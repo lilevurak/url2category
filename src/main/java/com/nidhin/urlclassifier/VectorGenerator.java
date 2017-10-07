@@ -46,6 +46,7 @@ public class VectorGenerator {
             System.out.println("Fetching keys for - " + key);
             aspCount++;
             int count = 0;
+            int totUrls = aspirationUrlsMap.get(key).size();
             for (String url : aspirationUrlsMap.get(key)){
                 try{
                     if (url.contains("pdf") || url.contains("PDF")){
@@ -61,7 +62,7 @@ public class VectorGenerator {
                     HashSet<String> keywords = keywordExtractor.extractKeyWords();
                     HashSet<String> metaKeywords = keywordExtractor.getStrictMetaKeywords();
                     if (count % 50 == 0){
-                        System.out.println("fetched url count - " + count + " asp count - " + aspCount);
+                        System.out.println("fetched url count - " + count + "/" + totUrls + " asp count - " + aspCount);
                     }
                     urlKeywordsMap.put(url, new ArrayList<>(keywords));
                     urlMetaKeywordsMap.put(url, new ArrayList<>(metaKeywords));
