@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta charset="utf-8">
+  <script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> 
+  <title>Choosing Your Career Path | Johnson State College</title> 
+  <meta name="description" content="Johnson State College, Vermont's premier public liberal arts college, offers high-impact education on campus and online. Johnson State will become Northern Vermont University in July 2018"> 
+  <link rel="stylesheet" href="//d3pt0wokcezon6.cloudfront.net/styles/main.css?v=1506951389"> 
+  <script src="//d3pt0wokcezon6.cloudfront.net/scripts/vendor/modernizr.js"></script> 
+  <meta name="google-site-verification" content="h0fwdpUYiI0xwPdNayaSNCXb3FYvS45eeKHERRhZva8"> 
+  <!-- Facebook Pixel Code --> 
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');fbq('init','969829429760393');fbq('track',"PageView");</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=969829429760393&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+ </head> 
+ <body class="normal choosing-your-career-path"> 
+  <!-- Google Tag Manager: Used to include all Google Analytics snippets --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WGXKQZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WGXKQZ');</script> 
+  <!-- End Google Tag Manager --> 
+  <header> 
+   <!-- begin main (top) nav include--> 
+   <!-- begin quicklinks nav--> 
+   <div id="quicklinks-nav" class="collapsed"> 
+    <a href="#" id="back" class="show-phone">Back</a> 
+    <div class="title-bar"> 
+     <h2 class="left">Quicklinks</h2> 
+     <a href="#" id="quicklinks-close" class="right">Close</a> 
+    </div> 
+    <nav> 
+     <div class="col-group five-cols no-wrap"> 
+      <div class="col nudge-down"> 
+       <a href="/student-life/arts-recreation/dibden-center-for-the-arts" class="right-arrow before">Dibden Center for the Arts</a> 
+       <a href="/student-life/arts-recreation/dibden-center-for-the-arts"><img class="center" alt="Dibden Center for the Arts" width="87" height="87" src="/images/uploads/utility-nav/xdibden-tix.png.pagespeed.ic.twG53PuL_W.png"></a> 
+      </div> 
+      <div class="col left-border white"> 
+       <h2 class="pencil" style="background-image:url(/images/uploads/utility-nav/pencil.png)">Resources</h2> 
+       <div class="no-decoration"> 
+        <ul> 
+         <li><a href="/offices-non-academic-departments/registrars-office">Registration</a></li> 
+         <li><a href="/academics/academic-resources/academic-calendars/undergraduate-catalog">Catalog &amp; Course Bulletins</a></li> 
+         <li><a href="/offices-non-academic-departments/information-technology-services">IT/Computing</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col"> 
+       <h2 class="person" style="background-image:url(/images/uploads/utility-nav/person.png)">On Campus</h2> 
+       <div class="no-decoration"> 
+        <ul> 
+         <li><a href="https://johnsonstate.sodexomyway.com/">Dining</a></li> 
+         <li><a href="/offices-non-academic-departments/public-safety">Campus Safety</a></li> 
+         <li><a href="/offices-non-academic-departments/conference-event-services">Conferences &amp; Events</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col"> 
+       <h2 class="person" style="background-image:url(/images/uploads/utility-nav/calendar.png)">Calendars &amp; Directory</h2> 
+       <div class="no-decoration"> 
+        <ul> 
+         <li><a href="/academics/academic-resources/academic-calendars/academic-calendar">Academic Calendar</a></li> 
+         <li><a href="https://events-jsc.vsc.edu/MasterCalendar/MasterCalendar.aspx">Events Calendar</a></li> 
+         <li><a href="/directory">Directory</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col left-border white"> 
+       <ul class="right-arrow"> 
+        <li><a href="/news-events">News &amp; Events</a></li> 
+        <li><a href="/library">Library</a></li> 
+        <li><a href="/offices-non-academic-departments/registrars-office">Transcripts</a></li> 
+        <li><a href="/community/contact-johnson-state">Contact</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+   </div> 
+   <!-- end quicklinks nav--> 
+   <!-- begin main nav (and)--> 
+   <!-- begin main nav (and)--> 
+   <div class="main-nav"> 
+    <a href="http://www.jsc.edu/" class="logo color">Johnson State College Vermont</a> 
+    <a href="#" class="reveal">Show</a> 
+    <div class="nav"> 
+     <div class="quicklinks-main quicklinks-reveal">
+      <a href="#">Quicklinks</a>
+     </div> 
+     <!-- Google CSE Search Box Begins  --> 
+     <form action="http://www.jsc.edu/search/results" id="searchbox_008724123781493753215:g_wv2jokdvo" class="search"> 
+      <input type="hidden" name="cx" value="008724123781493753215:g_wv2jokdvo"> 
+      <input type="hidden" name="cof" value="FORID:11"> 
+      <input type="text" name="q" placeholder="Search"> 
+      <input type="submit" name="sa"> 
+     </form> 
+     <script src="http://www.google.com/coop/cse/brand?form=searchbox_008724123781493753215%3Ag_wv2jokdvo"></script> 
+     <!-- Google CSE Search Box Ends --> 
+     <nav> 
+      <ul class="inline no-decoration"> 
+       <li class="first"><a href="http://www.jsc.edu/who-we-are/">Who We Are</a></li> 
+       <li class="parent-active"><a href="http://www.jsc.edu/academics/">Academics</a></li> 
+       <li><a href="http://www.jsc.edu/student-life/">Student Life</a></li> 
+       <li><a href="http://www.jsc.edu/admissions-aid/">Admissions &amp; Aid</a></li> 
+       <li class="last"><a href="http://www.jsc.edu/athletics/">Athletics</a></li> 
+       <li class="quicklinks-mobile quicklinks-reveal"> <a href="#">Quicklinks &gt;</a></li> 
+      </ul> 
+     </nav> 
+    </div> 
+   </div> 
+   <!-- end main nav--> 
+   <!-- end main nav--> 
+   <!-- end main (top) nav include--> 
+   <div class="container"> 
+    <h1><span>Careers</span></h1> 
+   </div> 
+  </header> 
+  <div class="main-wrapper"> 
+   <div class="container"> 
+    <div class="breadcrumbs"> 
+     <ul> 
+      <li><a href="http://www.jsc.edu">Home</a></li>
+      <li><a href="http://www.jsc.edu/academics/">Academics</a></li>
+      <li><a href="http://www.jsc.edu/academics/career-development/">Careers</a></li>
+      <li class="last">Choosing Your Career Path</li> 
+     </ul> 
+    </div> 
+    <div class="main sidebar"> 
+     <aside class="sidebar"> 
+      <nav class="sidebar"> 
+       <ul id="nav-sub" class="no-decoration"> 
+        <li class="first"><a href="http://www.jsc.edu/academics/career-development/about-the-office-of-career-development/">About Us</a></li> 
+        <li class="here"><a href="http://www.jsc.edu/academics/career-development/choosing-your-career-path/">Choosing Your Career Path</a> 
+         <ul> 
+          <li class="first"><a href="http://www.jsc.edu/academics/career-development/choosing-your-career-path/career-development-every-year/">Career Development Every Year</a></li> 
+          <li><a href="http://www.jsc.edu/academics/career-development/choosing-your-career-path/career-exploration/">Career Exploration</a></li> 
+          <li class="last"><a href="http://www.jsc.edu/academics/career-development/choosing-your-career-path/the-career-path-newsletter/">The Career Path Newsletter</a></li> 
+         </ul> </li> 
+        <li><a href="http://www.jsc.edu/academics/career-development/internships/">Internships</a></li> 
+        <li><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/">Jobs &amp; the Path After JSC</a> 
+         <ul> 
+          <li class="first"><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/preparing/">Preparing</a></li> 
+          <li><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/student-employment-and-work-study/">Student Employment and Work Study</a></li> 
+          <li><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/the-search/">The Search</a></li> 
+          <li class="last"><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/life-after-jsc/">Life After JSC</a> 
+           <ul> 
+            <li class="first"><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/life-after-jsc/applying-for-fellowships/">Applying for Fellowships</a></li> 
+            <li class="last"><a href="http://www.jsc.edu/academics/career-development/jobs-internships-and-the-path-after-jsc/life-after-jsc/pursuing-graduate-school/">Pursuing Graduate School</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li><a href="http://www.jsc.edu/academics/career-development/outcomes/">Outcomes</a> 
+         <ul> 
+          <li class="last"><a href="http://www.jsc.edu/academics/career-development/outcomes/graduate-survey-archive/">Graduate Survey Archive</a></li> 
+         </ul> </li> 
+        <li><a href="http://www.jsc.edu/academics/career-development/information-for-employers/">Information for Employers</a> 
+         <ul> 
+          <li class="last"><a href="http://www.jsc.edu/academics/career-development/information-for-employers/career-fair-information-for-employers/">Career &amp; Internship Fair Information</a></li> 
+         </ul> </li> 
+        <li><a href="http://www.jsc.edu/academics/career-development/information-for-parents/">Information for Parents</a></li> 
+        <li class="last"><a href="http://www.jsc.edu/academics/career-development/workplace-diversity/">Workplace Diversity</a> 
+         <ul> 
+          <li class="first"><a href="http://www.jsc.edu/academics/career-development/workplace-diversity/alana/">Career Support for ALANA Students</a></li> 
+          <li><a href="http://www.jsc.edu/academics/career-development/workplace-diversity/career-services-for-international-students/">Support for International Students</a></li> 
+          <li><a href="http://www.jsc.edu/academics/career-development/workplace-diversity/career-support-for-lgbtq-students/">Career Support for LGBTQ+ Students</a></li> 
+          <li class="last"><a href="http://www.jsc.edu/academics/career-development/workplace-diversity/career-support-for-veterans/">Career Support for Veterans</a></li> 
+         </ul> </li> 
+       </ul> 
+      </nav> 
+      <hr> 
+     </aside> 
+     <div class="content"> 
+      <header> 
+       <h2>Choosing Your Career Path</h2> 
+      </header> 
+      <hr> 
+      <article> 
+       <h3>Career Development Every Year</h3> 
+       <p>Career development doesn’t begin during your last semester with a quick appointment to polish your resume before you grab your diploma and head out for great things! In fact, you’re already on the road to developing your career before you even get to college, as you evaluate different college programs and decide what school will best help you achieve your goals.</p> 
+       <p>And once you’re here, choosing your major and courses, attending lectures and workshops, getting involved with campus groups and activities, interning at a local or national organization, joining a team, and focusing on your studies are all part of career development.</p> 
+       <p>We’ll help you see the ways that you are already building a set of skills and experiences that can help you find the right job, and we’ll show you how to make sure your investment in a college education leads you to fulfilling employment after graduation.</p> 
+       <p><a href="/academics/career-development/choosing-your-career-path/career-development-every-year/"><strong>Learn how to develop your career skills year by year</strong></a></p> 
+       <h3>Career Exploration</h3> 
+       <p>Some students come to campus knowing exactly what they want to major in; most, however, do not. That’s where we come in!</p> 
+       <p>The Career &amp; Internship Center can help you determine the best major for your interests and goals, by guiding you through self-assessments and exploring what JSC has to offer and where that will take you. And once you’ve discovered the major that works for you, our office will support you in your journey to find the career where you will shine!</p> 
+       <p><a href="/academics/career-development/choosing-your-career-path/career-exploration/"><strong>Get some ideas about how to explore career options</strong></a></p> 
+       <h3>Transferable Skills</h3> 
+       <p>The content of your classes and the information you gain in your field of study are important, the transferable skills that you gain, develop and are able to identify will likely be the ones that seal the deal in your job search.</p> 
+       <p>Students who start their college education knowing about transferable skills — that is the general skills you develop from jobs, projects, classes, hobbies, and interests that can be used in many different jobs –- are better equipped to get the most out of class activities like small groups, presentations and research. And once you’re able to identify and see the value in these types of ‘soft skills,’ you’ll be more likely to seek out ways to add to your development.</p> 
+       <p>The Career &amp; Internship Center can help you identify and develop your transferable skills so that you’ll be able to discuss these with knowledge and confidence at job interviews.</p> 
+      </article> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer> 
+   <div class="container"> 
+    <div class="wrapper"> 
+     <a href="http://northernvermont.edu/" class="logo white">Northern Vermont University</a> 
+     <div class="spacer hide-phone"></div> 
+     <div class="address"> 
+      <ul class="no-decoration"> 
+       <li class="dot"><span>337 College Hill</span></li> 
+       <li><span>Johnson, VT 05656</span></li> 
+       <li>800-635-2356</li> 
+      </ul> 
+     </div> 
+     <nav> 
+      <ul class="right-arrow"> 
+       <li><a href="/who-we-are/about-johnson-state/jobs-at-jsc/how-to-apply">Jobs at JSC</a></li> 
+       <li><a href="http://myjsc.jsc.edu">MyJSC Portal</a></li> 
+       <li><a href="/sexual-respect-title-ix">Title IX &amp; Sexual Respect</a></li> 
+       <li><a href="/offices-non-academic-departments/public-safety">Campus Safety</a></li> 
+      </ul> 
+     </nav> 
+     <div class="footer-social-wrap"> 
+      <a href="/give-to-jsc" class="button">Give to Johnson State</a> 
+      <div class="social"> 
+       <a href="https://www.facebook.com/JohnsonStateCollege?ref=br_tf" class="facebook">facebook</a> 
+       <a href="https://twitter.com/johnsonstate" class="twitter">twitter</a> 
+       <a href="https://www.youtube.com/user/JohnsonStateCollege" class="youtube">youtube</a> 
+       <a href="https://www.flickr.com/photos/johnsonstatecollege/" class="flickr">flickr</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script src="//d3pt0wokcezon6.cloudfront.net/scripts/vendor/jquery.min.js"></script> 
+  <script src="//d3pt0wokcezon6.cloudfront.net/scripts/vendor/jquery.cycle.js"></script> 
+  <script src="//d3pt0wokcezon6.cloudfront.net/scripts/main.js?v=1506951388"></script> 
+  <script>window._bugHerd||document.write('<script src="//www.bugherd.com/sidebarv2.js?apikey=vvn6qo1adrvzhmtrn2gesq"><\/script>')</script> 
+  <script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fe76a2a90e","applicationID":"4437373","transactionName":"YlVbYktUDUNWUkZRDlsfekNKQQxdGFBRWQVQXVBVShoAUUVUV0pMUVVPU1VaE11SX0Y=","queueTime":0,"applicationTime":552,"atts":"ThJYFANOHk0=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

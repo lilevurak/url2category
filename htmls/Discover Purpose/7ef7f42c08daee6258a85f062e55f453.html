@@ -1,0 +1,942 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+ <!--<![endif]-->
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> 
+  <meta property="og:url" content="http://www.healyourlife.com/find-your-life-purpose"> 
+  <link rel="shortcut icon" href="https://www.healyourlife.com/sites/all/themes/hyl_omega_subtheme/favicon.png" type="image/png"> 
+  <meta name="description" content="“What is my life purpose?” is the question I’m most commonly asked, and with good reason! Each and every one of us has an equally important purpose. When we’re working on it, our entire lives become healed. We feel happier and healthier. Even our finances improve!Before you were born, you worked with your angels to orchestrate a life mission that would help others and be emotionally rewarding. This role also ensures soul growth for you and comes with a guarantee that you’ll be completely supported as you fulfill it."> 
+  <meta name="keywords" content="Find Your Life Purpose, Doreen Virtue, oracle cards, self-esteem, life work, career, healing, abundance, happiness, divine guidance, life purpose, archangel michael, doreen virtue"> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <meta name="rights" content="2015 Hayhouse"> 
+  <link rel="canonical" href="https://www.healyourlife.com/find-your-life-purpose"> 
+  <link rel="shortlink" href="https://www.healyourlife.com/node/374"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:title" content="Find Your Life Purpose"> 
+  <meta property="og:description" content="“What is my life purpose?” is the question I’m most commonly asked, and with good reason! Each and every one of us has an equally important purpose. When we’re working on it, our entire lives become healed. We feel happier and healthier. Even our finances improve!Before you were born, you worked with your angels to orchestrate a life mission that would help others and be emotionally rewarding. This role also ensures soul growth for you and comes with a guarantee that you’ll be completely supported as you fulfill it."> 
+  <meta property="og:image" content="https://www.healyourlife.com/sites/default/files/articles/2014/03/24/bb3d2deff1aabe8f6e475b6116adff00.jpg"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <title>Find Your Life Purpose by Doreen Virtue - HealYourLife</title> 
+  <link type="text/css" rel="stylesheet" href="https://www.healyourlife.com/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.healyourlife.com/sites/default/files/css/css_dWBHPbSQWh-19e3Bc29cTHIsefj--RoEVftmVdOAMn4.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.healyourlife.com/sites/default/files/css/css_ewVpfHkSczBLadzreYvngpvAEPBgq91i7hAUoE9Rm0E.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.healyourlife.com/sites/default/files/css/css_YxYW4RhtQpM5HGXRLpEQSX0gXiWc56-2pV4mldzjjZY.css" media="screen"> 
+  <!--[if (lt IE 9)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="https://www.healyourlife.com/sites/default/files/css/css__vb7XZfXeuRXjYmfY6lNTg-jy-9kxy0K07AXHAQnnDQ.css" media="all" />
+<![endif]--> 
+  <!--[if gte IE 9]><!--> 
+  <link type="text/css" rel="stylesheet" href="https://www.healyourlife.com/sites/default/files/css/css_u2pTwEmFFSmhMCUkxV_dG3fqz2dmVqykks5liVuexT0.css" media="all"> 
+  <!--<![endif]--> 
+  <script type="text/javascript" src="https://www.healyourlife.com/misc/jquery.js?v=1.4.4"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/misc/jquery.once.js?v=1.2"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/misc/drupal.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/libraries/colorbox/jquery.colorbox-min.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/modules/popup_onload/popup_onload.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/modules/popup_onload/popup_onload_statistics/popup_onload_statistics.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/themes/hyl_omega_subtheme/js/respond.min.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/themes/hyl_omega_subtheme/js/modernizr-2.6.2.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/themes/hyl_omega_subtheme/js/jquery.min.js?owgho0"></script> 
+  <script type="text/javascript" src="https://www.healyourlife.com/sites/all/themes/omega/omega/js/omega-mediaqueries.js?owgho0"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"hyl_omega_subtheme","theme_token":"g0Nh2Te_ELrpVUqssX4TqDqfYbXp-qDcm5WdirNiTC0","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/popup_onload\/popup_onload.js":1,"sites\/all\/modules\/popup_onload\/popup_onload_statistics\/popup_onload_statistics.js":1,"sites\/all\/themes\/hyl_omega_subtheme\/js\/respond.min.js":1,"sites\/all\/themes\/hyl_omega_subtheme\/js\/modernizr-2.6.2.js":1,"sites\/all\/themes\/hyl_omega_subtheme\/js\/jquery.min.js":1,"sites\/all\/themes\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/popup_onload\/popup_onload-colorbox.css":1,"sites\/all\/modules\/tagclouds\/tagclouds.css":1,"sites\/all\/themes\/hyl_omega_subtheme\/css\/jquery.alerts.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_fluid\/normal\/alpha-fluid-normal-12.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_fluid\/normal\/alpha-fluid-normal-12.css":1}},"popup_onload":{"html":"\u003Cdiv class=\u0022entity entity-popup-onload popup-onload-popup-onload-basic clearfix\u0022 class=\u0022entity entity-popup-onload popup-onload-popup-onload-basic\u0022\u003E\n\n  \n  \u003Cdiv class=\u0022content\u0022\u003E\n    \u003Cdiv class=\u0022field field-name-field-fake-body field-type-text field-label-hidden\u0022\u003E\u003Cdiv class=\u0022field-items\u0022\u003E\u003Cdiv class=\u0022field-item even\u0022\u003E\u003Cdiv class=\u0022popup_div one\u0022 style=\u0022width:960px;text-align: center;\u0022\u003E\n\u003Cdiv class=\u0022left\u0022 style=\u0022float: left; width: 50%;\u0022\u003E\n\u003Ch2 style=\u0022font-family: robotoregular;font-size: 60px;line-height: 1em; color: #71ab00;\u0022\u003EAre you feeling stuck?\u003C\/h2\u003E\n\u003Cp\u003E\u003Cimg alt=\u0022Free Audio Book\u0022 src=\u0022\/sites\/default\/files\/u979990\/free-audiobook.png\u0022 style=\u0022width: 518px; height: 86px; margin: 15px 0;\u0022 \/\u003E\u003C\/p\u003E\n\u003Cdiv style=\u0022font-family: robotoregular; font-size: 21px; line-height: 1.5em;color: #000000;\u0022\u003EReceive \u003Cstrong\u003EFREE\u003C\/strong\u003E tips from Louise Hay to help you release old patterns and transition to the next step of your life with grace and ease.\u003C\/div\u003E\n\u003Cp\u003E\n\u003Cimg alt=\u0022\u0022 src=\u0022\/sites\/default\/files\/u979990\/arrow.png\u0022 style=\u0022width: 186px; height: 50px;\u0022 \/\u003E\u003C\/p\u003E\u003C\/div\u003E\n\u003Cdiv class=\u0022right\u0022 style=\u0022float: left; width: 50%;\u0022\u003E\u003Cimg alt=\u0022Louise Hay\u0022 class=\u0022author_img\u0022 src=\u0022\/sites\/default\/files\/u979990\/louise.png\u0022 \/\u003E\u003C\/div\u003E\n\u003Cdiv style=\u0022clear:both;height: 0;\u0022\u003E\u00a0\u003C\/div\u003E\n\u003Cdiv class=\u0022button-wrapper\u0022 style=\u0022background: #ffffff; width: 100%;position: absolute; text-align:center;height: 300px; left: 0\u0022\u003E\n\u003Cdiv class=\u0022button-container\u0022 style=\u0022width: 960px; margin: 0 auto;\u0022\u003E\u003Cbutton id=\u0022yes\u0022 onclick=\u0022popupYes();\u0022 style=\u0022background-color: #ff9900;color: #ffffff;font-family: robotoregular,sans-serif; font-size:20px; text-transform:uppercase; border:none; width:100%; padding:10px\u0022 type=\u0022button\u0022\u003EYES, PLEASE!\u003C\/button\u003E\u003Cbutton id=\u0022no\u0022 onclick=\u0022popupNo();\u0022 style=\u0022background-color: #ff9900;color: #ffffff;font-family: robotoregular,sans-serif; font-size:20px; text-transform:uppercase; border:none; width:100%; padding:10px\u0022 type=\u0022button\u0022\u003ENO THANKS\u003C\/button\u003E\u003C\/div\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\u0022popup_div second\u0022 style=\u0022width:960px;display: none;\u0022\u003E\n\u003Ch2 style=\u0022font-family: robotoregular;font-size: 60px;line-height: 1em; color: #71ab00;margin-bottom: 30px;\u0022\u003EDear Friends,\u003C\/h2\u003E\n\u003Cdiv style=\u0022font-family: robotolight; font-size: 21px; line-height: 1.5em;color: #000000;\u0022\u003ESign up for the Heal Your Life newsletter and receive Louise Hay\u0027s audiobook \u2014 \u003Cspan style=\u0022font-style: italic;\u0022\u003EChange and Transition\u003C\/span\u003E \u2014 FREE. Learn how to gently move from a state of grief or fear into a healing state of love and grace.\u003C\/div\u003E\n\u003Cdiv class=\u0022left\u0022 style=\u0022float: left; width: 30%;\u0022\u003E\u003Cimg alt=\u0022Audio Book\u0022 src=\u0022\/sites\/default\/files\/u979990\/thumbnail-1.jpg\u0022 style=\u0022width: 100%;padding: 30px;\u0022 \/\u003E\u003C\/div\u003E\n\u003Cdiv class=\u0022right desc\u0022 style=\u0022float: left; width: 70%;padding: 30px 30px 30px;font-family: robotoregular; font-size: 18px; line-height: 1.5em;color: #000000;\u0022\u003EIn this enlightening Audio Program, Louise Hay discusses the difficulties you may encounter when you\u0027re going through a period of \u0022change and transition.\u0022 Louise closes with a beautiful and empowering meditation.\u003C\/div\u003E\n\u003Cdiv style=\u0022clear:both;height: 0;\u0022\u003E\u00a0\u003C\/div\u003E\n\u003Cdiv class=\u0022button-wrapper\u0022 style=\u0022background: #ffffff; width: 100%;position: absolute; text-align:center;height: 300px; left: 0\u0022\u003E\n\u003Cdiv class=\u0022button-container\u0022 style=\u0022width: 960px; margin: 0 auto;\u0022\u003E\n\u003Cform action=\u0022\u0022 method=\u0022\u0022 onsubmit=\u0022return _submit_enews_letter_with_name(\u0027popup-newsletter-email\u0027, \u0027popup-newsletter-first-name\u0027);\u0022\u003E\n\u003Cfieldset\u003E\u003Cdiv style=\u0022float: left;width:33.33%;\u0022\u003E\n\u003Cfigure style=\u0022padding:60px 30px;\u0022\u003E\u003Cinput id=\u0022popup-newsletter-first-name\u0022 name=\u0022first_name\u0022 placeholder=\u0022Enter Your First Name\u0022 style=\u0022width:100%;background:#FFFFFF\u0022 type=\u0022text\u0022 \/\u003E\u003C\/figure\u003E\u003C\/div\u003E\n\u003Cdiv style=\u0022float: left;width:33.33%;\u0022\u003E\n\u003Cfigure style=\u0022padding:60px 30px;\u0022\u003E\u003Cinput id=\u0022popup-newsletter-email\u0022 name=\u0022email\u0022 placeholder=\u0022Enter Your Email Address\u0022 style=\u0022width:100%\u0022 type=\u0022email\u0022 \/\u003E\u003C\/figure\u003E\u003C\/div\u003E\n\u003Cdiv style=\u0022float: left;width:33.33%;\u0022\u003E\n\u003Cfigure style=\u0022padding:60px 30px;\u0022\u003E\u003Cbutton class=\u0022add-recaptcha\u0022 style=\u0022background-color: #71ab00;color: #ffffff;font-family: robotoregular,sans-serif; font-size:24px; text-transform:uppercase; border:none; width:100%; padding:15px\u0022 type=\u0022submit\u0022\u003ELISTEN NOW\u003C\/button\u003E\u003C\/figure\u003E\u003C\/div\u003E\n\u003Cp\u003E\u003C\/p\u003E\u003C\/fieldset\u003E\u003Cbr \/\u003E\u003C\/form\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E\u003C\/div\u003E\u003C\/div\u003E  \u003C\/div\u003E\n\u003C\/div\u003E\n","delay":"10000","fixed":false,"popup_id":"1","className":"popup_onload","close":"","innerWidth":"960","innerHeight":"450"},"omega":{"layouts":{"primary":"normal","order":["normal"],"queries":{"normal":"all and (min-width:  768px) and (min-device-width: 768px), all and (max-device-width: 960px) and (min-width:768px) and (orientation:landscape)"}}}});
+//--><!]]>
+</script> 
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+  <link href="/sites/all/themes/hyl_omega_subtheme/css/style.css" rel="stylesheet" type="text/css"> 
+  <link href="/sites/all/themes/hyl_omega_subtheme/css/jquery.fancybox.css" rel="stylesheet" type="text/css"> 
+  <link href="/sites/all/themes/hyl_omega_subtheme/css/overwrite.css" rel="stylesheet" type="text/css"> 
+  <!-- GA Code--> 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-45526753-1', 'healyourlife.com') ; ga('require', 'displayfeatures');
+  ga ('send', 'pageview');
+</script> 
+  <style type="text/css">
+.likebox { margin: 0 0 1.3em 0;}
+
+.detail-content h2 {margin: 1.7em 0 1em 0;}
+.detail-content h2 strong {font-family: georgia, serif; font-weight: bold; font-size: 1.3em;}
+
+.detail-content h3 {margin: 1.4em 0 1.2em 0; font-size: 1.1em;}
+
+.detail-content p {margin: 0px 0 15px; line-height: 1.5em; font-size: 1.1em; letter-spacing: .005em;}
+
+.detail-content ul, .detail-content ol {margin: 1em 0; padding: 1em 0 0 33px;}
+.detail-content li {margin: 0 0 1em 0; font-size: 1.2em; line-height: 1.3em}
+</style> 
+  <!-- end GA --> 
+  <!-- Pinterest Metatag--> 
+  <meta name="p:domain_verify" content="17c3ac9775a720b10dab717d1dcc95e7"> 
+  <!-- end PR --> 
+  <!-- SiteCatalyst code version: H.20.3.
+		Copyright 1996-2009 Adobe, Inc. All Rights Reserved
+		More info available at http://www.omniture.com --> 
+  <script language="JavaScript" type="text/javascript" src="/sites/all/themes/hyl_omega_subtheme/js/s_code.js"></script> 
+  <script language="JavaScript" type="text/javascript"><!--
+    /* You may give each page an identifying name, server, and channel on
+         the next lines. */
+    s.pageName="HYL:home"
+    s.server="healyourlife.com"
+    s.pageType=""
+    s.prop1="HYL:home"
+    s.prop2="HYL:home"
+    s.prop3="HYL:home"
+    s.prop4=""
+    s.prop5=""
+    s.prop6=""
+    s.prop7=""
+    s.prop8="landing page"
+    s.prop9=""
+    /* Conversion Variables */
+    s.campaign=""
+    s.state=""
+    s.zip=""
+    s.events=""
+    s.products=""
+    s.purchaseID=""
+    s.eVar1=s.prop1;
+    s.eVar2=s.prop2;
+    s.eVar3=s.prop3;
+    s.eVar4=s.prop4;
+    s.eVar5=""
+    s.eVar6=""
+    s.eVar7=""
+    s.eVar8=""
+    s.eVar9=s.purchaseID
+    s.eVar10="122.165.117.24"
+    s.eVar11=""
+    s.eVar12=""
+    s.eVar13=""
+    s.eVar14=""
+    s.eVar15=""
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
+  <script language="JavaScript" type="text/javascript"><!--
+    if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+    //--></script>
+  <noscript>
+   &lt;a href="http://www.omniture.com" title="Web Analytics"&gt;&lt;img src="https://healyourlife.122.2o7.net/b/ss/hhhylprod,hhglobalprod/1/H.20.3--NS/0" height="1" width="1" border="0" alt=""&gt;
+  </noscript>
+  <!--/DO NOT REMOVE/--> 
+  <!-- End SiteCatalyst code version: H.20.3. --> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-374 node-type-article context-find-your-life-purpose"> 
+  <div id="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <div class="gridContainer clearfix"> 
+   <header id="section-header" class="section section-header"> 
+    <div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix"> 
+     <div id="zone-branding" class="zone zone-branding clearfix block-header-top container-12"> 
+      <div class="grid-12 region region-branding" id="region-branding"> 
+       <div class="region-inner region-branding-inner"> 
+        <div class="block block-block block-1 block-block-1 odd block-without-title" id="block-block-1"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="topHeader"> 
+            <div class="container"> 
+             <div class="row clearfix"> 
+              <div class="left"> 
+               <form name="frm-subscribe" action="" method="post" target="if-handler" onsubmit="return enews_submit('txt-header-top-subscribe');"> 
+                <fieldset> 
+                 <legend>Join Our Community</legend> 
+                 <figure> 
+                  <input id="txt-header-top-subscribe" type="email" placeholder="email..." name="email"> 
+                 </figure> 
+                 <figure> 
+                  <input type="submit" value="Sign Up!" class="add-recaptcha"> 
+                 </figure> 
+                </fieldset> 
+               </form> 
+              </div> 
+              <div class="right"> 
+               <ul class="social"> 
+                <li>Connect with us :</li> 
+                <li><a href="https://www.facebook.com/HealYourLife" target="_blank" class="facebook-link"></a></li> 
+                <li><a href="https://twitter.com/HealYourLife" target="_blank" class="twitter-link"></a></li> 
+                <li><a href="http://www.pinterest.com/healyourlife/" target="_blank" class="pinterest-link"></a></li> 
+                <li><a href="https://plus.google.com/+Healyourlife1/" target="_blank" class="google-link"></a></li> 
+                <li><a href="http://www.youtube.com/user/HayHousePresents" target="_blank" class="youtube-link"></a></li> 
+                <li><a href="#" class="email-link"></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-header-wrapper" class="zone-wrapper zone-header-wrapper clearfix"> 
+     <div id="zone-header" class="zone zone-header clearfix container-12"> 
+      <div class="grid-12 region region-header-first" id="region-header-first"> 
+       <div class="region-inner region-header-first-inner"> 
+        <div class="block block-block block-2 block-block-2 odd block-without-title" id="block-block-2"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="midHeader"> 
+            <div class="container"> 
+             <div class="row clearfix"> 
+              <div class="left"> 
+               <h1 class="logo"><a href="/">HEAL YOUR LIFE</a></h1> 
+              </div> 
+              <div class="right"> 
+               <div class="login"> 
+                <ul> 
+                 <li class="btnLogin"><a href="#">Login</a> 
+                  <div class="dropDownContact"> 
+                   <h1>Login</h1> 
+                   <form name="frm-signin" id="frm-signin" action="?q=/hyl/user/user-login" method="post" target="if-handler"> 
+                    <fieldset> 
+                     <figure> 
+                      <legend>User Name</legend> 
+                      <input type="text" name="username" id="login_username"> 
+                     </figure> 
+                     <figure> 
+                      <legend>Password</legend> 
+                      <input type="password" name="password" id="login_password"> 
+                     </figure> 
+                     <figure> 
+                      <label> <input type="checkbox" name="remember" checked>&nbsp;Remember Me </label> 
+                      <input type="hidden" name="login_token" value="VFRNMExWYzdSVFVtTVRjdE1UNDJRUzh6SkRFdExTVTVNejBrTVNveFJEVlVOVFpSU0RSVVVUY3dSajA1TURjaFJ6QldQRjB2TjFFck9qYzlXZ280TTBRNUlUMGxORkl3UlRVc05UUlZWelZWTFZnNVZVVW5NRFJOT1RBMlhGMEtZQW89"> 
+                      <input type="submit" name="submit" value="Login"> 
+                     </figure> 
+                     <a href="#" class="forgotLogin">Forgot your login?</a> 
+                     <div class="btnSignUp"> 
+                      <a href="/sign-up">Sign Up</a> 
+                     </div> 
+                     <p>Don’t have an account? It’s free to sign up! Sign up now to save, share, and revisit your favorite content from Heal Your Life.</p> 
+                    </fieldset> 
+                   </form> 
+                  </div> 
+                  <div class="dropDownForgot"> 
+                   <h1>Forgot Password</h1> 
+                   <form name="frm-forgot" id="frm-forgot" action="?q=/hyl/user/user-forgot" method="post" target="if-handler"> 
+                    <fieldset> 
+                     <figure> 
+                      <legend>Email</legend> 
+                      <input type="text" name="email" id="forgot_email"> 
+                     </figure> 
+                     <figure> 
+                      <input type="hidden" name="login_token" value="VFRNMExWYzdSVFVtTVRjdE1UNDJRUzh6SkRFdExTVTVNejBrTVNveFJEVlVOVFpSU0RSVVVUY3dSajA1TURjaFJ6QldQRjB2TjFFck9qYzlXZ280TTBRNUlUMGxORkl3UlRVc05UUlZWelZWTFZnNVZVVW5NRFJOT1RBMlhGMEtZQW89"> 
+                      <input type="submit" name="submit" value="Forgot"> 
+                     </figure> 
+                     <div class="btnSignUp"> 
+                      <a href="/sign-up">Sign Up</a> 
+                     </div> 
+                     <p>Please input your email to recover password</p> 
+                    </fieldset> 
+                   </form> 
+                  </div> </li> 
+                 <li><a href="/sign-up">Sign up</a></li> 
+                </ul> 
+               </div> 
+               <div class="search"> 
+                <form action="/search-results" id="frm-top-search" name="search" method="get" accept-charset="utf-8"> 
+                 <fieldset> 
+                  <figure> 
+                   <input type="text" name="keys" placeholder="Searching for a topic?"> 
+                  </figure> 
+                  <figure> 
+                   <input type="button" value="" onclick="$('#frm-top-search').submit();"> 
+                  </figure> 
+                 </fieldset> 
+                </form> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix"> 
+     <div id="zone-menu" class="zone zone-menu clearfix container-12"> 
+      <div class="grid-12 region region-menu" id="region-menu"> 
+       <div class="region-inner region-menu-inner"> 
+        <div class="block block-block block-3 block-block-3 odd block-without-title" id="block-block-3"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="botHeader"> 
+            <div class="container"> 
+             <div class="row clearfix"> 
+              <nav> 
+               <ul class="navigation"> 
+                <li><a href="/daily-affirmations">Affirmations<span>daily</span></a></li> 
+                <li><a href="/daily-meditations">Meditations<span>daily</span></a></li> 
+                <li><a href="/articles">Articles</a></li> 
+                <li><a href="/oracle-cards">Free Card Reading</a></li> 
+                <li><a href="/audios">Audio</a></li> 
+                <li><a href="/videos-list">Video</a></li> 
+                <li><a href="/topic-list">Topics</a></li> 
+                <li><a href="/contributors-list">Contributors</a></li> 
+                <!--<li><a href="">Blog</a></li>--> 
+                <li><a href="/events">Events</a></li> 
+                <li><a href="/shop">Shop</a></li> 
+               </ul> 
+              </nav> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </header> 
+   <section id="section-content" class="section section-content"> 
+    <div id="zone-content-wrapper" class="zone-wrapper zone-content-wrapper clearfix container"> 
+     <div id="zone-content" class="zone zone-content clearfix content container-12"> 
+      <div class="grid-8 region region-content panel-left" id="region-content"> 
+       <div class="region-inner region-content-inner"> 
+        <a id="main-content"></a> 
+        <h1 class="title element-invisible" id="page-title">Find Your Life Purpose</h1> 
+        <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div id="node-article-374" class="ds-1col node node-article view-mode-full node-not-promoted node-not-sticky author-khanhvo03181gmailcom odd clearfix clearfix"> 
+            <div class=""> 
+             <div class="field field-name-node-full-content field-type-ds field-label-hidden">
+              <div class="field-items">
+               <div class="field-item even">
+                <div class="title">
+                 <h1>Articles&nbsp;<span>Inspirational articles from Hay House authors</span></h1>
+                </div> 
+                <div class="grid1_2cols clearfix"> 
+                 <div class="blockDetail"> 
+                  <div class="row clearfix"> 
+                   <!--
+            <div class="bannerDetail">
+                            </div>--> 
+                   <div class="fixLeft"> 
+                    <div class="heading"> 
+                     <h2><strong>Find Your Life Purpose</strong></h2> 
+                     <span>Which path is right for you?</span> 
+                    </div> 
+                   </div> 
+                   <div class="avatar-user"> 
+                    <div class="avtThumb">
+                     <a href="/authors/doreen-virtue"><img class="thumb" src="https://www.healyourlife.com/sites/default/files/styles/user_avatar_thumb/public/user-avatars/2014/03/19/3734.jpg?itok=HsU6DeA0" alt="Doreen Virtue" title="Doreen Virtue"></a>
+                    </div> 
+                    <div class="info clearfix"> 
+                     <span class="name">Doreen Virtue</span> 
+                     <a href="/articles/author/doreen_virtue" class="link-more">More by this author</a> 
+                    </div> 
+                    <div class="subscript"> 
+                     <span class="date-time">Feb 28, 2013 at 09:00 AM</span> 
+                     <em class="comment"><a style="color: inherit;" href="/find-your-life-purpose#disqus_thread"></a></em> 
+                    </div> 
+                   </div> 
+                   <div class="fixLeft"> 
+                    <div class="likebox clearfix"> 
+                     <ul> 
+                      <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/fb-like.png"></a><span class="share-total"><span class="arrow"></span><span class="fbshare-total"></span></span> </li> 
+                      <li><a href="https://twitter.com/intent/tweet?source=webclient&amp;text=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/tw-like.png"></a><span class="share-total"><span class="arrow"></span><span class="ttshare-total">0</span></span></li> 
+                      <li><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose&amp;media=https://www.healyourlife.com/sites/default/files/styles/org_style/public/articles/2014/03/24/bb3d2deff1aabe8f6e475b6116adff00.jpg?itok=rQGH5vAe&amp;description=%26ldquo%3BWhat+is+my+life+purpose%3F%26rdquo%3B+is+the+question+I%26rsquo%3Bm+most+commonly+asked%2C+and+with+good+reason%21+Each+and+every+one+of+us+has+an+equally+important+purpose.+When+we%26rsquo%3Bre+working+on+it%2C+our+entire+lives+become+healed.+We+feel+happier+and+healthier.+Even+our+finances+improve%21Before+you+w" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/pr-like.png"></a><span class="share-total"><span class="arrow"></span><span class="prshare-total">1</span></span></li> 
+                      <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/gg-like.png"></a><span class="share-total"><span class="arrow"></span><span class="ggshare-total">0</span></span></li> 
+                      <li><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose&amp;title=Find Your Life Purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/es-like.png"></a><span class="share-total"><span class="arrow"></span><span class="esshare-total">0</span></span></li> 
+                      <!--                        <li><img src="-->
+                      <!--images/ad-like.png"></li>--> 
+                      <li><a href="/articles/rss" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/rs-like.png"></a></li> 
+                     </ul> 
+                    </div> 
+                    <div class="detail-content clearfix"> 
+                     <div class="description"> 
+                      <p>“What is my life purpose?” is the question I’m most commonly asked, and with good reason! Each and every one of us has an equally important purpose. When we’re working on it, our entire lives become healed. We feel happier and healthier. Even our finances improve!</p>
+                      <p>Before you were born, you worked with your angels to orchestrate a life mission that would help others and be emotionally rewarding. This role also ensures soul growth for you and comes with a guarantee that you’ll be completely supported as you fulfill it.</p>
+                      <p>Everyone’s mission has the same underlying element of love. In essence, we’re all here to learn, remember, and teach this powerful emotion. Every action that we take either demonstrates fear or love. When we choose the path of love, we grow spiritually, help others, and balance our karma.</p>
+                      <p>The question about life purpose relates to which form your path of love will take. Will you be a healer, teacher, artist, parent, caregiver, and so forth?</p>
+                      <p>Most people ask for a life-purpose reading because they want to find a career that is meaningful and pays the bills. They want a guarantee that they can quit their present job and be financially secure.</p>
+                      <p>There is a guarantee, provided that you’re willing to carefully listen to and follow your inner Divine guidance. Archangel Michael knows what your, and everyone else’s, life purpose involves. He is the overseer of life purposes, like an orchestra conductor who ensures that all musicians are playing their parts. You, like one of the musicians in the orchestra, are much needed, and your contribution is just as important as everyone else’s. We are each playing a role in God’s plan of peace.</p>
+                      <p>Fortunately, your life purpose involves actions and topics that you’re already interested in. Usually, it is centered around activities that you’d do for free just for the joy of it! If you’re not sure what you’re passionate about, ask a trusted loved one. This person has observed which topics and pursuits excite you. And these are the bases for your life purpose.</p>
+                      <p>This purpose is so exciting and rewarding that you’ll wake up in the morning invigorated about the day ahead. Abundance will flow to you because you’ll naturally spend so much time on this endeavor. Your excitement will drive you to become very proficient at it.</p>
+                      <p>My new <em><a href="http://www.hayhouse.com/details.php?id=5692" target="_blank">Life Purpose Oracle Cards</a></em> were designed to help you identify your specific life purpose. They show different forms of missions in order to give you insight about your soul’s chosen path. As you draw a card, notice your body’s reactions. You’ll know you’re on the right track when it relaxes and feels simultaneously joyful and peaceful. (You can also read more about life purpose in my book <em><a href="http://www.hayhouse.com/details.php?id=5316" target="_blank">The Angel Therapy Handbook</a></em>.)</p>
+                      <p>Oracle cards are an ancient, time-honored way to connect with angels and archangels. They’re based upon Pythagorean numerology, which states that all numbers and images vibrate in a mathematically precise manner.</p>
+                      <p>You can’t make a mistake with these oracle cards because they operate alongside the infallible Law of Attraction. This means that your questions (or those of the individual you’re reading for) always attract the perfect cards as answers. That is, you’ll always pull the one whose answer matches the vibration of the question.</p>
+                      <p>Since Archangel Michael oversees everyone’s life purposes, it’s a good idea to ask for his guidance when conducting readings. For instance, you can say the following silently or aloud:</p>
+                      <p>“Archangel Michael, I ask that all of my readings with these cards be accurate and specific, and bring blessings to everyone involved. Please help me stay centered in my higher self so that I may clearly hear, see, feel, and know the Divine messages that wish to come through these readings. I ask that you stay by my side and watch over me during this oracle-card session, ensuring that only God’s love and wisdom come through.”</p> 
+                     </div> 
+                    </div> 
+                    <div class="tags"> 
+                     <a href="/tags/oracle-cards">oracle cards</a> | 
+                     <a href="/tags/self-esteem-0">self-esteem</a> | 
+                     <a href="/tags/life-work">life work</a> | 
+                     <a href="/tags/career">career</a> | 
+                     <a href="/tags/healing">healing</a> | 
+                     <a href="/tags/abundance">abundance</a> | 
+                     <a href="/tags/happiness">happiness</a> | 
+                     <a href="/tags/divine-guidance">divine guidance</a> | 
+                     <a href="/tags/life-purpose">life purpose</a> | 
+                     <a href="/tags/archangel-michael">archangel michael</a> | 
+                     <a href="/tags/doreen-virtue">doreen virtue</a> 
+                    </div> 
+                    <div class="like-inbox"> 
+                     <div class="likebox clearfix"> 
+                      <ul> 
+                       <li><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/fb-like.png"></a><span class="share-total"><span class="arrow"></span><span class="fbshare-total">17</span></span> </li> 
+                       <li><a href="https://twitter.com/intent/tweet?source=webclient&amp;text=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/tw-like.png"></a><span class="share-total"><span class="arrow"></span><span class="ttshare-total">0</span></span></li> 
+                       <li><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose&amp;media=https://www.healyourlife.com/sites/default/files/styles/org_style/public/articles/2014/03/24/bb3d2deff1aabe8f6e475b6116adff00.jpg?itok=rQGH5vAe&amp;description=%26ldquo%3BWhat+is+my+life+purpose%3F%26rdquo%3B+is+the+question+I%26rsquo%3Bm+most+commonly+asked%2C+and+with+good+reason%21+Each+and+every+one+of+us+has+an+equally+important+purpose.+When+we%26rsquo%3Bre+working+on+it%2C+our+entire+lives+become+healed.+We+feel+happier+and+healthier.+Even+our+finances+improve%21Before+you+w" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/pr-like.png"></a><span class="share-total"><span class="arrow"></span><span class="prshare-total">1</span></span></li> 
+                       <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/gg-like.png"></a><span class="share-total"><span class="arrow"></span><span class="ggshare-total">0</span></span></li> 
+                       <li><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.healyourlife.com%2Ffind-your-life-purpose&amp;title=Find Your Life Purpose" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/es-like.png"></a><span class="share-total"><span class="arrow"></span><span class="esshare-total">0</span></span></li> 
+                       <!--                            <li><img src="-->
+                       <!--images/mt-like.png"></li>--> 
+                       <!--                            <li><img src="-->
+                       <!--images/ad-like.png"></li>--> 
+                       <li><a href="javascript:" class="add-node-favourite"><img src="/sites/all/themes/hyl_omega_subtheme/images/rt-like.png"></a></li> 
+                       <li><a href="/articles/rss" target="_blank"><img src="/sites/all/themes/hyl_omega_subtheme/images/rs-like.png"></a></li> 
+                      </ul> 
+                     </div> 
+                     <div class="email"> 
+                      <form name="frm-subscribe" action="" method="post" target="if-handler" onsubmit="return enews_submit('txt-article-detail-subscribe');"> 
+                       <fieldset> 
+                        <legend>Receive interesting stories like this one in your inbox</legend> 
+                        <figure> 
+                         <input id="txt-article-detail-subscribe" type="email" placeholder="email..." name="email"> 
+                        </figure> 
+                        <figure> 
+                         <input type="submit" value="Subscribe" class="add-recaptcha"> 
+                        </figure> 
+                       </fieldset> 
+                      </form> 
+                     </div> 
+                    </div> 
+                    <div class="comment-box about-author clearfix" style="padding-bottom: 20px;"> 
+                     <span class="title">About Author</span> 
+                     <div>
+                      <img class="thumb" style="width: 80px; height: 80px; float: left; margin-right: 10px;" src="https://www.healyourlife.com/sites/default/files/styles/user_avatar_thumb/public/user-avatars/2014/03/19/3734.jpg?itok=HsU6DeA0" alt="Doreen Virtue" title="Doreen Virtue">
+                     </div> 
+                     <div>
+                      Doreen Virtue Doreen Virtue graduated from Chapman University with two degrees in counseling psychology. A former psychotherapist, Doreen now gives online workshops on topics rela 
+                      <a href="/authors/doreen-virtue">Continue reading</a> 
+                     </div> 
+                    </div> 
+                    <!--                <div class="comment-box">--> 
+                    <!--                    <span>Share Your Thoughts Below</span>--> 
+                    <!--                    -->
+                    <!--                </div>--> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+      <aside class="grid-4 region region-sidebar-second panel-right" id="region-sidebar-second"> 
+       <div class="region-inner region-sidebar-second-inner"> 
+        <div class="block block-block block-22 block-block-22 odd block-without-title" id="block-block-22"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="blockE-news"> 
+            <div class="heading"> 
+             <h1>Get Unstuck Now</h1> 
+             <p>Download the audio lecture <em>Change And Transition</em> by Louise Hay FREE when you sign up for the Heal Your Life Newsletter.</p> 
+            </div> 
+            <div class="email"> 
+             <form name="frm-subscribe" action="" method="post" target="if-handler" onsubmit="return enews_submit('txt-sidebar-subscribe');"> 
+              <fieldset> 
+               <figure> 
+                <input id="txt-sidebar-subscribe" type="email" placeholder="email..." name="email"> 
+               </figure> 
+               <figure> 
+                <input type="submit" value="Get Your Gift" class="add-recaptcha"> 
+               </figure> 
+              </fieldset> 
+             </form> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-block block-14 block-block-14 even block-without-title" id="block-block-14"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="blockProducts"> 
+            <div class="title">
+             <h2>Products</h2>
+            </div> 
+            <div class="product-inner clearfix"> 
+             <div class="col"> 
+              <div class="thumb">
+               <a href="http://www.hayhouse.com/details.php?id=5692" target="_blank"><img src="https://www.healyourlife.com/sites/default/files/styles/product_sticky_thumb/public/products/2014/05/06/f8718ed7133469dbacf7a0d46d3c651b.gif?itok=dXrRdkF8" alt="Life Purpose Oracle Cards" title="Life Purpose Oracle Cards"></a>
+              </div> 
+              <a href="http://www.hayhouse.com/details.php?id=5692" target="_blank">Life Purpose Oracle Cards</a> 
+              <p>This card deck by Doreen Virtue will allow you to conduct accurate and trustworthy readings to explore that life purpose. Each of the 44 beautifully illustrated cards contains an illuminating message </p> 
+             </div> 
+             <div class="col"> 
+              <div class="thumb">
+               <a href="http://www.hayhouse.com/details.php?id=5941" target="_blank"><img src="https://www.healyourlife.com/sites/default/files/styles/product_sticky_thumb/public/products/2014/05/06/103c50bca127082e66690d6fa7117d49.gif?itok=e4PSCYP4" alt="The Angel Therapy Handbook" title="The Angel Therapy Handbook"></a>
+              </div> 
+              <a href="http://www.hayhouse.com/details.php?id=5941" target="_blank">The Angel Therapy Handbook</a> 
+              <p>Doreen Virtue has taught her Angel Therapy Practitioner course since 1997, helping thousands to learn the skills of spiritual healing and psychic readings in concert with the angels and archangels. No</p> 
+             </div> 
+            </div> 
+            <div class="link-inner"> 
+             <a href="/shop" class="arr-m-green">View all products</a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-zhyl block-zhyl-trending-block block-zhyl-zhyl-trending-block odd block-without-title" id="block-zhyl-zhyl-trending-block"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <!-- article tab 1--> 
+           <div id="Articles1" class="blockArticles"> 
+            <ul class="tabs"> 
+             <li><a href="#Latest1">Trending Articles</a></li> 
+             <li><a href="#Popular1">Blog Posts</a></li> 
+            </ul> 
+            <div class="articles-inner"> 
+             <div id="Latest1"> 
+              <div class="view view-home-articles-list view-id-home_articles_list view-display-id-block_1 block-home-articles-sticky"> 
+               <div class="view-content"> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/suze-orman-s-tips-for-your-money-life"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2014/03/20/db8638a4faf0916bc93be4b698a97d95.jpg?itok=kgN741Eg" alt="Suze Orman’s Tips For Your Money Life" title="Suze Orman’s Tips For Your Money Life"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/suze-orman-s-tips-for-your-money-life">Suze Orman’s Tips For Your Money Life</a> 
+                    <p>Why do I ask students in my Financial Freedom semi</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/tim-whild-on-earths-ascension-process"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2015/02/23/bad3090d31d76ff0e9c5b70735b2eb59.jpg?itok=uQgI-Xlz" alt="Tim Whild on Earth's Ascension Process" title="Tim Whild on Earth's Ascension Process"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/tim-whild-on-earths-ascension-process">Tim Whild on Earth's Ascension Process</a> 
+                    <p>Editor’s note: the following is an&nbsp;introduction&nbsp;to</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/how-to-find-love-and-prosperity-in-the-akashic-records"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2016/11/16/a6b8ce7baaabc9148a2159127d2d5ce9.jpg?itok=AOoavki9" alt="How To Find Love and Prosperity In The Akashic Records" title="How To Find Love and Prosperity In The Akashic Records"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/how-to-find-love-and-prosperity-in-the-akashic-records">How To Find Love and Prosperity In The Akashic Records</a> 
+                    <p>What do quantum physics, inspiration and discovery</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/12-thought-provoking-quotes-for-finding-spiritual-truth"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2014/04/18/51cb72e35f3cf26dd8fcaba82e143484.jpg?itok=6nFOG8iS" alt="12 Thought Provoking Quotes For Finding Spiritual Truth" title="12 Thought Provoking Quotes For Finding Spiritual Truth"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/12-thought-provoking-quotes-for-finding-spiritual-truth">12 Thought Provoking Quotes For Finding Spiritual Truth</a> 
+                    <p>The approach to spiritual progress isn’t one of “g</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="link-inner"> 
+               <a href="/articles" class="arr-m-green">View all articles</a> 
+              </div> 
+             </div> 
+             <div id="Popular1"> 
+              <div class="view view-home-articles-list view-id-home_articles_list view-display-id-block_1 block-home-articles-sticky"> 
+               <div class="view-content"> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/15-ways-to-get-unstuck-empower-yourself"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2014/05/01/3591fb1d77c18c33815eb3f1a68cc38d.jpg?itok=x-bdsZ70" alt="15 Ways To Get Unstuck &amp; Empower Yourself" title="15 Ways To Get Unstuck &amp; Empower Yourself"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/15-ways-to-get-unstuck-empower-yourself">15 Ways To Get Unstuck &amp; Empower Yourself</a> 
+                    <p>In this fast-paced world,&nbsp;I use the term&nbsp;Percolate</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/build-up-your-self-confidence"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2014/07/02/dfa919e73069a65671d823bb79d22f64.jpg?itok=asntbT9L" alt="Build Up Your Self Confidence" title="Build Up Your Self Confidence"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/build-up-your-self-confidence">Build Up Your Self Confidence</a> 
+                    <p>Below is a conversation with Abraham about recover</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/are-you-ready-to-do-the-work"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/default_images/heal-your-life-default.jpg?itok=iP8MlQCh" alt="Are You Ready To Do The Work?" title="Are You Ready To Do The Work?"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/are-you-ready-to-do-the-work">Are You Ready To Do The Work?</a> 
+                    <p>THE WORK IS A SIMPLE yet powerful process of inqui</p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+                <div class="views-row"> 
+                 <div class="views-field views-field-field-image"> 
+                  <div class="field-content"> 
+                   <div class="thumb"> 
+                    <a href="/how-do-you-see-yourself"> <img typeof="foaf:Image" src="https://www.healyourlife.com/sites/default/files/styles/article_home_thumb/public/articles/2014/03/24/09c3c8676fb1359cfa2c012be4ab8066.jpg?itok=ucpKVlZH" alt="How Do You See Yourself?" title="How Do You See Yourself?"> </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="views-field views-field-comment-count"> 
+                  <span class="field-content"> 
+                   <div class="description"> 
+                    <a href="/how-do-you-see-yourself">How Do You See Yourself?</a> 
+                    <p>For generations, we have allowed the numbers that </p> 
+                   </div> </span> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="link-inner"> 
+               <a href="/blogs-post" class="arr-m-green">View all blogs</a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <script type="text/javascript">
+    $(document).ready(function() {
+        $('#Articles1').easyTabs({defaultContent:1});
+    });
+</script> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-block block-6 block-block-6 even block-without-title" id="block-block-6"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="blockContributors"> 
+            <div class="title">
+             <h2>Contributors</h2>
+            </div> 
+            <div class="slider-2"> 
+             <div class="flexslider2 carousel"> 
+              <ul class="slides"> 
+               <li><a href="/articles/author/louise_l_hay"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/2262.jpg?itok=iWS3y-wE" alt="Louise Hay" title="Louise Hay"><span>Louise Hay</span></a></li> 
+               <li><a href="/articles/author/dr_wayne_w_dyer"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/3660.jpg?itok=Gs3HQk7L" alt="Dr. Wayne W. Dyer" title="Dr. Wayne W. Dyer"><span>Dr. Wayne W. Dyer</span></a></li> 
+               <li><a href="/articles/author/hay_house"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/1067.jpg?itok=czs0Asdu" alt="Hay House" title="Hay House"><span>Hay House</span></a></li> 
+               <li><a href="/articles/author/doreen_virtue"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/3734.jpg?itok=n5hFqhv0" alt="Doreen Virtue" title="Doreen Virtue"><span>Doreen Virtue</span></a></li> 
+               <li><a href="/articles/author/marianne_williamson"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/1695.jpg?itok=V6SDxu4T" alt="Marianne Williamson" title="Marianne Williamson"><span>Marianne Williamson</span></a></li> 
+               <li><a href="/articles/author/dr_christiane_northrup"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/865.jpg?itok=aHgx_G4s" alt="Dr. Christiane Northrup" title="Dr. Christiane Northrup"><span>Dr. Christiane Northrup</span></a></li> 
+               <li><a href="/articles/author/robert_holden_phd"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/2178.jpg?itok=bHZcvrBo" alt="Robert Holden Ph.D." title="Robert Holden Ph.D."><span>Robert Holden Ph.D.</span></a></li> 
+               <li><a href="/articles/author/loretta_laroche"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/789.jpg?itok=8bgo_ftm" alt="Loretta LaRoche" title="Loretta LaRoche"><span>Loretta LaRoche</span></a></li> 
+               <li><a href="/articles/author/julie_daniluk"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/2952.jpg?itok=Z26pi5Lo" alt="Julie  Daniluk" title="Julie  Daniluk"><span>Julie Daniluk</span></a></li> 
+               <li><a href="/articles/author/rick_tamlyn"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/3504.jpg?itok=ek1cp0XE" alt="Rick  Tamlyn" title="Rick  Tamlyn"><span>Rick Tamlyn</span></a></li> 
+               <li><a href="/articles/author/leeza_gibbons"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/3212.jpg?itok=ddmaclR1" alt="Leeza  Gibbons" title="Leeza  Gibbons"><span>Leeza Gibbons</span></a></li> 
+               <li><a href="/articles/author/pamela_bruner"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/2726-pamela_bruner_keep_aspect_158x200.jpg?itok=1Ng5I--N" alt="Pamela Bruner" title="Pamela Bruner"><span>Pamela Bruner</span></a></li> 
+               <li><a href="/articles/author/pam_grout"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/3200.jpg?itok=0DcHf-SO" alt="Pam  Grout" title="Pam  Grout"><span>Pam Grout</span></a></li> 
+               <li><a href="/articles/author/shari_arison"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/3251.jpg?itok=6abQ99SJ" alt="Shari  Arison" title="Shari  Arison"><span>Shari Arison</span></a></li> 
+               <li><a href="/articles/author/jennifer_lewis_hall"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/919.jpg?itok=sZ5eF761" alt="Jennifer  Lewis-Hall" title="Jennifer  Lewis-Hall"><span>Jennifer Lewis-Hall</span></a></li> 
+               <li><a href="/articles/author/alan_cohen"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/709-Alan_Cohen_215x215_keep_aspect_215x215.jpg?itok=dvVc-Fzc" alt="Alan Cohen" title="Alan Cohen"><span>Alan Cohen</span></a></li> 
+               <li><a href="/articles/author/sandra_anne_taylor"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/2181.jpg?itok=8zteFUyJ" alt="Sandra Anne Taylor" title="Sandra Anne Taylor"><span>Sandra Anne Taylor</span></a></li> 
+               <li><a href="/articles/author/steven_d_farmer"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/1917.jpg?itok=xI1LttYG" alt="Dr. Steven D. Farmer" title="Dr. Steven D. Farmer"><span>Dr. Steven D. Farmer</span></a></li> 
+               <li><a href="/articles/author/cheryl_richardson"><img src="https://www.healyourlife.com/sites/default/files/styles/user_contributors_thumb/public/user-avatars/2014/03/19/2175.jpg?itok=x2uJYjin" alt="Cheryl  Richardson" title="Cheryl  Richardson"><span>Cheryl Richardson</span></a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-block block-13 block-block-13 odd block-without-title" id="block-block-13"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="blockPromotions"> 
+            <div class="banner-zone">
+             <a target="_blank" href="https://www.worldpsychicsummit.com/webinar"> <img src="https://www.healyourlife.com/sites/default/files/banners/2017/09/28/a1e59f1f68e5820ffee86cfee2d7b85c.jpg" alt=""> </a>
+            </div> 
+           </div> 
+           <div class="blockPromotions"> 
+            <div class="banner-zone">
+             <a target="_blank" href="https://hhafftrk.com/?a=4469&amp;c=4946&amp;p=r&amp;utm_source=HYL.com&amp;utm_medium=banner&amp;utm_campaign=HYL.com_WPS2017"> <img src="https://www.healyourlife.com/sites/default/files/banners/2017/09/05/911ad96b7aeb79928e51e7c14390afca.jpg" alt=""> </a>
+            </div> 
+           </div> 
+           <div class="blockPromotions"> 
+            <div class="banner-zone">
+             <a target="_blank" href="https://itunes.apple.com/us/app/the-psychic-tarot-john-holland/id1261162143?mt=8&amp;at=11l7rL"> <img src="https://www.healyourlife.com/sites/default/files/banners/2017/09/05/c96c44b235a89e0ec1e8879136ac576a.jpg" alt=""> </a>
+            </div> 
+           </div> 
+           <div class="blockPromotions"> 
+            <div class="banner-zone">
+             <a target="_blank" href="www.healyourlife.com/sign-up"> <img src="https://www.healyourlife.com/sites/default/files/banners/2017/02/08/93b4887ba294f35d2e7cfe9d44341f1a.jpg" alt=""> </a>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </aside> 
+     </div> 
+    </div>
+   </section> 
+   <footer id="section-footer" class="section section-footer"> 
+    <div id="zone-footer-wrapper" class="zone-wrapper zone-footer-wrapper clearfix"> 
+     <div id="zone-footer" class="zone zone-footer clearfix container-12"> 
+      <div class="grid-12 region region-footer-first" id="region-footer-first"> 
+       <div class="region-inner region-footer-first-inner"> 
+        <div class="block block-block block-8 block-block-8 odd block-without-title" id="block-block-8"> 
+         <div class="block-inner clearfix"> 
+          <div> 
+           <div class="topFooter"> 
+            <div class="container"> 
+             <div class="row clearfix"> 
+              <div class="left"> 
+               <div class="title">
+                <h2>Hay House Around the Web</h2>
+               </div> 
+               <div class="row clearfix"> 
+                <div class="linkhouse"> 
+                 <ul class="link"> 
+                  <li><a href="http://hayhouse.com">HayHouse.com</a></li> 
+                  <li><a href="http://hayhouseradio.com">HayHouseRadio.com</a></li> 
+                  <li><a href="http://www.hayhouseu.com">HayHouseU.com</a></li> 
+                  <li><a href="http://louisehay.com">LouiseHay.com</a></li> 
+                  <li><a href="http://www.drwaynedyer.com/">DrWayneDyer.com</a></li> 
+                 </ul> 
+                </div> 
+                <div class="linksocial"> 
+                 <h4>Connect with us</h4> 
+                 <ul class="social"> 
+                  <!--
+                            <li><a href="https://www.facebook.com/HealYourLife" target="_blank" class="facebook-link"></a></li>
+                            <li><a href="https://twitter.com/HealYourLife" target="_blank" class="twitter-link"></a></li>
+							--> 
+                  <li><a href="https://www.facebook.com/HealYourLife" target="_blank" class="facebook-link"></a><span class="like-counter">2,129,729</span></li> 
+                  <li><a href="https://twitter.com/HealYourLife" target="_blank" class="twitter-link"></a><span class="like-counter">121,064</span></li> 
+                 </ul> 
+                 <ul class="social"> 
+                  <li><a href="http://www.pinterest.com/healyourlife/" target="_blank" class="pinterest-link"></a></li> 
+                  <li><a href="https://plus.google.com/+Healyourlife1/" target="_blank" class="google-link"></a></li> 
+                  <li><a href="http://www.youtube.com/user/HayHousePresents" target="_blank" class="youtube-link"></a></li> 
+                  <li><a href="javascript:" class="email-link footer-email-link"></a></li> 
+                 </ul> 
+                </div> 
+                <div class="mapGlobal"> 
+                 <h4>Hay House Global</h4> 
+                 <div class="map">
+                  <img src="/sites/all/themes/hyl_omega_subtheme/images/map-global.png"> 
+                  <ul class="tt-wrapper"> 
+                   <li><a target="_blank" class="tt-US" href="http://www.hayhouse.com"><span>Hay House US</span></a></li> 
+                   <li><a target="_blank" class="tt-UK" href="http://www.hayhouse.co.uk/"><span>Hay House UK</span></a></li> 
+                   <li><a target="_blank" class="tt-AU" href="http://www.hayhouse.com.au/"><span>Hay House AU</span></a></li> 
+                   <li><a target="_blank" class="tt-India" href="http://www.hayhouse.co.in/"><span>Hay House India</span></a></li> 
+                   <li><a target="_blank" class="tt-South" href="http://shop.hayhouse.co.za/default.aspx"><span>Hay House SA</span></a></li> 
+                  </ul> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="right"> 
+               <div class="title">
+                <h2>Contact</h2>
+               </div> 
+               <div class="row clearfix"> 
+                <ul class="link"> 
+                 <li><a href="/content/learn-about-our-site">About Us</a></li> 
+                 <li><a href="/content/learn-about-our-site">How to Begin</a></li> 
+                 <li><a href="/content/join-the-affiliate-program">Affiliate Program</a></li> 
+                </ul> 
+                <ul class="link"> 
+                 <li><a href="#" class="call">(800) 654-5126</a></li> 
+                 <li><a href="/contact" class="address">Contact Us</a></li> 
+                </ul> 
+                <div class="email"> 
+                 <form name="frm-subscribe" action="" method="post" target="if-handler" onsubmit="return enews_submit('footer-email-subscribe');"> 
+                  <fieldset> 
+                   <legend>Make Your Soul Smile!<br>Get articles delivered to your inbox</legend> 
+                   <figure> 
+                    <input id="footer-email-subscribe" type="email" placeholder="email..." name="email"> 
+                   </figure> 
+                   <figure> 
+                    <input type="submit" value="Sign Up!" class="add-recaptcha"> 
+                   </figure> 
+                  </fieldset> 
+                 </form> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="botFooter"> 
+            <div class="container"> 
+             <div class="row clearfix">
+               © 2017 Hay House, Inc. All Rights Reserved. 
+              <ul class="navFooter"> 
+               <li><a href="/sitemap.xml">Sitemap</a>|</li> 
+               <li><a href="/content/your-privacy">Privacy Policy</a>|</li> 
+               <li><a href="/content/terms-of-use">Terms of Use</a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+           <iframe name="if-handler" id="if-handler" frameborder="0" scrolling="0"></iframe> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </footer> 
+   <p id="back-top"> <a href="#top" title="Back to Top"><span></span></a> </p> 
+  </div> 
+  <div class="region region-page-bottom" id="region-page-bottom"> 
+   <div class="region-inner region-page-bottom-inner"> 
+   </div> 
+  </div> 
+  <!-- script import --> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.nicescroll.min.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery-ui.min.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.flexslider.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.easing.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.mousewheel.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/flex-slider.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.jcarousel.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jcarousel.responsive.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/main.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/easytabs.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.touchSwipe.min.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.fancybox.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.fancybox-media.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.fancybox-buttons.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.alerts.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.validate.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jquery.ckie.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/jwplayer/jwplayer.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/idangerous.swiper.min.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/idangerous.swiper.3dflow.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/history.js"></script> 
+  <script src="/sites/all/themes/hyl_omega_subtheme/js/hyl.js"></script> 
+  <script>
+      $(document).ready(function (){
+          activeMenu('node');
+      });
+  </script> 
+  <script type="text/javascript" charset="utf-8">
+      var carousel = $('.jcarousel');
+      $('.jcarousel').jcarousel();
+      carousel.swipe({
+          swipeLeft: function(event, direction, distance, duration, fingerCount) {
+              carousel.jcarousel('scroll', '+=1');
+          },
+          swipeRight: function(event, direction, distance, duration, fingerCount) {
+              carousel.jcarousel('scroll', '-=1');
+          }
+      });
+  </script> 
+  <script type="text/javascript">
+      /* * * Just replace ExampleShortname with your shortname  * * */
+      var disqus_shortname = 'healyourlife'; // required: replace example with your forum shortname
+      /* * * Don't make any change for bellow lines * * */
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+  </script> 
+  <script src="https://www.google.com/recaptcha/api.js?onload=recaptchaLoadCallback&amp;render=explicit" async defer></script> 
+  <script>
+        var allWidgets = [];
+        var recaptchaLoadCallback = function() {
+            jQuery('.add-recaptcha').each(function(index, el) {
+                if(!jQuery(this).parent().find('.grecaptcha-badge').length){
+                    var widgetId = grecaptcha.render(el, {
+                        'sitekey' : '6Leg1yMUAAAAAMJDfhvgb4lGFpb7BVKanfgjlsX0',
+                        'size'    : 'invisible',
+                        'badge'   : 'inline',
+                        'callback': function(token) {
+                            jQuery(el).parent().find(".g-recaptcha-response").val(token);
+                            jQuery(el).parents('form').submit();
+                        }
+                    });
+
+                    jQuery(el).parent().find('.grecaptcha-badge').parent().css('display','none');
+                    jQuery(el).data('recaptcha-widget', widgetId);
+                    allWidgets.push(widgetId);
+                }
+            });
+        };
+
+        function resetAllWidgets(){
+            for (var i = 0; i < allWidgets.length; i++) {
+                grecaptcha.reset(allWidgets[i]);
+            }
+        }
+
+        jQuery(document).on('click', '#yes', function(){
+            recaptchaLoadCallback();
+        });
+    </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c1c155ba6e","applicationID":"17491050","transactionName":"ZwEDbEZTV0BSBRVRDl5LIFtAW1ZdHAgOXARvFABfUW1PWlYR","queueTime":0,"applicationTime":1394,"atts":"S0YAGg5JRE4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

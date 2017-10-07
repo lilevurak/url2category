@@ -1,0 +1,2116 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="author" content="Utah State Unversity"> 
+  <meta name="robots" content="follow, all"> 
+  <meta name="revisit-after" content="5 days"> 
+  <link href="//ajax.googleapis.com" rel="dns-prefetch"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" type="text/css" href="https://www.usu.edu/style/classic-full.min.css"> 
+  <link rel="stylesheet" type="text/css" href="https://ouresources.usu.edu/_resources/css/global-custom.css"> 
+  <link rel="stylesheet" type="text/css" href="https://ouresources.usu.edu/_resources/css/profile-page-v0-classic.css"> 
+  <link href="/_resources/css/prettyPhoto.css" rel="stylesheet" type="text/css"> 
+  <title>Apply to Utah State University | Admissions | USU</title> 
+  <meta name="Description" content="By now you've probably realized that we are pretty much a perfect match. We can't wait to make this thing official when we see your application glowing on our computer screens as we press that magical admit button."> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  <script src="https://www.usu.edu/assets/bootstrap/3.3.2/dist/js/bootstrap.min.js"></script> 
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
+  <!-- This is the sites headCode --> 
+  <!-- please don't remove, not pushed to production --> 
+  <link rel="icon" href="/admissions/_resources/global_includes/favicon.ico" type="image/x-icon"> 
+  <link href="/admissions/assets/dependencies.css" rel="stylesheet"> 
+  <link href="/admissions/assets/custom.css" rel="stylesheet"> 
+  <script src="/admissions/assets/dependencies.js"></script> 
+  <script src="/admissions/assets/core.js"></script> 
+  <script src="/admissions/assets/admissions.js"></script> 
+  <!-- UDS Conversion Tracking - Jay Wright --> 
+  <noscript>
+   &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-T88XLK" height="0" width="0" style="display:none;visibility:hidden"&gt;
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T88XLK');</script> 
+  <!-- End of sites headCode --> 
+ </head> 
+ <body class="">
+  <a href="#content" class="sr-only">Skip to main content</a>
+  <div id="global-header"> 
+   <div id="global-header-wrapper"> 
+    <div class="row"> 
+     <div class="brand">
+      <!-- Google Tag Manager (noscript) --> 
+      <noscript>
+       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T88XLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript> 
+      <!-- End Google Tag Manager (noscript) --> 
+      <a href="/admissions/"><img class="img-responsive" src="/admissions/_resources/includes/horizontal_logo.png" alt="Utah State University Office of Admissions"></a>
+     </div> 
+     <div class="header-right"> 
+      <div class="row"> 
+       <div class="header-navigation" role="navigation"> 
+        <ul class="header-links"> 
+         <li><a href="http://www.usu.edu/"><span class="fa fa-home fa-lg"></span><span class="sr-only">USU Home</span></a></li> 
+         <li><a href="http://usu.edu/azindex/">A-Z index</a></li> 
+         <li><a href="http://usu.edu/myusu/">MyUSU</a></li> 
+         <li><a href="http://directory.usu.edu/">directory</a></li> 
+        </ul> 
+       </div> 
+       <div class="header-search"> 
+        <form method="get" role="form" name="search" id="search" action="https://www.usu.edu/search/"> 
+         <div class="input-group pull-right">
+          <label class="sr-only" for="gsearch">Search</label>
+          <input id="gsearch" name="q" type="text" class="form-control" placeholder="" value="">
+          <div class="input-group-btn">
+           <button type="submit" class="btn" tabindex="-1"><span class="glyphicon glyphicon-search"></span><span class="sr-only">Search USU</span></button>
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+       <div class="header-support">
+        <a class="btn btn-info" href="/admissions/contact.php">Contact Us</a>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="main-navigation gray-nav"> 
+   <div class="main-navigation-wrapper"> 
+    <nav class="navbar navbar-default" role="navigation"> 
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+     </div> 
+     <div class="collapse navbar-collapse" id="main-navigation-collapse"> 
+      <ul class="nav navbar-nav">
+       <li class="dropdown yamm-fw container text-center hidden-xs affixLogo"><img style="height: 15px; margin: 3px 0;" src="/admissions/_resources/includes/horizontal_logo.png" alt="Utah State University Admissions Office"></li> 
+       <li class="dropdown yamm-fw container"> 
+        <div class="mainNav" data-toggle="dropdown"> 
+         <div class="row"> 
+          <div>
+           <em class="fa fa-bars" aria-hidden="true">&nbsp;</em> 
+           <em class="fa fa-search" aria-hidden="true">&nbsp;</em> 
+           <a class="hidden-md hidden-lg contactUs" href="/admissions/contact.php"><em class="fa fa-phone">&nbsp;</em>/ <em class="fa fa-envelope" aria-hidden="true">&nbsp;</em></a>
+          </div> 
+          <div class="topLevelNav" tabindex="0" data-menu="1">
+           Why USU
+          </div> 
+          <div class="topLevelNav" tabindex="0" data-menu="2">
+           Visit Campus
+          </div> 
+          <div class="topLevelNav" tabindex="0" data-menu="3">
+           Apply
+          </div> 
+          <div class="topLevelNav" tabindex="0" data-menu="4">
+           Cost &amp; Aid
+          </div> 
+          <div class="topLevelNav" tabindex="0" data-menu="5">
+           Academics
+          </div> 
+          <div class="topLevelNav" tabindex="0" data-menu="6">
+           After Admission
+          </div> 
+         </div> 
+        </div> 
+        <ul class="dropdown-menu mainNavContent"> 
+         <li class="container"> 
+          <div class="row"> 
+           <div>
+            <em class="fa fa-bars" aria-hidden="true">&nbsp;</em>
+           </div> 
+           <div> 
+            <ul> 
+             <li class="dropdown-header dropdown-title hidden-sm hidden-md hidden-lg">Why USU</li> 
+             <li><a href="/admissions/aggielife/" data-parentmenu="1">About Us</a></li> 
+             <li><a href="/admissions/aggielife/#learning" data-scrolling="yes">Learning</a></li> 
+             <li><a href="/admissions/aggielife/#research" data-scrolling="yes">Research</a></li> 
+             <li><a href="/admissions/aggielife/#traditions" data-scrolling="yes">Traditions</a></li> 
+             <li><a href="/admissions/aggielife/#athletics" data-scrolling="yes">Athletics</a></li> 
+             <li><a href="/admissions/aggielife/#recess" data-scrolling="yes">Recess</a></li> 
+             <li><a href="/admissions/aggielife/#town" data-scrolling="yes">College Town</a></li> 
+             <li><a href="/admissions/aggielife/#aggielife" data-scrolling="yes">Aggie Life</a></li> 
+            </ul> 
+           </div> 
+           <div> 
+            <ul> 
+             <li class="dropdown-header dropdown-title hidden-sm hidden-md hidden-lg">Visit Campus</li> 
+             <li><a href="/admissions/events/index.php" data-parentmenu="2">Attend an Event</a></li> 
+             <li><a href="/admissions/campustour/">Campus Tours</a></li> 
+             <li><a href="/admissions/events/freetickets.php">Free Game Tickets</a></li> 
+             <li><a href="/admissions/openhouse.php">Open Houses</a></li> 
+             <li><a href="/admissions/events/index.php#eventListing">Full Event List</a></li> 
+            </ul> 
+           </div> 
+           <div> 
+            <ul> 
+             <li class="dropdown-header dropdown-title hidden-sm hidden-md hidden-lg">Apply</li> 
+             <li><a href="/admissions/apply/" data-parentmenu="3">Undergraduates</a></li> 
+             <li><a href="/admissions/apply/#admissionindex" data-scrolling="yes">Admissions Index</a></li> 
+             <li><a href="/admissions/apply/#checklist" data-scrolling="yes">Checklist</a></li> 
+             <li><a href="/admissions/apply/#residency" data-scrolling="yes">Residency Requirements</a></li> 
+             <li><a href="/admissions/faq.php">Admissions FAQ</a></li> 
+             <li class="dropdown-header dropdown-spacer">Other Applicants</li> 
+             <li><a href="http://rgs.usu.edu/graduateschool/admissions/">Graduate Students</a></li> 
+             <li><a href="http://study.usu.edu/">International</a></li> 
+             <li><a href="https://concurrent.usu.edu">Concurrent Enrollment</a></li> 
+            </ul> 
+           </div> 
+           <div> 
+            <ul> 
+             <li class="dropdown-header dropdown-title hidden-sm hidden-md hidden-lg">Cost &amp; Aid</li> 
+             <li><a href="/admissions/costs-and-aid/" data-parentmenu="4">Cost &amp; Aid Overview</a></li> 
+             <li><a href="/admissions/costs-and-aid/#cost" data-scrolling="yes">Tuition &amp; Fees</a></li> 
+             <li><a href="/admissions/costs-and-aid/#index" data-scrolling="yes">Scholarship Index</a></li> 
+             <li><a href="/admissions/costs-and-aid/#scholarships" data-scrolling="yes">Scholarships - Admissions</a></li> 
+             <li><a href="/admissions/costs-and-aid/#aid" data-scrolling="yes">Financial Aid</a></li> 
+             <li><a href="/admissions/accept/">Scholarship Acceptance</a></li> 
+             <li><a href="https://usu.co1.qualtrics.com/SE/?SID=SV_d0WWoP8NuxbGpZr">Scholarship Appeals</a></li> 
+             <li><a href="/admissions/scholarships/faq.php">Scholarships FAQ</a></li> 
+            </ul> 
+           </div> 
+           <div> 
+            <ul> 
+             <li class="dropdown-header dropdown-title hidden-sm hidden-md hidden-lg">Academics</li> 
+             <li><a href="/admissions/majors.cfm" data-parentmenu="5">A-Z Undergraduate Majors</a></li> 
+             <li><a href="/degrees/">Degree Finder</a></li> 
+             <li><a href="http://www.usu.edu/academics/colleges/">Colleges</a></li> 
+             <li><a href="http://www.usu.edu/academics/departments/">Departments</a></li> 
+             <li><a href="http://catalog.usu.edu">University Catalog</a></li> 
+             <li><a href="/admissions/information/credits.php">AP/CLEP/IBO Options</a></li> 
+            </ul> 
+           </div> 
+           <div> 
+            <ul> 
+             <li class="dropdown-header dropdown-title hidden-sm hidden-md hidden-lg">After Admission</li> 
+             <li><a href="/admissions/whatsnext/" data-parentmenu="6">What's Next</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-SocialMedia" data-scrolling="yes">Social Media</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Orientation" data-scrolling="yes">Orientation</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Housing" data-scrolling="yes">Housing</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Jobs" data-scrolling="yes">Jobs</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Involvement" data-scrolling="yes">Involvement</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Registration" data-scrolling="yes">Registration</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-FinAid" data-scrolling="yes">Financial Aid</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Service" data-scrolling="yes">Service</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Textbook" data-scrolling="yes">Textbooks</a></li> 
+             <li><a href="/admissions/whatsnext/#inPage-Prep" data-scrolling="yes">Course Prep</a></li> 
+            </ul> 
+           </div> 
+          </div> </li> 
+        </ul> </li>
+      </ul> 
+      <ul class="nav navbar-nav navbar-right"></ul> 
+     </div> 
+    </nav> 
+   </div> 
+  </div> 
+  <div class="main-container-wide"> 
+   <div class="
+					main-container-wrapper
+					"> 
+    <div class="row" id="content"> 
+     <div class="main-content" role="main"> 
+      <div class="fullImageWrapper" style="background-image: url(/admissions/assets/img/old-main-arial-wide.jpg);"> 
+       <div class="imageGradient"></div> 
+       <div id="wrapperHeadline"> 
+        <h1 class="headline white">Apply to&nbsp;USU</h1> 
+        <div> 
+         <small> </small> 
+        </div> 
+        <div class="pageSubNav"> 
+        </div> 
+       </div> 
+       <div class="actionArea"> 
+        <a href="https://applynow.usu.edu" class="btn btn-default btn-hollow btn-block"> Apply Online </a> 
+       </div> 
+      </div> 
+      <div class="container primaryContainer"> 
+       <div class="row"> 
+        <div class="col-xs-12 col-md-10 col-md-offset-1"> 
+         <div class="widthReset"> 
+          <h2 class="lead">Admission Requirements</h2> 
+          <p class="lead"><span>USU is regarded as one of the country’s premier higher-education research institutions. We offer award-winning faculty, state-of-the-art facilities, and career-driven degree programs</span>. Start your degree path and apply now. </p> 
+          <p>Select an applicant type below to learn more about how to apply.</p> 
+         </div> 
+         <div class="widthReset"> 
+          <div class="uiWrapper clearfix"> 
+           <button type="button" class="close pull-right dialog-start" aria-label="Close"><span aria-hidden="true">×</span></button> 
+           <div class="row squareGrid"> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-hide=".squareGrid" data-color="inverse" data-target="#freshmen" aria-haspopup="true"> 
+             <h3>Freshmen</h3> 
+             <p>If you've never attended a college or university before, excluding USU concurrent enrollment.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#transfer" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Transfer</h3> 
+             <p>If you've attended any college or university after high school graduation.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#returning" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Returning</h3> 
+             <p>Been an Aggie before? Learn about how to readmit to Utah State University.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#concurrent" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Concurrent Enrollment</h3> 
+             <p>Take USU classes at your local high school to get a jump start on your degree.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#graduate" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Graduate</h3> 
+             <p>Have already completed a bachelor's degree and intend to obtain a graduate level degree.&nbsp;</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#international" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>International</h3> 
+             <p>International students are applicants who are from outside of the United States.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#homeschool" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Home School</h3> 
+             <p>If you completed your secondary education&nbsp;at home or part of a home school organization.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-sm-6 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#nondegree" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Non-Degree</h3> 
+             <p>If you just want to take classes for personal development or to transfer somewhere else, you can apply as a non-degree student.</p> 
+             <hr> 
+            </div> 
+            <div class="col-xs-12 col-md-4 uiButton bg-hover-colorRush hover-inverse" tabindex="0" data-target="#cert" data-hide=".squareGrid" data-color="inverse" aria-haspopup="true"> 
+             <h3>Certificates</h3> 
+             <p>Intending on obtaining a certificate from USU or an outside agency, you'll need to contact your department.</p> 
+             <hr> 
+            </div> 
+           </div> 
+           <div id="freshmen" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>Freshmen Admission Information</h3> 
+             <div class="row"> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4>Required Materials</h4> 
+               <ul> 
+                <li><a href="https://applynow.usu.edu">Application</a></li> 
+                <li>$50 nonrefundable application fee</li> 
+                <li>High school transcript or GED</li> 
+                <li>Official ACT or SAT scores - may be waived for applicants 25 and older</li> 
+                <li>Concurrent enrollment transcripts</li> 
+               </ul> 
+               <h4>Bachelor Degree Minimum Requirements</h4> 
+               <ul> 
+                <li>2.5 high school GPA or 660 Total GED</li> 
+                <li>17 ACT or 900 SAT score (820 old SAT) excluding writing portion</li> 
+                <li>90 Index score</li> 
+                <li>High School Prep Coursework (<span>It is recommended, but not required, students (grades 9-12) complete the following courses)</span> 
+                 <ul> 
+                  <li>4 years of English</li> 
+                  <li>4 years of Math (One class beyond math 3)</li> 
+                  <li>3.5 years of Social Science</li> 
+                  <li>3 years of Lab-Based Science (one each: biology, chemistry, and physics)</li> 
+                  <li>2 years of a world language (same language, taken progressively during grades 9-12)</li> 
+                 </ul> </li> 
+               </ul> 
+               <p class="help-block">If your academic work does not meet this standard, your application will be considered on an individual basis for potential admission into the Aggie Prep Program.</p> 
+               <h4>Associate Degree Minimum Requirements</h4> 
+               <p>Most USU Eastern Associates Degrees and Certificates are open enrollment and do not require a minimum high school GPA or ACT/SAT score.</p> 
+              </div> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4 class="h5">Spring Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Oct 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Dec 15</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jan 13</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">Summer Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 26</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">Fall Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Aug 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Sep 1</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <small><strong>Priority Admission Deadline:</strong> Last day to be admitted before priority registration.<br><strong>Final Admission Deadline:</strong> Students admitted after this date may be deferred to a future semester.<br><strong>Scholarship Deadline:</strong> <a href="/admissions/costs-and-aid/#scholarships">View scholarship details</a></small>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="transfer" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>Transfer Admission Information</h3> 
+             <div class="row"> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4>Required Materials</h4> 
+               <ul> 
+                <li><a href="https://applynow.usu.edu">Application</a></li> 
+                <li>$50 nonrefundable application fee</li> 
+                <li>All official college transcripts</li> 
+                <li>If you have less than 24 post-high school credits: 
+                 <ul> 
+                  <li>High school transcript or GED</li> 
+                  <li>Official ACT or SAT scores - may be waived for applicants 25 and older</li> 
+                  <li>Concurrent enrollment transcripts</li> 
+                 </ul> </li> 
+               </ul> 
+               <h4>Academic Requirements</h4> 
+               <p>Applicants must meet the minimum GPA requirement for their <a href="https://www.usu.edu/degrees">desired major.</a> Applicants whose GPA does not meet the requirements of their desired major may be offered an "Exploratory" major if they have at least a 2.3 GPA and fewer than 60 transfer credits. If the academic work does not meet this standard, applications will be considered on an individual basis. </p> 
+               <h4>Transferring Credit</h4> 
+               <p>USU accepts credit from any regionally accredited institution and will try to match credits with courses at USU. The process of finding a course-to-course equivalent is called articulation. If no course match is found, you will receive elective credit for your previous course work. <a href="https://www.usu.edu/registrar/transfer/">View our course-by-course articulation</a>. </p> 
+               <p>Students who transfer to USU and have an Associate of Arts or an Associate of Science degree (or have completed the General Education requirements) from a regionally-accredited institution may be deemed as having satisfied the General Education portion of the University Studies requirements. However, Utah State University will require students to satisfy the Breadth American Institutions requirement, as well as any deficiencies in Communications Literacy, Quantitative Literacy, and the Depth Education requirements. Check the US DOE website for <a href="http://ope.ed.gov/accreditation/Search.aspx">regionally accredited institutions</a>. </p> 
+              </div> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4 class="h5">Spring Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Oct 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Dec 15</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jan 13</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">SummerDeadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 26</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">Fall Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Aug 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Sep 1</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <small><strong>Priority Admission Deadline:</strong> Last day to be admitted before priority registration.<br><strong>Final Admission Deadline:</strong> Students admitted after this date may be deferred to a future semester.<br><strong>Scholarship Deadline:</strong> <a href="/admissions/costs-and-aid/#scholarships">View scholarship details</a></small> 
+               <h3>Official College Transcripts</h3> 
+               <p>Applicants are required to submit official transcripts from ALL colleges attended. Transcripts are considered official when the transcript remains in the sealed envelope issued by the transferring institution. Transcripts can be forwarded or hand delivered to USU as long as the transcript remains in the original sealed envelope. Also, electronic transcripts are accepted as being official from participating institutions, however, faxed transcripts will not be accepted. Electronic transcripts can be emailed to <a href="mailto:transcripts@usu.edu">transcripts@usu.edu</a>. </p> 
+               <p>Applicants must submit transcripts from ALL previously attended institutions. USU is not able to take credits from another institution on another college's transcript. For example: USU is not able to recognize Snow College coursework on a SUU transcript. USU must receive official transcripts from both institutions in order to complete the application and to ensure that your credits transfer over correctly.</p> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="returning" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <div class="row"> 
+              <div class="col-xs-12 col-md-6"> 
+               <h3>Returning Admission Information</h3> 
+               <p>If you attended USU previously, you will need to reapply if you meet any of the following criteria:</p> 
+               <ul> 
+                <li>Academic suspension or graduation occurred at the conclusion of the previous semester.</li> 
+                <li>You submitted a complete withdrawal from the university.</li> 
+                <li>You submitted a leave of absence and are returning for a semester <strong>other</strong> than what you indicated on your leave of absence. </li> 
+                <li>If you attended another school during your time away from Utah State University.</li> 
+                <li>You were absent for one year or longer without filing a Leave of Absence.</li> 
+               </ul> 
+               <p class="help-block">If you are unsure about your status or previously submitted forms, please email admit@usu.edu or call 1-800-488-8108.</p> 
+               <h4>Required Materials</h4> 
+               <ul> 
+                <li><a href="https://applynow.usu.edu">Application</a></li> 
+                <li>$50 nonrefundable application fee</li> 
+                <li>All official college transcripts</li> 
+               </ul> 
+               <h4>Academic Requirements</h4> 
+               <p>Applicants must meet the minimum GPA requirement for their <a href="https://www.usu.edu/degrees">desired major.</a> Applicants whose GPA does not meet the requirements of their desired major may be offered an "Exploratory" major if they have at least a 2.3 GPA and fewer than 60 transfer credits. If the academic work does not meet this standard, applications will be considered on an individual basis. </p> 
+              </div> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4 class="h5">Spring Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Oct 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Dec 15</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jan 13</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">SummerDeadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 26</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">Fall Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Aug 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Sep 1</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <small><strong>Priority Admission Deadline:</strong> Last day to be admitted before priority registration.<br><strong>Final Admission Deadline:</strong> Students admitted after this date may be deferred to a future semester.<br><strong>Scholarship Deadline:</strong> <a href="/admissions/costs-and-aid/#scholarships">View scholarship details</a></small>
+              </div> 
+             </div> 
+             <h3>Academic Action (Students not in good standing)</h3> 
+             <p>Utah State University cares about the academic success of its students. If you left Utah State University with a USU cumulative GPA of less than 2.0, you are not in "good standing" academically at USU. As such, your readmission will be processed differently so as to better ensure your academic success. Our goal is to help students return to good standing quickly, and to help students meet their educational goals.</p> 
+             <p>Students who left on academic action (warning, probation, suspension, or dismissal) must print and complete an <a href="/admissions/docs/academicInquiry.pdf">Academic Inquiry Form</a> to be considered for readmission. Students must also apply for admission and submit the application fee. To apply, click "Apply Online" above. Applications of students who did not leave in "Good Standing" will not be accepted after the following readmission deadlines. </p> 
+             <ul> 
+              <li>Fall Semester: July 1</li> 
+              <li>Spring Semester: October 1</li> 
+             </ul> 
+             <p>Please note that the deadlines are earlier than published final admissions deadlines for students returning in good standing. The reason for this is that classes fill up very quickly. Desirable course times and required classes become progressively harder to add. Since our goal is to remove obstacles to academic success, we require that students that are not in good academic standing apply for readmission while course availability is at a premium. This also allows for thorough academic advising before you register for classes.</p> 
+            </div> 
+           </div> 
+           <div id="concurrent" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>Concurrent Enrollment Admission Information</h3> 
+             <p>Concurrent Enrollment is for current high school students who want to get USU credit for taking college level courses at their high school. Concurrent enrollment students must apply to the university and register for classes through Utah State University.</p> 
+             <h4>Admission Requirements</h4> 
+             <ul> 
+              <li><a href="https://concurrent.usu.edu/admit/">Application</a></li> 
+              <li>$50 nonrefundable application fee</li> 
+              <ul> 
+               <li>When you apply to USU as a college freshman and use your A-Number as the promo code, USU will waive the application fee.</li> 
+              </ul> 
+             </ul> 
+             <a class="btn btn-default btn-hollow" href="https://concurrent.usu.edu/admit/">Apply for Concurrent Enrollment</a> 
+            </div> 
+           </div> 
+           <div id="graduate" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>Graduate Admission Information</h3> 
+             <h4>Required Materials</h4> 
+             <ul> 
+              <li><a href="https://applynow.usu.edu/">Application</a></li> 
+              <li>$55 nonrefundable application fee</li> 
+              <li>GRE, GMAT, or MAT as required by your intended program</li> 
+              <li>All official college transcripts</li> 
+              <li>Three letters of recommendation</li> 
+              <li>Individual graduate programs will have unique supplemental items required once you apply</li> 
+              <li style="list-style-type: none; margin-top: 2rem;"><strong>Additional Materials for International Students</strong> 
+               <ul> 
+                <li>Copy of Passport</li> 
+                <li><a href="http://study.usu.edu/requirements/">Demonstrated English proficiency</a> (students must provide TOEFL or IELTS scores) </li> 
+                <li>Proof of Financial Support (<a href="http://study.usu.edu/requirements/ISS-AffidavitofSupport_2015-16-Fillable.pdf">Affidavit of Financial Support</a> &amp; <a href="http://study.usu.edu/costs/%20">Bank Statement Copy</a>) </li> 
+                <li>English translations of transcripts must be provided in a sealed envelope from the school</li> 
+               </ul> </li> 
+             </ul> 
+             <h4>Academic Requirements</h4> 
+             <ul> 
+              <li>Have the requisite degree for your intended program by the time you are <a href="http://rgs.usu.edu/graduateschool/admissions/status-definitions/">matriculated</a>. </li> 
+              <li>3.0 or higher GPA for the terms that include your last 60 semester or 90 quarter credits.</li> 
+              <li>Score at or above the 40th percentile on appropriate admissions test. 
+               <ul> 
+                <li>Some programs may accept a portfolio in place of admissions test score. Contact the department for details.</li> 
+               </ul> </li> 
+              <li>Meet any additional requirements for the program.</li> 
+             </ul> 
+             <h4>Deadlines</h4> 
+             <p>Contact the department for application deadlines. Some departments have specific application deadlines and others admit students throughout the year.</p> 
+            </div> 
+           </div> 
+           <div id="international" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>International Undergraduate Admission Information</h3> 
+             <div class="row"> 
+              <div class="col-xs-12 col-sm-8"> 
+               <h4>Required Materials</h4> 
+               <ul> 
+                <li><a href="https://applynow.usu.edu/">Application</a></li> 
+                <li>$50 nonrefundable application fee</li> 
+                <li>Official transcripts showing class grades in all years of high school and university. English translations must be provided for transcripts in other languages and must be in the sealed envelope from the school.</li> 
+                <li><a href="http://study.usu.edu/requirements/">Demonstrated English Proficiency</a></li> 
+                <li>Proof of Financial Support (<a href="http://study.usu.edu/requirements/ISS-AffidavitofSupport_2015-16-Fillable.pdf">Affidavit of Financial Support</a> &amp; <a href="http://study.usu.edu/costs/">Bank Statement Copy</a>) </li> 
+                <li>Copy of Passport</li> 
+               </ul> 
+              </div> 
+              <div class="col-xs-12 col-sm-4"> 
+               <h4>Admissions Deadlines</h4> 
+               <ul> 
+                <li>Fall Priority deadline May 1</li> 
+                <li>Spring Priority deadline Oct. 1</li> 
+                <li>Summer Priority deadline Feb. 1</li> 
+               </ul> 
+               <p class="help-block">If you apply after these deadlines we will continue to process your application, but you may be deferred to a later semester.</p> 
+              </div> 
+             </div> 
+             <h4>Academic Requirements</h4> 
+             <div class="row"> 
+              <div class="col-xs-12 col-md-4"> 
+               <h5>Freshmen</h5> 
+               <ul> 
+                <li>Official high school/secondary school transcripts with grades from the last three years with a minimum GPA of 2.5 or 656 total on the General Education Development (GED) exam (550 Battery Average prior to 2014). Some majors may have a higher GPA requirement.</li> 
+                <li>If you are applying for a major within the College of Engineering, official ACT or SAT exam results are required.</li> 
+               </ul> 
+               <h5><br><br>Graduate </h5> Please visit the 
+               <a href="http://rgs.usu.edu/graduateschool/admissions/international/">graduate studies website</a> for details. 
+              </div> 
+              <div class="col-xs-12 col-md-4"> 
+               <h5>Transfer - less than 24 college/university credits</h5> 
+               <ul> 
+                <li>Official high school/secondary school transcripts with grades from the last three years with a minimum GPA of 2.5 or 656 Total GED (550 Battery Average prior to 2014)</li> 
+                <li>Official college/university transcripts from an accredited institution required with a minimum GPA of 2.5. Some majors may have a higher GPA requirement.</li> 
+                <li>If you are applying for a major within the College of Engineering, official ACT or SAT exam results are required.</li> 
+               </ul> 
+              </div> 
+              <div class="col-xs-12 col-md-4"> 
+               <h5>Transfer - more than 24 college/university credits</h5> 
+               <ul> 
+                <li>Official college/university transcripts from an accredited institution required with a minimum GPA of 2.5. Some majors may have a higher GPA requirement.</li> 
+                <li>If fewer than 48 credits of academic coursework from an accredited college/university, English language proficiency is required.</li> 
+                <li>If you are applying for a major within the College of Engineering, official ACT or SAT exam results are required.</li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="homeschool" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>Home School Admission Information</h3> 
+             <div class="row"> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4>Required Materials</h4> 
+               <ul> 
+                <li><a href="https://applynow.usu.edu">Application</a></li> 
+                <li>$50 nonrefundable application fee</li> 
+                <li>ACT or SAT scores - may be waived for applicants 25 and older</li> 
+                <li>If you have transcripts from accredited home school organization 
+                 <ul> 
+                  <li>High school transcript</li> 
+                 </ul> </li> 
+                <li>If you do not have transcripts from accredited home school organization 
+                 <ul> 
+                  <li>List of classes completed</li> 
+                  <li>GED score required if ACT score is less than 21</li> 
+                 </ul> </li> 
+                <li>Official college transcripts from all colleges attended</li> 
+               </ul> 
+               <h4>Minimum Academic Requirements</h4> 
+               <p>Home school students without a transcript from an accredited organization must have at least a 21 ACT (980 SAT, 1060 New SAT) score <strong>or</strong> 17 ACT (820 SAT, 900 New SAT) and a GED score of 660 </p> 
+               <p>Home school applicants are typically not eligible to enroll until after their peers have graduated from traditional high school. Home school students wishing to be considered earlier than this will be evaluated based on the Early Admission standard.<br><br>In consultation with the department of the applicant's intended major, the Admissions Committee will review all materials and make a final admissibility decision. If you have questions, please contact Jeff Sorensen, Associate Director of Admissions at <a href="mailto:jeff.sorensen@usu.edu">jeff.sorensen@usu.edu</a>. </p> 
+              </div> 
+              <div class="col-xs-12 col-md-6"> 
+               <h4 class="h5">Spring Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Oct 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Dec 15</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jan 13</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">SummerDeadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Jun 26</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <h4 class="h5">Fall Deadlines</h4> 
+               <table class="table table-condensed"> 
+                <tbody> 
+                 <tr> 
+                  <th>Date</th> 
+                  <th>Campuses</th> 
+                  <th>Type</th> 
+                 </tr> 
+                </tbody> 
+                <tbody> 
+                 <tr> 
+                  <td>Mar 1</td> 
+                  <td>Logan &amp; Regional</td> 
+                  <td>Priority</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Aug 1</td> 
+                  <td>Logan</td> 
+                  <td>Final</td> 
+                 </tr> 
+                 <tr> 
+                  <td>Sep 1</td> 
+                  <td>Regional &amp; USU Eastern</td> 
+                  <td>Final</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+               <small><strong>Priority Admission Deadline:</strong> Last day to be admitted before priority registration.<br><strong>Final Admission Deadline:</strong> Students admitted after this date may be deferred to a future semester.<br><strong>Scholarship Deadline:</strong> <a href="/admissions/costs-and-aid/#scholarships">View scholarship details</a></small> 
+               <h4>Academic Scholarships</h4> 
+               <p>Home School students can be considered for academic scholarships. These academic scholarships are awarded for fall semesters. However, the traditional index requirements do not apply to Home School students. Each student’s application will be reviewed individually and ACT/SAT scores will be weighted heavily in the process. If you have questions regarding academic scholarships, please contact Craig Whyte, Associate Director of Enrollment &amp; Recruitment at <a href="mailto:craig.whyte@usu.edu">craig.whyte@usu.edu</a>. </p> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="nondegree" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h3>Non-Degree Admission Information</h3> 
+             <h4>Admission Requirements</h4> 
+             <ul> 
+              <li><a href="https://applynow.usu.edu/">Application</a></li> 
+             </ul> 
+             <h4>Restrictions</h4> 
+             <p>While the application is quick and free, non-degree seeking students do have certain restrictions until they formally apply to the university.</p> 
+             <ul> 
+              <li>Only students who have already obtained a bachelor's degree will be able to attend courses designated as 'Logan Main Campus'.</li> 
+              <li>You will not be allowed to use federal financial aid.</li> 
+              <li>Graduate students may only take 12 non-degree seeking credits and have them count toward a USU graduate degree program.</li> 
+             </ul> 
+            </div> 
+           </div> 
+           <div id="cert" class="row hidden uiDetail"> 
+            <div class="clearfix"> 
+             <h2>Certificate Admission Information</h2> 
+             <p>The requirements to obtain a certificate can vary based on a number of factors such as who the issuing agency is, your previous academic history, and the course level of required classes. Many lower level certificates do not have admission requirements. Please contact the department to get details about the requirements.</p> 
+            </div> 
+           </div> 
+           <a class="pull-right dialog-end" href="#">Back to Applicant Types</a> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="flex"> 
+       <div id="admissionindex" class="fullImageWrapper sectionWrapper" style="background-image: url('/admissions/assets/img/student-on-computer-library.jpg')"> 
+        <div class="imageGradient">
+         &nbsp;
+        </div> 
+        <div> 
+         <h2 class="headline white">Admissions Index</h2> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="container secondaryContainer"> 
+       <div class="row"> 
+        <div class="col-xs-12 col-md-10 col-md-offset-1"> 
+         <div class="row "> 
+          <div class="col-xs-12"> 
+           <h3 class="h1">Your Index Score is Important</h3> 
+           <div class="uiWrapper clearfix">
+            <button class="close pull-right dialog-start" type="button" aria-label="Close"><span aria-hidden="true">×</span></button> 
+            <div id="indexWrap"> 
+             <p><span>A combination of your GPA and ACT/SAT test score make your index score, which determines eligibility for admission and scholarships.&nbsp;</span>View the index table to determine your score&nbsp;or enter your details in the <a class="uiButton" href="#" data-target="#calindex" data-hide="#indexWrap" data-color="ice accent inverse">Index Calculator</a>. </p> 
+             <div class="generalIndex"> 
+              <div class="table-responsive"> 
+               <table class="table table-index"> 
+                <thead> 
+                 <tr> 
+                  <th scope="col" rowspan="2">New SAT<br><small>Taken after<br>Mar. 2016<br>ERW+M</small></th> 
+                  <th scope="col" rowspan="2">Old SAT<br><small>Taken before<br>Mar. 2016<br>CR+M</small></th> 
+                  <th scope="col" rowspan="2">ACT<br>Comp </th> 
+                  <th colspan="20" aria-hidden="true">Unweighted GPA</th> 
+                 </tr> 
+                 <tr> 
+                  <th scope="col">4.0 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.9 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.8 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.7 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.6 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.5 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.4 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.3 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.2 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.1 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">3.0 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.9 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.8 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.7 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.6 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.5 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.4 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.3 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.2 <span class="sr-only">Unweighted GPA</span></th> 
+                  <th scope="col">2.1 <span class="sr-only">Unweighted GPA</span></th> 
+                 </tr> 
+                </thead> 
+                <tbody> 
+                 <tr> 
+                  <th scope="row">1600</th> 
+                  <th scope="row">1600</th> 
+                  <th scope="row">36</th> 
+                  <td class="index-tier1">142</td> 
+                  <td class="index-tier1">140</td> 
+                  <td class="index-tier1">138</td> 
+                  <td class="index-tier1">136</td> 
+                  <td class="index-tier1 index-edge">135</td> 
+                  <td class="index-tier2">133</td> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">128</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>112</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1560</th> 
+                  <th scope="row">1540</th> 
+                  <th scope="row">35</th> 
+                  <td class="index-tier1">140</td> 
+                  <td class="index-tier1">138</td> 
+                  <td class="index-tier1">136</td> 
+                  <td class="index-tier1 index-edge">135</td> 
+                  <td class="index-tier2">133</td> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">128</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>112</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1520</th> 
+                  <th scope="row">1490</th> 
+                  <th scope="row">34</th> 
+                  <td class="index-tier1">138</td> 
+                  <td class="index-tier1">136</td> 
+                  <td class="index-tier1 index-edge">135</td> 
+                  <td class="index-tier2">133</td> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">128</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>112</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>105</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1490</th> 
+                  <th scope="row">1440</th> 
+                  <th scope="row">33</th> 
+                  <td class="index-tier1">136</td> 
+                  <td class="index-tier1 index-edge">135</td> 
+                  <td class="index-tier2">133</td> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">128</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>112</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>105</td> 
+                  <td>103</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1450</th> 
+                  <th scope="row">1400</th> 
+                  <th scope="row">32</th> 
+                  <td class="index-tier1 index-edge">135</td> 
+                  <td class="index-tier2">133</td> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">128</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>112</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>105</td> 
+                  <td>103</td> 
+                  <td>101</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1420</th> 
+                  <th scope="row">1360</th> 
+                  <th scope="row">31</th> 
+                  <td class="index-tier2">133</td> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">128</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>112</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>105</td> 
+                  <td>103</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1390</th> 
+                  <th scope="row">1330</th> 
+                  <th scope="row">30</th> 
+                  <td class="index-tier2">131</td> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">127</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1350</th> 
+                  <th scope="row">1290</th> 
+                  <th scope="row">29</th> 
+                  <td class="index-tier2 index-edge">129</td> 
+                  <td class="index-tier3">127</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>103</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1310</th> 
+                  <th scope="row">1250</th> 
+                  <th scope="row">28</th> 
+                  <td class="index-tier3">127</td> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1280</th> 
+                  <th scope="row">1210</th> 
+                  <th scope="row">27</th> 
+                  <td class="index-tier3 index-edge">126</td> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1240</th> 
+                  <th scope="row">1170</th> 
+                  <th scope="row">26</th> 
+                  <td class="index-tier4">124</td> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1200</th> 
+                  <th scope="row">1130</th> 
+                  <th scope="row">25</th> 
+                  <td class="index-tier4 index-edge">122</td> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1160</th> 
+                  <th scope="row">1090</th> 
+                  <th scope="row">24</th> 
+                  <td class="index-tier5">120</td> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1130</th> 
+                  <th scope="row">1050</th> 
+                  <th scope="row">23</th> 
+                  <td class="index-tier5">119</td> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1100</th> 
+                  <th scope="row">1020</th> 
+                  <th scope="row">22</th> 
+                  <td class="index-tier5 index-edge">117</td> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1060</th> 
+                  <th scope="row">980</th> 
+                  <th scope="row">21</th> 
+                  <td>115</td> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">1020</th> 
+                  <th scope="row">940</th> 
+                  <th scope="row">20</th> 
+                  <td>113</td> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">980</th> 
+                  <th scope="row">900</th> 
+                  <th scope="row">19</th> 
+                  <td>111</td> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">940</th> 
+                  <th scope="row">860</th> 
+                  <th scope="row">18</th> 
+                  <td>110</td> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">900</th> 
+                  <th scope="row">820</th> 
+                  <th scope="row">17</th> 
+                  <td>108</td> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">860</th> 
+                  <th scope="row">770</th> 
+                  <th scope="row">16</th> 
+                  <td>106</td> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                 <tr> 
+                  <th scope="row">810</th> 
+                  <th scope="row">720</th> 
+                  <th scope="row">15</th> 
+                  <td>104</td> 
+                  <td>102</td> 
+                  <td>101</td> 
+                  <td>99</td> 
+                  <td>97</td> 
+                  <td>95</td> 
+                  <td>94</td> 
+                  <td>92</td> 
+                  <td>90</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                 </tr> 
+                </tbody> 
+               </table> 
+              </div> 
+              <div class="bordered borderedLeft"> 
+               <div class="shiftReset">
+                <small> ACT/SAT does not include the writing portion. Unweighted GPA is calculated on a 4.0 scale.&nbsp;<br> </small>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div> 
+             <div id="calindex" class="row hidden uiDetail"> 
+              <h3>Index Calculator</h3> 
+              <p>Academic scholarships are based upon an unweighted high school GPA and ACT/SAT scores. For the ACT, use your composite test score (without the writing portion). For the SAT, add your critical reading and math scores. By providing your information below, you will receive information on your <strong>potential</strong> scholarship eligibility. The information provided is not an official offer, please visit with a USU representative for more information. </p> 
+              <form id="indexForm" class="form-horizontal"> 
+               <div class="row"> 
+                <div class="col-xs-12 col-md-8 col-md-offset-2"> 
+                 <fieldset class="row form-group"> 
+                  <legend class="sr-only">Are you a Utah resident?</legend> 
+                  <div class="col-xs-12 col-sm-6 col-md-8" aria-hidden="true">
+                   Are you a Utah resident?
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4"> 
+                   <div class="radio col-sm-6">
+                    <input id="resident-yes" class="form-control" type="radio" name="resident" value="yes"> 
+                    <label for="resident-yes">Yes</label>
+                   </div> 
+                   <div class="radio col-sm-6">
+                    <input id="resident-no" class="form-control" type="radio" name="resident" value="no"> 
+                    <label for="resident-no">No</label>
+                   </div> 
+                  </div> 
+                 </fieldset> 
+                 <fieldset class="row form-group"> 
+                  <legend class="sr-only">Do you have any college transfer credits, excluding concurrent enrollment?</legend> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   Do you have any college transfer credits, excluding concurrent enrollment?
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4"> 
+                   <div class="radio col-sm-6">
+                    <input id="transfer-yes" class="form-control" type="radio" name="transfer" value="yes"> 
+                    <label for="transfer-yes">Yes</label>
+                   </div> 
+                   <div class="radio col-sm-6">
+                    <input id="transfer-no" class="form-control" type="radio" name="transfer" value="no"> 
+                    <label for="transfer-no">No</label>
+                   </div> 
+                  </div> 
+                 </fieldset> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="credits">How many transfer credits do you have?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <select id="credits" class="form-control" name="credits"> <option value="">Select One</option> <option value="23">23 or Less</option> <option value="24">24 or more</option> </select>
+                  </div> 
+                 </div> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="GPA">What is your GPA?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <select id="GPA" class="form-control" name="GPA" aria-describedby="GPADescription"> <option value="">Select One</option> <option value="4">4.0</option> <option value="3.9">3.9</option> <option value="3.8">3.8</option> <option value="3.7">3.7</option> <option value="3.6">3.6</option> <option value="3.5">3.5</option> <option value="3.4">3.4</option> <option value="3.3">3.3</option> <option value="3.2">3.2</option> <option value="3.1">3.1</option> <option value="3">3.0</option> <option value="2.9">2.9</option> <option value="2.8">2.8</option> <option value="2.7">2.7</option> <option value="2.6">2.6</option> <option value="2.5">2.5</option> <option value="2.4">2.4</option> <option value="2.3">2.3</option> <option value="2.2">2.2</option> <option value="2.1">2.1</option> <option value="2.0">2.0 or less</option> </select> 
+                   <p id="GPADescription" class="help-block">GPA below 2.1 will not qualify for scholarships</p> 
+                  </div> 
+                 </div> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="TestType">Did you take the SAT or ACT?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <select id="TestType" class="form-control" name="TestType"> <option value="">Select One</option> <option value="ACT">ACT</option> <option value="SAT">SAT</option> </select>
+                  </div> 
+                 </div> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="ACT">What was your ACT composite score?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <input id="ACT" class="form-control" type="text" name="ACT" aria-describedby="ACTDescription"> 
+                   <p id="ACTDescription" class="help-block">exclude the writing portion</p> 
+                  </div> 
+                 </div> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="SATDate">When did you take the SAT?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <select id="SATDate" class="form-control" name="SATDate"> <option selected value="after">After March 2016</option> <option value="before">Before March 2016</option> </select>
+                  </div> 
+                 </div> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="SAT">What was your SAT score?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <input id="SAT" class="form-control" type="text" name="SAT" aria-describedby="SATDescription"> 
+                   <p id="SATDescription" class="help-block">add your CR(Critical Reading) and M (Math) scores</p> 
+                  </div> 
+                 </div> 
+                 <div class="row form-group" style="display: none;"> 
+                  <div class="col-xs-12 col-sm-6 col-md-8">
+                   <label for="TransferGPA">What is your college GPA?</label>
+                  </div> 
+                  <div class="col-xs-12 col-sm-6 col-md-4">
+                   <select id="TransferGPA" class="form-control" name="TransferGPA" aria-describedby="collegeGPA"> <option value="">Select One</option> <option value="4">4.0</option> <option value="3.9">3.9</option> <option value="3.8">3.8</option> <option value="3.7">3.7</option> <option value="3.6">3.6</option> <option value="3.5">3.5</option> <option value="3.4">3.4</option> <option value="3.3">3.3</option> <option value="3.2">3.2 or less</option> </select> 
+                   <p id="collegeGPA" class="help-block">College GPA below 3.3 will not qualify for scholarships</p> 
+                  </div> 
+                 </div> 
+                 <div class="row"> 
+                  <div class="col-xs-12">
+                   <button id="calculateIndex" class="btn btn-hollow btn-default">Calculate Index</button>
+                  </div> 
+                 </div> 
+                 <div class="row">
+                  &nbsp;
+                 </div> 
+                </div> 
+               </div> 
+              </form> 
+              <div id="indexFeedback" style="display: none;" tabindex="-1"> 
+               <div id="feedbackContent">
+                &nbsp;
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <a class="pull-right dialog-end" href="#">Back to Index Table</a>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="flex"> 
+       <div id="checklist" class="fullImageWrapper sectionWrapper" style="background-image: url('/admissions/assets/img/walking-across-welcome-center.jpg');"> 
+        <div class="imageGradient">
+         &nbsp;
+        </div> 
+        <div> 
+         <h2 class="headline white">Checklist</h2> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="container secondaryContainer"> 
+       <div class="row"> 
+        <div class="col-xs-12 col-md-10 col-md-offset-1"> 
+         <h3 class="h1">Stay on Top of It</h3> 
+         <div class="row flexrow checklist"> 
+          <div class="well bg-mint accent inverse"> 
+           <div> 
+            <h3>Application Checklist</h3> 
+            <p>Here is the process for applying to Utah State University. Once you are done, check out our <a href="/admissions/whatsnext/">what's next guide</a>. </p> 
+           </div> 
+          </div> 
+          <div> 
+           <div> 
+            <h4>1. Submit Application</h4> 
+            <p>Fill out and submit the <a href="https://applynow.usu.edu">online application</a>. </p> 
+           </div> 
+          </div> 
+          <div> 
+           <div> 
+            <h4>2. Pay Application Fee</h4> 
+            <p>After your application is complete you will pay a $50 fee.</p> 
+           </div> 
+          </div> 
+          <div> 
+           <div> 
+            <h4>3. Supplemental Items</h4> 
+            <p>You may be required to submit transcripts or other documentation.</p> 
+           </div> 
+          </div> 
+         </div> 
+         <h3 class="h2">Checking Your Application Status</h3> 
+         <p>At any time you can <a href="https://applynow.usu.edu">login your admissions account</a>&nbsp;and check your applications status. We will&nbsp;email you if we are still waiting on you to submit documents such as transcripts or test scores. </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="flex"> 
+       <div class="fullImageWrapper sectionWrapper enlarge" id="residency" style="background-image: url('/admissions/assets/img/sitting-on-edge.jpg')"> 
+        <div class="imageGradient">
+         &nbsp;
+        </div> 
+        <div> 
+         <h2 class="headline white">Residency Requirements</h2> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="container secondaryContainer"> 
+       <div class="row"> 
+        <div class="col-xs-12 col-md-10 col-md-offset-1"> 
+         <h3 class="h1">Residency Calculator</h3> 
+         <p>Residents of Utah pay a different tuition rate than nonresidents. Generally speaking, if you have lived in Utah for the last 12 months and graduated from a Utah high school, you will be considered a resident for tuition purposes. It can get a bit more complicated than that so use our residecy calculator below or read our residency policy to see the details about how to apply as a Utah resident. Please note, this tool is not an official way to determine residency. If you need something official, apply or contact us.</p> 
+         <div class="row"> 
+          <div class="col-xs-12"> 
+           <div class="uiWrapper clearfix"> 
+            <button type="button" class="close pull-right dialog-start" aria-label="Close" data-target="#step1" data-toggle="tab"><span aria-hidden="true">×</span></button> 
+            <p class="text-center"><button type="button" class="btn btn-warning uiButton" data-target="#startCalculation" data-hide="p.text-center" data-anchorlink="residency" data-color="inverse">Start Residency Calculation</button></p> 
+            <p class="text-center"><a href="/admissions/residency.php">Official Residency Policy</a></p> 
+            <div id="startCalculation" class="row hidden uiDetail"> 
+             <div class="tab-content text-center"> 
+              <div class="tab-pane fade in active" id="step1"> 
+               <p class="full">Are you a citizen or permanent resident of the United States?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#no" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p>&nbsp;</p> 
+              </div> 
+              <div class="tab-pane fade" id="step2"> 
+               <p class="full">Have you lived in Utah continuously for the last 12 months?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-2" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-1" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step1" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-1"> 
+               <p class="full">Do you have a Utah state issued ID card such as a drivers license, state ID or driving permit?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-2" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-1-1" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-1-1"> 
+               <p class="full">Are you claimed as a dependent for tax purposes by anyone who is not a resident of Utah.?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yes" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-3" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-1" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-2"> 
+               <p class="full">Are you claimed as a dependent for tax purposes by anyone who is not a resident of Utah.?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yes" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-3" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-3"> 
+               <p class="full">Are you married to a resident of Utah?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-4" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesApply" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-2" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-4"> 
+               <p class="full">Are you (or your spouse or your parent/guardian) a veteran of the armed forces who was discharged in within the last 5 years?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-5" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesVeteran" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-3" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-5"> 
+               <p class="full">Are you eligible and entitled to benefits under 38 U.S.C. Chapter 30, Montgomery G.I. Bill – Active Duty Educational Assistance Program, or Chapter 33, Post 9/11 Educational Assistance Program?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-6" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesGI" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-4" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-6"> 
+               <p class="full">Are you a Utah resident assigned outside of Utah pursuant to federal permanent change of station orders?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-7" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesActiveDuty" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-5" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-7"> 
+               <p class="full">Were you (or your spource or parent/guardian) recruited or transferred to Utah for full-time employment?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step3" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step2-8" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-6" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step2-8"> 
+               <p class="full">Will this recruitment have happened more than 4 months from when you apply to Utah State University?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step3" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesApply" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2-7" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step3"> 
+               <p class="full">Are you (or your spouse or parent/guardian) an active-duty member of the military or national guard with Utah as your (or their) home of record?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step4" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesActiveDuty" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step2" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step4"> 
+               <p class="full">Are you a registered member of one of the Native American Tribes whose lands border Utah?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step5" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesNative" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step3" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step5"> 
+               <p class="full">Are you a recipient of State Social Services Benefit ?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#step6" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesApply" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step4" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="step6"> 
+               <p class="full">Are you participating in the Olympic Training Program?</p> 
+               <div class="row"> 
+                <div class="col-xs-6 col-md-4 col-md-offset-2"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#no" data-toggle="tab">No</button> 
+                </div> 
+                <div class="col-xs-6 col-md-4"> 
+                 <button class="btn btn-default btn-hollow btn-block" data-target="#yesApply" data-toggle="tab">Yes</button> 
+                </div> 
+               </div> 
+               <p class="full pull-left"><button data-target="#step5" data-toggle="tab" class="btn btn-xs btn-default btn-hollow"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous</button></p> 
+              </div> 
+              <div class="tab-pane fade" id="yes"> 
+               <h4 class="inside text-left h3">Resident Status</h4> 
+               <p class="full text-left">Based on your answers you probably qualify as a resident for tuition purposes. Remember this is not an official or binding status.</p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details. </p> 
+              </div> 
+              <div class="tab-pane fade" id="yesApply"> 
+               <h4 class="inside text-left h3">Resident Status with Application</h4> 
+               <p class="full text-left">Based on your answers you probably qualify as a resident for tuition purposes. <strong>However, you most likely need to apply for residency.</strong> Remember this is not an official or binding status. </p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details on how to apply. </p> 
+              </div> 
+              <div class="tab-pane fade" id="yesNative"> 
+               <h4 class="inside text-left h3">Resident Status</h4> 
+               <p class="full text-left">Based on your answers you probably qualify as a resident for tuition purposes. <strong>Please make sure USU receives a copy of your certificate of indian blood (CIB) or tribal identification.</strong> Remember this is not an official or binding status. </p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details. </p> 
+              </div> 
+              <div class="tab-pane fade" id="yesActiveDuty"> 
+               <h4 class="inside text-left h3">Resident Status with Application</h4> 
+               <p class="full text-left">Active duty military personnel, their spouses and their dependents generally qualify for the in-state tuition rate, if they are stationed in Utah or if they maintained their Utah residency during deployment outside the state. To receive residency status, please fill out the <a href="https://www.usu.edu/admissions/docs/USU Military Service Exceptions Application.pdf">Application for In-State Tuition Based Upon Military Service Exceptions</a>. </p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details. </p> 
+              </div> 
+              <div class="tab-pane fade" id="yesVeteran"> 
+               <h4 class="inside text-left h3">Resident Status with Application</h4> 
+               <p class="full text-left">Veterans of the armed forces, their spouses and their dependents generally qualify for the in-state tuition rate, depending on when the veteran officially separated from the military, can be considered Utah residents for tuition purposes. To receive residency status, please fill out the <a href="https://www.usu.edu/admissions/docs/USU Military Service Exceptions Application.pdf">Application for In-State Tuition Based Upon Military Service Exceptions</a>. </p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details. </p> 
+              </div> 
+              <div class="tab-pane fade" id="yesGI"> 
+               <h4 class="inside text-left h3">Resident Status with Application</h4> 
+               <p class="full text-left">Students who are utilizing benefits under 38 U.S.C. Chapter 30, Montgomery G.I. Bill – Active Duty Educational Assistance Program, or Chapter 33, Post 9/11 Educational Assistance Program can be considered Utah residents for tuition purposes. To receive residency status, please fill out the <a href="https://www.usu.edu/admissions/docs/USU Military Service Exceptions Application.pdf">Application for In-State Tuition Based Upon Military Service Exceptions</a>. </p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details. </p> 
+              </div> 
+              <div class="tab-pane fade" id="no"> 
+               <h4 class="inside text-left h3">Nonresident Status</h4> 
+               <p class="full text-left">Based on your answers you probably don't qualify as a resident for tuition purposes. Remember this is not an official or binding status.</p> 
+               <p class="full text-left">Please review our <a href="/admissions/residency.php">residency policy</a> for full details. </p> 
+              </div> 
+              <p class="full pull-right"><button data-target="#step1" data-toggle="tab" class="btn btn-default btn-hollow btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> Restart</button></p> 
+             </div> 
+            </div> 
+            <a class="pull-right dialog-end" href="#">Back to Content</a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="admissionFooter" class="inverse"> 
+   <div id="topLinkWrapper">
+    <span>&nbsp;</span>
+    <a id="toTopLink" href="#global-header" data-scrolling="yes"><em class="fa fa-angle-double-up" aria-hidden="true">&nbsp;</em> Back to Top <em class="fa fa-angle-double-up" aria-hidden="true">&nbsp;</em></a>
+    <span>&nbsp;</span>
+   </div> 
+   <div class="container"> 
+    <div class="row flexrow flexalign flex-lg"> 
+     <div class="col-xs-12 col-sm-8 col-md-9"> 
+      <div class="flexrow flexalign flexaround flex-lg">
+       <div class="flexrow flexalign flexstart" style="padding: 0 5rem;"> 
+        <div>
+         <img src="/admissions/assets/img/first-year.jpg" alt="Student sitting using laptop">
+        </div> 
+        <div>
+         <a class="h4" href="/admissions/articles/first-year-tips.php">First Year Tips &amp; Tricks</a> 
+         <p><span>A guide to surviving your first year of college.</span>..</p> 
+        </div> 
+       </div> 
+       <div class="flexrow flexalign flexstart" style="padding: 0 5rem;"> 
+        <div>
+         <img src="/admissions/assets/img/aggie-ice-cream.png" alt="Student eating ice cream">
+        </div> 
+        <div>
+         <a class="h4" href="/admissions/articles/aggie-ice-cream.php">Aggie Ice Cream</a> 
+         <p><span>The first ice cream to make it to outer space</span>...</p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+     <div class="col-xs-12 col-sm-4 col-md-3"> 
+      <h3><strong>USU Admissions</strong></h3> 
+      <ul style="margin-bottom: 0px;"> 
+       <li><a href="https://applynow.usu.edu">Apply</a></li> 
+       <li><a href="/admissions/contact.php">Contact Us</a></li> 
+       <li><a href="/admissions/directions.php">Directions</a></li> 
+       <li><a href="/admissions/events/">Attend an Event</a></li> 
+       <li><a href="/admissions/campustour/">Visit Campus</a></li> 
+       <li><a href="/admissions/aggielife/">Check out Aggie Life</a></li> 
+       <li><a href="/admissions/costs-and-aid/">Financial Aid / Cost</a></li> 
+       <li><a href="/admissions/counselor/">School Counselors</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-wrapper"> 
+    <div class="contentFooter">
+     <div class="footer-information"> 
+      <div class="footer-brand"> 
+       <h2 style="font-size: 2.2em;"><a href="http://www.usu.edu">UTAH STATE UNIVERSITY</a></h2> 
+      </div> 
+      <div class="footer-main-navigation"> 
+       <ul role="navigation"> 
+        <li><a href="/about/">ABOUT</a></li> 
+        <li><a href="/apply/">ADMISSION</a></li> 
+        <li><a href="/academics/">ACADEMICS</a></li> 
+        <li><a href="/campus-life/">CAMPUS LIFE</a></li> 
+        <li><a href="/research-innovation/">RESEARCH</a></li> 
+        <li><a href="/campuses/">CAMPUSES</a></li> 
+       </ul> 
+      </div> 
+      <div class="footer-social-media"> 
+       <ul> 
+        <li><a href="http://www.facebook.com/UtahState"><span class="sr-only">Facebook</span></a></li> 
+        <li><a href="http://twitter.com/USUAggies"><span class="sr-only">Twitter</span></a></li> 
+        <li><a href="http://www.youtube.com/user/UtahStateUniversity"><span class="sr-only">YouTube</span></a></li> 
+        <li></li> 
+        <li><a href="/rss/"><span class="sr-only">USU RSS</span></a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <hr>
+     <!-- /Footer Information --> 
+     <!-- Footer Navigation --> 
+     <div class="footer-navigation"> 
+      <div class="col-location">
+       <address><strong>Logan</strong>, UT 84322<br> (435) 797-1000</address>
+       <a href="http://www.usu.edu/maps/"><img class="campus-map" src="https://www.usu.edu/images/skin/map.jpg" alt="Campus map"></a>
+      </div> 
+      <div class="col-btns"> 
+       <ul> 
+        <li><a class="btn" href="/apply/"> <strong>APPLY</strong> to USU</a></li> 
+        <li><a class="btn" href="/visit/"> Plan your <strong>VISIT</strong></a></li> 
+        <li><a class="btn" href="http://www.usu.edu/giving/"> Make a <strong>GIFT</strong></a></li> 
+        <li><a class="btn" href="http://jobs.usu.edu"> Find a <strong>JOB</strong></a></li> 
+        <li><a class="btn" href="/contact/"> <strong>CONTACT</strong> us</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-nav"> 
+       <h3 class="h4">EDUCATION</h3> 
+       <ul> 
+        <li><a href="/degrees/">Find a Degree</a></li> 
+        <li><a href="/academics/colleges/">Colleges &amp; Schools</a></li> 
+        <li><a href="/academics/departments/">Academic Departments</a></li> 
+        <li><a href="/calendar/academic/">Academic Calendar</a></li> 
+        <li><a href="http://rgs.usu.edu/graduateschool/">Graduate School</a></li> 
+        <li><a href="http://catalog.usu.edu/">University Catalog</a></li> 
+        <li><a href="/online/">Online Classes</a></li> 
+        <li><a href="https://library.usu.edu/">Library</a></li> 
+        <li><a href="/campuses/">Regional Campuses</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-nav"> 
+       <h3 class="h4">QUICK LINKS</h3> 
+       <ul> 
+        <li><a href="http://directory.usu.edu/">Directory</a></li> 
+        <li><a href="/calendar/">Events Calendar</a></li> 
+        <li><a href="http://it.usu.edu/htm/teams/service-desk">IT Service Desk</a></li> 
+       </ul> 
+       <br> 
+       <h3 class="h4">INFORMATION</h3> 
+       <ul> 
+        <li><a href="/about/at_a_glance/">Quick Facts</a></li> 
+        <li><a href="/about/history/">History &amp; Traditions</a></li> 
+        <li><a href="/student-life/recreation-wellness/">Recreation &amp; Wellness</a></li> 
+        <li><a href="/arts-culture/">Arts &amp; Culture</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <hr> 
+    <div class="global-footer"> 
+     <div class="col-xs-12"> 
+      <ul> 
+       <li><a href="http://www.usu.edu/copyright/">© Utah State University</a></li> 
+       <li><a href="http://www.usu.edu/campussafety/emergencycontacts.cfm">Emergency Info</a></li> 
+       <li><a href="http://www.usu.edu/contact/suggestion.cfm?websitee">Website Feedback</a></li> 
+       <li> <a id="de" href="http://a.cms.omniupdate.com/10?skin=usu&amp;account=usu&amp;site=Admissions&amp;action=de&amp;path=/apply/index.pcf">Admin</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+			/*for disqus comments*/
+			var page_id="https://www.usu.edu/admissions/apply/index.php";
+		</script>
+  <script src="https://templates.usu.edu/_resources/assets/js/template/init.js"></script>
+  <script src="https://templates.usu.edu/_resources/assets/components/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+  <script src="https://templates.usu.edu/_resources/assets/components/bootstrap-jasny/js/fileinput.min.js"></script>
+  <script src="https://templates.usu.edu/_resources/assets/components/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/js/passwordProtect.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/js/accordionSnippet.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/js/tabSnippet.js"></script>
+  <script>
+			$(document).ready(function() {
+			$('.selectpicker').selectpicker();
+			});
+		</script>
+  <script src="https://templates.usu.edu/_resources/assets/components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript">
+			$(".form_datetime").datetimepicker({
+			format: 'mm-dd-yyyy H:ii P',
+			autoclose: 1,
+			showMeridian: 1
+			});
+			$(".form_date").datetimepicker({
+			format: 'mm-dd-yyyy',
+			autoclose: 1,
+			showMeridian: 1,
+			minView: 2,
+			forceParse: 0
+			});
+			$(".form_time").datetimepicker({
+			format: 'H:ii P',
+			autoclose: 1,
+			showMeridian: 1,
+			startView: 1,
+			minView: 0,
+			maxView: 1,
+			forceParse: 0
+			});
+		</script>
+  <script>
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-45551551-1', 'usu.edu');
+			ga('send', 'pageview');
+
+			ga('create', 'UA-90863005-5', 'site', {'name': 'allsites'});
+			ga('allsites.send', 'pageview');
+
+
+			</script>
+  <script type="text/javascript" src="https://ouresources.usu.edu/_assets/forms/ouforms.js"></script>
+  <script type="text/javascript" src="https://ouresources.usu.edu/_assets/forms/jquery.datetimepicker.full.min.js"></script>
+  <div id="hidden" style="display:none;"> 
+  </div> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bab786ce59","applicationID":"39467101","transactionName":"ZAZQYEoCCBBXAkxdX11MZ0ZRTAcHWwhLR1lcDUEbWRMWD09OUVpUVhscRFAT","queueTime":0,"applicationTime":5,"atts":"SEFTFgIYGx4=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

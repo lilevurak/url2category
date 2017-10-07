@@ -1,0 +1,940 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>Open Yale Courses | Financial Markets (2011) | Lecture 23 - Finding Your Purpose in a World of Financial Capitalism</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="shortcut icon" href="http://oyc.yale.edu/sites/default/files/zen_favicon.ico" type="image/x-icon"> 
+  <meta name="description" content="After reviewing the main themes of this course, Professor Shiller shares his views about finance from a broader perspective. His first topic, the morality of finance, centers on Peter Unger’s Living High and Letting Die and William Graham Sumner’s What the Social Classes Owe Each Other. Subsequently, he addresses the hopelessness about the world’s future that some see from Malthus’ dismal law from the Essay on the Principle of Population, but contrasts it with a positive outlook on purposes and goals in life. While discussing the endurance and survival of financial contracts, he outlines the cases of Germany after World War I, Iran after the Islamic Revolution, and South Africa after the end of apartheid, in which financial contracts prevailed, but does not fail to mention the cases of Russia after the Russian Revolution and Japan after World War II, in which it has not been the case. After a brief comparison between Mathematical Finance and Behavioral Finance, he elaborates on the interplay between wealth and inequality, building on Jacob Hacker’s and Paul Pearson’s Winner-Take-All Politics, Karl Marx’s Das Kapital, and Robert K. Merton concept of the cosmopolitan class. Following this, he emphasizes the democratization of finance as an important future trend and provides examples for this process from his books The Subprime Solution,The New Financial Order and Finance and the Good Society. Professor Shiller concludes the course with advice for finding the right career, highlighting the role of random events, but also the importance of a long-horizon outlook and an orientation towards history in the making."> 
+  <meta name="dcterms.description" content="After reviewing the main themes of this course, Professor Shiller shares his views about finance from a broader perspective. His first topic, the morality of finance, centers on Peter Unger's Living High and Letting Die and William Graham Sumner's What the Social Classes Owe Each Other."> 
+  <meta name="abstract" content="Finding your Purpose in a World of Financial Capitalism"> 
+  <meta name="keywords" content="yale,open,courses,Finance as a tool,finding one's purpose in life,parallels between finance and engineering,finance and information technology,morality of finance,Peter Unger and Living High and Letting Die,William Graham Sumner and What the Social Classes Owe Each Other,hopelessness about the world’s future,Thomas Malthus and the Essay on the Principle of P"> 
+  <meta name="dcterms.date" content="2012-03-14T00:00:00Z"> 
+  <meta name="copyright" content="Yale University, 2012"> 
+  <link rel="canonical" href="http://oyc.yale.edu/node/1099"> 
+  <meta name="revisit-after" content="1 day"> 
+  <link type="text/css" rel="stylesheet" media="all" href="http://oyc.yale.edu/sites/default/files/css/css_214a82b355e05531db70864e967cd08d.css"> 
+  <link type="text/css" rel="stylesheet" media="print" href="http://oyc.yale.edu/sites/default/files/css/css_fe85de38ecc99ddb5934ae4bd60d3a9c.css"> 
+  <link type="text/css" rel="stylesheet" media="all" href="http://oyc.yale.edu/sites/default/files/css_injector_1.css?H"> 
+  <!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/zen/zen/ie.css?H" />
+<![endif]--> 
+  <script type="text/javascript" src="http://oyc.yale.edu/sites/default/files/js/js_6c7b7e627be505882d1cbf924aad0c04.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","CToolsUrlIsAjaxTrusted":{"\/economics\/econ-252-11\/lecture-23":true},"cufonSelectors":[]});
+//--><!]]>
+</script> 
+ </head> 
+ <body class="not-front not-logged-in node-type-session no-sidebars page-economics-econ-252-11-lecture-23 section-economics"> 
+  <div id="page">
+   <div id="page-inner"> 
+    <a name="navigation-top" id="navigation-top"></a> 
+    <div id="skip-to-nav">
+     <a href="#navigation">Skip to Navigation</a>
+    </div> 
+    <div id="header">
+     <div id="header-inner" class="clear-block"> 
+      <div id="header-blocks" class="region region-header"> 
+       <div id="block-block-1" class="block block-block region-odd even region-count-1 count-10">
+        <div class="block-inner"> 
+         <div class="content"> 
+          <a href="/" id="home_logo_link"></a> 
+          <div id="help_box"> 
+           <a href="/feedback">feedback</a> 
+           <a href="/help">help</a> 
+          </div> 
+         </div> 
+        </div>
+       </div> 
+       <!-- /block-inner, /block --> 
+      </div> 
+      <!-- /#header-blocks --> 
+     </div>
+    </div> 
+    <!-- /#header-inner, /#header --> 
+    <div id="main">
+     <div id="main-inner" class="clear-block with-navbar"> 
+      <div id="content">
+       <div id="content-inner"> 
+        <div id="content-top" class="region region-content_top"> 
+         <div id="block-views-vid_still-block_1" class="block block-views region-odd even region-count-1 count-6">
+          <div class="block-inner"> 
+           <div class="content"> 
+            <div class="view view-vid-still view-id-vid_still view-display-id-block_1 display-none vidstill-link  view-dom-id-1"> 
+             <div class="view-content"> 
+              <div id="vidstill-afam-162">
+               sites/default/files/holloway_3.jpg
+              </div> 
+              <div id="vidstill-amst-246">
+               sites/default/files/dimock_3.jpg
+              </div> 
+              <div id="vidstill-astr-160">
+               sites/default/files/bailyn_4.jpg
+              </div> 
+              <div id="vidstill-beng-100">
+               sites/default/files/saltzman_5.jpg
+              </div> 
+              <div id="vidstill-chem-125a">
+               sites/default/files/mcbride_a.jpg
+              </div> 
+              <div id="vidstill-chem-125b">
+               sites/default/files/mcbride_b.jpg
+              </div> 
+              <div id="vidstill-clcv-205">
+               sites/default/files/kagan_d_4.jpg
+              </div> 
+              <div id="vidstill-econ-159">
+               sites/default/files/polak_4.jpg
+              </div> 
+              <div id="vidstill-econ-251">
+               sites/default/files/geanokopolos_0.jpg
+              </div> 
+              <div id="vidstill-econ-252-08">
+               sites/default/files/shiller_a.jpg
+              </div> 
+              <div id="vidstill-econ-252-11">
+               sites/default/files/shller_b.jpg
+              </div> 
+              <div id="vidstill-eeb-122">
+               sites/default/files/stearns_3.jpg
+              </div> 
+              <div id="vidstill-engl-220">
+               sites/default/files/rogers_3.jpg
+              </div> 
+              <div id="vidstill-engl-291">
+               sites/default/files/hungerford_4.jpg
+              </div> 
+              <div id="vidstill-engl-300">
+               sites/default/files/fry_4.jpg
+              </div> 
+              <div id="vidstill-engl-310">
+               sites/default/files/hammer_4.jpg
+              </div> 
+              <div id="vidstill-evst-255">
+               sites/default/files/wargo_4.jpg
+              </div> 
+              <div id="vidstill-gg-140">
+               sites/default/files/smith_r_3.jpg
+              </div> 
+              <div id="vidstill-hist-116">
+               sites/default/files/freeman_4.jpg
+              </div> 
+              <div id="vidstill-hist-119">
+               sites/default/files/blight_4.jpg
+              </div> 
+              <div id="vidstill-hist-202">
+               sites/default/files/merriman_b.jpg
+              </div> 
+              <div id="vidstill-hist-210">
+               sites/default/files/freedman_3.jpg
+              </div> 
+              <div id="vidstill-hist-234">
+               sites/default/files/snowden_4.jpg
+              </div> 
+              <div id="vidstill-hist-251">
+               sites/default/files/wrightson_4.jpg
+              </div> 
+              <div id="vidstill-hist-276">
+               sites/default/files/merriman_a.jpg
+              </div> 
+              <div id="vidstill-hsar-252">
+               sites/default/files/kleiner_4.jpg
+              </div> 
+              <div id="vidstill-ital-310">
+               sites/default/files/mazzotta_6.jpg
+              </div> 
+              <div id="vidstill-mcdb-150">
+               sites/default/files/wyman_4.jpg
+              </div> 
+              <div id="vidstill-musi-112">
+               sites/default/files/wright_4.jpg
+              </div> 
+              <div id="vidstill-phil-176">
+               sites/default/files/kagan_s_4.jpg
+              </div> 
+              <div id="vidstill-phil-181">
+               sites/default/files/gendler_3.jpg
+              </div> 
+              <div id="vidstill-phys-200">
+               sites/default/files/shankar_a.jpg
+              </div> 
+              <div id="vidstill-phys-201">
+               sites/default/files/shankar_0.jpg
+              </div> 
+              <div id="vidstill-plsc-114">
+               sites/default/files/smith_s_3.jpg
+              </div> 
+              <div id="vidstill-plsc-118">
+               sites/default/files/shapiro_3.jpg
+              </div> 
+              <div id="vidstill-plsc-270">
+               sites/default/files/rae_4.jpg
+              </div> 
+              <div id="vidstill-psyc-110">
+               sites/default/files/bloom_4.jpg
+              </div> 
+              <div id="vidstill-psyc-123">
+               sites/default/files/brownell_1.jpg
+              </div> 
+              <div id="vidstill-rlst-145">
+               sites/default/files/hayes_4.jpg
+              </div> 
+              <div id="vidstill-rlst-152">
+               sites/default/files/martin_4.jpg
+              </div> 
+              <div id="vidstill-socy-151">
+               sites/default/files/szelyni_0.jpg
+              </div> 
+              <div id="vidstill-span-300">
+               sites/default/files/echevarria.jpg
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+         </div> 
+         <!-- /block-inner, /block --> 
+         <div id="block-views-study_link-block_1" class="block block-views region-even odd region-count-2 count-7">
+          <div class="block-inner"> 
+           <div class="content"> 
+            <div class="view view-study-link view-id-study_link view-display-id-block_1 display-none vidstill-link  view-dom-id-2"> 
+             <div class="view-content"> 
+              <div id="studylink-clcv-205">
+               true
+              </div> 
+              <div id="studylink-econ-252">
+               true
+              </div> 
+              <div id="studylink-hsar-252">
+               true
+              </div> 
+              <div id="studylink-phys-200">
+               true
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+         </div> 
+         <!-- /block-inner, /block --> 
+         <div id="block-views-books_link-block_1" class="block block-views region-odd even region-count-3 count-8">
+          <div class="block-inner"> 
+           <div class="content"> 
+            <div class="view view-books-link view-id-books_link view-display-id-block_1 display-none vidstill-link  view-dom-id-3"> 
+             <div class="view-content"> 
+              <div id="bookslink-afam-162">
+               true
+              </div> 
+              <div id="bookslink-amst-246">
+               true
+              </div> 
+              <div id="bookslink-astr-160">
+               true
+              </div> 
+              <div id="bookslink-beng-100">
+               true
+              </div> 
+              <div id="bookslink-clcv-205">
+               true
+              </div> 
+              <div id="bookslink-econ-159">
+               true
+              </div> 
+              <div id="bookslink-econ-251">
+               true
+              </div> 
+              <div id="bookslink-econ-252">
+               true
+              </div> 
+              <div id="bookslink-econ-252">
+               true
+              </div> 
+              <div id="bookslink-eeb-122">
+               true
+              </div> 
+              <div id="bookslink-engl-220">
+               true
+              </div> 
+              <div id="bookslink-engl-291">
+               true
+              </div> 
+              <div id="bookslink-engl-300">
+               true
+              </div> 
+              <div id="bookslink-engl-310">
+               true
+              </div> 
+              <div id="bookslink-evst-255">
+               true
+              </div> 
+              <div id="bookslink-gg-140">
+               true
+              </div> 
+              <div id="bookslink-hist-116">
+               true
+              </div> 
+              <div id="bookslink-hist-119">
+               true
+              </div> 
+              <div id="bookslink-hist-202">
+               true
+              </div> 
+              <div id="bookslink-hist-210">
+               true
+              </div> 
+              <div id="bookslink-hist-234">
+               true
+              </div> 
+              <div id="bookslink-hist-251">
+               true
+              </div> 
+              <div id="bookslink-hist-276">
+               true
+              </div> 
+              <div id="bookslink-hsar-252">
+               true
+              </div> 
+              <div id="bookslink-ital-310">
+               true
+              </div> 
+              <div id="bookslink-mcdb-150">
+               true
+              </div> 
+              <div id="bookslink-musi-112">
+               true
+              </div> 
+              <div id="bookslink-phil-176">
+               true
+              </div> 
+              <div id="bookslink-phil-181">
+               true
+              </div> 
+              <div id="bookslink-phys-200">
+               true
+              </div> 
+              <div id="bookslink-phys-201">
+               true
+              </div> 
+              <div id="bookslink-plsc-114">
+               true
+              </div> 
+              <div id="bookslink-plsc-118">
+               true
+              </div> 
+              <div id="bookslink-plsc-270">
+               true
+              </div> 
+              <div id="bookslink-psyc-110">
+               true
+              </div> 
+              <div id="bookslink-psyc-123">
+               true
+              </div> 
+              <div id="bookslink-rlst-145">
+               true
+              </div> 
+              <div id="bookslink-rlst-152">
+               true
+              </div> 
+              <div id="bookslink-socy-151">
+               true
+              </div> 
+              <div id="bookslink-span-300">
+               true
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+         </div> 
+         <!-- /block-inner, /block --> 
+        </div> 
+        <!-- /#content-top --> 
+        <div id="content-header"> 
+         <h1 class="title">ECON 252 (2011) - Lecture 23 - Finding Your Purpose in a World of Financial Capitalism</h1> 
+        </div> 
+        <!-- /#content-header --> 
+        <div id="content-area"> 
+         <div id="node-1099" class="node node-type-session">
+          <div class="node-inner"> 
+           <div class="content"> 
+            <div id="session_head"> 
+             <h1><a href="../econ-252-11">econ 252: Financial Markets (2011)</a></h1> 
+             <ul id="course_links_left" class="course_links"> 
+              <li class="course_links_first"><a href="../econ-252-11#syllabus">Syllabus</a></li> 
+              <li><a href="../econ-252-11#sessions">Sessions</a></li> 
+              <li><a href="../econ-252-11#survey">Survey</a></li> 
+              <!-- 
+		<li id="course_links_sep"><a href="../econ-252-11#study">Join a Study Group</a></li>
+		<li><a href="../econ-252-11#books">Buy Books</a></li>
+	--> 
+             </ul> 
+            </div> 
+            <script type="text/javascript">
+   	var studylink = $('#studylink-econ-252-11').text();
+   	if (studylink !== "") {
+   		$('#course_links_left').append('<li id="course_links_sep"><a href="../econ-252-11#study">Join a Study Group</a></li>');
+   	}
+   	
+   	var bookslink = $('#bookslink-econ-252-11').text();
+   	if (bookslink !== "") {
+   		if (studylink !== "") {
+   			$('#course_links_left').append('<li><a href="../econ-252-11#books">Buy Books</a></li>');
+   		} else {
+   			$('#course_links_left').append('<li id="course_links_sep"><a href="../econ-252-11#books">Buy Books</a></li>');
+   		}
+   	}
+</script> 
+            <ul class="course_links" id="prev_next"> 
+             <li id="prev"><a href="/node/1098">« Previous Session</a></li>
+             <li id="next"><a href="/node/1289">Next Session »</a></li>
+            </ul> 
+            <div id="session_body"> 
+             <h2>Lecture 23 - Finding Your Purpose in a World of Financial Capitalism</h2> 
+             <div class="clear"></div> 
+             <div id="overview"> 
+              <h3>Overview</h3> 
+              <p></p>
+              <p>After reviewing the main themes of this course, Professor Shiller shares his views about finance from a broader perspective. His first topic, the morality of finance, centers on Peter Unger's <em>Living High and Letting Die</em> and William Graham Sumner's <em>What the Social Classes Owe Each Other</em>. Subsequently, he addresses the hopelessness about the world’s future that some see from Malthus' dismal law from the <em>Essay on the Principle of Population</em>, but contrasts it with a positive outlook on purposes and goals in life. While discussing the endurance and survival of financial contracts, he outlines the cases of Germany after World War I, Iran after the Islamic Revolution, and South Africa after the end of apartheid, in which financial contracts prevailed, but does not fail to mention the cases of Russia after the Russian Revolution and Japan after World War II, in which it has not been the case. After a brief comparison between Mathematical Finance and Behavioral Finance, he elaborates on the interplay between wealth and inequality, building on Jacob Hacker's and Paul Pearson's <em>Winner-Take-All Politics</em>, Karl Marx's <em>Das Kapital</em>, and Robert K. Merton concept of the cosmopolitan class. Following this, he emphasizes the democratization of finance as an important future trend and provides examples for this process from his books <em>The Subprime Solution</em>,&nbsp;<em>The New Financial Order </em>and<em> Finance and the Good Society</em>. Professor Shiller concludes the course with advice for finding the right career, highlighting the role of random events, but also the importance of a long-horizon outlook and an orientation towards history in the making.</p>
+              <p></p> 
+              <h3 id="resources">Resources</h3>
+              <div class="faux_p">
+               <div class="filefield-file">
+                <img class="filefield-icon field-icon-application-pdf" alt="application/pdf icon" src="http://oyc.yale.edu/sites/all/modules/contrib/filefield/icons/application-pdf.png">
+                <a href="http://oyc.yale.edu/sites/default/files/ECON252_23_042011_MC.pdf" type="application/pdf; length=216806" title="ECON252_23_042011_MC.pdf">Multiple-Choice Quiz (with answer key) [PDF]</a>
+               </div>
+              </div> 
+             </div> 
+             <div id="assignment"> 
+              <h3>Assignment</h3>
+              <p></p>
+              <p>Shiller, <em>Finance and the Good Society</em>, Ch. 13</p>
+              <p>Unger, <em>Living High and Letting Die</em></p>
+              <p>Sumner, <em>What the Social Classes Owe Each Other</em>, Ch. III&nbsp;</p>
+              <p></p> 
+             </div> 
+             <div class="clear"></div> 
+             <div id="video_wrapper"> 
+              <div id="player_wrapper"> 
+               <div id="mediaplayer"></div> 
+               <script type="text/javascript" src="/sites/all/themes/oyc/oyc/scripts/jwplayer.js"></script> 
+               <script type="text/javascript">
+					/* FLASH CHECKER */
+					(function($) {
+						if (typeof $.browser === "undefined" || !$.browser) {
+							var browser = {};
+							$.extend(browser);
+						}
+						var pluginList = {
+							flash: {
+								activex: "ShockwaveFlash.ShockwaveFlash",
+								plugin: /flash/gim
+							}
+						};
+						var isSupported = function(p) {
+							if (window.ActiveXObject) {
+								try {
+									new ActiveXObject(pluginList[p].activex);
+									$.browser[p] = true;
+								} catch (e) {
+									$.browser[p] = false;
+								}
+							} else {
+								$.each(navigator.plugins, function() {
+									if (this.name.match(pluginList[p].plugin)) {
+										$.browser[p] = true;
+										return false;
+									} else {
+										$.browser[p] = false;
+									}
+								});
+							}
+						};
+						$.each(pluginList, function(i, n) {
+							isSupported(i);
+						});
+					})(jQuery);
+					
+					/* JWPLAYER */
+			    	vid_still = '/' + $('#vidstill-econ-252-11').text();
+					jwplayer("mediaplayer").setup({
+						flashplayer: "/sites/all/themes/oyc/oyc/scripts/player.swf",
+						skin: "/sites/all/themes/oyc/oyc/scripts/newtubedark.zip",
+						file: "http://openmedia.yale.edu/projects/courses/spring11/econ252/embed/econ252_23_042011_emb.mp4",
+						provider: "http",
+						image: vid_still,
+						width: "600",
+						height: "360",
+						controlbar: "bottom",
+						plugins: {
+							"captions-2": {
+								file: "http://openmedia.yale.edu/projects/courses/spring11/econ252/embed/econ252_23_042011.srt",
+								state: false
+							}
+						}
+					});
+					
+					/* CHAP TIMES */
+					jQuery.fn.time_from_seconds = function() {
+					    return this.each(function() {
+					        var t = parseInt($(this).text(), 10);
+					        $(this).data('original', t);
+					        var h = Math.floor(t / 3600);
+					        t %= 3600;
+					        var m = Math.floor(t / 60);
+					        var s = Math.floor(t % 60);
+					        /* $(this).text((h > 0 ? h + ' hour' + ((h > 1) ? 's ' : ' ') : '') +
+					                     (m > 0 ? m + ' minute' + ((m > 1) ? 's ' : ' ') : '') +
+					                     s + ' second' + ((s > 1) ? 's' : '')); */
+					        
+					        var htext = h+'';
+					        var mtext = m+'';
+					        var stext = s+'';
+					        
+					        if (htext.length == 1) {
+					        	var hpad = '0' + h;
+					        } else {
+					        	var hpad = htext;
+					        }
+					        
+					        if (mtext.length == 1) {
+					        	var mpad = '0' + m;
+					        } else {
+					        	var mpad = mtext;
+					        }
+					        
+					        if (stext.length == 1) {
+					        	var spad = '0' + s;
+					        } else {
+					        	var spad = stext;
+					        }
+					        
+					        $(this).text(hpad + ':' + mpad + ':' + spad);     
+					               
+					    });
+					};
+				</script> 
+              </div> 
+              <div id="chapters"> 
+               <div id="flash"> 
+                <h3>Lecture Chapters</h3>
+                <ol>
+                 <li><a href="#ch0" onclick="jwplayer().seek(0);">The Course and Its Major Themes in Retrospect [<span class="time">0</span>]</a></li>
+                 <li><a href="#ch1" onclick="jwplayer().seek(408);">The Morality of Finance [<span class="time">408</span>]</a></li>
+                 <li><a href="#ch2" onclick="jwplayer().seek(966);">Hopelessness: Challenging Malthus's Dismal Law [<span class="time">966</span>]</a></li>
+                 <li><a href="#ch3" onclick="jwplayer().seek(1805);">The Endurance and Survival of Financial Contracts [<span class="time">1805</span>]</a></li>
+                 <li><a href="#ch4" onclick="jwplayer().seek(2261);">The Importance of Financial Theory [<span class="time">2261</span>]</a></li>
+                 <li><a href="#ch5" onclick="jwplayer().seek(2353);">Welfare and Poverty [<span class="time">2353</span>]</a></li>
+                 <li><a href="#ch6" onclick="jwplayer().seek(3036);">The Democratization of Finance [<span class="time">3036</span>]</a></li>
+                 <li><a href="#ch7" onclick="jwplayer().seek(3738);">Advice for the Right Career [<span class="time">3738</span>]</a></li>
+                </ol> 
+               </div> 
+               <div id="no_flash"> 
+                <h3>Lecture Chapters</h3>
+                <ol>
+                 <li><a href="#ch0" onclick="document.getElementsByTagName('video')[0].currentTime=0">The Course and Its Major Themes in Retrospect [<span class="time">0</span>]</a></li>
+                 <li><a href="#ch1" onclick="document.getElementsByTagName('video')[0].currentTime=408">The Morality of Finance [<span class="time">408</span>]</a></li>
+                 <li><a href="#ch2" onclick="document.getElementsByTagName('video')[0].currentTime=966">Hopelessness: Challenging Malthus's Dismal Law [<span class="time">966</span>]</a></li>
+                 <li><a href="#ch3" onclick="document.getElementsByTagName('video')[0].currentTime=1805">The Endurance and Survival of Financial Contracts [<span class="time">1805</span>]</a></li>
+                 <li><a href="#ch4" onclick="document.getElementsByTagName('video')[0].currentTime=2261">The Importance of Financial Theory [<span class="time">2261</span>]</a></li>
+                 <li><a href="#ch5" onclick="document.getElementsByTagName('video')[0].currentTime=2353">Welfare and Poverty [<span class="time">2353</span>]</a></li>
+                 <li><a href="#ch6" onclick="document.getElementsByTagName('video')[0].currentTime=3036">The Democratization of Finance [<span class="time">3036</span>]</a></li>
+                 <li><a href="#ch7" onclick="document.getElementsByTagName('video')[0].currentTime=3738">Advice for the Right Career [<span class="time">3738</span>]</a></li>
+                </ol> 
+               </div> 
+              </div> 
+              <script type="text/javascript">
+    			$('.time').time_from_seconds();
+				if ($.browser.flash) {
+					$('#no_flash').hide();
+					$('#flash').show();
+				}
+			</script> 
+             </div> 
+             <div class="clear"></div> 
+             <div id="course_media"> 
+              <h3>Course Media</h3> 
+              <div class="course_media_item"> 
+               <h4>Transcript</h4> 
+               <a href="#transcript" onclick="window.open('/transcript/1099/econ-252-11','Transcript','resizable=1,scrollbars=1,width=680,height=800');" class="course_media_file" id="course_media_transcript">html</a> 
+              </div> 
+              <div class="course_media_item"> 
+               <h4>Audio</h4> 
+               <a href="http://openmedia.yale.edu/cgi-bin/open_yale/media_downloader.cgi?file=/courses/spring11/econ252/mp3/econ252_23_042011.mp3" class="course_media_file" id="course_media_audio">mp3</a> 
+              </div> 
+              <div class="course_media_item"> 
+               <h4>Low Bandwidth Video</h4> 
+               <a href="http://openmedia.yale.edu/cgi-bin/open_yale/media_downloader.cgi?file=/courses/spring11/econ252/medium/econ252_23_042011.mov" class="course_media_file" id="course_media_low">mov [100MB]</a> 
+              </div> 
+              <div class="course_media_item"> 
+               <h4>High Bandwidth Video</h4> 
+               <a href="http://openmedia.yale.edu/cgi-bin/open_yale/media_downloader.cgi?file=/courses/spring11/econ252/mov/chapters/econ252_23_042011.mov" class="course_media_file" id="course_media_high">mov [500MB]</a> 
+              </div> 
+             </div> 
+             <div class="clear"></div> 
+            </div> 
+           </div> 
+          </div>
+         </div> 
+         <!-- /node-inner, /node --> 
+        </div> 
+        <div id="content-bottom" class="region region-content_bottom"> 
+         <div id="block-search-0" class="block block-search region-odd odd region-count-1 count-9">
+          <div class="block-inner"> 
+           <h2 class="title">Search</h2> 
+           <div class="content"> 
+            <form action="/economics/econ-252-11/lecture-23" accept-charset="UTF-8" method="post" id="search-block-form"> 
+             <div>
+              <div class="container-inline"> 
+               <div class="form-item" id="edit-search-block-form-1-wrapper"> 
+                <label for="edit-search-block-form-1">Search this site: </label> 
+                <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text"> 
+               </div> 
+               <input type="submit" name="op" id="edit-submit" value="Search" class="form-submit"> 
+               <input type="hidden" name="form_build_id" id="form-9ciDgJzkNEOABR4X1eERMqFfPxZbByL1Nq8NjzPMTRA" value="form-9ciDgJzkNEOABR4X1eERMqFfPxZbByL1Nq8NjzPMTRA"> 
+               <input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"> 
+              </div> 
+             </div>
+            </form> 
+           </div> 
+          </div>
+         </div> 
+         <!-- /block-inner, /block --> 
+        </div> 
+        <!-- /#content-bottom --> 
+       </div>
+      </div> 
+      <!-- /#content-inner, /#content --> 
+      <div id="navbar">
+       <div id="navbar-inner" class="clear-block region region-navbar"> 
+        <a name="navigation" id="navigation"></a> 
+        <div id="block-block-3" class="block block-block region-odd odd region-count-1 count-1">
+         <div class="block-inner"> 
+          <div class="content"> 
+           <a href="/" id="home_nav_link"></a> 
+           <ul id="nav_list"> 
+            <li class="nav_item" id="courses_link" onmouseover="showMenu();" onmouseout="hideMenu();"> <a href="/courses">Courses</a> 
+             <div id="courses_hover"> 
+              <div id="courses_hover_inner"> 
+               <div class="clear"></div> 
+               <div id="courses_hover_title">
+                <span>Departments</span>
+                <a href="/courses">View All Courses »</a>
+               </div> 
+               <div class="courses_hover_column" id="courses_hover_column_1"></div> 
+               <div class="courses_hover_column" id="courses_hover_column_2"></div> 
+               <div class="courses_hover_column" id="courses_hover_column_3"></div> 
+              </div> 
+             </div> </li> 
+            <li class="nav_item"><a href="/about">About</a></li> 
+            <li class="nav_item"><a href="/terms">Terms of Use</a></li> 
+            <li class="nav_item"><a href="/support-oyc">Support OYC</a></li> 
+           </ul> 
+           <!-- <input type="text" id="search" placeholder="Search" /> --> 
+           <form action="/" accept-charset="UTF-8" method="post" id="search-block-form" class="search-form" target="_self" _lpchecked="1"> 
+            <input placeholder="Search" type="text" name="search_block_form" id="search" value="" title="Enter the terms you wish to search for."> 
+            <!-- <input type="submit" name="op" id="edit-submit" value="Search" class="form-submit"> --> 
+            <input type="hidden" name="form_build_id" id="form-119bf11aabc8ef036569ff649aae4611" value="form-119bf11aabc8ef036569ff649aae4611"> 
+            <input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="605a7371b4e44eea9337b9b090d80fce"> 
+            <input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"> 
+            <!-- <input type="hidden" name="default_text" id="edit-default-text" value="" class="default-text"> --> 
+           </form> 
+           <script type="text/javascript">
+	function showMenu() {
+        hovpos = "";
+	var hovpos = $("#courses_link").position();
+		$("#courses_hover").css({"left" : hovpos.left, "top" : hovpos.top+18}).show();
+	}
+    function hideMenu() {
+		$("#courses_hover").hide();
+    }
+</script> 
+          </div> 
+         </div>
+        </div> 
+        <!-- /block-inner, /block --> 
+        <div id="block-views-dept_hover-block_1" class="block block-views region-even even region-count-2 count-2">
+         <div class="block-inner"> 
+          <div class="content"> 
+           <div class="view view-dept-hover view-id-dept_hover view-display-id-block_1 view-dom-id-2"> 
+            <div class="view-content"> 
+             <div class="item-list"> 
+              <ul> 
+               <li class="views-row views-row-1 views-row-odd views-row-first"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/african-american-studies">
+                   <div class="hover_dept">
+                    African American Studies
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-2 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/american-studies">
+                   <div class="hover_dept">
+                    American Studies
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-3 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/astronomy">
+                   <div class="hover_dept">
+                    Astronomy
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-4 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/biomedical-engineering">
+                   <div class="hover_dept">
+                    Biomedical Engineering
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-5 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/chemistry">
+                   <div class="hover_dept">
+                    Chemistry
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-6 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/classics">
+                   <div class="hover_dept">
+                    Classics
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-7 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/ecology-and-evolutionary-biology">
+                   <div class="hover_dept">
+                    Ecology and Evolutionary Biology
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-8 views-row-even views-row-last"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/economics">
+                   <div class="hover_dept">
+                    Economics
+                   </div></a></span> 
+                </div> </li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div> 
+        <!-- /block-inner, /block --> 
+        <div id="block-views-dept_hover_2-block_1" class="block block-views region-odd odd region-count-3 count-3">
+         <div class="block-inner"> 
+          <div class="content"> 
+           <div class="view view-dept-hover-2 view-id-dept_hover_2 view-display-id-block_1 view-dom-id-3"> 
+            <div class="view-content"> 
+             <div class="item-list"> 
+              <ul> 
+               <li class="views-row views-row-1 views-row-odd views-row-first"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/english">
+                   <div class="hover_dept">
+                    English
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-2 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/environmental-studies">
+                   <div class="hover_dept">
+                    Environmental Studies
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-3 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/geology-and-geophysics">
+                   <div class="hover_dept">
+                    Geology and Geophysics
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-4 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/history">
+                   <div class="hover_dept">
+                    History
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-5 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/history-art">
+                   <div class="hover_dept">
+                    History of Art
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-6 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/italian-language-and-literature">
+                   <div class="hover_dept">
+                    Italian Language and Literature
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-7 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/molecular-cellular-and-developmental-biology">
+                   <div class="hover_dept">
+                    Molecular, Cellular and Developmental Biology
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-8 views-row-even views-row-last"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/music">
+                   <div class="hover_dept">
+                    Music
+                   </div></a></span> 
+                </div> </li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div> 
+        <!-- /block-inner, /block --> 
+        <div id="block-views-dept_hover_3-block_1" class="block block-views region-even even region-count-4 count-4">
+         <div class="block-inner"> 
+          <div class="content"> 
+           <div class="view view-dept-hover-3 view-id-dept_hover_3 view-display-id-block_1 view-dom-id-4"> 
+            <div class="view-content"> 
+             <div class="item-list"> 
+              <ul> 
+               <li class="views-row views-row-1 views-row-odd views-row-first"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/philosophy">
+                   <div class="hover_dept">
+                    Philosophy
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-2 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/physics">
+                   <div class="hover_dept">
+                    Physics
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-3 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/political-science">
+                   <div class="hover_dept">
+                    Political Science
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-4 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/psychology">
+                   <div class="hover_dept">
+                    Psychology
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-5 views-row-odd"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/religious-studies">
+                   <div class="hover_dept">
+                    Religious Studies
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-6 views-row-even"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/sociology">
+                   <div class="hover_dept">
+                    Sociology
+                   </div></a></span> 
+                </div> </li> 
+               <li class="views-row views-row-7 views-row-odd views-row-last"> 
+                <div class="views-field-title"> 
+                 <span class="field-content"><a href="/spanish-and-portuguese">
+                   <div class="hover_dept">
+                    Spanish and Portuguese
+                   </div></a></span> 
+                </div> </li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div> 
+        <!-- /block-inner, /block --> 
+        <div id="block-block-5" class="block block-block region-odd odd region-count-5 count-5">
+         <div class="block-inner"> 
+          <div class="content"> 
+           <script type="text/javascript">
+
+    var hoverContent1 = $("#block-views-dept_hover-block_1").html();
+    var hoverContent1 = hoverContent1.replace(/ and /gi," &amp; ");
+    $("#courses_hover_column_1").append(hoverContent1);
+
+    var hoverContent2 = $("#block-views-dept_hover_2-block_1").html();
+    var hoverContent2 = hoverContent2.replace(/ and /gi," &amp; ");
+    $("#courses_hover_column_2").append(hoverContent2);
+
+    var hoverContent3 = $("#block-views-dept_hover_3-block_1").html();
+    var hoverContent3 = hoverContent3.replace(/ and /gi," &amp; ");
+    $("#courses_hover_column_3").append(hoverContent3);
+
+</script> 
+          </div> 
+         </div>
+        </div> 
+        <!-- /block-inner, /block --> 
+       </div>
+      </div> 
+      <!-- /#navbar-inner, /#navbar --> 
+     </div>
+    </div> 
+    <!-- /#main-inner, /#main --> 
+    <div id="footer">
+     <div id="footer-inner" class="region region-footer"> 
+      <div id="block-block-2" class="block block-block region-odd odd region-count-1 count-11">
+       <div class="block-inner"> 
+        <div class="content"> 
+         <a href="http://yale.edu/" id="yale_foot" target="_blank"></a> 
+         <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/" id="cc_foot" target="_blank"></a> 
+         <p id="cc_text_foot">© <strong>Yale University 2017</strong>. Most of the lectures and course material within Open Yale Courses are licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 license. Unless explicitly set forth in the applicable Credits section of a lecture, third-party content is not covered under the Creative Commons license. Please consult the <a href="/terms">Open Yale Courses Terms of Use</a> for limitations and further explanations on the application of the Creative Commons license.</p> 
+         <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8606462-1']);
+  _gaq.push(['_trackPageview']);
+
+ var _gaq = _gaq || [];
+  _gaq.push(['hewlett._setAccount', 'UA-5033010-1']);
+  _gaq.push(['hewlett._trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+        </div> 
+       </div>
+      </div> 
+      <!-- /block-inner, /block --> 
+     </div>
+    </div> 
+    <!-- /#footer-inner, /#footer --> 
+   </div>
+  </div> 
+  <!-- /#page-inner, /#page --> 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45934301-5', 'auto', 'yaleTracker');
+  ga('yaleTracker.send', 'pageview');
+
+</script>
+  <script type="text/javascript" src="http://oyc.yale.edu/sites/default/files/js/js_abce938eefff34784d029fa9507233a7.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"180521658b","applicationID":"51799315","transactionName":"Y1xWYkdTCkRRWxAPDFoWdVVBWwtZH1YLAgZrSVVRUG0SXlVP","queueTime":0,"applicationTime":262,"atts":"TxtVFA9JGUo=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

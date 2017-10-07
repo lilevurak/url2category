@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <title>Get Involved &amp; Build Skills – UConn Center for Career Development</title> 
+  <link rel="shortcut icon" href="https://d3irk3g7luh32r.cloudfront.net/wp-content/themes/uConnect_UConn/favicon.ico?v=4.508.1.352" type="image/x-icon"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="dns-prefetch" href="//connect.facebook.net"> 
+  <link rel="dns-prefetch" href="//s0.wp.com"> 
+  <link rel="dns-prefetch" href="//connect.facebook.net"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="UConn Center for Career Development » Feed" href="https://career.uconn.edu/feed/"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/d3irk3g7luh32r.cloudfront.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="open_sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C600%2C700%2C800%2C300&amp;ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" type="text/css" media="all" href="//d3irk3g7luh32r.cloudfront.net/_min/wp-content/plugins/uconnect-embed-google-docs-viewer/css/uconnect-embed-google-docs-viewer.css,wp-content/themes/uConnect/jquery-ui/jquery-ui.min.css,wp-content/plugins/uconnect-events-calendar-v2/css/uc-events-calendar-widget.css,wp-content/plugins/uconnect-guest-blog/css/uc_guest_blog_front.css,wp-content/plugins/uconnect-social-wall/css/uconnect-social-wall.css,wp-includes/css/dashicons.min.css,wp-content/themes/uConnect_UConn/icons/uconn-icons.css,wp-content/lib/materialize/css/materialize.min.css,wp-content/lib/icons/styles.css,wp-content/lib/js/owl-carousel/owl.carousel.css,wp-content/uploads/sites/7/theme/main-style.css&amp;201766.4452704&amp;debug"> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var UC_CONFIG = {"HEADER_IMAGE_WIDTH":"1600","HEADER_IMAGE_HEIGHT":"560","UC_SCHOOL_SITE_NAME_SHORT":"UConn CCD","SLIDER_SPEED":"5000"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="//d3irk3g7luh32r.cloudfront.net/_min/wp-includes/js/jquery/jquery.js,wp-includes/js/jquery/jquery-migrate.min.js,wp-content/lib/js/isotope.pkgd.min.js,wp-content/lib/js/isotope.masonry-horizontal.js,wp-content/themes/uConnect_UConn/js/uconnect.js,wp-content/lib/materialize/js/materialize.min.js,wp-content/lib/js/uc-lib-common.js,wp-content/lib/js/uc-lib-frontend.js,wp-content/lib/js/placeholders.jquery.min.js,wp-content/themes/uConnect/js/uconnect-head.js,wp-content/lib/js/jquery.lettering.min.js,wp-content/lib/js/jquery.cookie.js,wp-content/lib/js/jquery.infieldlabel.min.js,wp-content/lib/js/modernizr.js,wp-content/lib/js/owl-carousel/owl.carousel.min.js,wp-content/lib/js/fastclick.js&amp;201766.4452704&amp;debug"></script> 
+  <link rel="https://api.w.org/" href="https://career.uconn.edu/api/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://career.uconn.edu/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://career.uconn.edu/wp-includes/wlwmanifest.xml"> 
+  <link rel="canonical" href="https://career.uconn.edu/get-experience/"> 
+  <link rel="shortlink" href="http://bit.ly/2hHpvbF"> 
+  <link rel="alternate" type="application/json+oembed" href="https://career.uconn.edu/api/oembed/1.0/embed?url=https%3A%2F%2Fcareer.uconn.edu%2Fget-experience%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://career.uconn.edu/api/oembed/1.0/embed?url=https%3A%2F%2Fcareer.uconn.edu%2Fget-experience%2F&amp;format=xml"> 
+  <!-- Stream WordPress user activity plugin v3.2.2 --> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:image" content="https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/7/2015/12/Julia-Head-shot-21-e1449586290216.jpg"> 
+  <meta property="og:site_name" content="UConn Center for Career Development"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="fb:app_id" content="1469987199921887"> 
+  <meta property="og:url" content="https://career.uconn.edu/get-experience/"> 
+  <meta property="og:title" content="Get Involved &amp; Build Skills"> 
+  <meta property="og:image" content="https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/7/2015/12/Julia-Head-shot-21-e1449586290216.jpg"> 
+  <meta property="og:image:width" content="500"> 
+  <meta property="og:image:height" content="333"> 
+  <meta property="og:image" content="https://d3irk3g7luh32r.cloudfront.net/wp-content/themes/uConnect_UConn/images/default-og-image.png?v=4.508.1.352"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <!-- ## NXS/OG ## -->
+  <!-- ## NXSOGTAGS ## -->
+  <!-- ## NXS/OG ## --> 
+  <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-19563948-8', {'name': '_c'});
+ga('_c.send', 'pageview');
+ga('create', 'UA-19563948-1', {'name': '_x'});
+ga('_x.send', 'pageview');
+            //Tracking outbound links
+            jQuery(function($) {
+                $("a").on('click',function(e){
+                    if ($(this).hasClass('share')) return;
+                    var url = $(this).attr("href");
+                    if (e.currentTarget.hostname.length > 0 && e.currentTarget.hostname != window.location.host && e.currentTarget.hostname.indexOf("uconnectlabs.com") == -1) {
+                        ga('_x.send', 'event', 'Outbound Links', e.currentTarget.hostname, url);
+ga('_c.send', 'event', 'Outbound Links', e.currentTarget.hostname, url);
+                        if (e.metaKey || e.ctrlKey || $(this).attr("target") == '_blank') {
+                            var newtab = true;
+                        }
+                        if (!newtab) {
+                            e.preventDefault();
+                            setTimeout('document.location = "' + url + '"', 100);
+                        }
+                    }
+                });
+            });
+        </script> 
+ </head>
+ <body class="page-template-default page page-id-347 page-get-experience not-home full-width-hero hero-space-banner has-hero-nav double-column"> 
+  <div id="wrapper" class="hfeed"> 
+   <div id="header" class=" has_nav"> 
+    <div id="masthead"> 
+     <div id="masthead_inner" class="clearfix"> 
+      <div id="top_ribbon"> 
+       <div class="top-ribbon-nav">
+        <ul id="menu-user-account-nav" class="menu">
+         <li id="menu-item-guests" class="menu-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-guests"><a title="Log in to the guest contributors portal" target="_blank" href="https://career.uconn.edu/wp-login.php?role=guest">Guests</a></li> 
+         <li id="menu-item-log-in" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-log-in"><a href="https://career.uconn.edu/account/login/">Log in</a></li> 
+         <li id="menu-item-sign-up" class="menu-item-last menu-item menu-item-type-custom menu-item-object-custom menu-item-sign-up"><a title="Sign up for an account" href="https://career.uconn.edu/account/signup/">Sign up</a></li> 
+        </ul>
+       </div>
+       <!-- Served from cache in 0.00089 seconds. --> 
+       <a id="uconn-logo" href="http://uconn.edu/">University of Connecticut</a> 
+       <a id="az-button" href="http://uconn.edu/azindex.php">A-Z</a> 
+       <div class="widget widget_uc_search"> 
+        <form role="search" method="get" class="searchform " action="https://career.uconn.edu/"> 
+         <div> 
+          <input type="text" value="" name="s" id="s1"> 
+          <label for="s1">Search Keywords‌</label> 
+          <span class="screen-reader-text"> <input type="submit" value="Search" class="button"> </span> 
+         </div> 
+        </form> 
+       </div> 
+      </div> 
+      <div id="site-logo"> 
+       <a href="https://career.uconn.edu/" title="UConn Center for Career Development" rel="home"> Center for Career Development </a> 
+      </div> 
+      <div id="header-widget-area"> 
+       <div id="uc_button-4" class="widget-wrapper widget_uc_button">
+        <a href="/schedule-an-appointment/">Schedule an Appointment</a>
+       </div>
+       <div id="uc_button-3" class="widget-wrapper widget_uc_button">
+        <a href="/huskycareerlink/">HuskyCareerLink</a>
+       </div>
+       <div id="uc_button-5" class="widget-wrapper widget_uc_button">
+        <a href="https://career.uconn.edu/regional-campuses/">Regional Campuses</a>
+       </div>
+       <div id="uc_button-2" class="widget-wrapper widget_uc_button">
+        <a href="/support-us/">Support Us</a>
+       </div> 
+      </div> 
+      <div id="access" role="navigation"> 
+       <div class="skip-link screen-reader-text">
+        <a href="#content" title="Skip to content">Skip to content</a>
+       </div> 
+       <div class="standard-nav">
+        <ul id="menu-top-nav" class="menu">
+         <span class="icon-menu"></span>
+         <li id="menu-item-2064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2064"><a href="https://career.uconn.edu/personalizedcareerplan/">Undergraduate Students</a> 
+          <div class="sub-menu">
+           <ul class=""> 
+            <li id="menu-item-23199" class="menu-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-23199"><a href="http://career.uconn.edu/personalizedcareerplan/">Personalized Career Plan</a></li> 
+            <li id="menu-item-23200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23200"><a href="http://career.uconn.edu/explore-majors-%20careers/">Career &amp; Major Exploration</a></li> 
+            <li id="menu-item-23201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23201"><a href="http://career.uconn.edu/career-counseling/">Career Coaching</a></li> 
+            <li id="menu-item-23202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23202"><a href="http://career.uconn.edu/resume-and-cover-letters/">Resumes &amp; Cover Letters</a></li> 
+            <li id="menu-item-1957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1957"><a href="https://career.uconn.edu/interviewing/">Interviewing</a></li> 
+            <li id="menu-item-1983" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1983"><a href="https://career.uconn.edu/internships-and-coops/">Internships &amp; Co-ops</a></li> 
+            <li id="menu-item-1959" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1959"><a href="https://career.uconn.edu/job-search/">Job Search</a></li> 
+            <li id="menu-item-1956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1956"><a href="https://career.uconn.edu/considering-graduate-school/">Considering Graduate School</a></li> 
+            <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a href="https://career.uconn.edu/career-fairs/">Career Fairs</a></li> 
+            <li id="menu-item-1955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1955"><a href="https://career.uconn.edu/careers-for-the-common-good/">Careers for the Common Good</a></li> 
+            <li id="menu-item-7300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7300"><a href="http://career.uconn.edu/work-at-ccd/">Work at the CCD</a></li> 
+           </ul>
+          </div> </li> 
+         <li id="menu-item-2065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2065"><a href="https://career.uconn.edu/graduate-students/">Graduate Students and Postdoctoral Scholars</a> 
+          <div class="sub-menu">
+           <ul class=""> 
+            <li id="menu-item-11957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11957"><a href="https://career.uconn.edu/graduate-students/academic-job-search-timetable/">Academic Job Search</a></li> 
+            <li id="menu-item-11960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11960"><a href="https://career.uconn.edu/graduate-students/career-prep-checklist/">Career Prep Checklist</a></li> 
+            <li id="menu-item-11963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11963"><a href="https://career.uconn.edu/graduate-students/job-search-checklist/">Job Search Checklist</a></li> 
+            <li id="menu-item-11964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11964"><a href="https://career.uconn.edu/build-your-network/">Build Your Network</a></li> 
+            <li id="menu-item-11965" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11965"><a href="https://career.uconn.edu/interviewing/">Interviewing</a></li> 
+            <li id="menu-item-23216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23216"><a href="https://career.uconn.edu/internships-and-coops/graduate-students/">Internships</a></li> 
+            <li id="menu-item-11969" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11969"><a href="https://career.uconn.edu/career-fairs/">Career Fairs</a></li> 
+            <li id="menu-item-23209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23209"><a href="https://login.uconn.edu/cas/login?service=http%3A%2F%2Fvphd.career.uconn.edu%2Fwp-login.php%3Fprivacy%3D1%26redirect_to%3Dhttp%253A%252F%252Fvphd.career.uconn.edu%252F">Versatile PhD</a></li> 
+           </ul>
+          </div> </li> 
+         <li id="menu-item-23210" class="menu-item menu-item-type-post_type_archive menu-item-object-resource menu-item-23210"><a href="https://career.uconn.edu/resources/">Resources</a></li> 
+         <li id="menu-item-2066" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2066"><a href="https://career.uconn.edu/employers/">Employers</a> 
+          <div class="sub-menu">
+           <ul class=""> 
+            <li id="menu-item-1967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1967"><a href="https://career.uconn.edu/employers/post-a-position/">Post a Position</a></li> 
+            <li id="menu-item-1966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1966"><a href="https://career.uconn.edu/recruit-on-campus/">Recruit on Campus</a></li> 
+            <li id="menu-item-1965" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1965"><a href="https://career.uconn.edu/attend-a-career-fair/">Attend a Career Fair</a></li> 
+            <li id="menu-item-1980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1980"><a href="https://career.uconn.edu/employers/host-an-internship-or-co-op/">Host an Internship or Co-op</a></li> 
+            <li id="menu-item-23212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23212"><a href="http://career.uconn.edu/employer-resources-2/">Employer Guides, Resources, &amp; Policies</a></li> 
+            <li id="menu-item-2968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2968"><a href="/login.php?role=guest">Become a Guest Contributor</a></li> 
+           </ul>
+          </div> </li> 
+         <li id="menu-item-2341" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2341"><a href="#">About Us</a> 
+          <div class="sub-menu">
+           <ul class=""> 
+            <li id="menu-item-3643" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3643"><a href="https://career.uconn.edu/our-mission/">Our Mission</a></li> 
+            <li id="menu-item-2344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2344"><a href="https://career.uconn.edu/staff/">Staff</a></li> 
+            <li id="menu-item-2343" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2343"><a href="https://career.uconn.edu/contact/">Contact</a></li> 
+           </ul>
+          </div> </li> 
+         <li id="menu-item-23213" class="menu-item-last menu-item menu-item-type-post_type_archive menu-item-object-event menu-item-23213"><a href="https://career.uconn.edu/events/">Events</a></li> 
+        </ul>
+       </div>
+       <!-- Rendered in 0.04392 seconds and cached. --> 
+      </div>
+      <!-- #access --> 
+     </div>
+     <!-- #masthead_inner --> 
+    </div>
+    <!-- #masthead --> 
+   </div>
+   <!-- #header --> 
+   <div id="main"> 
+    <div id="container"> 
+     <div id="content" role="main" data-customizable> 
+      <div id="post-347" class="clearfix post-347 page type-page status-publish hentry has_thumbnail"> 
+       <h1 class="entry-title">Get Involved &amp; Build Skills</h1> 
+       <div class="entry-content"> 
+        <div style="float: right;background: #d8e5f3;width: 300px;padding: 10px;margin: 10px"> 
+         <p><img class="aligncenter size-medium wp-image-10637" src="https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/7/2015/12/Julia-Head-shot-21-300x200.jpg?v=10637" alt="Julia Head shot 2" width="300" height="200"></p> 
+         <p>Check out how other UConn students have been involved on and off campus and built their skills through the <a href="http://career.uconn.edu/blog/?ctag%5B%5D=student-success-story">“Meet Student Success Stories Blog”</a></p> 
+        </div> 
+        <p>Participating in a job shadow, informational interview, club or organization, community outreach, an internship or a co-op will give you the opportunity and framework to discover, build, and develop skills needed for your after college choices, whether it be graduate school, service or work. Below are some ways to start this process at UConn and add some critical skills to your repertoire.</p> 
+        <p><span style="color: #000080;font-size: 12pt"><strong>Community Outreach, Service Learning Courses, and Volunteering</strong>:</span></p> 
+        <p>Giving back to the community is a low risk, high benefit way to interact with like-minded individuals, as you can meet people both on and off campus who are attracted to the idea of helping. You may become more proficient in a skill set or even learn a new one while contributing to a project or with an individual seeking assistance. To find valuable outreach options at UConn, consider the <a href="http://www.volunteer.uconn.edu/">Office of Community Outreach</a>, taking a <a href="http://service-learning.uconn.edu/">Service Learning Course</a>, or finding a volunteer opportunity on your own or with a club you have joined.</p> 
+        <h3><span style="color: #000080"><strong>Student Organizations and Clubs</strong>:</span></h3> 
+        <p>By <a href="http://www.getinvolved.uconn.edu/">joining a club</a> and becoming an active member, you can develop transferable skills through projects and be identified by other members as a potential future leader of the organization. Transferable skills are skills you can gain through one experience, but apply to many future opportunities. Some of the transferable skills you may gain through club involvement include time management, critical thinking, problem solving, teamwork, and public speaking.</p> 
+        <h3><span style="color: #000080"><strong>Study Abroad:</strong></span></h3> 
+        <p>Experiencing another culture through <a href="http://abroad.uconn.edu/students/prospective/types-of-programs/">education abroad</a>, is a great opportunity to broaden your worldview and build your understanding of other cultures.&nbsp; Employers and graduate schools value students who appreciate diversity and are able to communicate and work as a team with people from a variety of backgrounds.<strong>&nbsp;</strong></p> 
+        <h3><span style="color: #000080"><strong>Informational Interviews and Job Shadows</strong>:</span></h3> 
+        <p>Getting exposed to an environment you believe you might want to work in after graduation is an ideal way to help you explore your options.</p> 
+        <p>An <a href="http://cdn.uconnectlabs.com/wp-content/uploads/sites/7/2014/07/PG-INformational-Interview-and-Job-Shadow_AC.pdf">informational interview</a> is when you set up a time to meet with someone at a place of employment to discuss that person’s role as well as the culture of the organization. These sessions typically last about an hour.</p> 
+        <p>A <a href="http://cdn.uconnectlabs.com/wp-content/uploads/sites/7/2014/07/PG-INformational-Interview-and-Job-Shadow_AC.pdf">job shadow</a> is an extension of the informational interview, as you would stay longer and be introduced to a half or full day of work at the site. Meeting people through this method can prove invaluable when looking to build professional connections.</p> 
+        <h3><span style="color: #000080"><strong>Part-time Jobs, Internships, and Co-ops</strong>:</span></h3> 
+        <p>Choosing to work while in college is a decision that can have a positive impact beyond your time at UConn. Gaining work experience can help you develop transferable skills and provide exposure to different work environments.</p> 
+        <p><a href="http://www.studentemployment.uconn.edu/">Part-time jobs</a> are plentiful and many are open to students with little to no prior work experience. They are an introduction to life as an employee, and many have tracks that support the student staying with the same department year after year.</p> 
+        <p><a href="http://www.interncoop.uconn.edu/">Internships and Co-ops</a> are elevated, as they not only need a student to work on a task, the student will be offered experiences that can increase their knowledge beyond the day-to-day work assignments for the employer. UConn students can find internships on and off campus during the summer and semester; co-op students are usually at least a sophomore or junior, take a semester to work full-time but don’t take classes, yet are considered full-time students. Students often fine tune practical skills while also learn about professional work environments and culture.</p> 
+       </div>
+       <!-- .entry-content --> 
+      </div>
+      <!-- #post-## --> 
+     </div>
+     <!-- #content --> 
+    </div>
+    <!-- #container --> 
+    <div id="primary" class="widget-area primary-side-widget-area  floating-layout" role="complementary"> 
+     <span class="screen-reader-text"><h2>Sidebar</h2></span> 
+     <ul class="xoxo"> 
+      <li id="uc_join_us_widget-3" class="ribbon-widget-container widget_uc_join_us_widget">
+       <div class="widget-wrapper">
+        <h3 class="no-lettering widget-title">Join Us</h3> 
+        <div class="textwidget"> 
+         <a href="http://twitter.com/UConnCCD" class="twitter" target="_blank" title="Follow Us on Twitter"><span class="screen-reader-text">Follow Us on Twitter</span><span class="icon icon-twitter-u" aria-hidden="true"></span></a>
+         <a href="http://www.facebook.com/UConnCCD" class="facebook" target="_blank" title="Follow Us on Facebook"><span class="screen-reader-text">Follow Us on Facebook</span><span class="icon icon-facebook-u" aria-hidden="true"></span></a>
+         <a href="http://www.linkedin.com/groups/UConn-Center-Career-Development-7440623?trk=my_groups-b-grp-v" class="linkedin" target="_blank" title="Follow Us on LinkedIn"><span class="screen-reader-text">Follow Us on LinkedIn</span><span class="icon icon-linkedin-u" aria-hidden="true"></span></a>
+         <a href="http://instagram.com/uconnccd" class="instagram" target="_blank" title="Follow Us on Instagram"><span class="screen-reader-text">Follow Us on Instagram</span><span class="icon icon-instagram" aria-hidden="true"></span></a>
+         <a href="http://pinterest.com/UConnCCD" class="pinterest" target="_blank" title="Follow Us on Pinterest"><span class="screen-reader-text">Follow Us on Pinterest</span><span class="icon icon-pinterest-u" aria-hidden="true"></span></a> 
+        </div> 
+       </div></li>
+      <li id="eventscalendarwidget-3" class="widget-container widget-container-inline widget_eventscalendarwidget">
+       <div class="widget-wrapper">
+        <h3 class="widget-title"><i class="icon-calendar-2" aria-hidden="true"></i><a href="https://career.uconn.edu/events/">Upcoming Events</a>
+         <div class="events-datepicker-button">
+          <span class="icon icon-calendar" aria-hidden="true"></span>
+          <input type="hidden" id="events-datepicker">Select a Date
+         </div></h3> 
+        <div class="events-list-wrapper"> 
+         <ul class="events-list main"> 
+          <li class="event_item"> 
+           <div class="month">
+            October
+           </div> <a href="https://career.uconn.edu/events/2017/10/03/virtual-pharmacy-school-fair-2/" class="popup "> 
+            <div class="info"> 
+             <div class="day_box" data-month="Oct">
+              03
+             </div> 
+             <div class="title">
+              Virtual Pharmacy School Fair
+             </div> 
+             <div class="event_date">
+              Tue, Oct 3 at 12am - 11:59pm
+             </div> 
+            </div> </a> </li> 
+          <li class="event_item"> <a href="https://career.uconn.edu/events/2017/10/03/social-work-grad-school-virtual-fair-3/" class="popup "> 
+            <div class="info"> 
+             <div class="day_box" data-month="Oct">
+              03
+             </div> 
+             <div class="title">
+              Social Work Grad School Virtual Fair
+             </div> 
+             <div class="event_date">
+              Tue, Oct 3 at 12am - 11:59pm
+             </div> 
+            </div> </a> </li> 
+          <li class="event_item"> <a href="https://career.uconn.edu/events/2017/10/03/biomed-virtual-grad-school-fair-8/" class="popup "> 
+            <div class="info"> 
+             <div class="day_box" data-month="Oct">
+              03
+             </div> 
+             <div class="title">
+              Biomed Virtual Grad School Fair
+             </div> 
+             <div class="event_date">
+              Tue, Oct 3 at 12am - 11:59pm
+             </div> 
+            </div> </a> </li> 
+          <li class="event_item"> <a href="https://career.uconn.edu/events/2017/10/04/linkedin-making-your-profile-work-for-you-2/" class="popup "> 
+            <div class="info"> 
+             <div class="day_box" data-month="Oct">
+              04
+             </div> 
+             <div class="title">
+              LinkedIn Making Your Profile Work For You
+             </div> 
+             <div class="event_date">
+              Wed, Oct 4 at 11am - 12pm
+             </div> 
+            </div> </a> </li> 
+          <li class="event_item"> <a href="https://career.uconn.edu/events/2017/10/05/acing-the-interview-14/" class="popup "> 
+            <div class="info"> 
+             <div class="day_box" data-month="Oct">
+              05
+             </div> 
+             <div class="title">
+              Acing the Interview
+             </div> 
+             <div class="event_date">
+              Thu, Oct 5 at 3pm - 4pm
+             </div> 
+            </div> </a> </li> 
+         </ul> 
+        </div> 
+        <div id="more_events"> 
+         <a href="https://career.uconn.edu/events/" id="more_events_link" class="button-more">See more events »</a> 
+        </div> 
+       </div></li>
+      <li id="uc_jobs_list_widget-2" class="widget-container widget-container-inline widget_uc_jobs_list_widget">
+       <div class="widget-wrapper">
+        <a href="https://career.uconn.edu/companies/"><h3 class="widget-title"><i class="icon-suitcase" aria-hidden="true"></i>Featured Internships &amp; Jobs</h3></a> 
+        <div class="textwidget"> 
+         <ul> 
+          <li> <a href="https://career.uconn.edu/companies/connecticut-early-childhood-alliance/jobs/" style="text-decoration: none;"> <img src="https://d3irk3g7luh32r.cloudfront.net/wp-content/uploads/sites/7/2016/11/CECA-logo-100x36.jpg?v=18455" alt="Connecticut Early Childhood Alliance"><strong>Connecticut Early Childhood Alliance</strong><br>View All Jobs </a> </li> 
+         </ul> 
+         <a href="https://career.uconn.edu/companies/" class="more_jobs button-more">See All Jobs</a> 
+        </div> 
+       </div></li> 
+     </ul> 
+    </div>
+    <!-- #primary .widget-area --> 
+   </div>
+   <!-- #main --> 
+  </div>
+  <!-- #wrapper --> 
+  <div id="bottom-widget-area" class="widget-area horizontal-widget-area"> 
+  </div> 
+  <div id="footer" role="contentinfo"> 
+   <div id="footer-logo"> 
+   </div> 
+   <div id="footer-links"> 
+    <div id="footer-links-first-col"> 
+     <p> Office Hours: 8AM – 5PM<br> Resume Critique Hours: 10AM – 5PM<br> Same-Day Career Coaching Hours: 12PM – 5PM<br> <span style="font-style: italic;font-size: 12px;">* These hours are applicable only during academic semesters. Please call for scheduling during breaks.</span> </p> 
+    </div> 
+    <div id="footer-links-second-col"> 
+     <h2>Contact</h2> 
+     <p> (860) 486-3013<br> career@uconn.edu </p> 
+    </div> 
+    <div id="footer-links-third-col"> 
+     <p> Center for Career Development<br> Wilbur Cross Building, Rm 202<br> 233 Glenbrook Road U-4051<br> Storrs, CT 06269<br> </p> 
+    </div> 
+   </div> 
+   <div id="colophon"> 
+    <div id="colophon_inner"> 
+     <div id="site-info">
+      <span id="content_copy">Content Copyright © 2017 University of Connecticut</span>
+      <span id="platform_copy">Platform and Design Copyright © 2017 uConnect, Inc.</span>
+     </div>
+     <!-- #site-info --> 
+     <div id="site-generator"> 
+      <a href="http://www.gouconnect.com/" title="uConnect Labs | The Future is On Campus" rel="generator" target="_blank">Powered by uConnect</a> 
+     </div>
+     <!-- #site-generator --> 
+    </div> 
+   </div>
+   <!-- #colophon --> 
+  </div>
+  <!-- #footer --> 
+  <div class="full-screen-popup-overlay" style="display: none;"></div> 
+  <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201740"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"1469987199921887"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script> 
+  <script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script> 
+  <div id="fb-root"></div>
+  <iframe style="display: none;" width="0" height="0" src="https://uconn-csm.symplicity.com/students/" sandbox="allow-same-origin allow-scripts"></iframe>
+  <script>jQuery.cookie('symplicity_session_init', true, {path: '/'});</script>
+  <script type="text/javascript">
+/* <![CDATA[ */
+var UC_EVENTS = {"ajax_url":"https:\/\/career.uconn.edu\/admin\/admin-ajax.php?max_events=5&no_found_rows=1","allEvents":"{\"2017\":{\"10\":{\"3\":3,\"4\":1,\"5\":1,\"6\":2,\"9\":2,\"10\":2,\"11\":4,\"12\":5,\"16\":1,\"17\":3,\"18\":4,\"23\":1,\"24\":2,\"25\":5},\"11\":{\"1\":3,\"2\":1,\"6\":1,\"8\":3,\"9\":2,\"13\":2,\"14\":1,\"15\":1},\"12\":{\"7\":1}}}"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="//d3irk3g7luh32r.cloudfront.net/_min/wp-includes/js/jquery/ui/core.min.js,wp-includes/js/jquery/ui/widget.min.js,wp-includes/js/jquery/ui/mouse.min.js,wp-includes/js/jquery/ui/resizable.min.js,wp-includes/js/jquery/ui/draggable.min.js,wp-includes/js/jquery/ui/button.min.js,wp-includes/js/jquery/ui/position.min.js,wp-includes/js/jquery/ui/dialog.min.js,wp-content/themes/uConnect/js/uconnect.js,wp-includes/js/wp-embed.min.js,wp-includes/js/jquery/ui/datepicker.min.js,wp-content/plugins/uconnect-events-calendar-v2/js/uc-events-widget.js&amp;201768.0952704&amp;debug"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e519f5f4ff","applicationID":"29489731,65514181,28178706","transactionName":"M1UDYRYFCksCUkENWQofIFYQDQtWTEFUA1M=","queueTime":0,"applicationTime":193,"atts":"HxIAF14fGUU=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

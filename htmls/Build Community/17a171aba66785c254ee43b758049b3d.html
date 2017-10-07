@@ -1,0 +1,1818 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+ <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>How To Find Your Own Group Of Queer Friends | PRIDE.com</title> 
+  <meta name="mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-title" content="Pride"> 
+  <meta property="fb:app_id" content="1660320884278138"> 
+  <meta property="fb:page_id" content="858821697507267"> 
+  <link rel="shortcut icon" sizes="152x152" href="/sites/www.pride.com/themes/pride/images/apple-touch-icon-152.jpg"> 
+  <link rel="apple-touch-icon-precomposed" href="/sites/www.pride.com/themes/pride/images/apple-touch-icon-152.jpg"> 
+  <!--[if IE]><![endif]--> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="preconnect" href="//s7.addthis.com"> 
+  <link rel="preconnect" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//sadmin.brightcove.com"> 
+  <link rel="dns-prefetch" href="//s7.addthis.com"> 
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin=""> 
+  <link rel="dns-prefetch" href="//fonts.gstatic.com"> 
+  <link rel="dns-prefetch" href="//native.sharethrough.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="preconnect" href="//sadmin.brightcove.com"> 
+  <link rel="preconnect" href="//cdnapisec.kaltura.com"> 
+  <link rel="preconnect" href="//native.sharethrough.com"> 
+  <link rel="dns-prefetch" href="//cdnapisec.kaltura.com"> 
+  <script type="text/javascript">dataLayer = [{"drupalLanguage":"en","drupalCountry":"US","heremediaAuthor":"Briana Gonzalez","heremediaContributor":"Briana Gonzalez","heremediaContentType":"article","entityType":"node","entityBundle":"article","entityId":"79181","entityLabel":"How To Find Your Own Group Of Queer Friends","userUid":0}];</script> 
+  <meta property="fb:pages" content="858821697507267"> 
+  <link rel="shortlink" href="/node/79181"> 
+  <link rel="canonical" href="https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends"> 
+  <link rel="shortcut icon" href="https://www.pride.com/sites/www.pride.com/themes/pride/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <link rel="amphtml" href="https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends?amp"> 
+  <script type="text/javascript">
+
+  var PREBID_TIMEOUT = 500;
+
+  var referrer = 'none';
+  if (document.referrer) {
+    url = document.referrer;
+    referrer = url.match(/:\/\/(.[^/]+)/)[1];
+  }
+
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  googletag.slots = googletag.slots || {};
+  var browser_width= window.innerWidth && document.documentElement.clientWidth ? Math.min(window.innerWidth, document.documentElement.clientWidth) : window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+
+  /* pbjs.initAdserver will be called either when all bids are back, or
+   when the timeout is reached.
+   */
+  function initAdserver() {
+    if (pbjs.initAdserverSet) return;
+
+    googletag.cmd.push(function () {
+      pbjs.que.push(function () {
+        pbjs.setTargetingForGPTAsync();
+      });
+    });
+    pbjs.initAdserverSet = true;
+  }
+
+  // Load GPT when timeout is reached.
+  setTimeout(initAdserver, PREBID_TIMEOUT);
+
+  var pbjs = pbjs || {};
+  pbjs.que = pbjs.que || [];
+
+  // Load the Prebid Javascript Library Async. We recommend loading it immediately after
+  // the initAdserver() and setTimeout functions.
+  (function () {
+    var d = document;
+    var pbs = d.createElement("script");
+    pbs.type = "text/javascript";
+    pbs.src = '/sites/all/libraries/prebid/prebid.js';
+    var target = d.getElementsByTagName("head")[0];
+    target.insertBefore(pbs, target.firstChild);
+  })();
+
+  //load GPT library here
+  (function () {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+
+  pbjs.que.push(function () {
+      
+    param_article_leaderboard_sovrn = {tagid: '427617'};
+          
+    param_article_leaderboard_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342736'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_leaderboard = [320, 50];
+            
+        param_article_leaderboard_sovrn = {tagid: '427618'};
+                  
+        param_article_leaderboard_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362674'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_leaderboard = [320, 50];
+            
+        param_article_leaderboard_sovrn = {tagid: '427618'};
+                  
+        param_article_leaderboard_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362674'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_leaderboard = [[728, 90], [970, 90], [970, 60], [970, 66]];
+            
+        param_article_leaderboard_sovrn = {tagid: '427617'};
+                  
+        param_article_leaderboard_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342736'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_leaderboard = [[728, 90], [970, 250], [970, 90], [970, 60], [970, 66]];
+            
+        param_article_leaderboard_sovrn = {tagid: '427617'};
+                  
+        param_article_leaderboard_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342736'};
+                  
+    }
+            
+    param_article_bigbox_top_sovrn = {tagid: '427605'};
+        param_article_bigbox_top_sovrn_2 = {tagid: '427606'};
+          
+    param_article_bigbox_top_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342736'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_bigbox_top = [300, 250];
+                        
+        param_article_bigbox_top_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362674'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_bigbox_top = [300, 250];
+                        
+        param_article_bigbox_top_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362674'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_bigbox_top = [[300, 250], [300, 600]];
+                        
+        param_article_bigbox_top_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342736'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_bigbox_top = [[300, 250], [300, 600]];
+                        
+        param_article_bigbox_top_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342736'};
+                  
+    }
+            
+    param_article_bigbox_mid_sovrn = {tagid: '427607'};
+        param_article_bigbox_mid_sovrn_2 = {tagid: '427608'};
+          
+    param_article_bigbox_mid_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_bigbox_mid = [[300, 250], [300, 600]];
+                        
+        param_article_bigbox_mid_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_bigbox_mid = [[300, 250], [300, 600]];
+                        
+        param_article_bigbox_mid_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_bigbox_mid = [[300, 250], [300, 600]];
+                        
+        param_article_bigbox_mid_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_bigbox_mid = [[300, 250], [300, 600]];
+                        
+        param_article_bigbox_mid_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+          
+      
+      
+      
+        
+    param_article_latest_initial_right_sovrn = {tagid: '427609'};
+        param_article_latest_initial_right_sovrn_2 = {tagid: '427610'};
+          
+    param_article_latest_initial_right_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_latest_initial_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_initial_right_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_latest_initial_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_initial_right_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_latest_initial_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_initial_right_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_latest_initial_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_initial_right_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+            
+    param_article_latest_initial_left_sovrn = {tagid: '427611'};
+        param_article_latest_initial_left_sovrn_2 = {tagid: '427612'};
+          
+    param_article_latest_initial_left_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_latest_initial_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_initial_left_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_latest_initial_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_initial_left_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_latest_initial_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_initial_left_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_latest_initial_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_initial_left_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+            
+    param_article_latest_continuous_right_sovrn = {tagid: '427613'};
+        param_article_latest_continuous_right_sovrn_2 = {tagid: '427614'};
+          
+    param_article_latest_continuous_right_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_latest_continuous_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_continuous_right_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_latest_continuous_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_continuous_right_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_latest_continuous_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_continuous_right_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_latest_continuous_right = [[300, 250], [300, 600]];
+                        
+        param_article_latest_continuous_right_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+            
+    param_article_latest_continuous_left_sovrn = {tagid: '427615'};
+        param_article_latest_continuous_left_sovrn_2 = {tagid: '427616'};
+          
+    param_article_latest_continuous_left_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+        
+      
+    if(browser_width >= 1 ){
+        size_article_latest_continuous_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_continuous_left_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 481 ){
+        size_article_latest_continuous_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_continuous_left_rubicon = {accountId: '10748', siteId: '76880', zoneId: '362676'};
+                  
+    }
+    
+    if(browser_width >= 768 ){
+        size_article_latest_continuous_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_continuous_left_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+    
+    if(browser_width >= 992 ){
+        size_article_latest_continuous_left = [[300, 600], [300, 250]];
+                        
+        param_article_latest_continuous_left_rubicon = {accountId: '10748', siteId: '71956', zoneId: '342738'};
+                  
+    }
+      
+    var adUnits = [
+              
+      
+      {
+        code: 'dfp-ad-article_leaderboard',
+        sizes: size_article_leaderboard,
+        bids: [
+                              
+          {
+            bidder: 'sovrn',
+            params: param_article_leaderboard_sovrn            
+          }
+          
+          ,
+                    
+          {
+            bidder: 'rubicon',
+            params: param_article_leaderboard_rubicon            
+          }
+          
+          
+          
+        ]
+      }
+
+                
+      ,
+      {
+        code: 'dfp-ad-article_bigbox_top',
+        sizes: size_article_bigbox_top,
+        bids: [
+                              
+          {
+            bidder: 'sovrn',
+            params: param_article_bigbox_top_sovrn            
+          }
+                    
+,          {
+            bidder: 'sovrn',
+            params: param_article_bigbox_top_sovrn_2            
+          }
+          
+          ,
+                    
+          {
+            bidder: 'rubicon',
+            params: param_article_bigbox_top_rubicon            
+          }
+          
+          
+          
+        ]
+      }
+
+                
+      ,
+      {
+        code: 'dfp-ad-article_bigbox_mid',
+        sizes: size_article_bigbox_mid,
+        bids: [
+                              
+          {
+            bidder: 'sovrn',
+            params: param_article_bigbox_mid_sovrn            
+          }
+                    
+,          {
+            bidder: 'sovrn',
+            params: param_article_bigbox_mid_sovrn_2            
+          }
+          
+          ,
+                    
+          {
+            bidder: 'rubicon',
+            params: param_article_bigbox_mid_rubicon            
+          }
+          
+          
+          
+        ]
+      }
+
+                                                        
+      ,
+      {
+        code: 'dfp-ad-article_latest_initial_right',
+        sizes: size_article_latest_initial_right,
+        bids: [
+                              
+          {
+            bidder: 'sovrn',
+            params: param_article_latest_initial_right_sovrn            
+          }
+                    
+,          {
+            bidder: 'sovrn',
+            params: param_article_latest_initial_right_sovrn_2            
+          }
+          
+          ,
+                    
+          {
+            bidder: 'rubicon',
+            params: param_article_latest_initial_right_rubicon            
+          }
+          
+          
+          
+        ]
+      }
+
+                
+      ,
+      {
+        code: 'dfp-ad-article_latest_initial_left',
+        sizes: size_article_latest_initial_left,
+        bids: [
+                              
+          {
+            bidder: 'sovrn',
+            params: param_article_latest_initial_left_sovrn            
+          }
+                    
+,          {
+            bidder: 'sovrn',
+            params: param_article_latest_initial_left_sovrn_2            
+          }
+          
+          ,
+                    
+          {
+            bidder: 'rubicon',
+            params: param_article_latest_initial_left_rubicon            
+          }
+          
+          
+          
+        ]
+      }
+
+                              
+    ];
+
+    //add the adUnits
+    pbjs.addAdUnits(adUnits);
+
+    /* Request bids for the added ad units. If adUnits or adUnitCodes are
+     not specified, the function will request bids for all added ad units.
+     */
+    pbjs.requestBids({
+
+      /* The bidsBack function will be called when either timeout is
+       reached, or when all bids come back, whichever happens sooner.
+       */
+      bidsBackHandler: function (bidResponses) {
+        initAdserver();
+
+      }
+    });
+
+  });
+
+googletag.cmd.push(function () {
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [320, 50])
+  .addSize([481, 1], [320, 50])
+  .addSize([768, 1], [[728, 90], [970, 90], [970, 60], [970, 66]])
+  .addSize([992, 1], [[728, 90], [970, 250], [970, 90], [970, 60], [970, 66]])
+  .build();
+googletag.slots["article_leaderboard"] = googletag.defineSlot("/6850/here.pride/article/leaderboard", [[728, 90], [970, 250], [970, 90], [970, 60], [970, 66]], "dfp-ad-article_leaderboard")
+  .addService(googletag.pubads())
+  .setTargeting("pos", "top")
+  .defineSizeMapping(mapping);
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [300, 250])
+  .addSize([481, 1], [300, 250])
+  .addSize([768, 1], [[300, 250], [300, 600]])
+  .addSize([992, 1], [[300, 250], [300, 600]])
+  .build();
+googletag.slots["article_bigbox_top"] = googletag.defineSlot("/6850/here.pride/article/bigbox_top", [[300, 250], [300, 600]], "dfp-ad-article_bigbox_top")
+  .addService(googletag.pubads())
+  .setTargeting("pos", "top")
+  .defineSizeMapping(mapping);
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [[300, 250], [300, 600]])
+  .addSize([481, 1], [[300, 250], [300, 600]])
+  .addSize([768, 1], [[300, 250], [300, 600]])
+  .addSize([992, 1], [[300, 250], [300, 600]])
+  .build();
+googletag.slots["article_bigbox_mid"] = googletag.defineSlot("/6850/here.pride/article/bigbox_mid", [[300, 250], [300, 600]], "dfp-ad-article_bigbox_mid")
+  .addService(googletag.pubads())
+  .setTargeting("pos", "right")
+  .defineSizeMapping(mapping);
+
+googletag.slots["article_wallpaper"] = googletag.defineSlot("/6850/here.pride/article/wallpaper", [1, 1], "dfp-ad-article_wallpaper")
+  .addService(googletag.pubads())
+  .setTargeting("pos", "bottom");
+
+googletag.slots["article_interstitial"] = googletag.defineOutOfPageSlot("/6850/here.pride/article/interstitial", "dfp-ad-article_interstitial")
+  .addService(googletag.pubads());
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [300, 250])
+  .addSize([481, 1], [300, 250])
+  .addSize([768, 1], [300, 250])
+  .addSize([992, 1], [300, 250])
+  .build();
+googletag.slots["article_native_1"] = googletag.defineSlot("/6850/here.pride/article/native_1", [300, 250], "dfp-ad-article_native_1")
+  .addService(googletag.pubads())
+  .setTargeting("strnativekey", "AWP3MqHxX6qAGRWkMfmsZPRU")
+  .defineSizeMapping(mapping);
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [300, 250])
+  .addSize([481, 1], [300, 250])
+  .addSize([768, 1], [300, 250])
+  .addSize([992, 1], [300, 250])
+  .build();
+googletag.slots["article_native_2"] = googletag.defineSlot("/6850/here.pride/article/native_2", [300, 250], "dfp-ad-article_native_2")
+  .addService(googletag.pubads())
+  .setTargeting("strnativekey", "z6pvBvUykfio1XprLeot2ELq")
+  .defineSizeMapping(mapping);
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [[300, 250], [300, 600]])
+  .addSize([481, 1], [[300, 250], [300, 600]])
+  .addSize([768, 1], [[300, 250], [300, 600]])
+  .addSize([992, 1], [[300, 250], [300, 600]])
+  .build();
+googletag.slots["article_latest_initial_right"] = googletag.defineSlot("/6850/here.pride/article/latest_initial_right", [[300, 250], [300, 600]], "dfp-ad-article_latest_initial_right")
+  .addService(googletag.pubads())
+  .setTargeting("strnativekey", "4hfR4LYaESek6Jkg9KsTRArx")
+  .defineSizeMapping(mapping);
+
+var mapping = googletag.sizeMapping()
+  .addSize([1, 1], [[300, 600], [300, 250]])
+  .addSize([481, 1], [[300, 600], [300, 250]])
+  .addSize([768, 1], [[300, 600], [300, 250]])
+  .addSize([992, 1], [[300, 600], [300, 250]])
+  .build();
+googletag.slots["article_latest_initial_left"] = googletag.defineSlot("/6850/here.pride/article/latest_initial_left", [[300, 600], [300, 250]], "dfp-ad-article_latest_initial_left")
+  .addService(googletag.pubads())
+  .defineSizeMapping(mapping);
+
+  googletag.pubads().enableSingleRequest();
+  googletag.pubads().collapseEmptyDivs();
+  googletag.pubads().setTargeting("referrer",referrer);
+  googletag.pubads().setTargeting("advert_friendly", "1");
+
+  googletag.pubads().setTargeting("cat", ["lesbian","bisexual","queer"]);
+  googletag.pubads().setTargeting("title", "how_find_your_own_group_queer_friends");
+  googletag.pubads().setTargeting("aid", "79181");
+  googletag.enableServices();
+
+});
+
+</script> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="http://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends"> 
+  <meta property="og:title" content="How To Find Your Own Group Of Queer Friends"> 
+  <meta property="og:updated_time" content="2015-10-12T14:14:49-04:00"> 
+  <meta property="og:image" content="https://www.pride.com/sites/www.pride.com/files/2015/10/12/womenx900.jpg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:site" content="TheAdvocateMag"> 
+  <meta name="twitter:site:id" content="21692297"> 
+  <meta name="twitter:creator" content="pride_site"> 
+  <meta name="twitter:creator:id" content="21692297"> 
+  <meta name="twitter:title" content="How To Find Your Own Group Of Queer Friends"> 
+  <meta property="article:published_time" content="2015-10-12T14:14:49-04:00"> 
+  <meta property="article:modified_time" content="2015-10-12T14:14:49-04:00"> 
+  <script type="application/ld+json">{ "@context": "http://schema.org", "@type": "NewsArticle", "mainEntityOfPage": "https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends", "headline": "How To Find Your Own Group Of Queer Friends", "image": {  "@type": "ImageObject",  "url": "https://www.pride.com/sites/www.pride.com/files/styles/amp_metadata_content_image_min_696px_wide/public/2015/10/12/womenx900.jpg?itok=JaxU_dU-",  "width": "696",  "height": "522" }, "datePublished": "2015-10-12T14:14:49-04:00", "dateModified": "2015-10-12T14:14:49-04:00", "author": {  "@type": "Person",  "name": "Briana Gonzalez" }, "publisher": {  "@type": "Organization",  "name": "PRIDE.com",  "logo": {  "@type": "ImageObject",  "url": "https://www.pride.com/sites/www.pride.com/files/styles/amp_metadata_logo_600x60/public/2017/07/20/prideamplogo.gif?itok=0wkRXwik",  "width": "178",  "height": "60"  } }, "description": "", "articleBody": "Something all baby gays experience after coming out is going from being a closeted queer person with a bunch of straight friends to an out queer person with little or no queer friends. Shows like The L word, Feminin/Feminin and Lip Service make it appear as though all hot dykes have a large, close knit group of gorgeous lesbian friends, which makes us all feel like we should too.  This is an unfortunate depiction to feed young, out women, since that’s basically the opposite of our lives. Having a full-time job and going out after work with your coworkers isn’t the magic recipe for cultivating a queer group of babes, unless you happen to work at a lesbian focused company and your girlfriend is a club photographer. But if that’s not your reality, there’s no harm in thinking out of the box, and exploring how to get more exposure to queer women, so you can find an L Word group of your own.Join a class that has some sort of queer focus.  A great resource is meetup.com, an online hub for neighborhood meetups, which allows you to filter by location, and anything you’re interested in. Searches like LGBT, queer and lesbian are good jumping off points, and if you’re underwhelmed with the groups offered in your area, you can always start your own (and then promote it on the HER feed, so more people know about it)!Get friendly at bars.  Although bars can be both the best and worst place to find sexual partners/girlfriends, they can also be a great place to find friends; you just need to know who to look for. If your gaydar gets triggered, make sure to stay away from any queer women who seem suuuper drunk, combative or immature, and approach queer women who seem more reserved, in a smaller group of people, and someone drinking slowly. A few places where you can start conversations: in the bathroom line, buying drinks, outside with the smokers, around the pool table (or whatever game thing they have at the bar).Volunteer at your local LGBT Community Center.  Volunteering is always worth your time, as it feeds your soul while giving back to a community, but it’s also a great place to network and meet people. Working at any LGBT based non-profit center or program will allow you to be in contact with other queer women in your area who are also interested in some of the same things as you are.Go to lesbian events around town.  Most cities in the US don’t have lesbian bars. I live in San Francisco and even here, we have 0 dedicated dyke bars (RIP The Lexington), but everywhere has girl parties. Make it a point to go out to the lesbian parties (when clubs host lesbian nights) around town and any and all daytime events that involve queer women; everything from bookstore readings to roller derby. Exploring new things while also exposing yourself to more queer women will pay off.Get online.  It may sound insane, but dating apps are a good place to find friends too. Although all these women are online to find women to date/fuck/whatever, it’s highly unlikely that these women are going to be annoyed by you hitting them up to hang out. A good way to enter into that is looking for several women who look like your type of friend and send a message with something as simple as, “Hi. I saw your profile on here and you seemed cool, and I think we could be friends. Would you be interested in coming to a queer meetup?” If they say yes, let them know a place and time, and sometime in your near future, you’ll have a bunch of queer women that choose to meet up with you and get to know each other!BUT nothing will happen unless you get their numbers and text them to hang!  This is integral. Unless you reach out and make that move, there’s no way to control your queer friend group destiny. You have to make it happen, so start making new friends, one text at a time!" }</script> 
+  <script type="text/javascript">
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "11464276" });
+
+(function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script> 
+  <noscript> &lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;amp;c2=11464276&amp;amp;cv=2.0&amp;amp;cj=1"&gt; 
+  </noscript> 
+  <!-- True Anthem script --> 
+  <script type="text/javascript">
+    (function (w, d) {
+        var s1 = d.getElementsByTagName('script')[0],
+            s = d.createElement('script'),
+            cid = '510';
+        s.src = '//tru.am/scripts/ta-pagesocial-sdk.js';
+        if (s.addEventListener) {
+            s.addEventListener('load', function () {
+                w.TRUE_ANTHEM.configure(cid);
+            }, false);
+        } else {
+            s.onreadystatechange = function () {
+                if (s.readyState in {loaded: 1, complete: 1}) {
+                    s.onreadystatechange = null;
+                    w.TRUE_ANTHEM.configure(cid);
+                }
+            };
+        }
+        s1.parentNode.insertBefore(s, s1);
+    }(window, document));
+</script> 
+  <!-- End True Anthem script --> 
+  <!-- Lotame script --> 
+  <script type="text/javascript" src="https://tags.crwdcntrl.net/c/6978/cc.js?ns=_cc6978" id="LOTCC_6978"></script> 
+  <script type="text/javascript" language="javascript">_cc6978.bcp();</script> 
+  <!-- End Lotame script --> 
+  <!-- GetAdmiral script --> 
+  <script>(function(a,b,c,d,e){e=a.createElement(b);a=a.getElementsByTagName(b)[0];e.async=1;e.src=c;a.parentNode.insertBefore(e,a)})(document,'script','//receptivereaction.com/246200ca9b0a6c2082693d0b6f9d0d3faa93d66923a64fefba653f0f1d8cbcd6ea34d6d4428372734c77ff1116424000bef2e6d806a1d06d5e31157b2831');</script> 
+  <!-- End GetAdmiral script --> 
+  <link type="text/css" rel="stylesheet" href="/sites/www.pride.com/files/advagg_css/css__4VmTBcuCQVWmyXKc6CRd3iqHIztQo3vQGgP2GRU4XcQ__PgyYPqJdRetuP0g8PR-EYJ4ryLfN2zyOCInLCCeuhWc__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="/sites/www.pride.com/files/advagg_css/css__ZjjE9Ns0fy470FRalqixITg-k7vJk_7fXjHL3HaDc8w__7szRNIWs1Lh82brwXijBS-_DNe4hT4UDTwxRQXfQG4w__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.css" media="all"> 
+  <!--[if lt IE 8]>
+<link type="text/css" rel="stylesheet" href="/sites/www.pride.com/files/advagg_css/css__8nh7ZZMpsZIXQKyk-b7qmtKChIgGUlgt0fMfe6P8kDc__WwdPWtQ37n5PhTUzshsj-X27EbYTSfnbXn6keNZjecY__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.css" media="all" />
+<![endif]--> 
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans+Condensed:300,700italic,700" media="all"> 
+  <link type="text/css" rel="stylesheet" href="/sites/www.pride.com/files/advagg_css/css__1Mi24oee0UoAzNDrrSdsPna8pRu3bAFtVviKVhmc6Yc__2DK-VxmawhJrftrqIkjoji50MDd5ed6qjhgci7M7H10__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.css" media="all"> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__ObFW6HxExtcIrJt-ZGldDO_rKhAsQtuHE51MEcHj8SE__IKNBhBzFbyNEYaTfT5Ofvh89rBOcePth5HaIzL14Mm8__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.migrateMute=true;jQuery.migrateTrace=false;
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__gol0uPTQZCl7vrHeL5M3WvlkNk-PPoeBkjAO9BRtPKU__gsAE_WnzUAzsV2xOATC8P87vTNXU930vX8UTEjNGWe4__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.createElement("picture");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__KeDHKL2WQclbfx5VOy2QfKhmTkWQrTZyoMmZRMgV8Vc__TuU8LtvZ_gR7yrMaDtKktBfUov6t50JRpLvDw8-vVN0__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript" src="https://sadmin.brightcove.com/js/BrightcoveExperiences.js"></script> 
+  <script type="text/javascript" src="//native.sharethrough.com/assets/tag.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var addthis_share={url:"https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends"}
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__Tf-78NpoVoLlLaIMdFd4t-zj2WpBD71T_6QZ95etiGk___zuDB_L_G6L7_-GkCJph5uuZR39oh5y2KxaS4EIi0aA__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var this_site=window.location.hostname.split(".");this_site=this_site[this_site.length-2];var sites={advocate:{pid:27514},out:{pid:27517},pride:{pid:31347},outtraveler:{pid:27520},gay:{pid:27527},hivplusmag:{pid:27530},heretv:{pid:27533}},site_ttf=sites[this_site];window._ttf=window._ttf||[];_ttf.push({pid:site_ttf.pid,lang:"en",slot:".articleStatus .textArticle > p, .newsBox .text > p",format:"inread",components:{skip:{delay:0}},avoidSlot:{slot:".media",dist:20},css:"margin: 0px auto 20px; max-width: 550px;"});(function(d){var js,s=d.getElementsByTagName('script')[0];js=d.createElement('script');js.async=true;js.src='//cdn.teads.tv/media/format.js';s.parentNode.insertBefore(js,s)})(window.document);
+//--><!]]>
+</script> 
+  <script type="text/javascript" async src="https://cdnapisec.kaltura.com/p/2197371/sp/219737100/embedIframeJs/uiconf_id/37028752/partner_id/2197371"></script> 
+  <script type="text/javascript" async src="https://cdnapisec.kaltura.com/p/2197371/sp/219737100/embedIframeJs/uiconf_id/38846222/partner_id/2197371"></script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__G2DDlSzKfKcOUBaynP_CaMEBw-yQiWW38NrmnfYiCqs__PpFcKA-14p8eYDpc1t32aDo1ZCxjZ2-U4E1GkFrRL7M__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{basePath:"\/",pathPrefix:"",ajaxPageState:{theme:"pride",theme_token:"rYyyIm0SeX7Bg9JCBT-PEbXgns6whoeV8-WH6k1m8G0",css:{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/picture\/picture_wysiwyg.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/libraries\/magnific-popup\/css\/magnific-popup.css":1,"sites\/all\/modules\/contrib\/media_gallery\/media_gallery.css":1,"sites\/all\/modules\/contrib\/media_gallery\/media_gallery.ie7.css":1,"https:\/\/fonts.googleapis.com\/css?family=Montserrat:400,700|Open+Sans+Condensed:300,700italic,700":1,"sites\/www.pride.com\/themes\/pride\/css\/bootstrap.min.css":1,"sites\/www.pride.com\/themes\/pride\/css\/jasny-bootstrap.min.css":1,"sites\/www.pride.com\/themes\/pride\/css\/salvattore.css":1,"sites\/www.pride.com\/themes\/pride\/css\/custom-bootstrap.css":1,"sites\/www.pride.com\/themes\/pride\/css\/charlton.css":1,"sites\/www.pride.com\/themes\/pride\/css\/override_admin_menu.css":1},js:{"sites\/all\/modules\/contrib\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/contrib\/picture\/picture.min.js":1,"sites\/www.pride.com\/modules\/features\/heremedia\/heremedia_article\/js\/salvattore.js":1,"sites\/all\/modules\/custom\/heremedia_fb\/js\/shares.js":1,"sites\/all\/libraries\/history.js\/scripts\/bundled\/html4+html5\/jquery.history.js":1,"sites\/all\/modules\/custom\/heremedia_infinite_scroll\/js\/infinite_scroll.js":1,"\/\/s7.addthis.com\/js\/300\/addthis_widget.js#pubid=ra-55c93dd3eed0db31":1,"sites\/www.pride.com\/modules\/features\/heremedia\/heremedia_media\/js\/custom.js":1,"public:\/\/google_tag\/google_tag.script.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery-migrate\/1\/jquery-migrate.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/admin_menu\/admin_devel\/admin_devel.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/www.pride.com\/modules\/features\/heremedia\/heremedia_article\/js\/quiztrack.js":1,"sites\/www.pride.com\/modules\/features\/heremedia\/heremedia_dfp\/js\/heremedia_dfp.js":1,"sites\/all\/libraries\/magnific-popup\/js\/jquery.magnific-popup.min.js":1,"sites\/all\/libraries\/sticky-ads\/jquery.sticky-kit.js":1,"sites\/www.pride.com\/modules\/features\/heremedia\/heremedia_dfp\/js\/moat-content.js":1,"https:\/\/sadmin.brightcove.com\/js\/BrightcoveExperiences.js":1,"\/\/native.sharethrough.com\/assets\/tag.js":1,"sites\/all\/modules\/custom\/heremedia_menu\/js\/heremedia_menu.js":1,"https:\/\/cdnapisec.kaltura.com\/p\/2197371\/sp\/219737100\/embedIframeJs\/uiconf_id\/37028752\/partner_id\/2197371":1,"https:\/\/cdnapisec.kaltura.com\/p\/2197371\/sp\/219737100\/embedIframeJs\/uiconf_id\/38846222\/partner_id\/2197371":1,"sites\/all\/modules\/contrib\/datalayer\/datalayer.js":1,"sites\/www.pride.com\/themes\/pride\/js\/bootstrap.min.js":1,"sites\/www.pride.com\/themes\/pride\/js\/jasny-bootstrap.min.js":1,"sites\/www.pride.com\/themes\/pride\/js\/scroll-header.js":1,"sites\/www.pride.com\/themes\/pride\/js\/out.js":1}},colorbox:{opacity:"0.85",current:"{current} of {total}",previous:"\u00ab Prev",next:"Next \u00bb",close:"Close",maxWidth:"98%",maxHeight:"98%",fixed:true,mobiledetect:true,mobiledevicewidth:"480px"},heremedia_ads:{enable:1,prebid_timeout:"500"},heremedia_fb:{fb_id:"1660320884278138",fb_token:"18d1bbea1ca83b6d3f4a2f374fcfd8ab"},arg:["node","79181"],heremedia_addthis:{url:"https:\/\/www.pride.com\/lesbian\/2015\/10\/12\/how-find-your-own-group-queer-friends"},urlIsAjaxTrusted:{"\/lesbian\/2015\/10\/12\/how-find-your-own-group-queer-friends":true},dataLayer:{languages:{en:{language:"en",name:"English","native":"English",direction:0,enabled:1,plurals:0,formula:"",domain:"",prefix:"",weight:0,javascript:""}},defaultLang:"en"},heremedia_dfp:{dfp_site:"article",continuous_right:"[[300, 250], [300, 600]]",continuous_right_ad_unit:"\/6850\/here.pride\/article\/latest_continuous_right",continuous_right_size:"size_article_latest_continuous_right",continuous_right_bids:{bidder:"rubicon",params: window['param_article_latest_continuous_right_rubicon'] },continuous_left:"[[300, 600], [300, 250]]",continuous_left_ad_unit:"\/6850\/here.pride\/article\/latest_continuous_left",continuous_left_size:"size_article_latest_continuous_left",continuous_left_bids:{bidder:"rubicon",params: window['param_article_latest_continuous_left_rubicon'] },strnativekey:"4hfR4LYaESek6Jkg9KsTRArx"}});
+//--><!]]>
+</script> 
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+  <!--[if lt IE 9]>
+    <script src="/sites/www.pride.com/themes/pride/js/html5shiv.js"></script>
+    <script src="/sites/www.pride.com/themes/pride/js/respond.js"></script>
+  <![endif]--> 
+  <script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0050/6735.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1586530151593576');
+    fbq('track', "PageView");
+</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1586530151593576&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-79181 node-type-article"> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-K5RNFPW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas"> 
+   <ul class="nav navmenu-nav out">
+    <li class="0 first"><a href="/identities">#Identities</a></li> 
+    <li class="1"><a href="/style">#Style</a></li> 
+    <li class="2"><a href="/taxonomy/term/15101/">#GoingOut</a></li> 
+    <li class="3"><a href="/gay-celebrities">#Celebs</a></li> 
+    <li class="4"><a href="/gay-music">#Music</a></li> 
+    <li class="5"><a href="/money">#Money</a></li> 
+    <li class="6"><a href="/gay-travel">#Travel</a></li> 
+    <li class="7"><a href="/hiv">#HIV</a></li> 
+    <li class="8 last"><a href="/first-person">#FirstPerson</a></li> 
+   </ul>
+   <ul class="nav navmenu-nav sites">
+    <li class="0 first"><a href="https://www.advocate.com" target="_blank">Advocate</a></li> 
+    <li class="1"><a href="https://www.out.com" target="_blank">Out</a></li> 
+    <li class="2"><a href="https://www.outtraveler.com" target="_blank">Out Traveler</a></li> 
+    <li class="3"><a href="https://www.hivplusmag.com" target="_blank">Plus</a></li> 
+    <li class="4 last"><a href="https://www.here.tv" target="_blank">Here TV</a></li> 
+   </ul>
+   <ul class="nav navmenu-nav order">
+    <li class="0 first"><a href="https://heremediamagazines.com/index.php" target="_blank">Subscribe</a></li> 
+    <li class="1"><a href="https://service.qfie.com/HERE/clsOUTLookup.asp?strAspReason=106&amp;strLookFormControl=1" target="_blank">Subscriber Services</a></li> 
+    <li class="2 last"><a href="/signup" class="order">Email Newsletter Signup</a></li> 
+   </ul>
+   <ul class="nav navmenu-nav terms">
+    <li class="0 first"><a href="/contact">Contact</a></li> 
+    <li class="1"><a href="https://www.heremedia.com/company/careers/" target="_blank">Career Opportunities</a></li> 
+    <li class="2"><a href="https://www.heremedia.com/sales/" target="_blank">Advertise With Us</a></li> 
+    <li class="3"><a href="https://www.heremedia.com/privacy-policy" target="_blank">Privacy Policy</a></li> 
+    <li class="4"><a href="https://www.heremedia.com/terms-of-use" target="_blank">Terms of Use</a></li> 
+    <li class="5 last"><a href="https://www.heremedia.com/legal-notice" target="_blank">Legal Notice</a></li> 
+   </ul> 
+   <ul class="nav navmenu-nav copyright"> 
+    <li>© 2017 Here Publishing Inc.<br> All Rights Reserved</li> 
+   </ul> 
+  </div> 
+  <div class="desktopHeader"> 
+   <div class="container topHeader"> 
+    <div class="magazines"> 
+    </div> 
+    <div class="navbar navbar-default"> 
+     <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <div class="topLogoHeader"> 
+      <a href="/"> <img src="https://www.pride.com/sites/www.pride.com/themes/pride/logo.png" class="mainLogo" alt=""> <img src="/sites/www.pride.com/themes/pride/images/pride-mobile.svg" class="mobileLogo" style="display:none;" alt="PRIDE"> </a> 
+     </div> 
+    </div> 
+    <div class="expand-trending"> 
+     <a class="icon-flame collapsed" href="#"><img src="/sites/www.pride.com/themes/pride/images/pride-logo-icon.gif" alt="Pride Expand"></a> 
+    </div> 
+    <div class="socialButtons"> 
+     <ul class="socialList"> 
+      <li class="searchBox"><a href="javascript: void(0);"><img src="/sites/www.pride.com/themes/pride/images/social-search.svg" width="29" height="20" alt="Search" class="search"> </a> 
+       <div class="searchForm"> 
+        <form action="/lesbian/2015/10/12/how-find-your-own-group-queer-friends" method="post" id="search-block-form" accept-charset="UTF-8">
+         <div>
+          <div class="container-inline"> 
+           <h2 class="element-invisible">Search form</h2> 
+           <div class="form-item form-type-textfield form-item-search-block-form"> 
+            <label class="element-invisible" for="edit-search-block-form--2">Search </label> 
+            <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text"> 
+           </div> 
+           <div class="form-actions form-wrapper" id="edit-actions">
+            <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+           </div>
+           <input type="hidden" name="form_build_id" value="form-bgT-A6IWl3zq4faxvFPkEWyV0bNJILAYVwGI9FNuxDY"> 
+           <input type="hidden" name="form_id" value="search_block_form"> 
+          </div> 
+         </div>
+        </form> 
+       </div> </li> 
+      <li class="fbButton"><a href="https://www.facebook.com/pridesite" target="_blank"><img src="/sites/www.pride.com/themes/pride/images/social-facebook.gif" width="29" height="20" alt="Facebook"></a></li> 
+      <li class="twButton"><a href="https://twitter.com/pride_site" target="_blank"><img src="/sites/www.pride.com/themes/pride/images/social-twitter.gif" width="29" height="20" alt="Twitter"></a></li> 
+      <li class="instaButton"><a href="https://www.instagram.com/pride_site/" target="_blank"><img src="/sites/www.pride.com/themes/pride/images/social-instagram.gif" width="29" height="20" alt="Instagram"></a></li> 
+      <li class="tumblrButton"><a href="http://pridesite.tumblr.com/" target="_blank"><img src="/sites/www.pride.com/themes/pride/images/social-tumblr.gif" width="29" height="20" alt="Tumblr"></a></li> 
+      <li class="youtubeButton"><a href="https://www.youtube.com/channel/UCUI3t8D47qQNFgqnTgcNsGg" target="_blank"><img src="/sites/www.pride.com/themes/pride/images/social-youtube.gif" width="29" height="20" alt="Tumblr"></a></li> 
+      <li class="mailButton"><a href="/signup"><img src="/sites/www.pride.com/themes/pride/images/social-mail.gif" width="29" height="20" alt="Mail"></a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="band"> 
+    <div class="container"> 
+     <!--TREND NAV BAR--> 
+     <div class="trendBar"> 
+      <ul> 
+       <li class="trend"><span>Editor's Pick</span></li> 
+       <li id="" class="yellow" style=""> <a href="/20-questions">#20Questions</a> </li> 
+       <li id="" class="teal" style=""> <a href="/biweek">#BiWeek</a> </li> 
+       <li id="" class="teal" style=""> <a href="/politics">#Politics</a> </li> 
+       <li id="" class="black" style=""> <a href="/activism">#Activism</a> </li> 
+       <li id="" class="red" style=""> <a href="/gay-movies">#Movies</a> </li> 
+       <li id="" class="purple" style=""> <a href="/gay-music">#Music</a> </li> 
+       <li id="" class="orange" style=""> <a href="/orange-is-the-new-black">#OITNB</a> </li> 
+       <li id="" class="green" style=""> <a href="/netflix">#Netflix</a> </li> 
+       <li id="" class="yellow" style=""> <a href="/coming-out">#ComingOut</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container adWindow"> 
+   <div class="leaderboard"> 
+    <div id="block-heremedia-ads-article-leaderboard" class="block block-heremedia-ads"> 
+     <div class="content"> 
+      <div id="dfp-ad-article_leaderboard-wrapper" class="dfp-tag-wrapper"> 
+       <div id="dfp-ad-article_leaderboard" class="dfp-tag-wrapper"> 
+        <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_leaderboard");
+    });
+  </script> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="trendbar-overlay" style="display:none;"> 
+   <ul> 
+   </ul> 
+  </div> 
+  <div id="body-inner" class="container"> 
+   <a href="#" class="scrollToTop"></a> 
+   <div class="row"> 
+    <div class="col-xs-12 col-sm-12 col-md-12"> 
+     <div id="block-heremedia-article-2" class="block block-heremedia-article"> 
+      <div class="content"> 
+       <!--SKYBOXES--> 
+       <div class="row skyboxeSection"> 
+        <div id="node-161231" class="node node-article icon-article black col-md-2 col-sm-2 col-xs-12"> 
+         <div class="img"> 
+          <a href="/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas" class="featureImageBox">
+           <picture title="Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas "> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=fZWg5PCQ&amp;timestamp=1506968842 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_tablet_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=fQDheqcl&amp;timestamp=1506968842 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mini_tablet_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=TGb7BdGC&amp;timestamp=1506968842 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=A_JYxqY7&amp;timestamp=1506968842 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=A_JYxqY7&amp;timestamp=1506968842" alt="Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas" title="Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas "> 
+           </picture> </a> 
+          <div class="imgText">
+           <a href="/activism">#Activism</a>
+          </div> 
+         </div> 
+         <div class="text"> 
+          <div class="description">
+           <a href="/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas">Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas </a>
+          </div> 
+         </div> 
+        </div> 
+        <div id="node-146416" class="node node-agg icon-video icon-agg col-md-2 col-sm-2 col-xs-12"> 
+         <div class="img"> 
+          <a href="http://www.pride.com/netflixandchill/2016/9/02/kat-blaque-shares-movie-picks-netflix-chill-video" class="featureImageBox" target="_blank">
+           <picture title="Kat Blaque&amp;#039;s Netflix &amp;amp; Chill"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/04/19/kat-blaque-netflix-and-chill.jpg?itok=0jo7OKIp&amp;timestamp=1461104602 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_tablet_1x/public/2016/04/19/kat-blaque-netflix-and-chill.jpg?itok=2PQLDJMq&amp;timestamp=1461104602 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mini_tablet_1x/public/2016/04/19/kat-blaque-netflix-and-chill.jpg?itok=V6724RrK&amp;timestamp=1461104602 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2016/04/19/kat-blaque-netflix-and-chill.jpg?itok=0ZVFJrU4&amp;timestamp=1461104602 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2016/04/19/kat-blaque-netflix-and-chill.jpg?itok=0ZVFJrU4&amp;timestamp=1461104602" alt="This is a photo of Kat Blaque. " title="Kat Blaque&amp;#039;s Netflix &amp;amp; Chill"> 
+           </picture> </a> 
+          <div class="imgText">
+           <a href="https://www.pride.com/netflixandchill/2016/9/02/kat-blaque-shares-movie-picks-netflix-chill-video" target="_blank">#KatBlaque</a>
+          </div> 
+         </div> 
+         <div class="text"> 
+          <div class="description">
+           <a href="http://www.pride.com/netflixandchill/2016/9/02/kat-blaque-shares-movie-picks-netflix-chill-video" target="_blank">Kat Blaque's Netflix &amp; Chill</a>
+          </div> 
+         </div> 
+        </div> 
+        <div id="node-151056" class="node node-agg icon-agg col-md-2 col-sm-2 col-xs-12"> 
+         <div class="img"> 
+          <a href="https://www.pride.com/authors/taylor-henderson" class="featureImageBox" target="_blank">
+           <picture title="Culture &amp;amp; Entertainment"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2017/07/31/19105692_10154652587307596_3525584184981509690_n_0.jpg?itok=9rLjBmbW&amp;timestamp=1501539273 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_tablet_1x/public/2017/07/31/19105692_10154652587307596_3525584184981509690_n_0.jpg?itok=wC2XHf25&amp;timestamp=1501539273 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mini_tablet_1x/public/2017/07/31/19105692_10154652587307596_3525584184981509690_n_0.jpg?itok=d4qzPcSq&amp;timestamp=1501539273 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2017/07/31/19105692_10154652587307596_3525584184981509690_n_0.jpg?itok=jGffX3S_&amp;timestamp=1501539273 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2017/07/31/19105692_10154652587307596_3525584184981509690_n_0.jpg?itok=jGffX3S_&amp;timestamp=1501539273" alt="taylor-henderson-pride" title="Culture &amp;amp; Entertainment"> 
+           </picture> </a> 
+          <div class="imgText">
+           <a href="https://www.pride.com/authors/taylor-henderson" target="_blank">#TaylorHenderson</a>
+          </div> 
+         </div> 
+         <div class="text"> 
+          <div class="description">
+           <a href="https://www.pride.com/authors/taylor-henderson" target="_blank">Culture &amp; Entertainment</a>
+          </div> 
+         </div> 
+        </div> 
+        <div id="node-151061" class="node node-agg icon-agg col-md-2 col-sm-2 col-xs-12"> 
+         <div class="img"> 
+          <a href="http://www.pride.com/authors/zachary-zane" class="featureImageBox" target="_blank">
+           <picture title="Dating &amp;amp; Relationships"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2017/08/21/zachary-zane-headshot.jpg?itok=Cbv6xYjK&amp;timestamp=1503352365 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_tablet_1x/public/2017/08/21/zachary-zane-headshot.jpg?itok=WlpW9AZg&amp;timestamp=1503352365 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mini_tablet_1x/public/2017/08/21/zachary-zane-headshot.jpg?itok=xQqFe2ZR&amp;timestamp=1503352365 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2017/08/21/zachary-zane-headshot.jpg?itok=4NwBzzsq&amp;timestamp=1503352365 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2017/08/21/zachary-zane-headshot.jpg?itok=4NwBzzsq&amp;timestamp=1503352365" alt="zachary-zane-headshot" title="Dating &amp;amp; Relationships"> 
+           </picture> </a> 
+          <div class="imgText">
+           <a href="https://www.pride.com/authors/zachary-zane" target="_blank">#ZacharyZane</a>
+          </div> 
+         </div> 
+         <div class="text"> 
+          <div class="description">
+           <a href="http://www.pride.com/authors/zachary-zane" target="_blank">Dating &amp; Relationships</a>
+          </div> 
+         </div> 
+        </div> 
+        <div id="node-146426" class="node node-agg icon-agg col-md-2 col-sm-2 col-xs-12"> 
+         <div class="img"> 
+          <a href="https://www.pride.com/authors/alexander-kirk" class="featureImageBox" target="_blank">
+           <picture title="Stop Shaming Each Other"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/04/19/alexander-kirk_0.jpg?itok=IdDtdfka&amp;timestamp=1461108296 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_tablet_1x/public/2016/04/19/alexander-kirk_0.jpg?itok=wsqhriBb&amp;timestamp=1461108296 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mini_tablet_1x/public/2016/04/19/alexander-kirk_0.jpg?itok=RyLu6LYR&amp;timestamp=1461108296 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2016/04/19/alexander-kirk_0.jpg?itok=v_M_HPXE&amp;timestamp=1461108296 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2016/04/19/alexander-kirk_0.jpg?itok=v_M_HPXE&amp;timestamp=1461108296" alt="This is a photo of Alexander Kirk." title="Stop Shaming Each Other"> 
+           </picture> </a> 
+          <div class="imgText">
+           <a href="https://www.pride.com/authors/alexander-kirk" target="_blank">#AlexKirk</a>
+          </div> 
+         </div> 
+         <div class="text"> 
+          <div class="description">
+           <a href="https://www.pride.com/authors/alexander-kirk" target="_blank">Stop Shaming Each Other</a>
+          </div> 
+         </div> 
+        </div> 
+        <div id="node-146651" class="node node-agg icon-agg col-md-2 col-sm-2 col-xs-12"> 
+         <div class="img"> 
+          <a href="http://www.pride.com/authors/jayson-flores" class="featureImageBox" target="_blank">
+           <picture title="Do You Fall for Straight People?"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/04/25/jayson-flores.jpg?itok=vUkvNucB&amp;timestamp=1461599691 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_tablet_1x/public/2016/04/25/jayson-flores.jpg?itok=tn91A6bD&amp;timestamp=1461599691 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mini_tablet_1x/public/2016/04/25/jayson-flores.jpg?itok=ZYnLfx16&amp;timestamp=1461599691 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2016/04/25/jayson-flores.jpg?itok=Z7_RUy3F&amp;timestamp=1461599691 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_mobile_1x/public/2016/04/25/jayson-flores.jpg?itok=Z7_RUy3F&amp;timestamp=1461599691" alt="This is a photo of Jayson Flores. " title="Do You Fall for Straight People?"> 
+           </picture> </a> 
+          <div class="imgText">
+           <a href="https://www.pride.com/authors/jayson-flores" target="_blank">#JaysonFlores</a>
+          </div> 
+         </div> 
+         <div class="text"> 
+          <div class="description">
+           <a href="http://www.pride.com/authors/jayson-flores" target="_blank">Do You Fall for Straight People?</a>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <!--/SKYBOXES--> 
+      </div> 
+     </div> 
+     <div class="tabs"></div> 
+     <div class="page articleDetailSection"> 
+      <div class="row"> 
+       <div class="col-md-8 col-sm-12 col-xs-12"> 
+        <div class="articleStatus node node-article yellow"> 
+         <div class="articleCategory">
+          <a href="/lesbian">#Lesbian</a>
+         </div> 
+         <h1 class="articleTitle"><p>How To Find Your Own Group Of Queer Friends</p> </h1> 
+         <div class="leadImageArticle"> 
+          <div class="articleImg "> 
+           <img src="https://www.pride.com/sites/www.pride.com/files/2015/10/12/womenx900.jpg" alt="WOMEN" title="How To Find Your Own Group Of Queer Friends
+"> 
+          </div> 
+          <div class="authorBox"> 
+           <div class="box"> 
+            <div class="articledivder"></div> 
+            <div class="authorAvatar"> 
+             <a href="/authors/briana-gonzalez"><img src="https://www.pride.com/sites/www.pride.com/files/2015/05/05/briana_gonzalez.jpeg" alt="Briana Gonzalez" title="Briana Gonzalez"></a> 
+            </div> 
+            <div class="articleAuthor">
+              By 
+             <span><a href="/authors/briana-gonzalez">Briana Gonzalez</a></span> 
+             <span class="twitter-handle"> <a href="https://twitter.com/brianasalese ">@brianasalese </a> </span> 
+            </div> 
+            <div class="articleDate"> 
+             <span class="date">October 12 2015 2:14 PM EDT</span> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="shareArticleButtons"> 
+          <div class="tableDiv"> 
+           <div class="tableRow"> 
+            <span class="tableCell share-count" data-url="https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends"></span> 
+            <div class="tableCell tw">
+             <a href="https://twitter.com/share?text=How To Find Your Own Group Of Queer Friends&amp;url=https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+            </div> 
+            <div class="tableCell fb">
+             <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends&amp;title=How To Find Your Own Group Of Queer Friends" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="textArticle" id="article-content"> 
+          <p>Something all baby gays experience after coming out is going from being a closeted queer person with a bunch of straight friends to an out queer person with little or no queer friends. Shows like <em>The L word</em>, <em>Feminin/Feminin</em> and <em>Lip Service</em> make it appear as though all hot dykes have a large, close knit group of gorgeous lesbian friends, which makes us all feel like we should too.</p> 
+          <p></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601271" class="file file-image file-image-gif"> 
+            <div class="content"> 
+             <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/gayfriends.gif">
+            </div> 
+           </div> 
+          </div> 
+          <p>This is an unfortunate depiction to feed young, out women, since that’s basically the opposite of our lives. Having a full-time job and going out after work with your coworkers isn’t the magic recipe for cultivating a queer group of babes, unless you happen to work at a lesbian focused company and your girlfriend is a club photographer. But if that’s not your reality, there’s no harm in thinking out of the box, and exploring how to get more exposure to queer women, so you can find an <em>L Word</em> group of your own.</p> 
+          <p class="subsection-heading"><strong>Join a class that has some sort of queer focus.</strong></p> 
+          <p><strong></strong></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601276" class="file file-image file-image-gif">
+            <strong> 
+             <div class="content"> 
+              <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/gayfriends1.gif">
+             </div> </strong>
+           </div>
+           <strong> </strong>
+          </div>
+          <p></p> 
+          <p>A great resource is meetup.com, an online hub for neighborhood meetups, which allows you to filter by location, and anything you’re interested in. Searches like LGBT, queer and lesbian are good jumping off points, and if you’re underwhelmed with the groups offered in your area, you can always start your own (and then promote it on the HER feed, so more people know about it)!</p> 
+          <p class="subsection-heading"><strong>Get friendly at bars.</strong></p> 
+          <p></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601281" class="file file-image file-image-gif"> 
+            <div class="content"> 
+             <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/gayfriends2.gif">
+            </div> 
+           </div> 
+          </div> 
+          <p>Although bars can be both the best and worst place to find sexual partners/girlfriends, they can also be a great place to find friends; you just need to know who to look for. If your gaydar gets triggered, make sure to stay away from any queer women who seem suuuper drunk, combative or immature, and approach queer women who seem more reserved, in a smaller group of people, and someone drinking slowly. A few places where you can start conversations: in the bathroom line, buying drinks, outside with the smokers, around the pool table (or whatever game thing they have at the bar).</p> 
+          <p class="subsection-heading"><strong>Volunteer at your local LGBT Community Center.</strong></p> 
+          <p><strong></strong></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601291" class="file file-image file-image-jpeg">
+            <strong> 
+             <div class="content"> 
+              <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/volunteer_0.jpg">
+             </div> </strong>
+           </div>
+           <strong> </strong>
+          </div>
+          <p></p> 
+          <p>Volunteering is always worth your time, as it feeds your soul while giving back to a community, but it’s also a great place to network and meet people. Working at any LGBT based non-profit center or program will allow you to be in contact with other queer women in your area who are also interested in some of the same things as you are.</p> 
+          <p class="subsection-heading"><strong>Go to lesbian events around town.</strong></p> 
+          <p></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601296" class="file file-image file-image-jpeg"> 
+            <div class="content"> 
+             <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/gayfriend4.jpg">
+            </div> 
+           </div> 
+          </div> 
+          <p>Most cities in the US don’t have lesbian bars. I live in San Francisco and even here, we have 0 dedicated dyke bars (RIP The Lexington), but everywhere has girl parties. Make it a point to go out to the lesbian parties (when clubs host lesbian nights) around town and any and all daytime events that involve queer women; everything from bookstore readings to roller derby. Exploring new things while also exposing yourself to more queer women will pay off.</p> 
+          <p class="subsection-heading"><strong>Get online.</strong></p> 
+          <p><strong></strong></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601301" class="file file-image file-image-jpeg">
+            <strong> 
+             <div class="content"> 
+              <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/gayfriends5.jpg">
+             </div> </strong>
+           </div>
+           <strong> </strong>
+          </div>
+          <p></p> 
+          <p>It may sound insane, but dating apps are a good place to find friends too. Although all these women are online to find women to date/fuck/whatever, it’s highly unlikely that these women are going to be annoyed by you hitting them up to hang out. A good way to enter into that is looking for several women who look like your type of friend and send a message with something as simple as, “Hi. I saw your profile on here and you seemed cool, and I think we could be friends. Would you be interested in coming to a queer meetup?” If they say yes, let them know a place and time, and sometime in your near future, you’ll have a bunch of queer women that choose to meet up with you and get to know each other!</p> 
+          <p class="subsection-heading"><strong>BUT nothing will happen unless you get their numbers and text them to hang!</strong></p> 
+          <p></p>
+          <div class="media media-element-container media-full">
+           <div id="file-601286" class="file file-image file-image-jpeg"> 
+            <div class="content"> 
+             <img alt="" title="" class="media-image" src="https://www.pride.com/sites/www.pride.com/files/2015/10/11/gayfriends3.jpg">
+            </div> 
+           </div> 
+          </div> 
+          <p>This is integral. Unless you reach out and make that move, there’s no way to control your queer friend group destiny. You have to make it happen, so start making new friends, one text at a time!</p> 
+         </div> 
+        </div> 
+        <div class="tags"> 
+         <span>Tags:</span> 
+         <a href="/lesbian" class="yellow">#Lesbian</a>, 
+         <a href="/bisexual" class="blue">#Bisexual</a>, 
+         <a href="/queer" class="purple">#Queer</a> 
+        </div> 
+        <div class="videoEmbed"> 
+         <div class="entity entity-bean bean-video-embed clearfix"> 
+          <div class="content"> 
+           <h2 class="col-xs-12 latestVideos"> <span>Latest Videos on Pride</span> </h2> 
+           <script src="https://cdnapisec.kaltura.com/p/2197371/sp/219737100/embedIframeJs/uiconf_id/37028812/partner_id/2197371"></script> 
+           <div id="kaltura_player_1479514185" style="width: 750px; height: 250px;"></div> 
+           <script>
+  kWidget
+      .embed({
+        "targetId" : "kaltura_player_1479514185",
+        "wid" : "_2197371",
+        "uiconf_id" : 37028812,
+        "flashvars" : {
+          "streamerType" : "auto",
+          "playlistAPI.kpl0Id" : "0_4bs4zf6u",
+          "IframeCustomPluginCss1" : '/sites/www.pride.com/themes/pride/css/kaltura/kaltura-custom-playlist-pride.css',
+          "doubleClick" : {
+            "adTagUrl" : "https://pubads.g.doubleclick.net/gampad/ads?sz=480x360|640x480&iu=/6850/here.pride/video/playlist_player&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]",
+            "disableCompanionAds" : false,
+            "debugMode" : false
+          }
+        }
+      });
+</script>
+           <div class="field field-name-field-kaltura-video field-type-heremedia-kaltura-field field-label-hidden">
+            <div class="field-items"></div>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <h2 class="col-xs-12 ourSponsors"> <span>From our Sponsors</span> </h2> 
+        <div class="row nativeCustomAds"> 
+         <div class="col-md-6 col-sm-6 col-xs-12"> 
+          <div id="dfp-ad-article_native_1-wrapper" class="dfp-tag-wrapper"> 
+           <div id="dfp-ad-article_native_1" class="dfp-tag-wrapper"> 
+            <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_native_1");
+    });
+  </script> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="col-md-6 col-sm-6 col-xs-12"> 
+          <div id="dfp-ad-article_native_2-wrapper" class="dfp-tag-wrapper"> 
+           <div id="dfp-ad-article_native_2" class="dfp-tag-wrapper"> 
+            <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_native_2");
+    });
+  </script> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="comments" class="facebookComments"> 
+         <h5>READER COMMENTS (
+          <fb:comments-count href="https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends"></fb:comments-count>)</h5> 
+         <fb:comments class="fb-comments" data-href="https://www.pride.com/lesbian/2015/10/12/how-find-your-own-group-queer-friends" data-numposts="10" data-width="auto"></fb:comments> 
+        </div> 
+       </div> 
+       <div class="col-md-4 col-sm-12 col-xs-12"> 
+        <div id="block-heremedia-ads-article-bigbox-top" class="block block-heremedia-ads"> 
+         <div class="content"> 
+          <div id="dfp-ad-article_bigbox_top-wrapper" class="dfp-tag-wrapper"> 
+           <div id="dfp-ad-article_bigbox_top" class="dfp-tag-wrapper"> 
+            <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_bigbox_top");
+    });
+  </script> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="block-heremedia-stats-0" class="block block-heremedia-stats"> 
+         <div class="content"> 
+          <div class="mostPopular"> 
+           <div class="title">
+            Trending on Pride
+           </div> 
+           <div class="row"> 
+            <div class="node node-article icon-article blue"> 
+             <div class="col-md-5 col-sm-5 col-xs-5"> 
+              <div class="image"> 
+               <a href="/dating/2015/08/21/9-signs-lesbian-or-bi-girl-actually-you-and-not-just-being-polite"><img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/09/12/oitnbmain.jpg?itok=uKbMS0EO" alt="Orange Is the New Black " title="9 Signs the Girl You Like Is Actually Into You and Not Just Being Polite "></a> 
+              </div> 
+             </div> 
+             <div class="col-md-7 col-sm-7 col-xs-7"> 
+              <div class="text"> 
+               <span class="popularCategory"><a href="/women">#Women</a></span> 
+               <div class="popularTitle">
+                <a href="/dating/2015/08/21/9-signs-lesbian-or-bi-girl-actually-you-and-not-just-being-polite">9 Signs the Girl You Like Is Actually Into You and Not Just Being Polite </a>
+               </div> 
+              </div> 
+             </div> 
+             <div class="spacer"></div> 
+            </div>
+            <div class="node node-article icon-article black"> 
+             <div class="col-md-5 col-sm-5 col-xs-5"> 
+              <div class="image"> 
+               <a href="/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre"><img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2017/10/02/caleb-keeter-750.jpg?itok=3UNQJ25c" alt="caleb-keeter-josh-abbott-band-guitarist-gun-control-las-vegas-shooting-twitter.jpg" title="Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre"></a> 
+              </div> 
+             </div> 
+             <div class="col-md-7 col-sm-7 col-xs-7"> 
+              <div class="text"> 
+               <span class="popularCategory"><a href="/activism">#Activism</a></span> 
+               <div class="popularTitle">
+                <a href="/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre">Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre</a>
+               </div> 
+              </div> 
+             </div> 
+             <div class="spacer"></div> 
+            </div>
+            <div class="node node-media-gallery icon-media_gallery orange"> 
+             <div class="col-md-5 col-sm-5 col-xs-5"> 
+              <div class="image"> 
+               <a href="/tv/2016/6/16/57-netflix-shows-awesome-lgbt-characters"><img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/06/16/06f3e71f0d445bc4d8c45c2710418868.jpg?itok=lCnbIBPN" alt="netflix lgbt" title="57 Netflix Shows With Awesome LGBT Characters"></a> 
+              </div> 
+             </div> 
+             <div class="col-md-7 col-sm-7 col-xs-7"> 
+              <div class="text"> 
+               <span class="popularCategory"><a href="/gay-tv">#TV</a></span> 
+               <div class="popularTitle">
+                <a href="/tv/2016/6/16/57-netflix-shows-awesome-lgbt-characters">57 Netflix Shows With Awesome LGBT Characters</a>
+               </div> 
+              </div> 
+             </div> 
+             <div class="spacer"></div> 
+            </div>
+            <div class="node node-media-gallery icon-media_gallery orange"> 
+             <div class="col-md-5 col-sm-5 col-xs-5"> 
+              <div class="image"> 
+               <a href="/tv/2017/6/21/all-33-sex-scenes-orange-new-black-ranked"><img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/06/20/prime900oitnb.jpg?itok=hK-iD5GN" alt="Orange is the New Black" title="All 33 Sex Scenes on &amp;#039;Orange Is the New Black&amp;#039; Ranked!"></a> 
+              </div> 
+             </div> 
+             <div class="col-md-7 col-sm-7 col-xs-7"> 
+              <div class="text"> 
+               <span class="popularCategory"><a href="/gay-tv">#TV</a></span> 
+               <div class="popularTitle">
+                <a href="/tv/2017/6/21/all-33-sex-scenes-orange-new-black-ranked">All 33 Sex Scenes on 'Orange Is the New Black' Ranked!</a>
+               </div> 
+              </div> 
+             </div> 
+             <div class="spacer"></div> 
+            </div>
+            <div class="node node-media-gallery icon-media_gallery green"> 
+             <div class="col-md-5 col-sm-5 col-xs-5"> 
+              <div class="image"> 
+               <a href="/netflix/2016/8/23/22-awesome-lgbt-documentaries-you-need-watch-netflix"><img src="https://www.pride.com/sites/www.pride.com/files/styles/small_teaser_custom_user_desktop_1x/public/2016/08/23/doc-feature.jpg?itok=4hPFRoRw" alt="lgbt netflix" title="22 Awesome LGBT Documentaries You Need to Watch on Netflix"></a> 
+              </div> 
+             </div> 
+             <div class="col-md-7 col-sm-7 col-xs-7"> 
+              <div class="text"> 
+               <span class="popularCategory"><a href="/netflix">#Netflix</a></span> 
+               <div class="popularTitle">
+                <a href="/netflix/2016/8/23/22-awesome-lgbt-documentaries-you-need-watch-netflix">22 Awesome LGBT Documentaries You Need to Watch on Netflix</a>
+               </div> 
+              </div> 
+             </div> 
+             <div class="spacer"></div> 
+            </div> 
+            <div class="clearfix"></div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="block-bean-single-video-embed" class="block block-bean"> 
+         <div class="content"> 
+          <div class="entity entity-bean bean-video-embed clearfix"> 
+           <div class="content"> 
+            <div class="field field-name-field-kaltura-video field-type-heremedia-kaltura-field field-label-hidden">
+             <div class="field-items">
+              <div class="field-item even">
+               <div class="title"></div> 
+               <div class="videoWrapper"> 
+                <div id="kaltura_player_1_i0lem51o" style="width: 750px; height: 421px;">
+                 &nbsp;
+                </div> 
+                <script>
+  kWidget.embed({
+    "targetId": "kaltura_player_1_i0lem51o",
+    "wid": "_2197371",
+    "uiconf_id": 38846222,
+    "flashvars": {
+          "doubleClick": {
+        "plugin" : true,
+        "adTagUrl" : "https://pubads.g.doubleclick.net/gampad/ads?sz=480x360|640x480&iu=/6850/here.pride/video/rightrail_player&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url={utility.referrer_url}&correlator=[timestamp]&cust_params=cat%3Dlesbian%2Cbisexual%2Cqueer%26title%3Dhow_find_your_own_group_queer_friends%26aid%3D79181",
+        "leadWithFlash" : false,
+        "disableCompanionAds" : true,
+        "debugMode" : false
+      },
+          "IframeCustomPluginCss1" : '/sites/www.pride.com/themes/pride/css/kaltura/kaltura-custom-pride.css'
+    },
+    "entry_id": "1_i0lem51o"
+  });
+</script> 
+               </div>
+              </div>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="block-heremedia-ads-article-bigbox-mid" class="block block-heremedia-ads"> 
+         <div class="content"> 
+          <div id="dfp-ad-article_bigbox_mid-wrapper" class="dfp-tag-wrapper"> 
+           <div id="dfp-ad-article_bigbox_mid" class="dfp-tag-wrapper"> 
+            <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_bigbox_mid");
+    });
+  </script> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="block-heremedia-article-3" class="block block-heremedia-article"> 
+      <div class="content"> 
+       <h2 class="col-xs-12 latestNewsTitle"><span>Latest News</span></h2> 
+       <div class="row latestNewsSection" id="columns" data-columns> 
+        <div class="panel panel-primary node node-article node-teaser icon-article black"> 
+         <div class="panel-image"> 
+          <a href="/activism/2017/10/02/queer-country-stars-speak-against-gun-violence-aftermath-las-vegas">
+           <picture title="Queer Country Stars Speak Up Against Gun Violence in Aftermath of Las Vegas"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/10/02/queer-country-stars-speak-up-against-gun-violence-in-aftermath-of-las-vegas-750_0.jpg?itok=6XPMnsEu&amp;timestamp=1506980488 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/10/02/queer-country-stars-speak-up-against-gun-violence-in-aftermath-of-las-vegas-750_0.jpg?itok=nx8F9BHE&amp;timestamp=1506980488 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/10/02/queer-country-stars-speak-up-against-gun-violence-in-aftermath-of-las-vegas-750_0.jpg?itok=Ige1GME0&amp;timestamp=1506980488 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/queer-country-stars-speak-up-against-gun-violence-in-aftermath-of-las-vegas-750_0.jpg?itok=DoHYghwt&amp;timestamp=1506980488 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/queer-country-stars-speak-up-against-gun-violence-in-aftermath-of-las-vegas-750_0.jpg?itok=DoHYghwt&amp;timestamp=1506980488" alt="Queer Country Stars Speak Up Against Gun Violence in Aftermath of Las Vegas" title="Queer Country Stars Speak Up Against Gun Violence in Aftermath of Las Vegas"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/activism">#Activism</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/activism/2017/10/02/queer-country-stars-speak-against-gun-violence-aftermath-las-vegas">Queer Country Stars Speak Up Against Gun Violence in Aftermath of Las Vegas</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">October 02 2017 6:05 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/activism/2017/10/02/queer-country-stars-speak-against-gun-violence-aftermath-las-vegas"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=Queer Country Stars Speak Up Against Gun Violence in Aftermath of Las Vegas&amp;url=https://www.pride.com/activism/2017/10/02/queer-country-stars-speak-against-gun-violence-aftermath-las-vegas" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/activism/2017/10/02/queer-country-stars-speak-against-gun-violence-aftermath-las-vegas&amp;title=Queer Country Stars Speak Up Against Gun Violence in Aftermath of Las Vegas" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-article node-teaser icon-article black"> 
+         <div class="panel-image"> 
+          <a href="/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre">
+           <picture title="Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/10/02/caleb-keeter-750.jpg?itok=B8yxN1FS&amp;timestamp=1506975927 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/10/02/caleb-keeter-750.jpg?itok=tKjIJnr_&amp;timestamp=1506975927 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/10/02/caleb-keeter-750.jpg?itok=FmN5eeuN&amp;timestamp=1506975927 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/caleb-keeter-750.jpg?itok=3ffL_2yj&amp;timestamp=1506975927 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/caleb-keeter-750.jpg?itok=3ffL_2yj&amp;timestamp=1506975927" alt="caleb-keeter-josh-abbott-band-guitarist-gun-control-las-vegas-shooting-twitter.jpg" title="Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/activism">#Activism</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre">Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">October 02 2017 4:31 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre&amp;url=https://www.pride.com/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/activism/2017/10/02/country-artist-flips-stance-gun-control-after-surviving-vegas-shooting-massacre&amp;title=Country Artist Flips Stance on Gun Control After Surviving Vegas Shooting Massacre" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="adBox"> 
+         <div id="dfp-ad-article_latest_initial_right" class="centerUnit"> 
+         </div> 
+        </div>
+        <div class="panel panel-primary node node-article node-teaser icon-video icon-article black"> 
+         <div class="panel-image"> 
+          <a href="/activism/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today">
+           <picture title="President Obama&amp;#039;s Many Speeches About Gun Control Still Ring True Today"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today-750.jpg?itok=Dp9z8XXl&amp;timestamp=1506971672 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today-750.jpg?itok=sllWwpn3&amp;timestamp=1506971672 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today-750.jpg?itok=BVUhfRZe&amp;timestamp=1506971672 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today-750.jpg?itok=_sep8PGx&amp;timestamp=1506971672 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today-750.jpg?itok=_sep8PGx&amp;timestamp=1506971672" alt="President Obama&amp;#039;s Many Speeches About Gun Control Still Ring True Today" title="President Obama&amp;#039;s Many Speeches About Gun Control Still Ring True Today"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/activism">#Activism</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/activism/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today">President Obama's Many Speeches About Gun Control Still Ring True Today</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">October 02 2017 3:46 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/activism/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=President Obama's Many Speeches About Gun Control Still Ring True Today&amp;url=https://www.pride.com/activism/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/activism/2017/10/02/president-obamas-many-speeches-about-gun-control-still-ring-true-today&amp;title=President Obama's Many Speeches About Gun Control Still Ring True Today" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-article node-teaser icon-article black"> 
+         <div class="panel-image"> 
+          <a href="/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas">
+           <picture title="Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas "> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=usmB5zzi&amp;timestamp=1506968842 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=4I6WpaH9&amp;timestamp=1506968842 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=7Oo3zAAx&amp;timestamp=1506968842 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=FJh4bebF&amp;timestamp=1506968842 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-in-las-vegas-x750.jpg?itok=FJh4bebF&amp;timestamp=1506968842" alt="Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas" title="Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas "> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/activism">#Activism</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas">Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas </a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">October 02 2017 2:34 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas &amp;url=https://www.pride.com/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/activism/2017/10/02/celebrities-share-their-grief-after-tragic-mass-shooting-las-vegas&amp;title=Celebrities Share Their Grief After Tragic Mass Shooting in Las Vegas " target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-article node-teaser icon-article orange"> 
+         <div class="panel-image"> 
+          <a href="/halloween/2017/10/02/10-epic-halloween-costumes-celebrate-bisexual-women">
+           <picture title="10 Epic Halloween Costumes that Celebrate Bisexual Women"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/10/02/wonder-woman-costume.jpg?itok=sSQlIl8a&amp;timestamp=1506962170 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/10/02/wonder-woman-costume.jpg?itok=QuoEQrg5&amp;timestamp=1506962170 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/10/02/wonder-woman-costume.jpg?itok=iQJ4Mqlu&amp;timestamp=1506962170 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/wonder-woman-costume.jpg?itok=Rc5aBVu4&amp;timestamp=1506962170 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/10/02/wonder-woman-costume.jpg?itok=Rc5aBVu4&amp;timestamp=1506962170" alt="Wonder Woman" title="10 Epic Halloween Costumes that Celebrate Bisexual Women"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/halloween">#Halloween</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/halloween/2017/10/02/10-epic-halloween-costumes-celebrate-bisexual-women">10 Epic Halloween Costumes that Celebrate Bisexual Women</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">October 02 2017 12:39 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/halloween/2017/10/02/10-epic-halloween-costumes-celebrate-bisexual-women"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=10 Epic Halloween Costumes that Celebrate Bisexual Women&amp;url=https://www.pride.com/halloween/2017/10/02/10-epic-halloween-costumes-celebrate-bisexual-women" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/halloween/2017/10/02/10-epic-halloween-costumes-celebrate-bisexual-women&amp;title=10 Epic Halloween Costumes that Celebrate Bisexual Women" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="adBox"> 
+         <div id="dfp-ad-article_latest_initial_left" class="centerUnit"> 
+         </div> 
+        </div>
+        <div class="panel panel-primary node node-article node-teaser icon-video icon-article orange"> 
+         <div class="panel-image"> 
+          <a href="/tv/2017/9/29/girls-magic-new-lesbian-comedy-series-perfectly-captures-queer-life-la">
+           <picture title="&amp;#039;Girls Like Magic&amp;#039; Is the New Lesbian Comedy Series That Perfectly Captures Queer Life in LA"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/09/29/girls-like-magic.jpg?itok=xZfizNTo&amp;timestamp=1506713390 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/09/29/girls-like-magic.jpg?itok=h9jDSKid&amp;timestamp=1506713390 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/09/29/girls-like-magic.jpg?itok=QGTN5zll&amp;timestamp=1506713390 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/29/girls-like-magic.jpg?itok=I6TxWYlm&amp;timestamp=1506713390 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/29/girls-like-magic.jpg?itok=I6TxWYlm&amp;timestamp=1506713390" alt="girls-like-magic" title="&amp;#039;Girls Like Magic&amp;#039; Is the New Lesbian Comedy Series That Perfectly Captures Queer Life in LA"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/gay-tv">#TV</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/tv/2017/9/29/girls-magic-new-lesbian-comedy-series-perfectly-captures-queer-life-la">'Girls Like Magic' Is the New Lesbian Comedy Series That Perfectly Captures Queer Life in LA</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">September 29 2017 3:31 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/tv/2017/9/29/girls-magic-new-lesbian-comedy-series-perfectly-captures-queer-life-la"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text='Girls Like Magic' Is the New Lesbian Comedy Series That Perfectly Captures Queer Life in LA&amp;url=https://www.pride.com/tv/2017/9/29/girls-magic-new-lesbian-comedy-series-perfectly-captures-queer-life-la" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/tv/2017/9/29/girls-magic-new-lesbian-comedy-series-perfectly-captures-queer-life-la&amp;title='Girls Like Magic' Is the New Lesbian Comedy Series That Perfectly Captures Queer Life in LA" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-article node-teaser icon-article red"> 
+         <div class="panel-image"> 
+          <a href="/movies/2017/9/29/kristen-stewart-lupita-nyongo-reportedly-talks-new-charlies-angels">
+           <picture title="Kristen Stewart and Lupita Nyong’o Reportedly in Talks for New&nbsp;Charlie’s Angels
+"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/09/29/kristen_stewart_lupita_nyongo_ap_collage.jpg?itok=CpJJehIg&amp;timestamp=1506712418 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/09/29/kristen_stewart_lupita_nyongo_ap_collage.jpg?itok=l_bqA3xp&amp;timestamp=1506712418 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/09/29/kristen_stewart_lupita_nyongo_ap_collage.jpg?itok=V6X5iR7Y&amp;timestamp=1506712418 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/29/kristen_stewart_lupita_nyongo_ap_collage.jpg?itok=939WlDU9&amp;timestamp=1506712418 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/29/kristen_stewart_lupita_nyongo_ap_collage.jpg?itok=939WlDU9&amp;timestamp=1506712418" alt="Kristen Stewart and Lupita Nyong’o Reportedly in Talks for New&nbsp;Charlie’s Angels
+" title="Kristen Stewart and Lupita Nyong’o Reportedly in Talks for New&nbsp;Charlie’s Angels
+"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/gay-movies">#Movies</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/movies/2017/9/29/kristen-stewart-lupita-nyongo-reportedly-talks-new-charlies-angels">Kristen Stewart and Lupita Nyong’o Reportedly in Talks for New&nbsp;<em>Charlie’s Angels</em> </a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">September 29 2017 3:18 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/movies/2017/9/29/kristen-stewart-lupita-nyongo-reportedly-talks-new-charlies-angels"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=Kristen Stewart &amp; Lupita Nyong’o Reportedly in Talks for New ‘Charlie’s Angels’&amp;url=https://www.pride.com/movies/2017/9/29/kristen-stewart-lupita-nyongo-reportedly-talks-new-charlies-angels" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/movies/2017/9/29/kristen-stewart-lupita-nyongo-reportedly-talks-new-charlies-angels&amp;title=Kristen Stewart &amp; Lupita Nyong’o Reportedly in Talks for New ‘Charlie’s Angels’" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-media-gallery node-teaser icon-media_gallery yellow mg-gallery mg-teaser"> 
+         <div class="panel-image"> 
+          <a href="/sex/2017/9/29/11-sex-tips-guys-who-just-came-out">
+           <picture title="11 Sex Tips for Guys Who Just Came Out"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/09/28/11-sex-tips-for-guys-just-coming-out-x750.jpg?itok=rrD_h2Ol&amp;timestamp=1506629908 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/09/28/11-sex-tips-for-guys-just-coming-out-x750.jpg?itok=rWrDEty1&amp;timestamp=1506629908 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/09/28/11-sex-tips-for-guys-just-coming-out-x750.jpg?itok=usgssTLo&amp;timestamp=1506629908 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/28/11-sex-tips-for-guys-just-coming-out-x750.jpg?itok=ETbb6plZ&amp;timestamp=1506629908 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/28/11-sex-tips-for-guys-just-coming-out-x750.jpg?itok=ETbb6plZ&amp;timestamp=1506629908" alt="11 Sex Tips for Guys Just Coming Out" title="11 Sex Tips for Guys Who Just Came Out"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/gay-sex">#Sex</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/sex/2017/9/29/11-sex-tips-guys-who-just-came-out">11 Sex Tips for Guys Who Just Came Out</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">September 29 2017 2:28 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/sex/2017/9/29/11-sex-tips-guys-who-just-came-out"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=11 Sex Tips for Guys Who Just Came Out&amp;url=https://www.pride.com/sex/2017/9/29/11-sex-tips-guys-who-just-came-out" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/sex/2017/9/29/11-sex-tips-guys-who-just-came-out&amp;title=11 Sex Tips for Guys Who Just Came Out" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-article node-teaser icon-audio icon-article purple"> 
+         <div class="panel-image"> 
+          <a href="/music/2017/9/29/pnks-latest-single-beautiful-trauma-complete-banger">
+           <picture title="P!nk&amp;#039;s Latest Single &amp;#039;Beautiful Trauma&amp;#039; Is a Complete Banger"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/09/28/pink-750.jpg?itok=Bv5rerf1&amp;timestamp=1506641505 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/09/28/pink-750.jpg?itok=sCu_5XJj&amp;timestamp=1506641505 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/09/28/pink-750.jpg?itok=4QuRDzdI&amp;timestamp=1506641505 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/28/pink-750.jpg?itok=jFZHuPDU&amp;timestamp=1506641505 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/28/pink-750.jpg?itok=jFZHuPDU&amp;timestamp=1506641505" alt="P!nk releases newest banger “Beautiful Trauma”" title="P!nk&amp;#039;s Latest Single &amp;#039;Beautiful Trauma&amp;#039; Is a Complete Banger"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/gay-music">#Music</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/music/2017/9/29/pnks-latest-single-beautiful-trauma-complete-banger">P!nk's Latest Single 'Beautiful Trauma' Is a Complete Banger</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">September 29 2017 1:29 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/music/2017/9/29/pnks-latest-single-beautiful-trauma-complete-banger"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=P!nk's Latest Single 'Beautiful Trauma' Is a Complete Banger&amp;url=https://www.pride.com/music/2017/9/29/pnks-latest-single-beautiful-trauma-complete-banger" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/music/2017/9/29/pnks-latest-single-beautiful-trauma-complete-banger&amp;title=P!nk's Latest Single 'Beautiful Trauma' Is a Complete Banger" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="panel panel-primary node node-article node-teaser icon-article purple"> 
+         <div class="panel-image"> 
+          <a href="/music/2017/9/29/cher-musical-broadway-bound-and-it-sounds-incredible">
+           <picture title="A Cher Musical Is Broadway-Bound and It Sounds Incredible"> 
+            <!--[if IE 9]><video style="display: none;"><![endif]--> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_desktop_1x/public/2017/09/28/cher-750.jpg?itok=pm9A7DYe&amp;timestamp=1506650378 1x" media="(min-width:992px) and (max-width: 9999px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_tablet_1x/public/2017/09/28/cher-750.jpg?itok=ZrbS_bz4&amp;timestamp=1506650378 1x" media="(min-width:768px) and (max-width: 991px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mini_tablet_1x/public/2017/09/28/cher-750.jpg?itok=6svmYrvZ&amp;timestamp=1506650378 1x" media="(min-width: 481px) and (max-width: 767px)"> 
+            <source srcset="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/28/cher-750.jpg?itok=W1ABufO0&amp;timestamp=1506650378 1x" media="(min-width: 1px) and (max-width: 480px)"> 
+            <!--[if IE 9]></video><![endif]--> 
+            <img src="https://www.pride.com/sites/www.pride.com/files/styles/teaser_custom_user_mobile_1x/public/2017/09/28/cher-750.jpg?itok=W1ABufO0&amp;timestamp=1506650378" alt="A Cher Musical Is Broadway-Bound and It Sounds Incredible" title="A Cher Musical Is Broadway-Bound and It Sounds Incredible"> 
+           </picture></a> 
+          <div class="imgText">
+           <a href="/gay-music">#Music</a>
+          </div> 
+         </div> 
+         <div class="panel-body"> 
+          <div class="title">
+           <a href="/music/2017/9/29/cher-musical-broadway-bound-and-it-sounds-incredible">A Cher Musical Is Broadway-Bound and It Sounds Incredible</a>
+          </div> 
+          <div class="timeShare"> 
+           <span class="time">September 29 2017 1:25 PM</span> 
+          </div> 
+          <div class="shareHomeButtons"> 
+           <div class="tableDiv"> 
+            <div class="tableRow"> 
+             <span class="tableCell share-count" data-url="https://www.pride.com/music/2017/9/29/cher-musical-broadway-bound-and-it-sounds-incredible"></span> 
+             <div class="tableCell tw">
+              <a href="https://twitter.com/share?text=A Cher Musical Is Broadway-Bound and It Sounds Incredible&amp;url=https://www.pride.com/music/2017/9/29/cher-musical-broadway-bound-and-it-sounds-incredible" target="_blank" class="twittershare"> <img src="/sites/all/modules/custom/heremedia_fb/images/twitter-share-button.jpg" alt="Share on Twitter"> </a> 
+             </div> 
+             <div class="tableCell fb">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.pride.com/music/2017/9/29/cher-musical-broadway-bound-and-it-sounds-incredible&amp;title=A Cher Musical Is Broadway-Bound and It Sounds Incredible" target="_blank" class="facebookshare"> <img src="/sites/all/modules/custom/heremedia_fb/images/facebook-share-button.jpg" alt="Share on Facebook"> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 1
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="deviceClass"></div> 
+  <script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-99s4-uKAk3J7g"
+});
+</script> 
+  <noscript> 
+   <div style="display:none;"> 
+    <img src="//pixel.quantserve.com/pixel/p-99s4-uKAk3J7g.gif" border="0" height="1" width="1" alt="Quantcast"> 
+   </div> 
+  </noscript> 
+  <script type="text/javascript">
+  var _sf_async_config = { uid: 9748, domain: 'pride.com'};
+  _sf_async_config.path = "/lesbian/2015/10/12/how-find-your-own-group-queer-friends";
+  (function() {
+    function loadChartbeat() {
+      window._sf_endpt = (new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+      document.body.appendChild(e);
+    };
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script> 
+  <div id="dfp-ad-article_interstitial-wrapper" class="dfp-tag-wrapper"> 
+   <div id="dfp-ad-article_interstitial" class="dfp-tag-wrapper"> 
+    <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_interstitial");
+    });
+  </script> 
+   </div> 
+  </div>
+  <div id="dfp-ad-article_wallpaper-wrapper" class="dfp-tag-wrapper"> 
+   <div id="dfp-ad-article_wallpaper" class="dfp-tag-wrapper"> 
+    <script type="text/javascript">
+    googletag.cmd.push(function() {
+      googletag.display("dfp-ad-article_wallpaper");
+    });
+  </script> 
+   </div> 
+  </div>
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__GM3GJPR36rRIz0TRkjC5OQwrioSyN9aoYRivDhCO_AM__qAl84FcCv2jyN22yFGS5Oc85cjd9zKX6p_cFNLGhe-M__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js" async></script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__VJw_iaK2YYaE22ElZO9KGZvUb8cEAdWNsG-EAFCdmpc__tbryVewdMGVeDC7eeRD05aB4X3vOi0cbOLRrttGV8tQ__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__KPSt-urSQiSdSfo6ZIX0JX3kMxVvknnSZtkg8F99hHc__cckTcW-vgwCVZdH5jmgyXRmvkbqYoaGIy8ncRX0s960__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55c93dd3eed0db31"></script> 
+  <script type="text/javascript" src="/sites/www.pride.com/files/advagg_js/js__lPz9A8965eWTWsE0Z2Yb_VBnEPQoLe-AERI2pgpwaS0__70VknjQDVNlrvGStlEGntWq_dMGh8ucEHvhT6k0Uvs8__Nb7Wbg6NoDUZ1w-p484kRyGXG4wwrlZdGTif1o8Tj6c.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.fbAsyncInit=function(){FB.init({appId:'1660320884278138',xfbml:true,version:'v2.8'})};(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/sdk.js";fjs.parentNode.insertBefore(js,fjs)}(document,'script','facebook-jssdk'));
+//--><!]]>
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d13870c224","applicationID":"65778905,65778872","transactionName":"NlJUMERRCBVSAk1ZWQ8YdwdCWQkIHA9WVFM+R1cDU28QD1YW","queueTime":0,"applicationTime":2073,"atts":"GhVXRgxLGxs=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

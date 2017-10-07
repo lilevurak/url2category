@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en-US">
+ <head>
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/core.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/content.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/ezwt/design/standard/stylesheets/websitetoolbar.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/ez_edit.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/reset.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/styles.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/styles-responsive.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/ezflow.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/ezstarrating/design/standard/stylesheets/star_rating.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/tipped.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/ezsurvey/design/standard/stylesheets/survey.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/ezfind/design/standard/stylesheets/ezfind.css"> 
+  <link rel="stylesheet" type="text/css" href="/extension/ezfind/design/standard/stylesheets/ezajax_autocomplete.css"> 
+  <!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezflow/design/ezflow/stylesheets/browsers/ie5.css);    </style> <![endif]--> 
+  <!--[if IE 6]><link href="/extension/grantspace/design/grantspace_user/stylesheets/ie6.css" rel="stylesheet" type="text/css" media="all" /><![endif]--> 
+  <!--[if lte IE 7]> <style type="text/css"> @import url(/extension/ezflow/design/ezflow/stylesheets/browsers/ie7lte.css); </style> <![endif]--> 
+  <!--[if lt IE 8]><link href="/extension/grantspace/design/grantspace_user/stylesheets/ie7.css" rel="stylesheet" type="text/css" media="all" /><![endif]--> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/extension/grantspace/design/grantspace_user/images/favicons/apple-touch-icon.png"> 
+  <link rel="icon" type="image/png" href="/extension/grantspace/design/grantspace_user/images/favicons/favicon-32x32.png" sizes="32x32"> 
+  <link rel="icon" type="image/png" href="/extension/grantspace/design/grantspace_user/images/favicons/favicon-16x16.png" sizes="16x16"> 
+  <link rel="manifest" href="/extension/grantspace/design/grantspace_user/images/favicons/manifest.json"> 
+  <link rel="mask-icon" href="/extension/grantspace/design/grantspace_user/images/favicons/safari-pinned-tab.svg" color="#5bbad5"> 
+  <link rel="shortcut icon" href="/extension/grantspace/design/grantspace_user/images/favicons/favicon.ico"> 
+  <meta name="msapplication-config" content="/extension/grantspace/design/grantspace_user/images/favicons/browserconfig.xml"> 
+  <meta name="theme-color" content="#ffffff"> 
+  <link rel="stylesheet" type="text/css" href="/extension/grantspace/design/grantspace_user/stylesheets/print.css" media="print"> 
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css"> 
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/82402fe8-9c42-413c-8f10-cd4b4875515d.css"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+  <script type="text/javascript" src="/extension/ezflow/design/ezflow/javascript/insertmedia.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="/design/standard/javascript/ezdatepicker.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="/extension/grantspace/design/grantspace_user/javascript/grantspace.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="/extension/grantspace/design/grantspace_user/javascript/jquery.cookie.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="/extension/grantspace/design/grantspace_user/javascript/tipped.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="//cdn.gigya.com/JS/socialize.js?APIKey=3_uUDf-VImdZRMMvXFeZmCAeNhpJLaaUq5zmL-uofiESSe73t0SogaWhMW2p5eYGzp">{ siteName: 'GrantSpace' , enabledProviders: 'facebook,googleplus,linkedin,openid,twitter' , connectWithoutLoginBehavior: 'alwaysLogin' }</script> 
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="author" content="Grantspace"> 
+  <meta name="copyright" content="Foundation Center"> 
+  <meta name="description" content="GrantSpace, a service of the Foundation Center, offers information and resources that are specifically designed to meet the needs of grantseekers."> 
+  <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"> 
+  <meta name="google-site-verification" content="YtmQZfdYZtblIFR54oMviofdU8fZ9sDrOoKA4NtmhaE">
+  <meta name="msvalidate.01" content=""> 
+  <meta property="og:title" content="How do I find grants for my nonprofit?"> 
+  <meta property="og:url" content="http://grantspace.org/tools/knowledge-base/Funding-Resources/Foundations/finding-grants"> 
+  <meta property="og:site_name" content="GrantSpace"> 
+  <meta property="og:description" content="The process of finding grants typically begins with prospect research. Foundations generally give based on subject and geographic region, so look for funders whose interests match your organization's mission, programs, populations served, and locations served."> 
+  <meta property="og:image" content="http://grantspace.org/extension/grantspace/design/grantspace_user/images/l-grantspace-fb-og.png"> 
+  <meta property="og:type" content="article"> 
+  <title>Finding grants  | Foundations | Funding Resources | Knowledge Base | Tools | GrantSpace</title>
+ </head> 
+ <body class="ui-navigation node-591 flexslider-loading nojQuery"> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-T349GK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T349GK');</script> 
+  <!-- End Google Tag Manager --> 
+  <!-- Google Universal Analytics (is omitted here) is installed via GTM --> 
+  <script src="http://foundationcenter.org/extension/fcorg/design/fcorg_user/javascript/multisite_nav.js"></script> 
+  <div id="multisite_nav_target"></div> 
+  <script>
+	
+	$(function(){
+		multisite_nav.load('#multisite_nav_target');
+	});
+	
+</script> 
+  <a class="skipnav" href="#top">skip to content</a> 
+  <div class="wrapper"> 
+   <div class="container"> 
+    <div class="header"> 
+     <h1 id="logo"> <a href="http://grantspace.org" title="GrantSpace: A Service of Foundation Center"><img src="/extension/grantspace/design/grantspace_user/images/grantspace-logo.png" class="logo" alt="GrantSpace: A Service of Foundation Center"></a> </h1> 
+     <div class="utilitynav"> 
+      <ul> 
+       <li class=""><a href="/user/login"><span class="login">Login</span></a></li> 
+       <li class=""><a href="/user/register"><span class="login">Join</span></a></li> 
+       <li class=""><a href="/free-newsletters" target="">Newsletters</a></li> 
+       <li class=""><a href="/about-grantspace" target="">About</a></li> 
+       <li class=""><a href="/ask-us" target="">Ask Us</a></li> 
+       <li class=""><a href="/recursos-en-espanol" target="">Español</a></li> 
+       <li class="last"><a href="/donate-to-grantspace" target="">Donate</a></li> 
+      </ul> 
+      <script type="text/javascript" src="//foundationcenter.widget.custhelp.com/euf/rightnow/RightNow.Client.js"></script> 
+      <link type="text/css" href="//foundationcenter.widget.custhelp.com/cp/customer/assets/css/syndicated_widgets/standard/standard/ConditionalChatLink.css" rel="Stylesheet"> 
+      <script type="text/javascript">
+    RightNow.Client.Controller.addComponent(
+        {
+            container_element_id: "myChatLinkContainer",
+            info_element_id: "GSmyChatLinkInfo",
+            link_element_id: "GSmyChatLink",
+            instance_id: "sccl_0",
+            module: "ConditionalChatLink",
+            enable_availability_check:true,
+            chat_login_page_width: screen.availWidth,
+            chat_login_page_height: screen.availHeight - 50,
+            min_sessions_avail: 1,
+            ignore_preroute: true,
+            type: 7
+        },
+        "//foundationcenter.widget.custhelp.com/ci/ws/get"
+    );
+</script> 
+      <div class="ask-us-wrap" id="GSmyChatLinkContainer"> 
+       <div class="ask-us"> 
+        <div id="GSmyChatLink" class="chat-button"> 
+        </div> 
+        <div id="GSmyChatLinkInfo"> 
+         <!-- status --> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="mainnav"> 
+      <ul id="nav"> 
+       <li class="training"> <a href="/training"><span>TRAINING</span></a> 
+        <ul> 
+         <li><a href="/training/calendar">Training Calendar</a> 
+          <ul> 
+           <li><a href="/training/calendar/atlanta">Atlanta</a> </li>
+           <li><a href="/training/calendar/cleveland">Cleveland</a> </li>
+           <li><a href="/training/calendar/new-york">New York</a> </li>
+           <li><a href="/training/calendar/san-francisco">San Francisco</a> </li>
+           <li><a href="/training/calendar/washington-dc">Washington, DC</a> </li>
+           <li><a href="/training/calendar/other-locations">Other Locations</a> </li>
+           <li><a href="/training/calendar/online">Online</a> </li>
+          </ul> </li> 
+         <li><a href="">On Demand</a> 
+          <ul> 
+           <li><a href="/training/self-paced-elearning">Self Paced</a> </li>
+           <li><a href="/tools/multimedia/webinars">Recorded Webinars</a> </li>
+           <li><a href="/tools/multimedia/podcasts">Podcasts</a> </li>
+           <li><a href="/tools/multimedia/Live-Chats">Live Chat Transcripts</a> </li>
+           <li><a href="/tools/multimedia/video">Videos</a> </li>
+          </ul> </li> 
+         <li><a href="/training/courses">Standard Curriculum</a> </li> 
+        </ul> </li> 
+       <li class="tools"> <a href="/tools"><span>TOOLS</span></a> 
+        <ul> 
+         <li><a href="/tools/knowledge-base">Knowledge Base</a> </li> 
+         <li><a href="/tools/sample-documents">Sample Documents</a> </li> 
+         <li><a href="/find-us">Find Us</a> </li> 
+         <li><a href="/tools/multimedia">Multimedia</a> </li> 
+         <li><a href="/tools/foundation-directory-online">Foundation Directory Online</a> </li> 
+         <li><a href="/tools/collaboration-hub">Collaboration Hub</a> </li> 
+         <li><a href="/tools/nonprofit-startup-resources-by-state">Startup Resources by State</a> </li> 
+         <li><a href="/tools">More Tools...</a> </li> 
+        </ul> </li> 
+       <li class="collaboration"> <a href="/tools/collaboration-hub"><span>COLLABORATION</span></a> </li> 
+       <li class="subjects"> <a href="/Subjects"><span>SUBJECTS</span></a> 
+        <ul> 
+         <li><a href="/Subjects/arts-and-culture">Arts and Culture</a> </li> 
+         <li><a href="/Subjects/education">Education</a> </li> 
+         <li><a href="/Subjects/environment">Environment</a> </li> 
+         <li><a href="/Subjects/health">Health</a> </li> 
+         <li><a href="/Subjects/human-services">Human Services</a> </li> 
+         <li><a href="/Subjects">More Subjects...</a> </li> 
+        </ul> </li> 
+       <li class="skills"> <a href="/skills"><span>SKILLS</span></a> 
+        <ul> 
+         <li><a href="/skills/fundraising">Fundraising</a> </li> 
+         <li><a href="/skills/organizational-sustainability">Organizational Sustainability</a> </li> 
+         <li><a href="/skills/leadership-management">Leadership &amp; Management</a> </li> 
+         <li><a href="/skills/find-foundation-corporate-donors">Finding Foundation Donors</a> </li> 
+         <li><a href="/skills/proposal-writing">Proposal Writing</a> </li> 
+         <li><a href="/skills/startup-dissolution">Startup &amp; Dissolution</a> </li> 
+         <li><a href="/skills">More Skills...</a> </li> 
+        </ul> </li> 
+       <li class="blog"> <a href="/blog"><span>BLOG</span></a> </li> 
+      </ul> 
+     </div> 
+     <div id="searchbar"> 
+      <form class="search" action="/content/search" method="get"> 
+       <input name="SearchText" type="text" value="" placeholder="Search" alt="Search" id="searchterm" class="searchterm" onclick="toggleClear(this);" onkeydown=""> 
+       <input type="submit" class="gobutton" alt="Go" name="go" value="Go"> 
+      </form> 
+     </div>
+     <!-- search --> 
+    </div>
+    <!-- header --> 
+    <!-- page_mainarea_wrap.tpl --> 
+    <div id="content"> 
+     <!-- Main area content: START -->
+     <div class="breadcrumbs breadcrumbs-node-591"> 
+      <ul> 
+       <!-- node breadcrumb --> 
+       <li><a href="/">GrantSpace</a></li> 
+       <li><a href="/tools">Tools</a></li> 
+       <li><a href="/tools/knowledge-base">Knowledge Base</a></li> 
+       <li><a href="/tools/knowledge-base/Funding-Resources">Funding Resources</a></li> 
+       <li><a href="/tools/knowledge-base/Funding-Resources/Foundations">Foundations</a></li> 
+       <li class="on">Finding grants </li>
+      </ul> 
+     </div> 
+     <script type="text/javascript">
+var act = new gigya.socialize.UserAction();
+act.setUserMessage("This is the user message");
+//act.setTitle("Seasons");
+act.setTitle($.trim($('title').text()));
+//act.setLinkBack("https://platform.gigya.com");
+// URL without params
+act.setLinkBack(document.location.protocol +"//"+ document.location.hostname + document.location.pathname);
+
+var Desc = $.trim($("meta[name=description]").attr("content"));
+if(Desc != ""){
+    act.setDescription(Desc);
+}
+
+var showShareBarTopUI_params=
+{ 
+    containerID: 'gigyaShareTop',
+    iconsOnly: true,
+    showCounts: 'none',
+    userAction: act,
+    emailBody: "$userMsg$<br /><br />I thought you'd like this:<br />$URL$<br /><br />$title$<br />$description$",
+    shareButtons: [
+		{ // Facebook Share button 
+			provider:'facebook', 
+			tooltip:'Share on Facebook', 
+			action:'like', 
+			font:'arial',
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopFacebook.png', 
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopFacebook.png'
+		},
+		{ // Twitter Tweet button 
+			provider:'Twitter', 
+			tooltip:'Share on Twitter', 
+			defaultText:'Twitter message', 
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopTwitter.png', 
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopTwitter.png' 
+		},
+		{ // linkedin button 
+			provider:'linkedin', 
+			tooltip:'Share on LinkedIn', 
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopLinkedin.png', 
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopLinkedin.png' 
+		},
+		{ // Google plus one 
+			provider:'googleplus', 
+			tooltip:'Share on Google +', 
+			font:'arial',
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopGoogleplus.png', 
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopGoogleplus.png', 
+			width: '32px',
+			height: '32px'
+		}, 
+		{ // Email button 
+			provider:'email', 
+			tooltip:'Email', 
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopeMail.png',
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopeMail.png'
+		},
+		{ // General Share Button 
+			provider:'share', 
+			tooltip:'More Share Options', 
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopSharemore.png', 
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopSharemore.png'
+		},
+		,
+		{ // General Share Button 
+			provider:'print', 
+			tooltip:'Print', 
+			iconImgUp:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopPrint.png', 
+			iconImgOver:'/extension/grantspace/design/grantspace_user/images/gigyaShareTopPrint.png'
+		}
+	]
+}
+</script> 
+     <div id="gigyaShareTop" class="gigyabartop"></div> 
+     <script type="text/javascript">
+   gigya.socialize.showShareBarUI(showShareBarTopUI_params);
+</script> 
+     <div class="page-title"> 
+      <h1>Knowledge Base</h1> 
+     </div> 
+     <div class="main subpage" id="full-kb_item"> 
+      <div class="leftside"> 
+       <div class="section-details"> 
+        <div class="qna">
+         Q:
+        </div> 
+        <div class="question attribute-title">
+          How do I find grants for my nonprofit?
+        </div> 
+        <div class="qna">
+         A:
+        </div> 
+        <div class="answer attribute-body"> 
+         <p>The process of finding grants typically begins with prospect research. Foundations generally give based on subject and geographic region, so look for funders whose interests match your organization's mission, programs, populations served, and locations served.&nbsp;</p>
+         <p><b>Please note that foundations generally give to nonprofits with 501(c)(3) status</b>. If you don’t have exempt status, first consider finding a nonprofit to work with or to act as your fiscal sponsor. These might help you qualify for more funding opportunities. To learn more, please see our&nbsp;<a href="http://grantspace.org/Tools/Knowledge-Base/Resources-for-Individual-Grant-Seekers/Fiscal-Sponsorship" target="_self">articles on fiscal sponsorship</a>.</p>
+         <p><b><a href="http://fconline.foundationcenter.org/" target="_blank"><i>Foundation Directory Online</i></a></b> is Foundation Center's searchable database that provides an unsurpassed level of comprehensive and accurate information on&nbsp;grantmakers and their grants. You can search based on field of interest/subject, geography, grantmaker type, type of support, trustee names, and many other search fields. <a href="https://fconline.foundationcenter.org/sample/index.html" target="_blank">See a sample record.</a></p>
+         <p>To use it from your own computer, you can choose from&nbsp;<a href="https://subscribe.foundationcenter.org/fdo" target="_self">two subscription plans</a>&nbsp;that you can renew by the month or year. You can also use it for free at one of our 400+&nbsp;<a href="http://grantspace.org/find-us" target="_blank">locations</a>&nbsp;worldwide.&nbsp;</p>
+         <p>We also offer these free online resources for finding grants:</p> 
+         <ul> 
+          <li><a href="http://fdo.foundationcenter.org" target="_blank"><i>Foundation Directory Online</i> Quick Start</a>: Search by name, city, state, ZIP, or EIN to get contact details, grantmaker information and links to recent 990s.</li> 
+          <li><a href="http://foundationcenter.org/pnd/rfp/" target="_blank">Requests for Proposals</a>&nbsp;(RFPs): Announcements of funding opportunities. Also available as an RSS feed or free weekly e-newsletter.</li> 
+          <li><a href="http://webapps.foundationcenter.org/intl/" target="_blank">Map of International Grants</a>: Click on a country to see a list of recipients and their funders for recent years. Provides basic contact details for funders.</li> 
+         </ul> 
+         <a name="eztoc4084_0_0_1" id="eztoc4084_0_0_1"></a>
+         <h4> 
+          <div class="object-left">
+           <div class="content-view-embed"> 
+            <div class="class-image"> 
+             <div class="attribute-image"> 
+              <a href="http://grantspace.org/tools/prospect-worksheets" target="_self"> <img src="/var/ezflow_site/storage/images/media/grantspace/images/prospect-sheet-fdns-image/15631390-1-eng-US/prospect-sheet-fdns-image_small.png" width="100" height="114" style="border: 0px solid ;" alt="Click to view or download prospect worksheet for institutional funders." title="Click to view or download prospect worksheet for institutional funders."> </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div>Keep track of your prospects</h4>
+         <p>The amount of information you will collect will grow quickly! If you subscribe to FDO, its Workspace features can help you manage your prospects.</p>
+         <p>If you'd rather save your research externally,&nbsp;here's a <a href="http://grantspace.org/tools/prospect-worksheets" target="_self">prospect&nbsp;worksheet to help you keep track of your information</a> or to help you create your own system. If you're looking for software options, <a href="http://www.idealware.org/donormgmt" target="_blank">Idealware offers reports and articles on choosing a donor management system</a>.</p>
+         <a name="eztoc4084_0_0_2" id="eztoc4084_0_0_2"></a>
+         <h4>New to finding funders?</h4>
+         <p>Start learning now with <b><b>Introduction to Finding Grants</b></b>,&nbsp;available for free as a live/recorded webinar or an in-person class.</p>
+         <p>Watch the recorded version now in the YouTube window below, or see its <a href="http://grantspace.org/classroom/training-courses/introduction-to-finding-grants-formerly-grantseeking-basics" target="_self">Course Page</a> for more details and upcoming live dates and locations.</p>
+         <iframe width="500" height="315" src="https://www.youtube.com/embed/X_3r_CjeMn4" frameborder="0" allowfullscreen></iframe>
+         <p class=" text-left">&nbsp;</p>
+         <p class=" text-left">See also our related Knowledge Base articles on:</p>
+         <p class=" text-left">-&nbsp;<a href="http://grantspace.org/Tools/Knowledge-Base/Funding-Resources/Foundations" target="_self">Foundations</a></p>
+         <p class=" text-left">- <a href="http://grantspace.org/tools/knowledge-base/Funding-Resources/Corporations" target="_self">Corporations</a></p>
+         <p class=" text-left">- <a href="http://grantspace.org/Tools/Knowledge-Base/The-Funding-Research-Process/Proposal-Writing" target="_self">Writing grant proposals</a></p>
+         <p class=" text-left">- <a href="http://grantspace.org/Tools/Knowledge-Base/Funding-Resources/Government-Funders" target="_self">Government funding</a></p>
+         <script language="JavaScript">
+<!--
+// IF AGENTS ARE AVAILABLE:
+function agents_available_2() {
+    objChat = document.getElementById('live-chat_2');
+    objChat.style.display='block';
+ 
+    return true;
+}
+ 
+// IF AGENTS ARE NOT AVAILABLE:
+function agents_not_available() {  
+    objChat = document.getElementById('live-chat_2');
+    objChat.style.display ='none';
+    return true;
+}
+//-->
+</script> 
+         <div id="smartbutton" style="display:none;"> 
+          <script language="JavaScript">document.write('<img src="https://admin.instantservice.com/resources/smartbutton/6153/21104/available.gif?'+Math.floor(Math.random()*10001)+'" style="width:0;height:0;visibility:hidden;position:absolute;" onLoad="agents_available_2()" onError="agents_not_available()">');</script> 
+         </div> 
+         <!-- Live Chat --> 
+         <div class="ask-us-wrap" id="live-chat_2" style="display:none;"> 
+          <a style="position:absolute;top:835px;left:460px;" href="" onclick="window.open('http://foundationcenter.org/getstarted/askus/is_form_frame.html','custclient','width=750,height=650,scrollbars=yes');return false;"><img title="Chat Now" alt="medium" view="embed" inline="false" customattributes="offset|0attribute_separationlimit|5" id="eZObject_119914" src="/var/ezflow_site/storage/images/grantspace/ask-us/chat-now/739407-1-eng-US/Chat-now.png" mce_src="/var/ezflow_site/storage/images/grantspace/ask-us/chat-now/739407-1-eng-US/Chat-now.png" width="142" height="36"></a>
+         </div>
+         <br>
+         <table class="comparison object-left" border="15" cellpadding="2" cellspacing="0" width="70%" summary="Special Offer">
+          <colgroup>
+           <col class="bgdark">
+          </colgroup>
+          <tbody>
+           <tr>
+            <td valign="top" style="vertical-align: top"> <p><b>Have a question about this topic?</b><b>&nbsp;Ask us!</b></p><p>The Foundation Center's Ask Us service is available 24/7 to answer your questions related to starting a nonprofit, finding grants, or other fundraising and management queries.</p><p><b><a href="http://grantspace.org/Ask-Us" target="_self">Ask Us Now! &gt;&gt;</a></b></p> </td>
+           </tr> 
+          </tbody>
+         </table> 
+         <p class=" text-left">Selected resources below may also be helpful.</p>
+         <a name="eztoc4084_0_1" id="eztoc4084_0_1"></a>
+         <h3>We Recommend</h3>
+         <a name="eztoc4084_0_1_3" id="eztoc4084_0_1_3"></a>
+         <h4>Books &amp; Articles</h4>
+         <p>Click on book covers to get more info and buy them on Amazon.&nbsp;<a href="http://catalog.foundationcenter.org/cgi-bin/koha/opac-search.pl?idx=su%2Cphr&amp;q=Foundations--grants&amp;op=and&amp;idx=su%2Cphr&amp;q=nonprofit+organizations--grantsmanship&amp;op=and&amp;idx=kw&amp;do=Search&amp;sort_by=pubdate_dsc&amp;limit=" target="_blank">Find more books &amp; articles.</a></p>
+         <table width="100%"> 
+          <tbody>
+           <tr> 
+            <td width="33%"><a href="http://www.amazon.com/dp/1475810105/ref=as_li_ss_il?ie=UTF8&amp;linkCode=li2&amp;tag=grant0f-20&amp;linkId=f4ab74338cbbd4bc670a1b4b4df34802" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=1475810105&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=grant0f-20"></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=grant0f-20&amp;l=li2&amp;o=1&amp;a=1475810105" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> <span id="mce_99"></span></td> 
+            <td width="33%"><a href="http://www.amazon.com/dp/1402267290/ref=as_li_ss_il?ie=UTF8&amp;linkCode=li2&amp;tag=grant0f-20&amp;linkId=f2ed03f346797e5c41f5501e1e0f10d4" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=1402267290&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=grant0f-20"></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=grant0f-20&amp;l=li2&amp;o=1&amp;a=1402267290" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> <span id="mce_86"></span></td> 
+            <td width="33%"><a href="http://www.amazon.com/Foundation-Fundamentals-Sarah-Collins/dp/1595421564/ref=as_li_ss_il?s=books&amp;ie=UTF8&amp;qid=1461651620&amp;sr=1-1&amp;keywords=foundation+fundamentals&amp;linkCode=li2&amp;tag=grant0f-20&amp;linkId=f9abcc0e390845c73fec2f9537fe9ed3" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=1595421564&amp;Format=_SL160_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=grant0f-20"></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=grant0f-20&amp;l=li2&amp;o=1&amp;a=1595421564" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> </td> 
+           </tr> 
+           <tr> 
+            <td width="33%"><a href="http://catalog.foundationcenter.org/cgi-bin/koha/opac-detail.pl?biblionumber=26812" target="blank">Find in FC libraries</a> <br><a href="http://www.worldcat.org/oclc/902936595" target="blank">Find in nearby libraries</a> </td> 
+            <td width="33%"><a href="http://catalog.foundationcenter.org/cgi-bin/koha/opac-detail.pl?biblionumber=32012" target="blank">Find in FC libraries</a> <br><a href="http://www.worldcat.org/oclc/781594064" target="blank">Find in nearby libraries</a> </td> 
+            <td width="33%"><span style="font-size: 1.1em;"><a href="http://catalog.foundationcenter.org/cgi-bin/koha/opac-detail.pl?biblionumber=8189" target="blank">Find in FC libraries</a></span><br><a href="http://www.worldcat.org/oclc/191847008" target="blank">Find in nearby libraries</a> </td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div>
+        <!-- answer --> 
+        <div class="attribute-linkroll_websites"> 
+         <h4>Web Sites</h4> 
+         <p><strong>* indicates staff pick</strong></p> 
+         <div class="linkroll"> 
+          <script type="text/javascript" src="https://www.diigo.com/roll2/linkrolls?v=4&amp;username=foundationcenter&amp;icon=false&amp;l_type=0&amp;count=100&amp;desc=1&amp;style=standard&amp;title=&amp;tags=npo-grants"></script> 
+         </div> 
+         <!--div id="linkroll-more" class="websites-linkroll-more">
+                        <p class="text-right"><a href="" target="">More Web Sites &raquo;</a></p>
+			</div--> 
+        </div> 
+        <div class="attribute-linkroll_articles"> 
+         <h4>Books and Articles</h4> 
+         <p>Check title availability at our <a href="/Find-Us/">libraries and Funding Information Network locations</a> or your local libraries. </p> 
+         <script type="text/javascript" src="http://feeds.feedburner.com/faq_grants?format=sigpro"></script> 
+        </div> 
+        <div class="attribute-skills">
+         <h4>Skill(s)</h4> 
+         <ul> 
+          <li class="listitem listitem-keyword tag_id-24606"> <a href="/content/search?filter[]=attr_tags_skill_lk:find foundation / corporate donors&amp;activeFacets[attr_tags_skill_lk:Skills]=find foundation / corporate donors"> Find Foundation / Corporate Donors </a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="rate-content block-view"> 
+        <h3 class="h3-rate-content"><span>Rate Content</span></h3> 
+        <script type="text/javascript" src="/extension/ezstarrating/design/standard/javascript/ezstarrating_jquery.js" charset="utf-8"></script> 
+        <script type="text/javascript">
+//<![CDATA[
+
+(function($) {
+    var _rootUrl = '/', _serverUrl = _rootUrl + 'ezjscore/', _seperator = '@SEPERATOR$',
+        _prefUrl = _rootUrl + 'user/preferences';
+
+// FIX: Ajax is broken on IE8 / IE7 on jQuery 1.4.x as it's trying to use the broken window.XMLHttpRequest object
+if ( window.XMLHttpRequest && window.ActiveXObject )
+    $.ajaxSettings.xhr = function() { try { return new window.ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {} };
+
+    // (static) jQuery.ez() uses jQuery.post() (Or jQuery.get() if post paramer is false)
+    //
+    // @param string callArgs
+    // @param object|array|string|false post Optional post values, uses get request if false or undefined
+    // @param function Optional callBack
+    function _ez( callArgs, post, callBack )
+    {
+        callArgs = callArgs.join !== undefined ? callArgs.join( _seperator ) : callArgs;
+        var url = _serverUrl + 'call/';
+        if ( post )
+        {
+            var _token = '', _tokenNode = document.getElementById('ezxform_token_js');
+            if ( _tokenNode ) _token = _tokenNode.getAttribute('title');
+            if ( post.join !== undefined )// support serializeArray() format
+            {
+                post.push( { 'name': 'ezjscServer_function_arguments', 'value': callArgs } );
+                post.push( { 'name': 'ezxform_token', 'value': _token } );
+            }
+            else if ( typeof(post) === 'string' )// string
+            {
+                post += ( post ? '&' : '' ) + 'ezjscServer_function_arguments=' + callArgs + '&ezxform_token=' + _token;
+            }
+            else // object
+            {
+                post['ezjscServer_function_arguments'] = callArgs;
+                post['ezxform_token'] = _token;
+            }
+            return $.post( url, post, callBack, 'json' );
+        }
+        return $.get( url + encodeURIComponent( callArgs ), {}, callBack, 'json' );
+    };
+    _ez.url = _serverUrl;
+    _ez.root_url = _rootUrl;
+    _ez.seperator = _seperator;
+    $.ez = _ez;
+
+    $.ez.setPreference = function( name, value )
+    {
+        var param = {'Function': 'set_and_exit', 'Key': name, 'Value': value};
+            _tokenNode = document.getElementById( 'ezxform_token_js' );
+        if ( _tokenNode )
+            param.ezxform_token = _tokenNode.getAttribute( 'title' );
+
+        return $.post( _prefUrl, param );
+    };
+
+    // Method version, for loading response into elements
+    // NB: Does not use json (not possible with .load), so ezjscore/call will return string
+    function _ezLoad( callArgs, post, selector, callBack )
+    {
+        callArgs = callArgs.join !== undefined ? callArgs.join( _seperator ) : callArgs;
+        var url = _serverUrl + 'call/';
+        if ( post )
+        {
+            post['ezjscServer_function_arguments'] = callArgs;
+            post['ezxform_token'] = jQuery('#ezxformtoken').attr('title');
+        }
+        else
+            url += encodeURIComponent( callArgs );
+
+        return this.load( url + ( selector ? ' ' + selector : '' ), post, callBack );
+    };
+    $.fn.ez = _ezLoad;
+})(jQuery);
+        
+//]]>
+</script> 
+        <!-- logged in but no starrating permission --> 
+        <p id="ezsr_no_permission_4085" class="ezsr-no-permission">You don't have access to rate this page.</p> 
+        <p id="ezsr_no_permission_4085" class="ezsr-no-permission"><a href="/user/login">Log in</a> or <a href="/user/register">create a user account</a> to rate this page.</p> Average Rating (
+        <span id="ezsr_total_4085">7</span> votes cast): 
+        <ul id="ezsr_rating_average_4085" class="ezsr-star-rating"> 
+         <li class="ezsr-average-rating" style="width:90%;">Currently <span>4.5</span> out of 5 Stars.</li> 
+        </ul> 
+        <p id="ezsr_just_rated_4085" class="ezsr-just-rated hide">Thank you for rating!</p> 
+        <p id="ezsr_has_rated_4085" class="ezsr-has-rated hide">You have already rated this page, you can only rate it once!</p> 
+        <p id="ezsr_changed_rating_4085" class="ezsr-changed-rating hide">Your rating has been changed, thanks for rating!</p> 
+       </div> 
+      </div> 
+      <div class="rightcol"> 
+       <div class="library-locator block-search"> 
+        <form id="findusForm" action="/find-us" method="get"> 
+         <h3 class="h3-library-locator"><span>Find Us</span></h3> 
+         <label for="zip"><a href="/find-us">400+ locations</a> provide our resources for free. Find one near you.</label>
+         <br> 
+         <input name="zip" class="searchterm" id="zipcode" type="text" value="ZIP, city, state, or country"> 
+         <input type="submit" class="gobutton" alt="Go" name="go" value="Go"> 
+        </form> 
+        <p class="err" id="zipcodeErrMsg"></p> 
+       </div>
+       <!-- library locator --> 
+       <!-- more_link_this for kb_item --> 
+       <div class="content-view-block block-more_like_this block-view"> 
+        <h3 class="h3-you-might-also-like"><span>You Might Also Like</span></h3> 
+        <ul class="related-content-listing nolist"> 
+         <li><a href="/training/courses/how-to-cultivate-meaningful-relationships-with-funders2">How to Cultivate Meaningful Relationships with Funders</a></li> 
+         <li><a href="/tools/knowledge-base/Funding-Research/proposal-writing/proposal-cover-letters" class="listitem-kb_item"> How do I write a proposal cover letter? </a></li> 
+         <li><a href="/tools/multimedia/webinars/introduction-to-finding-grants" class="listitem-webinar"> Introduction to Finding Grants</a></li> 
+         <li><a href="/tools/multimedia/webinars/finding-foundation-support-for-your-education" class="listitem-webinar"> Finding Foundation Support for Your Education</a></li> 
+         <li><a href="/tools/multimedia/podcasts/program-audio-ny-scholarship-funders-2010-05-12" class="listitem-podcast"> Meet the Scholarship Funders: Financing Your Education</a></li> 
+        </ul> 
+       </div> 
+       <div class="block-search block-view"> 
+        <h3 class="h3-search-kb"><span>Search the Knowledge Base</span></h3> 
+        <form method="" action="/content/search"> 
+         <input type="text" class="searchterm" id="searchterm" alt="Search" name="SearchText"> 
+         <input type="hidden" id="pathFilter" name="pathFilter" value="70"> 
+         <input type="hidden" id="classFilter" name="classFilter" value="54"> 
+         <!-- 54 = kb_item --> 
+         <input type="submit" class="gobutton" alt="Go" name="go" value="Go"> 
+        </form> 
+       </div> 
+       <div class="leftnav block-view block-questions-category"> 
+        <h3 class="h3-questions-category"><span>Questions by Category</span></h3> 
+        <ul> 
+         <li><a href="/tools/knowledge-base/About">About</a> </li> 
+         <li><a href="/tools/knowledge-base/Funding-Resources">Funding Resources</a> 
+          <ul> 
+           <li><a href="/tools/knowledge-base/Funding-Resources/General">General</a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Resources/Foundations">Foundations</a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Resources/Corporations">Corporations</a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Resources/Government-Funders">Government Funders</a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Resources/Individual-Donors">Individual Donors</a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Resources/online-virtual-fundraising">Online/Virtual Fundraising</a></li> 
+          </ul> </li> 
+         <li><a href="/tools/knowledge-base/Funding-Research">Funding Research</a> 
+          <ul> 
+           <li><a href="/tools/knowledge-base/Funding-Research/Definitions-and-Clarification">Definitions and Clarification </a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Research/Fundraising-Planning">Fundraising Planning</a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Research/proposal-writing">Proposal Writing </a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Research/Forms-990-and-990-PF">Forms 990 and 990-PF </a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Research/Statistics">Statistics </a></li> 
+           <li><a href="/tools/knowledge-base/Funding-Research/Training">Training</a></li> 
+          </ul> </li> 
+         <li><a href="/tools/knowledge-base/Nonprofit-Management">Nonprofit Management</a> 
+          <ul> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Establishment">Establishment</a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Employment-Volunteering">Employment/Volunteering</a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Boards">Boards</a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Accountability">Accountability </a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Consultants">Consultants </a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Sustainability">Sustainability</a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Researching-Nonprofit-Organizations">Researching Nonprofit Organizations </a></li> 
+           <li><a href="/tools/knowledge-base/Nonprofit-Management/Other-Nonprofit-Management-Issues">Other Nonprofit Management Issues </a></li> 
+          </ul> </li> 
+         <li><a href="/tools/knowledge-base/Individual-Grantseekers">Individual Grantseekers</a> 
+          <ul> 
+           <li><a href="/tools/knowledge-base/Individual-Grantseekers/General">General </a></li> 
+           <li><a href="/tools/knowledge-base/Individual-Grantseekers/Artists">Artists </a></li> 
+           <li><a href="/tools/knowledge-base/Individual-Grantseekers/Students">Students </a></li> 
+           <li><a href="/tools/knowledge-base/Individual-Grantseekers/Fiscal-Sponsorship">Fiscal Sponsorship </a></li> 
+           <li><a href="/tools/knowledge-base/Individual-Grantseekers/For-Profit-Enterprises">For-Profit Enterprises </a></li> 
+          </ul> </li> 
+         <li><a href="/tools/knowledge-base/Resources-for-Non-U.S.-Grantseekers">Resources for Non-U.S. Grantseekers</a> </li> 
+         <li><a href="/tools/knowledge-base/Grantmakers">Grantmakers</a> </li> 
+         <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol">Preguntas y respuestas en español</a> 
+          <ul> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Donantes-institucionales">Donantes institucionales</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Recursos-para-la-investigacion">Recursos para la investigación</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Procuracion-de-fondos">Procuración de fondos</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Propuestas-de-proyectos">Propuestas de proyectos</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Gestion-y-administracion">Gestión y administración</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Junta-directiva">Junta directiva</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Ambito-internacional">Ámbito internacional</a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Apoyo-a-particulares">Apoyo a particulares </a></li> 
+           <li><a href="/tools/knowledge-base/Preguntas-y-respuestas-en-espanol/Pequenas-empresas">Pequeñas empresas</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div>
+       <!-- module leftnav --> 
+       <!-- Promos START: --> 
+       <!-- inside node/view/full --> 
+       <!-- found promo folder --> 
+       <!-- Promos END: --> 
+      </div> 
+     </div> 
+     <!-- Main area content: END -->
+    </div> 
+    <!-- #page_mainarea_wrap.tpl --> 
+    <!-- Footer area: START --> 
+    <div class="footer"> 
+     <ul> 
+      <li class=""><a href="/" target="">Home</a></li> 
+      <li class=""><a href="/free-newsletters" target="">Newsletters</a></li> 
+      <li class=""><a href="/about-grantspace" target="">About</a></li> 
+      <li class=""><a href="/ask-us" target="">Ask Us</a></li> 
+      <li class=""><a href="/find-us" target="">Find Us</a></li> 
+      <li class=""><a href="http://foundationcenter.custhelp.com/app/ask" target="_blank">Feedback</a></li> 
+      <li class=""><a href="http://foundationcenter.org" target="_blank">FoundationCenter.org</a></li> 
+      <li class=""><a href="http://foundationcenter.org/privacy-policy" target="_blank">Privacy Policy</a></li> 
+      <li class=""><a href="/RSS" target="_blank">RSS</a></li> 
+      <li class=""><a href="https://twitter.com/grantspace" target="_blank">Twitter</a></li> 
+      <li class=""><a href="/user/login"><span class="login">Login</span></a></li> 
+      <li class="last"><a href="/user/register"><span class="login">Join</span></a></li> 
+     </ul> 
+     <p><a href="http://foundationcenter.org/" title="GrantSpace: A Service of Foundation Center" target="_blank"><img src="/extension/grantspace/design/grantspace_user/images/fc-logo.png" class="logo" alt="GrantSpace: A Service of Foundation Center"></a> </p>
+     <address><p>32 Old Slip, 24th Floor - New York, NY 10005 - (212) 620-4230<br> © 2017 Foundation Center, All Rights Reserved</p></address> 
+    </div>
+    <!-- footer --> 
+    <!-- Footer area: END --> 
+   </div>
+   <!-- container --> 
+  </div>
+  <!-- wrapper --> 
+  <script type="text/javascript">
+(function()
+{var isSecure=('https:'==document.location.protocol);var ff=document.createElement('script');ff.type='text/javascript';ff.async=true;ff.src=(isSecure?'https':'http')+'://'+(isSecure?'secure.':'lb.')+'liveviewer.ez.no/statjs/sst-358-305966232/stat.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ff,s);})();
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6a5ed71201","applicationID":"8026809","transactionName":"blcEZRMCW0BWUBVQDlcdM0MITFxdU1YZFxFRQg==","queueTime":0,"applicationTime":694,"atts":"QhAHE1sYSE4=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

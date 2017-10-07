@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <title>12 Insider Secrets of Getting Good Grades in College | Chegg Play</title> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.5.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <link rel="canonical" href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="12 Insider Secrets of Getting Good Grades in College | Chegg Play"> 
+  <meta property="og:description" content="Grades are the measure of college success. Like the salary at a job, a batting average in baseball, or the..."> 
+  <meta property="og:url" content="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/"> 
+  <meta property="og:site_name" content="Chegg Play"> 
+  <meta property="article:section" content="Student Life"> 
+  <meta property="article:published_time" content="2013-03-02T12:35:50-07:00"> 
+  <meta property="article:modified_time" content="2016-07-31T02:11:01-07:00"> 
+  <meta property="og:updated_time" content="2016-07-31T02:11:01-07:00"> 
+  <meta property="og:image" content="/play/wp-content/uploads/sites/3/2011/09/professors-guide.jpg"> 
+  <meta property="og:image:secure_url" content="/play/wp-content/uploads/sites/3/2011/09/professors-guide.jpg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="Grades are the measure of college success. Like the salary at a job, a batting average in baseball, or the... "> 
+  <meta name="twitter:title" content="12 Insider Secrets of Getting Good Grades in College | Chegg Play"> 
+  <meta name="twitter:image" content="http://chegg.com/play/wp-content/uploads/sites/3/2011/09/professors-guide.jpg"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.chegg.com\/play\/","name":"Chegg Play","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.chegg.com\/play\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » Feed" href="https://www.chegg.com/play/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » Comments Feed" href="https://www.chegg.com/play/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » 12 Insider Secrets of Getting Good Grades in College Comments Feed" href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/feed/"> 
+  <link rel="stylesheet" id="apss-frontend-css-css" href="/play/wp-content/plugins/accesspress-social-share/css/frontend.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="baskerville_style-css" href="/play/wp-content/themes/baskerville-child/style.css?ver=4.8.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="/play/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="/play/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/stop-user-enumeration/js/commentauthor.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var CheggContest = {"ajax_url":"\/play\/wp-admin\/admin-ajax.php","nonce":"bb86496ca3"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/chegg_contest//contest.js?ver=4.8.2"></script> 
+  <link rel="https://api.w.org/" href="https://www.chegg.com/play/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.chegg.com/play/xmlrpc.php?rsd"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="shortlink" href="https://www.chegg.com/play/?p=5865"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.chegg.com/play/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Fstudent-life%2F12-insider-secrets-of-getting-good-grades-in-college%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.chegg.com/play/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Fstudent-life%2F12-insider-secrets-of-getting-good-grades-in-college%2F&amp;format=xml"> 
+  <script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.chegg.com/play/?wordfence_logHuman=1&hid=A66E04080C4DAEF8B5A06D782FE5B249');
+</script> 
+  <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style> 
+  <script type="text/javascript">
+				jQuery(document).ready(function(){
+											jQuery(".related_post").on('click', function () {
+							window.location=jQuery(this).find("a").attr("href");
+						});
+						jQuery(".popular-wrap").on('click', function () {
+							window.location=jQuery(this).find("a").attr("href");
+						});
+									});
+			</script> 
+  <script>
+				var ScrollSneak = function(prefix, wait) {
+					// clean up arguments (allows prefix to be optional - a bit of overkill)
+					if (typeof(wait) == 'undefined' && prefix === true) prefix = null, wait = true;
+					prefix = (typeof(prefix) == 'string' ? prefix : window.location.host).split('_').join('');
+					var pre_name;
+
+					// scroll function, if window.name matches, then scroll to that position and clean up window.name
+					this.scroll = function() {
+						if (window.name.search('^'+prefix+'_(\\d+)_(\\d+)_') == 0) {
+							var name = window.name.split('_');
+							window.scrollTo(name[1], name[2]);
+							window.name = name.slice(3).join('_');
+						}
+					}
+					// if not wait, scroll immediately
+					if (!wait) this.scroll();
+
+					this.sneak = function() {
+					// prevent multiple clicks from getting stored on window.name
+					if (typeof(pre_name) == 'undefined') pre_name = window.name;
+
+					// get the scroll positions
+						var top = 0, left = 0;
+						if (typeof(window.pageYOffset) == 'number') { // netscape
+							top = window.pageYOffset, left = window.pageXOffset;
+						} else if (document.body && (document.body.scrollLeft || document.body.scrollTop)) { // dom
+							top = document.body.scrollTop, left = document.body.scrollLeft;
+						} else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) { // ie6
+							top = document.documentElement.scrollTop, left = document.documentElement.scrollLeft;
+						}
+					// store the scroll
+						if (top || left) window.name = prefix + '_' + left + '_' + top + '_' + pre_name;
+						return true;
+					}
+				}
+			</script> 
+  <script type="text/javascript">
+				jQuery(document).ready(function($) {
+											sessionpass = 0;
+						
+
+					if(sessionpass ==1){
+						$("#popularity").addClass("seek");
+						$("#recentlink").removeClass("seek");
+
+						$("#popularity").parent().addClass("seeker1");
+						$("#recentlink").parent().addClass("seeker2");
+						$("#popularity").parent().removeClass("seeker1a");
+						$("#recentlink").parent().removeClass("seeker2a");
+					}
+					if(sessionpass ==0){
+						$("#popularity").removeClass("seek");
+						$("#recentlink").addClass("seek");
+
+						$("#popularity").parent().removeClass("seeker1");
+						$("#recentlink").parent().removeClass("seeker2");
+						$("#popularity").parent().addClass("seeker1a");
+						$("#recentlink").parent().addClass("seeker2a");
+					}
+					jQuery("#popularity").on('click', function (e) {
+						var sorting = 'popular';
+						var catsort
+												if (catsort== null) {
+							catsort = "";
+						}
+						var pagenumber = $('.archive-nav .active a').html();
+						var popclicked = 1;
+						e.preventDefault();
+						$("#popularity").addClass("seek");
+						$("#recentlink").removeClass("seek");
+						$("#popularity").parent().addClass("seeker1");
+						$("#recentlink").parent().addClass("seeker2");
+						$("#popularity").parent().removeClass("seeker1a");
+						$("#recentlink").parent().removeClass("seeker2a");
+						$.ajax({
+							type: "post",
+							url: "wp-admin/admin-ajax.php",
+							data: {
+								'action':'example_ajax_request_alt2',
+								'sorting' : sorting,
+								'pagenumber' : pagenumber,
+								'popclicked' : popclicked,
+								'catsort' : catsort
+							},
+							beforeSend : function(){
+								 $(".ajax-gif").css('visibility','visible');
+							},
+							success:function(html) {
+								$(".ajax-gif").css('visibility','hidden');
+								 if (html.length > 0) {
+									 $(".posts").html(html);
+									 var $container = $(".posts");
+									 $container.imagesLoaded(function(){
+									 $container.masonry('reloadItems');
+									 $container.masonry('layout');
+									 });
+								}
+							},
+							error: function(errorThrown){
+								console.log(errorThrown);
+							}
+						});
+					});
+
+					jQuery("#recentlink").on('click', function (e) {
+						// We'll pass this variable to the PHP function example_ajax_request
+						var sorting = 'recent';
+						var catsort
+												if (catsort== null) {
+							catsort = "";
+						}
+						e.preventDefault();
+						var pagenumber = $('.archive-nav .active a').html();
+						var popclicked = 0;
+						$("#popularity").removeClass("seek");
+						$("#recentlink").addClass("seek");
+						$("#popularity").parent().removeClass("seeker1");
+						$("#recentlink").parent().removeClass("seeker2");
+						$("#popularity").parent().addClass("seeker1a");
+						$("#recentlink").parent().addClass("seeker2a");
+
+						$.ajax({
+							type: "post",
+							url: "wp-admin/admin-ajax.php",
+							data: {
+								'action':'example_ajax_request_alt2',
+								'sorting' : sorting,
+								'pagenumber' : pagenumber,
+								'popclicked' : popclicked,
+								'catsort' : catsort
+							},
+							beforeSend : function(){
+								 $(".ajax-gif").css('visibility','visible');
+							},
+							success:function(html) {
+								$(".ajax-gif").css('visibility','hidden');
+								if (html.length > 0) {
+									$(".posts").html(html);
+									var $container = $(".posts");
+									$container.imagesLoaded(function(){
+									$container.masonry('reloadItems');
+									$container.masonry('layout');
+									});
+								}
+							},
+							error: function(errorThrown){
+								console.log(errorThrown);
+							}
+						});
+					});
+
+					/*touch events for hamburger menu */
+					jQuery('body').click(function() {
+					   $(".chgg-menu").addClass("hidden");
+					});
+
+					jQuery("#app-switch-btn").click(function(event) {
+						$(".chgg-menu").removeClass("hidden");
+						event.stopImmediatePropagation();
+						return false;
+					});
+
+					jQuery(".chgg-menu-items").click(function(event) {
+						event.stopImmediatePropagation();
+					});
+				});
+			</script> 
+  <script type="text/javascript">
+  if (!window.digitalData) {
+            var digitalData = {};
+            digitalData = {
+                page: {
+                    pageInfo: {
+					pageName: "Post",
+					pageNameDetailed: "5865",
+       				 experience: "Responsive"
+					},
+                    category: {
+					 pageType: "blog",
+					 primaryCategory: "Chegg",
+					 subCategory1: "Web",
+        			subCategory2: "me",
+					subCategory3: "Play"
+					}
+                }
+            };
+        }
+</script> 
+  <script src="//assets.adobedtm.com/e157c7ff34e2d6bd3c151937f4c67f693db0150f/satelliteLib-bfe19886e39a4d20710fc37fd1e213b09fadbdbe.js"></script> 
+  <script>var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32128268-1']);
+			_gaq.push(['_setDomainName', 'chegg.com']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();
+		</script> 
+ </head> 
+ <body class="post-template-default single single-post postid-5865 single-format-standard no-featured-image"> 
+  <div class="topnav-wrap"> 
+   <nav> 
+    <div id="app-switch-container"> 
+     <a id="app-switch-btn" data-wpel-link="internal"></a> 
+    </div> 
+    <!--hidden menu--> 
+    <nav class="chgg-menu hidden"> 
+     <div class="carrot">
+      <div class="chgg-menu-icon icon-chegg-cancel"></div>
+     </div> 
+     <ul class="chgg-menu-items"> 
+      <li id="chgg-menu-home"><a class="chgg-menu-item home" href="/" title="Chegg home" data-wpel-link="internal"> 
+        <div class="chgg-menu-image chegg-home-icon"></div> <span>Chegg home</span> </a></li> 
+      <li id="chgg-menu-books"><a class="chgg-menu-item books" href="/books/" title="Books" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-books"></div> <span>Books</span> </a></li> 
+      <li id="chgg-menu-study"><a class="chgg-menu-item study" href="/study/" title="Study" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-study2"></div> <span>Study</span> </a></li> 
+      <li id="chgg-menu-tutors"><a class="chgg-menu-item tutors" href="/tutors/" title="Tutors" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-tutors-person"></div> <span>Tutors</span> </a></li> 
+      <li id="chgg-menu-test-prep"><a class="chgg-menu-item testprep" href="/test-prep/" title="Test Prep" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-TestPrep"></div> <span>Test Prep</span> </a></li> 
+      <li id="chgg-menu-internships"><a class="chgg-menu-item internships" href="/app/internships/" title="Internships" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-career"></div> <span>Internships</span> </a></li> 
+      <li id="chgg-menu-colleges"><a class="chgg-menu-item colleges" href="/schools/" title="Colleges" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-colleges2"></div> <span>Colleges</span> </a></li> 
+     </ul> 
+    </nav> 
+    <!--end hidden menu--> 
+    <a href="/play/" data-wpel-link="internal"><img src="/wp-content/themes/baskerville-child/assets/chegg-play-logo.png" alt="chegg play" height="25"></a> 
+   </nav> 
+   <div id="searchwrap"> 
+    <form method="get" class="searchform" action="https://www.chegg.com/play/"> 
+     <input type="search" value="" placeholder="Search Play" name="s" class="s"> 
+     <input type="submit" class="searchsubmit" value=""> 
+    </form> 
+   </div> 
+  </div> 
+  <!--smart slider here --> 
+  <!--end smart slider here--> 
+  <style>
+/* style reset for navbar on individual article pages */
+.topnav-wrap {position: relative; z-index:1 }
+.searchform {border: 1px solid #adadad;}
+input::-webkit-input-placeholder {color: #666 !important;}
+input:-moz-placeholder {color: #666 !important; opacity: 1}
+input::-moz-placeholder {color: #666 !important;opacity: 1}
+input:-ms-input-placeholder {color: #666 !important;}
+#app-switch-btn {background-image:url('/wp-content/themes/baskerville-child/assets/app-switcher-alt.png');}
+</style> 
+  <div class="borderline">
+   &nbsp;
+  </div> 
+  <div class="wrapper section medium-padding"> 
+   <div class="section-inner"> 
+    <div class="content fleft"> 
+     <p id="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/" rel="v:url" property="v:title" data-wpel-link="internal">Home</a> // <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/student-life/" rel="v:url" property="v:title" data-wpel-link="internal">Student Life</a> // <span class="breadcrumb_last">12 Insider Secrets of Getting Good Grades in College</span></span></span></span></p> 
+     <div id="post-5865" class="post-5865 post type-post status-publish format-standard hentry category-student-life"> 
+      <div class="post-header"> 
+       <div class="category-list">
+        <a href="https://www.chegg.com/play/student-life/" rel="category tag" data-wpel-link="internal">Student Life</a>
+       </div> 
+       <h1 class="post-title">12 Insider Secrets of Getting Good Grades in College</h1> 
+       <div class="first-author">
+        <span>professorsguide</span>
+       </div> 
+      </div> 
+      <!-- /post-header --> 
+      <div class="post-content"> 
+       <p style="text-align: center"><a href="/play/wp-content/uploads/sites/3/2011/09/professors-guide.jpg" data-wpel-link="internal"><img class="aligncenter wp-image-1673" title="professors-guide" src="/play/wp-content/uploads/sites/3/2011/09/professors-guide.jpg" alt="" width="534" height="147"></a></p> 
+       <p>Grades are the measure of college success. Like the salary at a job, a batting average in baseball, or the price of a stock, your GPA is an objective indication of how you’re doing—plain for all to see (including you). And yet, there’s surprisingly little good information – least of all from professors—about just what you need to do to get good grades. We go where others fear to tread. And so, here are the 12 secrets of getting really good grades in college (A’s, we mean):</p> 
+       <p><strong>1. Take control of your destiny</strong>. Your grade destiny, that is. There’s no teacher or parent to remind you every day of what you need to do, or to make sure you’ve studied for exams. It’s all in your hands. So step up to bat and take responsibility. What grades you get will depend on what you yourself do.</p> 
+       <p><strong>2. Don’t overload</strong>. Some students think it’s a mark of pride to take as many hours as the college allows. It isn’t. Take four or at the most five courses each semester. That way, you’ll be able to devote all your energies to a manageable number of subjects and you won’t have to sacrifice quality for quantity.</p> 
+       <p><strong>3</strong><strong>. Get your a** to class</strong>.<strong> </strong>Most students have a cutting budget: the number of lectures they think they can miss in each course and still do well. But if there are 35 class meetings, each class contains 3 percent of the content: miss seven, and that’s 20 percent. How can you get good grades then?</p> 
+       <ul> 
+        <li><span style="color: #ff0000"><strong>Best Kept Secret</strong></span> . Some not-so-nice professors want to penalize students who blow off the class right before Easter or Spring Break. So they pick an essay question for the midterm or final from that very lecture. Next result? You wind up doing major damage to your GPA for the price of just one class.</li> 
+       </ul> 
+       <p><strong>4. Take really good notes</strong>. In many intro courses, the professor’s lectures form the major part of the material tested on the midterm and final. So, as you’re taking notes you’re really writing the textbook for the course – which in many cases is more important than the official textbook. Be sure to get down everything the professor says, and to maintain your notes in an organized and readable form. After all, these are the notes you’ll have to study a number of times later in the course.</p> 
+       <p><strong>5. Study like you mean it</strong>. There’s a difference between studying and “studying” – and you know what it is. When you’re studying, you’re 100 percent focused on, and engaged with, the material: a total immersion in what you’re doing and a strong desire to get it right. When you’re only “studying” – that is, <em>pretending</em> to study – you’re 35 percent involved, with the other 65 percent of your attention divided among tweeting your friend about how much you’re studying, scoping out the surrounding tables to see who else might be around (and how attractive they are), and daydreaming about all the fun things you’ll do when you finish this God-awful studying. Look, we know studying can be painful, but all students who get A’s do it (no matter what they tell you).</p> 
+       <p><strong>6. Do all the homework</strong>. You might have thought that the homework and problem sets – each of which is worth maybe one-tenth of one percent of the grade – are just busy work – something the professor assigns just to make sure you’re doing something in the course each week. But, really, the homework provides applications of the concepts, principles, and methods of the field to actual examples. The same sort of examples that will come up on the bigger tests. If you do well on the homework – that is, get 10 out of 10 on the problem sets, or a check-plus on the little writing exercises—you’re putting yourself in a good position to get a 100 when it really counts – on the midterm or final.</p> 
+       <p><strong>7. Take each test three times</strong>. When done right, taking a test is really three activities: preparing for the test, taking the actual exam, then going over the comments to see what mistakes you made. Each activity furnishes important – and grade-improving – information: The studying gives you practice in questions very similar to the those that will be on the test; the actual test is where the A is earned (at least in the best case); and the review of the comments is an investment in an A on the next test.</p> 
+       <p><strong>8. Always answer the question asked</strong>. More points are lost on tests – and, even more so, on papers – by not answering the question asked than by giving the wrong answer. That’s because students often have strong – and wrong – preconceptions about what the professor should be asking. “How can the question be so specific,” they wonder. “How can the professor <em>not</em> be asking a question about last week’s classes, especially since he or she seemed so interested in that topic?” “Can the professor <em>really</em> be asking about that journal article we were supposed to read, or about the discussion in section?” Don’t try to psych out the professor or distrust what you see before your very eyes.</p> 
+       <p><strong>9. Play all four quarters</strong>. Many college courses are “back-loaded.” More than half the grade is left to assignments due the last month of the semester: a third test, 15 percent; the term- or research paper, 25 percent; the cumulative final, 30 percent. You get the idea. Pace yourself and don’t run out of gas just as you’re coming into the home stretch.</p> 
+       <p><strong>10. Do all the “extras</strong>.” In some courses, there are special, end-of-the-semester activities that can improve your grade. Review sessions, extra office hours, rewrites of papers, extra credit work – all of these can be grade-boosters. Especially in schools where there are no pluses and minuses, even a few extra points can push your border-line grade over the hump (say, from a B + to an A-minus – that is, an A).</p> 
+       <p><strong>11. Join a community. </strong>Many students improve their grades with “study buddies” or study groups. Try to meet at least once a week – especially in courses in which there are weekly problem sets or quizzes. Students can improve their grades one level (or more) when they commit to working in an organized way with other students.</p> 
+       <p><strong>12. Resolve to get at least one “A” each semester</strong>. Getting even a single “A” will change the way you think about yourself. You’ll be more confident about your abilities and more hopeful for future semesters. If you’re at all close, in even one course, work really hard to do it. It will change things forever.</p> 
+       <p><em>If you liked the tips in this article, you’ll love the 637 tips in our book, </em><a href="http://www.professorsguide.com/" data-wpel-link="external" rel="nofollow"><em>The Secrets of College Success</em></a><em>. Write us with questions or blog ideas at </em><a href="mailto:jeremy@professorsguide.com"><em>jeremy@professorsguide.com</em></a><em>. And follow us on Twitter </em><a href="/Users/Jeremy/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.IE5/KHO23Q38/twitter.com/professorsguide" data-wpel-link="internal"><em>@professorsguide</em></a><em>. We’d love to hear from you – really.</em></p> 
+       <p>© 2013 Professors’ Guide LLC. All rights reserved.</p> 
+       <p>&nbsp;</p> 
+       <div class="clear"></div> 
+      </div> 
+      <!-- /post-content --> 
+      <div class="post-meta-container"> 
+       <div class="post-author"> 
+        <div class="post-author-content"> 
+         <div class="author-photo-wrap"> 
+          <img src="/play/wp-content/uploads/sites/3/userphoto/65.jpg" alt="professorsguide" width="148" height="150" class="photo"> 
+         </div> 
+         <p class="author-intro">MEET THE AUTHOR</p> 
+         <h4>professorsguide</h4> 
+         <p class="author-description-meta"> This author doesn't have a bio yet, because they were too busy sprucing up this amazing content. Stay tuned for future posts from this unknown enigma. </p> 
+        </div> 
+        <!-- /post-author-content --> 
+       </div> 
+       <!-- /post-author --> 
+       <div class="post-meta"> 
+        <div class="apss-social-share apss-theme-3 clearfix"> 
+         <div class="apss-email apss-single-icon"> 
+          <a rel="nofollow" class="share-email-popup" title="Share it on Email" target="_blank" href="mailto:?subject=Check out this post from Chegg Play&amp;body=Hi!, I found this information for you: &quot;12%20Insider%20Secrets%20of%20Getting%20Good%20Grades%20in%20College&quot;. Here is the website link: https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/. Thank you."> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa  fa-envelope"></i> 
+            <span class="apss-social-text">Send email</span> 
+            <span class="apss-share">Mail</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-twitter apss-single-icon"> 
+          <a rel="nofollow" href="https://twitter.com/intent/tweet?text=12%20Insider%20Secrets%20of%20Getting%20Good%20Grades%20in%20College&amp;url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Fstudent-life%2F12-insider-secrets-of-getting-good-grades-in-college%2F&amp;" title="Share on Twitter" target="_blank" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-twitter"></i> 
+            <span class="apss-social-text">Share on Twitter</span>
+            <span class="apss-share">Tweet</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-pinterest apss-single-icon"> 
+          <a rel="nofollow" title="Share on Pinterest" href="javascript:pinIt();" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-pinterest"></i> 
+            <span class="apss-social-text">Share on Pinterest</span> 
+            <span class="apss-share">Share</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-facebook apss-single-icon"> 
+          <a rel="nofollow" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-facebook"></i> 
+            <span class="apss-social-text">Share on Facebook</span> 
+            <span class="apss-share">Share</span> 
+           </div> </a> 
+         </div> 
+        </div> 
+        <!--<p class="post-date">March 2, 2013</p>--> 
+        <!--<p class="post-categories"><a href="https://www.chegg.com/play/student-life/" rel="category tag" data-wpel-link="internal">Student Life</a></p>--> 
+        <div class="clear"></div> 
+       </div> 
+       <!-- /post-meta --> 
+       <div class="clear"></div> 
+      </div> 
+      <!-- /post-meta-container --> 
+      <!--post navigation here--> 
+      <div class="post-nav"> 
+       <a class="post-nav-prev" title="Previous post: Extracurricular Activities (When They Become &quot;The Struggle&quot;)" href="https://www.chegg.com/play/student-life/extracurricular-activities-when-they-become-the-struggle/" data-wpel-link="internal"><span class="prevnextintro">Previous article</span><br> <span class="prevnexttitle">Extracurricular Activities (When They...</span> </a> 
+       <a class="post-nav-next" title="Next post: Do Good &amp; Feel Good With These Alternative Spring Breaks" href="https://www.chegg.com/play/student-life/do-good-feel-good-with-these-alternative-spring-breaks/" data-wpel-link="internal"><span class="prevnextintro">Next article</span><br><span class="prevnexttitle">Do Good &amp; Feel Good With These...</span></a> 
+       <div class="clear"></div> 
+      </div> 
+      <!--end post navigation here--> 
+      <!--related posts--> 
+      <div class="related-wrap"> 
+       <h4>You might like:</h4> 
+       <ul id="joints-related-posts"> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/productivity/the-ultimate-satact-packing-list/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/07/pencils-SAT-600x311.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="What to bring to the SAT"></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Productivity
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/productivity/the-ultimate-satact-packing-list/" title="The Ultimate SAT/ACT Packing List" data-wpel-link="internal">The Ultimate SAT/ACT Packing List</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/katelevinthal/" data-wpel-link="internal">Katie Levinthal</a>
+         </div> </li> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/student-life/there-are-4-types-of-introverts-which-one-are-you/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/08/shutterstock_503426647-600x311.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Student Life
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/student-life/there-are-4-types-of-introverts-which-one-are-you/" title="There Are 4 Types of Introverts: Which One Are You?" data-wpel-link="internal">There Are 4 Types of Introverts: Which One Are You?</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/cadykopsky/" data-wpel-link="internal">Cady Kopsky</a>
+         </div> </li> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/productivity/23-study-tips-backed-by-science/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/10/23-facts-600x311.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Life Hacks
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/productivity/23-study-tips-backed-by-science/" title="23 Study Tips Backed By Science" data-wpel-link="internal">23 Study Tips Backed By Science</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/cadykopsky/" data-wpel-link="internal">Cady Kopsky</a>
+         </div> </li> 
+       </ul> 
+      </div> 
+      <!--end related posts--> 
+      <div class="comments"> 
+       <a name="comments" data-wpel-link="internal"></a> 
+       <div class="comments-title-container"> 
+        <div class="clear"></div> 
+       </div> 
+       <!-- /comments-title-container --> 
+       <ol class="commentlist"> 
+        <li class="comment even thread-even depth-1" id="li-comment-2213"> 
+         <div id="comment-2213" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://thebeautifufu.blogspot.com/" rel="external nofollow" class="url" data-wpel-link="external">Funmi</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2213" data-wpel-link="internal">September 15, 2015 at 8:56 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>These are some really good tips, it is a must to stay on top of your things and get to class! Its time to be independent and take control of your life as stated here. I finished college and did so in a timely manner (within 4 years) and with a pretty good GPA while following all these tips. For more tips check out my blog. I explain exactly how I went about planning and being smart about what classes to chose and what decisions to make.</p> 
+            <p><a href="http://thebeautifufu.blogspot.com/2015/09/10-tips-to-do-well-in-college.html" rel="nofollow" data-wpel-link="external">http://thebeautifufu.blogspot.com/2015/09/10-tips-to-do-well-in-college.html</a></p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-2212"> 
+         <div id="comment-2212" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="https://www.etsy.com/shop/PalomaAllNaturals?ref=hdr_shop_menu" rel="external nofollow" class="url" data-wpel-link="external">Trish Denny</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2212" data-wpel-link="internal">August 11, 2015 at 12:12 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>All of these are great suggestions – thanks! (in my case, I have to make the grades as I am trying to get into a highly competitive field and they only accept the top candidates). Anyway, just wanted to share. I also found this great little product online and it has really helped me when I have to stay up to work on my papers or study for exams. Plus, I wear it during class and it really does help keep my mind clear and focused. It’s called a “Clarity Necklace” and I got mine from Paloma’s All-Naturals on Etsy….Check it out</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-even depth-1" id="li-comment-2211"> 
+         <div id="comment-2211" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://www.msec.org.in/" rel="external nofollow" class="url" data-wpel-link="external">Mohammed</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2211" data-wpel-link="internal">July 14, 2015 at 3:17 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>This is the very useful information to score good marks. And can you please tel me how to schedule the timetable to follow all the above tips.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> 
+         <ul class="children"> 
+          <li class="comment odd alt depth-2" id="li-comment-2214"> 
+           <div id="comment-2214" class="comment"> 
+            <div class="comment-inner"> 
+             <div class="comment-header"> 
+              <cite class="fn"><a href="http://thebeautifufu.blogspot.com/" rel="external nofollow" class="url" data-wpel-link="external">Funmi</a></cite> 
+              <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2214" data-wpel-link="internal">September 15, 2015 at 8:58 pm</a></span> 
+             </div> 
+             <!-- /comment-header --> 
+             <div class="comment-content"> 
+              <p>Take a look at my blog, to share exactly how I did these things to be successful!! 😀<br> <a href="http://thebeautifufu.blogspot.com/2015/09/10-tips-to-do-well-in-college.html" rel="nofollow" data-wpel-link="external">http://thebeautifufu.blogspot.com/2015/09/10-tips-to-do-well-in-college.html</a></p> 
+              <div></div> 
+             </div>
+             <!-- /comment-content --> 
+             <div class="comment-actions-below hidden"> 
+              <div class="clear"></div> 
+             </div> 
+             <!-- /comment-actions --> 
+            </div> 
+            <!-- /comment-inner --> 
+           </div>
+           <!-- /comment-## --> </li>
+          <!-- #comment-## --> 
+         </ul>
+         <!-- .children --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2210"> 
+         <div id="comment-2210" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://www.learnessaywriting.com" rel="external nofollow" class="url" data-wpel-link="external">Chris Tomasso</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2210" data-wpel-link="internal">May 14, 2013 at 5:59 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>This is excellent advice.</p> 
+            <p>I’d also like to add that, if you can, make a connection with your teacher. You don’t have to be a teachers pet, but the flip side of them punishing you for blowing off class early is that they will do everything they can to help you if they know you are interested. Doing the things in this post will show them, but also emailing them thanking them for helping you understand something or saying hi after class will go a long way to giving you the extra edge.</p> 
+            <p>In class as in life, networking really helps.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2209"> 
+         <div id="comment-2209" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://yahoo" rel="external nofollow" class="url" data-wpel-link="external">faran</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2209" data-wpel-link="internal">April 8, 2013 at 2:15 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>this is very good secrets for those students who are confuse their study. &amp; not satisfy their marks</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2208"> 
+         <div id="comment-2208" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">robel</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2208" data-wpel-link="internal">March 28, 2013 at 12:00 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>How many hours am I supposed to study and sleep in a day? For a healthier and smarter me!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2207"> 
+         <div id="comment-2207" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">SK Erasmus</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2207" data-wpel-link="internal">March 18, 2013 at 4:41 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>That is real the truth!!! you should learn how to manage your time on your own. learn on how to be comfortable with your studies.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2206"> 
+         <div id="comment-2206" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://johnchakder.weebly.com" rel="external nofollow" class="url" data-wpel-link="external">JOHNCHAKDER</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2206" data-wpel-link="internal">March 5, 2013 at 9:31 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>GRATE…..!!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2205"> 
+         <div id="comment-2205" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://http" rel="external nofollow" class="url" data-wpel-link="external">Ask Deepak</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2205" data-wpel-link="internal">March 5, 2013 at 3:16 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>#13 have Chegg do all your homework for you.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2204"> 
+         <div id="comment-2204" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://www.facebook.com/seth.b.kay" rel="external nofollow" class="url" data-wpel-link="external">Seth Boss Kay</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2204" data-wpel-link="internal">March 4, 2013 at 10:42 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>i wish i could share this page’s information on facebook.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2203"> 
+         <div id="comment-2203" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Lisa</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2203" data-wpel-link="internal">March 4, 2013 at 7:25 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I agree with allow this. So many say they can not dowell in college, but the reality of it is, if you put forth the effort, you will will see success, but if you choose not to follow these simple rules,you will not be successful.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2202"> 
+         <div id="comment-2202" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Adrian</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2202" data-wpel-link="internal">March 4, 2013 at 6:02 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>it was emailed to me as a survival guide, but i didnt see anything about firemaking, fishing, or food preservation.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2201"> 
+         <div id="comment-2201" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Chris</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2201" data-wpel-link="internal">March 4, 2013 at 5:43 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>If you are nearing your last years in college think about getting a few professors as references for jobs later on, at least 2.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2200"> 
+         <div id="comment-2200" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Theresa Collins</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2200" data-wpel-link="internal">March 4, 2013 at 2:57 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>When in class, leave your smartphone in your bag.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2199"> 
+         <div id="comment-2199" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://www.asvmproductions.com" rel="external nofollow" class="url" data-wpel-link="external">sverko</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2199" data-wpel-link="internal">March 4, 2013 at 2:47 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>When taking a difficult class, dont simply focus on your assignments or all the reading. Take calculus, for example, you need to get YOUR knowledge as QUICK as possible. Pursue that bit of knowledge as if you were 5 points behind and there were only 3 minutes left in the 4th quarter. Its fun! Also, i have learned that having coffee or too much green tea is maybe good 2 days or 1 day before a chemistry, calculus or computer programming class. But when i get a really challenging exam, unexpectedly, the extra juice in my veins takes my cool away and reduces my ability to do well.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2198"> 
+         <div id="comment-2198" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">AF</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2198" data-wpel-link="internal">March 4, 2013 at 2:23 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Don’t forget to respect your teachers, especially the doctors. They like to feel good too!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-2197"> 
+         <div id="comment-2197" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Gabe</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2197" data-wpel-link="internal">March 4, 2013 at 1:45 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>A strong foundation is better that a weak foundation. Take note of The Three Little Pigs Story!!!!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-2196"> 
+         <div id="comment-2196" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">brian</cite> 
+            <span>- <a href="https://www.chegg.com/play/student-life/12-insider-secrets-of-getting-good-grades-in-college/#comment-2196" data-wpel-link="internal">March 4, 2013 at 1:27 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Murphy’s law of college. It is better to be far ahead than a little behind. Learned that the hard way.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+       </ol> 
+      </div>
+      <!-- /comments --> 
+      <p class="nocomments">Comments are closed.</p> 
+     </div> 
+     <!-- /post --> 
+    </div> 
+    <!-- /content --> 
+    <div class="sidebar fright" role="complementary"> 
+     <div class="widget widget_text">
+      <div class="widget-content"> 
+       <div class="textwidget"></div> 
+      </div>
+      <div class="clear"></div>
+     </div> 
+     <!--most popular posts--> 
+     <div class="popular-posts"> 
+      <h3>MOST POPULAR</h3>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/MDT-1275_Play_Quiz_Hero_Trivia_bell-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Trivia - How Well Do You Know College?</h4>
+        <span class="popular-author">By Victoria Holliday</span>
+        <a href="https://www.chegg.com/play/entertainment/trivia-well-know-college/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/06/cell-battery-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="cell phone battery life">
+        <div class="category-tape">
+         <div class="category-orange">
+          Life Hacks
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Cell Phone Self-Care: How to Extend Your Phone's Battery Life</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/life-hacks/self-care-phone-battery/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/murder-your-plants-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Dorm Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>How not to murder your new plant</h4>
+        <span class="popular-author">By Katie Levinthal</span>
+        <a href="https://www.chegg.com/play/student-life/not-murder-new-plant/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/gym-thoughts-800x414.png" class="attachment-medium size-medium wp-post-image" alt="41 Thoughts Every College Student Has At The Gym">
+        <div class="category-tape">
+         <div class="category-orange">
+          Fitness
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>39 Thoughts Every College Student Has At The Gym</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/food-and-fit/17-thoughts-every-college-student-has-at-the-gym/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/napping-800x414.png" class="attachment-medium size-medium wp-post-image" alt="7 famous people who napped">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>7 Famous People Who Napped</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/entertainment/5-famous-nappers/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/03/MDT-1103-CP-NicoleLapin-2-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Money
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>How to Recover from the Freshman (Spending) 15</h4>
+        <span class="popular-author">By Nicole Lapin</span>
+        <a href="https://www.chegg.com/play/life-hacks/money/how-to-recover-from-the-freshman-spending-15/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/Nope-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Productivity
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Top 10 SAT Words That You'll Never Actually Use</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/top-10-sat-words-that-youll-never-actually-use/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/weird-jobs-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>The Weirdest Careers To Spice Up Your Job Search</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/entertainment/jobs-you-didnt-know-existed/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/10/23-facts-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Life Hacks
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>23 Study Tips Backed By Science</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/23-study-tips-backed-by-science/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/shutterstock_503426647-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Student Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>There Are 4 Types of Introverts: Which One Are You?</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/student-life/there-are-4-types-of-introverts-which-one-are-you/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/pencils-SAT-800x414.png" class="attachment-medium size-medium wp-post-image" alt="What to bring to the SAT">
+        <div class="category-tape">
+         <div class="category-orange">
+          Productivity
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>The Ultimate SAT/ACT Packing List</h4>
+        <span class="popular-author">By Katie Levinthal</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/the-ultimate-satact-packing-list/" data-wpel-link="internal"></a>
+       </div>
+      </div> 
+     </div> 
+     <!--end most popular posts--> 
+    </div>
+    <!-- /sidebar --> 
+    <div class="clear"></div> 
+   </div> 
+   <!-- /section-inner --> 
+  </div> 
+  <!-- /wrapper --> 
+  <div class="chg-footer"> 
+   <div class="chg-footer-pattern"> 
+    <div class="chg-footer-container"> 
+     <nav> 
+      <div class="row"> 
+       <div class="col-12 col-first col-last"> 
+        <div class="chg-footer-nav"> 
+         <div class="chg-footer-nav-column"> 
+          <h4>ABOUT CHEGG</h4> 
+          <ul> 
+           <li><a href="http://www.chegg.com/press/" title="About Chegg" data-noajax="&quot;true&quot;" data-wpel-link="internal">Media Center</a></li> 
+           <li><a rel="nofollow" href="http://blog.chegg.com/category/chegg-for-good/" title="Chegg For Good" data-wpel-link="internal">Chegg For Good</a></li> 
+           <li><a href="http://collegemarketing.chegg.com/" title="College Marketing" data-wpel-link="internal">College Marketing</a></li> 
+           <li> <a rel="nofollow" href="http://www.chegg.com/privacypolicy/" title="Privacy Policy" data-wpel-link="internal">Privacy Policy</a> </li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/privacypolicy/#california" title="Your CA Privacy Rights" data-wpel-link="internal">Your CA Privacy Rights</a></li> 
+           <li> <a rel="nofollow" href="http://www.chegg.com/termsofuse/" title="Terms of Use" data-wpel-link="internal">Terms of Use</a> </li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/generalpolicies/" title="General Policies" data-wpel-link="internal">General Policies</a></li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/copyright/" title="Intellectual Property Rights" data-wpel-link="internal">Intellectual Property Rights</a></li> 
+           <li><a rel="nofollow" href="http://investor.chegg.com/" title="Investor Relations" data-wpel-link="internal">Investor Relations</a></li> 
+           <li><a href="http://edu.chegg.com/" title="Enrollment Services" data-wpel-link="internal">Enrollment Services</a></li> 
+          </ul> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>RESOURCES</h4> 
+           <ul> 
+            <li><a href="http://www.chegg.com/sitemap" title="Site Map" data-wpel-link="internal">Site Map</a></li> 
+            <li><a href="http://www.chegg.com/mobile" title="Mobile" data-noajax="true" data-wpel-link="internal">Mobile</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/publishers" title="Publishers" data-noajax="true" data-wpel-link="internal">Publishers</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/affiliatesignuppage/" title="Join Our Affiliate Program" data-noajax="true" data-wpel-link="internal">Join Our Affiliate Program</a></li> 
+            <li><a rel="nofollow" href="http://preferences-mgr.truste.com/?pid=chegg01&amp;aid=chegg_pub02&amp;type=cheggdirect" target="_new" title="Advertising Choices" data-noajax="" data-wpel-link="external">Advertising Choices</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>TEXTBOOK LINKS</h4> 
+           <ul> 
+            <li><a rel="nofollow" href="http://www.chegg.com/my/account/returnbooks" data-wpel-link="internal">Return Your Books</a></li> 
+            <li><a href="http://www.chegg.com/textbooks/" title="Textbook Rental" data-noajax="true" data-wpel-link="internal">Textbook Rental</a></li> 
+            <li><a href="http://www.chegg.com/etextbooks" title="eTextbooks" data-noajax="true" data-wpel-link="internal">eTextbooks</a></li> 
+            <li><a href="http://www.chegg.com/used-textbooks" title="Used Textbooks" data-wpel-link="internal">Used Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/cheap-textbooks" title="Cheap Textbooks" data-wpel-link="internal">Cheap Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/college-textbooks" title="College Textbooks" data-wpel-link="internal">College Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/sell-textbooks" title="Sell Textbooks" data-noajax="true" class="sell-textbooks" data-wpel-link="internal">Sell Textbooks</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>STUDENT SERVICES</h4> 
+           <ul> 
+            <li><a href="http://www.chegg.com/chegg-coupon" title="Chegg Coupon" data-wpel-link="internal">Chegg Coupon</a></li> 
+            <li><a href="http://www.chegg.com/scholarships" title="Scholarships" data-noajax="true" data-wpel-link="internal">Scholarships</a></li> 
+            <li><a href="http://www.chegg.com/career-center/explore" title="Career Search" data-noajax="true" data-wpel-link="internal">Career Search</a></li> 
+            <li><a href="http://www.chegg.com/app/internships/" title="Internships" data-noajax="true" data-wpel-link="internal">Internships</a></li> 
+            <li><a href="http://www.chegg.com/schools/" title="College Search" data-noajax="true" data-wpel-link="internal">College Search</a></li> 
+            <li><a href="http://www.chegg.com/majors" title="College Majors" data-noajax="true" data-wpel-link="internal">College Majors</a></li> 
+            <li><a href="http://www.chegg.com/redemption/scholarship" title="Scholarship Redemption" data-noajax="true" data-wpel-link="internal">Scholarship Redemption</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>COMPANY</h4> 
+           <ul> 
+            <li><a href="http://blog.chegg.com/" title="Blog" data-noajax="true" data-wpel-link="internal">Chegg College Blog</a></li> 
+            <li><a href="https://www.chegg.com/jobs/" title="Jobs" data-noajax="true" data-wpel-link="internal">Jobs</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/contactus/" title="Customer Service" data-noajax="true" data-wpel-link="internal">Customer Service</a></li> 
+            <li><a rel="nofollow" href="mailto:danlr@chegg.com" title="Give Us Feedback" data-noajax="true">Give Us Feedback</a></li> 
+            <li><a href="https://www.chegg.com/tutors/become-a-tutor/" title="Become a Tutor" data-noajax="true" data-wpel-link="internal">Become a Tutor</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>LEARNING SERVICES</h4> 
+           <ul> 
+            <li><a href="https://www.chegg.com/tutors" title="Online Tutoring" data-noajax="true" data-wpel-link="internal">Online Tutoring</a></li> 
+            <li><a href="http://www.chegg.com/study" title="Chegg Study Help" data-noajax="true" data-wpel-link="internal">Chegg Study Help</a></li> 
+            <li><a href="http://www.chegg.com/homework-help/solutions-manual" title="Solutions Manual" data-noajax="true" data-wpel-link="internal">Solutions Manual</a></li> 
+            <li><a href="https://www.chegg.com/tutors/cities" title="Tutors by City" data-noajax="true" data-wpel-link="internal">Tutors by City</a></li> 
+            <li><a href="http://www.chegg.com/homework-help/gpa-calculator" title="GPA Calculator" data-wpel-link="internal">GPA Calculator</a></li> 
+            <li><a href="http://www.chegg.com/test-prep" title="Test Prep" data-wpel-link="internal">Test Prep</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </nav> 
+     <footer> 
+      <div class="row chg-footer-copyright"> 
+       <div class="col-3 col-first"> 
+        <div title="Over 6 million trees planted" class="chg-mil-trees">
+         Over 6 million trees planted
+        </div> 
+        <div class="img-chg-plant-tree" title="Chegg Plants Trees">
+         Chegg Plants Trees
+        </div> 
+       </div> 
+       <div class="col-6 chg-copyright"> 
+        <div class="chg-copyright-blk"> 
+         <a rel="nofollow" href="http://www.paypal.com" title="PayPal" data-noajax="true" data-wpel-link="external"><img src="//c.cheggcdn.com/images/paypal_logo.gif" alt="PayPal"></a> 
+         <div class="chg-footer-truste-seal">
+          <div id="2d7d0c26-8294-4d5a-8841-1769f715fb08">
+           <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/Chegg,-Inc-/asc?rid=2d7d0c26-8294-4d5a-8841-1769f715fb08"></script>
+           <a data-in-app="true" href="//privacy.truste.com/privacy-seal/Chegg,-Inc-/validation?rid=066d8958-84e3-4256-8903-54ca5b4b297a" title="TRUSTe online privacy certification" target="_blank" data-wpel-link="external" rel="nofollow"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/Chegg,-Inc-/seal?rid=840d171e-655f-4821-8e68-58819b3cd2d2" alt="TRUSTe online privacy certification"></a>
+          </div>
+         </div> 
+         <a rel="nofollow" href="http://www.bbb.org/sanjose/business-reviews/books-textbooks-new-and-used/cheggcom-in-santa-clara-ca-238456" title="BBB" data-noajax="true" data-wpel-link="external"><img src="//c.cheggcdn.com/images/bbbseal1.gif" alt="BBB"></a> 
+         <p>© 2003-2016 Chegg Inc. All rights reserved.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </footer> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="/play/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var frontend_ajax_object = {"ajax_url":"https:\/\/www.chegg.com\/play\/wp-admin\/admin-ajax.php","ajax_nonce":"1c8c1f5877"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/accesspress-social-share/js/frontend.js?ver=4.3.4"></script> 
+  <script type="text/javascript" src="/play/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <link rel="stylesheet" id="apss-font-awesome-css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css?ver=4.1.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="apss-font-opensans-css" href="//fonts.googleapis.com/css?family=Open+Sans&amp;ver=4.5.3" type="text/css" media="all"> 
+  <script type="text/javascript">_satellite.pageBottom();</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1fabaefecb","applicationID":"52986996","transactionName":"NQcDYUAEXxJYUhFfXQxNIFZGDF4PFkIMWFUOBw==","queueTime":0,"applicationTime":3506,"atts":"GUAAFwgeTBw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

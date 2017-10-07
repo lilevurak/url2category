@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en" class="no-js s-healthcheck">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgEAVVRXGwcBXFdUDwY="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script> 
+  <title>Want to be Happy at Work? Here’s How to Find Purpose | SoFi</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <link rel="shortcut icon" href="https://www.sofi.com/wp/wp-content/themes/sofi-v4/favicon.png"> 
+  <meta name="google-site-verification" content="y0vzF-92wN4kBL6xvHlKpP5HQhGNO3_xpHCEPrHvLDY"> 
+  <meta name="msvalidate.01" content="DBDF2E792CBDCFAE8E06616938FA97CA"> 
+  <meta name="p:domain_verify" content="1e69cfa7475b79c308445834dd8cb8cf"> 
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "SoFi",
+      "url": "https://www.sofi.com/",
+      "sameAs": [
+        "https://www.facebook.com/SoFi",
+        "https://twitter.com/SoFi",
+        "https://instagram.com/sofi/",
+        "https://www.linkedin.com/company/sofi",
+        "https://plus.google.com/+SoFi/",
+        "https://www.youtube.com/user/socialfinance220",
+        "https://www.pinterest.com/sofiloans/"
+      ],
+      "logo":"https://www.sofi.com/wp/wp-content/themes/sofi-v4/dist/img/nav-logo.png",
+      "contactPoint": [
+        {"@type": "ContactPoint", "telephone": "+1-855-456-7634", "contactType": "customer service"}
+      ]
+    }
+  </script> 
+  <!-- This site is optimized with the Yoast SEO Premium plugin v4.7 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Learn how to find career happiness and the ideal job for you by answering a few questions about your values, strengths and interests."> 
+  <meta name="robots" content="noodp"> 
+  <link rel="canonical" href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Want to be Happy at Work? Here’s How to Find Purpose | SoFi"> 
+  <meta property="og:description" content="Learn how to find career happiness and the ideal job for you by answering a few questions about your values, strengths and interests."> 
+  <meta property="og:url" content="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/"> 
+  <meta property="og:site_name" content="SoFi"> 
+  <meta property="article:publisher" content="https://www.facebook.com/SoFi"> 
+  <meta property="article:tag" content="Alignment"> 
+  <meta property="article:tag" content="Career Advice"> 
+  <meta property="article:tag" content="career services"> 
+  <meta property="article:section" content="Career"> 
+  <meta property="article:published_time" content="2016-04-11T18:05:38-07:00"> 
+  <meta property="article:modified_time" content="2016-10-04T11:07:19-07:00"> 
+  <meta property="og:updated_time" content="2016-10-04T11:07:19-07:00"> 
+  <meta property="og:image" content="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20161004110702/Want-to-be-happy-at-work_Blog.jpg"> 
+  <meta property="og:image:width" content="853"> 
+  <meta property="og:image:height" content="286"> 
+  <meta property="DC.date.issued" content="2016-04-11T18:05:38-07:00"> 
+  <!-- / Yoast SEO Premium plugin. --> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//cdn.optimizely.com"> 
+  <link rel="alternate" type="application/rss+xml" title="SoFi » Feed" href="https://www.sofi.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="SoFi » Comments Feed" href="https://www.sofi.com/comments/feed/"> 
+  <link rel="alternate" type="text/calendar" title="SoFi » iCal Feed" href="https://www.sofi.com/events/?ical=1"> 
+  <link rel="alternate" type="application/rss+xml" title="SoFi » Want to be Happy at Work? Here’s How to Find Purpose Comments Feed" href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/feed/"> 
+  <link rel="stylesheet" id="soficss-css" href="https://www.sofi.com/wp/wp-content/themes/sofi-v4/dist/css/sofi.08aedab1.css" type="text/css" media="all"> 
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <script type="text/javascript" src="//cdn.optimizely.com/js/20891654.js?ver=1380115475"></script> 
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.0"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var popupally_pro_check_source_object = {"utm_mapping":{"popupally-cookie-1":""}};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-content/plugins/popupally-pro/resource/frontend/check-source.min.js?ver=2.1.9"></script> 
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-content/plugins/stop-user-enumeration/js/commentauthor.js?ver=4.8.2"></script> 
+  <link rel="https://api.w.org/" href="https://www.sofi.com/wp-json/"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.sofi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sofi.com%2Fblog%2Fwant-happy-work-heres-find-purpose%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.sofi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sofi.com%2Fblog%2Fwant-happy-work-heres-find-purpose%2F&amp;format=xml"> 
+  <script type="text/javascript">
+var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_config.templates=a2a_config.templates||{};
+a2a_config.icon_color = "#c7c7c7";
+</script> 
+  <script type="text/javascript" src="https://static.addtoany.com/menu/page.js" async></script> 
+  <meta name="tec-api-version" content="v1">
+  <meta name="tec-api-origin" content="https://www.sofi.com">
+  <link rel="https://theeventscalendar.com/" href="https://www.sofi.com/wp-json/tribe/events/v1/">
+  <style type="text/css">.blog-image1 {
+    background-image: url("https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20160412102525/Mobile-blog_article_image_purpose_diagram.jpg");
+    background-size: contain;
+    padding: 50%;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+.blog-image1 {
+    background-image: url("https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20160412090209/blog_article_image_purpose_diagram.jpg");
+    background-size: contain;
+    padding: 18%;
+}}</style> 
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+  <![endif]--> 
+ </head> 
+ <body class="post-template-default single single-post postid-20594 single-format-standard do-etfw tribe-no-js post-want-happy-work-heres-find-purpose"> 
+  <!-- google tag manager --> 
+  <noscript> 
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WLSZML" height="0" width="0" style="display:none;visibility:hidden"></iframe> 
+  </noscript> 
+  <script>
+    var mainDomain = document.location.hostname.match(/(([^.\/]+\.[^.\/]{2,3}\.[^.\/]{2})|(([^.\/]+\.)[^.\/]{2,4}))(\/.*)?$/)[1]; try{dataLayer.push({'baseDomain': mainDomain.toLowerCase()});}catch(err){ dataLayer = [{'baseDomain': mainDomain.toLowerCase()}];} (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-WLSZML');
+  </script> 
+  <div class="fixed-wrap"> 
+   <header class="header"> 
+    <nav class="nav"> 
+     <a href="/" class="nav__logo"> 
+      <div class="icon icon--sofi-logo"> 
+       <svg>
+        <use xlink:href="#sofi-logo"></use>
+       </svg> 
+      </div> </a> 
+     <ul class="nav__menu"> 
+      <li class="nav__item nav__item--login"><a class="nav__link nav__link--clickable" href="/b/">Log In</a></li> 
+      <li class="nav__item nav__item--home"><a class="nav__link nav__link--clickable" href="/">Home</a></li> 
+      <li class="nav__item nav__item--dropdown"> <a class="nav__link nav__link--clickable" href="/products/">Products</a> 
+       <div class="nav__submenu nav__submenu--borrow"> 
+        <div class="icon icon--active-triangle"> 
+         <svg>
+          <use xlink:href="#active-triangle"></use>
+         </svg> 
+        </div> 
+        <ul class="nav__submenu-list"> 
+         <li class="nav__submenu-group">Borrow</li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/refinance-student-loan/">Student Loan Refinancing</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/mortgage-loan/">Mortgages</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/mortgage-refinancing/">Mortgage Refinancing</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/personal-loans/">Personal Loans</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/parent-loan/">Parent Loans</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/parent-plus-refinancing/">Parent PLUS Refinancing</a></li> 
+        </ul> 
+        <ul class="nav__submenu-list nav__submenu-col"> 
+         <li class="nav__submenu-group">Invest</li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/wealth-management/">Wealth Management</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/invest/">Asset Management</a></li> 
+         <li class="nav__submenu-group">Insure</li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/life-insurance/">Life Insurance</a></li> 
+        </ul> 
+       </div> </li> 
+      <li class="nav__item nav__item--dropdown"> <a class="nav__link nav__link--clickable" href="/community-benefits/">Benefits</a> 
+       <div class="nav__submenu nav__submenu--invest"> 
+        <div class="icon icon--active-triangle"> 
+         <svg>
+          <use xlink:href="#active-triangle"></use>
+         </svg> 
+        </div> 
+        <ul class="nav__submenu-list"> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/career-advisory/">Career Advisory Group</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/events/">Community Events</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/entrepreneur-program/">Entrepreneur Program</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/referral-program/">Referral Program</a></li> 
+        </ul> 
+       </div> </li> 
+      <li class="nav__item nav__item--dropdown"> <a class="nav__link nav__link--clickable" href="/resource-center/">Resources</a> 
+       <div class="nav__submenu nav__submenu--resources"> 
+        <div class="icon icon--active-triangle"> 
+         <svg>
+          <use xlink:href="#active-triangle"></use>
+         </svg> 
+        </div> 
+        <ul class="nav__submenu-list"> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/resource-center/">Resource Center</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/blog/">Blog</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/faq/">FAQ</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/eligibility-criteria/">Eligibility Criteria</a></li> 
+        </ul> 
+        <ul class="nav__submenu-list nav__submenu-col"> 
+         <li class="nav__submenu-group">Top Resources</li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/student-loan-calculator/">Student Loan Calculator</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/consolidate-student-loans-vs-refinance/">Consolidate vs. Refinance</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/personal-loan-calculator/">Personal Loan Calculator</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/fixed-vs-variable-rate-loans/">Fixed vs. Variable Rate Loans</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/mortgage-calculator">Mortgage Calculator</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/home-buyers-guide">First-Time Home Buyer's Guide</a></li> 
+        </ul> 
+       </div> </li> 
+      <li class="nav__item nav__item--dropdown"> <a href="#" class="nav__link" onclick="return false;">At Work</a> 
+       <div class="nav__submenu nav__submenu--at-work"> 
+        <div class="icon icon--active-triangle"> 
+         <svg>
+          <use xlink:href="#active-triangle"></use>
+         </svg> 
+        </div> 
+        <ul class="nav__submenu-list"> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/sofi-at-work/">For Businesses</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/sofi-at-work-employees/">For Employees</a></li> 
+        </ul> 
+       </div> </li> 
+      <li class="nav__item nav__item--dropdown"> <a href="#" class="nav__link" onclick="return false;">Company</a> 
+       <div class="nav__submenu nav__submenu--about-us"> 
+        <div class="icon icon--active-triangle"> 
+         <svg>
+          <use xlink:href="#active-triangle"></use>
+         </svg> 
+        </div> 
+        <ul class="nav__submenu-list"> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/our-story/">About Us</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/how-it-works/">How it Works</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/member-stories/">Member Stories</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/press/">Press</a></li> 
+         <li class="nav__submenu-item"><a class="nav__submenu-link" href="/careers/">Jobs</a></li> 
+        </ul> 
+       </div> </li> 
+     </ul> 
+     <a href="#" onclick="return false;" class="nav__mobile-toggle" data-action="toggleMenu"> 
+      <div class="icon icon--menu-toggle"> 
+       <svg>
+        <use xlink:href="#menu-toggle"></use>
+       </svg> 
+      </div> </a> 
+     <a class="main-nav__cta-btn btn" href="/b/registration" onclick="_gaq.push(['_trackEvent', 'CTA', 'Clicked', 'find my rate']);">Find My Rate</a> 
+    </nav> 
+   </header> 
+  </div> 
+  <div class="page-wrap"> 
+   <div class="row"> 
+    <div class="l-main-left "> 
+     <section class="blog-wrap"> 
+      <div class="breadcrumbs"> 
+       <a href="/blog">
+        <svg> 
+         <use xlink:href="#caret-left"> 
+         </use>
+        </svg> Return to blog </a> 
+      </div> 
+      <article class="post post-20594 type-post status-publish format-standard has-post-thumbnail hentry category-career-advisory tag-alignment tag-career-advice tag-career-services" id="post-20594"> 
+       <div class="post__content"> 
+        <div class="post__content--image"> 
+         <a href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/"> <img width="853" height="286" src="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20161004110702/Want-to-be-happy-at-work_Blog.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Finding Purpose and Happiness at Work" srcset="https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20161004110702/Want-to-be-happy-at-work_Blog.jpg 853w, https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20161004110702/Want-to-be-happy-at-work_Blog-300x101.jpg 300w, https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/20161004110702/Want-to-be-happy-at-work_Blog-768x258.jpg 768w" sizes="(max-width: 853px) 100vw, 853px"> </a> 
+        </div> 
+        <h1> Want to be Happy at Work? Here’s How to Find Purpose </h1> 
+        <br> 
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style sharing_toolbox" data-a2a-icon-color="unset" data-a2a-url="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/" data-a2a-title="Want to be Happy at Work? Here’s How to Find Purpose"> 
+         <a class="a2a_button_facebook"></a> 
+         <a class="a2a_button_twitter"></a> 
+         <a class="a2a_button_pinterest"></a> 
+         <a class="a2a_button_linkedin"></a> 
+         <a class="a2a_dd" href="https://www.addtoany.com/share"></a> 
+        </div> 
+        <script src="//static.addtoany.com/menu/page.js" async></script> 
+        <br> 
+        <div class="post__content--byline">
+          By 
+         <a href="https://www.sofi.com/blog/author/rkim/" title="Posts by Rachel Kim" rel="author">Rachel Kim</a> &nbsp;| &nbsp; 
+         <span>Apr 11, 2016 &nbsp; | &nbsp; <a href="https://www.sofi.com/blog/category/career-advisory/" rel="category tag">Career</a> &nbsp;| &nbsp; <a href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/#comments">2 Comments</a></span>
+        </div> 
+        <div class="post__content--post"> 
+         <p><span style="font-weight: 400;">Have you ever caught yourself thinking, “I’d be happy at work if only I got a promotion/made more money/did something I’m more passionate about”? </span></p> 
+         <p>Or maybe you read stories about people who are getting paid to pursue their dreams and think, “Why can’t that be me?”</p> 
+         <p>Well, if it’s any consolation, you’re certainly not alone. Total career happiness is hard to come by.</p> 
+         <p><span style="font-weight: 400;">So what gives? Are some of us just doomed to be </span><span style="font-weight: 400;">unhappy at work</span><span style="font-weight: 400;"> forever?</span></p> 
+         <p><span id="more-20594"></span></p> 
+         <p><span style="font-weight: 400;">As a </span><a href="https://www.sofi.com/career-strategy/"><span style="font-weight: 400;">career strategist</span></a><span style="font-weight: 400;"> and coach at SoFi, I hear this question pretty frequently from our members—many of whom have started to build seemingly </span><a href="https://www.sofi.com/blog/3-secrets-career-success/"><span style="font-weight: 400;">successful careers</span></a><span style="font-weight: 400;"> but fear they may be on the wrong path to happiness. They feel stuck, often have a hard time getting motivated every morning. And they want to know if making a change will make a difference.</span></p> 
+         <p><span style="font-weight: 400;">In order to answer these questions, it’s important to peel back a few layers and make sure you’re clear on who you are and how you want to live your life. We call this foundation </span><b><i>alignment</i></b><span style="font-weight: 400;">, and if you get it right, the rest of the answers tend to fall in place.</span></p> 
+         <p><b>What is alignment, and how do I achieve it?</b></p> 
+         <p><span style="font-weight: 400;">In order to understand how alignment works, it helps to understand what truly makes people happy. In her book </span><a href="http://www.amazon.com/The-How-Happiness-Approach-Getting/dp/0143114956"><span style="font-weight: 400;">The How of Happiness</span></a><span style="font-weight: 400;">, Sonja Lyubomirsky defines happiness as “the experience of joy, contentment, or positive well-being, combined with a sense that one’s life is </span><b>good, meaningful, and worthwhile</b><span style="font-weight: 400;">.” </span></p> 
+         <p>In a nutshell, if you’re not sure what ‘good, meaningful, and worthwhile’ means to you, you may be chasing down the wrong things in your career.</p> 
+         <p>That’s where alignment comes in. Essentially, it’s when you learn to understand yourself better so that your career choices reflect who you are, what you’re good at, and what’s important to you. To achieve alignment, you must first identify three things:</p> 
+         <p><b>Your values and motivators.</b> <span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">What’s most important to you about the ways you live and work? What gets you out of bed in the morning? For example, one of my big values is responsibility—the fact that I contribute to my household and put food on the table for my family. It gives me a huge sense of purpose. </span></p> 
+         <p><b>Your personality and strengths.</b><span style="font-weight: 400;"> &nbsp;</span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">What are you good at? What are your habits and tendencies? I love being a part of a community, and yet I’ve always been good at working with people one-on-one. My role at SoFi allows me to do both. &nbsp;</span></p> 
+         <p><b>Your interests. &nbsp;</b><b><br> </b><span style="font-weight: 400;">What are you passionate about? What do you feel pulled toward? For me, helping people has always been a key interest—and again, I get to do that every day in my current job.</span></p> 
+         <p><span style="font-weight: 400;">These questions may seem a little obvious, but the truth is, most of us don’t think about this stuff as often as we should. For one thing, the answers may change over time, so it’s important to do a self-check on a regular basis. Also, it’s crucial to get outside your own head, for example using free tools like the </span><a href="http://www.lifevaluesinventory.org/"><span style="font-weight: 400;">Life Values Inventory</span></a><span style="font-weight: 400;">, </span><a href="https://www.16personalities.com/free-personality-test"><span style="font-weight: 400;">16Personalities</span></a><span style="font-weight: 400;"> and </span><a href="https://www.talentoday.com"><span style="font-weight: 400;">TalenToday</span></a><span style="font-weight: 400;">. If possible, work with a coach. An outside perspective may help you uncover things you couldn’t see on your own.</span></p> 
+         <div class="blog-image1"></div> 
+         <p><b>The difference between finding purpose and “Your Purpose”</b></p> 
+         <p><span style="font-weight: 400;">“Your Purpose” is what you might call your mission in life. It’s the thing that truly drives you. It’s the mark you want to leave, connecting your passion and your talents. It may be what you do for a living—but it doesn’t have to be. In fact, many people who try to make their purpose their career end up losing their passion for the work. For example, an artist may strive to connect with others in his or her own creative way—not necessarily in the way of their employer.</span></p> 
+         <p>Finding purpose in your work, on the other hand, doesn’t necessarily mean pursuing your calling. It should, however, help you achieve your larger life and career goals. Meaning even if you’re not passionate about the field your job is in—the job itself should honor your values, put your strengths to work, and keep you interested and challenged. Hopefully, it can provide you with the income and the flexibility to pursue “Your Purpose” outside of work.</p> 
+         <p>At the end of the day, it’s about uncovering your options and making choices that help you feel life is good, meaningful, and worthwhile.</p> 
+         <p><b>What’s next?</b></p> 
+         <p><span style="font-weight: 400;">Want more? Join me in a webinar series to help you get to know yourself better and create a plan that’s more “aligned” with your work and your life. Sign up&nbsp;</span><a href="https://attendee.gotowebinar.com/register/7288473838099124227"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">.</span></p> 
+         <p><span style="font-weight: 400;">Also, I’d love to hear your experience with finding the </span><span style="font-weight: 400;">ideal job</span><span style="font-weight: 400;">. What </span><span style="font-weight: 400;">career advice</span><span style="font-weight: 400;"> has helped you be </span><span style="font-weight: 400;">happy at work</span><span style="font-weight: 400;">? </span></p> 
+         <div class="a2a_kit a2a_kit_size_32 a2a_default_style sharing_toolbox" data-a2a-icon-color="unset" data-a2a-url="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/" data-a2a-title="Want to be Happy at Work? Here’s How to Find Purpose"> 
+          <a class="a2a_button_facebook"></a> 
+          <a class="a2a_button_twitter"></a> 
+          <a class="a2a_button_pinterest"></a> 
+          <a class="a2a_button_linkedin"></a> 
+          <a class="a2a_dd" href="https://www.addtoany.com/share"></a> 
+         </div> 
+         <script src="//static.addtoany.com/menu/page.js" async></script> 
+        </div> 
+        <br> 
+        <div class="post-tags">
+         <a href="https://www.sofi.com/blog/tag/alignment/" rel="tag">Alignment</a> 
+         <a href="https://www.sofi.com/blog/tag/career-advice/" rel="tag">Career Advice</a> 
+         <a href="https://www.sofi.com/blog/tag/career-services/" rel="tag">career services</a>
+        </div> 
+       </div> 
+      </article> 
+      <div class="author-bio"> 
+       <img alt="" src="https://secure.gravatar.com/avatar/84d21f9caa337620908e55bc166696b0?s=77&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/84d21f9caa337620908e55bc166696b0?s=154&amp;d=mm&amp;r=g 2x" class="avatar avatar-77 photo" height="77" width="77"> 
+       <span class="author-bio__name">ABOUT Rachel Kim</span> 
+       <span class="author-bio__description">Rachel Kim is a Career Strategist and Coach at SoFi, empowering SoFi members to make progress towards career success and happiness. Before becoming a coach full-time, Rachel led and designed organizational and leadership development programs at various local, statewide, and national nonprofit organizations. Early in her career, she also dabbled in media planning and consulting for companies such as Hasbro, Marvel, and Time, Inc. Rachel is a Certified Professional Co-Active Coach and holds an MPA from Baruch College and a BA from Dartmouth College. Her favorite happiness hacks include listening to podcasts during her commute, exploring parks and playgrounds with her two young children, and Netflix-binging with her husband.</span> 
+      </div> 
+      <div id="comments" class="comments-area"> 
+       <br>
+       <br> 
+       <h2 class="comments-title"> 2 thoughts on “<span>Want to be Happy at Work? Here’s How to Find Purpose</span>” </h2> 
+       <ol class="commentlist"> 
+        <li class="comment even thread-even depth-1" id="li-comment-174465"> 
+         <div id="comment-174465" class="comment"> 
+          <div> 
+           <div class="comment-author vcard"> 
+            <img alt="" src="https://secure.gravatar.com/avatar/0222cbe4b7623a018730682bea8f6a6b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/0222cbe4b7623a018730682bea8f6a6b?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+            <cite class="fn">Stan</cite> 
+            <span class="says">says:</span> 
+           </div> 
+           <div class="comment-meta commentmetadata"> 
+            <a href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/#comment-174465"><time pubdate datetime="2016-04-18T21:14:11+00:00"> April 18, 2016 at 9:14 pm </time></a> 
+           </div> 
+          </div> 
+          <div class="comment-content">
+           <p>Thank you for the article! It was very well written, and had many nuggets of worthwhile information. I loved the alignment concept, and the intersection of values, interests/skills, and external needs/context.</p> 
+           <p>Keep up the great work!</p> 
+          </div> 
+          <div class="reply"> 
+           <a rel="nofollow" class="comment-reply-link" href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/?replytocom=174465#respond" onclick="return addComment.moveForm( &quot;comment-174465&quot;, &quot;174465&quot;, &quot;respond&quot;, &quot;20594&quot; )" aria-label="Reply to Stan">Reply</a> 
+          </div> 
+         </div> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-177200"> 
+         <div id="comment-177200" class="comment"> 
+          <div> 
+           <div class="comment-author vcard"> 
+            <img alt="" src="https://secure.gravatar.com/avatar/19f6cdea32af190366220cd07f95837f?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/19f6cdea32af190366220cd07f95837f?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+            <cite class="fn">Jennifer</cite> 
+            <span class="says">says:</span> 
+           </div> 
+           <div class="comment-meta commentmetadata"> 
+            <a href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/#comment-177200"><time pubdate datetime="2016-05-25T10:58:28+00:00"> May 25, 2016 at 10:58 am </time></a> 
+           </div> 
+          </div> 
+          <div class="comment-content">
+           <p>Great article! I shared it with my children who are recent graduates. These are things they should consider as they enter the job market.</p> 
+          </div> 
+          <div class="reply"> 
+           <a rel="nofollow" class="comment-reply-link" href="https://www.sofi.com/blog/want-happy-work-heres-find-purpose/?replytocom=177200#respond" onclick="return addComment.moveForm( &quot;comment-177200&quot;, &quot;177200&quot;, &quot;respond&quot;, &quot;20594&quot; )" aria-label="Reply to Jennifer">Reply</a> 
+          </div> 
+         </div> </li>
+        <!-- #comment-## --> 
+       </ol> 
+       <div id="respond" class="comment-respond"> 
+        <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/want-happy-work-heres-find-purpose/#respond" style="display:none;">Cancel reply</a></small></h3> 
+        <form action="https://www.sofi.com/wp/wp-comments-post.php" method="post" id="commentform" class="comment-form"> 
+         <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+         <p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required></textarea></p>
+         <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required></p> 
+         <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required></p> 
+         <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="20594" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p>
+         <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="177"></p> 
+        </form> 
+       </div>
+       <!-- #respond --> 
+      </div> 
+     </section> 
+    </div> 
+    <div class="l-sidebar"> 
+     <div class="l-sidebar__search"> 
+      <form role="search" method="get" class="search-form" action="https://www.sofi.com/"> 
+       <input type="search" class="l-sidebar__search--input" placeholder="Fixed Rate Loans, etc..." value="" name="s" title="Search for:"> 
+       <input type="submit" class="l-sidebar__search--submit" value="Search"> 
+       <input class="event-search__input" type="hidden" name="post_type" value="post"> 
+      </form> 
+     </div> 
+     <div class="execphpwidget">
+      <section class="category-wrap"> 
+       <h3>CATEGORIES</h3> 
+       <ul> 
+        <li class="cat-item"><a href="/blog/">All</a></li> 
+        <li class="cat-item cat-item-124"><a href="https://www.sofi.com/blog/category/career-advisory/">Career</a> </li> 
+        <li class="cat-item cat-item-123"><a href="https://www.sofi.com/blog/category/lifestyle/">Lifestyle</a> </li> 
+        <li class="cat-item cat-item-122"><a href="https://www.sofi.com/blog/category/money/">Money</a> </li> 
+        <li class="cat-item cat-item-121"><a href="https://www.sofi.com/blog/category/sofi-news/">SoFi News</a> </li> 
+        <li class="cat-item"><a href="/blog/tag/market-commentary/ ">Market Commentary</a></li> 
+       </ul> 
+      </section>
+     </div> 
+     <div class="textwidget">
+      <section> 
+       <div class="signup-form-wrapper"> 
+        <h3>JOIN THE COMMUNITY</h3> 
+        <p> Career tips, money advice, workplace trends, and more. </p> 
+        <form name="signup" id="signup" action="https://t.trackedlink.net/signup.ashx" method="post" onsubmit="return validate_signup(this)"> 
+         <input type="hidden" name="addressbookid" value="2867493"> 
+         <input type="hidden" name="userid" value="114109"> 
+         <input type="hidden" name="ReturnURL" value="https://www.sofi.com/thanks"> 
+         <input name="Email" type="text" placeholder="Enter Email Address" class="email-address" required> 
+         <button class="button-caret" type="submit"> <span> Subscribe </span></button> 
+        </form> 
+       </div> 
+      </section>
+     </div> 
+    </div> 
+   </div>
+   <!-- row --> 
+   <footer class="footer"> 
+    <div class="footer__inner"> 
+     <div class="footer__col--questions-mobile"> 
+      <h4>QUESTIONS?</h4> 
+      <div> 
+       <div class="support-container"> 
+        <div class="support-phone-container"> 
+         <b>Customer Support:</b> 
+         <br> 
+         <span class="info"> 
+          <svg> 
+           <use xlink:href="#call-now"></use> 
+          </svg> </span> 
+         <b><a href="tel:+18554567634">(855) 456-7634</a></b> 
+        </div> 
+        <div class="support-service-hours"> 
+         <ul> 
+          <li>Mon-Thu 4:00 AM - 9:00 PM PT</li> 
+          <li>Fri-Sun 4:00 AM - 5:00 PM PT</li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="support-container"> 
+        <div class="support-phone-container"> 
+         <b>Mortgage Support:</b> 
+         <br> 
+         <span class="info"> 
+          <svg> 
+           <use xlink:href="#call-now"></use> 
+          </svg> </span> 
+         <b><a href="tel:+18447634466">(844) 763-4466</a></b> 
+        </div> 
+        <div class="support-service-hours"> 
+         <ul> 
+          <li>Mon-Thu 8:00 AM - 5:00 PM PT</li> 
+          <li>Fri 8:00 AM - 4:00 PM PT</li> 
+          <li>Sat 7:00 AM - 2:00 PM PT</li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="support-container"> 
+        <div class="support-phone-container"> 
+         <b>Wealth Support:</b> 
+         <br> 
+         <span class="info"> 
+          <svg> 
+           <use xlink:href="#call-now"></use> 
+          </svg> </span> 
+         <b><a href="tel:+18555257634">(855) 525-7634</a></b> 
+        </div> 
+        <div class="support-service-hours"> 
+         <ul> 
+          <li>Mon-Thu 4:00 AM - 9:00 PM PT</li> 
+          <li>Fri-Sun 4:00 AM - 5:00 PM PT</li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="footer__col--products"> 
+      <h4>PRODUCTS</h4> 
+      <ul> 
+       <li><a href="/refinance-student-loan/">Student Loan Refinancing</a></li> 
+       <li><a href="/mortgage-loan/">Mortgage Loans</a></li> 
+       <li><a href="/mortgage-refinancing/">Mortgage Refinancing</a></li> 
+       <li><a href="/personal-loans/">Personal Loans</a></li> 
+       <li><a href="/parent-loan/">Parent Loans</a></li> 
+       <li><a href="/parent-plus-refinancing/">Parent PLUS Refinancing</a></li> 
+       <li><a href="/invest/">Asset Management</a></li> 
+       <li><a href="/wealth-management/">Wealth Management</a></li> 
+       <li><a href="/life-insurance/">Life Insurance</a></li> 
+      </ul> 
+     </div> 
+     <div class="footer__col--company"> 
+      <h4>COMPANY</h4> 
+      <ul> 
+       <li><a href="/our-story/">About Us</a></li> 
+       <li><a href="/how-it-works/">How it Works</a></li> 
+       <li><a href="/press/">Press</a></li> 
+       <li><a href="/careers/">Jobs</a></li> 
+       <li><a href="/blog/" target="__blank">Blog</a></li> 
+       <li><a href="/faq/">FAQ</a></li> 
+      </ul> 
+     </div> 
+     <div class="footer__col--legal"> 
+      <h4>LEGAL</h4> 
+      <ul> 
+       <li><a href="/privacy-policy/">Privacy &amp; Security</a></li> 
+       <li><a href="/terms-of-use/">Terms of Use</a></li> 
+       <li><a href="/legal/">Disclaimers</a></li> 
+       <li><a href="/legal#licenses">Licenses</a></li> 
+       <li><a href="http://www.nmlsconsumeraccess.org/">NMLS Access</a></li> 
+       <li><a href="/eligibility-criteria/">Eligibility Criteria</a></li> 
+      </ul> 
+     </div> 
+     <div class="footer__col--questions"> 
+      <h4>QUESTIONS</h4> 
+      <ul> 
+       <li><a href="/faq/">FAQ</a></li> 
+       <li><a href="/contact-us/">Contact Us</a></li> 
+       <li><strong>Tweet</strong> <a class="twitter-support" href="https://twitter.com/sofisupport" target="_blank">@SoFiSupport</a></li> 
+       <li> <strong>Customer Support:</strong> <span class="phone-container"> <a href="tel:+18554567634">(855) 456-7634</a> <span class="info"> 
+          <svg> 
+           <use xlink:href="#question-outline"></use> 
+          </svg> 
+          <div class="bubble"> 
+           <ul> 
+            <li>Mon-Thu 4:00 AM - 9:00 PM PT</li> 
+            <li>Fri-Sun 4:00 AM - 5:00 PM PT</li> 
+           </ul> 
+          </div> </span> </span> </li> 
+       <li> <strong>Mortgage Support:</strong> <span class="phone-container"> <a href="tel:+18447634466"> (844) 763-4466</a> <span class="info"> 
+          <svg> 
+           <use xlink:href="#question-outline"></use> 
+          </svg> 
+          <div class="bubble"> 
+           <ul> 
+            <li>Mon-Thu 8:00 AM - 5:00 PM PT</li> 
+            <li>Fri 8:00 AM - 4:00 PM PT</li> 
+            <li>Sat 7:00 AM - 2:00 PM PT</li> 
+           </ul> 
+          </div> </span> </span> </li> 
+       <li> <strong>Wealth Support:</strong><br> <span class="phone-container"> <a href="tel:+18555257634"> (855) 525-7634</a> <span class="info"> 
+          <svg> 
+           <use xlink:href="#question-outline"></use> 
+          </svg> 
+          <div class="bubble"> 
+           <ul> 
+            <li>Mon-Thu 4:00 AM - 9:00 PM PT</li> 
+            <li>Fri-Sun 4:00 AM - 5:00 PM PT</li> 
+           </ul> 
+          </div> </span> </span> </li> 
+      </ul> 
+     </div> 
+     <div class="footer__col--signup"> 
+      <h4>HEAR ABOUT SOFI TIPS, EVENTS &amp; MORE</h4> 
+      <div class="footer__signup"> 
+       <form name="signup" id="signup" action="https://t.trackedlink.net/signup.ashx" method="post"> 
+        <input type="hidden" name="addressbookid" value="2867493"> 
+        <input type="hidden" name="userid" value="114109"> 
+        <input type="hidden" name="ReturnURL" value="https://www.sofi.com/thanks"> 
+        <div class="signup-form-wrapper"> 
+         <input name="Email" type="email" placeholder="Enter Email Address" class="email-address" required> 
+         <button class="button-caret" type="submit"> <span> 
+           <svg>
+            <use xlink:href="#caret-right"></use>
+           </svg> </span></button> 
+        </div> 
+       </form> 
+       <ul class="social-links"> 
+        <li><a href="https://www.facebook.com/SoFi" target="_blank" title="Facebook">
+          <svg>
+           <use xlink:href="#facebook-logo"></use>
+          </svg></a></li> 
+        <li><a href="http://www.linkedin.com/company/2301992" target="_blank" title="LinkedIn">
+          <svg>
+           <use xlink:href="#linkedin-logo"></use>
+          </svg></a></li> 
+        <li><a href="https://twitter.com/SoFi" target="_blank" title="Twitter">
+          <svg class="icon">
+           <use xlink:href="#twitter-logo"></use>
+          </svg></a></li> 
+        <li><a href="https://instagram.com/sofi/" target="_blank" title="Instagram">
+          <svg>
+           <use xlink:href="#instagram-logo"></use>
+          </svg></a></li> 
+        <li><a href="https://plus.google.com/112678676224400197566" target="_blank" title="Google+">
+          <svg>
+           <use xlink:href="#googleplus-logo"></use>
+          </svg></a></li> 
+        <li><a href="https://www.pinterest.com/sofiloans/" target="_blank" title="Pinterest">
+          <svg>
+           <use xlink:href="#pinterest-logo"></use>
+          </svg></a></li> 
+        <li><a href="https://www.snapchat.com/add/sofi" target="_blank" title="Snapchat">
+          <svg>
+           <use xlink:href="#snapchat-logo"></use>
+          </svg></a></li> 
+       </ul> 
+       <div class="sf-office">
+         375 Healdsburg Avenue
+        <br> Suite 280
+        <br> Healdsburg, CA 95448 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- end footer-inner --> 
+   </footer> 
+   <div class="subfooter"> 
+    <div class="subfooter__inner"> 
+     <div class="subfooter__legal"> 
+      <p> Terms and Conditions Apply. SOFI RESERVES THE RIGHT TO MODIFY OR DISCONTINUE PRODUCTS AND BENEFITS AT ANY TIME WITHOUT NOTICE. To qualify, a borrower must be a U.S. citizen or permanent resident in an <a href="/eligibility-criteria/"><strong>eligible state</strong></a> and meet SoFi's underwriting requirements. Not all borrowers receive the lowest rate. To qualify for the lowest rate, you must have a responsible financial history and meet other conditions. If approved, your actual rate will be within the range of rates listed above and will depend on a variety of factors, including term of loan, a responsible financial history, years of experience, income and other factors. Rates and Terms are subject to change at anytime without notice and are subject to state restrictions. <strong>SoFi refinance loans are private loans and do not have the same repayment options that the federal loan program offers such as Income Based Repayment or Income Contingent Repayment or PAYE.</strong> Licensed by the Department of Business Oversight under the California Finance Lender Law License No. 6054612. SoFi loans are originated by SoFi Lending Corp., NMLS # 1121636. (<a href="http://www.nmlsconsumeraccess.org/" target="blank"><strong>www.nmlsconsumeraccess.org</strong></a>) </p> 
+      <p id="credit-pull"> ✝ To check the rates and terms you qualify for, SoFi conducts a soft credit pull that will not affect your credit score. However, if you choose a product and continue your application, we will request your full credit report from one or more consumer reporting agencies, which is considered a hard credit pull and may affect your credit. </p> 
+     </div> 
+     <div class="subfooter__links">
+       ©2017 Social Finance, Inc. 
+     </div> 
+     <div class="icon-wrap"> 
+      <div class="subfooter__icon subfooter__icon--norton"> 
+       <svg>
+        <use xlink:href="#norton-seal"></use>
+       </svg> 
+      </div> 
+      <div class="subfooter__icon subfooter__icon--ssl"> 
+       <svg>
+        <use xlink:href="#security-shield"></use>
+       </svg> 
+       <span>SSL Encrypted</span> 
+      </div> 
+      <div class="subfooter__icon subfooter__icon--equal-housing"> 
+       <svg>
+        <use xlink:href="#equalhousinglender"></use>
+       </svg> 
+       <span>Equal Housing Lender</span> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+  <!-- page-wrap --> 
+  <script>
+// campaign vars
+var campaignSource = "";
+var campaignMedium = "";
+var campaignName = "";
+var campaignContent = "";
+
+// google retargeting vars
+/* <![CDATA[ */
+var google_conversion_id = 952789752;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script> 
+  <!-- google retargeting --> 
+  <div style="display: none;"> 
+   <script src="//www.googleadservices.com/pagead/conversion.js"></script> 
+   <noscript> 
+    <div style="display:inline;"> 
+     <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/952789752/?value=0&amp;guid=ON&amp;script=0"> 
+    </div> 
+   </noscript> 
+  </div> 
+  <script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script> 
+  <script type="text/javascript"> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script>
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-content/themes/sofi-v4/dist/js/sofi.df6200ed.js"></script> 
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-content/plugins/easy-twitter-feed-widget//js/twitter-widgets.js?ver=1.0"></script> 
+  <script type="text/javascript" src="https://www.sofi.com/wp/wp-content/plugins/akismet/_inc/form.js?ver=4.0"></script> 
+  <!--[if lt IE 9]>
+<div class="modal modal--auto">
+  <div class="modal__fade-screen modal__fade-screen">
+    <div class="modal__inner">
+      <div class="modal__content">
+        <p><strong>Did you know that your browser is out of date?</strong></p>
+        <p>For the best experience viewing our site, we recommend upgrading <a href="http://browsehappy.com/" target="_blank">here</a>.</p>
+        <p><a class="js-modal-close" href="#" onclick="return false;">Close this window</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<![endif]--> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ed681862cc","applicationID":"4186687","transactionName":"ZFdbYUYHD0tQWkYPCV0dbEddSQhWVVxKSBZbQg==","queueTime":0,"applicationTime":17,"atts":"SBBYFw4dHEU=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+  <!-- Comet Cache file path: /cache/zencache/cache/https/www-sofi-com/blog/want-happy-work-heres-find-purpose.html --> 
+  <!-- Comet Cache file built for (https://www.sofi.com/blog/want-happy-work-heres-find-purpose/) in 0.41000 seconds, on: Oct 3rd, 2017 @ 5:50 am UTC; via HTTP request. --> 
+  <!-- This Comet Cache file will auto-expire (and be rebuilt) on: Oct 7th, 2017 @ 5:50 am UTC (based on your configured expiration time). --> 
+  <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ --> 
+  <!-- Comet Cache fully functional :-) Cache file served for (https://www.sofi.com/blog/want-happy-work-heres-find-purpose/) in 0.01519 seconds, on: Oct 3rd, 2017 @ 2:01 pm UTC. -->
+ </body>
+</html>

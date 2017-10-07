@@ -1,0 +1,1519 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head>
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="com.silverpop.brandeddomains" content="www.pages03.net,www.highpoint.edu"> 
+  <title>Search For Internships &amp; Jobs,&amp;nbspCareer &amp; Professional Development | High Point University | High Point, NC</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="author" content="High Point University"> 
+  <meta name="geo.country" content="US"> 
+  <meta name="dc.language" content="en"> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content=""> 
+  <script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0029/8005.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script> 
+  <link rel="icon" type="image/png" href="http://www.highpoint.edu/wp-content/themes/regal/highpoint/dist/images/favicon.png"> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.4.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <link rel="canonical" href="http://www.highpoint.edu/careerinternships/researching/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Search For Internships &amp; Jobs - Career &amp; Professional Development"> 
+  <meta property="og:description" content="The most effective way to identify potential opportunities is through networking. Use our Networking Contact Log to keep track of your contacts. Purple Briefcase, LinkedIn, the Internship Host Database, Vault, and online job boards are other ways to identify opportunities. High Point University Career and Professional Development posts job listings on Purple Briefcase for the …"> 
+  <meta property="og:url" content="http://www.highpoint.edu/careerinternships/researching/"> 
+  <meta property="og:site_name" content="Career &amp; Professional Development"> 
+  <meta property="og:image" content="https://app.purplebriefcase.com/images/uiElements/footerLogo.png"> 
+  <meta property="og:image:secure_url" content="https://app.purplebriefcase.com/images/uiElements/footerLogo.png"> 
+  <meta property="og:image" content="http://www.highpoint.edu/careerinternships/files/2014/06/LinkedIn-Logo-600x145.png"> 
+  <meta property="og:image" content="http://www.highpoint.edu/careerinternships/files/2014/06/indeed1.png"> 
+  <meta property="og:image" content="http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-600x350.png"> 
+  <meta property="og:image" content="https://static.wayup.com/public_pages/external-employer-splash/assets/img/wayup_logo_horizontal.svg"> 
+  <meta property="og:image:secure_url" content="https://static.wayup.com/public_pages/external-employer-splash/assets/img/wayup_logo_horizontal.svg"> 
+  <meta property="og:image" content="http://www.highpoint.edu/careerinternships/files/2015/02/referenceusa-600x137.jpg"> 
+  <meta property="og:image" content="http://www.highpoint.edu/careerinternships/files/2014/12/Washington-Center.jpg"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:description" content="The most effective way to identify potential opportunities is through networking. Use our Networking Contact Log to keep track of your contacts. Purple Briefcase, LinkedIn, the Internship Host Database, Vault, and online job boards are other ways to identify opportunities. High Point University Career and Professional Development posts job listings on Purple Briefcase for the […]"> 
+  <meta name="twitter:title" content="Search For Internships &amp; Jobs - Career &amp; Professional Development"> 
+  <meta name="twitter:image" content="https://app.purplebriefcase.com/images/uiElements/footerLogo.png"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.highpoint.edu\/careerinternships\/","name":"Career &amp; Professional Development","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.highpoint.edu\/careerinternships\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//contentz.mkt932.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.highpoint.edu\/careerinternships\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="responsive-slider-css" href="http://www.highpoint.edu/careerinternships/wp-content/plugins/responsive-slider/css/responsive-slider.css?ver=0.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tribe-events-full-calendar-style-css" href="http://www.highpoint.edu/careerinternships/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css?ver=4.5.13" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tribe-events-calendar-style-css" href="http://www.highpoint.edu/careerinternships/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css?ver=4.5.13" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tribe-events-calendar-full-mobile-style-css" href="http://www.highpoint.edu/careerinternships/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full-mobile.min.css?ver=4.5.13" type="text/css" media="only screen and (max-width: 768px)"> 
+  <link rel="stylesheet" id="tribe-events-calendar-mobile-style-css" href="http://www.highpoint.edu/careerinternships/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme-mobile.min.css?ver=4.5.13" type="text/css" media="only screen and (max-width: 768px)"> 
+  <link rel="stylesheet" id="hpu-screen-css" href="http://www.highpoint.edu/wp-content/themes/regal/highpoint/dist/css/screen.min.css?ver=2.1.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="style.css-css" href="http://www.highpoint.edu/wp-content/themes/regal/highpoint/style.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tablepress-default-css" href="http://www.highpoint.edu/careerinternships/files/tablepress-combined.min.css?ver=12" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mediaelementjs-styles-css" href="http://www.highpoint.edu/careerinternships/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/mediaelementplayer.css?ver=4.8.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-content/plugins/html5-responsive-faq/js/hrf-script.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/wp-content/themes/regal/highpoint/tagmanager.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/mediaelement-and-player.min.js?ver=2.1.3"></script> 
+  <link rel="https://api.w.org/" href="http://www.highpoint.edu/careerinternships/wp-json/"> 
+  <link rel="shortlink" href="http://www.highpoint.edu/careerinternships/?p=1414"> 
+  <link rel="alternate" type="application/json+oembed" href="http://www.highpoint.edu/careerinternships/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.highpoint.edu%2Fcareerinternships%2Fresearching%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="http://www.highpoint.edu/careerinternships/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.highpoint.edu%2Fcareerinternships%2Fresearching%2F&amp;format=xml"> 
+  <script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.highpoint.edu/careerinternships/?wordfence_logHuman=1&hid=7B9860134ABF0E0409D35BDD49CA2B47');
+</script>
+  <meta name="tec-api-version" content="v1">
+  <meta name="tec-api-origin" content="http://www.highpoint.edu/careerinternships">
+  <link rel="https://theeventscalendar.com" href="http://www.highpoint.edu/careerinternships/wp-json/tribe/events/v1/">
+  <meta property="og:title" content="Search For Internships &amp; Jobs - Career &amp; Professional Development"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:image" content="http://www.highpoint.edu/wp-content/themes/regal/highpoint/dist/images/hpu-stacked-200.jpg"> 
+  <meta property="og:url" content="http://www.highpoint.edu/careerinternships/researching/"> 
+  <meta property="og:description" content="The most effective way to identify potential opportunities is through networking. Use our Networking Contact Log to keep track of your contacts. Purple Briefcase, LinkedIn, the Internship Host Database, Vault, and online job boards are other ways to identify opportunities.  High Point University Career and Professional Development posts job listings on Purple Briefcase for the convenience of students.&nbsp; It is the responsibility of students to perform due diligence in researching employers when applying for or accepting private, off-campus employment and to thoroughly research the facts and reputation of each organization to which they are applying. Students should be prudent and use common sense and caution when applying for or accepting any position.      Exclusively for HPU students and alumni, Purple Briefcase is an online internship/job board. This tool allows students and alumni to access full-time, part-time, internship and volunteer opportunities posted directly by the employer or through Career and Professional Development.  NOTE:&nbsp;Please&nbsp;LOGIN&nbsp;using your HPU email address and password (the same username and password that you use to access Blackboard, Webmail, etc). You&nbsp;DO NOT&nbsp;need to register for an account; your information is already in the system. If you have difficulty logging in please contact&nbsp;Career and Professional Development.     LinkedIn is the world’s largest professional networking tool. You can use LinkedIn to connect to professionals in organizations that interest you, HPU alumni, and actual job postings. LinkedIn is also a great tool for researching the job market within specific fields and geographic locations.       Search millions of jobs from thousands of job boards, newspapers, classifieds and company websites on&nbsp;indeed.com  &nbsp;    Search all jobs at Google. Do cool things that matter. On Google Careers you can search, find, and apply to the opportunities that are the right fit for you at Google.  &nbsp;  &nbsp;    WayUp is an online platform for finding jobs and internships. Students can sign up for free and gain access to job postings from companies who are hiring interns and full-time employees. &nbsp;    &nbsp;Locate and research companies that you want to work for. ReferenceUSA has details on 14 million US businesses including 200 million human resource contact names, business descriptions, company size, and website links to job postings.     Internship Host Database Please use these databases as resources to help you in your internship search. To access each database please contact a&nbsp;CPD staff member&nbsp;for the password.      &nbsp;Are you looking for a high quality academic internship experience? Would you like to develop your leadership skills while building &nbsp;your resume? Would you like to develop the skills, confidence, and sense of purpose that will help you make a real difference in the &nbsp;world? If so, then the High Point Washington program may be the perfect program for you.  [...]"> 
+  <meta property="og:site_name" content="High Point University - Career &amp; Professional Development"> 
+  <!--
+		<PageMap>
+							<DataObject type="thumbnail" />
+					</PageMap>
+		--> 
+ </head> 
+ <body class="page-template-default page page-id-1414 no-js tribe-no-js"> 
+  <!-- Google Tag Manager (noscript) --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T96P4NR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <!-- End Google Tag Manager (noscript) --> 
+  <div class="top-menu-mask interior"></div> 
+  <header id="flyout-container" style="left: -100%;"> 
+   <ul class="mobile-menu"> 
+    <li class="mobile-menu-item mobile-menu-title">HPU Main Menu</li> 
+    <li class="search-form-container mobile-menu-item"> 
+     <form action="/search-results/" id="mobile-search" class="form-search" method="get" name="SearchForm"> 
+      <input type="text" class="input-medium search-query" placeholder="SEARCH" name="q">
+      <button type="submit" class="btn"><span class="search-icon"></span></button> 
+     </form> </li> 
+    <li class="mobile-menu-item" id="admissions-2"> <a href="#">Admissions</a> 
+     <ul class="mobile-menu-submenu"> 
+      <li class="mobile-menu-subitem"><a href="/admissions/visits/">Schedule a visit to HPU Today!</a></li> 
+      <li class="mobile-menu-subitem"><a href="/admissions/">Undergraduate Admission</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/apply/">Apply For Admission</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/admissions/visits/">Schedule a Campus Visit</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/admissions/requestinfo/">Request More Information</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/financialplanning">Student Financial Planning</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/admissions/transfer-admissions">Transfer to HPU</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/admissions/tuition-fees/">Tuition &amp; Fees</a></li> 
+      <li class="mobile-menu-subitem"><a href="/graduate/">Graduate Admission</a></li> 
+     </ul> </li>
+    <li class="mobile-menu-item"><a href="#">Academics</a> 
+     <ul class="mobile-menu-submenu"> 
+      <li class="mobile-menu-subitem"><a href="/academics">Academics Homepage</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/artsandsciences">David R. Hayworth College of <br>Arts &amp; Sciences</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/artdesign/">School of Art &amp; Design</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/business/">Earl N. Phillips School of Business</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/communication">Nido R. Qubein School of Communication</a></li> 
+      <li class="mobile-menu-subitem"><a href="/education">Stout School of Education</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/healthsciences">Congdon School of <br>Health Sciences</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/pharmacy">Fred Wilson School of Pharmacy</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/graduate">Norcross Graduate School</a></li> 
+      <li class="mobile-menu-subitem"><a href="/honorsprogram">Honors Scholar Program</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/preprofessionalprograms/">Pre-Professional Programs</a></li> 
+     </ul> </li>
+    <li class="mobile-menu-item"><a href="#">Life On Campus</a> 
+     <ul class="mobile-menu-submenu"> 
+      <li class="mobile-menu-subitem"><a href="/residencelife/">Check out your new home!</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/studentlife">Student Life</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/studenthealth/">Student Health Services</a></li> 
+      <li class="mobile-menu-subitem"><a href="/studentactivities">Student Activities</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/residencelife">Residence Life</a></li> 
+      <li class="mobile-menu-subitem"><a href="/greeklife">Greek Life</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/studyabroad/incoming-international-students/">Incoming Exchange Students</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/oiss/">International Students</a></li> 
+      <li class="mobile-menu-subitem"><a href="/safety">Security &amp; Transportation</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/religiouslife">Religious Life</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/multiculturalaffairs/">Multicultural Affairs</a></li> 
+     </ul> </li>
+    <li class="mobile-menu-item"><a href="#">Athletics</a> 
+     <ul class="mobile-menu-submenu"> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpointpanthers.com/">Athletics</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpointpanthers.com/">Division 1 Sports</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://highpointpanthers.com/index.aspx?path=cs">Club Sports</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpoint.edu/recreationservices/">Intramural Sports</a></li> 
+      <li class="mobile-menu-subitem"><a href="http://www.highpointpanthers.com/sports/2012/9/13/ATH_0913120236.aspx?id=897">Panther Spirit</a></li> 
+     </ul> </li>
+    <li class="mobile-menu-item"><a href="/newsandmedia">News &amp; Media</a> </li>
+    <li class="mobile-menu-item"><a href="/president">Office Of The President</a> </li> 
+    <li class="mobile-menu-item mobile-demo-link"><a href="/discoverhpu">Prospective Students</a></li> 
+    <li class="mobile-menu-item mobile-demo-link"><a href="/currentstudents">Current Students</a></li> 
+    <li class="mobile-menu-item mobile-demo-link"><a href="https://engage.highpoint.edu/family">Parents &amp; Families</a></li> 
+    <li class="mobile-menu-item mobile-demo-link"><a href="https://engage.highpoint.edu/alumni">Alumni</a></li> 
+    <li class="mobile-menu-item mobile-demo-link"><a href="https://goo.gl/Gh3g86">Give</a></li> 
+   </ul> 
+  </header> 
+  <div class="wrap-first first-wrap interior"> 
+   <div class="top-menu interior"> 
+    <ul class="left"> 
+     <li><a class="top-menu-link" href="/discoverhpu">Prospective Students</a></li> 
+     <li><span></span><span class="top-menu-bullet">•</span><a class="top-menu-link" href="/currentstudents">Current Students</a></li> 
+     <li><span></span><span class="top-menu-bullet">•</span><a class="top-menu-link" href="https://engage.highpoint.edu/family">Parents &amp; Families</a></li> 
+     <li><span></span><span class="top-menu-bullet">•</span><a class="top-menu-link" href="https://engage.highpoint.edu/alumni">Alumni</a></li> 
+     <li><span></span><span class="top-menu-bullet">•</span><a class="top-menu-link" href="https://goo.gl/Gh3g86">Give</a></li> 
+    </ul> 
+    <ul class="right"> 
+     <li class="search-form-container"> 
+      <!-- <a class="top-menu-link" href="#test"></a> --> 
+      <div class="search-icon"></div> 
+      <form action="/search-results/" id="searc" class="form-search" method="get" name="SearchForm"> 
+       <input type="text" class="input-medium search-query" placeholder="SEARCH" name="q">
+       <button type="submit" class="btn">Go</button>
+       <div class="search-dropdown js-search-dropdown">
+        <span class="search-dropdown-arrow"></span>
+       </div> 
+       <div class="search-reveal" style="display: none"> 
+        <label class="radio inline"> <input type="radio" name="searchWhere" class="searchWhere" value="website" checked data-method="get" data-action="/search-results/"> HPU </label> 
+        <label class="radio inline"> <input type="radio" name="searchWhere" class="searchWhere" value="directory" data-method="post" data-action="https://my.highpoint.edu/pages/campus-directory.aspx"> Directory </label> 
+       </div> 
+      </form> </li> 
+    </ul> 
+    <div class="mobile-menu-button">
+     MENU
+    </div> 
+    <div class="logo-wrapper"> 
+     <a href="/" class="school"><span class="screen-reader-text">High Point University</span></a> 
+     <a href="/" class="school-roberts-hall"><span class="screen-reader-text">High Point University</span></a> 
+    </div> 
+    <div class="social-icons">
+      SHARE 
+     <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.highpoint.edu%2Fcareerinternships%2Fresearching%2F" class="facebook-icon-large-inverted social-icon" target="_blank"><span class="screen-reader-text">Share on Facebook</span></a> 
+     <a href="http://twitter.com/share?text=Search+For+Internships+%26amp%3B+Jobs+-+Career+%26amp%3B+Professional+Development+%7C++%7C+High+Point+University+%7C+High+Point%2C+NC&amp;url=http%3A%2F%2Fwww.highpoint.edu%2Fcareerinternships%2Fresearching%2F" class="twitter-icon-large-inverted social-icon" target="_blank"><span class="screen-reader-text">Share on Twitter</span></a> 
+    </div> 
+   </div> 
+   <div class="main-submenu-border-interior left"> 
+    <div class="one"></div> 
+   </div> 
+   <div class="main-submenu-border-interior right"> 
+    <div class="one"></div> 
+   </div> 
+   <div class="main-submenu interior"> 
+    <ul class="main-submenu-top"> 
+     <li class="" id="admissions-2"><a href="#">Admissions</a></li> 
+     <li class="" id="academics"><a href="#">•&nbsp;&nbsp;&nbsp;&nbsp;Academics</a></li> 
+     <li class="" id="life-on-campus-2"><a href="#">•&nbsp;&nbsp;&nbsp;&nbsp;Life On Campus</a></li> 
+     <li class="" id="athletics-2"><a href="#">•&nbsp;&nbsp;&nbsp;&nbsp;Athletics</a></li> 
+     <li class="" id="news-media"><a href="/newsandmedia">•&nbsp;&nbsp;&nbsp;&nbsp;News &amp; Media</a></li> 
+     <li class="" id="office-of-the-president-2"><a href="/president">•&nbsp;&nbsp;&nbsp;&nbsp;Office Of The President</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div id="page-wrapper" class="page-wrapper"> 
+   <div class="extend interior admissions-2" style="display: none;"> 
+    <div class="extend-header"></div> 
+    <div class="extend-display"></div> 
+    <div class="extend-links-container"> 
+     <div class="extend-links"> 
+      <a href="/admissions/">Undergraduate Admission</a> 
+      <a href="http://www.highpoint.edu/apply/">Apply For Admission</a> 
+      <a href="http://www.highpoint.edu/admissions/visits/">Schedule a Campus Visit</a> 
+      <a href="http://www.highpoint.edu/admissions/requestinfo/">Request More Information</a> 
+      <a href="http://www.highpoint.edu/financialplanning">Student Financial Planning</a> 
+      <a href="http://www.highpoint.edu/admissions/transfer-admissions">Transfer to HPU</a> 
+      <a href="http://www.highpoint.edu/admissions/tuition-fees/">Tuition &amp; Fees</a> 
+      <a href="/graduate/">Graduate Admission</a> 
+     </div> 
+     <div class="border_holder border_holder_left"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-post"> 
+      <div class="extended-image">
+       <a href="/admissions/visits/"><img src="http://www.highpoint.edu/media/home/GlobalNav_Square_AdmissionsCal.png" width="100%;"></a>
+      </div> 
+      <div class="extended-post-content">
+       <a href="/admissions/visits/">Schedule a<br>visit to HPU<br>Today!</a>
+       <br> 
+      </div> 
+     </div> 
+     <div class="border_holder border_holder_right"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-replics"> 
+      <div class="quote-image">
+       <img src="http://www.highpoint.edu/media/home/morgancrowder.png" width="100%;">
+      </div> "I love High Point because I wake up every day surrounded by positive people ready to help me create my future." 
+      <p class="extended-attribution">Morgan Crowder<br>Class of 2018</p> 
+     </div> 
+     <div style="clear:both;"></div> 
+    </div> 
+   </div> 
+   <div class="extend interior academics"> 
+    <div class="extend-header"></div> 
+    <div class="extend-display"></div> 
+    <div class="extend-links-container"> 
+     <div class="extend-links"> 
+      <a href="http://www.highpoint.edu/artsandsciences">David R. Hayworth College of <br>Arts &amp; Sciences</a> 
+      <a href="http://www.highpoint.edu/artdesign/">School of Art &amp; Design</a> 
+      <a href="http://www.highpoint.edu/business/">Earl N. Phillips School of Business</a> 
+      <a href="http://www.highpoint.edu/communication">Nido R. Qubein School of Communication</a> 
+      <a href="/education">Stout School of Education</a> 
+      <a href="http://www.highpoint.edu/healthsciences">Congdon School of <br>Health Sciences</a> 
+      <a href="http://www.highpoint.edu/pharmacy">Fred Wilson School of Pharmacy</a> 
+      <a href="http://www.highpoint.edu/graduate">Norcross Graduate School</a> 
+      <a href="/honorsprogram">Honors Scholar Program</a> 
+      <a href="http://www.highpoint.edu/preprofessionalprograms/">Pre-Professional Programs</a> 
+     </div> 
+     <div class="border_holder border_holder_left"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-post"> 
+      <div class="extended-image">
+       <a href="/academics"><img src="http://www.highpoint.edu/media/home/GlobalNav_Square_FindYourMajor.png" width="100%;"></a>
+      </div> 
+      <div class="extended-post-content">
+       <a href="/academics">Academics Homepage</a>
+       <br> 
+      </div> 
+     </div> 
+     <div class="border_holder border_holder_right"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-replics"> 
+      <div class="quote-image">
+       <img src="http://www.highpoint.edu/media/home/jamesensor.png" width="100%;">
+      </div> "The personal attention that I receive at HPU is unlike any other. Through small classes I have been able to establish life-long relationships with my professors. No matter if you're in a class with 25 students or a class with just 7 students, the professors ensure your success." 
+      <p class="extended-attribution">James Ensor<br>Class of 2017</p> 
+     </div> 
+     <div style="clear:both;"></div> 
+    </div> 
+   </div> 
+   <div class="extend interior life-on-campus-2"> 
+    <div class="extend-header"></div> 
+    <div class="extend-display"></div> 
+    <div class="extend-links-container"> 
+     <div class="extend-links"> 
+      <a href="http://www.highpoint.edu/studentlife">Student Life</a> 
+      <a href="http://www.highpoint.edu/studenthealth/">Student Health Services</a> 
+      <a href="/studentactivities">Student Activities</a> 
+      <a href="http://www.highpoint.edu/residencelife">Residence Life</a> 
+      <a href="/greeklife">Greek Life</a> 
+      <a href="http://www.highpoint.edu/studyabroad/incoming-international-students/">Incoming Exchange Students</a> 
+      <a href="http://www.highpoint.edu/oiss/">International Students</a> 
+      <a href="/safety">Security &amp; Transportation</a> 
+      <a href="http://www.highpoint.edu/religiouslife">Religious Life</a> 
+      <a href="http://www.highpoint.edu/multiculturalaffairs/">Multicultural Affairs</a> 
+     </div> 
+     <div class="border_holder border_holder_left"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-post"> 
+      <div class="extended-image">
+       <a href="/residencelife/"><img src="http://www.highpoint.edu/media/home/GlobalNav_Square_ResidenceLife.jpg" width="100%;"></a>
+      </div> 
+      <div class="extended-post-content">
+       <a href="/residencelife/">Check out your<br>new home!</a>
+       <br> 
+      </div> 
+     </div> 
+     <div class="border_holder border_holder_right"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-replics"> 
+      <div class="quote-image">
+       <img src="http://www.highpoint.edu/media/home/zoeychittick3.png" width="100%;">
+      </div> "HPU has the most eclectic personalities who are full of positive energy. There is a place for everyone here, it definitely feels like a family here at High Point." 
+      <p class="extended-attribution">Zoey Chittick<br>Class of 2016</p> 
+     </div> 
+     <div style="clear:both;"></div> 
+    </div> 
+   </div> 
+   <div class="extend interior athletics-2"> 
+    <div class="extend-header"></div> 
+    <div class="extend-display"></div> 
+    <div class="extend-links-container"> 
+     <div class="extend-links"> 
+      <a href="http://www.highpointpanthers.com/">Division 1 Sports</a> 
+      <a href="http://highpointpanthers.com/index.aspx?path=cs">Club Sports</a> 
+      <a href="http://www.highpoint.edu/recreationservices/">Intramural Sports</a> 
+      <a href="http://www.highpointpanthers.com/sports/2012/9/13/ATH_0913120236.aspx?id=897">Panther Spirit</a> 
+     </div> 
+     <div class="border_holder border_holder_left"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-post"> 
+      <div class="extended-image">
+       <a href="http://www.highpointpanthers.com/"><img src="http://www.highpoint.edu/media/home/GlobalNav_Square_Athletics.png" width="100%;"></a>
+      </div> 
+      <div class="extended-post-content">
+       <a href="http://www.highpointpanthers.com/">Athletics</a>
+       <br> 
+      </div> 
+     </div> 
+     <div class="border_holder border_holder_right"> 
+      <div class="border-holder-line"></div> 
+     </div> 
+     <div class="extended-replics"> 
+      <div class="quote-image">
+       <img src="http://www.highpoint.edu/media/home/maxwellwheeler4.png" width="100%;">
+      </div> "In between studying, leadership projects and classes, I will always find time for any game across campus – whether it’s an intramural, club, or official HPU athletic event." 
+      <p class="extended-attribution">Maxwell Wheeler<br>Class of 2018</p> 
+     </div> 
+     <div style="clear:both;"></div> 
+    </div> 
+   </div> 
+   <div class="wrap second-wrap interior"> 
+    <ul class="main-submenu-footer-menu interior js-close-menu"> 
+     <li><a href="https://www.highpoint.edu/apply">Apply Now</a></li> 
+     <li class="menu-bullet">&nbsp;&nbsp;•&nbsp;&nbsp;</li> 
+     <li><a href="/admissions/visitcampus/">Visit Campus</a></li> 
+     <li class="menu-bullet">&nbsp;&nbsp;•&nbsp;&nbsp;</li> 
+     <li><a href="http://www.highpoint.edu/admissions/requestinfo">Request Info</a></li> 
+    </ul> 
+    <div class="header-image-mask interior"> 
+     <div class="header-image " style="background-image: url(http://www.highpoint.edu/careerinternships/files/2014/10/careerinternships-10-141.jpg)"></div> 
+     <div class="header-static-ribbon left"> 
+      <img class="school-ribbon" src="http://www.highpoint.edu/wp-content/themes/regal/highpoint/assets/images/schools-ribbons/bright-purple-ribbon.png"> 
+      <div class="ribbon-school-name president-name"> 
+       <div class="school-name-align ribbon-bright-purple">
+         Career &amp; Professional Development 
+       </div> 
+       <div class="ribbon-end ribbon-end-bright-purple"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- .wrap.second-wrap.interior --> 
+   <div class="breadcrumb-container"> 
+    <div class="breadcrumb"> 
+     <a title="Go to High Point University." href="http://www.highpoint.edu/" class="main-home">High Point</a> &nbsp;›&nbsp; 
+     <!-- Breadcrumb NavXT 5.7.1 --> 
+     <a title="Go to Career &amp; Professional Development." href="http://www.highpoint.edu/careerinternships" class="home">Career &amp; Professional Development</a> &gt; Search For Internships &amp; Jobs 
+    </div> 
+   </div> 
+   <div class="body-main"> 
+    <div style="clear:both;"></div> 
+    <div class="left-side"> 
+     <button class="mobile-left-menu-button">On This Page</button> 
+     <div class="left-side-title">
+      Explore Careers
+     </div>
+     <div class="left-side-links">
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/career-exploration/">Explore Occupations</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/self-assessment/">Self Assessments</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/informational-interviewing-job-shadowing/">Informational Interviewing</a> 
+     </div> 
+     <div class="left-side-title">
+      Internships &amp; Jobs
+     </div> 
+     <div class="left-side-links"> 
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/internships-for-credit/">Internships for Academic Credit</a>
+      <a class="left-side-link active" href="http://www.highpoint.edu/careerinternships/researching/">Search For Internships &amp; Jobs</a>
+      <a class="left-side-link" href="https://app.purplebriefcase.com/pb/account/login/" target="_blank">Purple Briefcase Job Board</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/resume-cover-letters/">Resumes &amp; Cover Letters</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/interviewing/">Interviewing</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/linkedin/">LinkedIn</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/blog/category/blog/career-internship-services/" target="_blank">Career &amp; Internship Showcase</a> 
+     </div> 
+     <div class="left-side-title">
+      Graduate School
+     </div> 
+     <div class="left-side-links"> 
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/deciding-to-apply/">Deciding to Apply</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/application-process/">Application Process</a> 
+     </div> 
+     <div class="left-side-title">
+      For Employers
+     </div> 
+     <div class="left-side-links"> 
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/recruiting-guidelines/">Recruiting Guidelines</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/recruiting-a-panther/">Recruiting A Panther</a>
+      <a class="left-side-link" href="https://app.purplebriefcase.com/pb/account/login/" target="_blank">Purple Briefcase Job Board</a> 
+     </div> 
+     <div class="left-side-title">
+      Additional Resources
+     </div> 
+     <div class="left-side-links"> 
+      <a class="left-side-link" href="http://www.highpoint.edu/ooc/share-your-news-with-us">Share your news</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/partner-with-us/">Parents and Alumni</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/parents" target="_blank">HPU Parents Site</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/faculty-resources/">Faculty Resources</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/hpw" target="_blank">High Point Washington Program</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/ourevents/">Events</a>
+      <a class="left-side-link" href="http://www.highpoint.edu/careerinternships/hpu-in-the-city/">HPU in the City</a>
+     </div>
+    </div> 
+    <div class="center-side"> 
+     <article id="post-1414" class="post-1414 page type-page status-publish hentry"> 
+      <header class="entry-header">
+       <h1 class="entry-title">Search For Internships &amp; Jobs</h1>
+      </header> 
+      <div class="entry-content"> 
+       <p>The most effective way to identify potential opportunities is through networking. Use our <a href="http://www.highpoint.edu/careerinternships/files/2014/06/Networking-Contact-Log.zip">Networking Contact Log</a> to keep track of your contacts. <a href="https://app.purplebriefcase.com/pb/account/login/" target="_blank" rel="noopener">Purple Briefcase</a>, LinkedIn, the Internship Host Database, <a href="https://access.vault.com/career-insider-login.aspx?aid=274143" target="_blank" rel="noopener">Vault</a>, and online job boards are other ways to identify opportunities.</p> 
+       <p><em>High Point University Career and Professional Development posts job listings on Purple Briefcase for the convenience of students.&nbsp; It is the responsibility of students to perform due diligence in researching employers when applying for or accepting private, off-campus employment and to thoroughly research the facts and reputation of each organization to which they are applying. Students should be prudent and use common sense and caution when applying for or accepting any position.</em></p> 
+       <hr> 
+       <p><a href="https://app.purplebriefcase.com/pb/account/login/"><img class="logoLink alignleft" src="https://app.purplebriefcase.com/images/uiElements/footerLogo.png" width="137" height="59"></a></p> 
+       <p>Exclusively for HPU students and alumni, Purple Briefcase is an online internship/job board. This tool allows students and alumni to access full-time, part-time, internship and volunteer opportunities posted directly by the employer or through Career and Professional Development.</p> 
+       <p><em>NOTE:&nbsp;</em>Please&nbsp;<b>LOGIN</b>&nbsp;using your HPU email address and password (the same username and password that you use to access Blackboard, Webmail, etc). You&nbsp;<b>DO NOT</b>&nbsp;need to register for an account; your information is already in the system. If you have difficulty logging in please contact&nbsp;<a href="mailto:careerservices@highpoint.edu">Career and Professional Development</a>.</p> 
+       <hr> 
+       <p><a href="http://www.linkedin.com"><img class="alignleft wp-image-1528" src="http://www.highpoint.edu/careerinternships/files/2014/06/LinkedIn-Logo-600x145.png" alt="LinkedIn-Logo" width="200" height="48" srcset="http://www.highpoint.edu/careerinternships/files/2014/06/LinkedIn-Logo-600x145.png 600w, http://www.highpoint.edu/careerinternships/files/2014/06/LinkedIn-Logo-1024x248.png 1024w, http://www.highpoint.edu/careerinternships/files/2014/06/LinkedIn-Logo-345x83.png 345w" sizes="(max-width: 200px) 100vw, 200px"></a></p> 
+       <p style="color: #3e3e3e">LinkedIn is the world’s largest professional networking tool. You can use LinkedIn to connect to professionals in organizations that interest you, HPU alumni, and actual job postings. LinkedIn is also a great tool for researching the job market within specific fields and geographic locations.</p> 
+       <hr> 
+       <p><a href="https://www.indeed.com/"><img class=" wp-image-13857 alignleft" src="http://www.highpoint.edu/careerinternships/files/2014/06/indeed1.png" alt="" width="274" height="73" srcset="http://www.highpoint.edu/careerinternships/files/2014/06/indeed1.png 390w, http://www.highpoint.edu/careerinternships/files/2014/06/indeed1-324x86.png 324w, http://www.highpoint.edu/careerinternships/files/2014/06/indeed1-230x61.png 230w, http://www.highpoint.edu/careerinternships/files/2014/06/indeed1-345x92.png 345w" sizes="(max-width: 274px) 100vw, 274px"></a></p> 
+       <p>Search millions of jobs from thousands of job boards, newspapers, classifieds and company websites on&nbsp;indeed.com</p> 
+       <p>&nbsp;</p> 
+       <hr> 
+       <p><a href="https://careers.google.com/jobs"><img class=" wp-image-13858 alignleft" src="http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-600x350.png" alt="" width="182" height="106" srcset="http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-600x350.png 600w, http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-768x447.png 768w, http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-1024x597.png 1024w, http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-324x189.png 324w, http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-230x134.png 230w, http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11-345x201.png 345w, http://www.highpoint.edu/careerinternships/files/2014/06/google-for-jobs-custommade-11.png 1246w" sizes="(max-width: 182px) 100vw, 182px"></a>Search all jobs at Google. Do cool things that matter. On Google Careers you can search, find, and apply to the opportunities that are the right fit for you at Google.</p> 
+       <p>&nbsp;</p> 
+       <p>&nbsp;</p> 
+       <hr> 
+       <p style="color: #3e3e3e"><a href="https://www.wayup.com/?utm_source=university&amp;utm_medium=button&amp;utm_campaign=Highpoint&amp;refer=Highpoint"><img class="logo-img logo-blue alignleft" src="https://static.wayup.com/public_pages/external-employer-splash/assets/img/wayup_logo_horizontal.svg" width="228" height="57"></a></p> 
+       <p style="color: #3e3e3e">WayUp is an online platform for finding jobs and internships. Students can sign up for free and gain access to job postings from companies who are hiring interns and full-time employees.</p> 
+       <p>&nbsp;</p> 
+       <hr> 
+       <p style="color: #3e3e3e"><a href="http://www.referenceusa.com/Home/Home"><img class="alignleft wp-image-2367" src="http://www.highpoint.edu/careerinternships/files/2015/02/referenceusa-600x137.jpg" alt="referenceusa" width="241" height="55" srcset="http://www.highpoint.edu/careerinternships/files/2015/02/referenceusa-600x137.jpg 600w, http://www.highpoint.edu/careerinternships/files/2015/02/referenceusa-1024x234.jpg 1024w, http://www.highpoint.edu/careerinternships/files/2015/02/referenceusa-345x79.jpg 345w" sizes="(max-width: 241px) 100vw, 241px"></a></p> 
+       <p style="color: #3e3e3e">&nbsp;Locate and research companies that you want to work for. ReferenceUSA has details on 14 million US businesses including 200 million human resource contact names, business descriptions, company size, and website links to job postings.</p> 
+       <hr> 
+       <h2 style="color: #3e3e3e"><a style="color: #ff7e00" title="Internship Host Database" href="http://www.highpoint.edu/careerinternships/internship-host-database/">Internship Host Database</a></h2> 
+       <p style="color: #3e3e3e">Please use these databases as resources to help you in your internship search. To access each database please contact a&nbsp;<a style="color: #ff7e00" href="mailto:%20careerservices@highpoint.edu">CPD staff member</a>&nbsp;for the password.</p> 
+       <hr> 
+       <h2 style="color: #3e3e3e"><img class="alignleft wp-image-2080" src="http://www.highpoint.edu/careerinternships/files/2014/12/Washington-Center.jpg" alt="Washington Center" width="243" height="43" srcset="http://www.highpoint.edu/careerinternships/files/2014/12/Washington-Center.jpg 480w, http://www.highpoint.edu/careerinternships/files/2014/12/Washington-Center-345x61.jpg 345w" sizes="(max-width: 243px) 100vw, 243px"></h2> 
+       <p style="color: #3e3e3e">&nbsp;Are you looking for a high quality academic internship experience? Would you like to develop your leadership skills while building &nbsp;your resume? Would you like to develop the skills, confidence, and sense of purpose that will help you make a real difference in the &nbsp;world? If so, then the <a href="http://www.highpoint.edu/hpw/">High Point Washington program </a>may be the perfect program for you.</p> 
+       <hr> 
+       <h2>Job Boards</h2> 
+       <p style="color: #3e3e3e">There are numerous job search tools available online, and we have identified a sampling. In the industry specific sites listed below, you can access job boards, professional associations, and career information targeted to specific fields.</p> 
+       <table style="height: 255px" width="639"> 
+        <tbody> 
+         <tr> 
+          <td width="30%"> <h5>Internships</h5> </td> 
+          <td width="30%"> <h5>All Industries</h5> </td> 
+          <td width="40%"> <h5>Industry Specific</h5> </td> 
+         </tr> 
+         <tr> 
+          <td><a href="https://www.wayup.com/?utm_source=university&amp;utm_medium=button&amp;utm_campaign=Highpoint&amp;refer=Highpoint">WayUp</a></td> 
+          <td><a href="https://www.wayup.com/?utm_source=university&amp;utm_medium=button&amp;utm_campaign=Highpoint&amp;refer=Highpoint">WayUp</a></td> 
+          <td><a href="http://www.highpoint.edu/careerinternships/what-can-i-do-with-this-major/">What Can I Do With This Major?</a></td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://www.experience.com/entry-level-jobs/internships" target="_blank" rel="noopener noreferrer">Experience.com</a></td> 
+          <td><a href="http://www.simplyhired.com/" target="_blank" rel="noopener noreferrer">Simply Hired</a></td> 
+          <td><a href="http://www.mediabistro.com/joblistings/?nav=mmj" target="_blank" rel="noopener noreferrer">Media Bistro</a></td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://www.internmatch.com/" target="_blank" rel="noopener noreferrer">Intern Match</a></td> 
+          <td><a href="http://www.glassdoor.com/index.htm" target="_blank" rel="noopener noreferrer">Glassdoor</a></td> 
+          <td><a href="http://www.idealist.org/">Idealist</a></td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://www.idealist.org/" target="_blank" rel="noopener noreferrer">Idealist</a></td> 
+          <td><a href="http://www.careerbuilder.com/" target="_blank" rel="noopener noreferrer">Career Builder</a></td> 
+          <td><a href="http://www.teamworkonline.com/">Team Work Online</a></td> 
+         </tr> 
+         <tr> 
+          <td>&nbsp;<a href="http://www.internships.com/" target="_blank" rel="noopener noreferrer">Internships.com</a></td> 
+          <td><a href="http://www.linkup.com/" target="_blank" rel="noopener noreferrer">Linkup</a></td> 
+          <td><a href="http://www.usajobs.gov/">USA Jobs</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td><a href="http://www.rileyguide.com/" target="_blank" rel="noopener noreferrer">The Riley Guide</a></td> 
+          <td><a href="http://www.tommanatosjobs.com/" target="_blank" rel="noopener noreferrer">Tom Manatos Jobs&nbsp;</a></td> 
+         </tr> 
+         <tr> 
+          <td></td> 
+          <td><a href="http://www.indeed.com/">Indeed</a></td> 
+          <td>&nbsp;<a href="http://www.dice.com/" target="_blank" rel="noopener noreferrer">Dice</a></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div>
+      <!-- .entry-content --> 
+     </article>
+     <!-- #post-## --> 
+    </div>
+    <!-- .center-side --> 
+    <div class="right-side"> 
+     <div class="apply-links-container default"> 
+      <h2 class="widgettitle featured">Apply to HPU</h2> 
+      <div class="container-main"> 
+       <a href="/apply" class="right-block-main-links"> <span>Begin Your Application</span> <span class="arrow-continue"></span> </a> 
+      </div> 
+      <div class="container-main"> 
+       <a href="/admissions/visitcampus" class="right-block-main-links"> <span>Visit Campus</span> <span class="arrow-continue"></span> </a> 
+      </div> 
+      <div class="container-main"> 
+       <a href="/admissions/requestinfo" class="right-block-main-links"> <span>Request Info</span> <span class="arrow-continue"></span> </a> 
+      </div> 
+      <div class="container-main"> 
+       <a href="/admissions/#virtualtour" class="right-block-main-links"> <span>Launch Virtual Tour</span> <span class="arrow-continue"></span> </a> 
+      </div> 
+     </div> 
+     <div id="text-2" class="widget widget_text">
+      <h2 class="widgettitle">Contact Us</h2> 
+      <div class="textwidget">
+       <a href="tel:3368419677">(336) 841-9677</a>
+       <br> 
+       <a href="mailto:careerservices@highpoint.edu">careerservices@highpoint.edu</a>
+       <br> 
+       <b>Office Hours</b>
+       <br> Monday - Friday 8:30am - 5:00pm
+       <br> We are located in Cottrell Hall Suite 103 
+       <a href="http://www.highpoint.edu/careerinternships/aboutus/">About Us</a> | 
+       <a href="http://www.highpoint.edu/careerinternships/testimonials/">Testimonials</a>
+       <br> &nbsp; 
+       <div class="widgettitle"></div> 
+       <div class="container-main">
+        <a href="http://www.highpoint.edu/careerinternships/contact-us/" class="right-block-main-links"> <span>Schedule An Appointment</span> <span class="arrow-continue"></span></a>
+       </div> 
+       <div class="container-main"> 
+        <a href="http://www.highpoint.edu/careerinternships/drop-in-hours/" class="right-block-main-links"> <span>Drop-In Hours</span> <span class="arrow-continue"></span> </a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="hp_associated_posts-2" class="widget widget_hp_associated_posts"> 
+      <h2 class="widgettitle">Career and Professional Development Highlights</h2> 
+      <div class="news"> 
+       <a href="http://www.highpoint.edu/blog/2017/09/class-of-2017-profile-haley-ginther/" class="news-container"><img width="150" height="150" src="http://www.highpoint.edu/media/home/34107153020_b09908f631_z-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt=""></a> 
+       <div class="news-text">
+        Class of 2017 Profile: Haley Ginther
+       </div> 
+       <a class="news-read-more" href="http://www.highpoint.edu/blog/2017/09/class-of-2017-profile-haley-ginther/" title="Class of 2017 Profile: Haley Ginther">read more</a> 
+       <div style="clear:both"></div> 
+      </div> 
+      <div class="news"> 
+       <a href="http://www.highpoint.edu/blog/2017/09/senior-interns-with-two-nfl-teams/" class="news-container"><img width="150" height="150" src="http://www.highpoint.edu/media/home/IMG_3133-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt=""></a> 
+       <div class="news-text">
+        Senior Interns with Two NFL Teams
+       </div> 
+       <a class="news-read-more" href="http://www.highpoint.edu/blog/2017/09/senior-interns-with-two-nfl-teams/" title="Senior Interns with Two NFL Teams">read more</a> 
+       <div style="clear:both"></div> 
+      </div> 
+      <div class="news"> 
+       <a href="http://www.highpoint.edu/blog/2017/09/class-of-2017-profile-michael-keener-joins-gartner-as-account-manager/" class="news-container"><img width="150" height="150" src="http://www.highpoint.edu/media/home/LinkedIn-Pic-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt=""></a> 
+       <div class="news-text">
+        Class of 2017 Profile: Michael Keener Joins Gartner as Account Manager
+       </div> 
+       <a class="news-read-more" href="http://www.highpoint.edu/blog/2017/09/class-of-2017-profile-michael-keener-joins-gartner-as-account-manager/" title="Class of 2017 Profile: Michael Keener Joins Gartner as Account Manager">read more</a> 
+       <div style="clear:both"></div> 
+      </div> 
+      <a href="/blog/associated-site/associated-sites-16" class="widget_read_more">View All</a> 
+      <hr> 
+     </div> 
+    </div> 
+   </div> 
+   <hr class="footer-line"> 
+   <div class="social-block"> 
+    <a href="/socialmedia/" class="social-title">HPU SOCIAL<br><span>Connect with us</span></a> 
+    <div class="social-icons"> 
+     <a href="https://www.facebook.com/HighPointU" class="social-icon-large facebook-social-block"></a> 
+     <a href="https://twitter.com/HighPointU" class="social-icon-large twitter-social-block"></a> 
+     <a href="http://www.youtube.com/highpointuniversity" class="social-icon-large youtube-social-block"></a> 
+     <a href="http://www.pinterest.com/highpointu/" class="social-icon-large pinterest-social-block"></a> 
+     <a href="https://www.linkedin.com/school/28206" class="social-icon-large linkedin-social-block"></a> 
+     <a href="http://instagram.com/highpointu" class="social-icon-large instagram-social-block"></a> 
+     <a href="http://www.flickr.com/photos/highpointuniversity/sets/" class="social-icon-large flickr-social-block"></a> 
+    </div> 
+    <a href="/socialmedia" class="social-text">
+     <div class="social-text-title">
+      JOIN THE DIALOGUE 
+     </div>On the Social page, you can view all of High Point University’s social media feeds, connect to specific majors and schools on Facebook, and get the latest updates about what’s happening on campus. </a> 
+    <a href="/socialmedia" class="right-arrow"></a> 
+   </div> 
+   <div class="footer"> 
+    <div class="footer-container"> 
+     <div class="footer-submenu"> 
+      <div class="column cf"> 
+       <div class="column-title">
+        The University
+       </div> 
+       <div class="column-content"> 
+        <a class="footer-link" href="http://www.highpoint.edu/mobile-apps/">Mobile Apps</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/visitorinformation/">Visitor Information</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/community/events/">Community Events</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/donation">Giving To HPU</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/registrar/academic-calendars/">Academic Calendar</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/studentlife/diversity/">Diversity, Equity, &amp; Inclusion</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/campusmap">Campus Map</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/presskit/">Press Kit</a> 
+        <a class="footer-link" href="http://highpoint.bncollege.com/webapp/wcs/stores/servlet/BNCBHomePage?storeId=45559&amp;catalogId=10001">University Bookstore</a> 
+       </div> 
+      </div> 
+      <div class="column-seperator">
+       <div class="border-footer-holder-line"></div>
+      </div> 
+      <div class="column cf"> 
+       <div class="column-title">
+        Administration
+       </div> 
+       <div class="column-content"> 
+        <a class="footer-link" href="http://www.highpoint.edu/administration">Administrative Offices</a> 
+        <a class="footer-link" href="https://my.highpoint.edu/pages/campus-directory.aspx">Campus Directory</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/administration/human-resources/">Human Resources</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/administration/employment-opportunities/">Employment Opportunities</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/administration/files/2017/09/hpu_nondiscrimination-title_ix_statement-2016_17.pdf">Nondiscrimination/Title IX</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/provost/">Office of the Provost</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/administration/hea-student-consumer-information/">HEA Student Consumer Information</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/employeewellness">Employee Wellness Program</a> 
+       </div> 
+      </div> 
+      <div class="column-seperator">
+       <div class="border-footer-holder-line"></div>
+      </div> 
+      <div class="column cf"> 
+       <div class="column-title">
+        Holistic Learning
+       </div> 
+       <div class="column-content"> 
+        <a class="footer-link" href="http://www.highpoint.edu/president/seminar-on-life-skills/">The President's Seminar</a> 
+        <a class="footer-link" href="/careerinternships">Career and Professional Development</a> 
+        <a class="footer-link" href="https://app.purplebriefcase.com/pb/account/login/">Purple Briefcase</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/studyabroad">Study Abroad</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/servicelearning/">Service Learning</a> 
+        <a class="footer-link" href="/urcw">Undergraduate Research</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/community/enrichmentseries">Community Enrichment Series</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/gardens">Arboretum &amp; Gardens</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/successcoach/">Student Success Program</a> 
+       </div> 
+      </div> 
+      <div class="column-seperator">
+       <div class="border-footer-holder-line"></div>
+      </div> 
+      <div class="column cf"> 
+       <div class="column-title">
+        My HPU
+       </div> 
+       <div class="column-content"> 
+        <a class="footer-link" href="http://www.highpoint.edu/concierge/">Campus Concierge</a> 
+        <a class="footer-link" href="http://mywebmail.highpoint.edu/">Webmail</a> 
+        <a class="footer-link" href="https://mycourses.highpoint.edu/">Blackboard</a> 
+        <a class="footer-link" href="http://mystuff.highpoint.edu/">MyStuff</a> 
+        <a class="footer-link" href="https://myaccount.highpoint.edu/student/">Student Planning</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/academicservices/">Academic Services</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/library/">HPU Libraries</a> 
+        <a class="footer-link" href="http://helpdesk.highpoint.edu">HelpDesk</a> 
+        <a class="footer-link" href="http://www.highpoint.edu/concierge/facility-request-form/">Facility Request</a> 
+       </div> 
+      </div> 
+      <div class="column-seperator">
+       <div class="border-footer-holder-line"></div>
+      </div> 
+      <div class="column last cf"> 
+       <img src="http://www.highpoint.edu/careerinternships/wp-content/themes/regal/highpoint/dist/images/high-point-university-stacked.png" class="grid-100"> 
+       <br>
+       <br> 
+       <a href="https://www.google.com/maps/preview/place/833+Montlieu+Ave/@35.971095,-79.992206,17z/data=!4m2!3m1!1s0x88530ed9326433c7:0xde8fcd2c50964994">One University Parkway<br>High Point, NC 27268<br></a> 
+       <br> Questions &amp; Feedback 
+       <br> (800) 345-6993 or 
+       <br> (336) 841-9000 or 
+       <br> 
+       <a href="http://www.highpoint.edu/comment/">Comments<br></a>
+       <br> Copyright © 2017
+       <br> High Point University 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- /div#page-wrapper --> 
+  </div> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script> 
+  <script>// Discover HPU 2017 SCRATCH OFF
+(function($) {
+if (document.querySelector('.page-template-template-discoverhpu2017') !== null) { 
+var scratchOff = (function () {
+    // rewriting to work programatically
+    // function that does all the magic
+    function scratchOffBind(scratchElement) {
+        var scratch1Canvas = scratchElement.getContext('2d');
+        var brushRadius = (scratchElement.width / 100) * 5;
+        var img = new Image();
+
+        //question image here
+        img.src = $(scratchElement).data('scratchConceal');
+
+        /*function detectLeftButton(event) {
+            console.log(event);
+            if ('buttons' in event) {
+                return event.buttons === 1;
+            } else if ('which' in event) {
+                return event.which === 1;
+            } else {
+                return event.button === 1;
+            }
+        }*/
+
+        function getBrushPos(xRef, yRef) {
+            var scratch1Rect = scratchElement.getBoundingClientRect();
+            return {
+                x: Math.floor((xRef - scratch1Rect.left) / (scratch1Rect.right - scratch1Rect.left) * $(scratchElement).attr('width')),
+                y: Math.floor((yRef - scratch1Rect.top) / (scratch1Rect.bottom - scratch1Rect.top) * $(scratchElement).attr('height'))
+            };
+        }
+
+        function drawDot(mouseX, mouseY) {
+            scratch1Canvas.beginPath();
+            scratch1Canvas.arc(mouseX, mouseY, brushRadius, 0, 2 * Math.PI, true);
+            scratch1Canvas.fillStyle = '#000';
+            scratch1Canvas.globalCompositeOperation = "destination-out";
+            scratch1Canvas.fill();
+        }
+
+        // bind function to mousemove
+        $(scratchElement).mousemove(function (e) {
+            var brushPos = getBrushPos(e.clientX, e.clientY);
+            if ('buttons' in e){
+                if (e.buttons === 1){
+                    drawDot(brushPos.x, brushPos.y);
+                } else if (e.buttons == null && e.which === 1){
+                    drawDot(brushPos.x, brushPos.y);
+                }
+            }
+            /*var leftBut = detectLeftButton(e);
+            if (leftBut == 1) {
+                drawDot(brushPos.x, brushPos.y);
+            }*/
+        });
+
+        // bind function to touch move
+        $(scratchElement).on("touchmove", function (e) {
+            e.preventDefault();
+            var touch = e.originalEvent.changedTouches[0];
+            if (touch) {
+                var brushPos = getBrushPos(touch.clientX, touch.clientY);
+                drawDot(brushPos.x, brushPos.y);
+            }
+        });
+
+        if (brushRadius < 150) {
+            brushRadius = 150
+        }
+
+        // setup the canvas on load
+        $(img).on('load', function () {
+            scratch1Canvas.drawImage(img, 0, 0, scratchElement.width, scratchElement.height);
+
+        });
+    }
+
+    return {
+        Bind: scratchOffBind
+    }
+})();
+
+// On document load, fire off
+$(document).ready(function () {
+    var scratchClasses = $('.scratch');
+    for (var i = 0; i < scratchClasses.length; i++) {
+        // initialize and setup elements
+        var element = scratchClasses[i];
+        var concealImg = $(element).data('scratchReveal');
+        $(element).css({'background-image':"url(" + concealImg + ")"});
+        scratchOff.Bind(element);
+    }
+});
+
+  
+
+
+
+}
+})( jQuery );
+</script> 
+  <script>// Discover HPU 2017
+(function($) {
+if (document.querySelector('.page-template-template-discoverhpu2017') !== null) { 
+
+
+/*
+var waypoint = new Waypoint({
+  element: document.getElementById('extraordinary'),
+  handler: function(direction) {
+    $( "#menu-item-35 a" ).toggleClass( "active-waypoint" );
+console.log('extraordinary waypoint!!!');
+  },
+  offset: 220 
+})
+
+var waypoint = new Waypoint({
+  element: document.getElementById('inspiring'),
+  handler: function(direction) {
+$( "#menu-item-35 a" ).toggleClass( "active-waypoint" );
+    $( "#menu-item-36 a" ).toggleClass( "active-waypoint" );
+console.log('inspiring waypoint!!!');
+  },
+  offset: 220 
+})
+
+var waypoint = new Waypoint({
+  element: document.getElementById('caring'),
+  handler: function(direction) {
+   $( "#menu-item-36 a" ).toggleClass( "active-waypoint" );
+$( "#menu-item-37 a" ).toggleClass( "active-waypoint" );
+console.log('caring waypoint!!!');
+  },
+  offset: 320 
+})
+
+*/
+
+
+//waypoint for 95 counter
+var waypoint = new Waypoint({
+  element: document.getElementById('counter95'),
+  handler: function(direction) {
+  
+// Counter To
+$('.counter95').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 4000,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+
+});
+//end of Count to function
+ 
+console.log('counter95!!!');
+this.destroy()
+  },
+  offset: 'bottom-in-view' 
+})
+
+
+//waypoint for 25 counter
+var waypoint = new Waypoint({
+  element: document.getElementById('counter25'),
+  handler: function(direction) {
+  
+// Counter To
+$('.counter25').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 2000,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+
+});
+//end of Count to function
+ 
+console.log('counter25!!!');
+this.destroy()
+  },
+  offset: 'bottom-in-view' 
+})
+
+
+
+
+$(document).ready(function(){
+// Add smooth scrolling to all links
+
+$("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top-100
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+
+var dormButtonDelay = 2000;
+var waypoint = new Waypoint({
+  element: document.getElementById('dorm-button-trigger'),
+  handler: function(direction) {
+  
+
+setTimeout(function() {
+ 
+
+
+$("#dorm-button-trigger").append('<a href="http://www.highpoint.edu/admissions/freshmen-admissions/" target="_blank" class="badge-link"><div class="badge-container this-pulse"><div class="inner-badge"><div class="badge-content">Early decision candidates get first pick of dorms. Ready?<span class="badge-click-here">CLICK HERE TO APPLY</span></div></div></div></a>');
+$(".badge-container").hide().fadeIn(1000);
+
+console.log('dorm-button-trigger!!!');
+}, dormButtonDelay);
+this.destroy()
+
+  },
+  offset: 'bottom-in-view' 
+})
+
+
+
+
+
+
+
+// make flip cards clickable for mobile devices
+$('.flip-container').click(function (e) {
+  $(this).toggleClass('flipped');
+});
+
+// remove title from images
+$('img').removeAttr('title');
+
+
+
+  
+
+
+
+}
+})( jQuery );
+</script> 
+  <script>// Discover HPU 2017 MAGNIFY
+(function($) {
+if ((document.querySelector('.page-template-template-discoverhpu2017') !== null) && ($(window).width()>1000) && ($(window).width()<1900)) { 
+
+$(document).ready(function(){
+
+	var native_width = 0;
+	var native_height = 0;
+
+	//Now the mousemove function
+	$(".magnify").mousemove(function(e){
+		//When the user hovers on the image, the script will first calculate
+		//the native dimensions if they don't exist. Only after the native dimensions
+		//are available, the script will show the zoomed version.
+		if(!native_width && !native_height)
+		{
+			//This will create a new image object with the same image as that in .small
+			//We cannot directly get the dimensions from .small because of the 
+			//width specified to 200px in the html. To get the actual dimensions we have
+			//created this image object.
+			var image_object = new Image();
+			image_object.src = $(".small").attr("src");
+			
+			//This code is wrapped in the .load function which is important.
+			//width and height of the object would return 0 if accessed before 
+			//the image gets loaded.
+			native_width = image_object.width;
+			native_height = image_object.height;
+		}
+		else
+		{
+			//x/y coordinates of the mouse
+			//This is the position of .magnify with respect to the document.
+			var magnify_offset = $(this).offset();
+			//We will deduct the positions of .magnify from the mouse positions with
+			//respect to the document to get the mouse positions with respect to the 
+			//container(.magnify)
+			var mx = e.pageX - magnify_offset.left;
+			var my = e.pageY - magnify_offset.top;
+			
+			//Finally the code to fade out the glass if the mouse is outside the container
+			if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
+			{
+				$(".large").fadeIn(100);
+			}
+			else
+			{
+				$(".large").fadeOut(100);
+			}
+			if($(".large").is(":visible"))
+			{
+				//The background position of .large will be changed according to the position
+				//of the mouse over the .small image. So we will get the ratio of the pixel
+				//under the mouse pointer with respect to the image and use that to position the 
+				//large image inside the magnifying glass
+				var rx = Math.round(mx/$(".small").width()*native_width - $(".large").width()/2)*-1;
+				var ry = Math.round(my/$(".small").height()*native_height - $(".large").height()/2)*-1;
+				var bgp = rx + "px " + ry + "px";
+				
+				//Time to move the magnifying glass with the mouse
+				var px = mx - $(".large").width()/2;
+				var py = my - $(".large").height()/2;
+				//Now the glass moves with the mouse
+				//The logic is to deduct half of the glass's width and height from the 
+				//mouse coordinates to place it with its center at the mouse coordinates
+				
+				//If you hover on the image now, you should see the magnifying glass in action
+				$(".large").css({left: px, top: py, backgroundPosition: bgp});
+			}
+		}
+	})
+})
+
+
+
+}
+})( jQuery );
+</script> 
+  <script>
+// smooth scroll for http://www.highpoint.edu/admissions/collegefairs
+if ((document.URL.indexOf("/admissions") >= 0 ) && (document.querySelector('.page-id-16370') !== null)) {
+(function($) {
+
+//$(document).ready(function(){
+// Add smooth scrolling to all links
+
+$("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top-100
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+//});
+
+
+})( jQuery );
+}
+</script> 
+  <script>
+// add apply button to /academics homepage
+if ((document.URL.indexOf("/academics") >= 0 ) && (document.querySelector('.page-template-homepage') !== null)) { 
+(function($) {
+$(".academics-student-quote-container").after('<div class="link-inject"><a href="http://www.highpoint.edu/admissions/freshmen-admissions/">APPLY NOW</a></div>');
+//change placeholder text in search box
+$("#major-search").attr("placeholder", "search by major, profession, or industry");
+
+})( jQuery );
+}
+</script> 
+  <script>
+// add apply button to /newsandmedia pages
+if(document.URL.indexOf("/newsandmedia") >= 0 ){ 
+(function($) {
+$(".header-static-ribbon").before('<div class="link-inject"><a href="http://www.highpoint.edu/admissions/freshmen-admissions/">APPLY NOW</a></div>');
+
+
+})( jQuery );
+}
+</script> 
+  <script>
+// add logo to some landing pages
+if (((document.querySelector('.page-id-16045') !== null) && (document.URL.indexOf("/admissions") >= 0 )) || ((document.querySelector('.page-id-16306') !== null) && (document.URL.indexOf("/admissions") >= 0 )) || ((document.querySelector('.page-id-16075') !== null) && (document.URL.indexOf("/admissions") >= 0 ))) {
+(function($) {
+$(".center-side-wide").before('<div class="landing-logo"><img src="http://www.highpoint.edu/admissions/files/2017/08/high-point-university-1.png" /></div>');
+
+})( jQuery );
+}
+</script> 
+  <script>
+// visits landing page for admissions
+if ((document.querySelector('.page-id-16332') !== null) && (document.URL.indexOf("/admissions") >= 0 )) {
+(function($) {
+$( ".top-menu-mask, #flyout-container, .wrap-first, .breadcrumb-container, .extend, .second-wrap, .footer-line, .social-block, .footer" ).remove();
+
+$("html").addClass('full-bg-visits');
+
+$(".admissions-interior").before('<div class="visits-landin-logo"><img src="http://www.highpoint.edu/admissions/files/2017/08/high-point-university-1.png" /></div>');
+
+if ($(window).width()<601) {
+$holder = $('#visit-content').detach();
+$("#datepicker").after($holder);
+}
+
+$('.modal') 
+.on('shown', function(){ 
+  console.log('show'); 
+  $('body').css({overflow: 'hidden'}); 
+}) 
+.on('hidden', function(){ 
+  $('body').css({overflow: ''}); 
+}); 
+
+
+})( jQuery );
+}
+</script> 
+  <script>
+// apply landing page for admissions
+if (((document.querySelector('.page-id-16323') !== null) && (document.URL.indexOf("/admissions") >= 0 )) || ((document.querySelector('.page-id-16045') !== null) && (document.URL.indexOf("/admissions") >= 0 )) || ((document.querySelector('.page-id-16306') !== null) && (document.URL.indexOf("/admissions") >= 0 )) || ((document.querySelector('.page-id-16075') !== null) && (document.URL.indexOf("/admissions") >= 0 ))){
+(function($) {
+$( ".top-menu-mask, #flyout-container, .wrap-first, .breadcrumb-container, .extend, .second-wrap, .footer-line, .social-block, .footer" ).remove();
+$("html").addClass('full-bg');
+
+})( jQuery );
+}
+</script> 
+  <script>
+
+//make visit widget appear after visit-content on mobile view
+(function($) {
+if ((document.querySelector('.page-id-258') !== null) && (document.URL.indexOf("/admissions") >= 0 )) {
+
+$('#cv-main').prepend('<div class="volume">We’ve been experiencing a high volume of requests for campus visits.  If you are unable to confirm your reservation online, please contact us at 336-841-9216 or email <a href="mailto:visitation@highpoint.edu">visitation@highpoint.edu</a> and we will be happy to assist you!</div>');
+
+/*
+$eventsHolder = $('#hp-tribe-events-list-widget-0').detach();
+$("#visit-widget").prepend($eventsHolder);
+*/
+/*
+if ($(window).width()<601) {
+$holder = $('#visit-widget').detach();
+$("#visit-content").after($holder);
+}
+*/
+
+if ($(window).width()<601) {
+$holder = $('#visit-content').detach();
+$("#datepicker").after($holder);
+}
+
+$('.modal') 
+.on('shown', function(){ 
+  console.log('show'); 
+  $('body').css({overflow: 'hidden'}); 
+}) 
+.on('hidden', function(){ 
+  $('body').css({overflow: ''}); 
+}); 
+
+
+}
+})( jQuery );
+</script> 
+  <script>//manage show and hide for admissions quiz on http://www.highpoint.edu/admissions/early-decision-quiz/ and http://www.highpoint.edu/admissions/freshmen-admissions/
+(function($) {
+if ((document.querySelector('.page-id-16020') !== null) || (document.querySelector('.page-id-752') !== null)) {
+
+var myVar = setInterval(function(){ myTimer() }, 100);
+
+function myTimer() {
+  if ($('#field_26_15').css('display') == 'list-item') {
+  $( "#field_26_7").css("display", "none");
+console.log('Time');
+} 
+if ((($('#field_26_22').css('display') == 'list-item') || ($('#field_26_16').css('display') == 'list-item') || ($('#field_26_17').css('display') == 'list-item') || ($('#field_26_18').css('display') == 'list-item') || ($('#field_26_20').css('display') == 'list-item') || ($('#field_26_21').css('display') == 'list-item') ) && ($('#field_26_15').css('display') == 'none')) {
+  $( "#field_26_7").css("display", "list-item");
+} 
+}
+
+}
+})( jQuery );
+</script> 
+  <script>
+(function($) {
+if (document.querySelector('.page-template-template-video-homepage') !== null) {
+
+$(".search-form-container").insertAfter("#mega-menu-item-45716");
+$( "#search-field" ).remove();
+
+$('.search-form-container').on('click', function(){
+$(".search-form-container, .search-query, .btn, .js-search-dropdown").addClass("open");
+});
+
+$('.search-reveal').on('click', function(){
+$(this).css('display', 'block');
+});
+
+$("#home-video").after("<a href='http://www.highpoint.edu/discoverhpu/?utm_source=video-homepage&utm_medium=video&utm_campaign=homepage&utm_content=discover-hpu' target='_blank' id='clickable-video-area'></a>");
+
+$( ".familyfriends" ).last().replaceWith( "<div class='familyfriends'><a href='https://engage.highpoint.edu/alumni' target='_blank'>ALUMNI ENGAGEMENT</a></div>" );
+
+$("video").prop('muted', true);
+
+  $(".sound").click( function (){
+$(this).toggleClass('sound-mute');
+    if( $("video").prop('muted') ) {
+          $("video").prop('muted', false);
+    } else {
+      $("video").prop('muted', true);
+    }
+  });
+
+
+//remove right menu on mobile and add back after video
+if ($(window).width()<768) {
+$holder = $('.menu-video-homepage-right-menu-container').detach();
+$("#home-video").after($holder);
+}
+
+// wrap content boxes for zoom hover effect
+$( ".content-box" ).wrap( "<div class='new'></div>" );
+
+
+}
+})( jQuery );
+</script> 
+  <script>
+// insert cube slider into before content - necessary because the html gets removed in the before content of tabbed template
+if(document.querySelector('.page-id-1964') !== null){ 
+(function($) {
+$('.tab-container').prepend('<div class="etitle"><h3>PHOTO HIGHLIGHTS</h3></div><div style="height: 250px;"><a href="https://www.flickr.com/photos/highpointuniversity/sets/72157681597637490" class="cube-click" target="_blank"><div class="eslider"><div class="econtainer"><div class="eslide x"></div><div class="eslide y"></div><div class="eslide z"></div></div><div class="eshadow"></div></div></a></div>')
+})( jQuery );
+}
+</script> 
+  <!-- Start Insert Button --> 
+  <script>
+//injects divs and link for button only if the page has a class of 'category-1244', the tabs make it look like it is not functioning as expected because the chrome inspect tools do not refresh when changing tabs
+if (document.querySelector('.category-1244') !== null) {
+(function($) {
+if ((document.querySelector('.category-1244') !== null) && ($(window).width()>768)) {
+    var video = $('<video />', {
+    id: 'video',
+    class: 'evideo-center',
+    src: 'http://www.highpoint.edu/media/home/Access_Revisions_Web-cropped-lbw-v2.mp4',
+    type: 'video/mp4',
+    autoplay: true,
+loop: true
+});
+
+$(".header-image").remove();
+video.appendTo($('.header-image-mask'));
+}
+})( jQuery );
+
+    theGrandParent = document.getElementById("posts-waterfall");
+theParent = document.createElement("div");
+theKid = document.createElement("div");
+
+// prepend theParent to the beginning of theGrandParent
+theGrandParent.insertBefore(theParent, theGrandParent.firstChild);
+theParent.insertBefore(theKid, theParent.firstChild);
+theParent.className = 'center-ebtn';
+theParent.id = 'magic-parent';
+theKid.id = 'magic';
+theKid.className = 'ebtn';
+
+var mydiv = document.getElementById("magic");
+var aTag = document.createElement('a');
+aTag.setAttribute('href',"http://www.highpoint.edu/dailymotivation/?utm_source=%2Fblog%2Fcategory%2Faccess-to-innovators-video%2F&utm_campaign=dailymotivation&utm_medium=blog&utm_content=purple%20button");
+aTag.innerText = "Sign Up for Daily Motivation";
+mydiv.appendChild(aTag);
+aTag.className = 'button';
+}
+</script> 
+  <!-- End Insert Button --> 
+  <!-- wrap countdown widget with a tag on admissions site --> 
+  <script>
+if(document.URL.indexOf("/admissions") >= 0 ){ 
+(function($) {
+
+$( "#uji_widget-2" ).wrapAll( "<a href='https://highpointugraddeposits.uat.afford.com/?utm_source=admissions-deposit-countdown-widget&utm_medium=deposit-timer&utm_campaign=admissions-deposit&utm_content=deposit-timer' class='new' />");
+
+})( jQuery );
+}
+</script> 
+  <!--Start /president blog buttons script--> 
+  <script>// add buttons to top of bolg pages only
+if ((document.URL.indexOf("/president") >= 0 ) && (document.querySelector('.blog') !== null || document.querySelector('.archive') !== null || document.querySelector('.post-template-default') !== null ))  {
+(function($) {
+
+$('.body-main').prepend('<div class="ebtn-wrap"><div class="ebtn"><a class="button" href="http://www.highpoint.edu/president/category/tv-interviews/">TV Interviews</a></div><div class="ebtn"><a class="button" href="http://www.highpoint.edu/president/category/articles/">Articles</a></div><div class="ebtn"><a class="button" href="http://www.highpoint.edu/president/category/audio-interviews/">Audio Interviews</a></div><div class="center-ebtn"><div class="ebtn"><a class="button" href="http://www.highpoint.edu/president/category/dream-big/">Dream Big</a></div><div class="ebtn"><a class="button" href="http://www.highpoint.edu/blog/category/hpu365/" target="_blank">Motivation</a></div></div><div style="clear: both;"></div></div>')
+
+})( jQuery );
+}
+</script> 
+  <!--End /president blog buttons script--> 
+  <!--fix nextgen slider height on tabbed pages--> 
+  <script>
+if (document.querySelector('.page-id-27970') !== null) {
+Galleria.configure({ wait: true, responsive: true});
+}
+</script>
+  <style type="text/css">
+            h2.frq-main-title{
+               font-size: 18px;
+            }
+            .hrf-entry{
+               border:none !important;
+               margin-bottom: 0px !important;
+               padding-bottom: 0px !important;
+            }
+            .hrf-content{
+               display:none;
+               color: #444444;
+               background: ffffff;
+               font-size: 14px;
+               padding: 10px;
+               padding-left: 50px;
+               word-break: normal;
+            }
+            h3.hrf-title{
+               font-size: 18px ;
+               color: #4f2c7e;
+               background: #ffffff;
+               padding: 10px ;
+               padding-left: 50px;
+               margin: 0;
+               -webkit-touch-callout: none;
+               -webkit-user-select: none;
+               -khtml-user-select: none;
+               -moz-user-select: none;
+               -ms-user-select: none;
+               user-select: none;
+               outline-style:none;
+            }
+            .hrf-title.close-faq{
+               cursor: pointer;
+            }
+            .hrf-title.close-faq span{
+               width: 30px;
+               height: 30px;
+               display: inline-block;
+               position: relative;
+               left: 0;
+               top: 8px;
+               margin-right: 12px;
+               margin-left: -42px;
+               background: #e0e0e0 url(http://www.highpoint.edu/careerinternships/wp-content/plugins/html5-responsive-faq/images/open.png) no-repeat center center;
+            }
+            }.hrf-title.open-faq{
+            
+            }
+            .hrf-title.open-faq span{
+               width: 30px;
+               height: 30px;
+               display: inline-block;
+               position: relative;
+               left: 0;
+               top: 8px;
+               margin-right: 12px;
+               margin-left: -42px;
+               background: #e0e0e0 url(http://www.highpoint.edu/careerinternships/wp-content/plugins/html5-responsive-faq/images/close.png) no-repeat center center;
+            }
+            .hrf-entry p{
+            
+            }
+            .hrf-entry ul{
+            
+            }
+            .hrf-entry ul li{
+            
+            }</style> 
+  <script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script> 
+  <script type="text/javascript"> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script>
+  <script type="text/javascript">
+/* <![CDATA[ */
+var slider = {"effect":null,"delay":null,"duration":null,"start":null};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-content/plugins/responsive-slider/responsive-slider.js?ver=0.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var HPU = {"is_home":"false","on_home_page":"false"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/wp-content/themes/regal/highpoint/dist/js/plugins.min.js?ver=2.1.7"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/wp-content/themes/regal/highpoint/dist/js/main.min.js?ver=2.1.7"></script> 
+  <script type="text/javascript" src="http://contentz.mkt932.com/lp/static/js/iMAWebCookie.js?7b8717b8-13c926a8d62-b9e6bcd68d4fb511170ab3fcff55179d&amp;h=www.pages03.net"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=2.9.8"></script> 
+  <script type="text/javascript" src="http://www.highpoint.edu/careerinternships/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f6833543d8","applicationID":"40646711","transactionName":"b1xaZBZTWEoHBRcMWlYWeVMQW1lXSRYCAlA=","queueTime":0,"applicationTime":734,"atts":"QxtZEl5JS0Q=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+  <!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Database Caching 4/185 queries in 0.228 seconds using disk
+Application Monitoring using New Relic
+
+ Served from: www.highpoint.edu @ 2017-10-03 09:18:30 by W3 Total Cache -->
+ </body>
+</html>

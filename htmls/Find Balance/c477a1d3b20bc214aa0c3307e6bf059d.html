@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+ <head profile="http://www.w3.org/1999/xhtml/vocab"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="keywords" content="Home Care, Home Health Care, Delaware, Sussex County, Seniors, Aging, CHEER, Health, Healthy Aging, healthy lifestyles, Delaware, exercise"> 
+  <link rel="shortcut icon" href="https://www.cheerde.com/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="description" content="Home Care, Home Health Care, Delaware, Sussex County, Seniors, Aging, CHEER, Health, Healthy Aging, healthy lifestyles, Delaware, exercise"> 
+  <link rel="shortlink" href="/node/37"> 
+  <meta name="Generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="/healthy-lifestyles"> 
+  <title>Healthy Lifestyles | Cheer DE</title> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Architects+Daughter" type="text/css" media="screen" charset="utf-8"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_EPsgvacVXxxhwhLr4DGj8P1D4es4L_QnnRJPHn_TJHE.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_A2AuMkVQ8_Zav9GJ2q4leVK53xuvAr539r7Jx7xtGuk.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_7Sq_XAhc_SGND8Ew_nLvWl3azY2d5DZDE6d5N6mWgDo.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_e0Oi8I1L8cGJ7KxcUbimLkO-ivlPDoZXuBZMWKAz5GY.css" media="print"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_tQQdFl5IwcFYgHek4IsJohrOkJNACX4VlnU0uDz64vw.css" media="handheld, only screen and (max-width: 768px)"> 
+  <link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_EhMwfRwlALZRNlDKnjPuqPbm2B4J1RMKXJcaTeJoKE4.css" media="handheld, only screen and (min-width: 769px) and (max-width:1024px"> 
+  <!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="https://www.cheerde.com/sites/default/files/css/css_UyFQAPc8uOvNJfrDftbeMdZRsCihRGa-UoIsqiqhZA0.css" media="all" />
+<![endif]--> 
+  <script type="text/javascript" src="https://www.cheerde.com/sites/default/files/js/js_tm1gahPj5RurExr4Zj4GdGvvL7W4-u6_XRVeEsXyp3Q.js"></script> 
+  <script type="text/javascript" src="https://www.cheerde.com/sites/default/files/js/js_-KsBEz0Ocg4lgzXQ43N_JF7JRyxIRdoTE7WK6C3JdwQ.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.cheerde.com/sites/default/files/googleanalytics/analytics.js?owpj5n","ga");ga("create", "UA-27551349-1", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://www.cheerde.com/sites/default/files/js/js_q9UqJcZSW43LjMJfqfjMJyZK6mCdQTl4J_N42dob-XA.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"cheer","theme_token":"fTTODVRqnmmri3F_nthq4UH4LxNbSam53fWiYn9ZpFI","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/default\/themes\/cheer\/js\/cheer.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"sites\/default\/themes\/cheer\/css\/normalize.css":1,"sites\/default\/themes\/cheer\/css\/skeleton.css":1,"sites\/default\/themes\/cheer\/css\/paragraphs.css":1,"sites\/default\/themes\/cheer\/css\/tabs.css":1,"sites\/default\/themes\/cheer\/css\/pages.css":1,"sites\/default\/themes\/cheer\/css\/blocks.css":1,"sites\/default\/themes\/cheer\/css\/views-styles.css":1,"sites\/default\/themes\/cheer\/css\/nodes.css":1,"sites\/default\/themes\/cheer\/css\/forms.css":1,"sites\/default\/themes\/cheer\/css\/fields.css":1,"sites\/default\/themes\/cheer\/css\/calendar.css":1,"sites\/default\/themes\/cheer\/css\/calendar_multiday.css":1,"sites\/default\/themes\/cheer\/css\/calendar-overlap.css":1,"sites\/default\/themes\/cheer\/inc\/system.menus.css":1,"sites\/default\/themes\/cheer\/inc\/screen.css":1,"sites\/default\/themes\/cheer\/css\/print.css":1,"sites\/default\/themes\/cheer\/inc\/mobile.css":1,"sites\/default\/themes\/cheer\/inc\/tablet.css":1,"sites\/default\/themes\/cheer\/css\/ie7.css":1,"sites\/default\/themes\/cheer\/inc\/ie7.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#block-menu-block-4"],"media_size":"768","absolute":true,"remove_attributes":true,"responsive_menus_style":"responsive_menus_simple"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1}});
+//--><!]]>
+</script> 
+  <link href="https://vjs.zencdn.net/c/video-js.css" rel="stylesheet"> 
+  <script src="https://vjs.zencdn.net/c/video.js" type="text/javascript"></script> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-37 node-type-page section-healthy-lifestyles"> 
+  <div id="wrapper" class=""> 
+   <div id="brand"> 
+    <div id="brandx"> 
+     <a href="/" id="logo"></a> 
+     <div class="top_tabs"> 
+      <div class="region region-top"> 
+       <div id="block-block-2" class="block block-block clearfix first odd"> 
+        <div class="content"> 
+         <p><a href="/donate" class="donations_tab" style="display: inline !important; background-color: #ffffff; margin-left: 48px;">Donations</a></p> 
+         <p><a href="/contact-us" class="contact_tab">Contact Us</a> <a href="https://www.facebook.com/pages/Cheer-Sussex-County/140632639293416" target="_blank" style="display: inline-block; margin-left: 18px; padding-top: 3px;"><img src="/sites/default/themes/cheer/image/social-facebook.png" alt="Follow us on Facebook"></a> <a href="https://twitter.com/cheerdelaware" target="_blank" style="display: inline-block; margin-left: 7px; padding-top: 3px;"><img src="/sites/default/themes/cheer/image/social-twitter.png" alt="Follow us on Twitter"></a> <a href="http://www.pinterest.com/cheerde0206/" target="_blank" style="display: inline-block; margin-left: 7px; padding-top: 3px;"><img src="/sites/default/themes/cheer/image/social-pinterest.png" alt="Follow us on Pinterest"></a></p> 
+        </div> 
+       </div> 
+       <div id="block-block-1" class="block block-block text_tab even"> 
+        <div class="content"> 
+         <p>Call us 24 hours a day,<br> 7 days a week:<br><a href="tel:302-854-9555"><span>302-854-9555</span></a></p> 
+        </div> 
+       </div> 
+       <div id="block-menu-block-4" class="block block-menu-block last odd"> 
+        <div class="content"> 
+         <div class="menu-block-wrapper menu-block-4 menu-name-main-menu parent-mlid-0 menu-level-1"> 
+          <ul class="menu">
+           <li class="first leaf menu-mlid-485 home"><a href="/" class="home">Home</a></li> 
+           <li class="expanded menu-mlid-442 about"><a href="/about-us" class="about">About Us</a>
+            <ul class="menu">
+             <li class="first leaf menu-mlid-444"><a href="/testimonials">Testimonials</a></li> 
+             <li class="leaf menu-mlid-445"><a href="/employment-opportunities">Employment</a></li> 
+             <li class="leaf menu-mlid-446"><a href="/privacy-statement">Privacy Statement</a></li> 
+             <li class="leaf menu-mlid-447"><a href="/our-sponsors">Our Sponsors</a></li> 
+             <li class="leaf menu-mlid-448"><a href="http://www.cheerde.com/sites/default/files/documents/2011_annual_report.pdf" target="_blank">Annual Report</a></li> 
+             <li class="leaf menu-mlid-449"><a href="http://www.cheerde.com/sites/default/files/documents/strat_plan_2011_report.pdf" target="_blank">Strategic Plan</a></li> 
+             <li class="leaf menu-mlid-1329"><a href="/board-directors">Board of Directors</a></li> 
+             <li class="last leaf menu-mlid-1328"><a href="/staff">Our Staff</a></li> 
+            </ul></li> 
+           <li class="expanded menu-mlid-451 hhc"><a href="/senior-personal-assistance-services" class="hhc">In Home Personal Assistance</a>
+            <ul class="menu">
+             <li class="first leaf menu-mlid-452"><a href="/list-services">List of Services</a></li> 
+             <li class="leaf menu-mlid-453"><a href="/qualified-caregivers">Qualified Caregivers</a></li> 
+             <li class="leaf menu-mlid-454"><a href="/personal-care">Personal Care</a></li> 
+             <li class="leaf menu-mlid-455"><a href="/247-home-care">24/7 Home Care</a></li> 
+             <li class="leaf menu-mlid-456"><a href="/housekeeping">Housekeeping</a></li> 
+             <li class="leaf menu-mlid-566"><a href="/companionship-services">Companionship</a></li> 
+             <li class="leaf menu-mlid-458"><a href="/respite-care">Respite Care</a></li> 
+             <li class="last leaf menu-mlid-459"><a href="/personal-assistance-service-rates">Rates</a></li> 
+            </ul></li> 
+           <li class="leaf menu-mlid-933"><a href="/sand-hill-adult-day-program">Sand Hill Adult Day Program</a></li> 
+           <li class="expanded menu-mlid-461 activitycenters"><a href="/cheer-activity-centers" class="activitycenters">CHEER Activity Centers</a>
+            <ul class="menu">
+             <li class="first leaf menu-mlid-462"><a href="/georgetown">Georgetown</a></li> 
+             <li class="leaf menu-mlid-463"><a href="/greenwood">Greenwood</a></li> 
+             <li class="leaf menu-mlid-464"><a href="/lewes">Lewes</a></li> 
+             <li class="leaf menu-mlid-465"><a href="/long-neck-center">Long Neck</a></li> 
+             <li class="leaf menu-mlid-466"><a href="/ocean-view">Ocean View</a></li> 
+             <li class="leaf menu-mlid-467"><a href="/milton">Milton</a></li> 
+             <li class="last leaf menu-mlid-468"><a href="/roxana">Roxana</a></li> 
+            </ul></li> 
+           <li class="leaf menu-mlid-1339"><a href="https://www.cheerde.com/sites/default/files/calendars/Centers%20Collective%20Calendar%20September.pdf" target="_blank">CHEER Activity Calendar </a></li> 
+           <li class="leaf menu-mlid-1341"><a href="/cheer-travel-club">CHEER Travel Club</a></li> 
+           <li class="leaf menu-mlid-1343"><a href="/cheerful-living">CHEERFUL Living</a></li> 
+           <li class="leaf menu-mlid-469"><a href="/transportation">Transportation</a></li> 
+           <li class="leaf menu-mlid-470"><a href="/meals-wheels">Meals on Wheels</a></li> 
+           <li class="leaf menu-mlid-471"><a href="/mobile-mini-mart">Mobile Mini-Mart</a></li> 
+           <li class="leaf menu-mlid-472"><a href="/volunteer">Volunteer</a></li> 
+           <li class="expanded menu-mlid-473 community"><a href="/cheer-community-center" class="community">CHEER Community Center</a>
+            <ul class="menu">
+             <li class="first leaf menu-mlid-475"><a href="/weddingsbanquets">Weddings/Banquets</a></li> 
+             <li class="last leaf menu-mlid-476"><a href="/corporate-business-events">Corporate Events/Business Events</a></li> 
+            </ul></li> 
+           <li class="leaf menu-mlid-477"><a href="/cheer-foundation">CHEER Foundation</a></li> 
+           <li class="leaf active-trail active menu-mlid-478 active-trail"><a href="/healthy-lifestyles" class="active-trail active">Healthy Lifestyles</a></li> 
+           <li class="leaf menu-mlid-581"><a href="/health-news">Health News</a></li> 
+           <li class="leaf menu-mlid-580"><a href="/cheer-events">CHEER Events</a></li> 
+           <li class="leaf menu-mlid-938"><a href="/news-articles">CHEER News</a></li> 
+           <li class="leaf menu-mlid-482"><a href="/helpful-links">Helpful Links</a></li> 
+           <li class="leaf menu-mlid-481"><a href="/advertise-us">Advertise With Us</a></li> 
+           <li class="last leaf menu-mlid-499"><a href="/contact-us">Contact Us</a></li> 
+          </ul>
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="content" class="clearfix"> 
+    <div class="section"> 
+     <div id="info_bar"> 
+      <h2 id="info_title">Please Contact Me</h2> 
+      <div id="input_field"> 
+       <form id="contact_me" name="form" method="get" action="/contact-us"> 
+        <input type="text" name="fullname" id="fullname" value="" placeholder="Your Name"> 
+        <input type="text" name="phone" id="email" value="" placeholder="Your Phone Number"> 
+       </form> 
+       <a href="#" id="info_submit">Submit</a> 
+      </div> 
+     </div> 
+     <div id="nav"> 
+      <div class="region region-sidebar-left column sidebar">
+       <div class="section"> 
+        <div id="block-system-main-menu" class="block block-system block-menu first last odd"> 
+         <div class="content"> 
+          <ul class="menu">
+           <li class="first leaf home"><a href="/" class="home">Home</a></li> 
+           <li class="expanded about"><a href="/about-us" class="about">About Us</a>
+            <ul class="menu">
+             <li class="first leaf"><a href="/testimonials">Testimonials</a></li> 
+             <li class="leaf"><a href="/employment-opportunities">Employment</a></li> 
+             <li class="leaf"><a href="/privacy-statement">Privacy Statement</a></li> 
+             <li class="leaf"><a href="/our-sponsors">Our Sponsors</a></li> 
+             <li class="leaf"><a href="http://www.cheerde.com/sites/default/files/documents/2011_annual_report.pdf" target="_blank">Annual Report</a></li> 
+             <li class="leaf"><a href="http://www.cheerde.com/sites/default/files/documents/strat_plan_2011_report.pdf" target="_blank">Strategic Plan</a></li> 
+             <li class="leaf"><a href="/board-directors">Board of Directors</a></li> 
+             <li class="last leaf"><a href="/staff">Our Staff</a></li> 
+            </ul></li> 
+           <li class="expanded hhc"><a href="/senior-personal-assistance-services" class="hhc">In Home Personal Assistance</a>
+            <ul class="menu">
+             <li class="first leaf"><a href="/list-services">List of Services</a></li> 
+             <li class="leaf"><a href="/qualified-caregivers">Qualified Caregivers</a></li> 
+             <li class="leaf"><a href="/personal-care">Personal Care</a></li> 
+             <li class="leaf"><a href="/247-home-care">24/7 Home Care</a></li> 
+             <li class="leaf"><a href="/housekeeping">Housekeeping</a></li> 
+             <li class="leaf"><a href="/companionship-services">Companionship</a></li> 
+             <li class="leaf"><a href="/respite-care">Respite Care</a></li> 
+             <li class="last leaf"><a href="/personal-assistance-service-rates">Rates</a></li> 
+            </ul></li> 
+           <li class="leaf"><a href="/sand-hill-adult-day-program">Sand Hill Adult Day Program</a></li> 
+           <li class="expanded activitycenters"><a href="/cheer-activity-centers" class="activitycenters">CHEER Activity Centers</a>
+            <ul class="menu">
+             <li class="first leaf"><a href="/georgetown">Georgetown</a></li> 
+             <li class="leaf"><a href="/greenwood">Greenwood</a></li> 
+             <li class="leaf"><a href="/lewes">Lewes</a></li> 
+             <li class="leaf"><a href="/long-neck-center">Long Neck</a></li> 
+             <li class="leaf"><a href="/ocean-view">Ocean View</a></li> 
+             <li class="leaf"><a href="/milton">Milton</a></li> 
+             <li class="last leaf"><a href="/roxana">Roxana</a></li> 
+            </ul></li> 
+           <li class="leaf"><a href="https://www.cheerde.com/sites/default/files/calendars/Centers%20Collective%20Calendar%20September.pdf" target="_blank">CHEER Activity Calendar </a></li> 
+           <li class="leaf"><a href="/cheer-travel-club">CHEER Travel Club</a></li> 
+           <li class="leaf"><a href="/cheerful-living">CHEERFUL Living</a></li> 
+           <li class="leaf"><a href="/transportation">Transportation</a></li> 
+           <li class="leaf"><a href="/meals-wheels">Meals on Wheels</a></li> 
+           <li class="leaf"><a href="/mobile-mini-mart">Mobile Mini-Mart</a></li> 
+           <li class="leaf"><a href="/volunteer">Volunteer</a></li> 
+           <li class="expanded community"><a href="/cheer-community-center" class="community">CHEER Community Center</a>
+            <ul class="menu">
+             <li class="first leaf"><a href="/weddingsbanquets">Weddings/Banquets</a></li> 
+             <li class="last leaf"><a href="/corporate-business-events">Corporate Events/Business Events</a></li> 
+            </ul></li> 
+           <li class="leaf"><a href="/cheer-foundation">CHEER Foundation</a></li> 
+           <li class="leaf active-trail active-trail active-trail"><a href="/healthy-lifestyles" class="active-trail active-trail active">Healthy Lifestyles</a></li> 
+           <li class="leaf"><a href="/health-news">Health News</a></li> 
+           <li class="leaf"><a href="/cheer-events">CHEER Events</a></li> 
+           <li class="leaf"><a href="/news-articles">CHEER News</a></li> 
+           <li class="leaf"><a href="/helpful-links">Helpful Links</a></li> 
+           <li class="leaf"><a href="/advertise-us">Advertise With Us</a></li> 
+           <li class="last leaf"><a href="/contact-us">Contact Us</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+     <div id="main_info"> 
+      <h1 class="title" id="page-title">Healthy Lifestyles</h1> 
+      <div class="copy"> 
+       <div class="region region-content"> 
+        <div id="block-system-main" class="block block-system first last odd"> 
+         <div class="content"> 
+          <div id="node-37" class="node node-page view-mode-full clearfix"> 
+           <div class="content"> 
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+             <div class="field-items">
+              <div class="field-item even">
+               <div class="featureimg_special">
+                <img src="/sites/default/files/images/healthy_lifestyle_img.jpg" alt="Healthy Lifestyle" title="Healthy Lifestyle" width="300" height="207">
+               </div> 
+               <div class="sidebar-content">
+                <div class="field field-name-field-side-blocks field-type-blockreference field-label-hidden">
+                 <div class="field-items">
+                  <div class="field-item even">
+                   <div id="block-block-16" class="block block-block cheer_donate_box first odd"> 
+                    <div class="content"> 
+                     <div id="cheer_donate_box"> 
+                      <h4>Donate to<br> CHEER Today</h4> 
+                      <p>Donate and help<br> CHEER care for<br> Sussex County seniors.</p> 
+                      <a href="/donate" id="cheer_donate_btn">Donate</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-item odd">
+                   <div id="block-block-15" class="block block-block membership_box even"> 
+                    <div class="content"> 
+                     <div id="membership_app_box"> 
+                      <h4>Download our<br> Membership<br> Application</h4> 
+                      <div id="membership_extra">
+                       &nbsp;
+                      </div> 
+                      <a href="/sites/default/files/documents/membership_application_v.3.pdf" target="_blank" title="PDF file downloads or opens in a new tab/window" id="membership_app_btn">Click Here</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                 </div>
+                </div>
+               </div> 
+               <p>Once you have been living a healthy lifestyle, you feel better, sleep better, think better, and look better. But what is a healthy lifestyle? In general a healthy person does not smoke, is at a healthy weight, eats healthy and exercises. If you are new to learning how to live a healthy lifestyle, you have a lot of old habits to break. Let CHEER help you to reinvent yourself through exercise, diet, travel, entertainment, family traditions, expanded websites and much more.</p> 
+               <p>Sometimes the trick to healthy living is making small changes a little at a time; adding fruit to your cereal, having an extra glass of water, cut one or two unhealthy things from your diet, or add some bi-weekly exercise to your routine. Strenuous exercise does not mean a healthy lifestyle. Movement is movement and the more you do, the healthier you will be. If you want more information on leading a healthy lifestyle, attend one of the many CHEER sponsored classes at your local CHEER Activity Center such as Tia Chi, Zumba, Yoga, retro fitness, walking, line dancing and many others.</p> 
+               <p>Living a healthy life also means managing chronic illness and pain that comes with normal aging. CHEER offers a host of workshops such as Living with Diabetes, managing high and low Blood Sugar, Walking with Ease, Living with Arthritis, Nutrition and Healthy Aging, Stress Management and Relaxation Techniques, Self Management Programs for Chronic Diseases, Brain Fitness, low fat Cooking, the Savvy Caregiver course, and My Plate training. Most of these programs are offered at any of our eight Activity Centers strategically located throughout Sussex County.</p> 
+               <p>There are support groups available for caregivers and individuals who like a group setting. Support groups include but are not limited to Stroke, Heart Disease, Alzheimer, Dementia, Parkinson Disease, fibromyalgia, depression, and weight loss.</p> 
+               <p>Join one of our Healthy Lifestyle programs at a CHEER Activity Center near you and let our staff help you live a healthier life.</p>
+              </div>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="content-footer"> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="footer" class="clearfix"> 
+    <div id="bttm-cap"></div> 
+    <div id="site_links" class="clearfix"> 
+     <div class="region region-bottom-menu"> 
+      <div id="block-menu-block-1" class="block block-menu-block column1 first odd"> 
+       <h2 class="block-title">Our Company</h2> 
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-1 menu-name-menu-footer-menu parent-mlid-487 menu-level-1"> 
+         <ul class="menu">
+          <li class="first leaf menu-mlid-490"><a href="/about-us">About Us</a></li> 
+          <li class="leaf menu-mlid-491"><a href="/testimonials">Testimonials</a></li> 
+          <li class="leaf menu-mlid-890"><a href="/grievance-policy">Grievance Policy</a></li> 
+          <li class="leaf menu-mlid-493"><a href="/employment-opportunities">Employment</a></li> 
+          <li class="last leaf menu-mlid-494"><a href="/our-sponsors">Sponsors</a></li> 
+         </ul>
+        </div> 
+       </div> 
+      </div> 
+      <div id="block-menu-block-2" class="block block-menu-block column2 even"> 
+       <h2 class="block-title">Care &amp; Services</h2> 
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-2 menu-name-menu-footer-menu parent-mlid-488 menu-level-1"> 
+         <ul class="menu">
+          <li class="first leaf menu-mlid-495"><a href="/senior-personal-assistance-services">Personal Assistance Services</a></li> 
+          <li class="leaf menu-mlid-496"><a href="/transportation">Transportation</a></li> 
+          <li class="leaf menu-mlid-497"><a href="/cheer-activity-centers">Activity Centers</a></li> 
+          <li class="leaf menu-mlid-498"><a href="/cheer-community-center">Community Center</a></li> 
+          <li class="last leaf menu-mlid-500"><a href="/contact-us">Contact Us</a></li> 
+         </ul>
+        </div> 
+       </div> 
+      </div> 
+      <div id="block-menu-block-3" class="block block-menu-block column3 last odd"> 
+       <h2 class="block-title">Living with CHEER</h2> 
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-3 menu-name-menu-footer-menu parent-mlid-489 menu-level-1"> 
+         <ul class="menu">
+          <li class="first leaf menu-mlid-501"><a href="/helpful-links">Helpful Links</a></li> 
+          <li class="leaf active-trail active menu-mlid-502 active-trail"><a href="/healthy-lifestyles" class="active-trail active">Healthy Lifestyles</a></li> 
+          <li class="leaf menu-mlid-503"><a href="/volunteer">Volunteer</a></li> 
+          <li class="last leaf menu-mlid-504"><a href="/cheer-foundation">CHEER Foundation</a></li> 
+         </ul>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="region region-bottom"> 
+     <div id="block-block-6" class="block block-block first last odd"> 
+      <div class="content"> 
+       <ul class="copyr clearfix">
+        <li class="define">Copyright © 2002- <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+// <![CDATA[
+document.write((new Date()).getFullYear());
+// ]]]]><![CDATA[>
+//--><!]]>
+</script> CHEER, Inc. All Rights Reserved.&nbsp;&nbsp;&nbsp; | &nbsp; &nbsp;<a href="/privacy-statement">Privacy Policy</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="xtra1"></div> 
+  <div id="xtra2"></div> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2f3914b574","applicationID":"19084472","transactionName":"ZwZTZUoFDEAFBRcKV15McFJMDQ1dSwgMB11vE1BWXTsUWgER","queueTime":0,"applicationTime":289,"atts":"S0FQEwIfH04=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

@@ -1,0 +1,491 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+ <head profile="http://www.w3.org/1999/xhtml/vocab"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="shortcut icon" href="https://myusf.usfca.edu/sites/all/themes/usf_oa_radix/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://myusf.usfca.edu/student-life/career-services/find-a-job"> 
+  <link rel="shortlink" href="https://myusf.usfca.edu/node/65942"> 
+  <title>Find a Job or Internship | myUSF</title> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_-BmTnlmjGnysQIr26_rMnxY3GgDzwRzSsEp99zXET_s.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_KaFsg6T1gfDockWK1jbp4XdD084xEwL2yKvw118NwPg.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs.css" media="screen"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_8b057r32oQJ4g1hU1d2Bv0IelaoV0F8bpAc-Tt5Kx_E.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_T1CsEwL2ZPybU7myAhdVtdT0SgW4KGzzlhO9M8jE_Ic.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_c1Uvv8_IMbrnCIf7sJm-cshV8LuL-51VqM0T3J_zCho.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print"> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/colorizer/usf_oa_radix-f867b803.css" media="all"> 
+  <!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_wZrGTsoYfmGO7wv8FfhYX2Cj6X7yptf11iGMMLCzkb4.css" media="all" />
+<![endif]--> 
+  <!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="all" />
+<![endif]--> 
+  <!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="all" />
+<![endif]--> 
+  <link type="text/css" rel="stylesheet" href="https://myusf.usfca.edu/sites/default/files/css/css_ZifVMnOUwT-GW_YYNb-lNEKH5aNqOqbjHVoKun3MIDU.css" media="all"> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_jpJjaUC0z8JMIyav5oQrYykDRUb64rpaUDpB4Y9aklU.js"></script> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_kCSV0S0iwT9PDsUnOLHK32hZ6fH10nVxW76J0C3ULfE.js"></script> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_eXGt1Cnr9A0H9KV2K0197dohWlsLEpCbGOzIaUal7SY.js"></script> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_R5p800ALnPlKOUJWx5ZBLN5T3Q9d55EEIcKayUmS26M.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-59178514-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_B0qRwQ_MS4PdIIqn-9mWg2TD8LZPzt7_0LxIwLUZZ3A.js"></script> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_QoLpt_xaaM-vc7kI97RC97hv7uVbvdnTcK27IQw5ghY.js"></script> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_AUuuNJwZH0hNueaBxnds38CtijUJAO_gRPRbWUyp3ew.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"usf_oa_radix","theme_token":"fhjyM_jUbpG2066et7L_48xms5qbhcaqMgFC7tx82fI","jquery_version":"1.7","js":{"profiles\/openatrium\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.js":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/openatrium\/libraries\/underscore\/underscore-min.js":1,"profiles\/openatrium\/libraries\/backbone\/backbone-min.js":1,"profiles\/openatrium\/libraries\/bootstrap\/js\/bootstrap.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"profiles\/openatrium\/modules\/contrib\/media\/js\/media.core.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.resizable.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.button.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.dialog.min.js":1,"profiles\/openatrium\/modules\/contrib\/media\/js\/util\/json2.js":1,"profiles\/openatrium\/modules\/contrib\/media\/js\/util\/ba-debug.min.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/jquery.on-off-shim.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/matchmedia.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/debounce.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/displace.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/navbar.menu.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/navbar.js":1,"misc\/ajax.js":1,"profiles\/openatrium\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"profiles\/openatrium\/modules\/contrib\/navbar\/js\/navbar-overlay.js":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_images\/panopoly-images.js":1,"profiles\/openatrium\/modules\/contrib\/media_colorbox\/media_colorbox.js":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_admin\/panopoly-admin.js":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_magic\/panopoly-magic.js":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_theme\/js\/panopoly-accordion.js":1,"profiles\/openatrium\/modules\/contrib\/caption_filter\/js\/caption-filter.js":1,"sites\/all\/modules\/contrib\/authcache\/authcache.js":1,"profiles\/openatrium\/libraries\/colorbox\/jquery.colorbox-min.js":1,"profiles\/openatrium\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"profiles\/openatrium\/modules\/contrib\/dhtml_menu\/dhtml_menu.js":1,"profiles\/openatrium\/libraries\/jquery.imagesloaded\/jquery.imagesloaded.min.js":1,"profiles\/openatrium\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"profiles\/openatrium\/modules\/contrib\/media\/js\/media.popups.js":1,"misc\/progress.js":1,"profiles\/openatrium\/modules\/apps\/oa_files\/js\/upload.js":1,"profiles\/openatrium\/modules\/apps\/oa_toolbar\/js\/oa-toolbar.js":1,"profiles\/openatrium\/modules\/apps\/oa_appearance\/oa_appearance.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_ajax\/authcache_ajax.js":1,"sites\/all\/modules\/contrib\/authcache\/modules\/authcache_p13n\/authcache_p13n.js":1,"profiles\/openatrium\/themes\/radix\/assets\/javascripts\/modernizr.js":1,"profiles\/openatrium\/modules\/contrib\/oa_responsive_regions\/assets\/javascripts\/oa_responsive_regions.js":1,"profiles\/openatrium\/themes\/radix\/assets\/javascripts\/radix-script.js":1,"sites\/all\/themes\/usf_oa_radix\/assets\/javascripts\/script.js":1,"sites\/all\/themes\/usf_oa_radix\/assets\/javascripts\/usf.js":1,"sites\/all\/themes\/usf_oa_radix\/assets\/javascripts\/events.js":1,"profiles\/openatrium\/themes\/radix\/assets\/javascripts\/radix-progress.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"profiles\/openatrium\/modules\/contrib\/media\/css\/media.css":1,"profiles\/openatrium\/modules\/contrib\/navbar\/css\/navbar.menu.css":1,"profiles\/openatrium\/modules\/contrib\/navbar\/css\/navbar-overlay.css":1,"profiles\/openatrium\/modules\/contrib\/navbar\/css\/navbar.base.css":1,"profiles\/openatrium\/modules\/contrib\/navbar\/css\/navbar.theme.css":1,"profiles\/openatrium\/modules\/contrib\/navbar\/css\/navbar.icons.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/all\/modules\/contrib\/cache_consistent\/css\/cache_consistent.css":1,"modules\/comment\/comment.css":1,"profiles\/openatrium\/modules\/contrib\/contextual_tabs\/contextual_tabs.css":1,"profiles\/openatrium\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/openatrium\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"profiles\/openatrium\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"profiles\/openatrium\/modules\/apps\/oa_appearance\/oa_appearance.css":1,"profiles\/openatrium\/modules\/contrib\/oa_core\/css\/oa_core.css":1,"profiles\/openatrium\/modules\/apps\/oa_media\/oa_media.css":1,"profiles\/openatrium\/modules\/apps\/oa_related\/oa_related.css":1,"profiles\/openatrium\/modules\/contrib\/oa_core\/modules\/oa_river\/oa_river.css":1,"profiles\/openatrium\/modules\/contrib\/oa_core\/modules\/oa_sections\/oa_sections.css":1,"profiles\/openatrium\/modules\/apps\/oa_subspaces\/oa-subspaces.css":1,"profiles\/openatrium\/modules\/contrib\/oa_core\/modules\/oa_teams\/oa_teams.css":1,"profiles\/openatrium\/modules\/apps\/oa_toolbar\/css\/oa_toolbar.css":1,"profiles\/openatrium\/modules\/contrib\/oa_core\/modules\/oa_widgets\/oa_widgets.css":1,"profiles\/openatrium\/modules\/apps\/oa_wiki\/oa_wiki.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_admin\/panopoly-admin-navbar.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_core\/css\/panopoly-dropbutton.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_magic\/css\/panopoly-magic.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_theme\/css\/panopoly-featured.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_theme\/css\/panopoly-accordian.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_theme\/css\/panopoly-layouts.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_wysiwyg\/panopoly-wysiwyg.css":1,"profiles\/openatrium\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/custom\/usfb_address\/usfb_address.css":1,"profiles\/openatrium\/modules\/contrib\/views\/css\/views.css":1,"profiles\/openatrium\/modules\/contrib\/caption_filter\/caption-filter.css":1,"profiles\/openatrium\/libraries\/colorbox\/example1\/colorbox.css":1,"profiles\/openatrium\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/openatrium\/modules\/contrib\/dhtml_menu\/dhtml_menu.css":1,"profiles\/openatrium\/modules\/contrib\/oa_core\/modules\/oa_diff\/oa_diff.css":1,"profiles\/openatrium\/modules\/contrib\/panels\/css\/panels.css":1,"profiles\/openatrium\/modules\/apps\/oa_brand\/oa_brand_logo.css":1,"profiles\/openatrium\/modules\/contrib\/oa_responsive_regions\/assets\/stylesheets\/oa_responsive_regions.css":1,"profiles\/openatrium\/themes\/oa_radix\/assets\/stylesheets\/screen.css":1,"profiles\/openatrium\/themes\/oa_radix\/assets\/stylesheets\/font-awesome.min.css":1,"sites\/all\/themes\/usf_oa_radix\/assets\/stylesheets\/usf.css":1,"sites\/all\/themes\/usf_oa_radix\/assets\/stylesheets\/myusf-editor.css":1,"sites\/all\/themes\/usf_oa_radix\/assets\/stylesheets\/components.css":1,"sites\/all\/themes\/usf_oa_radix\/assets\/stylesheets\/fullcalendar.theme.override.css":1,"sites\/all\/themes\/usf_oa_radix\/assets\/stylesheets\/fullcalendar.override.css":1,"profiles\/openatrium\/themes\/oa_radix\/assets\/stylesheets\/print.css":1,"https:\/\/myusf.usfca.edu\/sites\/default\/files\/colorizer\/usf_oa_radix-f867b803.css":1,"profiles\/openatrium\/themes\/radix\/assets\/stylesheets\/ie.css":1,"profiles\/openatrium\/themes\/oa_radix\/assets\/stylesheets\/ie7.css":1,"profiles\/openatrium\/themes\/oa_radix\/assets\/stylesheets\/ie8.css":1,"profiles\/openatrium\/modules\/panopoly\/panopoly_images\/panopoly-images.css":1}},"authcache":{"q":"node\/65942","cp":{"path":"\/","domain":".myusf.usfca.edu","secure":true},"cl":1},"colorbox":{"transition":"elastic","speed":"350","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"maxWidth":"98%","maxHeight":"95%","initialWidth":"300","initialHeight":"250","fixed":true,"scrolling":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"dhtmlMenu":{"nav":"bullet","animation":{"effects":{"height":"height","opacity":"opacity","width":0},"speed":"100"},"effects":{"siblings":"none","children":"none","remember":"remember"},"filter":{"type":"whitelist","list":{"og-menu-single":"og-menu-single","devel":0,"main-menu":0,"management":0,"navigation":0,"shortcut-set-1":0,"user-menu":0}}},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"panopoly_magic":{"pane_add_preview_mode":"automatic"},"googleanalytics":{"trackOutbound":1},"media":{"browserUrl":"\/media\/browser?render=media-popup","styleSelectorUrl":"\/media\/-media_id-\/format-form?render=media-popup","dialogOptions":{"dialogclass":"media-wrapper","modal":true,"draggable":false,"resizable":false,"minwidth":500,"width":670,"height":280,"position":"center","overlay":{"backgroundcolor":"#000000","opacity":0.4},"zindex":10000}},"oa_files_media_options":{"global":{"types":{"document":"document","image":"image","video":"video"},"enabledPlugins":{"media_default--media_browser_1":"media_default--media_browser_1","media_default--media_browser_my_files":"media_default--media_browser_my_files","media_internet":"media_internet","upload":"upload"},"schemes":{"private":"private","public":"public","vimeo":"vimeo","youtube":"youtube"},"file_directory":"","file_extensions":"jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm zip vwx skp pkg","max_filesize":0,"uri_scheme":"private","multiselect":true}},"oa_files_upload_url":"\/oa-files\/upload\/multi","oa_toolbar":{"mouseover":0},"urlIsAjaxTrusted":{"\/search\/node":true},"authcacheP13nAjaxFragments":{"views\/favorite_links_quick_menu\/panel_pane_1":{"\/sites\/all\/modules\/contrib\/authcache\/modules\/authcache_p13n\/frontcontroller\/authcache.php?a=\u0026r=frag\/views\/favorite_links_quick_menu\/panel_pane_1\u0026o[q]=":""},"block\/usf_auth_user_badge-oa_user_badge":{"\/sites\/all\/modules\/contrib\/authcache\/modules\/authcache_p13n\/frontcontroller\/authcache.php?a=\u0026r=frag\/block\/usf_auth_user_badge-oa_user_badge\u0026o[q]=":""}},"ogContext":{"groupType":"node","gid":"48584"},"navbar":{"breakpoints":{"wide":"only screen and (min-width: 50em)"}}});
+//--><!]]>
+</script> 
+  <!--[if lt IE 9]>
+   <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+   </script>
+  <![endif]--> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-65942 node-type-oa-section user-role-anonymous-user og-context og-context-node og-context-node-48584 region-content panel-layout-radix_whelan panel-region-column1 panel-region-column2 panel-region-contentmain"> 
+  <div id="skip-link"> 
+   <a href="#main" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <nav id="navbar-administration" class="drupal-navbar overlay-displace-top" role="navigation">
+   <div id="navbar-bar" class="navbar-bar clearfix" data-offset-top="">
+    <h2 class="element-invisible">Navbar items</h2>
+    <div class="navbar-tab">
+     <a href="/" title="Home page" class="navbar-icon navbar-icon-home">Home</a>
+    </div>
+    <div class="navbar-tab">
+     <a href="/admin" title="Admin menu" class="navbar-icon navbar-icon-menu navbar-tab" id="navbar-tab-navbar-tray" data-navbar-tray="navbar-tray" aria-owns="navbar-tray" role="button" aria-pressed="false">Menu</a>
+    </div>
+    <div class="navbar-tab">
+     <a href="/user" title="My account" class="navbar-icon navbar-icon-user navbar-tab" id="navbar-tab-navbar-tray--2" data-navbar-tray="navbar-tray--2" aria-owns="navbar-tray--2" role="button" aria-pressed="false">Anonymous</a>
+    </div>
+   </div>
+   <div id="navbar-tray" data-navbar-tray="navbar-tray" aria-owned-by="navbar-tab-navbar-tray" class="navbar-tray overlay-displace-top">
+    <div class="navbar-lining clearfix">
+     <h3 class="element-invisible">Administration menu</h3>
+     <div class="navbar-menu-administration"></div>
+    </div>
+   </div>
+   <div id="navbar-tray--2" data-navbar-tray="navbar-tray--2" aria-owned-by="navbar-tab-navbar-tray--2" class="navbar-tray overlay-displace-top">
+    <div class="navbar-lining clearfix">
+     <h3 class="element-invisible">User account actions</h3>
+     <ul class="menu">
+      <li class="login first last"><a href="/user">Log in</a></li> 
+     </ul>
+    </div>
+   </div>
+  </nav> 
+  <div class="responsive-panels-region responsive-panels-region-top"> 
+   <div id="oa-navbar" class="navbar navbar-inverse navbar-fixed-top"> 
+    <div class="navbar-inner"> 
+     <!-- user_badge region --> 
+     <div class="region region-user-badge"> 
+      <span class="authcache-ajax-frag" data-p13n-frag="block/usf_auth_user_badge-oa_user_badge"></span> 
+     </div> 
+     <div class="panel-display moscone-flipped clearfix radix-moscone-flipped" id="mini-panel-usf_toolbar"> 
+      <div class="container-fluid"> 
+       <div class="row"> 
+        <div class="col-md-12 radix-layouts-header panel-panel"> 
+         <div class="panel-panel-inner"> 
+          <div class="panel-pane pane-oa-space-banner"> 
+           <div class="pane-content"> 
+            <div class="oa-banner oa-banner-before" data-width="1680" data-height="134"> 
+             <img class="oa-banner-overlay-img" src="https://myusf.usfca.edu/sites/default/files/myusf-top-main-banner_10.jpg" width="1680" height="134" alt="Site banner"> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="row"> 
+        <div class="col-md-8 radix-layouts-content panel-panel"> 
+         <div class="panel-panel-inner"> 
+         </div> 
+        </div> 
+        <div class="col-md-4 radix-layouts-sidebar panel-panel"> 
+         <div class="panel-panel-inner"> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="row"> 
+        <div class="col-md-12 radix-layouts-footer panel-panel"> 
+         <div class="panel-panel-inner"> 
+          <div class="panel-pane pane-oa-navigation"> 
+           <div class="pane-content"> 
+            <div class="oa-navigation clearfix"> 
+             <div id="oa-navbar-header"> 
+              <nav class="main-menu pull-left" role="navigation"> 
+               <ul class="menu nav navbar-nav">
+                <li class="first leaf menu-link-home"><a href="/" title="">Home</a></li> 
+                <li class="leaf menu-link-fogcutter-student-handbook"><a href="/fogcutter">Fogcutter Student Handbook</a></li> 
+                <li class="expanded dropdown menu-link-academic-services-and-career-success"><a href="/academic-career-success" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Academic Services and Career Success<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/student-life/explore-your-path" title="">Explore Your Path</a></li> 
+                  <li class="collapsed"><a href="/student-life/career-services" title="">Priscilla A. Scotlan Career Services Center</a></li> 
+                  <li class="collapsed"><a href="/student-life/casa" title="">Center for Academic and Student Achievement</a></li> 
+                  <li class="leaf"><a href="/study-abroad" title="">Center for Global Education</a></li> 
+                  <li class="collapsed"><a href="/ISSS" title="">International Student and Scholar Services</a></li> 
+                  <li class="leaf"><a href="/student-life/lwc%20">Learning, Writing, and Speaking Centers</a></li> 
+                  <li class="leaf"><a href="https://myusf.usfca.edu/mccarthy" title="">Leo T. McCarthy Center for Public Service and the Common Good</a></li> 
+                  <li class="leaf"><a href="/student-life/peak-performance-sessions" title="">Peak Performance Sessions</a></li> 
+                  <li class="last leaf"><a href="/student-life/sds" title="">Student Disability Services</a></li> 
+                 </ul></li> 
+                <li class="expanded dropdown menu-link-campus-life"><a href="https://myusf.usfca.edu/student-life" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Campus Life<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/student-life/cultural-centers" title="">Cultural Centers</a></li> 
+                  <li class="leaf"><a href="/student-life/housing" title="">Student Housing and Residential Education</a></li> 
+                  <li class="leaf"><a href="/student-health-safety/koret" title="">Koret Health and Recreation Center</a></li> 
+                  <li class="leaf"><a href="/student-life/one-card" title="">One Card and Campus Security Systems</a></li> 
+                  <li class="leaf"><a href="/ORIENTATION" title="">Orientation</a></li> 
+                  <li class="collapsed"><a href="/student-life/student-conduct" title="">Student Conduct, Rights and Responsibilities</a></li> 
+                  <li class="leaf"><a href="/student-life/SLE" title="">Student Leadership and Engagement</a></li> 
+                  <li class="last leaf"><a href="/university-ministry" title="">University Ministry</a></li> 
+                 </ul></li> 
+                <li class="expanded dropdown menu-link-counseling-health-and-safety"><a href="https://myusf.usfca.edu/student-life" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Counseling, Health, and Safety<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="https://myusf.usfca.edu/bias" title="">Bias Incident Reporting Information</a></li> 
+                  <li class="collapsed"><a href="/student-health-safety/caps" title="">Counseling and Psychological Services</a></li> 
+                  <li class="leaf"><a href="/STUDENT-HEALTH-SAFETY/HPS">Health Promotion Services</a></li> 
+                  <li class="leaf"><a href="/student-life/public-safety-transportation" title="">Public Safety &amp; Transportation</a></li> 
+                  <li class="last leaf"><a href="https://myusf.usfca.edu/title-ix" title="">Title IX and Sexual Misconduct Resources</a></li> 
+                 </ul></li> 
+                <li class="leaf menu-link-office-of-the-dean-of-students"><a href="https://myusf.usfca.edu/dean-of-students" title="">Office of the Dean of Students</a></li> 
+                <li class="leaf menu-link-dean-of-students-office"><a href="https://myusf.usfca.edu/dean-of-students" title="">Dean of Students Office</a></li> 
+                <li class="expanded dropdown menu-link-one-stop-enrollment-and-financial-services"><a href="/ONESTOP%20" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">One Stop Enrollment and Financial Services<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/onestop/billing-tuition" title="">Billing and Tuition</a></li> 
+                  <li class="leaf"><a href="/onestop/financial-aid" title="">Financial Aid</a></li> 
+                  <li class="leaf"><a href="https://myusf.usfca.edu/onestop/registration/forms" title="">Forms</a></li> 
+                  <li class="leaf"><a href="/onestop/graduation" title="">Graduation</a></li> 
+                  <li class="leaf"><a href="/oNESTOP/REGISTRATION" title="">Registration</a></li> 
+                  <li class="leaf"><a href="/ONESTOP/STUDENT-records" title="">Student Records</a></li> 
+                  <li class="last leaf"><a href="/onestop/student-EMPLOYMENT" title="">Student Employment</a></li> 
+                 </ul></li> 
+                <li class="leaf menu-link-think-about-it"><a href="/student-health-safety/hps/think-about-it/course" title="">Think About It</a></li> 
+                <li class="leaf menu-link-usf-101"><a href="/student-life/usf101" title="">USF 101</a></li> 
+                <li class="expanded dropdown menu-link-business-and-finance"><a href="/business-finance" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Business and Finance<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/abs">Accounting and Business Services</a></li> 
+                  <li class="leaf"><a href="/environmental-safety" title="">Environmental Safety</a></li> 
+                  <li class="leaf"><a href="/EVENTS">Events Management &amp; Guest Services</a></li> 
+                  <li class="leaf"><a href="/FACILITIES" title="">Facilities Management</a></li> 
+                  <li class="leaf"><a href="/finance-treasury" title="">Office of Finance and Treasury</a></li> 
+                  <li class="leaf"><a href="/project-management" title="">Project Management</a></li> 
+                  <li class="last leaf"><a href="/purchasing" title="">Purchasing and Ancillary Services</a></li> 
+                 </ul></li> 
+                <li class="leaf menu-link-dean-of-students"><a href="https://myusf.usfca.edu/student-life/student-development" title="">Dean of Students</a></li> 
+                <li class="leaf menu-link-general-counsel"><a href="/general-counsel" title="">General Counsel</a></li> 
+                <li class="leaf menu-link-human-resources"><a href="/human-resources">Human Resources</a></li> 
+                <li class="leaf menu-link-information-technology-services"><a href="/Its" title="">Information Technology Services</a></li> 
+                <li class="leaf menu-link-office-of-marketing-communications"><a href="/Marketing-communications" title="">Office of Marketing Communications</a></li> 
+                <li class="expanded dropdown menu-link-office-of-the-president"><a href="/president" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Office of the President<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/internal-audit" title="">Internal Audit and Tax Compliance</a></li> 
+                  <li class="leaf"><a href="/chancellor">Office of the Chancellor</a></li> 
+                  <li class="last leaf"><a href="/university-ministry" title="">University Ministry</a></li> 
+                 </ul></li> 
+                <li class="expanded dropdown menu-link-office-of-the-provost"><a href="/provost" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Office of the Provost<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/CIPE" title="">Center for Institutional Planning and Effectiveness (CIPE)</a></li> 
+                  <li class="collapsed"><a href="/diversity-engagement" title="">Diversity Engagement and Community Outreach</a></li> 
+                  <li class="leaf"><a href="https://myusf.usfca.edu/mccarthy" title="">Leo T. McCarthy Center for Public Service and the Common Good</a></li> 
+                  <li class="leaf"><a href="/provost/vice-provost/accreditation-compliance" title="">Office of Accreditation and Compliance</a></li> 
+                  <li class="leaf"><a href="/ASSESSMENT" title="">Office of Assessment and Accreditation Support</a></li> 
+                  <li class="leaf"><a href="/planning-and-budget" title="">Office of Planning and Budget</a></li> 
+                  <li class="last leaf"><a href="/provost/vice-provost/wscuc" title="">WSCUC Accreditation</a></li> 
+                 </ul></li> 
+                <li class="leaf menu-link-college-of-arts-and-sciences"><a href="/arts-sciences" title="">College of Arts and Sciences</a></li> 
+                <li class="leaf menu-link-school-of-education"><a href="/Education" title="">School of Education</a></li> 
+                <li class="leaf menu-link-school-of-law"><a href="/LAW" title="">School of Law</a></li> 
+                <li class="expanded dropdown menu-link-school-of-management"><a href="/Management" title="" class="dropdown-toggle" data-toggle="dropdown" data-target="#">School of Management<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li class="first leaf"><a href="/management/undergraduate-studies">Undergraduate Studies</a></li> 
+                  <li class="leaf"><a href="/management/graduate-student-affairs">Graduate Student Affairs</a></li> 
+                  <li class="leaf"><a href="/management/graduate-career-services" title="">Graduate Career Services</a></li> 
+                  <li class="last leaf"><a href="/Management/intranet" title="">School of Management Faculty &amp; Staff</a></li> 
+                 </ul></li> 
+                <li class="last leaf menu-link-school-of-nursing-and-health-professions"><a href="/NURSING" title="">School of Nursing and Health Professions</a></li> 
+               </ul> 
+              </nav> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="panel-pane pane-block pane-block-10"> 
+           <div class="pane-content"> 
+            <form action="javascript:googleSearch()" id="usf-cse" class="pull-right"> 
+             <div class="input-append"> 
+              <label class="sr-only hidden" for="custom-search-box">Search</label> 
+              <input class="search-text" id="custom-search-box" type="text" placeholder="Search myUSF"> 
+              <div class="btn-group"> 
+               <button type="submit" class="btn submit btn-inverse"> <i class="icon-search"></i><span class="element-invisible">Search Button</span> </button> 
+              </div> 
+             </div> 
+             <label class="custom-control custom-checkbox"> <input type="checkbox" id="engine" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">include usfca.edu</span> </label> 
+            </form> 
+           </div> 
+          </div> 
+          <div class="panel-pane pane-views-panes pane-favorite-links-quick-menu-panel-pane-1"> 
+           <div class="pane-content"> 
+            <span class="authcache-ajax-frag" data-p13n-frag="views/favorite_links_quick_menu/panel_pane_1"></span> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div>
+     <!-- /.moscone-flipped --> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="main-wrapper"> 
+   <div id="main" class="main container"> 
+    <div id="content"> 
+     <div class="row"> 
+      <div class="col-md-12 inner"> 
+       <ul id="contextual-tabs"> 
+       </ul> 
+       <a id="main-content"></a> 
+       <h1 class="title" id="page-title">Find a Job or Internship</h1> 
+       <ul class="action-links"></ul> 
+       <div class="region region-content"> 
+        <div id="block-system-main" class="block block-system"> 
+         <div class="content"> 
+          <div class="panel-display whelan clearfix radix-whelan"> 
+           <div class="container-fluid"> 
+            <div class="row"> 
+             <div class="col-md-3 radix-layouts-column1 panel-panel"> 
+              <div class="panel-panel-inner"> 
+               <div id="block-menu-menu-career-services-main-menu" class="block block-menu"> 
+                <h2>Career Services</h2> 
+                <div class="content"> 
+                 <ul class="nav nav-pills nav-stacked nav"> 
+                  <li class="first leaf"><a href="http://myusf.usfca.edu/student-life/career-services" title="">Career Services Center</a></li> 
+                  <li class="expanded active-trail dropdown"><a href="/student-life/career-services/find-a-job" title="" class="active-trail dropdown-toggle active" data-toggle="dropdown" data-target="#">Find a Job or Internship</a>
+                   <ul class="dropdown-menu">
+                    <li class="expanded active-trail"><a href="/student-life/career-services/find-a-job" title="" class="active-trail active">Find a Job or Internship</a></li> 
+                    <li class="first last leaf"><a href="/student-life/career-services/fellowship-volunteer-opportunities" title="">Fellowship/Volunteer</a></li> 
+                   </ul></li> 
+                  <li class="expanded dropdown"><a href="/student-life/career-services/connect-with-employers" title="" data-toggle="dropdown" data-target="#" class="dropdown-toggle">Recruiting Events &amp; Activities</a>
+                   <ul class="dropdown-menu">
+                    <li class="expanded"><a href="/student-life/career-services/connect-with-employers" title="">Recruiting Events &amp; Activities</a></li> 
+                    <li class="first leaf"><a href="/student-life/career-services/connect-with-employers/on-campus-interviews" title="">Sign Up for an On-Campus Interview</a></li> 
+                    <li class="leaf"><a href="/student-life/career-services/connect-with-employers/career-prep" title="">Career Prep with Employers</a></li> 
+                    <li class="last leaf"><a href="/student-life/career-services/connect-with-employers/off-campus-events" title="">Attend Off-Campus Networking Events</a></li> 
+                   </ul></li> 
+                  <li class="expanded dropdown"><a href="/student-life/career-services/career-prep" title="" data-toggle="dropdown" data-target="#" class="dropdown-toggle">Career Prep</a>
+                   <ul class="dropdown-menu">
+                    <li class="expanded"><a href="/student-life/career-services/career-prep" title="">Career Prep</a></li> 
+                    <li class="first leaf"><a href="/student-life/career-services/resumes-cover-letters" title="">Resumes and Cover Letters</a></li> 
+                    <li class="leaf"><a href="/student-life/career-services/interviews-offers" title="">Interviews and Offers</a></li> 
+                    <li class="leaf"><a href="/student-life/career-services/career-planning-checklist" title="">Career Planning Checklist</a></li> 
+                    <li class="last leaf"><a href="/student-life/career-services/career-planning-handouts" title="">Career Planning Handouts</a></li> 
+                   </ul></li> 
+                  <li class="leaf"><a href="/student-life/career-services/career-major-exploration" title="">Career &amp; Major Exploration</a></li> 
+                  <li class="leaf"><a href="/student-life/career-services/get-linkedin" title="">Get LinkedIn</a></li> 
+                  <li class="leaf"><a href="/student-life/career-services/classroom-presentations" title="">Request a Class or Club Presentation</a></li> 
+                  <li class="expanded dropdown"><a href="/student-life/career-services/meet-staff" title="" data-toggle="dropdown" data-target="#" class="dropdown-toggle">Meet the Staff</a>
+                   <ul class="dropdown-menu">
+                    <li class="expanded"><a href="/student-life/career-services/meet-staff" title="">Meet the Staff</a></li> 
+                    <li class="first last leaf"><a href="/student-life/career-services/career-planning-peers" title="">Career Planning Peers</a></li> 
+                   </ul></li> 
+                  <li class="leaf"><a href="/student-life/career-services/feedback" title="">We Want YOUR Feedback</a></li> 
+                  <li class="last leaf"><a href="http://myusf.usfca.edu/csc-monthly-newsletter-archives" title="">CSC Monthly Newsletter Archives</a></li> 
+                 </ul> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="col-md-6 radix-layouts-content panel-panel"> 
+              <div class="panel-panel-inner"> 
+               <div class="panel-pane pane-fieldable-panels-pane pane-fpid-2784 pane-bundle-text"> 
+                <div class="pane-content"> 
+                 <div class="fieldable-panels-pane"> 
+                  <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"> 
+                   <div class="field-items"> 
+                    <div class="field-item even">
+                     <h1><strong>In Search of Job/Internship?</strong></h1>
+                     <h2><a href="https://usfca.joinhandshake.com" title="Handshake" target="_blank">Handshake »</a></h2>
+                     <p><a href="https://usfcas.usfca.edu/cas/login?service=http%3A%2F%2Fusfca-csm.symplicity.com%2Fsso%2Fstudents%2Flogin" target="_blank" title="DonsCareers »"></a><span><span>Handshake is USF's new online career management platform for college recruiting. &nbsp;&nbsp;</span><span>You’ll be able easily upload your resume, search and apply for full-time jobs and internships, register for on-campus workshops and events, and schedule career counseling appointments.</span></span></p>
+                     <h2><strong>Internship Exchanges</strong></h2>
+                     <p>USF participates in two Internship Exchanges, in which you will find listings across the nation for students and alumni. The internships listed are exchanged among 30+ participating Universities including Boston College, Notre Dame, Duke, MIT, Yale, USC, and Harvard University.</p>
+                     <p>Sign up and create a new account with your USF email, and password of your choice.</p>
+                     <p><a href="https://ucan-csm.symplicity.com/students/index.php/pid730433?signin_tab=0" title="UCAN" target="_blank">Click here to access UCAN</a></p>
+                     <p><a href="https://inet-csm.symplicity.com/students/index.php" title="iNET" target="_blank">Click here to access iNet</a></p>
+                     <h2><a href="https://usfcas.usfca.edu/custom/goinglobal/usa.html">Going Global</a>»</h2>
+                     <p>Going Global USA &amp; Canada City Career Guides fast-track finding employment opportunities within the largest and most dynamic metropolitan areas in North America. Each City Career Guide contains recommended web sites, professional resources and reliable statistics.</p>
+                     <p><span>Going Global Country Career Guides are the ultimate international job seeker’s guide! Packed with country-specific information, this massive research tool contains more than 80,000 resources for finding international employment at home and abroad. Each guide has been developed by a local career specialist and is updated annually.&nbsp;</span></p>
+                     <h1><strong>Other Resources</strong></h1>
+                     <h2><a href="https://www.firstjob.com/" target="_blank">First Job »</a></h2>
+                     <p>Search thousands of curated jobs for millennials.</p>
+                     <h2><a href="https://www.ziprecruiter.com/college-jobs">ZipRecruiter»</a></h2>
+                     <h2><a href="http://www.glassdoor.com/Students/index.htm">Glass Door»</a></h2>
+                     <p>Glassdoor for Students is a free job search resource customized to meet the specific needs of college students and includes career overview pages, companies hiring new grads, and entry-level and internship search.</p>
+                     <p>You can also peruse Glass Door in these 11 countries:</p>
+                     <ul>
+                      <li><a href="https://www.glassdoor.at/index.htm">Austria</a></li>
+                      <li><a href="https://www.glassdoor.com.au/index.htm">Australia</a></li>
+                      <li>Belgium (<a href="https://fr.glassdoor.be/">French</a> or <a href="https://nl.glassdoor.be/index.htm">Dutch</a> language)</li>
+                      <li>Canada (<a href="https://www.glassdoor.ca/index.htm">English</a> or <a href="https://fr.glassdoor.ca/index.htm">French</a> language)</li>
+                      <li><a href="https://www.glassdoor.fr/index.htm">France</a></li>
+                      <li><a href="https://www.glassdoor.de/index.htm">Germany</a></li>
+                      <li><a href="https://www.glassdoor.co.in/index.htm">India</a></li>
+                      <li><a href="https://www.glassdoor.ie/index.htm">Ireland</a></li>
+                      <li><a href="https://www.glassdoor.nl/index.htm">Netherlands</a></li>
+                      <li>Switzerland (<a href="https://fr.glassdoor.ch/">French</a> or <a href="https://de.glassdoor.ch/">German</a> language)</li>
+                      <li><a href="https://www.glassdoor.co.uk/index.htm">United Kingdom</a></li>
+                     </ul>
+                     <h2><a href="http://www.liquidcompass.com/institutions/usf">Liquid Compass»</a></h2>
+                     <p><span style="color:#222222; float:none; background-color:#ffffff">A job search tool for USF Nursing Students</span></p>
+                     <h2><a href="https://myusf.usfca.edu/onestop/student-employment/students">USF On-Campus Jobs »</a></h2>
+                     <p>This is a link to Student Employment for on-campus jobs. On-Campus jobs are listed by One Stop services NOT the Career Services Center. For more information contact <a href="http://www.usfca.edu/onestop/contact/" target="_blank" title="One Stop">One Stop</a>.</p>
+                     <h1><strong>Part-Time Jobs</strong></h1>
+                     <h2><a href="http://www.localwisejobs.com/">Localwise</a>»</h2>
+                     <h2><a href="https://onelessthingsf.com">One Less Thing»</a></h2>
+                     <p><span>One Less Thing is an exclusive platform for college students to find one-off gigs and part-time jobs that fit their busy schedules. Students earn money, make connections and build their resume!</span></p>
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-bootstrap-pane alert alert-default pane-fieldable-panels-pane pane-fpid-2786"> 
+                <div class="alert-body"> 
+                 <div class="fieldable-panels-pane"> 
+                  <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"> 
+                   <div class="field-items"> 
+                    <div class="field-item even">
+                     <h2>Fraudulent Job Postings</h2>
+                     <p>Fraudulent job posters are becoming increasingly more clever. Here are some good tips to help you identify a fraudulent job posting:</p>
+                     <ul>
+                      <li>You are asked to give your credit card or bank account numbers, or copies of personal documents - but you get nothing in return. (NEVER share this kind of personal information unless you are well down the interview path, are receiving an offer, and have had personal, face-to-face meetings with company representatives and recruiters.)</li>
+                      <li>You are asked to send a payment by wire service or courier.</li>
+                      <li>You are offered a large payment or reward in exchange for allowing the use of your bank account - often for depositing checks or transferring money.</li>
+                      <li>You receive an unexpectedly large check.</li>
+                      <li><strong>If you believe you have identified a fraudulent job posting, please contact USF Career Services at (415) 422-6216.</strong></li>
+                     </ul>
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="col-md-3 radix-layouts-column2 panel-panel"> 
+              <div class="panel-panel-inner"> 
+               <div class="well style-region "> 
+                <div class="panel-pane pane-block pane-menu-menu-career-services-quick-links"> 
+                 <h2 class="pane-title"> Quick Links </h2> 
+                 <div class="pane-content"> 
+                  <ul class="nav nav-pills nav-stacked nav"> 
+                   <li class="first leaf"><a href="https://usfca.joinhandshake.com" title="">Handshake</a></li> 
+                   <li class="leaf"><a href="/student-life/career-services/resumes-cover-letters" title="">Resume and Cover Letters</a></li> 
+                   <li class="leaf"><a href="/student-life/career-services/career-planning-checklist" title="">Career Planning Checklist</a></li> 
+                   <li class="leaf"><a href="/student-life/career-services/career-planning-handouts" title="">Career Planning Handouts</a></li> 
+                   <li class="leaf"><a href="https://www.linkedin.com/groups?gid=4656244&amp;trk=hb_side_g" title="">Dons Helping Dons Mentorship Program</a></li> 
+                   <li class="last leaf"><a href="/student-life/career-services/success-stories" title="">Dons Success Stories</a></li> 
+                  </ul> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-pane pane-fieldable-panels-pane pane-fpid-2338 pane-bundle-text"> 
+                <div class="pane-content"> 
+                 <div class="fieldable-panels-pane"> 
+                  <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"> 
+                   <div class="field-items"> 
+                    <div class="field-item even">
+                     <p style="text-align:center"><a href="http://www.linkedin.com/groups?mostPopular&amp;gid=65531" target="_blank" title="Follow us on LinkedIn"><img alt="linkedin bar" height="25" width="150" class="media-element file-default panopoly-image-original" src="https://myusf.usfca.edu/system/files/styles/panopoly_image_original/private/linkedin_bar150.png?itok=y8aPkxen"></a></p>
+                     <p style="text-align:center"><a href="https://www.facebook.com/usfcareer" target="_blank" title="Join Us on Facebook"><img alt="facebook bar" height="25" width="150" class="media-element file-default panopoly-image-original" src="https://myusf.usfca.edu/system/files/styles/panopoly_image_original/private/facebook_bar150-1_0.png?itok=6M5Ls2Dq"></a></p>
+                     <p style="text-align:center"><a href="https://twitter.com/#!/usfcareer" target="_blank" title="Follow Us on Twitter"><img alt="Twitter Bar" height="25" width="150" class="media-element file-default panopoly-image-original" src="https://myusf.usfca.edu/system/files/styles/panopoly_image_original/private/twitter_bar150-1_0.png?itok=5Mfe4Fiy"></a></p>
+                     <p style="text-align:center"><a href="http://instagram.com/usfcareer?ref=badge" target="_blank" title="Follow Us on Instagram"><img alt="instagram bar" height="25" width="150" class="media-element file-default panopoly-image-original" src="https://myusf.usfca.edu/system/files/styles/panopoly_image_original/private/instagram_bar150.png?itok=NtAT5FMN"></a></p>
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div>
+          <!-- /.whelan --> 
+         </div> 
+        </div> 
+        <div id="block-block-13" class="block block-block"> 
+         <div class="content"> 
+          <script type="text/javascript"><!--
+(function () { var done = false;var script = document.createElement('script');script.async = true;script.type = 'text/javascript';script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript';document.getElementsByTagName('HEAD').item(0).appendChild(script);script.onreadystatechange = script.onload = function (e) {if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {var w = new PCWidget({ c: 'bac639b4-99b2-4519-80fa-5af8556785f9', f: true });done = true;}};})();
+//--></script> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="push"></div> 
+  </div> 
+  <footer id="footer" class="footer" role="footer"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-md-12"> 
+      <div class="footer-inner"> 
+       <div class="panel-display boxton clearfix radix-boxton" id="mini-panel-usf_footer_nav"> 
+        <div class="container-fluid"> 
+         <div class="row"> 
+          <div class="col-md-12 radix-layouts-content panel-panel"> 
+           <div class="panel-panel-inner"> 
+            <div class="panel-pane pane-menu-tree pane-menu-footer"> 
+             <div class="pane-content"> 
+              <div class="menu-block-wrapper menu-block-ctools-menu-footer-2 menu-name-menu-footer parent-mlid-menu-footer-menu-footer-menu-footer-0 menu-level-1"> 
+               <ul class="menu nav nav-pills nav-stacked">
+                <li class="first leaf menu-mlid-3599"><a href="http://www.usfca.edu" title="Public website for the University of San Francisco">USF Website</a></li> 
+                <li class="leaf menu-mlid-3600"><a href="http://www.usfca.edu/directions/" title="Detailed directions to University of San Francisco and maps of the campus">Directions &amp; Maps</a></li> 
+                <li class="leaf menu-mlid-3601"><a href="http://www.usfca.edu/contact/" title="Connections to the University of San Francisco and USF branch campuses">Contact Us</a></li> 
+                <li class="leaf menu-mlid-3602"><a href="http://www.usfjobs.com/" title="Search for jobs at the University of San Francisco">Careers at USF</a></li> 
+                <li class="leaf menu-mlid-3603"><a href="http://www.usfca.edu/mobile/" title="Download the University of San Francisco mobile app">Mobile</a></li> 
+                <li class="leaf menu-mlid-3604"><a href="https://myusf.usfca.edu/marketing-communications/feedback" title="Give us feedback on your impressions of the University of San Francisco web and intranet sites">Feedback</a></li> 
+                <li class="last leaf menu-mlid-17713"><a href="https://www.usfca.edu/library" title="">Library</a></li> 
+               </ul>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div>
+       <!-- /.boxton --> 
+       <a href="/" class="usf-footer-logo pull-right"><img src="https://myusf.usfca.edu/sites/all/themes/usf_oa_radix/assets/images/usflogo_neg_tag_150-min.png" alt=""></a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <div id="oa-responsive-regions-navbar" class="navbar navbar-inverse navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="btn btn-navbar btn-top responsive-panels-region-toggler" data-position="top"> 
+     <span class="icon-list"></span> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="https://myusf.usfca.edu/sites/default/files/js/js_29qYXJz8NLGg8Aomg-RZPjJcj9yEdEst1BMZ9gZbs-4.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5432163709","applicationID":"28284141","transactionName":"bgEEYxdVDEZUB0JZWVdLJ1QRXQ1bGhRXV1NmCQdZBFMHR2oKWVRTZhIPUhJrElRSAQ==","queueTime":0,"applicationTime":1432,"atts":"QkYHFV9PH0g=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

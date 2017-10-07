@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAAEUVdaGwUAV1NQDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"38c569029c","agent":"","transactionName":"MwcHNksEChcAUhZcDgpNIxdXBhANDl9NVBEUTA0DVwEIARNCWFEOBxcIB1cRFw==","applicationID":"6032288","errorBeacon":"bam.nr-data.net","applicationTime":340}</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="//classroom.synonym.com/favicon.ico">
+  <link rel="icon" href="//classroom.synonym.com/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//classroom.synonym.com/style.css" type="text/css">
+  <title>Why Is it Important to Have a Social Life in College? | Synonym</title>
+  <!-- jQuery needed here for use in video and quiz scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <meta name="description" content>
+  <meta property="og:type" content="article">
+  <meta property="og:description" content>
+  <meta property="og:title" content="Why Is it Important to Have a Social Life in College? | Synonym">
+  <meta property="og:image" content="http://photos.demandstudios.com/getty/article/18/21/77279359.jpg">
+  <link rel="canonical" href="https://classroom.synonym.com/important-social-life-college-6425.html">
+  <!-- Custom Dimension dataLayer -->
+  <script title="dataLayer" type="text/javascript">[{"pagetype": "Article","subpagetype": "Freestyle","studioid": "1676cef4-a763-448e-949e-eaee1daa9e5a","content_name": "Why Is it Important to Have a Social Life in College?","publish_date": "2017-09-26 13:33:36.904000","rating": "4","author": "Linda Emma","structure_rating": "4","ancestor_category1": "Classroom","ancestor_category2": "","category": "Education","has_image" : "TRUE","keyword1":"college social life","keyword1":"being college social","keyword1":"benefits of college"}]</script>
+  <script type="text/javascript">
+var dataLayer = JSON.parse ( document.querySelectorAll("script[title=dataLayer]")[0].innerHTML );
+
+    // Remove dataLayer keys that have no value for the given page
+    for (var key in dataLayer[0]) {
+        if (dataLayer[0].hasOwnProperty(key)) {
+            if (dataLayer[0][key] == "") {
+                delete dataLayer[0][key];
+            }
+        }
+    }
+
+</script>
+  <!-- End Custom Dimension dataLayer -->
+  <!-- Bing Webmaster Tool Auth -->
+  <meta name="msvalidate.01" content="129B5DE6FF8DD0ECBDD457C93FF101E3">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://classroom.synonym.com/important-social-life-college-6425.html",
+  "url": "https://classroom.synonym.com/important-social-life-college-6425.html",
+  "name":"Why Is it Important to Have a Social Life in College?",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Website",
+          "@id": "http://classroom.synonym.com/classroom/",
+          "url": "http://classroom.synonym.com/classroom/",
+          "name": "Classroom"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Website",
+          "@id": "http://classroom.synonym.com/",
+          "url": "http://classroom.synonym.com/",
+          "name": "Synonym"
+        }
+      }
+    ]
+  },
+  "inLanguage":"en-US",
+  "mainEntity":{
+    "@type":"Article",
+    "@id": "https://classroom.synonym.com/important-social-life-college-6425.html",
+    "url": "https://classroom.synonym.com/important-social-life-college-6425.html",
+    "mainEntityOfPage": "true",
+    "datePublished":"2013-03-22 06:45:00",
+    "dateModified":"2017-09-26 16:03:53.486000",
+    "headline": "Why Is it Important to Have a Social Life in College?",
+    "description":"College graduates the world over are less apt to fondly remember their days seated in a lecture hall or at a desk, than all the times they spent with friends outside of the classroom. Having a social life in college is vitally important to a positive college experience. But it may also be a bellwether of things to come after graduation in a student&amp;#8217;s personal and professional life.",
+    "keywords": "college social life, being college social, benefits of college",
+    "Publisher": {
+      "@type": "Organization",
+      "name": "Synonym",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "//classroom.synonym.com/images/synonym-channel-logo.png"}
+    },
+    "Author":{
+      "@type":"person",
+      "name":"Linda Emma"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://photos.demandstudios.com/getty/article/18/21/77279359.jpg",
+      "height": "2130",
+      "width": "1408"
+    }
+  }
+}
+</script>
+  <script type="text/javascript">
+  !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+
+  apstag.init({
+     pubID: '3066',
+     adServer: 'googletag'
+  });
+</script>
+  <script type="text/javascript">
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+	    var amzn_bid_config = {slots: []};
+
+            (function() {
+                var gads = document.createElement('script');
+                gads.async = true;
+                gads.type = 'text/javascript';
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') +
+                '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+            })();
+        </script>
+  <script type="text/javascript" src="//classroom.synonym.com/scripts/google_ad_request.js"></script>
+  <script src="//cdn.optimizely.com/js/7431252.js"></script>
+  <!-- Google Display Ads -->
+  <script async src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+  <script>
+            var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+
+            if (VIEWPORT_WIDTH <= 500) {
+              googletag.cmd.push(function() {
+                googletag.defineSlot('/6117/Synonym.com/slot1', [[300, 250], 'fluid'], '300x250_ATF').addService(googletag.pubads()).setTargeting('loc','atf');
+                googletag.defineSlot('/6117/Synonym.com/slot2', [[300, 250], 'fluid'], '300x250_BTF').addService(googletag.pubads()).setTargeting('loc','btf');
+                googletag.defineOutOfPageSlot('/6117/Synonym.com', 'out-of-page').addService(googletag.pubads());
+
+      		    
+      		      googletag.pubads().setTargeting('ctype','classroom.articles');
+      		      googletag.pubads().setTargeting('cat','classroom');
+      		    
+                googletag.pubads().setTargeting('envr','');
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.pubads().disableInitialLoad();
+                googletag.enableServices();
+              });
+            } else {
+              googletag.cmd.push(function()   {
+                googletag.defineSlot('/6117/Synonym.com/horizontal1', [[728, 90], [970, 250]], '728x90_970x250_ATF').addService(googletag.pubads());
+                googletag.defineSlot('/6117/Synonym.com/rightrail1', [[300, 250], [300, 600]], '300x250_300x600_ATF').addService(googletag.pubads()).setTargeting('loc','atf');
+                googletag.defineSlot('/6117/Synonym.com/rightrail2', [300, 250], '300x250_BTF').addService(googletag.pubads()).setTargeting('loc','btf');
+                googletag.defineOutOfPageSlot('/6117/Synonym.com', 'out-of-page').addService(googletag.pubads());
+
+		    
+      		      googletag.pubads().setTargeting('ctype','classroom.articles');
+      		      googletag.pubads().setTargeting('cat','classroom');
+		    
+
+                googletag.pubads().setTargeting('envr','');
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+		            googletag.pubads().disableInitialLoad();
+                googletag.enableServices();
+              });
+            }
+
+            if (VIEWPORT_WIDTH <= 500) {
+  	       	  amzn_bid_config.slots.push({ "slotID": "300x250_ATF", "sizes": [[300, 250]] });
+       	      amzn_bid_config.slots.push({ "slotID": "300x250_BTF", "sizes": [[300, 250]] });
+            } else {
+	       	    amzn_bid_config.slots.push({ "slotID": "728x90_970x250_ATF", "sizes": [[728, 90], [970, 250]] });
+	       	    amzn_bid_config.slots.push({ "slotID": "300x250_300x600_ATF", "sizes": [[300, 250], [300, 600]] });
+	       	    amzn_bid_config.slots.push({ "slotID": "300x250_BTF", "sizes": [[300, 250]] });
+	          }
+
+   apstag.fetchBids(amzn_bid_config, function(bids){
+    	googletag.cmd.push(function() {
+				      try {
+				      	  apstag.setDisplayBids();
+					  googletag.pubads().refresh();
+				      } catch(e) { }
+      	});
+   });
+        </script>
+  <!-- Google Display Ad Render Function -->
+  <script src="//classroom.synonym.com/scripts/displayAd.js"></script>
+  <!-- Taboola -->
+  <script type="text/javascript">
+          window._taboola = window._taboola || [];
+          _taboola.push({article:'auto'});
+          !function (e, f, u) {
+            e.async = 1;
+            e.src = u;
+            f.parentNode.insertBefore(e, f);
+          }(document.createElement('script'),
+          document.getElementsByTagName('script')[0],
+          '//cdn.taboola.com/libtrc/demandmedia-network/loader.js');
+        </script>
+ </head>
+ <body id="article-template" class="Article Freestyle">
+  <!-- body-top --> 
+  <!-- google tag manager --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZCHF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZCHF');</script> 
+  <!-- end google tag manager -->
+  <!-- end body-top --> 
+  <nav id="menu" class="slideout-menu"> 
+   <header> 
+    <h3 class="mobile-menu-header">Categories</h3> 
+    <span class="glyphicon glyphicon-remove toggle-button" aria-hidden="true"></span> 
+    <nav class="mobile-nav"> 
+     <ul> 
+      <li class="nav-item active"> <a href="/classroom/" data-event="header nav"> <span class="title-font">Classroom</span> </a> </li> 
+      <li class="nav-item "> <a href="/college" data-event="header nav"> <span class="title-font">College</span> </a> </li> 
+      <li class="nav-item "> <a href="/lifestyle/" data-event="header nav"> <span class="title-font">Lifestyle</span> </a> </li> 
+      <li class="nav-item "> <a href="/technology/" data-event="header nav"> <span class="title-font">Technology</span> </a> </li> 
+      <li class="nav-item "> <a href="/tests/" data-event="header nav"> <span class="title-font">Tests</span> </a> </li> 
+      <li class="nav-item "> <a href="/vocabulary/" data-event="header nav"> <span class="title-font">Vocabulary</span> </a> </li> 
+     </ul> 
+    </nav> 
+   </header> 
+  </nav> 
+  <main id="panel" class="slideout-panel"> 
+   <!-- Header --> 
+   <div class="container-fluid header-container"> 
+    <div class="row"> 
+     <div class="col-sm-12"> 
+      <div class="header-wrapper"> 
+       <div class="mobile-header"> 
+        <header> 
+         <a href="//classroom.synonym.com" data-event="back nav"> 
+          <svg height="40" width="25" viewbox="0 0 40 25"> 
+           <path style="stroke:black;stroke-width:5;fill:none;" d="M25 40 L3 20 L25 0"></path> 
+          </svg> </a> 
+         <section class="logo-section"> 
+          <div class="logo-title"> 
+           <a href="//classroom.synonym.com"> <img src="//classroom.synonym.com/images/logo.png" alt="Classroom"> </a> 
+          </div> 
+         </section> 
+         <span class="glyphicon glyphicon-menu-hamburger toggle-button" aria-hidden="true"></span> 
+        </header> 
+       </div> 
+       <div class="desktop-header"> 
+        <header> 
+         <div class="container"> 
+          <div class="row"> 
+           <div class="col-sm-3"> 
+            <section class="logo-section"> 
+             <div class="logo-title"> 
+              <a href="//classroom.synonym.com"> <img src="//classroom.synonym.com/images/logo.png" alt="Classroom"> </a> 
+             </div> 
+            </section> 
+           </div> 
+           <div class="col-sm-9"> 
+            <nav class="desktop-header-nav title-font"> 
+             <ul> 
+              <li class="nav-item classroom active"> <a href="/classroom/" data-event="header nav"> <span class="title-font">Classroom</span> </a> </li> 
+              <li class="nav-item college "> <a href="/college" data-event="header nav"> <span class="title-font">College</span> </a> </li> 
+              <li class="nav-item lifestyle "> <a href="/lifestyle/" data-event="header nav"> <span class="title-font">Lifestyle</span> </a> </li> 
+              <li class="nav-item technology "> <a href="/technology/" data-event="header nav"> <span class="title-font">Technology</span> </a> </li> 
+              <li class="nav-item tests "> <a href="/tests/" data-event="header nav"> <span class="title-font">Tests</span> </a> </li> 
+              <li class="nav-item vocabulary "> <a href="/vocabulary/" data-event="header nav"> <span class="title-font">Vocabulary</span> </a> </li> 
+             </ul> 
+            </nav> 
+           </div> 
+          </div> 
+         </div> 
+        </header> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- end Header --> 
+   <!-- Content --> 
+   <div class="container content-container"> 
+    <div class="row"> 
+     <div class="col-sm-12"> 
+      <div class="row desktop-only"> 
+       <div class="col-sm-12"> 
+        <div class="leaderboard-ad" id="leaderboard-ad"> 
+         <script>
+            if (VIEWPORT_WIDTH > 500) {
+                displayAd('728x90_970x250_ATF', 'leaderboard-ad');
+            }
+        </script> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="row"> 
+       <!-- Article Content --> 
+       <div class="article-main-col col-sm-12 col-md-8"> 
+        <div id="article-top"> 
+         <nav id="breadcrumbs"> 
+          <ul> 
+           <li> <a href="http://classroom.synonym.com/"> <span class="title-font">Home</span> </a> <span class="sep">»</span> </li> 
+           <li> <a href="http://classroom.synonym.com/classroom/"> <span class="title-font">Classroom</span> </a> </li> 
+          </ul> 
+         </nav> 
+         <div id="article-title">
+          <div id="sharebar" class="social-shares"> 
+           <ul class="social-shares-wrapper"> 
+            <li> <a class="share" data-event="social share" data-info="Email" target="_blank" href="mailto:?subject=Why%20Is%20it%20Important%20to%20Have%20a%20Social%20Life%20in%20College%3F%20%7C%20The%20Classroom&amp;body=I%20found%20this%20article%20on%20Synonym%20and%20thought%20you%20would%20enjoy%20it%21%0d%0dhttps%3A//classroom.synonym.com/important-social-life-college-6425.html"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a> </li> 
+            <li> <a class="share popup" data-event="social share" data-info="Facebook" data-popup-height="300" data-popup-width="600" href="https://www.facebook.com/sharer/sharer.php?u=https://classroom.synonym.com/important-social-life-college-6425.html"><i class="fa fa-facebook-square facebook-social fa-2x" aria-hidden="true"></i></a> </li> 
+            <li> <a class="popup share" data-event="social share" data-info="Twitter" data-popup-height="400" data-popup-width="575" href="https://twitter.com/share?url=https://classroom.synonym.com/important-social-life-college-6425.html&amp;text=Why%20Is%20it%20Important%20to%20Have%20a%20Social%20Life%20in%20College%3F"><i class="fa fa-twitter-square twitter-social fa-2x" aria-hidden="true"></i></a> </li> 
+            <li> <a class="share popup" data-event="social share" data-info="Pinterest" data-popup-height="300" data-popup-width="700" href="//pinterest.com/pin/create/button/?url=https://classroom.synonym.com/important-social-life-college-6425.html&amp;media=http://photos.demandstudios.com/getty/article/18/21/77279359.jpg&amp;description=Why%20Is%20it%20Important%20to%20Have%20a%20Social%20Life%20in%20College%3F" data-pin-do="buttonPin" data-pin-config="beside"><i class="fa fa-pinterest-square pinterest-social fa-2x" aria-hidden="true"></i></a> </li> 
+            <li> <a class="share popup" data-event="social share" data-info="Reddit" data-popup-height="400" data-popup-width="850" href="//www.reddit.com/submit?url=https://classroom.synonym.com/important-social-life-college-6425.html"><i class="fa fa-reddit-square reddit-social fa-2x" aria-hidden="true"></i></a> </li> 
+           </ul> 
+           <script>
+        $(function() {
+            $('#sharebar .popup').click(function(e) {
+            var width  = parseInt(this.getAttribute('data-popup-width')),
+                height = parseInt(this.getAttribute('data-popup-height')),
+                left   = ($(window).width()  - width)  / 2,
+                top    = ($(window).height() - height) / 2,
+                url    = $(this).attr('href'),
+                opts   = 'status=1' +
+                                ',width=' + width +
+                                ',height=' + height +
+                                ',top=' + top +
+                                ',left=' + left;
+                window.open(url,'_blank',opts);
+                e.preventDefault();
+            });
+        });
+        </script> 
+          </div>
+          <h1>Why Is it Important to Have a Social Life in College?</h1> 
+          <span id="article-byline">By Linda Emma</span> 
+         </div> 
+         <div class="article-image"> 
+          <div class="image-wrapper"> 
+           <img src="//img-aws.ehowcdn.com/750x428p/photos.demandstudios.com/getty/article/18/21/77279359.jpg" class="img-responsive" alt="For some college students, a social life is even more important than their academic one."> 
+          </div> 
+          <div class="article-image-attribution"> 
+           <span>For some college students, a social life is even more important than their academic one.</span> 
+          </div> 
+         </div>
+        </div> 
+        <div id="article-content"> 
+         <div class="article-text"> 
+          <div> 
+           <p>College graduates the world over are less apt to fondly remember their days seated in a lecture hall or at a desk, than all the times they spent with friends outside of the classroom. Having a social life in college is vitally important to a positive college experience. But it may also be a bellwether of things to come after graduation in a student’s personal and professional life.</p> 
+           <div class="inline-ad"> 
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+            <ins class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;height:125px" data-ad-client="ca-pub-3235755782694080" data-ad-slot="8408413546"></ins> 
+            <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+   </script> 
+           </div> 
+           <h3><p>The Benefit of Play</p></h3>
+           <p>Balancing the demands of a full course load, extra curricular activities and part-time jobs can become overwhelming to students. Kicking back with friends and taking some quality “me” time is great at reducing stress. Dartmouth College advises its students that “taking time to yourself for rejuvenation and relaxation is just as important as giving time to other activities.”</p> 
+           <h3><p>Social Circles</p></h3>
+           <p>Structured social activities help a student develop a sense of community. Whether serving as a member of the soccer team or a volunteering on a Habitat for Humanity project, students gain much from connecting to something bigger than themselves. They learn about teamwork and selflessness but may also discover innate leadership qualities they didn’t even know they possessed.</p> 
+           <h3><p>Exposure to Diversity</p></h3>
+           <p>An active social life gives students the opportunity to reach out to those beyond their typical social circle. Developing relationships with people of different cultures teaches students to be less judgmental and exposes them to a wider world. According to national population projections, the U.S. is becoming more diverse. The population of non-Hispanic whites is decreasing while minority population is increasing. By 2050, the Asian and Pacific islander population will be more than five times its current size. Particularly in a global economy where students may one day be working with peers far from home, these early lessons in acceptance can prove invaluable.</p> 
+           <h3><p>Self-confidence</p></h3>
+           <p>The college years afford students a great opportunity to put themselves in a variety of social situations. As they approach the boarders of their own comfort levels, they have the chance to hone their skills of communication, build self-confidence and learn resilience. College professors Lynn Jacobs and Jeremy Hyman advise students to turn off the voice that tells them they're not good enough and to practice their skills of communication on a smaller scale, at first. Voicing an opinion and speaking in front of small groups is good practice for larger groups and bigger debates.</p> 
+           <h3><p>Relationships</p></h3>
+           <p>Many students find future spouses in college. Some find lifelong friends. But all students with active social lives learn a lot about getting along with others and building relationships. The development of such interpersonal skills is fully transferable to the real world. Negotiating through roommate squabbles may lay the groundwork on how to handle future living arrangements or marital spats. The support systems upon which students rely in college may follow them into the working world; even if the actual members change, socially active students learn how to build and keep relationships alive.</p> 
+           <h3><p>Networking</p></h3>
+           <p>Peers in college soon become peers in the workforce, so having many social relationships can be beneficial to a student’s long-term networking systems. Students who are socially active in college also fare better in their careers. According to a longitudinal Finish study published in the journal "Developmental Psychology," students who are socially active in college become workers who are engaged, enthusiastic, motivated and dedicated to their careers.</p> 
+          </div> 
+          <div class="main-ad"> 
+           <script>
+                        var ad_height;
+                        var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+                        if (VIEWPORT_WIDTH > 500) {
+                            ad_height = '455px';
+                        } else {
+                            ad_height = '555px';
+                        }
+                    </script> 
+           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+           <!-- WORK_MAIN --> 
+           <ins id="ggads" class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;" data-ad-client="ca-pub-3235755782694080" data-ad-slot="9885146744"> </ins> 
+           <script>
+                        document.getElementById('ggads').style.height = ad_height;
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script> 
+          </div> 
+         </div> 
+         <div id="references" class="article-info"> 
+          <h4>References</h4> 
+          <ul>
+           <li><a href="http://www.guardian.co.uk/education/2003/nov/13/alevels2003.alevels" rel="nofollow">The Guardian: Social Life More Important than Study, Say Students</a></li>
+           <li><a href="http://www.collegeparents.org/members/resources/articles/helping-your-college-student-%E2%80%9Csupersize%E2%80%9D-his-college-experiences" rel="nofollow">College Parents: Helping Your College Student Supersize His College Experience</a></li>
+           <li><a href="http://www.helpguide.org/life/creative_play_fun_games.htm" rel="nofollow">Help Guide: Play, Creativity, and Lifelong Learning</a></li>
+           <li><a href="http://www.dartmouth.edu/~healthed/relax/index.html#suggestions" rel="nofollow">Dartmouth College: Suggestions for Reducing Stress</a></li>
+           <li><a href="http://www.uhs.uga.edu/stress/wellnesslifestyle.html" rel="nofollow">University of Georgia Health Center: Managing Stress: A Guide for College Students</a></li>
+           <li><a href="http://psychcentral.com/news/2011/03/01/learning-social-skills-in-college-helps-predict-work-career-success/23991.html" rel="nofollow">Psych Central: Learning Social Skills in College Helps Predict Work Career Success</a></li>
+           <li>Developmental Psychology; Trajectories of Educational Expectations from Adolescence to Young Adulthood in Finland; L Tynkkynen et al.</li>
+           <li><a href="https://cps.ipums.org/cps/resources/cpr/2_ps.pdf" rel="nofollow">Minnesota Population Center: National Population Projections</a></li>
+           <li><a href="http://www.usnews.com/education/blogs/professors-guide/2010/04/21/15-ways-to-boost-your-confidence-at-college" rel="nofollow">U.S. News College Compass: 15 Ways to Boost Your Confidence at College</a></li>
+          </ul> 
+         </div> 
+         <div id="synonym-taboola-below-article-thumbnails"></div> 
+         <script type="text/javascript">
+                window._taboola = window._taboola || [];
+                _taboola.push({
+                    mode: 'thumbnails-a',
+                    container: 'synonym-taboola-below-article-thumbnails',
+                    placement: 'Below Article Thumbnails synonym-taboola-below-article-thumbnails',
+                    target_type: 'mix'
+                });
+            </script> 
+         <div id="author" class="article-info"> 
+          <h4>About the Author</h4> 
+          <p>Linda Emma is a long-standing writer for gardening sites. She is also a digital marketing professional and published author with more than 20 years experience in media and business. She works as a content creator and professional writing tutor at a private New England college. She holds a bachelor's degree in journalism from Northeastern University. </p> 
+         </div> 
+         <div id="photo-credits" class="article-info"> 
+          <h4>Photo Credits</h4> 
+          <ul> 
+           <li>Polka Dot Images/Polka Dot/Getty Images</li> 
+          </ul> 
+         </div> 
+         <div id="more-related-articles" class="article-info"> 
+          <h4>More Classroom Articles</h4> 
+          <ul> 
+           <li> <a href="//classroom.synonym.com/living-coed-vs-singlesex-dorms-5658.html">Living in Coed vs. Single-Sex Dorms</a> </li> 
+           <li> <a href="//classroom.synonym.com/diversity-population-united-states-important-6026.html">Why Is Diversity of Population in the United States Important?</a> </li> 
+           <li> <a href="//classroom.synonym.com/top-national-colleges-18132.html">Top National Colleges</a> </li> 
+           <li> <a href="//classroom.synonym.com/percentage-high-school-students-attend-college-after-graduation-1423.html">What Percentage of High School Students Attend College After Graduation?</a> </li> 
+           <li> <a href="//classroom.synonym.com/good-foundation-longterm-relationship-9894.html">What Makes a Good Foundation for a Long-Term Relationship?</a> </li> 
+           <li> <a href="//classroom.synonym.com/facts-5004310-what-skills-needed-become-model.html">What Skills Are Needed to Become a Model?</a> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Article Sidebar --> 
+       <div class="article-sidebar-col col-sm-12 col-md-4"> 
+        <div id="article-sidebar"> 
+         <div class="radlinks"> 
+          <h3>Related Searches</h3> 
+          <div class="radlinks-content">
+           <script language="JavaScript">
+<!--
+function google_radlink_request_done(radlinks) {
+if (radlinks.length < 1)
+return;
+for(i=0; i < radlinks.length; ++i) {
+document.write("<ul><li class=\"entry\"><a target=\"_top\" href=\"" +
+"//classroom.synonym.com/rad-results.html?google_kw=" +
+radlinks[i].url_escaped_term +"&category=classroom.synonym.com/classroom/" +
+"&subcategory=Why+Is+it+Important+to+Have+a+Social+Life+in+College?" +"&media_type=Article" +"&channel=5662194342" +"&google_rt=" + radlinks[i].radlink_token +
+"&google_page_url=" +
+encodeURIComponent(window.location) + "\">" +
+radlinks[i].term +
+"</a></li></ul>\n");
+}
+}
+// -->
+</script> 
+           <script language="JavaScript">
+<!--
+google_ad_client = 'ca-pub-3235755782694080';
+google_ad_channel = '';
+google_ad_output = 'js';
+google_max_num_ads = '0';
+google_language = 'en';
+google_encoding = 'utf8';
+google_safe = 'high';
+google_num_radlinks = '6';
+google_max_radlink_len = '30';
+google_num_radlinks_per_unit = '3,4,5';
+google_rl_mode = 'relevance';
+// -->
+</script> 
+           <script language="JavaScript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+          </div> 
+         </div> 
+        </div> 
+        <div class="display-ad" id="sidebar-ad-1"> 
+         <script>
+                if (VIEWPORT_WIDTH <= 500) {
+                    displayAd('300x250_BTF', 'sidebar-ad-1');
+                } else {
+                    displayAd('300x250_300x600_ATF', 'sidebar-ad-1');
+                }
+            </script> 
+        </div> 
+        <div id="related-articles" class="related-content"> 
+         <h3>Related Articles</h3> 
+         <ul> 
+          <li> 
+           <div class="related-content-article-card"> 
+            <div class="related-content-article-image-wrapper"> 
+             <a href="//classroom.synonym.com/things-change-high-school-real-world-15029.html"> 
+              <div class="image-overlay"></div> <img src="//img-aws.ehowcdn.com/300x200/photos.demandstudios.com/getty/article/81/6/92914717.jpg" alt="How Do Things Change From High School to the Real World?"> </a> 
+            </div> 
+            <div class="related-content-article-title"> 
+             <a href="//classroom.synonym.com/things-change-high-school-real-world-15029.html"> <span class="title-font">How Do Things Change From High School to the Real World?</span> </a> 
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="related-content-article-card"> 
+            <div class="related-content-article-image-wrapper"> 
+             <a href="//classroom.synonym.com/purpose-being-sorority-10439.html"> 
+              <div class="image-overlay"></div> <img src="//img-aws.ehowcdn.com/300x200/photos.demandstudios.com/getty/article/110/250/86480245.jpg" alt="What Is the Purpose of Being in a Sorority?"> </a> 
+            </div> 
+            <div class="related-content-article-title"> 
+             <a href="//classroom.synonym.com/purpose-being-sorority-10439.html"> <span class="title-font">What Is the Purpose of Being in a Sorority?</span> </a> 
+            </div> 
+           </div> </li> 
+         </ul> 
+        </div> 
+        <div class="display-ad" id="sidebar-ad-2"> 
+         <script>
+                if (VIEWPORT_WIDTH > 500) {
+                    displayAd('300x250_BTF','sidebar-ad-2');
+                }
+            </script> 
+        </div> 
+        <div id="related-articles-b" class="related-content"> 
+         <h3>Related Articles</h3> 
+         <ul> 
+          <li> 
+           <div class="related-content-article-card"> 
+            <div class="related-content-article-image-wrapper"> 
+             <a href="//classroom.synonym.com/advantages-going-away-college-rather-staying-home-4988.html"> 
+              <div class="image-overlay"></div> <img src="//img-aws.ehowcdn.com/300x200/photos.demandstudios.com/getty/article/178/47/76763267.jpg" alt="The Advantages of Going Away to College Rather Than Staying Home"> </a> 
+            </div> 
+            <div class="related-content-article-title"> 
+             <a href="//classroom.synonym.com/advantages-going-away-college-rather-staying-home-4988.html"> <span class="title-font">The Advantages of Going Away to College Rather Than Staying Home</span> </a> 
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="related-content-article-card"> 
+            <div class="related-content-article-image-wrapper"> 
+             <a href="//classroom.synonym.com/youth-social-responsibility-8039901.html"> 
+              <div class="image-overlay"></div> <img src="//img-aws.ehowcdn.com/300x200/cpi.studiod.com/www_ehow_com/i.ehow.com/images/a07/h0/9p/use-observational-learning-classroom-800x800.jpg" alt="Youth Social Responsibility"> </a> 
+            </div> 
+            <div class="related-content-article-title"> 
+             <a href="//classroom.synonym.com/youth-social-responsibility-8039901.html"> <span class="title-font">Youth Social Responsibility</span> </a> 
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="related-content-article-card"> 
+            <div class="related-content-article-image-wrapper"> 
+             <a href="//classroom.synonym.com/important-social-life-college-1432.html"> 
+              <div class="image-overlay"></div> <img src="//img-aws.ehowcdn.com/300x200/cpi.studiod.com/www_ehow_com/i.ehow.com/images/a01/ud/f7/study-psat-800x800.jpg" alt="Why Is it Important to Have a Social Life in College?"> </a> 
+            </div> 
+            <div class="related-content-article-title"> 
+             <a href="//classroom.synonym.com/important-social-life-college-1432.html"> <span class="title-font">Why Is it Important to Have a Social Life in College?</span> </a> 
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="related-content-article-card"> 
+            <div class="related-content-article-image-wrapper"> 
+             <a href="//classroom.synonym.com/allwomen-colleges-north-carolina-6063528.html"> 
+              <div class="image-overlay"></div> <img src="//img-aws.ehowcdn.com/300x200/cpi.studiod.com/www_ehow_com/photos.demandstudios.com/25/158/fotolia_4181379_XS.jpg" alt="All-Women Colleges in North Carolina"> </a> 
+            </div> 
+            <div class="related-content-article-title"> 
+             <a href="//classroom.synonym.com/allwomen-colleges-north-carolina-6063528.html"> <span class="title-font">All-Women Colleges in North Carolina</span> </a> 
+            </div> 
+           </div> </li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div ub-in-page="599c829c176833351033bc1d"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- Footer --> 
+   <div class="footer"> 
+    <div class="container-fluid footer-container title-font"> 
+     <div class="row"> 
+      <div class="col-sm-12 col-md-12"> 
+       <div class="footer-content-wrapper"> 
+        <img class="footer-logo" src="//classroom.synonym.com/images/logo-white.png" alt="classroom.synonym.com"> 
+        <p>© 2001-2017, Leaf Group Ltd., all rights reserved. // Leaf Group Education</p> 
+        <p>The database based on Word Net is a lexical database for the English Language. See <a href="http://www.synonym.com/disclaimer/" data-event="footer nav">disclaimer</a>.</p> 
+        <ul id="policy-links"> 
+         <li> <a href="//classroom.synonym.com/about-us" data-event="footer nav">About Us</a> </li> 
+         <li> <a href="//classroom.synonym.com/terms-of-use" data-event="footer nav">Terms of Use</a> </li> 
+         <li> <a href="//classroom.synonym.com/privacy-policy" data-event="footer nav">Privacy Policy</a> </li> 
+         <li> <a href="//classroom.synonym.com/copyright-policy" data-event="footer nav">Copyright Policy</a> </li> 
+        </ul> 
+        <div> 
+         <!--
+                      Ghostery Inc tag
+                      cid: 374
+                      pid: 46
+                    --> 
+         <a id="_bapw-link" href="#" target="_blank" style="color:#000000 !important;font:11pt Arial !important;text-decoration:none !important"><img id="_bapw-icon" style="border:0 !important;display:inline !important;vertical-align:middle !important;padding-right:5px !important;filter: brightness(10000%);-webkit-filter: brightness(10000%);"><span style="vertical-align:middle !important">AdChoices</span></a> 
+         <script type="text/javascript">
+                      (function() {
+                        var ev = document.createElement('script'); ev.type = 'text/javascript'; ev.async = true; ev.setAttribute('data-ev-tag-pid', 46); ev.setAttribute('data-ev-tag-ocid', 374);
+                        ev.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/pub/tag.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ev, s);
+                      })();
+                    </script> 
+        </div> 
+        <img src="//classroom.synonym.com/images/leaf-logo.png" class="right" alt="driven by Leaf Group"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </main> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+  <script src="//classroom.synonym.com/scripts/slideout-0.1.12/dist/slideout.min.js"></script>
+  <script async src="//classroom.synonym.com/scripts/custom.js"></script> 
+  <!-- /6117/Synonym.com OOP--> 
+  <div id="out-of-page"> 
+   <script>
+googletag.cmd.push(function() { googletag.display('out-of-page'); });
+</script> 
+  </div> 
+  <script type="text/javascript">
+          window._taboola = window._taboola || [];
+          _taboola.push({flush: true});
+        </script> 
+  <!-- begin usabilla embed code --> 
+  <script>/*{literal}<![CDATA[*/window.usabilla||function(){var a=window,d=a.document,c={},f=d.createElement("div"),h=!1,a=a.usabilla=function(){(c.a=c.a||[]).push(arguments)};a._=c;c.ids={};f.style.display="none";(function(){if(!d.body)return setTimeout(arguments.callee,100);d.body.insertBefore(f,d.body.firstChild).id="usabilla";h=!0})();a.load=function(a,g,k){if(!c.ids[g]){var e=c.ids={};e.url="//"+a+"/"+g+".js?s1";e.config=k;setTimeout(function(){if(!h)return setTimeout(arguments.callee,100);var b=d.createElement("iframe"),a;b.id="usabilla-"+g;/MSIE[ ]+6/.test(navigator.userAgent)&&(b.src="javascript:false");f.appendChild(b);try{b.contentWindow.document.open()}catch(c){e.domain=d.domain,a="javascript:var d=document.open();d.domain='"+e.domain+"';",b.src=a+"void(0);"}try{var l=b.contentWindow.document;l.write(["<!DOCTYPE html><html><head></head><body onload=\"var d = document;d.getElementsByTagName('head')[0].appendChild(d.createElement('script')).src='",e.url,"'\"></body></html>"].join(""));l.close()}catch(m){b.src=a+'d.write("'+loaderHtml().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}b.contentWindow.config=k;b.contentWindow.SCRIPT_ID=g},0)}}}();
+          window.usabilla.load("w.usabilla.com", "00d7c3345c28");
+          /*]]>{/literal}*/</script> 
+  <!-- end usabilla embed code --> 
+  <!-- Quantcast Tag --> 
+  <script type="text/javascript">
+          var _qevents = _qevents || [];
+
+          (function() {
+          var elem = document.createElement('script');
+          elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+          elem.async = true;
+          elem.type = "text/javascript";
+          var scpt = document.getElementsByTagName('script')[0];
+          scpt.parentNode.insertBefore(elem, scpt);
+          })();
+
+          _qevents.push({
+          qacct:"p-4dIM5nVs2rFio"
+          });
+          </script> 
+  <noscript> 
+   <div style="display:none;"> 
+    <img src="//pixel.quantserve.com/pixel/p-4dIM5nVs2rFio.gif" border="0" height="1" width="1" alt="Quantcast"> 
+   </div> 
+  </noscript> 
+  <!-- End Quantcast tag -->  
+ </body>
+</html>

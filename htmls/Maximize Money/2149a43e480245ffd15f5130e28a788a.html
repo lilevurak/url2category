@@ -1,0 +1,630 @@
+<!doctype html>
+<html>
+ <head id="ctl00_Head1">
+  <title>
+	Get Out of Debt? | Regions
+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> 
+  <!-- #1182 11/14/13 added reference to jquery 1.10.2   --> 
+  <script src="https://www.regions.com/JS/jquery-1.10.2.min.js" type="text/javascript"></script> 
+  <script src="https://www.regions.com/JS/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> 
+  <script src="https://www.regions.com/JS/jquery.placeholder.min.js" type="text/javascript"></script> 
+  <script src="https://www.regions.com/JS/loadMedia.min.js" type="text/javascript"></script> 
+  <script src="https://www.regions.com/JS/cmbd-jquery.min.js" type="text/javascript"></script> 
+  <!--  #983 03/21/2013 add script reference  - also added script to JS folder - lives in /virtualDocuments in prod?  --> 
+  <script src="https://www.regions.com/JS/basic-jquery-slider.min.js" type="text/javascript"></script> 
+  <script src="https://sec-ads.bridgetrack.com/regions/site/_btAds_min.js" type="text/javascript"></script> 
+  <!--  #983 03/21/2013 end add script reference    --> 
+  <!--<script src="https://www.regions.com/JS/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="https://www.regions.com/JS/jquery.labelify.min.js" type="text/javascript"></script>
+	<script src="https://www.regions.com/JS/jquery.utils.js" type="text/javascript"></script>
+    <script src="https://www.regions.com/JS/jscripts-cmbd-min.js" type="text/javascript"></script>--> 
+  <style type="text/css">
+        #aghp-banners {width: 693px; height: 257px; padding: 0px; border: solid 0px #ccc; }
+        #aghp-banners ul.bjqs {position: relative; list-style: none; padding: 0; margin: 0; overflow: hidden; display: none; }
+        #aghp-banners li.bjqs-slide {display: none; position: absolute; }
+        #aghp-banners ul.bjqs-controls {list-style: none; margin: 0; padding: 0; z-index: 9999; }
+        #aghp-banners ol.bjqs-markers {list-style: none; margin: -30px 0 0 10px; padding: 0; z-index: 99999; position: relative; }
+        #aghp-banners ol.bjqs-markers li {float: left; margin: 0 3px; }
+        #aghp-banners ol.bjqs-markers li a {display: block; height: 10px; width: 10px; border: 4px solid #fff; overflow: hidden; text-indent: -9999px; background: #ccc; border-radius: 10px; }
+        #aghp-banners ol.bjqs-markers li.active-marker a {background: #558800; }
+        #aghp-banners ol.bjqs-markers {height: 18px;width: 73px; padding: 13px 10px;margin: -46px 0 0 0; background: transparent url(virtualDocuments/banner-bjqs-markers-bkg.png) no-repeat right bottom;}
+        
+        /* #1182 11/14/13 add styles for divs for lightbox effect */
+        .lb_tt_black_overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: none; z-index: 1000009; background-color: #595454; -moz-opacity: 0.8; opacity: .80; filter: alpha(opacity=80); }
+        .lb_tt_white_content { display: none; position: absolute; top: 5%; left: 50%; margin-left: -385px; width: 770px; height: 700px; padding: 0; border: none; background: url(https://www.regions.com/virtualDocuments/loading.gif) no-repeat center center #ffffff; z-index: 10000012; overflow: auto; }
+        #closeBtn { position: relative; width: 770px; text-align: right; margin: 0 auto; }
+        /*#light {position: absolute !important}*/
+        #light h3 { text-align: right; height: 30px; background-color: #80c055; }
+        #lightDisclaimer{ position: absolute; left: 50%; top: 50%; margin-top: -207px; margin-left: -240px; width: 480px; /*height: 415px;*/ background-color: #ebf0f1; z-index: 1000010; padding-bottom: 1em; }
+
+        #lightDisclaimer p{ line-height: 150%; padding: 15px; margin: 0; }
+        #lightDisclaimer h3{ background-color: #88bb00; padding: 15px; width: auto; color: #000; font-size: 24px; }
+
+        #lightDisclaimer .logo{height: 55px; background: url(https://www.regions.com/App_Themes/2010/img/staticImages.gif) no-repeat 10px 5px #fff;}
+
+        #lightDisclaimer .secondary-button{ background-color: #aaa; border: none; width: 47%; height: 35px; color: #fff; font-weight: bold; font-size: 13px;}
+        #lightDisclaimer .primary-button{background-color: #f99a00; border: none; width: 47%; height: 35px; color: #fff; font-weight: bold; font-size: 13px; margin-left: 15px; }
+        #lightDisclaimer a.primary-button { background-color: #f99a00; border: none; width: 47%; height: 26px; color: #fff; font-weight: bold; font-size: 13px; margin-left: 15px; display: inline-block; text-align: center; vertical-align: middle; padding-top: 8px; margin-top: -2px; }
+        #lightDisclaimer .center{ text-align: center; }
+
+        #lightDisclaimer table { border-collapse: collapse; margin: 0 15px; font-size: 10px; width: 436px; }
+        #lightDisclaimer td { border: 1px solid #d9d9d9; margin: 0; padding: 3px; background-color: #fff; color: #000; white-space: nowrap; }
+        #lightDisclaimer td.grey { background-color: #f2f2f2; }
+        #lightDisclaimer .ehl-small { margin: 0px 3px -3px 0;}
+
+        #closeBtn a { position: absolute; top: -10px; left: 740px; }
+        iframe { border: none;}
+
+        @media only screen and (max-width: 1024px) {
+            #lightDisclaimer { width: 100%; left: 0; top: 0; margin-left: 0; margin-top: 0; }
+            #lightDisclaimer table { margin: 0 auto; }
+        }
+        /* end #1182 11/14/13 add styles for divs for lightbox effect   *top: 25px; */
+
+    </style> 
+  <script language="JavaScript" type="text/javascript">
+        if (self == top) {
+        }
+        else {
+            top.location = self.location;
+        } 
+    </script> 
+  <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            // #983 03/21/2013 add function for Bridgetrack banner 
+            $('#aghp-banners').bjqs({
+                'width': 693,
+                'height': 257,
+                'animation': 'fade',
+                'animationDuration': 800,
+                'rotationSpeed': 7000,
+                'showMarkers': true,
+                'showControls': false,
+                'centerControls': false,
+                'centerMarkers': false
+            });
+
+            var nextModal;
+            $savedlocationLink = $("a#savedlocationLink");
+            $locationLink = $("div#lfo a#locationLink");
+            $servicesLink = $("div#sfo a#servicesLink");
+            $privacyLink = $("div#pfo a#privacyLink");
+
+            // Labelify our location Flyout
+            //$("input.locationField").labelify();
+            // updated to replace the outdated labelify plugin...
+            $("input.locationField").placeholder();
+
+            // Validators
+            $("input#locationZipCode").ForceNumericOnly();
+            $("input#locationState").ForceAlphaOnly();
+
+            // Handle Resizing
+            $(window).resize(function () {
+                if ($privacyLink.position() != null) { $("div#privacy_menu").css("left", $privacyLink.position().left + 9); }
+                if ($locationLink.position() != null) $("div#location_menu").css("left", $locationLink.position().left + 1);
+                if ($savedlocationLink.position() != null) $("div#savedlocation_menu").css("left", $savedlocationLink.position().left + 1);
+                if ($servicesLink.position() != null) $("div#services_menu").css("left", $servicesLink.position().left + 1);
+            });
+
+            // Toggle opening
+            $locationLink.click(function () {
+                $("div#location_menu").css("left", $locationLink.position().left + 1).toggle();
+                $locationLink.toggleClass("menu-open");
+                return false;
+            });
+
+            $savedlocationLink.click(function () {
+                $("div#savedlocation_menu").css("left", $savedlocationLink.position().left + 1).toggle();
+                return false;
+            });
+
+            $servicesLink.click(function () {
+                $("div#services_menu").css("left", $servicesLink.position().left + 1).toggle();
+                $servicesLink.toggleClass("menu-open");
+                return false;
+            });
+
+            $privacyLink.click(function () {
+                $("div#privacy_menu").css("left", $privacyLink.position().left).toggle();
+                $privacyLink.toggleClass("menu-open");
+                return false;
+            });
+
+            // "Submit" the form
+            $("div#locationFind").click(function () {
+                branchSubmit();
+            });
+
+            // Hide the location dropdown if they click off on the page
+            $(document).mouseup(function (e) {
+                if ($(e.target).parent("a.locations_fo").length == 0 && $(e.target).parent(".Locations").length == 0 && $(e.target).parent("#location_menu").length == 0) {
+                    $locationLink.removeClass("menu-open");
+                    $("div#location_menu").hide();
+                }
+
+                if ($(e.target).parent("a.savedlocations_fo").length == 0 && $(e.target).parent(".Locations").length == 0 && $(e.target).parent("#savedlocation_menu").length == 0) {
+                    $("div#savedlocation_menu").hide();
+                }
+
+                if ($(e.target).parent("a.services_fo").length == 0 && $(e.target).parent(".Services").length == 0 && $(e.target).parent("#services_menu").length == 0) {
+                    $servicesLink.removeClass("menu-open");
+                    $("div#services_menu").hide();
+                }
+
+                if ($(e.target).parent("a.privacy_fo").length == 0 && $(e.target).parent("#Login").length == 0) {
+                    $privacyLink.removeClass("menu-open");
+                    $("div#privacy_menu").hide();
+                }
+            });
+        });
+        // #915 12/17/2012 added the below function
+        function branchSubmit() {
+
+            var urlLocator = $('.clsUrlLocator').val();
+            var outUrl = urlLocator + '?City=';
+            if ($('#locationCity').val() != "City")
+                outUrl += $('#locationCity').val();
+            outUrl += '&State=';
+            if ($('#locationState').val() != 'State')
+                outUrl += $('#locationState').val();
+            outUrl += '&Zip=';
+            if ($('#locationZipCode').val() != "ZIP Code")
+                outUrl += $('#locationZipCode').val();
+            // Gail Brown (RC11832) changed line to correct problem with search
+            //outUrl += '&Pagination=0';
+            outUrl += '&PaginationId=0';
+
+            document.forms[0].action = outUrl;
+            document.forms[0].elements['__VIEWSTATE'].value = '';
+            document.forms[0].elements['__VIEWSTATE'].name = 'ignore';
+            document.forms[0].submit();
+        }
+
+        // #1182 11/14/13 add functions to show IFrame for TimeTrade and close the frame on click
+        // RC11832 4/3/2014 changes to lightbox behavior (with David Conlin)
+        function OpenIframe(url, id) {
+
+            $("#lightDisclaimer, #fade").show();
+
+            $("#button-cancel").click(function () {
+                $("#lightDisclaimer, #fade").hide();
+                $("#frameID").attr("src", "");
+                clearInterval(nextModal);
+                return false;
+            });
+
+            // RC11832 4/3/2014 changes to lightbox behavior (with David Conlin)
+            $("#button-continue").click(function (e) {
+              
+                if (typeof nextModal !== "undefined") {
+                    clearInterval(nextModal);
+                }
+
+                if ($(window).width() <= 1024) {
+
+                    window.location.href = "https://timetrade.com/app/regions/workflows/REGPHONE/schedule/?campaignId=personalcampaign&view=embed";
+
+                } else {
+                    window.openNext();
+                }
+                return false;
+            });
+            // end RC11832 4/3/2014 changes to lightbox behavior (with David Conlin)
+
+            window.openNext = function () {
+
+                $("#lightDisclaimer, #fade").hide();
+                document.getElementById('light').style.display = 'block';
+                document.getElementById('fade').style.display = 'block'
+                var theFrame = document.getElementById("frameID");
+                var now = new Date().getTime();
+
+                if (url) {
+                    $("#frameID").attr('src', url + "&cachebust=" + now);
+                }
+                else if (id) {
+                    var frameSrc = 'https://timetrade.com/app/regions/workflows/REGLOC/schedule/' + "?locationId=" + id + "&cachebust=" + now + "&view=embed";
+                    if (theFrame)
+                        $("#frameID").attr('src', frameSrc);
+                }
+            }
+
+            nextModal = setTimeout(function () { window.openNext(); }, 7500);
+        }
+
+        function CloseIframe() {
+
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none'
+            // RC11832 4/3/2014 changes to lightbox behavior (with David Conlin)
+            $("#frameID").attr('src', "");
+        }
+
+    </script> 
+  <link href="../App_Themes/2010/Ems.css" type="text/css" rel="stylesheet">
+  <link href="../App_Themes/2010/lightbox.css" type="text/css" rel="stylesheet">
+  <link rel="icon" href="https://www.regions.com/favicon.ico"> 
+  <meta name="template" content="Detail: 838"> 
+  <meta name="keywords" content="Regions, Regions Bank, get out of debt, save money"> 
+  <meta name="description" content="Regions Bank can help you develop a plan to get out of debt, start to save money and get back to financial freedom. Read here to learn more."> 
+  <meta name="apple-itunes-app" content="app-id=554293254">
+  <!-- START OF SmartSource Data Collector TAG v10.2.55 -->
+  <!-- Copyright (c) 2013 Webtrends Inc.  All rights reserved. -->
+  <script type="text/javascript" src="/JS/webtrends.load.js"></script>
+  <meta name="apple-itunes-app" content="app-id=554293254">
+ </head> 
+ <body> 
+  <form name="aspnetForm" method="post" action="../templateDetail.aspx" id="aspnetForm"> 
+   <div> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk1NjM3MTY4NQ9kFgJmD2QWAgIBD2QWAgIEDxUMF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tF2h0dHBzOi8vd3d3LnJlZ2lvbnMuY29tZGQCm4ZmCymyeCucJcJ36zf7SUyOfQ=="> 
+   </div> 
+   <script type="text/javascript">function GWLSubmit(){document.forms[0].action='https://www.regions.com/system/gateway.rf';document.forms[0].elements['__VIEWSTATE'].value='';document.forms[0].elements['__VIEWSTATE'].name='ignore';document.forms[0].submit();}</script>
+   <script type="text/javascript">function rateSubmit(){document.forms[0].action='https://www.regions.com/Rates.rf';document.forms[0].elements['__VIEWSTATE'].value='';document.forms[0].elements['__VIEWSTATE'].name='ignore';document.forms[0].submit();}</script>
+   <script type="text/javascript">function googleSubmit(){window.parent.location.href = 'https://www.regions.com/GoogleSearch.rf';document.forms[0].action='https://www.regions.com/GoogleSearch.rf';document.forms[0].elements['__VIEWSTATE'].value='';document.forms[0].elements['__VIEWSTATE'].name='ignore';document.forms[0].submit();}</script> 
+   <div> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B8891BFD"> 
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgLZxoyLBQLq+LO5AVIj2uATWZFF0df0o8wZ0wUpN/8g"> 
+   </div> 
+   <input name="ctl00$hfurlLocator" type="hidden" id="ctl00_hfurlLocator" class="clsUrlLocator" value="https://www.regions.com/Locations.rf"> 
+   <div> 
+    <div class="emsPage"> 
+     <!--      #1182 11/14/13 add div for TimeTrade applet in IFrame and another div to act as dark gray background
+https://www.timetrade.com/app/regions/workflows/REGPHONE/schedule/
+ --> 
+     <div id="light" class="lb_tt_white_content" style="display: none; position: absolute;"> 
+      <h3></h3> 
+      <div id="closeBtn"> 
+       <a href="#" onclick="CloseIframe()"> <img alt="" border="0" src="Img/BlueX.png"></a> 
+      </div> 
+      <h3></h3> 
+      <iframe id="frameID" frameborder="0" height="625" src="" style="text-align: center; border-spacing: 0px; overflow: hidden" width="770"> Your browser does not support iframe</iframe> 
+     </div> 
+     <div id="lightDisclaimer" style="display: none;"> 
+      <div class="logo"> 
+      </div> 
+      <h3>Make an Appointment</h3> 
+      <p>Customer information provided in order to set up this appointment will not be used to update any customer records and this information will only be used to service this appointment.</p> 
+      <p> <button id="button-cancel" class="secondary-button" type="submit"> Cancel</button> 
+       <!--<button type="submit" id="button-continue" class="primary-button">Continue</button>--> <a id="button-continue" class="primary-button" href="#">Continue</a> </p> 
+      <table> 
+       <tbody>
+        <tr> 
+         <td class="grey">Investment and Insurance Products:</td> 
+        </tr> 
+        <tr> 
+         <td>▶ Are Not FDIC Insured&nbsp;&nbsp;▶ Not a Deposit&nbsp;&nbsp;▶ May Go Down in Value&nbsp;&nbsp;▶ Not Bank Guaranteed</td> 
+        </tr> 
+        <tr> 
+         <td class="center">Not Insured by Any Federal Government Agency</td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <p class="center">Banking products are provided by Regions Bank, 1900 5th Avenue North,<br> Birmingham, AL 35203 © 2013 Regions Bank | <img alt="Equal Housing Lender | Member FDIC" class="ehl-small" src="Img/ehl-small.png">Equal Housing Lender |<br> Member FDIC | 1-800-REGIONS </p> 
+     </div> 
+     <div id="fade" class="lb_tt_black_overlay"> 
+     </div> 
+     <div class="emsInfonobackground">
+      <div class="Token" onmouseover="return window.status='NW:3 NA:0';" onmouseout="return window.status='';">
+       .
+      </div>
+      <div class="Token" onmouseover="return window.status='v4.0.22';" onmouseout="return window.status='';">
+       .
+      </div>
+     </div> 
+     <div class="emsHeaderTop">
+      <div class="Services">
+       <div id="sfo"> 
+        <a class="services_fo" id="servicesLink" href="https://www.regions.com/Services.rf"> <span>Services</span> </a> 
+       </div>
+       <div id="services_menu">
+        <div id="services_menuTop"></div>
+        <div id="services_menuMid">
+         <div id="sfo_personal">
+          <h2>Personal</h2>
+          <ul> 
+           <li><a href="https://www.planservices.com/regions/" title="1PlanPlus - Participant" target="_blank">1PlanPlus - Participant</a></li> 
+           <li><a href="http://www.regions.com/virtualDocuments/Regions-Collections.html" title="Collections" target="_blank">Collections</a></li> 
+           <li><a href="https://mymortgage.regionsmortgage.com/upmb/disp" title="My Mortgage" target="_blank">My Mortgage</a></li> 
+           <li><a href="http://www.regions.com/personal_banking/alternative_education_loans.rf" title="My Student Loan" target="_parent">My Student Loan</a></li> 
+           <li><a href="https://www.regions.com/personal_banking/regions_digital_banking.rf" title="Regions Online Banking" target="_parent">Regions Online Banking</a></li> 
+           <li><a href="https://iaf.infinity.com/IAF_IdP/AMSOTRPWL/plugins/common/app.xhtml?ClientID=Weblink" title="Trust Online" target="_blank">Trust Online</a></li>
+          </ul>
+         </div>
+         <div id="sfo_business">
+          <h2>Business</h2>
+          <ul> 
+           <li><a href="https://www.sponsorinsight.com/regions/index.cfm" title="1PlanPlus - Sponsor" target="_blank">1PlanPlus - Sponsor</a></li> 
+           <li><a href="https://www.card-data.com/RegionsCardManagementSystem/Security/Login.aspx" title="Commercial Card Services" target="_blank">Commercial Card Services</a></li> 
+           <li><a href="https://expresstrade.regions.com/iccweb/" title="Express Trade LC" target="_blank">Express Trade LC</a></li> 
+           <li><a href="https://checkimage.regions.com/Account/Login" title="Commercial Check Image" target="_parent">Commercial Check Image</a></li> 
+           <li><a href="https://itreasury.regions.com/wcmfd/wcmpw/CustomerLogin" title="iTreasury" target="_blank">iTreasury</a></li> 
+           <li><a href="http://www.regions.com/commercial_banking/tms_disbursing_funds.rf" title="Integrated Payables" target="_parent">Integrated Payables</a></li> 
+           <li><a href="https://onlineimagelockbox.regions.com/login.aspx" title="Image Lockbox Online" target="_blank">Image Lockbox Online</a></li> 
+           <li><a href="https://secure.paycor.com/Accounts/Authentication/Signin?l=6598745" title="Payroll and HR Services" target="_parent">Payroll and HR Services</a></li> 
+           <li><a href="https://icapture.regions.com/QuickDeposit/Login.faces" title="Quick Deposit" target="_blank">Quick Deposit</a></li> 
+           <li><a href="http://fx.regions.com/" title="RegionsFX Online" target="_parent">RegionsFX Online</a></li> 
+           <li><a href="https://achalert.regions.com" title="Regions ACH Alert" target="_blank">Regions ACH Alert</a></li> 
+           <li><a href="https://businessvisa.regions.com" title="Business Card Account Manager" target="_blank">Business Card Account Manager</a></li> 
+           <li><a href="https://intersect.regions.com" title="Regions Intersect" target="_parent">Regions Intersect</a></li> 
+           <li><a href="https://www.regions.com/small_business/regions_digital_banking.rf" title="Regions Online Banking" target="_parent">Regions Online Banking</a></li>
+          </ul>
+         </div>
+        </div>
+        <div id="services_menuBot"></div>
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/personal_banking/open_account.rf" title="Open an Account" target="_parent">Open an Account</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/about_regions/careers.rf" title="Careers" target="_parent">Careers</a>
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/contact.rf" title="Contact Us" target="_parent">Contact Us</a>
+       </div>
+       <div class="Last">
+        <a mporgnav href="http://espanol.regions.com/enes/" onclick="return switchLanguage('es');function switchLanguage(lang) {MP.SrcUrl=unescape('mp_js_orgin_url');MP.UrlLang='mp_js_current_lang';MP.init();MP.switchLanguage(MP.UrlLang==lang?'en':lang);return false;}">En Español</a>
+       </div>
+      </div>
+      <div class="Locations">
+       <div id="savedBranch" style="display: none;">
+        <div id="savedlocation_menu">
+         <div id="savedlocation_highlight">
+          <span id="locationDisplayName"></span>
+          <br>
+          <span id="locationPhone"></span>
+          <br>
+         </div>
+         <br>
+         <span id="locationAddress"><br>, </span>
+         <br>
+         <span id="locationLobbyHours"></span>
+         <br>
+         <a href="https://www.regions.com/Map.rf?id=" id="locationMap">Map</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+         <a href="https://www.regions.com/Directions.rf?id=" id="locationDrivingDirections">Driving Directions</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+         <a href="https://www.regions.com/Map.rf?id=" id="locationMoreDetails">More Details</a>
+        </div>
+        <div class="Txt">
+         My Branch: 
+         <a href="https://www.regions.com/Map.rf?id=" class="savedlocations_fo" id="savedlocationLink"></a> | 
+         <a href="https://www.regions.com/Locator.rf">Change Location</a>
+        </div>
+       </div>
+       <div id="findBranch" style="display: block;">
+        <div id="lfo"> 
+         <a class="locations_fo" href="https://www.regions.com/Locator.rf" id="locationLink"><span>Locations</span></a> 
+        </div>
+        <div id="location_menu"> 
+         <input id="locationZipCode" name="locationZipCode" class="locationField" value="" placeholder="ZIP Code" tabindex="1" type="text" autocomplete="off" maxlength="5" onkeydown="branchCK(this,event);"> &nbsp;
+         <strong>OR</strong> 
+         <br> 
+         <input name="locationCity" type="text" class="locationField" id="locationCity" tabindex="2" placeholder="City" value="" autocomplete="off" maxlength="25" onkeydown="branchCK(this,event);"> 
+         <input name="locationState" type="text" class="locationField" id="locationState" tabindex="3" placeholder="State" value="" autocomplete="off" maxlength="2" onkeydown="branchCK(this,event);"> 
+         <br>
+         <div class="Button" id="locationFind"></div>
+        </div>
+       </div>
+      </div>
+     </div> 
+     <div class="emsHeaderMain">
+      <div class="Logo" id="Logo">
+       <script type="text/javascript">$("#Logo").click(function() { window.parent.location.href = 'https://www.regions.com/Personal_banking.rf';});</script>
+      </div>
+      <div class="Menu">
+       <div class="Itm">
+        <a href="https://www.regions.com/personal_banking.rf" title="Personal" target="_parent">Personal</a>
+       </div>
+       <div class="Sep"></div>
+       <div class="Itm">
+        <a href="https://www.regions.com/small_business.rf" title="Small Business" target="_parent">Small Business</a>
+       </div>
+       <div class="Sep"></div>
+       <div class="Itm">
+        <a href="https://www.regions.com/commercial_banking.rf" title="Commercial" target="_parent">Commercial</a>
+       </div>
+       <div class="Sep"></div>
+       <div class="Itm">
+        <a href="https://www.regions.com/wealth_management.rf" title="Wealth" target="_parent">Wealth</a>
+       </div>
+       <div class="Sep"></div>
+       <div class="Itm">
+        <a href="https://www.regions.com/insights/personal" title="Insights" target="_parent">Insights</a>
+       </div>
+      </div>
+      <div class="Search">
+       <div class="Button" onclick="googleSubmit();"></div>
+       <div class="Itm">
+        <input name="googleSearch" class="Google" onkeydown="searchCK(this,event);" type="text">
+       </div>
+      </div>
+     </div> 
+     <div class="emsHeaderFull">
+      <div class="MenuFull">
+       <div class="Itm">
+        <a href="https://www.regions.com/personal_banking/everyday_banking.rf" title="Banking Solutions" target="_parent">Banking Solutions</a>
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/personal_banking/loans_credit.rf" title="Loans &amp; Credit" target="_parent">Loans &amp; Credit</a>
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/personal_banking/regions_digital_banking.rf" title="Regions Online Banking" target="_parent">Regions Online Banking</a>
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/advice.rf" title="Insights" target="_parent">Insights</a>
+       </div>
+      </div>
+     </div> 
+     <div class="emsDetail"> 
+      <div class="emsLeftMenu">
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/about_regions/faqs.rf" title="Frequently Asked Questions" target="_parent">Frequently Asked Questions</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/faq/cashback_rewards.rf" title="Rewards FAQs" target="_parent">Rewards FAQs</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/FAQ/check_over.rf" title="Checking &amp; Savings FAQs" target="_parent">Checking &amp; Savings FAQs</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/FAQ/cards_overview.rf" title="Card Product FAQs" target="_parent">Card Product FAQs</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/FAQ/loan_overview.rf" title="Loans &amp; Credit FAQs" target="_parent">Loans &amp; Credit FAQs</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/help/online-banking-help" title="Regions Online Banking FAQs" target="_parent">Regions Online Banking FAQs</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/FAQ/cust_service.rf" title="Customer Service FAQs" target="_parent">Customer Service FAQs</a>
+       </div>
+       <div class="Separator"></div>
+       <div class="Hdr">
+        <a class="" href="https://www.regions.com/FAQ/how_do_I.rf" title="How do I?" target="_parent">How do I?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/switch_banks.rf" title="Switch banks?" target="_parent">Switch banks?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/storm.rf" title="Prepare for a severe storm?" target="_parent">Prepare for a severe storm?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/lost_stolen.rf" title="Recover lost/stolen information?" target="_parent">Recover lost/stolen information?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/calculators/calculators_all.rf" title="Use Financial Calculators?" target="_parent">Use Financial Calculators?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/prepare_finances_married.rf" title="Prepare Finances to Get Married?" target="_parent">Prepare Finances to Get Married?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/manage_finances_newlywed.rf" title="Manage Finances as a Newlywed?" target="_parent">Manage Finances as a Newlywed?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/buy_a_home.rf" title="Buy a Home?" target="_parent">Buy a Home?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/plan_for_college.rf" title="Plan for College?" target="_parent">Plan for College?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/buy_a_car.rf" title="Buy a Car?" target="_parent">Buy a Car?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/personal_banking/auto_buying_service.rf" title="Purchase through Regions Auto Buying Service?" target="_parent">Purchase through Regions Auto Buying Service?</a>
+       </div>
+       <div class="Itm">
+        <a class="Selected" href="https://www.regions.com/FAQ/get_out_debt.rf" title="Get Out of Debt?" target="_parent">Get Out of Debt?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ_maximize_savings.rf" title="Maximize My Savings?" target="_parent">Maximize My Savings?</a>
+       </div>
+       <div class="Itm">
+        <a class="" href="https://www.regions.com/FAQ/save_taxes.rf" title="Save on Taxes?" target="_parent">Save on Taxes?</a>
+       </div>
+       <div class="Separator"></div>
+      </div> 
+      <div class="emsContentHeader_715">
+       <div style="float:left;">
+        <h1>Get Out of Debt?</h1>
+       </div>
+       <div style="float:right;cursor: pointer;" class="print" onclick="javascript:window.print();"></div>
+      </div> 
+      <div class="emsContent_705">
+       <p>&nbsp;</p> 
+       <p>We all know the importance of saving money. But it’s hard to justify saving for a $2,000 vacation when you owe $8,000 in credit card debt. Most of us become a slave to our debt. No matter how large or small the debit, we feel we must pay off the sum before we can spend elsewhere or sock away cash.</p> 
+       <p><strong>Map Out a Plan to Get Out of Debt</strong><br> Regions can help you develop a method to get out of debt, start saving and find your way back to financial freedom. Developing a plan is easier than you think. The hard part? Sticking to it. First you must get into the habit of spending less than you make. This is likely to be difficult considering it is living above our means that gets us into debt. Now go through your budget and cut the “fat.” From the largest to the smallest, rethink every item on your list. Ask yourself questions like: “How much could I save per month if I <a href="https://www.regions.com/Insights/Personal/Mortgage-Calculators/should-i-refinance-my-mortgage">refinanced my mortgage</a> at a lower rate?” ; "Do I really need 163 channels of television?"; and "Can I live without that $4 latte every morning?". Keep in mind, the "fat" you cut can be used to thin your principal debt.</p> 
+       <p><strong>We Have Answers</strong><br> We understand that dissolving debt takes discipline and determination. That is why the professionals at Regions are available to answer your questions and help you stick with your plan. Our convenient calculators can quickly supply you with answers to questions like:</p> 
+       <p><a href="https://www.regions.com/Insights/Personal/Debt-Calculators/how-to-pay-off-debt">How to Pay off Debt</a><br> <a href="https://www.regions.com/Insights/Personal/Debt-Calculators/how-to-consolidate-debt">How to Consolidate Debt</a><br> <a href="https://www.regions.com/Insights/Personal/Debt-Calculators/are-credit-card-balance-transfers-worth-it">Are Credit Card Balance Transfers Worth It</a>?<br> <a href="https://www.regions.com/Insights/Personal/Debt-Calculators/how-to-pay-off-debt-fast-using-a-lump-sum-payment">How to Pay Off Debt Fast Using a Lump Sum Payment</a><br> <a href="https://www.regions.com/Insights/Personal/Debt-Calculators/how-to-get-out-of-credit-card-debt">How to Get Out of Credit Card Debt</a><br> <a href="https://www.regions.com/Insights/Personal/Debt-Calculators/what-are-the-advantages-of-increasing-monthly-payments">What Are the Advantages of Increasing Monthly Payments</a>?<br> <br> Explore Regions’ credit options to discover other ways to get out of debt. Also be sure to visit other helpful sites Equifax for a copy of your credit report.</p> 
+       <p>The road to financial freedom is not always a smooth one, but staying focused can help you arrive sooner. Just think you may actually get to pay cash for your next family vacation — and enjoy it twice as much.</p> 
+       <p>&nbsp;</p> 
+       <p>&nbsp;</p>
+      </div> 
+     </div> 
+     <div class="emsFooter"> 
+      <div class="Footer">
+       <div class="Itm">
+        <a href="https://www.regions.com/about_regions.rf" title="About Regions" target="_parent">About Regions</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="http://ir.regions.com" title="Investor Relations" target="_parent">Investor Relations</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="https://www.regions.com/about_regions/terms_conditions.rf" title="Website Terms of Use" target="_parent">Website Terms of Use</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="http://realestate.regions.com" title="Property for Sale" target="_parent">Property for Sale</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="http://www.regions.com/about_regions/privacy_security.rf" title="Privacy &amp; Security" target="_parent">Privacy &amp; Security</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="http://www.regions.com/about_regions/online_privacy_notice_to_customers.rf#ads" title="Online Tracking &amp; Advertising" target="_parent">Online Tracking &amp; Advertising</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="http://www.regions.com/personal_banking/ehl.rf" title="Equal Housing Lender" target="_parent">Equal Housing Lender</a>
+       </div>
+       <div class="Itm">
+        |
+       </div>
+       <div class="Itm">
+        <a href="http://www.regions.com/about_regions/economic_update.rf" title="Economic Reports" target="_parent">Economic Reports</a>
+       </div>
+      </div>
+      <div class="FollowUs">
+       <div class="Itm">
+        Call 1-800-REGIONS
+       </div>
+       <div class="Itm">
+        <a href="javascript:void(0);" onclick="oOobj2.OnClick()"><img src="/Img/sm_558800_oo.gif" border="0" title="Feedback" style="margin-right:5px;">Feedback</a>
+       </div>
+      </div>
+      <div class="Copyright"> 
+       <div class="EHL"></div> 
+       <div class="FDIC">
+        Member FDIC
+       </div>
+       <div class="Itm">
+        © 2017 Regions Bank. All rights reserved.
+       </div> 
+      </div>
+     </div> 
+    </div> 
+   </div> 
+   <!-- Start: WebAnalytics --> 
+   <script type="text/javascript"> var bt_test = false </script> 
+   <script src="https://www.regions.com/js/_bt.js" type="text/javascript"></script> 
+   <!-- End: WebAnalytics --> 
+  </form>   
+ </body>
+</html>

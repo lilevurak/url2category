@@ -1,0 +1,1788 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <title>10 Habits of Successful College Students | Chegg Play</title> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.5.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <link rel="canonical" href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="10 Habits of Successful College Students | Chegg Play"> 
+  <meta property="og:description" content="The 10 Habits of Successful College Students What makes some college students successful, while others — well, less so? Sometimes,..."> 
+  <meta property="og:url" content="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/"> 
+  <meta property="og:site_name" content="Chegg Play"> 
+  <meta property="article:tag" content="Professors"> 
+  <meta property="article:tag" content="Time Management"> 
+  <meta property="article:tag" content="Tips &amp; Tricks"> 
+  <meta property="article:section" content="Productivity"> 
+  <meta property="article:published_time" content="2011-07-29T13:20:26-07:00"> 
+  <meta property="article:modified_time" content="2016-08-01T03:21:00-07:00"> 
+  <meta property="og:updated_time" content="2016-08-01T03:21:00-07:00"> 
+  <meta property="og:image" content="/play/wp-content/uploads/sites/3/2011/06/professors-guide.jpg?w=300"> 
+  <meta property="og:image:secure_url" content="/play/wp-content/uploads/sites/3/2011/06/professors-guide.jpg?w=300"> 
+  <meta property="og:image" content="http://static.addtoany.com/buttons/share_save_256_24.png"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="The 10 Habits of Successful College Students What makes some college students successful, while others — well, less so? Sometimes,... "> 
+  <meta name="twitter:title" content="10 Habits of Successful College Students | Chegg Play"> 
+  <meta name="twitter:image" content="http://chegg.com/play/wp-content/uploads/sites/3/2011/06/professors-guide.jpg?w=300"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.chegg.com\/play\/","name":"Chegg Play","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.chegg.com\/play\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » Feed" href="https://www.chegg.com/play/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » Comments Feed" href="https://www.chegg.com/play/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » 10 Habits of Successful College Students Comments Feed" href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/feed/"> 
+  <link rel="stylesheet" id="apss-frontend-css-css" href="/play/wp-content/plugins/accesspress-social-share/css/frontend.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="baskerville_style-css" href="/play/wp-content/themes/baskerville-child/style.css?ver=4.8.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="/play/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="/play/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/stop-user-enumeration/js/commentauthor.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var CheggContest = {"ajax_url":"\/play\/wp-admin\/admin-ajax.php","nonce":"bb86496ca3"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/chegg_contest//contest.js?ver=4.8.2"></script> 
+  <link rel="https://api.w.org/" href="https://www.chegg.com/play/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.chegg.com/play/xmlrpc.php?rsd"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="shortlink" href="https://www.chegg.com/play/?p=1386"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.chegg.com/play/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Flife-hacks%2Fproductivity%2F10-habits-of-successful-college-students%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.chegg.com/play/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Flife-hacks%2Fproductivity%2F10-habits-of-successful-college-students%2F&amp;format=xml"> 
+  <script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.chegg.com/play/?wordfence_logHuman=1&hid=6AD7344305F8CB5F584A11E01CEFA3CA');
+</script> 
+  <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style> 
+  <script type="text/javascript">
+				jQuery(document).ready(function(){
+											jQuery(".related_post").on('click', function () {
+							window.location=jQuery(this).find("a").attr("href");
+						});
+						jQuery(".popular-wrap").on('click', function () {
+							window.location=jQuery(this).find("a").attr("href");
+						});
+									});
+			</script> 
+  <script>
+				var ScrollSneak = function(prefix, wait) {
+					// clean up arguments (allows prefix to be optional - a bit of overkill)
+					if (typeof(wait) == 'undefined' && prefix === true) prefix = null, wait = true;
+					prefix = (typeof(prefix) == 'string' ? prefix : window.location.host).split('_').join('');
+					var pre_name;
+
+					// scroll function, if window.name matches, then scroll to that position and clean up window.name
+					this.scroll = function() {
+						if (window.name.search('^'+prefix+'_(\\d+)_(\\d+)_') == 0) {
+							var name = window.name.split('_');
+							window.scrollTo(name[1], name[2]);
+							window.name = name.slice(3).join('_');
+						}
+					}
+					// if not wait, scroll immediately
+					if (!wait) this.scroll();
+
+					this.sneak = function() {
+					// prevent multiple clicks from getting stored on window.name
+					if (typeof(pre_name) == 'undefined') pre_name = window.name;
+
+					// get the scroll positions
+						var top = 0, left = 0;
+						if (typeof(window.pageYOffset) == 'number') { // netscape
+							top = window.pageYOffset, left = window.pageXOffset;
+						} else if (document.body && (document.body.scrollLeft || document.body.scrollTop)) { // dom
+							top = document.body.scrollTop, left = document.body.scrollLeft;
+						} else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) { // ie6
+							top = document.documentElement.scrollTop, left = document.documentElement.scrollLeft;
+						}
+					// store the scroll
+						if (top || left) window.name = prefix + '_' + left + '_' + top + '_' + pre_name;
+						return true;
+					}
+				}
+			</script> 
+  <script type="text/javascript">
+				jQuery(document).ready(function($) {
+											sessionpass = 0;
+						
+
+					if(sessionpass ==1){
+						$("#popularity").addClass("seek");
+						$("#recentlink").removeClass("seek");
+
+						$("#popularity").parent().addClass("seeker1");
+						$("#recentlink").parent().addClass("seeker2");
+						$("#popularity").parent().removeClass("seeker1a");
+						$("#recentlink").parent().removeClass("seeker2a");
+					}
+					if(sessionpass ==0){
+						$("#popularity").removeClass("seek");
+						$("#recentlink").addClass("seek");
+
+						$("#popularity").parent().removeClass("seeker1");
+						$("#recentlink").parent().removeClass("seeker2");
+						$("#popularity").parent().addClass("seeker1a");
+						$("#recentlink").parent().addClass("seeker2a");
+					}
+					jQuery("#popularity").on('click', function (e) {
+						var sorting = 'popular';
+						var catsort
+												if (catsort== null) {
+							catsort = "";
+						}
+						var pagenumber = $('.archive-nav .active a').html();
+						var popclicked = 1;
+						e.preventDefault();
+						$("#popularity").addClass("seek");
+						$("#recentlink").removeClass("seek");
+						$("#popularity").parent().addClass("seeker1");
+						$("#recentlink").parent().addClass("seeker2");
+						$("#popularity").parent().removeClass("seeker1a");
+						$("#recentlink").parent().removeClass("seeker2a");
+						$.ajax({
+							type: "post",
+							url: "wp-admin/admin-ajax.php",
+							data: {
+								'action':'example_ajax_request_alt2',
+								'sorting' : sorting,
+								'pagenumber' : pagenumber,
+								'popclicked' : popclicked,
+								'catsort' : catsort
+							},
+							beforeSend : function(){
+								 $(".ajax-gif").css('visibility','visible');
+							},
+							success:function(html) {
+								$(".ajax-gif").css('visibility','hidden');
+								 if (html.length > 0) {
+									 $(".posts").html(html);
+									 var $container = $(".posts");
+									 $container.imagesLoaded(function(){
+									 $container.masonry('reloadItems');
+									 $container.masonry('layout');
+									 });
+								}
+							},
+							error: function(errorThrown){
+								console.log(errorThrown);
+							}
+						});
+					});
+
+					jQuery("#recentlink").on('click', function (e) {
+						// We'll pass this variable to the PHP function example_ajax_request
+						var sorting = 'recent';
+						var catsort
+												if (catsort== null) {
+							catsort = "";
+						}
+						e.preventDefault();
+						var pagenumber = $('.archive-nav .active a').html();
+						var popclicked = 0;
+						$("#popularity").removeClass("seek");
+						$("#recentlink").addClass("seek");
+						$("#popularity").parent().removeClass("seeker1");
+						$("#recentlink").parent().removeClass("seeker2");
+						$("#popularity").parent().addClass("seeker1a");
+						$("#recentlink").parent().addClass("seeker2a");
+
+						$.ajax({
+							type: "post",
+							url: "wp-admin/admin-ajax.php",
+							data: {
+								'action':'example_ajax_request_alt2',
+								'sorting' : sorting,
+								'pagenumber' : pagenumber,
+								'popclicked' : popclicked,
+								'catsort' : catsort
+							},
+							beforeSend : function(){
+								 $(".ajax-gif").css('visibility','visible');
+							},
+							success:function(html) {
+								$(".ajax-gif").css('visibility','hidden');
+								if (html.length > 0) {
+									$(".posts").html(html);
+									var $container = $(".posts");
+									$container.imagesLoaded(function(){
+									$container.masonry('reloadItems');
+									$container.masonry('layout');
+									});
+								}
+							},
+							error: function(errorThrown){
+								console.log(errorThrown);
+							}
+						});
+					});
+
+					/*touch events for hamburger menu */
+					jQuery('body').click(function() {
+					   $(".chgg-menu").addClass("hidden");
+					});
+
+					jQuery("#app-switch-btn").click(function(event) {
+						$(".chgg-menu").removeClass("hidden");
+						event.stopImmediatePropagation();
+						return false;
+					});
+
+					jQuery(".chgg-menu-items").click(function(event) {
+						event.stopImmediatePropagation();
+					});
+				});
+			</script> 
+  <script type="text/javascript">
+  if (!window.digitalData) {
+            var digitalData = {};
+            digitalData = {
+                page: {
+                    pageInfo: {
+					pageName: "Post",
+					pageNameDetailed: "1386",
+       				 experience: "Responsive"
+					},
+                    category: {
+					 pageType: "blog",
+					 primaryCategory: "Chegg",
+					 subCategory1: "Web",
+        			subCategory2: "me",
+					subCategory3: "Play"
+					}
+                }
+            };
+        }
+</script> 
+  <script src="//assets.adobedtm.com/e157c7ff34e2d6bd3c151937f4c67f693db0150f/satelliteLib-bfe19886e39a4d20710fc37fd1e213b09fadbdbe.js"></script> 
+  <script>var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32128268-1']);
+			_gaq.push(['_setDomainName', 'chegg.com']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();
+		</script> 
+ </head> 
+ <body class="post-template-default single single-post postid-1386 single-format-standard no-featured-image"> 
+  <div class="topnav-wrap"> 
+   <nav> 
+    <div id="app-switch-container"> 
+     <a id="app-switch-btn" data-wpel-link="internal"></a> 
+    </div> 
+    <!--hidden menu--> 
+    <nav class="chgg-menu hidden"> 
+     <div class="carrot">
+      <div class="chgg-menu-icon icon-chegg-cancel"></div>
+     </div> 
+     <ul class="chgg-menu-items"> 
+      <li id="chgg-menu-home"><a class="chgg-menu-item home" href="/" title="Chegg home" data-wpel-link="internal"> 
+        <div class="chgg-menu-image chegg-home-icon"></div> <span>Chegg home</span> </a></li> 
+      <li id="chgg-menu-books"><a class="chgg-menu-item books" href="/books/" title="Books" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-books"></div> <span>Books</span> </a></li> 
+      <li id="chgg-menu-study"><a class="chgg-menu-item study" href="/study/" title="Study" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-study2"></div> <span>Study</span> </a></li> 
+      <li id="chgg-menu-tutors"><a class="chgg-menu-item tutors" href="/tutors/" title="Tutors" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-tutors-person"></div> <span>Tutors</span> </a></li> 
+      <li id="chgg-menu-test-prep"><a class="chgg-menu-item testprep" href="/test-prep/" title="Test Prep" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-TestPrep"></div> <span>Test Prep</span> </a></li> 
+      <li id="chgg-menu-internships"><a class="chgg-menu-item internships" href="/app/internships/" title="Internships" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-career"></div> <span>Internships</span> </a></li> 
+      <li id="chgg-menu-colleges"><a class="chgg-menu-item colleges" href="/schools/" title="Colleges" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-colleges2"></div> <span>Colleges</span> </a></li> 
+     </ul> 
+    </nav> 
+    <!--end hidden menu--> 
+    <a href="/play/" data-wpel-link="internal"><img src="/wp-content/themes/baskerville-child/assets/chegg-play-logo.png" alt="chegg play" height="25"></a> 
+   </nav> 
+   <div id="searchwrap"> 
+    <form method="get" class="searchform" action="https://www.chegg.com/play/"> 
+     <input type="search" value="" placeholder="Search Play" name="s" class="s"> 
+     <input type="submit" class="searchsubmit" value=""> 
+    </form> 
+   </div> 
+  </div> 
+  <!--smart slider here --> 
+  <!--end smart slider here--> 
+  <style>
+/* style reset for navbar on individual article pages */
+.topnav-wrap {position: relative; z-index:1 }
+.searchform {border: 1px solid #adadad;}
+input::-webkit-input-placeholder {color: #666 !important;}
+input:-moz-placeholder {color: #666 !important; opacity: 1}
+input::-moz-placeholder {color: #666 !important;opacity: 1}
+input:-ms-input-placeholder {color: #666 !important;}
+#app-switch-btn {background-image:url('/wp-content/themes/baskerville-child/assets/app-switcher-alt.png');}
+</style> 
+  <div class="borderline">
+   &nbsp;
+  </div> 
+  <div class="wrapper section medium-padding"> 
+   <div class="section-inner"> 
+    <div class="content fleft"> 
+     <p id="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/" rel="v:url" property="v:title" data-wpel-link="internal">Home</a> // <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/life-hacks/" rel="v:url" property="v:title" data-wpel-link="internal">Life Hacks</a> // <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/life-hacks/productivity/" rel="v:url" property="v:title" data-wpel-link="internal">Productivity</a> // <span class="breadcrumb_last">10 Habits of Successful College Students</span></span></span></span></span></p> 
+     <div id="post-1386" class="post-1386 post type-post status-publish format-standard hentry category-productivity tag-professors tag-time-management tag-tips-tricks"> 
+      <div class="post-header"> 
+       <div class="category-list">
+        <a href="https://www.chegg.com/play/life-hacks/productivity/" rel="category tag" data-wpel-link="internal">Productivity</a>
+       </div> 
+       <h1 class="post-title">10 Habits of Successful College Students</h1> 
+       <div class="first-author">
+        <span>Chegg</span>
+       </div> 
+      </div> 
+      <!-- /post-header --> 
+      <div class="post-content"> 
+       <p><a href="/play/wp-content/uploads/sites/3/2011/06/professors-guide.jpg" data-wpel-link="internal"><img class="aligncenter size-medium wp-image-1362" title="professors-guide" src="/play/wp-content/uploads/sites/3/2011/06/professors-guide.jpg?w=300" alt="" width="300" height="82"></a></p> 
+       <p><strong>The 10 Habits of Successful College Students </strong></p> 
+       <p>What makes some college students successful, while others — well, less so? Sometimes, it’s a question of intelligence or insight. And sometimes, it’s sheer good luck. But a lot of the time it’s good habits: things you do on a regular basis that set you aside from the hordes of other, more scattered students. In the hopes of separating the sheep from the goats, we offer our top ten habits of the most successful students. You’ll find that these folk …</p> 
+       <p><strong>1. Have a goal. </strong>They have a definite reason for being in college — and know what it is. Could be a future career, graduate or professional school, or just wanting to further your education. But it’s almost never because their parents told them to go to college, or because it’s the next thing to do after high school, or because they’re too unimaginative to think up anything else to do with their time.</p> 
+       <p><strong>2. Set priorities. </strong>For every student, college is a balancing act between going to classes, doing the homework, having a social life, and, for many students, holding down a job. But the successful student knows how much time to allot to each of these activities — and how to set limits. Maybe partying is held down on weeknights, or an employer is told that hours have to be cut back during the jam-packed midterm week, or one has to jettison the family thanksgiving dinner in favor of extra work on the term paper. Look, there are only 168 hours in the week — and no one of them can be spent twice.</p> 
+       <p><strong>3. Divide up the work. </strong>Readings get broken up into manageable chunks (not 200 pages in one sitting). Quizzes and tests are studied for over the course of a week (not at 3 a.m. the night before). And paper ideas start gestating when the assignment is handed out (not two days before the paper is due when you can barely formulate an idea, much less think through an issue).</p> 
+       <p><strong>4. Are organized. </strong>Successful students have gotten used to the fact that, in college courses, there’s not a lot of redundancy or “going over.” So, they make it their business to make most of the lectures (and don’t cut the sections , either). They take really good class notes (and keep them in super-neat condition). And they always get their work in on time (no one-week extensions that only make it harder to complete the work in their other courses).</p> 
+       <p><strong>5. Work efficiently. </strong>Each task is done well — and once. There’s no listening to the lecture a second time on their mp3 player (they paid careful attention the first time). No copying over all their notes (why would they do that if they have a good set from the lecture?). No doing the reading three times (once for a general overview, once to understand the argument or direction, and once to focus in on the finer points). In a fifteen-week semester, with four or five courses on tap, who has time to do things twice (or, in the case of some students, thrice)?</p> 
+       <p><strong>6. Are persistent. </strong>Successful students know that sometimes the going gets tough. Maybe there’s a problem-set that requires serious hard thinking, or a paper that has to go through a number of painful drafts, or a presentation that has to be rehearsed ’til one really has it down. But, whatever the case, the successful student doesn’t flinch at the extra effort needed or the uncertainty of the result while you’re still working on it. This student’s mantra: <em>I’ll get this thing right if it kills me. </em> (Which it usually doesn’t.)</p> 
+       <p><strong>7. Challenge themselves. </strong>Successful students are intellectually energetic. So, when they read, they think actively and critically about what they’re reading (not just slog their way through to get the plot). When they go to class, they actively think about, and question, what the professor is saying (not just taking it all in like a giant sponge). And when they write papers, they probe more deeply into nuances of the issue (not just looking for the most basic, “yes/no” answer). Above all, they get the wheels and springs of their mind moving — and keep them moving throughout any intellectual task.</p> 
+       <p><strong> 8. Are open to feedback. </strong>The best students realize that the returned papers and exams are a golden opportunity: these are the times in the semester when the professor is giving one-to-one, customized feedback on their level of achievement. So instead of tossing away the graded papers and exams, or conveniently forgetting to pick them up, these students pore over the comments, and redo the missed problems, in the hopes of really learning where they went wrong and how they can do better next time. All in a non-defensive and genuinely open frame of mind. (Hard for everyone, but, somehow, these students manage to do it.)</p> 
+       <p><strong>9. Engage the professor</strong>. Successfulstudents realize that the prof isn’t just some content-dispensing machine, pouring out what he or she knows during lecture, but is a working scholar who’s happy to work with you on the content and materials of the course. So they go to office hours, talk to the professor (or TA) after class, and email questions about things they didn’t understand. In the best case, they forge a two-way relationship with the professor and, in so doing, learn more than the average college student and defeat the anonymity of the (for some students) alienating mega-university.</p> 
+       <p><strong>10. Manage their emotions. </strong>It’s difficult to excel at college if you’re feeling inadequate, bummed out, or doomed to fail. So, successful students know how to focus on their own positive achievements — rather than on their failure to get a check-plus on the quiz that counts only two percent of the grade. And they’re not hyper-competitive or concerned to find out how everyone else did on that just-returned piece of work. They know that, for every assignment, there’ll probably be someone doing better than they — and many doing a whole hell of a lot worse. (And, even if not, there’s nothing they can do about it, so why add negative emotions to a less-than-stellar situation?)</p> 
+       <p><strong>Bonus Habit. Visualize success. </strong>For any multi-step activity — especially one that’s spread out over five years and forty-odd courses — it’s helpful to imagine the end product: that is, to really picture what it’ll be like, and to experience the good feelings that will come with it. That’s why the most successful college students repeatedly visualize what will come at the end of the road for them: their dream job, their acceptance to a prestigious graduate or professional school, or, simply, the next stage in their life. This provides motivation and energy, especially when you’re in a rut, and makes it all seem worthwhile. Which it is.</p> 
+       <p><em>If you liked the tips in this blog, you’ll love the 637 tips in our new book, <a href="http://www.professorsguide.com/" data-wpel-link="external" rel="nofollow">The Secrets of College Success</a>. You can write us at <a href="mailto:professors@professorsguide.com">professors@professorsguide.com</a>. We’d love to hear from you.</em></p> 
+       <p>© 2011 <em>Professors’ Guide LLC</em>. All rights reserved.</p> 
+       <p><a href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fblog.chegg.com%2F2011%2F07%2F29%2F10-habits-of-successful-college-students%2F&amp;linkname=10%20Habits%20of%20Successful%20College%20Students" target="_blank" data-wpel-link="internal"><img src="http://static.addtoany.com/buttons/share_save_256_24.png" alt="Share"></a></p> 
+       <div class="clear"></div> 
+      </div> 
+      <!-- /post-content --> 
+      <div class="post-meta-container"> 
+       <div class="post-author"> 
+        <div class="post-author-content"> 
+         <div class="author-photo-wrap"> 
+          <img src="/play/wp-content/uploads/sites/3/userphoto/22.jpg" alt="Chegg" width="148" height="150" class="photo"> 
+         </div> 
+         <p class="author-intro">MEET THE AUTHOR</p> 
+         <h4>Chegg</h4> 
+         <p class="author-description-meta"> Chegg, the student hub, is transforming the way millions of students learn by connecting them to the people and tools needed to succeed in school. We work hard, and play hard. As the leading student-first connected learning platform, Chegg is making higher education more affordable, more accessible, and more successful for students. For more information, visit www.chegg.com/. </p> 
+        </div> 
+        <!-- /post-author-content --> 
+       </div> 
+       <!-- /post-author --> 
+       <div class="post-meta"> 
+        <div class="apss-social-share apss-theme-3 clearfix"> 
+         <div class="apss-email apss-single-icon"> 
+          <a rel="nofollow" class="share-email-popup" title="Share it on Email" target="_blank" href="mailto:?subject=Check out this post from Chegg Play&amp;body=Hi!, I found this information for you: &quot;10%20Habits%20of%20Successful%20College%20Students&quot;. Here is the website link: https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/. Thank you."> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa  fa-envelope"></i> 
+            <span class="apss-social-text">Send email</span> 
+            <span class="apss-share">Mail</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-twitter apss-single-icon"> 
+          <a rel="nofollow" href="https://twitter.com/intent/tweet?text=10%20Habits%20of%20Successful%20College%20Students&amp;url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Flife-hacks%2Fproductivity%2F10-habits-of-successful-college-students%2F&amp;" title="Share on Twitter" target="_blank" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-twitter"></i> 
+            <span class="apss-social-text">Share on Twitter</span>
+            <span class="apss-share">Tweet</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-pinterest apss-single-icon"> 
+          <a rel="nofollow" title="Share on Pinterest" href="javascript:pinIt();" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-pinterest"></i> 
+            <span class="apss-social-text">Share on Pinterest</span> 
+            <span class="apss-share">Share</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-facebook apss-single-icon"> 
+          <a rel="nofollow" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-facebook"></i> 
+            <span class="apss-social-text">Share on Facebook</span> 
+            <span class="apss-share">Share</span> 
+           </div> </a> 
+         </div> 
+        </div> 
+        <!--<p class="post-date">July 29, 2011</p>--> 
+        <!--<p class="post-categories"><a href="https://www.chegg.com/play/life-hacks/productivity/" rel="category tag" data-wpel-link="internal">Productivity</a></p>--> 
+        <!--<p class="post-tags"><a href="https://www.chegg.com/play/tag/professors/" rel="tag" data-wpel-link="internal">Professors</a>, <a href="https://www.chegg.com/play/tag/time-management/" rel="tag" data-wpel-link="internal">Time Management</a>, <a href="https://www.chegg.com/play/tag/tips-tricks/" rel="tag" data-wpel-link="internal">Tips &amp; Tricks</a></p>--> 
+        <div class="clear"></div> 
+       </div> 
+       <!-- /post-meta --> 
+       <div class="clear"></div> 
+      </div> 
+      <!-- /post-meta-container --> 
+      <!--post navigation here--> 
+      <div class="post-nav"> 
+       <a class="post-nav-prev" title="Previous post: Jokes for Students By Students!" href="https://www.chegg.com/play/student-life/chegg-for-good/jokes-for-students-by-students-2/" data-wpel-link="internal"><span class="prevnextintro">Previous article</span><br> <span class="prevnexttitle">Jokes for Students By Students!</span> </a> 
+       <a class="post-nav-next" title="Next post: Dealing with Stress in College" href="https://www.chegg.com/play/food-and-fit/health/dealing-w-stress-in-college/" data-wpel-link="internal"><span class="prevnextintro">Next article</span><br><span class="prevnexttitle">Dealing with Stress in College</span></a> 
+       <div class="clear"></div> 
+      </div> 
+      <!--end post navigation here--> 
+      <!--related posts--> 
+      <div class="related-wrap"> 
+       <h4>You might like:</h4> 
+       <ul id="joints-related-posts"> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/productivity/the-ultimate-satact-packing-list/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/07/pencils-SAT-600x311.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="What to bring to the SAT"></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Productivity
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/productivity/the-ultimate-satact-packing-list/" title="The Ultimate SAT/ACT Packing List" data-wpel-link="internal">The Ultimate SAT/ACT Packing List</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/katelevinthal/" data-wpel-link="internal">Katie Levinthal</a>
+         </div> </li> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/productivity/23-study-tips-backed-by-science/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/10/23-facts-600x311.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Life Hacks
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/productivity/23-study-tips-backed-by-science/" title="23 Study Tips Backed By Science" data-wpel-link="internal">23 Study Tips Backed By Science</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/cadykopsky/" data-wpel-link="internal">Cady Kopsky</a>
+         </div> </li> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/productivity/top-10-sat-words-that-youll-never-actually-use/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/07/Nope-600x311.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Productivity
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/productivity/top-10-sat-words-that-youll-never-actually-use/" title="Top 10 SAT Words That You’ll Never Actually Use" data-wpel-link="internal">Top 10 SAT Words That You’ll Never Actually Use</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/frida/" data-wpel-link="internal">Frida Schaefer Bastian</a>
+         </div> </li> 
+       </ul> 
+      </div> 
+      <!--end related posts--> 
+      <div class="comments"> 
+       <a name="comments" data-wpel-link="internal"></a> 
+       <div class="comments-title-container"> 
+        <div class="clear"></div> 
+       </div> 
+       <!-- /comments-title-container --> 
+       <ol class="commentlist"> 
+        <li class="comment even thread-even depth-1" id="li-comment-637"> 
+         <div id="comment-637" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">hassan</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-637" data-wpel-link="internal">June 27, 2015 at 2:16 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>without these habits no one will ever cross the bridge of success. it helped me to focus.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-636"> 
+         <div id="comment-636" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Manuel</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-636" data-wpel-link="internal">June 3, 2015 at 10:49 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>This was very helpful</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-even depth-1" id="li-comment-634"> 
+         <div id="comment-634" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://RioSalado.com" rel="external nofollow" class="url" data-wpel-link="external">Merari</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-634" data-wpel-link="internal">April 6, 2015 at 9:51 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>10 Habits of Success is a good tool to help you toward your goal.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-633"> 
+         <div id="comment-633" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://RioSalado.com" rel="external nofollow" class="url" data-wpel-link="external">Merari</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-633" data-wpel-link="internal">April 6, 2015 at 9:48 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>10 Habits of Success is a helpful tool to keep you on track, if it is work, school, or anything dealing with your goal for success.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-even depth-1" id="li-comment-632"> 
+         <div id="comment-632" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">matthew</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-632" data-wpel-link="internal">March 2, 2015 at 2:40 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>very helpful</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> 
+         <ul class="children"> 
+          <li class="comment odd alt depth-2" id="li-comment-635"> 
+           <div id="comment-635" class="comment"> 
+            <div class="comment-inner"> 
+             <div class="comment-header"> 
+              <cite class="fn"><a href="http://RioSalado.com" rel="external nofollow" class="url" data-wpel-link="external">Merari</a></cite> 
+              <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-635" data-wpel-link="internal">April 6, 2015 at 9:53 pm</a></span> 
+             </div> 
+             <!-- /comment-header --> 
+             <div class="comment-content"> 
+              <p>I totally agree.</p> 
+              <div></div> 
+             </div>
+             <!-- /comment-content --> 
+             <div class="comment-actions-below hidden"> 
+              <div class="clear"></div> 
+             </div> 
+             <!-- /comment-actions --> 
+            </div> 
+            <!-- /comment-inner --> 
+           </div>
+           <!-- /comment-## --> </li>
+          <!-- #comment-## --> 
+         </ul>
+         <!-- .children --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-631"> 
+         <div id="comment-631" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://donthaveone" rel="external nofollow" class="url" data-wpel-link="external">jorge</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-631" data-wpel-link="internal">January 22, 2015 at 7:36 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>love you article gave me hope to start college after finishing my GED</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-630"> 
+         <div id="comment-630" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Gildardo</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-630" data-wpel-link="internal">January 14, 2015 at 3:57 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I think that the 10 habits to a successful students are really important to do good in college. But those are good habits to have in life too.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-629"> 
+         <div id="comment-629" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://facebook" rel="external nofollow" class="url" data-wpel-link="external">Gloria Brooks</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-629" data-wpel-link="internal">April 25, 2013 at 8:35 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I like your article, it gave me some insight about college.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-628"> 
+         <div id="comment-628" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://chelseavoors.wordpress.com" rel="external nofollow" class="url" data-wpel-link="external">chelseavoors</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-628" data-wpel-link="internal">April 25, 2013 at 4:36 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I absolutely loved this post – I will be sure to share it with the Freshmen and Sophomore students that I advise. These 10 habits are so simple when they are spelled out in this way, but it is incredibly difficult to communicate the value of them to students. I believe that these are learned traits and the fact is – some students have it when they get to college and some don’t. I believe that by the time a student graduates, they have most likely accomplished most of these but far too many students are slow to adapts and fail to thrive in college.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-627"> 
+         <div id="comment-627" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">David Bueso</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-627" data-wpel-link="internal">September 4, 2012 at 10:57 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>The ten habbits of successful students is the way to lead to a better future. There is nothing better to succeed in life, following your goal! All the examples to be successful in life: responsible, motivated, dependable, etc. I will succed in life.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-626"> 
+         <div id="comment-626" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Cristian.E</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-626" data-wpel-link="internal">August 30, 2012 at 12:25 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>The ten habits of succeful student are really good.i belive that being Motiveded,responsible,doing good choices,being good commonicator and perseverance,open minded,determend any student thaht wants be secceful need make all this subjects into a habit!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-625"> 
+         <div id="comment-625" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Richard</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-625" data-wpel-link="internal">February 7, 2012 at 11:44 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>this is great advice and very informative.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-624"> 
+         <div id="comment-624" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Roldan</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-624" data-wpel-link="internal">February 7, 2012 at 8:31 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>This really helps, i wish i had known these things when i first stated college because it would have helped so much, but i strongly recommend that anyone having difficulty with school read this.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-623"> 
+         <div id="comment-623" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">minerva albarran</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-623" data-wpel-link="internal">February 6, 2012 at 12:11 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>i realy like all of this because is true it has good advice an it make me think a lot of things of how i have to change an do better</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-622"> 
+         <div id="comment-622" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Michael Martinez</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-622" data-wpel-link="internal">February 6, 2012 at 9:37 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>This is great advise. All of the steps WILL and CAN help you be a successful student. It isn’t easy as you read it. It takes hard work and dedication. I think the most important is to manage your emotions. Simply because how ever you’re feeling, sad, bummed, mad, you cannot lose focus on the task ahead. Always keep your head up and know what’s important and stay on that road.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-621"> 
+         <div id="comment-621" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Felipe Guillen</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-621" data-wpel-link="internal">February 5, 2012 at 2:15 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I like this it’s helpful</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-620"> 
+         <div id="comment-620" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Tatiana Gonzalez</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-620" data-wpel-link="internal">February 4, 2012 at 5:20 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Before , I never knew it about college for example, I did not know that college campus require to have permit parking what result, I got ticket. So I realized i have to look “succesful student” I surely did learn a lot college, not just school but outside that I find my habits studying, doing assigment, etc. It is important that students need to know what to do and plan in the campuses. Sometimes, people are lost because they did not research about what , where, when, or how college are. This is important that i really want to improved and life will better for myself. For myself, I am not well with English because I am deaf which my language is American Sign Language. So, I am going through deal with interpreters and Tutor. I am going to be fight no matter what. I knew<br> 10 Habits of Successful College Students will help me no mattter what. I took this note with me. To keep mind and reminded me during class, tutor, or lecture to make me feel little faith myself.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-619"> 
+         <div id="comment-619" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://www.lowfatdietfoods.net" rel="external nofollow" class="url" data-wpel-link="external">Low Fat Recipes</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-619" data-wpel-link="internal">September 16, 2011 at 2:17 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I’ve read some good stuff here. Definitely worth bookmarking for revisiting.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-618"> 
+         <div id="comment-618" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">AM.</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-618" data-wpel-link="internal">August 25, 2011 at 1:37 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>my respose to the use of tech. is pretty simple if you got it use. I personaly dont know how to use computers or the smart phones. So many people have these phones that can do anything I wouldnt know how to even turn it on. I dont have a problem with the use of technology helping you out as long as it doesnt bother others around you. I wish I had that tech. at my finger tips. I feel like Iam so far behind when it does come to new technology, just trying to figuer out how to do this was rackin my bain.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-617"> 
+         <div id="comment-617" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Emelie</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-617" data-wpel-link="internal">August 24, 2011 at 9:31 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>this was very helpful for my first year of college. At my college they have a learning disability program that helps me with everything i need. i am someone who has dyslexia but my college helps me be successful.<br> thank you for the information</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-616"> 
+         <div id="comment-616" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Aubry</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-616" data-wpel-link="internal">August 21, 2011 at 1:00 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Great quick read to start the semester off right, gonna save that for a boost every now and then!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-615"> 
+         <div id="comment-615" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">ncanimereviewda</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-615" data-wpel-link="internal">August 20, 2011 at 3:48 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Like so many others, I disagree with number five, at least the details you mentioned. I have a 4.0 GPA and I KNOW it’s because I reread and rewrite A LOT. I turned my American Government notes into flash cards. I recopied my World Religions notes before every test. I reread my British Literature material before every assignment or exam. If you don’t have a photographic memory, there’s absolutely nothing wrong with setting aside time to review in these ways.</p> 
+            <p>Now CRAMMING is another thing. But I make rereading/rewriting a part of my daily work and study schedule (I also work 40+ hours a week, so I need to schedule everything), and it absolutely makes a difference for me as a student. If I’m inefficient, so be it. I’m also on the dean’s list.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-614"> 
+         <div id="comment-614" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Jennifer</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-614" data-wpel-link="internal">August 19, 2011 at 12:55 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Eat healthy exercise and take care of yourself should be on this list. It’s hard to focus when your body is missing the essential vitamins and minerals it takes for the successful neurological process to take place. E.i. Retention, and conceptualizing the actually topic at hand. This is huge for my success. I found if you just reiterate a topic then it is harder to understand but if I actually know the what and why it is far easy to remember and identify trick questions. Watching videos on tube and talking with other students or some that has a different outlook than the professor is a huge help.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-613"> 
+         <div id="comment-613" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Grady Phillips</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-613" data-wpel-link="internal">August 18, 2011 at 9:19 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I have to agree with paying attention the first time but as I am doing classes on-line much of the advice goes for those who attend a regular class ,but Having a goal does pertain th those on-line as well.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-612"> 
+         <div id="comment-612" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Mike</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-612" data-wpel-link="internal">August 18, 2011 at 7:41 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Very helpful and motivational tips. Now i just hope to keep this fire going for fall semester in a couple weeks!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-610"> 
+         <div id="comment-610" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Sameera Rahman</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-610" data-wpel-link="internal">August 9, 2011 at 7:13 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>In reference to number 5 (working efficiently), what are the keys to effectively reading a section or listening to a lecture once? Is it good to do these once and go back and review a few key details that may have been forgotten or require better understanding?</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-609"> 
+         <div id="comment-609" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Hameed</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-609" data-wpel-link="internal">August 9, 2011 at 4:41 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Very helpful and motive tips</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-608"> 
+         <div id="comment-608" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">T. Morgan</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-608" data-wpel-link="internal">August 9, 2011 at 11:19 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Wow. I can’t say I agree less. This all seems either redundant, impossible (if you’re not positive, being told you’ll fail if you don’t get positive is going to make you a lot worse), or simply, to me, incorrect or narrow-minded. Some people thrive on repetition. We’re not all type-A personalities, either; much as intellectual query is excellent it is tiring, and knowing needless detail can be detrimental when only a pass is needed, for example. The redundancy comes from ‘people who work hard do well’. Wow, do they? Also, a smaller gripe, is that the wording sounds either patronising or smug.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-607"> 
+         <div id="comment-607" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">YD</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-607" data-wpel-link="internal">August 9, 2011 at 6:55 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Very enlightening! Thanks, it has given me lots of ideas!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-606"> 
+         <div id="comment-606" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">P.Sundaram</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-606" data-wpel-link="internal">August 8, 2011 at 8:04 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>It’s good</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-605"> 
+         <div id="comment-605" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Chris</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-605" data-wpel-link="internal">August 8, 2011 at 1:21 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>…Or they choose professors who know how to actually teach and don’t claim “Tenure” as some right….</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-604"> 
+         <div id="comment-604" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">andile</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-604" data-wpel-link="internal">August 8, 2011 at 9:33 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Im one of those students who go on without goals and not really thinking about the next step,this has really helped me to know what to focus to become one of those successful students .Thank you</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-603"> 
+         <div id="comment-603" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Yesi</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-603" data-wpel-link="internal">August 7, 2011 at 1:23 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Thank You!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-602"> 
+         <div id="comment-602" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Muheez Opebiyi</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-602" data-wpel-link="internal">August 7, 2011 at 11:17 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>What you wrote was a masterpiece.It reminds me of where I am coming from, Where I am and where I am going. Thank you.This is a passage for the wise.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-601"> 
+         <div id="comment-601" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Cake and Bacon</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-601" data-wpel-link="internal">August 6, 2011 at 8:49 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I only disagree with #5 . For any future college students here is my input. My college runs in a quarter system and I do repeat these steps at times even when I am working efficiently. If repeating works for you and you actually have time to manage repeating do it. This article is just for guidance but tweak if if you like. some people read these comments and articles very carefully and trust it’s information. I know I did but it’s not a rule book/rule blog.<br> I repeat steps so I can retain the information I need to know or simply to enjoy an interesting topic. I was thinking of my Business Leadership class as I type this. By the way, if the blogger or writer reads my comment, I did love everything else! So true!<br> *Also, I am a full time student with no job. I agree it would be different if I did have a job.<br> Oh and what is my gpa? all B’s with some A’s here and there. if B = Bad Fine shame me on it. To me if I pushed myself A’s would flow in but I am not going to die from having B’s. now C’s and lower eek. that = Cr** I avoid C’s!</p> 
+            <p>5. Work efficiently. Each task is done well — and once.<br> -True, it’s nice if All assignments simply were finished once around, but there will be some courses that require a repeat.</p> 
+            <p>There’s no listening to the lecture a second time on their mp3 player (they paid careful attention the first time).<br> -This depends I suppose. I never have used anything to record a lecture but nonetheless I think if I needed to, it would have been for that difficult to understand, heavily accented Russian instructor for math</p> 
+            <p>No copying over all their notes (why would they do that if they have a good set from the lecture?).<br> -well some college students (Ms. or Mr. Editor) would recopy notes! Its a way to retain information! (ok I agree not All of their notes, like you said they should have a pristine copy) but I do have trouble with complex theories that just won’t stay in my noggin and I hand write the main points about at minimum 10 times or more until I know for sure in my gut that I have this in my memory! I especially use it in my German class for vocabulary! Hahahha so many articles to remember! der, die, das</p> 
+            <p>No doing the reading three times (once for a general overview, once to understand the argument or direction, and once to focus in on the finer points).<br> – I sometimes, varying on the difficulty of the subject, read a paragraph or so for general overview and to understand the argument/direction. Especially if I find the topic interesting!</p> 
+            <p>In a fifteen-week semester, with four or five courses on tap, who has time to do things twice (or, in the case of some students, thrice)?<br> -I am on a quarter system and I do have time because I don’t have a job but as I said earlier I do agree that having a job would cram everything a bit more for me and balancing school work, social life and a job would be tough. I simply do not want anyone reading this article to take it too much to heart and feel stupid for repeating steps.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-600"> 
+         <div id="comment-600" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn"><a href="http://www.facebook.com/aminerhudson" rel="external nofollow" class="url" data-wpel-link="external">Annette Miner- Hudson</a></cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-600" data-wpel-link="internal">August 5, 2011 at 9:19 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>thanks for the information…</p> 
+            <p>I like to confirm what I’m doing, it’s moving me in the right direction!</p> 
+            <p>thanks chegg.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-599"> 
+         <div id="comment-599" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Luis</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-599" data-wpel-link="internal">August 4, 2011 at 12:21 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>I actually find this extremely helpful, especialy to incoming freshman. I think I would have done much better if I would have tead these tips. I am already a sophmore and still find this helpful for my upcoming semester. Thank you for sharing this.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-598"> 
+         <div id="comment-598" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Anna</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-598" data-wpel-link="internal">August 4, 2011 at 10:29 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Most of these I agree with – especially having a goal. If you’re not working toward something, what’s the point? However, I’ve found that in certain classes re-copying notes is a great way to study. Sometimes you’re trying so hard to make sure you write down everything that the prof is saying that notes end up disorganized and messy. If you recopy them, not only are you re-reading your notes but you can also make them more organized, make connections between things that you didn’t before, or even add examples from the textbook that help you understand the concepts in your notes.</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment odd alt thread-even depth-1" id="li-comment-597"> 
+         <div id="comment-597" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Brittany</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-597" data-wpel-link="internal">August 4, 2011 at 6:12 am</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>Helpful tips! I like the one about not adding negative thoughts to your situation but instead focusing on the positive! Definitely a good one. College can get competitive but it’s always nice to block out the competition!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> </li>
+        <!-- #comment-## --> 
+        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-596"> 
+         <div id="comment-596" class="comment"> 
+          <div class="comment-inner"> 
+           <div class="comment-header"> 
+            <cite class="fn">Tmart</cite> 
+            <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-596" data-wpel-link="internal">August 3, 2011 at 3:49 pm</a></span> 
+           </div> 
+           <!-- /comment-header --> 
+           <div class="comment-content"> 
+            <p>This is great advice for most! However, for those students who may have “unique” learning styles and/or tendencies which may require them to repeat reading and listening to lectures or rewriting notes in order to fully and clearly capture the material, being “efficient” can require doing exactly what you infer to be “inefficient”. We should all be so lucky to be able to complete any “higher ed” academic tasks (well done at that) only once!</p> 
+            <div></div> 
+           </div>
+           <!-- /comment-content --> 
+           <div class="comment-actions-below hidden"> 
+            <div class="clear"></div> 
+           </div> 
+           <!-- /comment-actions --> 
+          </div> 
+          <!-- /comment-inner --> 
+         </div>
+         <!-- /comment-## --> 
+         <ul class="children"> 
+          <li class="comment odd alt depth-2" id="li-comment-611"> 
+           <div id="comment-611" class="comment"> 
+            <div class="comment-inner"> 
+             <div class="comment-header"> 
+              <cite class="fn">Allison</cite> 
+              <span>- <a href="https://www.chegg.com/play/life-hacks/productivity/10-habits-of-successful-college-students/#comment-611" data-wpel-link="internal">August 18, 2011 at 4:53 pm</a></span> 
+             </div> 
+             <!-- /comment-header --> 
+             <div class="comment-content"> 
+              <p>Most universities and any college at that, have resources for those with learning disabilities. If you haven’t been diagnosed with one, some schools, I’m not going to speak for all, have tests to see your learning style. Then they will set you up with tutors, people to come to class with you and help with note taking, and a lot more. It’s just a matter of asking. I used to be a Student Programs and Resources (SPAR) aid for my college. I would go to local high schools and help with advising kids on how they can go to college and try and get the maximum and best option for them. If you don’t have a student program and resource at your school, ask someone in the Disability Center. If you do have one, that is the best place to get all the info your school, from academics, to financial aid, to all sorts of school programs. If no, then ask and keep asking, because you will get answers from someone even if you have to take it all the way to the dean of the school.</p> 
+              <div></div> 
+             </div>
+             <!-- /comment-content --> 
+             <div class="comment-actions-below hidden"> 
+              <div class="clear"></div> 
+             </div> 
+             <!-- /comment-actions --> 
+            </div> 
+            <!-- /comment-inner --> 
+           </div>
+           <!-- /comment-## --> </li>
+          <!-- #comment-## --> 
+         </ul>
+         <!-- .children --> </li>
+        <!-- #comment-## --> 
+       </ol> 
+      </div>
+      <!-- /comments --> 
+      <p class="nocomments">Comments are closed.</p> 
+     </div> 
+     <!-- /post --> 
+    </div> 
+    <!-- /content --> 
+    <div class="sidebar fright" role="complementary"> 
+     <div class="widget widget_text">
+      <div class="widget-content"> 
+       <div class="textwidget"></div> 
+      </div>
+      <div class="clear"></div>
+     </div> 
+     <!--most popular posts--> 
+     <div class="popular-posts"> 
+      <h3>MOST POPULAR</h3>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/MDT-1275_Play_Quiz_Hero_Trivia_bell-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Trivia - How Well Do You Know College?</h4>
+        <span class="popular-author">By Victoria Holliday</span>
+        <a href="https://www.chegg.com/play/entertainment/trivia-well-know-college/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/06/cell-battery-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="cell phone battery life">
+        <div class="category-tape">
+         <div class="category-orange">
+          Life Hacks
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Cell Phone Self-Care: How to Extend Your Phone's Battery Life</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/life-hacks/self-care-phone-battery/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/murder-your-plants-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Dorm Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>How not to murder your new plant</h4>
+        <span class="popular-author">By Katie Levinthal</span>
+        <a href="https://www.chegg.com/play/student-life/not-murder-new-plant/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/gym-thoughts-800x414.png" class="attachment-medium size-medium wp-post-image" alt="41 Thoughts Every College Student Has At The Gym">
+        <div class="category-tape">
+         <div class="category-orange">
+          Fitness
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>39 Thoughts Every College Student Has At The Gym</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/food-and-fit/17-thoughts-every-college-student-has-at-the-gym/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/napping-800x414.png" class="attachment-medium size-medium wp-post-image" alt="7 famous people who napped">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>7 Famous People Who Napped</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/entertainment/5-famous-nappers/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/03/MDT-1103-CP-NicoleLapin-2-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Money
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>How to Recover from the Freshman (Spending) 15</h4>
+        <span class="popular-author">By Nicole Lapin</span>
+        <a href="https://www.chegg.com/play/life-hacks/money/how-to-recover-from-the-freshman-spending-15/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/Nope-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Productivity
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Top 10 SAT Words That You'll Never Actually Use</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/top-10-sat-words-that-youll-never-actually-use/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/weird-jobs-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>The Weirdest Careers To Spice Up Your Job Search</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/entertainment/jobs-you-didnt-know-existed/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/10/23-facts-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Life Hacks
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>23 Study Tips Backed By Science</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/23-study-tips-backed-by-science/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/shutterstock_503426647-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Student Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>There Are 4 Types of Introverts: Which One Are You?</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/student-life/there-are-4-types-of-introverts-which-one-are-you/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/pencils-SAT-800x414.png" class="attachment-medium size-medium wp-post-image" alt="What to bring to the SAT">
+        <div class="category-tape">
+         <div class="category-orange">
+          Productivity
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>The Ultimate SAT/ACT Packing List</h4>
+        <span class="popular-author">By Katie Levinthal</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/the-ultimate-satact-packing-list/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/quiz-800x414.png" class="attachment-medium size-medium wp-post-image" alt="What Type Of Learner Are You?">
+        <div class="category-tape">
+         <div class="category-orange">
+          Student Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Quiz: What Type Of Learner Are You?</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/student-life/quiz-what-type-of-learner-are-you/" data-wpel-link="internal"></a>
+       </div>
+      </div> 
+     </div> 
+     <!--end most popular posts--> 
+    </div>
+    <!-- /sidebar --> 
+    <div class="clear"></div> 
+   </div> 
+   <!-- /section-inner --> 
+  </div> 
+  <!-- /wrapper --> 
+  <div class="chg-footer"> 
+   <div class="chg-footer-pattern"> 
+    <div class="chg-footer-container"> 
+     <nav> 
+      <div class="row"> 
+       <div class="col-12 col-first col-last"> 
+        <div class="chg-footer-nav"> 
+         <div class="chg-footer-nav-column"> 
+          <h4>ABOUT CHEGG</h4> 
+          <ul> 
+           <li><a href="http://www.chegg.com/press/" title="About Chegg" data-noajax="&quot;true&quot;" data-wpel-link="internal">Media Center</a></li> 
+           <li><a rel="nofollow" href="http://blog.chegg.com/category/chegg-for-good/" title="Chegg For Good" data-wpel-link="internal">Chegg For Good</a></li> 
+           <li><a href="http://collegemarketing.chegg.com/" title="College Marketing" data-wpel-link="internal">College Marketing</a></li> 
+           <li> <a rel="nofollow" href="http://www.chegg.com/privacypolicy/" title="Privacy Policy" data-wpel-link="internal">Privacy Policy</a> </li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/privacypolicy/#california" title="Your CA Privacy Rights" data-wpel-link="internal">Your CA Privacy Rights</a></li> 
+           <li> <a rel="nofollow" href="http://www.chegg.com/termsofuse/" title="Terms of Use" data-wpel-link="internal">Terms of Use</a> </li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/generalpolicies/" title="General Policies" data-wpel-link="internal">General Policies</a></li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/copyright/" title="Intellectual Property Rights" data-wpel-link="internal">Intellectual Property Rights</a></li> 
+           <li><a rel="nofollow" href="http://investor.chegg.com/" title="Investor Relations" data-wpel-link="internal">Investor Relations</a></li> 
+           <li><a href="http://edu.chegg.com/" title="Enrollment Services" data-wpel-link="internal">Enrollment Services</a></li> 
+          </ul> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>RESOURCES</h4> 
+           <ul> 
+            <li><a href="http://www.chegg.com/sitemap" title="Site Map" data-wpel-link="internal">Site Map</a></li> 
+            <li><a href="http://www.chegg.com/mobile" title="Mobile" data-noajax="true" data-wpel-link="internal">Mobile</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/publishers" title="Publishers" data-noajax="true" data-wpel-link="internal">Publishers</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/affiliatesignuppage/" title="Join Our Affiliate Program" data-noajax="true" data-wpel-link="internal">Join Our Affiliate Program</a></li> 
+            <li><a rel="nofollow" href="http://preferences-mgr.truste.com/?pid=chegg01&amp;aid=chegg_pub02&amp;type=cheggdirect" target="_new" title="Advertising Choices" data-noajax="" data-wpel-link="external">Advertising Choices</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>TEXTBOOK LINKS</h4> 
+           <ul> 
+            <li><a rel="nofollow" href="http://www.chegg.com/my/account/returnbooks" data-wpel-link="internal">Return Your Books</a></li> 
+            <li><a href="http://www.chegg.com/textbooks/" title="Textbook Rental" data-noajax="true" data-wpel-link="internal">Textbook Rental</a></li> 
+            <li><a href="http://www.chegg.com/etextbooks" title="eTextbooks" data-noajax="true" data-wpel-link="internal">eTextbooks</a></li> 
+            <li><a href="http://www.chegg.com/used-textbooks" title="Used Textbooks" data-wpel-link="internal">Used Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/cheap-textbooks" title="Cheap Textbooks" data-wpel-link="internal">Cheap Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/college-textbooks" title="College Textbooks" data-wpel-link="internal">College Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/sell-textbooks" title="Sell Textbooks" data-noajax="true" class="sell-textbooks" data-wpel-link="internal">Sell Textbooks</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>STUDENT SERVICES</h4> 
+           <ul> 
+            <li><a href="http://www.chegg.com/chegg-coupon" title="Chegg Coupon" data-wpel-link="internal">Chegg Coupon</a></li> 
+            <li><a href="http://www.chegg.com/scholarships" title="Scholarships" data-noajax="true" data-wpel-link="internal">Scholarships</a></li> 
+            <li><a href="http://www.chegg.com/career-center/explore" title="Career Search" data-noajax="true" data-wpel-link="internal">Career Search</a></li> 
+            <li><a href="http://www.chegg.com/app/internships/" title="Internships" data-noajax="true" data-wpel-link="internal">Internships</a></li> 
+            <li><a href="http://www.chegg.com/schools/" title="College Search" data-noajax="true" data-wpel-link="internal">College Search</a></li> 
+            <li><a href="http://www.chegg.com/majors" title="College Majors" data-noajax="true" data-wpel-link="internal">College Majors</a></li> 
+            <li><a href="http://www.chegg.com/redemption/scholarship" title="Scholarship Redemption" data-noajax="true" data-wpel-link="internal">Scholarship Redemption</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>COMPANY</h4> 
+           <ul> 
+            <li><a href="http://blog.chegg.com/" title="Blog" data-noajax="true" data-wpel-link="internal">Chegg College Blog</a></li> 
+            <li><a href="https://www.chegg.com/jobs/" title="Jobs" data-noajax="true" data-wpel-link="internal">Jobs</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/contactus/" title="Customer Service" data-noajax="true" data-wpel-link="internal">Customer Service</a></li> 
+            <li><a rel="nofollow" href="mailto:danlr@chegg.com" title="Give Us Feedback" data-noajax="true">Give Us Feedback</a></li> 
+            <li><a href="https://www.chegg.com/tutors/become-a-tutor/" title="Become a Tutor" data-noajax="true" data-wpel-link="internal">Become a Tutor</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>LEARNING SERVICES</h4> 
+           <ul> 
+            <li><a href="https://www.chegg.com/tutors" title="Online Tutoring" data-noajax="true" data-wpel-link="internal">Online Tutoring</a></li> 
+            <li><a href="http://www.chegg.com/study" title="Chegg Study Help" data-noajax="true" data-wpel-link="internal">Chegg Study Help</a></li> 
+            <li><a href="http://www.chegg.com/homework-help/solutions-manual" title="Solutions Manual" data-noajax="true" data-wpel-link="internal">Solutions Manual</a></li> 
+            <li><a href="https://www.chegg.com/tutors/cities" title="Tutors by City" data-noajax="true" data-wpel-link="internal">Tutors by City</a></li> 
+            <li><a href="http://www.chegg.com/homework-help/gpa-calculator" title="GPA Calculator" data-wpel-link="internal">GPA Calculator</a></li> 
+            <li><a href="http://www.chegg.com/test-prep" title="Test Prep" data-wpel-link="internal">Test Prep</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </nav> 
+     <footer> 
+      <div class="row chg-footer-copyright"> 
+       <div class="col-3 col-first"> 
+        <div title="Over 6 million trees planted" class="chg-mil-trees">
+         Over 6 million trees planted
+        </div> 
+        <div class="img-chg-plant-tree" title="Chegg Plants Trees">
+         Chegg Plants Trees
+        </div> 
+       </div> 
+       <div class="col-6 chg-copyright"> 
+        <div class="chg-copyright-blk"> 
+         <a rel="nofollow" href="http://www.paypal.com" title="PayPal" data-noajax="true" data-wpel-link="external"><img src="//c.cheggcdn.com/images/paypal_logo.gif" alt="PayPal"></a> 
+         <div class="chg-footer-truste-seal">
+          <div id="2d7d0c26-8294-4d5a-8841-1769f715fb08">
+           <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/Chegg,-Inc-/asc?rid=2d7d0c26-8294-4d5a-8841-1769f715fb08"></script>
+           <a data-in-app="true" href="//privacy.truste.com/privacy-seal/Chegg,-Inc-/validation?rid=066d8958-84e3-4256-8903-54ca5b4b297a" title="TRUSTe online privacy certification" target="_blank" data-wpel-link="external" rel="nofollow"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/Chegg,-Inc-/seal?rid=840d171e-655f-4821-8e68-58819b3cd2d2" alt="TRUSTe online privacy certification"></a>
+          </div>
+         </div> 
+         <a rel="nofollow" href="http://www.bbb.org/sanjose/business-reviews/books-textbooks-new-and-used/cheggcom-in-santa-clara-ca-238456" title="BBB" data-noajax="true" data-wpel-link="external"><img src="//c.cheggcdn.com/images/bbbseal1.gif" alt="BBB"></a> 
+         <p>© 2003-2016 Chegg Inc. All rights reserved.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </footer> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="/play/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var frontend_ajax_object = {"ajax_url":"https:\/\/www.chegg.com\/play\/wp-admin\/admin-ajax.php","ajax_nonce":"1c8c1f5877"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/accesspress-social-share/js/frontend.js?ver=4.3.4"></script> 
+  <script type="text/javascript" src="/play/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <link rel="stylesheet" id="apss-font-awesome-css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css?ver=4.1.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="apss-font-opensans-css" href="//fonts.googleapis.com/css?family=Open+Sans&amp;ver=4.5.3" type="text/css" media="all"> 
+  <script type="text/javascript">_satellite.pageBottom();</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1fabaefecb","applicationID":"52986996","transactionName":"NQcDYUAEXxJYUhFfXQxNIFZGDF4PFkIMWFUOBw==","queueTime":0,"applicationTime":4074,"atts":"GUAAFwgeTBw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

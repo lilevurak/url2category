@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="https://youngadventuress.com/xmlrpc.php"> 
+  <title>Ups and downs, highs and lows and the importance of finding balance</title> 
+  <!-- Social Warfare v2.3.3 https://warfareplugins.com --> 
+  <style>@font-face {font-family: "sw-icon-font";src:url("https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.eot?ver=2.3.3");src:url("https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.eot?ver=2.3.3#iefix") format("embedded-opentype"),url("https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.woff?ver=2.3.3") format("woff"), url("https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.ttf?ver=2.3.3") format("truetype"),url("https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.svg?ver=2.3.3#1445203416") format("svg");font-weight: normal;font-style: normal;}</style> 
+  <!-- Social Warfare v2.3.3 https://warfareplugins.com --> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.5.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Here are some of my thoughts about the highs and lows on the road and in life as well as finding balance while traveling"> 
+  <link rel="canonical" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Ups and downs, highs and lows and the importance of finding balance"> 
+  <meta property="og:description" content="Here are some of my thoughts about the highs and lows on the road and in life as well as finding balance while traveling"> 
+  <meta property="og:url" content="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html"> 
+  <meta property="og:site_name" content="Young Adventuress"> 
+  <meta property="article:section" content="Confessions"> 
+  <meta property="article:published_time" content="2015-01-31T17:39:46+13:00"> 
+  <meta property="article:modified_time" content="2015-02-12T23:26:28+13:00"> 
+  <meta property="og:image" content="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n.jpg"> 
+  <meta property="og:image:secure_url" content="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n.jpg"> 
+  <meta property="og:image:width" content="960"> 
+  <meta property="og:image:height" content="960"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/youngadventuress.com\/","name":"Young Adventuress","potentialAction":{"@type":"SearchAction","target":"https:\/\/youngadventuress.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//youngadventuress.com"> 
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Young Adventuress » Feed" href="https://youngadventuress.com/feed"> 
+  <link rel="alternate" type="application/rss+xml" title="Young Adventuress » Comments Feed" href="https://youngadventuress.com/comments/feed"> 
+  <link rel="alternate" type="application/rss+xml" title="Young Adventuress » Ups and downs, highs and lows and the importance of finding balance Comments Feed" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html/feed"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/20843-presscdn-pagely.netdna-ssl.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="sb_instagram_styles-css" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/instagram-feed/css/sb-instagram.min.css?ver=1.5" type="text/css" media="all"> 
+  <link rel="stylesheet" id="sb-font-awesome-css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="social_warfare-css" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/css/style.min.css?ver=2.3.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Roboto+Slab%3A100%2C300&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-fonts-montserrat-css" href="//fonts.googleapis.com/css?family=Montserrat%3A400%2C700&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="pf-young-style-css" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/themes/pf-youngadventuress-2016/style.css?ver=201738412" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <link rel="https://api.w.org/" href="https://youngadventuress.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://youngadventuress.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="shortlink" href="https://youngadventuress.com/?p=11967"> 
+  <link rel="alternate" type="application/json+oembed" href="https://youngadventuress.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://youngadventuress.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html&amp;format=xml"> 
+  <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-34680284-1', 'auto');
+		  ga('send', 'pageview');
+		</script> 
+  <style type="text/css">.rp4wp-related-posts ul{width:100%;padding:0;margin:0;float:left;}
+.rp4wp-related-posts ul>li{list-style:none;}
+.rp4wp-related-posts ul>li>p{margin:0;padding:0;}
+.rp4wp-related-post-image{}</style> 
+  <link rel="icon" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2017/01/cropped-YA_favicon_black-150x150.png" sizes="32x32"> 
+  <link rel="icon" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2017/01/cropped-YA_favicon_black-433x433.png" sizes="192x192"> 
+  <link rel="apple-touch-icon-precomposed" href="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2017/01/cropped-YA_favicon_black-433x433.png"> 
+  <meta name="msapplication-TileImage" content="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2017/01/cropped-YA_favicon_black-433x433.png"> 
+ </head> 
+ <body class="post-template-default single single-post postid-11967 single-format-standard group-blog"> 
+  <div id="page" class="site"> 
+   <a class="skip-link screen-reader-text" href="#main">Skip to content</a> 
+   <header id="masthead" class="site-header" role="banner"> 
+    <div class="container"> 
+     <button type="button" id="js-toggle-button" class="toggle-button"> <span class="sr-only">Toggle navigation</span> <span class="toggle-button__icon-bar icon-bar--open icon-bar--open-1"></span> <span class="toggle-button__icon-bar icon-bar--open icon-bar--open-2"></span> <span class="toggle-button__icon-bar icon-bar--open icon-bar--open-3"></span> <span class="toggle-button__icon-bar icon-bar--close icon-bar--close-1"></span> <span class="toggle-button__icon-bar icon-bar--close icon-bar--close-2"></span> </button> 
+     <div class="site-header__logo"> 
+      <a class="site-header__logo-link" href="https://youngadventuress.com" title="Young Adventuress"><span class="icon-logo site-header__logo-svg"></span></a> 
+     </div> 
+     <div id="js-main-navigation"> 
+      <div class="site-header__nav-wrapper"> 
+       <div class="site-header__nav" role="navigation"> 
+        <div class="menu-primary-left-container">
+         <ul id="menu-primary-left" class="menu">
+          <li id="menu-item-16514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-16514"><a href="https://youngadventuress.com/">Home</a></li> 
+          <li id="menu-item-16802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16802"><a href="https://youngadventuress.com/start-here">Meet me</a></li> 
+          <li id="menu-item-16569" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-16569"><a href="https://youngadventuress.com/blog">The blog</a></li> 
+          <li id="menu-item-16517" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-16517"><a href="https://youngadventuress.com/category/destinations">Destinations</a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-16747" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16747"><a href="https://youngadventuress.com/category/europe-2">Europe</a></li> 
+            <li id="menu-item-16748" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16748"><a href="https://youngadventuress.com/category/middle-east">Middle East</a></li> 
+            <li id="menu-item-16749" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16749"><a href="https://youngadventuress.com/category/north-america">North America</a></li> 
+            <li id="menu-item-16750" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16750"><a href="https://youngadventuress.com/category/south-america">South America</a></li> 
+            <li id="menu-item-16738" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16738"><a href="https://youngadventuress.com/category/new-zealand-2">New Zealand</a></li> 
+            <li id="menu-item-16741" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16741"><a href="https://youngadventuress.com/category/australia">Australia</a></li> 
+            <li id="menu-item-16739" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16739"><a href="https://youngadventuress.com/category/africa-2">Africa</a></li> 
+            <li id="menu-item-16740" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16740"><a href="https://youngadventuress.com/category/asia-2">Asia</a></li> 
+           </ul> </li> 
+          <li id="menu-item-16826" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16826"><a href="https://youngadventuress.com/category/moving-abroad">Moving abroad</a></li> 
+         </ul>
+        </div> 
+       </div> 
+       <div class="site-header__nav site-header__nav--right" role="navigation"> 
+        <div class="menu-primary-right-container">
+         <ul id="menu-primary-right" class="menu">
+          <li id="menu-item-16519" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16519"><a href="https://youngadventuress.com/category/new-zealand-2">New Zealand</a></li> 
+          <li id="menu-item-16520" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16520"><a href="https://youngadventuress.com/category/spain">Spain</a></li> 
+          <li id="menu-item-16570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-16570"><a href="https://youngadventuress.com/category/blogger">Blogging</a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-19722" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19722"><a href="https://youngadventuress.com/2015/02/how-to-start-a-blog.html">Start Blogging</a></li> 
+           </ul> </li> 
+          <li id="menu-item-16522" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16522"><a href="https://youngadventuress.com/category/photography">Photography</a></li> 
+         </ul>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header>
+   <!-- #masthead --> 
+   <div id="content" class="site-content"> 
+    <div id="primary" class="content-area"> 
+     <main id="main" class="site-main" role="main"> 
+      <article id="post-11967" class="post-11967 post type-post status-publish format-standard has-post-thumbnail hentry category-confessions category-get-inspired"> 
+       <section class="hero-inner box " style="background-image: url('https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n.jpg')"> 
+        <header class="entry-header"> 
+         <div class="container"> 
+          <div class="row"> 
+           <div class="col-md-12"> 
+            <h1 class="entry-title">Ups and downs, highs and lows and the importance of finding balance</h1> 
+           </div> 
+          </div> 
+         </div> 
+        </header>
+        <!-- .entry-header --> 
+       </section>
+       <!-- /.hero --> 
+       <div class="entry-content"> 
+        <div class="single-breadcrumbs"> 
+         <div class="container"> 
+          <div class="row"> 
+           <div class="col-md-12"> 
+            <p class="page-sub-header__breadcrumbs" id="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="https://youngadventuress.com/" rel="v:url" property="v:title">Home</a> » <span rel="v:child" typeof="v:Breadcrumb"><a href="https://youngadventuress.com/blog" rel="v:url" property="v:title">Blog</a> » <span rel="v:child" typeof="v:Breadcrumb"><a href="https://youngadventuress.com/category/confessions" rel="v:url" property="v:title">Confessions</a> » <span class="breadcrumb_last">Ups and downs, highs and lows and the importance of finding balance</span></span></span></span></span></p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="container"> 
+         <div class="row"> 
+          <div class="col-md-12"> 
+           <p><img class="aligncenter wp-image-11975 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1636-650x488.jpg" alt="finding balance while traveling" width="650" height="488" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1636-650x488.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1636-768x576.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1636-1024x768.jpg 1024w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1636.jpg 1500w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p>The other day I got a package in the mail from a friend back home. And by package I mean envelope.</p> 
+           <p>Inside was a simple beaded <a href="http://mylokai.com/" target="_blank">bracelet</a>. On one end was a black bead and on the other end a white bead. The attached note mentioned that the white bead carried water from Everest, the highest point in the world, while the black bead carried mud from the Dead Sea, the lowest point on earth.</p> 
+           <blockquote>
+            <p>Sometimes you’re on&nbsp;top of the world, <strong>stay humble</strong>.&nbsp;Sometimes you’ve hit a low, <strong>stay hopeful</strong>.</p>
+           </blockquote> 
+           <p>Woah, what a great message!</p> 
+           <p>While I have a lot of lifetime goals and ideas I regularly strive for and regularly fail at, but finding emotional balance has always been the most important thing to me, in a non-hippy alternative kind of way. It’s sort of just how I roll.</p> 
+           <p><img class="aligncenter wp-image-11973 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/229709_775669669705_1454858734_n-650x650.jpg" alt="finding balance while traveling" width="650" height="650" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/229709_775669669705_1454858734_n-650x650.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/229709_775669669705_1454858734_n-150x150.jpg 150w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/229709_775669669705_1454858734_n-768x768.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/229709_775669669705_1454858734_n-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/229709_775669669705_1454858734_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <h5 style="text-align: center;">Floating in the Dead Sea with <a href="http://www.cestchristine.com/" target="_blank">C’est Christine</a></h5> 
+           <p><img class="aligncenter wp-image-11976 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/14003463512_8198084ec7_k-650x488.jpg" alt="finding balance while traveling" width="650" height="488" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/14003463512_8198084ec7_k-650x488.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/14003463512_8198084ec7_k-768x576.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/14003463512_8198084ec7_k-1024x768.jpg 1024w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/14003463512_8198084ec7_k.jpg 1600w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <h5 style="text-align: center;">Everest image <a href="https://flic.kr/p/nkrpQ5" target="_blank">source</a></h5> 
+           <p>I’m an inherently emotional person. My feelings are, and always have been, a roller coaster.</p> 
+           <p>If I’m sad, I’m pretty sad, if I’m happy, I’m super bubbly, and then everything in between. I love feeling excited or thrilled or nervous or afraid, it reminds us we are alive. Someone once told me when I was younger to never lose our childish enthusiasm, and that’s stuck with me over the years.</p> 
+           <p>I love feeling&nbsp;getting excited.</p> 
+           <p>I’m like <a href="httpss://youtube.com/watch?v=t5jw3T3Jy70" target="_blank">Kirsten Bell</a>, if I’m not between a 3 and a 7 on the emotional scale, I’m crying AND I’m similarly afflicted with love for furry creatures. I totally teared up the first time I got to hold a koala in Australia, and if <a href="http://www.doc.govt.nz/" target="_blank">DOC in New Zealand</a> ever lets me hold a real-life kiwi, I will literally lose my shit. And a decade later and I still can’t watch this scene from <a href="httpss://youtube.com/watch?v=nKdSvhCg3VY" target="_blank">Love Actually</a> without crying my eyes out and <a href="https://www.facebook.com/humansofnewyork" target="_blank">HONY</a> makes me sob about once a week.</p> 
+           <p><img class="aligncenter wp-image-11846 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10372115_627583887345965_5102425668071866859_n-650x650.jpg" alt="finding balance while traveling" width="650" height="650" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10372115_627583887345965_5102425668071866859_n-650x650.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10372115_627583887345965_5102425668071866859_n-150x150.jpg 150w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10372115_627583887345965_5102425668071866859_n-768x768.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10372115_627583887345965_5102425668071866859_n-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10372115_627583887345965_5102425668071866859_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p><img class="aligncenter wp-image-11978 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/I2MG_8040-copy-650x433.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>For a few years I was told by people who are close to me that being emotional is a bad thing. And I believed them.&nbsp;It took me a long time to realize that I was hiding who I really was by hiding how I truly felt about all sorts of stuff. And that’s never cool guys.</p> 
+           <p>What’s wrong with feeling strongly about different things? Why should we not say what we think or show how we feel? For women but especially for dudes too. In fact, I think guys not talking about what they are thinking and feeling is a worldwide epidemic, especially in New Zealand with it’s massive tough-guy culture. Once I started to really think about it, the more and more bothered I became.</p> 
+           <p>We should be allowed to be ourselves. If I’m excited I want to smile and jump up and down, and if I’m sad, I want to cry and eat a lot of chocolate. If I’m nervous or scared, I want to say it, not bottle it in. What’s wrong with that?</p> 
+           <p><img class="aligncenter wp-image-11752 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357-650x650.jpg" alt="finding balance while traveling" width="650" height="650" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357-650x650.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357-150x150.jpg 150w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357-768x768.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357-1024x1024.jpg 1024w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_1357.jpg 1600w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p><img class="aligncenter wp-image-10740 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/09/IMG_6495-copy.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>Of course like with the most important things in life, nothing is that simple. Ever.</p> 
+           <p>While we all experience extreme highs and lows that effect all of us in different ways and how we express it is up to each person individually.Obviously you can slip too far to one end of that bitch of an emotional scale, but as long as you can balance it out at the end of the day, month or year, you’ll be good, right?</p> 
+           <p>That’s how I see it, at least. Life is all about finding balance. Total cliche, I know.</p> 
+           <p><img class="aligncenter wp-image-10906 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/10/IM2G_7928-copy-2.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p><img class="aligncenter wp-image-11853 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10734201_611321435638877_5041644780609544504_n-650x650.jpg" alt="finding balance while traveling" width="650" height="650" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10734201_611321435638877_5041644780609544504_n-650x650.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10734201_611321435638877_5041644780609544504_n-150x150.jpg 150w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10734201_611321435638877_5041644780609544504_n-768x768.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10734201_611321435638877_5041644780609544504_n-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10734201_611321435638877_5041644780609544504_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p>For me my highs and lows vary week to week, even day to day.</p> 
+           <p>I’ve felt like I was on top of the world more than a few times and thought&nbsp;I was invincible and I could do anything; and to contrast that I’ve been so far in the pit of despair that I thought the sun would never shine again and I wondered how I could ever go on. Twice. Shudder, remembering those lows are what keeps me going now and motivates me to find balance. I never want to end up like that again.</p> 
+           <p>But usually my <del>rage</del> range is less extreme, thank god for small favors.</p> 
+           <p><img class="aligncenter wp-image-11974 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n-650x650.jpg" alt="finding balance while traveling" width="650" height="650" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n-650x650.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n-150x150.jpg 150w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n-768x768.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/944904_775669704635_1831542732_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p><img class="aligncenter wp-image-11826 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_6585-copy-2-650x433.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>And of course everything is amplified tenfold when I am traveling and on the road.</p> 
+           <p>Travel has a way of bring up submerged emotions and feelings to the surface and forcing you to confront them. After all, it is easier to get lost in the routine of daily life or ignore things you don’t want to face than when you are forced to deal with them in a totally new and occasionally uncomfortable environment.</p> 
+           <p>Travel is a big test for a lot of people.</p> 
+           <p><img class="aligncenter wp-image-11627 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10455407_907551417625_4120480446765864962_n-650x362.jpg" alt="finding balance while traveling" width="650" height="362" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10455407_907551417625_4120480446765864962_n-650x362.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10455407_907551417625_4120480446765864962_n-768x428.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10455407_907551417625_4120480446765864962_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p><img class="aligncenter wp-image-10950 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/10/IMG_5378-copy-2.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>I get told daily by strangers and people who don’t even know me how wonderful my life is and how lucky I am and how they wish they could be like me blah blah blah. You guys know how I hate being told <a href="https://youngadventuress.com/2014/10/lucky-rant.html" target="_blank">I’m lucky</a>, and read <a href="https://youngadventuress.com/2014/05/make-money-travel-blogging.html" target="_blank">here</a> if you want to know more about my realities.</p> 
+           <p>When did it become socially acceptable to presume to know everything that is going on with another person’s life and judge accordingly?</p> 
+           <p>No matter who we are, no matter wherever we are in the world, we can never know someone else’s full story. And to make assumptions that we do is beyond uncool.</p> 
+           <p><img class="aligncenter wp-image-11977 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/G0080036-copy-650x488.jpg" alt="finding balance while traveling" width="650" height="488"></p> 
+           <p><img class="aligncenter wp-image-11981 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_2266-copy-650x433.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>Granted, in some ways I get it and I can see why people think that about me; my life is an open book thanks to this blog and social media, but there are still a few things I keep to myself, mostly to ensure my sanity and also because there’s only so much public humiliation a girl can take, right? And I can only talk about myself SO much before I start to look like a vain narcissistic bitch.</p> 
+           <p>But I digress. At the end of the day nobody but me can know how much work I’ve put towards this life I’ve built, what sacrifices I’ve made, and my own highs and lows. It’s not all pretty <a href="http://instagram.com/youngadventuress" target="_blank">Instagram</a> pictures folks. I often post pictures of stunning mountains but not of me sweating and red-faced slipping and sliding my way to the top.</p> 
+           <p>Life is hard. Life is gritty, and above all, life is full of ups and downs.</p> 
+           <p>And the same goes for you too, your story is your own, no one else’s.</p> 
+           <p><img class="aligncenter wp-image-11044 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/10/IMG_5642-copy.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p><img class="aligncenter wp-image-11757 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_13371-433x650.jpg" alt="finding balance while traveling" width="433" height="650"></p> 
+           <p>I have no idea where I am going with this actually. Ah yes, back to balance.</p> 
+           <p>Getting that bracelet in the mail couldn’t have come at a better time in my life. It put everything into perspective.</p> 
+           <p>The past two weeks I’ve been riding on a total high. I was asked to share my story on BBC travel about <a href="http://www.bbc.com/travel/feature/20150105-how-i-quit-my-job-to-travel-the-blogger" target="_blank">quitting my job to travel</a> which ended up getting featured on the massive BBC homepage and <a href="http://www.stuff.co.nz/travel/destinations/nz/65344623/the-american-girl-who-is-the-future-of-new-zealand-tourism" target="_blank">Stuff.co.nz</a>, one of New Zealand’s biggest newspapers named me “the future of tourism in New Zealand.” Again, holy shit. I was also just featured on Mashable and interviewed with USA Today.</p> 
+           <p>It’s also been hot and sunny in Wanaka, I’ve started running again and have made a bunch of new friends. Things are falling into place. I wake up excited and smiling every day. I’m happy.</p> 
+           <p>To say life is going good, at least for my blog, is massive understatement. Oh wait, except I’m still in limbo and still don’t have my NZ visa sorted. 7 weeks and counting.</p> 
+           <p><img class="aligncenter wp-image-11626 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10305254_980873973635_3947107973523190034_n-650x433.jpg" alt="finding balance while traveling" width="650" height="433" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10305254_980873973635_3947107973523190034_n-650x433.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10305254_980873973635_3947107973523190034_n-768x512.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10305254_980873973635_3947107973523190034_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p><img class="aligncenter wp-image-11182 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_8563-copy.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>But three months&nbsp;ago I was in between work and assignments and almost couldn’t pay my rent. Two&nbsp;major contracts I was working on fell through, the advisor&nbsp;I hired to help my with my immigration application screwed me out of over a grand and left me hanging, and the guy I thought I was in love with broke my heart.</p> 
+           <p>Five months ago I visited Mongolia which <a href="https://youngadventuress.com/2014/11/mongolia-changed-life.html" target="_blank">changed my whole life</a> and my travel style and also I realized I was getting super burnt out on the road.&nbsp;And I found out on the way to the airport that my best friend’s brother killed himself, someone who was basically family to me.</p> 
+           <p>Nine&nbsp;months&nbsp;ago I moved to Wanaka and fell head over heels in love with this town and a year ago I starred in a major TV show in the States. Six months before that <a href="https://youngadventuress.com/2013/11/falling-off-a-camel.html" target="_blank">I fell off a camel in Jordan</a> and almost broke my back, something I am STILL getting treated for and will likely have permanent nerve damage.</p> 
+           <p>Two years ago I was living at home with my parents wondering if I would ever become a full-time travel blogger and three years ago <a href="https://youngadventuress.com/2013/02/breaking-up-to-travel.html" target="_blank">I chose to live in Spain over love</a>. Four years ago I was convinced I was going to graduate school for history.</p> 
+           <p><img class="aligncenter wp-image-11980 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_0703.JPG1-copy-650x433.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p><img class="aligncenter wp-image-11625 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10297738_967892174265_2582138992777992776_n-650x471.jpg" alt="finding balance while traveling" width="650" height="471" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10297738_967892174265_2582138992777992776_n-650x471.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10297738_967892174265_2582138992777992776_n-768x556.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/10297738_967892174265_2582138992777992776_n.jpg 960w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p>So what’s my point besides bringing up all of these random big highs and lows&nbsp;in my life?</p> 
+           <p>Looking back I realize that if I were to fixate on any of those specific moments for a long period of time, those lows or highs, then I would be lost. It’s so easy to be consumed by strong emotions.</p> 
+           <p>That isn’t to say I haven’t either. I’m a dweller and deep thinker, and I have to seriously force myself out of ruts and down from buzzes all the time. But at the end of the day, I breathe in all of the emotions, embrace them, grow from them and then let them go, Frozen-style.</p> 
+           <p>But back to balance.</p> 
+           <p><img class="aligncenter wp-image-11866 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048-650x650.jpg" alt="finding balance while traveling" width="650" height="650" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048-650x650.jpg 650w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048-150x150.jpg 150w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048-768x768.jpg 768w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048-1024x1024.jpg 1024w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_1048.jpg 1600w" sizes="(max-width: 650px) 100vw, 650px"></p> 
+           <p><img class="aligncenter wp-image-11979 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_0464-2-650x433.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>We all have to find our own way to balance and happiness through these ups and downs. For me, I have found over and over again that stability, peace and quiet are what I need when I need balance. Obviously that almost always doesn’t coincide with how I travel.</p> 
+           <p>I think it has a lot to do with&nbsp;<a href="https://youngadventuress.com/2015/01/travel-introvert.html" target="_blank">being an introvert</a>&nbsp;and the fact that I thrive and grow and am the most creative when I am totally alone and without distraction. So if I am being more social than usual which can wear me down and exhaust me, I make sure to build in me-time to calm the fuck down.</p> 
+           <p>And then also sometimes the opposite happens, if I am completely alone for too long, I start to go a bit crazy and that’s when negative thoughts can creep in so I make sure to force myself to start being more social. Or like when I do laundry and realized I’ve only washed sweats, pajamas and yoga pants because I haven’t left my house in a week. Oops. Time to put on some pants and start talking to people!</p> 
+           <p><img class="aligncenter wp-image-11313 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/12/IMG_0903-copy-2.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p><img class="aligncenter wp-image-11215 size-full" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2014/11/IMG_0409-2-copy.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <p>Too much of either direction is never a good thing, it’s about figuring out what your balance is for you.</p> 
+           <p>I’m a big believer in feeling all of the feelings. After all, strong feelings and emotions can lead to creativity and personal growth, right? At least for me.</p> 
+           <p>The most important thing is being able to find balance between those highs and lows. Stay humble. Stay hopeful.</p> 
+           <p>And I don’t know about you, but I’d rather ride a roller coaster through life than drive on a flat highway in cruise control. Just make sure you stay on the road. Most of the time.</p> 
+           <p><em>How do you find balance in your life, especially on the road?</em></p> 
+           <p><em>**You can find the cool bracelet I was talking about here at <a href="http://mylokai.com/" target="_blank">My Lokai</a>.</em></p> 
+           <p><img class="aligncenter wp-image-11782 size-medium" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2015/01/IMG_3528-copy-2-650x433.jpg" alt="finding balance while traveling" width="650" height="433"></p> 
+           <div class="nc_socialPanel swp_flatFresh swp_d_fullColor swp_i_fullColor swp_o_fullColor scale-100 scale-fullWidth" data-position="below" data-float="floatLeft" data-count="5" data-floatcolor="#ffffff" data-emphasize="0">
+            <div class="nc_tweetContainer swp_fb" data-id="4" data-network="facebook">
+             <a rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" data-link="http://www.facebook.com/share.php?u=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-facebook"></i><span class="swp_share"> Share</span></span></span><span class="swp_count">91</span></a>
+            </div>
+            <div class="nc_tweetContainer twitter" data-id="3" data-network="twitter">
+             <a rel="nofollow" target="_blank" href="https://twitter.com/share?original_referer=/&amp;text=Ups+and+downs%2C+highs+and+lows+and+the+importance+of+finding+balance&amp;url=https://youngadventuress.com/2015/01/finding-balance-while-traveling.html&amp;via=YoungAdventures" data-link="https://twitter.com/share?original_referer=/&amp;text=Ups+and+downs%2C+highs+and+lows+and+the+importance+of+finding+balance&amp;url=https://youngadventuress.com/2015/01/finding-balance-while-traveling.html&amp;via=YoungAdventures" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-twitter"></i><span class="swp_share"> Tweet</span></span></span><span class="swp_count">39</span></a>
+            </div>
+            <div class="nc_tweetContainer googlePlus" data-id="2" data-network="google_plus">
+             <a rel="nofollow" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" data-link="https://plus.google.com/share?url=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-google-plus"></i><span class="swp_share"> +1</span></span></span><span class="swp_count">1</span></a>
+            </div>
+            <div class="nc_tweetContainer nc_pinterest" data-id="5" data-network="pinterest">
+             <a rel="nofollow" onclick="var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e);" class="nc_tweet noPop"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-pinterest"></i><span class="swp_share"> Pin</span></span></span><span class="swp_count">4</span></a>
+            </div>
+            <div class="nc_tweetContainer totes totesalt" data-id="6">
+             <span class="swp_count"><span class="swp_label">Shares</span> 135</span>
+            </div>
+           </div>
+           <div class="swp-content-locator"></div> 
+           <div class="entry-meta"> 
+            <span class="post-title">Written by <a href="https://youngadventuress.com" title="Visit Liz’s website" rel="author external">Liz</a></span>
+            <span class="post-title"> and was published on January 31, 2015</span>
+            <span class="cat-links"> in <a href="https://youngadventuress.com/category/confessions" rel="category tag">Confessions</a>, <a href="https://youngadventuress.com/category/get-inspired" rel="category tag">Get Inspired</a></span> 
+           </div>
+           <!-- .entry-meta --> 
+           <nav role="navigation" id="nav-below" class="site-navigation post-navigation"> 
+            <div class="nav-previous">
+             <a href="https://youngadventuress.com/2015/01/tropical-north-queensland.html" rel="prev"><span class="meta-nav">←</span> Previous Story</a>
+            </div> 
+            <div class="nav-next">
+             <a href="https://youngadventuress.com/2015/02/how-to-start-a-blog.html" rel="next">Next Adventure <span class="meta-nav">→</span></a>
+            </div> 
+           </nav>
+           <!-- #nav-below --> 
+          </div> 
+         </div> 
+        </div> 
+        <section class="bio box"> 
+         <div class="container"> 
+          <div class="row"> 
+           <div class="col-md-12"> 
+            <h2 class="bio__heading">About the author</h2> 
+           </div> 
+           <figure class="bio__avatar col-sm-2 col-xs-4"> 
+            <img alt="" src="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=512&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=1024&amp;d=mm&amp;r=r 2x" class="avatar avatar-512 photo" height="512" width="512"> 
+           </figure> 
+           <aside class="bio__content col-sm-10 col-xs-8"> 
+            <h5 class="bio__name">Liz</h5> 
+            <p class="bio__text">Hi, I'm Liz, and I got my first taste for traveling when I was 16 years old. On my own, 10 years and 50 something countries later, my wanderlust has only grown and the list of countries I want to visit longer.</p> 
+           </aside> 
+          </div> 
+         </div> 
+        </section>
+        <!-- /.bio --> 
+       </div>
+       <!-- .entry-content --> 
+       <section class="subscribe-bar box"> 
+        <div class="container"> 
+         <div class="single-border"> 
+          <div class="row"> 
+           <div class="col-md-6 text-center"> 
+            <div class="subscribe-bar__social">
+              Find me on 
+             <a class="subscribe-bar__link grey-link" href="https://www.instagram.com/youngadventuress/"><span class="icon-instagram"></span></a> or 
+             <a class="subscribe-bar__link grey-link" href="https://www.facebook.com/YoungAdventuress"><span class="icon-facebook"></span></a> or I'll email you! 
+            </div> 
+           </div> 
+           <div class="col-md-6 text-center"> 
+            <div class="subscribe-bar__mailchimp"> 
+             <script type="text/javascript">(function() {
+	if (!window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push({
+						event   : event,
+						callback: callback
+					});
+				}
+			}
+		}
+	}
+})();
+</script>
+             <!-- MailChimp for WordPress v4.1.9 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+             <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-16525" method="post" data-id="16525" data-name="Subscribe">
+              <div class="mc4wp-form-fields">
+               <label for="EMAIL" class="sr-only">Email address: </label> 
+               <input type="email" class="subscribe-bar__input" name="EMAIL" placeholder="Your Email Goes Here" required> 
+               <input type="submit" class="subscribe-bar__submit" value="Submit">
+               <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label>
+               <input type="hidden" name="_mc4wp_timestamp" value="1507036189">
+               <input type="hidden" name="_mc4wp_form_id" value="16525">
+               <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+              </div>
+              <div class="mc4wp-response"></div>
+             </form>
+             <!-- / MailChimp for WordPress Plugin --> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section>
+       <!-- /.subscribe-bar --> 
+      </article>
+      <!-- #post-## --> 
+      <div class="container"> 
+       <div class="row"> 
+        <div class="col-md-12"> 
+         <div id="comments" class="comments-area"> 
+          <h2 class="comments-title"> 89 Comments on “<span>Ups and downs, highs and lows and the importance of finding balance</span>” </h2> 
+          <div id="respond" class="comment-respond"> 
+           <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2015/01/finding-balance-while-traveling.html#respond" style="display:none;">Cancel reply</a></small></h3> 
+           <form action="https://youngadventuress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate> 
+            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+            <div class="form-group comment-form-comment"> 
+             <label for="comment">Comment</label> 
+             <textarea placeholder="Your comment" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea> 
+            </div>
+            <div class="row">
+             <div class="form-group comment-form-author col-md-3">
+              <label for="author">Name <span class="required">*</span></label> 
+              <input class="form-control" id="author" name="author" type="text" placeholder="Name" value="" size="30" aria-required="true">
+             </div> 
+             <div class="form-group comment-form-email col-md-3">
+              <label for="email">Email <span class="required">*</span></label> 
+              <input class="form-control" id="email" name="email" type="email" value="" size="30" " placeholder="Email" aria-required="true">
+             </div> 
+             <div class="form-group comment-form-url col-md-3">
+              <label for="url">Website</label> 
+              <input placeholder="Website(optional)" class="form-control" id="url" name="url" type="url" value="" size="30">
+             </div> 
+             <p class="form-submit"></p>
+             <div class="form-group col-md-3 text-right">
+              <input name="submit" type="submit" id="submit" class="btn btn-danger" value="Comment!">
+             </div>
+            </div> 
+            <input type="hidden" name="comment_post_ID" value="11967" id="comment_post_ID"> 
+            <input type="hidden" name="comment_parent" id="comment_parent" value="0"> 
+            <p></p>
+            <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="468b89f239"></p>
+            <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="44"></p> 
+           </form> 
+          </div>
+          <!-- #respond --> 
+          <ol class="comment-list"> 
+           <li id="comment-234675" class="comment even thread-even depth-1 parent"> 
+            <article id="div-comment-234675" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="https://secure.gravatar.com/avatar/96c4125ef3e0310ed8dbe907f4017875?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/96c4125ef3e0310ed8dbe907f4017875?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+               <b class="fn"><a href="http://Www.wildimagining.com" rel="external nofollow" class="url">Jenna Thomas</a></b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-234675"> <time datetime="2015-01-31T21:14:16+00:00"> January 31, 2015 at 9:14 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>So, I totally relate to this post and have been thinking a lot about this stuff since my husband and I started traveling full-time a month ago. Balance is soooo important and even though I love my husband–still gotta get that me time!</p> 
+              <p>But the main reason I wanted to comment is because I am EXACTLY the same way about animals. Have you heard Kristen Bell’s story about meeting a sloth for her birthday? That is my dream. I can’t even imagine holding a kiwi though, that’s like, next level.</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=234675#respond" onclick="return addComment.moveForm( &quot;div-comment-234675&quot;, &quot;234675&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Jenna Thomas">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> 
+            <ol class="children"> 
+             <li id="comment-235048" class="comment byuser comment-author-elizabeth bypostauthor odd alt depth-2"> 
+              <article id="div-comment-235048" class="comment-body"> 
+               <footer class="comment-meta"> 
+                <div class="comment-author vcard"> 
+                 <img alt="" src="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+                 <b class="fn"><a href="https://youngadventuress.com" rel="external nofollow" class="url">Liz</a></b> 
+                 <span class="says">says:</span> 
+                </div>
+                <!-- .comment-author --> 
+                <div class="comment-metadata"> 
+                 <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-235048"> <time datetime="2015-02-01T16:11:59+00:00"> February 1, 2015 at 4:11 pm </time> </a> 
+                </div>
+                <!-- .comment-metadata --> 
+               </footer>
+               <!-- .comment-meta --> 
+               <div class="comment-content"> 
+                <p>thanks! Yeah totally seen it, that’s where I got the emotional scale reference haha</p> 
+               </div>
+               <!-- .comment-content --> 
+               <div class="reply">
+                <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=235048#respond" onclick="return addComment.moveForm( &quot;div-comment-235048&quot;, &quot;235048&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Liz">Reply</a>
+               </div> 
+              </article>
+              <!-- .comment-body --> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+           <li id="comment-234652" class="comment even thread-odd thread-alt depth-1 parent"> 
+            <article id="div-comment-234652" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="https://secure.gravatar.com/avatar/bbcec469bf31d0dbdb2e38910ee8d95c?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/bbcec469bf31d0dbdb2e38910ee8d95c?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+               <b class="fn"><a href="http://www.hippie-inheels.com" rel="external nofollow" class="url">Rachel of Hippie in Heels</a></b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-234652"> <time datetime="2015-01-31T20:23:30+00:00"> January 31, 2015 at 8:23 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>Thanks for sharing and I’m so sorry to hear about your friends’ brother.</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=234652#respond" onclick="return addComment.moveForm( &quot;div-comment-234652&quot;, &quot;234652&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Rachel of Hippie in Heels">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> 
+            <ol class="children"> 
+             <li id="comment-235047" class="comment byuser comment-author-elizabeth bypostauthor odd alt depth-2"> 
+              <article id="div-comment-235047" class="comment-body"> 
+               <footer class="comment-meta"> 
+                <div class="comment-author vcard"> 
+                 <img alt="" src="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+                 <b class="fn"><a href="https://youngadventuress.com" rel="external nofollow" class="url">Liz</a></b> 
+                 <span class="says">says:</span> 
+                </div>
+                <!-- .comment-author --> 
+                <div class="comment-metadata"> 
+                 <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-235047"> <time datetime="2015-02-01T16:11:38+00:00"> February 1, 2015 at 4:11 pm </time> </a> 
+                </div>
+                <!-- .comment-metadata --> 
+               </footer>
+               <!-- .comment-meta --> 
+               <div class="comment-content"> 
+                <p>thanks, yeah not been the best year, and really hard to be on the other side of hte world for that :/</p> 
+               </div>
+               <!-- .comment-content --> 
+               <div class="reply">
+                <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=235047#respond" onclick="return addComment.moveForm( &quot;div-comment-235047&quot;, &quot;235047&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Liz">Reply</a>
+               </div> 
+              </article>
+              <!-- .comment-body --> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+           <li id="comment-234623" class="comment even thread-even depth-1 parent"> 
+            <article id="div-comment-234623" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="https://secure.gravatar.com/avatar/c9d9f9ac072cb7af6f87004fdd51f200?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/c9d9f9ac072cb7af6f87004fdd51f200?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+               <b class="fn"><a href="http://thelousytraveler.com/" rel="external nofollow" class="url">The Lousy Traveler</a></b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-234623"> <time datetime="2015-01-31T19:35:38+00:00"> January 31, 2015 at 7:35 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>First (and I wanted to say that for ages): I admire your ability to write really long posts that are entertaining throughout each paragraph. How exactly you manage that is a mystery to me.<br> Second: I also greatly admire your ability to show your feelings/opinions on the sleeve. Better to be blunt (not that you are) than bland, at least in my book. I like opinionated/strongly feeling people as they are just simply interesting. How am I going to want to meet someone again if everything is ‘fine’ for them? (Hint: I’m not going to.)<br> Third: I understand just how infuriating it is when people assume things about you for no reason (like people telling you you’re ‘lucky’). Recently I’ve moved to another country – mainly to pursue my career – and it would be hard for me to explain in one paragraph just how maddening it is for me that people around assume that if I left my country it is because said country is a stinking hole and I should be forever greatful for the opportunity – for the record, it is NOT and I am moderately, reasonably appreciative.<br> Altogether: a great post, thanks!</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=234623#respond" onclick="return addComment.moveForm( &quot;div-comment-234623&quot;, &quot;234623&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to The Lousy Traveler">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> 
+            <ol class="children"> 
+             <li id="comment-235046" class="comment byuser comment-author-elizabeth bypostauthor odd alt depth-2"> 
+              <article id="div-comment-235046" class="comment-body"> 
+               <footer class="comment-meta"> 
+                <div class="comment-author vcard"> 
+                 <img alt="" src="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+                 <b class="fn"><a href="https://youngadventuress.com" rel="external nofollow" class="url">Liz</a></b> 
+                 <span class="says">says:</span> 
+                </div>
+                <!-- .comment-author --> 
+                <div class="comment-metadata"> 
+                 <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-235046"> <time datetime="2015-02-01T16:07:34+00:00"> February 1, 2015 at 4:07 pm </time> </a> 
+                </div>
+                <!-- .comment-metadata --> 
+               </footer>
+               <!-- .comment-meta --> 
+               <div class="comment-content"> 
+                <p>Totally agree!</p> 
+               </div>
+               <!-- .comment-content --> 
+               <div class="reply">
+                <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=235046#respond" onclick="return addComment.moveForm( &quot;div-comment-235046&quot;, &quot;235046&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Liz">Reply</a>
+               </div> 
+              </article>
+              <!-- .comment-body --> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+           <li id="comment-234619" class="comment even thread-odd thread-alt depth-1 parent"> 
+            <article id="div-comment-234619" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="https://secure.gravatar.com/avatar/7aa5e87f631eb6a534b2a0fba6c73335?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/7aa5e87f631eb6a534b2a0fba6c73335?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+               <b class="fn"><a href="http://meaningofmomentum.com/" rel="external nofollow" class="url">Miquel</a></b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-234619"> <time datetime="2015-01-31T19:27:31+00:00"> January 31, 2015 at 7:27 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>Yup ups and downs are an inherent part of life and definitely amplified during travel. I think we all experience this. Some of us are just better at hiding it than others. I like to remember without the lows we couldn’t appreciate the highs.</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=234619#respond" onclick="return addComment.moveForm( &quot;div-comment-234619&quot;, &quot;234619&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Miquel">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> 
+            <ol class="children"> 
+             <li id="comment-235045" class="comment byuser comment-author-elizabeth bypostauthor odd alt depth-2 parent"> 
+              <article id="div-comment-235045" class="comment-body"> 
+               <footer class="comment-meta"> 
+                <div class="comment-author vcard"> 
+                 <img alt="" src="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+                 <b class="fn"><a href="https://youngadventuress.com" rel="external nofollow" class="url">Liz</a></b> 
+                 <span class="says">says:</span> 
+                </div>
+                <!-- .comment-author --> 
+                <div class="comment-metadata"> 
+                 <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-235045"> <time datetime="2015-02-01T16:06:27+00:00"> February 1, 2015 at 4:06 pm </time> </a> 
+                </div>
+                <!-- .comment-metadata --> 
+               </footer>
+               <!-- .comment-meta --> 
+               <div class="comment-content"> 
+                <p>That’s such a good way to think about it!</p> 
+               </div>
+               <!-- .comment-content --> 
+               <div class="reply">
+                <a rel="nofollow" class="comment-reply-link" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html?replytocom=235045#respond" onclick="return addComment.moveForm( &quot;div-comment-235045&quot;, &quot;235045&quot;, &quot;respond&quot;, &quot;11967&quot; )" aria-label="Reply to Liz">Reply</a>
+               </div> 
+              </article>
+              <!-- .comment-body --> 
+              <ol class="children"> 
+               <li id="comment-235109" class="comment even depth-3 parent"> 
+                <article id="div-comment-235109" class="comment-body"> 
+                 <footer class="comment-meta"> 
+                  <div class="comment-author vcard"> 
+                   <img alt="" src="https://secure.gravatar.com/avatar/44aad4581e1c63248991f022b3855611?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/44aad4581e1c63248991f022b3855611?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+                   <b class="fn"><a href="http://Non" rel="external nofollow" class="url">Abdur Rauf</a></b> 
+                   <span class="says">says:</span> 
+                  </div>
+                  <!-- .comment-author --> 
+                  <div class="comment-metadata"> 
+                   <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-235109"> <time datetime="2015-02-01T19:34:30+00:00"> February 1, 2015 at 7:34 pm </time> </a> 
+                  </div>
+                  <!-- .comment-metadata --> 
+                 </footer>
+                 <!-- .comment-meta --> 
+                 <div class="comment-content"> 
+                  <p>I read your story on BBC (How I quit my job) your story change my mind, I always have been fond of adventure and travel before reading your blog I always Imagined my self traveling on Karakuram High way from Islamabad to china. </p> 
+                  <p>When some time I see beautiful scenes of Nature and mountains and that blue water in pictures and photo (Like in your blog Young Adventures) I feel helpless and like being kept in prison(I am working as steno in 9 to 5 in basement).</p> 
+                  <p>I am always looking for the way to quit my job but i can’t, I want to go to Himalyas, Nangaperbat and Kashmir but I can’t want to travel on Karakuram high way on motorcycle but I can’t, I want to live for myself but I can’t. When I saw your blog and read your story. It make my happy that some one is living my dream. </p> 
+                  <p>From Pakistan, Islamabad. your fan.</p> 
+                 </div>
+                 <!-- .comment-content --> 
+                </article>
+                <!-- .comment-body --> </li>
+               <!-- #comment-## --> 
+               <li id="comment-235332" class="comment byuser comment-author-elizabeth bypostauthor odd alt depth-3"> 
+                <article id="div-comment-235332" class="comment-body"> 
+                 <footer class="comment-meta"> 
+                  <div class="comment-author vcard"> 
+                   <img alt="" src="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=40&amp;d=mm&amp;r=r" srcset="https://secure.gravatar.com/avatar/f6c7766f3d50ab803adb924779bf3dd8?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo" height="40" width="40"> 
+                   <b class="fn"><a href="https://youngadventuress.com" rel="external nofollow" class="url">Liz</a></b> 
+                   <span class="says">says:</span> 
+                  </div>
+                  <!-- .comment-author --> 
+                  <div class="comment-metadata"> 
+                   <a href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html#comment-235332"> <time datetime="2015-02-02T09:35:03+00:00"> February 2, 2015 at 9:35 am </time> </a> 
+                  </div>
+                  <!-- .comment-metadata --> 
+                 </footer>
+                 <!-- .comment-meta --> 
+                 <div class="comment-content"> 
+                  <p>thank you!</p> 
+                 </div>
+                 <!-- .comment-content --> 
+                </article>
+                <!-- .comment-body --> </li>
+               <!-- #comment-## --> 
+              </ol>
+              <!-- .children --> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .comment-list --> 
+          <div class="comment-pagination"> 
+           <span class="page-numbers current">1</span> 
+           <a class="page-numbers" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html/comment-page-2#comments">2</a> 
+           <a class="page-numbers" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html/comment-page-3#comments">3</a> 
+           <span class="page-numbers dots">…</span> 
+           <a class="page-numbers" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html/comment-page-12#comments">12</a> 
+           <a class="next page-numbers" href="https://youngadventuress.com/2015/01/finding-balance-while-traveling.html/comment-page-2#comments">More</a> 
+          </div> 
+         </div>
+         <!-- #comments --> 
+        </div> 
+       </div> 
+      </div> 
+      <section class="stories box"> 
+       <div class="container"> 
+        <div class="section-title-wrapper"> 
+         <h2 class="section-title">Related Adventures</h2> 
+        </div> 
+        <div class="row"> 
+         <div class="rp4wp-related-posts"> 
+          <div> 
+           <div class="col-sm-4">
+            <div class="stories-item-wrapper">
+             <div class="stories-item"> 
+              <img width="433" height="433" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2013/08/253_515405591005_980_n1-433x433.jpg" class="stories-item__image wp-post-image" alt="" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2013/08/253_515405591005_980_n1-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2013/08/253_515405591005_980_n1-150x150.jpg 150w" sizes="(max-width: 433px) 100vw, 433px"> 
+              <div class="stories-item__info"> 
+               <h3 class="stories-item__title"><a class="stories-item__link" href="https://youngadventuress.com/2013/08/friendship-travel.html"><h4>On Friendship and Long-Term Travel</h4></a></h3>
+               <div class="stories-item__excerpt">
+                Around six years and two months ago I came back home to Virginia…
+                <a class="rp4wp-related-post-content__link btn btn-primary" href="https://youngadventuress.com/2013/08/friendship-travel.html">Read More</a>
+               </div>
+              </div>
+             </div>
+            </div> 
+           </div> 
+           <div class="col-sm-4">
+            <div class="stories-item-wrapper">
+             <div class="stories-item"> 
+              <img width="433" height="433" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2013/09/972224_10151552311033437_1922480936_n-copy-433x433.jpg" class="stories-item__image wp-post-image" alt="" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2013/09/972224_10151552311033437_1922480936_n-copy-433x433.jpg 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2013/09/972224_10151552311033437_1922480936_n-copy-150x150.jpg 150w" sizes="(max-width: 433px) 100vw, 433px"> 
+              <div class="stories-item__info"> 
+               <h3 class="stories-item__title"><a class="stories-item__link" href="https://youngadventuress.com/2013/09/solo-female-travel.html"><h4>The Solo Female Traveler's Manifesto</h4></a></h3>
+               <div class="stories-item__excerpt">
+                When I jumped feet first into the big, bad scary world of travel…
+                <a class="rp4wp-related-post-content__link btn btn-primary" href="https://youngadventuress.com/2013/09/solo-female-travel.html">Read More</a>
+               </div>
+              </div>
+             </div>
+            </div> 
+           </div> 
+           <div class="col-sm-4">
+            <div class="stories-item-wrapper">
+             <div class="stories-item"> 
+              <img width="433" height="433" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-23-at-6.16.20-PM-433x433.png" class="stories-item__image wp-post-image" alt="" srcset="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-23-at-6.16.20-PM-433x433.png 433w, https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-23-at-6.16.20-PM-150x150.png 150w" sizes="(max-width: 433px) 100vw, 433px"> 
+              <div class="stories-item__info"> 
+               <h3 class="stories-item__title"><a class="stories-item__link" href="https://youngadventuress.com/2012/12/importance-of-traveling.html"><h4>The Importance of Being a Traveler: 5 Lessons I've Learned</h4></a></h3>
+               <div class="stories-item__excerpt">
+                As the year is winding down, I have begun to reflect about what…
+                <a class="rp4wp-related-post-content__link btn btn-primary" href="https://youngadventuress.com/2012/12/importance-of-traveling.html">Read More</a>
+               </div>
+              </div>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="btn-wrapper"> 
+         <a href="https://youngadventuress.com/blog" class="simple-btn simple-btn--grey stories__read-more">More travel stories</a> 
+        </div> 
+       </div> 
+      </section>
+      <!-- /.stories --> 
+     </main>
+     <!-- #main --> 
+    </div>
+    <!-- #primary --> 
+   </div>
+   <!-- #content --> 
+   <section class="featured-blogs box"> 
+    <div class="container"> 
+     <div class="section-title-wrapper"> 
+      <h2 class="section-title">Featured blogs</h2> 
+     </div> 
+     <div class="text-center"> 
+      <a href="https://youngadventuress.com/featured-travel-blog" class="featured-blogs__read-more">Learn more about how to get featured.</a> 
+     </div> 
+     <div class="featured-blogs__wrapper"> 
+      <div class="featured-blogs__item"> 
+       <a href="https://www.flyingandtravel.com/new-zealand/?utm_source=youngadv&amp;utm_campaign=home" target="_blank"><img width="698" height="300" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/11/flying-and-travel-new-zealand-1.png" class="featured-blogs__image" alt=""></a> 
+      </div> 
+      <div class="featured-blogs__item"> 
+       <a href="http://girlwhotravelstheworld.com/" target="_blank"><img width="350" height="150" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/11/Girl-Who-Travels-the-World-Image.png" class="featured-blogs__image" alt=""></a> 
+      </div> 
+      <div class="featured-blogs__item"> 
+       <a href="http://www.jesuenatravels.com/" target="_blank"><img width="350" height="150" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/11/HEADER-350x150.jpg" class="featured-blogs__image" alt=""></a> 
+      </div> 
+      <div class="featured-blogs__item"> 
+       <a href="https://www.theblondenomads.com.au/" target="_blank"><img width="2000" height="857" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2012/11/TBN-150X350.jpg" class="featured-blogs__image" alt=""></a> 
+      </div> 
+     </div> 
+    </div> 
+   </section>
+   <!-- /.featured-blogs --> 
+   <footer id="colophon" class="site-footer js-lazy-bg" role="contentinfo" data-image="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/themes/pf-youngadventuress-2016/img/bg-footer.jpg" data-mobile="false"> 
+    <div class="instagram-feed box"> 
+     <div class="container"> 
+      <div class="single-border"> 
+       <h2 class="instagram-feed__heading"> Join me on Instagram <a href="https://www.instagram.com/YoungAdventuress/" target="_blank">@YoungAdventuress</a> </h2> 
+       <div id="sb_instagram" class="sbi sbi_col_5" style="width:100%; padding-bottom: 30px; " data-id="146164422" data-num="5" data-res="auto" data-cols="5" data-options="{&quot;sortby&quot;: &quot;none&quot;, &quot;showbio&quot;: &quot;true&quot;, &quot;headercolor&quot;: &quot;&quot;, &quot;imagepadding&quot;: &quot;15&quot;}">
+        <div class="sb_instagram_header" style="padding: 30px; padding-bottom: 0;"></div>
+        <div id="sbi_images" style="padding: 15px;">
+         <div class="sbi_loader fa-spin"></div>
+        </div>
+        <div id="sbi_load">
+         <a class="sbi_load_btn" href="javascript:void(0);" style="">Load More...</a>
+         <div class="sbi_follow_btn">
+          <a href="https://instagram.com/" style="" target="_blank"><i class="fa fa-instagram"></i>Follow on Instagram</a>
+         </div>
+        </div>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="site-footer__widgets-area box"> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="site-footer__widget col-md-5"> 
+        <div class="site-footer__padding"> 
+         <section id="text-102" class="footer-widget widget_text">
+          <h3 class="footer-widget__title">Who is Young Adventuress?</h3> 
+          <div class="textwidget">
+           Hi, I'm Liz, and I got my first taste for traveling when I was 16 years old. On my own, 12 years and 50 something countries later, my wanderlust has only grown and the list of countries I want to visit longer. After living in Spain for the past few years and returning home for a stint, I then quit my job and moved to New Zealand and I've been here ever since. Follow my misadventures as I wander, eat, and photograph my way around the world
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+       <div class="site-footer__widget col-md-4"> 
+        <div class="site-footer__padding"> 
+         <section id="text-103" class="footer-widget widget_text">
+          <h3 class="footer-widget__title">Get Inspired</h3> 
+          <div class="textwidget">
+           <ul id="featured-post-category" class="menu">
+            <li><a href="https://youngadventuress.com/2017/09/blogger-hate-comments.html" rel="bookmark">All the mean, nasty and godawful hateful things people say to me online</a></li>
+            <li><a href="https://youngadventuress.com/2017/09/north-island-road-trip.html" rel="bookmark">Must-dos on any North Island road trip</a></li>
+            <li><a href="https://youngadventuress.com/2017/09/sustainable-tourism.html" rel="bookmark">Is it too much to ask to save the planet?</a></li>
+            <li><a href="https://youngadventuress.com/2017/09/travel-kyrgyzstan.html" rel="bookmark">25 photos that will inspire you to visit Kyrgyzstan</a></li>
+           </ul>
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+       <div class="site-footer__widget col-md-3"> 
+        <div class="site-footer__padding-left"> 
+         <section id="text-104" class="footer-widget widget_text">
+          <h3 class="footer-widget__title">Featured Stories</h3> 
+          <div class="textwidget">
+           <ul id="featured-post-category" class="menu">
+            <li><a href="https://youngadventuress.com/2016/04/coping-with-fear-and-travel.html" rel="bookmark">My big issue with fear and travel</a></li>
+            <li><a href="https://youngadventuress.com/2016/01/dealing-with-blog-hate.html" rel="bookmark">The best hate I got in 2015</a></li>
+            <li><a href="https://youngadventuress.com/2015/09/kakapo-new-zealand.html" rel="bookmark">The Story of the Kākāpō + Giveaway</a></li>
+            <li><a href="https://youngadventuress.com/2015/09/why-experience-still-matters.html" rel="bookmark">Why Experience Still Matters</a></li>
+           </ul>
+          </div> 
+         </section>
+         <section id="search-3" class="footer-widget widget_search">
+          <h3 class="footer-widget__title">Search</h3>
+          <form role="search" method="get" class="search-form" action="https://youngadventuress.com/"> 
+           <label> <span class="screen-reader-text">Search for:</span> <input type="search" class="search-field" placeholder="Search …" value="" name="s"> </label> 
+           <input type="submit" class="search-submit" value="Search"> 
+          </form>
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="site-footer__bg-layer"></div> 
+    <div class="site-footer__site-info"> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="col-md-12"> 
+        <p> © 2017 Youngadventuress.com <span class="sep"> | </span> <a href="#">Legal</a> <span class="sep"> | </span> <a href="#">Privacy Policy</a> <span class="sep"> | </span> Site by <a href="http://performancefoundry.com" rel="designer">Performance Foundry</a> </p> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>
+   <!-- #colophon --> 
+  </div>
+  <!-- #page --> 
+  <img alt="css.php" src="https://youngadventuress.com/wp-content/plugins/cookies-for-comments/css.php?k=a73f980ad5eb7eb44f67ab25d703f358&amp;o=i&amp;t=1271844826" width="1" height="1">
+  <div class="nc_socialPanelSide nc_socialPanel swp_default swp_d_fullColor swp_i_fullColor swp_o_fullColor slide" data-position="below" data-float="floatLeft" data-count="5" data-floatcolor="#ffffff" data-screen-width="1100" data-transition="slide" data-mobilefloat="off">
+   <div class="nc_tweetContainer totes totesalt" data-id="6">
+    <span class="swp_count">135</span>
+    <span class="swp_label"> Shares</span>
+   </div>
+   <div class="nc_tweetContainer swp_fb" data-id="4" data-network="facebook">
+    <a rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" data-link="http://www.facebook.com/share.php?u=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-facebook"></i><span class="swp_share"> Share</span></span></span><span class="swp_count">91</span></a>
+   </div>
+   <div class="nc_tweetContainer twitter" data-id="3" data-network="twitter">
+    <a rel="nofollow" target="_blank" href="https://twitter.com/share?original_referer=/&amp;text=Ups+and+downs%2C+highs+and+lows+and+the+importance+of+finding+balance&amp;url=https://youngadventuress.com/2015/01/finding-balance-while-traveling.html&amp;via=YoungAdventures" data-link="https://twitter.com/share?original_referer=/&amp;text=Ups+and+downs%2C+highs+and+lows+and+the+importance+of+finding+balance&amp;url=https://youngadventuress.com/2015/01/finding-balance-while-traveling.html&amp;via=YoungAdventures" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-twitter"></i><span class="swp_share"> Tweet</span></span></span><span class="swp_count">39</span></a>
+   </div>
+   <div class="nc_tweetContainer googlePlus" data-id="2" data-network="google_plus">
+    <a rel="nofollow" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" data-link="https://plus.google.com/share?url=https%3A%2F%2Fyoungadventuress.com%2F2015%2F01%2Ffinding-balance-while-traveling.html" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-google-plus"></i><span class="swp_share"> +1</span></span></span><span class="swp_count">1</span></a>
+   </div>
+   <div class="nc_tweetContainer nc_pinterest" data-id="5" data-network="pinterest">
+    <a rel="nofollow" onclick="var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e);" class="nc_tweet noPop"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-pinterest"></i><span class="swp_share"> Pin</span></span></span><span class="swp_count">4</span></a>
+   </div>
+  </div>
+  <!-- MODAL --> 
+  <div class="modal fade" id="subscribeBox" data-backdrop="true" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+   <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> 
+     <div class="modal-header"> 
+      <h3>Emails Suck. Mine Don't.</h3> 
+     </div> 
+     <div class="modal-body"> 
+      <script type="text/javascript">(function() {
+	if (!window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push({
+						event   : event,
+						callback: callback
+					});
+				}
+			}
+		}
+	}
+})();
+</script>
+      <!-- MailChimp for WordPress v4.1.9 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+      <form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-16525" method="post" data-id="16525" data-name="Subscribe">
+       <div class="mc4wp-form-fields">
+        <input type="email" name="EMAIL" placeholder="Your Email Goes Here :)" required>
+        <input type="submit" value="Submit">
+        <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label>
+        <input type="hidden" name="_mc4wp_timestamp" value="1507036189">
+        <input type="hidden" name="_mc4wp_form_id" value="16525">
+        <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-2">
+       </div>
+       <div class="mc4wp-response"></div>
+      </form>
+      <!-- / MailChimp for WordPress Plugin --> 
+     </div> 
+     <div class="modal-feature"> 
+      <img src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2017/02/YA_popup.jpg"> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">(function() {function addEventListener(element,event,handler) {
+	if(element.addEventListener) {
+		element.addEventListener(event,handler, false);
+	} else if(element.attachEvent){
+		element.attachEvent('on'+event,handler);
+	}
+}function maybePrefixUrlField() {
+	if(this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+if( urlFields && urlFields.length > 0 ) {
+	for( var j=0; j < urlFields.length; j++ ) {
+		addEventListener(urlFields[j],'blur',maybePrefixUrlField);
+	}
+}/* test if browser supports date fields */
+var testInput = document.createElement('input');
+testInput.setAttribute('type', 'date');
+if( testInput.type !== 'date') {
+
+	/* add placeholder & pattern to all date fields */
+	var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+	for(var i=0; i<dateFields.length; i++) {
+		if(!dateFields[i].placeholder) {
+			dateFields[i].placeholder = 'YYYY-MM-DD';
+		}
+		if(!dateFields[i].pattern) {
+			dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+		}
+	}
+}
+
+})();</script>
+  <script type="text/javascript">
+/* <![CDATA[ */
+var sb_instagram_js_options = {"sb_instagram_at":"146164422.3a81a9f.3e772967b69443a1b775bd1c7fdf2010"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/instagram-feed/js/sb-instagram.min.js?ver=1.5"></script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/social-warfare/js/script.min.js?ver=2.3.3"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var subscribeSettings = {"delay":"10000","remember":"10"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/themes/pf-youngadventuress-2016/js/scripts.min.js?ver=201757655"></script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/akismet/_inc/form.js?ver=4.0"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var mc4wp_forms_config = [];
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/mailchimp-for-wp/assets/js/forms-api.min.js?ver=4.1.9"></script> 
+  <!--[if lte IE 9]>
+<script type='text/javascript' src='https://20843-presscdn-pagely.netdna-ssl.com/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=4.1.9'></script>
+<![endif]--> 
+  <script type="text/javascript">var swpClickTracking = false; var swp_nonce = "21ed19fa09";
+		var swp_buttons_exist = !!document.getElementsByClassName( 'nc_socialPanel' );
+		if ( swp_buttons_exist ) {
+			swp_admin_ajax = 'https://youngadventuress.com/wp-admin/admin-ajax.php';
+			swp_post_id='11967';
+			swp_post_url='https://youngadventuress.com/2015/01/finding-balance-while-traveling.html';
+			swp_post_recovery_url = '';
+			socialWarfarePlugin.fetchShares();
+		}
+
+		</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"073b4df364","applicationID":"44658785","transactionName":"ZQZWMhBXVxYAUxdYDFxMdQUWX1YLTkMKXwReBg==","queueTime":0,"applicationTime":188,"atts":"SUFVRFhNRBg=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

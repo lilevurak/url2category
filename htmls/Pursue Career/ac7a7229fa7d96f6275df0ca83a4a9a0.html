@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en-CA" class="no-js no-svg">
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE"> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <script>var h=document.getElementsByTagName('html')[0];h.className=h.className.replace('no-js','js-enabled')</script> 
+  <title>Sheryl Chamberlain – Capgemini Canada</title> 
+  <link rel="dns-prefetch" href="//secure.gravatar.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Capgemini Canada » Feed" href="https://www.capgemini.com/ca-en/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Capgemini Canada » Comments Feed" href="https://www.capgemini.com/ca-en/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Capgemini Canada - Testimonials Feed" href="https://www.capgemini.com/ca-en/employee-stories/feed/"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.capgemini.com\/ca-en\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="all-css-0" href="https://www.capgemini.com/ca-en/_static/??/wp-content/themes/capgemini/assets/css/style.css,/wp-content/mu-plugins/jetpack/css/jetpack.css?m=1506408496" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/js/libs/lodash.min.js?m=1506408496g"></script> 
+  <link rel="https://api.w.org/" href="https://www.capgemini.com/ca-en/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.capgemini.com/ca-en/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.capgemini.com/ca-en/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="canonical" href="https://www.capgemini.com/ca-en/testimonials/sheryl-chamberlain/"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.capgemini.com/ca-en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.capgemini.com%2Fca-en%2Ftestimonials%2Fsheryl-chamberlain%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.capgemini.com/ca-en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.capgemini.com%2Fca-en%2Ftestimonials%2Fsheryl-chamberlain%2F&amp;format=xml"> 
+  <link rel="dns-prefetch" href="//v0.wordpress.com"> 
+  <style type="text/css">img#wpstats{display:none}</style> 
+  <!-- Jetpack Open Graph Tags --> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Sheryl Chamberlain"> 
+  <meta property="og:url" content="https://www.capgemini.com/ca-en/testimonials/sheryl-chamberlain/"> 
+  <meta property="og:description" content="The Power of Women’s Spirit Through the power of women’s entrepreneurial and business spirit we target growth and prosperity that address not only the business aspects of change but also social con…"> 
+  <meta property="article:published_time" content="2017-07-26T14:37:06+00:00"> 
+  <meta property="article:modified_time" content="2017-07-27T21:11:08+00:00"> 
+  <meta property="og:site_name" content="Capgemini Canada"> 
+  <meta property="og:image" content="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/sheryl_jump.jpg"> 
+  <meta name="twitter:card" content="summary"> 
+ </head> 
+ <body class="testimonial-template-default single single-testimonial postid-7778"> 
+  <script>var dataLayer = [{"post_type":"testimonial","post_id":7778,"blog":"https:\/\/www.capgemini.com\/ca-en","network":"https:\/\/www.capgemini.com\/","u1":"Sheryl Chamberlain","u2":"CA","u3":"en_CA","author":"Rahul Pandhare","date_posted":"2017-07-26 07:37:06"}];</script> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TTXZZ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+				var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+				j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-TTXZZ8N');</script> 
+  <!-- End Google Tag Manager --> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TF6CWNB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+				var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+				j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-TF6CWNB');</script> 
+  <!-- End Google Tag Manager --> 
+  <header class="header"> 
+   <div class="header__top container-full"> 
+    <nav class="header__nav"> 
+     <a href="#footer" class="header__nav__mobile hidden-lg-up"><span class="sr-only">Toggle menu</span> <i aria-hidden="true" class="icon-android-menu"></i></a> 
+     <div class="menu-all-pages-container"> 
+      <ul id="menu-main-menu" class="menu">
+       <li id="menu-item-17359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17359"><a href="https://www.capgemini.com/ca-en/industries/">Industries</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-17410" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17410"><a href="https://www.capgemini.com/ca-en/industry/automotive/">Automotive</a></li> 
+         <li id="menu-item-17412" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17412"><a href="https://www.capgemini.com/ca-en/industry/electronics-high-tech/">Electronics &amp; High Tech</a></li> 
+         <li id="menu-item-17405" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17405"><a href="https://www.capgemini.com/ca-en/industry/government-public-sector/">Government &amp; Public Sector</a></li> 
+         <li id="menu-item-17411" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17411"><a href="https://www.capgemini.com/ca-en/industry/consumer-products-retail/">Consumer Products &amp; Retail</a></li> 
+         <li id="menu-item-17406" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17406"><a href="https://www.capgemini.com/ca-en/industry/healthcare-life-sciences/">Healthcare &amp; Life Sciences</a></li> 
+         <li id="menu-item-17407" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17407"><a href="https://www.capgemini.com/ca-en/industry/insurance/">Insurance</a></li> 
+         <li id="menu-item-17408" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17408"><a href="https://www.capgemini.com/ca-en/industry/manufacturing-industrial-products/">Manufacturing &amp; Industrial Products</a></li> 
+         <li id="menu-item-17402" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17402"><a href="https://www.capgemini.com/ca-en/industry/natural-resources-2/">Natural Resources</a></li> 
+         <li id="menu-item-17409" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17409"><a href="https://www.capgemini.com/ca-en/industry/media-entertainment/">Media &amp; Entertainment</a></li> 
+         <li id="menu-item-17404" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17404"><a href="https://www.capgemini.com/ca-en/industry/telecoms/">Telecoms</a></li> 
+         <li id="menu-item-17403" class="menu-item menu-item-type-post_type menu-item-object-industry menu-item-17403"><a href="https://www.capgemini.com/ca-en/industry/transportation/">Transportation &amp; Distribution</a></li> 
+         <li id="menu-item-17360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17360"><a href="https://www.capgemini.com/ca-en/industries/">All industries</a></li> 
+        </ul> </li> 
+       <li id="menu-item-17345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17345"><a href="https://www.capgemini.com/ca-en/our-services/">Services</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-17348" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-17348"><a href="https://www.capgemini.com/ca-en/service/transformation-innovation/">Transformation &amp; Innovation</a> 
+          <ul class="sub-menu"> 
+           <li id="menu-item-17394" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17394"><a href="https://www.capgemini.com/ca-en/service/transformation-innovation/applied-innovation-exchange/">Applied Innovation</a></li> 
+           <li id="menu-item-17352" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17352"><a href="https://www.capgemini.com/consulting/service/finance-transformation/">Finance Transformation</a></li> 
+           <li id="menu-item-17353" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17353"><a href="https://www.capgemini.com/consulting/service/supply-chain-management/">Supply Chain Transformation</a></li> 
+           <li id="menu-item-17351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17351"><a href="https://www.capgemini.com/consulting/service/hr-transformation/">HR Transformation</a></li> 
+           <li id="menu-item-17349" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17349"><a href="https://www.capgemini.com/consulting/service/business-technology-innovation/">Business &amp; Technology Transformation</a></li> 
+           <li id="menu-item-17350" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17350"><a href="https://www.capgemini.com/consulting/service/digital-strategy-transformation/">Digital Strategy &amp; Transformation</a></li> 
+          </ul> </li> 
+         <li id="menu-item-17346" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-17346"><a title="Disrupt with Digital" href="https://www.capgemini.com/ca-en/service/digital-services/">Digital Services</a> 
+          <ul class="sub-menu"> 
+           <li id="menu-item-17347" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17347"><a href="https://www.capgemini.com/consulting/service/digital-strategy-transformation/">Digital Strategy &amp; Transformation</a></li> 
+           <li id="menu-item-17376" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17376"><a href="https://www.capgemini.com/ca-en/service/digital-services/digital-manufacturing/">Digital Manufacturing</a></li> 
+           <li id="menu-item-17377" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17377"><a href="https://www.capgemini.com/ca-en/service/digital-services/digital-customer-experience/">Digital Customer Experience</a></li> 
+           <li id="menu-item-17378" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17378"><a href="https://www.capgemini.com/ca-en/service/digital-services/insights-data-2/">Insights &amp; Data</a></li> 
+           <li id="menu-item-17379" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17379"><a href="https://www.capgemini.com/ca-en/service/digital-services/product-and-engineering-services/">Product &amp; Engineering Services</a></li> 
+          </ul> </li> 
+         <li id="menu-item-17369" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-17369"><a href="https://www.capgemini.com/ca-en?p=15604&amp;post_type=service&amp;preview_id=15604">Cloud Services</a> 
+          <ul class="sub-menu"> 
+           <li id="menu-item-17370" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17370"><a href="https://www.capgemini.com/ca-en/service/cloud-services/cloud-strategy/">Advise</a></li> 
+           <li id="menu-item-17371" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17371"><a href="https://www.capgemini.com/ca-en/service/cloud-services/workloads-assessment/">Align</a></li> 
+           <li id="menu-item-17372" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17372"><a href="https://www.capgemini.com/ca-en/service/cloud-services/dedicated-private-cloud/">Animate</a></li> 
+          </ul> </li> 
+         <li id="menu-item-17395" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-17395"><a href="https://www.capgemini.com/ca-en/service/technology-operations/">Technology Solutions</a> 
+          <ul class="sub-menu"> 
+           <li id="menu-item-17399" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17399"><a href="https://www.capgemini.com/ca-en/service/technology-operations/infrastructure-services/">Infrastructure Services</a></li> 
+           <li id="menu-item-17396" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17396"><a href="https://www.capgemini.com/ca-en/service/technology-operations/application-development-maintenance-services/">Application Development &amp; Maintenance Services</a></li> 
+           <li id="menu-item-17397" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17397"><a href="https://www.capgemini.com/ca-en/service/technology-operations/testing-services/">Testing Services</a></li> 
+           <li id="menu-item-17398" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17398"><a href="https://www.capgemini.com/ca-en/service/automation-drive/">Automation</a></li> 
+          </ul> </li> 
+         <li id="menu-item-17361" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-17361"><a href="https://www.capgemini.com/ca-en/service/business-services/">Business Operations</a> 
+          <ul class="sub-menu"> 
+           <li id="menu-item-17367" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17367"><a href="https://www.capgemini.com/ca-en/service/business-services/transform-your-finance-operations/">Transform your Finance Operations</a></li> 
+           <li id="menu-item-17368" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17368"><a href="https://www.capgemini.com/ca-en/service/business-services/optimize-your-supply-chain-and-vendor-performance/">Optimize your Supply Chain</a></li> 
+           <li id="menu-item-17363" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17363"><a href="https://www.capgemini.com/ca-en/service/business-services/retain-and-engage-employees/">Retain &amp; engage employees</a></li> 
+           <li id="menu-item-17364" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17364"><a href="https://www.capgemini.com/ca-en/service/business-services/gain-more-insights-from-business-analytics/">Gain more insights from business analytics</a></li> 
+           <li id="menu-item-17365" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17365"><a href="https://www.capgemini.com/ca-en/service/business-services/enrich-your-customer-interactions/">Enrich your customer interactions</a></li> 
+           <li id="menu-item-17366" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17366"><a href="https://www.capgemini.com/ca-en/service/business-services/better-manage-risk-and-compliance/">Better manage risk &amp; compliance</a></li> 
+           <li id="menu-item-17362" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17362"><a href="https://www.capgemini.com/ca-en/service/business-services/business-process-as-a-service-bpaas/">Business Process-as-a-Service (BPaaS)</a></li> 
+          </ul> </li> 
+         <li id="menu-item-17391" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-17391"><a href="https://www.capgemini.com/ca-en/service/cybersecurity-risk/">Cybersecurity &amp; Risk</a> 
+          <ul class="sub-menu"> 
+           <li id="menu-item-17393" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17393"><a href="https://www.capgemini.com/ca-en/service/cybersecurity-risk/cybersecurity-services-2/">Cybersecurity Services</a></li> 
+           <li id="menu-item-17392" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-17392"><a href="https://www.capgemini.com/ca-en/service/cybersecurity-risk/risk-compliance/">Risk &amp; Compliance</a></li> 
+          </ul> </li> 
+         <li id="menu-item-17358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17358"><a href="https://www.capgemini.com/ca-en/our-services/">All our services</a></li> 
+        </ul> </li> 
+       <li id="menu-item-17356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17356"><a href="https://www.capgemini.com/ca-en/global-technology-partners/">Partners</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-17390" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17390"><a href="https://www.capgemini.com/ca-en/partner/amazon-web-services/">Amazon Web Services</a></li> 
+         <li id="menu-item-17388" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17388"><a href="https://www.capgemini.com/ca-en/partner/dell-emc/">Dell EMC</a></li> 
+         <li id="menu-item-17389" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17389"><a href="https://www.capgemini.com/ca-en/partner/google-cloud/">Google</a></li> 
+         <li id="menu-item-17385" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17385"><a href="https://www.capgemini.com/ca-en/partner/hpe-2/">HPE</a></li> 
+         <li id="menu-item-17386" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17386"><a href="https://www.capgemini.com/ca-en/partner/ibm/">IBM</a></li> 
+         <li id="menu-item-17387" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17387"><a href="https://www.capgemini.com/ca-en/partner/intel/">Intel</a></li> 
+         <li id="menu-item-17380" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17380"><a href="https://www.capgemini.com/ca-en/partner/microsoft/">Microsoft</a></li> 
+         <li id="menu-item-17383" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17383"><a href="https://www.capgemini.com/ca-en/partner/oracle/">Oracle</a></li> 
+         <li id="menu-item-17384" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17384"><a href="https://www.capgemini.com/ca-en/partner/pega/">Pega</a></li> 
+         <li id="menu-item-17382" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17382"><a href="https://www.capgemini.com/ca-en/partner/salesforce/">Salesforce</a></li> 
+         <li id="menu-item-17381" class="menu-item menu-item-type-post_type menu-item-object-partner menu-item-17381"><a href="https://www.capgemini.com/ca-en?p=15685&amp;post_type=partner&amp;preview_id=15685">SAP</a></li> 
+         <li id="menu-item-17357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17357"><a href="https://www.capgemini.com/ca-en/global-technology-partners/">All our partners</a></li> 
+        </ul> </li> 
+       <li id="menu-item-17401" class="menu-item menu-item-type-post_type_archive menu-item-object-expert menu-item-17401"><a href="https://www.capgemini.com/ca-en/experts/">Our Experts</a></li> 
+       <li id="menu-item-17355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17355"><a href="https://www.capgemini.com/ca-en/insights-news/">Insights &amp; News</a></li> 
+       <li id="menu-item-17335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17335"><a href="https://www.capgemini.com/ca-en/our-company/">About us</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-20930" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20930"><a href="http://capgemini50.com/">Capgemini at 50</a></li> 
+         <li id="menu-item-17354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17354"><a href="https://www.capgemini.com/ca-en/our-company/">Our Company</a></li> 
+         <li id="menu-item-20928" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20928"><a href="https://www.capgemini.com/ca-en/our-corporate-responsibility-sustainability-approach/">Corporate Responsibility</a></li> 
+         <li id="menu-item-17400" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17400"><a href="http://investors.capgemini.com">Investors</a></li> 
+         <li id="menu-item-17336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17336"><a href="https://www.capgemini.com/ca-en/contact-us/">Find us</a></li> 
+         <li id="menu-item-20929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20929"><a href="https://www.capgemini.com/ca-en/contact-capgemini/">Contact Us</a></li> 
+        </ul> </li> 
+       <li id="menu-item-17338" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17338"><a href="https://www.capgemini.com/ca-en/careers/">Careers</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-17341" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17341"><a href="https://www.capgemini.com/ca-en/careers/career-paths/">Career paths</a></li> 
+         <li id="menu-item-17342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17342"><a href="https://www.capgemini.com/ca-en/careers/learning-development/">Learning &amp; Development</a></li> 
+         <li id="menu-item-17343" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17343"><a href="https://www.capgemini.com/ca-en/careers/life-at-capgemini/">Life at Capgemini</a></li> 
+         <li id="menu-item-17340" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17340"><a href="https://www.capgemini.com/ca-en/careers/life-at-capgemini/respect-for-diversity/">Diversity</a></li> 
+         <li id="menu-item-17344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17344"><a href="https://www.capgemini.com/ca-en/employee-stories/">Employee stories</a></li> 
+         <li id="menu-item-17339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17339"><a href="https://www.capgemini.com/ca-en/careers/job-search/">Job search</a></li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+    </nav> 
+    <a href="https://www.capgemini.com/ca-en/" class="header__logo"><img src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/images/logo_cap.svg" alt="Capgemini Canada"></a> 
+    <div class="header__right"> 
+     <button class="header__locations"><span class="hidden-lg-down">Locations</span><i class="icon-globe hidden-xl-up" aria-hidden="true"></i></button> 
+     <div class="header__window header__window--locations"> 
+      <div class="container"> 
+       <div class="row"> 
+        <h2 class="section__regular-title col-12">Select your location:</h2> 
+       </div> 
+       <nav class="row"> 
+        <div class="col-12 col-md-4 col-lg-2">
+         <h3 class="locations__header">Worldwide</h3>
+         <ul class="locations__list">
+          <li><a href="https://www.capgemini.com/">Global | EN</a></li>
+         </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+         <h3 class="locations__header">Americas</h3>
+         <ul class="locations__list">
+          <li><a href="https://www.capgemini.com/ar-es/">Argentina | ES</a></li>
+          <li><a href="https://www.capgemini.com/br-pt/">Brazil | PT</a></li>
+          <li><a href="https://www.capgemini.com/ca-en/">Canada | EN</a></li>
+          <li><a href="https://www.capgemini.com/ca-fr/">Canada | FR</a></li>
+          <li><a href="https://www.capgemini.com/mx-es/">Mexico | ES</a></li>
+          <li><a href="https://www.capgemini.com/us-en/">United States | EN</a></li>
+         </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+         <h3 class="locations__header">Asia Pacific</h3>
+         <ul class="locations__list">
+          <li><a href="https://www.capgemini.com/au-en/">Australia | EN</a></li>
+          <li><a href="https://www.capgemini.com/cn-zh/">China | ZH</a></li>
+          <li><a href="https://www.capgemini.com/in-en/">India | EN</a></li>
+          <li><a href="https://www.capgemini.com/jp-jp/">Japan | JP</a></li>
+          <li><a href="https://www.capgemini.com/sg-en/">Singapore | EN</a></li>
+         </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+         <h3 class="locations__header">Europe</h3>
+         <ul class="locations__list">
+          <li><a href="https://www.capgemini.com/at-de/">Austria | DE</a></li>
+          <li><a href="https://www.capgemini.com/be-en/">Belgium | EN</a></li>
+          <li><a href="https://www.capgemini.com/cz-en/">Czech Republic | EN</a></li>
+          <li><a href="https://www.capgemini.com/fi-en/">Finland | EN</a></li>
+          <li><a href="https://www.capgemini.com/fr-fr/">France | FR</a></li>
+          <li><a href="https://www.capgemini.com/de-de/">Germany | DE</a></li>
+          <li><a href="https://www.capgemini.com/hu-en/">Hungary | EN</a></li>
+         </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+         <h3 class="locations__header">Europe</h3>
+         <ul class="locations__list">
+          <li><a href="https://www.capgemini.com/it-it/">Italy | IT</a></li>
+          <li><a href="https://www.capgemini.com/nl-nl/">Netherlands | NL</a></li>
+          <li><a href="https://www.capgemini.com/no-no/">Norway | NO</a></li>
+          <li><a href="https://www.capgemini.com/pl-pl/">Poland | PL</a></li>
+          <li><a href="https://www.capgemini.com/pt-en/">Portugal | EN</a></li>
+          <li><a href="https://www.capgemini.com/ro-en/">Romania | EN</a></li>
+          <li><a href="https://www.capgemini.com/es-es/">Spain | ES</a></li>
+         </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+         <h3 class="locations__header">Europe</h3>
+         <ul class="locations__list">
+          <li><a href="https://www.capgemini.com/se-en/">Sweden | EN</a></li>
+          <li><a href="https://www.capgemini.com/ch-de/">Switzerland | DE</a></li>
+          <li><a href="https://www.capgemini.com/gb-en/">UK | EN</a></li>
+         </ul>
+        </div> 
+       </nav> 
+      </div> 
+      <button type="button" class="header__window__close"><span class="sr-only">Close window</span></button> 
+     </div> 
+     <button class="header__search-button"><span class="sr-only">Search</span> <i aria-hidden="true" class="icon-ios-search-strong"></i></button> 
+     <div class="header__window header__window--search"> 
+      <div class="container"> 
+       <div class="row"> 
+        <div class="col-12"> 
+         <form class="single-input form " role="form" method="get"> 
+          <div class="single-input__inner"> 
+           <div class="single-input__input"> 
+            <label for="mainsearch" class="hidden-sm-down"> <i aria-hidden="true" class="single-input__icon icon-ios-search-strong"></i> <span class="sr-only">Search</span> </label> 
+            <input id="mainsearch" value="" name="s" type="text" placeholder="Type to search"> 
+           </div> 
+           <button class="single-input__submit"> <span class="hidden-sm-down">Search</span> <i aria-hidden="true" class="hidden-md-up icon-ios-search-strong"></i> </button> 
+          </div> 
+          <div class="mainsearch__results"> 
+           <div class="mainsearch__results__top"> 
+            <div class="section__regular-title">
+              0 results for 
+            </div> 
+            <div class="mainsearch__show-checkboxes">
+             <a href="#">Show filters</a>
+            </div> 
+            <div class="mainsearch__hide-checkboxes">
+             <a href="#">Hide filters</a>
+            </div> 
+            <fieldset class="mainsearch__checkboxes"> 
+             <legend class="sr-only">Search only in section:</legend> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_post" type="checkbox" name="search-type[]" value="post"> 
+              <label for="mainsearch_post"> Blog Posts </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_page" type="checkbox" name="search-type[]" value="page"> 
+              <label for="mainsearch_page"> Pages </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_expert" type="checkbox" name="search-type[]" value="expert"> 
+              <label for="mainsearch_expert"> Experts </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_industry" type="checkbox" name="search-type[]" value="industry"> 
+              <label for="mainsearch_industry"> Industries </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_partner" type="checkbox" name="search-type[]" value="partner"> 
+              <label for="mainsearch_partner"> Partners </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_service" type="checkbox" name="search-type[]" value="service"> 
+              <label for="mainsearch_service"> Services </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_event" type="checkbox" name="search-type[]" value="event"> 
+              <label for="mainsearch_event"> Events </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_news" type="checkbox" name="search-type[]" value="news"> 
+              <label for="mainsearch_news"> News </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_btb" type="checkbox" name="search-type[]" value="btb"> 
+              <label for="mainsearch_btb"> Beyond the Buzz </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_resource" type="checkbox" name="search-type[]" value="resource"> 
+              <label for="mainsearch_resource"> Resources </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_management" type="checkbox" name="search-type[]" value="management"> 
+              <label for="mainsearch_management"> Management </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_mediateam" type="checkbox" name="search-type[]" value="mediateam"> 
+              <label for="mainsearch_mediateam"> Media Team </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_testimonial" type="checkbox" name="search-type[]" value="testimonial"> 
+              <label for="mainsearch_testimonial"> Testimonials </label> 
+             </div> 
+             <div class="form__checkbox"> 
+              <input id="mainsearch_job" type="checkbox" name="search-type[]" value="job"> 
+              <label for="mainsearch_job"> Job Offers </label> 
+             </div> 
+            </fieldset> 
+           </div> 
+           <div class="mainsearch__results__listing" aria-live="polite"> 
+            <script type="text/template" id="mainsearch__result-template">
+			
+<div class="card__textcard card__textcard--list card__textcard--hovered" >
+
+			<div class="card__textcard__tags">
+							<span>{{ tags }}</span>
+					</div>
+		<h3 class="card__textcard__title">
+					<a href="http://%20url%20">{{ title }}</a>
+			</h3>
+	
+	
+</div>
+		</script> 
+           </div> 
+           <script type="text/template" id="mainsearch__show-more-template">
+		<div class="mainsearch__results-show-more text-center">
+			<a href="" class="section__button">Show more <span class="sr-only">search results</span></a>
+		</div>
+	</script> 
+           <script type="text/template" id="mainsearch__noresult-template">
+		<div class="card__textcard">
+			<h3>No results found, try removing filters or using a more general term.</h3>
+		</div>
+	</script> 
+          </div> 
+         </form> 
+         <div class="mainsearch__placeholding"> 
+          <p class="section__regular-title">We are waiting for your move. Type the phrase which you are looking for or go to one of our hot topics:</p> 
+          <div class="row"> 
+           <div class="col-12 col-md-6 col-lg-4"> 
+            <ul> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <button type="button" class="header__window__close"><span class="sr-only">Close window</span></button> 
+     </div> 
+    </div> 
+   </div> 
+  </header> 
+  <header class="header"> 
+   <div class="container-full component__hero-subpage  "> 
+    <div class="component__hero-subpage__main"> 
+     <div class="component__hero-subpage__main-inner"> 
+      <div class="container"> 
+       <div class="row"> 
+        <div class="col col-md-10 offset-md-1"> 
+         <div class="component__hero-subpage__info"> 
+         </div> 
+         <h1 class="component__hero-subpage__title">Sheryl Chamberlain</h1> 
+         <div class="component__hero-subpage__text">
+           Women@Capgemini leader 
+         </div> 
+         <div class="component__hero-subpage__caption">
+          With Capgemini since 2014
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </header> 
+  <section class="section container"> 
+   <div class="row"> 
+    <div class="article-text col-12 col-md-6 offset-md-1"> 
+     <h2>The Power of Women’s Spirit</h2> 
+     <p>
+      <description></description></p> 
+     <p><img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/global_leaders_alll.jpg"></p> 
+     <p>Through the power of women’s entrepreneurial and business spirit we target growth and prosperity that address not only the business aspects of change but also social concerns.</p> 
+     <p>I am excited that today women in leadership positions have achieved an advanced level of media recognition and acceptance such that, in partnership with men, we are now a driving force of growth that leads to real fundamental economic changes reshaping our world.&nbsp;</p> 
+     <p></p> 
+     <h2>Importance of Gender Diversity</h2> 
+     <p>
+      <description></description></p> 
+     <h3> <img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/global_women_simmonsconfernence.jpg"></h3> 
+     <p> Why is Gender Diversity important to the IT sector today? </p> 
+     <div>
+       It is not a secret that the technology community is lacking women. However, numerous studies published in respected business journals such as Forbes and Fortune magazines have shown that technology companies with the highest representation of women in senior management post a higher return on equity than do those with fewer women in senior management.&nbsp;
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <div>
+       Studies have determined that gender diversity is associated with increased sales revenue, more customers, and greater profits. Clearly, when we bring a wider variety of people into IT, our innovation will be enhanced through the valuable contributions that diverse perspectives bring.
+     </div> 
+     <p></p> 
+     <h2>Promoting Gender Diversity</h2> 
+     <p>
+      <description></description></p> 
+     <p><img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/helene_barnekow_at_cgi.jpg"></p> 
+     <h3> <br> Why I decided to play an active role in promoting gender diversity</h3> 
+     <div>
+       Early in life I recognized that one of my greatest strengths is 
+      <a href="https://www.youtube.com/watch?v=FF9BkK9dQTs" target="_blank">connecting the dots</a>; aligning strategy with vision while bringing together diverse people with different objectives to achieve a common goal. Not only do I consider this to be among my strongest personal attributes, but, after many years of empirical observation, I have seen this same collaborative spirit and ability reside in other women.&nbsp;
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <div>
+       When I changed my career path from accounting to technology I drew on this ability to grow my sphere of influence and expand my knowledge to a multitude of domains including strategy, channels, marketing, services, entrepreneurship and innovation. &nbsp;
+     </div> 
+     <div> 
+      <br>
+      <img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/sheryl_3_no_limits.jpg">
+      <p></p> 
+      <div>
+        I am committed to paying it forward and helping to set the stage for the next generation of leaders and innovators. My brand, cultivated over time, reflects my vision and passion as an agent of change and a woman leader who knows no limits and delivers tangible business results in the corporate world.&nbsp;
+      </div> 
+      <div>
+        &nbsp;
+      </div> 
+      <div>
+        Over time I have expanded my impact and influence in the realm of women’s leadership by 
+       <a href="http://innovationstationblog.com/category/women-in-technology/" target="_blank">intertwining my business goals with my women’s leadership aspirations</a> and I continuously seek new ways to align and integrate my day job with my passion for women’s leadership.&nbsp;
+       <p></p> 
+       <p> <img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/capgemini_hult_action_project_2014.jpg"></p> 
+      </div> 
+     </div> 
+     <p></p> 
+     <p></p> 
+     <h2>Capgemini and Gender Diversity</h2> 
+     <p>
+      <description></description></p> 
+     <p><img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/sheryl_chamberlain_capgemini_emc_tv_.jpg"></p> 
+     <h3> <br> How Capgemini has helped me develop in the company</h3> 
+     <div>
+       I joined Capgemini in the late spring of 2014 to lead our alliance with one of our six strategic partners, the EMC Federation of Companies, including 
+      <a href="http://www.youtube.com/watch?v=PAy2-W_wHB0" target="_blank">EMCII</a>, 
+      <a href="http://www.youtube.com/watch?v=3pjELamwMaI" target="_blank">VMware</a>, Pivotal and RSA. &nbsp;&nbsp;
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <div>
+       For me, now more than ever, my business objectives are aligned with my commitment to women’s leadership specifically and innovation in general. Therefore, new to Capgemini, &nbsp;I needed to build my internal network, the foundation of any successful leader. Clearly, the company is founded on 
+      <a href="http://www.capgemini.com/about/group/values-ethics">seven values</a>, which are aligned with my code of ethics, helping me to quickly assimilate.
+      <p></p> 
+      <p> &nbsp;<br><img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/eiffel_tower_sheryl_and_emc_team.jpg"></p> 
+      <div>
+        For me, there is one person that stands out. Someone who, like me, aligns business with women’s leadership and that is Isabelle Roux-Chenu, Corporate Counsel and founding sponsor of Global 
+       <a href="mailto:Women@Capgemini">Women@Capgemini</a>. Generous with her time she invited me to join the leadership team and partner with her to build our founding 2015 Silicon Valley women’s program. Stay tuned for further developments!
+      </div> 
+     </div> 
+     <p></p> 
+     <p></p> 
+     <h2>Raising Gender Awareness</h2> 
+     <p>
+      <description></description></p> 
+     <p><img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/capgemini_vodgeball_2014.jpg"></p> 
+     <div>
+       To individuals who want to help raise greater awareness on gender diversity around the world and the IT sector, I would share four pieces of advice:
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <h3> 1. Take the lead, lift others as you climb</h3> 
+     <div>
+       Know there are no limits when you collaborate to achieve tangible results. &nbsp;
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <h3> 2. Get engaged</h3> 
+     <div>
+       You cannot participate from the sidelines and you cannot effect change until and unless you engage. &nbsp;
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <h3> 3. Small steps will take you forward, no need to jump all in</h3> 
+     <div>
+       Lao Tzu (Chinese philosopher) stated that a journey of a thousand miles begins with a single step. &nbsp;Mahatma Gandhi stated that one should strive to become the change one wishes to see in the world. &nbsp;
+     </div> 
+     <div>
+       &nbsp;
+     </div> 
+     <h3> 4. Align your core values</h3> 
+     <div>
+       &nbsp;Understand the importance of aligning your core values with business strategy one wishes to implement, along with the inherent knowledge that people matter and that results count.&nbsp;
+     </div> 
+     <p></p> 
+     <h2>A Little More About Sheryl</h2> 
+     <p>
+      <description></description></p> 
+     <p><img alt="" src="https://www.capgemini.com/wp-content/uploads/sites/10/2017/07/sheryl_jump.jpg"></p> 
+     <ul> 
+      <li> Group – Women @ Capgemini Leader</li> 
+      <li> &nbsp;</li> 
+      <li> Board Member – Association For Corporate Growth – Silicon Valley</li> 
+      <li> &nbsp;</li> 
+      <li> Hult Prize (A Clinton Global Initiative) Boston and San Francisco Judge</li> 
+      <li> &nbsp;</li> 
+      <li> Advisor and Mentor – Dallas Entrepreneur Center theDEC</li> 
+      <li> &nbsp;</li> 
+      <li> MassChallenge – Judge</li> 
+      <li> &nbsp;</li> 
+      <li> Award – YWCA Tribute to Women (TWIN) 2006</li> 
+      <li> &nbsp;</li> 
+      <li> Award California Diversity Council – 2014 Leadership &amp; Innovation</li> 
+      <li> &nbsp;</li> 
+      <li> Founding President EMC West Coast Women’s Leadership Forum&nbsp;</li> 
+      <li> &nbsp;</li> 
+      <li> Founding Committee and Keynote – IEEE WIE International Women in Technology</li> 
+      <li> &nbsp;</li> 
+      <li> Founder, Host, Moderator – New England Women’s Symposium</li> 
+      <li> &nbsp;</li> 
+      <li> Global Women’s Leadership Network (GWLN) – Women Leader for the World 2006</li> 
+     </ul> 
+     <p></p> 
+    </div> 
+    <div class="careers__rightcol col-12 col-md-4"> 
+     <div class="row"> 
+      <div class="col-12 section__block"> 
+       <div class="card__textcard "> 
+        <h3 class="card__textcard__title"> Education </h3> 
+        <div class="card__textcard__text">
+         <p></p>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="section container-full container-full--dark component__featured-jobs"> 
+   <div class="component__featured-jobs__inner"> 
+    <div class="container"> 
+     <div class="row"> 
+      <h2 class="section__title col-10 offset-1">Featured jobs</h2> 
+     </div> 
+     <div class="row slider-mobile section__block" data-per-slide="3"> 
+      <div class="col-12 col-md-4 component__featured-jobs__card"> 
+       <div class="card__textcard card__textcard--transparent-dark card__textcard--hovered card__textcard--hovered"> 
+        <p class="card__textcard__title"> <a href="https://www.capgemini.com/ca-en/jobs/016948-capgemini-manager/">016948-Capgemini Manager</a> </p> 
+       </div> 
+      </div> 
+      <div class="col-12 col-md-4 component__featured-jobs__card"> 
+       <div class="card__textcard card__textcard--transparent-dark card__textcard--hovered card__textcard--hovered"> 
+        <p class="card__textcard__title"> <a href="https://www.capgemini.com/ca-en/jobs/014995-service-delivery-analyst/">014995-Service Delivery Analyst</a> </p> 
+       </div> 
+      </div> 
+      <div class="col-12 col-md-4 component__featured-jobs__card"> 
+       <div class="card__textcard card__textcard--transparent-dark card__textcard--hovered card__textcard--hovered"> 
+        <p class="card__textcard__title"> <a href="https://www.capgemini.com/ca-en/jobs/014050-developer/">014050-Developer</a> </p> 
+       </div> 
+      </div> 
+      <div class="col-12 col-md-4 component__featured-jobs__card"> 
+       <div class="card__textcard card__textcard--transparent-dark card__textcard--hovered card__textcard--hovered"> 
+        <p class="card__textcard__title"> <a href="https://www.capgemini.com/ca-en/jobs/013494-os-project-manager/">013494-OS – Project Manager</a> </p> 
+       </div> 
+      </div> 
+      <div class="col-12 col-md-4 component__featured-jobs__card"> 
+       <div class="card__textcard card__textcard--transparent-dark card__textcard--hovered card__textcard--hovered"> 
+        <p class="card__textcard__title"> <a href="https://www.capgemini.com/ca-en/jobs/016614-program-manager-lims/">016614-Program Manager – LIMS</a> </p> 
+       </div> 
+      </div> 
+      <div class="col-12 col-md-4 component__featured-jobs__card"> 
+       <div class="card__textcard card__textcard--transparent-dark card__textcard--hovered card__textcard--hovered"> 
+        <p class="card__textcard__title"> <a href="https://www.capgemini.com/ca-en/jobs/016561-communications-sector-account-executive/">016561-Communications Sector Account Executive</a> </p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-12 text-center"> 
+       <a href="https://www.capgemini.com/ca-en/careers/job-search/" class="section__button section__button--transparent-light">See all openings</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <footer class="footer"> 
+   <div class="container"> 
+    <div class="footer__top row"> 
+     <div class="footer__logo col-md-4 hidden-lg-down"> 
+      <img alt="Capgemini logo" src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/images/logo_cap.svg"> 
+     </div> 
+     <nav class="footer__nav col-12 col-xl-8"> 
+      <div class="row"> 
+       <ul class="col-6 col-md-3">
+        <li><a href="https://www.capgemini.com/ca-en/our-services/" class="">Services</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/industries/" class="">Industries</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/global-technology-partners/" class="">Partners</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/insights-news/" class="">Insights &amp; News</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/careers/" class="">Careers</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/our-company/" class="">Our Company</a></li>
+       </ul>
+       <ul class="col-6 col-md-3">
+        <li><a href="http://investors.capgemini.com" class="">Investor relations</a></li>
+        <li><a href="#" class="footer__nav--locations">Locations</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/newsroom/" class="">Newsroom</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/contact-us/" class="">Find us</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/contact-capgemini/" class="">Contact Us</a></li>
+       </ul>
+       <ul class="col-6 col-md-3">
+        <li><a href="https://www.capgemini.com/ca-en/terms-of-use/" class=" failed">Terms of Use</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/privacy-policy/" class=" failed">Privacy Policy</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/social-media-guidelines/" class=" failed">Social Media Guidelines</a></li>
+        <li><a href="https://www.capgemini.com/ca-en/legal-information-mentions-legales/" class=" failed">Legal Information / Mentions Légales</a></li>
+       </ul> 
+       <div class="col-6 col-md-3"> 
+        <h3 class="footer__title">Our brands:</h3> 
+        <a href="http://www.capgemini.com/consulting" class="capconsult" target="_blank"><img alt="Capgemini Consulting logo" src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/images/logo_cc.svg"></a> 
+        <a href="http://www.sogeti.com/" class="sogeti" target="_blank"><img alt="Sogeti logo" src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/images/logo_sogeti.svg"></a> 
+       </div> 
+      </div> 
+     </nav> 
+    </div> 
+    <div class="footer__bottom row no-gutters"> 
+     <div class="footer__social col-12 col-xl-6"> 
+      <ul> 
+      </ul> 
+     </div> 
+     <div class="footer__copy col-12 col-xl-6" role="contentinfo"> 
+      <p>All rights reserved by Capgemini. <span>Copyright © 2017</span></p> 
+     </div> 
+     <div class="footer__logo col-12 hidden-xl-up"> 
+      <img alt="Capgemini logo" src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/images/logo_cap.svg"> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <div class="section__cookies"> 
+   <img src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/images/cookies.png" alt="cookies."> 
+   <div class="section__cookies__text"> 
+    <p>By continuing to navigate on this website, you accept the use of cookies.</p> 
+    <p> </p> 
+   </div> 
+   <a href="#" class="section__button--cookies section__button section__button--transparent"><i class="icon-android-close" aria-hidden="true"></i><p>Close</p><span class="sr-only">Close cookie information</span></a> 
+  </div> 
+  <div style="display:none"> 
+  </div> 
+  <script type="text/javascript" src="https://www.capgemini.com/ca-en/wp-content/themes/capgemini/assets/js/libs/jquery-3.2.1.min.js?m=1506408496g"></script> 
+  <script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=2017Octaa"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var CG_hero = {"replayString":"Replay video","resumeString":"Continue watching"};
+/* ]]> */
+</script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var CG = {"searchNonce":"6fa7c3cfd6","ajaxURL":"https:\/\/www.capgemini.com\/ca-en\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.capgemini.com/ca-en/_static/??-eJydksFOwzAMhl+INkMa0zggHoIDR5SmbuuSxF5sU+3tySYQXJtTFOX//P+24zbuAmWFrC5Zx9FmzOJWUPbh0yUaLYK4jedCC/WrPLh/hC6Q6mvwPEPCjM6LgFZcXMShnheDcu2VLCxvGzL0VbWjiEQcoewBQkFW6chKoMQ+Xz9ulA9q0lCGiY1bue6rht8zsl9a/dASdoFCuz3vaxKIEPSdqJ8sxsYlT6jVvCF4Q6sTldTCYWb7M8Qcoo1wV9QrpAHGnw/6ml4enw6n4+F8fD6t3zxUMPs="></script> 
+  <script type="text/javascript" src="https://stats.wp.com/e-201740.js" async defer></script> 
+  <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.3',blog:'135997793',post:'7778',tz:'-7',srv:'www.capgemini.com'} ]);
+	_stq.push([ 'clickTrackerInit', '135997793', '7778' ]);
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6b6b1d1407","applicationID":"52117986","transactionName":"YANaNUJSCkUHVUZYDFlJeQJEWgtYSUVbXwRbAxUVVUAQXwtZXFgCWw==","queueTime":0,"applicationTime":299,"atts":"TERNQwpIGRpEVxALGEob","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

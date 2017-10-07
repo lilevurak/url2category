@@ -1,0 +1,1364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>5 Inspiring People Who Each Paid Off Over $100,000 in Debt</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- pinterest verification -- temporary 7/13/16 --> 
+  <meta name="p:domain_verify" content="fd3ac43e4b062437bc99b4980c14937a"> 
+  <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WN9Q2WP');</script> 
+  <!-- End Google Tag Manager --> 
+  <meta name="description" content="These five inspiring people overcame massive debt burdens to live free-er, fuller lives."> 
+  <meta name="keywords" content="incredible debt reduction"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="x-dns-prefetch-control" content="on"> 
+  <link rel="dns-prefetch" href="//wisebread.killeracesmedia.netdna-cdn.com"> 
+  <meta property="og:title" content="5 Inspiring People Who Each Paid Off Over $100,000 in Debt"> 
+  <meta property="og:description" content="For these five people debt totaling $100k — or more — seemed insurmountable. That is, until they paid it off. Find out how you can, too."> 
+  <meta property="og:image" content="http://www.wisebread.com/files/fruganomics/blog-images/paying-bill-122474302-small.jpg"> 
+  <meta property="og:url" content="http://www.wisebread.com/5-inspiring-people-who-each-paid-off-over-100000-in-debt"> 
+  <meta property="og:site_name" content="Wise Bread"> 
+  <link rel="shortcut icon" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/wisebread/favicon-leaves.ico" type="image/x-icon"> 
+  <link rel="canonical" href="http://www.wisebread.com/5-inspiring-people-who-each-paid-off-over-100000-in-debt"> 
+  <meta name="revisit-after" content="1 day"> 
+  <!--This page is not a news article. googlebot-news IS blocked--> 
+  <meta name="GOOGLEBOT-NEWS" content="NOINDEX, NOFOLLOW"> 
+  <!-- CSS aggregated by CDN module. --> 
+  <link type="text/css" rel="stylesheet" media="all" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/css/cdn_css_http_23a2e37aa733c9514f5416da0e778f07.css"> 
+  <link type="text/css" rel="stylesheet" media="print" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/css/cdn_css_http_726eb9f5b9224e75bcf6f8d0ccdae963.css"> 
+  <!-- CSS aggregated by CDN module. --> 
+  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/sites/default/themes/custom/wisebread/ie.css" /><![endif]--> 
+  <!--If Less Than or Equal (lte) to IE 7--> 
+  <!--[if lte IE 7]><link type="text/css" rel="stylesheet" media="all" href="/sites/default/themes/custom/wisebread/ie7.css" /><![endif]--> 
+  <!--If Less Than or Equal (lte) to IE 7--> 
+  <script type="text/javascript" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/js/js_b8be3127307358767645f992dc427eba.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved or changed.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"custom_search":{"form_target":"_self","solr":1},"CToolsUrlIsAjaxTrusted":{"\/5-inspiring-people-who-each-paid-off-over-100000-in-debt":[true,true]},"quicktabs":{"qt_2":{"tabs":[0]},"qt_4":{"tabs":[0]}}});
+//--><!]]>
+</script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ga('set', 'contentGroup5', 'Debt Management')
+//--><!]]>
+</script> 
+  <!-- start dfp --> 
+  <script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script> 
+  <script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/1038175/WB_floating_160x600', [160, 600], 'div-gpt-ad-1396207921741-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_leaderboard_728x90_homepage_only', [728, 90], 'div-gpt-ad-1396232301203-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_top_sidebar_300x250_homepage_only', [300, 250], 'div-gpt-ad-1396234280862-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_300x250_skype_nodes', [300, 250], 'div-gpt-ad-1396239767493-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_leaderboard_728x90_skype_nodes', [728, 90], 'div-gpt-ad-1396271697630-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/Skype_midarticle_300x250', [300, 250], 'div-gpt-ad-1396271961711-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/wb_midarticle', [[300, 250], [336, 280]], 'div-gpt-ad-1396904310695-0').addService(googletag.pubads());
+
+    googletag.enableServices();
+    });
+    </script> 
+  <!-- end dfp --> 
+  <!-- start bing event tracking --> 
+  <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"4019141"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script> 
+  <!-- end bing event tracking --> 
+  <!-- facebook --> 
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1585036571784545']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script> 
+  <noscript>
+   &lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1585036571784545&amp;amp;ev=PixelInitialized"&gt; 
+  </noscript> 
+  <!-- end facebook --> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1585036571784545');
+    fbq('track', "PageView");</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585036571784545&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+  <!-- taboola pixel code --> 
+  <script src="//cdn.taboola.com/libtrc/killeraces-sc/tfa.js"></script> 
+  <!-- end taboola pixel code --> 
+  <!-- gemini tracking code disabled in mobile --> 
+  <!-- FM tracking pixel --> 
+  <script type="text/javascript" src="http://static.fmpub.net/header/wisebread"></script> 
+  <!-- FM tracking pixel --> 
+  <!-- outbrain pixel --> 
+ </head>
+ <body class="sidebar-right node-page">
+  <img src="//amplifypixel.outbrain.com/pixel?mid=007c2e4d9609448c076cadb4c1d5e14d52">   
+  <!-- Google Tag Manager (noscript) --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN9Q2WP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <!-- End Google Tag Manager (noscript) --> 
+  <!-- facebook widget --> 
+  <div id="fb-root"></div> 
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=6743596911";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> 
+  <!-- facebook widget --> 
+  <!-- Layout --> 
+  <div class="super-container"> 
+   <div class="side-float"> 
+   </div> 
+   <div class="container" style="display:inline-block;"> 
+    <!-- add "showgrid" class to display grid --> 
+    <div id="header" class="clearfix"> 
+     <div id="block-menu-menu-utility" class="block block-menu"> 
+      <div class="content clear"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/about" title="">About</a></li> 
+        <li class="leaf odd"><a href="/about/contact" title="">Contact</a></li> 
+        <li class="leaf last even"><a href="/advertise" title="">Advertise</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="header-left"> 
+      <div id="block-block-181" class="block block-block"> 
+       <div class="content clear"> 
+        <strong><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=hs"> 0% APR Up To 21 Months<br> See Wise Bread's Picks for<br> Best Balance Transfer Cards </a></strong> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#header-left --> 
+     <div id="logo"> 
+      <a href="/" title="Home" rel="home"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/wisebread/personal-finance-blog-logo.png" alt="logo for personal finance blog Wise Bread" id="logo"></a> 
+     </div> 
+     <!-- /logo-title --> 
+     <div id="mobilehead"> 
+      <a class="nav-menu-icon" href="#"> <img src="/sites/default/themes/custom/wisebread/images/icon_menu.png" alt="More" width="20px" height="20px"> </a> 
+      <div id="nav-menu-main" class="navhead clearfix"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a></li> 
+        <li class="leaf last odd"><a href="/topic/personal-finance" title="">Personal Finance</a></li> 
+       </ul> 
+      </div> 
+      <div class="clear-block"></div> 
+      <div class="nav-menu-secondary"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/frugal-living" title="">Frugal Living</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income" title="">Career</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks" title="">Life Hacks</a></li> 
+        <li class="leaf odd"><a href="/bestdeals/today" title="">Best Deals</a></li> 
+        <li class="leaf last even"><a href="/top-100-most-popular-personal-finance-blogs" title="">Top PF Blogs</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="search-box">
+      <form action="/5-inspiring-people-who-each-paid-off-over-100000-in-debt" accept-charset="UTF-8" method="post" id="search-theme-form" class="search-form"> 
+       <div>
+        <div id="search" class="container-inline"> 
+         <div class="form-item" id="edit-search-theme-form-1-wrapper"> 
+          <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" class="form-text NormalTextBox txtSearch"> 
+         </div> 
+         <fieldset class="custom_search-popup"></fieldset> 
+         <input type="image" name="op" value="Search" id="edit-submit" class="form-submit" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/images/search-button.jpg"> 
+         <input type="hidden" name="form_build_id" id="form-_gktCW_0GuWpNACLV9y3mxdMc_0gyhBzH4TvYnJ0ZVU" value="form-_gktCW_0GuWpNACLV9y3mxdMc_0gyhBzH4TvYnJ0ZVU"> 
+         <input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"> 
+         <input type="hidden" name="default_text" id="edit-default-text" value="" class="default-text"> 
+        </div> 
+       </div>
+      </form> 
+     </div> 
+    </div> 
+    <!-- /#header --> 
+    <div id="nav" class="navhead clearfix"> 
+     <ul class="menu">
+      <li class="expanded first odd"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="http://www.wisebread.com/the-5-best-secured-credit-cards?ref=nav" title="">Secured Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=nav" title="">Balance Transfer Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=nav" title="">Cash Back Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=nav" title="">Travel Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/the-best-5-credit-cards-for-groceries?ref=nav" title="">Groceries Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/the-5-best-credit-cards-for-dining-out?ref=nav" title="">Restaurant Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/the-best-low-interest-rate-credit-cards?ref=nav" title="">Low Interest Credit Cards</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/the-5-best-credit-cards-for-small-businesses?ref=nav" title="">Small Business Credit Cards</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/topic/personal-finance" title="">Personal Finance</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/personal-finance/banking" title="">Banking</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/cars-and-transportation" title="">Cars and Transportation</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/debt-management" title="">Debt Management</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/financial-news" title="">Financial News</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/insurance" title="">Insurance</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/investment" title="">Investment</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/real-estate-and-housing" title="">Real Estate and Housing</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/retirement" title="">Retirement</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/taxes" title="">Taxes</a></li> 
+        <li class="leaf last even"><a href="/topic/personal-finance" title="">More in Personal Finance</a></li> 
+       </ul></li> 
+      <li class="expanded even"><a href="/topic/frugal-living" title="">Frugal Living</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/frugal-living/budgeting" title="">Budgeting</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/diy" title="">DIY</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/entertainment" title="">Entertainment</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/food-and-drink" title="">Food and Drink</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/green-living" title="">Green Living</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/health-and-beauty" title="">Health and Beauty</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/home" title="">Home</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/lifestyle" title="">Lifestyle</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/shopping" title="">Shopping</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/style" title="">Style</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/travel" title="">Travel</a></li> 
+        <li class="leaf last odd"><a href="/topic/frugal-living" title="">More in Frugal Living</a></li> 
+       </ul></li> 
+      <li class="expanded even"><a href="/topic/career-and-income" title="">Career</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="/topic/career-and-income/career-building" title="">Career Building</a></li> 
+        <li class="leaf even"><a href="/newgrads" title="">New College Grads</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income/education-training" title="">Education &amp; Training</a></li> 
+        <li class="leaf even"><a href="/topic/career-and-income/entrepreneurship" title="">Entrepreneurship</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income/extra-income" title="">Extra Income</a></li> 
+        <li class="leaf even"><a href="/topic/career-and-income/job-hunting" title="">Job Hunting</a></li> 
+        <li class="leaf last odd"><a href="/topic/career-and-income" title="">More in Career &amp; Income</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/topic/life-hacks" title="">Life Hacks</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="/topic/life-hacks/consumer-affairs" title="">Consumer Affairs</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/family" title="">Family</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/general-tips" title="">General Tips</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/organization" title="">Organization</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/personal-development" title="">Personal Development</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/productivity" title="">Productivity</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/technology" title="">Technology</a></li> 
+        <li class="leaf last even"><a href="/topic/life-hacks" title="">More in Life Hacks</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/bestdeals/today" title="Best deals of the day; handpicked every weekday!">Best Deals</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/bestdeals/today" title="">Daily Deals</a></li> 
+        <li class="leaf odd"><a href="/topic/deals-and-coupons/giveaways" title="">Giveaways</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/coupons" title="">Coupon Codes</a></li> 
+        <li class="leaf odd"><a href="/printable-coupons" title="">Printable Coupons</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/credit-card-guide/?ref=nav" title="Wise Bread picks for credit cards that are good deals.">Best Credit Cards</a></li> 
+       </ul></li> 
+      <li class="leaf even"><a href="http://www.wisebread.com/top-100-most-popular-personal-finance-blogs/" title="">Top PF Blogs</a></li> 
+      <li class="expanded last odd"><a href="/all" title="">More</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="http://www.wisebread.com/guides" title="">How-To Guides</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/money-saving-book/" title="">Wise Bread Book</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/money-tips/" title="">Money Tips Network</a></li> 
+        <li class="leaf even"><a href="/make-money-writing-for-wise-bread" title="">Write For Us</a></li> 
+        <li class="leaf odd"><a href="/about/contact" title="">Contact Us</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/bloggers" title="">About Our Writers</a></li> 
+       </ul></li> 
+     </ul>
+     <div class="clear-block"></div> 
+    </div> 
+    <!-- /#nav --> 
+    <div class="body-container clearfix"> 
+     <div id="main" class=""> 
+      <div class="breadcrumb">
+       <a href="/">Home</a> » 
+       <a href="/topic/personal-finance">Personal Finance</a> » 
+       <a href="/topic/personal-finance/debt-management">Debt Management</a> » 5 Inspiring People Who Each Paid Off Over $100,000 in Debt
+      </div> 
+      <h1 class="page-title ">5 Inspiring People Who Each Paid Off Over $100,000 in Debt</h1> 
+      <div id="above-content"> 
+       <div id="block-block-110" class="block block-block"> 
+        <div class="content clear"> 
+         <script src="http://www.anrdoezrs.net/am/2822544/include/joined/sid/autoDL/am.js"></script> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="node-1163690" class="node node-blog"> 
+       <div class="credits">
+         By 
+        <a href="/alaina-tweddale" title="View user profile.">Alaina Tweddale</a> 
+        <span class="date">on 22 July 2014</span> 
+        <span class="comments"><a href="/5-inspiring-people-who-each-paid-off-over-100000-in-debt#comments" class="active">16 comments</a></span> 
+       </div> 
+       <div class="sharing-chicklets"> 
+        <span class="facebook-plugins-like-button_count"> 
+         <div class="fb-share-button" data-href="/5-inspiring-people-who-each-paid-off-over-100000-in-debt" data-type="button_count"></div> </span> 
+        <span class="retweet"> <a href="https://twitter.com/share" class="twitter-share-button" data-via="wisebread" data-text="5 Inspiring People Who Each Paid Off Over $100,000 in Debt">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </span> 
+        <span class="pinit"> <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles/fruganomics/blog-images/paying-bill-122474302-small.jpg&amp;description=5 Inspiring People Who Each Paid Off Over $100,000 in Debt" data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png"></a> </span> 
+       </div> 
+       <div class="sharing-chicklets-top-article big-share-buttons"> 
+        <a class="big-share-btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt"><img src="http://www.wisebread.com/files/fruganomics/facebook-17x17.png"><span>Share on Facebook</span></a> 
+        <a class="big-share-btn twitter" target="_blank" href="http://twitter.com/home/?status=5 Inspiring People Who Each Paid Off Over $100,000 in Debt http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt via @wisebread"><img src="http://www.wisebread.com/files/fruganomics/twitter-17x17.png"><span>Tweet This</span></a> 
+        <a class="big-share-btn pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fblog-images%2Fpaying-bill-122474302-small.jpg&amp;description=5 Inspiring People Who Each Paid Off Over $100,000 in Debt"><img src="http://www.wisebread.com/files/fruganomics/pinterest-17x17.png"><span>Pin It</span></a> 
+       </div> 
+       <!-- end big share buttons --> 
+       <div class="body"> 
+        <div id="big-main-image"> 
+         <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/605x340/blog-images/paying-bill-122474302-small.jpg" alt="" title="" class="" width="605" height="340"> 
+        </div> 
+        <br> 
+        <div class="image-and-share below-big-image"> 
+         <!-- editors pick block below image --> 
+         <style>
+  div.custom-belimg {
+    border:1px solid #d2d2d2;
+    padding: 5px;
+    font: 12px helvetica, arial, sans;
+  }
+  div.custom-belimg div.belimg-heading {
+   border-bottom:1px solid #c2c2c2;
+   font: bold 13px helvetica, arial, sans;
+   margin: 0 10px 15px 10px;
+   padding: 5px;
+  }
+  div.custom-belimg .belimg-content ul {
+  }
+  div.custom-belimg .belimg-content ul li {
+    line-height: 1.5em;
+    background: none;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+  div.custom-belimg .belimg-content ul li a {
+    border-bottom: none;
+  }
+</style> 
+         <div class="custom-belimg"> 
+          <!-- 1163690 --> 
+          <div class="belimg-heading"> 
+           <img src="http://www.wisebread.com/favicon.ico" style="position:relative;top:3px;margin-right:3px;"> Wise Bread Picks 
+          </div> 
+          <div class="belimg-content"> 
+           <ul> 
+            <li><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=belimg-all" title="5 Best Travel Rewards Credit Cards Reviewed">Travel Rewards Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=belimg-all" title="Top 5 Cash Back Credit Cards">Cash Back Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=belimg-a" title="Best 0% Balance Transfer Credit Cards">0% Balance Transfer Credit Cards</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- midarticle: first half -->
+        <p>Americans today owe over <a href="http://www.nerdwallet.com/blog/credit-card-data/average-credit-card-debt-household/">$11 trillion in debt</a> and that number is on the rise. On a household level, that averages out to $15,191 in credit card debt, $154,365 in mortgage debt, and $33,607 in student loan debt — per indebted household.</p> 
+        <p>Carrying a large debt load may seem like a necessity for some, but for many it also keeps them from reaching their dreams. Bulky monthly payments to creditors deplete funds you could be using to fund your dreams for tomorrow. (See also: <a href="http://www.wisebread.com/the-most-valuable-thing-debt-takes-from-you-isnt-money-its-this?ref=seealso">The Most Valuable Thing Debt Is Costing You Isn't Money</a>)</p> 
+        <p>Meet five inspiring people who made a commitment to paying down over $100,000 in debt and changed their lives for the better.</p> 
+        <h2>Cherie Lowe, Greenwood, IN</h2> 
+        <p><a href="http://www.queenoffree.net">Blogger</a> and author of <a href="http://www.amazon.com/gp/product/1414397208/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1414397208&amp;linkCode=as2&amp;tag=wisbre03-20&amp;linkId=TFUQ4T4DLAXIECG3">Slaying the Debt Dragon: How One Family Conquered Their Money Monster and Found an Inspired Happily After</a></p> 
+        <p><strong>Paid Off</strong>: $127,000 in four years</p> 
+        <h3>What She Paid Off</h3> 
+        <p>In four years, Cherie Lowe and her husband, Brian, paid off $127,000 in debts including $80,000 for student loans, $16,500 in credit card balances, $12,000 in car loans, and an additional $12,000 in assorted medical and home expenses.</p> 
+        <h3>How She Did It</h3> 
+        <p>"We used the <a href="http://www.wisebread.com/a-comprehensive-guide-to-the-debt-snowball-method-0?ref=internal">debt snowball method</a> and followed many of the principles outlined by Dave Ramsey," says Cherie. Ramsey's methods are counterintuitive for many, she admits, but they worked wonders for her family. The Lowes also:</p> 
+        <ul> 
+         <li>Took on <a href="http://www.wisebread.com/30-great-side-jobs">extra work</a>. Brian worked three jobs at very long hours.<br> &nbsp;</li> 
+         <li>Ran their home like a business. Cherie streamlined expenses by qualifying purchases with this question: "Will this choice help us save as much as possible?" If not, they didn't choose it.<br> &nbsp;</li> 
+         <li>Made temporary <a href="http://www.wisebread.com/10-smart-ways-to-make-yourself-love-saving-money">sacrifices to save money</a>. "We didn't eat meat for about six months so we could continue to use every penny to fuel our efforts." Brian didn't eat at a restaurant — even for a cup of coffee — for 2.5 years. The two didn't exchange gifts for Christmas, anniversaries, or Valentine's Day (although they did buy gifts for their kids!)</li> 
+        </ul> 
+        <h3>Why She's Glad She Did It</h3> 
+        <p>"Paying off debt unified our relationship in ways I could never even describe," says Cherie. "We're on the same page with our goals, saving 15% of all of our <a href="http://www.wisebread.com/10-easy-ways-to-supercharge-your-retirement">income for retirement</a>, quickly building college funds for our daughters (ages 11 &amp; 6), and saving for fun things like vacations, a more elaborate Christmas, and a new car."</p> 
+        <p>Unexpected expenses like the $600 car repair the Lowes faced the week we talked for this piece now have very little impact on their daily lives. "[I] like not having to worry anymore when we have a major repair," says Cherie.</p> 
+        <h3>How You Can Do It, Too</h3> 
+        <p>"So much of paying off debt has very little to do with money and math and more to do with personal behavior and your outlook on life," she says. "Live from a mindset of scarcity and you'll never be satisfied, no matter how much money you have. Live from a place of wonder in the wealth you've already been blessed with and you'll be much happier and more successful in paying off debt."</p> 
+        <p>"When we began our journey, we thought it would take 15 years, seven and a half if we really hustled," she says. Instead, the Lowes' willingness to get creative and sacrifice even the smallest of luxuries allowed them to meet their goal in just under four years. "Success builds momentum, which fuels everything you do," she says.</p> 
+        <h2>Christine Sparacino, Walnut Creek, CA</h2> 
+        <p>Retiree and author of Energize Your Retirement: Stories of Passionate Pursuits (upcoming)</p> 
+        <p>She and her husband paid off a mortgage on their California home in 21 years.</p> 
+        <h3>What She Paid Off</h3> 
+        <p>Approximately $245,000 in mortgage debt.</p> 
+        <h3>How She Did It</h3> 
+        <p>The Sparacinos are from California, home to one of the priciest real estate markets in the nation. Even so, they were able to find a bargain, <a href="http://www.wisebread.com/what-happens-at-a-foreclosure-auction">buying a foreclosed property</a> for $291,000. (Their home is currently worth between $850,000 and $900,000, according to Christine.) "[The house] was in a great neighborhood with excellent schools, but it was definitely the dog of the neighborhood," says Christine. "Since my husband is a general contractor and I don't mind helping, it worked out."</p> 
+        <p>The Sparacinos <a href="http://www.wisebread.com/refi-shy-how-to-determine-if-now-is-the-time-to-refinance">refinanced their mortgage</a> twice to take advantage of a lower interest rate but, says Christine, "We never took additional money out. That's one of the keys."</p> 
+        <p>The Sparacinos also:</p> 
+        <ul> 
+         <li>Paid extra toward their mortgage every month, even when money was short. They started with an additional $100 per month and bumped the extra amount to $200 — $300 once their kids graduated from college.<br> &nbsp;</li> 
+         <li>Did most home renovations and repairs themselves, saving on costly contractor expenses.<br> &nbsp;</li> 
+         <li>Used an inheritance to pay the last $105,000 of their mortgage.<br> &nbsp;</li> 
+         <li>Made <a href="http://www.wisebread.com/this-one-financial-trick-lets-you-buy-happiness">conscious choices</a> about how to spend their money, making saving and conscious spending a priority over buying new cars (they drove theirs for about 200,000 miles before replacing) or moving to a larger home.<br> &nbsp;</li> 
+         <li>Found a good accountant and built a long term relationship with him. "We've had the same one since 1984. We grew up and prospered together," says Christine.<br> &nbsp;</li> 
+         <li>Communicated with each other about spending. They always consulted the other before buying something that cost $100 or more.</li> 
+        </ul> 
+        <h3>Why She's Glad She Did It</h3> 
+        <p>Her two kids were each able to finish college without any student debt. "We were very disciplined about saving," she says. "Every month, even if it was only $50, we saved money."</p> 
+        <p>Despite their disciplined approach, the Sparacinos never felt they were living frugally. "We spent a lot of money on our kids." Things like swim team, tutors, space camp, Boy Scouts, and family-centered vacations were their financial priorities.</p> 
+        <h3>How You Can Do It, Too</h3> 
+        <p>The key to financial success is in the prioritization of spending. "Many of our friends drove expensive cars — but we didn't. Our accountant told us to move up to a more expensive house — but we didn't," she says. Even so, she never felt that they scrimped. They bought what was important to them and passed on what was not.</p> 
+        <h2>Matt Kelly, Durango, CO</h2> 
+        <p><a href="http://www.personalfinancecoaching.com/about/">Personal Finance Coach</a> and newspaper columnist</p> 
+        <p><strong>Paid Off</strong>: $165,000 in debt and saved $20,000 in 15 months.</p> 
+        <!-- midarticle: middle --> 
+        <div id="kamidarticle" class="ggnoads"> 
+         <!--
+    <div id="kamidarticle-adnotice">
+      ARTICLE CONTINUES BELOW    </div>
+    --> 
+         <div id="kamidarticle-middle-content"> 
+          <div class="desktop-ad"> 
+           <script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=269302");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script> 
+          </div> 
+          <div class="mobile-ad"> 
+           <script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=269303");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- midarticle: second half --> 
+        <h3>What He Paid Off</h3> 
+        <p>In 15 months, Matt Kelly and his wife, Cheri, paid off $165,000 in credit card, medical, and student loan debt. At the same time, they also put away <a href="http://www.wisebread.com/how-to-save-26000-in-5-years-or-less">$20,000 in an emergency savings</a> fund. Subsequently, they reduced their mortgage burden by an additional $100,000.</p> 
+        <h3>How He Did It</h3> 
+        <p>"We got very conscious about what's important to us," says Matt. "We started really tapping into what our dreams are." By using their dreams as a compass, the Kellys gained clarity about how their debt was holding them back from getting what they wanted out of life.</p> 
+        <p>They also:</p> 
+        <ul> 
+         <li>Sold their condominium and <a href="http://www.wisebread.com/this-is-how-you-downsize-your-home-and-start-living-a-better-life">bought a smaller place</a>. "We actually like the smaller, more connected feel than what we had in our larger, more lavish place," says Matt. "With that one move alone, we were able to take about $100,000 off our overall debt load."<br> &nbsp;</li> 
+         <li>Used a $40,000 inheritance to pay down debt, instead of taking a lavish vacation to Hawaii.<br> &nbsp;</li> 
+         <li>Focused exclusively on debt reduction at first, but also set up a budget for monthly expenses and irregular but expected expenses like routine auto maintenance or regular home repairs.<br> &nbsp;</li> 
+         <li>Budgeted for all expenses, not just the monthly ones, including a newspaper subscription, vet bills for their pet, and future car repairs. "These things stopped impacting our budget once we started planning for them," says Matt. "We were pretending every month would be a perfect month, and that the car would never break down. But, of course, the car does break down."</li> 
+        </ul> 
+        <h3>Why He's Glad He Did It</h3> 
+        <p>"We were sick of being stressed out and fighting about money," says Matt. "We still have a mortgage but it's been five to six years since we've had any consumer debt at all."</p> 
+        <p>Soon after paying off their consumer debt, the Kellys were financially able to send their young son, whose dyslexia they had recently uncovered, to a specialty school. "We never would have been able to pay for private school if we were drowning in the debt that we were," says Matt. "We couldn't have helped our son that way if we hadn't gotten control of our finances."</p> 
+        <h3>How You Can Do It, Too</h3> 
+        <p>"I found it far more empowering to focus on what I want, rather than what I didn't want," says Matt. Thinking ahead about what you want, even if it's something small like a weekend getaway, gives you the power to make good financial choices. Like Matt says, "Focus on your dreams."</p> 
+        <h2>Edward Nevraumont, Seattle, WA</h2> 
+        <p>Chief Marketing Officer, <a href="http://www.aplaceformom.com/">A Place for Mom</a></p> 
+        <p><strong>Paid Off</strong>: $120,000 in student loan debt in just two years.</p> 
+        <h3>What He Paid Off</h3> 
+        <p>In two years, Edward Nevraumont paid off $120,000 in student loan debt.</p> 
+        <h3>How He Did It</h3> 
+        <p>Being a foreign student was an advantage for Edward. "I was a Canadian going to school in the U.S., so I actually got a better rate on the Canadian bank loan over a U.S. student loan," he says.</p> 
+        <p>Edward also:</p> 
+        <ul> 
+         <li>Was very cautious about any unnecessary spending until his debt was paid off in full.<br> &nbsp;</li> 
+         <li>Paid a hefty $5,000 per month toward his loan. "I had a job as a tax consultant and was making about $150,000 per year plus bonus," he says. "My Canadian taxes took about a third, which left me a little over $8,000 per month. My apartment was $1,400. I lived on the remaining $600 per month, plus the float from my annual bonus."</li> 
+        </ul> 
+        <h2>Why He's Glad He Did It</h2> 
+        <p>After paying off his debt, Edward decided to splurge. "I bought a nice racing bike," he said, "as a gift to myself."</p> 
+        <h3>How You Can Do It, Too</h3> 
+        <p>Get a job that pays a lot but keep your expenses at the same level they were <a href="http://www.wisebread.com/15-life-hacks-for-college-students-or-anyone-else-trying-to-save-money">when you were a student</a>," says Edward. "Just because you have a high income doesn't mean you are rich."</p> 
+        <h2>Kate McKeon, New York, NY</h2> 
+        <p>CEO of educational consulting firm <a href="http://www.prepwise.com">PrepWise</a>.</p> 
+        <p><strong>Paid Off</strong>: More than $150,000 in small business loans and expenses in under two years.</p> 
+        <h3>What She Paid Off</h3> 
+        <p>While living in Dallas, TX, Kate McKeon paid off approximately $105,000 in nine months. The remaining $45,000 was paid off in the subsequent 12 months. She later moved to NYC.</p> 
+        <h3>How She Did It</h3> 
+        <p>As a business owner, Kate personally took on the debts necessary to expand her company. (A move she doesn't recommend, by the way.) After two poor performing years, she faced a mountain of personal debt which forced her to temporarily shut down her business.</p> 
+        <p>Kate also:</p> 
+        <ul> 
+         <li>Picked up two side jobs and worked around the clock. "I averaged 117 hours a week of billable time for eight months," she says, "and then a more manageable 85 hours a week for the following year."<br> &nbsp;</li> 
+         <li>Took on jobs with unreasonable clients.<br> &nbsp;</li> 
+         <li>Spent spare moments doing odd jobs. "I was very aware of the market rate for temp professional gigs and weighed every idea or possible cash flow opportunity against that hourly rate," says McKeon.<br> &nbsp;</li> 
+         <li>Calculated the rate she needed to earn on her time based on the hours she could dedicate to paying back her debt. "If I could make more teaching a bootcamp class than temping as a marketing analyst," she says, "then I taught a bootcamp class."<br> &nbsp;</li> 
+         <li>Accepted a debt forgiveness of 20–30%.</li> 
+        </ul> 
+        <h3>Why She's Glad She Did It</h3> 
+        <p>McKeon feels it was foolish to have taken the debts of her company on with a personal signature. However, she concedes, it was also the fastest way for her to <a href="http://www.wisebread.com/16-ways-to-get-money-for-your-business">get into business</a>.</p> 
+        <p>"A mountain of debt is a lot like having a hacking cough that no one understands," she says. "No one wants to be near a hacking cough."</p> 
+        <h3>How You Can Do It, Too</h3> 
+        <p>"Prepare to get dirty," she says. Only you can dig yourself out of your debt load.</p> 
+        <p>Also, do excellent work. "When you have a client who pays you fairly and respects your work, go the extra mile for them. You want to keep them as clients, sure. More important, they are giving you the opportunity to right the ship," she says. "They may not realize it, but they are investing in you. Be grateful."</p> 
+        <p><em>Do you have massive debts to pay off or have you successfully paid your loans in full? How do you plan to do it or what have you already done? We want to hear about your debt reduction plan. Tell us in the comments below.</em></p> 
+        <h2 style="text-align: center;">Like this article? Pin it!</h2> 
+        <div align="center">
+         <a data-pin-do="buttonPin" data-pin-count="above" data-pin-tall="true" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fu5180%2F5%2520Inspiring%2520People%2520Who%2520Each%2520Paid%2520Off%2520Over%2520100%252C000%2520Dollars%2520in%2520Debt.jpg&amp;description=5%20Inspiring%20People%20Who%20Each%20Paid%20Off%20Over%20100%2C000%20Dollars%20in%20Debt"></a>
+         <p></p> 
+         <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+        </div> 
+        <p style="text-align: center;"><img src="http://www.wisebread.com/files/fruganomics/u5180/5%20Inspiring%20People%20Who%20Each%20Paid%20Off%20Over%20100%2C000%20Dollars%20in%20Debt.jpg" alt="5 Inspiring People Who Each Paid Off Over 100,000 Dollars in Debt" width="250" height="374"></p> 
+        <div id="below-content" class="mobile-ad"> 
+        </div> 
+       </div> 
+       <div class="mobile-ad"> 
+        <div class="image-and-share below-big-image"> 
+         <!-- editors pick block below image --> 
+         <style>
+  div.custom-belimg {
+    border:1px solid #d2d2d2;
+    padding: 5px;
+    font: 12px helvetica, arial, sans;
+  }
+  div.custom-belimg div.belimg-heading {
+   border-bottom:1px solid #c2c2c2;
+   font: bold 13px helvetica, arial, sans;
+   margin: 0 10px 15px 10px;
+   padding: 5px;
+  }
+  div.custom-belimg .belimg-content ul {
+  }
+  div.custom-belimg .belimg-content ul li {
+    line-height: 1.5em;
+    background: none;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+  div.custom-belimg .belimg-content ul li a {
+    border-bottom: none;
+  }
+</style> 
+         <div class="custom-belimg"> 
+          <!-- 1163690 --> 
+          <div class="belimg-heading"> 
+           <img src="http://www.wisebread.com/favicon.ico" style="position:relative;top:3px;margin-right:3px;"> Wise Bread Picks 
+          </div> 
+          <div class="belimg-content"> 
+           <ul> 
+            <li><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=belimg-all" title="5 Best Travel Rewards Credit Cards Reviewed">Travel Rewards Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=belimg-all" title="Top 5 Cash Back Credit Cards">Cash Back Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=belimg-a" title="Best 0% Balance Transfer Credit Cards">0% Balance Transfer Credit Cards</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="big-share-buttons" style="margin:30px 0 60px;"> 
+        <a class="big-share-btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt"><img src="http://www.wisebread.com/files/fruganomics/facebook-17x17.png"><span>Share on Facebook</span></a> 
+        <a class="big-share-btn twitter" target="_blank" href="http://twitter.com/home/?status=5 Inspiring People Who Each Paid Off Over $100,000 in Debt http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt via @wisebread"><img src="http://www.wisebread.com/files/fruganomics/twitter-17x17.png"><span>Tweet This</span></a> 
+        <a class="big-share-btn pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wisebread.com%2F5-inspiring-people-who-each-paid-off-over-100000-in-debt&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fblog-images%2Fpaying-bill-122474302-small.jpg&amp;description=5 Inspiring People Who Each Paid Off Over $100,000 in Debt"><img src="http://www.wisebread.com/files/fruganomics/pinterest-17x17.png"><span>Pin It</span></a> 
+       </div> 
+       <!-- end big share buttons --> 
+       <div id="adsense-end-article"> 
+        <!-- end-of-article ad placeholder --> 
+       </div> 
+       <div class="terms" style="margin-bottom:10px;"> 
+        <strong>Tagged: </strong>
+        <a href="/topic/personal-finance/debt-management">Debt Management</a>, 
+        <a href="/topic/credit-0">credit</a>, 
+        <a href="/topic/debt">debt</a>, 
+        <a href="/topic/debt-stories">debt stories</a>, 
+        <a href="/topic/investing">investing</a>, 
+        <a href="/topic/productivity-0">productivity</a>, 
+        <a href="/topic/saving">saving</a>, 
+        <a href="/topic/savings-0">savings</a> 
+       </div> 
+       <div class="related-posts" style="clear:both;"> 
+        <div id="related-links-title" style="margin-bottom:7px;">
+         <strong>Related and Popular</strong>
+        </div> 
+        <div class="view view-similarterms view-id-similarterms view-display-id-block_1 view-dom-id-1"> 
+         <div class="view-content"> 
+          <div class="views-row views-row-1 views-row-odd views-row-first"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/6-ways-to-avoid-vacation-debt?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/travel_cost.jpg" alt="Travel cost" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 6 Ways to Avoid Vacation Debt </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-2 views-row-even"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/what-to-do-if-youre-retiring-with-debt?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/old_couple_having_problems_with_their_home_finances.jpg" alt="Old couple having problems with their home finances" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> What to Do If You're Retiring With Debt </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-3 views-row-odd"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/why-retiring-with-debt-isnt-the-end-of-the-world?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/calculating_our_day_to_day_living_cost.jpg" alt="Calculating our day-to-day living cost" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> Why Retiring With Debt Isn't the End of the World </span></a></span> 
+           </div> 
+          </div> 
+          <div style="" class="clear">
+           &nbsp;
+          </div> 
+          <div class="views-row views-row-4 views-row-even"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/7-easy-first-steps-to-paying-off-debt?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/worried_young_woman_counting_bills.jpg" alt="Worried young woman counting bills" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 7 Easy First Steps to Paying Off Debt </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-5 views-row-odd"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/7-strategies-for-paying-off-debt-when-living-on-a-variable-income?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/iStock-516427450.jpg" alt="Woman paying off debt on variable income" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 7 Strategies for Paying Off Debt When Living on a Variable Income </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-6 views-row-even views-row-last"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/why-you-need-to-know-the-difference-between-secured-and-unsecured-debts?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/casual_man_paying_bills_at_home_with_laptop.jpg" alt="Casual man paying bills at home with laptop" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> Why You Need to Know the Difference Between Secured and Unsecured Debts </span></a></span> 
+           </div> 
+          </div> 
+          <div style="" class="clear">
+           &nbsp;
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Render ZergNet --> 
+       <div id="zergnet-widget-33455"></div> 
+       <script language="javascript" type="text/javascript">
+    (function() {
+        var zergnet = document.createElement('script');
+        zergnet.type = 'text/javascript'; zergnet.async = true;
+        zergnet.src = 'http://www.zergnet.com/zerg.js?id=33455';
+        var znscr = document.getElementsByTagName('script')[0];
+        znscr.parentNode.insertBefore(zergnet, znscr);
+    })();
+</script> 
+       <!-- End of ZergNet --> 
+       <div class="bottom"> 
+        <span class="part fivestar">
+         <form action="/5-inspiring-people-who-each-paid-off-over-100000-in-debt" accept-charset="UTF-8" method="post" id="fivestar-form-node-1163690" class="fivestar-widget fivestar-combo-stars"> 
+          <div>
+           <div class="fivestar-form-vote-1163690 clear-block">
+            <div class="fivestar-static-form-item">
+             <div class="form-item"> 
+              <div class="fivestar-widget-static fivestar-widget-static-vote fivestar-widget-static-5 clear-block">
+               <div class="star star-1 star-odd star-first">
+                <span class="on">2.6</span>
+               </div>
+               <div class="star star-2 star-even">
+                <span class="on"></span>
+               </div>
+               <div class="star star-3 star-odd">
+                <span class="on" style="width: 60%"></span>
+               </div>
+               <div class="star star-4 star-even">
+                <span class="off"></span>
+               </div>
+               <div class="star star-5 star-odd star-last">
+                <span class="off"></span>
+               </div>
+              </div> 
+              <div class="description">
+               <div class="fivestar-summary fivestar-summary-average-count">
+                <span class="average-rating">Average: <span>2.6</span></span> 
+                <span class="total-votes">(<span>5</span> votes)</span>
+               </div>
+              </div> 
+             </div> 
+            </div>
+            <input type="hidden" name="content_type" id="edit-content-type" value="node"> 
+            <input type="hidden" name="content_id" id="edit-content-id" value="1163690"> 
+            <div class="fivestar-form-item  fivestar-combo-text fivestar-combo-stars fivestar-labels-hover">
+             <div class="form-item" id="edit-vote-wrapper"> 
+              <input type="hidden" name="vote_count" id="edit-vote-count" value="5"> 
+              <input type="hidden" name="vote_average" id="edit-vote-average" value="52"> 
+              <input type="hidden" name="auto_submit_path" id="edit-auto-submit-path" value="/fivestar/vote/node/1163690/vote" class="fivestar-path"> 
+              <select name="vote" class="form-select" id="edit-vote-1"><option value="-">Select rating</option><option value="20">Not useful</option><option value="40">Somewhat useful</option><option value="60">Useful</option><option value="80">Very useful</option><option value="100">Extremely useful</option></select>
+              <input type="hidden" name="auto_submit_token" id="edit-auto-submit-token" value="ed75c4b036e16ecaeae348e2325d2ede" class="fivestar-token"> 
+              <div class="description">
+               <div class="fivestar-summary fivestar-summary-user">
+                <span class="user-rating">Your rating: <span>None</span></span>
+               </div>
+              </div> 
+             </div> 
+            </div>
+            <input type="hidden" name="destination" id="edit-destination" value="node/1163690"> 
+            <input type="submit" name="op" id="edit-fivestar-submit" value="Rate" class="form-submit fivestar-submit"> 
+            <input type="hidden" name="form_build_id" id="form-GRs9tYebTfTrAdzkVdDZgNRLRtwsNmRY-u5btsyrzds" value="form-GRs9tYebTfTrAdzkVdDZgNRLRtwsNmRY-u5btsyrzds"> 
+            <input type="hidden" name="form_id" id="edit-fivestar-form-node-1163690" value="fivestar_form_node_1163690"> 
+           </div> 
+          </div>
+         </form> </span> 
+        <span class="part sharethis"><a href="http://www.wisebread.com/5-inspiring-people-who-each-paid-off-over-100000-in-debt" class="sharethis-link" title="5 Inspiring People Who Each Paid Off Over $100,000 in Debt" rel="nofollow">ShareThis</a></span> 
+        <div class="clear-block" style="width: 100%; clear: both;"></div> 
+       </div> 
+       <div id="block-block-192" class="block block-block"> 
+        <div class="content clear"> 
+         <p><em>Disclaimer: The links and mentions on this site may be affiliate links. But they do not affect the actual opinions and recommendations of the authors.</em></p> 
+         <p>Wise Bread is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.</p> 
+        </div> 
+       </div> 
+      </div> 
+      <br style="clear: both;"> 
+      <div id="block-views-comments-block_1" class="block block-views"> 
+       <div class="content clear"> 
+        <div class="view view-comments view-id-comments view-display-id-block_1 view-dom-id-1"> 
+         <div class="view-content"> 
+          <div class="views-row views-row-1 views-row-odd views-row-first"> 
+           <a id="comment-752365"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/e1a9e1137865f14c4320d8e14746e720.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Jen </span> 
+               <span class="count" style="display: none;">#1</span> 
+              </div> 
+              <div class="text"> 
+               <p>I wish they were inspiring but I found that most of them were able to pay off more debt in under two years than I make in two years! Unrealistic.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752365"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-2 views-row-even"> 
+           <a id="comment-752374"></a> 
+           <div class="comment clearfix child"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <a href="/alaina-tweddale" title="View user profile."><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/pictures/picture-5141.jpg" alt="Alaina Tweddale's picture" title="Alaina Tweddale's picture"></a>
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author"><a href="/alaina-tweddale" title="View user profile.">Alaina Tweddale</a></span> 
+               <span class="count" style="display: none;">#2</span> 
+              </div> 
+              <div class="text"> 
+               <p>Some of the people profiled did make good money, but not all of them. Check out Cherie Lowe's story. She and her husband really hustled! He worked three jobs and they didn't go out to eat -- not even for a cup of coffee -- for 2.5 years. It's inspiring to me that almost anyone can sacrifice by taking on extra work and cutting down on expenses until they reach their financial goals.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-3 views-row-odd"> 
+           <a id="comment-752377"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/d06f5d95200c4ddfce43ca67efc6b0e9.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Susan </span> 
+               <span class="count" style="display: none;">#3</span> 
+              </div> 
+              <div class="text"> 
+               <p>I'm about two months from paying off a credit card, then I will turn to paying down a killer HELOC ($48k). Lots of pressure: The HELOC matures in about seven years, plus I'm 10 years away from retirement and want to be reasonably debt-free (just the main mortgage) in retirement. The trouble is that our combined household income just isn't enough to allow us to do both pay down debt AND stock an emergency fund. I've made the calculated decision to pay down debt, while realizing that this means we're going to inevitably be sidetracked by this or that issue with the house or cars. For example, once the credit card is paid off around September, I'm going to stash a bunch of money in savings to deal with a car lease that's due. It's a continual juggle when you don't make enough -- and there's no inheritance windfall on the immediate horizon!</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752377"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-4 views-row-even"> 
+           <a id="comment-752387"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/fa43cb35dc6bcfd52e54723d0e475913.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author"><a href="http://www.jadij.com" rel="nofollow">Blue Shoe</a> </span> 
+               <span class="count" style="display: none;">#4</span> 
+              </div> 
+              <div class="text"> 
+               <p>Gonna echo Jen - some of this is inspiring (namely the first couple). But stuff like "Used an inheritance to pay the last $105,000 of their mortgage"? Most of us aren't going to be inheriting 100k. </p> 
+               <p>Still, I like seeing these types of posts.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752387"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-5 views-row-odd"> 
+           <a id="comment-752394"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/395dafb3d38253569b81305675f1e08e.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Carol </span> 
+               <span class="count" style="display: none;">#5</span> 
+              </div> 
+              <div class="text"> 
+               <p>I really liked this: "Live from a place of wonder in the wealth you've already been blessed with and you'll be much happier and more successful in paying off debt."</p> 
+               <p>and plan to use it in my own debt reduction journey. However.....I'd like to hear the story about the two income couple who had it made (except the debt, of course), when suddenly, one partner was out of work long term, they were not able to sell the under-water house in the depressed market, and although they barely avoided bankruptcy, they did avoid it, and they managed to pay off their large amount of debt without an inheritance or ....</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752394"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-6 views-row-even"> 
+           <a id="comment-752447"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/cbc64e334820c1562208cd796b50e210.jpg?d=identicon&amp;s=85&amp;r=G&amp;f=y" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Tiffany </span> 
+               <span class="count" style="display: none;">#6</span> 
+              </div> 
+              <div class="text"> 
+               <p>It's nice to read, yeah. But when I read things like...</p> 
+               <p>"Paid a hefty $5,000 per month toward his loan. "I had a job as a tax consultant and was making about $150,000 per year plus bonus," he says. "My Canadian taxes took about a third, which left me a little over $8,000 per month..."</p> 
+               <p>I had to read that statement twice. That's not an everyday, average situation. I live in an area where the average hourly wage is about 8-12 an hour.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752447"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-7 views-row-odd"> 
+           <a id="comment-752452"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/3488a8ec40ddc64231c1e13c4c6c99db.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Amanda </span> 
+               <span class="count" style="display: none;">#7</span> 
+              </div> 
+              <div class="text"> 
+               <p>I don't feel like I can identify with most of these people in this article (and I usually love these kind of articles). Most of them received a hefty inheritance at some point, and a lot of them found great high-paying jobs. I have joined the ranks of people who have a useless but pricey degree - a degree I had to pay for myself. I also graduated from high school and college with high honors; I just wasn't outstanding enough to receive any of the amazing scholarships. I abandoned graduate school when I had unexpected medical bills. One of my parents fought an expensive but short battle with cancer while I was a dependent. I am the oldest of six, and my mom is not awesome with money; I don't ever expect to receive a penny from her. Needless to say, I like to read about people who conquered financial burdens by themselves - without handouts for school (you are at a huge advantage if you had your school &amp; associated living costs paid for) or for just being born.</p> 
+               <p> I appreciate people like Cherie Lowe; those are the kind of stories I want to read! The other ones just make me want to smack someone. If my husband or I received a $100 k inheritance right now, we would own our house and our cars (actually, we already own our cars), have our student debt paid off, AND have a significant amount of the money in the bank, especially compared to how much we spend. I'm sorry, but your debt story is not impressive if you were fortunate enough to just suddenly receive that kind of money. After reading the other comments, I feel like most people are in agreement about this.</p> 
+               <p>However, rock on Cherie Lowe and family!! You guys are an inspiration :)</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752452"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-8 views-row-even"> 
+           <a id="comment-778516"></a> 
+           <div class="comment clearfix child"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/c44bb4dd5c0568d0abe714b6d84dd982.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">John N. </span> 
+               <span class="count" style="display: none;">#8</span> 
+              </div> 
+              <div class="text"> 
+               <p>I think many are missing the point. They lose focus when they hear inheritance. But they don't realize it took willpower and dedication to apply this new found money to their debt, instead of treating themselves(vacations, new cars, TV, etc.). I am in the process of rebuilding my future. It is hard to stay focused on paying down debt, when things keep popping up to eat up my emergency fund.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-9 views-row-odd"> 
+           <a id="comment-752470"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <a href="/max-wong" title="View user profile."><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/pictures/picture-792.jpg" alt="Max Wong's picture" title="Max Wong's picture"></a>
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author"><a href="/max-wong" title="View user profile.">Max Wong</a></span> 
+               <span class="count" style="display: none;">#9</span> 
+              </div> 
+              <div class="text"> 
+               <p>Cherie streamlined expenses by qualifying purchases with this question: "Will this choice help us save as much as possible?" If not, they didn't choose it.</p> 
+               <p>I am adding this quote to my arsenal of tools I use to combat debt. This is a GREAT way of clarifying what is a "want" vs. what is a "need."</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752470"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-10 views-row-even"> 
+           <a id="comment-752473"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/627b1233d90f57158920b6dd22a526d2.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Olivia </span> 
+               <span class="count" style="display: none;">#10</span> 
+              </div> 
+              <div class="text"> 
+               <p>The most universally practical example was that of Cherie and Brian, even if we don't know what everyone's salary was. Not eating meat or eating out is something I can wrap my head around. The average U.S. household makes around $50,000 a year before taxes. I would love to see more examples of frugal moderate or low income people making a dent in their expenses, not those with high salaries or windfalls. That is unrealistic.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752473"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-11 views-row-odd"> 
+           <a id="comment-752484"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/345184ffeb22ad05d68077583d46a78e.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Noah BoardwalkSavers </span> 
+               <span class="count" style="display: none;">#11</span> 
+              </div> 
+              <div class="text"> 
+               <p>Very inspiring. Those with student loans should first take into account the interest rates of their loans. If a loan tends to have a fluctuating rate, pay that one first before it goes up. Federal loans have fixed rates, so they can be saved for last. By developing small money savvy habits such as cutting cable, using public transport, cooking, having a roommate, and many more, you can save thousands of dollars every year. Getting all the help you need to get rid of debt is more crucial than ever nowadays.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/752484"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-12 views-row-even"> 
+           <a id="comment-771630"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/cbc64e334820c1562208cd796b50e210.jpg?d=identicon&amp;s=85&amp;r=G&amp;f=y" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Jay </span> 
+               <span class="count" style="display: none;">#12</span> 
+              </div> 
+              <div class="text"> 
+               <p>Stories of paying off their loans with big inheritances, or for example the marketing officer who makes 8000 dollars a month, make these stories pretty un-relatable for me. Just made me feel worse. Wish i could unread this.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/771630"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-13 views-row-odd"> 
+           <a id="comment-773755"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/cbc64e334820c1562208cd796b50e210.jpg?d=identicon&amp;s=85&amp;r=G&amp;f=y" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Guest </span> 
+               <span class="count" style="display: none;">#13</span> 
+              </div> 
+              <div class="text"> 
+               <p>How is getting 50k inheritance windfall "inspiring" for those people who have older generations of their family that failed to save, lost their home, need to be supported, etc., you will NOT get an inheritance. Having money handed to you is not something everyone can do and is about the opposite of "inspiring."</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/773755"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-14 views-row-even"> 
+           <a id="comment-775427"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/5fdb567a3a73f526548ba5a707d528fa.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author"><a href="http://www.thedownsizingjourney.com/" rel="nofollow">Jan</a> </span> 
+               <span class="count" style="display: none;">#14</span> 
+              </div> 
+              <div class="text"> 
+               <p>I enjoyed Cheries story, much easier to relate to than some of the others. I'll have to start asking myself that question to keep me motivated with the debt payoff</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/775427"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-15 views-row-odd"> 
+           <a id="comment-793087"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/2a6c216596dd209fee20cbc5c13e1514.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Lauren </span> 
+               <span class="count" style="display: none;">#15</span> 
+              </div> 
+              <div class="text"> 
+               <p>I agree with some of the commenters, that while these stories are good and inspiring to hear, they aren't the most realistic. Most inspiring one for me was probably Kate who was working as much as 117 hours a week! That's hustle, and definitely a lot more hustle than I have been doing. But the others --- 2 of them put inheritance money toward debt, not exactly something I can just plan for!</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/793087"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-16 views-row-even views-row-last"> 
+           <a id="comment-803677"></a> 
+           <div class="comment clearfix parent"> 
+            <div class="body"> 
+             <div class="picture"> 
+              <div class="picture"> 
+               <img src="http://www.gravatar.com/avatar/9259d3cad1826ea7852d1505271256ca.jpg?d=identicon&amp;s=85&amp;r=G" alt="Guest's picture" title="Guest's picture">
+              </div> 
+             </div> 
+             <div class="content"> 
+              <div class="author-and-date"> 
+               <span class="author">Darin L Clements </span> 
+               <span class="count" style="display: none;">#16</span> 
+              </div> 
+              <div class="text"> 
+               <p>Not that impressive. Using inheritance to pay off debt isn't courageous or even a sacrifice. It's free money.<br> And, when your job title is CFO or CEO and you're making $150k a year, it's even less so.</p> 
+              </div> 
+              <div class="actions"> 
+               <ul> 
+                <li class="reply"><a href="/comment/reply/1163690/803677"><span>REPLY</span></a></li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="clear-block"></div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#main --> 
+     <div id="sidebar-right" class="sidebar"> 
+      <div id="block-ka_author_block-0" class="block block-ka_author_block"> 
+       <div class="content clear"> 
+        <div id="ka_author_block-0" class="block yespic yesbio"> 
+         <div class="author-picture"> 
+          <a href="http://www.wisebread.com/alaina-tweddale" title="View author's profile"><img width="85" height="85" class="author-picture" alt="" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/pictures/picture-5141.jpg"></a> 
+         </div> 
+         <div class="author-name"> 
+          <a href="http://www.wisebread.com/alaina-tweddale" title="View 's profile">Alaina Tweddale</a> 
+         </div> 
+         <div class="author-title">
+           Staff Writer 
+         </div> 
+         <div class="author-more"> 
+          <a href="/alaina-tweddale">More articles »</a> 
+         </div> 
+         <div class="author-icons"> 
+          <a href="/alaina-tweddale" title="'s profile"><img id="author-icon-profile" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fugue-icons/icons/user.png"></a>
+          <a href="/users/alaina-tweddale/contact" title="Contact "><img id="author-icon-contact" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fugue-icons/icons/mail.png"></a> 
+         </div> 
+         <div class="author-short-bio"> 
+          <div class="author-short-bio-text"> 
+           <img class="blockquote-image" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/images/blockquote.gif"> 
+           <a href="http://www.wisebread.com/alaina-tweddale" title="View 's profile">Alaina Tweddale is a freelance writer in the Philadelphia area.</a> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- author_block cached 2017/10/02 - 11:32 --> 
+       </div> 
+      </div>
+      <div id="block-block-88" class="block block-block"> 
+       <div class="content clear"> 
+        <center> 
+         <!-- Begin Medium Rectangle 1 --> 
+         <script type="text/javascript" src="http://static.fmpub.net/zone/2230"></script> 
+         <!-- End Medium Rectangle 1 --> 
+         <!-- FM Tracking Pixel --> 
+         <script type="text/javascript" src="http://static.fmpub.net/site/wisebread"></script> 
+         <!-- FM Tracking Pixel --> 
+        </center> 
+       </div> 
+      </div>
+      <div id="block-quicktabs-2" class="block block-quicktabs"> 
+       <div class="content clear"> 
+        <div id="quicktabs-2" class="quicktabs_wrapper quicktabs-style-default">
+         <ul class="quicktabs_tabs quicktabs-style-default">
+          <li class="qtab-0 active first last"><a href="/5-inspiring-people-who-each-paid-off-over-100000-in-debt?quicktabs_2=0#quicktabs-2" id="quicktabs-tab-2-0" class="qt_tab active">Most Popular</a></li>
+         </ul>
+         <div id="quicktabs_container_2" class="quicktabs_main quicktabs-style-default">
+          <div id="quicktabs_tabpage_2_0" class="quicktabs_tabpage">
+           <div class="view view-most-views-commented view-id-most_views_commented view-display-id-block_1 view-dom-id-2"> 
+            <div class="view-content"> 
+             <div class="views-row views-row-1 views-row-odd views-row-first"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/the-best-0-balance-transfer-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/woman_credit_card_phone_000053601330.jpg" alt="Woman using her credit card on the phone" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/the-best-0-balance-transfer-credit-cards?ref=pop">The Best 0% Balance Transfer Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-2 views-row-even"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/top-5-travel-reward-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/couples-vacation-beach.jpg" alt="Couple on the beach" title="Couple on the beach" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/top-5-travel-reward-credit-cards?ref=pop">The Best Travel Reward Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-3 views-row-odd"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/5-best-cash-back-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/woman-with-cash.jpg" alt="" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/5-best-cash-back-credit-cards?ref=pop">The Best Cash Back Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-4 views-row-even"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/the-5-best-secured-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/couple_credit_card_000023241164.jpg" alt="Young couple with secured credit card" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/the-5-best-secured-credit-cards?ref=pop">The Best Secured Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-5 views-row-odd views-row-last"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/netspend-the-story-of-the-visa-debit-card-we-did-not-apply-for?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/7123758_0475304ba3_z.jpg" alt="debit card" title="debit card" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/netspend-the-story-of-the-visa-debit-card-we-did-not-apply-for?ref=pop">netSpend: The Story of the Visa Debit Card We Did Not Apply For</a> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="more-link"> 
+             <a href="/popular/today"> more </a> 
+            </div> 
+           </div> 
+          </div>
+         </div>
+        </div> 
+       </div> 
+      </div>
+      <div id="block-block-196" class="block block-block"> 
+       <div class="content clear"> 
+        <div style="padding:0 auto;">
+         <a style="position:relative;top:5px;"></a>
+         <a href="https://advertisers.federatedmedia.net/explore/view/wisebread"><img src="http://static.fmpub.net/assets/badges/FM_Business_Advertise_Vertical.gif" border="0" width="100" height="150"></a> &nbsp; &nbsp; 
+        </div> 
+       </div> 
+      </div> 
+      <div class="sidebar-split"> 
+       <div class="split-left"></div> 
+       <div class="split-right"></div> 
+      </div> 
+     </div> 
+     <!-- /#sidebar-right --> 
+     <div class="clear-block"></div> 
+    </div> 
+    <div class="footer-dividor"></div> 
+    <div id="footer" class="clear"> 
+     <div class="clear-block"></div> 
+     <div class="footer-message"> 
+      <div>
+        © 2017 
+       <a href="/">Wise Bread</a> | 
+       <a href="/about">About</a> | 
+       <a href="/advertise">Advertise</a> | 
+       <a href="/about/contact">Contact</a> | 
+       <a href="http://feeds.killeraces.com/wisebread">Subscribe</a> 
+      </div> 
+      <div> 
+       <strong><a href="/legal/user-agreement">User Agreement</a></strong> | 
+       <strong><a href="/legal/privacy-policy">Privacy Policy</a></strong> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- /#footer --> 
+    <div id="subfooter" class="clear"> 
+     <div id="block-block-155" class="block block-block"> 
+      <div class="content clear"> 
+       <!-- crazyegg --> 
+       <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0006/5275.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script> 
+       <!-- Start Quantcast tag --> 
+       <script type="text/javascript">
+
+_qoptions={
+
+qacct:"p-b0fVTrG87oLhU"
+
+};
+
+</script> 
+       <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script> 
+       <noscript> 
+        <img src="http://pixel.quantserve.com/pixel/p-b0fVTrG87oLhU.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"> 
+       </noscript> 
+       <!-- End Quantcast tag --> 
+       <!-- FM Insight Tag --> 
+       <script type="text/javascript">
+  var _bizo_data_partner_id = "901";
+</script> 
+       <script type="text/javascript">
+  var _bizo_p = (("https:" == document.location.protocol) ? "https://sjs." : "http://js.");
+  document.write(unescape("%3Cscript src='" + _bizo_p + "bizographics.com/convert_data.js?partner_id=" + _bizo_data_partner_id + "' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+       <noscript> 
+        <img height="1" width="1" alt="" style="display:none;" src="http://www.bizographics.com/collect/?pid=901&amp;fmt=gif"> 
+       </noscript> 
+       <!-- end FM Insight Tag --> 
+       <!-- itunes auto link tag --> 
+       <script type="text/javascript">var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '10lpjh']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script> 
+       <!-- end itunes auto link tag --> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- /.container --> 
+  </div>
+  <!-- /.super-container--> 
+  <!-- /layout --> 
+  <script type="text/javascript" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/js/js_8bc3ed918a14cc5031380764b134a6cd.js"></script> 
+  <!-- pinterest js --> 
+  <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1fdce76940","applicationID":"12902797","transactionName":"MgZVbBQHXBAEUhFZXgtMdlsSD10NSl8KVFQ6E1ZfAzlECgBG","queueTime":0,"applicationTime":1228,"atts":"HkFWGlwdTx4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

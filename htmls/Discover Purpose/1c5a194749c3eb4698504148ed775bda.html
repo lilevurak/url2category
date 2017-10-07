@@ -1,0 +1,1102 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"> 
+  <meta name="HandheldFriendly" content="True"> 
+  <meta name="keywords" content=""> 
+  <meta name="description" content=""> 
+  <meta name="author" content=""> 
+  <meta property="fb:app_id" content="95115330390"> 
+  <meta property="og:url" content="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/what-is-gods-purpose-for-your-life-and-how-to-find-it"> 
+  <meta property="og:title" content="What Is God's Purpose For Your Life (and how to find it)"> 
+  <meta property="og:description" content="Do you know God's purpose for your life? Are you feeling a bit confused and aimless. Here are some ways to find God's purpose."> 
+  <meta property="og:site_name" content="Cornerstone University"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:image" content="https://www.cornerstone.edu/images/blogs/300-pgs-blog-post.jpg"> 
+  <title>Lifelong Learning Matters</title> 
+  <link href="https://www.cornerstone.edu/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> 
+  <link rel="shortcut icon" href="https://www.cornerstone.edu/images/favicon.ico" type="image/x-icon"> 
+ </head> 
+ <body> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WDDDMK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDDDMK');</script> 
+  <!-- End Google Tag Manager --> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5C43P5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5C43P5');</script> 
+  <!-- End Google Tag Manager --> 
+  <div id="ttdUniversalPixelTag67e03bb9cefc408a97095f52eccf1637" style="display:none"> 
+   <script src="https://js.adsrvr.org/up_loader.1.1.0.js" type="text/javascript"></script> 
+   <script type="text/javascript">
+            (function(global) {
+                if (typeof TTDUniversalPixelApi === 'function') {
+                    var universalPixelApi = new TTDUniversalPixelApi();
+                    universalPixelApi.init("mhjuu44", ["vexqnqz"], "https://insight.adsrvr.org/track/up", "ttdUniversalPixelTag67e03bb9cefc408a97095f52eccf1637");
+                }
+            })(this);
+        </script> 
+  </div> 
+  <!--//  START Interior Banner  //--> 
+  <header class="section academic-programs-detail" id="interior-banner" style="background-image: url('');"> 
+   <div class="container"> 
+    <div class="general-interior-content"> 
+     <h1>Lifelong Learning Matters</h1> 
+     <ul id="breadcrumb"> 
+      <li><a href="https://www.cornerstone.edu/">Home</a></li> 
+      <li><a href="https://www.cornerstone.edu/blogs/">Blogs</a></li> 
+      <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/">Lifelong Learning Matters</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </header> 
+  <!--//  START Header  //--> 
+  <nav id="Top" role="navigation"> 
+   <div class="container"> 
+    <div class="nav-wrapper"> 
+     <a id="logo-container" href="https://www.cornerstone.edu/" class="brand-logo"> <img src="https://www.cornerstone.edu/images/cornerstone-university-logo.svg" alt="Cornerstone University Logo"> </a> 
+     <ul id="nav-utility" class="right"> 
+      <li><a href="http://www.cugoldeneagles.com/">Athletics</a></li> 
+      <li><a href="/blogs">Blogs</a></li> 
+      <li><a href="/christ-chapel">Christ Chapel</a></li> 
+      <li><a href="/contact-us">Contact Us</a></li> 
+      <li><a href="/why-cornerstone-university/events/">Events</a></li> 
+      <li><a href="/why-cornerstone-university/campus-locations/university-offices/advancement/">Give to CU</a></li> 
+     </ul> 
+     <ul id="nav-main" class="right menu"> 
+      <li class="mega-menu-parent"> <a href="https://www.cornerstone.edu/why-cornerstone-university/">Why CU?<i class="fa fa-angle-down"></i></a> 
+       <!-- Dropdown Structure --> 
+       <ul id="why-cu-dropdown" class="row"> 
+        <li class="col m4 left"> 
+         <ul> 
+          <li> <span>For Everyone</span> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/identity-mission-and-vision/">Identity, Mission and Vision</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/our-president/">Our President</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/board-of-trustees/">Board of Trustees</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/campus-locations/">Campus Locations</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/acerca-de-la-universidad-de-cornerstone/">Acerca de la Universidad de Cornerstone</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/accreditation/">Accreditation</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/news/">News</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/events/">Events</a></li> 
+            <li><a href="/why-cornerstone-university/cu-online/">CU Online</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/">Traditional Undergrad</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/adult-and-graduate/">Adult &amp; Graduate</a></li> 
+            <li><a href="https://www.cornerstone.edu/asia-biblical-theological-seminary/">Asia Biblical Theological Seminary</a></li> 
+           </ul> </li> 
+         </ul> <span class="triangle"></span> </li> 
+        <li class="col m8 right"> 
+         <ul class="row"> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/">Traditional Undergrad</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/the-cu-edge/">The Cornerstone Edge</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/student-life/">Student Life</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/athletics/">Athletics</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/quick-facts/">Quick Facts</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/undergrad/for-parents/">Parent Resources</a></li> 
+           </ul> </li> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/why-cornerstone-university/adult-and-graduate/">Adult &amp; Graduate</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/adult-and-graduate/about/">FAQs</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/adult-and-graduate/accreditation/">Educational Effectiveness</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/adult-and-graduate/administration-faculty/">Administration &amp; Faculty</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/adult-and-graduate/campuses/">Locations</a></li> 
+           </ul> </li> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/why-cornerstone-university/seminary/">Seminary</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/why-seminary/">Why Seminary?</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/administration-faculty/">Staff &amp; Faculty</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/accreditation/">Accreditation</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/history/">History &amp; Values</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/quick-facts/">Quick Facts</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/grand-rapids/">Grand Rapids</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/student-profiles/">Student Profiles</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li class="mega-menu-parent"> <a href="https://www.cornerstone.edu/admissions/">Admissions<i class="fa fa-angle-down"></i></a> 
+       <!-- Dropdown Structure --> 
+       <ul id="admissions-dropdown" class="row"> 
+        <li class="col m4 left" style="background-image: url('https://www.cornerstone.edu/files/pages/home-block-2-5.jpg');"> <a href="https://www.cornerstone.edu/apply/">Apply Now <i class="fa fa-angle-right"></i></a> <span class="triangle"></span> </li>
+        <li> </li>
+        <li class="col m8 right"> 
+         <ul class="row"> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/">Traditional Undergrad</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/costs-and-aid/">Costs and Aid</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/net-price-calculator-2/">Net Price Calculator</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/applying-to-cu/">High School Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/international-students/">International Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/transfer-students/">Transfer Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/accepted/">Accepted Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/deposited-students/">Deposited Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/contact-admissions/">Contact Us</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/undergraduate-admissions/costs-and-aid/pay-your-deposit/">Pay My Deposit</a></li> 
+           </ul> </li> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/admissions/pgs-apply-now/">Adult &amp; Graduate</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/adult-and-graduate-tuition-and-fees/">Tuition and Fees</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/financial-aid/">Financial Aid</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/pay-your-bill/">Pay Your Bill</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/transfer-credits/">Transfer Credits</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/international-applicants/">International Applicants</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/pgs-technology-requirements/">Technology Requirements</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/community-partnerships/">Community Partnerships</a></li> 
+            <li><a href="/admissions/cu-online/">CU Online</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/admissions-events/">Admissions Events</a></li> 
+            <li><a href="https://www.cornerstone.edu/admissions/pgs-apply-now/admissions-staff/">Contact Us</a></li> 
+           </ul> </li> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions">Seminary</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions/grts-costs-and-aid/">Costs and Aid</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions/new-students/">New Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions/international-students/">International Students</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions/visit-grts/">Visit GRTS</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions/contact-grts/">Contact Us</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li class="mega-menu-parent"> <a href="https://www.cornerstone.edu/academics/">Academics<i class="fa fa-angle-down"></i></a> 
+       <!-- Dropdown Structure --> 
+       <ul id="academics-dropdown" class="row"> 
+        <li class="col m4 left"> 
+         <ul> 
+          <li> <span>For Everyone</span> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/academics/view-all-programs/">View All Programs</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/university-learning-domains/">Learning Outcomes</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/commencement/">Commencement</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/faculty-scholarship/">Faculty Scholarship</a></li> 
+            <li><a href="/why-cornerstone-university/campus-locations/university-offices/provosts-office/">Academic Leadership</a></li> 
+            <li><a href="https://www.cornerstone.edu/why-cornerstone-university/campus-locations/university-offices/registrar/">Registrar's Office</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/student-disability-services/">Student Disability Services</a></li> 
+            <li><a href="http://library.cornerstone.edu/home">Miller Library</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/study-abroad/">Off-Campus Study Programs</a></li> 
+           </ul> </li> 
+         </ul> <span class="triangle"></span> </li> 
+        <li class="col m8 right"> 
+         <div class="row academics-search"> 
+          <div class="col s12 m6 l7"> 
+           <div class="academics-search-box"> 
+            <input id="academicsSearch" type="text" placeholder="Find programs, degrees and more..."> 
+            <i class="mdi-action-search"></i> 
+           </div> 
+          </div> 
+          <div class="col s12 m1 l1 separator-col"> 
+           <span>- <em>or</em> -</span> 
+          </div> 
+          <div class="col s12 m5 l4"> 
+           <a href="https://www.cornerstone.edu/academics/view-all-programs" class="btn waves-effect waves-light">View All Programs</a> 
+          </div> 
+          <span class="triangle"></span> 
+         </div> 
+         <ul class="row academics-links"> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/academics/undergrad/">Undergrad</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/all-majors-and-programs/">All Majors &amp; Programs</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/find-me-a-major/">Find Me a Major</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/divisions/">Divisions</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/creativity-and-innovation-honors-institute/">Creativity &amp; Innovation Honors Institute</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/undeclared/">Undeclared</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/academic-catalog/">Academic Catalog</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/career-life-calling/">Center for Career and Life Calling</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/center-for-student-success/">Center for Student Success</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/undergrad/academic-calendar/">Academic Calendar</a></li> 
+           </ul> </li> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/academics/pgs/">Adult &amp; Graduate Studies</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/academics/pgs/all-majors-programs/">All Degrees &amp; Programs</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/pgs/academic-catalog/">Academic Catalogs</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/pgs/divisions/">Divisions</a></li> 
+            <li><a href="https://www.cornerstone.edu/academics/pgs/academic-support/">Academic Support</a></li> 
+            <li><a href="/academics/cornerstone-university-online/">Online Degrees</a></li> 
+           </ul> </li> 
+          <li class="col m4"> <a href="https://www.cornerstone.edu/academics/seminary/">Seminary</a> 
+           <ul> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/academics/seminary-degree-programs/">Degree Programs</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/seminary/administration-faculty/">Staff &amp; Faculty</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/academics/israel-study-tour/">Israel Study Tour</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/academics/pirsig-fellowship/">Pirsig Fellowship</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/academics/urban-cohort/">Urban Cohort</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/academics/special-programs-certifications/">Special Programs &amp; Certifications</a></li> 
+            <li><a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/academics/academic-calendar/">Academic Calendar</a></li> 
+            <li><a href="https://www.cornerstone.edu/asia-biblical-theological-seminary/">Asia Biblical Theological Seminary</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li> <a href="https://www.cornerstone.edu/alumni/">Alumni<i class="fa fa-angle-down"></i></a> 
+       <!-- Dropdown Structure --> 
+       <ul id="alumni-dropdown" class="row"> 
+        <li class="col m7 left" style="background-image: url('https://www.cornerstone.edu/files/pages/406-406-web-alumni-02.jpg');"> <a href="https://www.cornerstone.edu/alumni/update-my-info-share-my-news/">Update Info <i class="fa fa-angle-right"></i></a> <span class="triangle"></span> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/events/">Events</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/alumni-reunion/">Alumni Reunion</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/awards/">Awards</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/alumni-updates/">Alumni Updates</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/yearbooks/">Yearbooks</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/surveys/">Surveys</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/give-to-cornerstone/">Give to Cornerstone</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/alumni/alumni-relations-staff/">Contact Us</a> </li> 
+       </ul> </li> 
+      <li> <a href="https://www.cornerstone.edu/visit/">Visit<i class="fa fa-angle-down"></i></a> 
+       <!-- Dropdown Structure --> 
+       <ul class="regular-dropdown"> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/visit/undergrad-visits/">Undergraduate Visits</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/admissions/pgs-apply-now/admissions-staff/meet-your-enrollment-counselor/">Adult &amp; Graduate Visits</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/grand-rapids-theological-seminary/grts-admissions/visit-grts/">GRTS Visits</a> </li> 
+       </ul> </li> 
+      <li> <a href="https://www.cornerstone.edu/apply/">Apply<i class="fa fa-angle-down"></i></a> 
+       <!-- Dropdown Structure --> 
+       <ul class="regular-dropdown"> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/apply/traditional-undergraduate/">Traditional Undergraduate</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/apply/adult-graduate/">Adult &amp; Graduate</a> </li> 
+        <li class="col m5 right"> <a href="https://www.cornerstone.edu/apply/cu-online/">CU Online</a> </li> 
+        <li class="col m5 right"> <a href="https://cornerstone.hobsonsradius.com/ssc/aform/EI770c0G0S3Ex6700qzxF.ssc">Seminary (GRTS)</a> </li> 
+        <li class="col m5 right"> <a href="/asia-biblical-theological-seminary/">Seminary (ABTS)</a> </li> 
+       </ul> </li> 
+      <li class="search"> 
+       <div class="control" tabindex="1"> 
+        <i class="mdi-action-search icon-search ion-search"></i> 
+        <span>Search</span> 
+        <div class="search-btn"></div> 
+       </div> </li> 
+     </ul> 
+     <i class="mdi-navigation-close icon-close ion-ios-close-empty"></i> 
+     <div class="search-form"> 
+      <div> 
+       <input id="desktopSearch" style="width: 100%; font-size: 35px;" class="input-search" placeholder="Type here to find programs, degrees and more..." type="text"> 
+       <input id="desktopSearch-button" style="opacity: 1;" class="input-submit btn btn-large waves-effect waves-light" type="submit" onmousedown="var urlBase = window.location.origin + '/search-results?q='; var mobileSearchText = $('.input-search').val(); window.location = urlBase + mobileSearchText;" value="search"> 
+      </div> 
+      <style type="text/css">#desktopSearch-button{ background: #cc9933; line-height: 88px; font-size: 1rem; padding: 0; font-weight: bold;} #desktopSearch-button:hover, .input-submit.btn.btn-large:hover, .input-submit.btn.btn-large:hover > #desktopSearch-button{background: #d1a347;}</style> 
+      <link href="https://www.cornerstone.edu/css/search.css" type="text/css" rel="stylesheet" media="screen,projection"> 
+      <i class="mdi-action-search search-input-icon"></i> 
+      <div class="row"> 
+       <div class="col"> 
+        <a href="/academics/view-all-programs">All Programs</a> 
+        <a href="/academics/faculty-directory/">Faculty Directory</a> 
+       </div> 
+      </div> 
+     </div> 
+     <ul id="nav-mobile" class="side-nav"> 
+      <li class="mobile-search-area"> 
+       <div> 
+        <input id="desktopSearch" class="input-search mobile-search" placeholder="Site Search..." type="text"> 
+        <input style="opacity: 1;" class="input-submit btn btn-large mobile-search-button" type="submit" onmousedown="var urlBase = window.location.origin + '/search-results?q='; var mobileSearchText = $('.mobile-search').val(); window.location = urlBase + mobileSearchText;" value="go"> 
+       </div> </li> 
+      <li class="main-link"> <a href="https://www.cornerstone.edu/why-cornerstone-university/">Why CU?<i class="fa fa-angle-right"></i></a> </li> 
+      <li class="main-link"> <a href="https://www.cornerstone.edu/admissions/">Admissions<i class="fa fa-angle-right"></i></a> </li> 
+      <li class="main-link"> <a href="https://www.cornerstone.edu/academics/">Academics<i class="fa fa-angle-right"></i></a> </li> 
+      <li class="main-link"> <a href="https://www.cornerstone.edu/alumni/">Alumni<i class="fa fa-angle-right"></i></a> </li> 
+      <li class="main-link"> <a href="https://www.cornerstone.edu/visit/">Visit<i class="fa fa-angle-right"></i></a> </li> 
+      <li class="main-link"> <a href="https://www.cornerstone.edu/apply/">Apply<i class="fa fa-angle-right"></i></a> </li> 
+      <li class="nav-utiliity-mobile"> 
+       <ul> 
+        <li><a href="http://www.cugoldeneagles.com/">Athletics</a></li> 
+        <li><a href="/blogs">Blogs</a></li> 
+        <li><a href="/christ-chapel">Christ Chapel</a></li> 
+        <li><a href="/contact-us">Contact Us</a></li> 
+        <li><a href="/why-cornerstone-university/events/">Events</a></li> 
+        <li><a href="/why-cornerstone-university/campus-locations/university-offices/advancement/">Give to CU</a></li> 
+       </ul> </li> 
+     </ul> 
+     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a> 
+    </div> 
+   </div> 
+  </nav> 
+  <script type="text/javascript">var switchTo5x=true;</script> 
+  <script type="text/javascript" id="st_insights_js" src="https://ws.sharethis.com/button/buttons.js?publisher=96092c57-0e3e-48ae-bc63-a4cc3bb80034-10exp-N"></script> 
+  <script type="text/javascript" src="https://ss.sharethis.com/loader.js"></script> 
+  <style>
+	.content .blog__post--author-bio {
+	padding: 10px;
+    background-color: #F2ECDC;
+    margin-bottom: 25px;
+}
+	.content .blog__post--author-bio img {
+		float:right;
+		width:200px;
+		padding-left:15px;
+	}
+	.content .blog__post--author-bio:after {
+	 visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+	}
+	@viewport{ width: device-width; } @-ms-viewport { width: device-width; }
+  	@media (max-width: 968px)
+  	{
+  		.blog__featured-image
+  		{
+  			height: 500px;
+  			background: url(https://www.cornerstone.edu/files/tablet_cu-online-landing-page-2-5-16.jpg) !important;
+  			background-repeat: none !important;
+  			background-size: cover !important;
+  		}
+  	}
+
+  	@media (max-width: 490px)
+  	{
+  		.blog__featured-image
+  		{
+  			height: 300px;
+  			background: url(https://www.cornerstone.edu/files/mobile_cu-online-landing-page-2-5-16.jpg) !important;
+  			background-repeat: none !important;
+  			background-size: cover !important;
+  		}
+  	}
+  	
+  	#sthoverbuttons .sthoverbuttonsMain-r {margin-right: 15px;}
+</style> 
+  <script type="text/javascript">
+				document.getElementById("interior-banner").style.backgroundImage = 'url(\'https://www.cornerstone.edu/files/cu-online-landing-page-2-5-16.jpg\')';
+	</script> 
+  <!-- <div class="blog__wrapper">
+	<div class="blog__featured-image" style="background: url('https://www.cornerstone.edu/files/cu-online-landing-page-2-5-16.jpg') no-repeat; background-size: cover; background-position: center center;"></div>
+</div> --> 
+  <main class="content" id="interior-main" role="main"> 
+   <div class="container"> 
+    <div class="row"> 
+     <section class="col s12 m12 19 right main-col"> 
+      <div class="programs-listing-results"> 
+       <script>document.title = "What Is God's Purpose For Your Life (and how to find it)";</script>
+       <script>var x = document.getElementsByClassName("general-interior-content"); console.log(x); var y = x[0].getElementsByTagName("h1"); y[0].innerHTML = "What Is God's Purpose For Your Life (and how to find it)";</script> 
+       <script type="text/javascript">
+				document.getElementById("interior-banner").style.backgroundImage = 'url(\'https://www.cornerstone.edu/files/cu-online-landing-page-2-5-16.jpg\')';
+	</script> 
+       <style>
+.post__categories span,
+.post__tags span,
+.content .related_posts--title {
+	font-weight:700;
+	}
+.content .related_posts--image {max-width:200px;}
+.content .related_posts--list {
+	display: inline-block;
+    list-style-type: none;
+    width: 100%;
+    padding-left:0;
+}
+    
+.content .related_posts--list li {
+	display: inline-block;
+    width: 190px;
+    list-style-type: none;
+    margin:0 30px 0 0;
+}
+.content .related_posts--list a {
+	text-decoration:none;
+}
+.content .related_posts--list{
+	text-align: center
+}
+
+.content .post_author-blurb {
+	background-color:#F2ECDC;
+	padding:15px;
+	margin-bottom:10px;
+	clear:both;
+}
+.content .post_author-blurb img {
+	float:right;
+	width:200px;
+	padding-left:15px;
+}
+.content .post_author-blurb:after {
+	 visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     margin-bottom:10px;
+}
+
+.post__content .post__image {
+	float: right; 
+	margin-left: 15px; 
+	margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 500px) {
+	.post__content .post__image {
+		float: none;
+	}
+} 
+
+</style> 
+       <article class="blog__post"> 
+        <h2 class="post__title">What Is God's Purpose For Your Life (and how to find it)</h2> 
+        <span class="post__data" style="display: block; margin-bottom: 15px;"> By <a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/mike.ward">Mike Ward</a> on January 17, 2017 </span> 
+        <div class="post__content"> 
+         <img class="post__image" src="https://www.cornerstone.edu/images/blogs/post_300-pgs-blog-post.jpg">
+         <p>Waking up feeling purposeless is incredibly frustrating. You look around and see your friends and coworkers living passionate, engaged, meaningful lives. They have deep relationships, rewarding jobs and a sense of direction that compels them to hop out of bed each morning with a spring in their step.</p> 
+         <p>You know that God has something good in store for you. You don't believe he intends you to live a life of painful drudgery in which each day is a total drag. After all, the Bible is chock full of passages about joy. While this certainly doesn't mean that every single day is a parade and circus, it does mean that an overall sense of gladness should permeate your life.</p> 
+         <p>In Psalm 63:7, David said, "...for you have been my help, and in the shadow of your wings I will sing for joy." How can you get to that place? Where, instead of wandering aimlessly through life, you're actually <em>singing</em> for joy (or just making a joyful noise if you're not the singing type)?</p> 
+         <p>In this post, we're going to first talk about some key signs that you may not be living in the fullness of God's purpose for you. Then we'll give some key suggestions for how to begin living a meaningful, enthusiastic, joyful life.</p> 
+         <h3>6 Signs That You May Not Be Living In God's Purpose</h3> 
+         <p><img src="https://www.cornerstone.edu/files/resources/600-pathway.jpg" alt="" width="600" height="400"></p> 
+         <p>Before we dive into this point, we need to make at least one caveat. In one sense, you are <em>always </em>living in God's purpose. God is God and He works all things, including your life, according to his purposes. Nothing can happen without God ordaining it.</p> 
+         <p>Psalm 57:2 says, "I cry out to God Most High, to God who fulfills his purpose for me." This is key in understanding God's purpose for your life. God has numbered your days and will fulfill every purpose He has for you.</p> 
+         <p>However, our choices and actions also really matter. In some ways, this is a mystery we can't fully understand, but that doesn't mean it's not true. We can choose to do things that will bring us more joy and give us more of a sense of purpose. That's where we're headed in this post. We want to help you identify those choices you can make to bring more excitement and God-given purpose into your life.</p> 
+         <p>But first, here are 6 signs that you don’t have much purpose in your life.</p> 
+         <p><strong>You're blatantly living in sin.</strong> Let's start with the obvious here. If you're blatantly disobeying the Bible, you're not living in God's purpose and you will certainly experience a sense of aimlessness in your life. This one is pretty straightforward so we don't need to spends too much time here.</p> 
+         <p><img src="https://www.cornerstone.edu/files/resources/600-happy.jpg" alt="" width="600" height="400"></p> 
+         <p><strong>You lack joy and excitement. </strong>If you wake up every day filled with apathy or dread or total boredom, you're probably not doing what you were meant to do. God has created you uniquely, has really good things planned for you and one of the fruits of the Spirit is joy (Galatians 5:22). Sure, there will be difficult things you encounter that require patience and persistence, but overall you should have a sense of joy and excitement that fills your days, your work and your relationships.</p> 
+         <p>In his book "<a href="https://www.amazon.com/Desiring-God-Revised-Meditations-Christian/dp/1601423101" target="_blank">Desiring God</a>," John Piper says:</p> 
+         <p style="padding-left: 30px;">The pursuit of joy in God is not optional. It is not an "extra" that a person might grow into after he comes to faith.</p> 
+         <p><strong>You don't feel much fulfillment in life. </strong>If you go about your days experiencing little fulfillment, you may be wandering from your God-given purpose. Fulfillment comes from doing rewarding, meaningful, purposeful things. From a job that taps into your skills and passions. From a relationship that involves giving and receiving. From hobbies that are invigorating instead of mind-numbing. Yes, you'll have to do certain things that are boring and unfulfilling, but if you're entire life is gray, you probably need a change.</p> 
+         <p><strong>You work so that you don't have to work. </strong>You know the feeling of pointless work. You go to the office, clock in, do your job, then go home and collapse in front of the television. You work for the weekends and for retirement. All true joy you experience comes from things outside of work. From hobbies or friends or side jobs.</p> 
+         <p>Ecclesiastes 8:15 says, "And I commend joy, for man has nothing better under the sun but to eat and drink and be joyful, for this will go with him in his toil through the days of his life that God has given him under the sun."</p> 
+         <p>Would you say that this kind of joy characterizes your life and work? If not, you may need to rethink where you're headed.</p> 
+         <p><strong>You feel stuck. </strong>If you desperately want a change but also feel totally stuck in your life, that's almost <em>certainly </em>a sign that you're not walking according to God's purpose. Those who are stuck want to go in a particular direction but don't know how to get there. So they spin their wheels, feeling endlessly frustrated but unsure of how to make the frustration end. Do you feel trapped?</p> 
+         <p><img src="https://www.cornerstone.edu/files/resources/600-direction.jpg" alt="" width="600" height="400"></p> 
+         <p><strong>You have no direction. </strong>If you don't know God's purpose for your life, you constantly feel a sense of aimlessness. You feel as though you're wandering from thing to thing without any forward progress. Nothing excites you and you don't have any specific goals you're working toward. Unlike the Israelites, who wandered for 40 years yet still had a goal (the Promised Land), you don't even have a goal in front of you.</p> 
+         <h3>6 Ways To Regain Your Purpose</h3> 
+         <p>In his classic book "<a href="https://www.amazon.com/Lord-Rings-50th-Anniversary-Vol/dp/0618640150/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1484689573&amp;sr=1-1&amp;keywords=the+lord+of+the+rings" target="_blank">The Lord of the Rings</a>," J.R.R. Tolkien wrote poem that included the line, "Not all who wander are lost." The same applies to you. Even though you feel like you're wandering without any true purpose, that doesn't mean you're lost. You can regain your sense of purpose and discover what God has for your life.</p> 
+         <p>Here are 6 ways to discover God’s purpose for your life.</p> 
+         <p><img src="https://www.cornerstone.edu/files/resources/600-bible.jpg" alt="" width="600" height="400"></p> 
+         <p><strong>Go to God in prayer. </strong>Again, let's start with the obvious. If you feel purposeless, ask God to give you wisdom and direction. James 1:5 states, "If any of you lacks wisdom, let him ask God, who gives generously to all without reproach, and it will be given him."</p> 
+         <p>That's incredibly good news. God <em>wants</em> to give you a purpose. He wants to bestow divine wisdom on you. It's not like God is holding out on you to make you miserable. He desires you to have a joyful, ambitious, purposeful life. Ask God for purpose and expect Him to give it to you.</p> 
+         <p><strong>Dig into God's word. </strong>The primary way God speaks to us is through the Bible. This means that one of the first things you should do in your search for God's purpose is to start digging into scripture. Now, you won't find any verses that tell you to become a dance instructor or painter, but you will begin to understand the heart of God.</p> 
+         <p>Psalm 119:105 says, "Your word is a lamp to my feet and a light to my path." God's word brings light to paths that otherwise seem dark. In the Bible you learn how to live wisely in God's world, which is the first step toward finding your purpose.</p> 
+         <p><strong>Determine your gifts and strengths. </strong>God has given you very specific gifts and strengths. Maybe you're a math whiz or a wise counselor. Maybe you have a mind for electronics or business. Maybe you're great at organizing people and getting things done. God's purpose for you probably involves the things you're already good at.</p> 
+         <p>This is where education can be particularly valuable. Going to college or going back to college allows you to discover your gifts and then determine how you're going to use them. It also connects you with people who want to help you find your purpose.</p> 
+         <p><strong>Determine your passions. </strong>What is one thing you're particularly passionate about? Really, this can be anything. Business, art, economics, alleviating poverty, whatever. If money wasn't an issue, what would you love to do?</p> 
+         <p>Determining your passions often helps you figure out what God has called you to do. It's often said that God works at the intersection of our gifts and our passions. Where do your gifts meet your passions? That may be God's purpose for you.</p> 
+         <p><img src="https://www.cornerstone.edu/files/resources/600-mentors.jpg" alt="" width="600" height="400"></p> 
+         <p><strong>B</strong><strong>ring others into your life. </strong>Proverbs 11:14 says, "Where there is no guidance, a people falls, but in an abundance of counselors there is safety." In other words, one of the main ways God will help you find your purpose is through others.</p> 
+         <p>A caveat needs to be made here. Your counselors should be people you <em>trust</em>. Whether this is your professors, parents or friends, it needs to be people who have your back and want the best for you. You want wise counselors to help you find God's purpose for you.</p> 
+         <p><strong>Take a solitude retreat. </strong>Sometimes it can be incredibly helpful to get away from it all and take some unhurried time to think, pray and journal. You don't have to spend a week in the woods for this to be effective. Even just a day away from the hustle and grind can be hugely rewarding.</p> 
+         <p>During these retreats, allow yourself to simply be still. To ponder. To ask God for direction and listen for His voice. This doesn't need to be complicated and doesn't require any elaborate rituals. Hebrews 11:6 is a reminder that God <em>always </em>rewards those who seek him. He's not hiding in the dark, trying to keep his will hidden from you. He wants to guide you.</p> 
+         <h3>In The End, Trust God</h3> 
+         <p>Trying to discover your life purpose can be a stressful, overwhelming thing. It can seem like such a big, confusing, frustrating subject. You want to move forward, but you're not sure how. You want to find your purpose, but you feel like you're aimlessly wandering.</p> 
+         <p>But you can trust God to lead you where he wants you to go. As Psalm 23:2-3 says, "He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name's sake."</p> 
+         <p>You may feel confused, but God doesn't.</p> 
+         <h4>Purpose in a Christ-Centered Perspective</h4> 
+         <p>Our <a href="https://www.cornerstone.edu/academics/pgs/all-majors-programs/">programs at PGS</a>&nbsp;focus on more than just the content learned in the classroom. We care about how you live out what you've learned in your everyday life. In whatever vocation you find yourself in, our foundation brings a <a href="https://www.cornerstone.edu/why-cornerstone-university/identity-mission-and-vision/" target="_blank">Christ-centered perspective</a>.</p> 
+         <div class="post_author-blurb">
+          <img src="https://www.cornerstone.edu/images/blogs/200-mike-ward-2.jpg">
+          <h3>About Mike Ward</h3> 
+          <p><a href="https://www.cornerstone.edu/staff/mike-ward/">Mike Ward</a> (M.Div) is director of enrollment and community development at <a href="https://www.cornerstone.edu/">Cornerstone University</a>. With eight years of higher education experience, Mike seeks to provide excellent student experiences that glorify God and bring joy to people. He is married to Beth and they have three wonderful children: Caleb, Katelyn and Nathan.</p>
+         </div> 
+         <div class="post__categories">
+          <span>Category:</span> 
+          <a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/vocation">Vocation</a>
+         </div>
+         <div class="post__tags">
+          <span>Tags:</span> 
+          <a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/tag/fulfillment">fulfillment</a>, 
+          <a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/tag/job">job</a>, 
+          <a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/tag/purpose">purpose</a>, 
+          <a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/tag/strengths">strengths</a>
+         </div> 
+        </div> 
+        <div class="related_posts--title">
+         Related Posts
+        </div>
+        <ul class="related_posts--list">
+         <li><a class="related_posts--link" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/want-to-be-an-effective-leader-develop-these-qualities"><h4 class="related_posts--post-title">Want To Be An Effective Leader? Develop These Qualities</h4><img class="related_posts--image" src="https://www.cornerstone.edu/images/blogs/550-web-rp3_4364.png"></a>
+          <div class="related_posts--blurb">
+           <p>Leadership skills are not inherent. They must be carefully cultivated through specific actions. Take these steps to begin developing leadership qualities.</p> 
+           <a class="btn btn-small related_posts--read-more" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/want-to-be-an-effective-leader-develop-these-qualities">Read More</a>
+          </div></li>
+         <li><a class="related_posts--link" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/want-to-live-a-more-successful-life-youll-need-to-give-these-things-up"><h4 class="related_posts--post-title">Want To Live A More Successful Life? You'll Need To Give These Things Up</h4><img class="related_posts--image" src="https://www.cornerstone.edu/images/blogs/rp3_8886.jpg"></a>
+          <div class="related_posts--blurb">
+           <p>Success isn't easy. It takes discipline and hard work. It also takes sacrifice. Here's what you need to give up in order to succeed.</p> 
+           <a class="btn btn-small related_posts--read-more" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/want-to-live-a-more-successful-life-youll-need-to-give-these-things-up">Read More</a>
+          </div></li>
+         <li><a class="related_posts--link" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/a-terminal-degree-that-doesnt-need-an-ending"><h4 class="related_posts--post-title">A Terminal Degree That Doesn't Need an Ending</h4><img class="related_posts--image" src="https://www.cornerstone.edu/images/blogs/600-web-rp3_4149.png"></a>
+          <div class="related_posts--blurb">
+           <p>Is achieving your doctorate the end of learning? Think again! Earning your doctorate carries you along the path of lifelong learning.</p> 
+           <a class="btn btn-small related_posts--read-more" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/a-terminal-degree-that-doesnt-need-an-ending">Read More</a>
+          </div></li>
+         <li><a class="related_posts--link" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/the-desperate-persons-guide-to-getting-and-staying-free-from-burnout"><h4 class="related_posts--post-title">The Desperate Person's Guide to Getting and Staying Free From Burnout</h4><img class="related_posts--image" src="https://www.cornerstone.edu/images/blogs/550-web-rp3_4285.png"></a>
+          <div class="related_posts--blurb">
+           <p>Burnout is a terrible experience that many people deal with. But how can you overcome it? Here's everything you need to know about burnout.</p> 
+           <a class="btn btn-small related_posts--read-more" href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/the-desperate-persons-guide-to-getting-and-staying-free-from-burnout">Read More</a>
+          </div></li>
+        </ul> 
+        <div id="disqus_thread"></div> 
+        <script>
+		    /**
+		     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+		     */
+		    
+		    var disqus_config = function () {
+		        this.page.url = "https://www.cornerstone.edu/blogs/lifelong-learning-matters/post/what-is-gods-purpose-for-your-life-and-how-to-find-it";  // Replace PAGE_URL with your page's canonical URL variable
+		        this.page.identifier = 114; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		    };
+
+		    (function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//cu-adult-graduate-studies.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();		</script> 
+        <noscript>
+         Please enable JavaScript to view the 
+         <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+        </noscript> 
+       </article> 
+      </div> 
+     </section> 
+     <aside class="col s12 m12 l3 left side-col"> 
+      <section class="subpage-nav"> 
+       <header> 
+        <span class="parent-page"> University Blogs </span> 
+       </header> 
+       <ul id="subpage-links"> 
+        <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/">Lifelong Learning Matters</a></li> 
+        <li><a href="https://www.cornerstone.edu/blogs/navigating-undergrad/">Navigating Undergrad</a></li> 
+        <li><a href="https://www.cornerstone.edu/blogs/talking-points/">Talking Points</a></li> 
+        <li><a href="https://www.cornerstone.edu/blogs/presidents-perspective/">President's Perspective</a></li> 
+        <li><a href="https://www.cornerstone.edu/blogs//"></a></li> 
+       </ul> 
+      </section> 
+      <div class="side-col-blog"> 
+       <section class="subpage-nav"> 
+        <header> 
+         <span class="parent-page">Blog Authors</span> 
+        </header> 
+        <ul id="subpage-links"> 
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/aleka.thrash">Aleka Thrash</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/anthony.adams">Anthony Adams</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/april.vanputten">April VanPutten</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/beth.bolthouse">Beth Bolthouse</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/brad.stamm">Brad Stamm</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/brian.hazeltine">Brian Hazeltine</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/ellie.walburg">Ellie Walburg</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/eric.strattan">Eric Strattan</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/graham.mckeague">Graham McKeague</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/james.lacy">James Lacy</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/janae.ernst">Janae Ernst</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/james.link">James Link</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/jason.allaire">Jason Allaire</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/jason.clayton">Jason Clayton</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/jeffrey.savage">Jeffrey Savage</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/john.obradovich">John Obradovich</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/kacey.spencer">Kacey Spencer</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/lisa.link">Lisa Link</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/mike.ward">Mike Ward</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/patti.ticknor">Patti Ticknor</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/peter.osborn">Peter Osborn</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/rachele.slotman">Rachele Slotman</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/steve.graham">Steve Graham</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/tonya.fountain">Tonya Fountain</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/author/online">Trevor McCready</a></li> 
+        </ul> 
+       </section> 
+       <section class="subpage-nav"> 
+        <header> 
+         <span class="parent-page">Blog Categories</span> 
+        </header> 
+        <ul id="subpage-links"> 
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/academic-resources">Academic Resources</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/faculty-staff">Faculty &amp; Staff</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/job-search">Job Search</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/leadership">Leadership</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/vocation">Vocation</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/category/why-college">Why College</a></li> 
+        </ul> 
+       </section> 
+       <section class="subpage-nav"> 
+        <header> 
+         <span class="parent-page">Blog Archives</span> 
+        </header> 
+        <ul id="subpage-links"> 
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2016-11">November 2016</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-01">January 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-02">February 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-03">March 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-04">April 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-05">May 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-06">June 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-07">July 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-08">August 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-09">September 2017</a></li>
+         <li><a href="https://www.cornerstone.edu/blogs/lifelong-learning-matters/month/2017-10">October 2017</a></li> 
+        </ul> 
+       </section>  
+       <section class="side-col-buttons"> 
+       </section> 
+      </div>
+     </aside> 
+    </div> 
+   </div> 
+  </main> 
+  <script type="text/javascript">stLight.options({publisher: "96092c57-0e3e-48ae-bc63-a4cc3bb80034-10exp-N", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script> 
+  <script>
+var options={ "publisher": "96092c57-0e3e-48ae-bc63-a4cc3bb80034-10exp-N", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email"]}};
+var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script> 
+  <a href="#Top" id="back-to-top" class="waves-effect waves-light">Top</a> 
+  <footer class="page-footer"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col s12 m3 l6"> 
+      <div class="row"> 
+       <div class="col s5 m12 l6 logo-col"> 
+        <img src="https://www.cornerstone.edu/files/footer-logo.jpg" class="footer-logo"> 
+       </div> 
+       <div class="col s7 m12 l6 contact-col"> 
+        <ul class="footer-contact-links"> 
+         <li> <address> <i class="mdi-communication-location-on"></i> <span class="location-link"> 1001 East Beltline Avenue Northeast Grand Rapids, MI 49525<br> </span> </address> </li> 
+         <li> <i class="mdi-communication-phone"></i> <a href="tel:616.949.5300">616.949.5300</a> </li> 
+         <li> <i class="mdi-communication-email"></i> <a href="mailto:info@cornerstone.edu">Email Us</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col s12 m9 l6"> 
+      <div class="row"> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="/apply-now">Apply Now</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="/why-cornerstone-university/campus-locations/university-offices/human-resources/">Employment</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="http://library.cornerstone.edu/home">Miller Library</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="/academics/faculty-directory/">Faculty &amp; Staff Directory</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="/why-cornerstone-university/campus-locations/university-offices/">University Offices</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="https://cornerstone.treeoflifebooks.com/#/landing">CU Bookstore</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="/asia-biblical-theological-seminary">Asia Biblical Theological Seminary</a></li> 
+        </ul> 
+       </div> 
+       <div class="col s12 m4 l4 quick-links-col"> 
+        <ul class="footer-links"> 
+         <li><a href="http://www.wcsg.org/">91.3 WCSG</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="footer-copyright"> 
+    <div class="container">
+      Copyright © 2017 Cornerstone University. All rights reserved. 
+     <div class="social-links"> 
+      <a href="https://www.facebook.com/cornerstoneuniversity" target="_blank" class="facebook waves-effect waves-light"> <i class="fa fa-facebook"></i> </a> 
+      <a href="http://twitter.com/CornerstoneU" target="_blank" class="twitter waves-effect waves-light"> <i class="fa fa-twitter"></i> </a> 
+      <a href="http://www.linkedin.com/company/cornerstone-university" target="_blank" class="linkedin waves-effect waves-light"> <i class="fa fa-linkedin"></i> </a> 
+      <a href="https://plus.google.com/103835213550094289928/about" target="_blank" class="google-plus waves-effect waves-light"> <i class="fa fa-google-plus"></i> </a> 
+      <a href="http://www.youtube.com/user/cornerstoneu?feature=results_main" target="_blank" class="youtube-play waves-effect waves-light"> <i class="fa fa-youtube-play"></i> </a> 
+      <a href="https://instagram.com/cornerstoneu/" target="_blank" class="instagram waves-effect waves-light"> <i class="fa fa-instagram"></i> </a> 
+      <a href="https://vimeo.com/cornerstoneuniversity" target="_blank" class="vimeo-square waves-effect waves-light"> <i class="fa fa-vimeo-square"></i> </a> 
+     </div> 
+     <span style="font-style: normal;">|</span> 
+     <a href="http://www.mindscapesolutions.com/" target="_blank" style="text-decoration: underline;">Site by MINDSCAPE</a> 
+    </div> 
+   </div> 
+  </footer> 
+  <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5062456"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+  <noscript>
+   <img src="//bat.bing.com/action/0?ti=5062456&amp;Ver=2" height="0" width="0" style="display:none; visibility: hidden;">
+  </noscript> 
+  <script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Cornerstone University",
+  "url" : "http://cornerstone.edu",
+  "sameAs" : [
+    "http://www.facebook.com/cornerstoneuniversity",
+    "http://www.twitter.com/CornerstoneU",
+    "http://plus.google.com/103835213550094289928/about"
+  ]
+}
+</script> 
+  <script type="text/javascript">
+    var _monsido = _monsido || [];
+    _monsido.push(['_setDomainToken', 'HPJfSjcwuFYk6YnJ6jjgVA']);
+    _monsido.push(['_withStatistics', 'true']);
+  </script> 
+  <script src="//cdn.monsido.com/tool/javascripts/monsido.js"></script> 
+  <script>var wwwRoot = 'https://www.cornerstone.edu/';</script> 
+  <script type="text/javascript">
+// Only do anything if jQuery isn't defined
+var thisPageUsingOtherJSLibrary = false;
+
+function getScript(url, success) {
+    
+        var script     = document.createElement('script');
+             script.src = url;
+        
+        var head = document.getElementsByTagName('head')[0],
+        done = false;
+        
+        // Attach handlers for all browsers
+        script.onload = script.onreadystatechange = function() {
+        
+            if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+            
+            done = true;
+                
+                // callback function provided as param
+                if (typeof success == 'undefined') {
+                    // Do Nothing
+                }
+                else{
+                    success();
+                }
+                
+                script.onload = script.onreadystatechange = null;
+                head.removeChild(script);
+                
+            };
+        
+        };
+        
+        head.appendChild(script);
+    
+    };
+
+if (typeof jQuery == 'undefined') {
+
+    if (typeof $ == 'function') {
+        // warning, global var
+        thisPageUsingOtherJSLibrary = true;
+    }
+    
+    getScript('https://code.jquery.com/jquery-2.1.1.min.js', function() {
+    
+        if (typeof jQuery=='undefined') {
+        
+            // Super failsafe - still somehow failed...
+        
+        } else {
+        
+            // jQuery loaded! Make sure to use .noConflict just in case
+            
+            if (thisPageUsingOtherJSLibrary) {
+
+                // Run your jQuery Code
+
+            } else {
+
+                getScript('https://www.cornerstone.edu/js/bin/materialize.js', function(){
+                    getScript('https://www.cornerstone.edu/js/slick.js', function(){
+                        getScript('https://www.cornerstone.edu/js/init.js', function(){
+                            getScript('https://www.cornerstone.edu/js/jquery.prettyPhoto.js', function(){
+                                                            });
+                        });
+                    });
+                });
+                
+                var urlPathname = window.location.pathname;
+                if (urlPathname.substr(urlPathname.length - 1) === '/') {
+                    var gaPage = window.location.pathname;
+                } else {
+                    var gaPage = window.location.pathname + '/';
+                }
+                switch (gaPage) {
+                    case '/apply/cu-online/main-application/':
+                         $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                             ga('send', 'event', 'PGS', 'Click', 'CU Online Application',{'nonInteraction': 1});
+                        });
+
+                        break;
+                    case '/admissions/undergraduate-admissions/tuition-and-fees/pay-tuition-deposit/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'TUG', 'Submit', 'Tuition Deposit',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/apply/adult-graduate/professional-graduate-application/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'PGS', 'Click', 'Degree Application',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/apply/adult-graduate/non-degree-application/':
+                         $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'PGS', 'Click', 'Non Degree Application');
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/apply-now/main-application/':
+                         $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/apply-now/re-admit-application/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/apply-now/non-degree-application/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/request-information/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Submit', 'Request Info',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/grts-admissions/visit-grts/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Submit', 'Visit',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/why-cornerstone-university/campus-locations/university-offices/advancement/ways-to-give/give-online/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'Advancement', 'Click', 'Give Now',{'nonInteraction': 1});
+                        });
+                        break;
+                }
+            }
+        
+        }
+    
+    });
+    
+} else { // jQuery was already loaded
+    
+                getScript('https://www.cornerstone.edu/js/bin/materialize.js', function(){
+                    getScript('https://www.cornerstone.edu/js/slick.js', function(){
+                        getScript('https://www.cornerstone.edu/js/init.js', function(){
+                            getScript('https://www.cornerstone.edu/js/jquery.prettyPhoto.js', function(){
+                                                            });
+                        });
+                    });
+                });
+
+                var urlPathname = window.location.pathname;
+                if (urlPathname.substr(urlPathname.length - 1) === '/') {
+                    var gaPage = window.location.pathname;
+                } else {
+                    var gaPage = window.location.pathname + '/';
+                }
+                switch (gaPage) {
+                    case '/apply/cu-online/main-application/':
+                         $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                             ga('send', 'event', 'PGS', 'Click', 'CU Online Application',{'nonInteraction': 1});
+                        });
+
+                        break;
+                    case '/admissions/undergraduate-admissions/tuition-and-fees/pay-tuition-deposit/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'TUG', 'Submit', 'Tuition Deposit',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/apply/adult-graduate/professional-graduate-application/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'PGS', 'Click', 'Degree Application',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/apply/adult-graduate/non-degree-application/':
+                         $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'PGS', 'Click', 'Non Degree Application');
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/apply-now/main-application/':
+                         $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/apply-now/re-admit-application/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/apply-now/non-degree-application/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/request-information/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Submit', 'Request Info',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/grand-rapids-theological-seminary/grts-admissions/visit-grts/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'GRTS', 'Submit', 'Visit',{'nonInteraction': 1});
+                        });
+                        break;
+                    case '/why-cornerstone-university/campus-locations/university-offices/advancement/ways-to-give/give-online/':
+                        $('#iframeHover').mouseover(function() {
+                            $(this).css('display', 'none');
+                            ga('create', 'UA-3704552-2', 'auto');
+                            ga('send', 'event', 'Advancement', 'Click', 'Give Now',{'nonInteraction': 1});
+                        });
+                        break;
+                }
+
+};
+</script> 
+  <!--<script src="https://www.cornerstone.edu/js/bin/materialize.js"></script>
+<script src="https://www.cornerstone.edu/js/slick.js"></script>
+
+<script src="https://www.cornerstone.edu/js/init.js"></script>
+<script src="https://www.cornerstone.edu/js/jquery.prettyPhoto.js"></script>--> 
+  <style>
+.btn.btn-large.waves-effect.waves-light.navy{
+background-color: #162B48;
+}
+</style> 
+  <!--does my current page have "pgs" in the path? If so, load up the pgs live chat stuff--> 
+  <script type="text/javascript">
+/*(function($){
+    $(document).ready(function() {
+        var urlPathname = window.location.pathname;
+        if (urlPathname.substr(urlPathname.length - 1) === '/') {
+            var gaPage = window.location.pathname;
+        } else {
+            var gaPage = window.location.pathname + '/';
+        }
+        switch (gaPage) {
+            case '/apply/cu-online/main-application/':
+                 $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                     ga('send', 'event', 'PGS', 'Click', 'CU Online Application',{'nonInteraction': 1});
+                });
+
+                break;
+            case '/admissions/undergraduate-admissions/tuition-and-fees/pay-tuition-deposit/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'TUG', 'Submit', 'Tuition Deposit',{'nonInteraction': 1});
+                });
+                break;
+            case '/apply/adult-graduate/professional-graduate-application/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'PGS', 'Click', 'Degree Application',{'nonInteraction': 1});
+                });
+                break;
+            case '/apply/adult-graduate/non-degree-application/':
+                 $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'PGS', 'Click', 'Non Degree Application');
+                });
+                break;
+            case '/grand-rapids-theological-seminary/apply-now/main-application/':
+                 $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                });
+                break;
+            case '/grand-rapids-theological-seminary/apply-now/re-admit-application/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                });
+                break;
+            case '/grand-rapids-theological-seminary/apply-now/non-degree-application/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'GRTS', 'Next', gaPage,{'nonInteraction': 1});
+                });
+                break;
+            case '/grand-rapids-theological-seminary/request-information/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'GRTS', 'Submit', 'Request Info',{'nonInteraction': 1});
+                });
+                break;
+            case '/grand-rapids-theological-seminary/grts-admissions/visit-grts/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'GRTS', 'Submit', 'Visit',{'nonInteraction': 1});
+                });
+                break;
+            case '/why-cornerstone-university/campus-locations/university-offices/advancement/ways-to-give/give-online/':
+                $('#iframeHover').mouseover(function() {
+                    $(this).css('display', 'none');
+                    ga('create', 'UA-3704552-2', 'auto');
+                    ga('send', 'event', 'Advancement', 'Click', 'Give Now',{'nonInteraction': 1});
+                });
+                break;
+        }
+
+    });
+})(jQuery);*/
+
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ea7ef204b0","applicationID":"18786223","transactionName":"ZlZUbBcCXUIFWkdRDF8cY0oMTEBYEFwcUQ1VVk4WFQtD","queueTime":0,"applicationTime":190,"atts":"ShFXGl8YTkw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

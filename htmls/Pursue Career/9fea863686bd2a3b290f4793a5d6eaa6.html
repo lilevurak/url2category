@@ -1,0 +1,231 @@
+<html>
+ <head>
+  <script src="/javascripts/all.js?1506617904" type="text/javascript"></script> 
+  <link rel="stylesheet" href="/stylesheets/floating-window.css?1506617891" type="text/css" media="screen"> 
+  <link rel="stylesheet" href="/stylesheets/modal-message.css?1506617891" type="text/css" media="screen"> 
+  <script type="text/javascript" src="/javascripts/popup_window/ajax.js?1506617891"></script> 
+  <script type="text/javascript" src="/javascripts/popup_window/ajax-dynamic-content.js?1506617891"></script> 
+  <script type="text/javascript" src="/javascripts/popup_window/floating-window.js?1506617891"><!-- (c)2005 www.dhtmlgoodies.com --></script> 
+  <script type="text/javascript" src="/javascripts/popup_window/modal-message.js?1506617891"><!-- (c)2005 www.dhtmlgoodies.com --></script> 
+  <script type="text/javascript">
+            function tcsPopup(width,height,top,left,contents,url) {
+                var divId = createNewWindow(width,height,left,top);
+                document.getElementById('windowContent' + divId).innerHTML = contents;
+                if (url) addContentFromUrl(url,divId)	// Add content from external file
+            }
+            messageObj = new DHTML_modalMessage();	// We only create one object of this class
+
+            function tcsPopup_Modal(width,height,contents,url,btnClose)
+            {
+                messageObj.setSource(url);
+                if (btnClose) contents = contents + "<div style='float:right'><a href='#' onclick='closeMessage();return false'>Close</a></div>";
+                messageObj.setHtmlContent(contents);
+                messageObj.setCssClassMessageBox(false);
+                messageObj.setSize(width,height);
+                messageObj.display();
+                document.getElementById('DHTMLSuite_modalBox_contentDiv').position='absolute';
+                document.getElementById('DHTMLSuite_modalBox_contentDiv').top='50px';
+                document.getElementById('DHTMLSuite_modalBox_contentDiv').left='50px';
+                messageObj.display();
+            }
+
+            function closeMessage()
+            {
+                messageObj.close();
+            }
+
+            function tcs_get_dates(form_name,from,to) {
+                var s = '<div class="popinbox" style="width:300px;margin-left:25px; padding:3px">';
+                s += 'Date Joined Date Range:<br/>';
+                s += '<input type="text" name="date_from" id="date_from" size="10" value="'+from+'" onclick="return true;">&nbsp;';
+                s += '<A HREF="#" TITLE="Pop-up Calendar" NAME="anchor_date_from" ID="anchor_date_from">?</a>';
+                s += ' thru <input type="text" name="date_thru" id="date_thru" size="10" value="'+to+'"onclick="return true;">&nbsp;';
+                s += '<A HREF="#" TITLE="Pop-up Calendar" NAME="anchor_date_thru" ID="anchor_date_thru">?</a>';
+                s += '&nbsp;&nbsp;<input type="button" value=" OK "  class="button" onclick="document.getElementById('+"'new_from'"+').value=document.getElementById('+"'date_from'"+').value; ';
+                s += 'document.getElementById('+"'new_thru'"+').value=document.getElementById('+"'date_thru'"+').value; ';
+                s += 'document.getElementById('+"'new_dates'"+').innerHTML='+"''"+'; tcs_set_preview_link(); return false;">&nbsp;';
+                s += '</div>';
+                document.getElementById("new_dates").innerHTML = s;
+                Calendar.setup({inputField  : "date_from",
+                                ifFormat    : "%m/%d/%Y",
+                                button      : "anchor_date_from",
+                                weekNumbers : false,
+                                addBoyEoy   : true,
+                                startMonth  : 10});
+                Calendar.setup({inputField  : "date_thru",
+                                ifFormat    : "%m/%d/%Y",
+                                button      : "anchor_date_thru",
+                                weekNumbers : false,
+                                addBoyEoy   : true,
+                                startMonth  : 10});
+            }
+
+            function tcs_get_dates_bootstrap(form_name,from,to) {
+                var s = '<div class="row new_member_dates"><form class="form-inline">';  
+                s += '<label style="padding-left:30px !important;">Dates Joined:&nbsp;</label>';
+                s += '<input class="tcs-width-auto" type="text" name="date_from" id="date_from" size="10" value="'+from+'" onclick="return true;">';
+                s += ' thru ';
+                s += '<input type="text" name="date_thru" class="tcs-width-auto" id="date_thru" size="10" value="'+to+'"onclick="return true;">';
+                s += '&nbsp;<input type="button" value=" OK "  class="btn btn-default tcs-width-auto" onclick="document.getElementById('+"'new_from'"+').value=document.getElementById('+"'date_from'"+').value; ';
+                s += 'document.getElementById('+"'new_thru'"+').value=document.getElementById('+"'date_thru'"+').value; ';
+                s += 'document.getElementById('+"'new_dates'"+').innerHTML='+"''"+'; tcs_set_preview_link(); return false;"></label>';
+                s += '</form></div>';
+
+                document.getElementById("new_dates").innerHTML = s;
+                jQuery("#date_from").datetimepicker({
+                      format: 'MM/DD/YYYY',
+                      minDate: moment("01/01/2016","M/D/YYYY"),
+                      useCurrent: false //Important! See issue #1075
+                });
+                jQuery("#date_thru").datetimepicker({
+                      format: 'MM/DD/YYYY',
+                      minDate: moment("01/01/2016","M/D/YYYY"),
+                      useCurrent: false //Important! See issue #1075
+                });
+                jQuery("#date_from").val(from);
+                jQuery("#date_thru").val(to);
+            }
+
+            function tcs_set_preview_link() {
+                var search_id = document.getElementById("saved_search_id").value;
+                var s = document.getElementById("review_list").href;
+                s = s.replace(/(&search=)\d+/,"$1"+search_id);
+                s = s.replace(/(&criteria=)\d+/,"$1"+document.getElementById("membership_criteria").value);
+                s = s.replace(/(&new_from=)[^&]*/,"$1"+document.getElementById("new_from").value);
+                s = s.replace(/(&new_thru=)[^&]*/,"$1"+document.getElementById("new_thru").value);
+                document.getElementById("review_list").href = s;
+            }
+            </script> 
+ </head>
+ <body>
+  <h4 class="tcsDetails">07/01/2014</h4>
+  <h2 class="tcsDetails">Career Development Opportunities Can Be Found by Looking at Own Job</h2>
+  <h3 class="tcsDetails">By Maggie McCormick</h3>
+  <p>Working adults sometimes assume that career development means going to classes or undertaking developmental roles outside of their jobs. They may even believe that development is only for those interested in promoting up the management ranks or for those on the “fast track.” However, it is critical to both the individual and to the organization that employees continue to grow in knowledge and skills regardless of rank, tenure, or career movement.</p> 
+  <p style="margin-top: 0.19in; margin-bottom: 0in;">The truth is all employees can find development opportunities; they need look no further than their own jobs. Every day at work presents a chance to learn something, to increase one’s skills, and to improve performance. How does one identify opportunities for development in the work? We’ll begin by looking within; then we’ll look around, look ahead, and look out. We will also take an example and walk through the process.</p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;"><strong>Looking within</strong> - A good place to start is with one’s own strengths. Workers should consider the following questions:</p> 
+  <ul> 
+   <li> <p style="margin-bottom: 0in;">What are my strengths?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">What skills do I have that bring me the most satisfaction?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">What skills do I have that elicit the most positive feedback from others?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">What types of assistance am I most often asked for?</p> </li> 
+  </ul> 
+  <p style="text-indent: 0.02in; margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0.19in;"><em>Take Julie, a catering coordinator for a large hotel and conference center. She reports to a catering sales director. Julie possesses strong writing skills. So for her, completing a task that involves writing is usually a little easier, more energizing, and more enjoyable than those for which she is less proficient. Because she produces quality work when writing is involved and often reaps praise for her work, she feels a sense of accomplishment from the outcome. Co-workers come to her for assistance in preparing letters or important memos, and she occasionally contributes articles to her company newsletter. She builds on her writing ability to develop other skills and add more value.</em></p> 
+  <p style="margin-bottom: 0in;">&nbsp;<strong>Looking around</strong> - The next place to look is in one’s current environment and ask:</p> 
+  <ul> 
+   <li> <p style="margin-bottom: 0in;">How do I use my strengths in my current job?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">What skills do I need to develop to do my job better?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">What skills are currently used in my team that I would like to develop or expand? What opportunities are there to cross-train on my team?</p> </li> 
+   <li> <p style="margin-bottom: 0.19in;">What opportunities are there to assist a co-worker or my manager to do his or her job?</p> </li> 
+  </ul> 
+  <p style="margin-bottom: 0in;"><em>In her current role, Julie routinely composes memos, e-mails, and letters to clients who have retained the hotel’s catering services. To build on her writing skills and contribute more to her team, she asks to help write the proposals to bid for event contracts. In order to successfully perform this task, she learns the criteria and format required in the proposal, determines the clients’ needs and special requests, and ensures her writing style is professional, thorough, and persuasive.</em></p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;">&nbsp;<strong>Looking ahead</strong> - Those who are most successful at adapting to change are those who anticipate the business needs and demands of the future. So the next step is to consider the future in one’s current environment.</p> 
+  <ul> 
+   <li> <p style="margin-bottom: 0in;">What’s coming? New technology? New processes? Changes in management or team direction?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">What gaps do I observe that I could propose – and develop - a solution for?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">Do I need to prepare for a change in personnel or job assignments?</p> </li> 
+  </ul> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;"><em>Julie learns that the hotel is changing audio/visual vendors. She develops a communication plan and an orientation guide to help establish the working relationship with the vendor and ensure an organized transition. She is able to enhance her writing skills with strategic thinking and tactical planning, and to create communication that is clear to someone unfamiliar with their particular processes and terminology.</em></p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;"><strong>Looking out </strong>– Employees can become more engaged when they look beyond their jobs to gain a line of sight between their contributions and company goals. Viewing their responsibilities in the context of the larger organization helps focus both the development and execution of skills. Taking a wider view also helps employees identify other roles in which they can use their talents and determine what other skills they need to develop to be more competitive for future opportunities. Appropriate questions to ask are:</p> 
+  <ul> 
+   <li> <p style="margin-bottom: 0in;">What are the top business issues facing my organization?</p> </li> 
+   <li> <p style="margin-bottom: 0in;">Where do I want to go with the company? With my career?</p> </li> 
+  </ul> 
+  <p style="text-indent: 0.02in; margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;"><em>Julie recognizes that the type of events the hotel caters is beginning to shift from social events to larger, more commercial occasions. She has now developed some expertise in all phases of the process of catering, so she can better adapt her skills to address the changes. In addition, she is more competitive for other opportunities where she can also contribute her skills, such as being promoted to catering sales director or transferring to marketing.</em></p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;">When workers maximize the opportunities within their jobs, they broaden the development options available to them. They increase control over their own career growth and enhance their resilience and their marketability. And they gain job satisfaction as they align their goals with company goals.</p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;">The organization also benefits when employees learn and grow while doing their jobs. Development in the work provides an efficient means of developing the workforce. And where opportunities for ongoing development are available to all workers, the organization realizes increased employee retention.</p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <p style="margin-bottom: 0in;">Ongoing development also increases the adaptability of the workforce. When employees are committed to keeping their skills current and are prepared to meet new demands in their jobs, there is less negative impact to service or production levels during times of transition. Finally, as the overall skill of the workforce increases, business results improve. Development in the workplace is a win-win strategy for the employee as well as the organization!</p> 
+  <p style="margin-bottom: 0in;">&nbsp;</p> 
+  <hr> 
+  <p>&nbsp;</p> 
+  <p style="margin-bottom: 0in;"><strong><img class="imgleft" src="https://www.ncda.org/aws/NCDA/asset_manager/get_icon/26104?ver=2" alt="Maggie McCormick" align="left" border="0">Maggie McCormick</strong>, M.A., LPC,<em> is a Learning &amp; Development Analyst for State Farm Mutual Automobile Insurance Company, where she and her team focus on coordinating and managing resources for employee development. She has a B.A. degree in Education and an M.A. degree in General Counseling, both from Louisiana Tech University in Ruston, LA. Her other work experience includes university career counseling, inpatient and outpatient mental health, juvenile corrections, and education. She can be reached at</em> <a href="mailto:Maggiemccormick73@gmail.com">Maggiemccormick73@gmail.com</a></p>
+  <a name="comments"></a>
+  <div id="tcscomments">
+   <style>
+        .commentbox { border:1px solid #C0C0C0;
+                    background: #FFFFFF url(/graphics/comments/background.png) bottom right no-repeat;
+                    margin:5px 0 0px 0;
+                    padding:5px;
+                    width:50%;
+                    font-size:.8em;
+                    -moz-border-radius: 8px;
+                    -webkit-border-radius:8px;
+                    }
+        .commentbox.unapproved { border: solid 2px #1E90FF;
+                      background: #FFFFFF url(/graphics/comments/hidden.png) bottom right no-repeat;
+                    }
+        .commentbox.author { 
+                      background: #FFFFFF url(/graphics/comments/author.png) bottom right no-repeat;
+                    }
+        #commentform { clear:both;
+                    border:2px solid #585858;
+                    margin:5px 0 0px 0;
+                    padding:5px;
+                    background: #FFFFFF url(/graphics/comments/new_comment_form.png) bottom left repeat-x;
+                    width:70%;
+                    font-size:0.9em; color:#424242;
+                    -moz-border-radius: 8px;
+                    -webkit-border-radius:8px;
+                    }
+        .savedmsg { margin:5px 0 0px 0;
+                    padding:5px;
+                    background-color:#FFFFCC;
+                    width:50%;
+                    font-size:.8em;
+                    }
+
+        .comment_fineprint {
+                    font-size:.7em; line-height:1.0em;
+                    }
+        .comment_terms_of_use {
+                    border:1px solid #585858;
+                    padding:5px;
+                    margin:10px 0 10px 0;
+                    }
+
+        #commentform table td        { padding:3px; vertical-align:middle;}
+        #commentform input           { font-size: 1.0em; font-family: "Lucida Grande", Tahoma, Verdana, sans-serif; color:#424242; padding:2px; border:solid 1px #585858;}
+        #commentform input:focus     { padding:1px; border: solid 2px #1E90FF; background-color:#FBFBEF}
+        #commentform textarea        { font-size: 1.0em; line-height:1.2em; font-family: "Lucida Grande", Tahoma, Verdana, sans-serif; color:#424242; padding:2px; border:solid 1px #585858;}
+        #commentform textarea:focus  { padding:1px; border: solid 2px #1E90FF;}
+        #commentform .button         { margin:0px; background-color:#0088cf; color:#fff;border:solid 1px #FFF;padding:2px 4px;}
+        #commentform .button:hover   { background-color:#f28200; border:solid 1px #C0C0C0;}
+        .errorExplanation            { background-color:#FFFFCC; padding:5px; }
+        .errorExplanation ul         { margin:0px 0 0 0;}
+
+        /* input fields with invalid entries: */
+        .invalid { background-color:#FFFFCC; }
+
+        .grey_90pct { color:#424242; }
+        .grey_60pct { color:#848484; }
+ </style> 
+   <div style="clear:both"> 
+    <h3>2 Comments</h3> 
+    <div id="commentformdiv"> 
+     <a href="#" onclick="new Ajax.Request('/aws/NCDA/cms/ajax_callbacks?resource_class=NewsArticle&amp;resource_id=37315&amp;resource_url=%2Faws%2FNCDA%2Fpt%2Fsd%2Fnews_article%2F37315%2F_self%2Flayout_ccmsearch%2Ftrue&amp;what_happened=show_comment_form', {asynchronous:true, evalScripts:true}); return false;">Leave a comment</a> 
+    </div> 
+    <div class="commentbox  "> 
+     <p class="grey_90pct"><b>Kathryn Scott</b> <span class="grey_60pct"> on Tuesday 04/26/2011 at 10:15PM wrote: </span> </p> 
+     <p class="grey_90pct">A very useful article which presents some simple questions to get someone thinking. I particularly like the Looking Within, Around, Ahead and Out categories.</p> 
+    </div> 
+    <div class="commentbox  "> 
+     <p class="grey_90pct"><b>Melanie Reinersman</b> <span class="grey_60pct"> on Friday 06/22/2012 at 02:39PM wrote: </span> </p> 
+     <p class="grey_90pct">Congratulations Maggie, on winning the 2012 Career Convergence Award for this valuable article!</p> 
+    </div> 
+    <div class="comment_fineprint">
+     <b>Disclaimer:</b> The opinions expressed in the comments shown above are those of the individual comment authors and do not reflect the opinions of this organization.
+    </div> 
+   </div>
+  </div>
+  <br>
+ </body>
+</html>

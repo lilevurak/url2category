@@ -1,0 +1,1998 @@
+<!doctype html>
+<!--[if IE 8 ]> <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head> 
+  <script src="//cdn.optimizely.com/js/252819092.js"></script> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="google-site-verification" content="S3Bf7-uk68AF_z3YBIZNXsQkQ_H2NsBqREurYFnWWYw"> 
+  <title>Online College Washington - Washington University - WGU Washington</title> 
+  <script type="text/javascript">digitalData = {"pageInstanceID":"25045","page":{"pageInfo":{"pageID":"25045","pageName":"Home Page","destinationURL":"https:\/\/washington.wgu.edu\/","requestedPath":"\/","pagePath":"\/"},"contentInfo":{"title":"Home Page","contentType":"info","pageTitle":"Online College Washington - Washington University - WGU Washington","created":"1415172756","changed":"1506778407","revision_uid":"5","revision_time":"1506778407"},"category":{"primaryCategory":"HOME","section":"HOME"},"attributes":{"country":"US","language":"en-US","timestamp":"1507205471-27"},"salesForceInfo":{"newlead":false,"opportunityId":0,"contact_id":0}}};</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <!--// DTM //-->
+  <script type="text/javascript" src="//assets.adobedtm.com/61ed24696095268f27b5eb53e729b02491b930df/satelliteLib-0c5faa5ec4ef8c9004eedb8aa7e25d6d36eb4b3a.js" id="wgu_adobe_dtm"></script> 
+  <link rel="shortcut icon" href="https://washington.wgu.edu/sites/all/themes/bricktheme/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="description" content="An online university that is accredited, affordable, and respected. WGU offers high quality online bachelors and master’s degree programs for busy adults. Find out if WGU is the best online university for you."> 
+  <link rel="canonical" href="https://washington.wgu.edu/"> 
+  <link rel="shortlink" href="https://washington.wgu.edu/"> 
+  <link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/wgu.edu/files/css/css_sUXRpbMpGQpHIW2eLXNp75IuiCNwBd5Ofv0_OTHpA8M.css" media="all"> 
+  <!--[if gt IE 9]><!--> 
+  <link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/all/themes/bricktheme/stylesheets/app.css?oxbbxg" media="all"> 
+  <!--<![endif]--> 
+  <!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/all/themes/bricktheme/stylesheets/app_f4-blessed1.css?oxbbxg" media="all" />
+<![endif]--> 
+  <!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/all/themes/bricktheme/stylesheets/app_f4.css?oxbbxg" media="all" />
+<![endif]--> 
+  <!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/all/themes/bricktheme/stylesheets/ie8.css?oxbbxg" media="all" />
+<![endif]--> 
+  <link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/all/themes/bricktheme/stylesheets/fonts.css?oxbbxg" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://washington.wgu.edu/sites/wgu.edu/files/css/css_iXLHWpOwjIT0DrAAQq8sTLO2bLTCTApXAdJR5JwbzQ4.css" media="all"> 
+  <!--[if gt IE 9]><!--> 
+  <script src="/sites/all/themes/bricktheme/javascripts/shared/jquery-2.1.1.min.js"></script> 
+  <!--<![endif]--> 
+  <!--[if lte IE 9]>
+    <script src="/sites/all/themes/bricktheme/javascripts/ie8/nwmatcher-1.2.5-min.js"></script>
+    <script src="/sites/all/themes/bricktheme/javascripts/ie8/selectivizr-1.0.3b.js"></script>
+    <script src="/sites/all/themes/bricktheme/javascripts/ie8/respond.min.js"></script>
+    <script src="/sites/all/themes/bricktheme/javascripts/shared/jquery-1.10.2.min.js"></script>
+  <![endif]--> 
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://washington.wgu.edu/sites/wgu.edu/files/js/js_f9n3ulCe1c7DXKoyMOuwbvOn2w8a5-SPx2BRt4CQmUY.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bricktheme","theme_token":"5SrnyPEFO7tdgb1xJpPT40VTCNuDw7rU827GxgwwURc","js":{"https:\/\/apis.google.com\/js\/platform.js":1,"\/\/platform.linkedin.com\/in.js":1,"sites\/all\/themes\/bricktheme\/javascripts\/min\/app.min.js":1,"sites\/all\/modules\/wgu_track_referrerAdobe\/js\/wgu_track_referrerAdobe.js":1,"0":1,"1":1,"2":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"3":1,"sites\/all\/themes\/bricktheme\/javascripts\/drupal.js":1},"css":{"sites\/all\/themes\/bricktheme\/stylesheets\/drupal.css":1,"sites\/all\/themes\/bricktheme\/stylesheets\/app.css":1,"sites\/all\/themes\/bricktheme\/stylesheets\/app_f4-blessed1.css":1,"sites\/all\/themes\/bricktheme\/stylesheets\/app_f4.css":1,"sites\/all\/themes\/bricktheme\/stylesheets\/ie8.css":1,"sites\/all\/themes\/bricktheme\/stylesheets\/fonts.css":1,"public:\/\/css_injector\/css_injector_176.css":1,"public:\/\/css_injector\/css_injector_331.css":1}},"urlIsAjaxTrusted":{"\/":true}});
+//--><!]]>
+</script> 
+ </head> 
+ <body class="wguwashington html front not-logged-in no-sidebars page-node page-node- page-node-25045 node-type-info"> 
+  <div id="fb-root"></div> 
+  <div class="l-page"> 
+   <header class="site-header is-oncanvas"> 
+    <div class="row"> 
+     <div class="large-12 columns header-top"> 
+      <div class="large-8 medium-4 small-9 columns collapse"> 
+       <a href="/" class="logo"></a> 
+      </div> 
+      <div class="large-4 medium-4 small-2 columns collapse end"> 
+       <div class="site-header__info"> 
+        <div class="number"> 
+         <form class="header_search_form custom" action="/" method="post" id="search-block-form" accept-charset="UTF-8">
+          <div>
+           <div class="container-inline"> 
+            <h2 class="element-invisible">Search form</h2> 
+            <div class="form-item control-group form-type-textfield form-item-search-block-form"> 
+             <label class="element-invisible control-label" for="edit-search-block-form--2">Search </label> 
+             <input title="Enter the terms you wish to search for." placeholder="Search the Site" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text input-text"> 
+             <small></small> 
+            </div> 
+            <div class="form-actions form-wrapper" id="edit-actions">
+             <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit button radius">
+            </div>
+            <input type="hidden" name="form_build_id" value="form-e8Pv2GhyaeD57HUmarBCMU5UN5JuyRxeAqwMTNSuqUo"> 
+            <input type="hidden" name="form_id" value="search_block_form"> 
+           </div> 
+          </div>
+         </form> 
+         <a href="tel:877.214.7004" class="phone-icon"></a> 
+         <a href="tel:877.214.7004" class="phone">877.214.7004</a> 
+        </div> 
+        <div class="header__ctas"> 
+         <a href="/wgu/inquiry_form-b" class="btn--yellow--arrow">Request Info</a> 
+         <a href="https://washingtonforms.wgu.edu/wgu/app/app_step0" class="btn--yellow--arrow">Apply Now</a> 
+        </div> 
+        <!-- TEST SINGLE CTA MOBILE TEST --> 
+        <a href="/wgu/inquiry_form" class="btn--yellow--arrow single-cta-mobile--link">Request Info</a> 
+        <!-- END TEST SINGLE CTA MOBILE TEST --> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="nav_wrapper"> 
+     <div class="mobile_menu_toggle" id="mobile_menu_toggle"> 
+      <a href="#main-menu"></a> Menu 
+     </div> 
+     <nav class="desktop_menu" id="main-menu"> 
+      <div class="row collapse"> 
+       <div class="large-12 columns"> 
+        <ul class="menu top-level"> 
+         <li class="first expanded" id="degrees_main"><a href="/degrees_and_programs">Degrees &amp; Programs</a> 
+          <div class="menu__container"> 
+           <p class="disabled">Choose a college</p> 
+           <ul class="menu second-level"> 
+            <li class="first expanded"><a href="/education/online_teaching_degree" class="default">Teachers College</a> 
+             <!--BEGIN THIRD LEVEL--> 
+             <ul class="menu third-level mobile_destroy_college"> 
+              <li> 
+               <div class="row"> 
+                <div class="large-12 columns"> 
+                 <a href="/education/online_teaching_degree" class="third-level__title">WGU TEACHERS COLLEGE</a> 
+                </div> 
+               </div> 
+               <div class="row collapse"> 
+                <div class="large-6 columns fourth-level__item"> 
+                 <div class="row mobile_subitem_college" sub_menu_class="teachers_licensure"> 
+                  <div class="large-12 columns"> 
+                   <a href="/education/teacher_certification" class="fourth-level__title">Licensure Programs</a> 
+                  </div> 
+                 </div> 
+                 <div class="row"> 
+                  <div class="large-6 columns teachers_licensure"> 
+                   <div>
+                    <a href="/education/teacher_certification_elementary_bachelor_degree">B.A. Interdisciplinary Studies (Elementary Education)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_mathematics_bachelor_degree">B.A. Mathematics</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_special_education_bachelor_degree">B.A. Special Education (K-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_science_bachelor_degree">B.A. Science (5-9)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_physics_bachelor_degree">B.A. Science (Physics, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_chemistry_bachelor_degree">B.A. Science (Chemistry, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_biology_bachelor_degree">B.A. Science (Biological Science, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_geoscience_bachelor_degree">B.A. Science (Geosciences, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_elementary_program">Post-Baccalaureate Teacher Preparation Program, Elementary Education</a>
+                   </div> 
+                  </div> 
+                  <div class="large-6 columns teachers_licensure"> 
+                   <div>
+                    <a href="/education/teacher_certification_science_program">Post-Baccalaureate Teacher Preparation Program, Science (5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_elementary_master_degree">M.A. Teaching, Elementary Education</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_english_master_degree">M.A. Teaching, English (5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_mathematics_master_degree">M.A. Teaching, Mathematics (5-9 or 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/teacher_certification_science_master_degree">M.A. Teaching, Science (5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/licensure_faq">Licensure Degrees FAQs</a>
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="large-6 columns"> 
+                 <div class="row mobile_subitem_college" sub_menu_class="teachers_masters"> 
+                  <div class="large-12 columns"> 
+                   <a href="/education/masters_degree" class="fourth-level__title">Graduate Programs</a> 
+                  </div> 
+                 </div> 
+                 <div class="row"> 
+                  <div class="large-6 columns teachers_masters"> 
+                   <div>
+                    <a href="/education/master_science_curriculum_instruction">M.S. Curriculum and Instruction</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_science_special_education">M.S. Special Education (K-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_science_educational_leadership">M.S. Educational Leadership</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_english_language_learning">M.A. English Language Learning (ELL) (PreK-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_instructional_design">M.Ed. Instructional Design</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_learning_technology">M.Ed. Learning and Technology</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_mathematics">M.A. Mathematics Education (K-6, 5-9, or 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_science">M.A. Science Education (5-9)</a>
+                   </div> 
+                  </div> 
+                  <div class="large-6 columns teachers_masters"> 
+                   <div>
+                    <a href="/education/master_education_chemistry">M.A. Science Education (Chemistry, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_physics">M.A. Science Education (Physics, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_biology">M.A. Science Education (Biological Science, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/master_education_geoscience">M.A. Science Education (Geosciences, 5-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/endorsement_preparation_program_english_language_learning">Endorsement Preparation Program in English Language Learning (ELL) (PreK-12)</a>
+                   </div>
+                   <div>
+                    <a href="/education/endorsement_preparation_program_educational_leadership">Endorsement Preparation Program in Educational Leadership</a>
+                   </div>
+                   <div>
+                    <a href="/education/graduate_faq">Graduate Degrees FAQs</a>
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> </li> 
+             </ul> 
+             <!--END THIRD LEVEL--> </li> 
+            <li class="expanded"><a href="/business/online_business_degree">College of Business</a> 
+             <!--BEGIN THIRD LEVEL--> 
+             <ul class="menu third-level mobile_destroy_college"> 
+              <li> 
+               <div class="row"> 
+                <div class="large-12 columns"> 
+                 <a href="/business/online_business_degree" class="third-level__title">COLLEGE OF BUSINESS</a> 
+                </div> 
+               </div> 
+               <div class="row collapse"> 
+                <div class="large-7 columns"> 
+                 <div class="row"> 
+                  <div class="large-6 columns fourth-level__item"> 
+                   <div class="row mobile_subitem_college" sub_menu_class="business_bachelors">
+                    <a href="/business/online_business_bachelor" class="fourth-level__title">Bachelor's Programs</a>
+                   </div> 
+                   <div class="row collapse"> 
+                    <div class="large-12 columns business_bachelors"> 
+                     <div>
+                      <a href="/business/business_management_bachelor_degree">B.S. Business Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/healthcare_management_bachelor_degree">B.S. Business—Healthcare Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/human_resource_bachelor_degree">B.S. Business—Human Resource Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/IT_management_bachelor_degree">B.S. Business—Information Technology Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/online_healthcare_information_management_degree">B.S. Health Information Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/marketing_bachelor_degree">B.S. Marketing Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/accounting_bachelor_degree">B.S. Accounting</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="large-6 columns fourth-level__item"> 
+                   <div class="row mobile_subitem_college" sub_menu_class="business_masters">
+                    <a href="/business/online_business_master" class="fourth-level__title">Master's Programs</a>
+                   </div> 
+                   <div class="row collapse"> 
+                    <div class="large-12 columns business_masters"> 
+                     <div>
+                      <a href="/business/master_business_administration_degree">Master of Business Administration (MBA)</a>
+                     </div>
+                     <div>
+                      <a href="/business/master_business_administration_IT_degree">MBA Information Technology Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/master_business_administration_healthcare_management_degree">MBA Healthcare Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/master_integrated_healthcare_management">M.S. Integrated Healthcare Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/master_leadership_management_degree">M.S. Management and Leadership</a>
+                     </div>
+                     <div>
+                      <a href="/business/accounting_master_degree">M.S. Accounting</a>
+                     </div>
+                     <div>
+                      <a href="/online_business_degrees/business_faq">Business Degrees FAQs</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="large-5 columns"> 
+                 <div class="row"> 
+                  <div class="large-12 columns"> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> </li> 
+             </ul> 
+             <!--END THIRD LEVEL--> </li> 
+            <li class="expanded"><a href="/online_it_degrees/programs">College of Information Technology</a> 
+             <!--BEGIN THIRD LEVEL--> 
+             <ul class="menu third-level mobile_destroy_college"> 
+              <li> 
+               <div class="row"> 
+                <div class="large-12 columns"> 
+                 <a href="/online_it_degrees/programs" class="third-level__title">COLLEGE OF INFORMATION TECHNOLOGY</a> 
+                </div> 
+               </div> 
+               <div class="row collapse"> 
+                <div class="large-7 columns"> 
+                 <div class="row"> 
+                  <div class="large-6 columns fourth-level__item"> 
+                   <div class="row mobile_subitem_college" sub_menu_class="it_bachelors">
+                    <a href="/online_it_degrees/bachelor_degree_programs" class="fourth-level__title">Bachelor's Programs</a>
+                   </div> 
+                   <div class="row collapse"> 
+                    <div class="large-12 columns it_bachelors"> 
+                     <div>
+                      <a href="/online-it-degrees/systems-cloud-administration-bachelors-program">B.S. Cloud and Systems Administration</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/cybersecurity_information_assurance_bachelor_degree">B.S. Cybersecurity and Information Assurance</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/data_management_analytics_bachelor_degree">B.S. Data Management/Data Analytics</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/information_technology_degree">B.S. Information Technology</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/information_technology_degree_networks_admin">B.S. Information Technology—Network Administration</a>
+                     </div>
+                     <div>
+                      <a href="/online-it-degrees/information-technology-security-network-administration-bachelors-program">B.S. Network Operations and Security</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/software_development_degree">B.S. Software Development</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/online_healthcare_information_management_degree">B.S. Health Information Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/IT_management_bachelor_degree">B.S. Business—Information Technology Management</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="large-6 columns fourth-level__item"> 
+                   <div class="row mobile_subitem_college" sub_menu_class="it_masters">
+                    <a href="/online_it_degrees/master_degree_programs" class="fourth-level__title">Master's Programs</a>
+                   </div> 
+                   <div class="row collapse"> 
+                    <div class="large-12 columns it_masters"> 
+                     <div>
+                      <a href="/online_it_degrees/cybersecurity_information_assurance_master_degree">M.S. Cybersecurity and Information Assurance</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/data_analytics_master_degree">M.S. Data Analytics</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/network_management_master_degree">M.S. Information Technology Management</a>
+                     </div>
+                     <div>
+                      <a href="/business/master_business_administration_IT_degree">MBA Information Technology Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_it_degrees/it_faq">IT Degrees FAQs</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="large-5 columns"> 
+                 <div class="row"> 
+                  <div class="large-12 columns"> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> </li> 
+             </ul> 
+             <!--END THIRD LEVEL--> </li> 
+            <li class="last expanded"><a href="/online_health_professions_degrees/online_healthcare_degree">College of Health Professions</a> 
+             <!--BEGIN THIRD LEVEL--> 
+             <ul class="menu third-level mobile_destroy_college"> 
+              <li> 
+               <div class="row"> 
+                <div class="large-12 columns"> 
+                 <a href="/online_health_professions_degrees/online_healthcare_degree" class="third-level__title">COLLEGE OF HEALTH PROFESSIONS</a> 
+                </div> 
+               </div> 
+               <div class="row collapse"> 
+                <div class="large-7 columns"> 
+                 <div class="row"> 
+                  <div class="large-6 columns fourth-level__item"> 
+                   <div class="row mobile_subitem_college" sub_menu_class="health_bachelors">
+                    <a href="/online_health_professions_degrees/online_healthcare_bachelor_degree" class="fourth-level__title">Bachelor's Programs</a>
+                   </div> 
+                   <div class="row collapse"> 
+                    <div class="large-12 columns health_bachelors"> 
+                     <div>
+                      <a href="/online_health_professions_degrees/online_healthcare_information_management_degree">B.S. Health Information Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/bachelor_science_nursing">B.S. Nursing (RN to BSN)</a>
+                     </div>
+                     <div>
+                      <a href="/business/healthcare_management_bachelor_degree">B.S. Business—Healthcare Management</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="large-6 columns fourth-level__item"> 
+                   <div class="row mobile_subitem_college" sub_menu_class="health_masters">
+                    <a href="/online_health_professions_degrees/online_healthcare_master_degree" class="fourth-level__title">Master's Programs</a>
+                   </div> 
+                   <div class="row collapse"> 
+                    <div class="large-12 columns health_masters"> 
+                     <div>
+                      <a href="/online_health_professions_degrees/master_integrated_healthcare_management">M.S. Integrated Healthcare Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/master_science_nursing_education_specialization_degree">M.S. Nursing—Education</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/master_science_nursing_leadership_specialization_degree">M.S. Nursing—Leadership and Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/online_nursing_informatics_masters_degree_program_bsn_msn">M.S. Nursing—Nursing Informatics</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/rn_msn_nursing_education_specialization">M.S. Nursing—Education (RN to MSN Option)</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/rn_msn_nursing_leadership_specialization">M.S. Nursing—Leadership and Management (RN to MSN Option)</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/online_nursing_informatics_masters_degree_program_rn_msn">M.S. Nursing—Nursing Informatics (RN to MSN Option)</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/master_business_administration_healthcare_management_degree">MBA Healthcare Management</a>
+                     </div>
+                     <div>
+                      <a href="/online_health_professions_degrees/health_professions_faq">Health Professions Degrees FAQs</a>
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="large-5 columns"> 
+                 <div class="row"> 
+                  <div class="large-12 columns"> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> </li> 
+             </ul> 
+             <!--END THIRD LEVEL--> </li> 
+           </ul> 
+          </div> </li> 
+         <li class="expanded"><a href="/admissions/requirements">Admissions</a> 
+          <div class="menu__container"> 
+           <!--BEGIN 2ND LEVEL--> 
+           <ul class="menu second-level--alt mobile_destroy" style="width: 530px;"> 
+            <li> 
+             <div class="row"> 
+              <div class="large-6 columns"> 
+               <div class="expanded mobile_subitem">
+                <a href="/admissions/requirements">Admission Requirements</a>
+                <div>
+                 <a href="/admissions/tc_requirements">Teachers College Admissions Requirements</a>
+                </div>
+                <div>
+                 <a href="/admissions/business_requirements">College of Business Admissions Requirements</a>
+                </div>
+                <div>
+                 <a href="/admissions/it_requirements">College of IT Admissions Requirements</a>
+                </div>
+                <div>
+                 <a href="/admissions/health_requirements">College of Health Professions Admissions Requirements</a>
+                </div>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/admissions/admissions_faq">Admissions FAQ</a>
+               </div> 
+              </div> 
+              <div class="large-6 columns"> 
+               <div class=" mobile_subitem">
+                <a href="/admissions/enrollment_checklist">Enrollment Checklist</a>
+               </div>
+               <div class="expanded mobile_subitem">
+                <a href="/admissions/transferring">Transferring</a>
+                <div>
+                 <a href="/admissions/transferring_credits_faq">FAQ for Earning Transfer Credit</a>
+                </div>
+                <div>
+                 <a href="/admissions/cc_transfer">Community College Transfers</a>
+                </div>
+                <div>
+                 <a href="/admissions/how_to_request_transcript">How to Request Transcripts</a>
+                </div>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="http://washington.wgu.edu/wgu/app/app_step0">Apply for Admission</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="https://washingtonforms.wgu.edu/wgu/returning_graduate_inquiry">Alumni Apply Here</a>
+               </div> 
+              </div> 
+             </div> </li> 
+           </ul> 
+           <!--END 2ND LEVEL--> 
+          </div> </li> 
+         <li class="expanded"><a href="/tuition_financial_aid/overview">Tuition &amp; Financial Aid</a> 
+          <div class="menu__container"> 
+           <!--BEGIN 2ND LEVEL--> 
+           <ul class="menu second-level--alt mobile_destroy" style="width:530px;"> 
+            <li> 
+             <div class="row"> 
+              <div class="large-6 columns"> 
+               <div class=" mobile_subitem">
+                <a href="/tuition_financial_aid/tuition">Tuition and Fees</a>
+               </div>
+               <div class="expanded mobile_subitem">
+                <a href="/tuition_financial_aid/financial_aid">Financial Aid</a>
+                <div>
+                 <a href="/tuition_financial_aid/financial_aid_application">Applying for Financial Aid</a>
+                </div>
+                <div>
+                 <a href="/tuition_finanical_aid/consumer_guide">Consumer Information Guide</a>
+                </div>
+                <div>
+                 <a href="/tuition_financial_aid/washington_aid">Washington State Financial Aid Programs</a>
+                </div>
+                <div>
+                 <a href="/tuition_financial_aid/obligation_faq">Your Financial Obligations</a>
+                </div>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/tuition_financial_aid/scholarships">Scholarships</a>
+               </div> 
+              </div> 
+              <div class="large-6 columns"> 
+               <div class="expanded mobile_subitem">
+                <a href="/tuition_financial_aid/veterans">VA and Military</a>
+                <div>
+                 <a href="/tuition_financial_aid/tuition_assistance">Tuition Assistance</a>
+                </div>
+                <div>
+                 <a href="/tuition_financial_aid/TA_online_degree_programs">Part-Time Programs for Military</a>
+                </div>
+                <div>
+                 <a href="/tuition_financial_aid/TA_tuition_fees">Part-Time Tuition</a>
+                </div>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/tuition_financial_aid/corporate">Corporate Reimbursement</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/tuition_financial_aid/faq">FAQ</a>
+               </div> 
+              </div> 
+             </div> </li> 
+           </ul> 
+           <!--END 2ND LEVEL--> 
+          </div> </li> 
+         <li class="expanded"><a href="/about_WGU/overview">About WGU Washington</a> 
+          <div class="menu__container"> 
+           <!--BEGIN 2ND LEVEL--> 
+           <ul class="menu second-level--alt mobile_destroy" style="width: 890px; left: -588px;"> 
+            <li> 
+             <div class="row"> 
+              <div class="large-4 columns"> 
+               <div class=" mobile_subitem">
+                <a href="/about_WGU_washington/accreditation">Accreditation and Recognition</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/about_WGU_washington/students">About Our Students</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/about_WGU_washington/wgu_faculty">About WGU Faculty</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/about_WGU_Washington/governance">University Governance</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/why_WGU/competency_based_approach">Competency-Based Approach</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/about_WGU_washington/partnerships">Partnerships</a>
+               </div>
+               <div class=" mobile_subitem">
+                <a href="/about_WGU_washington/employment">Employment at WGU</a>
+               </div> 
+              </div> 
+              <div class="large-4 columns"> 
+               <div class=" mobile_subitem">
+                <a href="/blog">The Night Owl Blog</a>
+               </div>
+               <div class="expanded mobile_subitem">
+                <a href="/about_WGU_washington/academic_experience">Academic Experience</a>
+                <div>
+                 <a href="/about_WGU_washington/academic_experience_mentor">Your Mentor</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/academic_experience_aap">Degree Plan</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/academic_experience_assessment">Completing Assessments</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/academic_experience_lr">Using Learning Resources</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/academic_experience_communities">Student Communities</a>
+                </div>
+               </div> 
+              </div> 
+              <div class="large-4 columns"> 
+               <div class="expanded mobile_subitem">
+                <a href="/newsroom">WGU Washington Newsroom</a>
+                <div>
+                 <a href="/about_WGU_washington/news_releases">News Releases</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/in_the_news">In the News</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/rss_feed">RSS Feeds</a>
+                </div>
+                <div>
+                 <a href="/about_WGU_washington/resources">Resources</a>
+                </div>
+               </div> 
+              </div> 
+             </div> </li> 
+           </ul> 
+           <!--END 2ND LEVEL--> 
+          </div> </li> 
+         <!-- end php block --> 
+        </ul> 
+       </div> 
+      </div> 
+     </nav> 
+    </div> 
+    <script type="text/javascript">
+jQuery('.top-level > li a.active').parents('.top-level > li').find('a:first').addClass('active');
+var path = window.location.pathname;
+jQuery('.top-level > li > a').each(function(){
+  if (jQuery(this).attr('href') == path)
+    jQuery(this).addClass('active');
+});
+</script>
+   </header> 
+   <!-- TEST SINGLE CTA MOBILE TEST --> 
+   <script type="text/javascript">
+  jQuery(document).ready(function(){
+    //console.log("page loaded");
+    var isMobile = {
+      Android: function() {
+        return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+      },
+      any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      }
+    };
+
+    var shortVersion = false;
+    var testVersion = false;
+    var currState = window['optimizely'].data;
+
+    if(currState != undefined) {
+      var currVariationNumber = window['optimizely'].data.state.variationMap;
+      for(i in currVariationNumber) {
+        if(i == 6032310079 && currVariationNumber[i] == 1) {
+          if( isMobile.any() ) {
+            jQuery(".single-cta-mobile--link").attr("style", "display: block");
+            jQuery(".remove-for-test").attr("style", "display: none !important");
+            jQuery(".header__ctas").attr("style", "display: none");
+          }
+        }
+      }
+    }
+  });
+</script> 
+   <!-- END TEST SINGLE CTA MOBILE TEST --> 
+   <!-- TEST Hero section banner --> 
+   <section class="page-section feature homepage-hero-test" style="display: none;"> 
+    <div class="row page__row"> 
+     <div class="large-12 columns"> 
+      <div class="hero--text--button"> 
+       <h1 class="hero--text"></h1> 
+       <a href="/degrees_and_programs" class="hero--button btn--yellow--arrow">Find your degree</a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="feature__banner white-arrow-down hero-sub-nav"> 
+     <div class="row"> 
+      <div class="large-12 columns"> 
+       <div class="row featured-colleges"> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/education/online_teaching_degree"><h3>Teaching</h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/education/teacher_certification">Licensure</a> 
+          <a class="link--red--arrow--upper" href="/education/masters_degree">Master's</a> 
+         </div> 
+        </div> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/online_it_degrees/programs"><h3>I.T.</h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/online_it_degrees/bachelor_degree_programs">Bachelor's</a> 
+          <a class="link--red--arrow--upper" href="/online_it_degrees/master_degree_programs">Master's</a> 
+         </div> 
+        </div> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/business/online_business_degree"><h3>Business</h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/business/online_business_bachelor">Bachelor's</a> 
+          <a class="link--red--arrow--upper" href="/business/online_business_master">Master's</a> 
+         </div> 
+        </div> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/online_health_professions_degrees/online_healthcare_degree"><h3>Health<span class="bar-spacer"> | </span><span class="text-italics">Nursing</span></h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/online_health_professions_degrees/online_healthcare_bachelor_degree">Bachelor's</a> 
+          <a class="link--red--arrow--upper" href="/online_health_professions_degrees/online_healthcare_master_degree">Master's</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <!-- END TEST Hero section banner --> 
+   <!-- Featured Banner --> 
+   <section class="page-section feature home" style="background-image: url('https://washington.wgu.edu/sites/wgu.edu/files/header_images/hero-bg-image.jpg');"> 
+    <div class="row page__row"> 
+     <div class="large-12 columns"> 
+      <div class="large-8 columns large-offset-4 small-7 small-offset-5 home_featured-img_content"> 
+       <h2><span>The University of</span><br>Higher Education, Reinvented.</h2> 
+       <p>Welcome to WGU Washington, an innovative and surprisingly affordable online university. It's a New kind of U.<span style="font-size: 0.5em; vertical-align: top;">™</span></p> 
+       <hr class="dotted-rule--slate">
+       <p style="margin:15px 0 0;"><a href="/degrees_and_programs" class="link--red--arrow--upper text--heavy">Explore Degrees &amp; Programs at WGU Washington</a></p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="feature__banner white-arrow-down hero-sub-nav"> 
+     <div class="row"> 
+      <div class="large-12 columns"> 
+       <div class="row featured-colleges"> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/education/online_teaching_degree"><h3>Teaching</h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/education/teacher_certification">Licensure</a> 
+          <a class="link--red--arrow--upper" href="/education/masters_degree">Master's</a> 
+         </div> 
+        </div> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/online_it_degrees/programs"><h3>I.T.</h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/online_it_degrees/bachelor_degree_programs">Bachelor's</a> 
+          <a class="link--red--arrow--upper" href="/online_it_degrees/master_degree_programs">Master's</a> 
+         </div> 
+        </div> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/business/online_business_degree"><h3>Business</h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/business/online_business_bachelor">Bachelor's</a> 
+          <a class="link--red--arrow--upper" href="/business/online_business_master">Master's</a> 
+         </div> 
+        </div> 
+        <div class="college-links columns medium-3"> 
+         <a class="link--navy--arrow" href="/online_health_professions_degrees/online_healthcare_degree"><h3>Health<span class="bar-spacer"> | </span><span class="text-italics">Nursing</span></h3></a> 
+         <div class="degree-links"> 
+          <a class="link--red--arrow--upper" href="/online_health_professions_degrees/online_healthcare_bachelor_degree">Bachelor's</a> 
+          <a class="link--red--arrow--upper" href="/online_health_professions_degrees/online_healthcare_master_degree">Master's</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <!-- End Featured Banner --> 
+   <!-- Mobile Degree Drop Downs --> 
+   <!-- <div class="row">
+<div class="large-12 columns">
+  <div class="show-for-small-only choose-college">
+    <div class="choose-college__label">Choose a College</div>
+    <select name="colleges_select" class="select--gray">
+      <option value="">Select One</option>
+      <option value="/college-degrees-drop-down/teachers.xml">Teachers College</option>
+      <option value="/college-degrees-drop-down/business.xml">College of Business</option>
+      <option value="/college-degrees-drop-down/information-technology.xml">College of Information Technology</option>
+      <option value="/college-degrees-drop-down/health.xml">College of Health Professionals</option>
+    </select>
+
+    <div class="choose-college__label">Choose a Degree</div>
+    <select name="colleges_degree_select" class="colleges_degrees_dropdown select--gray" disabled>
+      <option value="">Select One</option>
+    </select>
+  </div>
+</div>  
+</div> --> 
+   <!-- End Mobile Degree Drop Downs --> 
+   <!-- SINGLE CTA MOBILE TEST ADDED remove-for-test class--> 
+   <nav class="yellow-nav show-for-small-only show-for-small remove-for-test"> 
+    <ul> 
+     <li><a href="https://washingtonforms.wgu.edu/wgu/app/app_step0" class="yellow-button">Apply Now</a></li> 
+     <li><a href="/wgu/inquiry_form" class="yellow-button">Request Info</a></li> 
+    </ul> 
+   </nav> 
+   <!-- End state site eval --> 
+   <!----> 
+   <div class="region region-content"> 
+    <section class="block block-system "> 
+     <div class="ds-1col node node-info node-promoted view-mode-full  clearfix"> 
+      <div class="field field-name-body">
+       <!-- Three column callouts --> 
+       <section class="callouts callout--accordions page-section white-arrow-down"> 
+        <div class="row"> 
+         <div class="accordion-wrap"> 
+          <div class="large-4 medium-4 columns callouts__block mobile_accordion"> 
+           <section class="block block-tbf-ccblocks contextual-links-region "> 
+            <div class="contextual-links-wrapper contextual-links-processed">
+             <a class="contextual-links-trigger" href="#">Configure</a>
+             <ul class="contextual-links">
+              <li class="block-configure first last"><a href="/admin/structure/block/manage/tbf_ccblocks/home_underheader1/configure?destination=node/25045">Configure block</a></li> 
+             </ul>
+            </div> 
+            <h3 class="accordion_title">Less Time,<br>Less Money</h3> 
+            <div class="accordion_body"> 
+             <hr class="dotted-rule--slate"> 
+             <div class="callouts__block--first-section"> 
+              <p>Half the cost<br>of other online universities</p> 
+             </div> 
+             <hr class="dotted-rule--slate"> 
+             <div class="callouts__block--second-section"> 
+              <p>Average time to complete a bachelor's degree is less than 3 years</p> 
+             </div> 
+            </div> 
+           </section> 
+          </div> 
+          <div class="large-4 medium-4 columns callouts__block mobile_accordion"> 
+           <section class="block block-tbf-ccblocks contextual-links-region "> 
+            <div class="contextual-links-wrapper contextual-links-processed">
+             <a class="contextual-links-trigger" href="#">Configure</a>
+             <ul class="contextual-links">
+              <li class="block-configure first last"><a href="/admin/structure/block/manage/tbf_ccblocks/home_underheader2/configure?destination=node/25045">Configure block</a></li> 
+             </ul>
+            </div> 
+            <h3 class="accordion_title">A Better Learning<br>Experience</h3> 
+            <div class="accordion_body"> 
+             <hr class="dotted-rule--slate"> 
+             <div class="callouts__block--first-section"> 
+              <p>Flexible, individualized pacing</p> 
+             </div> 
+             <hr class="dotted-rule--slate"> 
+             <div class="callouts__block--second-section"> 
+              <p>Personalized, one-on-one<br>faculty support</p> 
+             </div> 
+            </div> 
+           </section> 
+          </div> 
+          <div class="large-4 medium-4 columns callouts__block mobile_accordion"> 
+           <section class="block block-tbf-ccblocks contextual-links-region"> 
+            <div class="contextual-links-wrapper contextual-links-processed">
+             <a class="contextual-links-trigger" href="#">Configure</a>
+             <ul class="contextual-links" style="display: none;">
+              <li class="block-configure first last"><a href="/admin/structure/block/manage/tbf_ccblocks/home_underheader3/configure?destination=node/25045">Configure block</a></li> 
+             </ul>
+            </div> 
+            <h3 class="accordion_title">Superior<br>Results</h3> 
+            <div class="accordion_body"> 
+             <hr class="dotted-rule--slate"> 
+             <div class="callouts__block--first-section"> 
+              <p>98% employer satisfaction</p> 
+             </div> 
+             <hr class="dotted-rule--slate"> 
+             <div class="callouts__block--second-section"> 
+              <p>Average salary increase of $9,000 within 3 years of graduation</p> 
+             </div> 
+            </div> 
+           </section> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <!-- End Three Column Callouts --> 
+       <!-- Video --> 
+       <section class="blue-arrow-down blue-solid-bg page-section"> 
+        <div class="row"> 
+         <div class="columns medium-6"> 
+          <h2 class="white uppercase">Employers Value WGU Washington</h2> 
+          <p class="white text--white text--light light">WGU Washington offers a flexible, affordable, valuable education that measures graduates on the competencies that matter to employers, and that's why employers regularly report that our alumni meet or exceed expectations.</p> 
+         </div> 
+         <div class="columns medium-6"> 
+          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;padding-top:25px;height:0;"> 
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/EsgKL8gS8Kg?controls=0&amp;showinfo=0&amp;rel=0" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <!-- end Video --> 
+       <!-- Accreditations and Affiliations --> 
+       <section class="accreditations page-section white-arrow-down"> 
+        <div class="row"> 
+         <div class="large-12 columns"> 
+          <h2>Accreditations &amp; Affiliations</h2> 
+          <ul class="large-block-grid-3 small-block-grid-2 affil-list"> 
+           <li class="affil-logos"> <img src="/sites/all/themes/bricktheme/img/logo-ccne.svg"> </li> 
+           <li class="affil-logos"> <img src="/sites/all/themes/bricktheme/img/logo-cahiim.svg"> </li> 
+           <li class="affil-logos"> <img src="/sites/all/themes/bricktheme/img/logo-cnss.svg"> </li> 
+           <li class="affil-logos"> <img class="ncate-logo" src="/sites/all/themes/bricktheme/img/logo-ncate.svg"> </li> 
+           <li class="affil-logos"> <img src="/sites/all/themes/bricktheme/img/logo-cyberwatch.svg"> </li> 
+           <li class="affil-logos"> <img class="microsoft-logo" src="/sites/all/themes/bricktheme/img/logo-msita.svg"> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </section> 
+       <!-- End Accreditations and Affiliations --> 
+       <!-- Get to Know Us --> 
+       <section class="page-section frost-bg frost-arrow-down home"> 
+        <div class="page-section__parent"> 
+         <div class="page-section__child"> 
+          <div class="row"> 
+           <div class="columns large-12"> 
+            <h2 class="uppercase center text--light light">Get to Know Us</h2> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="page-section__child"> 
+          <div class="row red-stat"> 
+           <div class="columns large-12"> 
+            <div class="row"> 
+             <div class="columns large-5 large-offset-1"> 
+              <div class="row" style="margin-bottom:20px;"> 
+               <div class="large-3 small-3 columns"> 
+                <span class="text-left" style="float:none;">37</span> 
+               </div> 
+               <div class="large-9 small-9 columns">
+                 The average age of WGU Washington students; ages range from 17 to 77. 
+               </div> 
+              </div> 
+              <div class="row" style="margin-bottom:20px;"> 
+               <div class="large-3 small-3 columns"> 
+                <span class="text-left" style="float:none;">82<sup>%</sup></span> 
+               </div> 
+               <div class="large-9 small-9 columns">
+                 WGU Washington's one-year retention rate in 2014; the retention rate at U.S. public four-year institutions was 73%. 
+               </div> 
+              </div> 
+             </div> 
+             <div class="columns large-5 end"> 
+              <div class="row" style="margin-bottom:20px;"> 
+               <div class="large-3 small-3 columns"> 
+                <span class="text-left" style="float:none;">97<sup>%</sup></span> 
+               </div> 
+               <div class="large-9 small-9 columns">
+                 of WGU Washington students, in a 2014 survey, said they would recommend WGU Washington. 
+               </div> 
+              </div> 
+              <div class="row" style="margin-bottom:20px;"> 
+               <div class="large-4 medium-3 small-4 columns"> 
+                <span class="text-left" style="float:none;">9,600<sup>+</sup></span> 
+               </div> 
+               <div class="large-8 medium-9 small-8 columns">
+                 Washingtonians have earned degrees from WGU. 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+       <!-- End Get to Know Us --> 
+       <!-- Quote --> 
+       <section class="beige-left page-section" style="padding: 0;"> 
+        <div class="row" style="background: #E2DCCB  no-repeat right bottom;"> 
+         <div class="row"> 
+          <div class="columns large-6 "> 
+           <blockquote style="font-size:1.3rem;">
+            "WGU Washington's model is founded on flexibility, affordability, and quality. None of the three is sacrificed. In fact, they all work together. I would say to anyone seeking a relevant degree in today's modern, hectic world that WGU Washington is the perfect model." 
+            <cite style="font-size:1rem;">Phyllis Campbell,<br>Chairman, Pacific Northwest, JPMorgan Chase &amp; Co.</cite>
+           </blockquote> 
+          </div> 
+          <img src="/sites/wgu.edu/files/custom_uploads/phyllis-campbell.png"> 
+         </div> 
+        </div>
+       </section> 
+       <!-- End Quote --> 
+       <!-- WGU In the News --> 
+       <section class="callouts page-section home news shadow long-page-version"> 
+        <div class="row"> 
+         <div class="small-12 columns"> 
+          <h2 class="">WGU Washington in the News</h2> 
+          <div class="view view-news view-id-news view-display-id-block view-dom-id-9e68d169e8ffda445eae8335b419a99c"> 
+           <div class="view-content"> 
+            <ul class="home-news small-block-grid-2 medium-block-grid-4 large-block-grid-4"> 
+             <li class="views-row views-row-1 views-row-odd views-row-first">
+              <div class="ds-1col node node-news view-mode-home_wgu_in_the_news  clearfix"> 
+               <div class="field field-name-field-news-teaser-image">
+                <img src="https://washington.wgu.edu/sites/wgu.edu/files/news_teaser_images/women-leadership.jpg" width="187" height="179" alt="">
+               </div>
+               <span class="news-source">The Seattle Times</span>
+               <span class="news-title"><span class="comma">,</span> <a href="http://www.seattletimes.com/sponsored/women-in-leadership-an-example-to-driven-self-starting-professionals/" target="_blank">Women in Leadership: An example to driven, self-starting professionals</a> </span>
+               <span class="news-date">2/10/17</span>
+               <div class="field field-name-news-read-more">
+                <p><a href="http://www.seattletimes.com/sponsored/women-in-leadership-an-example-to-driven-self-starting-professionals/" target="_blank" class="link">Read More</a></p>
+               </div>
+              </div> </li> 
+             <li class="views-row views-row-2 views-row-even">
+              <div class="ds-1col node node-news view-mode-home_wgu_in_the_news  clearfix"> 
+               <div class="field field-name-field-news-teaser-image">
+                <img src="https://washington.wgu.edu/sites/wgu.edu/files/news_teaser_images/msni-tease.jpg" width="187" height="179" alt="">
+               </div>
+               <span class="news-source">Kent Reporter</span>
+               <span class="news-title"><span class="comma">,</span> <a href="http://www.kentreporter.com/business/wgu-washington-launches-masters-in-nursing-informatics/" target="_blank">WGU Washington launches master’s in Nursing Informatics</a> </span>
+               <span class="news-date">12/8/16</span>
+               <div class="field field-name-news-read-more">
+                <p><a href="http://www.kentreporter.com/business/wgu-washington-launches-masters-in-nursing-informatics/" target="_blank" class="link">Read More</a></p>
+               </div>
+              </div> </li> 
+             <li class="views-row views-row-3 views-row-odd">
+              <div class="ds-1col node node-news view-mode-home_wgu_in_the_news  clearfix"> 
+               <div class="field field-name-field-news-teaser-image">
+                <img src="https://washington.wgu.edu/sites/wgu.edu/files/news_teaser_images/milestone.jpg" width="187" height="179" alt="">
+               </div>
+               <span class="news-source">Kent Reporter</span>
+               <span class="news-title"><span class="comma">,</span> <a href="http://www.kentreporter.com/news/wgu-washington-tops-10000-student-enrollment-milestone/" target="_blank">WGU Washington Tops 10,000 Student Enrollment Milestone</a> </span>
+               <span class="news-date">11/17/16</span>
+               <div class="field field-name-news-read-more">
+                <p><a href="http://www.kentreporter.com/news/wgu-washington-tops-10000-student-enrollment-milestone/" target="_blank" class="link">Read More</a></p>
+               </div>
+              </div> </li> 
+             <li class="views-row views-row-4 views-row-even views-row-last">
+              <div class="ds-1col node node-news view-mode-home_wgu_in_the_news  clearfix"> 
+               <div class="field field-name-field-news-teaser-image">
+                <img src="https://washington.wgu.edu/sites/wgu.edu/files/news_teaser_images/affordable_0.jpg" width="187" height="179" alt="">
+               </div>
+               <span class="news-source">KING-TV</span>
+               <span class="news-title"><span class="comma">,</span> <a href="http://www.king5.com/entertainment/television/programs/new-day-northwest/wgu-washingtons-unique-approach-to-affordable-college-educations/321569136" target="_blank">WGU Washington's unique approach to affordable college educations</a> </span>
+               <span class="news-date">9/19/16</span>
+               <div class="field field-name-news-read-more">
+                <p><a href="http://www.king5.com/entertainment/television/programs/new-day-northwest/wgu-washingtons-unique-approach-to-affordable-college-educations/321569136" target="_blank" class="link">Read More</a></p>
+               </div>
+              </div> </li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="row"> 
+         <div class="columns large-12"> 
+          <a href="/newsroom" class="link--red--arrow text--heavy newsroom-link" style="font-size: 15px;">Go To Newsroom</a> 
+         </div> 
+        </div> 
+       </section> 
+       <!-- End in the news --> 
+       <style>
+  .get-to-know-us-list-item {
+    font-size: 1.5rem !important; 
+    margin-bottom: 10px;
+  }
+  .get-to-know-us-list-item:before {
+    top: 20px !important;
+  }
+</style>
+      </div>
+     </div> 
+    </section> 
+   </div> 
+   <!-- Footer --> 
+   <footer class="site-footer"> 
+    <section class=""> 
+     <div class="row"> 
+      <div class="large-6 medium-6 columns"> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="short-homepage-footer"> 
+     <div class="row"> 
+      <a href="https://washingtonforms.wgu.edu/wgu/app/app_step0" class="large-4 medium-4 columns apply-now-footer"> 
+       <div class="center-content"> 
+        <div class="img-wrap"> 
+         <p class="s-apply-icon"></p> 
+        </div> 
+        <p class="uppercase white heavy">apply now</p> 
+       </div> </a> 
+      <a href="/wgu/inquiry_form" class="large-4 medium-4 columns learn-more-footer"> 
+       <div class="center-content"> 
+        <div class="img-wrap"> 
+         <p class="s-learn-icon"></p> 
+        </div> 
+        <p class="uppercase white heavy">learn more</p> 
+       </div> </a> 
+      <a href="tel:866.225.5948" class="large-4 medium-4 columns call-now-footer"> 
+       <div class="center-content"> 
+        <div class="img-wrap"> 
+         <p class="s-phone-icon"></p> 
+        </div> 
+        <p class="uppercase white heavy">877.214.7004</p> 
+       </div> </a> 
+     </div> 
+    </section> 
+    <section class="footer-links"> 
+     <div class="row"> 
+      <div class="info_and_resources large-4 medium-4 columns"> 
+       <div class="footer-links__section"> 
+        <h4>Information &amp; Resources</h4> 
+        <div class="row"> 
+         <div class="column-width-half large-6 medium-6 columns"> 
+          <ul> 
+           <li><a href="http://washington.wgu.edu/admissions/requirements">Admissions</a></li>
+           <li><a href="http://washington.wgu.edu/tuition_financial_aid/overview">Tuition and Financial Aid</a></li>
+           <li><a href="http://washington.wgu.edu/admissions/academic_experience">Academic Experience</a></li>
+           <li><a href="http://washington.wgu.edu/about_WGU_washington/overview">About WGU Washington</a></li> 
+          </ul> 
+         </div> 
+         <div class="column-width-half large-6 medium-6 columns"> 
+          <ul> 
+           <li><a href="http://washington.wgu.edu/about_WGU_washington/accreditation">Accreditation</a></li>
+           <li><a href="http://washington.wgu.edu/about_WGU_washington/wgu_news">Newsroom</a></li>
+           <li><a href="http://washington.wgu.edu/about_WGU_washington/employment">Employment at WGU</a></li>
+           <li><a href="https://mywashington.wgu.edu/">Student Portal</a></li>
+           <li><a href="http://washington.wgu.edu/">Subscribe</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="degrees_and_programs large-6 medium-6 columns"> 
+       <div class="footer-links__section"> 
+        <h4>Degrees &amp; Programs</h4> 
+        <div class="row"> 
+         <p>WGU Washington is an accredited online university offering online <a href="/degrees_and_programs/bachelors">bachelor’s</a> and <a href="/degrees_and_programs/online_masters_degrees">master’s</a> degree programs.</p> 
+         <div class="teachers-college large-3 medium-3 columns"> 
+          <ul> 
+           <li class="subhead"><a href="http://washington.wgu.edu/education/online_teaching_degree">Teachers College</a></li>
+           <li><a href="http://washington.wgu.edu/education/teacher_licensure_washington">Licensure Programs</a></li>
+           <li><a href="http://washington.wgu.edu/education/washington_masters_teaching_degree">Graduate Programs</a></li> 
+          </ul> 
+         </div> 
+         <div class="large-3 medium-3 columns"> 
+          <ul> 
+           <li class="subhead"><a href="http://washington.wgu.edu/business/online_business_degree">College of Business</a></li>
+           <li><a href="http://washington.wgu.edu/business/online_business_degree_washington">Bachelor's Degree</a></li>
+           <li><a href="http://washington.wgu.edu/business/online_mba_washington">Master's Degrees</a></li> 
+          </ul> 
+         </div> 
+         <div class="large-3 medium-3 columns"> 
+          <ul> 
+           <li class="subhead"><a href="http://washington.wgu.edu/online_it_degrees/information_technology">College of I.T.</a></li>
+           <li><a href="http://washington.wgu.edu/online_it_degrees/washington_bachelor_degree_programs">Bachelor's Programs</a></li>
+           <li><a href="http://washington.wgu.edu/online_it_degrees/washington_master_degree_programs">Master's Programs</a></li> 
+          </ul> 
+         </div> 
+         <div class="large-3 medium-3 columns"> 
+          <ul> 
+           <li class="subhead"><a href="http://washington.wgu.edu/online_health_professions_degrees/online_healthcare_degree">College of Health</a></li>
+           <li><a href="http://washington.wgu.edu/online_health_professions_degrees/washington_online_healthcare_bachelor_degree">Bachelor's Degrees</a></li>
+           <li><a href="http://washington.wgu.edu/online_health_professions_degrees/healthcare_masters_degree_washington">Master's Degrees</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="medium-2 columns"> 
+       <div class="institutions footer-links__section"> 
+        <div class="row"> 
+         <div class="large-12 medium-12 columns"> 
+          <ul> 
+           <li><a href="http://www.wgu.edu/">WGU National</a></li>
+           <li><a href="http://indiana.wgu.edu/">WGU Indiana</a></li>
+           <li><a href="http://missouri.wgu.edu/">WGU Missouri</a></li>
+           <li><a href="http://nevada.wgu.edu/">WGU Nevada</a></li>
+           <li><a href="http://tennessee.wgu.edu/">WGU Tennessee</a></li>
+           <li><a href="http://texas.wgu.edu/">WGU Texas</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="footer-info"> 
+     <div class="row"> 
+      <div class="columns medium-4 collapse center"> 
+       <!-- <span class="left footer-logo"></span> --> 
+       <p>© 2017 Western Governors University – WGU Washington. All Rights Reserved.</p> 
+      </div> 
+      <div class="columns medium-4 collapse center"> 
+       <div class="footer-info__text"> 
+        <p><a href="/privacy">Privacy Policy</a> | <a href="/site_map">Site Map</a> | <a href="/contact_us">Contact Us</a></p> 
+       </div> 
+      </div> 
+      <div class="columns medium-4"> 
+       <div class="footer-links__section"> 
+        <ul class="social-links"> 
+         <li class="s-twitter"><a target="_blank" href="https://twitter.com/wguwashington"></a></li> 
+         <li class="s-facebook"><a target="_blank" href="https://www.facebook.com/wguwashington"></a></li> 
+         <li class="s-youtube"><a target="_blank" href="https://www.youtube.com/wguwashington"></a></li> 
+         <li class="s-blog"><a href="/blog"></a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </footer> 
+   <div class="hide" id="script_blocks"> 
+    <div class="region region-block-scripts"> 
+     <section class="block block-block "> 
+      <script type="text/javascript">
+/* <![CDATA[ */
+    var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '46982626']);
+    _elqQ.push(['elqTrackPageView']);
+    
+    (function () {
+        function async_load() {
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.src = '//img.en25.com/i/elqCfg.min.js';
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        }
+        if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+        else if (window.attachEvent) window.attachEvent('onload', async_load); 
+    })();
+/* ]]> */
+</script> 
+     </section> 
+     <section class="block block-block "> 
+      <!--SteelHouse Tracking Pixel--> 
+      <!-- INSTALL ON ALL PAGES OF SITE--> 
+      <script type="text/javascript">
+(function(){"use strict";var e=null,b="4.0.0",
+n="10969",
+additional="",
+t,r,i;try{t=top.document.referer!==""?encodeURIComponent(top.document.referrer.substring(0,2048)):""}catch(o){t=document.referrer!==null?document.referrer.toString().substring(0,2048):""}try{r=window&&window.top&&document.location&&window.top.location===document.location?document.location:window&&window.top&&window.top.location&&""!==window.top.location?window.top.location:document.location}catch(u){r=document.location}try{i=parent.location.href!==""?encodeURIComponent(parent.location.href.toString().substring(0,2048)):""}catch(a){try{i=r!==null?encodeURIComponent(r.toString().substring(0,2048)):""}catch(f){i=""}}var l,c=document.createElement("script"),h=null,p=document.getElementsByTagName("script"),d=Number(p.length)-1,v=document.getElementsByTagName("script")[d];if(typeof l==="undefined"){l=Math.floor(Math.random()*1e17)}h="dx.steelhousemedia.com/spx?"+"dxver="+b+"&shaid="+n+"&tdr="+t+"&plh="+i+"&cb="+l+additional;c.type="text/javascript";c.src=("https:"===document.location.protocol?"https://":"http://")+h;v.parentNode.insertBefore(c,v)})()
+</script> 
+     </section> 
+     <section class="block block-block "> 
+      <h3>Schema Markup for WGU Washington Logo</h3> 
+      <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://washington.wgu.edu",
+      "logo": "http://washington.wgu.edu/sites/all/themes/bricktheme/img/washington_blue_seal.svg"
+    }
+    </script> 
+     </section> 
+    </div> 
+   </div> 
+   <div class="region region-below-all"> 
+    <section class="block block-block "> 
+     <!-- Marketo Popup Modal Offer --> 
+     <style type="text/css">
+    .popup-modal-free {
+      height: 430px;
+    }
+
+    #popupModalFreeE, #popupModalFreeF {
+      height: 530px;
+    }
+
+    #popupModalFreeE .modal-free--main-content #programofinterest {
+      margin-bottom: 0;
+      width: 351px !important;
+    }
+
+    @media screen and (max-width: 480px) {
+      .popup-modal-free .modal-free--main-content h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .popup-modal-free .close-btn-free {
+      background-image: url('/sites/all/themes/bricktheme/img/sprites/close.png');
+      width: 25px;
+      height: 25px;
+      background-size: 25px;
+      position: absolute;
+      margin: 10px;
+      right: 10px;
+      top: 10px;
+    }
+
+    .popup-modal-free h3 {
+      margin-top: 25px;
+    }
+
+    .popup-modal-free p {
+      width: 100%;
+      margin: 0 auto 30px auto;
+      font-size: .9rem;
+    }
+
+    .popup-modal-free form {
+      margin: 0 auto;
+      /*visibility: hidden;*/
+      display: block !important;
+    }
+
+    .popup-modal-free form .mktoAsterix {
+      display: none !important;
+    }
+
+    .popup-modal-free form #FirstName, .popup-modal-free form #LastName {
+      width: 169px !important;
+      padding: 2px 10px !important;
+    }
+
+    .popup-modal-free form .mktoFieldDescriptor .mktoOffset {
+      width: 0 !important;
+    }
+
+    .popup-modal-free form #Email {
+      width: 348px !important;
+      padding: 2px 10px !important;
+    }
+
+    .popup-modal-free form .mktoLabel {
+      width: 100% !important;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: -10px;
+    }
+
+    .popup-modal-free form .mktoFormRow:nth-child(5) .mktoLabel {
+      display: none !important;
+    }
+
+    .popup-modal-free form .mktoRadioList {
+      width: 100% !important;
+    }
+
+    .popup-modal-free form .mktoRadioList > label {
+      float: left;
+      margin-left: 10px !important;
+      margin-right: 16px !important;
+      margin-top: -1px !important;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .popup-modal-free form .mktoRadioList label:nth-child(2) {
+      width: 72px;
+    }
+
+    .popup-modal-free form .mktoRadioList label:nth-child(4) {
+      width: 56px;
+    }
+
+    .popup-modal-free form .mktoRadioList label:nth-child(6) {
+      width: 20px;
+    }
+
+    .popup-modal-free form .mktoRadioList label:nth-child(8) {
+      width: 20px;
+      width: 73px;
+      margin-right: 0 !important;
+    }
+
+    .popup-modal-free form #PersonTitle {
+      width: 347px !important;
+    }
+
+    @media screen and (max-width: 480px) {
+      .popup-modal-free form #PersonTitle {
+        width: 100% !important;
+      }
+    }
+
+    .popup-modal-free form .mktoButtonRow {
+      margin-top: 15px;
+    }
+
+    .popup-modal-free form .mktoButtonWrap {
+      margin-left: 67px !important;
+    }
+
+    .popup-modal-free form .mktoButton {
+      background-image: none !important;
+      background-color: #840028 !important;
+      border-color: #840028 !important;
+      width: 250px;
+      height: 40px;
+    }
+
+    .popup-modal-free .popup-modal-free--bottom-bar {
+      background-color: #ddd7c7;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .popup-modal-free .popup-modal-free--bottom-bar p {
+      margin: 15px auto 15px auto;
+    }
+
+    .popup-modal-free .confirm-form .bigger-font {
+      font-size: 1.1rem;
+      width: 100%;
+    }
+
+    .popup-modal-free .confirm-form a {
+      margin: 0 auto 47px auto;
+        display: block;
+        width: 25%;
+        text-align: center;
+        min-width: 208px;
+    }
+
+    .popup-modal-free .confirm-form .popup-modal-free--bottom-bar {
+      height: 50px;
+    }
+
+    @media screen and (max-width: 767px) {
+      .popup-modal-free {
+        min-height: 430px;
+      }
+
+      #popupModalFreeE {
+        min-height: 493px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .popup-modal-free form {
+        margin-top: -26px;
+      }
+
+      .popup-modal-free .confirm-form p.bigger-font {
+        margin-top: -16px;
+      }
+
+      .popup-modal-free .confirm-form .request-info-mkto {
+        margin-top: -19px;
+      }
+
+      .popup-modal-free .close-btn-free {
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+      }
+      /*.popup-modal-free form .mktoLabel {
+        display: none;
+      }*/
+      .popup-modal-free form #FirstName, .popup-modal-free form #LastName, .popup-modal-free form #Email {
+        width: 100% !important;
+      }
+
+      .popup-modal-free form .mktoButtonRow {
+        width: 100%;
+      }
+      .popup-modal-free form .mktoButtonWrap {
+        margin-left: 0 !important;
+      }
+      .popup-modal-free form .mktoButton {
+        width: 100%;
+        margin-top: -9px;
+      }
+    }
+    </style> 
+     <!-- POPUP MODAL VARIATION E --> 
+     <section> 
+      <div id="popupModalFreeE" class="popup-modal-free reveal-modal medium" data-reveal=""> 
+       <a class="close-btn-free" href="#"></a> 
+       <div class="modal-free--main-content" style=""> 
+        <!-- visibility:hidden;--> 
+        <h3 class="text--heavy center uppercase">GET WGU Washington OFFERS AND MORE</h3> 
+        <p class="center">Send me more information about WGU<br>and a $65 application fee waiver code.</p> 
+        <form id="mktoForm_1126"></form> 
+        <div class="popup-modal-free--bottom-bar"> 
+         <p class="center">By submitting you will receive emails from WGU and can opt-out at any time.</p> 
+        </div> 
+       </div> 
+       <div class=""> 
+        <div id="confirmform3" class="confirm-form" style="visibility:hidden;"> 
+         <h3 class="text--heavy center">THANKS FOR SIGNING UP!</h3> 
+         <p class="center paragraph-one">We're emailing you the app fee waiver code and other<br>information about getting your degree from WGU.</p> 
+         <p class="center bigger-font">Have questions about applying?<br>Get application help from an Enrollment Counselor.<br>Complete a request for more info and we'll contact you shortly.</p> 
+         <a href="#" onclick="requestInfo(event)" class="request-info-mkto btn--red--arrow">REQUEST INFO</a> 
+         <div class="popup-modal-free--bottom-bar"> 
+          <p class="center"></p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </section> 
+     <script src="//app-ab06.marketo.com/js/forms2/js/forms2.min.js"></script> 
+     <script type="text/javascript">
+      var mktFORM3 = MktoForms2.loadForm("//app-ab06.marketo.com", "850-ZWR-066", 1126);
+      var myTimeout;
+      var weHaveMobile = false;
+
+      function requestInfo(e) {
+        //console.log("request info");
+        e.preventDefault();
+        var formVersion = jQuery('.confirmform .request-info-mkto').text();
+        //console.log("version" +formVersion);
+
+        if(formVersion === "APPLY NOW") {
+          if(!weHaveMobile) {
+            //console.log('going to show desktop link');
+            window.open("https://wwwforms.wgu.edu/wgu/app/app_step0", '_self');
+          }else {
+            //console.log('going to show mobile link');
+            window.open("https://wwwforms.wgu.edu/wgu/app/app_step0", '_self');
+          }
+        }else {
+          if(!weHaveMobile) {
+            //console.log('going to show desktop link');
+            window.open("/wgu/inquiry_form", '_self');
+          }else {
+            //console.log('going to show mobile link');
+            window.open("/m/inquiry", '_self');
+          }
+        }
+      }
+
+      jQuery(document).ready(function(){
+        var currentState = "WGU Washington";
+
+        var isMobile = {
+          Android: function() {
+            return navigator.userAgent.match(/Android/i);
+          },
+          BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+          },
+          iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+          },
+          Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+          },
+          Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+          },
+          any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+          }
+        };
+        
+        if( isMobile.any() ) {
+          weHaveMobile = true;
+        }
+
+        // check if cookies are enabled
+        if(cookiesAreEnabled()) {
+
+          //Setup for the initial modal form. If user has visited the page before and has the cookie they won't see the modal.
+          setupPopup();
+
+          function setupPopup() {
+            if(!weHaveMobile) {
+              //Delay showing the modal for 10 seconds
+              //console.log("we don't have mobile");
+              var delay = 10000;
+              setTimeout(function(){
+                showConfirmNumber = 3;
+                var cookieValue = jQuery.cookie("visitedCookie");
+                if (!cookieValue) {
+                  jQuery('#popupModalFreeE').foundation('reveal', 'open'); 
+                }
+                jQuery.cookie("visitedCookie", true);
+              }, delay);
+            }else {
+              //Delay showing the modal for 30 and then 120 seconds
+              var firstDelay = 10000;
+              var secondDelay = 90000;
+              setTimeout(function(){
+                showConfirmNumber = 3;
+                var cookieValue = jQuery.cookie("visitedCookie");
+                if (!cookieValue) {
+                  jQuery('#popupModalFreeE').foundation('reveal', 'open');
+
+                  startSecondTimer(secondDelay);
+                }
+                jQuery.cookie("visitedCookie", true);
+              }, firstDelay);
+            }
+          }// end setupPopup()
+          
+          function startSecondTimer(delay) {
+            myTimeout = setTimeout(function(){
+              //console.log('second timer called');
+              jQuery('#popupModalFreeE').foundation('reveal', 'open');
+            }, delay);
+          }
+
+          //This is for the Marketo form that we are embeding in the modal.
+          mktFORM3.whenReady(function (form){
+            jQuery('.mktoButton').addClass('btn--red--arrow');
+            form.onSuccess(function(values, followUpUrl){
+              if(myTimeout) {
+                clearTimeout(myTimeout);
+              }
+              //console.log("form success show num " +showConfirmNumber);
+              jQuery('.modal-free--main-content').css('display', 'none');
+              if(showConfirmNumber === 3) {
+                jQuery('#confirmform3').css('visibility', 'visible');
+              }
+              return false;
+            });
+          });
+
+          //close popup modal
+          jQuery('.close-btn-free').on('click', function(event) {
+            jQuery('.popup-modal-free').foundation('reveal', 'close');
+          });
+        }
+      });// end document ready
+
+      // returns bool for if cookies are enabled in user's browser
+      function cookiesAreEnabled() {
+        var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+        
+        if(typeof navigator.cookieEnabled == 'undefined' && !cookieEnabled) {
+          document.cookie = 'testcookie';
+          cookieEnabled = (document.cookie.indexOf('testcookie') != -1) ? true : false;
+        }
+        
+        return cookieEnabled;
+      }// end cookiesAreEnabled()
+
+    </script> 
+     <!-- END Marketo Popup Modal Offer --> 
+    </section> 
+    <section class="block block-block "> 
+     <style>
+            
+    .chat-button {
+        cursor: pointer;
+        position: fixed;
+        top: auto;
+        bottom: 0px;
+        left: auto;
+        right: 0px;
+    }
+        .chat-button p {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            padding-top: 7px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+            .chat-button p #liveagent_button_online_573a0000000fxT9 {
+                background-color: #840028;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                color: #ffffff;
+                cursor: pointer;
+                display: inline-block;
+                height: 30px;
+                width: 130px;
+                padding-top: 7px;
+                vertical-align: middle;
+            }
+</style> 
+     <div class="chat-button no-select"> 
+      <p> <a id="liveagent_button_online_573a0000000fxT9" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573a0000000fxT9')">Chat Online</a> <a id="liveagent_button_offline_573a0000000fxT9" style="display: none;"></a> <script type="text/javascript">
+            if(!window._laq) {
+                window._laq = [];
+            }
+
+            window._laq.push(function() {
+                liveagent.showWhenOnline('573a0000000fxT9', document.getElementById('liveagent_button_online_573a0000000fxT9'));
+                liveagent.showWhenOffline('573a0000000fxT9', document.getElementById('liveagent_button_offline_573a0000000fxT9'));
+            });
+        </script> </p> 
+     </div> 
+     <script type="text/javascript" src="https://d.la4-c2-phx.salesforceliveagent.com/content/g/js/39.0/deployment.js"></script> 
+     <script type="text/javascript">
+
+function linkRecord(studentId,firstName, lastName)
+{
+
+    //add variables to see on the chat
+    liveagent.addCustomDetail('StudentId', studentId);
+    liveagent.addCustomDetail('First Name', firstName);
+    liveagent.addCustomDetail('Last Name', lastName);
+
+    //find the contact
+    liveagent.findOrCreate('Contact').map('StudentID__c','StudentId',true,true,false);
+    liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
+
+    //create the case
+    liveagent.addCustomDetail('Case Subject','IT Assisstance Needed').doKnowledgeSearch();
+    liveagent.addCustomDetail('Case Status','New', false);
+    liveagent.addCustomDetail('Case Origin','Chat', false);
+    liveagent.findOrCreate('Case').map('Subject','Case Subject',false,false,true).map('Status','Case Status',false,false,true).map('Origin','Case Origin', false, false, true).map('Case Record Type','CaseRecordType',false,false,true);
+    liveagent.findOrCreate('Case').saveToTranscript('CaseId').showOnCreate();
+
+    //initiate live agent
+liveagent.init('https://d.la4-c2-phx.salesforceliveagent.com/chat', '572a0000000blKC', '00D30000001GkGU');
+
+}
+
+</script> 
+     <script type="text/javascript" src="https://d.la4-c2-phx.salesforceliveagent.com/content/g/js/39.0/deployment.js"></script> 
+     <script type="text/javascript">liveagent.init('https://d.la4-c2-phx.salesforceliveagent.com/chat', '572a0000000blKC', '00D30000001GkGU');</script> 
+    </section> 
+   </div> 
+   <!-- Scripting for optimizely test #5429350269  short home page test--> 
+   <script type="text/javascript">
+  jQuery(document).ready(function(){
+    //console.log("page loaded");
+    
+    var shortVersion = false;
+    var testVersion = false;
+    var testingHeroSection = false;
+    var imageUrl;    
+
+    var currState = window['optimizely'].data;
+
+    if(currState != undefined) {
+      var currVariationNumber = window['optimizely'].data.state.variationMap;
+
+      for(i in currVariationNumber) {
+        //console.log("i " + i);
+        //console.log("currvarnum " + currVariationNumber[i]);
+        if(i == 8334140629 && currVariationNumber[i] == 1) {
+          //mom 20 years
+          testingHeroSection = true;
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("Twenty years ago, we created an entire university just for you.");
+        }else if(i == 8334140629 && currVariationNumber[i] == 2) {
+          //mom worthwhile
+          testingHeroSection = true;
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("&#34;Some things make the effort worthwhile.&#34;");
+        }else if(i == 8334140629 && currVariationNumber[i] == 3) {
+          //mom will way
+          testingHeroSection = true;
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("&#34;If you have the will, WGU has the way.&#34;");
+        }else if(i == 8334140629 && currVariationNumber[i] == 4) {
+          //dad 20 years
+          testingHeroSection = true;
+          imageUrl = "/sites/wgu.edu/files/custom_uploads/homepage-hero-dad.jpg";
+          jQuery(".homepage-hero-test").css('background-image', 'url(' + imageUrl + ')');
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("Twenty years ago, we created an entire university just for you.");
+        }else if(i == 8334140629 && currVariationNumber[i] == 5) {
+          //dad worthwhile
+          testingHeroSection = true;
+          imageUrl = "/sites/wgu.edu/files/custom_uploads/homepage-hero-dad.jpg";
+          jQuery(".homepage-hero-test").css('background-image', 'url(' + imageUrl + ')');
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("&#34;Some things make the effort worthwhile.&#34;");
+        }else if(i == 8334140629 && currVariationNumber[i] == 6) {
+          //dad will way
+          testingHeroSection = true;
+          imageUrl = "/sites/wgu.edu/files/custom_uploads/homepage-hero-dad.jpg";
+          jQuery(".homepage-hero-test").css('background-image', 'url(' + imageUrl + ')');
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("&#34;If you have the will, WGU has the way.&#34;");
+        }else if(i == 8334140629 && currVariationNumber[i] == 7) {
+          //grad 20 years
+          testingHeroSection = true;
+          imageUrl = "/sites/wgu.edu/files/custom_uploads/homepage-hero-grad.jpg";
+          jQuery(".homepage-hero-test").css('background-image', 'url(' + imageUrl + ')');
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("Twenty years ago, we created an entire university just for you.");
+        }else if(i == 8334140629 && currVariationNumber[i] == 8) {
+          //grad worthwhile
+          testingHeroSection = true;
+          imageUrl = "/sites/wgu.edu/files/custom_uploads/homepage-hero-grad.jpg";
+          jQuery(".homepage-hero-test").css('background-image', 'url(' + imageUrl + ')');
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("&#34;Some things make the effort worthwhile.&#34;");
+        }else if(i == 8334140629 && currVariationNumber[i] == 9) {
+          //grad will way
+          testingHeroSection = true;
+          imageUrl = "/sites/wgu.edu/files/custom_uploads/homepage-hero-grad.jpg";
+          jQuery(".homepage-hero-test").css('background-image', 'url(' + imageUrl + ')');
+          jQuery(".homepage-hero-test").css("display", "block");
+          jQuery(".hero--text--button .hero--text").html("&#34;If you have the will, WGU has the way.&#34;");
+        }
+
+        if(i == 5768970341 && currVariationNumber[i] == 1) {
+          //console.log("we have opt exp and server " +window.location.hostname);
+          if(window.location.hostname === "www.wgu.edu" || window.location.hostname === "dev.www.wgu.edu" || window.location.hostname === "stg.www.wgu.edu") {
+
+            jQuery(".short-page-version").css("display", "block");
+            shortVersion = true;
+            jQuery(".footer-actions").css("display", "none");
+            //console.log("we have optimizely");
+            jQuery(".feature.home").css({"height": "315px", "margin-bottom": "81px", "background-position": "35% 0", "background-size": "73%"});
+            jQuery(".feature.home").find(".page__row").css({"margin-top":"15px", "height": "300px"});
+
+            jQuery(".degree-links a").removeClass("link--red--arrow--upper");
+            jQuery(".degree-links a").addClass("link--sapphire--arrow");
+
+            //jQuery(".degree-links a").removeClass("link--red--arrow--upper");
+            //jQuery(".degree-links a").addClass("link--sapphire--arrow");
+            jQuery(".callout--accordions .accordion-wrap .block a").removeClass("link--red--arrow--upper");
+            jQuery(".callout--accordions .accordion-wrap .block a").addClass("link--sapphire--arrow");
+            jQuery(".callout--accordions .accordion-wrap .block a").addClass("uppercase");
+
+            jQuery(".callout--accordions").css("padding-top", "52px");
+            repositionNeeded();
+            jQuery(window).resize(function(){     
+              repositionNeeded();
+            });
+          }
+
+        }else if(i == 5768970341 && currVariationNumber[i] == 2) {
+          if(window.location.hostname === "www.wgu.edu" || window.location.hostname === "dev.www.wgu.edu" || window.location.hostname === "stg.www.wgu.edu") {
+            jQuery(".test-section").css("display", "block");
+            testVersion = true;
+            jQuery(".footer-actions").css("display", "none");
+            jQuery(".feature.home").css({"height": "315px", "margin-bottom": "81px", "background-position": "35% 0", "background-size": "73%"});
+            jQuery(".feature.home").find(".page__row").css({"margin-top":"15px", "height": "300px"});
+            jQuery(".callout--accordions .accordion-wrap .block a").removeClass("link--red--arrow--upper");
+            jQuery(".callout--accordions .accordion-wrap .block a").addClass("link--sapphire--arrow");
+            jQuery(".callout--accordions .accordion-wrap .block a").addClass("uppercase");
+            jQuery(".callout--accordions").css("padding-top", "52px");       
+            repositionNeeded();
+            jQuery(window).resize(function(){     
+              repositionNeeded();
+            });
+          }
+        }
+      }
+    }else {
+      jQuery(".feature.home").css("display", "block");
+    }
+
+    function repositionNeeded() {
+      //console.log("repositioning");
+      jQuery(".callout--accordions").css({"padding-top": "52px", "padding-bottom": "3em"});
+      if (jQuery('header').width() >= 1500) {
+        jQuery(".feature.home").css({"height": "315px", "margin-bottom": "81px", "background-position": "35% 0", "background-size": "73%"});
+      }
+      if (jQuery('header').width() <= 1500) {
+        jQuery(".feature.home").css({"height": "315px", "margin-bottom": "81px", "background-position": "12% 0", "background-size": "84%"});
+      }
+      if (jQuery('header').width() <= 1300) {
+        jQuery(".feature.home").css({"height": "315px", "margin-bottom": "81px", "background-position": "94% 0", "background-size": "107%"});
+      }
+      if (jQuery('header').width() <= 1024) {
+        jQuery(".feature.home").css({"height": "315px", "margin-bottom": "81px", "background-position": "34% 0", "background-size": "170%"});
+      }
+      if (jQuery('header').width() <= 640) {
+        jQuery(".feature.home").css({"height": "205px", "margin-bottom": "0", "background-position": "34% 0", "background-size": "221%"});
+        jQuery(".callout--accordions").css({"padding-top": "0", "padding-bottom": "0"});
+      }
+    }
+
+    function repositionNeededTest() {
+
+    }
+
+    if(!testingHeroSection) {
+      jQuery(".feature.home").css("display", "block");
+    }else {
+      jQuery(".feature.home").css("display", "none");
+    }
+
+    if(!shortVersion && !testVersion) {
+      jQuery(".long-page-version").css("display", "block");
+    }
+  });
+</script> 
+   <!-- END Scripting for optimizely test #5429350269  short home page test--> 
+  </div> 
+  <a class="l-search-close"></a> 
+  <div class="l-search-overlay"></div> 
+  <!--[if gt IE 9]><!--> 
+  <script src="/sites/all/themes/bricktheme/javascripts/shared/foundation5.custom.min.js"></script> 
+  <!--<![endif]--> 
+  <!--[if lte IE 9]>
+<script src="/sites/all/themes/bricktheme/javascripts/shared/foundation4.custom.min.js"></script>
+<![endif]--> 
+  <script type="text/javascript" src="https://washington.wgu.edu/sites/wgu.edu/files/js/js_wx10LiLm1JiLsgGmdL1IU9_dcQH5Qx-BZ44Bju14xHs.js"></script> 
+  <script type="text/javascript" src="https://washington.wgu.edu/sites/wgu.edu/files/js/js_UDhrWvU9uMP3y06CuwlQHhciaW-Ot8lJ00QkbaSJrpk.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(document).foundation({
+  equalizer : {
+    // Specify if Equalizer should make elements equal height once they become stacked.
+    equalize_on_stack: true
+  }
+});
+//--><!]]>
+</script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery( document ).ready(function() {
+   var footerFirstULElements = jQuery(".site-footer .footer-links .footer-links__section .row .column-width-half ul")[1];
+   //console.log("elements " +footerFirstULElements);
+   var liTags = footerFirstULElements.getElementsByTagName("li");
+   //console.log("li tags " + liTags);
+   for(var i=0; i < liTags.length; i++) {
+      //console.log(liTags[i]);
+      var currTag = liTags[i].getElementsByTagName("a");
+      for(var j=0; j < currTag.length; j++) {
+         //console.log("curr a tag: "+currTag[j].innerText);
+         if(currTag[j].innerText === "Subscribe") {
+            //console.log("we have it");
+            jQuery(currTag[j]).attr("href", "#");
+            jQuery(currTag[j]).addClass('footer-subscribe-link');
+            jQuery(currTag[j]).click(function(event) {
+               event.preventDefault();
+               jQuery('#popupModalFreeE').foundation('reveal', 'open');
+            });
+            break;
+         }
+      }
+   }
+});
+//--><!]]>
+</script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+/*
+var _stk = "5ddc523ec1b1c75c408ad86d8a347683ad929cf6";
+    (function(){
+        var a=document, b=a.createElement("script"); b.type="text/javascript";
+        b.async=!0; b.src=('https:'==document.location.protocol ? 'https://' :
+        'http://') + 'd31y97ze264gaa.cloudfront.net/assets/st/js/st.js';
+        a=a.getElementsByTagName("script")[0]; a.parentNode.insertBefore(b,a);
+    })();
+*/
+//--><!]]>
+</script> 
+  <div id="popupModal" class="reveal-modal medium" data-reveal></div> 
+  <div id="popupModal_iframe" class="reveal-modal medium" data-reveal> 
+   <iframe src="" width="100%" height="500"></iframe> 
+  </div> 
+  <div id="ie8Modal" class="reveal-modal small ie_modal"> 
+   <div id="ie8_warning"> 
+    <div class="notice"> 
+     <div class="container"> 
+      <p><strong>You’re using an unsupported version of your browser.</strong>.</p> 
+      <p>You’ll still have full access to the site, but some functionality may be lost. For the best wgu.edu experience, upgrade your browser by following the links below.</p> 
+      <ul class="option"> 
+       <li class="upgrade"><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src="/sites/all/themes/bricktheme/img/firefox.jpg"></a></li> 
+       <li class="install"><a href="https://www.google.com/intl/en/chrome/browser/" target="_blank"><img src="/sites/all/themes/bricktheme/img/chrome.jpg"></a></li> 
+      </ul> 
+      <div class="dismiss">
+       <a href="#" class="manual_close">Dismiss</a>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <a class="close-reveal-modal">×</a> 
+  </div> 
+  <script type="text/javascript">_satellite.pageBottom();</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bcb8cc6972","applicationID":"70688255","transactionName":"Z1QDMRYEWkEHWxcMDl4eNBcNSl1cAl0bSxFYQQ==","queueTime":0,"applicationTime":19,"atts":"SxMAR14eSU8=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

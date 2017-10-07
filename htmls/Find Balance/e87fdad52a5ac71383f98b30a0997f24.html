@@ -1,0 +1,1213 @@
+<!doctype html>
+
+<!--[if IE 8]><html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie-8 lt-ie9 lt-ie10"><![endif]-->
+<!--[if IE 9]><html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie9 lt-ie10"><![endif]-->
+<!--[if !IE]> -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<!--<![endif]-->
+
+<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><link rel="stylesheet" type="text/css" href="http://wtop.com/wp-content/cache/minify/000000/bYxRCoAgEAUvVG0dSdTI0t3wrQWdPioqiH4eAzO8jmBC1CGX2haoJDKAV5AFHlW1tKrMt1o8O8nUS2FnNAifMUtOJobNf-rDven_FWKwUzPigmt3.css?f405bc" media="all" />
+
+<!-- New Relic -->
+<script type="text/javascript">
+window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"1d8c2aa18a",applicationID:"5693986",sa:1}
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta property="fb:pages"content="112565666483" />
+<title>Doctors&#039; top tips for a healthy lifestyle | WTOP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="wp-admin-url"
+	content="http://wtop.com/wp-admin/post.php?post=575451&amp;action=edit">
+	<!-- /NewsInc -->
+		<!-- SailThru -->
+			<meta name="sailthru.canonical" content="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/" />
+			<meta name="sailthru.date" content="2015-01-01 06:27:29" />
+			
+					<meta name="sailthru.tags" content="Food &amp; Restaurant News,health,Health and Fitness News,Latest News" />
+			
+				
+					<meta name="sailthru.image.full" content="http://wtop.com/wp-content/plugins/sailthru-custom/assets/img/wtop50x50.jpg" />
+			<meta name="sailthru.image.thumb" content="http://wtop.com/wp-content/plugins/sailthru-custom/assets/img/wtop50x50.jpg" />
+				<!-- /SailThru -->
+		<meta http-equiv="refresh" content="720" />
+<!-- This site is optimized with the Yoast SEO Premium plugin v4.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="news_keywords" content="health" />
+<meta name="original-source" content="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/" />
+<link rel="canonical" href="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Doctors&#039; top tips for a healthy lifestyle" />
+<meta property="og:description" content="WASHINGTON &#8212; It&#8217;s a brand new year and a lot of us have resolved to ramp up our health and fitness. WTOP talked to the women of the Lady Docs Corner Cafe, a group of health&hellip;" />
+<meta property="og:url" content="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/" />
+<meta property="og:site_name" content="WTOP" />
+<meta property="article:tag" content="health" />
+<meta property="article:section" content="Latest News" />
+<meta property="article:published_time" content="2015-01-01T18:27:29-04:00" />
+<meta property="article:modified_time" content="2015-01-01T19:50:56-04:00" />
+<meta property="og:updated_time" content="2015-01-01T19:50:56-04:00" />
+<meta property="og:image" content="http://wtop.com/wp-content/uploads/2017/07/FallbackImage_App_WTOP_Logo_070617_R01.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="WASHINGTON &#8212; It&#8217;s a brand new year and a lot of us have resolved to ramp up our health and fitness. WTOP talked to the women of the Lady Docs Corner Cafe, a group of health&hellip;" />
+<meta name="twitter:title" content="Doctors&#039; top tips for a healthy lifestyle - WTOP" />
+<meta name="twitter:image" content="http://wtop.com/wp-content/uploads/2017/07/FallbackImage_App_WTOP_Logo_070617_R01.png" />
+<meta property="DC.date.issued" content="2015-01-01T18:27:29-04:00" />
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//launch.newsinc.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/wtop.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+<link rel='stylesheet' id='open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet' id='webfonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900,400italic,700italic,900italic|Lato:400,700,900,400italic,700italic,900italic' type='text/css' media='screen' />
+<link rel='stylesheet' id='oswaldfont-css'  href='//fonts.googleapis.com/css?family=Oswald:400,700,900' type='text/css' media='screen' />
+<link rel='stylesheet' id='robotofont-css'  href='//fonts.googleapis.com/css?family=Roboto:500,700,900' type='text/css' media='screen' />
+
+
+
+<link rel='stylesheet' id='site-css'  href="http://wtop.com/wp-content/themes/wtop/assets/css/site.css?refresh-css-08-09-17&amp;f405bc" type='text/css' media='screen' />
+<link rel='stylesheet' id='print-css'  href="http://wtop.com/wp-content/themes/wtop/assets/css/print.css?f405bc" type='text/css' media='print' />
+		<!-- DFP -->
+		<script>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+            var advelvetTargeting = [];
+            advelvetTargeting.push((Math.floor(Math.random() * 20) + 1) + "");
+            googletag.cmd.push(function () {
+                googletag.pubads().setTargeting('advelvet', advelvetTargeting);
+            });
+			(function() {
+				var gads = document.createElement("script");
+				gads.async = true;
+				gads.type = "text/javascript";
+				var useSSL = "https:" == document.location.protocol;
+				gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+				var node =document.getElementsByTagName("script")[0];
+				node.parentNode.insertBefore(gads, node);
+			})();
+		</script>
+		<!-- /DFP -->
+				<!-- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			//ga('create', 'UA-23103174-10', 'auto');
+			ga('create', 'UA-23103174-10', 'auto', {'allowLinker': true });
+ 
+  			ga('require', 'linker');
+  			ga('linker:autoLink', ['wtop.com','wtop.collegehoops.upickem.net']);
+					ga('set', 'dimension1', 'Living News');
+					ga('set', 'dimension2', 'Paula Wolfson');
+					ga('send', 'pageview');
+		</script>
+		<!-- /Google Analytics -->
+		<script src="/advertisement.js?f405bc" defer></script>
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZGJTC"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-TZGJTC');</script>
+		<!-- End Google Tag Manager -->
+				<!-- Taboola -->
+                <script type="text/javascript">
+                    function downloadTaboolaAtOnload() {
+                        window._newsroom = window._newsroom || [];
+
+                        
+			!function (e, f, u) {
+				e.async = 1;
+				e.src = u;
+				f.parentNode.insertBefore(e, f);
+			}(document.createElement('script'), document.getElementsByTagName('script')[0], '//c2.taboola.com/nr/wtop/newsroom.js');
+                    }
+                    if (window.addEventListener)
+                        window.addEventListener("load", downloadTaboolaAtOnload, false);
+                    else if (window.attachEvent)
+                        window.attachEvent("onload", downloadTaboolaAtOnload);
+                    else window.onload = downloadTaboolaAtOnload;
+                </script>
+		<!-- /Taboola -->
+				<!-- YieldMo -->
+		<script type="text/javascript">
+                    function downloadYieldMoAtOnload(){
+                        var e = document, t = window;
+                        if(t._ym===void 0){
+                            t._ym="";var m=e.createElement("script");
+                            m.type="text/javascript";
+                            m.async=!0;
+                            m.src="//static.yieldmo.com/ym.m5.js?f405bc";
+                            (e.getElementsByTagName("head")[0]||e.getElementsByTagName("body")[0]).appendChild(m);
+                        } else {
+                            t._ym instanceof String||void 0===t._ym.chkPls||t._ym.chkPls();
+                        }
+                    }
+                    if (window.addEventListener)
+                        window.addEventListener("load", downloadYieldMoAtOnload, false);
+                    else if (window.attachEvent)
+                        window.attachEvent("onload", downloadYieldMoAtOnload);
+                    else window.onload = downloadYieldMoAtOnload; 
+                </script>
+		<!-- /YieldMo -->
+				<script>
+			window.Site = window.Site || {};
+			window.Site.icons = window.Site.icons || {};
+			window.Site.icons['arrow-down'] = "<svg class=\"Svg\" data-name=\"arrow-down\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\" width=\"11px\" height=\"7px\" viewBox=\"0 0 11 7\" enable-background=\"new 0 0 11 7\" xml:space=\"preserve\">\t<image src=\"http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/arrow-down.png\" \/><path d=\"M9.786,0c-0.32,0-0.623,0.127-0.857,0.365l-3.43,3.601L2.143,0.444C1.911,0.162,1.573,0,1.214,0\n\tC0.545,0,0,0.561,0,1.25c0,0.296,0.101,0.58,0.285,0.805C0.3,2.076,0.316,2.097,0.335,2.116l4.279,4.493\n\tC4.843,6.857,5.165,7,5.497,7H5.5c0.333,0,0.654-0.143,0.876-0.385l4.291-4.506C10.882,1.876,11,1.571,11,1.25\n\tC11,0.561,10.455,0,9.786,0z\"\/><\/svg>";
+			window.Site.icons['image-arrow-circle-blue'] = "http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/arrow-circle-blue.png";
+			window.Site.icons['image-arrow-right-black'] = "http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/arrow-right-black.png";
+			window.Site.icons['image-arrow-left-black'] = "http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/arrow-left-black.png";
+		</script>
+		<script type='text/javascript' src="//ajax.aspnetcdn.com/ajax/jquery/jquery-1.11.1.min.js?f405bc"></script>
+
+        <script>
+        // Fallback to loading jQuery from a local path if the CDN is unavailable
+        (window.jQuery || append_jquery_fallback() );
+            function append_jquery_fallback(){
+                var script = document.createElement('script');
+                script.setAttribute('type', 'text/javascript');
+                script.setAttribute('src', 'http://wtop.com/wp-content/themes/wtop/assets/vendor/jquery/dist/jquery.min.js');
+                document.write(script.outerHTML);
+            }
+        </script><script type='text/javascript'>
+/* <![CDATA[ */
+var DFP_config = {"account":"6585","template":"<div id=\"%id%\" class=\"\"><\/div>"};
+var DFP_ad_slots = [{"name":"wtop_header_banner","sizes":"[[970, 250], [970, 90], [728, 90], [468, 60], [320, 50], [1, 1]]","id":"DFP_slot_wtop_header_banner_1","sizeMapping":{"[990, 200]":"[[970, 90],[970, 250],[728, 90], [1, 1]]","[768, 200]":"[[728, 90], [468, 60]]","[500, 200]":"[468, 60]","[0, 0]":"[320, 50]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_contracting_banner","sizes":"[[970, 90]]","id":"DFP_slot_wtop_contracting_banner_1","sizeMapping":{"[981, 101]":"[[970, 90]]","[0, 0]":"[]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":"[970,250]","transition":4},{"name":"wtop_footer_banner","sizes":"[[728, 90], [468, 60], [320, 50]]","id":"DFP_slot_wtop_footer_banner_1","sizeMapping":{"[981, 200]":"[728, 90]","[768, 200]":"[[728, 90], [468, 60]]","[0, 0]":"[320, 50]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_mobile_right","sizes":"[300, 250]","id":"DFP_slot_wtop_mobile_right_1","sizeMapping":{"[768, 200]":"[]","[0, 0]":"[300, 250]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false},{"name":"tout-in-article-ad-unit","sizes":"[1, 1]","id":"DFP_slot_tout-in-article-ad-unit_1","sizeMapping":{"[0, 0]":"[1, 1]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_mobile_backfill","sizes":"[300, 250]","id":"DFP_slot_wtop_mobile_backfill_1","sizeMapping":{"[768, 200]":"[]","[0, 0]":"[300, 250]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_interstitial","sizes":"[1, 1]","id":"DFP_slot_wtop_interstitial_1","sizeMapping":{"[768, 200]":"[1, 1]","[0, 0]":"[]"},"extra":false,"outofpage":true,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_mobile_interstitial","sizes":"[1, 1]","id":"DFP_slot_wtop_mobile_interstitial_1","sizeMapping":{"[1825, 1025]":"[]","[768, 200]":"[]","[0, 0]":"[1,1]"},"extra":false,"outofpage":true,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_tout_interstitial","sizes":"[1, 1]","id":"DFP_slot_wtop_tout_interstitial_1","sizeMapping":{"[0, 0]":"[1,1]"},"extra":false,"outofpage":true,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_mobile_adhesion","sizes":"[320, 50]","id":"DFP_slot_wtop_mobile_adhesion_1","sizeMapping":{"[768, 200]":"[]","[0, 0]":"[[320,50], [300,50], [320,100]]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false},{"name":"wtop_right_1","sizes":"[[300, 600], [300, 250]]","id":"DFP_slot_wtop_right_1_1","sizeMapping":{"[768, 200]":"[[300, 600], [300, 250]]","[0, 0]":"[]"},"extra":{"[300, 250]":["wtop_right_1_extra"]},"outofpage":false,"companion":true,"expandedSize":false,"transition":false},{"name":"wtop_right_3","sizes":"[300, 250]","id":"DFP_slot_wtop_right_3_1","sizeMapping":{"[768, 200]":"[300, 250]","[0, 0]":"[]"},"extra":false,"outofpage":false,"companion":false,"expandedSize":false,"transition":false}];
+var DFP_custom_targeting = {"is_front":"false","is_archive":"false","is_article":"true","is_gallery":"false","is_page":"false","is_traffic":"false","is_weather":"false","is_search":"false","is_author":"false","is_dev":"false","slug":"doctors-top-tips-healthy-lifestyle","category":["news"],"section":["food-restaurant","health-fitness"],"traffic":[],"weather":[],"region":[],"tag":["health-2"],"author":["Paula Wolfson"]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://wtop.com/wp-content/cache/minify/000000/M9RPSSvQTS4tLsnP1U8sLk4tKdbPKgYJAgA.js?f405bc"></script>
+<script type="text/javascript" src="//launch.newsinc.com/js/embed.js?f405bc" id="_nw2e-js"></script><link rel='https://api.w.org/' href='http://wtop.com/wp-json/' />
+<link rel='shortlink' href='http://wtop.com/?p=575451' />
+<link rel="alternate" type="application/json+oembed" href="http://wtop.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwtop.com%2Fhealth-fitness%2F2015%2F01%2Fdoctors-top-tips-healthy-lifestyle%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://wtop.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwtop.com%2Fhealth-fitness%2F2015%2F01%2Fdoctors-top-tips-healthy-lifestyle%2F&#038;format=xml" />
+<!-- BEGIN wp-parsely Plugin Version 1.10.2 -->
+<meta name='wp-parsely_version' id='wp-parsely_version' content='1.10.2' />
+   <script type="application/ld+json">
+   {"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/wtop.com\/health-fitness\/2015\/01\/doctors-top-tips-healthy-lifestyle\/"},"headline":"Doctors&#8217; top tips for a healthy lifestyle","url":"http:\/\/wtop.com\/health-fitness\/2015\/01\/doctors-top-tips-healthy-lifestyle\/","thumbnailUrl":"http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/logo-700x260.gif","image":{"@type":"ImageObject","url":"http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/logo-700x260.gif","width":700,"height":260},"dateCreated":"2015-01-01T23:27:29Z","datePublished":"2015-01-01T23:27:29Z","dateModified":"2013-10-23T03:42:15Z","articleSection":"Latest News","author":[{"@type":"Person","name":"Paula Wolfson"}],"creator":["Paula Wolfson"],"publisher":{"@type":"Organization","name":"WTOP","logo":{"@type":"ImageObject","url":"http:\/\/wtop.com\/wp-content\/themes\/wtop\/assets\/img\/icons\/logo-162x60.gif"}},"keywords":["health"]}   </script>
+    <!-- END wp-parsely Plugin Version 1.10.2 -->
+<link rel="amphtml" href="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/amp/" /><link rel="alternate" type="application/rss+xml" title="WTOP &raquo; Feed" href="http://wtop.com/feed/" />
+		<link rel="apple-touch-icon" sizes="57x57" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="http://wtop.com/wp-content/themes/wtop/assets/img/favicons/browserconfig.xml">
+					<!-- Begin ChartBeat  -->
+			<script type="text/javascript">
+				var _sf_async_config = _sf_async_config || {};
+				/** CONFIGURATION START **/
+				_sf_async_config.uid = 55822; // ACCOUNT NUMBER
+				_sf_async_config.domain = 'wtop.com'; // DOMAIN 
+				_sf_async_config.flickerControl = false;
+				_sf_async_config.useCanonical = true;
+				/** CONFIGURATION END **/
+				var _sf_startpt = (new Date()).getTime();
+			</script>
+			<script async src="//static.chartbeat.com/js/chartbeat_mab.js?f405bc"></script>
+
+			<!-- End ChartBeat -->
+							<!-- Begin Distroscale  -->
+					                        
+	                        <script type="text/javascript">
+	                            function downloadDistroscaleAtOnload() {
+	                                var element = document.createElement("script");
+	                                element.src = "//c.jsrdn.com/s/cs.js?p=22242";
+	                                document.body.appendChild(element);
+	                            }
+	                            if (window.addEventListener)
+	                                window.addEventListener("load", downloadDistroscaleAtOnload, false);
+	                            else if (window.attachEvent)
+	                                window.attachEvent("onload", downloadDistroscaleAtOnload);
+	                            else window.onload = downloadDistroscaleAtOnload;
+	                        </script>
+				<!-- End Distroscale -->
+				<meta property="tout:article:id" content="575451" />
+	<!--[if IE 8]>
+		<link rel="stylesheet" href="http://wtop.com/wp-content/themes/wtop/assets/css/ie8.css?f405bc">
+		<script type="text/javascript" src="http://wtop.com/wp-content/themes/wtop/assets/vendor/shivie8/dist/shivie8.js?f405bc"></script>
+		<script type="text/javascript" src="http://wtop.com/wp-content/themes/wtop/assets/vendor/object.keys/src/object.keys.js?f405bc"></script>
+			<![endif]-->
+</head>
+
+<body class="post-template-default single single-post postid-575451 single-format-standard">
+	<!-- Audio tracking -->
+    
+	<div class="Overflow">
+
+
+
+		<div class="clearfix_header"></div>
+
+		<header
+			class="h_new "
+			id="h_new">
+
+			<div class="row expanded ">
+
+				<div class="wtop-header-left">
+					<ul>
+						<li>
+							<div class="h_menu" id="openNav">
+								<div id="nav-icon1">
+									<span></span> <span></span> <span></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="h_logo"> 
+																<a href="http://wtop.com" title="Homepage">
+										<svg class="Svg" data-name="logo-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222 80">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/logo-white.png" /><defs><style>.logo-1{fill:#fff;}</style></defs><path class="logo-1" d="M218.87,21c-3.7-7.7-11.87-9.8-19.81-9.83H174.27l-5.32,23c-.11-12.91-9.71-23.31-23.56-24.33a33,33,0,0,0-27.86,12.6l2.68-11.3H108.5L110.89.82H89.47L87.07,11.19H64.71l.1.14-.13-.15-13.78,27-.82-27H35.71l-13.78,27-.82-27H.72L4.09,64.48H24.26l12-23.4.71,23.4H57.08L76.41,26.64h7.1c-.58,2.59-.9,4-1.23,5.36l-2,8.51,0,.12-1.6,6.81a25.34,25.34,0,0,0-.78,6.43c0,.07,0,.14,0,.21.43,4.28,2.3,7.56,6.36,9.17a16.75,16.75,0,0,0,6.11,1.22h15.26a7,7,0,0,0,.92-.1,2.5,2.5,0,0,0,1.74-2.46,2.08,2.08,0,0,0-.77-1.66,3.55,3.55,0,0,0-1.56-.71,6.19,6.19,0,0,1-4.9-4c-1.42-3.44-.83-8.1-.46-10.17,1.14-5,4.31-18.84,4.31-18.84h9.9a29.82,29.82,0,0,0-3.39,9.19c-2.89,15.43,7.44,28.88,23.06,30,13.1,1,25.9-7,31.52-18.73l-7.42,32.18h20.15l3.41-14.77H195a19.93,19.93,0,0,0,5.75-.71,24.36,24.36,0,0,0,11.56-7.54C220.41,46.92,224.41,32.54,218.87,21ZM147,38.88c-1.37,6.94-5.23,12.42-8.82,12.72a4.84,4.84,0,0,1-.92,0,4.56,4.56,0,0,1-.89-.14c-3.37-.82-5-6.71-3.68-13.64s5.2-12.42,8.82-12.72a4.91,4.91,0,0,1,.93,0,4.62,4.62,0,0,1,.9.14C146.75,26.06,148.38,31.95,147,38.88Zm53.34-5.43a30.14,30.14,0,0,1-1.16,7.27,23.72,23.72,0,0,1-2.92,6.67A9.72,9.72,0,0,1,189,51.58a30.45,30.45,0,0,1-3.95,0l6.12-26.53h3.67a4.84,4.84,0,0,1,4.16,1.8,10.65,10.65,0,0,1,1.31,6Q200.36,33.2,200.35,33.45Z"/></svg>									</a>
+													</div>
+						</li>
+						<li class="nav"><a href="/headlines/">NEWS</a></li>
+						<li class="nav"><a href="/traffic/">TRAFFIC</a></li>
+						<li class="nav"><a href="/weather/">WEATHER</a></li>
+						<li class="nav"><a href="/listen-live/">Listen</a></li>
+
+					</ul>
+				</div>
+				<div class="wtop-header-right">
+					<ul>
+						<li>
+							<div class="wtop-welcome">
+								<a href="http://wtop.com">Washington's Top News</a>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+				<div class="Nav-search-new show-for-xlarge-up">
+<form role="search" method="get" class="search-form" id="wtop-new-search" action="http://wtop.com/search/">
+	<input type="search" id="st-search-input" class="search-field st-default-search-input" placeholder="Search" value="" name="s" />
+	<button type="submit" class="search-submit hide-for-xlarge-up" id="wtop-new-search-btn-mobile">
+		<svg class="Svg" data-name="search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/search.png" /><path d="M21.4,18.5c0.4,0.4,0.6,0.9,0.6,1.5c0,1.1-0.9,2.1-2.1,2.1c-0.6,0-1.1-0.2-1.5-0.6l0,0l-6-6
+	c-1.2,0.7-2.7,1.1-4.2,1.1C3.7,16.5,0,12.8,0,8.3C0,3.7,3.7,0,8.3,0s8.3,3.7,8.3,8.3c0,1.5-0.4,3-1.1,4.2L21.4,18.5L21.4,18.5z
+	 M8.3,2.1c-3.4,0-6.2,2.8-6.2,6.2s2.8,6.2,6.2,6.2s6.2-2.8,6.2-6.2C14.4,4.8,11.7,2.1,8.3,2.1z"/></svg>	</button>
+	<button type="button" class="search-submit show-for-xlarge-up" id="wtop-new-search-btn-desktop">
+		<svg class="Svg" data-name="search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/search.png" /><path d="M21.4,18.5c0.4,0.4,0.6,0.9,0.6,1.5c0,1.1-0.9,2.1-2.1,2.1c-0.6,0-1.1-0.2-1.5-0.6l0,0l-6-6
+	c-1.2,0.7-2.7,1.1-4.2,1.1C3.7,16.5,0,12.8,0,8.3C0,3.7,3.7,0,8.3,0s8.3,3.7,8.3,8.3c0,1.5-0.4,3-1.1,4.2L21.4,18.5L21.4,18.5z
+	 M8.3,2.1c-3.4,0-6.2,2.8-6.2,6.2s2.8,6.2,6.2,6.2s6.2-2.8,6.2-6.2C14.4,4.8,11.7,2.1,8.3,2.1z"/></svg>	</button>
+	
+	
+	</form></div>
+			</div>
+
+
+		</header>
+		<span id='stickydepth' class='stickydepth_notready'>20</span><span id='stickyperiod' class='stickyperiod'>1.5</span><div id='scroller-anchor'></div><div id='header_sticky_ad'><div class="Ad Widget " id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="DFP_slot_wtop_header_banner_1" class="wtop_header_banner"></div>	</div>
+</div></div><div id='header_sticky_ad_clearfix'></div>			 
+		<div id="mySidenav" class="sidenav">
+			<div class="Nav-search-mob hide-for-xlarge-up">
+<form role="search" method="get" class="search-form" id="wtop-new-search" action="http://wtop.com/search/">
+	<input type="search" id="st-search-input" class="search-field st-default-search-input" placeholder="Search" value="" name="s" />
+	<button type="submit" class="search-submit hide-for-xlarge-up" id="wtop-new-search-btn-mobile">
+		<svg class="Svg" data-name="search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/search.png" /><path d="M21.4,18.5c0.4,0.4,0.6,0.9,0.6,1.5c0,1.1-0.9,2.1-2.1,2.1c-0.6,0-1.1-0.2-1.5-0.6l0,0l-6-6
+	c-1.2,0.7-2.7,1.1-4.2,1.1C3.7,16.5,0,12.8,0,8.3C0,3.7,3.7,0,8.3,0s8.3,3.7,8.3,8.3c0,1.5-0.4,3-1.1,4.2L21.4,18.5L21.4,18.5z
+	 M8.3,2.1c-3.4,0-6.2,2.8-6.2,6.2s2.8,6.2,6.2,6.2s6.2-2.8,6.2-6.2C14.4,4.8,11.7,2.1,8.3,2.1z"/></svg>	</button>
+	<button type="button" class="search-submit show-for-xlarge-up" id="wtop-new-search-btn-desktop">
+		<svg class="Svg" data-name="search" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/search.png" /><path d="M21.4,18.5c0.4,0.4,0.6,0.9,0.6,1.5c0,1.1-0.9,2.1-2.1,2.1c-0.6,0-1.1-0.2-1.5-0.6l0,0l-6-6
+	c-1.2,0.7-2.7,1.1-4.2,1.1C3.7,16.5,0,12.8,0,8.3C0,3.7,3.7,0,8.3,0s8.3,3.7,8.3,8.3c0,1.5-0.4,3-1.1,4.2L21.4,18.5L21.4,18.5z
+	 M8.3,2.1c-3.4,0-6.2,2.8-6.2,6.2s2.8,6.2,6.2,6.2s6.2-2.8,6.2-6.2C14.4,4.8,11.7,2.1,8.3,2.1z"/></svg>	</button>
+	
+	
+	</form></div>
+			<nav>
+				<div class="wrap clearfix">
+
+					<ul class="Dropdown-menu row">
+					 	 
+						<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13664096"><a href="http://wtop.com/headlines/" class="Nav-link">Headlines</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 Nav-menuItem--hasSubMenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13659211"><a href="http://wtop.com/region/local/" class="Nav-link">Local News</a>
+<ul class="Nav-menu Nav-menu--depth1 sub-menu">
+	<li class="Nav-menuItem Nav-menuItem--depth1 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659306"><a href="http://wtop.com/region/local/virginia/" class="Nav-link">Virginia</a></li>
+	<li class="Nav-menuItem Nav-menuItem--depth1 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659311"><a href="http://wtop.com/region/local/maryland/" class="Nav-link">Maryland</a></li>
+	<li class="Nav-menuItem Nav-menuItem--depth1 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659316"><a href="http://wtop.com/region/local/dc/" class="Nav-link">DC</a></li>
+	<li class="Nav-menuItem Nav-menuItem--depth1 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659321"><a href="http://wtop.com/weather/weather-news/" class="Nav-link">Weather News</a></li>
+	<li class="Nav-menuItem Nav-menuItem--depth1 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659346"><a href="http://wtop.com/traffic/dc-transit/" class="Nav-link">Transportation News</a></li>
+</ul>
+</li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659351"><a href="http://wtop.com/region/national/" class="Nav-link">National</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659371"><a href="http://wtop.com/region/world/" class="Nav-link">World</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659396"><a href="http://wtop.com/section/business-finance/" class="Nav-link">Business &#038; Finance</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659406"><a href="http://wtop.com/section/government/" class="Nav-link">Government</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659421"><a href="http://wtop.com/section/living/" class="Nav-link">Living</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659431"><a href="http://wtop.com/section/entertainment/" class="Nav-link">Entertainment</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659471"><a href="http://wtop.com/section/sports/" class="Nav-link">Sports</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659511"><a href="http://wtop.com/section/tech/" class="Nav-link">Tech</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659516"><a href="http://wtop.com/section/trending-now/" class="Nav-link">Trending Now</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659526"><a href="https://federalnewsradio.com/" class="Nav-link">Federal News Radio</a></li>
+<br><li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659686"><a href="http://wtop.com/section/media-galleries/" class="Nav-link">Photo Galleries</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659696"><a href="http://games.wtop.com/?arkpromo=site_hamburger" class="Nav-link">Fun &#038; Games</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659711"><a href="http://wtop.com/lotteries/" class="Nav-link">Lottery Results</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659716"><a href="http://wtop.com/contests/" class="Nav-link">Contests</a></li>
+<br><li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659806"><a href="http://wtop.com/listen-live/" class="Nav-link">Listen Live</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-13659771"><a href="http://wtop.com/podcast-dc/" class="Nav-link">Podcasts</a></li>
+				</ul>
+				</div>
+			</nav>
+		</div>
+	 
+				<div class="Boxnobg">
+               </div>
+
+		<div class="MainContainer" id="MainContainer"><!----><div class="Box row">
+	<div class="column xlarge-8 u-borderBetween-right">
+		<div class="SingleEntry Entry author-paula-wolfson">
+
+		 <div class="breadcrumbs breadcrumbs-header" data-swiftype-index="false"> <span prefix="v: http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="http://wtop.com" rel="v:url" property="v:title">Home</a> &raquo; <span rel="v:child"><span typeof="v:Breadcrumb"><a href="http://wtop.com/news/" rel="v:url" property="v:title">Latest News</a> &raquo; <span rel="v:child"><span typeof="v:Breadcrumb"><a href="http://wtop.com/section/living/" rel="v:url" property="v:title">Living News</a> &raquo; <span rel="v:child"><span typeof="v:Breadcrumb"><a href="http://wtop.com/section/living/health-fitness/" rel="v:url" property="v:title"><strong>Health and Fitness News</strong></a> &raquo; <span rel="v:child"><span typeof="v:Breadcrumb"><span class="breadcrumb_last" property="v:title">Doctors' top tips for&hellip;</span></span></span></span></span></span></span></span></span></span></span> </div>
+			<div class="Entry-header">
+				<h1 class="Entry-title" data-swiftype-name="title" data-swiftype-type="string">Doctors&#8217; top tips for a healthy lifestyle</h1>
+				<div class="Entry-info">
+								<div class="Entry-infoImg author-paula-wolfson"><img  data-lazy-src="http://wtop.com/wp-content/uploads/2014/12/PaulaWolfson_m-112x112.jpg" src="" alt="" class="lazyload" /></div>
+								<div class="Entry-infoContent">
+											By 
+                                                <a href="http://wtop.com/author/paula-wolfson/" data-swiftype-name="author" data-swiftype-type="string">						
+						Paula Wolfson                        </a> 
+                        						 | <a href="https://twitter.com/PWolfsonWTOP">@PWolfsonWTOP</a>										                    
+					<span   class="Entry-date" data-swiftype-name="publish_date" data-swiftype-type="date">January 1, 2015 6:27 pm</span>
+					<span style="display:none;" data-swiftype-name="pretty_date" data-swiftype-type="string">01/01/2015 06:27pm</span>
+				</div>
+
+									<div class="Entry-infoSocial">
+						<div class="Entry-social">
+
+				<strong class="shares">Share</strong>
+			
+	<span  class="st_facebook_custom" st_url="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/"><svg class="Svg" data-name="facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="24px" viewBox="-299.5 408.5 12 24" enable-background="new -299.5 408.5 12 24" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/facebook.png" /><path fill="#FFFFFF" d="M-288.517,408.507c0,1.326,0,3.703,0,3.703s-2.784-0.273-3.481,0.773c-0.381,0.572-0.155,2.246-0.189,3.448
+	c1.215,0,2.478,0,3.693,0c-0.312,1.405-0.536,2.358-0.765,3.574c-1.052,0-2.948,0-2.948,0v11.503c0,0-3.48,0-5.116,0
+	c0.001-3.546-0.001-7.683,0-11.458c-0.795,0-1.382,0-2.177,0c0-1.326,0-2.293,0-3.62c0.771,0,1.382,0,2.153,0
+	c0.11-2.646,0.152-5.268,1.493-6.604C-294.347,408.326-292.909,408.507-288.517,408.507z"/></svg></span><span  class="st_twitter_custom" st_via="WTOP" st_url="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/"><svg class="Svg" data-name="twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23px" height="20px" viewBox="-294 406.5 23 20" enable-background="new -294 406.5 23 20" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/twitter.png" /><g >
+	<path fill="#FFFFFF" d="M-278.363,406.501c1.827-0.033,2.799,0.645,3.728,1.508c0.788-0.069,1.813-0.517,2.416-0.829
+		c0.196-0.109,0.391-0.219,0.587-0.327c-0.345,0.949-0.812,1.691-1.53,2.255c-0.16,0.126-0.318,0.295-0.518,0.375
+		c0,0.004,0,0.008,0,0.011c1.023-0.011,1.868-0.481,2.669-0.736c0,0.004,0,0.008,0,0.011c-0.421,0.682-0.991,1.374-1.599,1.87
+		c-0.246,0.199-0.491,0.397-0.736,0.596c0.013,1.104-0.016,2.157-0.219,3.085c-1.178,5.393-4.299,9.055-9.24,10.623
+		c-1.774,0.563-4.641,0.795-6.673,0.28c-1.008-0.255-1.918-0.543-2.773-0.923c-0.475-0.211-0.914-0.44-1.335-0.701
+		c-0.138-0.086-0.276-0.172-0.414-0.258c0.458,0.014,0.995,0.143,1.507,0.058c0.464-0.076,0.918-0.056,1.346-0.152
+		c1.067-0.238,2.014-0.554,2.83-1.04c0.396-0.235,0.996-0.513,1.277-0.853c-0.53,0.01-1.01-0.116-1.404-0.257
+		c-1.526-0.549-2.414-1.558-2.992-3.074c0.462,0.052,1.794,0.174,2.106-0.093c-0.582-0.033-1.142-0.376-1.542-0.631
+		c-1.227-0.783-2.228-2.094-2.221-4.114c0.163,0.078,0.324,0.156,0.485,0.235c0.308,0.132,0.622,0.203,0.99,0.28
+		c0.155,0.033,0.466,0.126,0.644,0.059c-0.008,0-0.015,0-0.023,0c-0.237-0.282-0.624-0.47-0.863-0.772
+		c-0.787-0.997-1.525-2.532-1.058-4.359c0.118-0.464,0.306-0.873,0.506-1.25c0.008,0.004,0.015,0.007,0.023,0.012
+		c0.092,0.195,0.296,0.339,0.426,0.502c0.402,0.507,0.898,0.965,1.403,1.367c1.722,1.372,3.273,2.215,5.765,2.84
+		c0.632,0.158,1.362,0.279,2.117,0.28c-0.212-0.629-0.144-1.647,0.023-2.255c0.42-1.531,1.332-2.634,2.669-3.226
+		c0.32-0.141,0.675-0.244,1.047-0.327C-278.747,406.548-278.555,406.524-278.363,406.501z"/>
+</g></svg></span><span  class="st_email_custom" st_url="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/"><svg class="Svg" data-name="email" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42.926px" height="31.179px" viewBox="0 0 42.926 31.179" enable-background="new 0 0 42.926 31.179" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/email.png" /><path fill="#FFFFFF" d="M39.001,0H3.925C1.761,0,0,1.761,0,3.926v23.327c0,2.165,1.761,3.926,3.925,3.926h35.076
+	c2.164,0,3.925-1.761,3.925-3.926V3.926C42.926,1.761,41.166,0,39.001,0z M21.988,15.51l-0.141,0.128
+	c-0.263,0.262-0.691,0.262-0.954,0L6.811,4h29.115L21.988,15.51z M13.578,14.773L4,24.35V6.863L13.578,14.773z M16.676,17.331
+	l1.467,1.211c0.901,0.86,2.064,1.29,3.228,1.29s2.327-0.43,3.228-1.29l1.609-1.329l9.966,9.966H6.828L16.676,17.331z M29.305,14.655
+	l9.621-7.945v17.566L29.305,14.655z"/></svg></span><span  class="print show-for-medium-up"><svg class="Svg" data-name="print" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42px" height="35px" viewBox="0 0 42 35" enable-background="new 0 0 42 35" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/print.png" /><g>
+	<path fill="#FFFFFF" d="M37.979,6.833h-4.684V0H8.343v6.833H4.021C1.804,6.833,0,8.661,0,10.908v14.415
+		c0,2.247,1.804,4.075,4.021,4.075h4.217V35h25.524v-5.602h4.217c2.218,0,4.021-1.828,4.021-4.075V10.908
+		C42,8.661,40.197,6.833,37.979,6.833z M12.364,4.075h16.911v2.758H12.364V4.075z M29.741,30.925H12.259v-6.217h17.482V30.925z
+		 M37.979,25.323h-4.217v-4.69H8.238v4.69H4.021V10.908h33.958V25.323z"/>
+	<rect x="8.437" y="13.67" fill="#FFFFFF" width="4.142" height="4.197"/>
+	<rect x="16.677" y="13.67" fill="#FFFFFF" width="4.142" height="4.197"/>
+</g></svg></span><span  class="st_sharethis_custom" st_url="http://wtop.com/health-fitness/2015/01/doctors-top-tips-healthy-lifestyle/"><svg class="Svg" data-name="more" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="17px" viewBox="0 0 17 17" enable-background="new 0 0 17 17" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/more.png" /><path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M15.5,7H10V1.5C10,0.672,9.328,0,8.5,0C7.672,0,7,0.672,7,1.5V7
+	H1.5C0.672,7,0,7.672,0,8.5C0,9.329,0.672,10,1.5,10H7v5.5C7,16.329,7.672,17,8.5,17c0.828,0,1.5-0.671,1.5-1.5V10h5.5
+	c0.828,0,1.5-0.671,1.5-1.5C17,7.672,16.328,7,15.5,7z"/></svg></span>
+</div>					</div>
+								</div>
+
+				
+			</div>
+
+						<div class="Entry-featured" style='display:none;'>
+				<figure>
+	<div class="Img u-scale">
+		<img  src="http://wtop.com/wp-content/uploads/2017/08/yoga-props-727x485.jpg" alt="" srcset="http://wtop.com/wp-content/uploads/2017/08/yoga-props-727x485.jpg 767w, http://wtop.com/wp-content/uploads/2017/08/yoga-props-1880x1254.jpg 1x" />	</div>
+	<figcaption class="Img-caption">
+		Fitness yoga pilates equipment props on a carpet	</figcaption>
+</figure>
+
+			</div>
+		                    
+            <div class="tout-sdk tout-top-article"></div>
+                
+            <div class="Entry-featured-video">
+                <div class="inform-embed" id="ndn-video-player-top"
+                     data-tracking-group="90460"
+                     data-placement-id="inform-placement-top" 
+                     data-width="100%"
+                    data-aspect-ratio="16:9"></div> 
+                <script type="text/javascript">var _informq = _informq || [];
+                _informq.push(['embed']);</script>
+                <script type="text/javascript">
+                    _informq.push(['hook', 'inform-placement-top/videoLoad', function(event) {
+                      console.log('Video has loaded for the player embedded within the ' +
+                      'configurable <div> element where its "id" attribute is "' + 
+                      event.containerElement.id + '"!');
+                      
+                    var element =  document.getElementsByClassName('Entry-featured')[0];
+                    if (typeof(element) != 'undefined' && element != null)
+                    {
+                      document.getElementsByClassName('Entry-featured')[0].style.display = 'none';
+                    }
+                    }]);
+                </script>
+            </div>
+    
+		
+		
+			<div class="Entry-content u-textFormat" data-swiftype-name="content" data-swiftype-type="text">
+								<p>WASHINGTON &#8212; It&#8217;s a brand new year and a lot of us have resolved to ramp up our health and fitness. WTOP talked to the women of the <a href="http://www.ladydocscornercafe.com/#sthash.m9a8nStk.9Z7cdXUF.dpbs">Lady Docs Corner Cafe,</a> a group of health professionals from Montgomery County, Maryland, who practice what they preach. They meet regularly to workout, share a nutritous meal and rededicate themselves to a healthy lifestyle. Here are their top tips for a healthy new year:</p><!-- NewsInc Container --><div class="inform-embed" data-placement-id="inform-video-player-1" data-width="100%" data-aspect-ratio="16:9" data-tracking-group="90460"></div> <script type="text/javascript">var _informq = _informq || []; _informq.push(["embed"]);</script><!-- /NewsInc Container -->
+<p><strong>Wear your shades</strong></p><!-- NewsInc Container --><div class="inform-embed" data-placement-id="inform-video-player-2" data-width="100%" data-aspect-ratio="16:9" data-tracking-group="90460"></div> <script type="text/javascript">var _informq = _informq || []; _informq.push(["embed"]);</script><!-- /NewsInc Container -->
+<p>It&#8217;s the No. 1 piece of advice from Dr. Holly Gross, an ophthalmologist in Rockville.  She says, &#8220;It&#8217;s important to wear sunglasses all the time, even on cloudy days, because ultraviolet light can penetrate even the clouds.&#8221; Gross says sunglasses also help protect the surface of your eye from burns and other sun damage.</p>
+		<div id="DFP_slot_wtop_mobile_backfill_1" class="wtop_mobile_backfill"></div>
+<p><strong>Walk after meals</strong></p>
+<p>Dr. Daphne Keshishian, a Bethesda internist, says a 10-minute walk after meals helps keep sugar spikes at bay. It works by activating muscles that use sugar as a fuel source. A brief walk after eating also aids in digestion.</p>
+<p><strong>Get probiotic benefits from the food you eat</strong></p>
+<p>Dr. Serrin Gantt, a gastroenterologist in Rockville, says skip the pills and rev up your diet instead to improve your gut health. She says regular plain yogurt with active culture is a great alternative to probiotic supplements. Another options is to focus more on high fiber foods that stimulate the growth of good bacteria in the colon.</p><!-- NewsInc Container --><div class="inform-embed" data-placement-id="inform-video-player-7" data-width="100%" data-aspect-ratio="16:9" data-tracking-group="90460"></div> <script type="text/javascript">var _informq = _informq || []; _informq.push(["embed"]);</script><!-- /NewsInc Container -->
+<p><strong>Everything in moderation</strong></p>
+<p>Dr. Geetha Pinto says there is a lot of confusing information out there about diet and exercise, especially when it comes to protecting your heart. This Rockville cardiologist offers some simple advice, &#8220;Do things that have been known for years to be heart healthy, like moderate exercise, staying physically active and eating a well-balanced diet.&#8221;</p>
+<p><strong>Walk before you run</strong></p>
+<p>A lot of people launch an exercise program at the start of the new year. Would-be runners need to remember to take it easy in the beginning. Miriam Graham, a physical therapist with Restore Motion in Rockville, says &#8220;set realistic goals of time and distance.&#8221; She also suggests mixing walking and running until you build strength.</p>
+<p><strong>Don&#8217;t eat before shut-eye</strong></p>
+<p>Dr. Julia Korenman is a Rockville gastroenterologist who says it&#8217;s best to stop eating two to three hours before you turn in for the night. &#8220;This will improve the quality of your sleep,&#8221; she says. Korenman says it will also help if you have irritable bowel syndrome or bouts of acid reflux.</p>
+<p><strong>Stock up on produce</strong></p>
+<p>The benefits are huge, according to Dr, Marsha Seidelman, an internist in Silver Spring.  She says, &#8220;You can decrease your risk of heart-attacks and strokes, decrease your risk of cancer&#8221; by adding more fruits, vegetables and whole grains to you diet. It is also, of course, good for your waistline.</p>
+<p><strong>Roll up your sleeve </strong></p>
+<p>Rockville allergist Rachel Schreiber says her top health tip &#8220;is to make sure your vaccinations and your kids&#8217; vaccinations are up to date.&#8221; It&#8217;s easier for children, since the most important immunizations are required for school. But adults often forget that the shots they got when they were kids don&#8217;t necessarily provide protection forever.</p>
+<p><strong>Protect your brain</strong></p>
+<p>Dr. Thu Tran is a OB-GYN in Rockville. She is fascinated by the latest recommendations on preventing dementia. Tran says, &#8220;Adults should sleep seven to eight hours a night.&#8221; She says it is also important to eat a variety of fruits and vegetables, and exercise 150 minutes each week.</p>
+<p><strong>Curb your sweet tooth and save your smile</strong></p>
+<p>Dr. Deepali Bhanot, a pediatric dentist in Germantown, says &#8220;start the year off right by eliminating high sugar snacks,  especially like fruit roll-ups and other gummy candy, in our children&#8217;s diets.” She says they are the biggest causes of cavities in our kids.</p>
+				                                
+								<p>© 2014 WTOP. All Rights Reserved.</p>
+			</div>
+
+		
+<div class="Widget WidgetList WidgetRelatedStories alignnone">
+			<h3 class="Widget-title">
+			More News		</h3>
+		<ul class="Widget-list">
+			<li class="Widget-item">
+			<a class="Widget-itemLink" href="http://wtop.com/health-fitness/2017/10/15928831/">
+				<strong class="Widget-itemTitle">Little bit of exercise can ward off depression, study shows</strong>
+							<span class="tag tag--primary">Health and Fitness News</span>
+						</a>
+		</li>
+			<li class="Widget-item">
+			<a class="Widget-itemLink" href="http://wtop.com/health-fitness/2017/10/with-lack-of-grocery-stores-volunteers-bring-pop-up-markets-to-dc-areas/">
+				<strong class="Widget-itemTitle">With lack of grocery stores, volunteers bring pop-up markets to DC areas</strong>
+							<span class="tag tag--primary">Health and Fitness News</span>
+						</a>
+		</li>
+			<li class="Widget-item">
+			<a class="Widget-itemLink" href="http://wtop.com/health-fitness/2017/10/fda-acts-encourage-generic-competition-complex-drugs/">
+				<strong class="Widget-itemTitle">FDA acts to encourage generic competition for complex drugs</strong>
+							<span class="tag tag--primary">Health and Fitness News</span>
+						</a>
+		</li>
+		</ul>
+</div>                                <div class="tout-sdk tout-mid-article"></div>
+                		<!--  AMP ad slot - AdSense -->
+		<amp-ad
+			layout="responsive"
+			width=300
+			height=250
+			type="adsense"
+			data-ad-client="ca-pub-8087073732553662"
+			data-ad-slot="1172684273">
+		</amp-ad>
+		<!--  //end AMP ad -->
+		
+		
+			<div class="Entry-footer" data-swiftype-index="false">
+			  <div class="Entry-footer-row">
+				<div class="topics-container">
+				
+<div class="Topics ">
+	<div class="label">Topics:</div>
+	<div class="list">
+					<a class="tag" href="http://wtop.com/section/living/food-restaurant/">Food &amp; Restaurant News</a>
+					<a class="tag" href="http://wtop.com/tag/health-2/">health</a>
+					<a class="tag" href="http://wtop.com/section/living/health-fitness/">Health and Fitness News</a>
+					<a class="tag" href="http://wtop.com/news/">Latest News</a>
+			</div>
+</div>				</div>
+				<div class="comments-container">
+								</div>
+			  </div>
+			  
+			</div>
+			<div class="Entry-comments" id="comments">
+						</div>
+		</div>
+					<div class="MobileAd u-mobileFill">
+			<div class="Ad Widget " id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="DFP_slot_wtop_mobile_right_1" class="wtop_mobile_right"></div>	</div>
+</div>			</div>
+			
+		<hr>
+
+	
+
+		<div class="Ad Widget MoreFrom u-mobileFill" id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="taboola_ad_1"></div>	</div>
+</div>
+		<hr>
+
+					<div class="row-8 u-mobileFill">
+				<div class="Ad-label">Advertiser Content</div>
+				<div class="column">					<div class="Ad Widget " id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="taboola_ad_2"></div>	</div>
+</div>				</div>
+			</div>
+		
+		<hr><br><br>
+
+		<div class="Ad Widget ReduceTopSpace u-mobileFill" id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="contentad16522"></div>	</div>
+</div>
+            
+	</div>
+	<div class="column xlarge-4 hide show-for-xlarge-up u-borderBetween-left u-boxPadding" data-swiftype-index="false">
+		<div class="Sidebar">
+
+			<div class="Ad Widget"><div class="Ad-content"><div id="DFP_slot_wtop_right_1_1" class="wtop_right_1"></div><span class="bt-uid-tg" uid="58ebc6ae34-54-97" style="display: none !important"></span></div></div><!-- NewsInc Widget Container -->
+<div class="ndn_embed" style="padding: 30px 0;"
+	data-config-widget-id="22759" data-config-type="VideoLauncher/Slider"
+	data-config-tracking-group="90460"></div>
+<script type="text/javascript">var _ndnq = _ndnq || []; _ndnq.push(['embed']);</script>
+<!-- /NewsInc Widget Container -->
+
+<div class="Widget WidgetPhoto" data-tb-region="Photo_Widget_Fun & Games">
+	<h3 class="Widget-title">
+
+					<a href="http://games.wtop.com/?arkpromo=site_articleRR%20">
+		
+			Play Now
+						<svg class="Svg" data-name="arrow-circle" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/arrow-circle.png" /><path fill-rule="evenodd" clip-rule="evenodd" d="M10,20C4.477,20,0,15.523,0,10C0,4.477,4.477,0,10,0
+	c5.523,0,10,4.477,10,10C20,15.523,15.523,20,10,20z M10,1.875c-4.487,0-8.125,3.638-8.125,8.125c0,4.488,3.638,8.125,8.125,8.125
+	s8.125-3.637,8.125-8.125C18.125,5.513,14.488,1.875,10,1.875z M14.688,10.694l0.002,0.003l-3.125,2.812l-0.002-0.003
+	c-0.166,0.15-0.384,0.243-0.625,0.243C10.42,13.75,10,13.33,10,12.812c0-0.276,0.122-0.523,0.313-0.694l-0.002-0.002l1.309-1.178
+	H5.938C5.42,10.938,5,10.518,5,10c0-0.518,0.42-0.937,0.937-0.937h5.682l-1.309-1.178l0.002-0.003C10.122,7.71,10,7.464,10,7.188
+	c0-0.518,0.42-0.938,0.938-0.938c0.241,0,0.459,0.094,0.625,0.243l0.002-0.003l3.125,2.813l-0.002,0.003
+	C14.878,9.477,15,9.723,15,10C15,10.277,14.878,10.523,14.688,10.694z"/></svg>			</a>
+		
+	</h3>
+	<div class="Entry Widget-content">
+					<a href="http://games.wtop.com/?arkpromo=site_articleRR%20">
+		
+			<img  data-lazy-src="http://wtop.com/wp-content/uploads/2016/12/fun-games-200x650-280x187.jpg" src="" alt="" class="lazyload" />
+					</a>
+		
+					<h3 class="Entry-title">
+				<a href="http://games.wtop.com/?arkpromo=site_articleRR%20">				Fun &amp; Games				</a>			</h3>
+		
+					<div class="Entry-content">
+				<p>Need a break? Play a quick game of solitaire or Sudoku. Or take one of our fun quizzes!</p>
+			</div>
+		
+			</div>
+</div>
+<div class="Widget WidgetTabs">
+	
+<div class="tabs-container">
+	<dl class="tabs" data-tab>
+					<dd class="active">
+				<a href="#recommended">Recommended</a>
+			</dd>
+					<dd class="">
+				<a href="#latest">Latest</a>
+			</dd>
+			</dl>
+
+	<div class="tabs-content">
+					<div id="recommended" class="content active">
+				
+<div class="Widget WidgetList ">
+		<ul class="Widget-list Widget-content">
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/virginia/2017/10/virginia-car-tax/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						Why does Virginia have a &#8216;car tax&#8217;?					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Virginia</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/entertainment/2017/10/remembering-tom-petty-dead-age-66-photos/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						Rock legend Tom Petty dies at 66					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Entertainment News</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/health-fitness/2017/10/15928831/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						Little bit of exercise can ward off depression, study shows					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Health and Fitness News</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/latin-america/2017/10/trump-heads-to-puerto-rico-to-survey-hurricane-damage/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						Trump heads to Puerto Rico to survey hurricane damage					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Latin America News</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/montgomery-county/2017/10/montgomery-co-votes-on-funding-to-fight-gangs/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						Montgomery Co. to vote on funding to fight gangs					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Montgomery County, MD News</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+			</ul>
+</div>
+			</div>
+					<div id="latest" class="content ">
+				
+<div class="Widget WidgetList ">
+		<ul class="Widget-list Widget-content">
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/national/2017/10/two-weeks-maria-virgin-islands-pick-pieces-theres-no-normal/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						&#039;There&#039;s no more normal&#039;: Virgin Island residents try to pick up pieces after hurricanes					  </strong>
+					  
+					  
+													<span class="tag tag--primary">World</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/national/2017/10/police-confirm-reports-of-active-shooter-in-las-vegas/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						&#8216;I&#8217;m going to die&#8217;: fear grips Vegas strip; gunman kills 59					  </strong>
+					  
+					  
+													<span class="tag tag--primary">National</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/dc-transit/2017/10/merge-left-drivers-adjust-new-traffic-pattern-capital-beltway-md/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						Merge left: Drivers adjust to new traffic pattern on Capital Beltway in Md.					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Transportation</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/health-fitness/2017/10/with-lack-of-grocery-stores-volunteers-bring-pop-up-markets-to-dc-areas/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						With lack of grocery stores, volunteers bring pop-up markets to DC areas					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Living</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+					<li class="Widget-item">
+
+							<a class="Widget-link" href="http://wtop.com/entertainment/2017/10/dc-palestinian-film-and-arts-festival-comes-to-life-on-screen-on-stage/">
+			
+				
+					<div class="Widget-itemContent">
+					  <strong class="Entry-title">
+					  						DC Palestinian Film and Arts Festival comes to life on screen, on stage					  </strong>
+					  
+					  
+													<span class="tag tag--primary">Entertainment</span>
+											  					  
+					</div>
+
+							</a>
+			
+			</li>
+			</ul>
+</div>
+			</div>
+			</div>
+</div></div><div class="Ad Widget"><div class="Ad-content"><div id="DFP_slot_wtop_right_3_1" class="wtop_right_3"></div><span class="bt-uid-tg" uid="58ebc6bdd6-54-97" style="display: none !important"></span></div></div>		</div>
+	</div>
+</div>
+
+
+
+<div id="ym_1146333851801729831" class="ym"></div>
+
+			
+			<footer class="Footer" data-swiftype-index="false">
+				<div class="NewsAlerts row">
+										<span>
+						<strong class="label">Get alerts</strong>
+						<a href="http://www.wtop.com/alerts/" class="button">Sign Up</a>
+					</span>				 
+										<span>
+						<strong class="label">Fun & Games</strong>
+						<a href="http://games.wtop.com/?arkpromo=site_footer" class="button">Play Now</a>
+					</span>				 
+										<div class="rightwrap">
+												<div class="righitems">
+							<a href="https://www.instagram.com/wtopnews/" target="_blank" >
+								<svg class="Svg" data-name="instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/instagram.png" /><image  data-name="Layer 0" width="20" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAQAAAAngNWGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhBgcMHAdyUp4EAAABk0lEQVQoz42RPUjUYRzHP/+n/2E6dHiiJXSDEBJ4geFgbxTRENSQNEhTS0MtYUPUFIVBg1tL0WTQ4NDcFCTRYu9vQ2ggRBF3aSR5/E+T89Py739eL9hneX7fF54Hnl8kwHHaecsxzlAhokGgkxbucYnpmP0M8YkCM/RQoEAzj5lnB0/ZF3OBHI9oo07C77xiFwCz3Agc5h0JS1RZ/qO4kJ4z7A3EFOimgyKbUnuOSjp1kQNydAMmauKKC6retWSffZa8req0L3yvJpHn2UqNOi1sZ5LrnGCUHNcY5yRH+UzMDxK+RI7TzirSyh0meEknl5FztLGNI4ywSCDwDRvs9qIf3CAiPvGm/Y0Qy+n0xs0mDqU13GPNvJNpWg7ZV1SRVr5nOiEmUGss6Rf9BCY4m+nTTAEDmc6e1hFjF73lTkuOWTfvcJaV1xb1oHkf+tFZn7vFAZf/VdRT9hiJRYddWeOXI+fpaNpvhQfUOUCxyZ2LrNDF+nwN3P+PGrzGXquuz2Ak9HKFQyyx+pebAhuZ4irPfgJonztWQFYnCQAAAABJRU5ErkJggg=="/></svg>							</a>
+						</div>				 
+												<div class="righitems">
+							<a href="https://www.youtube.com/user/WTOPradio" target="_blank" >
+								<svg class="Svg" data-name="youtube" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="20" viewBox="0 0 26 20">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/youtube.png" /><image  data-name="Layer 0" width="26" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAUCAQAAAA5SeU1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfhBgcMHiYMDezYAAABJElEQVQ4y5WTvUrEQBRGz72EwG4EFXYbBcFOsdhGBAsFwS5qZWNjIYggqP12YuEL7APoEyhiJTaW/hRWljaCCKIguDGuOxkb2SKTxM03zXBmzszcgSsGkDkbMkKVCkMEwACCBQRDhOWTDyIinjiTW8CI2Te2/5FsJyJmhmvKZUJZLqnAvDKZQt1/pWmllkLKETtEBVJNGXakZ1qywAk/OVJVqTpwFLhhlU3uMiVf0ZzzEo6Z5ZAHt0rFZhl/sCtNmeIyveoVf5QdZIuxfiTpzXbZoOFuyJK+AVhij8Xs+z1ih71S54B1Kjlv7ni8OTBkjfGCQttZUoPivKs8Ujb3ynlp6QqjplWmCU3TqBhQVgipE+AT4AN+r90tHSDmi5g2L5xyAb/vsZ5gavV7BwAAAABJRU5ErkJggg=="/></svg>							</a>
+						</div>				 
+												<div class="righitems">
+							<a href="https://www.facebook.com/wtopnews/" target="_blank" >
+								<svg class="Svg" data-name="facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="24px" viewBox="-299.5 408.5 12 24" enable-background="new -299.5 408.5 12 24" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/facebook.png" /><path fill="#FFFFFF" d="M-288.517,408.507c0,1.326,0,3.703,0,3.703s-2.784-0.273-3.481,0.773c-0.381,0.572-0.155,2.246-0.189,3.448
+	c1.215,0,2.478,0,3.693,0c-0.312,1.405-0.536,2.358-0.765,3.574c-1.052,0-2.948,0-2.948,0v11.503c0,0-3.48,0-5.116,0
+	c0.001-3.546-0.001-7.683,0-11.458c-0.795,0-1.382,0-2.177,0c0-1.326,0-2.293,0-3.62c0.771,0,1.382,0,2.153,0
+	c0.11-2.646,0.152-5.268,1.493-6.604C-294.347,408.326-292.909,408.507-288.517,408.507z"/></svg>							</a>
+						</div>				 
+												<div class="righitems">
+							<a href="https://twitter.com/WTOP" target="_blank" >
+								<svg class="Svg" data-name="twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23px" height="20px" viewBox="-294 406.5 23 20" enable-background="new -294 406.5 23 20" xml:space="preserve">	<image src="http://wtop.com/wp-content/themes/wtop/assets/img/icons/twitter.png" /><g >
+	<path fill="#FFFFFF" d="M-278.363,406.501c1.827-0.033,2.799,0.645,3.728,1.508c0.788-0.069,1.813-0.517,2.416-0.829
+		c0.196-0.109,0.391-0.219,0.587-0.327c-0.345,0.949-0.812,1.691-1.53,2.255c-0.16,0.126-0.318,0.295-0.518,0.375
+		c0,0.004,0,0.008,0,0.011c1.023-0.011,1.868-0.481,2.669-0.736c0,0.004,0,0.008,0,0.011c-0.421,0.682-0.991,1.374-1.599,1.87
+		c-0.246,0.199-0.491,0.397-0.736,0.596c0.013,1.104-0.016,2.157-0.219,3.085c-1.178,5.393-4.299,9.055-9.24,10.623
+		c-1.774,0.563-4.641,0.795-6.673,0.28c-1.008-0.255-1.918-0.543-2.773-0.923c-0.475-0.211-0.914-0.44-1.335-0.701
+		c-0.138-0.086-0.276-0.172-0.414-0.258c0.458,0.014,0.995,0.143,1.507,0.058c0.464-0.076,0.918-0.056,1.346-0.152
+		c1.067-0.238,2.014-0.554,2.83-1.04c0.396-0.235,0.996-0.513,1.277-0.853c-0.53,0.01-1.01-0.116-1.404-0.257
+		c-1.526-0.549-2.414-1.558-2.992-3.074c0.462,0.052,1.794,0.174,2.106-0.093c-0.582-0.033-1.142-0.376-1.542-0.631
+		c-1.227-0.783-2.228-2.094-2.221-4.114c0.163,0.078,0.324,0.156,0.485,0.235c0.308,0.132,0.622,0.203,0.99,0.28
+		c0.155,0.033,0.466,0.126,0.644,0.059c-0.008,0-0.015,0-0.023,0c-0.237-0.282-0.624-0.47-0.863-0.772
+		c-0.787-0.997-1.525-2.532-1.058-4.359c0.118-0.464,0.306-0.873,0.506-1.25c0.008,0.004,0.015,0.007,0.023,0.012
+		c0.092,0.195,0.296,0.339,0.426,0.502c0.402,0.507,0.898,0.965,1.403,1.367c1.722,1.372,3.273,2.215,5.765,2.84
+		c0.632,0.158,1.362,0.279,2.117,0.28c-0.212-0.629-0.144-1.647,0.023-2.255c0.42-1.531,1.332-2.634,2.669-3.226
+		c0.32-0.141,0.675-0.244,1.047-0.327C-278.747,406.548-278.555,406.524-278.363,406.501z"/>
+</g></svg>							</a>
+						</div>				 
+											</div>
+				</div>
+
+				<nav class="Nav Nav--footer"><ul class="Nav-menu Nav-menu--depth0 menu"><li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-173210"><a href="http://wtop.com/news-team/" class="Nav-link">News Team</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-173211"><a href="http://wtop.com/careers/" class="Nav-link">Careers</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-173213"><a href="http://wtop.com/advertise/" class="Nav-link">Advertise</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-324946"><a href="http://wtop.com/contests/" class="Nav-link">Contests</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-173218"><a href="http://wtop.com/contact-us/" class="Nav-link">Contacts</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-498441"><a href="http://wtop.com/submit-news-tip/" class="Nav-link">Submit News Tip</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-1971916"><a href="http://wtop.com/charities-2/" class="Nav-link">Charities</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-7377521"><a href="http://wtop.com/wtop-community-events/" class="Nav-link">Events</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-9125131"><a href="http://video.wtop.com/" class="Nav-link">Video</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-9125156"><a href="http://wtop.com/podcast-dc/" class="Nav-link">Podcast DC</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-6893326"><a href="http://federalnewsradio.com/" class="Nav-link">Federal News Radio</a></li>
+</ul></nav>
+				<div class="Footer-copyright row">
+					<span class="copyright">Copyright © 2017 by WTOP. All rights reserved.</span>
+					<ul class="Nav--footer-copyright">
+					<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-173219"><a href="http://wtop.com/feedback/" class="Nav-link">Feedback</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-2317001"><a href="http://corporate.hubbardradio.com/privacy-policy/" class="Nav-link">Privacy Policy</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-2317011"><a href="http://corporate.hubbardradio.com/terms-of-use/" class="Nav-link">Terms of Use</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-173222"><a href="http://wtop.com/copyright/" class="Nav-link">Copyright</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-6893391"><a href="http://wtop.com/wp-content/uploads/2017/05/6_1_2017Wash-DC-Market.pdf" class="Nav-link">EEO</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-custom menu-item-object-custom menu-item-7377581"><a href="http://corporate.hubbardradio.com/" class="Nav-link">Hubbard Radio</a></li>
+<li class="Nav-menuItem Nav-menuItem--depth0 menu-item menu-item-type-post_type menu-item-object-page menu-item-9245636"><a href="http://wtop.com/wtop-103-5-fm-wwwt-107-7-fm-wtlp-103-9-fm-wwfd-820-am-online-fcc-public-inspection-files/" class="Nav-link">FCC Public Inspection File</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div><!-- end .MainContainer -->
+		
+
+
+
+		<div class="Ad Widget " id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="DFP_slot_wtop_footer_banner_1" class="wtop_footer_banner"></div>	</div>
+</div>		
+					<div class="MobileStaticAd u-mobileFill">
+			<div class="Ad Widget " id="" data-swiftype-index="false">
+		
+	<div class="Ad-content">
+		<div id="DFP_slot_wtop_mobile_adhesion_1" class="wtop_mobile_adhesion"></div>	</div>
+</div>			</div>
+			<div class="dfp_mobile_adhesion_spacer"></div>
+		
+				
+		<div id="DFP_slot_wtop_interstitial_1" class="wtop_interstitial"></div>		
+		<div id="DFP_slot_wtop_mobile_interstitial_1" class="wtop_mobile_interstitial"></div>		
+		<div id="DFP_slot_wtop_tout_interstitial_1" class="wtop_tout_interstitial"></div>
+	</div><!-- end .Overflow -->
+
+	<section id="wp-footer">
+		
+<!-- START Parse.ly Include: Standard -->
+<div id="parsely-root" style="display: none">
+  <div id="parsely-cfg" data-parsely-site="wtop.com"></div>
+</div>
+<script data-cfasync="false">
+(function(s, p, d) {
+  var h=d.location.protocol, i=p+"-"+s,
+      e=d.getElementById(i), r=d.getElementById(p+"-root"),
+      u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+      :"static."+p+".com";
+  if (e) return;
+  e = d.createElement(s); e.id = i; e.async = true;
+  e.setAttribute('data-cfasync', 'false'); e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script>
+<!-- END Parse.ly Include: Standard -->
+<script type="text/javascript" src="http://wtop.com/wp-content/cache/minify/000000/nY1BDoMwDAQ_1GK-ZBKjunXiNHaoxOtbCVVwgEtuu9aMd4SPawE0IzdYKEetUMmK5giRzP9lSJxv4xmdNFLNvB7SPTRzTed84eCt0swiEPm3cDhcr4hGtMcmbHkImgr6tTKjeRAOLxCe9nYBa8sRnTXD045tj93iQO-GwivV_heOU7-MQtX79UoLoXwB.js?f405bc"></script>
+<script type="text/javascript" src="http://wtop.com/wp-content/cache/minify/000000/M9AvL8kv0E8sLk4tKdYvS81LyS_SL87JTM7WyyqGMCAkAA.js?f405bc"></script>
+<script type="text/javascript" src="http://wtop.com/wp-content/cache/minify/000000/bY5RDsIwDEMvxJbdqIrWDHWkSddkwDg9Q_CDWslf9rPlCR6uBdCM3OBOErXCuu1UjzGqfwVWZ1it8cec5DL9LZyUUy6MTtZGlpz6hRCXElivbUpPpyrIgZPcOpu_U6aCtX-I8XUMrBiHeTfX_KHe.js?f405bc"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wp_js_data = {"template_url":"http:\/\/wtop.com\/wp-content\/themes\/wtop","ajaxurl":"http:\/\/wtop.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://wtop.com/wp-content/cache/minify/000000/M9AvL8kv0E8sLk4tKdbPKtbPKIhPzEqsiM_JT0xJLdIxwJBPBYnH56WW65jolxfopuYmpabo5WbmAQA.js?f405bc"></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Sailthru_config = {"domain":"horizon.wtop.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="http://wtop.com/wp-content/plugins/sailthru-custom/assets/js/sailthru.js?f405bc"></script>
+		
+		<!-- AdExchange --> 
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-8053056755505505";
+		/* WTOP */
+		google_ad_slot = "7312728029";
+		google_ad_width = 4;
+		google_ad_height = 0;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="//pagead2.googlesyndication.com/pagead/show_ads.js?f405bc">
+		</script>
+
+		<!-- /AdExchange -->
+		
+		
+				<!-- Advertising.com -->
+		<img src="https://secure.leadback.advertising.com/adcedge/lb?site=695501&betr=37724=904187[720]" width="1" height="1" border="0" />
+		<img src="//secure.ace-tag.advertising.com/action/type=127161/bins=1/rich=0/Mnum=1516/" width = "1" height= "1" border = "0" />
+		<!-- /Advertising.com -->
+				<!-- ComScore -->
+		<script defer >
+		    var _comscore = _comscore || [];
+		    _comscore.push({ c1: "2", c2: "16067480" });
+                    function downloadComScoreAtOnload() {
+                        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+                        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+                        el.parentNode.insertBefore(s, el);
+                    }
+                    if (window.addEventListener)
+                        window.addEventListener("load", downloadComScoreAtOnload, false);
+                    else if (window.attachEvent)
+                        window.attachEvent("onload", downloadComScoreAtOnload);
+                    else window.onload = downloadComScoreAtOnload; 
+		</script>
+		<noscript>
+		  <img src="//b.scorecardresearch.com/p?c1=2&c2=16067480&cv=2.0&cj=1" />
+		</noscript>
+		<!-- /ComScore -->
+		                    <script type="text/javascript">
+                        function downloadCustomAdAtOnload16522 ( ) {
+                            var d = document;
+                            var params =
+                            {
+                                                              id: "a876c671-4530-4caa-aa9d-541a60456d96",
+                                                              d:  "d3RvcC5jb20=",
+                                wid: "16522",
+                                cb: (new Date()).getTime()
+                            };
+
+                            var qs=[];
+                            for(var key in params) qs.push(key+'='+encodeURIComponent(params[key]));
+                            var s = d.createElement('script');s.type='text/javascript';s.async=true;
+                            var p = 'https:' == document.location.protocol ? 'https' : 'http';
+                            s.src = p + "://api.content-ad.net/Scripts/widget2.aspx?" + qs.join('&');
+                            var div = d.getElementById("contentad16522");
+                            if ( div ) { div.appendChild(s); }
+                        }
+                        
+                        if (window.addEventListener)
+                            window.addEventListener("load", downloadCustomAdAtOnload16522, false);
+                        else if (window.attachEvent)
+                            window.attachEvent("onload", downloadCustomAdAtOnload16522);
+                        else window.onload = downloadCustomAdAtOnload16522;
+                    </script>
+					<!--  Blockthrough  -->
+			<script defer >
+			function downloadBlockthroughAtOnload() {
+				var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+				s.src =  "//wtop.com/ogg_load_fix.js";
+				el.parentNode.insertBefore(s, el);
+			}
+			if (window.addEventListener) {
+				window.addEventListener("load", downloadBlockthroughAtOnload, false);
+			} else if (window.attachEvent) {
+					window.attachEvent("onload", downloadBlockthroughAtOnload);
+			} else  { window.onload = downloadBlockthroughAtOnload; }
+			</script>
+			<!--  // end Blockthrough  -->
+				<!-- ShareThis -->
+		<script type="text/javascript">var switchTo5x=true; </script>
+		<script type="text/javascript" async="true" src="https://ws.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">
+                    // stLight.options({publisher: "de88ba6c-368a-4776-b217-b0f8e75b2f46", onhover: false, doNotHash: true, doNotCopy: true, hashAddressBar: false, shorten: false});
+                       wait();
+			// Wait until buttons.js is ready
+			function wait ( ) {
+				if ( typeof(stlib) === 'undefined' ) {
+					setTimeout(wait, 250);
+				} else {
+					initShareThis();
+				}
+			}
+			
+			function initShareThis() {
+				stLight.options({publisher: "de88ba6c-368a-4776-b217-b0f8e75b2f46", onhover: false, doNotHash: true, doNotCopy: true, hashAddressBar: false, shorten: false});
+			}         
+                </script>
+		<!-- /ShareThis -->
+		
+		
+		<!-- Swiftype --> 
+		<script type="text/javascript">
+		(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+		(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+		e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+		})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+		
+		_st('install','QzQUNkRqA9QNdsF29GaH','2.0.0'); 
+		</script>
+        <script type="text/javascript" src="//s.swiftypecdn.com/cc/cKz9Lg1wXHR4z9AVvyJz.js?f405bc"></script>
+		<!-- /Swiftype -->
+		
+		
+				<!-- Taboola -->
+		<script type="text/javascript">
+			window._taboola = window._taboola || [];
+
+					_taboola.push({"mode":"autosized-generated-2r","container":"taboola_ad_1","placement":"bottom-main-column","target_type":"mix"});
+					_taboola.push({"mode":"hybrid-text-links-2c","container":"taboola_ad_2","placement":"below-main-column","target_type":"mix"});
+		
+			_taboola.push({article: 'auto'});
+		</script>
+		                <script type="text/javascript">
+                        function downloadTaboolaSyndactionAtOnload() {
+                            var element = document.createElement("script");
+                            element.src = "//cdn.taboola.com/libtrc/wtop/loader.js";
+                            document.body.appendChild(element);
+                        }
+                        if (window.addEventListener)
+                            window.addEventListener("load", downloadTaboolaSyndactionAtOnload, false);
+                        else if (window.attachEvent)
+                            window.attachEvent("onload", downloadTaboolaSyndactionAtOnload);
+                        else window.onload = downloadTaboolaSyndactionAtOnload;
+                </script>
+		<!-- /Taboola -->
+							<!-- Tout matched video / featured image replacement -->                    
+					<script class="tout-sdk tout-sdk-script-tag">
+					!function(){var TOUT=window.TOUT=window.TOUT||{},utils={getCanonicalLinkHref:function(){for(var links=document.getElementsByTagName("link"),i=0;i<links.length;i++)if("canonical"===links[i].getAttribute("rel"))return links[i].getAttribute("href");return""},getMetaTagContentByProperty:function(metaTagProperty){for(var metaTags=document.getElementsByTagName("meta"),i=0;i<metaTags.length;i++)if(metaTags[i].getAttribute("property")===metaTagProperty)return metaTags[i].getAttribute("content");return""},getWindowLocationOrigin:function(){return window.location.protocol+"//"+window.location.host},getCanonicalUrl:function(){var canonicalUrl=utils.getCanonicalLinkHref()||utils.getMetaTagContentByProperty("og:url");return canonicalUrl&&"/"===canonicalUrl[0]&&(canonicalUrl=utils.getWindowLocationOrigin()+canonicalUrl),canonicalUrl},getOgUrl:function(){var ogUrl=utils.getMetaTagContentByProperty("og:url");return ogUrl&&"/"===ogUrl[0]&&(ogUrl=utils.getWindowLocationOrigin()+ogUrl),ogUrl},getRelCanonical:function(){var relCanonical=utils.getCanonicalLinkHref();return relCanonical&&"/"===relCanonical[0]&&(relCanonical=utils.getWindowLocationOrigin()+relCanonical),relCanonical},getExternalArticleId:function(){return utils.getMetaTagContentByProperty("tout:article:id")},getCurrentProtocol:function(){return"https:"===document.location.protocol?"https:":"http:"},getPlatformHost:function(){return TOUT.SDK_HOST||"platform.tout.com"}};TOUT.mapAsyncFetchApp={init:function(brandUid,options){this.brandUid=brandUid,this.active=!0,this.productFetched=!1,this.dataLoaded=!1,this.startedSuccessfully=!1,this.options=options||{},this.options.paramsWhitelist||(this.options.paramsWhitelist=["brand_uid","external_article_id","og_url","window_location","rel_canonical","async_fetch"])},fetch:function(){var script=document.createElement("script"),src=utils.getCurrentProtocol()+"//"+utils.getPlatformHost()+"/mid_article_player.js",params=TOUT.mapAsyncFetchApp.getMidArticleQueryParams(),joinCharacter="?";for(var param in params)params.hasOwnProperty(param)&&""!==params[param]&&(src+=joinCharacter+param+"="+encodeURIComponent(params[param]),joinCharacter="&");script.src=src;var firstScript=document.getElementsByTagName("script")[0];firstScript.parentNode.insertBefore(script,firstScript)},start:function(){this.productFetched&&this.dataLoaded&&!this.startedSuccessfully&&(this.startedSuccessfully=!0,TOUT.midArticleProductLoader.start(TOUT.data.mid_article_player_experiment))},getMidArticleQueryParams:function(){var params={};return this._whitelistContains("brand_uid")&&(params.brand_uid=this.brandUid),this._whitelistContains("content_referrer")&&(params.content_referrer=document.referrer),this._whitelistContains("external_article_id")&&(params.external_article_id=utils.getExternalArticleId()),this._whitelistContains("og_url")&&(params.og_url=utils.getOgUrl()),this._whitelistContains("window_location")&&(params.window_location=document.location.href),this._whitelistContains("rel_canonical")&&(params.rel_canonical=utils.getRelCanonical()),this._whitelistContains("async_fetch")&&(params.async_fetch=!0),params},_whitelistContains:function(value){return this.options.paramsWhitelist&&this.options.paramsWhitelist.indexOf(value)>-1}}}();
+					!function(){var TOUT=window.TOUT=window.TOUT||{};if(console&&console.log&&console.log("Tout SDK: "+ +new Date),!TOUT._sdkScriptTagParsedAt){TOUT._sdkScriptTagParsedAt=new Date,TOUT.EMBED_CODE_VERSION="1.2.0";var sdkHost=TOUT.SDK_HOST||"platform.tout.com",sdkProtocol=TOUT.SDK_PROTOCOL||("https:"==window.location.protocol?"https:":"http:"),analyticsHost=TOUT.SDK_ANALYTICS_HOST||"analytics.tout.com",analyticsProtocol=TOUT.SDK_ANALYTICS_PROTOCOL||sdkProtocol;TOUT.onReady=TOUT.onReady||function(func){return TOUT._onReadyQueue=TOUT._onReadyQueue||[],TOUT._onReadyQueue.push(func),TOUT},TOUT.fireSimpleAnalyticsPixel=function(trigger_name,attrs){var img=new Image,url=analyticsProtocol+"//"+analyticsHost+"/events?trigger="+trigger_name;for(var attr in attrs)attrs.hasOwnProperty(attr)&&(url+="&"+attr+"="+encodeURIComponent(attrs[attr]));return img.src=url,img},TOUT.init=function(brandUid,options){options=options||{};var sdkScriptId="tout-js-sdk";if(document.getElementById(sdkScriptId)&&!options.forceInit)return TOUT;if(brandUid=TOUT.SDK_BRAND_UID||brandUid,"undefined"==typeof brandUid||"string"!=typeof brandUid||0===brandUid.length||brandUid.length>7)return TOUT.fireSimpleAnalyticsPixel("sdk_log",{log_level:"error",log_message:"BRAND_UID_NOT_DEFINED",content_page_url:window.location.href}),console&&console.error&&console.error("TOUT - Invalid Brand UID: "+brandUid),TOUT;TOUT._initOptions=options;var script=document.createElement("script");script.type="text/javascript",script.src=sdkProtocol+"//"+sdkHost+"/sdk/v1/"+brandUid+".js",script.id=sdkScriptId,script.className="tout-sdk";var firstScript=document.getElementsByTagName("script")[0];return firstScript.parentNode.insertBefore(script,firstScript),TOUT.fireSimpleAnalyticsPixel("sdk_initialized",{content_brand_uid:brandUid,sdk_embed_code_version:TOUT.EMBED_CODE_VERSION,content_page_url:window.location.href}),TOUT}}}();
+					(function(){
+					  
+					  window.TOUT = window.TOUT || {};
+					  window.TOUT.topArticleLoaded = function(attrs){
+					    if(attrs.matchExists){
+					      //$()Post-Featured-Photo
+                                              if ( typeof document.getElementsByClassName('Entry-featured')[0] !== "undefined" ) {
+                                                    document.getElementsByClassName('Entry-featured')[0].style.display = 'none';
+                                              }				
+					      console.log("There is a Tout top article match for this article.");
+					    }
+					  };
+					  var brandUid = '1d52bf';
+					  TOUT.mapAsyncFetchApp.init(brandUid);
+					  TOUT.init(brandUid);
+					  TOUT.mapAsyncFetchApp.fetch();
+					})();
+					</script>
+                    
+                    
+                    
+                                        <script src="//platform.tout.com/sdk.js?f405bc" async></script>
+                                        <!-- // Tout -->
+                    		<!-- TwentySixty -->
+		<div id="ttdUniversalPixelTagc7130402a6c547e2a334fe06559f886a" style="display:none">
+                                        <script type="text/javascript">
+                        function downloadTwentySixtyAtOnload() {
+                            var element = document.createElement("script");
+                            element.src = "https://js.adsrvr.org/up_loader.1.1.0.js";
+                            document.body.appendChild(element);
+                            if (typeof TTDUniversalPixelApi === 'function') { 
+                                var universalPixelApi = new TTDUniversalPixelApi(); universalPixelApi.init("eac6kka", ["msqi0ya"], "https://insight.adsrvr.org/track/up", "ttdUniversalPixelTagc7130402a6c547e2a334fe06559f886a");
+                            }
+                        }
+                        if (window.addEventListener)
+                            window.addEventListener("load", downloadTwentySixtyAtOnload, false);
+                        else if (window.attachEvent)
+                            window.attachEvent("onload", downloadTwentySixtyAtOnload);
+                        else window.onload = downloadTwentySixtyAtOnload;
+                </script>
+		</div>
+		<!-- /TwentySixty -->
+				<!-- ChartBeat -->
+		<script type='text/javascript'>
+			var _sf_async_config = _sf_async_config || {};
+			/** CONFIGURATION START **/
+			_sf_async_config.sections = 'Latest News'; 
+			_sf_async_config.authors = 'Paula Wolfson';
+
+
+            /** CONFIGURATION END **/
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+
+                    document.body.appendChild(e);
+                }
+
+                loadChartbeat();
+
+//                var oldonload = document.ready;
+//                document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
+//                        oldonload();
+//                        loadChartbeat();
+//                    };
+            })();
+        </script>
+
+		<!-- /ChartBeat -->
+			</section>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1d8c2aa18a","applicationID":"5693986","transactionName":"M11bYEVXW0UDBUILWQoXeFdDX1pYTRVfDFEIXQ==","queueTime":0,"applicationTime":4454,"atts":"HxpYFg1NSEs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using memcached
+Database Caching 240/280 queries in 3.407 seconds using memcached
+Object Caching 5360/7346 objects using memcached
+Fragment Caching 0/0 fragments using memcached
+Application Monitoring using New Relic
+
+ Served from: wtop.com @ 2017-10-03 08:23:23 by W3 Total Cache -->

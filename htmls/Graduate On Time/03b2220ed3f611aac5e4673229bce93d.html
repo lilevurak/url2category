@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="http://www.seattleglobalist.com/xmlrpc.php"> 
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:700|Roboto:300" rel="stylesheet"> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script> 
+  <title>Tips for International Students hoping to stay after studying - The Seattle Globalist</title> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.4 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="A program called Optional Practical Training (OPT) allows international students to work in the U.S. for a year if they’re hired within 90 days of graduating."> 
+  <link rel="canonical" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Tips for International Students hoping to stay after studying - The Seattle Globalist"> 
+  <meta property="og:description" content="A program called Optional Practical Training (OPT) allows international students to work in the U.S. for a year if they’re hired within 90 days of graduating."> 
+  <meta property="og:url" content="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679"> 
+  <meta property="og:site_name" content="The Seattle Globalist"> 
+  <meta property="article:tag" content="immigration law"> 
+  <meta property="article:tag" content="International student"> 
+  <meta property="article:tag" content="OPT"> 
+  <meta property="article:tag" content="University of Washington"> 
+  <meta property="article:tag" content="USCIS"> 
+  <meta property="article:tag" content="UW"> 
+  <meta property="article:section" content="Education"> 
+  <meta property="article:published_time" content="2015-04-09T13:25:22-07:00"> 
+  <meta property="article:modified_time" content="2016-05-30T15:43:52-07:00"> 
+  <meta property="og:updated_time" content="2016-05-30T15:43:52-07:00"> 
+  <meta property="og:image" content="http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2.jpg"> 
+  <meta property="og:image:width" content="900"> 
+  <meta property="og:image:height" content="600"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.seattleglobalist.com\/","name":"The Seattle Globalist","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.seattleglobalist.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//www.seattleglobalist.com"> 
+  <link rel="dns-prefetch" href="//w.sharethis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="The Seattle Globalist » Feed" href="http://www.seattleglobalist.com/feed"> 
+  <link rel="alternate" type="application/rss+xml" title="The Seattle Globalist » Comments Feed" href="http://www.seattleglobalist.com/comments/feed"> 
+  <link rel="alternate" type="text/calendar" title="The Seattle Globalist » iCal Feed" href="http://www.seattleglobalist.com/events/?ical=1"> 
+  <link rel="alternate" type="application/rss+xml" title="The Seattle Globalist » Tips for International Students hoping to stay after studying Comments Feed" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679/feed"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.seattleglobalist.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.1"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="wbounce-style-all-css" href="http://www.seattleglobalist.com/wp-content/plugins/wbounce/frontend/css/min/wbounce-all.min.css?ver=4.8.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="globsixteen-style-css" href="http://www.seattleglobalist.com/wp-content/themes/globsixteen/style.css?ver=4.8.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="author-avatars-widget-css" href="http://www.seattleglobalist.com/wp-content/plugins/author-avatars/css/widget.css?ver=1.11" type="text/css" media="all"> 
+  <link rel="stylesheet" id="author-avatars-shortcode-css" href="http://www.seattleglobalist.com/wp-content/plugins/author-avatars/css/shortcode.css?ver=1.11" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fancybox-css" href="http://www.seattleglobalist.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.css?ver=1.6" type="text/css" media="screen"> 
+  <script id="st_insights_js" type="text/javascript" src="http://w.sharethis.com/button/st_insights.js?publisher=4d48b7c5-0ae3-43d4-bfbe-3ff8c17a8ae6&amp;product=simpleshare"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <link rel="https://api.w.org/" href="http://www.seattleglobalist.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.seattleglobalist.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.seattleglobalist.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8.1"> 
+  <link rel="shortlink" href="http://www.seattleglobalist.com/?p=35679"> 
+  <link rel="alternate" type="application/json+oembed" href="http://www.seattleglobalist.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.seattleglobalist.com%2F2015%2F04%2F09%2Fopt-international-student-optional-practical-training-f1-visa-washington-seattle-uw%2F35679"> 
+  <link rel="alternate" type="text/xml+oembed" href="http://www.seattleglobalist.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.seattleglobalist.com%2F2015%2F04%2F09%2Fopt-international-student-optional-practical-training-f1-visa-washington-seattle-uw%2F35679&amp;format=xml"> 
+  <!-- This site is using AdRotate v4.9.1 Professional to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ --> 
+  <!-- AdRotate CSS --> 
+  <style type="text/css" media="screen">
+	.g { margin:0px; padding:0px; overflow:hidden; line-height:1; zoom:1; }
+	.g img { height:auto; }
+	.g-col { position:relative; float:left; }
+	.g-col:first-child { margin-left: 0; }
+	.g-col:last-child { margin-right: 0; }
+	.g-2 { min-width:5px; max-width:310px; }
+	.b-2 { margin:5px 5px 5px 5px; }
+	.g-4 { min-width:1px; max-width:730px; }
+	.b-4 { margin:1px 1px 1px 1px; }
+	.g-6 { min-width:5px; max-width:310px; }
+	.b-6 { margin:5px 5px 5px 5px; }
+	@media only screen and (max-width: 480px) {
+		.g-col, .g-dyn, .g-single { width:100%; margin-left:0; margin-right:0; }
+	}
+</style> 
+  <!-- /AdRotate CSS --> 
+  <script>(function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));</script>
+  <style type="text/css">	.ssba {
+									
+									
+									
+									
+								}
+								.ssba img
+								{
+									width: 44px !important;
+									padding: 6px;
+									border:  0;
+									box-shadow: none !important;
+									display: inline !important;
+									vertical-align: middle;
+								}
+								.ssba, .ssba a
+								{
+									text-decoration:none;
+									border:0;
+									background: none;
+									
+									font-size: 	20px;
+									
+									font-weight: normal;
+								}
+								.ssba_sharecount:after, .ssba_sharecount:before {
+									right: 100%;
+									border: solid transparent;
+									content: " ";
+									height: 0;
+									width: 0;
+									position: absolute;
+									pointer-events: none;
+								}
+								.ssba_sharecount:after {
+									border-color: rgba(224, 221, 221, 0);
+									border-right-color: #f5f5f5;
+									border-width: 5px;
+									top: 50%;
+									margin-top: -5px;
+								}
+								.ssba_sharecount:before {
+									border-color: rgba(85, 94, 88, 0);
+									border-right-color: #e0dddd;
+									border-width: 6px;
+									top: 50%;
+									margin-top: -6px;
+								}
+								.ssba_sharecount {
+									font: 11px Arial, Helvetica, sans-serif;
+
+									padding: 5px;
+									-khtml-border-radius: 6px;
+									-o-border-radius: 6px;
+									-webkit-border-radius: 6px;
+									-moz-border-radius: 6px;
+									border-radius: 6px;
+									position: relative;
+									border: 1px solid #e0dddd;color: #555e58;
+										background: #ffffff;
+									}
+									.ssba_sharecount:after {
+										border-right-color: #ffffff;
+									}</style>
+  <meta name="tec-api-version" content="v1">
+  <meta name="tec-api-origin" content="http://www.seattleglobalist.com">
+  <link rel="https://theeventscalendar.com" href="http://www.seattleglobalist.com/wp-json/tribe/events/v1/">
+  <style type="text/css"></style>
+  <link rel="icon" href="http://www.seattleglobalist.com/wp-content/uploads/2016/11/logo-32x32.png" sizes="32x32"> 
+  <link rel="icon" href="http://www.seattleglobalist.com/wp-content/uploads/2016/11/logo.png" sizes="192x192"> 
+  <link rel="apple-touch-icon-precomposed" href="http://www.seattleglobalist.com/wp-content/uploads/2016/11/logo.png"> 
+  <meta name="msapplication-TileImage" content="http://www.seattleglobalist.com/wp-content/uploads/2016/11/logo.png"> 
+  <!-- Easy FancyBox 1.6 using FancyBox 1.3.8 - RavanH (http://status301.net/wordpress-plugins/easy-fancybox/) --> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton' : true, 'margin' : 20, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale' : true };
+var easy_fancybox_handler = function(){
+	/* IMG */
+	var fb_IMG_select = 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".gif"]:not(.nolightbox,li.nolightbox>a), area[href*=".gif"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox)';
+	jQuery(fb_IMG_select).addClass('fancybox image').attr('rel', 'gallery');
+	jQuery('a.fancybox, area.fancybox, li.fancybox a').fancybox( jQuery.extend({}, fb_opts, { 'easingIn' : 'easeOutBack', 'easingOut' : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false, 'titleShow' : true, 'titlePosition' : 'over', 'titleFromAlt' : true, 'showNavArrows' : true, 'enableKeyboardNav' : true, 'cyclic' : false }) );
+}
+var easy_fancybox_auto = function(){
+	/* Auto-click */
+	setTimeout(function(){jQuery('#fancybox-auto').trigger('click')},1000);
+}
+/* ]]> */
+</script> 
+ </head> 
+ <body class="post-template-default single single-post postid-35679 single-format-standard tribe-no-js tribe-theme-globsixteen group-blog"> 
+  <header id="masthead" class="site-header" role="banner"> 
+   <div class="site-branding"> 
+    <a id="logo" href="http://www.seattleglobalist.com/" rel="home"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/logo.png"> </a> 
+    <a id="title" href="http://www.seattleglobalist.com/" rel="home"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/TheSeattleGlobalist.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/TheSeattleGlobalist.png'"> </a> 
+   </div>
+   <!-- .site-branding --> 
+   <nav id="site-navigation" class="main-navigation" role="navigation"> 
+    <div id="main-menu-toggle"></div> 
+    <div class="social-icons"> 
+     <a href="https://www.facebook.com/seattleglobalist" target="_blank"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-fb.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-fb.png'"> </a>
+     <a href="https://www.instagram.com/seattleglobalist/" target="_blank"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-ig.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-ig.png'"> </a>
+     <a href="http://www.seattleglobalist.com/feed" target="_blank"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-rs.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-rs.png'"> </a>
+     <a href="https://twitter.com/seaglobalist" target="_blank"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-tw.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-tw.png'"> </a>
+     <a href="https://www.youtube.com/seattleglobalist" target="_blank"> <img src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-yt.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/soc-yt.png'"> </a> 
+     <img id="search-icon" src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/search.svg" onerror="this.src='http://www.seattleglobalist.com/wp-content/themes/globsixteen/img/search.png'"> 
+    </div> 
+    <div id="search-bar"> 
+     <form role="search" method="get" class="search-form" action="http://www.seattleglobalist.com/"> 
+      <label> <span class="screen-reader-text">Search for:</span> <input type="search" class="search-field" placeholder="Search …" value="" name="s"> </label> 
+      <input type="submit" class="search-submit" value="Search"> 
+     </form> 
+    </div> 
+    <div id="main-menu-container" class="menu-main-2016-container">
+     <ul id="primary-menu" class="menu">
+      <li id="menu-item-58583" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-58583"><a href="http://www.seattleglobalist.com/latest">Latest News</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-58585" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58585"><a href="http://www.seattleglobalist.com/category/home-page-sections/politics-2">Politics</a></li> 
+        <li id="menu-item-58586" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58586"><a href="http://www.seattleglobalist.com/category/home-page-sections/arts-culture">Arts &amp; Culture</a></li> 
+        <li id="menu-item-58584" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-58584"><a href="http://www.seattleglobalist.com/category/immigration">Immigration</a></li> 
+        <li id="menu-item-58587" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58587"><a href="http://www.seattleglobalist.com/category/race-ethnicity">Race &amp; Ethnicity</a></li> 
+       </ul> </li> 
+      <li id="menu-item-58588" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-58588"><a href="http://www.seattleglobalist.com/category/home-page-sections/perspectives">Perspectives</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-58589" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58589"><a href="/author/reagan-jackson">Reagan Jackson</a></li> 
+       </ul> </li> 
+      <li id="menu-item-58592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58592"><a href="http://www.seattleglobalist.com/youth">Youth</a></li> 
+      <li id="menu-item-58593" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58593"><a href="/events">Events</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-58594" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58594"><a href="/events">Calendar</a></li> 
+        <li id="menu-item-58596" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58596"><a href="/events/community/add">Post an event</a></li> 
+       </ul> </li> 
+      <li id="menu-item-58597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58597"><a href="http://www.seattleglobalist.com/about-the-globalist">About</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-58598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58598"><a href="http://www.seattleglobalist.com/about-the-globalist/who-we-are">Staff</a></li> 
+        <li id="menu-item-58891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58891"><a href="http://www.seattleglobalist.com/about-the-globalist/board-of-directors">Board</a></li> 
+        <li id="menu-item-58890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58890"><a href="http://www.seattleglobalist.com/sponsorship">Advertising</a></li> 
+       </ul> </li> 
+      <li id="menu-item-58600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58600"><a href="http://www.seattleglobalist.com/about-the-globalist/donate">Get Involved</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-59945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59945"><a href="http://www.seattleglobalist.com/poweryourmedia">Power Your Media!</a></li> 
+        <li id="menu-item-58602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58602"><a href="http://www.seattleglobalist.com/about-the-globalist/pitch-us-a-story">Pitch</a></li> 
+        <li id="menu-item-60072" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60072"><a href="https://secure.lglforms.com/form_engine/s/ClaPLYUZsXJNOyw6B7BqTA?t=1481666247">Donate</a></li> 
+       </ul> </li> 
+     </ul>
+    </div> 
+   </nav>
+   <!-- #site-navigation --> 
+  </header>
+  <!-- #masthead --> 
+  <div id="page" class="site"> 
+   <!-- <a class="skip-link screen-reader-text" href="#main">Skip to content</a> --> 
+   <div id="content" class="site-content"> 
+    <div id="after-header" class="widget-area" role="complementary"> 
+     <section id="ajdg_grpwidgets-6" class="widget ajdg_grpwidgets">
+      <div class="g g-4">
+       <div class="g-col b-4 a-235">
+        <a class="gofollow" data-track="MjM1LDQsMSwxMA==" href="https://www.nwfolklife.org/seattlechildrensfestival/"><img src="http://www.seattleglobalist.com/wp-content/uploads/2017/09/unnamed.png"></a>
+       </div>
+      </div>
+     </section> 
+    </div> 
+    <div id="primary" class="content-area"> 
+     <div id="primary-content"> 
+      <main id="main" class="site-main" role="main"> 
+       <article id="post-35679" class="post-35679 post type-post status-publish format-standard has-post-thumbnail hentry category-education-2 category-immigration category-travel tag-immigration-law tag-international-student tag-opt tag-university-of-washington tag-uscis tag-uw"> 
+        <header class="entry-header"> 
+         <h1 class="entry-title">Tips for International Students hoping to stay after studying</h1> 
+         <div class="entry-meta"> 
+          <span class="posted-on">Posted on <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679" rel="bookmark"><time class="entry-date published" datetime="2015-04-09T13:25:22+00:00">Apr 9, 2015</time></a></span>
+          <span class="byline"> <span class="author vcard">by <a class="url fn n" href="http://www.seattleglobalist.com/author/yyyrebecca">Rebecca Yeung</a></span></span> 
+         </div>
+         <!-- .entry-meta --> 
+        </header>
+        <!-- .entry-header --> 
+        <div class="entry-content"> 
+         <figure id="attachment_35683" style="width: 700px" class="wp-caption aligncenter">
+          <a href="http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2.jpg"><img class="wp-image-35683 size-large" title="International Students should start thinking about OPT long before graduation. (Photo by UW Admissions / Katherine B. Turner)" src="http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-700x467.jpg" alt="International Students should start thinking about OPT long before graduation. (Photo by UW Admissions / Katherine B. Turner)" width="700" height="467" srcset="http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-600x400.jpg 600w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-326x217.jpg 326w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-250x167.jpg 250w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-536x357.jpg 536w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-725x483.jpg 725w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2-800x533.jpg 800w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/Commencement-2.jpg 900w" sizes="(max-width: 700px) 100vw, 700px"></a>
+          <figcaption class="wp-caption-text">
+           International Students should start thinking about OPT long before graduation. (Photo by UW Admissions / Katherine B. Turner)
+          </figcaption>
+         </figure> 
+         <p>Spring can be a stressful time for the college seniors as they start to think about what they’ll do upon graduation. Even more so for the <strong>thousands of international students studying at colleges and universities</strong> in the Northwest.</p> 
+         <p>Options are limited. Only an elite few will find an American company willing to sponsor them for a skilled worker visa. The rest will have to go back to their home country within a couple months of graduation.</p> 
+         <p>But there is a third option:</p> 
+         <p><span id="more-35679"></span>Optional Practical Training (OPT) is <strong>a permitted 12-month working period for undergraduate and graduate students on&nbsp;F-1 visas</strong>&nbsp;who have finished their degrees or have studied in the U.S. for more than nine months. During this year-long period, graduates are allowed to actually work and be paid (something that’s&nbsp;<a href="https://iss.washington.edu/employment/f1-employment/cpt">heavily restricted&nbsp;while they’re still studying</a>)</p> 
+         <p>OPT opportunities can sometimes lead to a H1B working visa and ultimately a green card — though the chances are slim. Either way, working in the U.S. for a year is still an invaluable experience that can open doors anywhere in the world.</p> 
+         <p>If you are an international student planning to apply for OPT, <strong>here are 3 key tips to set yourself up for success</strong>:</p> 
+         <h4>Get an early start</h4> 
+         <p>Most students graduate in the spring. That means if you toss your cap in June, you’ll be facing a lot more competition for jobs, and OPT positions. Take some summer classes and see if you can graduate a quarter early. USCIS officers, advisors and employers are a lot less busy during winter, so your application will get processed a lot faster.</p> 
+         <p>Also try to get an internship as soon as you can. Every job will be looking for U.S. work experience, but there’s no legal way for you to get it! But you’re allowed to do unpaid internships, and they’ll make your resume look so much better.</p> 
+         <h4>Apply Soon</h4> 
+         <p>Apply the first day of your last quarter in school. Don’t wait around until you get a job. You can apply before you even start looking for your position, and up to 90 days before you finish school.</p> 
+         <p>USCIS is receiving applications from across the nation, which means the process will take a long time — maybe&nbsp;<a href="http://iss.washington.edu/employment/f1-employment/opt/12-months">three months</a> or even longer. In some rare cases, the application might&nbsp;even get lost or hit some other snag. Therefore, applying early is key.&nbsp;You can read more about the application process <a href="http://iss.washington.edu/employment/f1-employment/opt/12-months">here</a>.</p> 
+         <h4>Choose your work start date wisely</h4> 
+         <p>You are allowed to choose your OPT start date. Bear&nbsp;in mind that with OPT status you can stay in the U.S. for 90 days while unemployed, and the 12-month work period begins on the start date you choose on your application. If you are going on a graduation trip or vacation, do not set the start date for the day you graduate. You need some time to find a job, so set it for the date you anticipate starting work.</p> 
+         <figure id="attachment_25009" style="width: 700px" class="wp-caption aligncenter">
+          <a href="http://www.seattleglobalist.com/wp-content/uploads/2014/05/51.jpg"><img class="wp-image-25009 size-large" title="An event held by the UW Chinese Students &amp; Scholars Association to welcome international students. (Photo courtesy CSSA)" src="http://www.seattleglobalist.com/wp-content/uploads/2014/05/51-700x424.jpg" alt="An event held by the UW Chinese Students &amp; Scholars Association to welcome international students. (Photo courtesy CSSA)" width="700" height="424" srcset="http://www.seattleglobalist.com/wp-content/uploads/2014/05/51-700x424.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2014/05/51-300x182.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2014/05/51-400x242.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2014/05/51-600x364.jpg 600w, http://www.seattleglobalist.com/wp-content/uploads/2014/05/51.jpg 900w" sizes="(max-width: 700px) 100vw, 700px"></a>
+          <figcaption class="wp-caption-text">
+           An event held by the UW Chinese Students &amp; Scholars Association to welcome international students. (Photo courtesy CSSA)
+          </figcaption>
+         </figure> 
+         <p>Filing an OPT application is just the first step. Now you need to find a position. <strong>Here are a few things you can do during your last year in school to improve your chances:</strong></p> 
+         <h4>Be honest with yourself</h4> 
+         <p>Let’s be realistic, employers like long-term employees with local knowledge and connections. U.S. laws that prohibit discrimination between job applicants don’t necessarily stop them from picking an American citizen over you for those reasons.</p> 
+         <h4>Build Connections</h4> 
+         <p>Connections are much more important than your grades. Get an internship, go to events, volunteer, meet professionals, throw yourself out there and don’t be afraid to ask them for help. There is nothing to lose when people don’t know you. If they think you’re cool, they will help you with their connections; if they think you’re a fool, they won’t remember you.</p> 
+         <p>Bottom line: pass all of your classes and meet graduation requirements, but don’t let that stop you from getting out there and building connections. (P.S. this is not an excuse to party every day!)</p> 
+         <h4>Practice applying&nbsp;for jobs</h4> 
+         <p>Go to careerbuilder, craigslist and indeed. Look at all the job requirements and start applying for jobs right now! You have to wait until your <a href="http://www.uscis.gov/green-card/green-card-processes-and-procedures/employment-authorization-document" target="_blank">EAD card</a> arrives to start working, but you don’t need it to apply for jobs. It’s not illegal to start interviewing just for the experiences. Take every chance to polish your cover letter and resume, and be prepared when the chances come.</p> 
+         <figure id="attachment_35684" style="width: 700px" class="wp-caption aligncenter">
+          <a href="http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1.jpg"><img class="size-large wp-image-35684" src="http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-700x467.jpg" alt="Just because you're graduating this Spring, doesn't mean you have to leave the beautiful Pacific Northwest. (Photo by Yue Ching Yeung)" width="700" height="467" srcset="http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-600x400.jpg 600w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-326x217.jpg 326w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-250x167.jpg 250w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-536x357.jpg 536w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-725x483.jpg 725w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1-800x533.jpg 800w, http://www.seattleglobalist.com/wp-content/uploads/2015/04/unnamed-1.jpg 900w" sizes="(max-width: 700px) 100vw, 700px"></a>
+          <figcaption class="wp-caption-text">
+           Just because you’re graduating this Spring, doesn’t mean you have to leave the beautiful Pacific Northwest. (Photo by Yue Ching Yeung)
+          </figcaption>
+         </figure> 
+         <p>When it comes to actually landing that&nbsp;job that will allow you to complete your year of Optional Practical Training, there are some things you need to pay attention to. <strong>Here are a few tips to&nbsp;increase the odds of getting a job offer:</strong></p> 
+         <h4>Apply Early</h4> 
+         <p>Did I say this already? Is there an echo in here? Applying early is key, especially when you don’t have a lot of experience.</p> 
+         <p>Bianca Chan, an international student who graduated&nbsp;from the UW in fall&nbsp;of 2013, says she sent out over 100 applications until she got her first non-paid internship. But with the internships she had, she was able to get a job within two weeks after graduation.</p> 
+         <h4>Look for contract jobs</h4> 
+         <p>Once again, employers tend to like long-term employees — they usually don’t want to train someone who’s only going to&nbsp;leave after a year. But a job that’s on a year-long contract would be a perfect fit for you. There are a lot of contract job offerings from big companies like Microsoft.</p> 
+         <h4>Trust yourself</h4> 
+         <p>What happens if you fall? Get back up! Ask any American and they’ll tell you how hard it is to get a job. As a foreigner, things could be ten times harder. It may take you 20 applications to get an interview, and another 20 interviews to get a job, but that’s okay. You already beat the odds to get to the U.S. to study. Be proud of what you have achieved and present your best to everyone that is watching.</p> 
+         <p>Fingers crossed!</p> 
+         <h4><em>Do you need help?:</em></h4> 
+         <p><em>Most of the H-1B employers and employees will hire a lawyer to assist with applications and ensure that they follow all the USCIS conditions and regulations. But OPT is a lot simpler and students normally do not need a lawyer. If you’re a UW student, advisors in <a href="https://iss.washington.edu/about-us">International Student Services</a> are there to help, and many other schools have similar services.</em></p> 
+         <p><em>&nbsp;</em></p> 
+         <!-- Simple Share Buttons Adder (6.3.6) simplesharebuttons.com -->
+         <div class="ssba ssba-wrap">
+          <div style="text-align:left">
+           <a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679" target="_blank"><img src="http://www.seattleglobalist.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="ssba ssba-img" alt="Share on Facebook"></a>
+           <span class="ssba_sharecount">0</span>
+           <a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679&amp;text=Tips+for+International+Students+hoping+to+stay+after+studying+" target="_blank"><img src="http://www.seattleglobalist.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter"></a>
+           <a data-site="email" class="ssba_email_share" href="mailto:?subject=Tips%20for%20International%20Students%20hoping%20to%20stay%20after%20studying&amp;body=%20http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679"><img src="http://www.seattleglobalist.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/email.png" title="Email" class="ssba ssba-img" alt="Email this to someone"></a>
+          </div>
+         </div> 
+         <div class="tags">
+           Tags: 
+          <a href="http://www.seattleglobalist.com/tag/immigration-law" rel="tag">immigration law</a>, 
+          <a href="http://www.seattleglobalist.com/tag/international-student" rel="tag">International student</a>, 
+          <a href="http://www.seattleglobalist.com/tag/opt" rel="tag">OPT</a>, 
+          <a href="http://www.seattleglobalist.com/tag/university-of-washington" rel="tag">University of Washington</a>, 
+          <a href="http://www.seattleglobalist.com/tag/uscis" rel="tag">USCIS</a>, 
+          <a href="http://www.seattleglobalist.com/tag/uw" rel="tag">UW</a>. 
+         </div> 
+         <div class="author-bio"> 
+          <a href="http://www.seattleglobalist.com/author/yyyrebecca"> <h3 class="author-name"> Rebecca Yeung </h3> 
+           <div class="author-description">
+             Too Asian for an American and too American for an Asian. Too girly to be a sporty girl and too sporty to be a girly girl. Rebecca Yeung loves traveling, exploring, writing, music, coffee, food and all the fun stuff. Follow her on twitter: @rebiyeung 
+           </div> <img alt="Rebecca Yeung" src="http://www.seattleglobalist.com/wp-content/uploads/2015/01/Yue-Ching-Yeung-106x106.jpg" class="avatar avatar-106 photo" height="106" width="106"> </a> 
+         </div> 
+         <div id="after-post-body" class="widget-area" role="complementary"> 
+          <section id="ajdg_grpwidgets-5" class="widget ajdg_grpwidgets">
+           <div class="g g-7">
+            <div class="g-single a-125">
+             <!-- Begin MailChimp Signup Form --> 
+             <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> 
+             <style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style> 
+             <div id="mc_embed_signup"> 
+              <form action="//seattleglobalist.us11.list-manage.com/subscribe/post?u=3c396aa97391063a0a1989a20&amp;id=bb71036af2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> 
+               <div id="mc_embed_signup_scroll"> 
+                <h2>Get the Globalist delivered!</h2> 
+                <div class="mc-field-group"> 
+                 <label for="mce-EMAIL">Email Address </label> 
+                 <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"> 
+                </div> 
+                <p>Powered by <a class="gofollow" data-track="MTI1LDcsMSwxMA==" href="http://eepurl.com/bqSLCn" title="MailChimp - email marketing made easy and fun">MailChimp</a></p> 
+                <div id="mce-responses" class="clear"> 
+                 <div class="response" id="mce-error-response" style="display:none"></div> 
+                 <div class="response" id="mce-success-response" style="display:none"></div> 
+                </div> 
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> 
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                 <input type="text" name="b_3c396aa97391063a0a1989a20_bb71036af2" tabindex="-1" value="">
+                </div> 
+                <div class="clear">
+                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div> 
+               </div> 
+              </form> 
+             </div> 
+             <!--End mc_embed_signup-->
+            </div>
+           </div>
+          </section> 
+         </div> 
+        </div>
+        <!-- .entry-content --> 
+       </article>
+       <!-- #post-## --> 
+       <div id="comments" class="comments-area"> 
+        <h4 class="comments-title separator-title"> <span> 7 Comments </span> </h4> 
+        <ol class="comment-list"> 
+         <li id="comment-828480" class="comment even thread-even depth-1 parent"> 
+          <article id="div-comment-828480" class="comment-body"> 
+           <footer class="comment-meta"> 
+            <div class="comment-author vcard"> 
+             <img alt="" src="http://1.gravatar.com/avatar/a58baaa9f33f4926350bbc6705f2cb8d?s=50&amp;d=mm&amp;r=g" srcset="http://1.gravatar.com/avatar/a58baaa9f33f4926350bbc6705f2cb8d?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+             <b class="fn">Mimi Cee</b> 
+             <span class="says">says:</span> 
+            </div>
+            <!-- .comment-author --> 
+            <div class="comment-metadata"> 
+             <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-828480"> <time datetime="2016-05-28T07:58:51+00:00"> May 28, 2016 at 7:58 am </time> </a> 
+            </div>
+            <!-- .comment-metadata --> 
+           </footer>
+           <!-- .comment-meta --> 
+           <div class="comment-content"> 
+            <p>This article is misguiding.<br> You can definitely do a PAID internship as an international student (Look up CPT). I have done 4 internships (11 months all together) and was paid $20+ per hour.<br> If you are an international student, please seek information from more than this article and do not be discouraged. Keep trying! I was rejected by many companies for my internships but when I finally got 1 experience, the others were easier to get.<br> I also have a full-time offer from a company that is willing to sponsor me (I interned with them!)<br> Good luck and remember, it is definitely not impossible.</p> 
+           </div>
+           <!-- .comment-content --> 
+           <div class="reply">
+            <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=828480#respond" onclick="return addComment.moveForm( &quot;div-comment-828480&quot;, &quot;828480&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to Mimi Cee">Reply</a>
+           </div> 
+          </article>
+          <!-- .comment-body --> 
+          <ol class="children"> 
+           <li id="comment-891201" class="comment odd alt depth-2"> 
+            <article id="div-comment-891201" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="http://2.gravatar.com/avatar/badca258c5820ad00ddb060cc461b586?s=50&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/badca258c5820ad00ddb060cc461b586?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+               <b class="fn">hatim rachdi</b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-891201"> <time datetime="2017-03-26T16:45:12+00:00"> Mar 26, 2017 at 4:45 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>Hi Mimi, </p> 
+              <p>Thank you so much for your encouraging comment. Is it possible that we talk on Fb or via email. Please, I have a lot of questions to ask. </p> 
+              <p>Thank you.</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=891201#respond" onclick="return addComment.moveForm( &quot;div-comment-891201&quot;, &quot;891201&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to hatim rachdi">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> </li>
+           <!-- #comment-## --> 
+           <li id="comment-911932" class="comment even depth-2"> 
+            <article id="div-comment-911932" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="http://2.gravatar.com/avatar/8292837a3a806eb883dbd9e92dd467fc?s=50&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/8292837a3a806eb883dbd9e92dd467fc?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+               <b class="fn">Laia</b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-911932"> <time datetime="2017-07-20T16:43:04+00:00"> Jul 20, 2017 at 4:43 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>Hello Mimi!!<br> I would love to talk to you and ask you about your experience, I was wondering if you could shot me an email or add me on fb?</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=911932#respond" onclick="return addComment.moveForm( &quot;div-comment-911932&quot;, &quot;911932&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to Laia">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li id="comment-848008" class="comment odd alt thread-odd thread-alt depth-1"> 
+          <article id="div-comment-848008" class="comment-body"> 
+           <footer class="comment-meta"> 
+            <div class="comment-author vcard"> 
+             <img alt="" src="http://0.gravatar.com/avatar/fd619917c0a8ad1884fa4c81152c4c47?s=50&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/fd619917c0a8ad1884fa4c81152c4c47?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+             <b class="fn">babi</b> 
+             <span class="says">says:</span> 
+            </div>
+            <!-- .comment-author --> 
+            <div class="comment-metadata"> 
+             <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-848008"> <time datetime="2016-07-31T22:42:47+00:00"> Jul 31, 2016 at 10:42 pm </time> </a> 
+            </div>
+            <!-- .comment-metadata --> 
+           </footer>
+           <!-- .comment-meta --> 
+           <div class="comment-content"> 
+            <p>Do we need to apply for an opt only within our field of study?</p> 
+           </div>
+           <!-- .comment-content --> 
+           <div class="reply">
+            <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=848008#respond" onclick="return addComment.moveForm( &quot;div-comment-848008&quot;, &quot;848008&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to babi">Reply</a>
+           </div> 
+          </article>
+          <!-- .comment-body --> </li>
+         <!-- #comment-## --> 
+         <li id="comment-889643" class="comment even thread-even depth-1 parent"> 
+          <article id="div-comment-889643" class="comment-body"> 
+           <footer class="comment-meta"> 
+            <div class="comment-author vcard"> 
+             <img alt="" src="http://1.gravatar.com/avatar/41822e25cc5352a97fc8df54c3c83f5e?s=50&amp;d=mm&amp;r=g" srcset="http://1.gravatar.com/avatar/41822e25cc5352a97fc8df54c3c83f5e?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+             <b class="fn">Alex</b> 
+             <span class="says">says:</span> 
+            </div>
+            <!-- .comment-author --> 
+            <div class="comment-metadata"> 
+             <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-889643"> <time datetime="2017-03-10T20:00:32+00:00"> Mar 10, 2017 at 8:00 pm </time> </a> 
+            </div>
+            <!-- .comment-metadata --> 
+           </footer>
+           <!-- .comment-meta --> 
+           <div class="comment-content"> 
+            <p>To be short, nobody wants to hire OPT candidates so I don’t know why it even exists.</p> 
+           </div>
+           <!-- .comment-content --> 
+           <div class="reply">
+            <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=889643#respond" onclick="return addComment.moveForm( &quot;div-comment-889643&quot;, &quot;889643&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to Alex">Reply</a>
+           </div> 
+          </article>
+          <!-- .comment-body --> 
+          <ol class="children"> 
+           <li id="comment-891202" class="comment odd alt depth-2"> 
+            <article id="div-comment-891202" class="comment-body"> 
+             <footer class="comment-meta"> 
+              <div class="comment-author vcard"> 
+               <img alt="" src="http://2.gravatar.com/avatar/badca258c5820ad00ddb060cc461b586?s=50&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/badca258c5820ad00ddb060cc461b586?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+               <b class="fn">hatim rachdi</b> 
+               <span class="says">says:</span> 
+              </div>
+              <!-- .comment-author --> 
+              <div class="comment-metadata"> 
+               <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-891202"> <time datetime="2017-03-26T16:45:55+00:00"> Mar 26, 2017 at 4:45 pm </time> </a> 
+              </div>
+              <!-- .comment-metadata --> 
+             </footer>
+             <!-- .comment-meta --> 
+             <div class="comment-content"> 
+              <p>Is this real?</p> 
+             </div>
+             <!-- .comment-content --> 
+             <div class="reply">
+              <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=891202#respond" onclick="return addComment.moveForm( &quot;div-comment-891202&quot;, &quot;891202&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to hatim rachdi">Reply</a>
+             </div> 
+            </article>
+            <!-- .comment-body --> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li id="comment-900644" class="comment even thread-odd thread-alt depth-1"> 
+          <article id="div-comment-900644" class="comment-body"> 
+           <footer class="comment-meta"> 
+            <div class="comment-author vcard"> 
+             <img alt="" src="http://0.gravatar.com/avatar/9aea376e0eab8bb94a953988f97fb586?s=50&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/9aea376e0eab8bb94a953988f97fb586?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50"> 
+             <b class="fn"><a href="http://www.seattleglobalist.com" rel="external nofollow" class="url">Nitish</a></b> 
+             <span class="says">says:</span> 
+            </div>
+            <!-- .comment-author --> 
+            <div class="comment-metadata"> 
+             <a href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#comment-900644"> <time datetime="2017-06-11T21:02:38+00:00"> Jun 11, 2017 at 9:02 pm </time> </a> 
+            </div>
+            <!-- .comment-metadata --> 
+           </footer>
+           <!-- .comment-meta --> 
+           <div class="comment-content"> 
+            <p>It all depends on your hard work and luck. I have applied for over 900 jobs since 7 months and was able to give only a couple of interviews. people will select you unless you have enough skills and experience. only a few people are lucky enough to get a job without any experience on OPT being a foreign candidate.</p> 
+           </div>
+           <!-- .comment-content --> 
+           <div class="reply">
+            <a rel="nofollow" class="comment-reply-link" href="http://www.seattleglobalist.com/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679?replytocom=900644#respond" onclick="return addComment.moveForm( &quot;div-comment-900644&quot;, &quot;900644&quot;, &quot;respond&quot;, &quot;35679&quot; )" aria-label="Reply to Nitish">Reply</a>
+           </div> 
+          </article>
+          <!-- .comment-body --> </li>
+         <!-- #comment-## --> 
+        </ol>
+        <!-- .comment-list --> 
+        <div id="respond" class="comment-respond"> 
+         <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2015/04/09/opt-international-student-optional-practical-training-f1-visa-washington-seattle-uw/35679#respond" style="display:none;">Cancel reply</a></small></h3> 
+         <form action="http://www.seattleglobalist.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate> 
+          <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+          <p class="comment-form-comment"><label for="comment">Comment</label> <textarea onfocus="if(!this._s==true){var _i=document.createElement('input');_i.setAttribute('type','hidden');_i.setAttribute('name','ssc_key_1ace15824e75769f');_i.setAttribute('value','c755db746d9bd075');var _p=this.parentNode;_p.insertBefore(_i,this);this._s=true;}" id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required></textarea></p>
+          <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required></p> 
+          <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required></p> 
+          <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p> 
+          <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="35679" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p>
+          <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1a4a986235"></p>
+          <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="162"></p>
+          <style>.ssc_notice_1ace15824e75769f strong {display:none;}.ssc_notice_1ace15824e75769f:after {content:'\2018\0063\0037\0035\0035\0064\0062\0037\0034\0036\0064\0039\0062\0064\0030\0037\0035\0031\0061\0063\0065\0031\0035\0038\0032\0034\0065\0037\0035\0037\0036\0039\0066\2019';font-weight:bold;}</style>
+          <noscript>
+           <p class="ssc_notice_1ace15824e75769f">Notice: It seems you have Javascript disabled in your Browser. In order to submit a comment to this post, please write this code along with your comment: <strong aria-hidden="true">e74c76764b52c75dd51eb0f78955d91a</strong></p>
+          </noscript> 
+         </form> 
+        </div>
+        <!-- #respond --> 
+       </div>
+       <!-- #comments --> 
+      </main>
+      <!-- #main --> 
+     </div> 
+    </div>
+    <!-- #primary --> 
+    <aside id="secondary" class="widget-area" role="complementary"> 
+     <section id="text-51" class="widget widget_text"> 
+      <div class="textwidget">
+       <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fseattleglobalist%2F&amp;tabs&amp;width=300&amp;height=70&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId=245748235472175" width="300" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+      </div> 
+     </section>
+     <section id="text-153" class="widget widget_text"> 
+      <div class="textwidget">
+       <a href="https://secure.lglforms.com/form_engine/s/ClaPLYUZsXJNOyw6B7BqTA" class="glob-btn big">Donate Now</a>
+      </div> 
+     </section>
+     <section id="ajdg_grpwidgets-2" class="widget ajdg_grpwidgets">
+      <div id="scat-ads">
+       .
+       <div class="g g-6">
+        <div class="g-col b-6 a-236">
+         <a class="gofollow" data-track="MjM2LDYsMSwxMA==" href="https://www.seattleartmuseum.org/gardnercenter#sat"><img src="http://www.seattleglobalist.com/wp-content/uploads/2017/09/IE-and-Globalist-300x250_r3.jpg"></a>
+        </div>
+       </div>
+       <div class="g g-6">
+        <div class="g-col b-6 a-121">
+         <div class="alignleft"> 
+          <script type="text/javascript">
+       	amzn_assoc_ad_type = "banner";
+	amzn_assoc_marketplace = "amazon";
+	amzn_assoc_region = "US";
+	amzn_assoc_placement = "assoc_banner_placement_default";
+	amzn_assoc_campaigns = "holsetforget2016";
+	amzn_assoc_banner_type = "setandforget";
+	amzn_assoc_p = "12";
+	amzn_assoc_width = "300";
+	amzn_assoc_height = "250";
+	amzn_assoc_tracking_id = "theseatglob-20";
+	amzn_assoc_linkid = "b6da5a7a691ba9b25acf633162ec7a25";
+     </script> 
+          <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;Operation=GetScript&amp;ID=OneJS&amp;WS=1"></script> 
+         </div>
+        </div>
+       </div>
+       <div class="g g-6">
+        <div class="g-col b-6 a-120">
+         <!-- BEGIN JS TAG - LYM Sidebar #1 < - DO NOT MODIFY --> 
+         <script src="http://dat.localyokelmedia.com/ttj?id=4543257&amp;cb=[CACHEBUSTER]" type="text/javascript"></script> 
+         <!-- END TAG -->
+        </div>
+       </div>.
+      </div>
+     </section>
+     <section id="text-52" class="widget widget_text"> 
+      <div class="textwidget">
+       News tips: 
+       <a href="mailto:editor@seattleglobalist.com">editor@seattleglobalist.com</a> 
+       <br>
+      </div> 
+     </section>
+     <section id="author_avatars-2" class="widget widget_author_avatars">
+      <h2 class="widget-title"><span>Meet the contributors</span></h2>
+      <div class="author-list">
+       <div class="user user-201">
+        <a href="http://www.seattleglobalist.com/author/aida-solomon" title=""><span class="avatar" title=""><img alt="Aida Solomon" src="http://www.seattleglobalist.com/wp-content/uploads/2013/12/Aida-Solomon_avatar_1387224799-62x62.jpg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-42">
+        <a href="http://www.seattleglobalist.com/author/deric-gruen" title=""><span class="avatar" title=""><img alt="Deric Gruen" src="http://www.seattleglobalist.com/wp-content/uploads/2013/01/Deric-Gruen_avatar-62x62.jpeg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-101055">
+        <a href="http://www.seattleglobalist.com/author/barbara-clabots" title=""><span class="avatar" title=""><img alt="Barbara Clabots" src="http://www.seattleglobalist.com/wp-content/uploads/2015/12/Barbara-Clabots_avatar_1451256952-62x62.png" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-101074">
+        <a href="http://www.seattleglobalist.com/author/said-maxad" title=""><span class="avatar" title=""><img alt="Said Shaiye" src="http://www.seattleglobalist.com/wp-content/uploads/2017/01/Said-Shaiye_avatar_1485304968-62x62.jpg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-380">
+        <a href="http://www.seattleglobalist.com/author/alia-marsha" title=""><span class="avatar" title=""><img alt="Alia Marsha" src="http://www.seattleglobalist.com/wp-content/uploads/2016/09/Alia-Marsha_avatar_1473714853-62x62.jpg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-101058">
+        <a href="http://www.seattleglobalist.com/author/elizabeth-alvarado" title=""><span class="avatar" title=""><img alt="Elizabeth Alvarado" src="http://www.seattleglobalist.com/wp-content/uploads/2017/05/Elizabeth-Alvarado_avatar_1495518814-62x62.jpg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-277">
+        <a href="http://www.seattleglobalist.com/author/partnowjess" title=""><span class="avatar" title=""><img src="http://1.gravatar.com/avatar/dad8daaf6abad4b5651ca839953e2be5?s=62&amp;d=mm&amp;r=g" srcset="http://1.gravatar.com/avatar/dad8daaf6abad4b5651ca839953e2be5?s=124&amp;d=mm&amp;r=g 2x" class="avatar avatar-62 photo" height="62" width="62" title="" alt=""></span></a>
+       </div>
+       <div class="user user-313">
+        <a href="http://www.seattleglobalist.com/author/travis-quezon" title=""><span class="avatar" title=""><img alt="Travis Quezon" src="http://www.seattleglobalist.com/wp-content/uploads/2014/10/Travis-Quezon_avatar_1413049126-62x62.jpg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+       <div class="user user-209">
+        <a href="http://www.seattleglobalist.com/author/dianehan" title=""><span class="avatar" title=""><img alt="Diane Han" src="http://www.seattleglobalist.com/wp-content/uploads/2014/01/Diane-Han_avatar_1389823866-62x62.jpg" class="avatar avatar-62 photo" height="62" width="62" title=""></span></a>
+       </div>
+      </div>
+     </section>
+     <section id="text-134" class="widget widget_text">
+      <h2 class="widget-title"><span>Get updates!</span></h2> 
+      <div class="textwidget">
+       <!-- Begin MailChimp Signup Form --> 
+       <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> 
+       <style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style> 
+       <div id="mc_embed_signup"> 
+        <form action="//seattleglobalist.us11.list-manage.com/subscribe/post?u=3c396aa97391063a0a1989a20&amp;id=bb71036af2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> 
+         <div id="mc_embed_signup_scroll"> 
+          <div class="mc-field-group"> 
+           <label for="mce-EMAIL">Email Address </label> 
+           <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"> 
+          </div> 
+          <p>Powered by <a href="http://eepurl.com/bqSLCn" title="MailChimp - email marketing made easy and fun">MailChimp</a></p> 
+          <div id="mce-responses" class="clear"> 
+           <div class="response" id="mce-error-response" style="display:none"></div> 
+           <div class="response" id="mce-success-response" style="display:none"></div> 
+          </div> 
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> 
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+           <input type="text" name="b_3c396aa97391063a0a1989a20_bb71036af2" tabindex="-1" value="">
+          </div> 
+          <div class="clear">
+           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+       <!--End mc_embed_signup-->
+      </div> 
+     </section>
+     <section id="text-95" class="widget widget_text">
+      <h2 class="widget-title"><span>Mission</span></h2> 
+      <div class="textwidget">
+       Our mission is to elevate diverse voices through media. The Seattle Globalist is a 501(c)(3) nonprofit organization.
+      </div> 
+     </section>
+     <section id="text-94" class="widget widget_text">
+      <h2 class="widget-title"><span>Want to write for us?</span></h2> 
+      <div class="textwidget">
+       The Seattle Globalist features up and coming contributors from across the region and around the globe. 
+       <a href="/about-the-globalist/pitch-us-a-story">How to pitch a story »</a>
+      </div> 
+     </section>
+     <div id="sticky-sidebar">
+      <section id="ajdg_grpwidgets-3" class="widget ajdg_grpwidgets">
+       <div class="g g-2">
+        <div class="g-col b-2 a-234">
+         <a href="https://ajdg.solutions/"><img src="http://www.seattleglobalist.com/wp-content/uploads/2017/09/tasveer-300x250.jpg"></a>http://tsaff.tasveer.org/
+        </div>
+       </div>
+      </section>
+      <section id="related_artciles-2" class="widget widget_related_artciles">
+       <h2 class="widget-title"><span>Related Articles</span></h2>
+       <div class="post-preview post-preview-1 featured-odd">
+        <a href="http://www.seattleglobalist.com/2017/09/25/donor-funds-125000-daca-fees-washington-residents/68831"><img width="300" height="200" src="http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-1-300x200.jpg" class="attachment-300 size-300 wp-post-image" alt="" srcset="http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-1-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-1-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-1-768x512.jpg 768w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-1-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-1.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px"></a>
+        <div class="text-block">
+         <a href="http://www.seattleglobalist.com/2017/09/25/donor-funds-125000-daca-fees-washington-residents/68831"><h4>Donor covers $125,000 in DACA fees for Washington residents</h4><em class="by-line">by Venice Buhain</em><span class="date-comments"><span class="date">Sep 25, 2017</span></span></a>
+        </div>
+       </div>
+       <div class="post-preview post-preview-2 featured-even">
+        <a href="http://www.seattleglobalist.com/2017/09/19/seattle-organizations-offer-young-immigrants-assistance-as-daca-deadline-looms/68759"><img width="300" height="200" src="http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-4-300x200.jpg" class="attachment-300 size-300 wp-post-image" alt="" srcset="http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-4-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-4-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-4-768x512.jpg 768w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-4-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-4.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px"></a>
+        <div class="text-block">
+         <a href="http://www.seattleglobalist.com/2017/09/19/seattle-organizations-offer-young-immigrants-assistance-as-daca-deadline-looms/68759"><h4>Seattle organizations offer assistance as DACA deadline looms</h4><em class="by-line">by Globalist Staff</em><span class="date-comments"><span class="date">Sep 19, 2017</span></span></a>
+        </div>
+       </div>
+       <div class="post-preview post-preview-3 featured-odd">
+        <a href="http://www.seattleglobalist.com/2017/09/06/seattle-rallies-in-support-of-daca/68453"><img width="300" height="200" src="http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-2-300x200.jpg" class="attachment-300 size-300 wp-post-image" alt="" srcset="http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-2-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-2-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-2-768x512.jpg 768w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-2-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2017/09/DACA-2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px"></a>
+        <div class="text-block">
+         <a href="http://www.seattleglobalist.com/2017/09/06/seattle-rallies-in-support-of-daca/68453"><h4>Hundreds in Seattle rally in support of DACA</h4><em class="by-line">by Venice Buhain</em><span class="date-comments"><span class="date">Sep 6, 2017</span></span></a>
+        </div>
+       </div>
+       <div class="post-preview post-preview-4 featured-even">
+        <a href="http://www.seattleglobalist.com/2017/09/05/trump-rescinds-daca/68427"><img width="300" height="200" src="http://www.seattleglobalist.com/wp-content/uploads/2016/12/Photo-by-Enrique-Perez_2-300x200.jpg" class="attachment-300 size-300 wp-post-image" alt="" srcset="http://www.seattleglobalist.com/wp-content/uploads/2016/12/Photo-by-Enrique-Perez_2-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2016/12/Photo-by-Enrique-Perez_2-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2016/12/Photo-by-Enrique-Perez_2-768x512.jpg 768w, http://www.seattleglobalist.com/wp-content/uploads/2016/12/Photo-by-Enrique-Perez_2-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2016/12/Photo-by-Enrique-Perez_2.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px"></a>
+        <div class="text-block">
+         <a href="http://www.seattleglobalist.com/2017/09/05/trump-rescinds-daca/68427"><h4>Trump ends DACA</h4><em class="by-line">by Venice Buhain</em><span class="date-comments"><span class="date">Sep 5, 2017</span></span></a>
+        </div>
+       </div>
+       <div class="post-preview post-preview-5 featured-odd">
+        <a href="http://www.seattleglobalist.com/2017/08/07/opinion-trump-endorsed-raise-act-would-hurt-economy-and-immigrant-families/67861"><img width="300" height="200" src="http://www.seattleglobalist.com/wp-content/uploads/2017/08/USCIS_San_Antonio_Twitter_2-300x200.jpg" class="attachment-300 size-300 wp-post-image" alt="" srcset="http://www.seattleglobalist.com/wp-content/uploads/2017/08/USCIS_San_Antonio_Twitter_2-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2017/08/USCIS_San_Antonio_Twitter_2-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2017/08/USCIS_San_Antonio_Twitter_2-768x512.jpg 768w, http://www.seattleglobalist.com/wp-content/uploads/2017/08/USCIS_San_Antonio_Twitter_2-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2017/08/USCIS_San_Antonio_Twitter_2.jpg 900w" sizes="(max-width: 300px) 100vw, 300px"></a>
+        <div class="text-block">
+         <a href="http://www.seattleglobalist.com/2017/08/07/opinion-trump-endorsed-raise-act-would-hurt-economy-and-immigrant-families/67861"><h4>Trump-endorsed RAISE Act would hurt economy — and immigrant families</h4><em class="by-line">by Tahmina Watson</em><span class="date-comments"><span class="date">Aug 7, 2017</span></span></a>
+        </div>
+       </div>
+       <div class="post-preview post-preview-6 featured-even">
+        <a href="http://www.seattleglobalist.com/2017/06/12/3-things-international-students-in-the-humanities-need-to-know-when-looking-for-a-job-in-the-u-s/66208"><img width="300" height="200" src="http://www.seattleglobalist.com/wp-content/uploads/2017/06/JV3-300x200.jpg" class="attachment-300 size-300 wp-post-image" alt="" srcset="http://www.seattleglobalist.com/wp-content/uploads/2017/06/JV3-300x200.jpg 300w, http://www.seattleglobalist.com/wp-content/uploads/2017/06/JV3-400x267.jpg 400w, http://www.seattleglobalist.com/wp-content/uploads/2017/06/JV3-768x512.jpg 768w, http://www.seattleglobalist.com/wp-content/uploads/2017/06/JV3-700x467.jpg 700w, http://www.seattleglobalist.com/wp-content/uploads/2017/06/JV3-e1497038124958.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px"></a>
+        <div class="text-block">
+         <a href="http://www.seattleglobalist.com/2017/06/12/3-things-international-students-in-the-humanities-need-to-know-when-looking-for-a-job-in-the-u-s/66208"><h4>3 things humanities international students should know while job hunting</h4><em class="by-line">by Jeevika Verma</em><span class="date-comments"><span class="date">Jun 12, 2017</span></span></a>
+        </div>
+       </div>
+      </section>
+     </div>
+    </aside>
+    <!-- #secondary --> 
+   </div>
+   <!-- #content --> 
+   <footer id="colophon" class="site-footer" role="contentinfo"> 
+    <div class="site-info"> 
+     <div class="col"> 
+      <strong>Mission</strong> 
+      <br> 
+      <p>Our mission is to elevate diverse voices through media.</p> 
+      <p> <a href="http://www.seattleglobalist.com/about-the-globalist">About</a> | <a href="http://www.seattleglobalist.com/contact-us">Contact</a> | <a href="http://www.seattleglobalist.com/donate">Get Involved</a> </p> 
+      <p>P.O. Box 22806, Seattle WA 98122</p> 
+     </div>
+     <div class="col last"> 
+      <p>Web design and development by <a href="http://www.franlopez.info" rel="designer">Fran López</a>.</p> 
+      <p>© Copyright 2017 The Seattle Globalist.</p> 
+      <p>+1.206.685.7177 | <a href="mailto:info@seattleglobalist.com">info@seattleglobalist.com</a></p> 
+     </div> 
+    </div> 
+   </footer>
+   <!-- #colophon --> 
+  </div>
+  <!-- #page --> 
+  <div id="wbounce-modal" class="wbounce-modal underlay" style="display:none"> 
+   <div id="wbounce-modal-flex" class="wbounce-modal-flex"> 
+    <div id="wbounce-modal-sub" class="wbounce-modal-sub"> 
+     <div class="g g-8">
+      <div class="g-single a-138">
+       <!-- Begin MailChimp Signup Form --> 
+       <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css"> 
+       <style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style> 
+       <div id="mc_embed_signup"> 
+        <form action="//seattleglobalist.us11.list-manage.com/subscribe/post?u=3c396aa97391063a0a1989a20&amp;id=bb71036af2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> 
+         <div id="mc_embed_signup_scroll"> 
+          <div class="widget block-title block-title span widget_text"> 
+           <h2>Get the Globalist delivered!</h2> 
+          </div> 
+          <div class="mc-field-group"> 
+           <label for="mce-EMAIL">Email Address </label> 
+           <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"> 
+          </div> 
+          <div class="mc-field-group input-group"> 
+           <strong>Globalist updates </strong> 
+           <ul>
+            <li><input type="checkbox" value="1" name="group[4073][1]" id="mce-group[4073]-4073-0"><label for="mce-group[4073]-4073-0">This Week on the Globalist</label></li> 
+            <li><input type="checkbox" value="2" name="group[4073][2]" id="mce-group[4073]-4073-1"><label for="mce-group[4073]-4073-1">Events &amp; Workshops</label></li> 
+            <li><input type="checkbox" value="4" name="group[4073][4]" id="mce-group[4073]-4073-2"><label for="mce-group[4073]-4073-2">Globalist Youth</label></li> 
+           </ul> 
+          </div> 
+          <p>Powered by <a class="gofollow" data-track="MTM4LDgsMSwxMA==" href="http://eepurl.com/bqSLCn" title="MailChimp - email marketing made easy and fun">MailChimp</a></p> 
+          <div id="mce-responses" class="clear"> 
+           <div class="response" id="mce-error-response" style="display:none"></div> 
+           <div class="response" id="mce-success-response" style="display:none"></div> 
+          </div> 
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> 
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+           <input type="text" name="b_3c396aa97391063a0a1989a20_bb71036af2" tabindex="-1" value="">
+          </div> 
+          <div class="clear">
+           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+       <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+       <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[4]='LGL_SAL';ftypes[4]='text';fnames[5]='LGL_ID';ftypes[5]='text';fnames[6]='LG14090';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script> 
+       <!--End mc_embed_signup-->
+      </div>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="wbounce-config" style="display: none;">
+   {"cookieName":"wBounce","isAggressive":false,"isSitewide":true,"hesitation":"","openAnimation":false,"exitAnimation":false,"timer":"","sensitivity":"","cookieExpire":"3","cookieDomain":"","autoFire":"","isAnalyticsEnabled":true}
+  </div> 
+  <script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script> 
+  <script type="text/javascript"> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script>
+  <script type="text/javascript">
+/* <![CDATA[ */
+var click_object = {"ajax_url":"http:\/\/www.seattleglobalist.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/plugins/adrotate-pro/library/jquery.adrotate.clicktracker.js"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/plugins/simple-share-buttons-adder/js/ssba.min.js?ver=4.8.1"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/plugins/wbounce/frontend/js/min/wbounce.min.js?ver=1.7"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/themes/globsixteen/js/general.js?ver=20151215"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-includes/js/comment-reply.min.js?ver=4.8.1"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-includes/js/wp-embed.min.js?ver=4.8.1"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.js?ver=1.6"></script> 
+  <script type="text/javascript" src="http://www.seattleglobalist.com/wp-content/plugins/easy-fancybox/js/jquery.mousewheel.min.js?ver=3.1.13"></script> 
+  <!-- AdRotate JS --> 
+  <script type="text/javascript">
+jQuery(document).ready(function(){if(jQuery.fn.gslider) {
+}});
+</script> 
+  <!-- /AdRotate JS --> 
+  <script type="text/javascript">
+jQuery(document).on('ready post-load', function(){ jQuery('.nofancybox,a.pin-it-button,a[href*="pinterest.com/pin/create/button"]').addClass('nolightbox'); });
+jQuery(document).on('ready post-load',easy_fancybox_handler);
+jQuery(document).on('ready',easy_fancybox_auto);</script> 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27425466-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0670b0075d","applicationID":"17730363","transactionName":"ZFcGYkQCWkJTAhEPWl0dJVVCCltfHRIMCFJfVw==","queueTime":0,"applicationTime":621,"atts":"SBAFFAwYSUw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

@@ -1,0 +1,516 @@
+<!doctype html>
+<!--[if lt IE 7]>     <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>        <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>        <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>        <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+ <!--<![endif]-->
+ <head profile="http://www.w3.org/1999/xhtml/vocab"> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="shortcut icon" href="https://college.harvard.edu/sites/all/themes/harvard/css/images/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="description" content="Considering a Gap YearHarvard College encourages admitted students to defer enrollment for one year to travel, pursue a special project or activity, work, or spend time in another meaningful way—provided they do not enroll in a degree-granting program at another college. Deferrals for two-year obligatory military service are also granted. Each year, between 80 and 110 students defer their matriculation to the College.For more thoughts on the advantages of taking time off before college, read the article below, &quot;Time Out or Burn Out for the Next Generation.&quot;"> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://college.harvard.edu/admissions/preparing-college/should-i-take-time"> 
+  <link rel="shortlink" href="https://college.harvard.edu/node/306"> 
+  <meta name="google-site-verification" content="y67J8Jo7YiMeew7p4lMBYchKQx8mzhts7HFDhSkhs24"> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=156643444746123&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <title>Should I Take Time Off? | Harvard College</title> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_DnvLRZdhU1iBaJ_Zf_WwGCIDJmDG62GCal7Vnrj9Ckg.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css__-Lr2jLWUZIOa1OVgEyDDzrmuMOYbm9kIK8OUPTCOEo.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_qpHURMTtcGa8w9tkG0TIBf6gPihw4BtY77D2XojDszg.css" media="print"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_RgpUXGXoFRWpl-qpsMgbHgDZnSyDtShtNU0jvscD0AU.css" media="all"> 
+  <!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_5vwjkRw45NusIP78-M83achliNJznka1sNkxAz8Zvr0.css" media="all" />
+<![endif]--> 
+  <!--[if lt IE 8]>
+<link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_Hj9fXY775g2eA7RUp7hysigbxUIt5lX4nXdeRHMLbrY.css" media="all" />
+<![endif]--> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_WkOMkSyjg9rxsesVK2mUAVX_dhZTWbIE6jpIzuL-ygM.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_CDGBrxcsUei5uGpIel7O_d4I9Vwm1GeWQO_r0AtTrBE.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_OQVOpqwhXG6cQgHJwECWamuLVUdG6gZc8_4SCj5kzNU.js"></script> 
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-42906607-5", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_r9p12DhdkpD6Skcv5P884Yym85k42EITbZQyqMIN81c.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_GlTwym0fQnw9fk0TgVbamTBG7RbjARtKVlnsICoJRWY.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_wsddnd40CcZNElnyzYtHzN70I34CUiw1SCs0IWoeFm4.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"harvard","theme_token":"bDeHqbUVhtRfY1ExI-FOWwIvbOASf8icvuNBZJwFkOc","js":{"sites\/all\/modules\/contrib\/addthis\/addthis.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/custom\/harvard_icons\/harvard_icons.js":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"misc\/form.js":1,"misc\/collapse.js":1,"\/\/platform.twitter.com\/widgets.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/contrib\/google_analytics_et\/js\/google_analytics_et.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/chart.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/detect.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/matchMedia.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/matchMedia.addListener.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/enquire.min.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.chosen.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.datepicker.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.equalheights.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.masonry.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.royalslider.min.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.select.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.waypoints.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.sticky.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/modernizr.js":1,"sites\/all\/themes\/harvard\/js\/dist\/all.js":1,"sites\/all\/themes\/harvard\/js\/script.js":1,"public:\/\/facebook_tracking_pixel\/fb_tkpx.156643444746123.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/field_collection_ajax\/css\/field-collection-ajax.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr_cc_icons_on_hover.css":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/typogrify\/typogrify.css":1,"sites\/all\/themes\/harvard\/layouts\/harvard_template_x\/harvard_template_x.css":1,"sites\/all\/modules\/contrib\/twitter\/twitter.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/twocol\/twocol.css":1,"sites\/all\/themes\/harvard\/css\/print.css":1,"sites\/all\/themes\/harvard\/css\/patchwork.css":1,"sites\/all\/themes\/harvard\/css\/screen.css":1,"sites\/all\/themes\/harvard\/css\/harvard.main.css":1,"sites\/all\/themes\/harvard\/css\/ie.css":1,"sites\/all\/themes\/harvard\/css\/ie--lt8.css":1}},"better_exposed_filters":{"views":{"harvard_recent_tweet":{"displays":{"block":{"filters":[]}}}}},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extIconPlacement":0,"extSubdomains":0,"extExclude":"(www\\.youvisit\\.com)","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"googleAnalyticsETSettings":{"selectors":[{"event":"click","selector":".pane-fpid-606 form[action*=\u0022net-price-calculator\u0022] button[type=\u0022submit\u0022]","category":"NPC","action":"click","label":"module_large","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-636 a[href*=\u0022net-price\u0022]","category":"NPC","action":"click","label":"module_small","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-251 a[href*=\u0022application-tips\u0022]","category":"module","action":"click","label":"tips","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-246 a[href*=\u0022what-we-look\u0022]","category":"module","action":"click_look","label":"apply","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-246 a[href*=\u0022application-timeline\u0022]","category":"module","action":"click_when","label":"apply","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-246 a[href*=\u0022application-requirements\u0022]","category":"module","action":"click_submit","label":"apply","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-866 a[href*=\u0022admissions\/apply\u0022]","category":"module","action":"click_apply","label":"belong","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-866 a[href*=\u0022coming-home\u0022]","category":"module","action":"click_watchvideo","label":"belong","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-866 a[href*=\u0022hear-students\/video\u0022]","category":"module","action":"click_allvideos","label":"belong","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-71 a","category":"module","action":"click","label":"aid","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .content .page-content .container .carousel .carousel-viewport a","category":"carousel","action":"click","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .content .page-content .container .carousel .carousel-viewport a+a","category":"carousel","action":"click","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022https:\/\/itunes.apple.com\/us\/app\/\u0022]","category":"Appdownload","action":"offsiteclick","label":"iTunes","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022https:\/\/play.google.com\/store\/apps\/\u0022]","category":"Appdownload","action":"offsiteclick","label":"Googleplay","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href$=\u0022.pdf\u0022]","category":"download","action":"pdf","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href$=\u0022.doc\u0022]","category":"download","action":"doc","label":"!href","value":0,"noninteraction":false},{"event":"change","selector":"select[name=\u0022submitted[faq_topic]\u0022]","category":"Contactus","action":"submit","label":"!text","value":0,"noninteraction":false},{"event":"change","selector":"select[name=\u0022submitted[email_form][subject]\u0022]","category":"Contactus","action":"selectsubject","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"#webform-client-form-846--2 input#edit-submit--2","category":"Contactus","action":"submit","label":"topic_subject","value":0,"noninteraction":false},{"event":"mousedown","selector":"form#webform-client-form-846--2.webform-client-form div fieldset#webform-component-email-form.webform-component-fieldset div.fieldset-wrapper div#webform-component-email-form--subject.form-item div#s2id_edit-submitted-email-form-subject--2.select2-container","category":"Contactus","action":"selectsubject","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022http\u0022]:not(a[href*=\u0022college.harvard.edu\u0022])","category":"offsitelink","action":"offsiteclick","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href*=\u0022user\/login\u0022]","category":"Login","action":"click","label":"!currentPage","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href*=\u0022\/about\/news-announcements\/\u0022]","category":"News","action":"click","label":"!currentPage","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href*=\u0022\/college-events\/\u0022]","category":"Events","action":"click","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-menu-menu-primary-menu li a","category":"nav_main","action":"click","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-harvard-site-harvard-audience-links ul li a","category":"nav_audience","action":"click","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"ul.first-level.in li.last.expanded.active-trail.menu-level-2 ul.second-level li.leaf.menu-level-3","category":"Reply","action":"action","label":"label","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022http:\/\/news.harvard.edu\/gazette\u0022]","category":"Gazette","action":"offsiteclick","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-176 form[action*=\u0022net-price-calculator\u0022] button[type=\u0022submit\u0022]","category":"NPC","action":"click","label":"module_FAO","value":0,"noninteraction":false}],"settings":[]}});
+//--><!]]>
+</script> 
+  <!-- BEGIN inc/meta.php --> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content=""> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- END inc/meta.php --> 
+  <!-- BEGIN inc/cssReference.php (conditional js only) --> 
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/sites/all/themes/harvard/js/plugins/html5shiv.js"></script>
+  <script type="text/javascript" src="/sites/all/themes/harvard/js/plugins/ie8.js"></script>
+  <![endif]--> 
+  <!-- END inc/cssReference.php --> 
+  <script src="https://use.typekit.net/eqx7xwa.js"></script> 
+  <script>try{Typekit.load(
+{ async: true }
+);}catch(e){}</script> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-306 node-type-page "> 
+  <!-- BEGIN inc/skip.php --> 
+  <a class="anchor-link element-invisible element-focusable" href="#main-top">Skip to main content</a> 
+  <!-- END inc/skip.php --> 
+  <!-- BEGIN inc/page-header.php --> 
+  <header class="page-header" role="banner"> 
+   <div class="high-level"> 
+    <div class="wrap"> 
+     <strong class="title"><a href="http://www.harvard.edu" class="logo ir">Harvard University</a></strong> 
+     <span class="url in"><a href="http://www.harvard.edu">harvard.edu</a></span> 
+    </div> 
+   </div> 
+   <div class="top-level"> 
+    <div class="sticky-background"></div> 
+    <div class="wrap"> 
+     <div class="title bk3-1of3"> 
+      <div class="in"> 
+       <strong><a href="/" class="logo ir logo-child">Harvard College Admissions &amp; Financial Aid</a></strong> 
+      </div> 
+     </div> 
+     <div class="header-toolbar right-align in bk4-2of3"> 
+      <ul class="header-toolbar-triggers row"> 
+       <li><a href="#search" data-target="search-global" class="search"><span class="icon-search"></span><span class="nodisplay">Search</span></a></li> 
+       <li><a href="#global-menu" data-target="nav" class="menu"><span class="icon-menu"></span><span class="nodisplay">Menu</span></a></li> 
+      </ul> 
+      <div class="header-toolbar-window"> 
+       <div class="in"> 
+        <div class="region region-utility-links"> 
+         <nav id="block-menu-menu-utility-links" class="block block-menu" aria-labelledby="menu-utility-links" role="navigation"> 
+          <h2 class="element-invisible" id="menu-utility-links">Utility Links</h2> 
+          <div class="content"> 
+           <ul class="utility-links utility-links--primary">
+            <li class="first leaf menu-level-1"><a href="http://my.harvard.edu" title="">my.harvard</a></li> 
+            <li class="leaf menu-level-1"><a href="/frequently-asked-questions" title="">FAQs</a></li> 
+            <li class="leaf menu-level-1"><a href="https://www.directory.harvard.edu/phonebook/" title="">Directory</a></li> 
+            <li class="last leaf menu-level-1"><a href="/college-events" title="">College Events</a></li> 
+           </ul>
+           <ul class="utility-links utility-links--secondary">
+            <li class="utility-links__link--admitted-students"><a href="/admitted-students-login">Admitted Students</a></li>
+           </ul> 
+          </div> 
+         </nav> 
+        </div> 
+        <div class="search-wrapper"> 
+         <form action="/search-results" method="get" id="search" class="search search-global"> 
+          <div class="search-wrap"> 
+           <label for="searchtext">Search:</label> 
+           <div class="form-input-search"> 
+            <input type="text" id="searchtext" name="searchtext"> 
+           </div> 
+           <div class="form-input-submit"> 
+            <button type="submit" class="icon-search"><span class="element-invisible">Submit search</span></button> 
+           </div> 
+          </div> 
+         </form> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <nav id="global-menu" class="global-nav nav" role="navigation" aria-labelledby="menu-primary-menu"> 
+    <div class="wrap"> 
+     <div class="in"> 
+      <div class="region region-header"> 
+       <div id="block-menu-menu-primary-menu" class="block block-menu" aria-labelledby="menu-primary-menu"> 
+        <h2 class="element-invisible" id="menu-primary-menu">Main menu</h2> 
+        <div class="content"> 
+         <ul class="menu">
+          <li class="first leaf"><a href="/about" title="">About</a></li> 
+          <li class="leaf"><a href="/admissions" title="" class="active">Admissions</a></li> 
+          <li class="leaf"><a href="/financial-aid" title="">Financial Aid</a></li> 
+          <li class="leaf"><a href="/academics" title="">Academics</a></li> 
+          <li class="last leaf"><a href="/student-residentiallife" title="">Student &amp; Residential Life</a></li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <!-- END inc/page-header.php --> 
+  <div> 
+   <div id="page-wrapper">
+    <div id="page"> 
+     <div id="main-wrapper">
+      <div id="main" class="clearfix" role="main" tabindex="-1">
+       <a name="main-top" id="main-top"><span class="element-invisible">Main content</span></a> 
+       <div id="content" class="column">
+        <div class="section"> 
+         <a id="main-content"><span class="element-invisible">Main content</span></a> 
+         <div class="region region-content"> 
+          <div id="block-system-main" class="block block-system"> 
+           <div class="content"> 
+            <div> 
+             <div class="page-title"> 
+              <div class="wrap"> 
+               <div> 
+                <div class="panel-pane pane-page-breadcrumb"> 
+                 <div class="pane-content"> 
+                  <nav class="breadcrumbs in" aria-label="Breadcrumbs"> 
+                   <ul> 
+                    <li><a href="/">Home</a></li> 
+                    <li><a href="/admissions">Admissions</a></li> 
+                    <li><a href="/admissions/preparing-college" class="active-trail">Preparing for College</a></li> 
+                   </ul> 
+                  </nav> 
+                 </div> 
+                </div> 
+                <div class="panel-separator"></div>
+                <div class="panel-pane pane-node-title"> 
+                 <div class="pane-content"> 
+                  <h1 class="title in">Should I Take Time Off?</h1> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="page-content clearfix" data-thmr="thmr_3"> 
+              <div class="container"> 
+               <div class="wrap"> 
+                <nav class="secondary-nav toggle-container bk4-1of4" aria-labelledby="aria-section-menu"> 
+                 <h2 class="element-invisible" id="aria-section-menu">Section Menu</h2> 
+                 <a href="#" class="toggle-trigger eta in">Section Menu</a> 
+                 <div class="toggle-target"> 
+                  <div class="panel-pane pane-block pane-harvard-menu-harvard-menu"> 
+                   <div class="pane-content"> 
+                    <ul class="first-level in">
+                     <li class="first collapsed menu-level-2"><a href="/admissions/choosing-harvard">Choosing Harvard</a></li> 
+                     <li class="collapsed menu-level-2"><a href="/admissions/hear-our-students">Hear from Our Students</a></li> 
+                     <li class="collapsed menu-level-2"><a href="/admissions/visit">Visit</a></li> 
+                     <li class="collapsed menu-level-2"><a href="/admissions/apply">Apply</a></li> 
+                     <li class="collapsed menu-level-2"><a href="/admissions/application-requirements">Application Requirements</a></li> 
+                     <li class="expanded active-trail menu-level-2"><a href="/admissions/preparing-college" class="active-trail">Preparing for College</a>
+                      <ul class="second-level">
+                       <li class="first leaf menu-level-3"><a href="/admissions/preparing-college/choosing-courses">Choosing Courses</a></li> 
+                       <li class="last leaf active-trail menu-level-3"><a href="/admissions/preparing-college/should-i-take-time" class="active-trail active">Should I Take Time Off?</a></li> 
+                      </ul></li> 
+                     <li class="last leaf menu-level-2"><a href="/admissions/admissions-statistics">Admissions Statistics</a></li> 
+                    </ul> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </nav> 
+                <div class="bk4-3of4"> 
+                 <div class="page-content-primary bk3-2of3"> 
+                  <div class="panel-pane pane-entity-field pane-node-body"> 
+                   <div class="pane-content"> 
+                    <div class="page-content-block"> 
+                     <div class="field field-name-body field-type-text-with-summary field-label-hidden"> 
+                      <div class="field-items"> 
+                       <div class="field-item even" property="content:encoded">
+                        <h2 class="beta">Considering a Gap&nbsp;Year</h2> 
+                        <p>Harvard College encourages admitted students to defer enrollment for one year to travel, pursue a special project or activity, work, or spend time in another meaningful way—provided they do not enroll in a degree-granting program at another college. Deferrals for two-year obligatory military service are also granted. Each year, between 80 and 110 students defer their matriculation to the&nbsp;College.</p> 
+                        <p>For more thoughts on the advantages of taking time off before college, read the article below, “Time Out or Burn Out for the Next&nbsp;Generation.”</p> 
+                        <h3 class="gamma">Time Out or Burn Out for the Next&nbsp;Generation</h3> 
+                        <p>William Fitzsimmons<br><em>Dean of Admissions and Financial Aid, Harvard&nbsp;College</em></p> 
+                        <p>Marlyn E. McGrath<br><em>Director of Admissions, Harvard&nbsp;College</em></p> 
+                        <p>Charles Ducey<br><em>Adjunct Lecturer in Psychology, Harvard Graduate School of&nbsp;Education</em></p> 
+                        <p>College admissions officers, especially those who admitted the parents of today’s applicants, have an unusual vantage point from which to observe changes from one generation to the next. Many of us are concerned that the pressures on today’s students seem far more intense than those placed on previous generations. College admission—the chance to position oneself for “success” through the acquisition of the “right” college degree—looms large for increasing numbers of students. Particularly because selective colleges are perceived to be part of the problem, we want to do everything possible to help the students we enroll make the most of their opportunities, avoiding the much-reported “burnout” phenomenon that can keep them from reaching their full&nbsp;potential.</p> 
+                        <p>Of course, the quest for college admission is only one aspect of a much larger syndrome driving many students today. Stories about the latest twenty-something multimillionaires, the astronomical salaries for athletes and pop-music stars, and the often staggering compensation packages for <span class="caps">CEO</span>s only stimulate the frenzied search for the brass ring. More than ever, students (and their parents) seek to emulate those who win the “top prizes” and the accompanying disproportionate&nbsp;rewards.</p> 
+                        <p><b>From the cradle on…</b><br>The chase for the prize begins early, and some reports sound hyperbolic. Anecdotes abound of infants serenaded with classical music to enhance their mental powers; toddlers overwhelmed with computers and “educational” toys; “experts” guilt-tripping parents by telling them that their children will be hopelessly behind by age three or four if they don’t follow myriad prescribed&nbsp;strategies.</p> 
+                        <p>Consultants are paid thousands of dollars to prepare toddlers for the “all- important” interview and observed play-time that will determine admission to the “right” pre-kindergarten, kindergarten, or primary school—thereby presumably ensuring admission to the right high school, college, graduate school, and so on. The consultant will teach the child to maintain eye contact in the interview and to demonstrate both leadership and sharing during the observed play sequence. The competition for admission to some of the pre-k, kindergarten, and grammar schools can be intense—statistically more difficult (with lower admission rates) than&nbsp;Harvard.</p> 
+                        <p>Once in the “right” school, students are pushed along by teachers, by outside tutors and, if they stumble, by learning specialists who will help them approach their studies in the most efficient manner. The school day continues well into the night with structured study time and drills. The pressure can be relentless, even from well-intentioned parents. For the most part, they simply want the best for their children who, they fear, will be left by the wayside by other high&nbsp;achievers.</p> 
+                        <p>Sports, music, dance, and other recreational activities used to provide a welcome break, a time to relax and unwind. No more: training for college scholarships—or professional contracts—begins early, even in grammar school. Professional instruction, summer camps, and weekly practice and game schedules consume many hours and nearly all free time. Student and family commuting logistics become byzantine in their complexity. Even “play-time” is often structured and enriched with just the right mix of appropriate playmates and educational activities. Summer vacations have become a thing of the past. The pace of the day and the year allows little time simply “to be a kid”—or, it seems, to develop into a complete human&nbsp;being.</p> 
+                        <p><b>The middle school/high school fast track</b><br>By high school, the pressure intensifies. Students start to specialize in one activity even to the exclusion of other pursuits. Athletes, dancers, musicians and others begin to define themselves by their chosen activity as they try to perfect their new-found talents and&nbsp;identities.</p> 
+                        <p>The American Academy of Pediatrics has warned of possible physical and psychological damage that can result from specializing in a sport prematurely. For every success story, there are countless other less happy results. Some students participate in programs that take up as much time as school. Fast-track athletic teams compete or practice most days—with weekend-consuming road games, and national or international schedules during summers and vacations. A serious athlete or musician or dancer may change schools for a better athletic program, even moving far away from home to do so, and perhaps to an academically weaker&nbsp;school.</p> 
+                        <p>Academic demands also ratchet up, supported by special tutors and the beginnings of <span class="caps">SAT</span> prep in middle school. In high school, <span class="caps">SAT</span> prep becomes a way of life for some students, with night and weekend sessions. The “right” <span class="caps">SAT</span> tutors may command several hundred dollars per hour, and can be engaged to live during the summer at or near their tutees’ beach houses. Summer “cram schools” for the <span class="caps">SAT</span>s are increasingly common, as are summer school sessions at the best prep schools and universities, some beginning in middle&nbsp;school.</p> 
+                        <p><b>The quest for the right college</b><br>Professional college counselors (either independent or school-based) appear on the scene early, sometimes in middle school, to begin to structure students’ academic and extracurricular profiles for entrance to the “right” college. At its best, such advice can be helpful in assessing talents, goals, and making “mid-course corrections” that can make a real difference in students’ lives. From a more cynical perspective, such advice steers students toward travel abroad, community service, or other activities solely to enhance college application essays or interviews. Such services may command thousands of dollars, and assistance in preparing applications ranges from appropriate to plagiaristic. Videotaped mock college interviews are features of some packages, as are guided tours of colleges. An array of services start in ninth grade (“or seventh or eighth grade for no extra charge”) for fees of in the thousands of dollars. More specific services include Essay Review, which offers “brainstorming session and as many revisions as necessary.” Such services can add to, rather than alleviate, the stress of the normal expectations of school, community, and family life. Their “products,” such as overly-slick essays, can even hurt a student’s admissions chances as they can sometimes be easy to spot in the admissions&nbsp;process.</p> 
+                        <p>The pressure of gaining entrance to the most selective colleges is commonly blamed for much of the stress we observe. But those of us who work in college admissions recognize that college is only one of many destinations in the fast lane. The accumulation of “credentials” simply continues to intensify as the stakes increase. The “right” graduate school looms after college, and the “right” sequence of jobs is next. Such attainments make it possible to live in the “right” kinds of communities and to begin the job of bringing up the following generation, one that might need to vault even higher&nbsp;hurdles.</p> 
+                        <p><b>The fallout</b><br>Faced with the fast pace of growing up today, some students are clearly distressed, engaging in binge drinking and other self-destructive behaviors. Counseling services of secondary schools and colleges have expanded in response to greatly increased demand. It is common to encounter even the most successful students, who have won all the “prizes,” stepping back and wondering if it was all worth it. Professionals in their thirties and forties - physicians, lawyers, academics, business people and others - sometimes give the impression that they are dazed survivors of some bewildering life-long boot-camp. Some say they ended up in their profession because of someone else’s expectations, or that they simply drifted into it without pausing to think whether they really loved their work. Often they say they missed their youth entirely, never living in the present, always pursuing some ill-defined future&nbsp;goal.</p> 
+                        <p><b>Some early remedies</b><br>What can be done&nbsp;to help? Fortunately this young fast-track generation itself offers ideas that can reduce stress and prevent burnout. In college application essays and interviews, in conversations and counseling sessions with current college students, and in discussions with alumni/ae, many current students perceive the value of taking time out. Such a “time out” can take many forms. It can be very brief or last for a year or more. It can be structured or unstructured, and directed toward career, academic or purely personal pursuits. Most fundamentally, it is a time to step back and reflect, to gain perspective on personal values and goals, or to gain needed life experience in a setting separate from and independent of one’s accustomed pressures and&nbsp;expectations.</p> 
+                        <p>For the years during high school, here is some of the advice students have&nbsp;offered:</p> 
+                        <p>Families should allow for “down-time” during vacations, weekends, and during the week at mealtimes or at any other break in the action. The fabric of family life is already under assault from the demands of parents’ increasingly stressful jobs. Parents, some of whom experienced the first wave of fast-lane childhoods themselves, are often distressed by how little uninterrupted free time they have to devote to their children.<br>Bring summer back. Summer need not be totally consumed by highly structured programs, such as summer schools, travel programs, or athletic camps. While such activities can be wonderful in many ways, they can also add to stress by assembling “super peers” who set nearly impossible standards. Activities in which one can develop at one’s own pace can be much more pleasant and helpful. An old-fashioned summer job that provides a contrast to the school year or allows students to meet others of differing backgrounds, ages, and life experiences is often invaluable in providing psychological downtime and a window on future possibilities. Students need ample free time to reflect, to recreate (i.e. to “re-create” themselves without the driving pressure to achieve as an influence), and to gather strength for the school year ahead.<br>Choose a high school (or a college) not simply by “brand name” or reputation but because it is the best fit. A school with a slower pace or a different academic or extracurricular focus can be a better match for certain students in the long&nbsp;run.</p> 
+                        <p><b>Using the senior year</b><br>The senior year of high school presents some special challenges and opportunities. The <span class="caps">U.S.</span> Department of Education’s Commission on the High School Senior Year calls the senior year a “lost opportunity that we need to reclaim.” While some students try to get by with as little work as possible, others find it the most stressful year of their lives, with more demanding courses, more leadership responsibilities in their extracurricular activities, and the added burden of applying to college and taking the requisite college entrance&nbsp;tests.</p> 
+                        <p>There is often great tension about choosing and being admitted to the “right” college. Students and their families react to this particular stress in a number of ways, and many want the college admissions process over with as soon as&nbsp;possible.</p> 
+                        <p>While early admission programs may be right for some students, many observers have begun to ask whether too many students are applying early. They wonder if students are taking enough time and care to select colleges that best match their academic interests, career goals, and personal aspirations. Some have even used the word “hysteria” to describe some students who, perhaps influenced by peer pressure, want to apply early “somewhere”—without considering which colleges might be best for them. Some students have concluded that it is a virtual necessity to apply early, whatever the circumstances, for fear of being left&nbsp;behind.</p> 
+                        <p>We concur with these observers that early admissions programs have not always served students well. In addition, they are not equally available to all students given the great disparities in guidance counseling and other resources in the United States and elsewhere. We eliminated our early admission program in recent years in part to encourage our students to use their secondary school years in the most effective manner possible. By focusing on the opportunities available in secondary school rather than on applying “early” to college, students will also benefit by avoiding the worst aspects of the college application frenzy that students often find so stressful. While we have restored early admission to meet the rising demand for this option—and have instituted changes to encourage students from modest economic backgrounds to apply early—we hope all students will use early admission in a thoughtful manner and only when it is appropriate for their individual&nbsp;needs.</p> 
+                        <p>Some high schools help their seniors in the transition from high school to college by allowing a slightly reduced course load, along with alternatives such as community service, research projects, and internships that might help with career&nbsp;exploration.</p> 
+                        <p>Colleges can help themselves as well as their prospective students by declaring (and demonstrating) that they are not judged simply by the number of <span class="caps">AP</span> or other advanced credits amassed at the end of senior year. For example, those students with particular strengths in the humanities and social sciences often believe colleges expect them to take calculus when they might be much better served by another algebra course or statistics—or another language—instead. No matter which path they take, students who can find ways to reduce stress and use the senior year well arrive at college much better prepared to take full advantage of their first year of&nbsp;college.</p> 
+                        <p><b>Taking time off before or during college</b><br>Perhaps the best way of all to get the full benefit of a “time-off” is to postpone entrance to college for a year. For more than four decades, Harvard has recommended this option, indeed proposing it in the letter of admission. Now more than one hundred students defer college until the next&nbsp;year.</p> 
+                        <p>The results have been uniformly positive. Harvard’s daily student newspaper, The Crimson, reported (5/19/2000) that students who had taken a year off found the experience “so valuable that they would advise all Harvard students to consider it.” Harvard’s overall graduation rate of 97&nbsp;percent is among the highest in the nation, perhaps in part because so many students take time off. One student, noting that the majority of her friends will simply spend eight consecutive terms at Harvard, “wondered if they ever get the chance to catch their&nbsp;breath.”</p> 
+                        <p>During her year off, the student quoted above toured South America with an ice-skating company and later took a trip to Russia. Another interviewed in the article worked with a growing e-commerce company (in which the staff grew from 10 to 100 during the year) and backpacked around Europe for six&nbsp;months.</p> 
+                        <p><b>Some options for the interim year</b><br>Members of one recent class participated in the following activities, and more, in the interim year: drama, figure skating, health-care, archeological exploration, kibbutz life, language study, mineralogical research, missionary work, music, non-profit groups, child welfare programs, political campaigns, rebuilding schools, special needs volunteering, sports, steel drumming, storytelling, swing dance, university courses, and writing—to name some chosen at random. They took their interim year in the following locales: Belize, Brazil, China, Costa Rica, Denmark, Ecuador, France, Germany, Guatemala, Honduras, India, Ireland, Israel, Italy, Mongolia, Nepal, Philippines, Scandinavia, Scotland, Spain, Switzerland, Taiwan, Thailand, Uruguay, United States and&nbsp;Zimbabwe.</p> 
+                        <p>Many students divide their year into several segments of work, travel, or study. Not all can afford to travel or to take part in exotic activities. A number have served in the military or other national or international service programs. Some remain at home, working, taking part-time courses, interning, and still finding the time to read books they have never had time to fit into their schedules or begin to write the “great American novel.” Others have been able to forge closer ties with parents or grandparents from whom they may have drifted away during the hectic pace of the high-school&nbsp;years.</p> 
+                        <p><b>Reactions to the year off</b><br>Students taking a year off prior to Harvard are doing what students from the <span class="caps">U.K.</span> do with their so-called “gap year.” Other countries have mandatory military service for varying periods of time. Regardless of why they took the year off or what they did, students are effusive in their praise. Many speak of their year away as a “life-altering” experience or a “turning point,” and most feel that its full value can never be measured and will pay dividends the rest of their lives. Many come to college with new visions of their academic plans, their extracurricular pursuits, the intangibles they hoped to gain in college, and the career possibilities they observed in their year away. Virtually all would do it&nbsp;again.</p> 
+                        <p>Nevertheless, taking time off can be a daunting prospect for students and their parents. Students often want to follow friends on safer and more familiar paths. Parents worry that their sons and daughters will be sidetracked from college, and may never enroll. Both fear that taking time off can cause students to “fall behind” or lose their study skills irrevocably. That fear is rarely justified. High school counselors, college administrators, and others who work with students taking time off can help with reassurance that the benefits far outweigh the&nbsp;risks.</p> 
+                        <p>Occasionally students are admitted to Harvard or other colleges in part because they accomplished something unusual during a year off. While no one should take a year off simply to gain admission to a particular college, time away almost never makes one a less desirable candidate or less well prepared for&nbsp;college.</p> 
+                        <p><b>Achieving balance</b><br>While the focus here has been on ways to relieve stress for today’s high-achieving generation, we should note that in fact most students are coping well with pressure, even thriving. This remarkable time offers opportunities that previous generations (and students in many other countries today) could not imagine. Colleges, for example, now reach out through their recruiting programs to talented students from every economic background. Financial aid makes college a reality for outstanding students on a scale that was not possible before. Graduation rates at leading American colleges and universities remain extremely high and students express satisfaction with their college&nbsp;experiences.</p> 
+                        <p>It is important to remember that access to higher education around the world is at present limited to a lucky few. Those fortunate enough to enjoy such a privilege have a responsibility to use their talents to provide expanded opportunities for future generations. Our young alumni and alumnae have been successful in meeting the formidable challenges they have faced since college. But they continue to remind us that the rigors of competing in the new world economy impose high standards on everyone. They do not (nor do we) tell today’s students to “slack off” and achieve less. Recent graduates advise today’s high school and college students to prepare themselves emotionally as well as&nbsp;academically.</p> 
+                        <p>It is worth noting that extraordinary achievements are never based on emulating someone else’s achievements, but on some unmeasurable combination of (a) marching to one’s own specific and unique drummer and (b) accidentally—perhaps unconsciously—doing something that captures the Zeitgeist in new and unexpected ways. Those whom parents often want their children to emulate either used their own ingenuity to give the public a product or image it desperately wanted, or happened to catch a hot wave of the time, or (ideally)&nbsp;both.</p> 
+                        <p>While their achievement stands as an ideal for which others strive, others cannot by definition duplicate that achievement because it is induplicable. So the problem can often be well-meaning but misguided parents who try to mold their children into an image of success they value; and their children, being moldable as they are, often get on board and go along with the program before they have any capacity to make such a choice for themselves. Yet the paradox is that the only road to real success is to become more fully oneself, to succeed in the field and on the terms that one defines for&nbsp;oneself.</p> 
+                        <p>So the pressures placed on many children probably have the unintended effect of delaying a child’s finding herself and succeeding on her own terms. We should all have the right to gape with awe at Yo-Yo Ma’s musical triumphs, while at the same time achieving our own more modest ones in our own fields and ways: finding hominid bones that shift our conception of paleontology, or composing smooth jazz melody, or tracing the rise and decline of Roman gentes. Parents and students alike profit from redefining success as fulfillment of the student’s own aims, even those yet to be discovered. Burnout is an inevitable result of trying to live up to alien goals. Time out can promote discovery of one’s own&nbsp;passions.</p> 
+                        <p>The fact remains that there is something very different about growing up today. Some students and families are suffering from the frenetic pace, while others are coping but enjoying their lives less than they would like. Even those who are doing extraordinarily well, the “happy warriors” of today’s ultra-competitive landscape, are in danger of emerging a bit less human as they try to keep up with what may be increasingly unrealistic&nbsp;expectations.</p> 
+                        <p>The good news is that students themselves offer helpful suggestions about how best to handle the challenges they face. In part because of all the obstacles that confront them from the earliest stages of their lives, this generation has emerged generally more mature, sophisticated, and, at their best, better prepared to cope with the demands of the twenty-first century. They learn at an early age how to cope with both victory and defeat and with the formidable demands placed on them by adults and peers. Yet many would benefit from a pause in their demanding lives. Let us hope that more of them will take some sort of time out before burnout becomes the hallmark of their&nbsp;generation.</p> 
+                        <p>2000 - Revised&nbsp;2017</p> 
+                        <p>&nbsp;</p> 
+                       </div> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="panel-separator"></div>
+                  <div class="panel-pane pane-node-links link-wrapper"> 
+                   <div class="pane-content"> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="page-content-secondary bk3-1of3"> 
+                  <div class="bk2-1of2 bk3-1of1">
+                   <div class="in">
+                    <div class="panel-pane pane-fieldable-panels-pane pane-fpid-266 pane-bundle-harvard-stats"> 
+                     <div class="pane-content"> 
+                      <article class="module"> 
+                       <h2 class="module-title zeta">Facts About Financial Aid</h2> 
+                       <div class="field-collection-container clearfix"> 
+                        <div class="row"> 
+                         <div class="chart bk1-1of2 bk4-break"> 
+                          <div class="in"> 
+                           <div class="dollar"> 
+                            <span class="percent">$</span>0 
+                           </div> 
+                          </div> 
+                         </div> 
+                         <div class="module-body iota bk1-1of2 bk4-break"> 
+                          <div class="field field-name-field-summary field-type-text-long field-label-hidden"> 
+                           <div class="field-items"> 
+                            <div class="field-item even">
+                             <p>Amount that parents making&nbsp;<strong>less than $65,000</strong> are expected to&nbsp;contribute.</p> 
+                            </div> 
+                           </div> 
+                          </div> 
+                         </div> 
+                        </div> 
+                        <div class="row"> 
+                         <div class="chart bk1-1of2 bk4-break"> 
+                          <div class="in"> 
+                           <canvas class="chart-donut" data-percent="90%"></canvas> 
+                           <noscript>
+                            90%
+                           </noscript> 
+                          </div> 
+                         </div> 
+                         <div class="module-body iota bk1-1of2 bk4-break"> 
+                          <div class="field field-name-field-summary field-type-text-long field-label-hidden"> 
+                           <div class="field-items"> 
+                            <div class="field-item even">
+                             <p><span style="color: rgb(108, 108, 108); font-family: Arial, Helvetica, sans-serif; line-height: 16px; ">Ninety percent of American families would&nbsp;</span><strong style="margin: 0px; padding: 0px; color: rgb(108, 108, 108); font-family: Arial, Helvetica, sans-serif; line-height: 16px; ">pay the same or less</strong><span style="color: rgb(108, 108, 108); font-family: Arial, Helvetica, sans-serif; line-height: 16px; ">&nbsp;to send their children to Harvard as they would a&nbsp;</span><strong style="margin: 0px; padding: 0px; color: rgb(108, 108, 108); font-family: Arial, Helvetica, sans-serif; line-height: 16px; ">state&nbsp;school.</strong></p> 
+                            </div> 
+                           </div> 
+                          </div> 
+                         </div> 
+                        </div> 
+                       </div> 
+                       <div class="field field-name-field-link field-type-link-field field-label-hidden"> 
+                        <div class="field-items"> 
+                         <div class="field-item even">
+                          <a href="https://college.harvard.edu/financial-aid/how-aid-works/fact-sheet" class="kappa icon-caret-right">See the facts</a>
+                         </div> 
+                        </div> 
+                       </div> 
+                      </article> 
+                     </div> 
+                    </div> 
+                    <div class="panel-separator"></div>
+                    <div class="panel-pane pane-fieldable-panels-pane pane-fpid-261 pane-bundle-harvard-box"> 
+                     <div class="pane-content"> 
+                      <article class="module"> 
+                       <h2 class="module-title zeta">VISIT HARVARD</h2> 
+                       <div class="field field-name-field-thumbnail field-type-image field-label-hidden"> 
+                        <div class="field-items"> 
+                         <div class="field-item even">
+                          <img typeof="foaf:Image" src="https://college.harvard.edu/sites/default/files/Harvard-Ext-379.jpg" alt="John Harvard Statue in front of University Hall">
+                         </div> 
+                        </div> 
+                       </div> 
+                       <div class="module-body theta"> 
+                        <div class="field field-name-field-summary field-type-text-long field-label-hidden"> 
+                         <div class="field-items"> 
+                          <div class="field-item even">
+                           <p>Stroll through Harvard Yard, ask Admissions staff all your questions, and feel the warmth of the Harvard community. <a href="https://college.harvard.edu/admissions/visit/tours-information-sessions">See tour dates and times</a>.</p> 
+                          </div> 
+                         </div> 
+                        </div> 
+                       </div> 
+                      </article> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="bk2-1of2 bk3-1of1">
+                   <div class="in">
+                    <div class="panel-pane pane-fieldable-panels-pane pane-fpid-251 pane-bundle-harvard-box"> 
+                     <div class="pane-content"> 
+                      <article class="module"> 
+                       <h2 class="module-title zeta">Admissions APPLICATION TIPS</h2> 
+                       <div class="module-body theta"> 
+                        <div class="field field-name-field-summary field-type-text-long field-label-hidden"> 
+                         <div class="field-items"> 
+                          <div class="field-item even">
+                           <p>Get <a href="https://college.harvard.edu/admissions/application-requirements/application-tips">step-by-step tips</a> for completing your&nbsp;application.</p> 
+                          </div> 
+                         </div> 
+                        </div> 
+                       </div> 
+                      </article> 
+                     </div> 
+                    </div> 
+                    <div class="panel-separator"></div>
+                    <div class="panel-pane pane-fieldable-panels-pane pane-fpid-246 pane-bundle-harvard-box"> 
+                     <div class="pane-content"> 
+                      <article class="module"> 
+                       <h2 class="module-title zeta">START YOUR APPLICATION FOR ADMISSION</h2> 
+                       <div class="module-body theta"> 
+                        <div class="field field-name-field-summary field-type-text-long field-label-hidden"> 
+                         <div class="field-items"> 
+                          <div class="field-item even">
+                           <ul>
+                            <li><a class="kappa" href="https://college.harvard.edu/admissions/application-process/what-we-look">What we look&nbsp;for</a></li> 
+                            <li><a class="kappa" href="https://college.harvard.edu/admissions/apply/application-timeline">When to&nbsp;apply</a></li> 
+                            <li><a class="kappa" href="https://college.harvard.edu/admissions/application-requirements">What you’ll need to&nbsp;submit</a></li> 
+                           </ul>
+                          </div> 
+                         </div> 
+                        </div> 
+                       </div> 
+                      </article> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="row in">
+                 <div class="hr"></div>
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="block-block-21" class="block block-block"> 
+           <div class="content"> 
+            <script type="text/javascript">
+      var addthis_config = {
+         data_ga_property: 'UA-42906607-5'
+      }; 
+</script> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+       </div> 
+       <!-- /.section, /#content --> 
+      </div>
+     </div> 
+     <!-- /#main, /#main-wrapper --> 
+    </div>
+   </div> 
+   <!-- /#page, /#page-wrapper --> 
+   <div class="region region-footer"> 
+    <div id="block-panels-mini-footer-main" class="block block-panels-mini"> 
+     <div class="content"> 
+      <div class="panel-display panel-2col clearfix" id="mini-panel-footer_main"> 
+       <div class="panel-panel panel-col-first"> 
+        <div class="inside">
+         <nav class="panel-pane pane-block pane-menu-menu-quick-links" aria-labelledby="menu-quick-links"> 
+          <h2 class="pane-title" id="menu-quick-links"> College Quick Links </h2> 
+          <div class="pane-content"> 
+           <ul class="quick-links row">
+            <li class="first leaf menu-level-1"><a href="https://apply.college.harvard.edu/status" title="">Applicant Login</a></li> 
+            <li class="leaf menu-level-1"><a href="/contact-us" title="">Contact Us</a></li> 
+            <li class="leaf menu-level-1"><a href="http://www.fas.harvard.edu/home/" title="">Faculty of Arts &amp; Sciences</a></li> 
+            <li class="leaf menu-level-1"><a href="http://www.harvard.edu" title="">Harvard.edu</a></li> 
+            <li class="leaf menu-level-1"><a href="http://map.harvard.edu/" title="">Maps &amp; Directions</a></li> 
+            <li class="last leaf menu-level-1"><a href="http://www.registrar.fas.harvard.edu/" title="">Registrar</a></li> 
+           </ul> 
+          </div> 
+         </nav> 
+        </div> 
+       </div> 
+       <div class="panel-panel panel-col-last"> 
+        <div class="inside">
+         <div class="panel-pane pane-harvard-icons"> 
+          <div class="pane-content"> 
+           <div class="harvard_icons">
+            <a href="http://twitter.com/applytoharvard" class="harvard-icons-twitter">twitter</a>
+            <a href="http://www.facebook.com/harvardadmissions" class="harvard-icons-facebook">facebook</a>
+            <a href="http://www.instagram.com/harvard_admissions" class="harvard-icons-instagram">instagram</a>
+            <a href="http://harvard.tumblr.com/" class="harvard-icons-tumblr">tumblr</a>
+            <a href="https://plus.google.com/b/110269133928001503487/110269133928001503487/posts" class="harvard-icons-googleplus">googleplus</a>
+            <a href="https://www.youtube.com/user/discoverharvard" class="harvard-icons-youtube">youtube</a>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <footer class="page-footer" role="contentinfo"> 
+    <div class="wrap"> 
+     <div class="in"> 
+      <p>Copyright © 2017 The President and Fellows of Harvard College | <a href="http://www.harvard.edu/privacy-statement">Privacy</a> | <a href="http://dmca.harvard.edu/pages/annual-copyright-disclosure">Copyright Disclosure</a> | <a href="http://accessibility.harvard.edu/">Accessibility</a></p> 
+     </div> 
+    </div> 
+   </footer> 
+   <nav id="people-menu" class="nav people-nav"> 
+    <h2 class="element-invisible">Audience</h2> 
+    <div class="wrap"> 
+     <p class="zeta in">For <i class="icon-caret-right"></i></p> 
+     <div class="region region-audience-links"> 
+      <div id="block-harvard-site-harvard-audience-links" class="block block-harvard-site" aria-labelledby="harvard_audience_links" role="navigation"> 
+       <h2 class="element-invisible" id="harvard_audience_links">Audience links</h2> 
+       <div class="content"> 
+        <ul class="row in">
+         <div class="split-left">
+          <li class="first leaf menu-level-1"><a href="/alumni" title="">Alumni</a></li> 
+          <li class="leaf menu-level-1"><a href="/current-students-0" title="">Current Students</a></li> 
+          <li class="leaf menu-level-1"><a href="/faculty" title="">Faculty</a></li> 
+         </div>
+         <div class="split-right">
+          <li class="leaf menu-level-1"><a href="/parents" title="">Parents &amp; Families</a></li> 
+          <li class="leaf menu-level-1"><a href="/prospective-students" title="">Prospective Students</a></li> 
+          <li class="leaf menu-level-1"><a href="/school-counselors" title="">School Counselors</a></li> 
+          <li class="last leaf menu-level-1"><a href="/informacion-en-espanol" title="">Información en Español</a></li> 
+         </div>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </div> 
+  <!-- /.page-content -->  
+  <div id="modal-container"> 
+   <div class="modal-window"> 
+    <a href="#" class="modal-close icon-remove"></a> 
+    <div class="modal-target"></div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_MLVgtzZ1ORq9krYqkeOsRay6ou_T-0QZytivuM9tTT8.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d5ee19a50a","applicationID":"56250227","transactionName":"YlwDMksDCEcAW0JeX1sWIAVNCwlaTkhXUFVqVAAIWAUDRj5WWVNVak8IA049FlUGXQ==","queueTime":0,"applicationTime":472,"atts":"ThsARAMZG0k=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

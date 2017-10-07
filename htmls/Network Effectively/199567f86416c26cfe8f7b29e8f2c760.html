@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAAEUVdaGwUAV1NQDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"38c569029c","agent":"","transactionName":"MwcHNksEChcAUhZcDgpNIxdXBhANDl9NVBEUTA0DVwEIARNCWFEOBxcIB1cRFw==","applicationID":"6032288","errorBeacon":"bam.nr-data.net","applicationTime":307}</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="//smallbusiness.chron.com/style.css" type="text/css">
+  <link rel="shortcut icon" href="//smallbusiness.chron.com/favicon.ico">
+  <link rel="icon" href="//smallbusiness.chron.com/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title href="//smallbusiness.chron.com/rss/root.xml">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script async src="//cdn.optimizely.com/js/7431252.js"></script>
+  <!-- Custom Dimension dataLayer -->
+  <script title="dataLayer" type="text/javascript">[{"pagetype": "Article","subpagetype": "About","studioid": "bbbf3fcd-c800-430e-b407-a2f3931fcb79","content_name": "Effective Communication Networking","publish_date": "2010-08-12 00:00:00","rating": "","author": "Leigh Richards","structure_rating": "","ancestor_category1": "Effective Communication","ancestor_category2": "Business Communications &amp; Etiquette","ancestor_category3": "Small Business","category": "Business","has_image" : "TRUE","keyword1":"effective communication networking","keyword1":"networking effectively","keyword1":"successful business networking"}]</script>
+  <script type="text/javascript">
+var dataLayer = JSON.parse ( document.querySelectorAll("script[title=dataLayer]")[0].innerHTML );
+
+    // Remove dataLayer keys that have no value for the given page
+    for (var key in dataLayer[0]) {
+        if (dataLayer[0].hasOwnProperty(key)) {
+            if (dataLayer[0][key] == "") {
+                delete dataLayer[0][key];
+            }
+        }
+    }
+
+</script>
+  <!-- End Custom Dimension dataLayer -->
+  <!-- Bing Webmaster Tool Auth -->
+  <meta name="msvalidate.01" content="129B5DE6FF8DD0ECBDD457C93FF101E3">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "http://smallbusiness.chron.com/effective-communication-networking-5091.html",
+  "url": "http://smallbusiness.chron.com/effective-communication-networking-5091.html",
+  "name":"Effective Communication Networking",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Website",
+          "@id": "http://smallbusiness.chron.com/effective-communication/",
+          "url": "http://smallbusiness.chron.com/effective-communication/",
+          "name": "Effective Communication"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Website",
+          "@id": "http://smallbusiness.chron.com/business-communications-etiquette/",
+          "url": "http://smallbusiness.chron.com/business-communications-etiquette/",
+          "name": "Business Communications &amp; Etiquette"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Website",
+          "@id": "http://smallbusiness.chron.com/",
+          "url": "http://smallbusiness.chron.com/",
+          "name": "Small Business"
+        }
+      }
+    ]
+  },
+  "inLanguage":"en-US",
+  "mainEntity":{
+    "@type":"Article",
+    "@id": "http://smallbusiness.chron.com/effective-communication-networking-5091.html",
+    "url": "http://smallbusiness.chron.com/effective-communication-networking-5091.html",
+    "mainEntityOfPage": "true",
+    "datePublished":"2010-08-12 00:00:00",
+    "dateModified":"2016-10-26 17:31:04.230000",
+    "headline": "Effective Communication Networking",
+    "description":"Effective Communication Networking. Effective networking is a skill that successful businesspeople seem to come by naturally. However, if you ask them about their talent, they&#39;ll tell you that there is a method to their madness. Effective networkers have a goal, know their audience and are concerned more with the needs and interests of others than themselves. Networking has a history that extends from conversations over backyard fences to boardrooms and online social media sites.",
+    "keywords": "effective communication networking, networking effectively, successful business networking",
+    "Publisher": {
+      "@type": "Organization",
+      "name": "Chron.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "//smallbusiness.chron.com/images/channel-logo.png"}
+    },
+    "Author":{
+      "@type":"person",
+      "name":"Leigh Richards"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://photos.demandstudios.com/49/11/fotolia_3452638_XS.jpg",
+      "height": "283",
+      "width": "424"
+    }
+  }
+}
+</script>
+  <title>Effective Communication Networking | Chron.com</title>
+  <meta name="description" content="Effective networking is a skill that successful businesspeople seem to come by naturally. However, if you ask them about their talent, they'll tell you that there is a method to their madness. ...">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Effective networking is a skill that successful businesspeople seem to come by naturally. However, if you ask them about their talent, they'll tell you that there is a method to their madness. ...">
+  <meta property="og:title" content="Effective Communication Networking">
+  <meta property="og:image" content="http://photos.demandstudios.com/49/11/fotolia_3452638_XS.jpg">
+  <link rel="canonical" href="http://smallbusiness.chron.com/effective-communication-networking-5091.html">
+  <script src="//smallbusiness.chron.com/scripts/google_ad_request.js"></script>
+  <script src="http://aps.hearstnp.com/scripts/loadAds.js?ver=2.0"></script>
+  <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+ </head> 
+ <body id="article-template" class="smallbusiness article about"> 
+  <!-- body-top --> 
+  <!-- google tag manager --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZCHF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZCHF');</script> 
+  <!-- end google tag manager -->
+  <!-- end body-top -->
+  <header id="header" class="clearfix">
+   <style>
+.site-nav {
+    background: #000;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+.shadow-nav {
+    -moz-box-shadow: 0 3px 4px -2px #222;
+    -webkit-box-shadow: 0 3px 4px -2px #222;
+    box-shadow: 0 3px 4px -2px #222;
+    height: 10px;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 401;
+}
+.site-nav .innerWrap {
+    display: flex;
+    float: none;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+ul.topnav {
+    clear: both;
+    display: flex;
+    height: 50px;
+    list-style: none;
+    z-index: 400;
+}
+ul.topnav li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+ul.topnav li a {
+    color: #FFF;
+    float: left;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-style: bold;
+    font-family: 'RobotoBold',arial,sans-serif;    
+}
+.no-mobile-header {
+    width: 120px;
+}
+li.home.mobile-header {
+    width: 120px;
+    margin-right: 60px;
+}
+
+li.mobile-back-button.mobile-header {
+   display: none;		    
+}
+.mobile-logo { 
+   background: url("http://www.chron.com/img/logo.svg") no-repeat;
+   background-position: 0 0;
+   background-size: 138px 84px;
+   margin-bottom: -moz-calc((55px - 28px) / 2);
+   margin-bottom: -webkit-calc((55px - 28px) / 2);
+   margin-bottom: -o-calc((55px - 28px) / 2);
+   margin-bottom: calc((55px - 28px) / 2);
+   margin-top: -moz-calc((55px - 28px) / 2);
+   margin-top: -webkit-calc((55px - 28px) / 2);
+   margin-top: -o-calc((55px - 28px) / 2);
+   margin-top: calc((55px - 28px) / 2);
+   display: flex;
+   float: left;
+   height: 28px;
+   margin-left: auto;
+   margin-right: auto;
+   webkit-transform: rotate(0deg);
+   moz-transform: rotate(0deg);
+   ms-transform: rotate(0deg);
+   o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   width: 138px;
+}
+.leaderboard {
+    display: block;
+    height: 90px;
+    padding: 2px 0 2px 0;
+    float: none;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+@media (max-width: 980px)  {
+ .leaderboard,
+ .no-mobile-header {
+    display: none;
+ }
+
+ .hst-siteheader {
+    top: 0;
+    position: fixed;
+    z-index: 40;
+    width: 100%;
+ }
+ 
+ li.home.mobile-header {
+    margin-left: 25px;
+    text-align: center;
+ }
+
+ li.mobile-back-button.mobile-header {
+    display: flex;
+    margin-left: 12px;
+ }
+
+ #page {
+    margin-top: 50px;
+ }
+}
+</style> 
+   <div class="leaderboard">
+    <!-- Begin Hearst Ad --> 
+    <div id="A728"> 
+     <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("A728");/*]]>*/</script> 
+    </div> 
+    <!-- End Hearst Ad -->
+   </div> 
+   <div class="hst-siteheader"> 
+    <nav id="siteNav" class="site-nav"> 
+     <div class="shadow-nav"></div> 
+     <div class="innerWrap"> 
+      <ul class="topnav"> 
+       <li class="mobile-back-button mobile-header"> <a href="//smallbusiness.chron.com" data-event="back nav"> 
+         <svg height="40" width="25" viewbox="0 0 40 25"> 
+          <path style="stroke:white;stroke-width:5;fill:none;" d="M25 40 L3 20 L25 0"></path> 
+         </svg> </a> </li> 
+       <li class="home mobile-header"> <a href="//chron.com" target="_blank"> 
+         <div class="mobile-logo"></div></a> </li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/news/houston-texas/">Local</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/news/nation-world/">US &amp; World</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/sports/">Sports</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/business/">Business</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/entertainment/">A&amp;E</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/life/">Life</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/jobs/">Jobs</a></li> 
+       <li class="no-mobile-header"><a href="http://cars.chron.com/">Cars</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/homes/">Real Estate</a></li> 
+      </ul> 
+     </div> 
+    </nav> 
+   </div>
+  </header> 
+  <div id="page">
+   <a href="#main" id="skipLink">Skip to main content.</a>
+   <div id="content" class="clearfix">
+    <nav id="breadcrumbs"> 
+     <ol class="clearfix"> 
+      <li> <a href="http://smallbusiness.chron.com/"> Small Business</a><span class="sep">»</span></li> 
+      <li> <a href="http://smallbusiness.chron.com/business-communications-etiquette/"> Business Communications &amp; Etiquette</a><span class="sep">»</span></li> 
+      <li> <a href="http://smallbusiness.chron.com/effective-communication/"> Effective Communication</a><span class="sep">»</span></li> 
+     </ol> 
+    </nav>
+    <div id="main"> 
+     <header id="title"> 
+      <h1>Effective Communication Networking</h1> 
+      <cite> by Leigh Richards </cite> 
+     </header> 
+     <article id="article-section"> 
+      <div id="top-image" class="clearfix"> 
+       <figure id="main-article-photo" class="article-image"> 
+        <img src="//img-aws.ehowcdn.com/340x221p/photos.demandstudios.com/49/11/fotolia_3452638_XS.jpg" alt="The ability to network effectively is an important communication skill for small businesspeople." title="g communication image by Andrey Kiselev from Fotolia.com"> 
+        <figcaption class="article-image-credits"> 
+         <p class="photo-cap">The ability to network effectively is an important communication skill for small businesspeople.</p> 
+         <p class="photo-attribution">g communication image by Andrey Kiselev from Fotolia.com</p> 
+        </figcaption> 
+       </figure>
+       <div id="related-articles"> 
+        <h3>Related Articles</h3> 
+        <ul> 
+         <li><span>1 </span><a href="//smallbusiness.chron.com/organizational-communication-network-examples-37495.html">What Are Some Organizational Communication Network Examples?</a></li> 
+         <li><span>2 </span><a href="//smallbusiness.chron.com/five-strategies-networking-21564.html">Five Strategies for Networking</a></li> 
+         <li><span>3 </span><a href="//smallbusiness.chron.com/difference-between-informal-formal-organization-18282.html">What Is the Difference Between an Informal &amp; Formal Organization?</a></li> 
+         <li><span>4 </span><a href="//smallbusiness.chron.com/importance-healthy-corporate-culture-20899.html">Importance of a Healthy Corporate Culture</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="section-0" class="section summary">
+       <p>Effective networking is a skill that successful businesspeople seem to come by naturally. However, if you ask them about their talent, they'll tell you that there is a method to their madness. Effective networkers have a goal, know their audience and are concerned more with the needs and interests of others than themselves. Networking has a history that extends from conversations over backyard fences to boardrooms and online social media sites.</p> 
+      </div> 
+      <div class="inline-ad"> 
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+       <!-- WORK_INLINE --> 
+       <ins class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;height:125px" data-ad-client="ca-pub-3235755782694080" data-ad-slot="1166178349"></ins> 
+       <script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+      </div> 
+      <div id="section-1" class="section">
+       <h2>What Is Networking?</h2> 
+       <p>Networking can be defined as the process of reaching out to others to build relationships that can be used for mutual gain, says Lin Grensing-Pophal, author of "The Essentials of Corporate Communications and Public Relations." Networking is the building of personal and professional connections in a variety of ways ranging from old-fashioned one-on-one connections made in conference rooms to media-based connections, such as those made online.</p> 
+      </div>
+      <div id="section-2" class="section">
+       <h2>The Benefits of Networking</h2> 
+       <p>Networking enables a participant to build connections that serve as useful references or referrals for jobs and other business opportunities. Networking can result in connections being made with individuals who can share information and insights related to their areas of expertise. Networking can also yield social benefits; many people who network online find that they're able to connect with and meet online colleagues as they travel to business events around the country. Programs like Jigsaw (www.Jigsaw.com) and MeetUp (www.meetup.com) make this interaction easier than ever before.</p> 
+       <script>
+		var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+		if (VIEWPORT_WIDTH > 500) {
+
+	   	            document.write('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></scr'+'ipt><!-- SMALLBUSINESS_LOWLINE --><ins class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;height:75px" data-ad-client="ca-pub-3235755782694080" data-ad-slot="1530628549"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</scr'+'ipt>');	        
+		} 
+		</script> 
+      </div>
+      <div id="section-3" class="section">
+       <h2>The Drawbacks of Networking</h2> 
+       <p>While networking can yield many benefits, there are some drawbacks. Chief among them can be the time it takes to build strong relationships with others, whether in-person or online. Another drawback can be the expectation of reciprocity that may exist if, for instance, a contact helps you land a key account and is now looking for a referral from you. Another challenge can be juggling the sheer number of contacts that can emerge online. British anthropologist Robin Dunbar has been cited as the source of data which suggests that the maximum number of contacts we can effectively maintain relationships with is around 150.</p> 
+      </div>
+      <div id="section-4" class="section">
+       <h2>Best Practices in Networking</h2> 
+       <p>Effective networkers point to a number of best practices that help them obtain maximum effectiveness from their networking efforts in both traditional or online settings. First and foremost is having a goal for networking, or a specific purpose for making connections. When going to a business meeting, for instance, consider ahead of time what your networking goal will be. Then identify the specific audience you wish to connect with; this may vary based on your networking objective. Most importantly, says Grensing-Pophal, think more about what you have to give than what you have to gain from networking. Ineffective networkers can come across as insincere or self-aggrandizing, which can turn off those whom they most wish to connect with. A sincere interest in others is key, as is follow-up after the meeting to stay in touch by offering information that your new connection will find useful.</p> 
+      </div>
+      <div id="section-5" class="section">
+       <h2>The Future of Networking</h2> 
+       <p>Social media has had a significant impact on networking opportunities. In the past, it would have been literally impossible to quickly and inexpensively develop relationships with people across the country or even around the world. However, social networking now makes this communication possible. It is not likely that online networking will ever replace the value of in-person connections, but it is certainly true that it will continue to be an important method of augmenting those relationships and building new ones.</p> 
+      </div> 
+      <div class="main-ad pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links"> 
+       <script>
+			var ad_height;
+			var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+                if (VIEWPORT_WIDTH > 500) {
+					ad_height = '455px';
+				} else {
+					ad_height = '550px';
+				}
+		</script> 
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+       <!-- WORK_MAIN --> 
+       <ins id="ggads" class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;" data-ad-client="ca-pub-3235755782694080" data-ad-slot="2642911548"> </ins> 
+       <script>
+		document.getElementById('ggads').style.height = ad_height;
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script> 
+      </div> 
+      <script>
+		var mainAds = $('.main-ad');
+		if (mainAds.length < 1 || mainAds.height() < 10) {
+			document.write('<div id="DMINSTR" type="adimpression" data-type="adTracking" name="&amp;adunit_id=2642911548&amp;ad_unit_type=CNT&amp;ad_unit_network=GAS&amp;revenue_basis=CPC&amp;ad_position=C2&amp;revenue_tag=pub-3235755782694080"> <div id="google-article-block" class="google-text"> <script type="text/javascript"> google_ad_channel = "2642911548"; google_ad_client = "pub-3235755782694080"; google_ad_output = "js"; google_max_num_ads = "4"; google_ad_type = "text"; google_image_size = "336x280"; google_feedback = "on"; google_skip = 1; google_url ="bottom"; google_class = "336x280"; google_label_text = "Ads"; </sc'+'ript> <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></scr'+'ipt> </div></div>');
+		}
+	</script> 
+      <div class="OUTBRAIN" data-src="http://smallbusiness.chron.com/effective-communication-networking-5091.html" data-widget-id="AR_2" data-ob-template="SmallBusinessChron" id="outbrain"></div>
+      <div class="s2nPlayer-VtBBB6Nk" data-type="full"></div>
+      <script type="text/javascript" src="http://embed.sendtonews.com/player2/embedcode.php?fk=VtBBB6Nk&amp;cid=8187" data-type="s2nScript"></script> 
+      <div id="references" class="section"> 
+       <h4><a class="link-toggle-list" href="#" onclick="return false;"> References <span id="references_count">(4)</span> <span class="icon icon-right-open"></span><span class="icon icon-down-open"></span> </a></h4> 
+       <ul>
+        <li><a href="http://www.toastmasters.org/ToastmastersMagazine/ToastmasterArchive/2009/June/Work-a-Room.aspx" rel="nofollow">Toastmaster: Here's How To Work A Room</a></li>
+        <li><a href="http://baruchnewmedia.com/wiki/How_Business_is_Using_Social_Networking" rel="nofollow">Baruch New Media: How Businesses Are Benefitting From Social Networking</a></li>
+        <li><a href="http://www.entrepreneur.com/marketing/marketingideas/networkingcolumnistivanmisner/article204186.html" rel="nofollow">Entrepreneur: New to Networking? No Problem</a></li>
+        <li><a href="http://www.guardian.co.uk/technology/2010/mar/14/my-bright-idea-robin-dunbar" rel="nofollow">Guardian.co.uk: Robin Dunbar: We Can Only Ever Have 150 Friends at Most…</a></li>
+       </ul> 
+      </div> 
+      <div id="resources" class="section"> 
+       <h4><a class="link-toggle-list" href="#" onclick="return false;"> Resources <span id="resources_count">(1)</span> <span class="icon icon-right-open"></span><span class="icon icon-down-open"></span> </a></h4> 
+       <ul>
+        <li><a href="http://www.amazon.com/Essentials-Corporate-Communications-Relations-Professionals/dp/1591398193/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1281473250&amp;amp;sr=1-1" rel="nofollow">"Essentials of Corporate Communications and Public Relations;" Lin Grensing-Pophal; 2006</a></li>
+       </ul> 
+      </div> 
+      <div id="author" class="section"> 
+       <h4>About the Author</h4> 
+       <p>Leigh Richards has been a writer since 1980. Her work has been published in "Entrepreneur," "Complete Woman" and "Toastmaster," among many other trade and professional publications. She has a Bachelor of Arts in psychology from the University of Wisconsin and a Master of Arts in organizational management from the University of Phoenix. </p> 
+      </div> 
+      <div id="photo-credits" class="section"> 
+       <h4>Photo Credits</h4> 
+       <ul> 
+        <li>g communication image by Andrey Kiselev from <a href="http://fotolia.com">Fotolia.com</a></li> 
+       </ul> 
+      </div> 
+      <div class="in-article-feedback"> 
+       <a target="_blank" href="mailto:partner.channelfeedback@leafgroup.com?subject=Article%20Feedback&amp;body=Hi.%20I%20have%20feedback%20about%20this%20article%20http%3A//smallbusiness.chron.com/effective-communication-networking-5091.html on Small Business." data-reveal-id="feedback-container">Suggest an Article Correction</a> 
+      </div> 
+     </article> 
+    </div> 
+    <aside id="sidebar"> 
+     <div id="radlinks" class="widget"> 
+      <h3><span>Related</span> Searches</h3>
+      <script language="JavaScript">
+<!--
+function google_radlink_request_done(radlinks) {
+if (radlinks.length < 1)
+return;
+for(i=0; i < radlinks.length; ++i) {
+document.write("<ul><li class=\"entry\"><a target=\"_top\" href=\"" +
+"//smallbusiness.chron.com/rad-results.html?google_kw=" +
+radlinks[i].url_escaped_term +"&category=Business+Communications+&amp;+Etiquette" +
+"&subcategory=Effective+Communication" +"&media_type=Article" +"&channel=8507346042+8746739823" +"&google_rt=" + radlinks[i].radlink_token +
+"&google_page_url=" +
+encodeURIComponent(window.location) + "\">" +
+radlinks[i].term +
+"</a></li></ul>\n");
+}
+}
+// -->
+</script> 
+      <script language="JavaScript">
+<!--
+google_ad_client = 'ca-pub-3235755782694080';
+google_ad_channel = '';
+google_ad_output = 'js';
+google_max_num_ads = '0';
+google_language = 'en';
+google_encoding = 'utf8';
+google_safe = 'high';
+google_num_radlinks = '6';
+google_max_radlink_len = '30';
+google_num_radlinks_per_unit = '3,4,5';
+google_rl_mode = 'relevance';
+// -->
+</script> 
+      <script language="JavaScript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+     </div> 
+     <div id="top-300" class="widget">
+      <!-- Begin Hearst Ad --> 
+      <div id="A300"> 
+       <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("A300");/*]]>*/</script> 
+      </div> 
+      <!-- End Hearst Ad -->
+     </div> 
+     <!-- Ads move in script --> 
+     <script>
+		$(function(){
+			var adsMoveTo = null;
+			
+				if ($('[id^="section"]').length >= 4) {
+					adsMoveTo = 2;
+				}
+			
+			
+			
+			if ($(window).width() <= 760) {
+				if (adsMoveTo) {
+					$('#top-300').insertAfter('#section-' + adsMoveTo);
+				}
+			}
+		});
+	</script> 
+     <div id="more-read" class="widget clearfix"> 
+      <h3><span>More</span> Articles</h3> 
+      <ul> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/effective-workplace-communication-822.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/150/61/fotolia_3857103_XS.jpg" alt="What is Effective Workplace Communication?" title="What is Effective Workplace Communication?" width="137" height="77"> <p>What is Effective Workplace Communication?</p> </a></li> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/boundary-spanner-public-relations-72332.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/getty/article/129/233/91910748.jpg" alt="What Is a Boundary Spanner in Public Relations?" title="What Is a Boundary Spanner in Public Relations?" width="137" height="77"> <p>What Is a Boundary Spanner in Public Relations?</p> </a></li> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/effective-communication-organization-1400.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/65/31/fotolia_2744589_XS.jpg" alt="How Effective Communication Will Help an Organization" title="How Effective Communication Will Help an Organization" width="137" height="77"> <p>How Effective Communication Will Help an Organization</p> </a></li> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/factors-effective-communication-3183.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/90/209/fotolia_2314077_XS.jpg" alt="Factors of Effective Communication" title="Factors of Effective Communication" width="137" height="77"> <p>Factors of Effective Communication</p> </a></li> 
+      </ul> 
+     </div> 
+     <div id="bottom-300" class="widget">
+      <!-- Begin Hearst Ad --> 
+      <div id="B300"> 
+       <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("B300");/*]]>*/</script> 
+      </div> 
+      <!-- End Hearst Ad -->
+     </div> 
+     <div id="also-viewed" class="widget"> 
+      <h3><span>Also</span> Viewed</h3> 
+      <ul> 
+       <li><a href="//smallbusiness.chron.com/effects-interpersonal-communication-organization-18338.html">The Effects of Interpersonal Communication in an Organization</a></li> 
+       <li><a href="//smallbusiness.chron.com/importance-good-communication-business-1403.html">Importance of Good Communication in Business</a></li> 
+       <li><a href="//smallbusiness.chron.com/effective-communication-business-3177.html">Effective Communication in a Business</a></li> 
+       <li><a href="//smallbusiness.chron.com/importance-effective-communication-business-2879.html">Importance of Effective Communication in Business</a></li> 
+       <li><a href="//smallbusiness.chron.com/importance-communication-organizational-structure-24390.html">The Importance of Communication in the Organizational Structure</a></li> 
+       <li><a href="//smallbusiness.chron.com/benefits-businesses-using-internet-322.html">Benefits for Businesses Using the Internet</a></li> 
+       <li><a href="//smallbusiness.chron.com/types-business-communications-697.html">Types of Business Communications</a></li> 
+      </ul> 
+     </div> 
+     <div id="s-300" class="widget">
+      <!-- Begin Hearst Ad --> 
+      <div id="S300"> 
+       <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("S300");/*]]>*/</script> 
+      </div> 
+      <!-- End Hearst Ad -->
+     </div> 
+    </aside> 
+   </div>
+   <footer class="clearfix">
+    <footer> 
+     <div class="hdnce-e hdnce-item-41834">
+      <!-- mid:freeform.41834 --> 
+      <div class="header"> 
+       <span class="logo">Logo</span> 
+       <span class="top"><a href="#">Return to Top</a></span> 
+      </div> 
+      <div class="body"> 
+       <div class="about"> 
+        <h3>About</h3> 
+        <ul> 
+         <li><a href="http://www.hearst.com/newspapers/houston-chronicle">Our Company</a></li> 
+         <li><a href="http://www.chron.com/careers">Careers</a></li> 
+         <li><a href="http://marketing.chron.com/home">Advertise with Us</a></li> 
+         <li><a href="http://www.aboutads.info/choices/" class="adchoices">Ad Choices</a></li> 
+         <li><a href="http://www.chron.com/terms_of_use/">Terms &amp; Conditions</a></li> 
+         <li><a href="http://www.chron.com/privacy_policy/">Privacy Policy</a></li> 
+         <li><a href="http://www.chron.com/privacy_policy/#caprivacyrights">Your California Privacy Rights</a></li> 
+        </ul> 
+       </div> 
+       <div class="contact"> 
+        <h3>Contact</h3> 
+        <ul> 
+         <li><a href="https://myaccount.houstonchronicle.com/FAQ.aspx">Customer Service</a></li> 
+         <li><a href="http://www.chron.com/about/newsroom/">Newsroom Contacts</a></li> 
+        </ul> 
+       </div> 
+       <div class="connect"> 
+        <h3>Connect</h3> 
+        <ul> 
+         <li><a href="http://www.chron.com/newsletters/">Email Newsletter</a></li> 
+         <li><a href="https://www.facebook.com/chroncom" class="facebook">Facebook</a></li> 
+         <li><a href="https://twitter.com/houstonchron" class="twitter">Twitter</a></li> 
+         <li><a href="https://www.pinterest.com/houstonchron/" class="pinterest">Pinterest</a></li> 
+         <li><a href="https://plus.google.com/+houstonchronicle/posts" class="google">Google</a></li> 
+         <li><a href="https://instagram.com/houstonchron/" class="instagram">Instagram</a></li> 
+        </ul> 
+       </div> 
+       <div class="subscribe"> 
+        <h3>Subscribe</h3> 
+        <ul> 
+         <li><a href="http://www.chron.com/ipad/">iPad app</a></li> 
+         <li><a href="http://www.houstonchronicle.com/">HoustonChronicle.com</a></li> 
+         <li><a href="http://www.houstonchronicle.com/archive">Houston Chronicle Archives</a></li> 
+         <li><a href="http://digital.olivesoftware.com/Olive/ODN/HoustonChronicleDemo/">eEdition Demo</a></li> 
+         <li><a href="http://digital.olivesoftware.com/Olive/ODN/houstonchronicle/Default.aspx">Today's eNewspaper</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="footer"> 
+       <span class="logo">Hearst Newspapers</span> 
+       <span class="copyright">© Copyright 2017 Hearst Newspapers, LLC</span> 
+      </div> 
+     </div> 
+    </footer> 
+   </footer>
+  </div>
+  <script>(function(d,t){var cjs=d.createElement(t),dhd=d.getElementsByTagName(t)[0];cjs.async=1;cjs.src='//smallbusiness.chron.com/scripts/custom.js';dhd.parentNode.insertBefore(cjs,dhd);}(document,'script'));</script> 
+  <script type="text/javascript" src="//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"></script>  
+ </body>
+</html>

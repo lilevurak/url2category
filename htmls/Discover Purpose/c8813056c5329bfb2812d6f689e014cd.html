@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head> 
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>Intercom - IC a Meaningful Future: Finding My Career Purpose &amp; Strategy</title> 
+  <meta name="ROBOTS" content="INDEX,FOLLOW"> 
+  <link rel="alternate" title="Intercom" href="https://www.ithaca.edu/intercom/backend/intercom.xml" type="application/rss+xml" charset="utf-8"> 
+  <link rel="stylesheet" href="/css/style-screen-home.css" media="screen"> 
+  <link rel="stylesheet" href="/css/style-screen-stretch.css" media="screen"> 
+  <link rel="stylesheet" href="/css/style-screen-intercom.css?2008082701" media="screen"> 
+  <link rel="stylesheet" href="/css2/style-header.css" media="screen"> 
+  <link rel="stylesheet" href="/css2/blueprint/screen.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/css2/blueprint/print.css" type="text/css" media="print"> 
+  <link rel="stylesheet" href="/css2/style.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/css2/style-modules.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/css2/style-print.css" type="text/css" media="print"> 
+  <script type="text/javascript" src="/css2/js/jquery-1.4.4.min.js"></script> 
+  <script type="text/javascript" src="/css2/js/jquery.tools.min.js"></script> 
+  <script type="text/javascript" src="/css2/js/jquery.valign.js"></script> 
+  <script type="text/javascript" src="/css2/js/typehelper/EventHelpers.js"></script> 
+  <script type="text/javascript" src="/css2/js/typehelper/TypeHelpers.js"></script> 
+  <style type="text/css" title="text/css" media="screen">
+			.stretch_bg, .stretch_drop_righttop, .stretch_drop_lefttop, .stretch_drop_right, .stretch_wrap {
+				background: none;
+			}
+
+
+			.subhead_right, .subhead_left, .subtall, .subtalllt {
+				background: none;
+			}
+
+			#subheadertall {
+				background-image: url(/intercom/images/header_bg.png);
+				background-repeat: no-repeat;
+			}
+
+			#subheadertalllt h2 {
+				color: #fff;
+				font-size: 28px;
+				font-weight: normal;
+				line-height: 30px;
+				margin: 0 0 3px 10px;
+				text-transform: none;
+				letter-spacing: 0;
+			}
+
+			/*
+.box_wrap h3 {
+				text-transform: none;
+				font-size: 13px;
+				background: none;
+				letter-spacing: 0;
+
+			}
+*/
+
+			#stretch_wrapper, #footer {
+				width: 950px;
+				margin: 0 auto;
+			}
+
+			#footer .widewrap {
+				margin: 0 1em;
+			}
+
+			table#story_editor_table td {
+				vertical-align: top;
+				padding: 0px 10px 10px 0;
+			}
+
+		</style> 
+  <!--[if lte IE 7]>
+		<style type="text/css" title="text/css" media="screen">
+			.maxwidthwrap {
+				width:expression(document.body.clientWidth > 980? "980px": "auto" );
+			}
+
+			#globalmenu li, #header li { float: left; }
+
+			#globalmenu ul { width: 890px; margin: 0 auto; }
+
+			#header ul { top: 30px !important; }
+
+		</style>
+	<![endif]--> 
+ </head> 
+ <body> 
+  <!-- Begin Header --> 
+  <div id="header_wrapper"> 
+   <div class="globalmenu_wrapper"> 
+    <div class="container"> 
+     <div id="globalmenu" class="span-24 last"> 
+      <ul> 
+       <li><a href="/about/" rel="#aboutic" class="aboutic panelslide">About IC</a></li> 
+       <li><a href="/admission/" rel="#admission" class="admission panelslide">Admission</a></li> 
+       <li><a href="/academics/" rel="#academics" class="academics panelslide">Academics</a></li> 
+       <li><a href="/alumni_parents_friends/" rel="#apf" class="apf panelslide">Alumni, Parents, &amp; Friends</a></li> 
+       <li><a href="/athletics/" rel="#athletics" class="athletics panelslide">Athletics</a></li> 
+       <li><a href="/campuslife/" rel="#campuslife" class="campus panelslide">Campus Life</a></li> 
+       <li><a href="/newsevents/" rel="#newsevents" class="news panelslide">News &amp; Events</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- THE DRAWER --> 
+   <div class="logoheader_wrapper"> 
+    <div class="container"> 
+     <div id="header" class="span-24 last"> 
+      <div class="printlogo">
+       <img src="/css2/images/ic_print_logo.png" width="330" height="52" border="0" alt="Ithaca College">
+      </div> 
+      <h1 class="png_bg">Ithaca College</h1> 
+      <a href="/" id="header_home_link"></a> 
+      <ul> 
+       <li><a href="/admission/" id="headerapply">Apply Now</a> 
+        <ul class="applyoptions"> 
+         <li><a href="/admission/apply/" id="popapply_ug">Undergraduate</a></li> 
+         <li><a href="/gps/gradprograms/admission/apply/" id="popapply_grad">Graduate</a></li> 
+        </ul> </li> 
+       <li><a href="/directories/site_index.php">Site Index</a></li> 
+       <li><a href="/directories/">Directories</a></li> 
+      </ul> 
+      <div id="sitesearch"> 
+       <script>
+  (function() {
+    var cx = '018112999141108794150:p53dpbdxjii';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script> 
+       <gcse:searchbox-only gname="header-search" resultsurl="/search.php"></gcse:searchbox-only> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="/css2/js/drawer/ic_drawer.js" async defer></script> 
+  <!-- End Header --> 
+  <!-- End Header --> 
+  <!-- Begin Content --> 
+  <div class="stretch_wrap"> 
+   <div id="stretch_wrapper" class="widewrap"> 
+    <div style="background: url(//www.ithaca.edu/css/images/intercom_bodybg.gif) repeat-y right;"> 
+     <div id="subheadertall" class="subtall"> 
+      <div id="subheadertalllt" class="subtalllt"> 
+       <div class="subhead_left"> 
+        <div class="subhead_right"> 
+         <h2> Intercom </h2> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="intercom_navbar"> 
+      <table border="0" width="100%" cellspacing="0" cellpadding="0"> 
+       <tbody>
+        <tr> 
+         <td><a href="https://www.ithaca.edu/intercom/" class="header-navigation">intercom home</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.ithaca.edu/intercom/search.php" class="header-navigation">advanced search</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.ithaca.edu/intercom/staticpages/index.php/about" class="header-navigation">about intercom</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.ithaca.edu/intercom/staticpages/index.php/alerts" class="header-navigation">alerts</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.ithaca.edu/intercom/staticpages/index.php/faq" class="header-navigation">faq</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.ithaca.edu/intercom/staticpages/index.php/help" class="header-navigation">help</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.ithaca.edu/intercom/staticpages/index.php/rss" class="header-navigation">rss</a>&nbsp;&nbsp; </td> 
+         <td align="right">
+          <div id="int_search">
+           <form action="https://www.ithaca.edu/intercom/search.php" method="get" id="form_search_intercom"> 
+            <label for="query">Search Intercom</label> 
+            <input name="query" id="query" type="text" size="13" style="background: #f5f5f5;"> 
+            <input type="hidden" name="type" value="all" style="display: none;"> 
+            <input type="hidden" name="mode" value="search" style="display: none;"> 
+            <input name="form_search_intercom_submit" id="form_search_intercom_submit" type="submit" value="Search" class="submit"> 
+           </form>
+          </div></td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <!--
+<div id="int_search">
+
+										</div>
+
+										<div class="clearme"></div>
+ --> 
+     </div> 
+     <div id="intercom_wrapper"> 
+      <table id="intercom_table" cellspacing="0" cellpadding="0"> 
+       <tbody>
+        <tr> 
+         <td id="intercom_table_left">
+          <div class="box_wrap"> 
+           <h3>user functions</h3> 
+           <!-- <div style="height: 10px; overflow: hidden;"></div> -->
+           <img src="/intercom/images/stop_missing_out.png" alt="Log into intercom now" width="175" height="33" style="margin-bottom: 10px;">
+           <br> 
+           <div id="int_login_wrap"> 
+            <p>Current Ithaca College community members may contribute stories and comments as well as view additional topics by logging in.</p> 
+            <form action="https://www.ithaca.edu/intercom/users.php" method="POST"> 
+             <label for="loginname">Netpass username:</label> 
+             <input type="text" size="10" name="loginname" value=""> 
+             <label for="passwd">Netpass password:</label> 
+             <input type="password" size="10" name="passwd"> 
+             <input type="submit" value="Log in" class="submit"> 
+            </form> 
+           </div> 
+           <p><a href="https://www.ithaca.edu/passwords/?action=forgot">Reset My Password</a></p> 
+          </div> 
+          <div class="navsepbar" style="margin: 5px 0;"></div>
+          <div class="box_wrap"> 
+           <h3>sections</h3> 
+           <!-- <div style="height: 10px; overflow: hidden;"></div> -->
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=campus_news">News and Notices</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=lectures">Lectures and Presentations</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=arts_etc">Arts and Performances</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=learningops">Learning Opportunities</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=kudos">Kudos</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=news_for_faculty">News for Faculty</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=news_for_staff">News for Staff</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=news_for_students">News for Students</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=student_orgs">Student Organizations</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=hrnews">HR News</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=comingsgoings">Comings and Goings</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=technology">Technology</a>
+           </div> 
+           <div class="intercom_section_menu_item">
+            <a href="https://www.ithaca.edu/intercom/index.php?topic=archive">Archive</a>
+           </div> 
+          </div> 
+          <div class="navsepbar" style="margin: 5px 0;"></div>
+          <div class="box_wrap"> 
+           <h3>related links</h3> 
+           <!-- <div style="height: 10px; overflow: hidden;"></div> -->
+           <ul class="intercom_rel_links"> 
+            <li><a href="/emergencynotification/">Emergency Notification System</a></li> 
+            <li><a href="/hr/employment/">Employment</a></li> 
+            <li><a href="/calendar/">Events Calendar</a></li> 
+            <li><a href="/fc/">Faculty Council</a></li> 
+            <li><i><a href="/icview/">ICView</a></i></li> 
+            <li><a href="/ithacan/"><i>Ithacan</i></a></li> 
+            <li><a href="/news/">News Releases</a></li> 
+            <li><a href="/bombers/">Sports Information</a></li> 
+            <li><a href="/staffcouncil/">Staff Council</a></li> 
+            <li><a href="/orgs/sga/">Student Government Association</a></li> 
+            <li><a href="https://wicb.org/">WICB Radio</a></li> 
+           </ul> 
+          </div> 
+          <div class="navsepbar" style="margin: 5px 0;"></div>
+          <div class="box_wrap"> 
+           <h3>roundup</h3> 
+           <!-- <div style="height: 10px; overflow: hidden;"></div> -->
+           <table border="0" cellpadding="0" cellspacing="0"> 
+            <tbody>
+             <tr> 
+              <td valign="TOP"><img src="/intercom/images/mail_icon.gif" border="0"></td> 
+              <td width="8"><img src="/images/fill.gif" width="8" height="5" border="0"></td> 
+              <td valign="TOP" width="90%"> <b><a href="https://www.ithaca.edu/intercom/staticpages/index.php?page=20030227175353191">E-mail<br>Roundup</a></b> </td> 
+             </tr> 
+             <tr>
+              <td colspan="3"><img src="/images/fill.gif" width="6" height="6" border="0"><br> <small>Sign up to receive a summary of <i>Intercom</i> headlines via e-mail three times a week.</small> </td>
+             </tr> 
+            </tbody>
+           </table> 
+          </div> 
+          <div class="navsepbar" style="margin: 5px 0;"></div></td> 
+         <td id="intercom_table_main"> 
+          <div class="story_wrap"> 
+           <div class="story_wrap_full"> 
+            <div class="int_headwrap"> 
+             <h2> <a href="https://www.ithaca.edu/intercom/article.php/20170918153454324" class="non-ul"> IC a Meaningful Future: Finding My Career Purpose &amp; Strategy </a> </h2> 
+             <p class="int_subtitle"> Contributed by <a href="mailto:ckeenan@ithaca.edu"> Caryanne Keenan </a> on 09/20/17&nbsp; </p> 
+             <div class="int_subtitle_right"> 
+              <div style="float:right"> 
+               <a href="https://www.ithaca.edu/intercom/article.php/20170918153454324/print"><img border="0" src="https://www.ithaca.edu/intercom/layout/intercom_blue/images/print.gif" alt="View printable version" title="Printable Story Format"></a> 
+              </div> 
+              <div style="float: right;"> 
+               <!-- AddThis Button BEGIN --> 
+               <div class="addthis_toolbox addthis_default_style "> 
+                <a class="addthis_button_facebook"></a> 
+                <a class="addthis_button_twitter"></a> 
+                <a class="addthis_button_tumblr"></a> 
+                <a class="addthis_button_email"></a> 
+                <a class="addthis_button_compact"></a> 
+                <a class="addthis_counter addthis_bubble_style"></a> 
+               </div> 
+               <script type="text/javascript">
+    var addthis_config = {
+        data_ga_property: 'UA-1253946-6',
+        data_ga_social: true,
+        data_track_addressbar: true
+    };
+</script> 
+               <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-511e8cae70b2f773"></script> 
+               <!-- AddThis Button END --> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="story_wrap_all"> 
+             <div class="story_wrap_text"> 
+              <p> <img width="200" height="200" align="right" src="https://www.ithaca.edu/intercom/images/articles/20170918153454324_1.png">Join one of Career Services&#x2019; "Holland Code" sessions and experience a brief, fun, and interactive exercise designed to help you identify what engages you the most and how can you pursue it throughout your college and career journey in the most exciting way. 87% of the world&#x2019;s workforce is struggling to find meaning in what they do (Gallup, 2016); let&#x2019;s break this pattern together and become part of our new generation of leaders who are preparing for their meaningful impact in the world through a clear career purpose and strategy.</p>
+              <p><strong>Interests &amp; Careers: Group Exploration Using the Strong Interest Inventory</strong><br> The Strong Interest Inventory measures career and leisure interests and is used to aid people in making educational and career decisions. In these sessions (offered every other week) students will learn the components of John Holland&#x2019;s Theory of Career Choice (on which the Strong Interest Inventory is based) and determine their own &#x201c;Holland Code,&#x201d; as well as receive their own customized Strong Interest Inventory College Report*.<br> <strong>DATE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9/28, 10/12, 10/26, 11/9, 11/30</strong><br> <strong>TIME: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3:00-3:50 p.m.</strong><br> <strong>LOCATION: &nbsp; Career Services</strong><br> <em>*Registration on <a href="https://ithaca.joinhandshake.com/">Handshake</a> is required by 3 p.m. the previous day*</em><i><br> <em>*Students MUST take the SII&nbsp;assessment&nbsp;</em><strong>no later than 2 p.m.</strong><em>&nbsp;the day of the workshop if they wish to receive a SII&nbsp;Career Report.</em></i><br> *For instructions on accessing the Strong online assessment, please come to the Office of Career Services, 101 Muller*</p> 
+              <p><br> <strong>Holland Code Part 1: What's My Holland Code?</strong><br> John Holland's Theory of Career Choice is based on the premises that, "people search for environments where they can use their skills and abilities and express their values and attitudes," and "people who choose to work in an environment similar to their personality type are more likely to be successful and satisfied". In these sessions, through an interactive activity, students will learn their Holland Code and first steps on how to apply it to career planning.<br> <strong>DATE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;October 11 @ the Majors and Minors Fair<br> TIME: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4:45, 5:30, &amp; 6:15 p.m.<br> LOCATION: &nbsp; Emerson Suites lobby area</strong><br> <em>*No registration required*</em></p> 
+              <p><br> <strong>Holland Code Part 2: Using Your Holland Code for Career Action Planning**</strong><br> In this session, students will use what they&nbsp;learned from doing the Holland Code Part 1 activity to further explore their Holland Code and its implications in career action planning.<br> <strong>DATE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; October 31</strong><br> <strong>TIME: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3:00-5:00 p.m. (Offered every half hour starting at 3:00)</strong><br> <strong>LOCATION: &nbsp;Clark &amp; Klingenstein Lounges</strong><br> <em>*Registration on <a href="https://ithaca.joinhandshake.com/">Handshake</a> is required*</em><i><br> <em>**Students must have participated in a Holland Code Part 1 activity to attend this session*</em></i></p> 
+              <p>&nbsp;<br> <b>Connect with Career Services</b>: <a href="http://www.facebook.com/pages/Career-Services-at-Ithaca-College/144312428949279?v=wall" target="_blank">Facebook</a>, <a href="http://twitter.com/iccareers" target="_blank">Twitter</a>, <a href="http://www.linkedin.com/groups?gid=1777761&amp;trk=group-name" target="_blank">LinkedIn</a>, <a href="http://instagram.com/iccareers" target="_blank">&amp; Instagram</a>.</p> 
+              <p>Individuals with disabilities requiring accommodations should contact Jennifer Pawlewicz at jpawlewicz@ithaca.edu or (607) 274-3365. We ask that requests for accommodations be made as soon as possible. </p> 
+              <p> </p> 
+             </div> 
+             <div class="story_footer"> 
+              <div class="story_footer_left"> 
+              </div> Topic: 
+              <a href="https://www.ithaca.edu/intercom/index.php?topic=news_for_students"> News for Students </a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="commentarea"> 
+           <form action="https://www.ithaca.edu/intercom/article.php" method="POST" style="margin: 0; padding: 0;" name="comments" id="comments"> 
+            <input type="hidden" name="story" value="20170918153454324"> 
+            <table cellspacing="0" cellpadding="0" align="center" width="100%" class="block-divider">
+             <tbody>
+              <tr>
+               <td><a name="comments"></a> <img src="https://www.ithaca.edu/intercom/images/speck.gif" width="1" height="2" alt=""></td>
+              </tr>
+             </tbody>
+            </table> 
+            <table cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 15px;"> 
+             <tbody>
+              <tr>
+               <td align="center" class="commentbar1"><b><a href="https://www.ithaca.edu/intercom/article.php/20170918153454324" class="non-ul">IC a Meaningful Future: Finding My Career Purpose &amp; Strategy</a></b> | 0 Comments | <input type="hidden" name="type" value="article"> <input type="hidden" name="pid" value="0"> <input type="submit" name="reply" value="Add a comment" style="font-size: 11px;"> </td>
+              </tr> 
+              <tr>
+               <td align="center" class="commentbar3" style="padding-top:6px;padding-bottom:6px;padding-left:20px;padding-right:20px;">The following comments are the opinions of the individuals who posted them. They do not necessarily represent the position of <i>Intercom</i> or Ithaca College, and the editors reserve the right to monitor and delete comments that violate College policies.</td>
+              </tr> 
+              <tr> 
+               <td align="center" class="commentbar2" style="padding-top:6px;padding-bottom:6px;padding-left:20px;padding-right:20px;"> <select name="order"> <option value="DESC">Newest first</option> <option value="ASC" selected>Oldest first</option> </select> <select name="mode"> <option value="flat">Flat</option> <option value="nested" selected>Nested</option> <option value="nocomment">No comments</option> <option value="threaded">Threaded</option> </select> <a href="javascript:document.getElementById('comments').submit()">Refresh view</a> </td> 
+              </tr> 
+             </tbody>
+            </table> 
+           </form> 
+           <center></center> 
+          </div> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+     </div> 
+     <!-- <div class="clearme" style="height: 30px;"> --> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- End Content --> 
+  <!-- Begin Footer --> 
+  <div class="maxwidthwrap"> 
+   <div id="footer"> 
+    <div id="footer_address">
+     953 Danby Road, Ithaca, NY 14850
+    </div> 
+    <div id="footer_links"> 
+     <ul> 
+      <li><a href="/map/">Campus Map</a></li> 
+      <li><a href="/contact/">Contact</a></li> 
+      <li><a href="/giving/">Giving</a></li> 
+      <li><a href="https://myhome.ithaca.edu/">myHome</a></li> 
+      <li><a href="/hr/">Work at Ithaca</a></li> 
+      <li><a href="/its/general/policies/privacy/">Privacy</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="copyright"> 
+    <div id="who">
+      Maintained by the 
+     <i>Intercom</i> editorial staff (
+     <a href="mailto:intercom@ithaca.edu">intercom@ithaca.edu</a>) 
+    </div> 
+    <p> © Copyright Ithaca College. All rights reserved; unauthorized use prohibited. All material on this server is produced by our community but, except for designated pages, is neither approved nor verified by Ithaca College. </p> 
+   </div> 
+  </div> 
+  <!-- End Footer --> 
+  <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-1253946-6']);
+            _gaq.push(['_setDomainName', '.ithaca.edu']);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview']);
+
+            (function (d) {
+                var s = d.getElementsByTagName('script')[0];
+
+                var ga = d.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.defer = true;
+                ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(ga, s);
+
+                var ext = d.createElement('script');
+                ext.type = 'text/javascript';
+                ext.async = true;
+                ext.defer = true;
+                ext.src = 'https://www.ithaca.edu/css2/js/gaext.js';
+                s.parentNode.insertBefore(ext, s);
+            })(document);
+
+            /* google event tracking */
+            function recordGoogleEvent(category, action) {
+                try {
+                    _gaq.push(['_trackEvent', category, action]);
+                } catch (err) {
+                    return false;
+                }
+            }
+        </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2d1cd29110","applicationID":"9584867","transactionName":"NFdSN0pVCkVYUkRbDQ0dcxZLQAtbFlheRgcRUV8OF1UWQlBSXFdME1pAXEtAC0RADAICU1QCCVIABVEFDQQEAVBX","queueTime":0,"applicationTime":118,"atts":"GBBRQQJPGUs=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

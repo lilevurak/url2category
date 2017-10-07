@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="shortcut icon" href="http://slc.berkeley.edu/sites/all/themes/MDALLC/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> 
+  <meta name="description" content="CalREN Project: Study Tips &nbsp; When to Study  1. Find out how you use and misuse your time before making any changes."> 
+  <meta name="keywords" content="tests, time management, study strategies"> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="http://slc.berkeley.edu/study-and-success-strategies"> 
+  <link rel="shortlink" href="http://slc.berkeley.edu/node/128"> 
+  <meta property="og:site_name" content="SLC | UC Berkeley"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="http://slc.berkeley.edu/study-and-success-strategies"> 
+  <meta property="og:title" content="Study and Success Strategies"> 
+  <meta property="og:description" content="CalREN Project: Study Tips &nbsp; When to Study  1. Find out how you use and misuse your time before making any changes. | CalREN Project: Study Tips  When to Study  1. Find out how you use and misuse your time before making any changes. 2. Plan two hours of study time for every hour spent in class. There are exceptions, but this is a good general rule. Students making the transition from high school or community college are often unaware of the increased workload expected of them. The benefits of following the rule will be apparent at exam time. 3. Study difficult (or boring) subjects first. If your chemistry problems put you to sleep, get to them first, while you are fresh. Most of us tend to do what we like first, yet the courses we find most difficult require the most creative energy. Save the subjects you enjoy for later. 4. Avoid scheduling marathon study sessions. When possible, study in shorter sessions. Three three-hour sessions are far more productive for most students than one nine-hour session. When you do study in long sessions, take a planned break every hour. Work on several subjects and avoid studying similar subjects back to back. 5. Be aware of your best time of day. Many students learn best in daylight hours. Observe yourself and, if this is true of you, schedule study time for your most difficult subjects when the sun is up. The key point is to determine your best learning time. If early morning doesn't work for you, find out what time is better. 6. Use waiting time. Five minutes waiting time for the bus, 20 minutes waiting for the dentist, 10 minutes between classes -- waiting time adds up fast. Have short study tasks ready to do during these times. For example, carry 3X5 cards with equations, formulas, or definitions and pull them out anywhere. Also, use time between classes or breaks during work to review class notes or notes on reading. A solid review of a lecture can be completed in 15 minutes, and even five minutes can be valuable if you are prepared. 7. Keep a calendar for the semester. Keep track of all your assignments, tests, and papers. 8. Make a weekly to-do list of important tasks and assignments that you need to complete. Be sure to prioritize the list and to do the most important tasks first.  Where to Study  1. Use a regular study area. Your body knows where you are. When you use the same place to study, day after day, your body becomes trained. When you arrive at that particluar place, it will automatically sense that it's time to study. You will focus your concentration more quickly. 2. Don't get too comfortable. Put yourself into a situation where your mind is alert. 3. Use the library. Libraries are designed for learning. Entering a library is a signal to your body to quiet the mind and get to work. Most students can get more done in a shorter time at the library. 4. Set up study groups. A study group doesn't take the place of individual study, but it forces you to articulate concepts and makes a review more fun and productive. Also, it helps keep your review on schedule and helps you to avoid procrastination.  How to Handle the Rest of the World  1. Pay attention to your attention. Breaks in concentration are often caused by internal interruptions; your own thoughts jump in to tell you another story about the world. If this happens too often, perhaps you need to find a different study time or place. 2. Agree with living mates about study time. This includes roommates, wives, husbands, parents, and/or kids. Make the rules clear and be sure to follow them yourself. Make explicit agreements -- even written contracts. Hang a &quot;do not disturb&quot; sign on your door. One student always wears a colorful hat when he wants to study. When his roommates see the hat, they respect his wish to be left alone. 3. Avoid noise distractions. Don't study in front of the TV. Turn off the stereo. Many students insist that they study better with music, and that may be true. Some students have reported good results with carefully selected and controlled music. The overwhelming majority of research indicates that silence is the best form of music for study. 4. Notice how others misuse your time. Be aware of repeat offenders. Ask yourself if there are certain friends or relatives who consistently interrupt your study time. If avoiding them is impractical, send a clear (but gentle) message. Sometimes others don't realize they are breaking your concentration. 5. Get off the phone/Un-plug from Social Media and Other Distractions You don't have to be a telephone victim. Try saying, &quot;I can't talk right now, I'm studying&quot; or let the call go to voicemail. Or avoid the whole problem by studying at the library. 6. Learn to say no. This is a valuable time saver for students, and a valuable life skill. Many people feel it is rude to refuse a request. Saying &quot;no&quot; can be done effectively and courteously. Others want you to succeed as a student. When you tell them that you can't comply with a request because you are busy educating yourself, 99% will understand.  Things to Ask Yourself When You Get Stuck  1. Ask: What is one task I can accomplish toward my goal? This is a good technique to use on big, imposing jobs. Pick out one small accomplishment, preferably one you can complete in about five minutes, then do it. The satisfaction of getting one thing done often spurs you on to get one more thing done. Meanwhile the job gets smaller. 2. Ask: Am I beating myself up? When you get frustrated with a reading assignment, or when you notice that your attention wanders repeatedly, or when you fall behind on problems due for tomorrow, take a minute to ask yourself, am I judging myself too harshly? Lighten up. Allow yourself to feel a little foolish, recognize the feeling, and get on with it. Don't add to the problem by berating yourself. 3. Ask: Is this a piano? Carpenters who build rough frames for buildings have a saying they use when they bend a nail or hack a chunk out of a two-by-four. They say, &quot;Well, this ain't no piano.&quot; It means perfection is not necessary. Ask yourself if what you are doing needs to be perfect. You don't have to apply the same standards of grammar to review notes that you apply to a term paper. The basketball player who refuses to shoot until the perfect shot is available may never shoot. If you can complete a job 95 percent perfect in two hours, and 100 percent in four hours, ask yourself whether the additional five percent improvement is worth doubling the amount of time you spend. Sometimes it is a piano. A tiny mistake can ruin an entire lab experiment. Computers are notorious for turning little errors into monsters. Accept lower standards where appropriate, especially when time is short. 4. Ask: How did I just waste time? Notice when time passes and you haven't accomplished what you planned. Take a minute to review your actions and note the specific way you wasted time. We operate by habit and tend to waste time in the same ways over and over again. When you have noticed things you do that kill your time, you are more likely to catch yourself in the act next time. Observing one small quirk may save you hours. 5. Ask: Would I pay myself for what I'm doing right now? If you were employed as a student, would you be earning your wages? Ask yourself this question when you notice that you've taken your third popcorn break in 30 minutes. Most students are, in fact, employed as students. They are investing in their own productivity and sometimes don't realize what a mediocre job may cost them. 6. Ask: Can I do just one more thing? Ask yourself this question at the end of a long day. Almost always you may have enough energy to do just one more short task. If you get in the habit of working until you are done, then doing one more thig, those end-of-the-day tasks will soon add up. The overall increase in your productivity will surprise you. Adapted from: Becoming a Master Student, by David Ellis. (College Survival, Inc. 1984)  Seven Day Procrastination Elimination Plan These are 7 strategies you can use to eliminate procrastination. The suggestions are tied to the days of the week to help you recall. On Monday, Make it Meaningful.  Why is that job important? If you have been putting off something, take a minute to list all the benefits of completing the task. Look at the job in the perspective of your goals. Write down the task you have been avoiding, then, below it, write your reason for doing it. Relate the task to your goals, and be specific about the payoffs and rewards.  On Tuesday, Take it apart.  Break big jobs into small, manageable parts. Then be determined to complete one of those tasks. Make each task something you can accomplish in 15 minutes or less. Make the results measurable so you can see your progress. If a long reading assignment intimidates you, break it into two- or three-page sections, list the sections, then cross off each section as you complete it. Give yourself a visual experience of getting something done.  On Wednesday, Write an intention statement.  Use an intention statement in conjunction with a small task you have created. Write your statement on 3X5 card, and carry it with you or post it in your study area where you can see it often. For example, if you have a term paper to write and can't seem to get started, write yourself an intention statement that says, &quot;I intend to write a list of at least ten possible topics for my term paper by 9 pm. I will reward myself with an hour of guilt- free recreational reading.&quot;  On Thursday, Tell everyone.  Announce your intention publicly. Tell a friend. Tell your spouse, roommate, parents, or children. Telling the world of your intention is an excellent technique to ensure its completion. Make the world your support group.  On Friday, Find a reward.  Rewards can be difficult to construct. A reward must be something that you would genuinely withhold from yourself if you did not earn it. Don't pick a movie as a reward if you plan to go to anyway. If you don't complete what you set out to do, and go to the movie anyway, the movie would be an ineffective reward. When you legitimately reap your reward, notice how it feels. You may find that movies, clothes, or an extra hour studying one of your favorite subjects are more enjoyable when you feel like you've earned it.  On Saturday, Settle it, now.  Do it now. The minute you notice yourself procrastinating, plunge into the task. Imagine yourself at a mountain lake, poised to dive. Gradual immersion would be slow torture. It's often less painful to leap. Then be sure to savor the feeling of having the task behind you.  On Sunday, Say no.  When you notice yourself continually pushing a task into the low-priority category, re-examine the purpose for doing it at all. If you realize that you really don't intend to do something, quit telling yourself that you will. That's procrastinating. Tell the truth and drop it. Then you're not procrastinating, and you don't have to carry around the baggage of an undone task.  Adapted from: Becoming a Master Student, by David Ellis. (College Survival, Inc. 1984) Techniques To Manage Procrastination Set Priorities.  Not: I don't know where to begin, so I can't begin at all. Not: I have to do EVERYTHING! Nothing less will do. Instead: The most important step is to pick one project to focus on.  Break the Task Down into Little Pieces.  Not: There's so much to do, and it's so complicated. I'm overwhelmed by my English term paper. Instead: I don't have to do the whole project at once. There are separate small steps I can take one at a time to begin researching and drafting my paper.   Set Up Small, Specific Goals.  Not: I have to write my thesis within two months. Instead: If I write 2 pages per day, Monday-Friday, I can finish a 1st draft in 1 month. I'll have a revised final draft in 2 months.  Take One Small Step at a Time.  Not: It's too much. I'll never get it all done Instead: What is the one next step on my list? I'll concentrate on that step for right now  Reward Yourself Right Away When You Accomplish a Small Goal.  Not: I can't take any time out until I'm completely finished. Instead: I spent an hour working. Now I'll call a friend.  Use a Time Schedule.  Not: I must devote the whole week to this project Instead: I can use these times this week to work on my project: Monday 7-8; Tuesday 7-9; Saturday 10-12.  Learn How to Tell Time.  Not: Sorting through these papers and reorganizing my file cabinet will be a snap. It won't take me more than an hour, so I can do it any time. Instead: Sorting papers always takes longer than I expect, so I'll start tonight. I'll spend 1 hour filing 1 stack of papers.  Optimize Your Chances for Success.  Not: I'll do my writing this weekend at home. Instead: I'll write during the week in a library. (Choose whatever conditions are optimal for you to get work done.)  Delegate, if Possible.  Not: I am the only person in the world who can do this. Instead: I don't have to do this all by myself. I can ask someone else to do part of the job and still feel a sense of accomplishment.  Just Get Started.  Not: I can't write this speech until inspiration hits. Instead: I'll write what first comes to mind, then improve it later.  Look at What You Have Accomplished.  Not: I have hardly made a dent in all there is to do. Instead: I have reviewed my lecture notes and read 3 chapters. That won't guarentee me an &quot;A&quot;, but it's more than I did yesterday.  Be Realistic!  Not: I should be able to work full-time, take 4 classes, be president of the Esperanto Club, spend more time with friends, and play tennis 2 hours a day with no trouble at all. Instead: I have limits. I can take on fewer responsibilities and still like myself.  Learning by Listening  Not everything is equally important in lecture. Hold yourself accountable for being selective and differentiating between levels of importance. Organize your notetaking as a way to review, test your understanding of ideas, and prepare for exams. You can learn a lot through listening. In college, it will be a prime source of information. Listening is a skill which must be developed. If you apply the following suggestions, you will find yourself listening more effectively. The responsibility for developing interest and understanding is yours. Be an active listener and get the most out of attending lecture. Concentrate on what the speaker is saying. Sit where you can see and hear the speaker easily and where other distractions are at a minimum. Determine why what the speaker is saying is important to you. If you don't have an immediate, vivid reason for listening to a speaker, you are an unmotivated listener. Practice the habit of paying attention. Prepare to get the most out of lecture by reviewing the important points from the previous lecture. Preview the assigned readings to establish some background knowledge. Determine what you know and do not know about the material in order to focus your listening as an opportunity for learning. Listen for the pattern of organization in lecture. Does it begin or end with a brief summary of the main concepts, themes, or ideas? How are details or examples used to develop specific points? What is the relationship between the points presented? What is the structural format? Outline? Comparative analysis? Main idea, background information, supporting points? Inductive or deductive reasoning? Ask yourself: What questions does this lecture answer? What are possible midterm questions that information from lectures could be used to answer? What is the relationship between the lectures and the readings?  A System for Effective Listening and Notetaking You can think about 4 TIMES FASTER than a lecturer can speak. Effective LISTENING requires the expenditure of energy; to compensate for the rate of presentation, you have to acively intend to listen. NOTETAKING is one way to enhance listening, and using a systematic approach to the taking and reviewing of your notes can add immeasurably to your understanding and remembering the content of lectures. Before Class    Develop a mind-set geared toward listening.    Test yourself over the previous lecture while waiting for the next one to begin.    Skim relevant reading assignments to aquaint yourself with main ideas, new technical terms, etc.    Do what you can to improve physical and mental alertness(fatigue, hunger; time of day, where you sit in the classroom may affect motivation).    Choose notebooks that will enhance your systematic notetaking: A separate notebook with full-sized pages is recommended for each course. You might wish to mark off the pages into one of the formats shown at the end of this section.    INTEND TO LISTEN.   During class    Listen for the structure and information in the lecture.    Resist distractions, emotional reactions, or boredom.    Be consistent in your use of form, abbreviation, etc.    Pay attention to speaker for verbal, postural, and visual clues to what's important.    Label important points and organizational clues: main points, examples.    When possible translate the lecture into your own words, but, if you can't, don't let it worry you into inattention!    If you feel you don't take enough notes, divide your page into 5 sections and try to fill each part every 10 minutes (or work out your own formula).    Ask questions if you don't understand. Instead of closing your notebook early and getting ready to leave, listen carefully to information given toward the end of class; summary statements may be of particular value in highlighting main points; there may be possible quiz questions, etc.   After Class    Clear up any questions raised by the lecture by asking either the teacher or classmates.    Fill in missing points or misunderstood terms from text or other sources.    Edit your notes, labeling main points, adding recall clues and questions to be answered. Key points in the notes can be highlighted with different colors of ink.    Make note of your ideas and reflections, keeping them separate from those of the speaker.   Periodically    Review your notes: Glance at your recall clues and see how much you can remember before rereading the notes.    Look for the emergence of themes, main concepts, methods of presentation over the course of several lectures.    Make up and answer possible test questions   Effective Note-Taking  Lecture styles vary greatly from speaker to speaker. Some lecturers are beautifully organized, some ramble, some present an hour of anecdotes and leave the student to determine their significance. It is imperative that you figure out a lecturer's style. In the case of the rambler or story teller, you may find yourself at the end of an hour with only a sentence or two written down. Check with other students, but don't be surprised if it works out that your sentences do, indeed, represent the crucial points of the lecture.  Purposes of Note-Taking  1. In order to take efficient notes, the student is forced to listen carefully and critically to what is being said. 2. Taking notes aids comprehension and retention. Personal notes in one's own writing are easier to understand and remember than texbook material. 3. Lecture notes should represent a concise and complete outline of the most important points and ideas, especially those considered most important by the professor. 4. Lecture notes clarify ideas not fully understood in the text or elaborate on things that the text mentions only briefly. 5. Lecture notes combined with notes from textbook material are an excellent source of review. They provide a gauge to what is important in the textbook. A frequent complaint of students is that they are unable to determine during the lecture what is important and what might just as well be left out. These students may attempt to write down every word uttered by the professor, combining page after page of isolated facts and details but missing a more general understanding of the material, as they are too busy writing to listen. The following are some suggestions to aid the student in taking efficient lecture notes.  Before the Lecture  The single most important thing you can do is to read or skim the text prior to attending the lecture. This will enable you to: 1. Get the general overview of main ideas, secondary points, and important concepts. Listen with understanding and determine what is relevant and irrevelant. 2. Identify familiar terms with unfamiliar terms and concepts. a. Look up the terms before class. b. Listen for an explantion during the lecture. c. Ask the professor or TA for an explanation. 3. Note portions of the material which are unclear. a. Listen for an explanation during the lecture. b. Develop questions to ask in class. 4. Look for other gaps in information which should be clarified or filled in.  During the Lecture  Structure of Notes Each student should develop his own method of taking notes, however, the following suggestions may be helpful. 1. Keep a separate section of your notebook or binder for each course. If there are several types of notes for one course, such as lecture notes, notes on outside readings, and computation of problems, you may want to arrange them on opposite pages for purposes of cross-reference. 2. Notes for each lecture should begin on a new page. This makes for a greater legibility and allows for more freedom in organization. 3. Date your lecture notes and number all pages. 4. Make your notes brief. a. Never use a sentence when you can use a phrase, or a phrase when you can use a word. b. Use abbreviations and sumbols wherever possible. 5. Put most notes in your own words. However, the following should be noted exactly: a. Formulae b. Definitions c. Specific facts 6. Note your lecturer's chief pattern. S/he may be summarizing the text and highlighting important points, or trying to draw relationships between new and previous understandings. S/he may expect you to get the textbook material on your own while he discusses related outside material. a. If s/he is highlighting the text, take down explanations and examples. Seeing a concept stated in more than one way can help you understand it. b. If s/he draws relationships and asks questions, note the questions and answers. If s/he doesn't give the answers, try to find them after class. 7. Don't worry about outlining, but use indentations to distinguish between major and minor points. Numbers and letters may be added later if you wish. However, if the lecturer says s/he will make four or five points, list four or five causes, etc., be sure to use numbers as a check on having taken them all down. 8. Note down unfamiliar vocabulary and unclear areas. If the lecturer discusses something you don't understand, take it down as best and as completely as you can. Then you can check with the text or at least know what questions to ask if getting help from someone else. If your instructor knows just what you don't understand, s/he's in a position to help you. 9. If you should miss something completely, leave a blank space and get it later. 10. Use margins for questions, comments, notes to yourself on unclear material, etc. 11. Develop a code system of note-marking to indicate questions, comments, important points, due dates of assignments, etc. This helps separate extraneous material from the body of notes and also helps point out areas which are unclear. Margins are excellent places for coded notations. Some suggested codes are: ? - not clear at time of lecture Imp. or ! - important Q - questions * - assignment C - comment(student's own) 12. Attempt to differentiate fact from opinion.  Content. 1. Notes should include all main ideas and enough subordinate points to clarify understanding. 2. All formulae, rules, definitions, and generalizations should be included. 3. Inclusion of the speaker's illustrations and examples may help clarify concepts when notes are reviewed. 4. Marginal notes facilitate speedy location of specific items. 5. Instructors usually give clues as to what is important to take down: a. previews and summaries b. material written on blackboard, other visual aids c. repetition d. vocal emphasis e. questions asked of the class f. word clues: four causes of; four aspects of; therefore; in conclusion; and so we see; hence; in a like manner; on the other hand; however; cause-effect; relationships; etc.  After the Lecture  Go over your notes as soon as possible after the lecture. See below for an example of &quot;mapping&quot; 1. Clear up illegibilities in writing, check for errors, fill in further facts and examples while the lecture is still fresh in your mind. At this point you should clear up misunderstandings or fill in missing information by consulting the lecturer, TA, classsmates, the texts, or addtional readings. 2. Immediate review is essential to retention. Unless you review within 24 hours after lecture or at least before the next lecture, retention will drop sharply and you will be relearning rather than reviewing. 3. Merely recopying notes without thinking about or revising them does not necessarily aid retention. A more helpful practice is to manipulate the material by reorganizing it and putting it in your own words. For a well-organized lecture, an outline can suffice, but in the case of material where important ideas and relationships are scattered throughout, there is a technique called mapping which can be very useful in restructuring and putting together the relevant points. The use of this technique forces you to critically evaluate material in terms of main ideas, secondary points, and details, and to structure this content in an organized and coherent fashion. Relationships must be observed and established, irrelevant material may be excluded. This can be one of the most efficient means of immediate review for optimal retention.  Taking Tests -- General Tips Tests measure how you are doing in a course. Usually test scores are the key determinants of your course grade. Doing well on tests requires test-taking skills, a purposeful positive attitude, strategic thinking and planning, and, naturally, a solid grasp of the course content. This article contains tips that apply to all types of tests: Additional tips are available for problem solving tests, objective tests, and essay tests. How to Prepare for Tests  1. Familiarize yourself with the test. Ask the professor how long it will be and what kind of questions will be on it. Ask your instructor which concepts are most important, which chapters to focus on, and what you will have to do on the test. Also ask for some sample test questions and whether there is a copy of a similar test on file in a library. Look over the tests you have already taken in the course to predict what you will need to prepare for. Your aim is to determine both the content of the questions and the type of memory/intellectual skills you will be asked to use. Examples of these skills include:    Remembering specific facts.    Comparing, contrasting, and otherwise interpreting meaning in the information studied.    Applying principles and theories to solve problems (that may not have been covered explicitly in the materials).    Predicting possible outcomes given a set of variables.    Evaluating the usefulness of certain ideas, concepts, or methods for a given event or situation.   2. Overview all the work to be done and schedule time to do it. On the basis of your familiarity with the test, make a list of all the tasks you must complete to prepare for it. Given what topics you expect to be most important on the test, set priorties among your study tasks and plan to do the most important ones first. In scheduling your test preparation work, keep as much as possible to your own routines. If you do not know how to make a study schedule, refer to the article on time management. 3. Avoid the &quot;escape syndrome&quot;. If you find yourself fretting or talking about your work rather than studying, relax for a few minutes and rethink what you are doing - reappraise your priorities and if necessary rethink your study plan to address your worries and then START WORKING. 4. Deal with unread materials - succinctly. Approach your unread materials keeping in mind all of your study plan, how much time you have to catch up on your reading, and what it is you need to pull out of the reading. Preview the material, dividing it up into parts looking for the organizational scheme of the work. Decide what parts in the reading you can omit, what parts you can skim, and what parts you want to read. Set time limits for each part, and keep to the limits. Use the following techniques to help move through the reading:    Skim all the reading material first (except the parts you have decided to omit) so you will have at least looked at everything before the test. Take notes on what you skim.    Read, emphasizing key sentences and concentrating on understanding the ideas expressed. Try editorializing as you read by asking yourself questions regarding WHO, WHAT, WHERE, WHEN, and HOW about the information.    Recite the material to yourself immediately, self-testing at the end of each part to enhance recall even without later review.   5. Review actively. Integrate notes, text, and supplementary information onto summary sheets by diagramming, charting, outlining, categorizing in tables, or simply writing paragraph summaries of the information. Try to create a summary sheet for each study session, or for each main idea, or for each concept. Use as many of the suggested ways possible, bringing all your senses as well as your sense of humor to bear on these summary sheets to make them really personally meaningful. The more of yourself you put into these sheets, the better you will remember the information. 6. Practice doing what you will be doing on the test. If you will be solving problems, then that is what you need to do while studying; if you will be conjugating Spanish verbs, then write these out. Answer unassigned problems or questions in the text or anticipate test questions by thinking frequently, 'If I were making up this test, I would probably ask...', and then answer your question. Remember, the single most effective way to prepare for any test is to practice doing what you will have to do on the test. 7. It is frequently useful to study with other well-prepared students and to attend any review sessions if available. Use these forums to clarify any questions you have about the materials and the test. Do not expect review sessions to repeat any lectures nor to present any addition information. The purpose of these sessions is to give you the opportunity to ask questions about the information to further your understanding.  How to Take Tests  1. Be prepared emotionally and physically as well as intellectually. Get into a &quot;fighting&quot; attitude, emotionally ready to do your best. Stay away from others right before the test. Anxiety is highly contagious. Focus on what you know rather than on what you do not know: Reinforce your strengths and arrest your weaknesses. Get your rest the night before a test, eat well balanced meals, keep up with your regular exercise - prepare your brain for optimum functioning by keeping your physical resources well maintained. Avoid fasts; do not take any stimulants you are not used to, and if you are used to them (i.e. coffee or soft drinks) keep within moderate amounts. 2. Arrive at the test room early enough to arrange your working conditions, establishing a calm and alert mode. Select a seat where the lighting is the best (frequently in the front of the room) and where your view of other students will be minimized. 3. When you receive your test, use the back to jot down all the information you are worried you might forget. Remember first to ask whether you can write on the test form itself. 4. Preview the whole test before beginning to answer any questions. Make sure your copy has no missing or duplicate pages. Ask the instructor or proctor to clarify any ambiguities. Read the directions carefully. 5. Plan your time. Allow the most time for the questions which offer the most points. Allocate time at the end to review. 6. Start with the easy questions to build your confidence and to gain time for the harder ones. Work the entire test: Put down some answer for each question, even if you must guess (unless there is a penalty for guessing). 7. Do not panic if you see a question you did not anticipate or prepare for. Use everything you know about the content of the course, the instructor's explanations and your own reasoning ability to analyze the question and create a logical answer. Go for partial credit when you know you cannot get all the points: If you have studied, you are bound to know something. 8. Read the question as is. Avoid overanalyzing or oversimplifying, or you will end up answering a question that exists only in your mind, not on the grading key. Answer the question the testmaker intended: interpret the test within the scope of the course.  How to Analyze Returned Tests    1. If you receive your test back to keep, rework your errors trying to reason out why the correct answer was correct.    2. If you do not receive your test back, visit your instructor's office to take a look at your answer sheet and the questions you missed.  3. Look for the origin of each question - text, notes, labs, supplementary reading, etc.  4. Identify the reason you missed a question. Did you fail to read it correctly? Did you fail to prepare for it? Was the test at a more difficult level than you prepared for? Did you run out of time?  5. Check the level of detail and skill of the test. Were most of the questions on precise details and facts or were they over main ideas an principles? Did the questions come straight from the text, or did the testmaker expect you to make sophisticated transformations and analyses?  6. Did you have any problems with anxiety or blocking during the test?   Taking Essay Tests Preparing for Essay Tests  1. Begin your preparation by reading your instructor's course description and syllabus and then writing down whatever assumptions, biases, and teaching objectives are stated or implied in these materials. Determine how the various course topics relate to one another, and note any repeated themes. Think about any potential essay questions you can generate from this information, and then write them down. 2. Read assignments and listen to lectures and discussions with the purpose of determining how the course content supports the major themes and answers the major questions you have generated from the course description and syllabus. Modify and refine these themes and questions throughout the course as you gain additional information. 3. At some point prior to the test - preferably a week or two before - quickly look over your notes and the chapter headings from your readings. From this overview, generate a list of major topics for the course material covered. For each major topic, create a summary sheet of all the relevant factual data that relates to that topic. (See &quot;Taking Tests - General Tips&quot; (below) for more information about summary sheets. 4. In addition to learning the factual material, determine any logical relationships among topics. These relationships are often predictive of essay test questions. For example, if, in a history course, you find that two political movements are noticeably similar, then your instructor may very well ask you to compare and contrast the two movements. Generate a list of possible essay questions and consider setting up and answering as many of these questions as time permits.  Taking Essay Tests  1. Read all essay questions before you start to write. As ideas and examples come to you, jot them down on scratch paper or on the back of the test so that you won't clutter your mind trying to remember everything. 2. Budget your time according to the point value of each question, allowing time for proofreading and any unexpected emergencies (such as taking longer than you expected on a questions or going blank for a while.) 3. As you read the questions, underline key words (eg., compare, explain, justify, define) and make sure you understand what you are being asked. 4. Begin with the questions that seems easiest to you. This procedure reduces anxiety and facilitates clear thinking. 5. Before actually writing, determine the relationship implied by the question, even if the key word or words do not express a specific relationship. For example, if you were given the following question, &quot;The Progressive Movement was a direct response to the problems of industrialization. Discuss.&quot;, you might narrow your response to a more specific cause/effect relationship like the following:&quot;What were the problems of industrialization that caused a response that we label The Progressive Movement?&quot; 6. After determing the relationship implied by the question, picture the relationship by creating a chart or matrix of the related elements. Be sure to separate general issues you wish to bring up from supporting details and examples. Once this framework for your ideas has been created, generate as many ideas as you can within the allotted time to fill in the categories you have established. (See Figure 1). Figure 1. Sample of Prewriting Matrix       GENERAL     CAUSE PROBLEMS OF INDUSTRIALIZATION     EFFECT:  PROGRESSIVE RESPONSE          Social     Urbanization  Change in Family  New Labor Conditions  New Social Conditions     Muckraking--Spargo  Settlement House  Working Condition Laws  Brandeis Brief        Political     Growth of Bossism: Tweed     Muckraking--Baker  LaFollette Reform  Party Platform--1912        Economic     Trusts: Standard Oil  Wealth Distribution     Muckraking--Tarbeil  Anti-trust Legislation  Railroad Regulation      While You Write  1. Be sure your answer has a definite thesis that directly answers the question. State this thesis within the first few sentences of your answer. 2. Provide specific as well as general information in your response by including examples, substantiating facts, and relevant details from your pre-writing matrix. 3. Use the technical vocabulary of the course. 4. Leave space for additions to your answer by writing on every other line and on only one side of each page. 5. Write legibly. 6. If your mind goes blank or you don't know much about a question, relax and brainstorm for a few moments about the topic. Recall pages from your texts, particular lectures, and class discussions to trigger your memeory about ideas relevant to the question. Write these ideas down as coherently as you can. 7. When you reach the end of your alloted time period for a given question, move on to the next item: Partially answering all questions is better than fully anwering some but not others. The instructor can't give you any credit for a question you haven't attempted. 8. If you find yourself out of time on a question but with more to say, quickly write down in outline form what you would write if you had time.  After You Write  1. Re-read your answers and make any additions that are necessary for clarity and completeness. 2. Check your response for errors in grammar, spelling, and punctuation.  Analyzing Returned Essay Tests  1. Read all comments and suggestions. 2. Look for the origins of the questions. Did most of the information your instructor expected on your essay come from the lectures? From the texts? From outside readings? 3. Determine the source of your errors. Was there any course content tested for which you failed to prepare or were inadequately prepared? Did you misread or misunderstand any of the questions? Did you do poorly because you ran out of time? Were you too anxious to focus on the questions and your responses? Did the instructor criticize your writing skills - grammar, spelling, punctuation, sentence structure, style, or organization - or how you developed or argued your points? 4. Check the level of difficulty or the level of detail of the test questions. Were most of the questions asking for precise details or main ideas and principles? Did most of the quesitons come straight from the material covered, or did the instructor expect you to be able to analyze and/or evaluate the information? Did you have any problems with anxiety or blocking during the test? Portions of this handout have been adapted from materials developed by Nancy Wood, University of Texas at El Paso, and David Hubin and Susan Lesyk, University of Oregon.  Taking Problem-Solving Tests Preparing for Problem-Solving Tests  1. Review notes and text - list the major concepts and formulas that have been covered. 2. Highlight those topics/problems that were emphasized. Note why they were emphasized. 3. The single best way to prepare for problem-solving tests is to solve problems - lots of them. Work problems not previously assigned. 4. Analyze all problems you work:    What concepts, formulas, and rules did I apply?    What methods did I use?    How did I begin?    Have I seen this problem before?    Is it similar to or dissimilar from other problems I've done?    How does my solution compare with the examples from the book and class?    Could this problem be worked another way? Can I simplify what I did?   5. In your own words, next to each problem-solving step, explain what you did and why. 6. Look for fundamental problem types. Usually a course has approximately 5 fundamental groups of problems - make sure you can recognize what they are. 7. Practice working problems out of sequence. For example, work a problem from Chapter 7, then one from Chapter 5, then one from Chapter 10. This randomness will allow you to see how different problems relate to each other and will simulate the test-taking experience. 8. Work with a time limit - aim to solve as many problems as you will have on the test within the test time limit (i.e., 30 problems in 50 minutes). 9. Make up a practice test. Possibly you might cut/paste/xerox a test from your homework problems.  Taking Problem-Solving Tests  1. Before starting the test, turn it over and jot down all the formulas, relationships, definitions, etc., that you are trying to keep current in memory. 2. Look the whole test over, skimming the questions and developing a general plan for your work. If any thoughts come to you immediately as you look at a problem, note these down in the margin. 3. Plan your time. Allow more time for high point value problems: Reserve time at the end of the period to review your work and to handle emergencies. 4. Start with the easier problems, the ones for which you can specify a solution method quickly. This will reduce anxiety and facilitate clear thinking. 5. For the more difficult problems:    Make absolutely sure that you understand the posed problem: Mark key words, identify the givens and unknowns in your own words, sketch a diagram or picture of the problem, anticipate the form and characteristics of the solution (e.g., it has to be an integer, the solution is an algebraic expression, etc.)    Make a note, in symbols, diagrams, graphs or tables of all the information given.    For complex problems, list all the formulas you consider might be relevant to the solution, then decide which you will need to begin with.   6. If you have no solution method:    If possible, write out an equation to express the relationships among all the givens and unknowns, accounting for all the data and facts of the problem.    Think back to similar practice problems to select a solution method.    Solve a simpler form of the problem if dealing with complex configurations OR substitute simple numbers for unknowns to reduce the amount of abstract thinking required.    Break the problem into a series of smaller problems and work each part, thus building up to a solution.    Guess an answer and check it. Possibly the checking process will suggest a solution method.   7. If all else fails, mark it to come back to later and work another problem. You may find clues in subsequent problems. 8. For all problems, easy and difficult:    Once you have the solution method, follow it carefully. Check each step for consistency in notation. Document all your work so that it may be read easily; write legibly.    Evaluate your solutions. Check your answers against the original problem to make sure they fit.   9. Try all test problems. If your mind goes blank, relax for a moment and contemplate the problem OR mark it to come back later. 10. If you run out of time and still have some problems left, try to gain at least partial credit by setting the problem up in a solution plan (even if you can't follow through on calculations).  Analyzing Returned Problem-Solving Tests  1. Read the comments and suggestions. 2. Locate the source of the test: Did the problems come from the lectures, the textbook, or the homework? 3. Note any transformations - how were the problems changed from those in the notes, text, and homework? 4. Detemine the source of your errors:    Were your errors due to carelessness? For example, did you fail to carry a negative sign from one step to another?    Did you misread questions? For example, did you fail to account for all the given data in your solution method?    Did you consistently miss the same kind of problem?    Could you produce the formulas, or did you remember them incorrectly?    Were you unable to finish the test because you ran out of time?    Were you unable to solve problems because you had not practiced doing similar ones?   5. Did you have a difficult time during the test because you were too anxious to focus on the questions?  Taking Objective Tests Objective tests measure your ability to remember many facts and figures as well as your understanding of the course materials. These tests are often designed to make you think independently - do not count on recognizing the right answer ; instead prepare yourself for high level critical reasoning and making fine discriminations to determine the best answer. The most common objective test questions are multiple-choice, true-false, and matching items. Doing well on these questions requires that you not only master the information but also interpret the test-maker's intentions. You know you have mastered the information if you can:   Recall specific terms, facts, names, and other key words; become proficient in the language of the course.  Distinguish the ways in which ideas, facts, theories, or other observations differ from each other AND categorize ideas, facts, theories or other observations according to the ways these are similar.  Answer the questions and solve the problems in the text and create your own questions or problems.  Preparing for Objective Tests  1. Review notes and text(s) - list the major concepts that have been covered 2. Highlight those topics that were stressed. Note why they were stressed. 3. Think vocabulary. Every field of study has its own vocabulary. Identify words/terms used to represent specific concepts (i.e., the word 'paradigm' in a social science research course) and treat them as you would a foreign language - make flash cards for frequent drills, and try to use these words whenever you work with course-related materials. 4. Compare and contrast. Sometimes objective questions can be used to test your ability to distinguish concepts, ideas, theories, events, or facts from each other. Construct diagrams, charts, tables, or lists to summarize relationships. 5. Recite for precision. Review your retention of the information by recalling it often. Use odd moments, in addition to 15-20 minute review sessions, to say or write out complete ideas, facts. It is very important to verbalize the recalled information completely and in a detailed manner so that you will have a precise idea of your mastery of the material.  Taking Objective Tests  1. General tips.    Plan your time. Allow more time for high point value questions; reserve time at the end to review your work, and for emergencies.    Before starting the test, turn it over and jot down all the facts and details you are trying to keep current in memory.    Look the whole test over, skimming the quesitons and developing a general plan for your work. If any immediate thoughts come to you, jot them down in the margin    Check with your instructor whether or not you can write on the test.    Read the directions very carefully. Look for time limits, specific answering procedures (i.e., answer 3 out of the 4 questions below), how questions will be graded.    Start with the section of the test that will yield the most points, but begin working with the easiest questions to gain time for the more difficult ones and to warm up.    Work quickly, check your timing regularly, and adjust your speed when necessary.    Avoid reading into the question. When you find yourself thinking along the lines of &quot;this is too easy; there must be a trick...&quot; mark the question and move on to another. When you begin modifying the question, the answer you will come up with will be different from the one on the teacher's key. Interpret questions literally.    Choose the answer the testmaker intended - stay within the scope of the course. If you know facts that are beyond the level of sophistication of the test, 1) Record the intended answer, and 2) point out the possible ambiguity and make a case for a different answer either in the margin of the test or during the next regular class.    Mark key words in every question. To help find the key works ask yourself WHAT, WHO, WHERE, WHEN, and HOW?   2. Multiple choice questions.    Probably the most commonly used objective questions, multiple choice questions, consist of 2 parts:   a. The stem - the statement or question. b. The choices - also known as the distractors. There are usually 3 to 5 options from which you choose the one that will complete the stem statement or question.You are to select the correct choice, the option that completes the thought expressed in the stem. There is a 20% chance that you will guess the correct choice if there are 5 choices listed. Although multiple choice questions are are most often used to test your memory of details, facts, and relationships, they are also used to test your comprehension and your ability to solve problems. Reasoning ability is a very important skill for doing will on multiple choice tests.    Read the stem as if it were an independent, free standing statement. Anticipate the phrase that would complete the thought expressed, then evaluate each answer choice against your anticipated answer. It is important that you read each choice, even if the first choice matches the answer you anticipated, because there may be a better answer listed.    Another evaluation technique is to read the stem together with each answer choice as if it were a true-false statement. If the answer makes the statement a false one, cross it out. Check all the choices that complete the stem as a true statement. Try to suspend judgment about the choices you think are true until you have read all the choices.    Beware of words like not, but, except . Mark these words because they specify the direction and limits of the answer.    Also watch out for words like always, never, and only . These must be interpreted as meaning all of the time, not just 99% of the time. These choices are frequently incorrect because there are few statements that have no exceptions (but there are a few).    If there are two or more options that could be the correct answer, compare them to each other to determine the differences between them, and then relate these differences with the stem to deduce which of the choices is the better one. (Hint: Select the option that gives the most complete information.)    If there is an encompassing answer choice, for example &quot;all of the above&quot;, and you are unable to determine that there are at least two correct choices, select the encompassing choice.    Use hints from questions you know to answer questions you do not.    Make educated guesses - eliminate options any way you can.   3. True-False Questions.    Also a popular question type, the true-flase question has only two options. Your odds are always 50-50 with this type of item. Typically, testmakers tend to focus on details in true-false questions.    In order for a statement to be true, it must be so 100% of the time. This means each part of the question. Thus you must evaluate the trueness of WHAT, WHO, WHERE, WHEN, and HOW for each statement.    Beware of words that qualify and give specific meanings. Words like some, usually, not frequently denote true statements, but be careful to interpret each statement as a special case.    Another type of word, such as always and never , should be interpreted as meaning without exception. If you can think of an exception, the statement is false.    Testmakers often mismatch items or names with inappropriate events or definintions to test your mastery and alertness.   4. Matching Questions.    Matching questions give you some opportunity for guessing. You must know the information well in that you are presented with two columns of items for which you must establish relationships. If only one match is allowed per item, then once items become eliminated, a few of the latter ones may be guessed.    The relationship is the crucial factor in a set of matching items. Usually the relationship is common to all included items. For example, all the items in Column B define the terms in Column A, or the individuals named in Column A wrote the books listed in Column B.    For every match you make, cross the the items in both columns (unless there is more than one match possible).    Begin with the lengthier column containing the information, evaluating the items in the column with shorter descriptions for a match. This way you save time by not constantly having to re-read the lengthy statements.   Analyzing Returned Objective Tests  After you get your graded test back, analyze the questions. If you do not get your test back, visit your professor in his/her office where the test will be kept on file and ask for your graded answer sheet to analyze your performance on the test.    Read all comments and suggestions.    Loof for the origin of the questions. Did they come from the notes or the book(s)? From the class or the lab?    Look at the questions you missed. Verbalize the rationale for the correct answer - figure out why the correct answer was better than your answer.    Did you really know the answer to a question, but you failed to read it carefully enough to recognize it?    Were there any areas tested you failed to prepare for? Why didn't you?    Did you misread any questions?    Check the level of difficulty or the level of detail of the test questions. Were most of the questions over precise details, or were they over main ideas and principle? Did most of the questions come straight from the material covered, or did the testmaker expect you to be able to analyze and/or evaluate the information?    Were you able to finish the test?    Did you have a difficult time during the test because you were too anxious to focus on the questions?   Study Strategies Links Fall 2017 Semester Calendar Weekly Planning Calendar Download a 24/7 blank schedule that you can use as a weekly and daily planner!"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:url" content="http://slc.berkeley.edu/study-and-success-strategies"> 
+  <meta name="twitter:title" content="Study and Success Strategies"> 
+  <meta name="twitter:description" content="CalREN Project: Study Tips &nbsp; When to Study  1. Find out how you use and misuse your time before making any changes."> 
+  <title>Study and Success Strategies | SLC | UC Berkeley</title> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all"> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_QnDqumlAmBiA-LkPKOOEj-wMlRQlYuHQdMmPGFs03GQ.css" media="all"> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_mSo1G5fIParbqab6f6XgDDBT7DA8ChWH4-90fTSfU3g.css" media="all"> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_1q3_qXgx_cDg-osKaQYplFjG_lK2JDzCGr1SyF2qk8I.css" media="all"> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="all"> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_T-JB7RV9mowmDZPLwf68BG3ECVkC8x4fVZSBlq9y30A.css" media="all"> 
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;subset=latin-ext,latin" media="all"> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_sLGx5EgobMLxEepyJpw8zff5qtS2QttXeu4hIJjIRUo.css" media="all"> 
+  <!--[if (lt IE 9)&(!IEMobile)]>
+<link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_IIZonmhqChFakOT4r6t9m1czMHSAXC3kHIRtWFBKYT8.css" media="all" />
+<![endif]--> 
+  <!--[if gte IE 9]><!--> 
+  <link rel="stylesheet" href="http://slc.berkeley.edu/sites/default/files/css/css_EnvXxsjZ7mj-WQ9MIQIhmsVjPa62utwEKoplwGgpA18.css" media="all"> 
+  <!--<![endif]--> 
+  <script>
+document.cookie = 'adaptive_image=' + Math.max(screen.width, screen.height) + '; path=/';
+</script> 
+  <script src="http://slc.berkeley.edu/sites/default/files/js/js_tm1gahPj5RurExr4Zj4GdGvvL7W4-u6_XRVeEsXyp3Q.js"></script> 
+  <script src="http://slc.berkeley.edu/sites/default/files/js/js__XcwLy4quRB53Qss-2KD6c7mE7TNkhmo8pDS6ApYGyA.js"></script> 
+  <script>
+jQuery(document).ready(function(){jQuery("#accordion, #accordion2, #accordion3, #accordion4, #accordion5, #accordion6").accordion({active:false,autoHeight:false,navigation:true,collapsible:true});});
+</script> 
+  <script src="http://slc.berkeley.edu/sites/default/files/js/js_IMsPAO6JcR0gkfJsgLfaZxMCX8E_G46AsC4YFEwnZ_8.js"></script> 
+  <script src="http://slc.berkeley.edu/sites/default/files/js/js_S4Fotzj2_g0hGXDc_oaoBxECIPze1RkFsgbTggDlDh8.js"></script> 
+  <script src="http://slc.berkeley.edu/sites/default/files/js/js_43n5FBy8pZxQHxPXkf-sQF7ZiacVZke14b0VlvSA554.js"></script> 
+  <script>
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"MDALLC","theme_token":"cm3qRmcvR-hFA_ATOEMZl8KGViL0JfqLxGjq105CwaM","js":{"sites\/all\/modules\/menu_minipanels\/js\/menu_minipanels.js":1,"sites\/all\/libraries\/qtip\/jquery.qtip-1.0.0-rc3.min.js":1,"0":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/ui\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/all\/modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/all\/modules\/nice_menus\/js\/superfish.js":1,"sites\/all\/modules\/nice_menus\/js\/nice_menus.js":1,"1":1,"sites\/all\/modules\/jquerymenu\/jquerymenu.js":1,"sites\/all\/modules\/megamenu\/megamenu.js":1,"sites\/all\/modules\/menu_minipanels\/js\/menu_minipanels.callbacks.js":1,"sites\/all\/themes\/MDALLC\/js\/custom-accordion.js":1,"sites\/all\/themes\/MDALLC\/js\/playvideo.js":1,"sites\/all\/themes\/omega\/omega\/js\/jquery.formalize.js":1,"sites\/all\/themes\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/all\/modules\/adaptive_image\/css\/adaptive-image.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/jquerymenu\/jquerymenu.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"public:\/\/ctools\/css\/0a2d2db161d346075c06ba181c752133.css":1,"sites\/all\/modules\/nice_menus\/css\/nice_menus.css":1,"sites\/all\/themes\/MDALLC\/nicemenu-skin-mda.css":1,"sites\/all\/modules\/megamenu\/megamenu.css":1,"sites\/all\/modules\/megamenu\/megamenu-skins.css":1,"sites\/all\/modules\/menu_minipanels\/css\/menu_minipanels.css":1,"public:\/\/google_fonts.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-reset.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-mobile.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-alpha.css":1,"sites\/all\/themes\/omega\/omega\/css\/formalize.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-text.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-branding.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-menu.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-forms.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-visuals.css":1,"sites\/default\/files\/fontyourface\/font.css":1,"http:\/\/fonts.googleapis.com\/css?family=Open+Sans:300,400,600\u0026subset=latin-ext,latin":1,"sites\/all\/themes\/MDALLC\/css\/global.css":1,"ie::normal::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default.css":1,"ie::normal::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default-normal.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"narrow::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default.css":1,"narrow::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default-narrow.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-12.css":1,"normal::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default.css":1,"normal::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default-normal.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"wide::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default.css":1,"wide::sites\/all\/themes\/MDALLC\/css\/MDALLC-alpha-default-wide.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/wide\/alpha-default-wide-12.css":1}},"jquerymenu":{"hover":0,"animate":1,"edit_link":1,"click_to_expand":0},"urlIsAjaxTrusted":{"\/study-and-success-strategies":true},"nice_menus_options":{"delay":800,"speed":"slow"},"menuMinipanels":{"panels":{"panel_218":{"position":{"target":"custom","target_custom":"#block-system-main-menu","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"0","when":{"event":"mouseover"},"effect":{"type":"slide","length":"300"}},"hide":{"delay":"300","effect":{"type":"fade","length":"300"}},"style":{"name":"light","width":{"min":"220","max":"940"},"border":{"width":"0","color":"#d3d3d3","radius":"0"}},"mlid":"218"},"panel_1158":{"position":{"target":"custom","target_custom":"#block-system-main-menu","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"0","when":{"event":"mouseover"},"effect":{"type":"slide","length":"300"}},"hide":{"delay":"300","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"220","max":"940"},"border":{"width":"0","color":"#d3d3d3","radius":"0"}},"mlid":"1158"},"panel_1159":{"position":{"target":"custom","target_custom":"#block-system-main-menu","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"0","when":{"event":"mouseover"},"effect":{"type":"slide","length":"300"}},"hide":{"delay":"300","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"220","max":"940"},"border":{"width":"0","color":"#d3d3d3","radius":"0"}},"mlid":"1159"}}},"megamenu":{"timeout":"500","sizewait":"250","hoverwait":"400"},"omega":{"layouts":{"primary":"normal","order":["narrow","normal","wide"],"queries":{"narrow":"all and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+</script> 
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-128 node-type-page context-study-and-success-strategies"> 
+  <div id="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <div class="page clearfix" id="page"> 
+   <header id="section-header" class="section section-header"> 
+    <div id="zone-user-wrapper" class="zone-wrapper zone-user-wrapper clearfix"> 
+     <div id="zone-user" class="zone zone-user clearfix container-12"> 
+      <div class="grid-12 region region-user-second" id="region-user-second"> 
+       <div class="region-inner region-user-second-inner"> 
+        <div class="block block-megamenu block-menu-masthead-navigation block-megamenu-menu-masthead-navigation odd block-without-title" id="block-megamenu-menu-masthead-navigation"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <ul id="megamenu-menu-masthead-navigation" class="megamenu-menu columnar megamenu-skin-masthead">
+            <li id="megamenu-mlid-1350" class="megamenu-parent megamenu-parent-0 odd half-1 leaf-0 first menu-1350  first"><h2 class="megamenu-parent-title"><a href="/faculty-and-staff">Faculty and Staff</a></h2></li>
+            <li id="megamenu-mlid-1352" class="megamenu-parent megamenu-parent-1 even half-1 leaf-1 menu-1352 "><h2 class="megamenu-parent-title"><a href="/slc-affirmation">Students</a></h2></li>
+            <li id="megamenu-mlid-1349" class="megamenu-parent megamenu-parent-2 odd half-2 leaf-2 menu-1349 "><h2 class="megamenu-parent-title"><a href="/slc-alumni">SLC Alums</a></h2></li>
+            <li id="megamenu-mlid-1504" class="megamenu-parent megamenu-parent-3 even half-2 leaf-3 last menu-1504  last"><h2 class="megamenu-parent-title"><a href="/training">Training</a></h2>
+             <ul class="megamenu-bin megamenu-slots-columnar">
+              <li id="megamenu-mlid-1507" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/overview">Overview</a></h3></li>
+              <li id="megamenu-mlid-1505" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/training-0">Training</a></h3></li>
+              <li id="megamenu-mlid-1506" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 last  last"><h3 class="megamenu-slot-title"><a href="/faq-4">FAQ</a></h3></li>
+             </ul></li>
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix"> 
+     <div id="zone-branding" class="zone zone-branding clearfix container-12"> 
+      <div class="grid-12 region region-branding" id="region-branding"> 
+       <div class="region-inner region-branding-inner"> 
+        <div class="branding-data clearfix"> 
+         <div class="logo-img"> 
+          <a href="/" rel="home" title=""><img src="http://slc.berkeley.edu/sites/all/themes/MDALLC/logo.png" alt="" id="logo"></a> 
+         </div> 
+        </div> 
+        <div class="block block-panels-mini block-mobile-header block-panels-mini-mobile-header odd block-without-title" id="block-panels-mini-mobile-header"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <div class="panel-flexible panels-flexible-3 clearfix" id="mini-panel-mobile_header"> 
+            <div class="panel-flexible-inside panels-flexible-3-inside"> 
+             <div class="panels-flexible-row panels-flexible-row-3-1 panels-flexible-row-first clearfix "> 
+              <div class="inside panels-flexible-row-inside panels-flexible-row-3-1-inside panels-flexible-row-inside-first clearfix"> 
+               <div class="panels-flexible-region panels-flexible-region-3-left_region panels-flexible-region-first "> 
+                <div class="inside panels-flexible-region-inside panels-flexible-region-3-left_region-inside panels-flexible-region-inside-first"> 
+                 <div class="panel-pane pane-custom pane-1"> 
+                  <div class="pane-content"> 
+                   <a href="/">Home</a> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panels-flexible-region panels-flexible-region-3-social_region panels-flexible-region-last "> 
+                <div class="inside panels-flexible-region-inside panels-flexible-region-3-social_region-inside panels-flexible-region-inside-last"> 
+                 <div class="panel-pane pane-custom pane-3"> 
+                  <div class="pane-content"> 
+                   <div class="header-social-1 rteright" style="">
+                    Contact Us | 
+                    <a class="mobile-mail" href="/contact-slc-staff">&nbsp;</a>
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="panels-flexible-row panels-flexible-row-3-main-row clearfix header1"> 
+              <div class="inside panels-flexible-row-inside panels-flexible-row-3-main-row-inside clearfix"> 
+               <div class="panels-flexible-region panels-flexible-region-3-menu_toggle panels-flexible-region-first "> 
+                <div class="inside panels-flexible-region-inside panels-flexible-region-3-menu_toggle-inside panels-flexible-region-inside-first"> 
+                 <div class="panel-pane pane-custom pane-2"> 
+                  <div class="pane-content"> 
+                   <div id="menu_btn">
+                    &nbsp;
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panels-flexible-region panels-flexible-region-3-center panels-flexible-region-last "> 
+                <div class="inside panels-flexible-region-inside panels-flexible-region-3-center-inside panels-flexible-region-inside-last"> 
+                 <div class="panel-pane pane-block pane-search-form"> 
+                  <div class="pane-content"> 
+                   <form action="/study-and-success-strategies" method="post" id="search-block-form" accept-charset="UTF-8">
+                    <div>
+                     <div class="container-inline"> 
+                      <h2 class="element-invisible">Search form</h2> 
+                      <div class="form-item form-type-searchfield form-item-search-block-form"> 
+                       <label class="element-invisible" for="edit-search-block-form--2">Search </label> 
+                       <input title="Enter the terms you wish to search for." onblur="if (this.value == '') {this.value = 'Find Tutoring and Resources';}" onfocus="if (this.value == 'Find Tutoring and Resources') {this.value = '';}" type="search" id="edit-search-block-form--2" name="search_block_form" value="Find Tutoring and Resources" size="30" maxlength="128" class="form-text form-search"> 
+                      </div> 
+                      <div class="form-actions form-wrapper" id="edit-actions">
+                       <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+                      </div>
+                      <input type="hidden" name="form_build_id" value="form-tAFNQEYdBZ1di-nVQMMRvc21sU3bdnSO-K7GL6yZ3o0"> 
+                      <input type="hidden" name="form_id" value="search_block_form"> 
+                     </div> 
+                    </div>
+                   </form> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="panels-flexible-row panels-flexible-row-3-2 panels-flexible-row-last clearfix "> 
+              <div class="inside panels-flexible-row-inside panels-flexible-row-3-2-inside panels-flexible-row-inside-last clearfix"> 
+               <div class="panels-flexible-region panels-flexible-region-3-branding panels-flexible-region-first panels-flexible-region-last "> 
+                <div class="inside panels-flexible-region-inside panels-flexible-region-3-branding-inside panels-flexible-region-inside-first panels-flexible-region-inside-last"> 
+                 <div class="panel-pane pane-page-logo"> 
+                  <div class="pane-content"> 
+                   <a href="/" rel="home" id="logo" title="Home"><img src="http://slc.berkeley.edu/sites/all/themes/MDALLC/logo.png" alt="Home"></a> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix"> 
+     <div id="zone-menu" class="zone zone-menu clearfix container-12"> 
+      <div class="grid-12 region region-menu" id="region-menu"> 
+       <div class="region-inner region-menu-inner"> 
+        <div class="block block-search block-form block-search-form odd block-without-title" id="block-search-form"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <form action="/study-and-success-strategies" method="post" id="search-block-form--2" accept-charset="UTF-8">
+            <div>
+             <div class="container-inline"> 
+              <h2 class="element-invisible">Search form</h2> 
+              <div class="form-item form-type-searchfield form-item-search-block-form"> 
+               <label class="element-invisible" for="edit-search-block-form--4">Search </label> 
+               <input title="Enter the terms you wish to search for." onblur="if (this.value == '') {this.value = 'Find Tutoring and Resources';}" onfocus="if (this.value == 'Find Tutoring and Resources') {this.value = '';}" type="search" id="edit-search-block-form--4" name="search_block_form" value="Find Tutoring and Resources" size="30" maxlength="128" class="form-text form-search"> 
+              </div> 
+              <div class="form-actions form-wrapper" id="edit-actions--2">
+               <input type="submit" id="edit-submit--2" name="op" value="Search" class="form-submit">
+              </div>
+              <input type="hidden" name="form_build_id" value="form-lZHvWrBuxckSYRIKItyWhHBSy_y-NFYG9CDSPMl2_-Y"> 
+              <input type="hidden" name="form_id" value="search_block_form"> 
+             </div> 
+            </div>
+           </form> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-system block-menu block-main-menu block-system-main-menu even block-without-title" id="block-system-main-menu"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <ul class="menu">
+            <li class="first collapsed"><a href="/welcome-slc" class="menu-minipanel menu-minipanel-218">Welcome</a></li> 
+            <li class="expanded active-trail"><a href="/academic-programs-and-services" class="active-trail menu-minipanel menu-minipanel-1158">Academic programs &amp; services</a>
+             <ul class="menu">
+              <li class="first expanded active-trail"><a href="/academic-success-and-strategic-learning-resources" class="active-trail">Academic Success and Strategic Learning Resources</a>
+               <ul class="menu">
+                <li class="first leaf"><a href="/freshmen">For Freshmen</a></li> 
+                <li class="leaf"><a href="/continuing-students">For Continuing Students</a></li> 
+                <li class="leaf"><a href="/transferre-entry-students">For Transfer/Re-entry Students</a></li> 
+                <li class="leaf"><a href="/students-experiencing-academic-difficulty">For Students Experiencing Academic Difficulty</a></li> 
+                <li class="leaf"><a href="/students-exploring-learning-differences">For Students Exploring Learning Differences</a></li> 
+                <li class="leaf active-trail"><a href="/study-and-success-strategies" class="active-trail active">Study and Success Strategies</a></li> 
+                <li class="leaf"><a href="/next-semesters-services">Next Semester's Services</a></li> 
+                <li class="collapsed"><a href="/peer-peer-individual-consultations">Peer-to-Peer Individual Consultations</a></li> 
+                <li class="leaf"><a href="/study-strategies-workshops">Study Strategies Workshops</a></li> 
+                <li class="leaf"><a href="/become-peer-strategic-learning-coachpeer-mentor" title="">Become a Strategies for Success Peer Mentor</a></li> 
+                <li class="last leaf"><a href="/faq-2">FAQ</a></li> 
+               </ul></li> 
+              <li class="collapsed"><a href="/econ">Economics</a></li> 
+              <li class="collapsed"><a href="/interdisciplinary-resources-transfer-students">Interdisciplinary Resources for Transfer Students</a></li> 
+              <li class="collapsed"><a href="/isp">International Student Program</a></li> 
+              <li class="collapsed"><a href="/math-and-statistics">Math and Statistics</a></li> 
+              <li class="collapsed"><a href="/science">Science</a></li> 
+              <li class="collapsed"><a href="/social-sciences">Social Sciences</a></li> 
+              <li class="collapsed"><a href="/undergraduate-course-facilitator-training-resources-ucftr">Undergraduate Course Facilitator Training &amp; Resources (UCFTR)</a></li> 
+              <li class="collapsed"><a href="/writing">Writing</a></li> 
+              <li class="last leaf"><a href="/slcrap">Research Associate Program</a></li> 
+             </ul></li> 
+            <li class="leaf"><a href="http://slc.berkeley.edu/summer-bridge" title="">Summer Bridge</a></li> 
+            <li class="leaf"><a href="/spear">SPEAR Academy</a></li> 
+            <li class="collapsed"><a href="/summer-sessions">Summer Sessions</a></li> 
+            <li class="collapsed"><a href="/become-tutor" class="menu-minipanel menu-minipanel-1159">Become a Tutor</a></li> 
+            <li class="last expanded"><a href="/give-slc">Give to the SLC</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div>
+        <section class="block block-nice-menus block-1 block-nice-menus-1 odd" id="block-nice-menus-1"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title block-title">Main Menu</h2> 
+          <div class="content clearfix"> 
+           <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
+            <li class="menu-218 menuparent  menu-path-node-31 first odd "><a href="/welcome-slc" class="menu-minipanel menu-minipanel-218">Welcome</a>
+             <ul>
+              <li class="menu-1351 menuparent  menu-path-node-180 first odd "><a href="/about-slc">About the SLC</a>
+               <ul>
+                <li class="menu-1498 menu-path-node-183 first odd "><a href="/courses-credit-overview">Courses for Credit (Overview)</a></li> 
+                <li class="menu-1520 menu-path-node-215  even last"><a href="/location-and-hours">Location and Hours</a></li> 
+               </ul></li> 
+              <li class="menu-1355 menu-path-node-33  even "><a href="/areas-study">Areas of Study</a></li> 
+              <li class="menu-1356 menu-path-node-35  odd "><a href="/how-do-i-sign">How do I sign up?</a></li> 
+              <li class="menu-1517 menu-path-node-13  even "><a href="/faculty-and-staff">Faculty and Staff</a></li> 
+              <li class="menu-1519 menu-path-node-15  odd "><a href="/slc-alumni">Alumni</a></li> 
+              <li class="menu-1615 menuparent  menu-path-events-and-dates  even "><a href="/events-and-dates">Events and Important Dates</a>
+               <ul>
+                <li class="menu-1616 menu-path-all-events-and-dates first odd last"><a href="/all-events-and-dates" title="">All Events and Important Dates</a></li> 
+               </ul></li> 
+              <li class="menu-1516 menu-path-node-14  odd last"><a href="/slc-affirmation">Statement of Affirmation</a></li> 
+             </ul></li> 
+            <li class="menu-1158 menuparent  menu-path-node-37 active-trail  even "><a href="/academic-programs-and-services" class="menu-minipanel menu-minipanel-1158">Academic programs &amp; services</a>
+             <ul>
+              <li class="menu-1367 menuparent  menu-path-node-122 active-trail first odd "><a href="/academic-success-and-strategic-learning-resources">Academic Success and Strategic Learning Resources</a>
+               <ul>
+                <li class="menu-1432 menu-path-node-123 first odd "><a href="/freshmen">For Freshmen</a></li> 
+                <li class="menu-1433 menu-path-node-124  even "><a href="/continuing-students">For Continuing Students</a></li> 
+                <li class="menu-1434 menu-path-node-125  odd "><a href="/transferre-entry-students">For Transfer/Re-entry Students</a></li> 
+                <li class="menu-1435 menu-path-node-126  even "><a href="/students-experiencing-academic-difficulty">For Students Experiencing Academic Difficulty</a></li> 
+                <li class="menu-1436 menu-path-node-127  odd "><a href="/students-exploring-learning-differences">For Students Exploring Learning Differences</a></li> 
+                <li class="menu-1437 menu-path-node-128 active-trail  even "><a href="/study-and-success-strategies" class="active">Study and Success Strategies</a></li> 
+                <li class="menu-1439 menu-path-node-130  odd "><a href="/next-semesters-services">Next Semester's Services</a></li> 
+                <li class="menu-1441 menuparent  menu-path-node-132  even "><a href="/peer-peer-individual-consultations">Peer-to-Peer Individual Consultations</a>
+                 <ul>
+                  <li class="menu-1442 menu-path-node-133 first odd "><a href="/individual-consultations-strategies-success-peers">Individual Consultations with Strategies for Success Peers</a></li> 
+                  <li class="menu-1443 menu-path-node-134  even "><a href="/strategies-success-bio-aneesh-chandramouli">Strategies for Success Bio | Aneesh Chandramouli</a></li> 
+                  <li class="menu-1618 menu-path-node-275  odd "><a href="/strategies-success-bio-larry-zhou">Strategies for Success Bio | Larry Zhou</a></li> 
+                  <li class="menu-1617 menu-path-node-274  even "><a href="/strategies-success-bio-manali-sawant">Strategies for Success Bio | Manali Sawant</a></li> 
+                  <li class="menu-1619 menu-path-node-282  odd "><a href="/strategies-success-bio-saif-umemoto">Strategies for Success Bio | Saif Umemoto</a></li> 
+                  <li class="menu-1445 menu-path-node-135  even "><a href="/strategies-success-bio-jimmy-tran">Strategies for Success Bio | Jimmy Tran</a></li> 
+                  <li class="menu-1446 menu-path-node-136  odd "><a href="/strategies-success-bio-osakwe">Strategies for Success Bio | Osakwe</a></li> 
+                  <li class="menu-1447 menu-path-node-137  even "><a href="/strategies-success-bio-nitta-pattarachanyakul">Strategies for Success Bio | Pattarachanyakul</a></li> 
+                  <li class="menu-1444 menu-path-node-138  odd last"><a href="/strategies-success-bio-irene-liang">Strategies for Success Bio | Irene Liang</a></li> 
+                 </ul></li> 
+                <li class="menu-1448 menu-path-node-139  odd "><a href="/study-strategies-workshops">Study Strategies Workshops</a></li> 
+                <li class="menu-1476 menu-path-node-140  even "><a href="/become-peer-strategic-learning-coachpeer-mentor" title="">Become a Strategies for Success Peer Mentor</a></li> 
+                <li class="menu-1467 menu-path-node-131  odd last"><a href="/faq-2">FAQ</a></li> 
+               </ul></li> 
+              <li class="menu-1717 menuparent  menu-path-node-312  even "><a href="/econ">Economics</a>
+               <ul>
+                <li class="menu-2336 menu-path-node-404 first odd "><a href="/econ-tutor">Become an Econ Tutor</a></li> 
+                <li class="menu-2245 menu-path-node-401  even "><a href="/exam-review">Exam Review</a></li> 
+                <li class="menu-2129 menu-path-node-375  odd last"><a href="/meet-our-tutors-0">Meet Our Tutors</a></li> 
+               </ul></li> 
+              <li class="menu-1358 menuparent  menu-path-node-38  odd "><a href="/interdisciplinary-resources-transfer-students">Interdisciplinary Resources for Transfer Students</a>
+               <ul>
+                <li class="menu-2239 menu-path-node-397 first odd "><a href="/become-interdisciplinary-resources-transfer-students-irts-tutor">Become an Interdisciplinary Resources for Transfer Students (IRTS) Program Tutor</a></li> 
+                <li class="menu-2428 menu-path-node-407  even "><a href="/english-history-open-hours">English &amp; History Open Hours</a></li> 
+                <li class="menu-1362 menu-path-node-42  odd "><a href="/political-science-149e">Political Science 149E</a></li> 
+                <li class="menu-1360 menu-path-node-40  even "><a href="/psychology-101">Psychology 10/101</a></li> 
+                <li class="menu-2130 menu-path-node-377  odd "><a href="/sociology-5-0">Sociology Open Hours</a></li> 
+                <li class="menu-1359 menu-path-node-39  even "><a href="/sociology-101">Sociology 102</a></li> 
+                <li class="menu-1363 menu-path-node-43  odd "><a href="/other-resources">Other Resources</a></li> 
+                <li class="menu-2427 menu-path-node-406  even "><a href="/social-welfare-open-hours">Social Welfare Open Hours</a></li> 
+                <li class="menu-1364 menu-path-node-44  odd last"><a href="/next-semester">Next Semester</a></li> 
+               </ul></li> 
+              <li class="menu-1369 menuparent  menu-path-node-150  even "><a href="/isp">International Student Program</a>
+               <ul>
+                <li class="menu-2241 menu-path-node-398 first odd "><a href="/lep">Language Exchange Program</a></li> 
+                <li class="menu-2242 menu-path-node-399  even last"><a href="/lepfaq">Language Exchange Program FAQ</a></li> 
+               </ul></li> 
+              <li class="menu-1371 menuparent  menu-path-node-45  odd "><a href="/math-and-statistics">Math and Statistics</a>
+               <ul>
+                <li class="menu-1373 menu-path-node-46 first odd "><a href="/math-1a">Math 1A</a></li> 
+                <li class="menu-1379 menu-path-node-47  even "><a href="/math-1b">Math 1B</a></li> 
+                <li class="menu-1375 menu-path-node-48  odd "><a href="/math-10a">Math 10A</a></li> 
+                <li class="menu-1376 menu-path-node-49  even "><a href="/math-10b">Math 10B</a></li> 
+                <li class="menu-1377 menu-path-node-50  odd "><a href="/math-16a">Math 16A</a></li> 
+                <li class="menu-1378 menu-path-node-51  even "><a href="/math-16b">Math 16B</a></li> 
+                <li class="menu-1380 menu-path-node-52  odd "><a href="/math-32">Math 32</a></li> 
+                <li class="menu-1372 menu-path-node-53  even "><a href="/math-53">Math 53</a></li> 
+                <li class="menu-1381 menu-path-node-54  odd "><a href="/math-54">Math 54</a></li> 
+                <li class="menu-1382 menu-path-node-55  even "><a href="/math-55">Math 55</a></li> 
+                <li class="menu-1383 menu-path-node-56  odd "><a href="/statistics-2">Statistics 2</a></li> 
+                <li class="menu-1384 menu-path-node-57  even "><a href="/statistics-20">Statistics 20</a></li> 
+                <li class="menu-1385 menu-path-node-58  odd "><a href="/statistics-21">Statistics 21</a></li> 
+                <li class="menu-1391 menu-path-node-59  even "><a href="/statistics-134">Statistics 134</a></li> 
+                <li class="menu-1386 menu-path-node-60  odd "><a href="/other-resources-0">Other Resources</a></li> 
+                <li class="menu-1374 menu-path-node-61  even "><a href="/math-and-statistics-links">Math and Statistics Links</a></li> 
+                <li class="menu-1387 menu-path-node-62  odd "><a href="/next-semester-0">Next Semester</a></li> 
+                <li class="menu-1388 menu-path-node-63  even "><a href="/summer-session">Summer Session</a></li> 
+                <li class="menu-1389 menu-path-node-64  odd "><a href="/faq">FAQ</a></li> 
+                <li class="menu-1390 menu-path-node-65  even last"><a href="/become-mathstatistics-tutor">Become a Math/Statistics Tutor</a></li> 
+               </ul></li> 
+              <li class="menu-1366 menuparent  menu-path-node-66  even "><a href="/science">Science</a>
+               <ul>
+                <li class="menu-1413 menu-path-node-68 first odd "><a href="/biology-1a-1al">Biology 1A / 1AL</a></li> 
+                <li class="menu-1414 menu-path-node-69  even "><a href="/biology-1b">Biology 1B</a></li> 
+                <li class="menu-1415 menu-path-node-70  odd "><a href="/chemistry-1a-1al">Chemistry 1A / 1AL</a></li> 
+                <li class="menu-1416 menu-path-node-71  even "><a href="/chemistry-3a-3al">Chemistry 3A / 3AL</a></li> 
+                <li class="menu-1418 menu-path-node-73  odd "><a href="/chemistry-3b-3bl">Chemistry 3B / 3BL</a></li> 
+                <li class="menu-2081 menu-path-node-74  even "><a href="/mcb-102">MCB 102</a></li> 
+                <li class="menu-1422 menu-path-node-77  odd "><a href="/physics">Physics 7A/7B/8A/8B</a></li> 
+                <li class="menu-1424 menu-path-node-79  even "><a href="/chemistry-p">Chemistry P</a></li> 
+                <li class="menu-1429 menuparent  menu-path-node-84  odd "><a href="/become-science-tutor">Become an SLC Science Tutor</a>
+                 <ul>
+                  <li class="menu-1430 menu-path-node-85 first odd "><a href="/slc-science-open-tutoring-positions">SLC Science Open Tutoring Positions</a></li> 
+                  <li class="menu-1431 menu-path-node-86  even last"><a href="/additional-information-becoming-science-tutor">Additional Information for Becoming a Science Tutor</a></li> 
+                 </ul></li> 
+                <li class="menu-1712 menu-path-node-300  even "><a href="/seeking-private-science-tutor">Seeking a Private Science Tutor</a></li> 
+                <li class="menu-1425 menu-path-node-80  odd last"><a href="/slc-science-tutors">For SLC Science Tutors</a></li> 
+               </ul></li> 
+              <li class="menu-1370 menuparent  menu-path-node-151  odd "><a href="/social-sciences">Social Sciences</a>
+               <ul>
+                <li class="menu-1450 menu-path-node-152 first odd "><a href="/anthropology">Anthropology</a></li> 
+                <li class="menu-1451 menu-path-node-153  even "><a href="/ethnic-studies">Ethnic Studies</a></li> 
+                <li class="menu-1452 menu-path-node-154  odd "><a href="/history">History</a></li> 
+                <li class="menu-1714 menu-path-node-302  even "><a href="/ias">International and Area Studies</a></li> 
+                <li class="menu-1453 menu-path-node-155  odd "><a href="/political-science">Political Science</a></li> 
+                <li class="menu-1454 menu-path-node-156  even "><a href="/psychology">Psychology</a></li> 
+                <li class="menu-1455 menu-path-node-157  odd "><a href="/sociology">Sociology</a></li> 
+                <li class="menu-1456 menu-path-node-158  even "><a href="/ethnic-perspectives-history-98">Ethnic Perspectives (History 98)</a></li> 
+                <li class="menu-1457 menu-path-node-159  odd "><a href="/other-resources-2">Other Resources</a></li> 
+                <li class="menu-1458 menu-path-node-160  even "><a href="/slc-tutor-resources">SLC Tutor Resources</a></li> 
+                <li class="menu-1469 menu-path-node-161  odd "><a href="/next-semester-4">Next Semester</a></li> 
+                <li class="menu-1460 menu-path-node-162  even "><a href="/special-events-and-workshops">Mastering the Social Sciences Workshop Series</a></li> 
+                <li class="menu-1461 menu-path-node-163  odd last"><a href="/become-social-science-tutor">Become a Social Science Tutor</a></li> 
+               </ul></li> 
+              <li class="menu-1368 menuparent  menu-path-node-141  even "><a href="/undergraduate-course-facilitator-training-resources-ucftr">Undergraduate Course Facilitator Training &amp; Resources (UCFTR)</a>
+               <ul>
+                <li class="menu-1462 menu-path-node-142 first odd "><a href="/startup-workshops">Startup Workshops &amp; Campus Deadlines</a></li> 
+                <li class="menu-1347 menu-path-node-145  even "><a href="/resources">Resources</a></li> 
+                <li class="menu-1466 menu-path-node-146  odd "><a href="/department-contacts">Department Contacts</a></li> 
+                <li class="menu-1468 menu-path-node-147  even last"><a href="/faq-3">FAQ</a></li> 
+               </ul></li> 
+              <li class="menu-1365 menuparent  menu-path-node-87  odd "><a href="/writing">Writing</a>
+               <ul>
+                <li class="menu-2244 menu-path-node-121 first odd "><a href="/become-writing-tutor" title="">Become a Writing Tutor</a></li> 
+                <li class="menu-2229 menu-path-node-389  even "><a href="/appointment-service">Appointment Service</a></li> 
+                <li class="menu-2230 menu-path-node-390  odd "><a href="/weekly-service">Weekly Service</a></li> 
+                <li class="menu-2228 menu-path-node-388  even "><a href="/drop-service">Drop-in Service</a></li> 
+                <li class="menu-2231 menu-path-node-392  odd "><a href="/rcworkshops" title="Reading and Composition Workshops">Reading and Composition Workshops</a></li> 
+                <li class="menu-2232 menu-path-node-393  even "><a href="/research-workshops">Research Workshops</a></li> 
+                <li class="menu-2233 menu-path-node-394  odd "><a href="/academic-writing-workshops">Academic Writing Workshops</a></li> 
+                <li class="menu-2235 menu-path-node-396  even "><a href="/rrr-week-writing-retreat">RRR Week Writing Retreat</a></li> 
+                <li class="menu-2234 menu-path-node-395  odd "><a href="/undergraduate-thesis-workshops">Undergraduate Thesis Workshops</a></li> 
+                <li class="menu-2236 menu-path-node-391  even "><a href="/online-service">Online Service</a></li> 
+                <li class="menu-2243 menu-path-node-117  odd "><a href="/writing-worksheets">Writing Worksheets</a></li> 
+                <li class="menu-1406 menu-path-node-118  even "><a href="/meet-our-tutors">Meet Our Tutors</a></li> 
+                <li class="menu-2430 menu-path-node-402  odd last"><a href="/special-events">Special Events</a></li> 
+               </ul></li> 
+              <li class="menu-2293 menu-path-node-403  even last"><a href="/slcrap">Research Associate Program</a></li> 
+             </ul></li> 
+            <li class="menu-2131 menu-path-slcberkeleyedu-summer-bridge  odd "><a href="http://slc.berkeley.edu/summer-bridge" title="">Summer Bridge</a></li> 
+            <li class="menu-1478 menu-path-node-186  even "><a href="/spear">SPEAR Academy</a></li> 
+            <li class="menu-1480 menuparent  menu-path-node-188  odd "><a href="/summer-sessions">Summer Sessions</a>
+             <ul>
+              <li class="menu-1481 menu-path-node-189 first odd last"><a href="/summer-job-opportunities">Summer Job Opportunities</a></li> 
+             </ul></li> 
+            <li class="menu-1159 menuparent  menu-path-node-169  even "><a href="/become-tutor" class="menu-minipanel menu-minipanel-1159">Become a Tutor</a>
+             <ul>
+              <li class="menu-1474 menu-path-node-140 first odd "><a href="/become-peer-strategic-learning-coachpeer-mentor">in Academic Success and Strategic Learning Resources</a></li> 
+              <li class="menu-2084 menu-path-node-372  even "><a href="/http%3A//slc.berkeley.edu/become-economics-tutor">in Economics!</a></li> 
+              <li class="menu-1471 menu-path-node-65  odd "><a href="/become-mathstatistics-tutor" title="">in Mathematics or Statistics!</a></li> 
+              <li class="menu-1472 menu-path-node-84  even "><a href="/become-science-tutor" title="">in Science!</a></li> 
+              <li class="menu-1473 menu-path-node-163  odd "><a href="/become-social-science-tutor" title="">in Social Science!</a></li> 
+              <li class="menu-1475 menu-path-node-121  even "><a href="/become-writing-tutor">in Writing!</a></li> 
+              <li class="menu-2240 menu-path-node-397  odd last"><a href="/become-interdisciplinary-resources-transfer-students-irts-tutor">Become an Interdisciplinary Resources for Transfer Students (IRTS) Tutor</a></li> 
+             </ul></li> 
+            <li class="menu-1330 menuparent  menu-path-node-175  odd last"><a href="/give-slc">Give to the SLC</a>
+             <ul></ul></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </section> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </header> 
+   <section id="section-content" class="section section-content"> 
+    <div id="zone-content-wrapper" class="zone-wrapper zone-content-wrapper clearfix"> 
+     <div id="zone-content" class="zone zone-content clearfix container-12"> 
+      <div class="grid-8 region region-content" id="region-content"> 
+       <div class="region-inner region-content-inner"> 
+        <a id="main-content"></a> 
+        <a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
+        <h1 class="title" id="page-title">Study and Success Strategies</h1> 
+        <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <article class="node node-page node-published node-not-promoted node-not-sticky author-admin odd clearfix" id="node-page-128"> 
+            <div class="content clearfix"> 
+             <div class="field field-name-field-background-image field-type-image field-label-hidden">
+              <div class="field-items">
+               <div class="field-item even">
+                <img src="http://slc.berkeley.edu/sites/default/files/default_images/ucb_chavez-98_3.JPG" alt="">
+               </div>
+              </div>
+             </div>
+             <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+               <div class="field-item even">
+                <h3><span style="font-size: 1.875em; letter-spacing: 0.005em;">CalREN Project: Study Tips</span></h3> 
+                <p>&nbsp;</p> 
+                <div class="min-max" id="accordion"> 
+                 <h3>When to Study</h3> 
+                 <div class="h4-wrap"> 
+                  <p><strong>1. Find out how you use and misuse your time before making any changes.</strong></p> 
+                  <p><strong>2. Plan two hours of study time for every hour spent in class.</strong><br> There are exceptions, but this is a good general rule. Students making the transition from high school or community college are often unaware of the increased workload expected of them. The benefits of following the rule will be apparent at exam time.</p> 
+                  <p><strong>3. Study difficult (or boring) subjects first.</strong><br> If your chemistry problems put you to sleep, get to them first, while you are fresh. Most of us tend to do what we like first, yet the courses we find most difficult require the most creative energy. Save the subjects you enjoy for later.</p> 
+                  <p><strong>4. Avoid scheduling marathon study sessions.</strong><br> When possible, study in shorter sessions. Three three-hour sessions are far more productive for most students than one nine-hour session. When you do study in long sessions, take a planned break every hour. Work on several subjects and avoid studying similar subjects back to back.</p> 
+                  <p><strong>5. Be aware of your best time of day.</strong><br> Many students learn best in daylight hours. Observe yourself and, if this is true of you, schedule study time for your most difficult subjects when the sun is up. The key point is to determine your best learning time. If early morning doesn't work for you, find out what time is better.</p> 
+                  <p><strong>6. Use waiting time.</strong><br> Five minutes waiting time for the bus, 20 minutes waiting for the dentist, 10 minutes between classes -- waiting time adds up fast. Have short study tasks ready to do during these times. For example, carry 3X5 cards with equations, formulas, or definitions and pull them out anywhere. Also, use time between classes or breaks during work to review class notes or notes on reading. A solid review of a lecture can be completed in 15 minutes, and even five minutes can be valuable if you are prepared.</p> 
+                  <p><strong>7. Keep a calendar for the semester.</strong><br> Keep track of all your assignments, tests, and papers.</p> 
+                  <p><strong>8. Make a weekly to-do list of important tasks and assignments that you need to complete.</strong><br> Be sure to prioritize the list and to do the most important tasks first.</p> 
+                 </div> 
+                 <h3>Where to Study</h3> 
+                 <div class="h4-wrap"> 
+                  <p><strong>1. Use a regular study area.</strong><br> Your body knows where you are. When you use the same place to study, day after day, your body becomes trained. When you arrive at that particluar place, it will automatically sense that it's time to study. You will focus your concentration more quickly.</p> 
+                  <p><strong>2. Don't get too comfortable.</strong><br> Put yourself into a situation where your mind is alert.</p> 
+                  <p><strong>3. Use the library.</strong><br> Libraries are designed for learning. Entering a library is a signal to your body to quiet the mind and get to work. Most students can get more done in a shorter time at the library.</p> 
+                  <p><strong>4. Set up study groups.</strong><br> A study group doesn't take the place of individual study, but it forces you to articulate concepts and makes a review more fun and productive. Also, it helps keep your review on schedule and helps you to avoid procrastination.</p> 
+                 </div> 
+                 <h3>How to Handle the Rest of the World</h3> 
+                 <div class="h4-wrap"> 
+                  <p><strong>1. Pay attention to your attention.</strong><br> Breaks in concentration are often caused by internal interruptions; your own thoughts jump in to tell you another story about the world. If this happens too often, perhaps you need to find a different study time or place.</p> 
+                  <p><strong>2. Agree with living mates about study time.</strong><br> This includes roommates, wives, husbands, parents, and/or kids. Make the rules clear and be sure to follow them yourself. Make explicit agreements -- even written contracts. Hang a "do not disturb" sign on your door. One student always wears a colorful hat when he wants to study. When his roommates see the hat, they respect his wish to be left alone.</p> 
+                  <p><strong>3. Avoid noise distractions.</strong><br> Don't study in front of the TV. Turn off the stereo. Many students insist that they study better with music, and that may be true. Some students have reported good results with carefully selected and controlled music. The overwhelming majority of research indicates that silence is the best form of music for study.</p> 
+                  <p><strong>4. Notice how others misuse your time.</strong><br> Be aware of repeat offenders. Ask yourself if there are certain friends or relatives who consistently interrupt your study time. If avoiding them is impractical, send a clear (but gentle) message. Sometimes others don't realize they are breaking your concentration.</p> 
+                  <p><strong>5. Get off the phone/Un-plug from Social Media and Other Distractions</strong><br> You don't have to be a telephone victim. Try saying, "I can't talk right now, I'm studying" or let the call go to voicemail. Or avoid the whole problem by studying at the library.</p> 
+                  <p><strong>6. Learn to say no.</strong><br> This is a valuable time saver for students, and a valuable life skill. Many people feel it is rude to refuse a request. Saying "no" can be done effectively and courteously. Others want you to succeed as a student. When you tell them that you can't comply with a request because you are busy educating yourself, 99% will understand.</p> 
+                 </div> 
+                 <h3>Things to Ask Yourself When You Get Stuck</h3> 
+                 <div class="h4-wrap"> 
+                  <p><strong>1. Ask: What is one task I can accomplish toward my goal?</strong><br> This is a good technique to use on big, imposing jobs. Pick out one small accomplishment, preferably one you can complete in about five minutes, then do it. The satisfaction of getting one thing done often spurs you on to get one more thing done. Meanwhile the job gets smaller.</p> 
+                  <p><strong>2. Ask: Am I beating myself up?</strong><br> When you get frustrated with a reading assignment, or when you notice that your attention wanders repeatedly, or when you fall behind on problems due for tomorrow, take a minute to ask yourself, am I judging myself too harshly? Lighten up. Allow yourself to feel a little foolish, recognize the feeling, and get on with it. Don't add to the problem by berating yourself.</p> 
+                  <p><strong>3. Ask: Is this a piano?</strong><br> Carpenters who build rough frames for buildings have a saying they use when they bend a nail or hack a chunk out of a two-by-four. They say, "Well, this ain't no piano." It means perfection is not necessary. Ask yourself if what you are doing needs to be perfect. You don't have to apply the same standards of grammar to review notes that you apply to a term paper. The basketball player who refuses to shoot until the perfect shot is available may never shoot. If you can complete a job 95 percent perfect in two hours, and 100 percent in four hours, ask yourself whether the additional five percent improvement is worth doubling the amount of time you spend.<br> Sometimes it is a piano. A tiny mistake can ruin an entire lab experiment. Computers are notorious for turning little errors into monsters. Accept lower standards where appropriate, especially when time is short.</p> 
+                  <p><strong>4. Ask: How did I just waste time?</strong><br> Notice when time passes and you haven't accomplished what you planned. Take a minute to review your actions and note the specific way you wasted time. We operate by habit and tend to waste time in the same ways over and over again. When you have noticed things you do that kill your time, you are more likely to catch yourself in the act next time. Observing one small quirk may save you hours.</p> 
+                  <p><strong>5. Ask: Would I pay myself for what I'm doing right now?</strong><br> If you were employed as a student, would you be earning your wages? Ask yourself this question when you notice that you've taken your third popcorn break in 30 minutes. Most students are, in fact, employed as students. They are investing in their own productivity and sometimes don't realize what a mediocre job may cost them.</p> 
+                  <p><strong>6. Ask: Can I do just one more thing?</strong><br> Ask yourself this question at the end of a long day. Almost always you may have enough energy to do just one more short task. If you get in the habit of working until you are done, then doing one more thig, those end-of-the-day tasks will soon add up. The overall increase in your productivity will surprise you.</p> 
+                  <p>Adapted from: Becoming a Master Student, by David Ellis. (College Survival, Inc. 1984)</p> 
+                 </div> 
+                </div> 
+                <h2>Seven Day Procrastination Elimination Plan</h2> 
+                <p>These are 7 strategies you can use to eliminate procrastination. The suggestions are tied to the days of the week to help you recall.</p> 
+                <div class="min-max" id="accordion2"> 
+                 <h3>On Monday, Make it Meaningful.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Why is that job important? If you have been putting off something, take a minute to list all the benefits of completing the task. Look at the job in the perspective of your goals. Write down the task you have been avoiding, then, below it, write your reason for doing it. Relate the task to your goals, and be specific about the payoffs and rewards.</p> 
+                 </div> 
+                 <h3>On Tuesday, Take it apart.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Break big jobs into small, manageable parts. Then be determined to complete one of those tasks. Make each task something you can accomplish in 15 minutes or less. Make the results measurable so you can see your progress. If a long reading assignment intimidates you, break it into two- or three-page sections, list the sections, then cross off each section as you complete it. Give yourself a visual experience of getting something done.</p> 
+                 </div> 
+                 <h3>On Wednesday, Write an intention statement.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Use an intention statement in conjunction with a small task you have created. Write your statement on 3X5 card, and carry it with you or post it in your study area where you can see it often.</p> 
+                  <p>For example, if you have a term paper to write and can't seem to get started, write yourself an intention statement that says, "I intend to write a list of at least ten possible topics for my term paper by 9 pm. I will reward myself with an hour of guilt- free recreational reading."</p> 
+                 </div> 
+                 <h3>On Thursday, Tell everyone.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Announce your intention publicly. Tell a friend. Tell your spouse, roommate, parents, or children. Telling the world of your intention is an excellent technique to ensure its completion. Make the world your support group.</p> 
+                 </div> 
+                 <h3>On Friday, Find a reward.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Rewards can be difficult to construct. A reward must be something that you would genuinely withhold from yourself if you did not earn it. Don't pick a movie as a reward if you plan to go to anyway. If you don't complete what you set out to do, and go to the movie anyway, the movie would be an ineffective reward. When you legitimately reap your reward, notice how it feels. You may find that movies, clothes, or an extra hour studying one of your favorite subjects are more enjoyable when you feel like you've earned it.</p> 
+                 </div> 
+                 <h3>On Saturday, Settle it, now.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Do it now. The minute you notice yourself procrastinating, plunge into the task. Imagine yourself at a mountain lake, poised to dive. Gradual immersion would be slow torture. It's often less painful to leap.<br> Then be sure to savor the feeling of having the task behind you.</p> 
+                 </div> 
+                 <h3>On Sunday, Say no.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>When you notice yourself continually pushing a task into the low-priority category, re-examine the purpose for doing it at all. If you realize that you really don't intend to do something, quit telling yourself that you will. That's procrastinating. Tell the truth and drop it. Then you're not procrastinating, and you don't have to carry around the baggage of an undone task.</p> 
+                 </div> 
+                </div> 
+                <p>Adapted from: Becoming a Master Student, by David Ellis. (College Survival, Inc. 1984)</p> 
+                <h2>Techniques To Manage Procrastination</h2> 
+                <div class="min-max" id="accordion3"> 
+                 <h3>Set Priorities.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I don't know where to begin, so I can't begin at all.<br> Not: I have to do EVERYTHING! Nothing less will do.<br> Instead: The most important step is to pick one project to focus on.</p> 
+                 </div> 
+                 <h3>Break the Task Down into Little Pieces.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: There's so much to do, and it's so complicated. I'm overwhelmed by my English term paper.<br> Instead: I don't have to do the whole project at once. There are separate small steps I can take one at a time to begin researching and drafting my paper.<br> &nbsp;</p> 
+                 </div> 
+                 <h3>Set Up Small, Specific Goals.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I have to write my thesis within two months.<br> Instead: If I write 2 pages per day, Monday-Friday, I can finish a 1st draft in 1 month. I'll have a revised final draft in 2 months.</p> 
+                 </div> 
+                 <h3>Take One Small Step at a Time.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: It's too much. I'll never get it all done<br> Instead: What is the one next step on my list? I'll concentrate on that step for right now</p> 
+                 </div> 
+                 <h3>Reward Yourself Right Away When You Accomplish a Small Goal.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I can't take any time out until I'm completely finished.<br> Instead: I spent an hour working. Now I'll call a friend.</p> 
+                 </div> 
+                 <h3>Use a Time Schedule.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I must devote the whole week to this project<br> Instead: I can use these times this week to work on my project:<br> Monday 7-8; Tuesday 7-9; Saturday 10-12.</p> 
+                 </div> 
+                 <h3>Learn How to Tell Time.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: Sorting through these papers and reorganizing my file cabinet will be a snap. It won't take me more than an hour, so I can do it any time.<br> Instead: Sorting papers always takes longer than I expect, so I'll start tonight. I'll spend 1 hour filing 1 stack of papers.</p> 
+                 </div> 
+                 <h3>Optimize Your Chances for Success.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I'll do my writing this weekend at home.<br> Instead: I'll write during the week in a library. (Choose whatever conditions are optimal for you to get work done.)</p> 
+                 </div> 
+                 <h3>Delegate, if Possible.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I am the only person in the world who can do this.<br> Instead: I don't have to do this all by myself. I can ask someone else to do part of the job and still feel a sense of accomplishment.</p> 
+                 </div> 
+                 <h3>Just Get Started.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I can't write this speech until inspiration hits.<br> Instead: I'll write what first comes to mind, then improve it later.</p> 
+                 </div> 
+                 <h3>Look at What You Have Accomplished.</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I have hardly made a dent in all there is to do.<br> Instead: I have reviewed my lecture notes and read 3 chapters. That won't guarentee me an "A", but it's more than I did yesterday.</p> 
+                 </div> 
+                 <h3>Be Realistic!</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Not: I should be able to work full-time, take 4 classes, be president of the Esperanto Club, spend more time with friends, and play tennis 2 hours a day with no trouble at all.<br> Instead: I have limits. I can take on fewer responsibilities and still like myself.</p> 
+                 </div> 
+                 <h3>Learning by Listening</h3> 
+                 <div class="h4-wrap"> 
+                  <p><span style="line-height: 1.5; letter-spacing: 0.05em;">Not everything is equally important in lecture. Hold yourself accountable for being selective and differentiating between levels of importance. Organize your notetaking as a way to review, test your understanding of ideas, and prepare for exams.</span></p> 
+                  <p>You can learn a lot through listening. In college, it will be a prime source of information. Listening is a skill which must be developed. If you apply the following suggestions, you will find yourself listening more effectively.</p> 
+                  <p>The responsibility for developing interest and understanding is yours. Be an active listener and get the most out of attending lecture. Concentrate on what the speaker is saying. Sit where you can see and hear the speaker easily and where other distractions are at a minimum.</p> 
+                  <p>Determine why what the speaker is saying is important to you. If you don't have an immediate, vivid reason for listening to a speaker, you are an unmotivated listener. Practice the habit of paying attention.</p> 
+                  <p>Prepare to get the most out of lecture by reviewing the important points from the previous lecture. Preview the assigned readings to establish some background knowledge. Determine what you know and do not know about the material in order to focus your listening as an opportunity for learning.</p> 
+                  <p>Listen for the pattern of organization in lecture. Does it begin or end with a brief summary of the main concepts, themes, or ideas? How are details or examples used to develop specific points? What is the relationship between the points presented?</p> 
+                  <p>What is the structural format? Outline? Comparative analysis? Main idea, background information, supporting points? Inductive or deductive reasoning?</p> 
+                  <p>Ask yourself: What questions does this lecture answer? What are possible midterm questions that information from lectures could be used to answer? What is the relationship between the lectures and the readings?</p> 
+                 </div> 
+                </div> 
+                <h2>A System for Effective Listening and Notetaking</h2> 
+                <p>You can think about 4 TIMES FASTER than a lecturer can speak. Effective LISTENING requires the expenditure of energy; to compensate for the rate of presentation, you have to acively intend to listen. NOTETAKING is one way to enhance listening, and using a systematic approach to the taking and reviewing of your notes can add immeasurably to your understanding and remembering the content of lectures.</p> 
+                <div class="min-max" id="accordion4"> 
+                 <h3>Before Class</h3> 
+                 <div class="h4-wrap"> 
+                  <ul>
+                   <li> <p>Develop a mind-set geared toward listening.</p> </li> 
+                   <li> <p>Test yourself over the previous lecture while waiting for the next one to begin.</p> </li> 
+                   <li> <p>Skim relevant reading assignments to aquaint yourself with main ideas, new technical terms, etc.</p> </li> 
+                   <li> <p>Do what you can to improve physical and mental alertness(fatigue, hunger; time of day, where you sit in the classroom may affect motivation).</p> </li> 
+                   <li> <p>Choose notebooks that will enhance your systematic notetaking: A separate notebook with full-sized pages is recommended for each course. You might wish to mark off the pages into one of the formats shown at the end of this section.</p> </li> 
+                   <li> <p>INTEND TO LISTEN.</p> </li> 
+                  </ul>
+                 </div> 
+                 <h3>During class</h3> 
+                 <div class="h4-wrap"> 
+                  <ul>
+                   <li> <p>Listen for the structure and information in the lecture.</p> </li> 
+                   <li> <p>Resist distractions, emotional reactions, or boredom.</p> </li> 
+                   <li> <p>Be consistent in your use of form, abbreviation, etc.</p> </li> 
+                   <li> <p>Pay attention to speaker for verbal, postural, and visual clues to what's important.</p> </li> 
+                   <li> <p>Label important points and organizational clues: main points, examples.</p> </li> 
+                   <li> <p>When possible translate the lecture into your own words, but, if you can't, don't let it worry you into inattention!</p> </li> 
+                   <li> <p>If you feel you don't take enough notes, divide your page into 5 sections and try to fill each part every 10 minutes (or work out your own formula).</p> </li> 
+                   <li> <p>Ask questions if you don't understand. Instead of closing your notebook early and getting ready to leave, listen carefully to information given toward the end of class; summary statements may be of particular value in highlighting main points; there may be possible quiz questions, etc.</p> </li> 
+                  </ul>
+                 </div> 
+                 <h3>After Class</h3> 
+                 <div class="h4-wrap"> 
+                  <ul>
+                   <li> <p>Clear up any questions raised by the lecture by asking either the teacher or classmates.</p> </li> 
+                   <li> <p>Fill in missing points or misunderstood terms from text or other sources.</p> </li> 
+                   <li> <p>Edit your notes, labeling main points, adding recall clues and questions to be answered. Key points in the notes can be highlighted with different colors of ink.</p> </li> 
+                   <li> <p>Make note of your ideas and reflections, keeping them separate from those of the speaker.</p> </li> 
+                  </ul>
+                 </div> 
+                 <h3>Periodically</h3> 
+                 <div class="h4-wrap"> 
+                  <ul>
+                   <li> <p>Review your notes: Glance at your recall clues and see how much you can remember before rereading the notes.</p> </li> 
+                   <li> <p>Look for the emergence of themes, main concepts, methods of presentation over the course of several lectures.</p> </li> 
+                   <li> <p>Make up and answer possible test questions</p> </li> 
+                  </ul>
+                 </div> 
+                 <h3>Effective Note-Taking</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Lecture styles vary greatly from speaker to speaker. Some lecturers are beautifully organized, some ramble, some present an hour of anecdotes and leave the student to determine their significance.</p> 
+                  <p>It is imperative that you figure out a lecturer's style. In the case of the rambler or story teller, you may find yourself at the end of an hour with only a sentence or two written down. Check with other students, but don't be surprised if it works out that your sentences do, indeed, represent the crucial points of the lecture.</p> 
+                 </div> 
+                 <h3>Purposes of Note-Taking</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. In order to take efficient notes, the student is forced to listen carefully and critically to what is being said.</p> 
+                  <p>2. Taking notes aids comprehension and retention. Personal notes in one's own writing are easier to understand and remember than texbook material.</p> 
+                  <p>3. Lecture notes should represent a concise and complete outline of the most important points and ideas, especially those considered most important by the professor.</p> 
+                  <p>4. Lecture notes clarify ideas not fully understood in the text or elaborate on things that the text mentions only briefly.</p> 
+                  <p>5. Lecture notes combined with notes from textbook material are an excellent source of review. They provide a gauge to what is important in the textbook.</p> 
+                  <p>A frequent complaint of students is that they are unable to determine during the lecture what is important and what might just as well be left out. These students may attempt to write down every word uttered by the professor, combining page after page of isolated facts and details but missing a more general understanding of the material, as they are too busy writing to listen. The following are some suggestions to aid the student in taking efficient lecture notes.</p> 
+                 </div> 
+                 <h3>Before the Lecture</h3> 
+                 <div class="h4-wrap"> 
+                  <p>The single most important thing you can do is to read or skim the text prior to attending the lecture. This will enable you to:</p> 
+                  <p>1. Get the general overview of main ideas, secondary points, and important concepts. Listen with understanding and determine what is relevant and irrevelant.</p> 
+                  <p>2. Identify familiar terms with unfamiliar terms and concepts.</p> 
+                  <p class="rteindent1">a. Look up the terms before class.</p> 
+                  <p class="rteindent1">b. Listen for an explantion during the lecture.</p> 
+                  <p class="rteindent1">c. Ask the professor or TA for an explanation.</p> 
+                  <p>3. Note portions of the material which are unclear.</p> 
+                  <p class="rteindent1">a. Listen for an explanation during the lecture.</p> 
+                  <p class="rteindent1">b. Develop questions to ask in class.</p> 
+                  <p>4. Look for other gaps in information which should be clarified or filled in.</p> 
+                 </div> 
+                 <h3>During the Lecture</h3> 
+                 <div class="h4-wrap"> 
+                  <h4>Structure of Notes</h4> 
+                  <p>Each student should develop his own method of taking notes, however, the following suggestions may be helpful.</p> 
+                  <p>1. Keep a separate section of your notebook or binder for each course. If there are several types of notes for one course, such as lecture notes, notes on outside readings, and computation of problems, you may want to arrange them on opposite pages for purposes of cross-reference.</p> 
+                  <p>2. Notes for each lecture should begin on a new page. This makes for a greater legibility and allows for more freedom in organization.</p> 
+                  <p>3. Date your lecture notes and number all pages.</p> 
+                  <p>4. Make your notes brief.</p> 
+                  <p class="rteindent1">a. Never use a sentence when you can use a phrase, or a phrase when you can use a word.</p> 
+                  <p class="rteindent1">b. Use abbreviations and sumbols wherever possible.</p> 
+                  <p>5. Put most notes in your own words. However, the following should be noted exactly:</p> 
+                  <p class="rteindent1">a. Formulae</p> 
+                  <p class="rteindent1">b. Definitions</p> 
+                  <p class="rteindent1">c. Specific facts</p> 
+                  <p>6. Note your lecturer's chief pattern. S/he may be summarizing the text and highlighting important points, or trying to draw relationships between new and previous understandings. S/he may expect you to get the textbook material on your own while he discusses related outside material.</p> 
+                  <p class="rteindent1">a. If s/he is highlighting the text, take down explanations and examples. Seeing a concept stated in more than one way can help you understand it.</p> 
+                  <p class="rteindent1">b. If s/he draws relationships and asks questions, note the questions and answers. If s/he doesn't give the answers, try to find them after class.</p> 
+                  <p>7. Don't worry about outlining, but use indentations to distinguish between major and minor points. Numbers and letters may be added later if you wish. However, if the lecturer says s/he will make four or five points, list four or five causes, etc., be sure to use numbers as a check on having taken them all down.</p> 
+                  <p>8. Note down unfamiliar vocabulary and unclear areas. If the lecturer discusses something you don't understand, take it down as best and as completely as you can. Then you can check with the text or at least know what questions to ask if getting help from someone else. If your instructor knows just what you don't understand, s/he's in a position to help you.</p> 
+                  <p><span style="line-height: 1.5; letter-spacing: 0.05em;">9. If you should miss something completely, leave a blank space and get it later.</span></p> 
+                  <p>10. Use margins for questions, comments, notes to yourself on unclear material, etc.</p> 
+                  <p>11. Develop a code system of note-marking to indicate questions, comments, important points, due dates of assignments, etc. This helps separate extraneous material from the body of notes and also helps point out areas which are unclear. Margins are excellent places for coded notations. Some suggested codes are:</p> 
+                  <p class="rteindent1">? - not clear at time of lecture</p> 
+                  <p class="rteindent1">Imp. or ! - important</p> 
+                  <p class="rteindent1">Q - questions</p> 
+                  <p class="rteindent1">* - assignment</p> 
+                  <p class="rteindent1">C - comment(student's own)</p> 
+                  <p>12. Attempt to differentiate fact from opinion.</p> 
+                  <p><br> Content.</p> 
+                  <p>1. Notes should include all main ideas and enough subordinate points to clarify understanding.</p> 
+                  <p>2. All formulae, rules, definitions, and generalizations should be included.</p> 
+                  <p>3. Inclusion of the speaker's illustrations and examples may help clarify concepts when notes are reviewed.</p> 
+                  <p>4. Marginal notes facilitate speedy location of specific items.</p> 
+                  <p>5. Instructors usually give clues as to what is important to take down:</p> 
+                  <p class="rteindent1">a. previews and summaries</p> 
+                  <p class="rteindent1">b. material written on blackboard, other visual aids</p> 
+                  <p class="rteindent1">c. repetition</p> 
+                  <p class="rteindent1">d. vocal emphasis</p> 
+                  <p class="rteindent1">e. questions asked of the class</p> 
+                  <p class="rteindent1">f. word clues: four causes of; four aspects of; therefore; in conclusion; and so we see; hence; in a like manner; on the other hand; however; cause-effect; relationships; etc.</p> 
+                 </div> 
+                 <h3>After the Lecture</h3> 
+                 <div class="h4-wrap"> 
+                  <p>Go over your notes as soon as possible after the lecture. See below for an example of "mapping"</p> 
+                  <p>1. Clear up illegibilities in writing, check for errors, fill in further facts and examples while the lecture is still fresh in your mind. At this point you should clear up misunderstandings or fill in missing information by consulting the lecturer, TA, classsmates, the texts, or addtional readings.</p> 
+                  <p>2. Immediate review is essential to retention. Unless you review within 24 hours after lecture or at least before the next lecture, retention will drop sharply and you will be relearning rather than reviewing.</p> 
+                  <p>3. Merely recopying notes without thinking about or revising them does not necessarily aid retention. A more helpful practice is to manipulate the material by reorganizing it and putting it in your own words. For a well-organized lecture, an outline can suffice, but in the case of material where important ideas and relationships are scattered throughout, there is a technique called mapping which can be very useful in restructuring and putting together the relevant points. The use of this technique forces you to critically evaluate material in terms of main ideas, secondary points, and details, and to structure this content in an organized and coherent fashion. Relationships must be observed and established, irrelevant material may be excluded. This can be one of the most efficient means of immediate review for optimal retention.</p> 
+                 </div> 
+                </div> 
+                <h2>Taking Tests -- General Tips</h2> 
+                <p>Tests measure how you are doing in a course. Usually test scores are the key determinants of your course grade. Doing well on tests requires test-taking skills, a purposeful positive attitude, strategic thinking and planning, and, naturally, a solid grasp of the course content. This article contains tips that apply to all types of tests: Additional tips are available for problem solving tests, objective tests, and essay tests.</p> 
+                <div class="min-max" id="accordion5"> 
+                 <h3>How to Prepare for Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Familiarize yourself with the test. Ask the professor how long it will be and what kind of questions will be on it. Ask your instructor which concepts are most important, which chapters to focus on, and what you will have to do on the test. Also ask for some sample test questions and whether there is a copy of a similar test on file in a library. Look over the tests you have already taken in the course to predict what you will need to prepare for. Your aim is to determine both the content of the questions and the type of memory/intellectual skills you will be asked to use. Examples of these skills include:</p> 
+                  <ul>
+                   <li> <p>Remembering specific facts.</p> </li> 
+                   <li> <p>Comparing, contrasting, and otherwise interpreting meaning in the information studied.</p> </li> 
+                   <li> <p>Applying principles and theories to solve problems (that may not have been covered explicitly in the materials).</p> </li> 
+                   <li> <p>Predicting possible outcomes given a set of variables.</p> </li> 
+                   <li> <p>Evaluating the usefulness of certain ideas, concepts, or methods for a given event or situation.</p> </li> 
+                  </ul>
+                  <p>2. Overview all the work to be done and schedule time to do it. On the basis of your familiarity with the test, make a list of all the tasks you must complete to prepare for it. Given what topics you expect to be most important on the test, set priorties among your study tasks and plan to do the most important ones first. In scheduling your test preparation work, keep as much as possible to your own routines. If you do not know how to make a study schedule, refer to the article on time management.</p> 
+                  <p>3. Avoid the "escape syndrome". If you find yourself fretting or talking about your work rather than studying, relax for a few minutes and rethink what you are doing - reappraise your priorities and if necessary rethink your study plan to address your worries and then START WORKING.</p> 
+                  <p>4. Deal with unread materials - succinctly. Approach your unread materials keeping in mind all of your study plan, how much time you have to catch up on your reading, and what it is you need to pull out of the reading. Preview the material, dividing it up into parts looking for the organizational scheme of the work. Decide what parts in the reading you can omit, what parts you can skim, and what parts you want to read. Set time limits for each part, and keep to the limits. Use the following techniques to help move through the reading:</p> 
+                  <ul>
+                   <li> <p>Skim all the reading material first (except the parts you have decided to omit) so you will have at least looked at everything before the test. Take notes on what you skim.</p> </li> 
+                   <li> <p>Read, emphasizing key sentences and concentrating on understanding the ideas expressed. Try editorializing as you read by asking yourself questions regarding WHO, WHAT, WHERE, WHEN, and HOW about the information.</p> </li> 
+                   <li> <p>Recite the material to yourself immediately, self-testing at the end of each part to enhance recall even without later review.</p> </li> 
+                  </ul>
+                  <p>5. Review actively. Integrate notes, text, and supplementary information onto summary sheets by diagramming, charting, outlining, categorizing in tables, or simply writing paragraph summaries of the information. Try to create a summary sheet for each study session, or for each main idea, or for each concept. Use as many of the suggested ways possible, bringing all your senses as well as your sense of humor to bear on these summary sheets to make them really personally meaningful. The more of yourself you put into these sheets, the better you will remember the information.</p> 
+                  <p>6. Practice doing what you will be doing on the test. If you will be solving problems, then that is what you need to do while studying; if you will be conjugating Spanish verbs, then write these out. Answer unassigned problems or questions in the text or anticipate test questions by thinking frequently, 'If I were making up this test, I would probably ask...', and then answer your question. Remember, the single most effective way to prepare for any test is to practice doing what you will have to do on the test.</p> 
+                  <p>7. It is frequently useful to study with other well-prepared students and to attend any review sessions if available. Use these forums to clarify any questions you have about the materials and the test. Do not expect review sessions to repeat any lectures nor to present any addition information. The purpose of these sessions is to give you the opportunity to ask questions about the information to further your understanding.</p> 
+                 </div> 
+                 <h3>How to Take Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Be prepared emotionally and physically as well as intellectually. Get into a "fighting" attitude, emotionally ready to do your best. Stay away from others right before the test. Anxiety is highly contagious. Focus on what you know rather than on what you do not know: Reinforce your strengths and arrest your weaknesses. Get your rest the night before a test, eat well balanced meals, keep up with your regular exercise - prepare your brain for optimum functioning by keeping your physical resources well maintained. Avoid fasts; do not take any stimulants you are not used to, and if you are used to them (i.e. coffee or soft drinks) keep within moderate amounts.</p> 
+                  <p>2. Arrive at the test room early enough to arrange your working conditions, establishing a calm and alert mode. Select a seat where the lighting is the best (frequently in the front of the room) and where your view of other students will be minimized.</p> 
+                  <p>3. When you receive your test, use the back to jot down all the information you are worried you might forget. Remember first to ask whether you can write on the test form itself.</p> 
+                  <p>4. Preview the whole test before beginning to answer any questions. Make sure your copy has no missing or duplicate pages. Ask the instructor or proctor to clarify any ambiguities. Read the directions carefully.</p> 
+                  <p>5. Plan your time. Allow the most time for the questions which offer the most points. Allocate time at the end to review.</p> 
+                  <p>6. Start with the easy questions to build your confidence and to gain time for the harder ones. Work the entire test: Put down some answer for each question, even if you must guess (unless there is a penalty for guessing).</p> 
+                  <p>7. Do not panic if you see a question you did not anticipate or prepare for. Use everything you know about the content of the course, the instructor's explanations and your own reasoning ability to analyze the question and create a logical answer. Go for partial credit when you know you cannot get all the points: If you have studied, you are bound to know something.</p> 
+                  <p>8. Read the question as is. Avoid overanalyzing or oversimplifying, or you will end up answering a question that exists only in your mind, not on the grading key. Answer the question the testmaker intended: interpret the test within the scope of the course.</p> 
+                 </div> 
+                 <h3>How to Analyze Returned Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <dl>
+                   <dt> 
+                    <p><span style="letter-spacing: 0.05em; line-height: 1.5;">1. If you receive your test back to keep, rework your errors trying to reason out why the correct answer was correct.</span></p> 
+                   </dt> 
+                   <dt> 
+                    <p>2. If you do not receive your test back, visit your instructor's office to take a look at your answer sheet and the questions you missed.</p> 
+                    <p>3. Look for the origin of each question - text, notes, labs, supplementary reading, etc.</p> 
+                    <p>4. Identify the reason you missed a question. Did you fail to read it correctly? Did you fail to prepare for it? Was the test at a more difficult level than you prepared for? Did you run out of time?</p> 
+                    <p>5. Check the level of detail and skill of the test. Were most of the questions on precise details and facts or were they over main ideas an principles? Did the questions come straight from the text, or did the testmaker expect you to make sophisticated transformations and analyses?</p> 
+                    <p>6. Did you have any problems with anxiety or blocking during the test?</p> 
+                   </dt> 
+                  </dl>
+                 </div> 
+                </div> 
+                <h2>Taking Essay Tests</h2> 
+                <div class="min-max" id="accordion6"> 
+                 <h3>Preparing for Essay Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Begin your preparation by reading your instructor's course description and syllabus and then writing down whatever assumptions, biases, and teaching objectives are stated or implied in these materials. Determine how the various course topics relate to one another, and note any repeated themes. Think about any potential essay questions you can generate from this information, and then write them down.</p> 
+                  <p>2. Read assignments and listen to lectures and discussions with the purpose of determining how the course content supports the major themes and answers the major questions you have generated from the course description and syllabus. Modify and refine these themes and questions throughout the course as you gain additional information.</p> 
+                  <p>3. At some point prior to the test - preferably a week or two before - quickly look over your notes and the chapter headings from your readings. From this overview, generate a list of major topics for the course material covered. For each major topic, create a summary sheet of all the relevant factual data that relates to that topic. (See "Taking Tests - General Tips" (below)&nbsp; for more information about summary sheets.</p> 
+                  <p>4. In addition to learning the factual material, determine any logical relationships among topics. These relationships are often predictive of essay test questions. For example, if, in a history course, you find that two political movements are noticeably similar, then your instructor may very well ask you to compare and contrast the two movements. Generate a list of possible essay questions and consider setting up and answering as many of these questions as time permits.</p> 
+                 </div> 
+                 <h3>Taking Essay Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Read all essay questions before you start to write. As ideas and examples come to you, jot them down on scratch paper or on the back of the test so that you won't clutter your mind trying to remember everything.</p> 
+                  <p>2. Budget your time according to the point value of each question, allowing time for proofreading and any unexpected emergencies (such as taking longer than you expected on a questions or going blank for a while.)</p> 
+                  <p>3. As you read the questions, underline key words (eg., compare, explain, justify, define) and make sure you understand what you are being asked.</p> 
+                  <p>4. Begin with the questions that seems easiest to you. This procedure reduces anxiety and facilitates clear thinking.</p> 
+                  <p>5. Before actually writing, determine the relationship implied by the question, even if the key word or words do not express a specific relationship. For example, if you were given the following question, "The Progressive Movement was a direct response to the problems of industrialization. Discuss.", you might narrow your response to a more specific cause/effect relationship like the following:"What were the problems of industrialization that caused a response that we label The Progressive Movement?"</p> 
+                  <p>6. After determing the relationship implied by the question, picture the relationship by creating a chart or matrix of the related elements. Be sure to separate general issues you wish to bring up from supporting details and examples. Once this framework for your ideas has been created, generate as many ideas as you can within the allotted time to fill in the categories you have established. (See Figure 1).</p> 
+                  <center>
+                   Figure 1. Sample of Prewriting Matrix
+                  </center> 
+                  <table id="datagrid">
+                   <thead>
+                    <tr>
+                     <th> <p>GENERAL</p> </th> 
+                     <th> <p>CAUSE PROBLEMS OF INDUSTRIALIZATION</p> </th> 
+                     <th> <p>EFFECT:<br> PROGRESSIVE RESPONSE</p> </th> 
+                    </tr>
+                   </thead>
+                   <tbody>
+                    <tr>
+                     <td> <p>Social</p> </td> 
+                     <td> <p>Urbanization<br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Change in Family</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">New Labor Conditions</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">New Social Conditions</span></p> </td> 
+                     <td> <p>Muckraking--Spargo<br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Settlement House</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Working Condition Laws</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Brandeis Brief</span></p> </td> 
+                    </tr>
+                    <tr>
+                     <td> <p>Political</p> </td> 
+                     <td> <p>Growth of Bossism:&nbsp;<span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Tweed</span></p> </td> 
+                     <td> <p>Muckraking--Baker<br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">LaFollette Reform</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Party Platform--1912</span></p> </td> 
+                    </tr>
+                    <tr>
+                     <td> <p>Economic</p> </td> 
+                     <td> <p>Trusts:&nbsp;<span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Standard Oil</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Wealth Distribution</span></p> </td> 
+                     <td> <p>Muckraking--Tarbeil<br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Anti-trust Legislation</span><br><span style="font-size: inherit; line-height: 1.5; letter-spacing: 0.05em;">Railroad Regulation</span></p> </td> 
+                    </tr>
+                   </tbody>
+                  </table>
+                 </div> 
+                 <h3>While You Write</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Be sure your answer has a definite thesis that directly answers the question. State this thesis within the first few sentences of your answer.</p> 
+                  <p>2. Provide specific as well as general information in your response by including examples, substantiating facts, and relevant details from your pre-writing matrix.</p> 
+                  <p>3. Use the technical vocabulary of the course.</p> 
+                  <p>4. Leave space for additions to your answer by writing on every other line and on only one side of each page.</p> 
+                  <p>5. Write legibly.</p> 
+                  <p>6. If your mind goes blank or you don't know much about a question, relax and brainstorm for a few moments about the topic. Recall pages from your texts, particular lectures, and class discussions to trigger your memeory about ideas relevant to the question. Write these ideas down as coherently as you can.</p> 
+                  <p>7. When you reach the end of your alloted time period for a given question, move on to the next item: Partially answering all questions is better than fully anwering some but not others. The instructor can't give you any credit for a question you haven't attempted.</p> 
+                  <p>8. If you find yourself out of time on a question but with more to say, quickly write down in outline form what you would write if you had time.</p> 
+                 </div> 
+                 <h3>After You Write</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Re-read your answers and make any additions that are necessary for clarity and completeness.</p> 
+                  <p>2. Check your response for errors in grammar, spelling, and punctuation.</p> 
+                 </div> 
+                 <h3>Analyzing Returned Essay Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Read all comments and suggestions.</p> 
+                  <p>2. Look for the origins of the questions. Did most of the information your instructor expected on your essay come from the lectures? From the texts? From outside readings?</p> 
+                  <p>3. Determine the source of your errors. Was there any course content tested for which you failed to prepare or were inadequately prepared? Did you misread or misunderstand any of the questions? Did you do poorly because you ran out of time? Were you too anxious to focus on the questions and your responses? Did the instructor criticize your writing skills - grammar, spelling, punctuation, sentence structure, style, or organization - or how you developed or argued your points?</p> 
+                  <p>4. Check the level of difficulty or the level of detail of the test questions. Were most of the questions asking for precise details or main ideas and principles? Did most of the quesitons come straight from the material covered, or did the instructor expect you to be able to analyze and/or evaluate the information? Did you have any problems with anxiety or blocking during the test?</p> 
+                  <p><em>Portions of this handout have been adapted from materials developed by Nancy Wood, University of Texas at El Paso, and David Hubin and Susan Lesyk, University of Oregon.</em></p> 
+                 </div> 
+                </div> 
+                <h2>Taking Problem-Solving Tests</h2> 
+                <div class="min-max" id="accordion6"> 
+                 <h3>Preparing for Problem-Solving Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Review notes and text - list the major concepts and formulas that have been covered.</p> 
+                  <p>2. Highlight those topics/problems that were emphasized. Note why they were emphasized.</p> 
+                  <p>3. The single best way to prepare for problem-solving tests is to solve problems - lots of them. Work problems not previously assigned.</p> 
+                  <p>4. Analyze all problems you work:</p> 
+                  <ul class="rteindent1">
+                   <li> <p>What concepts, formulas, and rules did I apply?</p> </li> 
+                   <li> <p>What methods did I use?</p> </li> 
+                   <li> <p>How did I begin?</p> </li> 
+                   <li> <p>Have I seen this problem before?</p> </li> 
+                   <li> <p>Is it similar to or dissimilar from other problems I've done?</p> </li> 
+                   <li> <p>How does my solution compare with the examples from the book and class?</p> </li> 
+                   <li> <p>Could this problem be worked another way? Can I simplify what I did?</p> </li> 
+                  </ul>
+                  <p>5. In your own words, next to each problem-solving step, explain what you did and why.</p> 
+                  <p>6. Look for fundamental problem types. Usually a course has approximately 5 fundamental groups of problems - make sure you can recognize what they are.</p> 
+                  <p>7. Practice working problems out of sequence. For example, work a problem from Chapter 7, then one from Chapter 5, then one from Chapter 10. This randomness will allow you to see how different problems relate to each other and will simulate the test-taking experience.</p> 
+                  <p>8. Work with a time limit - aim to solve as many problems as you will have on the test within the test time limit (i.e., 30 problems in 50 minutes).</p> 
+                  <p>9. Make up a practice test. Possibly you might cut/paste/xerox a test from your homework problems.</p> 
+                 </div> 
+                 <h3>Taking Problem-Solving Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <h4><span style="font-size: 13px; line-height: 1.5; color: rgb(36, 36, 36); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: 0.05em;">1. Before starting the test, turn it over and jot down all the formulas, relationships, definitions, etc., that you are trying to keep current in memory.</span></h4> 
+                  <p>2. Look the whole test over, skimming the questions and developing a general plan for your work. If any thoughts come to you immediately as you look at a problem, note these down in the margin.</p> 
+                  <p>3. Plan your time. Allow more time for high point value problems: Reserve time at the end of the period to review your work and to handle emergencies.</p> 
+                  <p>4. Start with the easier problems, the ones for which you can specify a solution method quickly. This will reduce anxiety and facilitate clear thinking.</p> 
+                  <p>5. For the more difficult problems:</p> 
+                  <ul class="rteindent1">
+                   <li> <p>Make absolutely sure that you understand the posed problem: Mark key words, identify the givens and unknowns in your own words, sketch a diagram or picture of the problem, anticipate the form and characteristics of the solution (e.g., it has to be an integer, the solution is an algebraic expression, etc.)</p> </li> 
+                   <li> <p>Make a note, in symbols, diagrams, graphs or tables of all the information given.</p> </li> 
+                   <li> <p>For complex problems, list all the formulas you consider might be relevant to the solution, then decide which you will need to begin with.</p> </li> 
+                  </ul>
+                  <p>6. If you have no solution method:</p> 
+                  <ul class="rteindent1">
+                   <li> <p>If possible, write out an equation to express the relationships among all the givens and unknowns, accounting for all the data and facts of the problem.</p> </li> 
+                   <li> <p>Think back to similar practice problems to select a solution method.</p> </li> 
+                   <li> <p>Solve a simpler form of the problem if dealing with complex configurations OR substitute simple numbers for unknowns to reduce the amount of abstract thinking required.</p> </li> 
+                   <li> <p>Break the problem into a series of smaller problems and work each part, thus building up to a solution.</p> </li> 
+                   <li> <p>Guess an answer and check it. Possibly the checking process will suggest a solution method.</p> </li> 
+                  </ul>
+                  <p>7. If all else fails, mark it to come back to later and work another problem. You may find clues in subsequent problems.</p> 
+                  <p>8. For all problems, easy and difficult:</p> 
+                  <ul class="rteindent1">
+                   <li> <p>Once you have the solution method, follow it carefully. Check each step for consistency in notation. Document all your work so that it may be read easily; write legibly.</p> </li> 
+                   <li> <p>Evaluate your solutions. Check your answers against the original problem to make sure they fit.</p> </li> 
+                  </ul>
+                  <p>9. Try all test problems. If your mind goes blank, relax for a moment and contemplate the problem OR mark it to come back later.</p> 
+                  <p>10. If you run out of time and still have some problems left, try to gain at least partial credit by setting the problem up in a solution plan (even if you can't follow through on calculations).</p> 
+                 </div> 
+                 <h3>Analyzing Returned Problem-Solving Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Read the comments and suggestions.</p> 
+                  <p>2. Locate the source of the test: Did the problems come from the lectures, the textbook, or the homework?</p> 
+                  <p>3. Note any transformations - how were the problems changed from those in the notes, text, and homework?</p> 
+                  <p>4. Detemine the source of your errors:</p> 
+                  <ul>
+                   <li> <p>Were your errors due to carelessness? For example, did you fail to carry a negative sign from one step to another?</p> </li> 
+                   <li> <p>Did you misread questions? For example, did you fail to account for all the given data in your solution method?</p> </li> 
+                   <li> <p>Did you consistently miss the same kind of problem?</p> </li> 
+                   <li> <p>Could you produce the formulas, or did you remember them incorrectly?</p> </li> 
+                   <li> <p>Were you unable to finish the test because you ran out of time?</p> </li> 
+                   <li> <p>Were you unable to solve problems because you had not practiced doing similar ones?</p> </li> 
+                  </ul>
+                  <p>5. Did you have a difficult time during the test because you were too anxious to focus on the questions?</p> 
+                 </div> 
+                </div> 
+                <h2>&nbsp;</h2> 
+                <h2>Taking Objective Tests</h2> 
+                <p>Objective tests measure your ability to remember many facts and figures as well as your understanding of the course materials. These tests are often designed to make you think independently - do not count on recognizing the right answer ; instead prepare yourself for high level critical reasoning and making fine discriminations to determine the best answer.<br><br> The most common objective test questions are multiple-choice, true-false, and matching items. Doing well on these questions requires that you not only master the information but also interpret the test-maker's intentions. You know you have mastered the information if you can:</p> 
+                <p>&nbsp;</p> 
+                <ul class="rteindent1">
+                 <li> <p>Recall specific terms, facts, names, and other key words; become proficient in the language of the course.</p> </li> 
+                 <li> <p>Distinguish the ways in which ideas, facts, theories, or other observations differ from each other AND categorize ideas, facts, theories or other observations according to the ways these are similar.</p> </li> 
+                 <li> <p>Answer the questions and solve the problems in the text and create your own questions or problems.</p> </li> 
+                </ul>
+                <div class="min-max" id="accordion6"> 
+                 <h3>Preparing for Objective Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. Review notes and text(s) - list the major concepts that have been covered</p> 
+                  <p>2. Highlight those topics that were stressed. Note why they were stressed.</p> 
+                  <p>3. Think vocabulary. Every field of study has its own vocabulary. Identify words/terms used to represent specific concepts (i.e., the word 'paradigm' in a social science research course) and treat them as you would a foreign language - make flash cards for frequent drills, and try to use these words whenever you work with course-related materials.</p> 
+                  <p>4. Compare and contrast. Sometimes objective questions can be used to test your ability to distinguish concepts, ideas, theories, events, or facts from each other. Construct diagrams, charts, tables, or lists to summarize relationships.</p> 
+                  <p>5. Recite for precision. Review your retention of the information by recalling it often. Use odd moments, in addition to 15-20 minute review sessions, to say or write out complete ideas, facts. It is very important to verbalize the recalled information completely and in a detailed manner so that you will have a precise idea of your mastery of the material.</p> 
+                 </div> 
+                 <h3>Taking Objective Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>1. General tips.</p> 
+                  <ul class="rteindent1" style="margin-right: 0px; margin-bottom: 0px;">
+                   <li> <p>Plan your time. Allow more time for high point value questions; reserve time at the end to review your work, and for emergencies.</p> </li> 
+                   <li> <p>Before starting the test, turn it over and jot down all the facts and details you are trying to keep current in memory.</p> </li> 
+                   <li> <p>Look the whole test over, skimming the quesitons and developing a general plan for your work. If any immediate thoughts come to you, jot them down in the margin</p> </li> 
+                   <li> <p>Check with your instructor whether or not you can write on the test.</p> </li> 
+                   <li> <p>Read the directions very carefully. Look for time limits, specific answering procedures (i.e., answer 3 out of the 4 questions below), how questions will be graded.</p> </li> 
+                   <li> <p>Start with the section of the test that will yield the most points, but begin working with the easiest questions to gain time for the more difficult ones and to warm up.</p> </li> 
+                   <li> <p>Work quickly, check your timing regularly, and adjust your speed when necessary.</p> </li> 
+                   <li> <p>Avoid reading into the question. When you find yourself thinking along the lines of "this is too easy; there must be a trick..." mark the question and move on to another. When you begin modifying the question, the answer you will come up with will be different from the one on the teacher's key. Interpret questions literally.</p> </li> 
+                   <li> <p>Choose the answer the testmaker intended - stay within the scope of the course. If you know facts that are beyond the level of sophistication of the test, 1) Record the intended answer, and 2) point out the possible ambiguity and make a case for a different answer either in the margin of the test or during the next regular class.</p> </li> 
+                   <li> <p>Mark key words in every question. To help find the key works ask yourself WHAT, WHO, WHERE, WHEN, and HOW?</p> </li> 
+                  </ul>
+                  <p>2. Multiple choice questions.</p> 
+                  <ul class="rteindent1" style="margin-right: 0px; margin-bottom: 0px;">
+                   <li> <p>Probably the most commonly used objective questions, multiple choice questions, consist of 2 parts:</p> </li> 
+                  </ul>
+                  <p class="rteindent3">a. The stem - the statement or question.</p> 
+                  <p class="rteindent3">b.&nbsp;The choices - also known as the distractors. There are usually 3 to 5 options from which you choose the one that will complete the stem statement or question.You are to select the correct choice, the option that completes the thought expressed in the stem. There is a 20% chance that you will guess the correct choice if there are 5 choices listed. Although multiple choice questions are are most often used to test your memory of details, facts, and relationships, they are also used to test your comprehension and your ability to solve problems. Reasoning ability is a very important skill for doing will on multiple choice tests.</p> 
+                  <ul class="rteindent1" style="margin-right: 0px; margin-bottom: 0px;">
+                   <li> <p>Read the stem as if it were an independent, free standing statement. Anticipate the phrase that would complete the thought expressed, then evaluate each answer choice against your anticipated answer. It is important that you read each choice, even if the first choice matches the answer you anticipated, because there may be a better answer listed.</p> </li> 
+                   <li> <p>Another evaluation technique is to read the stem together with each answer choice as if it were a true-false statement. If the answer makes the statement a false one, cross it out. Check all the choices that complete the stem as a true statement. Try to suspend judgment about the choices you think are true until you have read all the choices.</p> </li> 
+                   <li> <p>Beware of words like not, but, except . Mark these words because they specify the direction and limits of the answer.</p> </li> 
+                   <li> <p>Also watch out for words like always, never, and only . These must be interpreted as meaning all of the time, not just 99% of the time. These choices are frequently incorrect because there are few statements that have no exceptions (but there are a few).</p> </li> 
+                   <li> <p>If there are two or more options that could be the correct answer, compare them to each other to determine the differences between them, and then relate these differences with the stem to deduce which of the choices is the better one. (Hint: Select the option that gives the most complete information.)</p> </li> 
+                   <li> <p>If there is an encompassing answer choice, for example "all of the above", and you are unable to determine that there are at least two correct choices, select the encompassing choice.</p> </li> 
+                   <li> <p>Use hints from questions you know to answer questions you do not.</p> </li> 
+                   <li> <p>Make educated guesses - eliminate options any way you can.</p> </li> 
+                  </ul>
+                  <p>3. True-False Questions.</p> 
+                  <ul class="rteindent1" style="margin-right: 0px; margin-bottom: 0px;">
+                   <li> <p>Also a popular question type, the true-flase question has only two options. Your odds are always 50-50 with this type of item. Typically, testmakers tend to focus on details in true-false questions.</p> </li> 
+                   <li> <p>In order for a statement to be true, it must be so 100% of the time. This means each part of the question. Thus you must evaluate the trueness of WHAT, WHO, WHERE, WHEN, and HOW for each statement.</p> </li> 
+                   <li> <p>Beware of words that qualify and give specific meanings. Words like some, usually, not frequently denote true statements, but be careful to interpret each statement as a special case.</p> </li> 
+                   <li> <p>Another type of word, such as always and never , should be interpreted as meaning without exception. If you can think of an exception, the statement is false.</p> </li> 
+                   <li> <p>Testmakers often mismatch items or names with inappropriate events or definintions to test your mastery and alertness.</p> </li> 
+                  </ul>
+                  <p>4. Matching Questions.</p> 
+                  <ul class="rteindent1" style="margin-right: 0px; margin-bottom: 0px;">
+                   <li> <p>Matching questions give you some opportunity for guessing. You must know the information well in that you are presented with two columns of items for which you must establish relationships. If only one match is allowed per item, then once items become eliminated, a few of the latter ones may be guessed.</p> </li> 
+                   <li> <p>The relationship is the crucial factor in a set of matching items. Usually the relationship is common to all included items. For example, all the items in Column B define the terms in Column A, or the individuals named in Column A wrote the books listed in Column B.</p> </li> 
+                   <li> <p>For every match you make, cross the the items in both columns (unless there is more than one match possible).</p> </li> 
+                   <li> <p>Begin with the lengthier column containing the information, evaluating the items in the column with shorter descriptions for a match. This way you save time by not constantly having to re-read the lengthy statements.</p> </li> 
+                  </ul>
+                 </div> 
+                 <h3>Analyzing Returned Objective Tests</h3> 
+                 <div class="h4-wrap"> 
+                  <p>After you get your graded test back, analyze the questions. If you do not get your test back, visit your professor in his/her office where the test will be kept on file and ask for your graded answer sheet to analyze your performance on the test.</p> 
+                  <ul class="rteindent1" style="margin-right: 0px; margin-bottom: 0px;">
+                   <li> <p>Read all comments and suggestions.</p> </li> 
+                   <li> <p>Loof for the origin of the questions. Did they come from the notes or the book(s)? From the class or the lab?</p> </li> 
+                   <li> <p>Look at the questions you missed. Verbalize the rationale for the correct answer - figure out why the correct answer was better than your answer.</p> </li> 
+                   <li> <p>Did you really know the answer to a question, but you failed to read it carefully enough to recognize it?</p> </li> 
+                   <li> <p>Were there any areas tested you failed to prepare for? Why didn't you?</p> </li> 
+                   <li> <p>Did you misread any questions?</p> </li> 
+                   <li> <p>Check the level of difficulty or the level of detail of the test questions. Were most of the questions over precise details, or were they over main ideas and principle? Did most of the questions come straight from the material covered, or did the testmaker expect you to be able to analyze and/or evaluate the information?</p> </li> 
+                   <li> <p>Were you able to finish the test?</p> </li> 
+                   <li> <p>Did you have a difficult time during the test because you were too anxious to focus on the questions?</p> </li> 
+                  </ul>
+                 </div> 
+                </div> 
+                <h3><span style="font-size: 1.875em; letter-spacing: 0.005em; line-height: 1.2;">Study Strategies Links</span></h3> 
+                <p><a href="https://drive.google.com/a/berkeley.edu/file/d/0B90ufO9cWW7AcjZZYTVOSFpEWTg/view?usp=sharing">Fall 2017 Semester Calendar</a></p> 
+                <p><a href="/sites/default/files/docs/24-7_Calendar.pdf">Weekly Planning Calendar</a><br> Download a 24/7 blank schedule that you can use as a weekly and daily planner!</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+               </div>
+              </div>
+             </div> 
+            </div> 
+            <div class="clearfix"> 
+             <nav class="links node-links clearfix"></nav> 
+            </div> 
+           </article> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+      <aside class="grid-4 region region-sidebar-second" id="region-sidebar-second"> 
+       <div class="region-inner region-sidebar-second-inner"> 
+        <div class="block block-menu-block block-15 block-menu-block-15 odd block-without-title" id="block-menu-block-15"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <div class="menu-block-wrapper menu-block-15 menu-name-main-menu parent-mlid-0 menu-level-3"> 
+            <ul class="menu">
+             <li class="first leaf menu-mlid-1432"><a href="/freshmen">For Freshmen</a></li> 
+             <li class="leaf menu-mlid-1433"><a href="/continuing-students">For Continuing Students</a></li> 
+             <li class="leaf menu-mlid-1434"><a href="/transferre-entry-students">For Transfer/Re-entry Students</a></li> 
+             <li class="leaf menu-mlid-1435"><a href="/students-experiencing-academic-difficulty">For Students Experiencing Academic Difficulty</a></li> 
+             <li class="leaf menu-mlid-1436"><a href="/students-exploring-learning-differences">For Students Exploring Learning Differences</a></li> 
+             <li class="leaf active-trail active menu-mlid-1437"><a href="/study-and-success-strategies" class="active-trail active">Study and Success Strategies</a></li> 
+             <li class="leaf menu-mlid-1439"><a href="/next-semesters-services">Next Semester's Services</a></li> 
+             <li class="leaf has-children menu-mlid-1441"><a href="/peer-peer-individual-consultations">Peer-to-Peer Individual Consultations</a></li> 
+             <li class="leaf menu-mlid-1448"><a href="/study-strategies-workshops">Study Strategies Workshops</a></li> 
+             <li class="leaf menu-mlid-1476"><a href="/become-peer-strategic-learning-coachpeer-mentor" title="">Become a Strategies for Success Peer Mentor</a></li> 
+             <li class="last leaf menu-mlid-1467"><a href="/faq-2">FAQ</a></li> 
+            </ul>
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <section class="block block-views block-dates-block-3 block-views-dates-block-3 even" id="block-views-dates-block-3"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title block-title">Announcements</h2> 
+          <div class="content clearfix"> 
+           <div class="view view-dates view-id-dates view-display-id-block_3 view-dom-id-bca60200c8d754ca9c5fb918c4a60ed2"> 
+            <div class="view-empty"> 
+             <p>No upcoming events are scheduled at this time, but please check back often!</p> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </section>
+        <section class="block block-views block-general-info-block block-views-general-info-block odd" id="block-views-general-info-block"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title block-title">General Information</h2> 
+          <div class="content clearfix"> 
+           <div class="view view-general-info view-id-general_info view-display-id-block view-dom-id-7c64e7b7ad596a5016c21b5c4e5464f9"> 
+            <div class="view-content"> 
+             <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+              <div class="views-field views-field-body"> 
+               <div class="field-content">
+                <h5>Location</h5> 
+                <p>University of California<br> Student Learning Center<br> César E. Chávez Student Center<br> Berkeley, CA 94720-4260</p> 
+                <h5>Hours</h5> 
+                <h5><strong style="font-size: 13px; line-height: 1.5; color: rgb(36, 36, 36); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: 0.05em;">Chavez Student Center</strong></h5> 
+                <p><strong>Building Hours</strong></p> 
+                <p><strong style="line-height: 1.5; letter-spacing: 0.05em;">Monday -&nbsp;Thursday</strong></p> 
+                <p><strong style="line-height: 1.5; letter-spacing: 0.05em;">8:00AM&nbsp;- 10:00PM</strong></p> 
+                <p><strong style="line-height: 1.5; letter-spacing: 0.05em;">Friday</strong></p> 
+                <p><strong style="font-size: 13px; line-height: 1.5; letter-spacing: 0.05em;">8:00AM&nbsp;- 5:00PM</strong></p> 
+                <p><span style="line-height: 1.5; letter-spacing: 0.05em;">Front Desk Phone:&nbsp;</span><span class="mobile" style="line-height: 1.5; letter-spacing: 0.05em;">510.642.7332</span></p> 
+                <p><a href="http://slc.berkeley.edu/contact-us">Staff Contact List&nbsp;</a><br style="font-size: 13px; line-height: 19px;"><br><a href="https://maps.google.com/maps?q=University+of+California+,+C%C3%A9sar+E.+Ch%C3%A1vez+Student+Center,+Berkeley,+CA+94720-4260&amp;ie=UTF8&amp;hnear=Cesar+Chavez+Student+Learning+Center,+Berkeley,+California+94720&amp;t=m&amp;z=16&amp;iwloc=A" style="font-size: 13px; line-height: 19px;" target="_blank">Map to Chavez Student Center</a></p> 
+               </div> 
+              </div> 
+              <div class="views-field views-field-edit-node"> 
+               <span class="field-content"></span> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </section> 
+       </div> 
+      </aside> 
+     </div> 
+    </div>
+   </section> 
+   <footer id="section-footer" class="section section-footer"> 
+    <div id="zone-footer-wrapper" class="zone-wrapper zone-footer-wrapper clearfix"> 
+     <div id="zone-footer" class="zone zone-footer clearfix container-12"> 
+      <div class="grid-12 region region-footer-first" id="region-footer-first"> 
+       <div class="region-inner region-footer-first-inner"> 
+        <div class="block block-megamenu block-menu-footer-menu block-megamenu-menu-footer-menu odd block-without-title" id="block-megamenu-menu-footer-menu"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <ul id="megamenu-menu-footer-menu" class="megamenu-menu columnar megamenu-skin-minimal">
+            <li id="megamenu-mlid-1171" class="megamenu-parent megamenu-parent-0 odd half-1 leaf-0 first menu-1171  first"><h2 class="megamenu-parent-title"><a href="/" title="">Home</a></h2></li>
+            <li id="megamenu-mlid-1313" class="megamenu-parent megamenu-parent-1 even half-1 leaf-1 menu-1313 "><h2 class="megamenu-parent-title"><a href="/links">Links</a></h2></li>
+            <li id="megamenu-mlid-1314" class="megamenu-parent megamenu-parent-2 odd half-1 leaf-2 menu-1314 "><h2 class="megamenu-parent-title"><a href="/contact-us">Contact SLC Staff</a></h2></li>
+            <li id="megamenu-mlid-1335" class="megamenu-parent megamenu-parent-3 even half-1 leaf-3 menu-1335 "><h2 class="megamenu-parent-title"><a href="/slc-tutors">SLC Tutors</a></h2></li>
+            <li id="megamenu-mlid-1176" class="megamenu-parent megamenu-parent-4 odd half-2 leaf-4 menu-1176 "><h2 class="megamenu-parent-title"><a href="/privacy-policy">Privacy Policy</a></h2></li>
+            <li id="megamenu-mlid-1177" class="megamenu-parent megamenu-parent-5 even half-2 leaf-5 menu-1177 "><h2 class="megamenu-parent-title"><a href="http://vpapf.chance.berkeley.edu/" title="">Division of Teaching, Learning, Academic Planning and Facilities</a></h2></li>
+            <li id="megamenu-mlid-1178" class="megamenu-parent megamenu-parent-6 odd half-2 leaf-6 menu-1178 "><h2 class="megamenu-parent-title"><a href="http://www.berkeley.edu/" title="">UC Berkeley</a></h2></li>
+            <li id="megamenu-mlid-1179" class="megamenu-parent megamenu-parent-7 even half-2 leaf-7 last menu-1179  last"><h2 class="megamenu-parent-title"><a href="http://mollyduggan.com" title="Designed and Built by Molly Duggan Associates, LLC">Designed and Built by Molly Duggan Associates, LLC</a></h2></li>
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+      <div class="grid-12 region region-footer-second" id="region-footer-second"> 
+       <div class="region-inner region-footer-second-inner"> 
+        <div class="block block-block block-11 block-block-11 odd block-without-title" id="block-block-11"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <p> Copyright ©2017 UC Regents. All rights reserved.</p> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-block block-6 block-block-6 even block-without-title" id="block-block-6"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <script src="//static.getclicky.com/js" type="text/javascript"></script> 
+           <script type="text/javascript">try{ clicky.init(100581314); }catch(e){}</script> 
+           <noscript>
+            <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100581314ns.gif"></p>
+           </noscript> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </footer> 
+  </div> 
+  <div class="region region-page-bottom" id="region-page-bottom"> 
+   <div class="region-inner region-page-bottom-inner"> 
+    <div class="menu-minipanels menu-minipanel-218">
+     <div class="panel-display omega-grid omega-12-threecol-4-4-4" id="mini-panel-start_nav"> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-custom pane-4"> 
+         <div class="pane-content"> 
+          <div id="global-submenu"> 
+           <div id="bin"> 
+            <div id="bin-inset-title"> 
+             <h2>Welcome to the SLC</h2> 
+            </div> 
+            <p>We are dedicated to fostering academic excellence and are driven by the philosophy that students working with students promotes academic and personal success.</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-block pane-menu-block-4" id="global-submenu"> 
+         <h2 class="pane-title"> Welcome </h2> 
+         <div class="pane-content"> 
+          <div class="menu-block-wrapper menu-block-4 menu-name-main-menu parent-mlid-218 menu-level-1"> 
+           <ul class="menu">
+            <li class="first leaf has-children menu-mlid-1351"><a href="/about-slc">About the SLC</a></li> 
+            <li class="leaf menu-mlid-1355"><a href="/areas-study">Areas of Study</a></li> 
+            <li class="leaf menu-mlid-1356"><a href="/how-do-i-sign">How do I sign up?</a></li> 
+            <li class="leaf menu-mlid-1517"><a href="/faculty-and-staff">Faculty and Staff</a></li> 
+            <li class="leaf menu-mlid-1519"><a href="/slc-alumni">Alumni</a></li> 
+            <li class="leaf has-children menu-mlid-1615"><a href="/events-and-dates">Events and Important Dates</a></li> 
+            <li class="last leaf menu-mlid-1516"><a href="/slc-affirmation">Statement of Affirmation</a></li> 
+           </ul>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-custom pane-5"> 
+         <div class="pane-content"> 
+          <div id="global-submenu"> 
+           <div id="bin"> 
+            <blockquote>
+             <p>The rigor of classes and the expectations here at Cal are very difficult and high. However, with the help of tutors, I was able to learn the level of analysis needed to succeed at Cal.</p> 
+            </blockquote> 
+            <p class="rteright">- Paolo Garcia, fourth year Political Science Major, Study Strategies Peer Mentor</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div class="menu-minipanels menu-minipanel-1158">
+     <div class="panel-display omega-grid omega-12-threecol-4-4-4" id="mini-panel-academics_nav"> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-custom pane-6"> 
+         <div class="pane-content"> 
+          <div id="global-submenu"> 
+           <div id="bin"> 
+            <div id="bin-inset-title"> 
+             <h2>Academic Programs &amp; Services</h2> 
+            </div> 
+            <p>We are dedicated to fostering academic excellence and are driven by the philosophy that students working with students promotes academic and personal success.</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-block pane-menu-block-3" id="global-submenu"> 
+         <h2 class="pane-title"> Academic programs &amp; services </h2> 
+         <div class="pane-content"> 
+          <div class="menu-block-wrapper menu-block-3 menu-name-main-menu parent-mlid-1158 menu-level-1"> 
+           <ul class="menu">
+            <li class="first leaf has-children active-trail menu-mlid-1367"><a href="/academic-success-and-strategic-learning-resources" class="active-trail">Academic Success and Strategic Learning Resources</a></li> 
+            <li class="leaf has-children menu-mlid-1717"><a href="/econ">Economics</a></li> 
+            <li class="leaf has-children menu-mlid-1358"><a href="/interdisciplinary-resources-transfer-students">Interdisciplinary Resources for Transfer Students</a></li> 
+            <li class="leaf has-children menu-mlid-1369"><a href="/isp">International Student Program</a></li> 
+            <li class="leaf has-children menu-mlid-1371"><a href="/math-and-statistics">Math and Statistics</a></li> 
+            <li class="leaf has-children menu-mlid-1366"><a href="/science">Science</a></li> 
+            <li class="leaf has-children menu-mlid-1370"><a href="/social-sciences">Social Sciences</a></li> 
+            <li class="leaf has-children menu-mlid-1368"><a href="/undergraduate-course-facilitator-training-resources-ucftr">Undergraduate Course Facilitator Training &amp; Resources (UCFTR)</a></li> 
+            <li class="leaf has-children menu-mlid-1365"><a href="/writing">Writing</a></li> 
+            <li class="last leaf menu-mlid-2293"><a href="/slcrap">Research Associate Program</a></li> 
+           </ul>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-custom pane-7"> 
+         <div class="pane-content"> 
+          <div id="global-submenu"> 
+           <div id="bin"> 
+            <blockquote>
+             <p>It is my wish that your experience in the SLC allows you to discover your personal gifts, to expand intellectually and to develop an awareness and understanding of others.</p> 
+            </blockquote> 
+            <p class="rteright">- Cara Stanley,<br> Director, Student Learning Center</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div class="menu-minipanels menu-minipanel-1159">
+     <div class="panel-display omega-grid omega-12-threecol-4-4-4" id="mini-panel-tutor_nav"> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-custom pane-8"> 
+         <div class="pane-content"> 
+          <div id="global-submenu"> 
+           <div id="bin"> 
+            <div id="bin-inset-title"> 
+             <h2>Become a Tutor</h2> 
+            </div> 
+            <p>In preparing for future careers or graduate/professional school, students hone their leadership skills by joining the SLC.</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-block pane-menu-block-5" id="global-submenu"> 
+         <h2 class="pane-title"> Become a Tutor </h2> 
+         <div class="pane-content"> 
+          <div class="menu-block-wrapper menu-block-5 menu-name-main-menu parent-mlid-1159 menu-level-1"> 
+           <ul class="menu">
+            <li class="first leaf menu-mlid-1474"><a href="/become-peer-strategic-learning-coachpeer-mentor">in Academic Success and Strategic Learning Resources</a></li> 
+            <li class="leaf menu-mlid-2084"><a href="/http%3A//slc.berkeley.edu/become-economics-tutor">in Economics!</a></li> 
+            <li class="leaf menu-mlid-1471"><a href="/become-mathstatistics-tutor" title="">in Mathematics or Statistics!</a></li> 
+            <li class="leaf menu-mlid-1472"><a href="/become-science-tutor" title="">in Science!</a></li> 
+            <li class="leaf menu-mlid-1473"><a href="/become-social-science-tutor" title="">in Social Science!</a></li> 
+            <li class="leaf menu-mlid-1475"><a href="/become-writing-tutor">in Writing!</a></li> 
+            <li class="last leaf menu-mlid-2240"><a href="/become-interdisciplinary-resources-transfer-students-irts-tutor">Become an Interdisciplinary Resources for Transfer Students (IRTS) Tutor</a></li> 
+           </ul>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="panel-panel grid-4"> 
+       <div class="inside">
+        <div class="panel-pane pane-custom pane-9"> 
+         <div class="pane-content"> 
+          <div id="global-submenu"> 
+           <div id="bin"> 
+            <blockquote>
+             <p>After seven years' experience teaching I have to say that the training I received at the SLC was top-notch, better than anything else I’ve been exposed to.</p> 
+            </blockquote> 
+            <p class="rteright">- Michael Wong, Graduate student in Physics, and Math Adjunct Course Instructor</p> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+  <script src="http://slc.berkeley.edu/sites/default/files/js/js_XWYQWmnEXPvgUg1El2FGrm2bOMYbPS_GSM1B3UD94Xw.js"></script> 
+  <script type="text/javascript" src="/sites/all/themes/MDALLC/js/clear-default-webform.js"></script> 
+  <script type="text/javascript" src="/sites/all/themes/MDALLC/js/paralax.js"></script> 
+  <script type="text/javascript" src="/sites/all/themes/MDALLC/js/scripts.js"></script> 
+  <script type="text/javascript" src="/sites/all/themes/MDALLC/js/jquery.localscroll.js"></script> 
+  <script type="text/javascript" src="/sites/all/themes/MDALLC/js/jquery.scrollTo.js"></script> 
+  <script type="text/javascript" src="/sites/all/themes/MDALLC/js/plugins.minimize.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f153c68f50","applicationID":"1834544","transactionName":"YAdXMhZRXEFUBhdeVllNYBQNHx1bWwEGTxdHCkU=","queueTime":0,"applicationTime":20,"atts":"TEBURF5LT08=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

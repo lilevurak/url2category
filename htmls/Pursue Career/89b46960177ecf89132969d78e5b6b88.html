@@ -1,0 +1,1402 @@
+<html lang="en">
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="language" content="en-us"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"> 
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon"> 
+  <link rel="stylesheet" type="text/css" href="/css/hs/foundation.css"> 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css"> 
+  <link rel="stylesheet" type="text/css" href="/css/hs/styles.css"> 
+  <!--Sourcebuster--> 
+  <script src="/scripts/sourcebuster.min.js"></script> 
+  <script type="text/javascript">sbjs.init();</script> 
+  <!-- Optimizely --> 
+  <script src="//cdn.optimizely.com/js/180066136.js"></script> 
+  <!-- TypeKit --> 
+  <script src="//use.typekit.net/sur1toq.js"></script> 
+  <script type="text/javascript">try { Typekit.load({ async: false }); } catch (e) { }</script> 
+  <!-- Font Awesome --> 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.css"> 
+  <!-- Ion Icons --> 
+  <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
+  <script src="/scripts/hs/foundation.js"></script> 
+  <!-- Global Page Settings Header Scripts --> 
+  <!-- For savings offer end date --> 
+  <script src="/ppc/scripts/offerenddate.js?v=20170929" type="text/javascript"></script> 
+  <!-- For proofing --> 
+  <!--<script src="/ppc/scripts/offerenddate-fpo.js?v=20170927" type="text/javascript"></script>--> 
+  <!-- End --> 
+  <!-- For phone number styling on IE - Added 2/3/2017 --> 
+  <meta name="format-detection" content="telephone=no"> 
+  <!-- End phone number styling on IE --> 
+  <!-- Chris H changes for Mobile View --> 
+  <script type="text/javascript">
+$(document).ready(function() {
+
+$(".horizontal li").on('touchend', function(){
+    window.location.href = $(this).find('a').attr("href");
+});
+
+}); //end document ready
+</script> 
+  <!-- End Chris H changes for Mobile View --> 
+  <!-- Begin to Change Links at the top left in black bar --> 
+  <script type="text/javascript">
+$(document).ready(function() {
+
+$("a").each(function(){
+  var title=this.innerHTML;
+     if (title=="For Educators" )
+     {
+     this.innerHTML ="For Organizations";
+     this.title ="For Organizations";	
+     $(this).attr("href", "/partners");
+        }
+     if (title=="For Employers" )
+     {
+     $(this).remove();			
+        }
+     });
+
+}); //end document ready
+</script> 
+  <!--End--> 
+  <!--Begin Style for HR on Reviews Front Matter pages--> 
+  <style type="text/css">
+hr.style-one{
+    margin: 0px 0px 15px 0px;    
+    border: 0;
+    width: 100%;
+    color: #ccc;
+    background-color: #ccc;
+    height: 1px; 
+} 
+</style> 
+  <!--End Style for HR on Reviews Front Matter pages--> 
+  <!--Begin Style for Footnote font size--> 
+  <style type="text/css">
+  p.footnote {font-size: .888rem;}
+</style> 
+  <!--End Style for Footnote font size--> 
+  <!--Begin Style for Chat Popup --> 
+  <style type="text/css">
+.lpInviteChatTbl, lpInviteChatTbl:tr, lpInviteChatTbl:td
+{padding:0; border:0;}
+.lpInviteChatTbl
+{padding:0; border:0;}
+.lpInviteChatTbl td
+{padding:0; border:0;}
+</style> 
+  <!--End Style for Chat Popup --> 
+  <script type="text/javascript">
+
+
+var mainReviewUrl = "https://community.pennfoster.edu/api/core/v3/contents?filter=tag({0})";
+
+
+$(document).ready(function () {
+                var jkid =url_query('jkid');
+                var jadid =url_query('jadid');
+                var jkid_c =getCookie("jkid");
+                var jadid_c =getCookie("jadid");
+                if(jkid_c==""){
+                                if(jkid != ""){
+                                                setCookie("jkid", jkid, 30);
+                                                jkid_c=jkid;
+                                }
+                }
+                if(jadid_c=="")  {
+                                if(jadid != ""){
+                                                setCookie("jadid", jadid, 30);
+                                                jadid_c=jadid;                                   
+                                }
+                }
+				
+				
+				
+//new lead and enroll click actions
+//var progid = programNumber;
+   var returnURL = document.location.href;
+   ///var eLink = $("#enroll-link").attr("href");
+   
+   $(".btnright").attr("href", "#");
+    $(".smallestround").attr("href", "#");
+
+    $(".btnleft").addClass("lead-click");
+    $(".btnright").addClass("enroll-click");
+    $(".smallestround").addClass("enroll-click");
+
+if ($(".ace").length == 0) {
+    $("a").each(function () {
+        if (this.title == "Get Info") {
+            //this.href("#");
+            $(this).attr('href', "#");
+            $(this).addClass("lead-click");
+        }
+        
+
+        if (this.title == "Enroll Now!") {
+            $(this).attr('href', "#");
+            $(this).addClass("enroll-click");
+
+        }
+
+        if (this.title == "Enroll Today!") {
+            $(this).attr('href', "#");
+            $(this).addClass("enroll-click");
+
+        }
+
+    });
+
+   eLink ="https://" + window.location.host + "/enroll/?sh=e&pid=" + programNumber + "&refURL=" + returnURL;
+
+   $(".enroll-click").attr("href",eLink);
+   $(".enroll-click-top").attr("href",eLink);
+   
+}
+var LLink ="http://" + window.location.host + "/request-info-form"
+	if (programNumber!="")
+	{
+		$("#courseid").val(programNumber);
+		$(".lead-click").attr("href","/request-info-form?mycourseid=" + programNumber );
+		//$("#leadPost").attr("action","https://" + window.location.host + "/request-info-form" )	;
+	}
+	else
+	{
+		$(".lead-click").attr("href",LLink );
+	}
+   
+
+               
+});
+
+
+/**************************************************/
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+
+/**************************************************/
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+/**************************************************/
+function url_query(query) {
+    query = query.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var expr = "[\\?&]" + query + "=([^&#]*)";
+    var regex = new RegExp(expr);
+    var results = regex.exec(window.location.href);
+    if (results !== null) {
+        return results[1];
+    } else {
+        return false;
+    }
+};
+
+</script> 
+  <!-- Facebook Pixel Code Added February 10 2016 --> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1108264759218378');
+fbq('track', "PageView");</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1108264759218378&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"> 
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"> 
+  <style>.ftr-ctas{display:none !important;}</style> 
+  <!--ENG-12 &ENG-13--> 
+  <script>
+$(document).ready(function () {
+
+    // moved here from Sitecore Enroll Header Script
+    var sid = url_query("sid");
+	var fname = url_query("fname");
+	var lname = url_query("lname");
+	var email = url_query("email");
+	var zip = url_query("zip");
+
+if(zip.length>5){
+var zip = zip.substr(0,5)
+}
+
+
+	
+	if (sid!=''){
+		
+	sessionStorage['sid'] = sid;
+	sessionStorage['fname'] = fname;
+	sessionStorage['lname'] = lname;
+	sessionStorage['email'] = email;
+	sessionStorage['zip'] = zip;
+	window.location.href=window.location.protocol+ "//" + window.location.hostname+window.location.pathname;
+	}
+
+});
+
+</script>
+  <link href="/~/media/files/style/cms.css" rel="stylesheet" type="text/css">
+  <!-- PF Google Analytics - Removed 6/1/2017--> 
+  <!-- End PF Google Analytics --> 
+  <!-- Google Webmaster Tools --> 
+  <meta name="google-site-verification" content="H2ck57L27Dpt36NL16YVIqBsesup1-3rScCR7x-m4jY"> 
+  <!-- End Google Webmaster Tools --> 
+  <!-- BING Webmaster Tools --> 
+  <meta name="msvalidate.01" content="6CF22677FBFBC3D38384D17AFC781269"> 
+  <!-- End BING Webmaster Tools --> 
+  <!-- BKV Retargeting Pixel --> 
+  <script type="text/javascript" src="https://pixel.mathtag.com/event/js?mt_id=10733&amp;v1=&amp;v2=&amp;v3=&amp;s1=&amp;s2=&amp;s3="></script> 
+  <!-- End BKV Retargeting Pixel --> 
+  <!-- Traffic Media Detector - Added 9/20/2017 --> 
+  <script type="text/javascript">
+
+$(function () {
+    setCookie("pftraffictype", sbjs.get.current.typ, 30)
+
+var qString = document.location.search.substr(1);
+	var qStringCookieVal =getCookie("qstring");
+    if(qStringCookieVal==""){
+		setCookie("qstring", qString, 1);
+	}
+});
+
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+
+</script> 
+  <!-- End Traffic Media Detector --> 
+  <script type="text/javascript">
+    var programNumber = "588";
+    var programCategory = "General Studies";
+    var linkEnrollURL = "/enroll-form";
+    var linkGetInfoURL = "/request-info-form";
+    var phoneNumber = "1-800-275-4410";
+    var programSavings = "0";
+    var offer = "";
+</script> 
+  <link rel="canonical" attrib="n" href="https://www.pennfoster.edu/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate"> 
+  <title>Career Readiness Bootcamp | Penn Foster Career School</title> 
+  <meta name="description" content="Take steps towards upgrading your workplace readiness skills in an online career training program with Penn Foster's Career Readiness Bootcamp."> 
+  <meta property="fb:app_id" content="251552683561"> 
+  <meta property="og:site_name" content="Penn Foster Career School"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:image" content="https://www.pennfoster.edu/ppc/web/images/PennFosterIcon.png"> 
+  <meta property="og:type" content="school"> 
+  <meta property="og:title" content="Career Readiness Bootcamp | Penn Foster Career School"> 
+  <meta property="og:description" content="Take steps towards upgrading your workplace readiness skills in an online career training program with Penn Foster's Career Readiness Bootcamp."> 
+  <meta property="og:url" content="http://www.pennfoster.edu/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate"> 
+  <meta property="twitter:card" content="summary"> 
+  <meta property="twitter:site" content="@pennfoster"> 
+  <meta property="twitter:image:src" content="https://www.pennfoster.edu/ppc/web/images/PennFosterIcon.png"> 
+  <meta property="twitter:title" content="Career Readiness Bootcamp | Penn Foster Career School"> 
+  <meta property="twitter:description" content="Take steps towards upgrading your workplace readiness skills in an online career training program with Penn Foster's Career Readiness Bootcamp."> 
+  <meta property="twitter:url" content="http://www.pennfoster.edu/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate"> 
+  <meta itemprop="name" content="Career Readiness Bootcamp | Penn Foster Career School"> 
+  <meta itemprop="description" content="Take steps towards upgrading your workplace readiness skills in an online career training program with Penn Foster's Career Readiness Bootcamp."> 
+  <meta itemprop="name" content="Career Readiness Bootcamp | Penn Foster Career School"> 
+  <meta itemprop="image" content="https://www.pennfoster.edu/ppc/web/images/PennFosterIcon.png"> 
+  <script src="/scripts/hs/scripts.js"></script> 
+  <script src="/scripts/PFfriendbuyStart.js"></script> 
+ </head> 
+ <body class=" pf-pad"> 
+  <script type="text/javascript">
+            if (window.location.href.match("pennfoster.edu/high-school/academics/tuition") == null) {
+                localStorage.setItem("pfpathway", "007");
+            }
+        </script> 
+  <!-- Global Page Settings Start Body Scripts --> 
+  <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TC7V32" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TC7V32');</script> 
+  <!-- End Google Tag Manager --> 
+  <div class="hdr-container"> 
+   <header class="mobileonly mobilehdr"> 
+    <div class="row"> 
+     <div class="small-5 columns mobile-logo"> 
+      <a href="/career-school" title="Career School"><img src="/~/media/images/career-school/mobile-logo.png?h=60&amp;w=164&amp;la=en&amp;hash=C16A5436260CD202A284D019E5303E15B784F05B" alt=""></a> 
+     </div> 
+     <div class="small-7 columns mobile-ctas"> 
+      <a href="tel:1.888.427.6200" class="phonenumber" title="Telephone"><i class="fa fa-phone"></i></a> 
+      <a href="http://login.pennfoster.edu/" target="_blank" title="Student Portal"></a> 
+      <a href="http://my.pennfoster.com/StudentLMS/SignInSplash.aspx" target="_blank"><img border="0" src="/images/hs/man-icon.png" alt="Student Login"></a> 
+      <button class="hamburger hamburger--slider" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="mobilenav"> 
+   </div>
+   <div class="searchbar"> 
+    <div class="row"> 
+     <form action="/api/sitecore/Navigation/ExecuteHighSchoolSearch" method="post">
+      <input class="text search-query" id="Query" name="Query" placeholder="Search" title="Search" type="text" value="">
+     </form> 
+     <i class="fa fa-times"></i> 
+    </div> 
+   </div>
+   <div class="transheader"> 
+    <div class="row"> 
+     <div class="large-6 medium-6 columns trans-offer">
+      <span>Start Today!</span> 
+      <span class="phonenumber" x-ms-format-detection="none">1-800-275-4410</span>
+     </div> 
+     <div class="large-6 medium-6 columns trans-ctas"> 
+      <a class="button getinfo" href="#" title="Get Info"><span>Get Info</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+      <a class="button enrollnow enroll-click" href="#" title="Enroll Now"><span>Enroll Now</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+      <button class="hamburger hamburger--slider" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="transnav"> 
+   </div>
+   <div class="preheader desktoponly"> 
+    <div class="row"> 
+     <div class="large-6 medium-6 columns stu-login">
+      <a href="http://login.pennfoster.edu" target="_blank" title="Student Login">Student Login</a>
+     </div> 
+     <div class="large-6 medium-6 columns search">
+      <i class="fa fa-search"></i>
+     </div> 
+    </div> 
+   </div>
+   <header class="desktoponly"> 
+    <div class="row"> 
+     <div class="large-3 medium-3 columns logo"> 
+      <a href="/career-school" title="Penn Foster Career School"><img src="/~/media/images/career-school/logo.png?h=66&amp;w=195&amp;la=en&amp;hash=6C7326AC5E534181B0E58D553B6C7D36B89CEBD3" alt="Penn Foster Career School Logo"></a> 
+     </div> 
+     <div class="large-9 medium-9 columns hdr-info"> 
+      <div class="row"> 
+       <div class="large-12 medium-12 columns hdr-info-top"> 
+        <a class="button enrollnow" href="" title="Enroll Now" id="enroll-link"><span>Enroll Now</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+        <a class="button getinfo lead-click" href="javascript:link(1,this);"><span>Get Info</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+        <span class="hdrtxt">Enroll Today! <a href="tel:1.888.427.6200" title="Call Today!" class="phonenumber">1.888.427.6200</a></span> 
+        <script>
+$(document).ready(function () {
+   //var progid = programNumber;
+   var returnURL = document.location.href;
+   ///var eLink = $("#enroll-link").attr("href");
+   
+   $(".btnright").attr("href", "#");
+    $(".smallestround").attr("href", "#");
+
+    //$(".btnleft").addClass("lead-click");
+    $(".btnright").addClass("enroll-click");
+    $(".smallestround").addClass("enroll-click");
+
+if ($(".ace").length == 0) {
+    $("a").each(function () {
+        /*if (this.title == "Get Info") {
+            //this.href("#");
+            $(this).attr('href', "#");
+            $(this).addClass("lead-click");
+        }
+        */
+
+        if (this.title == "Enroll Now") {
+            $(this).attr('href', "#");
+            $(this).addClass("enroll-click");
+        }
+
+        if (this.title == "Enroll Today!") {
+            $(this).attr('href', "#");
+            $(this).addClass("enroll-click");
+        }
+
+    });
+
+   eLink ="https://" + window.location.host + "/enroll/?sh=e&pid=" + programNumber + "&refURL=" + returnURL;
+
+   $(".enroll-click").attr("href",eLink);
+
+  setTimeout(function(){
+ $(".enrollnow").attr("href", $(".enrollnow").attr("href") + "&high-school") 
+ }, 2000);
+}
+});
+</script> 
+       </div> 
+      </div> 
+      <div class="row"> 
+       <div class="large-12 medium-12 columns hdr-info-bot"> 
+        <nav> 
+         <ul> 
+          <li> <a href="/why-penn-foster" title="Why Penn Foster">Why Penn Foster</a> 
+           <ul> 
+            <li><a href="/why-penn-foster/about" class="fa fa-caret-down" title="About Penn Foster">About Us</a></li> 
+            <li><a href="/why-penn-foster/about/mission-and-history" class="fa fa-caret-down" title="Mission and History">Mission and History</a></li> 
+            <li><a href="/why-penn-foster/about/accreditation" class="fa fa-caret-down" title="Accreditation &amp; Affiliations">Accreditation &amp; Affiliations</a></li> 
+            <li><a href="/why-penn-foster/about/our-leaders" class="fa fa-caret-down" title="Our Leaders">Our Leaders</a></li> 
+            <li><a href="/why-penn-foster/about/instructors" class="fa fa-caret-down" title="Our Faculty">Our Faculty</a></li> 
+            <li><a href="/why-penn-foster/solutions-for-organizations" class="fa fa-caret-down" title="Solutions for Organizations">Solutions for Organizations</a></li> 
+            <li><a href="/why-penn-foster/reviews" class="fa fa-caret-down" title="Reviews">Reviews</a></li> 
+            <li><a href="/why-penn-foster/contact-us" class="fa fa-caret-down" title="Contact Us">Contact Us</a></li> 
+           </ul> </li> 
+          <li> <a href="/college" title="College">College</a> 
+           <ul> 
+            <li><a href="/college/all-programs" class="fa fa-caret-down" title="All College Programs">All College Programs</a></li> 
+            <li><a href="/college/all-programs/associate-degrees" class="fa fa-caret-down" title="Associate Degrees">Associate Degrees</a></li> 
+            <li><a href="/college/all-programs/bachelors-degrees" class="fa fa-caret-down" title="Bachelor's Degrees">Bachelor's Degrees</a></li> 
+            <li><a href="/college/all-programs/certificates" class="fa fa-caret-down" title="Undergraduate Certificates">Undergraduate Certificates</a></li> 
+            <li><a href="/college/all-programs/college-courses" class="fa fa-caret-down" title="Individual College Courses">Individual College Courses</a></li> 
+            <li><a href="/college/videos" class="fa fa-caret-down" title="College Reviews">College Reviews</a></li> 
+            <li><a href="/college/accreditation" class="fa fa-caret-down" title="Accreditations &amp; Affiliations">Accreditations &amp; Affiliations</a></li> 
+            <li><a href="/college/catalog" class="fa fa-caret-down" title="College Catalog">College Catalog</a></li> 
+            <li><a href="/college/grading-system" class="fa fa-caret-down" title="Grading System">Grading System</a></li> 
+            <li><a href="/college/wiki" class="fa fa-caret-down" title="Consumer Information">Consumer Information</a></li> 
+           </ul> </li> 
+          <li> <a href="/career-school" title="Career School">Career School</a> 
+           <ul> 
+            <li><a href="/career-school/all-programs" class="fa fa-caret-down" title="All Career School Programs">All Career School Programs</a></li> 
+            <li><a href="/career-school/all-programs/diplomas" class="fa fa-caret-down" title="Career Diplomas">Career Diplomas</a></li> 
+            <li><a href="/career-school/all-programs/certificates" class="fa fa-caret-down" title="Career Certificates">Career Certificates</a></li> 
+            <li><a href="/career-school/videos" class="fa fa-caret-down" title="Career School Reviews">Career School Reviews</a></li> 
+            <li><a href="/career-school/accreditation" class="fa fa-caret-down" title="Accreditation &amp; Affiliations">Accreditation &amp; Affiliations</a></li> 
+            <li><a href="/career-school/catalog" class="fa fa-caret-down" title="Career School Catalog">Career School Catalog</a></li> 
+            <li><a href="/career-school/grading-system" class="fa fa-caret-down" title="Grading System">Grading System</a></li> 
+            <li><a href="/career-school/wiki" class="fa fa-caret-down" title="Consumer Information">Consumer Information</a></li> 
+           </ul> </li> 
+          <li> <a href="/high-school" title="High School">High School</a> 
+           <ul> 
+            <li><a href="/high-school" class="fa fa-caret-down" title="Academics">Academics</a></li> 
+            <li><a href="/high-school/academics/program-overview" class="fa fa-caret-down" title="High School Diploma">High School Diploma</a></li> 
+            <li><a href="/high-school/academics/pathways" class="fa fa-caret-down" title="Career Pathways">Career Pathways</a></li> 
+            <li><a href="/high-school/academics/individual-courses" class="fa fa-caret-down" title="Individual Courses">Individual Courses</a></li> 
+            <li><a href="/high-school/academics/partner-programs" class="fa fa-caret-down" title="Partner Programs">Partner Programs</a></li> 
+            <li><a href="/high-school/about-us/accreditation-licensing" class="fa fa-caret-down" title="Accreditation &amp; Licensing">Accreditation &amp; Licensing</a></li> 
+            <li><a href="/high-school/admissions/catalog" class="fa fa-caret-down" title="High School Catalog">High School Catalog</a></li> 
+            <li><a href="/high-school/academics/grading-system" class="fa fa-caret-down" title="Grading System">Grading System</a></li> 
+            <li><a href="/high-school/about-us/consumer-info" class="fa fa-caret-down" title="Consumer Information">Consumer Information</a></li> 
+           </ul> </li> 
+          <li> <a href="/admissions" title="Admissions">Admissions</a> 
+           <ul> 
+            <li><a href="/admissions" class="fa fa-caret-down" title="Admissions Information">Admissions Information</a></li> 
+            <li><a href="/admissions/about-online-education" class="fa fa-caret-down" title="About Online Education">About Online Education</a></li> 
+            <li><a href="/admissions/transferring-credits" class="fa fa-caret-down" title="Transferring Credits">Transferring Credits</a></li> 
+            <li><a href="/admissions/tuition/payment-options" class="fa fa-caret-down" title="Tuition &amp; Payment Options">Tuition &amp; Payment Options</a></li> 
+            <li><a href="/admissions/tuition/financial-assistance" class="fa fa-caret-down" title="Financial Assistance">Financial Assistance</a></li> 
+            <li><a href="/admissions/tuition/military-benefits" class="fa fa-caret-down" title="Military Benefits">Military Benefits</a></li> 
+            <li><a href="/admissions/refund-policy" class="fa fa-caret-down" title="Refund Policy">Refund Policy</a></li> 
+            <li><a href="/admissions/student-records" class="fa fa-caret-down" title="Student Records">Student Records</a></li> 
+           </ul> </li> 
+         </ul> 
+        </nav> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header> 
+   <script type="text/javascript">
+        if (window.location.href.match(".edu\/enroll") == null && window.location.href.match(".edu\/solutions") == null && Math.max($(window).width(), window.innerWidth) > 980) {
+            var addthisScript = document.createElement('script');
+            addthisScript.setAttribute('src', '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-542c555469788db9');
+            addthisScript.setAttribute('async', 'true');
+            document.head.appendChild(addthisScript);
+        }
+</script> 
+   <style>
+nav.social li a{width:90px !important;}
+</style> 
+   <script type="text/javascript" src="//pennfoster.widget.custhelp.com/euf/rightnow/RightNow.Client.js"></script> 
+   <script type="text/javascript">
+
+$(document).ready(function () {
+var soc = $("#socialSB").detach();
+$(soc).insertBefore(".hdr-container");
+CheckOnChat();
+});
+
+
+    RightNow.Client.Controller.addComponent(
+        {
+            chat_login_page: "/app/chat/chat_launch_basic",            
+            container_element_id: "myChatLinkContainer",
+            info_element_id: "myChatLinkInfo",
+            link_element_id: "myChatLink",
+            p: "110",
+            instance_id: "sccl_0",
+            module: "ConditionalChatLink",
+                        type: 7
+        },
+        "//pennfoster.widget.custhelp.com/ci/ws/get"
+    );
+
+
+function CheckOnChat() {
+    var indexer = 0;
+    
+    myInterval = setInterval(function() {
+            if (indexer < 5) {
+                chatIntervalFunction();
+                indexer++;
+            } else {
+                chatIntervalClearFunction();
+            }
+        },
+        3000);
+    
+}
+
+function chatIntervalFunction() {
+    
+    if ($("#myChatLinkInfo span").text() === "Agents are available with no wait time." || $("#myChatLinkInfo span").text() === "Agents are available with no wait time.Agents are available with no wait time.") {
+            $(".chat-image").css("display", "inline");
+            $(".chatnow").css("display", "inline");
+                        $(".social").css("display", "inline");
+            $("#socialSB").css("display", "inline");
+
+        } else {
+            $(".chat-image").css("display", "none");
+            $(".chatnow").css("display", "none");
+                        $(".social").css("display", "inline");
+            $("#socialSB").css("display", "none");
+
+        }
+       
+    
+    
+}
+
+function chatIntervalClearFunction() {
+    clearInterval(myInterval);
+}
+
+    </script> 
+   <nav class="social sidebar" id="socialSB" style="display: none;"> 
+    <ul> 
+     <li> 
+      <div id="myChatLinkContainer" class="chatnow socialSB rev-chat" title="Chat Now"> 
+       <div id="myChatLink"> 
+        <div class="chat-image">
+         <i class="fa fa-2x fa-wechat"></i>
+        </div> 
+       </div> 
+       <div id="myChatLinkInfo" style="display:none"> 
+       </div> 
+      </div> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <section class="hero gsa-hero"> 
+   <div class="banner-text"> 
+    <div class="main-heading">
+     Sharpen Your Soft Skills
+    </div> 
+    <div class="sub-heading">
+     Learn the communication, planning, and decision-making skills employers want
+    </div> 
+    <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Learn More about the Career Readiness Program"><button class="button learn-more"><span>Learn More</span> <i class="ion-arrow-right-c"></i></button></a> 
+   </div> 
+  </section> 
+  <style>
+  .hero {background: #334553 url(/~/media/images/career-school/career-readiness-bootcamp/hero2.jpg) no-repeat left top; background-size: cover;}
+
+ @media only screen and (min-width: 320px) and (max-width:1023px) {
+ .hero {background: #334553 url(/~/media/images/career-school/career-readiness-bootcamp/hero2.jpg) no-repeat center; background-size: cover;}
+}
+</style> 
+  <section class="home-offer"> 
+   <div class="row"> 
+    <div class="large-12 medium-12 small-12 columns offer-top">
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/tuition" title="Tuition and Payment Options"><b style="padding: 0px;">Start Today for $10!</b></a>
+    </div> 
+    <div class="large-12 medium-12 small-12 columns offer-bottom">
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/tuition" title="Tuition and Payment Options">$149 total program cost&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Complete in as little as 2 weeks</a>
+    </div> 
+   </div> 
+  </section> 
+  <div class="row desktoponly"> 
+   <div class="large-12 medium-12 columns bcrumbs" itemprop="breadcrumb" itemscope itemtype="http://schema.org/breadcrumb"> 
+    <a itemprop="url" href="/"><span itemprop="name">Home</span></a> 
+    <a itemprop="url" href="/programs-and-degrees"><span itemprop="name">All Programs</span></a> 
+    <a itemprop="url" href="/programs-and-degrees/general-studies"><span itemprop="name">General Studies</span></a> 
+    <span itemprop="child" itemscope itemtype="http://schema.org/breadcrumb"> <span itemprop="name">Career Readiness Bootcamp Certificate</span> </span> 
+   </div> 
+  </div> 
+  <div id="googleBreadcrumb" class="hidden"> 
+   <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> 
+    <a title="Home" href="/" itemprop="url"> <span itemprop="title">Home</span> </a> 
+    <a title="All Programs" href="/programs-and-degrees" itemprop="url"> <span itemprop="title">All Programs</span> </a> 
+    <a title="General Studies" href="/programs-and-degrees/general-studies" itemprop="url"> <span itemprop="title">General Studies</span> </a> 
+   </div> 
+  </div>
+  <div class="row"> 
+   <div class="large-12 medium-12 columns subnav mobile-subnav "> 
+    <ul class="mobile-ul"> 
+     <li class="mobile-li"> <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate" class="blue-underline" title="Overview">Overview</a> </li> 
+     <li class="pipe-li">|</li> 
+     <li class="mobile-li"> <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" class="" title="Program Details">Program Details</a> </li> 
+     <li class="pipe-li">|</li> 
+     <li class="mobile-li"> <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/tuition" class="" title="Tuition &amp; Payment Options">Tuition</a> </li> 
+     <li class="pipe-li">|</li> 
+    </ul> 
+   </div> 
+  </div> 
+  <section class="curr-section"> 
+   <div class="row valign-center"> 
+    <section class="large-6 medium-6 columns curr-block"> 
+     <h1 class="sect-title">Stand out with Career Readiness Bootcamp</h1> 
+     <div class="curr-text">
+      Nine out of ten employers say they need employees with soft skills. Invest in yourself with our Career Readiness Bootcamp, and learn communication skills, planning and organization, productivity tools, decision-making, and teamwork — the skills you need to stand out in any job.
+     </div> 
+    </section> 
+    <section class="large-6 medium-6 columns"> 
+     <div class="reviews-vid"> 
+      <video data-video-id="5353527046001" data-account="1642697353001" data-player="default" data-embed="default" class="video-js" controls></video> 
+     </div> 
+    </section> 
+   </div> 
+  </section> 
+  <script src="//players.brightcove.net/1642697353001/default_default/index.min.js"></script> 
+  <!-- Image on Left --> 
+  <section class="copy-photo hha-title"> 
+   <div class="row valign-center"> 
+    <section class="large-6 medium-6 columns"> 
+     <div> 
+      <img src="/~/media/images/career-school/career-readiness-bootcamp/crb_screenshot.jpg?la=en&amp;hash=8AF14E5EEFE56A95D974BD7DCA7F891ABA57E3D5" alt="Career Readiness Bootcamp Student Experience"> 
+     </div> 
+    </section> 
+    <section class="large-6 medium-6 columns curr-block"> 
+     <h2 class="sect-title">Why Do I Need Soft Skills?</h2> 
+     <div class="curr-text">
+      Whether you’re currently a student, on the hunt for a job, or working in your field, our online Career Readiness Bootcamp was created for you. Companies across the U.S. say it is becoming increasingly difficult to find applicants who can communicate clearly, take initiative, problem-solve, and get along with co-workers.* Show employers you’ve got what it takes by taking the next step toward becoming desirable in today’s workplace and unlocking career advancement opportunities.
+     </div> 
+     <div class="curr-text blue-link">
+      <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Curriculum">Curriculum <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+     </div> 
+    </section> 
+   </div> 
+  </section> 
+  <!-- End Image on Left --> 
+  <section class="bggray overview crb-boxes no-hover"> 
+   <div class="sect-title">
+    Learn 9 Valuable Soft Skills at Your Own Pace
+   </div> 
+   <!--<div class="overview-text">copy here... </div>--> 
+   <div class="row desktoponly"> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+   </div> 
+   <div class="row desktoponly"> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+   </div> 
+   <div class="row desktoponly"> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+    <section class="large-4 medium-4 columns each-block"></section> 
+   </div> 
+   <div class="row mobileonly home-slider"> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p>Communication Skills</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Active Listening, Non-Verbal Communication, Receiving Feedback, Communication Channel Etiquette
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p>Problem Solving/ Decision Making</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Identifying Problems, Decision Making Tools and Strategies
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p>Planning and Organization</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Creating and Managing Plans, Prioritizing, Time Management
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p>Working with Tools/Technology</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Using Technology to Solve Problems, Common Technology Tools and Applications, Accepting New Technology
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p>Professionalism/ Adaptability</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Barriers to Change, Adjusting to Changing Priorities and Work Conditions
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p class="one-line">Teamwork</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Being a Team Player, Relationship Building/Cooperation, Conflict Resolution
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p class="one-line">Customer Focus</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Anticipating and Delivering on Customer Needs; Evaluating Service Effectiveness
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p class="one-line">Respect</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Appreciation for Diversity, Tolerance, and Multicultural Awareness
+      </div> </a> 
+    </div> 
+    <div class="each-block-mobile"> 
+     <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/program-details" title="Program Curriculum"> 
+      <div class="boxtitle"> 
+       <div class="row"> 
+        <div class="columns large-2 medium-2 small-2"> 
+         <i class="fa fa-shield" aria-hidden="true"></i> 
+        </div> 
+        <div class="columns large-10 medium-10 small-10"> 
+         <p class="one-line">Integrity</p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="boxtxt">
+       Honesty, Responsibility, and Reliability; “Doing the right thing” and “Keeping your promises"
+      </div> </a> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="offercostsarea hha-tuition-home"> 
+   <div class="row valign-center"> 
+    <div class="large-6 medium-6 columns oc-left" style="background: url(/~/media/images/high-school/general/tuitionbox_overviewpage.gif) no-repeat"> 
+     <div class="offer-text">
+      <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/tuition" title="Tuition and Payment Options" style="color:#fff;"> <p>Enroll today! </p></a>
+      <h3><a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/tuition" title="Tuition and Payment Options" style="color:#fff;">Start Today for $10 </a></h3>
+     </div> 
+     <!-- <div class="offer-text offertimer"></div>--> 
+    </div> 
+    <div class="large-6 medium-12 columns oc-right"> 
+     <div class="sect-title">
+      Affordable Payment Options
+     </div> 
+     <div class="offer-text">
+      With affordable payment options, you can start training in the Career Readiness Bootcamp online today. Best of all, everything you need is included, and you can begin right away.
+     </div> 
+     <div class="blue-link">
+      <a href="/programs-and-degrees/general-studies/career-readiness-bootcamp-certificate/tuition" title="Program Tuition">Tuition <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <style> .quote {line-height: 30px;} </style> 
+  <section class="newtestis hha-testis"> 
+   <div class="row"> 
+    <div class="large-4 large-push-8 medium-4 small-12 columns testirotate"> 
+     <div class="orbit" role="region" aria-label="Testis" data-orbit> 
+      <ul class="orbit-container"> 
+       <li class="is-active orbit-slide"> 
+        <div class="quote" style="padding-bottom: 15px;">
+          Career Readiness Bootcamp has helped me greatly in my current workplace. By learning all I did and applying it to my job I have been promoted to Assistant Manager at my job. 
+        </div> 
+        <div class="author">
+          Markcus P.
+         <br>
+         <i style="margin-top: 0px;">Career Readiness Bootcamp Graduate</i> 
+        </div> </li> 
+       <li class="orbit-slide"> 
+        <div class="quote" style="padding-bottom: 15px;">
+          I honestly wish Career Readiness Bootcamp had been available when I first started in the workforce. I would have been a much better employee. It is priceless! 
+        </div> 
+        <div class="author">
+          Magen S.
+         <br>
+         <i style="margin-top: 0px;">Career Readiness Bootcamp Graduate</i> 
+        </div> </li> 
+       <li class="orbit-slide"> 
+        <div class="quote" style="padding-bottom: 15px;">
+          When companies are assessing job candidates, they’re looking for the best of both worlds: someone who is not only proficient in a particular function, but also has the right personality. 
+        </div> 
+        <div class="author">
+          Rosemary Haefner
+         <br>
+         <i style="margin-top: 0px;">Vice President of Human Resources at CareerBuilder</i> 
+        </div> </li> 
+      </ul> 
+      <nav class="orbit-bullets"> 
+       <button class="is-active" data-slide="0"><span class="show-for-sr">Testimonial 1</span></button> 
+       <button data-slide="1"><span class="show-for-sr">Testimonial 2</span></button> 
+       <button data-slide="2"><span class="show-for-sr">Testimonial 3</span></button> 
+      </nav> 
+     </div> 
+    </div> 
+    <div class="large-8 large-pull-4 medium-8 small-12 columns testivideo"> 
+     <div class="reviews-vid"> 
+      <img src="/~/media/images/career-school/career-readiness-bootcamp/quotephoto.jpg?la=en&amp;hash=882A71A6D03249B98ACCFE8CCEF58B4EF3DE4E42" alt="career woman career readiness"> 
+      <!--<video data-video-id="5167288036001" data-account="1642697353001" data-player="default" data-embed="default" class="video-js" controls></video>--> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="enrollarea hha-enroll"> 
+   <div class="row"> 
+    <div class="large-12 medium-12 columns enroll-txt"> 
+     <div class="enrolltitle">
+      Ready To Enroll?
+     </div> 
+     <p>Get started today! Sharpen the skills you need to stand out in any job with an accredited, online program that supports your on-the-go lifestyle.</p> 
+     <a class="button enrollnow" href="#" title="Enroll Now"><span>Enroll Now</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="partnersarea"> 
+   <div class="row"> 
+    <div class="large-8 medium-8 columns partners-left"> 
+     <p>Penn Foster partners with hundreds of secondary &amp; post-secondary schools, employers, and youth organizations.</p> 
+    </div> 
+    <div class="large-4 medium-4 columns partners-right"> 
+     <a href="http://partners.pennfoster.edu/" target="_blank" title="Solutions for Organizations and Schools">Solutions For<br>Organizations &amp; Schools <i class="fa fa-caret-right"></i></a> 
+    </div> 
+   </div> 
+  </section> 
+  <div class="row ftr-ctas"> 
+   <div class="large-12 medium-12 small-12 columns"> 
+    <a class="button enrollnow enroll-click" href="#" title="Enroll Now" id="enroll-link"><span>Enroll Now</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+    <a class="button getinfo lead-click" href="#"><span>Get Info</span> <i class="ion-arrow-right-c" aria-hidden="true"></i></a> 
+   </div> 
+  </div> 
+  <footer> 
+   <div class="row"> 
+    <div class="large-3 medium-3 small-12 columns firstcol"> 
+     <div class="ftr-heading">
+      We're Accredited
+     </div> 
+     <div class="ftr-icons"> 
+      <a href="http://www.deac.org/" target="_blank" class="deac" title="DEAC"><img src="/~/media/images/high-school/logos/deac.png?la=en&amp;hash=1392FC483AAECC1D4730E515BC390DC350ED31A7" width="184" alt="DEAC Accreditation Logo"></a> 
+      <a href="http://www.msa-cess.org/" target="_blank" class="msa" title="MSA/CESS"><img src="/~/media/images/high-school/logos/msacess.png?la=en&amp;hash=7AE65AF51A2DDC319B3DAADA682396DBF9587169" width="102" alt="MSA-CESS Accreditation Logo"></a> 
+      <a href="http://www.bbb.org/washington-dc-eastern-pa/business-reviews/correspondence-schools/penn-foster-career-school-in-scranton-pa-235963585/" class="bbb" target="_blank" title="Better Business Bureau"><img src="/~/media/images/logos/logo-bbb-lg.gif?la=en&amp;hash=F1C75428FD60056B96156599D75BD098F24CB82F" width="151" alt="BBB"></a> 
+     </div> 
+    </div> 
+    <div class="large-3 medium-3 columns secondcol desktoponly"> 
+     <div class="ftr-heading">
+      Quick Links
+     </div> 
+     <ul class="quicklnk1"> 
+      <li><a title="Penn Foster Home" href="/">Home</a></li> 
+      <li><a title="All Penn Foster Programs" href="/programs-and-degrees">All Programs</a></li> 
+      <li><a title="Penn Foster Site Map" href="/sitemap">Site Map</a></li> 
+      <li><a title="Penn Foster FAQ" href="/why-penn-foster/learning/faq">FAQ</a></li> 
+      <li><a title="Contact Penn Foster" href="/why-penn-foster/contact-us">Contact Us</a></li> 
+      <li><a title="Link your site to Penn Foster" href="/link-to-us">Link to Us</a></li> 
+      <li><a title="Penn  Foster News and Media articles" href="/why-penn-foster/news">News &amp; Media</a></li> 
+      <li><a title="Penn Foster career opportunities" href="/why-penn-foster/about/careers">Careers @ Penn Foster</a></li> 
+      <li><a target="_blank" title="Penn Foster Student Login" href="http://login.pennfoster.edu/">Student Login</a></li> 
+      <li><a target="_blank" title="Visit the Penn Foster Student Community" href="https://community.pennfoster.edu/">Student Community</a></li> 
+      <li><a target="_blank" title="Penn Foster Comments and Suggestions" href="http://pennfoster.custhelp.com/app/ask_student_solutions_center">Student Solutions</a></li> 
+      <li><a title="Penn Foster Refund Policy" href="/admissions/refund-policy">Refund Policy</a></li> 
+      <li><a target="_blank" title="Visit the Bookstore for Penn Foster items" href="https://bookstore.pennfoster.com/">Bookstore</a></li> 
+     </ul> 
+    </div> 
+    <div class="large-6 medium-6 small-12 columns thirdcol"> 
+     <div class="ftr-heading desktoponly">
+      Connect with us
+     </div> 
+     <div class="ftr-social desktoponly"> 
+      <ul class="social"> 
+       <li><a target="_blank" title="facebook" href="https://www.facebook.com/pennfostereducation" class="facebook">facebook</a></li> 
+       <li><a target="_blank" title="twitter" href="https://twitter.com/PennFoster" class="twitter">twitter</a></li> 
+       <li><a target="_blank" title="google+" href="https://plus.google.com/+pennfoster/posts" class="google">google</a></li> 
+       <li><a target="_blank" title="pinterest" href="http://www.pinterest.com/pennfoster/" class="pinterest">pinterest</a></li> 
+       <li><a target="_blank" title="linkedin" href="http://www.linkedin.com/company/penn-foster" class="linkedin">linkedin</a></li> 
+       <li><a target="_blank" title="youtube" href="http://www.youtube.com/pennfoster" class="youtube">youtube</a></li> 
+       <li><a target="_blank" title="instagram" href="http://web.stagram.com/n/pennfoster" class="photo">instagram</a></li> 
+       <!--<li><a target="_blank" title="snapchat" href="http://www.snapchat.com/pennfoster" class="snapchat">snapchat</a></li>--> 
+      </ul> 
+     </div> 
+     <div class="ftr-heading desktoponly">
+      Divisions
+     </div> 
+     <ul class="desktoponly"> 
+      <li><a href="/high-school" title="Penn Foster High School">Penn Foster High School</a></li> 
+      <li><a href="/college" title="Penn Foster College">Penn Foster College</a></li> 
+      <li><a target="_blank" title="ICS Canada" href="https://www.icslearn.ca/">ICS Canada</a></li> 
+      <li><a target="_blank" title="Workforce Solutions" href="http://partners.pennfoster.edu/">Workforce Solutions</a></li> 
+      <li><a target="_blank" title="Penn Foster International" href="http://www.pennfosterglobal.com/">Penn Foster International</a></li> 
+      <li><a href="/military" title="Military">Military</a></li> 
+     </ul> 
+     <div class="newcopyinfo">
+      <strong><span>Penn Foster Career School</span><br>925 Oak Street, Scranton, PA 18515 USA <a href="tel:18002754410" title="Telephone" class="phonenumber desktoponly">1-800-275-4410</a></strong>
+      <br> © 
+      <script language="JavaScript">
+   var d=new Date();
+    yr=d.getFullYear(); 
+     document.write(yr);
+</script> Penn Foster Inc. All Rights Reserved.
+      <span class="desktoponly"> <a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a> | <a href="/copyright-and-terms" title="Terms of Use">Terms of Use</a></span>
+     </div> 
+    </div> 
+   </div> 
+   <div class="row"> 
+    <div class="large-12 medium-12 small-12 columns ftr-copy"> 
+    </div> 
+   </div> 
+  </footer> 
+  <div class="mobileonly"> 
+   <div class="mobile-ftr-btns"> 
+    <div class="row"> 
+     <div class="small-6 columns">
+      <a class="button getinfo" href="#" title="Get Info">Get Info</a>
+     </div> 
+     <div class="small-6 columns">
+      <a class="button enrollnow" href="#" title="Enroll Now">Enroll Now</a>
+     </div> 
+    </div> 
+   </div> 
+   <div class="mobile-offer-test"> 
+    <div class="row"> 
+     <div class="small-12 columns"> 
+      <div class="orange-offer offer-closed"> 
+       <a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+       <p class="offer-amount">Start for $19 <span>Save up to <span class="programsavings" style="display:inline;"></span>!</span></p> 
+       <p class="offer-timing"><a href="/programs-and-degrees/small-business-management/guest-service-agent/tuition" title="Tuition and Payment Options"><b><span class="offertimer"></span> offer ends 2/13/17</b></a></p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="small-4 columns">
+      <a class="button enrollnow enroll-click" href="#" title="Enroll"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Enroll</a>
+     </div> 
+     <div class="small-4 columns">
+      <a class="button getinfo lead-click" href="#" title="Get Info"><i class="fa fa-info-circle" aria-hidden="true"></i> Get Info</a>
+     </div> 
+     <div class="small-4 columns">
+      <a class="button offer-clicker" href="#" title="Offer"><i class="fa fa-tags" aria-hidden="true"></i> Offers</a>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+            $(document).foundation();
+        </script> 
+  <!-- Global Page Settings End Body Scripts --> 
+  <!-- Start lead to enroll revamp added June 25 2015 --> 
+  <script>
+$(document).ready(function () {
+
+if(window.location.href.indexOf("/enroll") ==-1)
+{
+var eeid = url_query('eid');
+var eeyn = url_query('t');
+var thisPage = window.location.href;
+var prog = url_query('prog');
+var enrid = url_query('EnrollID');
+
+
+    if (eeid != '' && eeyn == "en") {
+
+                //they are coming back to enroll after submitting a lead
+                                                                
+                                                                
+                window.location.href = window.location.protocol + "//" + window.location.host + "/enroll/?t=en" + "&prog=" + prog + "&EnrollID=" + enrid +"&eid=" + eeid +"&refURL=" + thisPage  ;
+        
+        noReturn = false;
+    }
+
+
+}
+
+});
+</script> 
+  <!-- End lead to enroll revamp --> 
+  <!-- Google Code for Remarketing Tag --> 
+  <!-- 
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+ --> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1068937977;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js"></script> 
+  <noscript> 
+   <div style="display:inline;"> 
+    <img height="1" width="1" style="border-style:none;" alt="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1068937977/?value=0&amp;guid=ON&amp;script=0"> 
+   </div> 
+  </noscript> 
+  <!-- Begin SearchForce tracking code for landing page (5.0) --> 
+  <script id="sfcode1" type="text/javascript" language="Javascript">
+var jed ={
+event: 'landing',
+cookieexpire: '30',
+accountid: '45715',
+trackdirect: true,
+trackseo: true,
+seopublisher: 'SEO'
+};
+</script> 
+  <script type="text/javascript" language="Javascript" src="https://sftrack.searchforce.net/SFConversionTracking/sfct.js"></script> 
+  <!-- End SearchForce tracking code --> 
+  <!-- Start Adroll Conversion Added June 28 2013 --> 
+  <script type="text/javascript">
+adroll_adv_id = "S3YGKIBO45F2FFOOAAVBPL";
+adroll_pix_id = "76FKLWMS7NCIXKNZEN6PLG";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script> 
+  <!-- End Adroll --> 
+  <!-- G+ verification--> 
+  <div style="display:none"> 
+   <a href="https://plus.google.com/107376672055761246789" rel="publisher">Find us on Google+</a> 
+  </div> 
+  <!-- End G+ verification--> 
+  <!-- start Facebook script --> 
+  <div id="fb-root"></div> 
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> 
+  <!-- end Facebook script --> 
+  <!-- Cadreon Tag --> 
+  <script src="https://d1cerpgff739r9.cloudfront.net/tt-7acaf3d61f9d900f195ada9fb33b345f057da42d8d7363c4816d693fc94d71e2.js"></script> 
+  <!-- End Cadreon Tag --> 
+  <!-- Piwik - Updated July 20 2016--> 
+  <script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(["setDomains", ["*.pennfoster.edu"]]);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function()
+{ var u="https://piwikcloud.videoactivenetwork.tv/"; _paq.push(['setTrackerUrl', u+'piwik.php']); _paq.push(['setSiteId', 18]); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s); }
+)();
+</script> 
+  <noscript>
+   <p><img src="https://piwikcloud.videoactivenetwork.tv/piwik.php?idsite=18" style="border:0;" alt=""></p>
+  </noscript> 
+  <!-- End Piwik Code --> 
+  <!-- Piwik Student Portal add Class - April 28 2015 --> 
+  <script type="text/javascript">
+$(document).ready(function () {
+    $("a").each(function () {
+
+        if (this.title == "Student Portal") {
+            $(this).addClass("piwik_link");
+        }
+    });
+});
+</script> 
+  <!-- End Piwik Student Portal add Class --> 
+  <!-- Start code to allow for Mobile website tracking --> 
+  <script type="text/javascript">
+var _mfq = _mfq || [];
+(function() {
+   var mf = document.createElement("script");
+   mf.type = "text/javascript"; mf.async = true;
+   mf.src = "//cdn.mouseflow.com/projects/95adcbc5-d963-4761-8306-7761c0d0238a.js";
+   document.getElementsByTagName("head")[0].appendChild(mf);
+})();
+</script> 
+  <!-- End code to allow for Mobile website tracking --> 
+  <script>
+//addition for lewis to capture "first touch"
+$(document).ready(function () {
+                var firstPage = getCookie('FirstPage');
+
+                if (firstPage != '' && firstPage !=false){
+                                //this is not the first page they visited, do nothing
+                                var fp = getCookie('FirstPage');
+                }
+                else
+                {
+                                var myPage = window.location.href
+                                //no cookie set, set first page cookie
+                                setCookie('FirstPage',myPage,30);
+                                
+                                //then check adkey
+                                var adkey = getCookie('mktad');
+                                
+                                if (adkey=="")
+                                {
+                                                //check if we are on blog page, and if so, set adkey = blog adkey
+                                                
+                                                if (myPage.indexOf('why-penn-foster/about/blog') >=0)
+                                                {
+                                                                //we are on a blog page
+                                                                //set adkey accordingly
+                                                                var redirectPage = window.location.protocol + "//" + window.location.host + "/urm.aspx?source=RAAS27T&url=" + myPage; 
+                                                                //alert(redirectPage);
+                                                                window.location = redirectPage;
+                                                                
+                                                }
+                                                
+                                }
+                                
+                }
+});
+
+
+
+</script> 
+  <script>
+/**************************************************/
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+
+/**************************************************/
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+</script> 
+  <script>
+<!--enroll stuff-->
+$(document).ready(function () {
+if ($(".ace").length == 0) {
+
+   var returnURL = document.location.href;
+    $("a").each(function () {
+
+        if (this.title == "Enroll Now") {
+            $(this).attr('href', "#");
+            $(this).addClass("enroll-click");
+        }
+
+        if (this.title == "Enroll Today") {
+            $(this).attr('href', "#");
+            $(this).addClass("enroll-click");
+        }
+    });
+
+   eLink ="https://" + window.location.host + "/enroll/?sh=e&pid=" + programNumber + "&refURL=" + returnURL;
+   $(".enroll-click").attr("href",eLink);
+ }
+});
+</script> 
+  <!--Alicia adkey/phone number swap PR-3017 Added 03/03/2017--> 
+  <script>
+$( document ).ready(function() {
+setTimeout(function(){
+
+	//Get Adkey Out of Cookie
+	var adkey = getCookie("mktad");
+	var phoneNumber = '';
+
+	switch(adkey) {
+        case 'Q505831':
+        phoneNumber='1-800-214-6148';
+        break;
+
+        case 'Q505760':
+        case 'Q506098':
+        case 'Q505762':
+        case 'Q506133':
+        case 'Q506100':
+        case 'Q505761':
+        case 'Q506099':
+        phoneNumber='1-800-230-7206';
+        break;
+
+	case 'Q417492':
+	case 'Q426160':
+	case 'Q421826':
+        phoneNumber='1-800-238-9574';
+        break;
+
+	case 'Q179660':
+	case 'Q179659':
+	case 'Q092344':
+        phoneNumber='1-800-239-3916';
+        break;
+
+        <!-- Added 3/31/17 -->
+	case 'Q417496':
+	case 'Q179734':
+	case 'Q179790':
+	case 'Q179778':
+	case 'Q426160':
+	case 'Q189114':
+	case 'Q179730':
+	case 'Q179738':
+	case 'Q179659':
+	case 'Q417499':
+	case 'Q189113':
+        phoneNumber='1-800-262-1125';
+        break;
+
+        <!-- Added 3/31/17 -->
+	case 'ULPP97V':
+        phoneNumber='1-888-427-3800';
+        break;
+
+    default:
+        phoneNumber='';
+	}
+
+	if(phoneNumber!='')
+	{
+		$(".phonenumber").html(phoneNumber);
+		$(".phone-number").html(phoneNumber);
+		$(".qphonenumber").html(phoneNumber);	
+	}
+	
+}, 50);
+});
+	
+</script> 
+  <!--End Alicia adkey/phone number swap--> 
+  <script src="/scripts/otherscripts.js?v=Vkll-0iN1jK_SSwQZYfCufALIoGEv4ngVR-QPQB6-Ro1"></script> 
+  <form name="Form1" id="Form1" method="post" action=""> 
+   <input type="hidden" name="courseid" value=""> 
+   <input type="hidden" name="siteID" value="DOM"> 
+   <input type="hidden" name="mktcategory" value=""> 
+   <input type="hidden" name="adkey" value=" "> 
+   <input type="hidden" name="type" value=" "> 
+   <input type="hidden" name="folder" value=" "> 
+   <input type="hidden" name="omni" value=" "> 
+   <input type="hidden" name="country" value="USA"> 
+   <input type="hidden" name="LevelID" value="5"> 
+   <input type="hidden" name="skinid" value="3"> 
+   <input type="hidden" name="returnURL" value=""> 
+   <input name="uid" type="hidden" value="fb3a7595-f939-4a11-8be5-f51cc8b92b15"> 
+  </form>   
+ </body>
+</html>

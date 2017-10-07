@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1"> 
+  <title>100 Pitches Social: Networking like a PRO - It’s not "what"  but WHO you know... - Oslo Innovation Week 2017</title> 
+  <meta name="description" content="Whilst networking is not an exact science, this session will give you the skills needed to build the bridges that will help scale your company"> 
+  <meta name="robots" content="all"> 
+  <meta property="og:title" content="100 Pitches Social: Networking like a PRO - It’s not &quot;what&quot;  but WHO you know... - Oslo Innovation Week 2017"> 
+  <meta property="og:description" content="Whilst networking is not an exact science, this session will give you the skills needed to build the bridges that will help scale your company"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="http://oiw.no/program/networking-like-a-pro"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:site" content="@OsloIW"> 
+  <meta name="twitter:creator" content="@OsloIW"> 
+  <meta name="twitter:url" content="http://oiw.no/program/networking-like-a-pro"> 
+  <meta name="twitter:title" content="100 Pitches Social: Networking like a PRO - It’s not &quot;what&quot;  but WHO you know... - Oslo Innovation Week 2017"> 
+  <meta name="twitter:description" content="Whilst networking is not an exact science, this session will give you the skills needed to build the bridges that will help scale your company"> 
+  <link rel="made" href="http://www.redrabbits.com" title="Red Rabbits"> 
+  <script type="text/JavaScript" src="/assets/js/vendor/modernizr.js?v=2"></script> 
+  <!-- To put redux initial state in the different twig templates --> 
+  <script type="text/javascript">
+            var __INITIAL_STATE__ = {};
+        </script> 
+  <script type="text/javascript">
+	(function(__INITIAL_STATE__) {
+		var menuEntries = [{"title":"Program","id":"134","url":"http:\/\/oiw.no\/program","descendants":["345"]},{"title":"My program","id":"345","url":"http:\/\/oiw.no\/program\/my-program","descendants":[]},{"title":"Speakers","id":"171","url":"http:\/\/oiw.no\/speakers","descendants":[]},{"title":"Explore Oslo","id":"172","url":"http:\/\/oiw.no\/explore-oslo","descendants":[]},{"title":"100 Pitches","id":"166","url":"http:\/\/oiw.no\/100-pitches","descendants":["1048","167","169"]},{"title":"About 100 Pitches","id":"1048","url":"http:\/\/oiw.no\/100-pitches\/about","descendants":[]},{"title":"Pitch program","id":"167","url":"http:\/\/oiw.no\/100-pitches\/pitch-program","descendants":[]},{"title":"Finalists","id":"169","url":"http:\/\/oiw.no\/100-pitches\/finalists","descendants":[]},{"title":"FAQ \/ About","id":"181","url":"http:\/\/oiw.no\/faq-about","descendants":[]},{"title":"How to join","id":"173","url":"http:\/\/oiw.no\/how-to-join","descendants":[]},{"title":"Media","id":"196","url":"http:\/\/oiw.no\/media","descendants":[]},{"title":"Vignette","id":"1412","url":"http:\/\/oiw.no\/vignette","descendants":[]}];
+		var descendants = [];
+		var menuEntriesObject = {};
+		var menuEntry;
+		var menuItems = [];
+
+		var mapIdToMenuEntry = function (id) {
+			return menuEntriesObject[id];
+		};
+
+		for(var i = menuEntries.length - 1, j = 0; i >= j; --i){
+			menuEntry = menuEntries[i];
+			if(menuEntry.id === '1412') {
+				continue;
+			}
+			if(menuEntry.descendants.length){
+				descendants = descendants.concat(menuEntry.descendants);
+				menuEntry.descendants = menuEntry.descendants.map(mapIdToMenuEntry);
+				for(var x = 0, y = menuEntry.descendants.length; x < y; x++){
+					if(menuEntry.descendants[x].active) {
+						menuEntry.active = true;
+					}
+				}
+			}
+			menuItems.push(menuEntry);
+			menuEntriesObject[menuEntry.id] = menuEntry;
+
+			if (menuEntry.id === '172') {
+				menuItems.push({
+					id: 'oiw-powercouples',
+					title: 'Powercouples',
+					url: 'http://powercouples.oiw.no/',
+					descendants: []
+				});
+			}
+		}
+
+		menuItems = menuItems.filter(function (elem) {
+			return descendants.indexOf(elem.id) === -1;
+		}).reverse();
+
+		var pressItem = null;
+		//SINCE THIS IS A NEW SECTION, THE ID VARIES ON EACH ENVIRONMENT.
+		if(menuEntriesObject['3056']){ //PAULO's LOCAL VERSION
+			pressItem = menuEntriesObject['3056'].url;
+		}else if(menuEntriesObject['3085']){ //STAGING LOCAL
+			pressItem =  menuEntriesObject['3085'].url;
+		}else if(menuEntriesObject['4675']){ //PRODUCTION LOCAL
+			pressItem =  menuEntriesObject['4675'].url;
+		}
+
+		__INITIAL_STATE__.menu = {items: menuItems};
+		__INITIAL_STATE__.urls = {
+			login: "http:\/\/oiw.no\/actions\/social\/login?provider=facebook",
+			logout: "http:\/\/oiw.no\/index.php?p=actions\/social\/logout",
+			removeFavorite: "\/index.php\/actions\/favorite\/removeFavorite",
+			addFavorite: "\/index.php\/actions\/favorite\/addFavorite",
+
+			faqAboutUrl: menuEntriesObject['181'].url,
+			mediaUrl: menuEntriesObject['196'].url,
+			pressUrl: pressItem,
+			howToJoinUrl: menuEntriesObject['173'].url,
+
+			programUrl: menuEntriesObject['134'].url,
+			programPreUrl: menuEntriesObject['134'].url + '#pre-events',
+			programMondayUrl: menuEntriesObject['134'].url + '#2017-09-25',
+			programTuesdayUrl: menuEntriesObject['134'].url + '#2017-09-26',
+			programWednesdayUrl: menuEntriesObject['134'].url + '#2017-09-27',
+			programThursdayUrl: menuEntriesObject['134'].url + '#2017-09-28',
+			programFridayUrl: menuEntriesObject['134'].url + '#2017-09-29',
+			programPostUrl: menuEntriesObject['134'].url + '#post-events',
+
+			speakersUrl: menuEntriesObject['171'] && menuEntriesObject['171'].url,
+
+			hundredPitchesFinalistsUrl: menuEntriesObject['169'].url,
+			pitchProgram: menuEntriesObject['167'].url,
+
+						
+            
+			exploreOsloUrl: menuEntriesObject['172'].url,
+			upcomingHappeningsUrl: menuEntriesObject['172'].url + '#upcomingHappenings',
+			placesToSeeUrl: menuEntriesObject['172'].url + '#placesToSee',
+			accommodationUrl: menuEntriesObject['172'].url + '#accommodation',
+			gettingAroundUrl: menuEntriesObject['172'].url + '#gettingAround',
+
+
+			copyright: "Oslo Business Region",
+			developerUrl: "http:\/\/www.redrabbits.com",
+			developerName: "Red Rabbits",
+		};
+
+	})(__INITIAL_STATE__)
+</script> 
+  <script type="text/javascript" src="/assets/dist/commons.bundle.js?v=2"></script> 
+ </head> 
+ <body> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PWSMHQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PWSMHQ');</script> 
+  <!-- End Google Tag Manager --> 
+  <div id="root"></div> 
+  <script type="text/javascript">
+    (function() {
+        var event = __INITIAL_STATE__['event'] = {"id":"3789","title":"100 Pitches Social: Networking like a PRO - It\u2019s not \u0022what\u0022  but WHO you know...","description":"\u003Cp\u003EWithout the right connections an idea is just an idea. Business is done between people. But how do you engage the right people in the first place? How do you approach them? How do you retain their interest \u2013 and is it actually possible to get into a whole new network without a pre-existing connection?\u003C\/p\u003E\n\u003Cp\u003EWhilst networking is not an exact science, this session will give you the skills needed to build the bridges into the communities and people that will help scale your company. Language, for one thing, is important. The English language is one with many nuances that can get lost in translation. With their Norwegian background, Martin and A\u030ase will also provide a number of pointers for the benefit of Norwegian \u201cdon\u2019t come here and come here\u201d mindset that can prove challenging to international relationship building.\u003C\/p\u003E\n\u003Cp\u003E\u003Cbr \/\u003ECome and learn the skills of human connectivity with keynotes:\u00a0\u003C\/p\u003E\u003Cul\u003E\u003Cli\u003ENancy Fenchnay\u003C\/li\u003E\u003Cli\u003EMartin Falch and\u003C\/li\u003E\u003Cli\u003EA\u030ase Bergstr\u00f8m.\u00a0\u003C\/li\u003E\u003C\/ul\u003E\u003Cp\u003EJudging by the exponential growth of Artificial Intelligence, this may soon be the most important skill we have!\u003C\/p\u003E\u003Cp\u003E\u003Cbr \/\u003E\u003C\/p\u003E\u003Cp\u003E#oiw2017\u003C\/p\u003E","eventbriteUrl":"https:\/\/tikkio.com\/tickets\/3456-its-not-what-you-know-but-who-you-know-networking-like-a-like-a-pro-and-how-to-make-and-retain-","summary":"Whilst networking is not an exact science, this session will give you the skills needed to build the bridges that will help scale your company","price":"Free","priceForStartups":"Free","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_large\/Oslo-Innovation-Week-Gorm-K.-Gaare12.jpg","speakers":[{"id":"4827","title":"Nancy  Fechnay (uk)","companyName":"The Inspire Movement","slug":"nancy-fechnay-uk","url":"http:\/\/oiw.no\/speakers\/nancy-fechnay-uk","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/4826\/Nancy-Fechnay.jpg"},{"id":"3871","title":"Awsa Bergstr\u00f8m (uk)","companyName":"Awsamusic","slug":"awsa-bergstrom","url":"http:\/\/oiw.no\/speakers\/awsa-bergstrom","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/4000\/AWSA.jpg"},{"id":"3870","title":"Martin  Falch (uk)","companyName":"360Leaders","slug":"martin-falch-uk","url":"http:\/\/oiw.no\/speakers\/martin-falch-uk","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/3872\/Martin-Falch.jpg"}],"program":[],"isFeatured":0,"startsAt":1506524400000,"endsAt":1506527100000,"category":{"id":"362","title":"Social","slug":"social"},"tags":[{"id":"3867","title":"networking","slug":"networking"},{"id":"2700","title":"workshop","slug":"workshop"}],"hosts":[{"id":"4094","title":"360 Leaders","homepage":"http:\/\/360leaders.net\/","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_logo\/360-Leaders.png"},{"id":"3351","title":"Oslo Innovation Week","homepage":"http:\/\/oiw.no\/","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_logo\/oiw2017.png"}],"venue":{"id":"2377","title":"SALT","googleMapsLink":"https:\/\/goo.gl\/maps\/Cce8orQopqx"},"type":"normalEvent","relatedEvents":[{"id":"4368","title":"Pre event: Crowdfunding - what's all the fuss about?","slug":"crowdfunding-whats-all-the-fuss-about","summary":"Join us for 90 minutes of pure crowdfunding chat!","eventbriteUrl":"https:\/\/www.eventbrite.co.uk\/e\/crowdfunding-whats-all-the-fuss-about-tickets-37330690099","url":"http:\/\/oiw.no\/program\/crowdfunding-whats-all-the-fuss-about","price":"","priceForStartups":"","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/crowdfund.jpg","startsAt":1506319200000,"endsAt":1506326400000,"isFeatured":0,"category":{"id":"139","title":"Tech","slug":"tech"},"hosts":[{"id":"4378","title":"Argentum","homepage":"http:\/\/argentum.no\/en\/"},{"id":"4376","title":"Embassy of Israel In Norway","homepage":"http:\/\/embassies.gov.il\/oslo"}],"venue":{"id":"3815","title":"MESH","googleMapsLink":"https:\/\/goo.gl\/maps\/mg7nnWhzjeq"}},{"id":"2687","title":"OIW Nordic Edtech Humanitarian Challenge","slug":"oiw-nordic-edtech-humanitarian-challenge","summary":"How can humanitarian aid for education in developing countries aid business development and growth for the Nordic Edtech Industry?","eventbriteUrl":"https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSc4iHvGZ6hkAf22UmiaOISg8ekEYBFg3v5pU59wvGi3sQR2vw\/viewform","url":"http:\/\/oiw.no\/program\/oiw-nordic-edtech-humanitarian-challenge","price":"Free","priceForStartups":"Free","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/4196\/OIW-Nordic-Edtech-Challenge.jpg","startsAt":1506495600000,"endsAt":1506520800000,"isFeatured":0,"category":{"id":"139","title":"Tech","slug":"tech"},"hosts":[{"id":"2690","title":"Oslo Edtech Cluster","homepage":"http:\/\/www.osloedtech.no"},{"id":"3487","title":"Innovation Norway","homepage":"http:\/\/www.innovasjonnorge.no\/en\/start-page\/"},{"id":"2477","title":"IKT Norge","homepage":"https:\/\/www.ikt-norge.no\/"},{"id":"2691","title":"Pure Consulting","homepage":"http:\/\/www.purecsr.no"}],"venue":{"id":"2377","title":"SALT","googleMapsLink":"https:\/\/goo.gl\/maps\/Cce8orQopqx"}},{"id":"2488","title":"Afterwork Thursday","slug":"afterwork-thursday","summary":"Come, relax, grab a drink with friends, co-workers and other startup enthusiasts\u200b\u200b","eventbriteUrl":"https:\/\/tikkio.com\/tickets\/2845-afterwork-tuesday","url":"http:\/\/oiw.no\/program\/afterwork-thursday","price":"100","priceForStartups":"0","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/Afterwork-2.jpg","startsAt":1506610800000,"endsAt":1506643200000,"isFeatured":0,"category":{"id":"362","title":"Social","slug":"social"},"hosts":[{"id":"3351","title":"Oslo Innovation Week","homepage":"http:\/\/oiw.no\/"}],"venue":{"id":"2377","title":"SALT","googleMapsLink":"https:\/\/goo.gl\/maps\/Cce8orQopqx"}},{"id":"2487","title":"Afterwork Wednesday ","slug":"afterwork-wednesday","summary":"Come, relax, grab a drink with friends, co-workers and other startup enthusiasts!","eventbriteUrl":"https:\/\/tikkio.com\/tickets\/2845-afterwork-tuesday","url":"http:\/\/oiw.no\/program\/afterwork-wednesday","price":"Free","priceForStartups":"Free","image":"http:\/\/b66e7a930bc23e788593-c9947be38fa118f3f80e6d5a827290c4.r40.cf3.rackcdn.com\/_medium\/Afterwork-2.jpg","startsAt":1506524400000,"endsAt":1506556800000,"isFeatured":0,"category":{"id":"362","title":"Social","slug":"social"},"hosts":[{"id":"3351","title":"Oslo Innovation Week","homepage":"http:\/\/oiw.no\/"}],"venue":{"id":"2377","title":"SALT","googleMapsLink":"https:\/\/goo.gl\/maps\/Cce8orQopqx"}}]};
+    })();
+</script> 
+  <script type="text/javascript" src="/assets/dist/singleEvent.bundle.js?v=2"></script>   
+ </body>
+</html>

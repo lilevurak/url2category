@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head> 
+  <meta name="SCPS Build Version" content="1.0"> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta http-equiv="keywords" content=""> 
+  <link href="/etc/designs/scps2/static.css" rel="stylesheet" type="text/css"> 
+  <link href="/etc/designs/scps2/phase2.css" rel="stylesheet" type="text/css"> 
+  <link href="/etc/designs/scps2/styles_available_in_text_editor.css" rel="stylesheet" type="text/css"> 
+  <link href="/etc/designs/scps2/jquery-ui-1.8.12.custom.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+  <script type="text/javascript" src="/etc/designs/scps2/clientlibs/jquery_ui.js"></script> 
+  <script type="text/javascript" src="/etc/designs/scps2/main.js"></script> 
+  <!-- additions by Brian --> 
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet"> 
+  <script src="http://vjs.zencdn.net/c/video.js"></script> 
+  <!-- end --> 
+  <!--[if !(IE 8)]--> 
+  <link type="text/css" href="/etc/designs/scps2/font-face.css" rel="stylesheet"> 
+  <!--[endif]--> 
+  <script type="text/javascript" src="/libs/foundation/components/form/clientlibs/form.js"></script> 
+  <link href="/etc/designs/scps2/component_css/component_carousel.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="/apps/scps2/components/component_carousel/clientlibs/jquery.cycle.all.js"></script> 
+  <script type="text/javascript" src="/etc/designs/scps2/component_js/cycle.js"></script> 
+  <link href="/etc/designs/scps2/component_css/image_with_overlay.css" rel="stylesheet" type="text/css"> 
+  <link href="/etc/designs/scps2/component_css/headersearch.css" rel="stylesheet" type="text/css"> 
+  <link href="/etc/designs/scps2/component_css/topnav_dynamic.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="/apps/scps/components/left_nav/clientlibs/left_nav.js"></script> 
+  <script type="text/javascript">
+   // alert(window.location.hostname);
+    if((window.location.hostname =="www.scps.nyu.edu" || window.location.hostname=="www.sps.nyu.edu" || 
+    		window.location.hostname =="scps.nyu.edu" || window.location.hostname=="sps.nyu.edu" )
+    	    && (window.location.pathname.indexOf("/content/login/") > -1)) {
+        var user = getCookie("username");
+     //   alert(window.location.hostname);
+        if (user != "") {
+         //   alert("Welcome again gand marwao" );
+        } else {
+        //   alert("cookie nai hai gand marwao ");
+            var redirectPage="/content/login.html?url="+window.location.href;
+            window.location.assign(redirectPage);
+           // return;
+           // if (user != "" && user != null) {
+             //   setCookie("username", user, 365);
+            //}
+        }
+     }
+
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+    </script> 
+  <script type="text/javascript">
+        SCPS.PAGE_DATA.title = 'Marketing and Public Relations';
+        SCPS.PAGE_DATA.nav_title = 'Marketing and Public Relations';
+        SCPS.PAGE_DATA.keywords = '';
+        SCPS.PAGE_DATA.makeSpoofedBreadcrumbBasedOnPrevPage = false;
+        SCPS.PAGE_DATA.breadcrumbLinks = '/content/scps/academics/departments.html,/content/scps/academics/departments/marketing-and-pr.html';
+        SCPS.PAGE_DATA.breadcrumbLabels = 'Academic Departments,Marketing and Public Relations';
+        SCPS.PAGE_DATA.editing = false;
+        
+        /* variables from java deployment bundle: */
+
+        SCPS.SPRING_SERVER_NAME = 'https://www.scps.nyu.edu/webapps';
+        SCPS.NC_COURSE_DETAIL='/content/scps/academics/course_detail.html?id=';
+        SCPS.FACULTY_DETAIL='/content/scps/faculty/faculty-profile.html?id=';
+
+        SCPS.NC_COURSE_INDEX='/content/scps/academics/noncredit-offerings/noncredit-course-index.html?depId=';
+        SCPS.FACULTY_INDEX='/content/scps/faculty/faculty-index.html?depId=';
+
+        SCPS.DEGREE_SEARCH='/content/scps/degree_search.html';
+        SCPS.CERTIFICATE_SEARCH='/content/scps/certificate_search.html';
+        SCPS.FACULTY_SEARCH='/content/scps/faculty_search.html';
+        SCPS.NC_COURSE_SEARCH='/content/scps/academics/noncredit-offerings/nc_search.html';
+        SCPS.EVENT_SEARCH='/content/scps/events_search.html';
+        SCPS.SITE_SEARCH='/content/scps/site_search.html';
+        
+        SCPS.LEGACY_SPRING_SERVER_NAME = 'https://www.scps.nyu.edu';
+        SCPS.ALERT_DATA_PATH = '/content/alert_data/alert_data.html?fromAjax=true'; 
+        SCPS.PAGE_DATA.showEcommerceAlerts = false;
+        SCPS.ENROLLMENT_SYSTEM_DOWN_MSG_PATH = '/content/alert_data/peoplesoft_alert.html?fromAjax=true';
+        
+    </script> 
+  <!-- google analytics: --> 
+  <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-314919-1']);
+        _gaq.push(['_setDomainName', 'none']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_addIgnoredOrganic', 'www.scps.nyu.edu']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script> 
+  <!-- Google Code for SCPS McGhee Transfer --> 
+  <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup --> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1020448132;
+var google_conversion_label = "uYlbCLya-wQQhJvL5gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script> 
+  <!-- Google Code for SU14 CE General New --> 
+  <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup --> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1020448132;
+var google_conversion_label = "UqvdCOyL5gcQhJvL5gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script> 
+  <noscript> &lt;div style="display:inline;"&gt; &lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1020448132/?value=1.000000&amp;amp;label=UqvdCOyL5gcQhJvL5gM&amp;amp;guid=ON&amp;amp;script=0"&gt;  
+  </noscript> 
+  <!-- Do Not Remove - Turn Tracking Beacon Code - Do Not Remove --> 
+  <!-- Advertiser Name : NYU - SCPS --> 
+  <!-- Beacon Name : NYU SCPS - Spring 2014_FBX --> 
+  <!-- If Beacon is placed on a Transaction or Lead Generation based page, please populate the turn_client_track_id with your order/confirmation ID --> 
+  <script type="text/javascript">
+  turn_client_track_id = "";
+</script> 
+  <script type="text/javascript" src="http://r.turn.com/server/beacon_call.js?b2=Bc5Tvpvkmq18CoeaENvfnnwXw__JfoEbXoFSB4JRFSLcDHA5nJPHJxonjY3BJ2DPIK3-SM5HfXPPrzoKJoJ2_w">
+</script> 
+  <noscript> &lt;img border="0" src="http://r.turn.com/r/beacon?b2=Bc5Tvpvkmq18CoeaENvfnnwXw__JfoEbXoFSB4JRFSLcDHA5nJPHJxonjY3BJ2DPIK3-SM5HfXPPrzoKJoJ2_w&amp;amp;cid="&gt; 
+  </noscript> 
+  <!-- End Turn Tracking Beacon Code Do Not Remove --> 
+  <title>Marketing and Public Relations</title> 
+ </head> 
+ <body> 
+  <!-- begin main container --> 
+  <div id="main"> 
+   <div class="parsys iparsys header"> 
+    <div class="iparys_inherited">
+     <div class="parsys iparsys header"> 
+     </div> 
+    </div>
+    <div class="section">
+     <div class="header_general parbase"> 
+      <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script> 
+      <noscript> 
+       <div style="display:inline;"> 
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1020448132/?value=0&amp;label=uYlbCLya-wQQhJvL5gM&amp;guid=ON&amp;script=0"> 
+       </div> 
+      </noscript> 
+      <ul id="audience"> 
+       <li id="loginStrip"></li> 
+      </ul> 
+      <div id="searchMain"> 
+       <form action="" id="searchForm"> 
+        <input id="mainSearchField" value="Search by Keyword" type="text"> 
+        <a href="#" id="main_go_button">&nbsp;</a> 
+        <!-- input id="searchGo" value="GO" onClick="trigSearch(); return false;" type="submit"--> 
+        <div id="searchDrop"> 
+         <input name="radio2" type="radio" value="web" id="allOpt" onclick="SCPS.trigSearch(); return false;" checked="true">The NYU School of Professional Studies Website
+         <br> 
+         <input name="radio2" type="radio" onclick="SCPS.trigSearch(); return false;" value="fac" id="facOpt">Faculty
+         <br> 
+         <input name="radio2" type="radio" onclick="SCPS.trigSearch(); return false;" value="deg">Degrees
+         <br> 
+         <input name="radio2" type="radio" onclick="SCPS.trigSearch(); return false;" value="cert">Professional Certificates
+         <br> 
+         <input name="radio2" type="radio" onclick="SCPS.trigSearch(); return false;" value="event">Upcoming Events
+         <br> 
+         <div class="courseSection"> 
+          <b>Search Courses</b>
+          <br> 
+          <input name="radio2" type="radio" value="cc">Credit Course
+          <br> 
+          <input name="radio2" type="radio" value="nc" onclick="SCPS.trigSearch(); return false;" id="ncOpt">Non-Credit Course 
+         </div> 
+        </div> 
+        <ul class="searchOpt" id="searchSelect"> 
+         <li><a href="#" id="siteOpt" class="opt optOn">Site</a></li> 
+         <li><a href="#" id="courseOpt" class="opt">Noncredit Courses</a></li> 
+         <li><a href="#" id="facultyOpt" class="opt">Faculty</a></li> 
+        </ul> 
+       </form> 
+      </div> 
+      <div id="logo"> 
+       <span class="txtrt"></span> 
+       <a href="/content/scps.html"><img src="/etc/designs/scps2/images/nyu-scps-logo.png" alt="NYU-SCPS Logo"></a> 
+       <div class="addl"> 
+        <a href="/academics/departments/marketing-and-pr.html"> </a> 
+       </div> 
+       <div class="dept"> 
+        <a href="/academics/departments/marketing-and-pr.html"> Marketing and Public Relations</a> 
+       </div> 
+      </div> 
+      <div id="cartStrip"></div> 
+      <div id="alertHolderBrowser"></div>
+      <!-- populated by main.js --> 
+      <div class="enrollmentSystemAlertHolder"></div> 
+      <div id="alertHolder"></div>
+      <!-- populated by main.js --> 
+     </div> 
+    </div>
+   </div> 
+   <div class="top_nav parsys iparsys"> 
+    <div class="iparys_inherited">
+     <div class="top_nav parsys iparsys"> 
+     </div> 
+    </div>
+    <div class="section">
+     <div class="parbase top_nav_dynamic gray_bg"> 
+      <div id="topNav"> 
+       <div id="topNavLeftCorner"></div> 
+       <ul> 
+        <li><a href="/academics/departments/marketing-and-pr/about.html">About</a> 
+         <div class="subNav">
+          <ul>
+           <li><a href="/academics/departments/marketing-and-pr/about/faculty.html">Faculty</a></li>
+           <li><a href="/academics/departments/marketing-and-pr/about/news.html">News</a></li>
+          </ul>
+         </div> </li> 
+        <li><a href="/academics/departments/marketing-and-pr/admissions.html">Admissions</a> </li> 
+        <li><a href="/academics/departments/marketing-and-pr/academic-offerings.html">Academics</a> 
+         <div class="subNav">
+          <ul>
+           <li><a href="/academics/departments/marketing-and-pr/academic-offerings/graduate.html">Graduate Programs</a></li>
+           <li><a href="/academics/departments/marketing-and-pr/academic-offerings/noncredit.html">Professional Pathways</a></li>
+          </ul>
+         </div> </li> 
+        <li><a href="/academics/departments/marketing-and-pr/career.html">Career</a> </li> 
+        <li><a href="/academics/departments/marketing-and-pr/events.html">Events</a> </li> 
+        <li><a href="/academics/departments/marketing-and-pr/alumni.html">Alumni</a> </li> 
+       </ul> 
+       <div id="topNavCorner"></div> 
+      </div> 
+     </div> 
+    </div>
+   </div> 
+   <div id="breadcrumb"> 
+    <a id="backLink"></a> &nbsp; 
+    <span id="bcrumb_itself"> </span> 
+   </div>
+   <!-- / breadcrumb --> 
+   <div id="mainContent"> 
+    <div class="c_container_1"> 
+     <div class="parsys main_content"> 
+      <div class="parbase component_carousel section"> 
+       <ul style="height:360px;"> 
+        <li> 
+         <div class="default parbase botLeft image_with_overlay section full_width"> 
+          <div class="image">
+           <img title="Marketing and Public Relations" alt="Marketing and Public Relations" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/component_carousel/image_with_overlay.img.jpg/1481811381208.jpg">
+           <br>
+          </div> 
+          <div class="overlay"> 
+           <div class="overlay_content"> 
+            <h2>Marketing and Public Relations</h2> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li> 
+         <div class="default parbase botLeft image_with_overlay section full_width"> 
+          <div class="image">
+           <a href="/academics/departments/marketing-and-pr/about/news/kerry-ogrady-uses-own-experience.html"><img title="PR and Corporate Communication Professor<br>Featured on <i>ABC News'</i> &quot;Uncomfortable&quot; Podcast" alt="PR and Corporate Communication Professor<br>Featured on <i>ABC News'</i> &quot;Uncomfortable&quot; Podcast" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/component_carousel/image_with_overlay_5.img.jpg/1502285072090.jpg"></a>
+           <br>
+          </div> 
+          <div class="overlay"> 
+           <div class="overlay_content"> 
+            <h2><a href="/academics/departments/marketing-and-pr/about/news/kerry-ogrady-uses-own-experience.html">PR and Corporate Communication Professor<br>Featured on <i>ABC News'</i> "Uncomfortable" Podcast</a></h2> 
+            <h3><a href="/academics/departments/marketing-and-pr/about/news/kerry-ogrady-uses-own-experience.html">Clinical Assistant Professor Kerry O'Grady discussed how her own experience with<br>social media trolling became a teachable moment</a></h3> 
+            <a href="/academics/departments/marketing-and-pr/about/news/kerry-ogrady-uses-own-experience.html" class="readmore">Read More</a> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li> 
+         <div class="default parbase botLeft image_with_overlay section full_width"> 
+          <div class="image">
+           <a href="/academics/departments/marketing-and-pr/about/news/leyda-hernandez-named-to-2017-forbes-30-under-30-list.html"><img title="2017 <i>Forbes 30 Under 30</i> List" alt="2017 <i>Forbes 30 Under 30</i> List" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/component_carousel/image_with_overlay_3.img.jpg/1485464172552.jpg"></a>
+           <br>
+          </div> 
+          <div class="overlay"> 
+           <div class="overlay_content"> 
+            <h2><a href="/academics/departments/marketing-and-pr/about/news/leyda-hernandez-named-to-2017-forbes-30-under-30-list.html">2017 <i>Forbes 30 Under 30</i> List</a></h2> 
+            <h3><a href="/academics/departments/marketing-and-pr/about/news/leyda-hernandez-named-to-2017-forbes-30-under-30-list.html">NYUSPS Adjunct Instructor Leyda Hernandez Named to Illustrious <i>Forbes</i> List</a></h3> 
+            <a href="/academics/departments/marketing-and-pr/about/news/leyda-hernandez-named-to-2017-forbes-30-under-30-list.html" class="readmore">Learn More</a> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li> 
+         <div class="default parbase botLeft image_with_overlay section full_width"> 
+          <div class="image">
+           <a href="http://www.prnewsonline.com/awards/2016-rising-PR-stars-winners/leis" target="_blank"><img title="PR News 2016 Rising PR Stars" alt="PR News 2016 Rising PR Stars" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/component_carousel/image_with_overlay_2.img.jpg/1485464150487.jpg"></a>
+           <br>
+          </div> 
+          <div class="overlay"> 
+           <div class="overlay_content"> 
+            <h2><a href="http://www.prnewsonline.com/awards/2016-rising-PR-stars-winners/leis" target="_blank">PR News 2016 Rising PR Stars</a></h2> 
+            <h3><a href="http://www.prnewsonline.com/awards/2016-rising-PR-stars-winners/leis" target="_blank">MS in Public Relations and Corporate Communication alumna Joanna Leis '09 was named a "Rising PR Star" by PR News</a></h3> 
+            <a href="http://www.prnewsonline.com/awards/2016-rising-PR-stars-winners/leis" target="_blank" class="readmore">Learn More</a> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li> 
+         <div class="default parbase botLeft image_with_overlay section full_width"> 
+          <div class="image">
+           <img title="MS in Integrated Marketing Students Visit Omnicom Media Group (OMD)" alt="MS in Integrated Marketing Students Visit Omnicom Media Group (OMD)" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/component_carousel/image_with_overlay_0.img.jpg/1481834224173.jpg">
+           <br>
+          </div> 
+          <div class="overlay"> 
+           <div class="overlay_content"> 
+            <h2>MS in Integrated Marketing Students Visit Omnicom Media Group (OMD)</h2> 
+            <h3>Students met with the OMD marketing science team at a site visit hosted by the Wasserman Center at NYUSPS</h3> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li> 
+         <div class="parbase no_overlay botLeft image_with_overlay section full_width"> 
+          <div class="image">
+           <img title="200_4_12-mqPt-iStock_000018641940" alt="200_4_12-mqPt-iStock_000018641940" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/component_carousel/image_with_overlay_1.img.jpg/1498592510307.jpg">
+           <br>
+          </div> 
+          <div class="overlay"> 
+           <div class="overlay_content"> 
+           </div> 
+          </div> 
+         </div> </li> 
+       </ul>
+       <!-- list of carousel slides --> 
+       <!--  carousel controls --> 
+       <div class="component_carousel_control"> 
+        <div class="cc_ctrlblock cc_dark"> 
+         <div class="cc_pager"> 
+         </div> 
+         <div class="cc_toggle">
+          <a href="#">Play</a> 
+         </div> 
+        </div> 
+       </div> 
+       <script type="text/javascript">
+  $(document).ready(function() {
+    SCPS.initCarousel(true);
+  });
+</script> 
+      </div> 
+      <div class="column_group colctrl-1-1-2 col_no_outln">
+       <div class="parsys_column colctrl-1-1-2-c0">
+        <div class="default_style parbase feature default_bg section"> 
+         <div class="featureContent"> 
+          <div class="imgWindow"> 
+           <a href="/academics/departments/marketing-and-pr/academic-offerings/graduate.html"> <img title="Graduate Programs" alt="Graduate Programs" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/feature_1.img.jpg/1481811460307.jpg"> </a> 
+          </div> 
+          <div class="feature_desc"> 
+           <h4><a href="/academics/departments/marketing-and-pr/academic-offerings/graduate.html">Graduate Programs</a></h4> 
+           <div class="feature_blurb">
+            Comprehensive curricula taught by top industry professionals. 
+           </div> 
+           <a href="/academics/departments/marketing-and-pr/academic-offerings/graduate.html" class="feature_link">More Information</a> 
+          </div> 
+         </div> 
+         <div class="br"></div>
+        </div> 
+       </div>
+       <div class="parsys_column colctrl-1-1-2-c1">
+        <div class="default_style parbase feature default_bg section"> 
+         <div class="featureContent"> 
+          <div class="imgWindow"> 
+           <a href="/academics/departments/marketing-and-pr/academic-offerings/noncredit.html"> <img title="Professional Pathways" alt="Professional Pathways" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/feature.img.jpg/1481811469794.jpg"> </a> 
+          </div> 
+          <div class="feature_desc"> 
+           <h4><a href="/academics/departments/marketing-and-pr/academic-offerings/noncredit.html">Professional Pathways</a></h4> 
+           <div class="feature_blurb">
+            Advance your career by gaining specialized expertise that will set you apart. 
+           </div> 
+           <a href="/academics/departments/marketing-and-pr/academic-offerings/noncredit.html" class="feature_link">More Information</a> 
+          </div> 
+         </div> 
+         <div class="br"></div>
+        </div> 
+       </div>
+       <div class="parsys_column colctrl-1-1-2-c2">
+        <div class="default_style parbase feature default_bg section"> 
+         <div class="featureContent"> 
+          <div class="imgWindow"> 
+           <a href="/academics/departments/marketing-and-pr/career.html"> <img title="Career" alt="Career" class="cq-dd-image" src="/content/scps/academics/departments/marketing-and-pr/_jcr_content/main_content/feature_0.img.jpg/1481811479499.jpg"> </a> 
+          </div> 
+          <div class="feature_desc"> 
+           <h4><a href="/academics/departments/marketing-and-pr/career.html">Career</a></h4> 
+           <div class="feature_blurb">
+            Career opportunities abound in the growing and internationally expanding fields of marketing and PR. The NYU School of Professional Studies can help you make the most of your options.
+           </div> 
+           <a href="/academics/departments/marketing-and-pr/career.html" class="feature_link">More Information</a> 
+          </div> 
+         </div> 
+         <div class="br"></div>
+        </div> 
+       </div>
+       <div class="colbr"></div>
+      </div>
+      <div class="text parbase section"> 
+      </div> 
+     </div> 
+     <div class="br"></div> 
+    </div> 
+   </div> 
+   <div class="parsys iparsys configurable_footer"> 
+    <div class="iparys_inherited">
+     <div class="parsys iparsys configurable_footer"> 
+      <div class="section">
+       <div class="footer_not_admit"> 
+        <ul> 
+         <li id="quicklinks">QUICK LINKS 
+          <ul class="footerLink"> 
+           <li><a href="/about.html">About Us</a></li> 
+           <li><a href="/student-affairs.html">Office of Student Affairs</a></li> 
+           <li><a href="/visit-us.html">Visit Us</a></li> 
+           <li><a href="/contact-us.html">Contact Us</a></li> 
+          </ul> </li> 
+         <li id="middlelinks">ATTEND THE SCHOOL 
+          <ul class="footerLink"> 
+           <li><a href="/admissions/graduate.html">Graduate Admissions</a></li> 
+           <li><a href="/admissions/undergraduate.html">Undergraduate Admissions</a></li> 
+           <li><a href="https://www.scps.nyu.edu/login.htm" target="_blank">Career Advancement Course Registration</a></li> 
+          </ul> </li> 
+         <li id="ontheweb">ON THE WEB 
+          <ul class="footerLink socialClub"> 
+           <li class="facebookLink"><a href="http://www.facebook.com/nyusps" target="_blank">On Facebook</a></li> 
+           <li class="twitterLink"><a href="http://www.twitter.com/nyusps" target="_blank">On Twitter</a></li> 
+           <li class="youtubeLink"><a href="http://www.youtube.com/scpsnyu" target="_blank">On YouTube</a></li> 
+           <li class="Link"><a href="/system-requirements.html">Browser Requirements</a></li> 
+          </ul> </li> 
+        </ul> 
+        <div id="footer_divot"></div> 
+        <div class="br"></div> 
+       </div> 
+      </div>
+     </div> 
+    </div>
+   </div> 
+   <div class="footer_foot"> 
+    <a id="nyufootLogo" target="_blank" href="http://nyu.edu">NYU Homepage</a> 
+    <p class="copyright"><a href="/content/scps.html" class="homelink">&nbsp;</a>© New York University School of Professional Studies | <a onclick="SCPS.popupUrl('http://sps.nyu.edu/academic-policies-and-procedures.html#Family_Educational_Rights_and_Privacy_Act__FERPA_','Privacy Policy | New York University - SPS')">Privacy Policy</a></p> 
+   </div> 
+  </div> 
+  <!-- / div id=main -->   
+ </body>
+</html>

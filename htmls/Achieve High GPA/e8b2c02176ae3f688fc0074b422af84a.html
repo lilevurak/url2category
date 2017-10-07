@@ -1,0 +1,459 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+ <!--<![endif]-->
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>6 New Year’s Resolutions for College Students &amp; How to Make Them Stick!</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <script>
+dataLayer = [{"title":"6 New Year\u2019s Resolutions for College Students &#8211; and How to Make Them Stick!","author":"ATCAdmin","wordcount":709,"logged_in":"false","page_id":3140,"post_date":"2014-12-30 15:21:20"}];
+</script> 
+  <!-- This site is optimized with the Yoast SEO plugin v4.9 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Making a New Year’s resolution is easy. Sticking to it is harder. Here are common New Year's resolutions for college students, and how to make them stick."> 
+  <link rel="canonical" href="https://www.ameritech.edu/blog/new-year-resolutions-for-college-students/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="6 New Year’s Resolutions for College Students &amp; How to Make Them Stick!"> 
+  <meta property="og:description" content="Making a New Year’s resolution is easy. Sticking to it is harder. Here are common New Year's resolutions for college students, and how to make them stick."> 
+  <meta property="og:url" content="https://www.ameritech.edu/blog/new-year-resolutions-for-college-students/"> 
+  <meta property="og:site_name" content="Ameritech College of Healthcare"> 
+  <meta property="article:section" content="Uncategorized"> 
+  <meta property="article:published_time" content="2014-12-30T15:21:20-06:00"> 
+  <meta property="og:image" content="https://www.ameritech.edu/wp-content/uploads/2014/12/resolutions-scrabble-1.jpg"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:description" content="Making a New Year’s resolution is easy. Sticking to it is harder. Here are common New Year's resolutions for college students, and how to make them stick."> 
+  <meta name="twitter:title" content="6 New Year’s Resolutions for College Students &amp; How to Make Them Stick!"> 
+  <meta name="twitter:image" content="https://www.ameritech.edu/wp-content/uploads/2014/12/resolutions-scrabble-1.jpg"> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//platform-api.sharethis.com"> 
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Ameritech College of Healthcare » 6 New Year’s Resolutions for College Students – and How to Make Them Stick! Comments Feed" href="https://www.ameritech.edu/blog/new-year-resolutions-for-college-students/feed/"> 
+  <!-- This site is powered by Shareaholic - https://shareaholic.com --> 
+  <script type="text/javascript" data-cfasync="false">
+  //<![CDATA[
+    _SHR_SETTINGS = {"endpoints":{"local_recs_url":"https:\/\/www.ameritech.edu\/wp-admin\/admin-ajax.php?action=shareaholic_permalink_related","share_counts_url":"https:\/\/www.ameritech.edu\/wp-admin\/admin-ajax.php?action=shareaholic_share_counts_api"}};
+  //]]>
+</script> 
+  <script type="text/javascript" data-cfasync="false" src="//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js" data-shr-siteid="32f573afd367e08d50af20b0212408a7" async>
+</script> 
+  <!-- Shareaholic Content Tags --> 
+  <meta name="shareaholic:site_name" content="Ameritech College of Healthcare"> 
+  <meta name="shareaholic:language" content="en-US"> 
+  <meta name="shareaholic:url" content="https://www.ameritech.edu/blog/new-year-resolutions-for-college-students/"> 
+  <meta name="shareaholic:keywords" content="new year resolutions for college students"> 
+  <meta name="shareaholic:article_published_time" content="2014-12-30T15:21:20+00:00"> 
+  <meta name="shareaholic:article_modified_time" content="2017-10-03T14:00:26+00:00"> 
+  <meta name="shareaholic:shareable_page" content="true"> 
+  <meta name="shareaholic:article_author_name" content="ATCAdmin"> 
+  <meta name="shareaholic:site_id" content="32f573afd367e08d50af20b0212408a7"> 
+  <meta name="shareaholic:wp_version" content="7.8.0.3"> 
+  <meta name="shareaholic:image" content="https://www.ameritech.edu/wp-content/uploads/2014/12/resolutions-scrabble-1.jpg"> 
+  <!-- Shareaholic Content Tags End --> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.ameritech.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="jquery.bxslider-css" href="//www.ameritech.edu/wp-content/plugins/testimonials-widget/includes/libraries/bxslider-4/dist/jquery.bxslider.css?ver=4.8" type="text/css" media="all"> 
+  <link rel="stylesheet" id="Axl_Testimonials_Widget-css" href="//www.ameritech.edu/wp-content/plugins/testimonials-widget/assets/css/testimonials-widget.css?ver=4.8" type="text/css" media="all"> 
+  <link rel="stylesheet" id="cff-css" href="https://www.ameritech.edu/wp-content/plugins/custom-facebook-feed/css/cff-style.css?ver=2.4.6" type="text/css" media="all"> 
+  <link rel="stylesheet" id="cff-font-awesome-css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css?ver=4.5.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tablepress-default-css" href="https://www.ameritech.edu/wp-content/plugins/tablepress/css/default.min.css?ver=1.8" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.ameritech.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://www.ameritech.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#product=ga"></script> 
+  <link rel="https://api.w.org/" href="https://www.ameritech.edu/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ameritech.edu/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.ameritech.edu/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8"> 
+  <link rel="shortlink" href="https://www.ameritech.edu/?p=3140"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.ameritech.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ameritech.edu%2Fblog%2Fnew-year-resolutions-for-college-students%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.ameritech.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ameritech.edu%2Fblog%2Fnew-year-resolutions-for-college-students%2F&amp;format=xml"> 
+  <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."> 
+  <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.ameritech.edu/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+  <!-- Facebook Pixel Code --> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '674514542650426'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=674514542650426&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- DO NOT MODIFY --> 
+  <!-- End Facebook Pixel Code -->
+  <noscript>
+   <style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style>
+  </noscript> 
+  <!--[if IE]><link rel="shortcut icon" href="https://www.ameritech.edu/wp-content/themes/ameritech-2016/favicon.ico"><![endif]--> 
+  <link rel="icon" href="https://www.ameritech.edu/wp-content/themes/ameritech-2016/images/favicon.png"> 
+  <link href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" href="https://www.ameritech.edu/wp-content/themes/ameritech-2016/style.css"> 
+  <script src="https://www.ameritech.edu/wp-content/themes/ameritech-2016/javascript/modernizr.js"></script> 
+  <script type="text/javascript">
+        var templateDir = "https://www.ameritech.edu/wp-content/themes/ameritech-2016";
+    </script> 
+  <!-- Ameritech - Max Connect Marketing GTM --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NNMQ8GK');</script> 
+  <!-- End GTM -->
+  <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N3MB7GL');</script> 
+  <!-- End Google Tag Manager -->
+  <script type="text/javascript"> new Image().src = '//clickserv.pixel.ad/conv/4a2e10a0c4bc32f5';
+ </script>
+ </head> 
+ <body class=""> 
+  <!-- Ameritech - Max Connect Marketing GTM (no script —>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNMQ8GK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End GTM (noscript) -->
+  <!-- Google Tag Manager (noscript) --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3MB7GL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Start of Async HubSpot Analytics Code --> 
+  <script type="text/javascript">
+    (function(d,s,i,r) {
+      if (d.getElementById(i)){return;}
+      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+      n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/558017.js';
+      e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+  </script> 
+  <!-- End of Async HubSpot Analytics Code -->
+  <div class="cover"></div> 
+  <div class="container container-header"> 
+   <header class="content content-header"> 
+    <a class="logo" href="https://www.ameritech.edu/">Ameritech</a> 
+    <a href="/request-info/" class="btn">Request Info</a> 
+    <form role="search" method="get" class="search-form" action="/"> 
+     <button type="submit"><i class="fa fa-search"></i></button>
+     <label><input type="search" class="search-field" name="s" title="Search:" value=""></label> 
+    </form> 
+    <a class="menu-toggle" href="javascript:;"> <i class="fa fa-bars"></i> <i class="fa fa-times"></i> </a> 
+    <div class="menu-main-menu-container">
+     <ul id="menu-main-menu" class="menu">
+      <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-27"><a href="https://www.ameritech.edu/programs/">Programs</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://www.ameritech.edu/programs/nursing/">Nursing</a></li> 
+        <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="https://www.ameritech.edu/programs/rn-bsn-degree-completion/">RN-BSN Degree Completion</a></li> 
+        <li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="https://www.ameritech.edu/programs/medical-assistant/">Medical Assistant</a></li> 
+        <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://www.ameritech.edu/programs/dental-lab-tech/">Dental Laboratory Technician</a></li> 
+        <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://www.ameritech.edu/programs/occupational-therapy-assistant/">Occupational Therapy Assistant</a></li> 
+       </ul> </li> 
+      <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="https://www.ameritech.edu/admissions/">Admissions</a></li> 
+      <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="https://www.ameritech.edu/financial-aid/">Financial Aid</a></li> 
+      <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-35"><a href="https://www.ameritech.edu/about/">About</a> 
+       <ul class="sub-menu"> 
+        <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="https://www.ameritech.edu/about/accreditations/">Accreditations</a></li> 
+        <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://www.ameritech.edu/about/life-at-ameritech/">Life at Ameritech</a></li> 
+       </ul> </li> 
+      <li id="menu-item-5436" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-5436"><a href="https://www.ameritech.edu/blog/">Blog</a></li> 
+     </ul>
+    </div> 
+   </header> 
+  </div> 
+  <div class="container container-gen"> 
+   <div class="content content-gen"> 
+    <div class="blockContainer block-blog"> 
+     <div class="block block70"> 
+      <article id="post-3140" class="post-3140 post type-post status-publish format-standard hentry category-uncategorized"> 
+       <h1>6 New Year’s Resolutions for College Students – and How to Make Them Stick!</h1> 
+       <p class="post-meta"> 3 years ago </p> 
+       <div class="shareaholic-canvas" data-app-id="24816053" data-app="share_buttons" data-title="6 New Year’s Resolutions for College Students - and How to Make Them Stick!" data-link="https://www.ameritech.edu/blog/new-year-resolutions-for-college-students/" data-summary=""></div>
+       <p class="p1"><span class="s1"><a href="https://www.ameritech.edu/wp-content/uploads/2014/12/resolutions-scrabble-1.jpg"><img class="alignnone  wp-image-3151" src="https://www.ameritech.edu/wp-content/uploads/2014/12/resolutions-scrabble-1.jpg" alt="resolutions-scrabble-1" width="731" height="370"></a></span></p> 
+       <p class="p1"><span class="s1">Making a New Year’s resolution is easy. Sticking to it is much harder. Here are some common New Year’s resolutions for college students, and tips on how to make them stick.</span></p> 
+       <p class="p1"><span class="s1"><b>Study harder.</b> It’s no mystery why this is one of the most common New Year’s resolutions for college students. Better study habits lead to better outcomes. We’ve posted a few blogs that will help you with your study mechanics (try this <a title="6 Proven Study Tips to Retain Information" href="https://www.ameritech.edu/blog/6-proven-study-tips-retain-information/">one</a> and this <a title="Finals: 7 Study Tips to Tame The Beast!" href="https://www.ameritech.edu/blog/study-tips/">one</a>), but consistently putting these mechanics into practice requires the formation of habits. To make habits stick, you must commit to them for at least three to four weeks (studies often cite thirty days). Start simple and make it daily. If you only study sporadically, it’ll be much more difficult to form the habit. </span></p> 
+       <p class="p1"><span class="s1"><b>Perfect attendance.</b> For many college students, perfect attendance is like a unicorn. You’ve heard of its existence, it sounds amazing, but you’re pretty convinced it’s a myth. The truth is, the practical benefit of attending every class is worth the effort it takes to make it happen. You can’t control unexpected events in your life, but you can better prepare for them. Take care of yourself to avoid sickness. Plan on showing up to campus a little earlier just in case you have car troubles. It’s not the most glamorous of New Year’s resolutions, but it’s one worth pursuing. </span></p> 
+       <p class="p1"><span class="s1"><b>Get more sleep.</b> We don’t need to debate the merit of being well-rested. As a college student, your commitments often keep you from achieving that perfect eight hours of sleep. One way to combat this is by structuring your sleep the same way you structure important events in your life – budget and plan for it! Try studying earlier. Stay away from computer, tablet, and phone screens prior to hitting the hay. </span></p> 
+       <p class="p1"><span class="s1"><b>Finish assignments at least one day in advance.</b>&nbsp;Procrastination is the act&nbsp;of delaying or postponing something. It’s the decision to do something impulsive (often instant gratification) instead of sticking to a plan. To finish assignments early is the most noble of all New Year’s resolutions for college students. Here’s how you make it happen:</span></p> 
+       <ul> 
+        <li class="p1">Start by writing down when your assignments are due. Make <i>your</i> due date one day earlier.</li> 
+        <li class="p1">Tell at least three people you are completing your assignment a day early. This way, whenever you see them, they’ll be likely to inquire about your progress.</li> 
+        <li class="p1">Break completing the assignment into small, manageable steps. Sometimes we procrastinate because the work seems overwhelming. Small chunks of work are more manageable.</li> 
+        <li class="p1">Eliminate procrastination enablers. This includes and is not limited to Facebook, Pinterest, Snapchat, Instagram, Twitter, television, jump ropes (if you’re in to that), etc.</li> 
+       </ul> 
+       <p class="p1"><span class="s1"><b>Make healthy choices.</b> These types of resolutions rarely pan out because they aren’t specific enough. Being specific with your formula will help your resolution stick. For instance, if you want to get in better shape, your formula may look like this: </span></p> 
+       <p class="p1"><span class="s1"><em>“I want to lose [blank] pounds by [date]. I will achieve this by getting [blank] minutes of exercise [blank] times per week. I will also get [blank] number of servings of fruit, vegetables, and whole foods per day.”</em> </span></p> 
+       <p class="p1"><span class="s1">Being specific makes all the difference in the world.</span></p> 
+       <p class="p1"><span class="s1"><b>Have a 5-year plan.</b> You’re likely going to college to achieve a specific outcome (like becoming a Registered Nurse). What you do post-college should be about achieving specific outcomes as well. In essence, having a 5-year plan is similar to having an extended New Year’s resolution. Like all resolutions, be specific about what you want. Write it down. Tell other people about it. Five years is far enough in the future where you can start laying groundwork towards achieving your long-term goals. The best way to stick with it is to revisit your goals often. These should be regularly-scheduled times to determine if the steps you’re taking to achieve your goals are working or need to be adjusted. </span></p> 
+       <p class="p1"><span class="s1">Are we missing your New Year’s resolution? Post on our Facebook <a href="https://www.facebook.com/AmeriTechCollege" target="_blank">page</a> with your resolution and we’ll help brainstorm ways to make it stick. We wish you a happy and prosperous New Year! #ATCpride</span></p> 
+       <div class="shareaholic-canvas" data-app-id="24816049" data-app="share_buttons" data-title="6 New Year’s Resolutions for College Students - and How to Make Them Stick!" data-link="https://www.ameritech.edu/blog/new-year-resolutions-for-college-students/" data-summary=""></div>
+      </article>
+      <!-- #post --> 
+     </div> 
+     <div class="block block30 blog-right"> 
+      <div id="sidebar" class="widget-area" role="complementary"> 
+       <div>
+        <h4>Subscribe</h4> 
+        <div class="textwidget">
+         <!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]--> 
+         <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script> 
+         <script>
+  hbspt.forms.create({ 
+    portalId: '558017',
+    formId: '1b2adeef-b452-404d-8d56-0deca82b26dd'
+  });
+</script>
+        </div> 
+       </div>
+       <div>
+        <h4>Categories</h4> 
+        <ul> 
+         <li class="cat-item cat-item-45"><a href="https://www.ameritech.edu/blog/category/atc-pride-award/">ATC Pride Award</a> </li> 
+         <li class="cat-item cat-item-15"><a href="https://www.ameritech.edu/blog/category/bsn/">BSN</a> </li> 
+         <li class="cat-item cat-item-35"><a href="https://www.ameritech.edu/blog/category/dental-lab-technician-2/">Dental Lab Technician</a> </li> 
+         <li class="cat-item cat-item-207"><a href="https://www.ameritech.edu/blog/category/e-books/">E-Books</a> </li> 
+         <li class="cat-item cat-item-40"><a href="https://www.ameritech.edu/blog/category/financial-aid/">Financial Aid</a> </li> 
+         <li class="cat-item cat-item-32"><a href="https://www.ameritech.edu/blog/category/medical-assisting-2/">Medical Assisting</a> </li> 
+         <li class="cat-item cat-item-24"><a href="https://www.ameritech.edu/blog/category/nclex/">NCLEX</a> </li> 
+         <li class="cat-item cat-item-25"><a href="https://www.ameritech.edu/blog/category/nursing-2/">Nursing</a> </li> 
+         <li class="cat-item cat-item-26"><a href="https://www.ameritech.edu/blog/category/nursing-student-tips/">Nursing Student Tips</a> </li> 
+         <li class="cat-item cat-item-185"><a href="https://www.ameritech.edu/blog/category/occupational-therapy-assistant/">Occupational Therapy Assistant</a> </li> 
+         <li class="cat-item cat-item-42"><a href="https://www.ameritech.edu/blog/category/student-life/">Student Life</a> </li> 
+         <li class="cat-item cat-item-21"><a href="https://www.ameritech.edu/blog/category/study-tips-2/">Study Tips</a> </li> 
+         <li class="cat-item cat-item-1"><a href="https://www.ameritech.edu/blog/category/uncategorized/">Uncategorized</a> </li> 
+         <li class="cat-item cat-item-30"><a href="https://www.ameritech.edu/blog/category/work-life-balance/">Work-Life Balance</a> </li> 
+        </ul> 
+       </div>
+       <div>
+        <form role="search" method="get" id="searchform" class="searchform" action="https://www.ameritech.edu/"> 
+         <div> 
+          <label class="screen-reader-text" for="s">Search for:</label> 
+          <input type="text" value="" name="s" id="s"> 
+          <input type="submit" id="searchsubmit" value="Search"> 
+         </div> 
+        </form>
+       </div>
+       <div>
+        <h4>Recent Posts</h4> 
+        <ul> 
+         <li><a href="https://www.ameritech.edu/blog/healthcare-halloween-costumes/" title="6 Healthcare-Themed Halloween Costumes">6 Healthcare-Themed Halloween Costumes</a><br><span class="post-meta" title="">1 hour ago</span></li> 
+         <li><a href="https://www.ameritech.edu/blog/front-lines-of-healthcare/" title="The Front Lines of Healthcare">The Front Lines of Healthcare</a><br><span class="post-meta" title="">5 days ago</span></li> 
+         <li><a href="https://www.ameritech.edu/blog/healthcare-and-law/" title="Medical Responsibility and the Law">Medical Responsibility and the Law</a><br><span class="post-meta" title="">1 week ago</span></li> 
+         <li><a href="https://www.ameritech.edu/blog/developing-work-life-balance/" title="Developing a Work-Life Balance at Ameritech">Developing a Work-Life Balance at Ameritech</a><br><span class="post-meta" title="">2 weeks ago</span></li> 
+         <li><a href="https://www.ameritech.edu/blog/nursing-abroad/" title="Travel Nursing: Where to Be a Nurse Abroad">Travel Nursing: Where to Be a Nurse Abroad</a><br><span class="post-meta" title="">2 weeks ago</span></li> 
+        </ul> 
+       </div>
+      </div>
+      <!-- #secondary --> 
+     </div> 
+    </div> 
+   </div>
+   <!-- #content --> 
+  </div>
+  <!-- #primary --> 
+  <div class="container container-bottom"> 
+   <div id="changer" class="content content-bottom text-center"> 
+    <!-- <h5>Ready to be a part of the Ameritech family?</h5>
+        <a href="/request-info/" class="btn">Request Info</a></p> --> 
+    <link rel="stylesheet" href="/wp-content/themes/ameritech-2016/bootstrapCustom.min.css"> 
+    <div id="wholeForm"> 
+     <h3 class="text-center" id="formHeader">Ready to be a part of the Ameritech family?</h3> 
+     <form onsubmit="submitForm()" data-toggle="validator" role="form" id="myFormId"> 
+      <div class="container"> 
+       <div class="form-group col-md-4"> 
+        <label class="" for="fname">First Name <span class="reqd">*</span></label> 
+        <input type="text" tabindex="1" class="form-control" id="fname" name="FirstName" placeholder="John" required> 
+        <label class="text-center col-md-push-4" for="lname">Last Name <span class="reqd">*</span></label> 
+        <input type="text" tabindex="2" class="form-control" id="lname" name="Lastname" placeholder="Smith" required> 
+        <label class="text-center" for="email">Email <span class="reqd">*</span></label> 
+        <input type="email" tabindex="3" class="form-control" id="email" name="Email" placeholder="jsmith@email.com" required> 
+       </div> 
+       <div class="form-group col-md-4"> 
+        <label class="text-center" for="phone">Phone <span class="reqd">*</span></label> 
+        <input type="tel" class="form-control" tabindex="4" id="phone" name="Telephone" placeholder="(222) 333-4444" required> 
+        <label class="text-center" for="state">State <span class="reqd">*</span></label> 
+        <select class="form-control" tabindex="5" id="state" placeholder="Select a State" name="ProvinceStateID" required> <option value="">Choose a State</option> <option value="AL">Alabama</option> <option value="AK">Alaska</option> <option value="AZ">Arizona</option> <option value="AR">Arkansas</option> <option value="CA">California</option> <option value="CO">Colorado</option> <option value="CT">Connecticut</option> <option value="DE">Delaware</option> <option value="DC">District Of Columbia</option> <option value="FL">Florida</option> <option value="GA">Georgia</option> <option value="HI">Hawaii</option> <option value="ID">Idaho</option> <option value="IL">Illinois</option> <option value="IN">Indiana</option> <option value="IA">Iowa</option> <option value="KS">Kansas</option> <option value="KY">Kentucky</option> <option value="LA">Louisiana</option> <option value="ME">Maine</option> <option value="MD">Maryland</option> <option value="MA">Massachusetts</option> <option value="MI">Michigan</option> <option value="MN">Minnesota</option> <option value="MS">Mississippi</option> <option value="MO">Missouri</option> <option value="MT">Montana</option> <option value="NE">Nebraska</option> <option value="NV">Nevada</option> <option value="NH">New Hampshire</option> <option value="NJ">New Jersey</option> <option value="NM">New Mexico</option> <option value="NY">New York</option> <option value="NC">North Carolina</option> <option value="ND">North Dakota</option> <option value="OH">Ohio</option> <option value="OK">Oklahoma</option> <option value="OR">Oregon</option> <option value="PA">Pennsylvania</option> <option value="RI">Rhode Island</option> <option value="SC">South Carolina</option> <option value="SD">South Dakota</option> <option value="TN">Tennessee</option> <option value="TX">Texas</option> <option value="UT">Utah</option> <option value="VT">Vermont</option> <option value="VA">Virginia</option> <option value="WA">Washington</option> <option value="WV">West Virginia</option> <option value="WI">Wisconsin</option> <option value="WY">Wyoming</option> </select> 
+        <label class="text-center" for="program">Choose Your Program <span class="reqd">*</span></label> 
+        <select class="form-control" id="program" tabindex="6" name="ProgramID" required> <option value="">Select a Program</option> <option value="182">Dental Lab Technician</option> <option value="183">Medical Assistant</option> <option value="184">Nursing</option> <option value="185">RN-BSN Degree Completion</option> <option value="396">Occupational Therapy Assistant</option> </select> 
+        <br> 
+        <div class="" id="RNBSN1" style=""> 
+         <label for="rngrad"> <input type="checkbox" tabindex="7" id="rngrad" name="rngrad" value="checked"> I have graduated as an RN.</label> 
+        </div> 
+       </div> 
+       <div class="form-group col-md-4" id="disclaimer"> 
+        <p style="text-align: justify">By pressing "Request Information" I hereby consent and agree to receive calls, text or other messages by or on behalf of Ameritech College of Healthcare at the phone number(s) provided above. I understand that the foregoing consent is not a condition of program application or enrollment and agree that the terms of the privacy policy apply. <span class="pull-right" style="color: red;">* Required</span></p> 
+        <button type="submit" id="submit" tabindex="8" name="submit" class="btn-lg btn pull-right" style="position:relative !important;">Request Information</button> 
+       </div> 
+      </div>  
+     </form> 
+    </div> 
+    <div id="msgSubmit" class="alert-success text-center hidden">
+     <h3>Form has been successfully submitted. Thank you.</h3>
+    </div> 
+    <div id="msgAlready" class="alert-info text-center hidden">
+     <h4>You have already requested information using this form.</h4>Pease call us at (801) 816-1444 so we can answer all of your questions.
+    </div> 
+   </div> 
+  </div> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+  <script src="/wp-content/themes/ameritech-2016/leadform/js/jquery.maskedinput.min.js"></script> 
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
+  <script src="/wp-content/themes/ameritech-2016/leadform/js/custom.js"></script> 
+  <p class="soc pull-left"> <a href="https://www.youtube.com/user/AmeriTechCollege" target="_blank"><i class="fa fa-youtube" aria-hidden="true" title="YouTube"></i></a> <a href="https://www.linkedin.com/company/ameritech-college" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" title="LinkedIn"></i></a> <a href="https://twitter.com/ameritechedu" target="_blank"><i class="fa fa-twitter" aria-hidden="true" title="Twitter"></i></a> <a href="https://www.facebook.com/AmeriTechCollege/" target="_blank"><i class="fa fa-facebook" aria-hidden="true" title="Facebook"></i></a> <a href="https://www.instagram.com/ameritechedu/" target="_blank"><i class="fa fa-instagram" aria-hidden="true" title="Instagram"></i></a> <a href="https://www.pinterest.com/ameritechedu/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true" title="Pinterest"></i></a> </p>   
+  <div class="container container-footer" style=""> 
+   <footer class="content content-footer"> 
+    <div class="blockContainer"> 
+     <div class="block block16"> 
+      <div class="footer-menu">
+       <ul id="menu-programs-menu" class="menu">
+        <li id="menu-item-5443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5443"><a href="https://www.ameritech.edu/programs/">Programs</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-5444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5444"><a href="https://www.ameritech.edu/programs/nursing/">Nursing</a></li> 
+          <li id="menu-item-5445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5445"><a href="https://www.ameritech.edu/programs/rn-bsn-degree-completion/">RN-BSN Degree Completion</a></li> 
+          <li id="menu-item-5446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5446"><a href="https://www.ameritech.edu/programs/medical-assistant/">Medical Assistant</a></li> 
+          <li id="menu-item-5447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5447"><a href="https://www.ameritech.edu/programs/dental-lab-tech/">Dental Laboratory Technician</a></li> 
+          <li id="menu-item-5448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5448"><a href="https://www.ameritech.edu/programs/occupational-therapy-assistant/">Occupational Therapy Assistant</a></li> 
+         </ul> </li> 
+       </ul>
+      </div> 
+     </div> 
+     <div class="block block16"> 
+      <div class="footer-menu">
+       <ul id="menu-admissions-menu" class="menu">
+        <li id="menu-item-5441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5441"><a href="https://www.ameritech.edu/admissions/">Admissions</a></li> 
+       </ul>
+      </div> 
+     </div> 
+     <div class="block block16"> 
+      <div class="footer-menu">
+       <ul id="menu-financial-menu" class="menu">
+        <li id="menu-item-5442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5442"><a href="https://www.ameritech.edu/financial-aid/">Financial Aid</a></li> 
+       </ul>
+      </div> 
+     </div> 
+     <div class="block block16"> 
+      <div class="footer-menu">
+       <ul id="menu-about-menu" class="menu">
+        <li id="menu-item-5437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5437"><a href="https://www.ameritech.edu/about/">About</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-5439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5439"><a href="https://www.ameritech.edu/about/accreditations/">Accreditations</a></li> 
+          <li id="menu-item-5440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5440"><a href="https://www.ameritech.edu/about/life-at-ameritech/">Life at Ameritech</a></li> 
+         </ul> </li> 
+       </ul>
+      </div> 
+     </div> 
+     <div class="block block16 footer-logins"> 
+      <div class="footer-menu">
+       <ul id="menu-login-menu" class="menu">
+        <li id="menu-item-5929" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5929"><a>Logins</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-5920" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5920"><a href="https://portal.ameritech.edu/secure/student/loginstu.aspx">Student Portal</a></li> 
+          <li id="menu-item-5921" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5921"><a href="https://outlook.office365.com/">Ameritech Email</a></li> 
+          <li id="menu-item-5922" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5922"><a href="https://ameritech.instructure.com">LMS – Canvas</a></li> 
+          <li id="menu-item-5923" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5923"><a href="https://www.engrade.com/ameritech">Engrade</a></li> 
+          <li id="menu-item-5924" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5924"><a href="https://portal.ameritech.edu/secure/staff/loginsta.aspx">Faculty Portal</a></li> 
+          <li id="menu-item-5932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5932"><a href="https://www.ameritech.edu/make-a-payment/">Make a Payment</a></li> 
+          <li id="menu-item-5928" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5928"><a href="https://shop.ameritechbookstore.com/default.aspx">Student Store</a></li> 
+          <li id="menu-item-5927" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5927"><a href="http://servicedesk.ameritech.edu">Service Desk</a></li> 
+         </ul> </li> 
+       </ul>
+      </div> 
+     </div> 
+     <div class="block block16 footer-location"> 
+      <div class="footer-menu">
+       <ul id="menu-locations-menu" class="menu">
+        <li id="menu-item-5723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5723"><a href="https://www.ameritech.edu/location/">Location</a></li> 
+       </ul>
+      </div> 
+      <div class="bottom-contact">
+       <h6>Contact</h6> 
+       <div class="textwidget">
+        <p>Draper Campus</p> 
+        <p>12257 Business Park Drive #100<br> Draper, Utah 84020<br> (801) 816-1444</p> 
+        <p>Provo Campus</p> 
+        <p>2035 North 550 West<br> Provo, Utah 84604<br> (801) 377-2900</p> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="clear"></div> 
+    <div class="bottom-menu">
+     <ul id="menu-bottom-links" class="menu">
+      <li id="menu-item-5452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5452"><a href="https://www.ameritech.edu/careers/">Careers</a></li> 
+      <li id="menu-item-5451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5451"><a href="https://www.ameritech.edu/student-catalog/">Student Catalog</a></li> 
+      <li id="menu-item-5450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5450"><a href="https://www.ameritech.edu/transcript-request/">Transcript Request</a></li> 
+      <li id="menu-item-5449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5449"><a href="https://www.ameritech.edu/privacy/">Privacy</a></li> 
+      <li id="menu-item-5954" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5954"><a href="/wp-content/uploads/2017/07/ConsumerInformationGuide2.0-6.2017.pdf">Consumer Information Guide</a></li> 
+      <li id="menu-item-7368" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7368"><a href="https://www.ameritech.edu/annual-security-report/">Annual Security Report</a></li> 
+      <li id="menu-item-7369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7369"><a href="https://www.ameritech.edu/drug-alcohol-prevention-program/">Drug and Alcohol Prevention Program</a></li> 
+     </ul>
+    </div> 
+    <p class="copyright">© Ameritech Inc. All Rights Reserved.</p> 
+   </footer> 
+  </div> 
+  <!-- Custom Facebook Feed JS --> 
+  <script type="text/javascript">
+var cfflinkhashtags = "true";
+</script> 
+  <script>
+    jQuery(document).ready(function () {
+		jQuery.post('https://www.ameritech.edu?ga_action=googleanalytics_get_script', {action: 'googleanalytics_get_script'}, function(response) {
+			var F = new Function ( response );
+			return( F() );
+		});
+    });
+</script>
+  <script type="text/javascript" src="https://www.ameritech.edu/wp-content/plugins/custom-facebook-feed/js/cff-scripts.js?ver=2.4.6"></script> 
+  <script type="text/javascript" src="https://www.ameritech.edu/wp-includes/js/wp-embed.min.js?ver=4.8"></script> 
+  <script src="https://www.ameritech.edu/wp-content/themes/ameritech-2016/javascript/global.js"></script> 
+  <script type="text/javascript">
+    adroll_adv_id = "FQTE3WORNFHSHLJPSZFIV2";
+    adroll_pix_id = "LHNC2JXFJJESLKVDTAORY3";
+    /* OPTIONAL: provide email to improve user identification */
+    /* adroll_email = "username@example.com"; */
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6bc727c301","applicationID":"22173570","transactionName":"ZQZbMkJSX0AFU0dbDFxMeAVEWl5dS0NaXAReBg==","queueTime":0,"applicationTime":839,"atts":"SUFYRApITE4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

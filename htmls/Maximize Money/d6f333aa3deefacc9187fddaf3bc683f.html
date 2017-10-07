@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"> 
+  <meta charset="utf-8"> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"843ec445c1","applicationID":"12026397","transactionName":"J1xaEktaDVRXER8EEQtdQANXUU5IUwRV","queueTime":0,"applicationTime":42,"agent":""}</script> 
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQMEUV9WGwICVFNUBAgA"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script> 
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"> 
+  <meta content="7C15436EDD559DD4914148ABAEC02230" name="msvalidate.01"> 
+  <meta name="apple-itunes-app" content="app-id=957118897"> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="Traveling on a budget? Here's how to get the most bang for your buck when it comes to student flights. Money saving tips ✓ Discounted fares ✓ Budget tips ✓"> 
+  <meta name="robots" content="index,follow"> 
+  <meta name="msvalidate.01" content="7C15436EDD559DD4914148ABAEC02230"> 
+  <title>Student Flights | Discount &amp; Money Saving Tips - Travelstart.co.za</title> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="OqV7x9pnKqVCSfEOiC83VRsVh6gaZFX3MawdcMTDMH/eDaEMv/lEPiO+vTdPVDaIgt6Kvu8WwXkoc8ER50F+ug=="> 
+  <link rel="apple-touch-icon" href="http://www.travelstart.co.za/resources/images/apple-touch-icon.png"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script> 
+  <link rel="icon" href="/resources/images/favicon.ico"> 
+  <script type="text/javascript">
+       $(document).ready(function(){
+        $('.flight-routes__tr').click(function(){
+          var href = $(this).data('href');
+           if (href){
+            window.location.href = href ;
+            }
+        });
+      });
+     </script> 
+  <link rel="stylesheet" media="screen" href="//cms.travelstart.com/assets/front-29770ea13bd23a96b76888e7ffad8a59bbe655526869ec13cabea1d530b2ecf3.js">
+  <script src="//cms.travelstart.com/assets/front-29770ea13bd23a96b76888e7ffad8a59bbe655526869ec13cabea1d530b2ecf3.js"></script> 
+  <script>
+  var onloadCallback = function() {
+    window.TS.reCaptchaLoad()
+  };
+</script> 
+  <script async defer src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit"></script> 
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"> 
+  <script>
+        // iframe to run in https, like all version 08+
+       var iframeUrl = 'https://' + 'www.travelstart.co.za';
+       var _domainName = 'www.travelstart.co.za'
+       var _domainLocale = 'ZA'
+      </script> 
+  <script src="//cms.travelstart.com/assets/destination_pages_frontend-09890fe94e09649a8050378e2b8ab656cd153b00575194d56c3ce4b252ea989a.js"></script> 
+  <script src="//cms.travelstart.com/assets/deeplink_iframe-5683ff1d34be9ebf21994aad15ff17801c85928bb97dfbc0c167166bed750205.js"></script> 
+  <link rel="stylesheet" media="screen" href="//cms.travelstart.com/assets/front_end-c018d3026f87ea51577eccfbf235cbb1a62078f6a1d13f5656ba7347b6809e2b.css"> 
+  <link rel="stylesheet" media="screen" href="//cms.travelstart.com/assets/destination_pages_front-72b97673fcdc2c6a2e1e44614881df403cf71cd49f2963227c87b48fed2b4180.css">
+  <script>
+        // Innometrics script
+        (function () {
+        var swDc = document.createElement('script'); swDc.type = 'text/javascript';
+        swDc.charset = 'UTF-8';
+        swDc.async = true;
+        swDc.src = ('https:' === document.location.protocol) ?
+          "https://a248.e.akamai.net/swordfishinc.download.akamai.com/145199/live/p/151/28959778.js" :
+          "http://media.swordfishdc.com/live/p/151/28959778.js";
+        var a = document.getElementsByTagName('script')[0];
+        a.parentNode.insertBefore(swDc, a);
+        }());
+      </script> 
+  <style> 
+      .card-border{border:1px solid #e0e4e5;}
+      .pb20{padding-bottom:20px;}
+      .pt20{padding-top:20px;}
+      .bg-white{background:#fff;}
+      .pdlr-8{padding: 0 8px 0 8px;}
+      .card-job {box-shadow: 0 1px 5px 0 rgba(0,00,0,.1);border-bottom: 3px solid #1bb3f5;}
+      .card-job a{color:#4a4a4a;text-decoration:none;}
+      .card-job h4{color:#4a4a4a;text-decoration:none;}
+      .job-heading {white-space: nowrap; overflow: hidden;text-overflow: ellipsis;margin-top:3px;width:230px;}
+      .job-heading:hover{overflow: visible; white-space: normal;height:auto;}
+ 	  	.block-l{display:block;width:70%;float:left;}
+ 	  	.block-r{display:block;width:30%;float:left;}
+      @media (max-width: 479px) {
+      .block-l{width:100%;}
+ 	  	.block-r{width:100%;}
+      }
+   	 @media (max-width: 784px){
+       .block-l{width:100%;}
+ 	  	.block-r{width:100%;}
+   	 }
+      @media all and (max-width: 991px) and (min-width: 479px){
+        .job-heading {width:120px;}
+      }
+       @media all and (max-width: 1182px) and (min-width: 992px){
+        .job-heading {width:180px;}
+      }
+      .job-sub {line-height: 0;}
+      .job-small-tx {color: rgba(153, 153, 153, 1);font-size: 12px;}
+    
+    </style> 
+ </head> 
+ <body> 
+  <div class="header-container"> 
+   <div class="container"> 
+    <a class="header-logo-link" href="https://www.travelstart.co.za"><img class="header-logo" src="/assets/img/logos/ts-logo-ZA.svg" alt="Ts logo za"></a> 
+    <div class="header-nav"> 
+     <div class="header-main-links"> 
+      <a class="header-nav__item header-nav__item--active" href="https://www.travelstart.co.za" target="_self"><span class="header-nav__subheading"><span>Book</span></span><span class="header-nav__heading"><span>Flights</span></span></a>
+      <a class="header-nav__item" href="https://hotels.travelstart.com/?locale=en_ZA&amp;pos=TSTART_ZA&amp;wapb3=|c.496978|l.en_ZA|t.web|s.header-lp" target="_self"><span class="header-nav__subheading"><span>Find</span></span><span class="header-nav__heading"><span>Hotels</span></span></a>
+      <a class="header-nav__item" href="http://cars.travelstart.co.za" target="_self"><span class="header-nav__subheading"><span>Rent</span></span><span class="header-nav__heading"><span>Cars</span></span></a>
+      <a class="header-nav__item" href="http://www.travelstart.co.za/lp/promotions-specials/holiday-packages" target="_self"><span class="header-nav__subheading"><span>Find</span></span><span class="header-nav__heading"><span>Packages</span></span></a> 
+     </div> 
+     <div class="header-extra-links"> 
+      <a class="header-nav__item header-nav__item--has-icon" href="https://www.travelstart.co.za/account/signin?language=en" target="_self"><i class="header-nav__my-trips-icon"></i><span class="header-nav__heading"><span>My Trips</span></span></a> 
+     </div> 
+     <a class="hamburger-link header-nav__item" href="#" id="hamburger-link"><i class="header-nav__menu header-nav__item__icon"></i></a> 
+     <div class="nav-drawer"> 
+      <div class="overlay overlay--nav-drawers"></div> 
+      <div class="nav-drawer__content"> 
+       <a class="nav-drawers__close" href="#"> Close</a> 
+       <div class="nav-drawer__heading h3"> 
+        <span class="ts-circle"></span> 
+       </div> 
+       <div class="nav-menu-wrap"> 
+        <ul class="nav-menu item-list"> 
+         <li class="active nav-menu__list-item"> <a class="nav-menu__item" href="#"><span class="item-list__text_wrap"><span class="item-list__text">Book Flights</span></span></a> </li> 
+         <li class="nav-menu__list-item"> <a class="nav-menu__item" href="https://hotels.travelstart.com/?locale=en_ZA&amp;pos=TSTART_ZA&amp;wapb3=|c.496978|l.en_ZA|t.web|s.header-lp" target="_self"><span class="item-list__text_wrap"><span class="item-list__text">Find Hotels</span></span></a> </li> 
+         <li class="nav-menu__list-item"> <a class="nav-menu__item" href="http://cars.travelstart.co.za"><span class="item-list__text_wrap"><span class="item-list__text">Rent Cars</span></span></a> </li> 
+         <li class="nav-menu__list-item"> <a class="nav-menu__item" href="https://www.travelstart.co.za/contact-us?language=en" id="contact-us-link"><span class="item-list__text_wrap"><span class="item-list__text">Contact Us</span></span></a> </li> 
+        </ul> 
+        <hr> 
+        <ul class="nav-menu"> 
+         <li class="nav-menu__list-item"> <a class="nav-menu__item" href="https://www.travelstart.co.za/account/signin?language=en" id="account-link"><span class="item-list__text_wrap"><span class="item-list__text">Login to your account</span></span></a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- the start of the header --> 
+  <div class="hero" style="background-image:url(http://cms.travelstart.com/uploads/image/asset/5784/student-flights-hero-image-1920x333.jpg)"> 
+   <div class="hero__content"> 
+    <h1 class="hero__heading"> Student Flights: Book International Youth and Student Fares at Travelstart </h1> 
+   </div> 
+  </div> 
+  <div class="bg-white"> 
+   <ul class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a class="breadcrumb" href="https://www.travelstart.co.za" itemprop="item"><span itemprop="name">Home</span></a> 
+     <meta content="1" itemprop="position"> </li> 
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a class="breadcrumb" href="http://www.travelstart.co.za/lp/flight-specials" itemprop="item"><span itemprop="name">Flight Specials</span></a> 
+     <meta content="2" itemprop="position"> </li> 
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"> <a class="breadcrumb breadcrumb--active breadcrumb--last" href="#" itemprop="item"><span itemprop="name">Student Flights</span></a> 
+     <meta content="2" itemprop="position"> </li> 
+   </ul> 
+  </div> 
+  <section class="about"> 
+   <div class="container"> 
+    <div class="grid grid--has-gutters pb20"> 
+     <div class="cell cell--1of2"> 
+      <div class="card"> 
+       <div class=""> 
+        <h3 id="1" class="card__heading"> Student flights: Travel at Lower Cost </h3> 
+        <p class="">Travelling is not as simple as just booking a flight ticket. As a student with a low budget, trying to find cheap student flights can be a challenging process. This student flights promotions page will make your life a little a bit easier. Find amazing student flight deals and holiday packages. Get all the information you need about student visa’s, and save money with the travelling tips provided underneath.</p> 
+        <p>To book youth and student fares, follow the steps below: everybody between 12 and 35 years old can apply! (See the Terms and Conditions at the bottom).</p> 
+        <h5>What you need to do:</h5> 
+        <ol> 
+         <li>Call us on <a href="tel:0210200559">021 020 0559</a> or email us at <a href="mailto:travelbar@travelstart.com">travelbar@travelstart.com</a></li> 
+         <li>Have your passport at hand</li> 
+         <li>Give us your preferred travelling dates</li> 
+         <li>We'll get back to you with the best available fare</li> 
+        </ol> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="cell cell--1of3"> 
+      <div class="card" style="background:#fafafa;"> 
+       <div class="card__body"> 
+        <h3 class="card__heading "> Overview </h3> 
+        <p><a href="#1">Compare flights and save money</a></p> 
+        <p><a href="#2">Best time to travel</a></p> 
+        <p><a href="#3">Most popular student travel destinations</a></p> 
+        <p><a href="#4">Book cheap flights without using a credit card</a></p> 
+        <p><a href="#5">How do student travel visas work?</a></p> 
+        <p><a href="#6">Money saving tips while travelling</a></p> 
+        <p><a href="#7">Inexpensive ways of travelling through Europe</a></p> 
+        <p><a href="#8">Tips For Moving Into Residence</a></p> 
+        <p><a href="#9">Terms and Conditions</a></p> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="grid grid--has-gutters"> 
+     <div class="cell"> 
+      <div class="card"> 
+       <div class=""> 
+        <h3 id="2" class="card__heading"> Timing is everything: The best travel periods to find affordable student flights </h3> 
+        <p class="">They say that the best time to travel is when you are young, but travelling is so expensive it is often impossible to find affordable student travel packages or student flights on a budget. This is why we have researched the most penny saving travel periods: timing is everything.</p> 
+        <p>Travelling during dead zones have become extremely popular amongst students. Dead zones are what the travel industry refer to as the unpopular travel periods. During these times, there are plenty of great student flights and holiday packages to choose from. A few examples of these dead zones, include:</p> 
+        <ul> 
+         <li>The first two weeks of December.</li> 
+         <li>January after New Year’s</li> 
+         <li>Spring and fall, although you should never travel over the special events like ‘Spring Break’ or ‘Easter Weekend’,<br> as travel prices become very expensive - even when you’re booking student flights.</li> 
+        </ul> 
+        <h5>Start planning your trip now, and personally find out what difference it makes to travel in those dead zones!</h5> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <script src="http://www.travelstart.com/search_panel/search-panel.js" type="text/javascript"></script> 
+  <section class="bg-white pb20 pt20"> 
+   <div class="container pdlr-8"> 
+    <h3 id="3">The most popular student travel destinations for South African students</h3> 
+    <p class="pb20">Travelling is expensive and when travelling with a weak currency like the South African Rand often does not make holiday planning very pleasant at times. Most travellers can relate to how important it is to travel when you are young and how it is often impossible because student flights are so hard to find and travelling in generally is so expensive. Based on extensive travel research these are the cheapest student travel destinations that should be explored.</p> 
+    <div class="grid grid--has-gutters pb20"> 
+     <div class="cell cell--1of3"> 
+      <div class="card"> 
+       <div class=""> 
+        <img src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/6031/student_flights_egypt1.jpg" height="auto" width="100%"> 
+        <h3>1. Egypt</h3> 
+        <p>Egypt is not only a destination that is famous for their memorising iconic ancient sites, but there is a variety of affordable attractions from the Red Sea to the markets in Cairo, and the rich heritage of Port Said which makes it one of the best student travel destinations.</p> 
+        <a href="http://www.travelstart.co.za/lp/cairo/flights">Compare and book flights to Cairo</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="cell cell--1of3"> 
+      <div class="card"> 
+       <div class=""> 
+        <img src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/6033/student_flights_MADAGASCAR.jpg" height="auto" width="100%"> 
+        <h3>2. Madagascar</h3> 
+        <p>This island nation is home to thousands of animal species and immaculate outdoor scenery that is beautiful any time of year, the best thing is that it is considered to be an outdoor destination where most of the exploring and sight-seeing activities are very budget friendly and often times for free.</p> 
+        <a href="http://www.travelstart.co.za/lp/antananarivo/flights">Compare and book flights to Antananarivo</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="cell cell--1of3"> 
+      <div class="card"> 
+       <div class=""> 
+        <img src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/6032/student_flights_hungary.jpg" height="auto" width="100%"> 
+        <h3>3. Hungary</h3> 
+        <p>This capital that many forget about is a holiday destination which is not only affordable, but a great destination filled with intriguing history and sites which would leave you breathless, without even costing you millions of dollars to enjoy.</p> 
+        <a href="http://www.travelstart.co.za/lp/budapest/flights">Compare and book flights to Budapest</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="grid grid--has-gutters pb20"> 
+     <div class="cell cell--1of3"> 
+      <div class="card"> 
+       <div class=""> 
+        <img src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/6034/student_flights_rio.jpg" height="auto" width="100%"> 
+        <h3>4. Brazil</h3> 
+        <p>This captivating place is home to the Amazon Rainforest, glorious mountains and a vibrant atmosphere fit for any student looking for a good time and great student holiday packages.</p> 
+        <a href="http://www.travelstart.co.za/lp/rio-de-janeiro/flights">Compare and book flights to Rio de Janeiro</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="cell cell--1of3"> 
+      <div class="card"> 
+       <div class=""> 
+        <img src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/6030/student_flights_columbia.jpg" height="auto" width="100%"> 
+        <h3>5. Colombia</h3> 
+        <p>This country is every travellers dream with lush Amazonian rainforests, crystal blue sandy beaches and such a fascinating culture, it is an affordable holiday place every travelling student should have on their bucket list.</p> 
+        <a href="http://www.travelstart.co.za/lp/bogota/flights">Compare and book flights to Bogota</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="cell cell--1of3"> 
+      <div class="card"> 
+       <div class=""> 
+        <img src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/6029/student_flights_china.jpg" height="auto" width="100%"> 
+        <h3>6. China</h3> 
+        <p>This cultural melting pot is a destination with numerous amounts of natural wonders as well as a wide variety of tantalising inexpensive street food, it can definitely be considered a student’s dream.</p> 
+        <a href="http://www.travelstart.co.za/lp/shanghai/flights">Compare and book flights to Shanghai</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <p>There are so many destinations that can be explored with the South African Rand that many travelling students do not know of. Read more about this topic of <a href="http://www.travelstart.co.za/blog/cheap-rand-friendly-destinations/">Cheap Rand Friendly Destinations</a> Destinations to travel to, to find out more.</p> 
+    <h3 id="4">How to book cheap student flights</h3> 
+    <p>Generally, in order to get student discounts on flights you would need to provide your student card or proof of studies during the payment process of your flights or travel packages. Most airlines offer student discount on flights, you just need to enquire about this information before booking.</p> 
+    <p>Underneath you will find the different student discount cards, that can give you access to some savings on your next trip. Below is a list of the most accepted student discount cards and apps that are out there for students to take advantage of:</p> 
+    <ul class=""> 
+     <li>University student ID card</li> 
+     <li><a href="http://www.isic.co.za/">ISIC (International Student Identity Card)</a></li> 
+     <li><a href="https://varsityvibe.co.za/">Varsity Vibe</a></li> 
+    </ul> 
+    <p>Looking for discounts without having to look for your student ID card?</p> 
+    <p>Call us on <a href="tel:0210200559">021 020 0559</a> or email us at <a href="mailto:travelbar@travelstart.com">travelbar@travelstart.com</a> so that we can help you!</p> 
+    <h3>How to book cheap flights without using a credit card</h3> 
+    <p>Your entire travel experience can be quick, easy and safe as possible when booking student flights through Travelstart, even without using a credit card. The great news is that Travelstart is an official approved beneficiary at the four main banks in South Africa, so you are able to purchase any of our amazing flight specials or holiday packages with either a cash deposit or debit card. <a href="http://www.travelstart.co.za/lp/book-flights-without-a-credit-card">Booking flights without a credit card</a> is not as complicated as it might seem.</p> 
+    <h3 id="5">How do student travel visas work?</h3> 
+    <p>Any citizen of a foreign country who wants to enter a new country would generally need to obtain a visa. This could either be a non-immigrant visa for temporary stay, or an immigrant visa for permanent residence. There are also student visas which allow you to study in a new country for the duration of your studies.</p> 
+    <p>The four types of student visas which you can receive during your student travel experience include:</p> 
+    <ul> 
+     <li>F-1 Visa: Intended for students attending a university, college, high school, private elementary school, seminary, conservatory, or any other type of academic institution, like a language training program.</li> 
+     <li>M-1 Visa: Intended for students attending a vocational school or any other type of recognized non-academic institution, other than a language training program.</li> 
+     <li>J-1 Visa: Exchange visitor (J-1) visas are non-immigrant visas for individuals approved to participate in exchange visitor programs in the United States.</li> 
+     <li>Visitor (B) Visa: Intended for students enrolled in a short recreational course of study that is not for credit toward a degree or academic certificate.</li> 
+    </ul> 
+    <p>Getting a visa can be quite a struggle: make sure to start the application in time! You can find some <a href="http://www.travelstart.co.za/lp/visa-free-countries">visa-free countries</a> to travel to as well!</p> 
+    <h3 id="6">Money saving tips while travelling</h3> 
+    <p>Travelling does not have to be that expensive. There is no reason not to still have a little extra cash in your pocket at the end of an amazing holiday. Follow these smart student travel tips and save money while exploring the world, one continent at a time:</p> 
+    <ul> 
+     <li>Download Flapp to compare flights for different airlines, and combine the cheapest tickets.</li> 
+     <li>Avoid hotels and spend the night as much as possible in hostels. Shared dorm rooms are not only cheaper, but also a good way to get to know other low budget travellers.</li> 
+     <li>Find an affordable local place to stay by using services like Couchsurfing. With Couchsurfing you can sleep at a local’s resident, often for free.</li> 
+     <li>When travelling it is often hard to stay connected to your loved ones back home, as it can be really expensive. The best way to stay to connected to your family and friends at a reduced rate would be through apps like Skype, Google Hangouts, Whatsapp and Viber. All you have to do, is finding a strong Wifi signal (that’s challenging enough in some places).</li> 
+     <li>To ensure that you do not over spend on your amazing holiday away, using apps like <a href="http://download.cnet.com/Trail-Wallet-Travel-Budget-Expense-Tracker/3000-20428_4-75824253.html">Trail Wallet</a> can help to track your finances.</li> 
+     <li>Even with good student holiday packages local transportation can be one of the biggest expenses when travelling, which is why it might be smart to walk as much as possible. For places that are not on walking distance, it is advised to travel around like the locals do.</li> 
+     <li>If you plan on travelling a lot, signing-up for a Frequent Flyer programme might be beneficial. Travellers on these programmes can earn you airmiles, which later on can be redeemed to get flights almost for free.</li> 
+     <li>There are many museums around the world - especially in Europe - which not only offer free or discounted student pricing, but also offer cheaper tickets as a way to encourage interest in the arts. Take your student ID wherever you go.</li> 
+     <li>Last but not least: stay up to date on our <a href="http://www.travelstart.co.za/lp/flight-specials">flight specials page</a> for jaw dropping student flight specials.</li> 
+    </ul> 
+    <h3 id="7">There are many inexpensive ways of travelling through Europe</h3> 
+    <p>Travelling during off-season in Europe is the best time to travel if you are looking for student deals for travel. October through April in Europe are the months that offer student holiday package deals, creating the best value for money.</p> 
+    <p>When visiting a new place - especially Europe - travelling can be one of the costliest expenses. Good news is that there is always a cheaper way to travel anywhere. Travelling like the locals is something that could and would save you tons of cash.</p> 
+    <p>Many locals in Europe travel with Eurail as it is quick, inexpensive and convenient. You have the option of choosing between regional passes, global passes or you could build your own pass. If you think that is too expensive then you should opt for the environmentally-friendly choice of travelling around the many cities in Europe with a bicycle. The only limits of distance you have is how far and fast your legs can go.</p> 
+    <p>Read the article that was written for the Travelstart blog which informs you on the <a href="http://www.travelstart.co.za/blog/the-cheapest-airport-to-fly-into-in-europe/ ">cheapest airports to fly into Europe with</a></p> 
+    <p>Europe is generally considered to be a fairly expensive place to travel, but what most travellers do not realise is that it can be very affordable and enjoyable if planned out properly. Places like Prague and Budapest are cities that most travellers, especially students, are able to travel and experience.</p> 
+    <h3 id="8">BONUS: Top tips for moving into residence that every student should know</h3> 
+    <p>Moving out as a student can be a very daunting task, here’s the top 5 tips that will prepare every student for their big milestone:</p> 
+    <ul> 
+     <li>Do not forget to socialise. Everyone is going through the same experiences, so the up-side is that you already have that in common, it is always good to be bold and put yourself out there. Make the most of your stay.</li> 
+     <li>Balance is very important. Just like with everything in life - too much of a good thing is never good for you. Plan your days and your weekends out, get creative and make a calendar that you could place on your wall and tick off all your tasks one-by-one so that you do not miss out or fall behind on anything.</li> 
+     <li>Save money. As a student you will soon realise that money comes and goes really quickly, so be smart and plan your meals and expenses for the week. Don’t be afraid to use your student card, you will be surprised at all the discounts available to students.</li> 
+     <li>Do not over pack. Most student places are very small, so use this as an opportunity to let go of those things that you do not use, you could even sell those things that you do not use and earn extra pennies.</li> 
+     <li>Lastly do not forget to have fun!</li> 
+    </ul> 
+    <h3 id="9">Terms and Conditions</h3> 
+    <ul> 
+     <li>Only applicable for international flights</li> 
+     <li>You need to be between 12 and 35 years old</li> 
+     <li>Some airlines require a Student/ISE card to book</li> 
+     <li>A copy of your valid passport is required</li> 
+     <li>Free changes are subject to the same fare class being available, differences in taxes will apply if applicable</li> 
+     <li>Fares are non-refundable on partially used tickets</li> 
+     <li>Rerouting is not permitted</li> 
+     <li>Fares are subject to flight and fare class availability</li> 
+     <li>Fares can be withdrawn by the airline or Travelstart at any time.</li> 
+    </ul> 
+    <p>Now that you are equipped with all this information on student flights and travelling tips, hopefully the next few years of student-life would be filled with plenty of travelling adventures and a lifetime of memories.</p> 
+    <p>Be sure to stay connected to the Travelstart <a href="http://www.travelstart.co.za/lp/flight-specials">flight special page </a> in order to find the best deals.</p> 
+   </div> 
+  </section> 
+  <!-- the start of the footer --> 
+  <section class="usp-lists"> 
+   <div class="container"> 
+    <div class="grid grid--has-gutters"> 
+     <div class="cell"> 
+      <div class="usp-list"> 
+       <h5 class="usp-list__heading"> Why book with us </h5> 
+       <ul class="list-items list-items--ts"> 
+        <li class="list-item"> Bringing you the best fares from all airlines </li> 
+        <li class="list-item"> Expert assistance from booking to departure </li> 
+        <li class="list-item"> Online destinations for planning your travels </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="cell"> 
+      <div class="usp-list"> 
+       <h5 class="usp-list__heading"> Already Booked your Flight? </h5> 
+       <p class="usp-list__description"> Explore our Hotel listings: </p> 
+       <ul class="list-items list-items--ts"> 
+        <li class="list-item"> 1000's of options worldwide </li> 
+        <li class="list-item"> Best prices </li> 
+        <li class="list-item"> Great service </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="cell"> 
+      <div class="usp-list"> 
+       <h5 class="usp-list__heading"> Personalised Assistance </h5> 
+       <p class="usp-list__description"> Need help with your booking? Contact our expert Travelbar agents for guidance and booking assistance </p> 
+       <ul class="list-items list-items--ts"> 
+        <li class="list-item"> 0861 878 278 </li> 
+        <li class="list-item"> travelbar@travelstart.com </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <section class="footer-links"> 
+   <div class="container"> 
+    <div class="footer-links__split"> 
+     <div class="footer-links__group footer-links__plan-trip"> 
+      <h4 class="footer-links__header"> Plan your trip </h4> 
+      <ul class="footer-links__list"> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/lp/products-services/overview?language=en"> Products &amp; Services</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/lp/travellers-guide?language=en">Travellers Guide</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/lp/destinations?language=en">Destinations</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/lp/promotions-specials/holiday-packages?language=en">Holiday Packages</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/blog?language=en">Blog</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links__group footer-links__signup"> 
+      <div class="signup-form"> 
+       <div class="newsletter-subscribe"> 
+        <h2 class="newsletter-subscribe__header"> <span>Subscribe to our newsletter</span> </h2> 
+        <form id="newsletterForm" novalidate lpformnum="1"> 
+         <div class="input-field--newsletter-subscribe"> 
+          <input class="input input--block" id="first_name" name="first_name" placeholder="Enter first name" type="text" required> 
+         </div> 
+         <div class="input-group input-field--newsletter-subscribe"> 
+          <input class="input input-group__input" id="email" name="email" placeholder="Enter your email" required type="email"> 
+          <input type="hidden" name="sign_up_location" value="flights_generic"> 
+          <span class="input-group__btn"> <input class="btn btn--primary btn--centered btn--block btn--newsletter" type="submit" value="Subscribe"> </span> 
+         </div> 
+         <p class="help-block newsletter-subscribe__message newsletter-subscribe__message--validation newsletter-subscribe__message--error" style="display:none"> <span>Please enter a first name and valid e-mail</span> </p> 
+         <p class="help-block newsletter-subscribe__message newsletter-subscribe__message--server newsletter-subscribe__message--error" style="display:none"> <span>Your newsletter subscription has failed</span> </p> 
+         <p class="help-block newsletter-subscribe__message newsletter-subscribe__message--success" style="display:none"> <span>Thank you for subscribing to our newsletter</span> </p> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="footer-links__split"> 
+     <div class="footer-links__group"> 
+      <h4 class="footer-links__header"> Partners </h4> 
+      <ul class="footer-links__list"> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/become-an-affiliate?language=en" target="_self" track="Footer-Links:become-an-affiliate"> Become an Affiliate</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//nextgen.travel/next/home?language=en" target="_self" track="Footer-Links:login-to-next"> Login to Next</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/lp/link-to-us?language=en" target="_self" track="Footer-Links:link-to-us"> Link to Us</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="https://www.travelstart.biz" target="_self" track="Footer-Links:link-to-us"> Business Travel</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="//www.travelstart.co.za/api?language=en" target="_self" track="Footer-Links:api"> API</a> </li> 
+      </ul> 
+     </div> 
+     <div class="footer-links__group"> 
+      <h4 class="footer-links__header"> Need Help? </h4> 
+      <ul class="footer-links__list"> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="tel:0861878278" target="_self" track="Footer-Links:phone-1"> 0861 878 278</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="tel:+27 21 468 4300" target="_self" track="Footer-Links:phone-1"> 021 468 4300</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="http://www.travelstart.co.za/lp/faq" target="_self" track="Footer-Links:faq"> FAQ</a> </li> 
+       <li class="footer-links__list-item"> <a class="footer-links__list-action" href="http://www.travelstart.co.za/contact-us" target="_self" track="Footer-Links:contact-us"> Contact Us</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <div class="flapp-banner-wrap"> 
+   <div class="container"> 
+    <div class="flapp-banner"> 
+     <div class="flapp-banner__info"> 
+      <span class="flapp-banner__img"></span> 
+      <div class="flapp-banner__text-group"> 
+       <h4 class="flapp-banner__heading"> Download our app </h4> 
+       <p class="flapp-banner__subheading"> Free for iPhones and Andriod </p> 
+      </div> 
+     </div> 
+     <div class="flapp-banner__buttons"> 
+      <a class="flapp-banner__button flapp-banner__button--app-store" href="https://itunes.apple.com/za/app/flapp-air-commuter/id957118897?mt=8" target="_blank"></a> 
+      <a class="flapp-banner__button flapp-banner__button--google-play" href="https://play.google.com/store/apps/details?id=za.co.travelstart.flapp" target="_blank"></a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer class="footer"> 
+   <div class="footer-top"> 
+    <div class="footer-nav"> 
+     <ul class="footer-nav__list"> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="http://www.travelstart.co.za/lp/about-us?language=en">About Us</a> </li> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="https://www.travelstart.co.za/contact-us?language=en">Contact Us</a> </li> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="https://www.travelstart.co.za/faq?language=en">FAQ</a> </li> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="https://www.travelstart.co.za/lp/jobs/travelstart-careers?language=en">Careers</a> </li> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="https://www.travelstart.co.za/press-releases?language=en">Press</a> </li> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="https://www.travelstart.co.za/terms-and-conditions?language=en">T&amp;Cs</a> </li> 
+      <li class="footer-nav__item"> <a class="footer-nav__action" href="https://www.travelstart.co.za/privacy?language=en">Privacy</a> </li> 
+     </ul> 
+    </div> 
+    <div class="social-links"> 
+     <ul class="social-links__list"> 
+      <li class="social-links__item"> <a class="social-links__action--facebook social-links__action" href="http://www.facebook.com/Travelstart?language=en">Facebook</a> </li> 
+      <li class="social-links__item"> <a class="social-links__action--twitter social-links__action" href="http://twitter.com/#!/Travelstart/?language=en">Twitter</a> </li> 
+      <li class="social-links__item"> <a class="social-links__action--googleplus social-links__action" href="https://plus.google.com/+Travelstart?language=en">Google+</a> </li> 
+      <li class="social-links__item"> <a class="social-links__action--youtube social-links__action" href="http://www.youtube.com/user/travelstartchannel?sub_confirmation=1&amp;amp;language=en">Youtube</a> </li> 
+      <li class="social-links__item"> <a class="social-links__action--linkedin social-links__action" href="http://www.linkedin.com/company/travelstart?language=en">LinkedIn</a> </li> 
+      <li class="social-links__item"> <a class="social-links__action--instagram social-links__action" href="https://www.instagram.com/travelstart?language=en">Instagram</a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="trust-logos"> 
+    <span class="trust-logos__text">Secured by: </span>
+    <img class="trust-logos__icon" src="https://www.travelstart.co.za/assets/img/trustlogos/trustlogo-footer-thawte.png">
+    <img class="trust-logos__icon" src="https://www.travelstart.co.za/assets/img/trustlogos/trustlogo-footer-iata.png"> 
+   </div> 
+   <div class="copyright">
+     Copyright © 1999-2016 Travelstart Online Travel Operations Pty LTD. 
+   </div> 
+  </footer> 
+  <footer> 
+   <script>  
+      function getParameterByName(name) {
+        name = name.replace(/\[/, "\\[").replace(/\]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+        if (results === null || !results.length) {
+          return "";
+        } else {
+          return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+      }
+      
+      var TSAffiliateGoogle = getParameterByName('gclid');
+      if (!TSAffiliateCode && TSAffiliateGoogle) {
+        TSAffiliateCode = "google";
+      }
+      
+      var TSAffiliateCode = getParameterByName('affid') || getParameterByName('affId');
+      
+      if (TSAffiliateCode) {
+        var cookieDomain = window.location.host;
+        cookieDomain = cookieDomain.replace('www','');
+      
+        $.cookie("TSAffiliateCode", TSAffiliateCode, { expires : 30, path: "/", domain: cookieDomain });
+        $.cookie("_ts.affiliate.code", TSAffiliateCode, { expires : 30, path: "/" });
+        $.cookie("_ts.affiliate.param.id", TSAffiliateCode, { expires : 30, path: "/" });
+      }
+    </script> 
+  </footer>   
+ </body>
+</html>

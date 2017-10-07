@@ -1,0 +1,1632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+ <head>
+  <script type="text/javascript">
+function setCustomDimensions() { 
+if(typeof(ga) != "undefined") {
+ga('set', 'dimension2', 'Community|32');
+ga('set', 'dimension3', 'College|822');
+}
+}</script>
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-55666153-1', 'kokomoherald.com');
+setCustomDimensions();
+ga('send', 'pageview');
+</script>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>
+	Nursing students teach healthy habits at summer camp - Kokomo Herald
+</title>
+  <link rel="Stylesheet" type="text/css" href="/Style/Default/Stylesheet.aspx">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"> 
+  <!-- get jquery going before we run our code --> 
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.min.js"></script> 
+  <script type="text/javascript" src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
+  <script type="text/javascript" src="/Stats/Stats.js"></script> 
+  <script type="text/javascript" src="/scripts/jwplayer.js"></script> 
+  <script type="text/javascript" src="/scripts/lightbox/lightbox.js?version=2.0.0.0"></script> 
+  <script type="text/javascript">
+
+        function onRequestStart(sender, args) {
+            if (args.get_eventTarget().indexOf("rbDownload") >= 0 ||
+                args.get_eventTarget().indexOf("rbAddToBasket") >= 0) {
+
+                args.set_enableAjax(false);
+            }
+        }
+
+        function onResponseEnd(sender, args) {
+            args.set_enableAjax(true);
+            alert('Ajax turned on.');
+        }
+
+        $(document).ready(function () {
+            $("a").hover(
+                function () {
+                    if ($(this).hasClass("rmLink") == false && $(this).hasClass("IgnoreGlobalHoverStyle") == false) {
+                        if ($(this).parent().attr("class") != undefined) {
+                            if ($(this).parent().attr("class").indexOf("NavParentItem") == -1 && $(this).parent().attr("class").indexOf("NavChildItem") == -1) {
+                                $(this).addClass("HyperlinkHoverStyle");
+                            }
+                        }
+                        else {
+                            $(this).addClass("HyperlinkHoverStyle");
+                        }
+                    }
+                },
+                function () {
+                    if ($(this).hasClass("rmLink") == false && $(this).hasClass("IgnoreGlobalHoverStyle") == false) {
+                        if ($(this).parent().attr("class") != undefined) {
+                            if ($(this).parent().attr("class").indexOf("NavParentItem") == -1 && $(this).parent().attr("class").indexOf("NavChildItem") == -1) {
+                                $(this).removeClass("HyperlinkHoverStyle");
+                            }
+                        }
+                        else {
+                            $(this).removeClass("HyperlinkHoverStyle");
+                        }
+                    }
+                }
+            );
+
+            $("div").tooltip( {
+                content: function () {
+                    if ($(this).attr("id") != undefined) {
+                        if ($(this).attr("id").indexOf("pnlTooltip") != -1) {
+                            return $(this).prop("title");
+                        }
+                    }
+                }
+            },
+            { tooltipClass: "custom-tooltip-styling" });
+        });
+
+        function hideTooltips() {
+            $("div[id^='ui-tooltip-']").hide();
+        }
+
+        $(window).load(function () {
+            $(".Tooltip").tooltip({
+                content: function () {
+                    return $(this).prop('title');
+                }
+            });
+        });
+
+        var pollInfo = [];
+
+        function getResults(pollID) {
+            NewsSite.Polls.PollService.getResults(pollID, rebindResults);
+        }
+
+        function rebindResults(result) {
+            var clearResults = true;
+
+            $.each(result, function (index, pollAnswer) {
+                if (clearResults == true) $("#" + pollInfo[pollAnswer.pollID][4]).html("");
+                clearResults = false;
+
+                $("#" + pollInfo[pollAnswer.pollID][4]).append("<div style=\"height:20px; width:" + pollAnswer.answerPercentage + "%; min-width:1%; background-color:\#444444; margin-bottom:5px; float:left\"></div>" +
+                                                               "<div style=\"height:20px; width:50px; padding-left:5px; margin-bottom:5px; float:left; vertical-align:middle\">" + pollAnswer.answerPercentage + "%</div>" +
+                                                               "<div style=\"clear:both;\"></div>" +
+                                                               "<div style=\"margin-bottom:20px;\">" +
+                                                                   pollAnswer.answerName +
+                                                               "</div>");
+            });
+        }
+
+        function captureVote(pollId) {
+            var answerId = $('#' + pollInfo[pollId][0] + ' input[type=radio]:checked').val();
+            document.getElementById(pollInfo[pollId][1]).style.display = 'none';
+            document.getElementById(pollInfo[pollId][2]).style.display = 'none';
+            document.getElementById(pollInfo[pollId][3]).style.display = 'none';
+            if (document.getElementById(pollInfo[pollId][4]) != null) document.getElementById(pollInfo[pollId][4]).style.display = 'block';
+            setCookie('PollID_' + pollId.toString(), 'PollID_' + pollId.toString(), 720);
+            NewsSite.Polls.PollService.captureVote(pollId, answerId, getResults);
+            return false;
+        }
+
+        function pollBack(pollID) {
+            document.getElementById(pollInfo[pollID][1]).style.display = 'inline';
+            document.getElementById(pollInfo[pollID][2]).style.display = 'inline';
+            document.getElementById(pollInfo[pollID][3]).style.display = 'inline';
+            if (document.getElementById(pollInfo[pollID][4]) != null) document.getElementById(pollInfo[pollID][4]).style.display = 'none';
+            document.getElementById(pollInfo[pollID][5]).style.display = 'none';
+            return false;
+        }
+    </script> 
+  <style type="text/css">
+        .rmSlide { 
+            overflow:visible !important;
+        }
+    </style> 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta name="keywords" content="">
+  <meta name="description" content="KOKOMO, Ind. —&nbsp;Even the pickiest eater might try a radish, if there is a sticker to be earned for it.
+Children at the Indiana University Kokomo Fit C">
+  <script type="text/javascript">var switchTo5x=false;</script> 
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script> 
+  <script type="text/javascript">stLight.options({publisher: "ur-9aa6befa-ab67-a983-6320-88441f96cfda", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+  <link rel="shortcut icon" href="/ftp/favicon.ico">
+  <meta property="og:image" content="http://kokomoherald.com/Images/Images/130387.jpg">
+  <link href="/WebResource.axd?d=BI0G6pX5Ish3SW1DbzfXlRW6x_NEtBhT7LDGzX0udvhRtSJuyyQGB88KBxWg7qmFSv1bk8y5eMGTI1CaHl3LRcBicl0McmEjtwKr_43ZptE6kkIduyGfGlDWHAnQUR9Fz1Z8j6Lfmfo43MjV2awbMmSmdS5DzCIxQmlUHzmJycg1&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=_NMqmChcP5LTbkYSZm5HEtSnU2woIqchyHBeEgN3gZ-LNvD6cubbtfJ2Fu7yfGnH4SvTyHQvL1xN_88o8DMo41PJiSjBxHIfXaao03rftn3XBXeb-h_vA2WTZ63eU-IOhLVo3YOmKj9A4t6IyPTCWhHoI2W-B17IooytyhfFelf2GENBUeOr9G0u5lLsXsnK0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=m_FiXbxpqXhsgwG5eOd_4N6EJ6fp1526819maNpk_lLReUxqDwRlMXxo8jtqHoaSo7amWSDTG7HZmT7iGYxvP_revkEI7XW4GU9g9ZmypUf2ms6vYS5k0sixY845gxKk9wN4-JjeL5Etu9IOLlEKsV3EE9VPjGAlA2dBIhu-emBDMV9Efmu2w4zVhFNAg-Wa0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=nif4Lb-w1bD6QDjls56g7hqRHRD8u8VMnC1qiPwg5_as4dp8137bOW-X03Gnq7kZxQAygoF5u3kG-4qj7DBbtMy5igW_9dUZWQtyGviYY1T0pl4UvNAFVQZCyb2EkFOo4VRuN7h7SIkRx-RCy0TSzvoq5eRmT0f_8EvSFztmyDbyOIdmYbo4xr2zIMYvWTYxZlJxreaBnqbV8HXa75L2VA2&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=PzVeEHcgU7OyGcVyGtqOOccG61nCqI5wyPSJ3d1ARtAeNpybGV1_77QWuXa1wphTsMOeIPjlheax1xFy3znYtZmpgKthg8-ZRxkwOZvsVEuiOKEj0YOKtO_qDfUzsy-oV9iMFTyrknHvfhiOv4LYJoO6tj2BF5hO-sVh4TE5TYE1&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=znKZJKheYPIquU0f1NVF5GyWAwnvCKg6Wdk4p1CTRBPesc6rD-f1KgWq514GPrrC_H6eRgoGbNhA6H7Lm-Yw7DmfYqzX4dSjbccaWqdYyFXk4gDrSa0fKm5mkX2bCVILIXqtMWrPwVg1VdiDhGxUjgItCyak0nWZCRw4Pom3boywyMoEe229qWyEY6HmgMNT0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=TV64bWzWfmkfYf3ZkZBpQvq9LMX2HAI33GhzgFKtO_zPwpGhK4yEBM7-cLLUhvYv9DSGo33VezEtXDya4m5bk4Y84b0BVCYXTEgi3UEw2QQzZ66QhPSNijp8o3qtY0OVmulOj8aWrZcoCA1yu05HFlYCuGWduaHyGHNjLd1oaUVvOPIH7UyEpQoi-P5GmEKn0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=YZcT3w-SskMHDOr9hDcSOkOR1Sb76DZPP2qhj934641ns-eqXhoN90pDw8_ShgU4Oi1T7yY5DqPR92xO3pvOU7-L4xvWxFnELibkzoDKZnHq3HDY_IyJ-Sr6rm-kIZDMAxkuLPlLIS1ffh583oQFfq94YFP13Vmm-IJJtt25i1Wf2kSo8KvOo6C6E0DbCKkM1l2KCFfGX5qwUQBso82TGQ2&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=4lqLyrVPDfmEVzKY9S_U19HD34MUQGoAb18_bI-703x5Qv-hjsLwa8wcwpjLiiX3RGaqYHsPBupnmiXFMfjdSehTEcS3IxDoi0l0OBl-5-rVoBxI6e58iGxkJBaD0ChFNgaus0llXx4TvqknJ4C9sueFgTnaL6C_RdTXjcgz9PiYpISgJB3-iP9bEnqMh_aP0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=6SN2iu7ubEtRoprwBOr5HOPeCwh4BVJdNj2nx48toRG-X5d8GWK2iaygqmJX31POeC20sVkltEBP3-cjufuG3rMLSxvqy-aYUsNRTA41QDcdbYrKJ7Ax1PVr7mKmlwxCb0VBFq7T1Ch5uykAcFUMRCYsL80xZ-ods_Xydfr37zE1&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=ntYwzxALBzuOba1QR_2ZT7-QvqNtgNqFEhqgl971eZpDiB1BYQ9Xdpl3UkfvzoWgVeDmc2ll9gjqI2A240esV5LXFUivplXmrOpQ_4zKcjoXamy8puQsv3FdSndONZlhMWPM3nkSC4Vk2z6tz_UKkCqkVinu2xI188-k8elSVbUjCI8Ern03KNLoP0JjxGFn0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=55aAoddnzFAEnMJyh7den8FkYOX1CAoTewQGCTf1O05s3j9ni6gJWydpjg-ZjRqgwOX_RmfaDRqx2iwsOaKtgtRoMKcmmjRFTi4iVf1TNNRPhLOiLmAnqT1ZNqy114YJ8T0FiFHW4rhwtfRYtMwXh31L6mRiGVr2_KAyFDId_6E1&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=Nwki_2zbzj918rDTxMD2fFP_jLvEXPTUsfZSiX4uPT0RVgu-Gumw1gvhidkS6aDyHmMRYm6ZgAv8i0LNnW7kIdPMQhRqsS5IJXka4DNsHvBzbdUKWIcEfXh841TSXSjVdFOheclPWuK80I8qkmE9D7G4JqQqLcOcqEAmUZu1M8yOGp7cwSyKxRjZQw91gOVJ0&amp;t=636343407597519093" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nC1vZkGfUUvTiQgkMxNoSPwXy7IEmHbr2AsJXCxczyAjpbXk8XdeCljaq82wZcS3WH02sgqGXvL4xIWI3S-6wRI5LgO3QlEBDOXfmTc699Xy0&amp;t=636396441760000000&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3b%7c636384749387486561%3ae01eea66%3aa3d8623e" type="text/css" rel="stylesheet">
+ </head> 
+ <body style="height:100%; min-height:100%;"> 
+  <form method="post" action="./31654" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" style="height:100%; min-height:100%; margin:0px; padding:0px;"> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="rsmManagement_TSM" id="rsmManagement_TSM" value=""> 
+    <input type="hidden" name="rssmPublic_TSSM" id="rssmPublic_TSSM" value=""> 
+    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="5xYeOFHiLaGz9AWY8YqcmT6cNi6Z9syZsr83NCQqelDSvVJ7Cl4neXMiY4zdV6P+sZxmfZ4lkg1smSnE+t/3YXQPXChc0kXOtNQzMm/wGfvZlNG/A8YfHdkHn7qIyhP4Nk67PEOPjtJezOyD/Fr6+QftGcDHaaDIdr51OsNsVVvNpoW0pNCMqabCc81JvphNKFPZYZb+lwaVcYtzhZ5Ue6C2fiNhZkQPfoUosuwaRmXRv9/cMCaXc0DR2K8GaEYQ1So0/LrIYe72aG8HFGy/QfeaEH6S5TUvrEQZK9anejqmuwTEe4+z742l47jfZ4BXLLsU/aiqA8DSy6W/z5ay5rWTWk3vfq48/rLWTqEQ+h7SP1R/uWtJyysuhGCUWA33rAw2s/LtvSYqdgdIJIHDzwfYnySDtG0WIk2GlYyYq/aUy2mupjAmfRzE1X7xXIj9bJB6TzXjDbBEkM8vC6d1mDZMdXKFWHTfX+frzI5rhEpAlhOAqRpMPF47xGxSwqwBIOPch1ebkDHC9vAWvJh0/mAfQFfZEoc0g7Okkh3eAGJ+DT/pxtjavtqIL5jvMZMuhFo1knhQUCqZYiBNkl8tbwbRPvo3zIKFNSVA3iOa5p9qRN0i0dSI5Xhj4cobYQqVLXJLAOZiBT15metJQFKIu6XpI3MBSIqbo9YYeSx5F4u8KcwmTTWjzLJXYt72x0OujqRKFflXhDVkGOrdzCIMDAA5u5z81ZtyY6lCTxRs44WeLVBEYcv0pbYy+DwH13Ql+YEqkZohKDLM9vWGAuD9f41eAqGAGPppGaljyC2IpS9KvFT9VXuM5Wsltzz78gIVXS8YyuLHUgB9xZRujEZtB/Jqsnfqu7haSQ/R/AgVHeJpqoEwRBtWPitIVYmpyUL/p2t0YdzE/0aA2eT2PfTJYdne5iiY3IfUpoY51TQzBtMoD0YJgd3hkwSLBdj5lwwa4bgpzdr56uSOExj0RJTPoBE5dbk1kJS/aBXo2C6Yor7jGQA10CJF66LbUkhnBN3KAdRoz4nyHuoA5Hu7CJoRcM69uVnhWLKDuPJ2CaMEjSaO4etzqs2GyFxpeHZjmfCuHZC0ZwzlqQsGPbYqR5v8umotST0012GlDdOiAXIshWu9qru6H6CUvqbz0nUzqr7Se/rSSJp892/rUQhCXA//JZsO2zOTvqy3AsXKd4GiRV8381cGa411v2HOWyRt4MSxAOyxIe/61Ol4x8oVil6Ts8kF3rgic1EDcA2dacJi8t6BJerkufQJ+ij0PQJkaiCuJ/YT9ZTWDp56cJe+ul7bv1TRhr/5hpKHCiPkqLcFO3j6+VV1kz5SR53EdUKdeYxHERUZ/4zdHyhxVzE3zM0pnqt++EppOTIuZ6rIL4mjFNlFOWMRRjt768Au3IxnN7clN+Z7BDOWG70mcHqRNUU8LLOOov1GAfhdvynkv9WwCukPjX6vLOUwWXaUDsfHp+C5OWY3ghXXrq4d7svRyrmd38trqu84NRGipQEGp9Nh89F6fJFHfVHRpvuLfL5ygL4SiShfedh3SsDx4MHOMBUoMrOrFE1FrXBcLroei1jyKpxQyJ2ihxelpTTnQNWHNpgM+Quy6kE7e3zntDzmMeiia66jBX9Ydxb9O/i9CsUj1W6zpqdl2iwsRqE+/27Gfpim8J5LYwrVC8U7RRpSNXw7dpEVrFqVL1lOOhuG8vmGQOVNIdXmmLJCT3jpc4mYTfloXqaYQ6eadhFUxFGr9XK3S2w22ESlLu5/vsUA81sDeGD2xl2bVnt4Bxjukd1y4xqM4Byze3014t+FoCe/okDmMpy/uMB/OHyxo/2atDX7sWH2dwvUsaOUEeGRkPawl2/uLY5aBQiq2dwfbTkbSH7L6aq8H6dlNZzGdUEFIFcvF7YSOn8SiMHiE3w74gwBYlmj4JQBYUGZea/xZAv7zNe8Uq3TIAjhUAxO2Uz8HdDI+HxtF2HpP4Uze7wFa0bfXWiniLft4EkxFkMjVSTFKrOFieiGfeU93B8MO9QgtiVnZMzVTVs6M5y4/F8aE0eMVZI71Nq5kMvz3lEms077rJNS3vinhBK06RbKlff8Y6vhOOOKYOpw942uapGQn08LdNhTTyyCvgGad+QDywF1Yv8NRNOoDV7epxx9s8L4ckpfW3LnDH5CjY3Qqi3XCl4vJQjBFtxHf6u8Zg4DnS9TPjYoMN2ses6+I2O3w0FaY8dPb4hLI21hUqw65ofemOBsnaalrQ6KQ+B7HsbWrx3QZQUC9e9H/A26pYhewy5MB8W2R4f/wLt2UW6juukAsOc//CI3/NvHpfTGY/+KErTg2yMX8i2LBOKz7tyDXvQwZQ86nf/bnEKoXzFfEBp6pyt3EZQka/eX37bpX5hrddnB0FhFryWrFQZC5W0qynnuoVkqsZSxY5Jg3oVxXkT0KxEwDXcPhllk6VGHMQjgp3hlW02kaDazzIfHFv9iKZzHOAqbDzXSvZDdoE1PZP8z0h2WKRs/r/Xg1OY6nWFA3jE0DJAkWQx9tHHPY4paX9DRnoBor1NOw8wxL83yKRYmlL4nkl0HWnbLE43mlH3yMcW5JDzK+LO3W1xpaEys5rTWAQbmly12+GSMSTUYB/uUh+IgHPW9n8x8/MlQwcNELsBVlDX1otdrYcu/sJfQZuZ3AGCxsSlC8ioM5Jnv+7RspU7AHzfE/gMZLs158KCxO6gDHEXtnE2jyIOGsCn1aCo1SOB6L9i1efU0lv5BFzuXAi0Cq/r8TIk8QFM1GKl2YADVjl9rVWOz2jupXTT6gmZW3pknSaIeJyMqvUhWZdNGdfB0waEfAsX+6nlT0k5G+Qf6gCizu908KjkR+Qyrb55/8tHSjdr7OtEUwR+5qydhFY4mr7YEhKBrF4Z2IKka7SxvZBWS0C5yXf+h+BICjwnV3KfcyRXhyRwD0z5AnZSIPkfjmbPKBDvj/WkFYm979XeCIN+UzXVZoSc272YUN78ILIcAjzOoG0oop5eQWNd22xoG5Z9U+YCTo7jr/b4gofRRcIx/P5wnspwoocjsZZdjX1XZM7bZN86KGO4eAJRJsswCcf6wxLVFo+5nXiFVd6vm3/hCcEzLSQtxaLiStl8YzhgiHdU7LsI6B3KHrw7IFQQCERItZEbT3aHdNVr/Ts1EVNW2089CUbRh4/dc+ItmERB0DlTIq1odXqcqCknMlXJHglnWOQ6N8GZaf5kl0OcqSoKLvmaOPk/M3sE0zdsD4Rj3L6dT14BdElMPOtNK8C+KmXT7x30m30aJzxOt9QIEzcCbr3W7J2osoDcyC/hnY+2lDxsQs4WeQPVf3blz11fq30Ed3tDlLusIXCxGmXzTdxeJ4skkmLN7kkLcVfW8Y+45ZmgTkSUaB3cCpvXkd35LXBWYMUslfLbxNcbKW5J07+0FeP9Fofa7yrzdvns9A4VlmfREFbo0CSz0PXmWoEQjciGYqUherolLmi3Pobf2gHQa67opv9x+hNcU6C5w6AL6+sJo3yROSDa34+AcDPWxq2KDobKhquqeulAAbCWKYdpFSJXwhmQ2Sl2Ex37IqrYj0UGVl5qa3asucNYesIktIVpim0U45sEd0cemYh0G3035EjombAB3E7HD2M7MqU5Mu1UAcArFLJ6HYnZVxOTbFPPcIGVme29K4BfnNSIHi8Fyds1GHk1Orl7jQhAQwRLsJJqnDopL2JxOsWyOhA7CXGR/0Cb7Av2EU14Cz60xaiESZsLgfsqS/mWu4Ix2p5d5sFuioJ4OIhuor5/DsNg23/EjWnaeXittNHvuY25hIoj6/3OXQvwAXom1ihxGGRZJHsj72orUrPbjfBryX+hVphtBPzIU4dvIDwvPXgvBREHUr2xPOjz7+l6MPcsNcEysoDe6bJYSVHRZLe2JgJxDyj2TIJXsuQi9Yu6vGN+5kHxB87+pZPRFhp2RvUwCFGGZXoBYpFAZ0pXpYqYuzGYzGi6uZBF2f68JzV3tEVTXdYbRAVnTZSbA53pZdLEQ4DmOrChSFMAZ6ioUnWNLLJ6v1g8Kco9YlG35pitqeYKX76L9ntcBKOpn2a3w8SIfCBCgx9Xz6YlYY/VQvkPILOEFrZUZDrmlvBFVtGRlMasIjazX94pFeUcZLsn0AWQJcWnOVu9hC7WY0Hfq5K4m5s0RSmWRnbqs0knfQMiRuSTsiwZZ4r3o4jjNPJiFgabMyt1Hee6VUdBuJnv8PYxPryF5PBOpeZJel0OY/aOe02Vzg+acC+I6YZHfzBmilolQk9TdzTGkjTYMk94IZAnOep3kUZWoSRIi1giSqd+J/xpkajDJyuxQiSryuEwpXAOw9r8vmBbE+iJePoPZw5lm7aFETtU8gQjAsnrJHl4ozDfBYTrpePJBoq7d9Dl7Y1PWamwt/szN6aF/gPpM8SEa1CSj3VmlH24LdZ6+HBffgrcpenXf5+7F1nCgBKxkeE6OGbte7+fUUoyLrNIT5KBVE/0DpRkx6Hrq3Hu7whfFztNcFe7lCoXGIGtq1ej1+NHRWFLekEA="> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+   <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZKMonjYmtzvDnHGk0PdZW9NdJOh4pHqaL1u-1ALY03il8xpG-NwfleLnJ7STab7pBw2&amp;t=636396441760000000" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=1HpV3OVB0CaEXoaafcqmhnWs3SpOt0K90khnxcPVgAcWoT1MEz-d7dSszKQQ86zvBHlCiKV4lUf-pIOtsYqzzBC3qLhssPZVT2y7CWXQMTMcCDUBJaRaaSYJOBAJ_6asL_zBW_oogWGpju4YKOHuug2&amp;t=ffffffffbbdeec10" type="text/javascript"></script> 
+   <script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=rsmManagement_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a3542601e-9c1f-4a5f-b344-e01a858e4b49%3aea597d4b%3ab25378d2%3btelerik.web.ui%2c+Version%3d2016.1.113.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a285f25cf-bee1-4348-a763-03f96c15d645%3a16e4e7cd%3af7645509%3a24ee1bba%3ae330518b%3a2003d0b8%3ac128760b%3a1e771326%3a88144a7a%3ac8618e41%3a1a73651d%3a333f8d94%3aed16cbdc%3a4a0008d8%3addbfcb67%3ab7778d6c%3a874f8ea2%3afd9da3ae%3a6d43f6d9%3a4877f69a%3a92fe8ea0%3afa31b949%3af46195d3%3a19620875%3a490a9d4e%3abd8f85e4" type="text/javascript"></script> 
+   <script src="../../../../../../../Scripts/Ads.js" type="text/javascript"></script> 
+   <script src="../../../../../../../Scripts/Functions.js" type="text/javascript"></script> 
+   <script src="../../../../../../../Scripts/RotatingStory.js" type="text/javascript"></script> 
+   <script src="../../../../../../../Scripts/PhotoGalleryThumbnails.js" type="text/javascript"></script> 
+   <script src="../../../../../../../Scripts/TabbedBox.js" type="text/javascript"></script> 
+   <script src="../../../../../../../AdGroups/Advertisement.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Stats/CaptureStat.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/Utility.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Polls/PollService.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/BasketButtons.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/NetworkSite/CheckInCheckOn.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/NetworkSite/FeatureArticle.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/PhotoGalleryThumbnails.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/PhotoGalleryBrief.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/Videos/Brief.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/eCommerceService.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/SignupForm.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/SocialLogin.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/CheckinOn/Checkin.asmx/js" type="text/javascript"></script> 
+   <script src="../../../../../../../Services/CheckinOn/Checkon.asmx/js" type="text/javascript"></script> 
+   <script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="318D363F"> 
+   </div> 
+   <!-- script manager --> 
+   <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$rsmManagement', 'form1', ['tctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$ramPanel',''], [], [], 90, 'ctl00');
+//]]>
+</script> 
+   <!-- end script manager --> 
+   <!--gasurvey--> 
+   <!--end ga survey--> 
+   <div id="Content" style="width:100%;"> 
+    <div id="body_pnlAnchoredToTop" style="width:100%;"> 
+    </div> 
+    <div id="body_pnlLayout" class="ContentDiv" style="margin:0px auto;width:1040px;"> 
+     <div id="Zone1" style="width:1040px;width:1040px;  font-weight:normal; font-style:normal; text-decoration:none; clear:both; background:url(/FTP/gradient.jpg) repeat-y; "> 
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_0a7836ac-9ff1-49c2-a743-0b06af3535eb" style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_df63ba43-c6a9-4ef1-acfb-b26dbb540f64"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_8eedf490-05e9-4124-b3bd-75f8e1eee453" style=" font-weight:normal; font-style:normal; text-decoration:none; padding-top:20px; padding-bottom:10px; "> 
+       <input type="hidden" name="ctl00$body$ctl07$hfNavigationID" id="body_ctl07_hfNavigationID" value="5"> 
+       <input type="hidden" name="ctl00$body$ctl07$hfChildBreakoutID" id="body_ctl07_hfChildBreakoutID" value="1"> 
+       <script type="text/javascript">
+    function ShowChildNavigationItems(tblChildNavigationID, childTableIDs) {
+        var navEmptyTable = document.getElementById("navEmptyTable");
+        if (navEmptyTable != null) {
+            // Hide the empty nav
+            navEmptyTable.removeAttribute('style');
+            navEmptyTable.setAttribute('style', 'display:none;');
+        }    
+
+        // Create an array from the pipe-delimited list of IDs
+        var idsArray = childTableIDs.split("|");
+
+        for (i = 0; i < idsArray.length; i++) {
+            // Compare the current item's ID with the ID in the array
+            if (tblChildNavigationID == idsArray[i]) {
+                // Get the <div> by ID
+                var tbl = document.getElementById(tblChildNavigationID);
+
+                if (tbl != null) {
+                    // Remove the current style and set the style to the global thumbnail highlight style
+                    tbl.removeAttribute('style');
+                    tbl.setAttribute('style', 'display:table; width:100%;');
+                }
+            }
+            else {
+                // Get the <div> by ID
+                var tbl = document.getElementById(idsArray[i]);
+
+                if (tbl != null) {
+                    // Remove the current style and set the style to the global thumbnail style
+                    tbl.removeAttribute('style');
+                    tbl.setAttribute('style', 'display:none; width:100%;');
+                }
+            }
+        }
+    }
+</script> 
+       <style type="text/css"> #ctl00_body_ctl07_rmMenu li { float:left; margin:0px; padding:0px 0 0px 0; line-height:29px; } .rmVertical li { padding:0px !important; } #ctl00_body_ctl07_rmMenu ul { display:inline-block; padding:0px; } #ctl00_body_ctl07_rmMenu { text-align:center; padding:0 0px 0 0px; } </style> 
+       <div id="ctl00_body_ctl07_rmMenu" class="RadMenu RadMenu_5rm rmSized 5rm" style="width:100%;"> 
+        <!-- 2016.1.113.45 -->
+        <ul class="rmRootGroup rmHorizontal"> 
+         <li class="rmItem rmFirst"><a class="rmLink rmRootLink" target="_blank" href="http://digital.kokomoherald.com/app.php?RelId=5.5.7p1.1"><span class="rmText">E-Edition</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="http://kokomoherald.com/Content/Home/ENL/ENLSignup/ENLSignup/-3/-3/2"><span class="rmText">Subscribe</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Contact-Us/Contact-Us/28/62"><span class="rmText">Contact Us</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Classifieds/41"><span class="rmText">Classifieds</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" target="_blank" href="http://kokomoherald.com/Content/Default/Default/Form-Content/News-Tip-Submission/-3/-3/1"><span class="rmText">Submissions</span></a>
+          <div class="rmSlide"> 
+           <ul class="rmVertical rmGroup rmLevel1"> 
+            <li class="rmItem rmFirst"><a class="rmLink" target="_blank" href="/Content/Default/Default/Form-Content/News-Tip-Submission/-3/-3/1"><span class="rmText">News Tip Submission</span></a></li>
+            <li class="rmItem "><a class="rmLink" target="_blank" href="/Content/Default/Default/Form-Content/Letter-to-the-Editor/-3/-3/2"><span class="rmText">Letters to the Editor</span></a></li>
+            <li class="rmItem "><a class="rmLink" href="/Content/Default/Default/Form-Content/Submit-Photos/-3/-3/4"><span class="rmText">Submit Photos</span></a></li>
+            <li class="rmItem rmLast"><a class="rmLink" target="_blank" href="/Content/Default/Default/Form-Content/Submit-Articles/-3/-3/3"><span class="rmText">Submit Articles</span></a></li> 
+           </ul> 
+          </div></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Default/Subsection/Classified/Public-Notices/-3/0/32"><span class="rmText">Public Notices</span></a></li>
+         <li class="rmItem rmLast"><a class="rmLink rmRootLink" href="/Content/Default/Weather/-3/837"><span class="rmText">Weather</span></a></li> 
+        </ul>
+        <input id="ctl00_body_ctl07_rmMenu_ClientState" name="ctl00_body_ctl07_rmMenu_ClientState" type="hidden"> 
+       </div> 
+       <div id="body_ctl07_pnlChildNavigations" style="clear:both;"> 
+       </div> 
+       <div id="body_ctl07_pnlClearBoth" style="clear:both;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_b9515a01-3849-4ae2-8d27-252b3857fb3d" style=" text-align:center; font-weight:normal; font-style:normal; text-decoration:none; padding-top:10px; "> 
+       <table id="body_ctl10_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl10_trAds"> 
+          <td id="body_ctl10_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG14S822I1R2092782699"> 
+            <script type="text/javascript">LoadAd('pnlAG14S822I1R2092782699',14,822,null,1)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl10_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_bb965091-1006-4174-880b-700d597b0081"> 
+       <div id="body_ctl13_pnlNestedLayout"> 
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone1" style="width:1040px; font-weight:normal; font-style:normal; text-decoration:none; clear:both;"> 
+        </div>
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone2" style="width:650px; font-weight:normal; font-style:normal; text-decoration:none; padding-top:10px; padding-bottom:10px; float:left; "> 
+         <div id="body_ctl13_e7d8602c-65d3-4d49-a7dc-3612853cc15a" style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+          <div style=" font-weight:normal; font-style:normal; text-decoration:none; padding-left:20px; "> 
+           <a href="http://kokomoherald.com"><img src="http://kokomoherald.com/Images/Images/21353.png" alt="An image." style="border-style:None;"></a> 
+          </div> 
+         </div> 
+        </div>
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone3" style="width:200px; font-weight:normal; font-style:normal; text-decoration:none; padding-top:10px; padding-bottom:10px; float:left; "> 
+         <div id="body_ctl13_60cd30ac-9bcf-49f4-a589-2bba96d40397"> 
+          <div style=" font-weight:normal; font-style:normal; text-decoration:none; padding-top:30px; "> 
+           <div style="padding: 0px 5px 0px 0px; float: left;"> 
+            <a href="https://www.facebook.com/KokomoHerald"><img alt="" src="/FTP/facebook.png"></a> 
+           </div> 
+           <div style="padding: 0px 5px 0px 0px; float: left;"> 
+            <a href="https://instagram.com/kokomoherald/"><img alt="" src="/FTP/instagram.gif" width="30"></a>&nbsp;
+            <a href="http://twitter.com/kokomoherald"><img alt="" src="/FTP/twitter.png"></a>
+           </div> 
+           <div style="float: left;"> 
+            <a href="http://www.youtube.com/channel/UCNuBaOqG1GnT1irYFyB8KDA"><img alt="" src="/FTP/youtube.png"></a> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone4" style="width:170px; font-weight:normal; font-style:normal; text-decoration:none; padding-top:10px; padding-bottom:10px; float:left; "> 
+         <div id="body_ctl13_02d27a28-72b9-4844-9daa-93252450bdbd"> 
+          <div style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+           <a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:46901.1.99999&amp;bannertypeclick=wu_macwhite"><img width="160" height="90" alt="Click for Kokomo, Indiana Forecast" src="http://weathersticker.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=wu_macwhite&amp;airportcode=KOKK&amp;ForcedCity=Kokomo&amp;ForcedState=IN"></a> 
+          </div> 
+         </div> 
+        </div>
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone5" style="width:100px; font-weight:normal; font-style:normal; text-decoration:none; clear:both;"> 
+        </div>
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone6" style="width:180px; font-weight:normal; font-style:normal; text-decoration:none; float:left; background:url(/FTP/gradient_reversed_left.jpg) repeat-y; height:31px;"> 
+         <div id="body_ctl13_aaaad6f7-5c44-4080-bc89-98dc996d2f10"> 
+          <div style="font-family:Arial; font-size:7pt; color:#FFFFFF; text-align:left; font-weight:bold; font-style:normal; text-decoration:none; color:#FFFFFF; padding-left:10px; padding-top:9px; padding-bottom:8px; ">
+            Tuesday, October 03, 2017 
+          </div> 
+         </div> 
+        </div>
+        <div id="body_bb965091-1006-4174-880b-700d597b0081_Zone7" style="width:860px; font-weight:normal; font-style:normal; text-decoration:none; float:left; background:url(/FTP/gradient_reversed_right.jpg) repeat-y; "> 
+         <div id="body_ctl13_4f93ba14-8ccf-40be-b5ec-540b987bd797"> 
+          <input type="hidden" name="ctl00$body$ctl13$ctl05$hfNavigationID" id="body_ctl13_ctl05_hfNavigationID" value="1"> 
+          <input type="hidden" name="ctl00$body$ctl13$ctl05$hfChildBreakoutID" id="body_ctl13_ctl05_hfChildBreakoutID" value="1"> 
+          <script type="text/javascript">
+    function ShowChildNavigationItems(tblChildNavigationID, childTableIDs) {
+        var navEmptyTable = document.getElementById("navEmptyTable");
+        if (navEmptyTable != null) {
+            // Hide the empty nav
+            navEmptyTable.removeAttribute('style');
+            navEmptyTable.setAttribute('style', 'display:none;');
+        }    
+
+        // Create an array from the pipe-delimited list of IDs
+        var idsArray = childTableIDs.split("|");
+
+        for (i = 0; i < idsArray.length; i++) {
+            // Compare the current item's ID with the ID in the array
+            if (tblChildNavigationID == idsArray[i]) {
+                // Get the <div> by ID
+                var tbl = document.getElementById(tblChildNavigationID);
+
+                if (tbl != null) {
+                    // Remove the current style and set the style to the global thumbnail highlight style
+                    tbl.removeAttribute('style');
+                    tbl.setAttribute('style', 'display:table; width:100%;');
+                }
+            }
+            else {
+                // Get the <div> by ID
+                var tbl = document.getElementById(idsArray[i]);
+
+                if (tbl != null) {
+                    // Remove the current style and set the style to the global thumbnail style
+                    tbl.removeAttribute('style');
+                    tbl.setAttribute('style', 'display:none; width:100%;');
+                }
+            }
+        }
+    }
+</script> 
+          <style type="text/css"> #ctl00_body_ctl13_ctl05_rmMenu li { float:left; margin:0px; padding:0px 0 0px 0; line-height:29px; } .rmVertical li { padding:0px !important; } #ctl00_body_ctl13_ctl05_rmMenu ul { display:inline-block; padding:0px; } #ctl00_body_ctl13_ctl05_rmMenu { text-align:left; padding:0 0px 0 0px; } </style> 
+          <div id="ctl00_body_ctl13_ctl05_rmMenu" class="RadMenu RadMenu_1rm rmSized 1rm" style="width:100%;"> 
+           <ul class="rmRootGroup rmHorizontal"> 
+            <li class="rmItem rmFirst"><a class="rmLink rmRootLink" href="/Content/News/All-News/1/98"><span class="rmText">News</span></a>
+             <div class="rmSlide"> 
+              <ul class="rmVertical rmGroup rmLevel1"> 
+               <li class="rmItem rmFirst"><a class="rmLink" href="/Content/News/All-News/1/98"><span class="rmText">All News</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/News/Local-News/1/1"><span class="rmText">Local News</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/News/Area-News/1/751"><span class="rmText">Area News</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/News/State-News/1/217"><span class="rmText">State News</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="http://feeds.foxnews.com/foxnews/world"><span class="rmText">World News</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Crime/Crime/40/757"><span class="rmText">Crime</span></a>
+                <div class="rmSlide"> 
+                 <ul class="rmVertical rmGroup rmLevel2"> 
+                  <li class="rmItem rmFirst"><a class="rmLink" href="/Content/Crime/Police-Blotter/40/128"><span class="rmText">Police Blotter</span></a></li>
+                  <li class="rmItem rmLast"><a class="rmLink" href="/Content/Crime/Sheriff-s-Bulletin/40/99"><span class="rmText">Sheriff's Bulletin</span></a></li> 
+                 </ul> 
+                </div></li>
+               <li class="rmItem "><a class="rmLink" href="http://kokomoherald.com/Content/Default/Subsection/Form-Content/News-Tip-Submission/-1/-3/1"><span class="rmText">News Tip Submission</span></a></li>
+               <li class="rmItem rmLast"><a class="rmLink" href="http://www.foxnews.com/about/rss/feedburner/foxnews/most-popular"><span class="rmText">U.S. News</span></a></li> 
+              </ul> 
+             </div></li>
+            <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Sports/Area-Sports/39/96"><span class="rmText">Sports</span></a>
+             <div class="rmSlide"> 
+              <ul class="rmVertical rmGroup rmLevel1"> 
+               <li class="rmItem rmFirst"><a class="rmLink" href="/Content/Sports/Youth/39/752"><span class="rmText">Youth</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Sports/Prep/39/753"><span class="rmText">Prep</span></a>
+                <div class="rmSlide"> 
+                 <ul class="rmVertical rmGroup rmLevel2"> 
+                  <li class="rmItem rmFirst"><a class="rmLink" href="/Content/Sports/Eastern-Comets/39/317"><span class="rmText">Eastern</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Sports/Kokomo-Wildkats/39/320"><span class="rmText">Kokomo</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Sports/Lewis-Cass-Kings/39/379"><span class="rmText">Lewis Cass</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Sports/Logansport-Berries/39/597"><span class="rmText">Logansport</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Sports/Northwestern-Tigers/39/319"><span class="rmText">Northwestern</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Sports/Taylor-Titans/39/318"><span class="rmText">Taylor</span></a></li>
+                  <li class="rmItem rmLast"><a class="rmLink" href="/Content/Sports/Western-Panthers/39/312"><span class="rmText">Western</span></a></li> 
+                 </ul> 
+                </div></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Sports/College-Sports/39/754"><span class="rmText">College</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Sports/Outdoor/39/211"><span class="rmText">Outdoor</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Sports/Other/39/755"><span class="rmText">Other</span></a></li>
+               <li class="rmItem rmLast"><a class="rmLink" href="/Content/Sports/Sign-ups/39/834"><span class="rmText">Sign-ups</span></a></li> 
+              </ul> 
+             </div></li>
+            <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Community/Community/32/759"><span class="rmText">Community</span></a>
+             <div class="rmSlide"> 
+              <ul class="rmVertical rmGroup rmLevel1"> 
+               <li class="rmItem rmFirst"><a class="rmLink" href="/Content/Community/Business/32/756"><span class="rmText">Business</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Schools/Education/52/254"><span class="rmText">Education</span></a>
+                <div class="rmSlide"> 
+                 <ul class="rmVertical rmGroup rmLevel2"> 
+                  <li class="rmItem rmFirst"><a class="rmLink" href="/Content/Community/Elementary-school/32/824"><span class="rmText">Elementary</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Community/Middle-school/32/825"><span class="rmText">Middle school</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Community/High-school/32/823"><span class="rmText">High school</span></a></li>
+                  <li class="rmItem "><a class="rmLink" href="/Content/Community/College/32/822"><span class="rmText">College</span></a></li>
+                  <li class="rmItem rmLast"><a class="rmLink" href="/Content/Default/School-Delays-and-Closings/-3/826"><span class="rmText">School Delays and Closings</span></a></li> 
+                 </ul> 
+                </div></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Community/Religion/32/120"><span class="rmText">Religion</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Community/Senior/32/763"><span class="rmText">Senior</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Pets/Pets/31/74"><span class="rmText">Pets</span></a></li>
+               <li class="rmItem rmLast"><a class="rmLink" href="/Content/Community/Community-Columnists/32/827"><span class="rmText">Columnists</span></a></li> 
+              </ul> 
+             </div></li>
+            <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Events/2"><span class="rmText">Events</span></a>
+             <div class="rmSlide"> 
+              <ul class="rmVertical rmGroup rmLevel1"> 
+               <li class="rmItem rmFirst rmLast"><a class="rmLink" href="/Content/Events/Local-Events-Calendar/Event-Submission-Form/Event-Submission-Form/2/2/56"><span class="rmText">Submit Event</span></a></li> 
+              </ul> 
+             </div></li>
+            <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Obits/22"><span class="rmText">Obits</span></a>
+             <div class="rmSlide"> 
+              <ul class="rmVertical rmGroup rmLevel1"> 
+               <li class="rmItem rmFirst rmLast"><a class="rmLink" href="/Content/Obits/Obituaries/22/73"><span class="rmText">Obituaries</span></a></li> 
+              </ul> 
+             </div></li>
+            <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Opinions/Opinions/15/16"><span class="rmText">Opinions</span></a>
+             <div class="rmSlide"> 
+              <ul class="rmVertical rmGroup rmLevel1"> 
+               <li class="rmItem rmFirst"><a class="rmLink" href="/Content/Opinions/Editorials/15/130"><span class="rmText">Editorials</span></a></li>
+               <li class="rmItem "><a class="rmLink" href="/Content/Opinions/Letters-to-the-Editor/15/129"><span class="rmText">Letters to the Editor</span></a></li>
+               <li class="rmItem rmLast"><a class="rmLink" href="/Content/Default/Subsection/Form-Content/News-Tip-Submission/-1/-3/2"><span class="rmText">Submit Letter to the Editor</span></a></li> 
+              </ul> 
+             </div></li>
+            <li class="rmItem "><a class="rmLink rmRootLink" target="_blank" href="http://digital.kokomoherald.com"><span class="rmText">E-Edition</span></a></li>
+            <li class="rmItem rmLast"><a class="rmLink rmRootLink" href="http://kokomoherald.com/Content/Default/Subsection/Classified/Public-Notices/-3/0/32"><span class="rmText">Public Notices</span></a></li> 
+           </ul>
+           <input id="ctl00_body_ctl13_ctl05_rmMenu_ClientState" name="ctl00_body_ctl13_ctl05_rmMenu_ClientState" type="hidden"> 
+          </div> 
+          <div id="body_ctl13_ctl05_pnlChildNavigations" style="clear:both;"> 
+          </div> 
+          <div id="body_ctl13_ctl05_pnlClearBoth" style="clear:both;"> 
+          </div> 
+         </div> 
+        </div>
+        <div style="clear:both;"> 
+        </div> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div> 
+     </div>
+     <div id="Zone2" style="width:680px;width:680px;  font-weight:normal; font-style:normal; text-decoration:none; padding-left:20px; padding-right:20px; padding-top:20px; float:left; "> 
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_588269ec-ca02-481c-a939-7399f1a65db8" style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+       <div style=" font-weight:normal; font-style:normal; text-decoration:none; padding-bottom:15px; "> 
+        <span class="st_sharethis_large" displaytext="ShareThis"></span> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_ContentModule_pnlAccess"> 
+      </div> 
+      <div id="body_ContentModule_pnlContainer"> 
+       <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlPrint"> 
+        <div class="PrintButtonStyle" style="float:right;"> 
+         <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_lblPrint">
+          <div style=" font-weight:normal; font-style:normal; text-decoration:none; background-image:url(/images/print-icon.png); cursor:pointer; float:right; height:32px; width:32px; " onclick="window.open('/PrintArticle.aspx?aid=31654&amp;uid=f893ed10-86f2-4614-88bf-13f0f50c7a38');" title="Click here to view a printer-friendly version of the article.">
+           &nbsp;
+          </div></span> 
+        </div> 
+        <div style="clear:both; height:10px;"></div> 
+       </div> 
+       <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlHeadline" class="ArticleHeadline" style="clear:both;padding-bottom:10px;"> 
+        <h1 style="padding:0px; margin:0px; font-size:inherit; font-weight:inherit;"><span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_lblHeadline">Nursing students teach healthy habits at summer camp</span></h1> 
+       </div> 
+       <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlDate" class="FullArticleDateStyle" style="clear:both;"> 
+        <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_lblDate">Wednesday, June 28, 2017 12:26 PM</span> 
+       </div> 
+       <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlBody" class="ArticleBody" style="padding-top:10px;"> 
+        <div class="p402_premium"> 
+         <div class="p402_hide"> 
+          <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlImages" style="float:right;padding-left:20px;max-width:500px;;"> 
+           <p></p> 
+           <style type="text/css">
+    .ArticlePhotos_SelectedDot {
+        color:#444444;
+        font-size:24pt;
+        cursor:pointer;
+        padding-right:5px;
+        font-family:Arial;
+    }
+
+    .ArticlePhotos_UnselectedDot {
+        color:#cccccc;
+        font-size:24pt;
+        cursor:pointer;
+        padding-right:5px;
+        font-family:Arial;
+    }
+
+    .ArticlePhotos_SelectedNumber {
+        float:left;
+        padding:5px;
+        margin:0px 5px 5px 0px;
+        background-color:#444444;
+        color:#cccccc;
+        font-size:10pt;
+        font-weight:bold;
+        font-family:Arial;
+        cursor:pointer;
+    }
+
+    .ArticlePhotos_UnselectedNumber {
+        float:left;
+        padding:5px;
+        margin:0px 5px 5px 0px;
+        background-color:#cccccc;
+        color:#444444;
+        font-size:10pt;
+        font-weight:bold;
+        font-family:Arial;
+        cursor:pointer;
+    }
+</style> 
+           <link rel="stylesheet" type="text/css" href="/scripts/lightbox/lightbox.css"> 
+           <script type="text/javascript">
+    var currentArticlePhoto = 0;
+
+    function previousRelatedPhotoGalleryPhoto() {
+        currentArticlePhoto = currentArticlePhoto - 1;
+        document.getElementById("relatedPhotoGalleryLeftArrow").removeAttribute("style");
+        document.getElementById("relatedPhotoGalleryRightArrow").removeAttribute("style");
+
+        if (document.getElementById("articlePhoto" + currentArticlePhoto) != null) {
+            photoInfo = document.getElementById("articlePhoto" + currentArticlePhoto).innerHTML;
+
+            document.getElementById("pnlScrollPhotos").removeAttribute("style");
+            document.getElementById("pnlScrollPhotos").setAttribute("style", "background:url(" + returnRelatedPhotoGalleryVariable(photoInfo, 1) + "); width:" +
+                returnRelatedPhotoGalleryVariable(photoInfo, 2) +
+                "px; height:" + returnRelatedPhotoGalleryVariable(photoInfo, 3) +
+                "px; background-position:center; background-size:" + returnRelatedPhotoGalleryVariable(photoInfo, 2) + "px " + returnRelatedPhotoGalleryVariable(photoInfo, 3) + "px;");
+
+            document.getElementById("lblScrollPhotosCaption").innerHTML = "";
+            document.getElementById("lblScrollPhotosCaption").innerHTML = returnRelatedPhotoGalleryVariable(photoInfo, 5);
+
+            document.getElementById("lblScrollPhotosByline").innerHTML = "";
+            document.getElementById("lblScrollPhotosByline").innerHTML = returnRelatedPhotoGalleryVariable(photoInfo, 6);
+
+            document.getElementById("pnlScrollPhotos").title = returnRelatedPhotoGalleryVariable(photoInfo, 4);
+
+            document.getElementById("relatedPhotoGalleryRightArrow").setAttribute("style", "display:block; float:right; padding-top:" + ((returnRelatedPhotoGalleryVariable(photoInfo, 3) - 64) / 2) + "px; cursor:pointer;");
+            document.getElementById("relatedPhotoGalleryLeftArrow").setAttribute("style", "display:block; padding-top:" + ((returnRelatedPhotoGalleryVariable(photoInfo, 3) - 64) / 2) + "px; cursor:pointer;");
+        }
+
+        if (document.getElementById("articlePhoto" + (currentArticlePhoto - 1)) == null) {
+            document.getElementById("relatedPhotoGalleryLeftArrow").removeAttribute("style");
+            document.getElementById("relatedPhotoGalleryLeftArrow").setAttribute("style", "display:none;");
+        }
+    }
+
+    function nextRelatedPhotoGalleryPhoto() {
+        currentArticlePhoto = currentArticlePhoto + 1;
+        document.getElementById("relatedPhotoGalleryLeftArrow").removeAttribute("style");
+        document.getElementById("relatedPhotoGalleryRightArrow").removeAttribute("style");
+
+        if (document.getElementById("articlePhoto" + currentArticlePhoto) != null) {
+            photoInfo = document.getElementById("articlePhoto" + currentArticlePhoto).innerHTML;
+
+            document.getElementById("pnlScrollPhotos").removeAttribute("style");
+            document.getElementById("pnlScrollPhotos").setAttribute("style", "background:url(" + returnRelatedPhotoGalleryVariable(photoInfo, 1) + "); width:" +
+                returnRelatedPhotoGalleryVariable(photoInfo, 2) +
+                "px; height:" + returnRelatedPhotoGalleryVariable(photoInfo, 3) +
+                "px; background-position:center; background-size:" + returnRelatedPhotoGalleryVariable(photoInfo, 2) + "px " + returnRelatedPhotoGalleryVariable(photoInfo, 3) + "px;");
+
+            document.getElementById("lblScrollPhotosCaption").innerHTML = "";
+            document.getElementById("lblScrollPhotosCaption").innerHTML = returnRelatedPhotoGalleryVariable(photoInfo, 5);
+
+            document.getElementById("lblScrollPhotosByline").innerHTML = "";
+            document.getElementById("lblScrollPhotosByline").innerHTML = returnRelatedPhotoGalleryVariable(photoInfo, 6);
+
+            document.getElementById("pnlScrollPhotos").title = returnRelatedPhotoGalleryVariable(photoInfo, 4);
+            document.getElementById("relatedPhotoGalleryRightArrow").setAttribute("style", "display:block; float:right; padding-top:" + ((returnRelatedPhotoGalleryVariable(photoInfo, 3) - 64) / 2) + "px; cursor:pointer;");
+            document.getElementById("relatedPhotoGalleryLeftArrow").setAttribute("style", "display:block; padding-top:" + ((returnRelatedPhotoGalleryVariable(photoInfo, 3) - 64) / 2) + "px; cursor:pointer;");
+        }
+
+        if (document.getElementById("articlePhoto" + (currentArticlePhoto + 1)) == null) {
+            document.getElementById("relatedPhotoGalleryRightArrow").removeAttribute("style");
+            document.getElementById("relatedPhotoGalleryRightArrow").setAttribute("style", "display:none;");
+        }
+    }
+
+    function returnRelatedPhotoGalleryVariable(photoInfo, variableIndex) {
+        var variable = "";
+
+        if (photoInfo != null) {
+            var globalVariablesArray = photoInfo.split("||");
+            variable = globalVariablesArray[variableIndex];
+        }
+
+        return variable;
+    }
+
+    function changeArticlePhoto(photoID, paginationType) {
+        if (photoID != currentPhotoID) {
+            var showPhoto = document.getElementById("ArticlePhoto_" + photoID);
+            var hidePhoto = document.getElementById("ArticlePhoto_" + currentPhotoID);
+
+            if (showPhoto != null && hidePhoto != null) {
+                showPhoto.removeAttribute("style");
+                showPhoto.setAttribute("style", "display:inline;");
+
+                hidePhoto.removeAttribute("style");
+                hidePhoto.setAttribute("style", "display:none;");
+            }
+
+            if (paginationType == "Numbers") {
+                var selectNumber = document.getElementById("ArticlePhoto_Number_" + photoID);
+                var unselectNumber = document.getElementById("ArticlePhoto_Number_" + currentPhotoID);
+
+                if (selectNumber != null && unselectNumber != null) {
+                    selectNumber.removeAttribute("class");
+                    selectNumber.setAttribute("class", "ArticlePhotos_SelectedNumber");
+
+                    unselectNumber.removeAttribute("class");
+                    unselectNumber.setAttribute("class", "ArticlePhotos_UnselectedNumber");
+                }
+            }
+            else {
+                var selectDot = document.getElementById("ArticlePhoto_Dot_" + photoID);
+                var unselectDot = document.getElementById("ArticlePhoto_Dot_" + currentPhotoID);
+
+                if (selectDot != null && unselectDot != null) {
+                    selectDot.removeAttribute("class");
+                    selectDot.setAttribute("class", "ArticlePhotos_SelectedDot");
+
+                    unselectDot.removeAttribute("class");
+                    unselectDot.setAttribute("class", "ArticlePhotos_UnselectedDot");
+                }
+            }
+
+            currentPhotoID = photoID;
+        }
+    }
+
+    function nextArticlePhoto(paginationType) {
+        var showPhoto = document.getElementById("ArticlePhoto_" + (currentPhotoID + 1));
+        var hidePhoto = document.getElementById("ArticlePhoto_" + currentPhotoID);
+
+        if (showPhoto != null && hidePhoto != null) {
+            showPhoto.removeAttribute("style");
+            showPhoto.setAttribute("style", "display:inline;");
+            
+            hidePhoto.removeAttribute("style");
+            hidePhoto.setAttribute("style", "display:none;");
+
+            if (paginationType == "Numbers") {
+                var selectNumber = document.getElementById("ArticlePhoto_Number_" + (currentPhotoID + 1));
+                var unselectNumber = document.getElementById("ArticlePhoto_Number_" + currentPhotoID);
+
+                if (selectNumber != null && unselectNumber != null) {
+                    selectNumber.removeAttribute("class");
+                    selectNumber.setAttribute("class", "ArticlePhotos_SelectedNumber");
+
+                    unselectNumber.removeAttribute("class");
+                    unselectNumber.setAttribute("class", "ArticlePhotos_UnselectedNumber");
+                }
+            }
+            else {
+                var selectDot = document.getElementById("ArticlePhoto_Dot_" + (currentPhotoID + 1));
+                var unselectDot = document.getElementById("ArticlePhoto_Dot_" + currentPhotoID);
+
+                if (selectDot != null && unselectDot != null) {
+                    selectDot.removeAttribute("class");
+                    selectDot.setAttribute("class", "ArticlePhotos_SelectedDot");
+
+                    unselectDot.removeAttribute("class");
+                    unselectDot.setAttribute("class", "ArticlePhotos_UnselectedDot");
+                }
+            }
+
+            currentPhotoID = currentPhotoID + 1;
+        }
+    }
+
+    function previousArticlePhoto(paginationType) {
+        var showPhoto = document.getElementById("ArticlePhoto_" + (currentPhotoID - 1));
+        var hidePhoto = document.getElementById("ArticlePhoto_" + currentPhotoID);
+
+        if (showPhoto != null && hidePhoto != null) {
+            showPhoto.removeAttribute("style");
+            showPhoto.setAttribute("style", "display:inline;");
+
+            hidePhoto.removeAttribute("style");
+            hidePhoto.setAttribute("style", "display:none;");
+
+            if (paginationType == "Numbers") {
+                var selectNumber = document.getElementById("ArticlePhoto_Number_" + (currentPhotoID - 1));
+                var unselectNumber = document.getElementById("ArticlePhoto_Number_" + currentPhotoID);
+
+                if (selectNumber != null && unselectNumber != null) {
+                    selectNumber.removeAttribute("class");
+                    selectNumber.setAttribute("class", "ArticlePhotos_SelectedNumber");
+
+                    unselectNumber.removeAttribute("class");
+                    unselectNumber.setAttribute("class", "ArticlePhotos_UnselectedNumber");
+                }
+            }
+            else {
+                var selectDot = document.getElementById("ArticlePhoto_Dot_" + (currentPhotoID - 1));
+                var unselectDot = document.getElementById("ArticlePhoto_Dot_" + currentPhotoID);
+
+                if (selectDot != null && unselectDot != null) {
+                    selectDot.removeAttribute("class");
+                    selectDot.setAttribute("class", "ArticlePhotos_SelectedDot");
+
+                    unselectDot.removeAttribute("class");
+                    unselectDot.setAttribute("class", "ArticlePhotos_UnselectedDot");
+                }
+            }
+
+            currentPhotoID = currentPhotoID - 1;
+        }
+    }
+</script> 
+           <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucArticleImages_pnlPhotos"> 
+            <div id="ArticlePhoto_1" style="display:inline;"> 
+             <div style="text-align:center;"> 
+              <a id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucArticleImages_rptPhotos_hlHighResImage_0"><img id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucArticleImages_rptPhotos_imgPhoto_0" src="../../../../../../../Images/Images/130387.jpg" style="max-width:500px;"></a> 
+             </div> 
+             <div class="ArticlePhotoCaption"> 
+              <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucArticleImages_rptPhotos_lblCaption_0"></span> 
+             </div> 
+            </div> 
+            <div style="clear:both; height:20px;"></div> 
+           </div> 
+           <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlSideBar" style="padding-bottom:20px;;"> 
+           </div> 
+           <script type="text/javascript">
+    function RelatedAudio_ShowFullCaption(MoreID, CaptionID, FullCaption, ShortCaption) {
+        var Caption = document.getElementById(CaptionID);
+        if (Caption != null) {
+            Caption.innerHTML = FullCaption;
+        }
+
+        var More = document.getElementById(MoreID);
+        if (More != null) {
+            More.removeAttribute("style");
+            More.setAttribute("style", "display:none;");
+        }
+    }
+</script> 
+           <div style="clear:both;"></div> 
+          </div> 
+         </div> 
+         <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_lblBody"><p><strong><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">KOKOMO, Ind. —&nbsp;</span></strong><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Even the pickiest eater might try a radish, if there is a sticker to be earned for it.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Children at the Indiana University Kokomo Fit Camp literally tasted a rainbow this week, sampling strawberries, tomatoes, carrots, cantaloupe, pineapple, grapes, cucumbers, green peppers, broccoli, and other vegetables, to fill in a rainbow sticker chart — and learn about delicious options for healthy eating.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“They’re starting to build a good foundation for making good food choices,” said Madona Smyser, one of the School of Nursing students who served as a counselor for the annual camp. “They’ve been willing to try new choices.”</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">The overall goal of Fit Camp is to combat the rising obesity epidemic, by helping children establish smart food choices and healthy exercise habits at a young age.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">According to a study published this month in the New England Journal of Medicine, more than 10 percent of the world’s population is now obese, leading to widespread health issues and millions of premature deaths. It noted that 12.5 percent of children in the U.S. are obese, up from 5 percent in 1980.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">It’s easier to start with good habits while you are young, rather than having to break bad habits as an adult, said Lesley Connolly, lecturer of nursing and camp co-director.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“They remember what they are learning, because we make it fun,” she said. “We hope they’re going to go home and tell their parents what they’ve learned. We hope they influence their parents to make healthier choices when they’re planning meals and buying food for their families.”</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">While this is the 20<sup>th</sup> year the School of Nursing has hosted a summer camp, this is the first time its complete focus has been on wellness. It started as Camp Eeze-the-Wheeze, for children with asthma, and Kidds Camp, for children with diabetes, adding the Fit Camp component to teach wellness six years ago. Fewer and fewer children enrolled for asthma and diabetes instruction each year —&nbsp;only one camper and one junior counselor signed up this year —&nbsp;so those programs were incorporated into Fit Camp.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">The camp boasted its largest attendance ever, with 54 children ages 6-12, four junior counselors who are young teens, nine nursing students, and Connolly and her co-director, Assistant Dean Bridget Whitmore.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Nursing students lead groups of children through daily activities at Jackson Morrow Park. Campers learned nutrition lessons using the ChooseMyPlate.gov curriculum, which guides users to building a healthy eating style, and participated in sports drills with Andy Shaffer, IU Kokomo’s athletic trainer, and campus student athletes from the volleyball, basketball, and cross country teams.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Madona, together with classmates Carla Lee and Regina Ditts, worked with about 20 of the youngest campers, focusing on one food group each day. During the session discussing grains, Madona and Regina used puppets to teach, with a green-haired puppet complaining about being grumpy because he was hungry.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“You’re hungry!” the blonde puppet said, shaking her head. “I’m not hungry. Do you boys and girls know what I ate for breakfast today?”</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“Grains!” the children yelled back, and she tells them they are right, she had Cheerios with strawberries. Her puppet friend admitted he didn’t eat breakfast, and the blonde puppet asked if that is a good idea. When the children told her no, she asked them for ideas of what might be a good breakfast.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“Doughnuts!” called one boy, and Madona agreed doughnuts have grains in them, but are not the best choices, and handed out a snack of Cinnamon Chex and Apple Cinnamon Cheerios.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Earlier in the week, Carla taught them about fruits and vegetables, and brought in a tray of samples, arranged like a rainbow. Children earned stickers to fill in their own rainbow paper, for each food they tried.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“At first they were afraid of some of them, but when they learned they could get a sticker, they were willing to try it,” Carla said. “We’re changing their eating habits, and hoping they will ask their parents to buy some of these fruits and vegetables when they go grocery shopping.”</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Maggie Weber, who attends Sts. Joan of Arc and Patrick School, said the cucumbers were her favorite food, while Bryson Allen, a Maconaquah student, picked ice cream, because it is a dairy product.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Connolly said many of their campers return each year, because they have a good time while they are learning important lessons.</span></p> <p><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">“Obesity is a world-wide problem,” she said. “Pediatricians are telling us we have to teach these kids how to eat well, and we need to start now.”</span></p> <p><em><span style="color: #2e2a25; font-size: 10pt; font-family: Arial, sans-serif;">Indiana University Kokomo serves north central Indiana.</span></em></p></span> 
+        </div> 
+       </div> 
+       <script type="text/javascript">
+    function RelatedPhotoGallery_ShowFullCaption(MoreID, CaptionID, FullCaption, ShortCaption) {
+        var Caption = document.getElementById(CaptionID);
+        if (Caption != null) {
+            Caption.innerHTML = FullCaption
+        }
+
+        var More = document.getElementById(MoreID);
+        if (More != null) {
+            More.removeAttribute("style");
+            More.setAttribute("style", "display:none;");
+        }
+    }
+</script> 
+       <input type="hidden" name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucArticleFileGallery$hfArticleID" id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucArticleFileGallery_hfArticleID" value="31654"> 
+       <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_pnlComments" style="clear:both;"> 
+        <link href="/Style/Default/Comments.css" rel="stylesheet" type="text/css"> 
+        <style type="text/css">
+    .CommentsFormLeft
+    {
+        font-family:Arial;
+        font-size:10pt;
+        font-weight:normal;
+        color:#444444;
+        text-align:right;
+        vertical-align:top;
+        padding-bottom:10px;
+        padding-right:10px;
+    }
+    
+    .CommentsFormRight
+    {
+        text-align:left;
+        vertical-align:top;
+        padding-right:10px;
+        padding-bottom:10px;
+    }
+</style> 
+        <script type="text/javascript">
+    function CommentsTabClicked() {
+        var divCommentDisplay = document.getElementById("divCommentDisplay");
+        if (divCommentDisplay != null) {
+            divCommentDisplay.style.display = "block";
+        }
+
+        var divLeaveAComment = document.getElementById("divLeaveAComment");
+        if (divLeaveAComment != null) {
+            divLeaveAComment.style.display = "none";
+        }
+
+        var tdCommentsTab = document.getElementById("tdCommentsTab");
+        if (tdCommentsTab != null) {
+            tdCommentsTab.className = "CommentsTabSelectedStyle";
+        }
+
+        var tdLeaveACommentTab = document.getElementById("tdLeaveACommentTab");
+        if (tdLeaveACommentTab != null) {
+            tdLeaveACommentTab.className = "CommentsTabStyle";
+        }
+    }
+
+    function LeaveACommentTabClicked() {
+        var divCommentDisplay = document.getElementById("divCommentDisplay");
+        if (divCommentDisplay != null) {
+            divCommentDisplay.style.display = "none";
+        }
+
+        var divLeaveAComment = document.getElementById("divLeaveAComment");
+        if (divLeaveAComment != null) {
+            divLeaveAComment.style.display = "block";
+        }
+
+        var tdCommentsTab = document.getElementById("tdCommentsTab");
+        if (tdCommentsTab != null) {
+            tdCommentsTab.className = "CommentsTabStyle";
+        }
+
+        var tdLeaveACommentTab = document.getElementById("tdLeaveACommentTab");
+        if (tdLeaveACommentTab != null) {
+            tdLeaveACommentTab.className = "CommentsTabSelectedStyle";
+        }
+    }
+
+    function ShowCommentsAndForm() {
+        if (divCommentDisplay != null) {
+            divCommentDisplay.style.display = "block";
+        }
+
+        if (divLeaveAComment != null) {
+            divLeaveAComment.style.display = "block";
+        }
+    }
+
+    function SetCommentsClasses() {
+        if (divLeaveAComment != null) {
+            divLeaveAComment.className = "CommentsBoxStyle";
+            
+        }
+    }
+</script> 
+        <input type="hidden" name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$hfrtxHack" id="hfrtxHack" value="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage"> 
+        <div id="divCommentDisplay" style="display:inline;"> 
+         <link href="/Style/Default/Comments.css" rel="stylesheet" type="text/css"> 
+         <script type="text/javascript">
+    function RevealComment(id, removedID, revealID) {
+        var ThisElement = document.getElementById(id);
+        if (ThisElement != null) {
+            ThisElement.style.display = "inline";
+        }
+        
+        var RemovedElement = document.getElementById(removedID);
+        if (RemovedElement != null) {
+            RemovedElement.style.display = "none";
+        }
+        
+        var RevealLink = document.getElementById(revealID);
+        if (RevealLink != null) {
+            RevealLink.innerHTML = "<a href='javascript:HideComment(\"" + id + "\", \"" + removedID + "\", \"" + revealID + "\");' style='color:inherit; text-decoration:inherit;'>Hide&nbsp;comment</a>";
+        }
+    }
+
+    function HideComment(id, removedID, revealID) {
+        var ThisElement = document.getElementById(id);
+        if (ThisElement != null) {
+            ThisElement.style.display = "none";
+        }
+
+        var RemovedElement = document.getElementById(removedID);
+        if (RemovedElement != null) {
+            RemovedElement.style.display = "inline";
+        }
+
+        var RevealLink = document.getElementById(revealID);
+        if (RevealLink != null) {
+            RevealLink.innerHTML = "<a href='javascript:RevealComment(\"" + id + "\", \"" + removedID + "\", \"" + revealID + "\");' style='color:inherit; text-decoration:inherit;'>Show&nbsp;comment</a>";
+        }
+    }
+
+    function refreshComments(arg) {
+        var ajaxManager = $find("ram.ClientID");
+        if (ajaxManager != null) {
+            ajaxManager.ajaxRequest('Refresh');
+        }
+    }
+</script> 
+         <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_pnlComment"> 
+          <div class="RadAjaxPanel" id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_ramPanel"> 
+           <div id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_ram"> 
+            <div style="width:100%; margin:20px 0px 20px 0px;"> 
+             <div class="CommentsBarStyle" style="width:100%; height:30px; margin-bottom:20px;"> 
+              <div style="width:46%; float:left;"> 
+               <div class="RadDataPager RadDataPager_CommentsSkin" id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop"> 
+                <div class="rdpWrap"> 
+                 <input type="submit" name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$rdpCommentsTop$ctl00$PrevButton" value="Prev" onclick="return false;" id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop_ctl00_PrevButton" title="Prev" class="rdpPagePrev"> 
+                </div>
+                <div class="rdpWrap rdpNumPart"> 
+                 <a onclick="return false;" class="rdpCurrentPage" href="javascript:__doPostBack('ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$rdpCommentsTop$ctl01$ctl00','')"><span>1</span></a> 
+                </div>
+                <div class="rdpWrap"> 
+                 <input type="submit" name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$rdpCommentsTop$ctl02$NextButton" value="Next" onclick="return false;" id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop_ctl02_NextButton" title="Next" class="rdpPageNext"> 
+                </div>
+                <input id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop_ClientState" name="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop_ClientState" type="hidden"> 
+               </div> 
+              </div> 
+              <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_pnlTotalComments" style="width:21%; float:left;"> 
+               <div style="width:100px; margin-left:auto;"> 
+                <div class="RadDataPager RadDataPager_Default" id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsBottom"> 
+                 <div class="rdpWrap"> 
+                  <span id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsBottom_ctl00_lblTotalItems" class="CommentsCountStyle">0</span> 
+                  <span class="CommentsCountStyle">Comments</span> 
+                 </div>
+                 <input id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsBottom_ClientState" name="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsBottom_ClientState" type="hidden"> 
+                </div> 
+               </div> 
+              </div> 
+              <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_pnlSortComments" style="width:33%; float:left; text-align:right; margin-top:6px;"> 
+               <div style="padding-right:6px;"> 
+                <a id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_lbNewestFirst" class="CommentsNewestOldestFirstStyle" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$lbNewestFirst&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Newest ▼</a> 
+                <a id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_lbOldestFirst" class="CommentsNewestOldestFirstStyle" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$lbOldestFirst&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Oldest ▲</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_pnlComments"> 
+              <input id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rlvComments_ClientState" name="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rlvComments_ClientState" type="hidden">
+              <span id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rlvComments" style="display:none;"></span> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="divLeaveAComment" class="CommentsBoxStyle" style="display:none; padding:10px 10px 0px 10px;"> 
+         <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_pnlCommentForm"> 
+          <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_pnlTextAbove" class="TextAboveCommentFormStyle" style="clear:both; margin-bottom:20px;"> 
+           <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_lblTextAbove">Please fill out the form below to submit a comment.</span> 
+          </div> 
+          <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_pnlCommentInput"> 
+           <div style="padding-bottom:3px;">
+             Comment 
+           </div> 
+           <div style="padding-bottom:10px;"> 
+            <span id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage_wrapper" class="riSingle RadInput RadInput_Default RadInputMultiline RadInputMultiline_Default" style="width:660px;"><textarea id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage" name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$rtxtMessage" rows="2" cols="20" class="riTextBox riEnabled" style="height:70px;"></textarea><input id="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage_ClientState" name="ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage_ClientState" type="hidden"></span> 
+            <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage" class="FormRequiredStyle" style="visibility:hidden;">Message is a required field.</span> 
+           </div> 
+           <div style="float:left; padding-right:10px;"> 
+            <div style="padding-bottom:3px;">
+              Name 
+            </div> 
+            <div style="padding-bottom:10px;"> 
+             <input name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$txtCommentName" type="text" id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_txtCommentName"> 
+            </div> 
+           </div> 
+           <div style="float:left; padding-right:10px;"> 
+            <div style="padding-bottom:3px;">
+              Email 
+            </div> 
+            <div style="padding-bottom:10px;"> 
+             <input name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$txtCommentEmail" type="text" id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_txtCommentEmail"> 
+            </div> 
+           </div> 
+           <div style="float:left;"> 
+            <div style="padding-bottom:3px;">
+              Telephone 
+            </div> 
+            <div style="padding-bottom:10px;"> 
+             <input name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$txtCommentPhone" type="text" id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_txtCommentPhone"> 
+            </div> 
+           </div> 
+           <div style="clear:both;"></div> 
+           <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_pnlCaptcha" style="width:660px;overflow-x:auto; margin-bottom:10px;"> 
+            <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2" class="FormErrorStyle" style="visibility:hidden;">Captcha entry is not valid, please try again.</span>
+            <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_pnlRecaptcha" class="g-recaptcha" data-sitekey="6LeYRggUAAAAAAFDm75r_CnI6xkX_MbI_RaS2yRG"> 
+            </div> 
+           </div> 
+           <div style="padding-bottom:20px;"> 
+            <div style="float:right;"> 
+             <input type="submit" name="ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$btnSubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$btnSubmit&quot;, &quot;&quot;, true, &quot;vgCommentSubmission&quot;, &quot;&quot;, false, false))" id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_btnSubmit"> 
+            </div> 
+            <div style="clear:both;"></div> 
+           </div> 
+          </div> 
+          <div id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_pnlTextBelow" class="TextBelowCommentFormStyle" style="padding-bottom:10px;"> 
+           <span id="body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_lblTextBelow">A comment must be approved by our staff before it will displayed on the website.</span> 
+          </div> 
+         </div> 
+        </div> 
+        <script type="text/javascript">ShowCommentsAndForm();</script> 
+        <div style="clear:both; height:20px;"></div> 
+       </div> 
+       <div style="clear:both; height:20px;"></div> 
+      </div> 
+      <script type="text/javascript">captureGAImpression('Article', 'Nursing students teach healthy habits at summer camp|31654');SendStatsImpression('f893ed10-86f2-4614-88bf-13f0f50c7a38');</script> 
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_e5dc65e2-dd40-4db8-aef5-0c16cfd11676" style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+       <div id="body_ctl70_pnlSocialShare" style="width:100%;"> 
+        <div id="ctl00_body_ctl70_rssSocial" class="RadSocialShare RadSocialShare_Default" style="border-style:None;"> 
+         <ul class="sshContent"> 
+          <li class="sshListItem"><a class="sshLinkItem" href="javascript:void(0)"></a></li>
+          <li class="sshListItem"><a class="sshLinkItem" href="javascript:void(0)"></a></li> 
+         </ul>
+         <input id="ctl00_body_ctl70_rssSocial_ClientState" name="ctl00_body_ctl70_rssSocial_ClientState" type="hidden"> 
+        </div> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div> 
+     </div>
+     <div id="Zone3" style="width:300px;width:300px;  font-weight:normal; font-style:normal; text-decoration:none; padding-right:20px; padding-top:20px; float:left; "> 
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_2bd70e57-49ef-422d-af68-c4caf778a65f" style=" font-weight:normal; font-style:normal; text-decoration:none; padding-bottom:20px; height:20px; "> 
+       <script type="text/javascript">
+    var rbQuickSearch_ClientID = "ctl00_body_ctl16_rbQuickSearch";
+
+    $(document).ready(function () {
+        $("input[name$='txtQuickSearch']").attr("style", "height:18px; width:" + searchBoxWidth + "px; padding:1px; margin:0px; border:1px solid #777777; border-radius:3px;");
+    });
+
+    function quickSearch() {
+        var rbQuickSearch = $find(rbQuickSearch_ClientID);
+        rbQuickSearch.click(true);
+    }
+</script> 
+       <script type="text/javascript">var searchBoxWidth = 256;</script> 
+       <div id="body_ctl16_pnlBasicSearch" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_body_ctl16_rbQuickSearch')"> 
+        <div style="display:table-cell; vertical-align:top;"> 
+         <input name="ctl00$body$ctl16$txtQuickSearch" type="text" value="Search" id="body_ctl16_txtQuickSearch" onfocus="this.select()" onclick="(this.value == 'Search') ? this.value='' : this.value ;" onblur="(value.length == 0) ? this.value='Search' : this.value;" title="Type search term here" style="height:18px;padding:0px; margin:0px;"> 
+        </div> 
+        <div style="display:table-cell; vertical-align:top; padding-left:2px;"> 
+         <div onclick="quickSearch();" class="Button" style="height:22px; line-height:22px; font-size:9pt;">
+           GO 
+         </div> 
+         <div style="display:none;"> 
+          <span id="ctl00_body_ctl16_rbQuickSearch" class="RadButton RadButton_Default rbSkinnedButton"><input class="rbDecorated" type="button" name="ctl00$body$ctl16$rbQuickSearch_input" id="ctl00_body_ctl16_rbQuickSearch_input" value="Go"><input id="ctl00_body_ctl16_rbQuickSearch_ClientState" name="ctl00_body_ctl16_rbQuickSearch_ClientState" type="hidden"></span> 
+         </div> 
+        </div> 
+        <div style="clear:both;"> 
+         <span id="body_ctl16_revQuickSearchQuery" class="FormErrorStyle" style="visibility:hidden;">Search only accepts letters and numbers.</span> 
+        </div> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_83aba2a9-7dbd-4961-ad7a-ad0476bc2ccc"> 
+       <table id="body_ctl19_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl19_trAds"> 
+          <td id="body_ctl19_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG8S822I3R476851764"> 
+            <script type="text/javascript">LoadAd('pnlAG8S822I3R476851764',8,822,null,3)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl19_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_18d88f76-561d-4d90-8b6d-dfdbae8472f0"> 
+       <div style="font-family:Verdana; font-size:14pt; color:#B33131; text-align:left; font-weight:bold; font-style:normal; text-decoration:none; color:#B33131; padding-left:13px; padding-top:10px; border-left:1px solid #CCCCCC; border-top:1px solid #CCCCCC; border-right:1px solid #CCCCCC; ">
+         LATEST NEWS 
+        <br> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_88a4ac85-c836-432d-9e5b-dde6184be515"> 
+       <div id="body_ctl25_pnlOneClickReading" class="OneClickReadingBoxStyle"> 
+        <ul style="margin-top:0px; margin-bottom:0px; padding-left:20px;"> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_0" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Volunteers-log-hundreds-of-hours-tons-of-produce-collected/29/760/32293" style="text-decoration:none;">Volunteers log hundreds of hours; tons of produce collected</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_1" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Autism-Resource-Center-gears-up-for-Zombie-Dash/29/760/32291" style="text-decoration:none;">Autism Resource Center gears up for Zombie Dash</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_2" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/FAFSA-student-aid-filings-now-open/29/760/32289" style="text-decoration:none;">FAFSA student aid filings now open</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_3" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Social-Security-is-there-for-those-who-served-our-country/29/760/31996" style="text-decoration:none;">Social Security is there for those who served our country</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_4" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Two-troopers-and-a-U-S-postal-worker-credited-with-saving-man-s-life/29/760/32281" style="text-decoration:none;">Two troopers and a U.S. postal worker credited with saving man's life</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_5" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/FTC-launches-website-dedicated-to-new-military-task-force/29/760/32279" style="text-decoration:none;">FTC launches website dedicated to new military task force</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_6" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Health-department-ramps-up-fight-against-cervical-cancer/29/760/32267" style="text-decoration:none;">Health department ramps up fight against cervical cancer</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_7" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Learning-the-lingo-of-Social-Security/29/760/31995" style="text-decoration:none;">Learning the lingo of Social Security</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_8" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Indiana-State-Police-to-Conduct-Commercial-Motor-Vehicle-Seatbelt-Enforcement-Blitz/29/760/32254" style="text-decoration:none;">Indiana State Police to Conduct Commercial Motor Vehicle Seatbelt Enforcement Blitz</a> <span style="text-wrap:none;"> </span> </li> 
+         <li class="OneClickBullet"> <a id="body_ctl25_rOneClickStatic_hlOCItem_9" class="OneClickItem" href="/Content/Closings-and-Delays/Latest-News/Article/Beef-Boards-Dinner-Theatre-announces-open-call-adult-auditions/29/760/32253" style="text-decoration:none;">Beef &amp; Boards Dinner Theatre announces open call adult auditions</a> <span style="text-wrap:none;"> </span> </li> 
+        </ul> 
+       </div> 
+       <div id="body_ctl25_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_7aa55b6a-4ce7-4456-a3af-86d87ad08c8d"> 
+       <table id="body_ctl28_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl28_trAds"> 
+          <td id="body_ctl28_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG9S822I2R708736047"> 
+            <script type="text/javascript">LoadAd('pnlAG9S822I2R708736047',9,822,null,2)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl28_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_15748b2e-3e51-40ca-addc-24fcb29d2116"> 
+       <table id="body_ctl31_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl31_trAds"> 
+          <td id="body_ctl31_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG10S822I1R357364156"> 
+            <script type="text/javascript">LoadAd('pnlAG10S822I1R357364156',10,822,null,1)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl31_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_a56a0e0f-e832-4389-b5e2-5e9fba25222e"> 
+       <script type="text/javascript">$(document).ready(function() { if (getCookie('PollID_0') != null && getCookie('PollID_0') != "null" && getCookie('PollID_0') != undefined && getCookie('PollID_0') != "undefined") { document.getElementById('body_ctl34_pnlPollAnswers').style.display = 'none'; document.getElementById('body_ctl34_btnVote').style.display = 'none'; if (document.getElementById('body_ctl34_pnlPollResults') != null) document.getElementById('body_ctl34_pnlPollResults').style.display = 'block'; document.getElementById('body_ctl34_btnResults').style.display = 'none'; getResults(0); } else { if (document.getElementById('body_ctl34_pnlPollResults') != null) document.getElementById('body_ctl34_pnlPollResults').style.display = 'none'; } }); pollInfo[0] = ["body_ctl34_rblPollAnswers", "body_ctl34_pnlPollAnswers", "body_ctl34_btnResults", "body_ctl34_btnVote", "body_ctl34_pnlPollResults", "body_ctl34_btnBack"]; </script> 
+       <br> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_c2a9da7c-7d24-4d9f-9f03-08fbca604d40"> 
+       <table id="body_ctl37_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl37_trAds"> 
+          <td id="body_ctl37_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG11S822I2R170092402"> 
+            <script type="text/javascript">LoadAd('pnlAG11S822I2R170092402',11,822,null,2)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl37_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_891b4902-0476-4afc-8a7d-22156b466883"> 
+       <div> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_667a06bc-bca7-469f-8234-fa70d3a1e549"> 
+       <table id="body_ctl43_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl43_trAds"> 
+          <td id="body_ctl43_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG12S822I5R1966204158"> 
+            <script type="text/javascript">LoadAd('pnlAG12S822I5R1966204158',12,822,null,5)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl43_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_dc778a97-47ad-439e-b238-bbba84ceac7b"> 
+       <div style="font-family:Verdana; font-size:14pt; color:#B33131; font-weight:bold; font-style:normal; text-decoration:none; color:#B33131; padding-top:10px; ">
+         TWITTER 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_0090db8d-0b42-47b2-aa82-b2acecb9a023"> 
+       <div style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+        <a class="twitter-timeline" href="https://twitter.com/KokomoHerald" data-widget-id="575026684841299968">Tweets by @KokomoHerald</a> 
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <br>
+        <br>
+        <br> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_02fc97f0-6bbb-4da9-a59c-27010a4c342c"> 
+       <div style="font-family:Verdana; font-size:14pt; color:#B33131; font-weight:bold; font-style:normal; text-decoration:none; color:#B33131; padding-top:10px; ">
+         FACEBOOK
+        <br> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_3e80e2bd-e47e-49de-85a9-45a7d9138001"> 
+       <div style=" font-weight:normal; font-style:normal; text-decoration:none; "> 
+        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FKokomoHerald&amp;width=300&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=true&amp;show_border=true" scrolling="no" style="border: none; overflow: hidden; width: 300px; height: 590px;" allowtransparency="true" frameborder="0"></iframe> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div> 
+     </div>
+     <div id="Zone4" style="width:1040px;width:1040px;  font-weight:normal; font-style:normal; text-decoration:none; padding-top:20px; padding-bottom:20px; clear:both;"> 
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_6f429308-d6e9-4664-94b8-a00273fc773b" style=" font-weight:normal; font-style:normal; text-decoration:none; padding-top:20px; background:url(/FTP/gradient.jpg) repeat-y; "> 
+       <table id="body_ctl58_tblAds" style="width:100%;"> 
+        <tbody>
+         <tr id="body_ctl58_trAds"> 
+          <td id="body_ctl58_tcAds"> <script type="text/javascript">
+                function AdFrameResize(id, size) {
+                    //document.getElementById("adFrame_" + thing).width = "1000px";
+                    document.getElementById(id).height = size + "px";
+                }
+            </script> 
+           <div id="pnlAG2S822I2R1966204158"> 
+            <script type="text/javascript">LoadAd('pnlAG2S822I2R1966204158',2,822,null,2)</script> 
+           </div></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <div id="body_ctl58_pnlClearBoth" style="clear:both; height:20px;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_02deb7f4-9939-4cb4-9d29-36abbfcf7efb" style=" font-weight:normal; font-style:normal; text-decoration:none; background:url(/FTP/gradient_reversed.jpg) repeat-y;"> 
+       <input type="hidden" name="ctl00$body$ctl61$hfNavigationID" id="body_ctl61_hfNavigationID" value="6"> 
+       <input type="hidden" name="ctl00$body$ctl61$hfChildBreakoutID" id="body_ctl61_hfChildBreakoutID"> 
+       <script type="text/javascript">
+    function ShowChildNavigationItems(tblChildNavigationID, childTableIDs) {
+        var navEmptyTable = document.getElementById("navEmptyTable");
+        if (navEmptyTable != null) {
+            // Hide the empty nav
+            navEmptyTable.removeAttribute('style');
+            navEmptyTable.setAttribute('style', 'display:none;');
+        }    
+
+        // Create an array from the pipe-delimited list of IDs
+        var idsArray = childTableIDs.split("|");
+
+        for (i = 0; i < idsArray.length; i++) {
+            // Compare the current item's ID with the ID in the array
+            if (tblChildNavigationID == idsArray[i]) {
+                // Get the <div> by ID
+                var tbl = document.getElementById(tblChildNavigationID);
+
+                if (tbl != null) {
+                    // Remove the current style and set the style to the global thumbnail highlight style
+                    tbl.removeAttribute('style');
+                    tbl.setAttribute('style', 'display:table; width:100%;');
+                }
+            }
+            else {
+                // Get the <div> by ID
+                var tbl = document.getElementById(idsArray[i]);
+
+                if (tbl != null) {
+                    // Remove the current style and set the style to the global thumbnail style
+                    tbl.removeAttribute('style');
+                    tbl.setAttribute('style', 'display:none; width:100%;');
+                }
+            }
+        }
+    }
+</script> 
+       <style type="text/css"> #ctl00_body_ctl61_rmMenu li { float:left; margin:0px; padding:0px 0 0px 0; line-height:29px; } .rmVertical li { padding:0px !important; } #ctl00_body_ctl61_rmMenu ul { display:inline-block; padding:0px; } #ctl00_body_ctl61_rmMenu { text-align:center; padding:0 0px 0 0px; } </style> 
+       <div id="ctl00_body_ctl61_rmMenu" class="RadMenu RadMenu_6rm rmSized 6rm" style="width:100%;"> 
+        <ul class="rmRootGroup rmHorizontal"> 
+         <li class="rmItem rmFirst"><a class="rmLink rmRootLink" href="/"><span class="rmText">Home</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/News/All-News/1/98"><span class="rmText">News</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Sports/Area-Sports/39/96"><span class="rmText">Sports</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Community/Community/32/759"><span class="rmText">Community</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Events/2"><span class="rmText">Events</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Obits/22"><span class="rmText">Obits</span></a></li>
+         <li class="rmItem "><a class="rmLink rmRootLink" href="/Content/Opinions/Opinions/15/16"><span class="rmText">Opinions</span></a></li>
+         <li class="rmItem rmLast"><a class="rmLink rmRootLink" target="_blank" href="http://digital.kokomoherald.com/"><span class="rmText">E-Edition</span></a></li> 
+        </ul>
+        <input id="ctl00_body_ctl61_rmMenu_ClientState" name="ctl00_body_ctl61_rmMenu_ClientState" type="hidden"> 
+       </div> 
+       <div id="body_ctl61_pnlChildNavigations" style="clear:both;"> 
+       </div> 
+       <div id="body_ctl61_pnlClearBoth" style="clear:both;"> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div style="clear:both;"> 
+      </div>
+      <div id="body_df5846a0-9ed0-4e1b-b611-28bf95c12dbe"> 
+       <div style=" color:#FFFFFF; text-align:center; font-weight:normal; font-style:normal; text-decoration:none; color:#FFFFFF; padding-top:20px; padding-bottom:20px; background:url(/FTP/gradient.jpg) repeat-y; "> 
+        <div style="width: 50%; float: left; text-align: center;">
+          Kokomo Herald
+         <br> 209 N. Main Street 
+         <br> Kokomo, IN 46901 
+        </div> 
+        <div style="width: 50%; float: left; text-align: center;">
+          Phone: (765) 452-5942
+         <br> Hours: 8-5 Monday through Friday 
+        </div> 
+        <div style="height: 20px; clear: both;"></div> 
+        <br> 
+        <br> 
+        <a href="/Content/Home/Home/ARA-Landing/ARA-Landing/-2/-2/1/">Living</a> 
+       </div> 
+      </div>
+      <div style="clear:both;"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="body_pnlScrollingClassifieds" style="width:100%; position:fixed; bottom:0px;"> 
+    </div> 
+    <script type="text/javascript">SendStatsImpression('1b3cd180-4387-4d64-b100-6e7967e2984a');</script> 
+    <div id="ctl00_rwmMaster" style="display:none;"> 
+     <div id="ctl00_rwReport" style="display:none;"> 
+      <div id="ctl00_rwReport_C" style="display:none;"> 
+      </div>
+      <input id="ctl00_rwReport_ClientState" name="ctl00_rwReport_ClientState" type="hidden"> 
+     </div>
+     <div id="ctl00_rwmMaster_alerttemplate" style="display:none;"> 
+      <div class="rwDialogPopup radalert"> 
+       <div class="rwDialogText">
+         {1} 
+       </div> 
+       <div> 
+        <a onclick="$find('{0}').close(true);" class="rwPopupButton" href="javascript:void(0);"> <span class="rwOuterSpan"> <span class="rwInnerSpan">##LOC[OK]##</span> </span> </a> 
+       </div> 
+      </div> 
+     </div>
+     <div id="ctl00_rwmMaster_prompttemplate" style="display:none;"> 
+      <div class="rwDialogPopup radprompt"> 
+       <div class="rwDialogText">
+         {1} 
+       </div> 
+       <div> 
+        <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script> 
+        <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text" class="rwDialogInput" value="{2}"> 
+       </div> 
+       <div> 
+        <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a> 
+        <a onclick="$find('{0}').close(null);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a> 
+       </div> 
+      </div> 
+     </div>
+     <div id="ctl00_rwmMaster_confirmtemplate" style="display:none;"> 
+      <div class="rwDialogPopup radconfirm"> 
+       <div class="rwDialogText">
+         {1} 
+       </div> 
+       <div> 
+        <a onclick="$find('{0}').close(true);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a> 
+        <a onclick="$find('{0}').close(false);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a> 
+       </div> 
+      </div> 
+     </div>
+     <input id="ctl00_rwmMaster_ClientState" name="ctl00_rwmMaster_ClientState" type="hidden"> 
+    </div> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage"), document.getElementById("body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2"), document.getElementById("body_ctl16_revQuickSearchQuery"));
+//]]>
+</script> 
+   <script type="text/javascript">
+//<![CDATA[
+var body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage = document.all ? document.all["body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage"] : document.getElementById("body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage");
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage.controltovalidate = "ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage";
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage.errormessage = "Message is a required field.";
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage.validationGroup = "vgCommentSubmission";
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage.initialvalue = "";
+var body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2 = document.all ? document.all["body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2"] : document.getElementById("body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2");
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2.errormessage = "Captcha entry is not valid, please try again.";
+body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var body_ctl16_revQuickSearchQuery = document.all ? document.all["body_ctl16_revQuickSearchQuery"] : document.getElementById("body_ctl16_revQuickSearchQuery");
+body_ctl16_revQuickSearchQuery.controltovalidate = "body_ctl16_txtQuickSearch";
+body_ctl16_revQuickSearchQuery.errormessage = "Search only accepts letters and numbers.";
+body_ctl16_revQuickSearchQuery.validationGroup = "vgBasicSearch";
+body_ctl16_revQuickSearchQuery.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+body_ctl16_revQuickSearchQuery.validationexpression = "[^:;,/!`\'\\\\]+";
+//]]>
+</script> 
+   <script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        ;(function() {
+                        function loadHandler() {
+                            var hf = $get('rssmPublic_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';|636384749387486561:e01eea66:a3d8623e';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_enableItemImagesPreloading":true,"_skin":"5rm","clientStateFieldID":"ctl00_body_ctl07_rmMenu_ClientState","collapseAnimation":"{\"type\":0,\"duration\":450}","defaultGroupSettings":"{\"flow\":0}","expandAnimation":"{\"type\":0,\"duration\":450}","itemData":[{"navigateUrl":"http://digital.kokomoherald.com/app.php?RelId=5.5.7p1.1","target":"_blank"},{"navigateUrl":"http://kokomoherald.com/Content/Home/ENL/ENLSignup/ENLSignup/-3/-3/2"},{"navigateUrl":"/Content/Contact-Us/Contact-Us/28/62"},{"navigateUrl":"/Content/Classifieds/41"},{"items":[{"navigateUrl":"/Content/Default/Default/Form-Content/News-Tip-Submission/-3/-3/1","target":"_blank"},{"navigateUrl":"/Content/Default/Default/Form-Content/Letter-to-the-Editor/-3/-3/2","target":"_blank"},{"navigateUrl":"/Content/Default/Default/Form-Content/Submit-Photos/-3/-3/4"},{"navigateUrl":"/Content/Default/Default/Form-Content/Submit-Articles/-3/-3/3","target":"_blank"}],"navigateUrl":"http://kokomoherald.com/Content/Default/Default/Form-Content/News-Tip-Submission/-3/-3/1","target":"_blank"},{"navigateUrl":"/Content/Default/Subsection/Classified/Public-Notices/-3/0/32"},{"navigateUrl":"/Content/Default/Weather/-3/837"}]}, null, null, $get("ctl00_body_ctl07_rmMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_enableItemImagesPreloading":true,"_skin":"1rm","clientStateFieldID":"ctl00_body_ctl13_ctl05_rmMenu_ClientState","collapseAnimation":"{\"type\":0,\"duration\":450}","defaultGroupSettings":"{\"flow\":0}","expandAnimation":"{\"type\":0,\"duration\":450}","itemData":[{"items":[{"navigateUrl":"/Content/News/All-News/1/98"},{"navigateUrl":"/Content/News/Local-News/1/1"},{"navigateUrl":"/Content/News/Area-News/1/751"},{"navigateUrl":"/Content/News/State-News/1/217"},{"navigateUrl":"http://feeds.foxnews.com/foxnews/world"},{"items":[{"navigateUrl":"/Content/Crime/Police-Blotter/40/128"},{"navigateUrl":"/Content/Crime/Sheriff-s-Bulletin/40/99"}],"navigateUrl":"/Content/Crime/Crime/40/757"},{"navigateUrl":"http://kokomoherald.com/Content/Default/Subsection/Form-Content/News-Tip-Submission/-1/-3/1"},{"navigateUrl":"http://www.foxnews.com/about/rss/feedburner/foxnews/most-popular"}],"navigateUrl":"/Content/News/All-News/1/98"},{"items":[{"navigateUrl":"/Content/Sports/Youth/39/752"},{"items":[{"navigateUrl":"/Content/Sports/Eastern-Comets/39/317"},{"navigateUrl":"/Content/Sports/Kokomo-Wildkats/39/320"},{"navigateUrl":"/Content/Sports/Lewis-Cass-Kings/39/379"},{"navigateUrl":"/Content/Sports/Logansport-Berries/39/597"},{"navigateUrl":"/Content/Sports/Northwestern-Tigers/39/319"},{"navigateUrl":"/Content/Sports/Taylor-Titans/39/318"},{"navigateUrl":"/Content/Sports/Western-Panthers/39/312"}],"navigateUrl":"/Content/Sports/Prep/39/753"},{"navigateUrl":"/Content/Sports/College-Sports/39/754"},{"navigateUrl":"/Content/Sports/Outdoor/39/211"},{"navigateUrl":"/Content/Sports/Other/39/755"},{"navigateUrl":"/Content/Sports/Sign-ups/39/834"}],"navigateUrl":"/Content/Sports/Area-Sports/39/96"},{"items":[{"navigateUrl":"/Content/Community/Business/32/756"},{"items":[{"navigateUrl":"/Content/Community/Elementary-school/32/824"},{"navigateUrl":"/Content/Community/Middle-school/32/825"},{"navigateUrl":"/Content/Community/High-school/32/823"},{"navigateUrl":"/Content/Community/College/32/822"},{"navigateUrl":"/Content/Default/School-Delays-and-Closings/-3/826"}],"navigateUrl":"/Content/Schools/Education/52/254"},{"navigateUrl":"/Content/Community/Religion/32/120"},{"navigateUrl":"/Content/Community/Senior/32/763"},{"navigateUrl":"/Content/Pets/Pets/31/74"},{"navigateUrl":"/Content/Community/Community-Columnists/32/827"}],"navigateUrl":"/Content/Community/Community/32/759"},{"items":[{"navigateUrl":"/Content/Events/Local-Events-Calendar/Event-Submission-Form/Event-Submission-Form/2/2/56"}],"navigateUrl":"/Content/Events/2"},{"items":[{"navigateUrl":"/Content/Obits/Obituaries/22/73"}],"navigateUrl":"/Content/Obits/22"},{"items":[{"navigateUrl":"/Content/Opinions/Editorials/15/130"},{"navigateUrl":"/Content/Opinions/Letters-to-the-Editor/15/129"},{"navigateUrl":"/Content/Default/Subsection/Form-Content/News-Tip-Submission/-1/-3/2"}],"navigateUrl":"/Content/Opinions/Opinions/15/16"},{"navigateUrl":"http://digital.kokomoherald.com","target":"_blank"},{"navigateUrl":"http://kokomoherald.com/Content/Default/Subsection/Classified/Public-Notices/-3/0/32"}]}, null, null, $get("ctl00_body_ctl13_ctl05_rmMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDataPager, {"_currentPageIndex":0,"_pageCount":0,"_pageSize":10,"_startRowIndex":0,"_totalRowCount":0,"_uniqueID":"ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$rdpCommentsTop","clientStateFieldID":"ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop_ClientState"}, null, null, $get("ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsTop"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDataPager, {"_currentPageIndex":0,"_pageCount":0,"_pageSize":10,"_startRowIndex":0,"_totalRowCount":0,"_uniqueID":"ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$rdpCommentsBottom","clientStateFieldID":"ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsBottom_ClientState"}, null, null, $get("ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rdpCommentsBottom"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$rlvComments","_allowPaging":true,"_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rlvComments_itemPlaceholder","DataService":{}}},"clientStateFieldID":"ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rlvComments_ClientState","renderMode":1}, null, null, $get("ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_rlvComments"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"","styles":[],"uniqueID":"ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$ucComments$ram"}, null, null, $get("ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucComments_ram"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTextBox, {"_displayText":"","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"setTimeout(\"__doPostBack(\\\u0027ctl00$body$ContentModule$ctl00$ucArticleTemplated$acContainer$ucComments$rtxtMessage\\\u0027,\\\u0027\\\u0027)\", 0)","_skin":"Default","_validationText":"","clientStateFieldID":"ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage_ClientState","enabled":true,"maxLength":300,"styles":{HoveredStyle: ["height:70px;width:660px;", "riTextBox riHover"],InvalidStyle: ["height:70px;width:660px;", "riTextBox riError"],DisabledStyle: ["height:70px;width:660px;", "riTextBox riDisabled"],FocusedStyle: ["height:70px;width:660px;", "riTextBox riFocused"],EmptyMessageStyle: ["height:70px;width:660px;", "riTextBox riEmpty"],ReadOnlyStyle: ["height:70px;width:660px;", "riTextBox riRead"],EnabledStyle: ["height:70px;width:660px;", "riTextBox riEnabled"]}}, null, null, $get("ctl00_body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_rtxtMessage"));
+});
+
+document.getElementById('body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_reqMessage'));
+}
+
+document.getElementById('body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('body_ContentModule_ctl00_ucArticleTemplated_acContainer_ucComments_ucCaptcha_cvRecaptcha2'));
+}
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadSocialShare, {"_addFbScript":true,"_addGoogleScript":false,"_addLinkedInScript":false,"_addPinterestScript":false,"_addTwitterScript":true,"_addYammerScript":false,"_locale":"en_US","_uniqueId":"ctl00$body$ctl70$rssSocial","clientStateFieldID":"ctl00_body_ctl70_rssSocial_ClientState","gaID":"UA-55666153-1","mainButtons":"[['FacebookLike','','', 'True', 'Standard', 'Light', '', 'Arial', ''],['Twitter','','', 'None']]","titleToShare":"Nursing students teach healthy habits at summer camp","urlToShare":"http://kokomoherald.com/Content/Social/Social/Article/Nursing-students-teach-healthy-habits-at-summer-camp/-2/-2/31654"}, null, null, $get("ctl00_body_ctl70_rssSocial"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadButton, {"_accessKey":"","_hasIcon":false,"_hasImage":false,"_isClientSubmit":true,"_isImageButton":false,"_postBackReference":"WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$body$ctl16$rbQuickSearch', '', true, 'vgBasicSearch', '', false, true))","_renderMode":1,"_validationGroup":"vgBasicSearch","clientStateFieldID":"ctl00_body_ctl16_rbQuickSearch_ClientState","iconData":{},"imageData":{},"text":"Go","toggleStatesData":[],"uniqueGroupName":"","uniqueID":"ctl00$body$ctl16$rbQuickSearch"}, null, null, $get("ctl00_body_ctl16_rbQuickSearch"));
+});
+
+document.getElementById('body_ctl16_revQuickSearchQuery').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('body_ctl16_revQuickSearchQuery'));
+}
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_enableItemImagesPreloading":true,"_skin":"6rm","clientStateFieldID":"ctl00_body_ctl61_rmMenu_ClientState","collapseAnimation":"{\"type\":0,\"duration\":450}","defaultGroupSettings":"{\"flow\":0}","expandAnimation":"{\"type\":0,\"duration\":450}","itemData":[{"navigateUrl":"/"},{"navigateUrl":"/Content/News/All-News/1/98"},{"navigateUrl":"/Content/Sports/Area-Sports/39/96"},{"navigateUrl":"/Content/Community/Community/32/759"},{"navigateUrl":"/Content/Events/2"},{"navigateUrl":"/Content/Obits/22"},{"navigateUrl":"/Content/Opinions/Opinions/15/16"},{"navigateUrl":"http://digital.kokomoherald.com/","target":"_blank"}]}, null, null, $get("ctl00_body_ctl61_rmMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":36,"clientStateFieldID":"ctl00_rwReport_ClientState","enableShadow":true,"formID":"form1","height":"480px","iconUrl":"","keepInScreenBounds":true,"minHeight":"480px","minWidth":"370px","minimizeIconUrl":"","modal":true,"name":"rwReport","showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"width":"370px"}, null, null, $get("ctl00_rwReport"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"ctl00_rwmMaster_ClientState","enableShadow":true,"formID":"form1","iconUrl":"","minimizeIconUrl":"","modal":true,"name":"rwmMaster","skin":"Default","windowControls":"['ctl00_rwReport']"}, null, {"child":"ctl00_rwReport"}, $get("ctl00_rwmMaster"));
+});
+//]]>
+</script> 
+  </form> 
+  <script type="text/javascript">
+        //resizePageGroups();
+    </script> 
+  <script type="text/javascript">forceCopyright();</script> 
+  <!-- 1updone -->   
+ </body>
+</html>

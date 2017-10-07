@@ -1,0 +1,452 @@
+<!doctype html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width"> 
+  <title>Midlife Career Change: 5 Tips to Finding Your Purpose | Kaplan Test Prep</title> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="http://www.kaptest.com/blog/grad-school-insider/xmlrpc.php"> 
+  <!--[if lt IE 9]>
+<script src="http://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/js/html5.js" type="text/javascript"></script>
+<![endif]--> 
+  <!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.4 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Considering making a career change in midlife? You need our 5 tips to finding your purpose."> 
+  <link rel="canonical" href="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Midlife Career Change: 5 Tips to Finding Your Purpose | Kaplan Test Prep"> 
+  <meta property="og:description" content="Considering making a career change in midlife? You need our 5 tips to finding your purpose."> 
+  <meta property="og:url" content="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/"> 
+  <meta property="og:site_name" content="Grad School Insider"> 
+  <meta property="article:section" content="Your Future"> 
+  <meta property="article:published_time" content="2014-11-26T10:00:38+00:00"> 
+  <meta property="article:modified_time" content="2015-09-03T17:36:19+00:00"> 
+  <meta property="og:updated_time" content="2015-09-03T17:36:19+00:00"> 
+  <meta property="og:image" content="https://www.kaptest.com/blog/grad-school-insider/wp-content/uploads/sites/18/2014/11/177765863.jpg"> 
+  <!-- / Yoast WordPress SEO plugin. --> 
+  <link rel="alternate" type="application/rss+xml" title="Grad School Insider » Feed" href="http://www.kaptest.com/blog/grad-school-insider/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Grad School Insider » Comments Feed" href="http://www.kaptest.com/blog/grad-school-insider/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Grad School Insider » Midlife Career Change: 5 Tips to Finding Your Purpose Comments Feed" href="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/feed/"> 
+  <!--[if lte IE 6]> <style type="text/css">.cantembedplus{display:none;}</style><![endif]-->
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.kaptest.com/blog/grad-school-insider/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.kaptest.com/blog/grad-school-insider/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.1.16"> 
+  <link rel="shortlink" href="http://www.kaptest.com/blog/grad-school-insider/?p=4217"> 
+  <link rel="https://github.com/WP-API/WP-API" href="http://www.kaptest.com/blog/grad-school-insider/wp-json"> 
+  <link rel="stylesheet" type="text/css" href="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/css/bootstrap/css/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" href="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/css/bootstrap/css/bootstrap-theme.css"> 
+  <link href="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/css/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/css/main.css"> 
+  <!-- Load jQuery --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+ </head> 
+ <body> 
+  <!-- Google Tag Manager --> 
+  <script>
+var dataLayer = dataLayer || [];
+
+//Google Analytics Event Tracking
+function analyticsEvent(category,action,opt_label,opt_value,opt_noninteractive) {
+  dataLayer.push({
+    'event': 'analyticsEvent',
+    'eventCategory': category,
+    'eventAction': action,
+    'eventLabel': opt_label,
+    'eventValue': opt_value,
+    'eventNonInt': opt_noninteractive
+  });
+}
+
+//Google Analytics Social Interaction Tracking
+function socialInteraction(socialNetwork, socialAction, opt_socialTarget, opt_page) {
+  dataLayer.push({
+    'event': 'social',
+    'socialNetwork': socialNetwork,
+    'socialAction': socialAction,
+    'socialTarget': opt_socialTarget,
+    'socialPagePath': opt_page
+  });
+}
+
+</script> 
+  <script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-24FF');</script> 
+  <!-- End Google Tag Manager --> 
+  <div id="header"> 
+   <!-- Headers --> 
+   <div class="container"> 
+    <!-- Desktop Header --> 
+    <div class="row" id="desktop-header"> 
+     <div class="col-md-8 left-text"> 
+      <h3><a href="http://www.kaptest.com/blog/grad-school-insider" style="letter-spacing: -2px;" alt="Grad School Insider">Grad School Insider</a></h3> 
+      <h6 style="font-family: FacitWeb"> Testing tips and simple strategies to prepare you for grad school and the GRE®. </h6> 
+     </div> 
+     <div class="col-md-4 right-text"> 
+      <a href="http://www.kaptest.com/gre" target="_blank"> <img id="logo" src="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/kaplanlogo.png" style="margin-top: 30px;"> </a> 
+     </div> 
+    </div> 
+    <!-- Mobile Header --> 
+    <div class="row" id="mobile-header"> 
+     <div class="col-xs-6"> 
+      <img src="/assets/img/redesign15/logo.png"> 
+     </div> 
+     <div class="col-xs-6 text-right"> 
+      <h3 style="font-size: 14px;">Grad School Insider</h3> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- End Headers --> 
+   <!-- Desktop Menu --> 
+   <div class="row"> 
+    <div class="col-md-12"> 
+     <div class="bar"> 
+      <div class="container"> 
+       <div class="row"> 
+        <div class="col-xs-12 col-md-9"> 
+         <ul class="secondary-menu clearfix " style="padding-right:0px;" id="h-top-links"> 
+          <li class="cat-item cat-item-1630"><a href="http://www.kaptest.com/blog/grad-school-insider/category/applying-to-grad-programs/">Applying to Grad Programs</a> </li> 
+          <li class="cat-item cat-item-1631"><a href="http://www.kaptest.com/blog/grad-school-insider/category/financing-grad-school/">Financing Grad School</a> </li> 
+          <li class="cat-item cat-item-1629"><a href="http://www.kaptest.com/blog/grad-school-insider/category/gre-tips/">GRE Tips</a> </li> 
+          <li class="cat-item cat-item-1628"><a href="http://www.kaptest.com/blog/grad-school-insider/category/your-future/">Your Future</a> </li> 
+         </ul> 
+        </div> 
+        <div class="col-xs-6 col-md-3 right-text"> 
+         <div class="icon pull-right right-text"> 
+          <ul class="links"> 
+           <li> <a href="http://www.facebook.com/KaplanGradPrep" target="_blank"> <i class="fa fa-facebook-square fa-lg"></i> </a> </li> 
+           <li> <a href="http://twitter.com/kaplangradprep" target="_blank"> <i class="fa fa-twitter fa-lg"></i> </a> </li> 
+           <li> <a href="http://youtube.com/kaplangradprep" target="_blank"> <i class="fa fa-youtube-play fa-lg"></i> </a> </li> 
+           <li> </li> 
+          </ul> 
+          <ul class="search"> 
+           <li> 
+            <!--  < ? php echo custom_search_form(); ? > --> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- End Desktop Menu --> 
+   <!-- Mobile menu --> 
+   <div class="mobile-menu"> 
+    <div class="container"> 
+     <div class="row"> 
+      <div class="col-xs-6"> 
+       <h4>MENU</h4> 
+      </div> 
+      <div class="col-xs-6"> 
+       <img src="/assets/img/redesign15/nav-icon.png" style="float:right; cursor: pointer;"> 
+       <div style="float: right; font-size: 25px; display:none; cursor: pointer;">
+        X
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <ul class="cat-list"> 
+     <li><a href="http://www.kaptest.com/blog/grad-school-insider/?cat=1628">Your Future</a></li>
+     <li><a href="http://www.kaptest.com/blog/grad-school-insider/?cat=1629">GRE Tips</a></li>
+     <li><a href="http://www.kaptest.com/blog/grad-school-insider/?cat=1630">Applying to Grad Programs</a></li>
+     <li><a href="http://www.kaptest.com/blog/grad-school-insider/?cat=1631">Financing Grad School</a></li> 
+    </ul> 
+   </div> 
+   <!-- end mobile menu--> 
+   <input id="site-url" type="hidden" value="http://www.kaptest.com/blog/grad-school-insider"> 
+  </div> 
+  <div id="main" class="main-content"> 
+   <div class="container"> 
+    <div style="display:none;">
+      http://www.kaptest.com/blog/grad-school-insider 
+    </div> 
+    <style>
+
+</style> 
+    <div class="row"> 
+     <div class="col-sm-8 col-md-9 col-lg-8" style="margin-left:-8px"> 
+      <div class="row"> 
+       <div class="article full-post"> 
+        <div class="row content text"> 
+         <div> 
+          <style> /*.full-post p img:nth-of-type(1){display:none;}*/ .text p:nth-of-type(2) a img {display:none;}</style> 
+          <div class="col-md-7 no-padding" style="float:right;"> 
+           <h1 class="headline"> Midlife Career Change: 5 Tips to Finding Your Purpose </h1> 
+           <h5 class="date"> November 26, 2014 
+            <!-- get_the_date();--> </h5> 
+           <h5 class="author"> <a href="#author">Kaplan Test Prep</a> </h5> 
+           <hr> 
+          </div> 
+          <div class="the-content"> 
+           <div class="ok col-md-5" style="padding-right:20px; margin-bottom: 8px;">
+            <img src="https://www.kaptest.com/blog/grad-school-insider/wp-content/uploads/sites/18/2014/11/177765863.jpg" class="featured-image">
+            <div class="ok_postcaption"></div>
+           </div>
+           <p><a href="https://www.kaptest.com/blog/grad-school-insider/wp-content/uploads/sites/18/2014/11/177765863.jpg"><img class=" wp-image-4218 alignright" alt="career change" src="https://www.kaptest.com/blog/grad-school-insider/wp-content/uploads/sites/18/2014/11/177765863.jpg" width="305" height="203"></a></p> 
+           <p><b><i>This is brought to you by StudentAdvisor.com &amp; Kaplan.&nbsp;<a href="http://studentadvisor.com" target="_blank">StudentAdvisor.com</a>&nbsp;and&nbsp;<a href="http://learningadvisor.com/" target="_blank">LearningAdvisor.com</a>&nbsp;offer valuable resources to empower students of all ages to succeed in their educational and career journey.</i></b></p> 
+           <p>For many adults, the thought&nbsp;of changing careers can be overwhelming.&nbsp;Even if&nbsp;you lost a job or you’re &nbsp;just feeling the need for a change, you may not be thrilled with the idea of&nbsp;starting over. Family and financial responsibilities often leave adults feeling less idealistic than college kids and sometimes with a twinge of guilt&nbsp;at the thought of disrupting a stable career to find a new one&nbsp;that makes you happier. However,<strong>your&nbsp;hesitations don’t have to hold you back</strong>&nbsp;from making a career change that makes you feel more passionate and purposeful.</p> 
+           <p>Changing your career can be a positive step forward because&nbsp;<strong>you’ll naturally rise farther and faster when you’re doing something fulfilling</strong>. That’s not to say you should drop everything and go seek your career passions in some vague, unplanned search. Rather, start by&nbsp;<strong><a title="Why 'follow your passion' is bad advice" href="http://www.cnn.com/2012/08/29/opinion/passion-career-cal-newport" target="_blank">nurturing your passions to find the right career direction</a></strong>, narrowing in on just what makes you tick.</p> 
+           <p><strong>Here are 5 helpful suggestions to lead you in the right direction.&nbsp;&nbsp;</strong></p> 
+           <h3><b>1. Document your daily life.</b></h3> 
+           <p>One of the advantages you have over a college-aged student on the brink of his or her career is&nbsp;<strong>your years of experience in the workforce</strong>. You already have some ideas about the kinds of tasks you like and are good at versus the kinds of things you’d prefer to avoid. Focus in on exactly what these activities are by analyzing your daily life.</p> 
+           <p>As you go about your routine,&nbsp;<strong>pay attention to the things&nbsp;that give you energy</strong>. If you’re feeling upset or otherwise low, do a little forensics to pinpoint just what it is that’s making you feel that&nbsp;way. Look for both skills and tasks that affect your moods.</p> 
+           <p>Use a&nbsp;<strong><a title="ISEEK Skills Assessment" href="http://www.iseek.org/careers/skillsAssessment" target="_blank">career aptitude test</a></strong>&nbsp;to&nbsp;<strong>connect factors&nbsp;that positively affect you with real jobs</strong>. Be sure not to ignore any supporting&nbsp;environmental factors as you go. A boss that’s always looking over your shoulder, for example, may make you feel like you’re not trusted in the workplace. For an introvert, having to answer phones may make you dislike a job about which you’re otherwise deeply passionate. Keep your notes in a written or digital diary and&nbsp;<strong>start looking for themes</strong>&nbsp;that run much deeper than, “I like this” or “I don’t like that.” You’ll need them as you change course.</p> 
+           <h3><b>2.&nbsp;</b><b>Make your own internship.</b></h3> 
+           <p>If you’re working, it can be difficult to make the time and wage sacrifices required for a traditional&nbsp;<strong><a title="Getting an Internship through Face-to-Face Networking Events" href="http://blog.studentadvisor.com/getting-an-internship-through-face-to-face-networking-events/">internship</a></strong>—many of which you can only get through college anyway. But that doesn’t mean you can’t create an internship-like work experience on your own. If there’s a person out there in the professional world whose work you admire, why not reach out to them and offer to lend them a helping hand? Whether it’s just an hour a week or ten, you could do anything from stuffing envelopes to researching a topic for their next book to being a virtual assistant.<strong>You’d be surprised how eager many successful people are to find help</strong>, and if you do a good job, you’ll have made a great connection while also receiving some form of&nbsp;<strong><a title="Learning from the Expertise of Others" href="http://blog.studentadvisor.com/learning-from-the-expertise-of-others/" target="_blank">mentorship</a></strong>.</p> 
+           <p>To find a good contact, tap into&nbsp;your&nbsp;<strong><a title="Networking Tips: Connecting with Connectors" href="http://blog.studentadvisor.com/networking-tips-connecting-connectors/" target="_blank">network</a></strong>. Reach out to relevant contacts on&nbsp;<strong><a title="LinkedIn: Enhance Your Profile and Get The Job of Your Dreams" href="http://blog.studentadvisor.com/linkedin-enhance-your-profile-get-the-job-of-your-dreams/" target="_blank">LinkedIn</a></strong>&nbsp;and send an email detailing your “internship” to friends and family members.&nbsp;<strong>Social media is a great place to start as it allows you to network more naturally around topics in which you share interests with others</strong>. Having contact with people who inspire you will be a great reminder of where you’re going and how to get there.</p> 
+           <h3><b>3. Surround yourself with supportive people.</b></h3> 
+           <p>For the people closest to you, it can often be difficult to see you differently than you are now. Career shifts and&nbsp;<a title="Adult Education: 15 Tips On Going Back to School" href="http://www.studentadvisor.com/pages/adult-education-15-tips-on-going-back-to-school" target="_blank"><strong>going back to school</strong></a>&nbsp;to achieve them can also come with (short) periods of instability that can affect the whole family. If you’re going to make this work,&nbsp;<strong>it’s important to&nbsp;you have your partner and family on board</strong>. Their job should be to help you through the low points and celebrate your successes rather than validate your worst fears. To grapple with the stresses a midlife career change can cause, it may make sense to work with a&nbsp;<a title="Coach or Consultant: Get Paid for What You Know" href="http://blog.studentadvisor.com/coach-consultant-get-paid-know/" target="_blank"><strong>career coach</strong></a>&nbsp;or a therapist to help keep you focused on the ultimate outcome of this new adventure.</p> 
+           <h3><b>4. Choose a few extracurriculars.</b></h3> 
+           <p>Just like when you were in school,&nbsp;<strong>recreational activities can be a great way to explore new career interests</strong>and skills in a very low-pressure environment. The key here is to dole out your time purposefully. Don’t join a kickball team unless you want to become a professional kickball player or there’s someone whose career you really admire on the team. Do you think&nbsp;your penchant for creating wacky gadgets could make a real career? Join a Maker club and give your design skills a test run. See yourself as a team leader who just hasn’t gotten the right opportunity? Join a volunteer organization with a cause you love, and work hard to rise through the ranks. Don’t like one thing? Try another. It’s much better to&nbsp;<strong>experiment in many different ways as a volunteer</strong>&nbsp;than to plunge into a new career and suddenly change again.</p> 
+           <h3><b>5. Try a few courses.</b></h3> 
+           <p>From community college courses to&nbsp;<a title="Free Online Classes Lists from LearningAdvisor.com" href="http://learningadvisor.com/courses?page=1&amp;rating=5" target="_blank"><strong>free online classes</strong></a>, called&nbsp;<strong><a title="Top 10 Reasons to Advance Your Career with a MOOC" href="http://mooc.studentadvisor.com/posts/53/top-10-reasons-to-advance-your-career-with-a-mooc" target="_blank">MOOCs</a></strong>&nbsp;(Massive Open Online Courses), there are numerous ways to&nbsp;<strong>give new subject areas a spin</strong>. Community college tuition rates are among the most affordable, and MOOCs offer free online classes with instruction from professors at the world’s best universities. Both are&nbsp;low-risk ways to give new subject areas a whirl.</p> 
+           <p><b style="font-size: 1.17em;line-height: 1.5em">The Takeaway</b></p> 
+           <p>After all of this exploration, you may decide to stay within your field but move toward different disciplines or roles. Or it may&nbsp;indeed be time for a complete career overhaul, including a return to school for a second degree. Whatever you decide, remember that your career change isn’t a magic pill, and it won’t fix all that ails you. You’ll have to work your way up and be open to all kinds of new tasks. However, if you are truly focused, committed, and willing to work hard, you’ll likely grow much&nbsp;faster than you would as a recent&nbsp;college graduate. When you put all of your knowledge and experience into making a new career work, you’re sure to rise fast.</p> 
+           <p><b><i>Whether you’re a high school student thinking about college options, a college student thinking about transferring to another school or an adult learner striving to enhance your skills or pursue a new career path,&nbsp;<a href="http://studentadvisor.com/" target="_blank">StudentAdvisor.com</a>&nbsp;and&nbsp;<a href="http://learningadvisor.com/" target="_blank">LearningAdvisor.com</a>&nbsp;can provide you with relevant insights to help you maximize the value and return on your education.</i></b></p> 
+           <script>
+    $(".the-content img:eq(1)").css("display", "none");
+  </script> 
+          </div> 
+         </div> 
+        </div> 
+        <hr> 
+        <div class="row"> 
+         <div class="col-md-12 related-posts"> 
+          <div id="comments" class="comments-area"> 
+           <h2 class="comments-title"> 2 thoughts on “Midlife Career Change: 5 Tips to Finding Your Purpose” </h2> 
+           <!-- < ? php twentyfifteen_comment_nav(); ?> --> 
+           <div id="comment-941" class="pingback even thread-even depth-1"> 
+            <div class="comment-body">
+              Pingback: 
+             <a href="http://gmatclub.com/blog/2014/12/3-signs-a-business-degree-is-right-for-you/" rel="external nofollow" class="url">3 Signs a Business Degree Is Right for You | The GMAT Club</a> 
+            </div> 
+           </div>
+           <!-- #comment-## --> 
+           <div id="comment-942" class="pingback odd alt thread-odd thread-alt depth-1"> 
+            <div class="comment-body">
+              Pingback: 
+             <a href="http://www.kaptest.com/blog/business-school-insider/2014/12/26/3-signs-a-business-degree-is-right-for-you/" rel="external nofollow" class="url">3 Signs a Business Degree is Right for You</a> 
+            </div> 
+           </div>
+           <!-- #comment-## --> 
+           <!-- < ? php twentyfifteen_comment_nav(); ? >  --> 
+           <p class="no-comments">Comments are closed.</p> 
+          </div>
+          <!-- .comments-area --> 
+         </div> 
+        </div> 
+        <div class="row center-text"> 
+         <div id="sharethis" class="center-text social-content"> 
+          <span st_url="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/" st_title="Midlife Career Change: 5 Tips to Finding Your Purpose" class="st_email_vcount"></span> 
+          <span st_url="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/" st_title="Midlife Career Change: 5 Tips to Finding Your Purpose" class="st_facebook_vcount"></span> 
+          <span st_url="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/" st_title="Midlife Career Change: 5 Tips to Finding Your Purpose" class="st_twitter_vcount"></span> 
+          <span st_url="http://www.kaptest.com/blog/grad-school-insider/2014/11/26/midlife-career-change-5-tips-finding-purpose/" st_title="Midlife Career Change: 5 Tips to Finding Your Purpose" class="st_sharethis_vcount"></span> 
+         </div> 
+        </div> 
+        <hr> 
+        <div class="row" id="author"> 
+         <div class="col-md-2 center-text "> 
+          <img alt="Kaplan Test Prep" src="http://www.kaptest.com/blog/wp-content/uploads/2015/03/jrees_avatar_1425416363-96x96.jpg" class="avatar avatar-96 photo" height="96" width="96"> 
+         </div> 
+         <div class="col-md-10"> 
+          <p> <span class="author"><strong>Kaplan Test Prep</strong></span> </p> 
+         </div> 
+        </div> 
+        <hr> 
+        <div class="row"> 
+         <div class="col-md-6 col-xs-6 left-text"> 
+          <a href="#" class="first"></a>
+          <a href="http://www.kaptest.com/blog/grad-school-insider/2014/11/25/5-demand-jobs-book-lovers/" rel="prev"><span class="meta-nav"><strong> <span class="glyphicon glyphicon-chevron-left"></span> </strong> </span> Previous</a>  
+         </div> 
+         <div class="col-md-6 col-xs-6 right-text"> 
+          <a href="#"> </a>
+          <a href="http://www.kaptest.com/blog/grad-school-insider/2014/11/28/masters-degree-in-computer-science/" rel="next">Next <span class="meta-nav"><strong> <span class="glyphicon glyphicon-chevron-right"></span> </strong></span></a>  
+         </div> 
+        </div> 
+        <div class="row"> 
+         <div class="col-md-12 related-posts"> 
+          <h3>Related Posts</h3> 
+          <ul>
+           <li><a href="http://www.kaptest.com/blog/grad-school-insider/2017/08/07/gre-vs-lsat-5-things-to-consider/">GRE vs. LSAT: 5 Things to Consider</a></li>
+           <li><a href="http://www.kaptest.com/blog/grad-school-insider/2017/07/26/day-gre-test-day-2/">What Should You Do the Day Before GRE Test Day?</a></li>
+           <li><a href="http://www.kaptest.com/blog/grad-school-insider/2017/07/05/4-ways-quickly-increase-gre-vocabulary/">4 Ways to Quickly Increase Your GRE Vocabulary</a></li>
+           <li><a href="http://www.kaptest.com/blog/grad-school-insider/2017/05/24/your-winning-strategy-for-getting-into-grad-school/">Your Winning Strategy for Getting into Grad School</a></li>
+           <li><a href="http://www.kaptest.com/blog/grad-school-insider/2017/05/16/average-gre-scores-for-top-grad-school-programs/">Average GRE Scores for Top Grad School Programs</a></li>
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- SIDERAIL--> 
+     <div class="col-sm-4 col-md-3 col-lg-4"> 
+      <div class="row siderail"> 
+       <!-- Banner Section --> 
+       <div class="col-md-12 article "> 
+        <div class="content promo"> 
+         <a target="_blank" href="https://www.kaptest.com/gre"> <img src="http://www.kaptest.com/blog/grad-school-insider/wp-content/uploads/sites/18/2017/01/BlogTile_300x250_GRE.jpg"></a> 
+        </div> 
+       </div> 
+       <!-- Banner Section ENDS--> 
+       <aside id="text-2" class="widget widget_text"> 
+        <div class="textwidget">
+         <!-- FORM --> 
+         <div class="col-md-12 article no-border"> 
+          <style>
+.fsFirst.fsLast.fsFieldCell {
+color: #949494;
+}
+.fieldset-content{
+padding-top:20px;
+color:#949494;
+}
+
+#fsRow1762244-5, #fsRow1762244-4{
+width: 49%;
+float: left;
+clear: none;
+}
+.fsForm .fsLabel {
+    /*display:none !important;*/
+}
+.fsSubField{
+width:100%
+}
+.fsBody .fsSupporting {
+font-weight:400;
+/*display: none !important;*/
+}
+
+.fsFieldRow input[type=email], .fsFieldRow input[type=number], .fsFieldRow input[type=tel], .fsFieldRow input[type=text], .fsForm textarea {
+font-family:facitweb;
+display: block;
+width: 100%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+margin-top: 10px;
+}
+form#fsForm1762244 {width:100%; background-color:transparent; border:none;}
+
+.fsBody .fsRowBody, .fsSubFieldGroup, .fsSubField  {
+padding: 0 !important;}
+
+.fsFieldRow, .fsSection, .fsPage   {
+padding: 0 !important;}
+
+.fsForm .fsSubmit {
+padding: 0px;
+background-color: transparent!important;}
+
+ input#fsSubmitButton1762244 {
+-webkit-appearance: none;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+-ms-border-radius: 6px;
+-o-border-radius: 6px;
+border-radius: 6px;
+-webkit-font-smoothing: antialiased;
+background: #2badd9;
+border: 1px solid;
+border-color: #2badd9;
+cursor: pointer;
+color: #fff !important;
+display: inline-block;
+font-family: "FacitWeb-semibold", "lucida grande", sans-serif;
+font-size: 0.8125rem !important;
+font-size: 13px !important;
+font-weight: 500;
+line-height: 1.69231;
+outline: 0;
+overflow: hidden;
+margin: 0;
+padding: 0px 38px;
+text-decoration: none;
+vertical-align: middle;
+width: auto;
+height: 36px;
+-webkit-transition: all 0.15s ease;
+-moz-transition: all 0.15s ease;
+-o-transition: all 0.15s ease;
+transition: all 0.15s ease;
+}
+
+input#fsSubmitButton1762244:hover {color:#fff !important; background:#9cb711
+!important;border-color: #9cb711 !important;}
+
+</style> 
+          <div class="panel-group" id="accordion"> 
+           <div class="panel panel-default"> 
+            <div class="panel-heading"> 
+             <h4 class="panel-title center-text" style="border: 0 none;"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Subscribe to get the latest stories, info, and offers. </a> </h4> 
+            </div> 
+            <div id="collapseOne" class="panel-collapse "> 
+             <div class="panel-body"> 
+              <script src="https://www.formstack.com/forms/js.php?1762239-SVucipKNHw-v3" type="text/javascript"></script>
+              <noscript>
+               <a href="https://www.formstack.com/forms/?1762239-SVucipKNHw" title="Online Form">Online Form - GRE Blog Subscribe Form</a>
+              </noscript> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </aside> 
+       <!-- About Section --> 
+       <div class="col-md-12 article "> 
+        <div class="content border-top"> 
+         <h4 class="header">About Kaplan</h4> 
+         <p style="padding-left: 8px;" class="about">We know test prep. We invented it. Through innovative technology and a personalized approach to learning, we equip you with the test insights and advice you need to achieve your personal best. Results, guaranteed.*</p> 
+        </div> 
+       </div> 
+       <!-- About Section ENDS--> 
+      </div> 
+     </div> 
+     <!-- end siderail -->
+    </div> 
+    <div class="row" id="disclaimer"> 
+     <div class="col-md-12 col-xs-12 col-sm-12 left-text">
+       Kaplan is accredited by the Accrediting Council for Continuing Education &amp; Training (ACCET), a U.S. Department of Education nationally recognized agency.&nbsp;GRE ® is a registered trademark of the Educational Testing Service, which neither sponsors nor endorses this product. All other test names are registered trademarks of their respective owners. None of the trademark holders are affiliated with Kaplan or this website.&nbsp;Prometric® is a registered trademark of Prometric.&nbsp;*Higher Score Guarantee: Conditions and restrictions apply. For complete guarantee eligibility requirements, visit 
+      <a href="/hsg" target="_blank">kaptest.com/hsg</a>. © Copyright Kaplan, Inc. All Rights Reserved. 
+     </div> 
+    </div> 
+    <script type="text/javascript" src="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/js/jquery-1.11.1.min.js"></script> 
+    <script type="text/javascript" src="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/css/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="https://www.kaptest.com/blog/grad-school-insider/wp-content/themes/kaplan/js/main.js"></script> 
+    <script charset="utf-8" type="text/javascript">var switchTo5x=true;</script> 
+    <script async charset="utf-8" type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script> 
+    <script async charset="utf-8" type="text/javascript">stLight.options({"publisher":"6382117e-839e-4d0f-ae3c-00806a24860a"});var st_type="wordpress4.1.1";</script> 
+    <!--? php wp_footer(); ?--> 
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2e276c9bd1","applicationID":"39722639","transactionName":"NVVbNUdQCxVVAhBeDAwfeAJBWAoIGxINWQQOVQ==","queueTime":0,"applicationTime":134,"atts":"GRJYQw9KGBs=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+    <!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+ Served from: www.kaptest.com @ 2017-10-03 12:06:36 by W3 Total Cache -->
+   </div>
+  </div>
+ </body>
+</html>

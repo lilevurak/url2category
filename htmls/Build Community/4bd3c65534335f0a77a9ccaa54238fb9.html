@@ -1,0 +1,1888 @@
+<!doctype html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="shortcut icon" href="https://www.charities.org/sites/all/themes/charities/favicon.png"> 
+  <meta name="viewport" content="width=device-width"> 
+  <meta http-equiv="ImageToolbar" content="false"> 
+  <meta name="description" content="Use our website to sort by cause, click on charities that interest you, learn more about their work, and donate to multiple charities at a time."> 
+  <meta name="abstract" content="Use our website to sort by cause, click on charities that interest you, learn more about their work, and donate to multiple charities at a time."> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://www.charities.org/charities"> 
+  <link rel="shortlink" href="https://www.charities.org/charities"> 
+  <meta property="og:site_name" content="America's Charities"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://www.charities.org/charities"> 
+  <meta property="og:title" content="Give Now"> 
+  <title>Find a Charity &amp; Donate Online | America's Charities</title> 
+  <link rel="stylesheet" href="https://www.charities.org/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css"> 
+  <link rel="stylesheet" href="https://www.charities.org/sites/default/files/css/css_S9IM4rSr_q9cOOIgqDFo4yONrmZykT9wcbd2__RVIzU.css"> 
+  <link rel="stylesheet" href="https://www.charities.org/sites/default/files/css/css_985bYrz0-2FiNxBsAFr1sOEyi6D1AxC1uqEiHaLDy1M.css"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,400italic"> 
+  <link rel="stylesheet" href="https://www.charities.org/sites/default/files/css/css_h28NEmHQM07D-nj_Dnt7-sm0jNJKORD9Btq1tT544nE.css"> 
+  <link rel="stylesheet" href="https://www.charities.org/sites/default/files/css/css_ZHDTgd1VT6ykWiV-UDbCXizY5kMFvDYKMne21Mbo9xs.css" media="print"> 
+  <!--[if lt IE 9]>
+<link rel="stylesheet" href="https://www.charities.org/sites/default/files/css/css_Tn4R3PzAGNgFsUwhEdkCtL6xksnLboQwzOsfVX3_0DM.css" />
+<![endif]--> 
+  <script src="https://www.charities.org/sites/default/files/js/js_WkOMkSyjg9rxsesVK2mUAVX_dhZTWbIE6jpIzuL-ygM.js"></script> 
+  <script src="https://www.charities.org/sites/default/files/js/js_BLxotNs2yt7YGlf9QRI9L9AMfdnkQfnN-_ADBTW3SiE.js"></script> 
+  <script src="https://www.charities.org/sites/default/files/js/js_dRvxLKwerTkEQIxblJHBS5hHQol9mO9IOtP2FwAZG_8.js"></script> 
+  <script src="//platform.twitter.com/widgets.js"></script> 
+  <script src="https://www.charities.org/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script> 
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-19129613-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('require', 'displayfeatures');ga("send", "pageview");</script> 
+  <script src="https://www.charities.org/sites/default/files/js/js_3CzxYbMOA6jCL_f671OQZ-K5Wkm-P3tQYKX-z1rzPGA.js"></script> 
+  <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"charities","theme_token":"Gt1fRDkPn5xaUTjpk63Xp7IplttM__CAvJ1Pgp6opqA","jquery_version":"1.10","js":{"sites\/all\/themes\/charities\/js\/vendor\/rem.js":1,"profiles\/flight\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/flight\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"profiles\/flight\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"profiles\/flight\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"profiles\/flight\/modules\/contrib\/ctools\/js\/auto-submit.js":1,"profiles\/flight\/modules\/custom\/form_beautifier\/js\/zurb5-multiselect.js":1,"profiles\/flight\/modules\/custom\/form_beautifier\/js\/zurb-multiselect.js":1,"profiles\/flight\/modules\/contrib\/views\/js\/base.js":1,"profiles\/flight\/modules\/contrib\/select_or_other\/select_or_other.js":1,"misc\/progress.js":1,"profiles\/flight\/modules\/contrib\/views\/js\/ajax_view.js":1,"\/\/platform.twitter.com\/widgets.js":1,"profiles\/flight\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/charities\/js\/vendor\/custom.modernizr.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.accordion.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.alert.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.dropdown.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.equalizer.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.interchange.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.offcanvas.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.orbit.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.reveal.js":1,"sites\/all\/themes\/charities\/js\/foundation\/foundation.tab.js":1,"sites\/all\/themes\/charities\/js\/vendor\/jquery.waitforimages.min.js":1,"sites\/all\/themes\/charities\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"profiles\/flight\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/flight\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/flight\/modules\/contrib\/views\/css\/views.css":1,"profiles\/flight\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"profiles\/flight\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/flight\/modules\/contrib\/field_group\/field_group.field_ui.css":1,"\/\/fonts.googleapis.com\/css?family=Noto+Sans:400,700|Noto+Serif:400,400italic":1,"profiles\/flight\/themes\/custom\/flight_base\/css\/app.css":1,"sites\/all\/themes\/charities\/css\/custom-foundation.css":1,"sites\/all\/themes\/charities\/css\/custom.css":1,"sites\/all\/themes\/charities\/css\/fontawesome.css":1,"sites\/all\/themes\/charities\/css\/print.css":1,"sites\/all\/themes\/charities\/css\/ie-mq.css":1,"sites\/all\/themes\/charities\/css\/vendor\/ie.css":1}},"admin_menu":{"suppress":1},"form_beautifier":{"zurbmulti":{"live":false,"filter":false}},"urlIsAjaxTrusted":{"\/charities":true,"\/views\/ajax":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:bcafa895c196f89967db3a34ba0505ba":{"view_name":"charity_search","view_display_id":"page","view_args":"","view_path":"charities","view_base_path":"charities","view_dom_id":"bcafa895c196f89967db3a34ba0505ba","pager_element":0}}},"googleanalytics":{"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});</script> 
+  <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]--> 
+ </head> 
+ <body class="html not-front not-logged-in one-sidebar sidebar-second page-charities section-charities views-page"> 
+  <div class="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <!--.page --> 
+  <div data-offcanvas role="document" class="page off-canvas-wrap">
+   <div class="inner-wrap"> 
+    <!--.l-header region --> 
+    <header role="banner" class="l-header"> 
+     <nav class="top-bar" data-options=""> 
+      <!--.l-header-region --> 
+      <section class="l-header-menu-region row"> 
+       <div class="header-menu-wrap right"> 
+        <section class="block block-commerce-cart block-commerce-cart-cart"> 
+         <div class="cart-empty-block">
+          Your shopping cart is empty.
+         </div> 
+        </section> 
+        <section class="block block-menu-block block-menu-block-3"> 
+         <a href="/user" class="button success">My Account</a>
+         <br>
+         <div class="menu-block-wrapper menu-block-3 menu-name-user-menu parent-mlid-0 menu-level-1"> 
+          <ul id="user-drop" class="f-dropdown">
+           <li class="first last leaf menu-mlid-801"><a href="/user/login" title="">Login</a></li> 
+          </ul>
+         </div> 
+        </section> 
+        <section class="block block-bean block-bean-header-menu-give-now"> 
+         <div class="field field-name-field-link">
+          <a href="https://www.charities.org/charities/americas-charities" class="button">Give Now</a>
+         </div> 
+        </section> 
+        <section class="block block-bean block-bean-header-menu-contact-us"> 
+         <div class="field field-name-field-link">
+          <a href="https://www.charities.org/contact" class="button">Contact Us</a>
+         </div> 
+        </section> 
+       </div> 
+      </section> 
+      <!--/.l-header-region --> 
+     </nav> 
+     <div class="header-row row"> 
+      <div class="title-area columns medium-3"> 
+       <a href="/" rel="home" title="America's Charities Home"><img class="logo" src="https://www.charities.org/sites/all/themes/charities/logo.png" alt="America's Charities logo" title="America's Charities Home"></a> 
+       <div id="site-name" class="element-invisible"> 
+        <strong> <a href="/" title="Home" rel="home"><span>America's Charities</span></a> </strong> 
+       </div> 
+       <div class="toggle-topbar menu-icon">
+        <a class="right-off-canvas-toggle" href="#"><span>Menu</span> <i class="fa-bars"></i></a>
+       </div> 
+      </div> 
+      <aside class="right-off-canvas-menu top-bar-section columns medium-9"> 
+       <a href="#" class="exit-off-canvas"><i class="fa-long-arrow-left"></i> Back</a> 
+       <!--.l-header-region --> 
+       <section class="block block-menu-block block-menu-block-1 header"> 
+        <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1"> 
+         <ul class="menu">
+          <li class="first leaf active-trail active menu-mlid-804"><a href="/charities" title="Charities" class="active-trail active">Find a Charity</a></li> 
+          <li class="leaf menu-mlid-20963"><a href="/funds" title="Cause Funds">Cause Funds</a></li> 
+          <li class="leaf has-children menu-mlid-1078"><a href="/solutions" title="Learn more about what America's Charities can do for you">Solutions</a></li> 
+          <li class="leaf menu-mlid-20995"><a href="https://www.charities.org/resources" title="Resources">Resources</a></li> 
+          <li class="leaf menu-mlid-20994"><a href="https://www.charities.org/news?field_story_type_tid=100" title="America's Charities Blog and Workplace Giving and Employee Engagement News">News &amp; Blog</a></li> 
+          <li class="last leaf has-children menu-mlid-1081"><a href="https://www.charities.org/about" title="Learn more about America's Charities">About</a></li> 
+         </ul>
+        </div> 
+       </section> 
+       <section class="block block-search block-search-form header"> 
+        <form action="/charities" method="post" id="search-block-form" accept-charset="UTF-8">
+         <div>
+          <div class="container-inline"> 
+           <h2 class="element-invisible">Search form</h2> 
+           <div class="form-item form-type-textfield form-item-search-block-form"> 
+            <label class="element-invisible" for="edit-search-block-form--2">Search </label> 
+            <input title="Enter the terms you wish to search for." placeholder="Search" class="small-8 columns form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128"> 
+           </div> 
+           <button class="postfix small-4 columns form-submit" id="edit-submit--13" name="op" value="Search" type="submit">Search</button> 
+           <input type="hidden" name="form_build_id" value="form-y4wnP0dkCHPW0lCAi_IQcYSy6FgsFZSdvo8x2-RTaMs"> 
+           <input type="hidden" name="form_id" value="search_block_form"> 
+          </div> 
+         </div>
+        </form> 
+       </section> 
+       <!--/.l-header-region --> 
+      </aside> 
+     </div> 
+    </header> 
+    <!--/.l-header --> 
+    <!--/.featured --> 
+    <section class="l-featured row"> 
+     <div class="medium-12 columns"> 
+      <h1 id="page-title" class="title">Give Now</h1> 
+     </div> 
+    </section> 
+    <!--/.l-featured --> 
+    <main role="main" class="row l-main"> 
+     <!--/.l-help --> 
+     <section class="l-help"> 
+      <div class="medium-12 columns"> 
+       <section class="block block-bean block-bean-charities-header"> 
+        <div class="zf-2col-switched entity entity-bean bean-image-text-link view-mode-image_right_fade  clearfix"> 
+         <div class="group-right right medium-5"> 
+          <div class="field field-name-field-image">
+           <img src="https://www.charities.org/sites/default/files/styles/large/public/Find-Charity-Pagephoto_2.jpg?itok=bzQchO2V" width="381" height="245" alt="Find Charity" title="Find Charity">
+          </div> 
+         </div> 
+         <div class="group-left left medium-7"> 
+          <h2>Support Causes You Care About</h2>
+          <div class="field field-name-field-body">
+           <p>America’s Charities is an alliance of&nbsp;140+ of America's best charities. Our&nbsp;501(c)(3) high-impact nonprofit&nbsp;members are r<span>eviewed annually and must meet <a href="https://www.charities.org/nonprofit-member-criteria">specific eligibility criteria</a> before they’re approved for membership. Search below to learn more about our&nbsp;</span><span>nonprofit members'&nbsp;work&nbsp;and learn how you can <a href="https://www.charities.org/donate-your-favorite-charities-through-workplace-giving">support them through workplace giving</a>. F</span><span>or a PDF list of our members, </span><a href="https://www.charities.org/sites/default/files/2017%20Members%20by%20Federation.pdf" target="_blank">click here</a><span>.&nbsp;</span></p> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+      </div> 
+     </section> 
+     <!--/.l-help --> 
+     <div class="large-9 main columns"> 
+      <a id="main-content"></a> 
+      <div class="view view-charity-search view-id-charity_search view-display-id-page view-dom-id-bcafa895c196f89967db3a34ba0505ba"> 
+       <div class="view-filters"> 
+        <form class="ctools-auto-submit-full-form zurb-multiselect no-labels" action="/charities" method="get" id="views-exposed-form-charity-search-page" accept-charset="UTF-8">
+         <div>
+          <div class="views-exposed-form"> 
+           <div class="views-exposed-widgets clearfix"> 
+            <div id="edit-title-wrapper" class="views-exposed-widget views-widget-filter-title"> 
+             <label for="edit-title"> Search Charities </label> 
+             <div class="views-widget"> 
+              <div class="form-item form-type-textfield form-item-title"> 
+               <input placeholder="Search Charities" type="text" id="edit-title" name="title" value="" size="30" maxlength="128" class="form-text"> 
+              </div> 
+             </div> 
+            </div> 
+            <div id="edit-field-category-tid-wrapper" class="views-exposed-widget views-widget-filter-field_category_tid"> 
+             <label for="edit-field-category-tid"> Search Cause </label> 
+             <div class="views-widget"> 
+              <div class="form-item form-type-select form-item-field-category-tid"> 
+               <select title="Cause" multiple name="field_category_tid[]" id="edit-field-category-tid" size="9" class="form-select"><option value="6">Arts and Culture</option><option value="7">Advocacy and Human Rights</option><option value="8">Animals</option><option value="9">Bullying and Violence</option><option value="10">Children and Family</option><option value="11">Disaster Recovery</option><option value="12">Education and Training</option><option value="13">Elderly</option><option value="14">Environment and Sustainability</option><option value="15">Hunger and Poverty</option><option value="16">Health</option><option value="17">Research</option><option value="18">International Aid</option><option value="19">LGBT</option><option value="20">Military and Police</option><option value="21">Religion</option><option value="22">STEM</option><option value="23">Women</option></select> 
+              </div> 
+             </div> 
+            </div> 
+            <div id="edit-field-charity-states-tid-wrapper" class="views-exposed-widget views-widget-filter-field_charity_states_tid"> 
+             <label for="edit-field-charity-states-tid"> States served </label> 
+             <div class="views-widget"> 
+              <div class="form-item form-type-select form-item-field-charity-states-tid"> 
+               <select title="Location" multiple name="field_charity_states_tid[]" id="edit-field-charity-states-tid" size="9" class="form-select"><option value="41">Alabama</option><option value="42">Alaska</option><option value="44">Arizona</option><option value="45">Arkansas</option><option value="46">California</option><option value="47">Colorado</option><option value="48">Connecticut</option><option value="49">Delaware</option><option value="50">District of Columbia</option><option value="51">Florida</option><option value="52">Georgia</option><option value="54">Hawaii</option><option value="55">Idaho</option><option value="56">Illinois</option><option value="57">Indiana</option><option value="58">Iowa</option><option value="59">Kansas</option><option value="60">Kentucky</option><option value="61">Louisiana</option><option value="62">Maine</option><option value="63">Maryland</option><option value="64">Massachusetts</option><option value="65">Michigan</option><option value="66">Minnesota</option><option value="67">Mississippi</option><option value="68">Missouri</option><option value="69">Montana</option><option value="70">Nebraska</option><option value="71">Nevada</option><option value="72">New Hampshire</option><option value="73">New Jersey</option><option value="74">New Mexico</option><option value="75">New York</option><option value="76">North Carolina</option><option value="77">North Dakota</option><option value="78">Northern Marianas Islands</option><option value="79">Ohio</option><option value="80">Oklahoma</option><option value="81">Oregon</option><option value="82">Pennsylvania</option><option value="84">Rhode Island</option><option value="85">South Carolina</option><option value="86">South Dakota</option><option value="87">Tennessee</option><option value="88">Texas</option><option value="89">Utah</option><option value="90">Vermont</option><option value="91">Virginia</option><option value="93">Washington</option><option value="94">West Virginia</option><option value="95">Wisconsin</option><option value="96">Wyoming</option></select> 
+              </div> 
+             </div> 
+            </div> 
+            <div id="edit-field-federation-tid-wrapper" class="views-exposed-widget views-widget-filter-field_federation_tid"> 
+             <label for="edit-field-federation-tid"> Federation </label> 
+             <div class="views-widget"> 
+              <a class="button " style="display: block;
+        background-color: #f89751;
+        padding: 10px 10px 7px;
+        border-color: #f67b22;
+        color: #fff;
+        font-size:0.875rem;
+        text-align: left;" href="/funds"> Cause Funds »</a>
+              <div style="display:none">
+               <div class="form-item form-type-select form-item-field-federation-tid"> 
+                <select title="Federation" multiple name="field_federation_tid[]" id="edit-field-federation-tid" size="5" class="form-select"><option value="37">America's Charities</option><option value="38">Children First - America's Charities</option><option value="36">Health First - America's Charities</option><option value="35">Community First</option><option value="34">America's Charities Local</option></select> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="views-exposed-widget views-submit-button"> 
+             <button class="ctools-use-ajax ctools-auto-submit-click form-submit" id="edit-submit-charity-search" name="" value="Apply" type="submit">Apply</button> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </form> 
+       </div> 
+       <div class="view-content"> 
+        <div data-equalizer class="grid-row clearfix"> 
+         <div class="views-row views-row-1 views-row-odd views-row-first column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/junior-achievement-new-york"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/JA-of-New-York-LOGO.jpg?itok=GDPvXGgp" width="200" height="62" alt="Junior Achievement of New York logo" title="Junior Achievement of New York logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/junior-achievement-new-york">Junior Achievement of New York</a></p>
+             </div>
+             <h5>New York, NY</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/junior-achievement-new-york" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-13"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-13" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-13" action="/charities/junior-achievement-new-york" method="post" id="commerce-cart-add-to-cart-form-13" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="13"> 
+                 <input type="hidden" name="form_build_id" value="form-qmqVCAaBgRPLRbQpc1YPncT7Zo95ToBcyIcuY45BTqQ"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_13"> 
+                 <div id="edit-line-item-fields" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Junior Achievement of New York" class="give-now-button form-submit" id="edit-submit" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-2 views-row-even column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/arthritis-chronic-pain-research-institute"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/arthritis_chronicpain.jpg?itok=GQFAgROf" width="100" height="75" alt="Arthritis and Chronic Pain Research Institute logo" title="Arthritis and Chronic Pain Research Institute logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/arthritis-chronic-pain-research-institute">Arthritis &amp; Chronic Pain Research Institute</a></p>
+             </div>
+             <h5>San Diego, CA</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/arthritis-chronic-pain-research-institute" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-33"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-33" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-33" action="/charities/arthritis-chronic-pain-research-institute" method="post" id="commerce-cart-add-to-cart-form-33" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="33"> 
+                 <input type="hidden" name="form_build_id" value="form-OEGojQkgkgrlLdAWkMX8Nc9i-FyfgFsM0hZqopEoxdQ"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_33"> 
+                 <div id="edit-line-item-fields--2" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--2">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--2">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--2" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--2" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--2">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--2" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--2">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--2" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--2">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--2" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--2">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--2" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--2">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--2" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--2">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--2" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--2">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--2">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--2">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--2">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--2" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--2" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--2" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--2">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--2">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--2">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--2" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--2" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--2" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Arthritis &amp; Chronic Pain Research Institute" class="give-now-button form-submit" id="edit-submit--2" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-3 views-row-odd column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/ovarian-cancer-research-fund-alliance-ocrfa"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/OCRFA%20logo.png?itok=f0L8ZZgb" width="200" height="33" alt="Ovarian Cancer Research Fund Alliance (OCRFA)" title="Ovarian Cancer Research Fund Alliance (OCRFA)"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/ovarian-cancer-research-fund-alliance-ocrfa">Ovarian Cancer Research Fund Alliance (OCRFA)</a></p>
+             </div>
+             <h5>New York, NY</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/ovarian-cancer-research-fund-alliance-ocrfa" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-16"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-16" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-16" action="/charities/ovarian-cancer-research-fund-alliance-ocrfa" method="post" id="commerce-cart-add-to-cart-form-16" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="16"> 
+                 <input type="hidden" name="form_build_id" value="form-mkP_AvAhBrXnzT9LUqZXZgH1MJucMivtaB-Hy0SePvQ"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_16"> 
+                 <div id="edit-line-item-fields--3" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--3">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--3">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--3" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--3" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--3">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--3" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--3">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--3" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--3">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--3" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--3">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--3" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--3">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--3" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--3">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--3" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--3">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--3">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--3">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--3">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--3" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--3" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--3" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--3">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--3">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--3">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--3" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--3" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--3" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Ovarian Cancer Research Fund Alliance (OCRFA)" class="give-now-button form-submit" id="edit-submit--3" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div data-equalizer class="grid-row clearfix"> 
+         <div class="views-row views-row-4 views-row-even column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/feed-the-children"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/Feed_The_Children_Logo.jpg?itok=ibe-zrcW" width="200" height="56" alt="Feed The Children" title="Feed The Children"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/feed-the-children">Feed the Children</a></p>
+             </div>
+             <h5>Oklahoma City, OK</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/feed-the-children" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-115"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-115" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-115" action="/charities/feed-the-children" method="post" id="commerce-cart-add-to-cart-form-115" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="115"> 
+                 <input type="hidden" name="form_build_id" value="form-GCosvMDAggj_yGUonQuxnZuHwtiMqB97q6ghV-GKlnc"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_115"> 
+                 <div id="edit-line-item-fields--4" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--4">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--4">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--4" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--4" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--4">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--4" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--4">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--4" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--4">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--4" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--4">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--4" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--4">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--4" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--4">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--4" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--4">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--4">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--4">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--4">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--4" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--4" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--4" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--4">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--4">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--4">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--4" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--4" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--4" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Feed the Children" class="give-now-button form-submit" id="edit-submit--4" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-5 views-row-odd column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/marfan-foundation"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/logo_4.jpg?itok=48ErkvEQ" width="200" height="39" alt="The Marfan Foundation" title="The Marfan Foundation"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/marfan-foundation">The Marfan Foundation</a></p>
+             </div>
+             <h5>Port Washington, NY</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/marfan-foundation" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-49"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-49" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-49" action="/charities/marfan-foundation" method="post" id="commerce-cart-add-to-cart-form-49" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="49"> 
+                 <input type="hidden" name="form_build_id" value="form-pgancBoWpCGlmvZTpEemTNNtRYKBqsMhk5RHw4TQmKU"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_49"> 
+                 <div id="edit-line-item-fields--5" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--5">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--5">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--5" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--5" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--5">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--5" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--5">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--5" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--5">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--5" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--5">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--5" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--5">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--5" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--5">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--5" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--5">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--5">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--5">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--5">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--5" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--5" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--5" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--5">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--5">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--5">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--5" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--5" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--5" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="The Marfan Foundation" class="give-now-button form-submit" id="edit-submit--5" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-6 views-row-even column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/ymca-metropolitan-washington"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/ymca.jpg?itok=TaSN1xqS" width="131" height="100" alt="YMCA logo" title="YMCA logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/ymca-metropolitan-washington">YMCA of Metropolitan Washington</a></p>
+             </div>
+             <h5>Washington, DC</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/ymca-metropolitan-washington" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-153"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-153" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-153" action="/charities/ymca-metropolitan-washington" method="post" id="commerce-cart-add-to-cart-form-153" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="153"> 
+                 <input type="hidden" name="form_build_id" value="form--bOns8oigi4IDOBu6OdtA3BoWlTLcF_bjt2kMrIkBPI"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_153"> 
+                 <div id="edit-line-item-fields--6" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--6">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--6">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--6" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--6" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--6">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--6" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--6">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--6" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--6">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--6" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--6">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--6" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--6">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--6" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--6">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--6" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--6">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--6">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--6">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--6">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--6" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--6" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--6" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--6">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--6">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--6">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--6" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--6" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--6" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="YMCA of Metropolitan Washington" class="give-now-button form-submit" id="edit-submit--6" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div data-equalizer class="grid-row clearfix"> 
+         <div class="views-row views-row-7 views-row-odd column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/reading-fundamental-inc-rif"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/Reading%20Is%20Fundamental%20logo%202011.png?itok=4NGdzy0u" width="97" height="100" alt="Reading is Fundamental logo" title="Reading is Fundamental logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/reading-fundamental-inc-rif">Reading Is Fundamental, Inc. (RIF)</a></p>
+             </div>
+             <h5>Washington, DC</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/reading-fundamental-inc-rif" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-108"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-108" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-108" action="/charities/reading-fundamental-inc-rif" method="post" id="commerce-cart-add-to-cart-form-108" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="108"> 
+                 <input type="hidden" name="form_build_id" value="form-zu3JugZFEE1tzP66JdMgfMvw06s-T5GG5h2F71eNJ3c"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_108"> 
+                 <div id="edit-line-item-fields--7" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--7">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--7">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--7" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--7" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--7">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--7" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--7">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--7" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--7">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--7" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--7">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--7" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--7">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--7" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--7">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--7" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--7">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--7">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--7">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--7">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--7" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--7" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--7" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--7">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--7">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--7">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--7" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--7" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--7" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Reading Is Fundamental, Inc. (RIF)" class="give-now-button form-submit" id="edit-submit--7" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-8 views-row-even column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/childrens-house-johns-hopkins-hospital"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/BIT-full-logo_0.png?itok=-vb6Iv7-" width="200" height="48" alt="Children's House at Johns Hopkins Hospital " title="Children's House at Johns Hopkins Hospital"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/childrens-house-johns-hopkins-hospital">Children's House at Johns Hopkins Hospital</a></p>
+             </div>
+             <h5>Baltimore, MD</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/childrens-house-johns-hopkins-hospital" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-262"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-262" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-262" action="/charities/childrens-house-johns-hopkins-hospital" method="post" id="commerce-cart-add-to-cart-form-262" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="262"> 
+                 <input type="hidden" name="form_build_id" value="form-yfiQc5YBxi2C9Fx9136287HQEK4Y6b8KDyuZLL1XiCo"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_262"> 
+                 <div id="edit-line-item-fields--8" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--8">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--8">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--8" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--8" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--8">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--8" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--8">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--8" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--8">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--8" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--8">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--8" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--8">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--8" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--8">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--8" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--8">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--8">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--8">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--8">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--8" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--8" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--8" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--8">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--8">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--8">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--8" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--8" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--8" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Children's House at Johns Hopkins Hospital" class="give-now-button form-submit" id="edit-submit--8" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-9 views-row-odd column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/christian-appalachian-project"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/CAP-Logo.jpg?itok=KVzkbkaO" width="133" height="100" alt="Christian Appalachian Project logo" title="Christian Appalachian Project logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/christian-appalachian-project">Christian Appalachian Project</a></p>
+             </div>
+             <h5>Lexington, KY</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/christian-appalachian-project" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-83"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-83" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-83" action="/charities/christian-appalachian-project" method="post" id="commerce-cart-add-to-cart-form-83" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="83"> 
+                 <input type="hidden" name="form_build_id" value="form-9FyHzhcIoJxzK7-QtYi2Z45MlzgLA5HWB9sNDHBXxH0"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_83"> 
+                 <div id="edit-line-item-fields--9" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--9">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--9">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--9" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--9" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--9">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--9" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--9">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--9" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--9">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--9" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--9">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--9" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--9">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--9" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--9">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--9" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--9">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--9">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--9">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--9">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--9" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--9" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--9" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--9">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--9">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--9">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--9" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--9" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--9" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Christian Appalachian Project" class="give-now-button form-submit" id="edit-submit--9" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div data-equalizer class="grid-row clearfix"> 
+         <div class="views-row views-row-10 views-row-even column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity node-promoted view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/weta-greater-washington-educational-telecommunications-association"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/WETA-only%20PMS193%2BBlk.jpg?itok=Ve8PCB9h" width="200" height="84" alt="WETA" title="WETA"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/weta-greater-washington-educational-telecommunications-association">WETA (Greater Washington Educational Telecommunications Association)</a></p>
+             </div>
+             <h5>Arlington, VA</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/weta-greater-washington-educational-telecommunications-association" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-63"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-63" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-63" action="/charities/weta-greater-washington-educational-telecommunications-association" method="post" id="commerce-cart-add-to-cart-form-63" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="63"> 
+                 <input type="hidden" name="form_build_id" value="form-MFMLr0AFUwJTL86H2HQCkGcN7gwHQ_SiOLxzjtGv7ns"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_63"> 
+                 <div id="edit-line-item-fields--10" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--10">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--10">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--10" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--10" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--10">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--10" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--10">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--10" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--10">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--10" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--10">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--10" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--10">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--10" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--10">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--10" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--10">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--10">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--10">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--10">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--10" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--10" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--10" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--10">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--10">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--10">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--10" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--10" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--10" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="WETA (Greater Washington Educational Telecommunications Association)" class="give-now-button form-submit" id="edit-submit--10" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-11 views-row-odd column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/100-black-men-america"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/100BlackMen_logo.jpg?itok=sC3uMrpu" width="186" height="100" alt="100 Black men of America What They See Is What They'll Be" title="100 Black men logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/100-black-men-america">100 Black Men of America</a></p>
+             </div>
+             <h5>Atlanta, GA</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/100-black-men-america" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-168"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-168" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-168" action="/charities/100-black-men-america" method="post" id="commerce-cart-add-to-cart-form-168" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="168"> 
+                 <input type="hidden" name="form_build_id" value="form-QAfk-SYU-0wNRn3GCWbB0QhK_Tarh05_SgMvJYEXvzM"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_168"> 
+                 <div id="edit-line-item-fields--11" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--11">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--11">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--11" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--11" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--11">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--11" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--11">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--11" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--11">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--11" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--11">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--11" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--11">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--11" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--11">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--11" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--11">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--11">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--11">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--11">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--11" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--11" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--11" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--11">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--11">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--11">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--11" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--11" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--11" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="100 Black Men of America" class="give-now-button form-submit" id="edit-submit--11" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="views-row views-row-12 views-row-even views-row-last column medium-4 left"> 
+          <div data-equalizer-watch="" class="grid-teaser node node-charity view-mode-grid_teaser "> 
+           <div class="row"> 
+            <div class="columns group-main"> 
+             <div class="field field-name-field-charity-logo">
+              <a href="/charities/connecticut-food-bank"><img src="https://www.charities.org/sites/default/files/styles/logo_small/public/CT%20Food%20Bank_Horiz%20Logo_4cp_ISO_300.jpg?itok=anCQLFUU" width="200" height="67" alt="Connecticut Food Bank" title="Connecticut Food Bank logo"></a>
+             </div>
+             <div class="field field-name-title">
+              <p><a href="/charities/connecticut-food-bank">Connecticut Food Bank</a></p>
+             </div>
+             <h5>East Haven, CT</h5> 
+            </div> 
+           </div> 
+           <div class="row"> 
+            <div class="columns group-bottom_left small-7"> 
+             <div class="field field-name-node-link">
+              <a href="/charities/connecticut-food-bank" class="">Learn More</a>
+             </div> 
+            </div> 
+            <div class="columns group-image small-5"> 
+             <div class="field field-name-charity-donate-dropdown"> 
+              <a class="button button-give-now dropdown" data-dropdown="product-form-6"> Give Now</a> 
+              <div class="add-to-cart-drop f-dropdown" id="product-form-6" data-dropdown-content=""> 
+               <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-6" action="/charities/connecticut-food-bank" method="post" id="commerce-cart-add-to-cart-form-6" accept-charset="UTF-8">
+                <div>
+                 <input type="hidden" name="product_id" value="6"> 
+                 <input type="hidden" name="form_build_id" value="form-byVtd4p0GK536B_-rArB2VUu1B5fmqx17dkZlsklOWA"> 
+                 <input type="hidden" name="form_id" value="commerce_cart_add_to_cart_form_6"> 
+                 <div id="edit-line-item-fields--12" class="form-wrapper">
+                  <div class="field-type-number-integer field-name-commerce-donate-amount field-widget-select-or-other-buttons form-wrapper" id="edit-line-item-fields-commerce-donate-amount--12">
+                   <div class="form-item form-item-line-item-fields-commerce-donate-amount-und"> 
+                    <div class="select-or-other"> 
+                     <div class="form-item form-type-radios form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                      <label for="edit-line-item-fields-commerce-donate-amount-und-select--12">Amount <span class="form-required" title="This field is required.">*</span></label> 
+                      <div id="edit-line-item-fields-commerce-donate-amount-und-select--12" class="form-radios select-or-other-select">
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-25--12" name="line_item_fields[commerce_donate_amount][und][select]" value="25"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-25--12">$25 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-35--12" name="line_item_fields[commerce_donate_amount][und][select]" value="35"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-35--12">$35 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-50--12" name="line_item_fields[commerce_donate_amount][und][select]" value="50"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-50--12">$50 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-100--12" name="line_item_fields[commerce_donate_amount][und][select]" value="100" checked> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-100--12">$100 </label> 
+                       </div> 
+                       <div class="form-item form-type-radio form-item-line-item-fields-commerce-donate-amount-und-select"> 
+                        <input class="select-or-other-select form-radio" type="radio" id="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--12" name="line_item_fields[commerce_donate_amount][und][select]" value="select_or_other"> 
+                        <label class="option" for="edit-line-item-fields-commerce-donate-amount-und-select-select-or-other--12">Other </label> 
+                       </div> 
+                      </div> 
+                     </div> 
+                     <div class="form-item form-type-textfield form-item-line-item-fields-commerce-donate-amount-und-other"> 
+                      <span class="field-prefix">$</span> 
+                      <input class="select-or-other-other form-text" type="text" id="edit-line-item-fields-commerce-donate-amount-und-other--12" name="line_item_fields[commerce_donate_amount][und][other]" value="" size="60" maxlength="128"> 
+                      <span class="field-suffix">.00</span> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div>
+                  <div class="field-type-list-boolean field-name-field-commerce-recurring field-widget-options-onoff form-wrapper" id="edit-line-item-fields-field-commerce-recurring--12">
+                   <div class="form-item form-type-checkbox form-item-line-item-fields-field-commerce-recurring-und"> 
+                    <input type="checkbox" id="edit-line-item-fields-field-commerce-recurring-und--12" name="line_item_fields[field_commerce_recurring][und]" value="1" class="form-checkbox"> 
+                    <label class="option" for="edit-line-item-fields-field-commerce-recurring-und--12">Repeat my donation </label> 
+                   </div> 
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-rec-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-rec-period--12">
+                   <div id="line-item-fields-commerce-recurring-rec-period-add-more-wrapper--12">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-rec-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-rec-period-und-0--12">Repeat every </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-rec-period-und-0--12" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-rec-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-rec-period-und-0-interval--12" name="line_item_fields[commerce_recurring_rec_period][und][0][interval]" value="1" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-rec-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-rec-period-und-0-period--12" name="line_item_fields[commerce_recurring_rec_period][und][0][period]" class="form-select"><option value="month" selected>Months</option><option value="year">Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                  <div class="field-type-interval field-name-commerce-recurring-end-period field-widget-interval-default form-wrapper" id="edit-line-item-fields-commerce-recurring-end-period--12">
+                   <div id="line-item-fields-commerce-recurring-end-period-add-more-wrapper--12">
+                    <div class="form-item form-type-interval form-item-line-item-fields-commerce-recurring-end-period-und-0"> 
+                     <label for="edit-line-item-fields-commerce-recurring-end-period-und-0--12">Repeat for </label> 
+                     <div id="edit-line-item-fields-commerce-recurring-end-period-und-0--12" class="container-inline">
+                      <div class="form-item form-type-textfield form-item-line-item-fields-commerce-recurring-end-period-und-0-interval"> 
+                       <input type="text" id="edit-line-item-fields-commerce-recurring-end-period-und-0-interval--12" name="line_item_fields[commerce_recurring_end_period][und][0][interval]" value="5" size="8" maxlength="128" class="form-text"> 
+                      </div> 
+                      <div class="form-item form-type-select form-item-line-item-fields-commerce-recurring-end-period-und-0-period"> 
+                       <select id="edit-line-item-fields-commerce-recurring-end-period-und-0-period--12" name="line_item_fields[commerce_recurring_end_period][und][0][period]" class="form-select"><option value="month">Months</option><option value="year" selected>Years</option></select> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <input type="hidden" name="quantity" value="1"> 
+                 <button data-charity-title="Connecticut Food Bank" class="give-now-button form-submit" id="edit-submit--12" name="op" value="Give Now" type="submit">Give Now</button> 
+                </div>
+               </form>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <h2 class="element-invisible">Pages</h2>
+       <div class="pagination-centered">
+        <div class="item-list">
+         <ul class="pagination pager">
+          <li class="current first"><a href="">1</a></li> 
+          <li><a title="Go to page 2" href="/charities?page=1">2</a></li> 
+          <li><a title="Go to page 3" href="/charities?page=2">3</a></li> 
+          <li><a title="Go to page 4" href="/charities?page=3">4</a></li> 
+          <li><a title="Go to page 5" href="/charities?page=4">5</a></li> 
+          <li><a title="Go to page 6" href="/charities?page=5">6</a></li> 
+          <li><a title="Go to page 7" href="/charities?page=6">7</a></li> 
+          <li><a title="Go to page 8" href="/charities?page=7">8</a></li> 
+          <li><a title="Go to page 9" href="/charities?page=8">9</a></li> 
+          <li class="unavailable"><a href="">…</a></li> 
+          <li class="arrow"><a title="Go to next page" href="/charities?page=1">next ›</a></li> 
+          <li class="arrow last"><a title="Go to last page" href="/charities?page=11">last »</a></li> 
+         </ul>
+        </div>
+       </div> 
+      </div> 
+     </div> 
+     <!--/.main region --> 
+     <aside role="complementary" class="large-3 sidebar-second columns sidebar"> 
+      <section class="block block-bean block-bean-social-links block-odd clearfix"> 
+       <div class="field field-name-field-links">
+        <a href="https://www.facebook.com/AmericasCharitiesFederation"><i class="fa-facebook-square"></i> Facebook</a>
+        <a href="https://twitter.com/AmerCharities"><i class="fa-twitter"></i> Twitter</a>
+        <a href="https://plus.google.com/+CharitiesOrg/posts"><i class="fa-google-plus"></i> Google Plus</a>
+        <a href="http://www.linkedin.com/company/america's-charities"><i class="fa-linkedin"></i> LinkedIn</a>
+        <a href="http://www.youtube.com/user/AmericasCharities"><i class="fa-youtube-play"></i> Youtube</a>
+        <a href="http://www.pinterest.com/amercharities/"><i class="fa-pinterest"></i> Pinterest</a>
+       </div> 
+      </section> 
+      <section class="block block-bean block-mailchimp-lists block-bean-mailchimp-embedded-form block-even clearfix"> 
+       <div class="entity entity-bean bean-block clearfix"> 
+        <div class="content"> 
+         <div class="field field-name-field-body field-type-text-long field-label-hidden field-wrapper">
+          <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+var loc = "https://analytics.clickdimensions.com/charitiesorg-ablie/pages/";
+//--><!]]>
+</script>
+          <script type="text/javascript" src="https://az124611.vo.msecnd.net/web/v10/CDWidget.js"></script>
+          <div pageid="s3tbux5leewerwad2lccba"></div>
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+      <section class="block block-bean block-bean-sidebar-video-highlight block-odd clearfix"> 
+       <div class="field field-name-field-picture">
+        <a href="https://www.charities.org/simple-employee-giving-solution"><img src="https://www.charities.org/sites/default/files/styles/medium_sidebar/public/americascharities-simple-employee-giving-solutions_sidebar.png?itok=6Xps--ZX" alt="America's Charities workplace giving solution" title="America's Charities workplace giving solution"> </a>
+       </div>
+       <p class="media-link blocks-ads"><a href="https://www.charities.org/simple-employee-giving-solution">Start or take your workplace giving program to the next level. Get Started!</a></p> 
+      </section> 
+      <section class="block block-bean block-bean-sidebar-video-highlight block-bean-second-sidebar-video-highlight block-even clearfix"> 
+       <div class="field field-name-field-picture">
+        <a href="https://www.charities.org/How-Optimizely-Increased-Employee-Giving-Results-Sevenfold"><img src="https://www.charities.org/sites/default/files/styles/medium_sidebar/public/americascharities-optimizely-case-study_webrotator.png?itok=mE0yJCHq" alt="Case Study: How Optimizely Increased Its Employee Giving Results Sevenfold" title="Banner Graphic of the Case Study: How Optimizely Increased Its Employee Giving Results Sevenfold"> </a>
+       </div>
+       <p class="media-link blocks-ads"><a href="https://www.charities.org/How-Optimizely-Increased-Employee-Giving-Results-Sevenfold">Case Study: How Optimizely Increased Its Employee Giving Results Sevenfold</a></p> 
+      </section> 
+      <section class="block block-bean split-bean-block block-bean-anon-sidebar-call-to-action-1 block-odd clearfix"> 
+       <div class="split-block entity entity-bean bean-icon-link-picture-title view-mode-default "> 
+        <div class="color-section columns"> 
+         <div class="group-icon"> 
+          <div class="field field-name-field-icon">
+           <i class="fa-flag"></i>
+          </div> 
+         </div> 
+         <div class="group-bottom_left"> 
+          <h6 class="blocks-ads"><a href="/become-member">Become a Nonprofit Member</a></h6> 
+         </div> 
+        </div> 
+        <div class="image-section"> 
+         <div class="group-image"> 
+          <div class="field field-name-field-image">
+           <img src="https://www.charities.org/sites/default/files/styles/split_image/public/Index-Become-a-Member_cropped.jpg?itok=6SBWZnu9" width="120" height="160" alt="Become a Member" title="Become a Member">
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+      <section class="block block-bean split-bean-block block-bean-anon-sidebar-call-to-action-2 block-even clearfix"> 
+       <div class="split-block entity entity-bean bean-icon-link-picture-title view-mode-default "> 
+        <div class="color-section columns"> 
+         <div class="group-icon"> 
+          <div class="field field-name-field-icon">
+           <i class="fa-user"></i>
+          </div> 
+         </div> 
+         <div class="group-bottom_left"> 
+          <h6 class="blocks-ads"><a href="/connect-us-online">Newsletter &amp; Social Media</a></h6> 
+         </div> 
+        </div> 
+        <div class="image-section"> 
+         <div class="group-image"> 
+          <div class="field field-name-field-image">
+           <img src="https://www.charities.org/sites/default/files/styles/split_image/public/photo5unitedhealthcare-fl2.jpg?itok=LaUye2yD" width="120" height="160" alt="Join Our Community" title="Join Our Community">
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+      <section class="block block-bean split-bean-block block-bean-sidebar-blog block-odd clearfix"> 
+       <div class="split-block entity entity-bean bean-icon-link-picture-title view-mode-default "> 
+        <div class="color-section columns"> 
+         <div class="group-icon"> 
+          <div class="field field-name-field-icon">
+           <i class="fa-file-text-o"></i>
+          </div> 
+         </div> 
+         <div class="group-bottom_left"> 
+          <h6 class="blocks-ads"><a href="https://www.charities.org/blog">Read Our Blog</a></h6> 
+         </div> 
+        </div> 
+        <div class="image-section"> 
+         <div class="group-image"> 
+          <div class="field field-name-field-image">
+           <img src="https://www.charities.org/sites/default/files/styles/split_image/public/Americas-charities-workplace-giving-philanthropy.jpg?itok=zxQSV0iA" width="120" height="160" alt="America's Charities Blogs" title="America's Charities Blogs">
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+      <section class="block block-social-block block-social-block-twitter-widget block-even clearfix"> 
+       <div class="twitter-pull-block-wrapper"> 
+        <div class="twitter-pull-block-content"> 
+         <a class="twitter-timeline" href="https://twitter.com/AmerCharities" data-widget-id="421725563737219072">Tweets by @AmerCharities</a> 
+         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+        </div> 
+       </div> 
+      </section> 
+     </aside> 
+    </main> 
+    <!--/.main--> 
+    <div class="footer-push" id="footer-push"></div> 
+   </div>
+  </div> 
+  <!--/.page --> 
+  <!--.l-footer--> 
+  <footer class="l-footer" role="contentinfo"> 
+   <!--.footer-columns --> 
+   <section class="row l-footer-sections-top"> 
+    <div class="footer-first medium-7 columns"> 
+     <section class="block block-menu-block block-menu-block-4"> 
+      <div class="menu-block-wrapper menu-block-4 menu-name-main-menu parent-mlid-0 menu-level-1"> 
+       <ul class="menu">
+        <li class="first leaf active-trail active menu-mlid-804"><a href="/charities" title="Charities" class="active-trail active">Find a Charity</a></li> 
+        <li class="leaf menu-mlid-20963"><a href="/funds" title="Cause Funds">Cause Funds</a></li> 
+        <li class="leaf has-children menu-mlid-1078"><a href="/solutions" title="Learn more about what America's Charities can do for you">Solutions</a></li> 
+        <li class="leaf menu-mlid-20995"><a href="https://www.charities.org/resources" title="Resources">Resources</a></li> 
+        <li class="leaf menu-mlid-20994"><a href="https://www.charities.org/news?field_story_type_tid=100" title="America's Charities Blog and Workplace Giving and Employee Engagement News">News &amp; Blog</a></li> 
+        <li class="last leaf has-children menu-mlid-1081"><a href="https://www.charities.org/about" title="Learn more about America's Charities">About</a></li> 
+       </ul>
+      </div> 
+     </section> 
+    </div> 
+    <div class="footer-second medium-5 columns"> 
+     <section class="block block-menu block-menu-menu-resource-menu"> 
+      <ul class="menu">
+       <li class="first leaf"><a href="https://www.charities.org/board-resources" title="">Board Resources</a></li> 
+       <li class="leaf"><a href="https://www.charities.org/members" title="">Member Resources</a></li> 
+       <li class="last leaf"><a href="https://www.charities.org/Client-Resource-Center-Access" title="">Client Resources</a></li> 
+      </ul> 
+     </section> 
+    </div> 
+   </section> 
+   <section class="row l-footer-sections-bottom"> 
+    <div class="footer-third medium-7 columns"> 
+     <section class="block block-bean block-bean-social-links--2"> 
+      <div class="field field-name-field-links">
+       <a href="https://www.facebook.com/AmericasCharitiesFederation"><i class="fa-facebook-square"></i> Facebook</a>
+       <a href="https://twitter.com/AmerCharities"><i class="fa-twitter"></i> Twitter</a>
+       <a href="https://plus.google.com/+CharitiesOrg/posts"><i class="fa-google-plus"></i> Google Plus</a>
+       <a href="http://www.linkedin.com/company/america's-charities"><i class="fa-linkedin"></i> LinkedIn</a>
+       <a href="http://www.youtube.com/user/AmericasCharities"><i class="fa-youtube-play"></i> Youtube</a>
+       <a href="http://www.pinterest.com/amercharities/"><i class="fa-pinterest"></i> Pinterest</a>
+      </div> 
+     </section> 
+     <section class="block block-charities-config block-charities-config-rss-icon"> 
+      <a href="/rss/news/all"><i class="fa fa-rss"></i></a> 
+     </section> 
+     <section class="block block-bean block-bean-footer-copyright"> 
+      <div class="entity entity-bean bean-block clearfix"> 
+       <div class="content"> 
+        <div class="field field-name-field-body field-type-text-long field-label-hidden field-wrapper">
+         <p><span>America’s Charities inspires employees and organizations to support causes they care about. We do this to bring more resources to the nonprofits that are changing our world.</span></p> 
+         <p>14150 Newbrook Drive, Suite 110, Chantilly, VA 20151<br> Ph: (800) 458-9505&nbsp;• Fax: (703) 222-3867</p> 
+         <p>© 2014 America's Charities. <a href="/privacy">Privacy Policy</a> | <a href="/sitemap">Sitemap</a></p> 
+        </div> 
+       </div> 
+      </div> 
+     </section> 
+    </div> 
+    <div class="footer-fourth medium-5 columns"> 
+     <section class="block block-bean block-bean-footer-accredidation-links"> 
+      <div class="entity entity-bean bean-block clearfix"> 
+       <div class="content"> 
+        <div class="field field-name-field-body field-type-text-long field-label-hidden field-wrapper">
+         <p>&nbsp;</p> 
+         <p><img alt="America&amp;#039;s Charities CFC Number" class="element file-full" height="84" src="https://www.charities.org/sites/default/files/styles/large/public/America%27s-Charities-CFC-Number_cfclogo_0.jpg?itok=PC2zZzWw" title="" width="122"><a href="http://www.guidestar.org/profile/54-1517707" target="_blank"><img alt="GuideStar Gold" class="media-element file-full" height="125" src="https://www.charities.org/sites/default/files/styles/large/public/guidestar.png?itok=rhfBHL_9" title="GuideStar Gold" width="125"></a>&nbsp; &nbsp;&nbsp;<a href="http://www.novachamber.org/"><img alt="Northern Virginia Chamber of Commerce Member" class="media-element file-full" height="116" src="https://www.charities.org/sites/default/files/styles/large/public/NorthernVACoC_1659_Chamber-Badge-17_grey.png?itok=p8ESIDbf" title="" width="116"></a></p> 
+         <p></p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+         <p>&nbsp;</p> 
+        </div> 
+       </div> 
+      </div> 
+     </section> 
+    </div> 
+   </section> 
+   <!--/.footer-columns--> 
+   <section class="row l-footer-wrap"> 
+    <div class="footer medium-12 columns"> 
+     <script src="//qoo.ly/js/qooly.js" type="text/javascript"></script> 
+     <script type="text/javascript">client.init('10100');</script> 
+     <noscript>
+      <p><img alt="qooly" width="1" height="1" src=""></p>
+     </noscript>
+     <script type="text/javascript" src="https://analytics.clickdimensions.com/ts.js"> </script> 
+     <script type="text/javascript"> 
+  var cdAnalytics = new clickdimensions.Analytics('analytics.clickdimensions.com'); 
+  cdAnalytics.setAccountKey('abLiE6u4CS0qHPS2HT52hZ'); 
+  cdAnalytics.setDomain('charities.org'); 
+  cdAnalytics.setScore(typeof(cdScore) == "undefined" ? 0 : (cdScore == 0 ? null : cdScore)); 
+  cdAnalytics.trackPage(); 
+</script> Children First Acct: 
+     <!-- Google Code for www.charities.org Conversion Page --> 
+     <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 958406508;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "o2d9CNjYyl4Q7L6AyQM";
+var google_remarketing_only = false;
+/* ]]> */
+</script> 
+     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script> 
+     <noscript> 
+      <div style="display:inline;"> 
+       <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/958406508/?label=o2d9CNjYyl4Q7L6…"> 
+      </div> 
+     </noscript> 
+     <!-- Google Code for www.charities.org Conversion Page --> 
+     <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 960627990;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "SDBCCMDrz14QloqIygM";
+var google_remarketing_only = false;
+/* ]]> */
+</script> 
+     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script> 
+     <noscript> 
+      <div style="display:inline;"> 
+       <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/960627990/?label=SDBCCMDrz14Qloq…"> 
+      </div> 
+     </noscript> 
+     <!-- Google Code for www.charities.org Conversion Page --> 
+     <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 957137539;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "7CbkCJXtz14Qg4WzyAM";
+var google_remarketing_only = false;
+/* ]]> */
+</script> 
+     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script> 
+     <noscript> 
+      <div style="display:inline;"> 
+       <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/957137539/?label=7CbkCJXtz14Qg4W…"> 
+      </div> 
+     </noscript>
+     <script type="text/javascript"> 
+    var $buoop = {vs:{i:8,f:15,o:15,s:5.1,n:9}}; 
+    $buoop.ol = window.onload; 
+    window.onload=function(){ 
+      try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+      var e = document.createElement("script"); 
+      e.setAttribute("type", "text/javascript"); 
+      e.setAttribute("src", "//browser-update.org/update.js"); 
+      document.body.appendChild(e); 
+    } 
+    </script> 
+     <script type="text/javascript">
+  _linkedin_data_partner_id = "49019";
+  </script>
+     <script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script> 
+     <noscript> 
+      <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=49019&amp;fmt=gif"> 
+     </noscript> 
+    </div> 
+   </section> 
+  </footer> 
+  <!--/.footer--> 
+  <script src="https://www.charities.org/sites/default/files/js/js_zsT3LLZRV9puZanI5BssRY3WrAZHbpYlH_RZdsA33nE.js"></script> 
+  <script>
+    (function ($, Drupal, window, document, undefined) {
+      $(document).foundation();
+    })(jQuery, Drupal, this, this.document);
+  </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"85f5b6e7c4","applicationID":"6977600","transactionName":"ZANabEZXCEUFU0QLXV1JbUpdGUlfClRVGhxDDkg=","queueTime":0,"applicationTime":10,"atts":"SERZGg5NG0s=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

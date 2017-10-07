@@ -1,0 +1,544 @@
+<!doctype html>
+<html class="no-js" lang="en">
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>The Importance of Improving Your Skills - Upwork Blog</title> 
+  <link rel="stylesheet" href="//components.elance-odesk.com/marketing-ui/1.3.0/css/components.css"> 
+  <link rel="stylesheet" href="https://www.upwork.com/blog/wp-content/themes/blog-theme/stylesheets/app.css?v=1.1"> 
+  <script src="https://www.upwork.com/blog/wp-content/themes/blog-theme/bower_components/modernizr/modernizr.js"></script> 
+  <!-- This site is optimized with the Yoast SEO plugin v3.9 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <link rel="canonical" href="https://www.upwork.com/blog/2011/02/importance-of-improving-your-skills/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="The Importance of Improving Your Skills - Upwork Blog"> 
+  <meta property="og:description" content="It’s vital to set aside some time and start thinking about how you can forward your career by adding new skills, qualifications and experiences to your resume."> 
+  <meta property="og:url" content="https://www.upwork.com/blog/2011/02/importance-of-improving-your-skills/"> 
+  <meta property="og:site_name" content="Upwork Blog"> 
+  <meta property="article:tag" content="Freelancers"> 
+  <meta property="article:section" content="The Way We Work"> 
+  <meta property="article:published_time" content="2011-02-01T09:03:06-07:00"> 
+  <meta property="article:modified_time" content="2016-07-09T12:52:32-07:00"> 
+  <meta property="og:updated_time" content="2016-07-09T12:52:32-07:00"> 
+  <meta property="og:image" content="https://content-static.upwork.com/blog/uploads/sites/4/2016/07/02153026/BLOG_improving-your-skills_H.jpg"> 
+  <meta property="og:image:width" content="1270"> 
+  <meta property="og:image:height" content="580"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:description" content=" It’s vital to set aside some time and start thinking about how you can forward your career by adding new skills, qualifications and experiences to your resume."> 
+  <meta name="twitter:title" content="The Importance of Improving Your Skills - Upwork Blog"> 
+  <meta name="twitter:image" content="https://content-static.upwork.com/blog/uploads/sites/4/2016/07/02153026/BLOG_improving-your-skills_H.jpg"> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//www.upwork.com"> 
+  <link rel="dns-prefetch" href="//s0.wp.com"> 
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Upwork Blog » The Importance of Improving Your Skills Comments Feed" href="https://www.upwork.com/blog/2011/02/importance-of-improving-your-skills/feed/"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.upwork.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="realtidbitsPushquote_headcss-css" href="https://www.upwork.com/blog/wp-content/plugins/pushquote/css/pullquote.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="es-widget-css-css" href="https://www.upwork.com/blog/wp-content/plugins/email-subscribers/widget/es-widget.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="et-gf-open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" media="all"> 
+  <link rel="stylesheet" id="et_monarch-css-css" href="https://www.upwork.com/blog/wp-content/plugins/monarch/css/style.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="hipo-reg-css-css" href="https://www.upwork.com/blog/wp-content/plugins/wp-upwork-widget/widgets/reg-popup-cta/styles/hipo-reg.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="upwork_widget_css-css" href="https://www.upwork.com/blog/wp-content/plugins/wp-upwork-widget/assets/css/upwork-widgets.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="jetpack_css-css" href="https://www.upwork.com/blog/wp-content/plugins/jetpack/css/jetpack.css" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/themes/blog-theme/bower_components/jquery/dist/jquery.min.js"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var PushquoteAjax = {"show_credits":null,"login":"","api_key":""};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/pushquote/js/pullquote.js"></script> 
+  <link rel="https://api.w.org/" href="https://www.upwork.com/blog/wp-json/"> 
+  <link rel="shortlink" href="https://wp.me/p2z1PV-3JY"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.upwork.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.upwork.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;format=xml"> 
+  <script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.upwork.com/blog/?wordfence_logHuman=1&hid=582EB2229C20E7A9D398C037BE4E1E06');
+</script>
+  <style type="text/css" id="et-social-custom-css">
+				.et_monarch .et_social_sidebar_networks li, .et_monarch .et_social_mobile li { background: #f2f2f2; } .et_monarch .et_social_sidebar_networks .et_social_icons_container li:hover, .et_monarch .et_social_mobile .et_social_icons_container li:hover { background: #37a000 !important; } .et_social_sidebar_border li { border-color: #37a000 !important; } .et_monarch .et_social_sidebar_networks .et_social_icons_container li i, .et_monarch .et_social_sidebar_networks .et_social_icons_container li .et_social_count, .et_monarch .et_social_mobile .et_social_icons_container li i, .et_monarch .et_social_mobile .et_social_icons_container li .et_social_count { color: #b2b2b2; } .et_monarch .et_social_sidebar_networks .et_social_icons_container li:hover i, .et_monarch .et_social_sidebar_networks .et_social_icons_container li:hover .et_social_count, .et_monarch .et_social_mobile .et_social_icons_container li:hover i, .et_monarch .et_social_mobile .et_social_icons_container li:hover .et_social_count { color: #ffffff !important; } .et_monarch .et_social_icon, .et_monarch .et_social_icon:before, .et_monarch .et_social_icon:after { font-size: 14px; } .et_monarch .et_social_icon_googleplus:before, .et_monarch .et_social_icon_googleplus:after { font-size: 10px; } .et_social_networkname { color: #b2b2b2; } .et_social_icons_container li:hover .et_social_networkname { color: #fff; } .et_social_hide_sidebar { display:none!important; } @media only screen and (max-width: 1024px) { .et_social_mobile { height: 40px!important } .et_social_heading { display: none!important; overflow: hidden; } .et_monarch .et_social_mobile .et_social_networks { display: block!important; padding: 0!important; background-color: #f2f2f2!important; height: 40px!important; overflow: hidden; } .et_social_network_label { display: none!important; } .et_monarch .et_social_mobile .et_social_networks li a { width: auto!important; display: inline-block; } .et_monarch .et_social_networks li, .et_monarch .et_social_mobile .et_social_networks li { clear: none !important; float: left; margin-top: 0px!important; margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important; width: 16.66666%!important; text-align: center; border-radius: 0; } .et_monarch .et_social_networks li:nth-child(2n+1), .et_monarch .et_social_mobile .et_social_networks li:nth-child(2n+1) { clear: none !important; } .et_monarch .et_social_networks li:nth-child(n+2), .et_monarch .et_social_mobile .et_social_networks li:nth-child(n+2) { margin-top: 0px!important; margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important; } }
+			</style>
+  <style type="text/css">img#wpstats{display:none}</style> 
+ </head> 
+ <body class="post-template-default single single-post postid-14382 single-format-standard et_monarch"> 
+  <!-- Google Tag Manager --> 
+  <script>
+      dataLayer = [{"site":{"application":"Wordpress","version":"06d60b8","environment":"production"},"user":{"visitor_id":"","recognized":false}}];
+    </script> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-K7572X" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K7572X');</script> 
+  <!-- End Google Tag Manager --> 
+  <div class="off-canvas-wrap" data-offcanvas> 
+   <div class="inner-wrap"> 
+    <aside class="right-off-canvas-menu"> 
+     <ul class="off-canvas-list"> 
+      <li><label class="first"><a href="/">Home</a></label></li> 
+     </ul> 
+     <ul class="off-canvas-list"> 
+      <li><a href="/about/">About Us</a></li> 
+      <li><a href="/press/">Press</a></li> 
+      <li><a href="/hiring/">Hiring Headquarters</a></li> 
+      <li><a href="https://goo.gl/P2lvo4">Enterprise Solutions</a></li> 
+      <li><a href="/legal/privacy/">Privacy Policy</a></li> 
+     </ul> 
+     <ul class="off-canvas-list"> 
+      <li><label class="first">Search</label></li> 
+      <li> 
+       <div class="search-form"> 
+        <form role="search" action="https://www.upwork.com/blog" method="get" class="text-right"> 
+         <input type="text" name="s" value="" placeholder="Search Blog"> 
+         <button class="submit"></button> 
+        </form> 
+       </div> </li> 
+     </ul> 
+    </aside> 
+    <header class="site-header contain-to-grid" role="banner"> 
+     <section class="top-bar"> 
+      <section class="top-bar-section row"> 
+       <div class="small-8 medium-4 columns"> 
+        <a href="/" target="_blank" title="Upwork Home"> <img src="//components.elance-odesk.com/marketing-ui/master/img/upwork-logo.svg" alt="Upwork" width="106"> </a> 
+       </div> 
+       <div class="medium-8 columns hide-for-small"> 
+        <div class="search-form right"> 
+         <form role="search" action="https://www.upwork.com/blog" method="get" class="text-right"> 
+          <input type="text" name="s" value="" placeholder="Search Blog"> 
+          <button class="submit"></button> 
+         </form> 
+        </div> 
+       </div> 
+       <div class="small-4 columns show-for-small"> 
+        <a class="right-off-canvas-toggle menu-icon right" href="/blog"> <span></span> </a> 
+       </div> 
+      </section> 
+     </section> 
+     <section class="subnav-menu clearfix"> 
+      <div class="row"> 
+       <div class="medium-3 columns"> 
+        <h1 class="subhead"><a href="https://www.upwork.com/blog" title="Upwork Blog Home">Upwork Blog</a></h1> 
+       </div> 
+       <nav class="medium-9 columns hide-for-small"> 
+        <ul class="secondary-menu right"> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36705"> <a href="/about/">About Us</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36706"> <a href="/press/">Press</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34945"> <a href="/hiring/">Hiring Headquarters</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37350"> <a href="https://goo.gl/P2lvo4">Enterprise Solutions</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39856"> <a href="/legal/privacy/">Privacy Policy</a> </li> 
+        </ul> 
+       </nav> 
+      </div> 
+     </section> 
+    </header> 
+    <div class="site-main"> 
+     <div class="row"> 
+      <div class="page-headline small-12 columns"> 
+       <h1 class="page-title">The Importance of Improving Your Skills</h1> 
+      </div> 
+     </div> 
+     <div class="row content-row"> 
+      <main class="medium-8 columns" role="main"> 
+       <article class="post-entry post-14382 post type-post status-publish format-standard has-post-thumbnail hentry category-way-we-work tag-freelancers"> 
+        <header> 
+         <a href="https://www.upwork.com/blog/category/way-we-work/" class="category-label">The Way We Work</a> 
+         <div class="wrapper"> 
+          <img class="thumbnail" src="https://content-static.upwork.com/blog/uploads/sites/4/2016/07/02153026/BLOG_improving-your-skills_H-645x285.jpg" alt=""> 
+         </div> 
+         <div class="meta"> 
+          <span class="date">February 1, 2011</span> 
+          <span class="author">by <a href="https://www.upwork.com/blog/author/guest_blogger/">Guest Blogger</a></span> 
+         </div> 
+        </header> 
+        <div class="content"> 
+         <p></p>
+         <p><em>One of the great things about working for yourself as a contractor is having more control over the direction of your career.&nbsp; However when you are meeting tight project deadlines while simultaneously interviewing for the next job, it’s easy to overlook the bigger picture. It’s vital to set aside some time and start thinking about how you can forward your career by adding new skills, qualifications and experiences to your resume.</em></p> 
+         <p><strong>Here are eight reasons why it’s important to improve your skills:</strong></p> 
+         <p><strong>1. </strong><strong>You’re the driver!</strong></p> 
+         <p>It’s worth remembering you are your own mentor, HR department and boss.&nbsp; Nobody else is going to be looking after your contractor career development except you, so you need to be the instigator of change. Rather than resting on your laurels, make sure you are moving forward to ensure you don’t get stuck in a rut.</p> 
+         <p><strong>2. </strong><strong>Win new work.</strong></p> 
+         <p>One of the main reasons for adding to your skill set is to be able to win new types of work, which may be more interesting or lucrative. It may be as simple as completing one of the <a href="http://www.odesk.com/tests">oDesk skill tests</a> in order to seal the deal, or you may want to branch out into something completely new–which involves retraining and new education courses.</p> 
+         <p><strong>3. </strong><strong>Increase your hourly rate.</strong></p> 
+         <p>Job satisfaction is important, but so is getting paid. If that summer vacation still looks out of reach, you may need to invest in some training or certifications to ensure you end up with a better rate of pay.</p> 
+         <p><strong><img class="alignleft size-full wp-image-14389" title="improving your skills two" src="http://www.odesk.com/blog/wp-content/uploads/2011/01/improving-your-skills-two.jpg" alt="improving your skills two" width="162" height="116">4. </strong><strong>Play catch-up and stay knowledgeable.</strong></p> 
+         <p>Many professions require you to keep on top of new developments, which can move very fast.&nbsp; So if there is a new software release, or a dynamic new design trend, you may need to have that knowledge under your belt so you’re better equipped to compete on your next job interview.</p> 
+         <p><strong>5. </strong><strong>Stand out from the crowd by combining skills.</strong></p> 
+         <p>Over the next few years the world of contract work is undoubtedly going to get more competitive. You many need something extra to really stand out. Sometimes unusual combinations of skills can result in you having a unique selling point. Are you a programmer who also knows about accessibility? Are you a graphic designer who can also write great copy? Merge your talent and your passions to find creative combinations that make you more marketable.</p> 
+         <p><strong>6. </strong><strong>Highlight your talent.</strong></p> 
+         <p>If you know that you have a talent — such as writing — but it is rather unproven, and you don’t have enough experience in that area to get hired, then having a formal qualification may help you get your toe in the door on relevant projects.</p> 
+         <p><strong><img class="alignright size-full wp-image-14388" title="improving your kills three" src="http://www.odesk.com/blog/wp-content/uploads/2011/01/improving-your-kills-three.jpg" alt="improving your kills three" width="120" height="180">7. </strong><strong>Impress employers by demonstrating your character.</strong></p> 
+         <p>Employers love self-improvement.&nbsp; They greatly respect individuals who are moving forward and developing themselves, and if you can demonstrate this — particularly at the interview stage — then they are likely to consider you the type of person they would want to work with.</p> 
+         <p><strong>8. </strong><strong>Reap the personal rewards</strong></p> 
+         <p>The most important part of learning a new skill or undergoing training is the sense of achievement you will feel when you move forward.&nbsp; Moreover, the whole process of learning is rewarding and interesting, and you can gain insights into your own capabilities and character. You may also meet friends and valuable business contacts on the way. You really can’t lose when educating yourself, improving your skill set and advancing your own contract career.</p> 
+         <p><strong>Are there any other reasons why it’s important to improve your career?&nbsp; Have you had positive experiences from training or learning new skills?&nbsp; Let us know your thoughts in the comments below.</strong></p> 
+         <p><em><br> </em></p> 
+         <span class="et_social_bottom_trigger"></span>
+         <p></p> 
+         <footer> 
+          <div class="author"> 
+           <div class="row"> 
+            <div class="medium-3 columns"> 
+             <a href="https://www.upwork.com/blog/author/guest_blogger/"> 
+              <div class="avatar-wrapper" style="background-image:url('https://secure.gravatar.com/avatar/756b46acee88b4cd5a010f8e92e1d508?s=116&amp;d=mm&amp;r=g')"></div> </a> 
+            </div> 
+            <div class="medium-9 columns"> 
+             <h3><a href="https://www.upwork.com/blog/author/guest_blogger/">Guest Blogger</a></h3> 
+             <h4>Upwork</h4> 
+             <div class="bio"> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </footer> 
+        </div> 
+       </article> 
+       <div class="related-posts"> 
+        <h4>You may also be interested in</h4> 
+        <ul class="row"> 
+         <li class="medium-4 columns post-28209 post type-post status-publish format-standard has-post-thumbnail hentry category-way-we-work tag-freelancers tag-the-future-of-work"> <a class="wrapper" href="https://www.upwork.com/blog/2013/04/this-weeks-perspectives-on-the-future-of-work-week-of-april-12th/"> <img src="https://content-static.upwork.com/blog/uploads/sites/4/2016/07/01122645/BLOG_future-of-work_H-210x175.jpg" alt="This Week’s Perspectives on the Future of Work: Week of April 12th"> <h6 class="title"><span>This Week’s Perspectives on the Future of Work: Week of April 12th</span></h6> </a> </li> 
+         <li class="medium-4 columns post-32362 post type-post status-publish format-standard has-post-thumbnail hentry category-way-we-work tag-entrepreneurship tag-small-business"> <a class="wrapper" href="https://www.upwork.com/blog/2014/04/biggest-unrecognized-opportunity-sharing-economy/"> <img src="https://content-static.upwork.com/blog/uploads/sites/4/2014/04/reaching-out_crop-210x175.jpg" alt="The Biggest Unrecognized Opportunity in the Sharing Economy"> <h6 class="title"><span>The Biggest Unrecognized Opportunity in the Sharing Economy</span></h6> </a> </li> 
+         <li class="medium-4 columns post-18052 post type-post status-publish format-standard has-post-thumbnail hentry category-way-we-work tag-freelancers tag-online-work"> <a class="wrapper" href="https://www.upwork.com/blog/2011/10/negotiating-work-contracts-managers-and-freelancers/"> <img src="https://content-static.upwork.com/blog/uploads/sites/4/2011/10/iStock_000003187239XSmall-150x150.jpg" alt="Negotiating Work Contracts"> <h6 class="title"><span>Negotiating Work Contracts</span></h6> </a> </li> 
+        </ul> 
+       </div> 
+       <div id="comments" class="disqus-comments"> 
+        <div id="disqus_thread"> 
+         <div id="dsq-content"> 
+          <ul id="dsq-comments"> 
+           <li class="post pingback"> <p>Pingback: <a href="https://www.micampusmag.co.za/2017/03/5-ways-to-prepare-for-your-next-job/" rel="external nofollow" class="url">5 ways to prepare for your next job – MiCampusMag</a>()</p> </li> 
+           <!-- #comment-## --> 
+           <li class="post pingback"> <p>Pingback: <a href="https://krettlerblog.wordpress.com/2016/02/14/distinguishing-job-search-strategy/" rel="external nofollow" class="url">Distinguishing Job Search Strategy | Prognosis</a>()</p> </li> 
+           <!-- #comment-## --> 
+          </ul> 
+         </div> 
+        </div> 
+        <script type="text/javascript">
+var disqus_url = 'https://www.upwork.com/blog/2011/02/importance-of-improving-your-skills/';
+var disqus_identifier = '14382 http://www.odesk.com/blog/?p=14382';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'odeskblog';
+var disqus_title = "The Importance of Improving Your Skills";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script> 
+       </div> 
+      </main> 
+      <aside class="sidebar medium-4 columns" role="complementary"> 
+       <div class="wrapper"> 
+        <div class="row"> 
+         <div class="medium-12 columns get-started"> 
+          <a href="/about/">New to Upwork? <em>Learn more</em></a> 
+         </div> 
+        </div> 
+        <ul class="row"> 
+         <li class="widget"> <h2>Follow Us</h2> 
+          <ul class="social-links"> 
+           <li class="gplus"> <a href="https://plus.google.com/u/0/+Upwork/about" target="_blank" title="Add Upwork to Google+ circles"></a> </li> 
+           <li class="twitter"> <a href="https://www.twitter.com/upwork" target="_blank" title="Follow Upwork on Twitter"></a> </li> 
+           <li class="linkedin"> <a href="https://www.linkedin.com/company/upwork" target="_blank" title="Read Upwork company news on LinkedIn"></a> </li> 
+           <li class="facebook"> <a href="https://www.facebook.com/upwork " target="_blank" title="Visit Upwork on Facebook"></a> </li> 
+           <li class="youtube"> <a href="http://www.youtube.com/c/upwork" target="_blank" title="Watch Upwork videos on YouTube"></a> </li> 
+           <li class="instagram"> <a href="https://www.instagram.com/upworkinc/" target="_blank" title="Visit Upwork on Instagram"></a> </li> 
+          </ul> </li> 
+         <li id="nav_menu-3" class="widget widget_nav_menu"><h2 class="widgettitle">Categories</h2> 
+          <div class="menu-categories-container">
+           <ul id="menu-categories" class="menu">
+            <li id="menu-item-37354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37354"><a href="https://www.upwork.com/blog/category/whats-new-on-upwork/">What’s New on Upwork</a></li> 
+            <li id="menu-item-37353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37353"><a href="https://www.upwork.com/blog/category/startup-resources/">Startup Resources</a></li> 
+            <li id="menu-item-39789" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39789"><a href="https://www.upwork.com/blog/category/working-remotely/">Working Remotely</a></li> 
+            <li id="menu-item-38691" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-38691"><a href="https://www.upwork.com/blog/category/engineering/">Engineering</a></li> 
+           </ul>
+          </div></li> 
+         <li id="cta_image_widget-4" class="widget widget_cta_image_widget">
+          <div class="text-center cta-wrapper"> 
+           <div class="cta-inner related"> 
+            <a href="https://www.upwork.com/blog/get-weekly-updates-upwork-blog/"> <img src="https://content-static.upwork.com/blog/uploads/sites/4/2016/07/26102825/Blog-Email-Signup.png" alt=""> </a> 
+           </div> 
+          </div></li> 
+         <li id="cta_image_widget-5" class="widget widget_cta_image_widget">
+          <div class="text-center cta-wrapper"> 
+           <div class="cta-inner related"> 
+            <a href="https://upwork.app.link/ngDr9eU2OD"> <img src="https://content-static.upwork.com/blog/uploads/sites/4/2017/07/19094437/upwork-mobile-app-banner_0717.jpg" alt=""> </a> 
+           </div> 
+          </div></li> 
+         <li id="cta_image_widget-2" class="widget widget_cta_image_widget">
+          <div class="text-center cta-wrapper"> 
+           <div class="cta-inner related"> 
+            <a href="https://goo.gl/eiYrBd"> <img src="https://content-static.upwork.com/blog/uploads/sites/4/2017/02/22092839/Create-an-Awesome-Job-Post-300x250.png" alt=""> </a> 
+           </div> 
+          </div></li> 
+        </ul> 
+       </div> 
+      </aside> 
+     </div> 
+    </div> 
+    <footer class="site-footer"> 
+     <div class="row"> 
+      <section class="medium-5 columns"> 
+       <div class="about hide-for-small"> 
+        <p> <em>Upwork is a leading online workplace—helping businesses find, manage, and pay freelance talent. Our large-scale staffing solutions are used by companies of all sizes, from scrappy startups to Fortune 500s.</em> </p> 
+        <p> <em>Learn more about <a href="/">www.upwork.com</a></em> </p> 
+       </div> 
+       <div class="colophon"> 
+        <small class="footer-legal">© 2015 - 2017 Upwork Global.</small> 
+       </div> 
+      </section> 
+      <section class="medium-4 columns hide-for-small"> 
+       <address> <p> <strong>Upwork Global Inc.</strong><br> 441 Logue Avenue<br> Mountain View, CA 94043<br> USA </p> </address> 
+       <ul class="social-links"> 
+        <li class="gplus"> <a href="https://plus.google.com/u/0/+Upwork/about" target="_blank" title="Add Upwork to Google+ circles"></a> </li> 
+        <li class="twitter"> <a href="https://www.twitter.com/upwork" target="_blank" title="Follow Upwork on Twitter"></a> </li> 
+        <li class="linkedin"> <a href="https://www.linkedin.com/company/upwork" target="_blank" title="Read Upwork company news on LinkedIn"></a> </li> 
+        <li class="facebook"> <a href="https://www.facebook.com/upwork " target="_blank" title="Visit Upwork on Facebook"></a> </li> 
+        <li class="youtube"> <a href="http://www.youtube.com/c/upwork" target="_blank" title="Watch Upwork videos on YouTube"></a> </li> 
+        <li class="instagram"> <a href="https://www.instagram.com/upworkinc/" target="_blank" title="Visit Upwork on Instagram"></a> </li> 
+       </ul> 
+      </section> 
+      <section class="medium-3 columns"> 
+       <nav class="footer-nav"> 
+        <ul> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36705"> <a href="/about/">About Us</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36706"> <a href="/press/">Press</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34945"> <a href="/hiring/">Hiring Headquarters</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37350"> <a href="https://goo.gl/P2lvo4">Enterprise Solutions</a> </li> 
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39856"> <a href="/legal/privacy/">Privacy Policy</a> </li> 
+        </ul> 
+       </nav> 
+      </section> 
+     </div> 
+     <a class="exit-off-canvas"></a> 
+    </footer> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'odeskblog';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script> 
+  <div class="et_social_pin_images_outer"> 
+   <div class="et_social_pinterest_window"> 
+    <div class="et_social_modal_header">
+     <h3>Pin It on Pinterest</h3>
+     <span class="et_social_close"></span>
+    </div> 
+    <div class="et_social_pin_images" data-permalink="https://www.upwork.com/blog/2011/02/importance-of-improving-your-skills/" data-title="The Importance of Improving Your Skills" data-post_id="14382"></div> 
+   </div> 
+  </div>
+  <div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_simple et_social_sidebar_withcounts et_social_mobile_on"> 
+   <ul class="et_social_icons_container">
+    <li class="et_social_facebook"> <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;t=The%20Importance%20of%20Improving%20Your%20Skills" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_facebook"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_googleplus"> <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;t=The%20Importance%20of%20Improving%20Your%20Skills" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="googleplus" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_googleplus"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_linkedin"> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;title=The%20Importance%20of%20Improving%20Your%20Skills" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_linkedin"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_twitter"> <a href="http://twitter.com/share?text=The%20Importance%20of%20Improving%20Your%20Skills&amp;url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;via=" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="twitter" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_twitter"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_pinterest"> <a href="#" class="et_social_share_pinterest et_social_display_count" rel="nofollow" data-social_name="pinterest" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_pinterest"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_gmail"> <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=The%20Importance%20of%20Improving%20Your%20Skills&amp;body=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;ui=2&amp;tf=1" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="gmail" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_gmail"></i> <span class="et_social_overlay"></span> </a> </li>
+   </ul> 
+   <span class="et_social_hide_sidebar et_social_icon"></span> 
+  </div>
+  <div class="et_social_mobile_button"></div> 
+  <div class="et_social_mobile et_social_fadein"> 
+   <div class="et_social_heading">
+    Share This
+   </div> 
+   <span class="et_social_close"></span> 
+   <div class="et_social_networks et_social_simple et_social_rounded et_social_left et_social_withcounts"> 
+    <ul class="et_social_icons_container">
+     <li class="et_social_facebook"> <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;t=The%20Importance%20of%20Improving%20Your%20Skills" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_facebook"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Facebook
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_googleplus"> <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;t=The%20Importance%20of%20Improving%20Your%20Skills" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="googleplus" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_googleplus"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Google+
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_linkedin"> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;title=The%20Importance%20of%20Improving%20Your%20Skills" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_linkedin"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         LinkedIn
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_twitter"> <a href="http://twitter.com/share?text=The%20Importance%20of%20Improving%20Your%20Skills&amp;url=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;via=" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="twitter" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_twitter"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Twitter
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_pinterest"> <a href="#" class="et_social_share_pinterest et_social_display_count" rel="nofollow" data-social_name="pinterest" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_pinterest"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Pinterest
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_gmail"> <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=The%20Importance%20of%20Improving%20Your%20Skills&amp;body=https%3A%2F%2Fwww.upwork.com%2Fblog%2F2011%2F02%2Fimportance-of-improving-your-skills%2F&amp;ui=2&amp;tf=1" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="gmail" data-post_id="14382" data-social_type="share" data-location="sidebar" data-min_count="0"> <i class="et_social_icon et_social_icon_gmail"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Gmail
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="et_social_mobile_overlay"></div> 
+  <script type="text/javascript">
+            var ajaxurl = 'https://www.upwork.com/blog/ajax-api/';
+        </script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var es_widget_notices = {"es_email_notice":"Please enter email address","es_incorrect_email":"Please provide a valid email address","es_load_more":"loading...","es_ajax_error":"Cannot create XMLHTTP instance","es_success_message":"Successfully Subscribed.","es_success_notice":"Your subscription was successful! Within a few minutes, kindly check the mail in your mailbox and confirm your subscription. If you can't see the mail in your mailbox, please check your spam folder.","es_email_exists":"Email Address already exists!","es_error":"Oops.. Unexpected error occurred.","es_invalid_email":"Invalid email address","es_try_later":"Please try after some time","es_problem_request":"There was a problem with the request"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/email-subscribers/widget/es-widget.js"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var es_widget_page_notices = {"es_email_notice":"Please enter email address","es_incorrect_email":"Please provide a valid email address","es_load_more":"loading...","es_ajax_error":"Cannot create XMLHTTP instance","es_success_message":"Successfully Subscribed.","es_success_notice":"Your subscription was successful! Within a few minutes, kindly check the mail in your mailbox and confirm your subscription. If you can't see the mail in your mailbox, please check your spam folder.","es_email_exists":"Email Address already exists!","es_error":"Oops.. Unexpected error occurred.","es_invalid_email":"Invalid email address","es_try_later":"Please try after some time","es_problem_request":"There was a problem with the request"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/email-subscribers/widget/es-widget-page.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/monarch/js/idle-timer.min.js"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/www.upwork.com\/blog\/ajax-api\/","pageurl":"https:\/\/www.upwork.com\/blog\/2011\/02\/importance-of-improving-your-skills\/","stats_nonce":"a125077991","share_counts":"08edae304a","follow_counts":"d58056fa93","total_counts":"037192106d","media_single":"746823d5af","media_total":"31883ecfa2","generate_all_window_nonce":"9ecb998db7","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/monarch/js/custom.js"></script> 
+  <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/themes/blog-theme/bower_components/foundation/js/foundation.min.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/themes/blog-theme/bower_components/QuickShare/dist/quickshare.min.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/themes/blog-theme/bower_components/bowser/bowser.min.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/themes/blog-theme/js/app.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/themes/blog-theme/js/outdated.min.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/wp-upwork-widget/assets/js/upwork-widgets.js"></script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-includes/js/wp-embed.min.js"></script> 
+  <script type="text/javascript" src="https://ssl-munchkin.marketo.net/js/munchkin.js"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var marketo_vars = {"munchkin_id":"518-RKL-392"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.upwork.com/blog/wp-content/plugins/marketo/includes/marketo.js"></script> 
+  <script type="text/javascript">
+        jQuery(function($){
+            if($('.et_social_display_count').length){
+                let element = $('.et_social_facebook a');
+                let shareUrl = location.href;
+                $.getJSON('//graph.facebook.com/?id=' + shareUrl)
+                    .success(function(data){
+                        element.append('<div class="et_social_count"><span>' + data.share.share_count + '</span></div>');
+                        $.post(
+                            ajaxurl, 
+                            {
+                                'action': 'monarch_add_fb_count',
+                                'data': data.share.share_count,
+                                'post_id': $('.et_social_facebook [data-post_id]').data('post_id')
+                            });
+                    });
+            }
+        });
+    </script> 
+  <script type="text/javascript" src="https://stats.wp.com/e-201740.js" async defer></script> 
+  <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.9.7',blog:'37901215',post:'14382',tz:'-7',srv:'www.upwork.com'} ]);
+	_stq.push([ 'clickTrackerInit', '37901215', '14382' ]);
+</script> 
+  <div class="outdated-browser-popup hidden-xs hidden-sm" id="outdated-browser-popup"> 
+   <div class="container"> 
+    <a href="#" class="btn-close-update-browser" title="Close">×</a> 
+    <i class="icon-warning"></i> 
+    <h1 class="font-gotham-bold">Your browser is not supported</h1> 
+    <p class="text-overview font-gotham-medium">To access essential Upwork features, you'll need to update your browser.</p> 
+    <a class="btn btn-default btn-update-browser" href="http://outdatedbrowser.com/">Update my browser</a> 
+   </div> 
+  </div> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8e23a381b9","applicationID":"69924466","transactionName":"NVxRMRBYVhBXUhBQDAwWcgYWUFcNGUINVwQOXA==","queueTime":0,"applicationTime":377,"atts":"GRtSR1hCRR4=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="msvalidate.01" content="ECDA6B6FBE1C84E0198A25810FD787FB"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="https://www.mckissock.com/xmlrpc.php"> 
+  <title>6 Skills You Need to Be a Residential Property Manager - McKissock Learning</title> 
+  <!-- This site is optimized with the Yoast SEO plugin v4.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Property management is hard work. Before you take the steps to become a residential property manager, make sure you develop these six critical skills."> 
+  <meta name="robots" content="noodp"> 
+  <link rel="canonical" href="https://www.mckissock.com/blog/real-estate/real-estate-career/6-skills-residential-property-manager/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="6 Skills You Need to Be a Residential Property Manager - McKissock Learning"> 
+  <meta property="og:description" content="Property management is hard work. Before you take the steps to become a residential property manager, make sure you develop these six critical skills."> 
+  <meta property="og:url" content="https://www.mckissock.com/blog/real-estate/real-estate-career/6-skills-residential-property-manager/"> 
+  <meta property="og:site_name" content="McKissock Learning"> 
+  <meta property="article:tag" content="property management"> 
+  <meta property="article:tag" content="property management skills"> 
+  <meta property="article:tag" content="real estate continuing education"> 
+  <meta property="article:tag" content="residential property manager"> 
+  <meta property="article:tag" content="residential property managers"> 
+  <meta property="article:section" content="Property Management"> 
+  <meta property="article:published_time" content="2016-08-04T08:00:33+00:00"> 
+  <meta property="article:modified_time" content="2017-06-29T15:35:49+00:00"> 
+  <meta property="og:updated_time" content="2017-06-29T15:35:49+00:00"> 
+  <meta property="og:image" content="http://blogs.mckissock.com/real-estate/wp-content/uploads/sites/7/2016/08/blog_image_skills-property-manager.png"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:description" content="Property management is hard work. Before you take the steps to become a residential property manager, make sure you develop these six critical skills."> 
+  <meta name="twitter:title" content="6 Skills You Need to Be a Residential Property Manager - McKissock Learning"> 
+  <meta name="twitter:image" content="http://blogs.mckissock.com/real-estate/wp-content/uploads/sites/7/2016/08/blog_image_skills-property-manager.png"> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//s0.wp.com"> 
+  <link rel="dns-prefetch" href="//www.mckissock.com"> 
+  <link rel="dns-prefetch" href="//display.ugc.bazaarvoice.com"> 
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> 
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"> 
+  <link rel="dns-prefetch" href="//a.optnmnstr.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="McKissock Learning » Feed" href="https://www.mckissock.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="McKissock Learning » Comments Feed" href="https://www.mckissock.com/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="McKissock Learning » 6 Skills You Need to Be a Residential Property Manager Comments Feed" href="https://www.mckissock.com/blog/real-estate/real-estate-career/6-skills-residential-property-manager/feed/"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.mckissock.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="dashicons-css" href="https://www.mckissock.com/wp-includes/css/dashicons.min.css?ver=4.7.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wds_rex-google-font-css" href="//fonts.googleapis.com/css?family=Roboto%3A400%2C700%7COpen+Sans%3A400%2C300%2C700" type="text/css" media="all"> 
+  <link rel="stylesheet" id="animate.css-css" href="https://www.mckissock.com/wp-content/themes/rex/assets/bower_components/animate.css/animate.min.css?ver=10.26.16" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wds_rex-style-css" href="https://www.mckissock.com/wp-content/themes/rex/style.min.css?ver=10.26.16" type="text/css" media="all"> 
+  <link rel="stylesheet" id="star-histogram-css-css" href="https://www.mckissock.com/wp-content/themes/rex/assets/js/colibri/star-histogram/starhistogram.css?ver=2017.02.23" type="text/css" media="all"> 
+  <link rel="stylesheet" id="colibri_css-css" href="https://www.mckissock.com/wp-content/plugins/ns-vc-elements/colibri_style.css?ver=4.7.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="colibriTwo_css-css" href="https://www.mckissock.com/wp-content/plugins/ns-vc-elements/colibriTwo_style.css?ver=4.7.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="https://display.ugc.bazaarvoice.com/static/mckissock/en_US/bvapi.js?ver=4.7.2"></script> 
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?ver=3.3.7"></script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js?ver=4.17.4"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/colibri/star-histogram/star-histogram.js?ver=2017.02.23"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/colibri/star-histogram/mck-star-histogram.js?ver=2017.02.23"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/colibri/ratingsAndReviews.js?ver=2017.02.14"></script> 
+  <script type="text/javascript" data-cfasync="false" id="omapi-script" async src="//a.optnmnstr.com/app/js/api.min.js?ver=1.1.6.1"></script> 
+  <link rel="https://api.w.org/" href="https://www.mckissock.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.mckissock.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.mckissock.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.7.2"> 
+  <link rel="shortlink" href="https://www.mckissock.com/?p=3232"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.mckissock.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.mckissock.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F&amp;format=xml"> 
+  <!-- Stream WordPress user activity plugin v3.1.1 --> 
+  <style type="text/css">img#wpstats{display:none}</style> 
+  <!-- Google Tag Manager ### All includes are managed by marketing through this  ---> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NRSCQ8');</script> 
+  <noscript>
+   &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRSCQ8" height="0" width="0" style="display:none;visibility:hidden"&gt;
+  </noscript> 
+  <!-- End Google Tag Manager --> 
+  <!-- Start Visual Website Optimizer Asynchronous Code --> 
+  <script type="text/javascript">
+		var _vwo_code=(function(){
+		var account_id=274649,
+		settings_tolerance=2000,
+		library_tolerance=2500,
+		use_existing_jquery=false,
+		/* DO NOT EDIT BELOW THIS LINE */
+		f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+		</script> 
+  <!-- End Visual Website Optimizer Asynchronous Code --> 
+  <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."> 
+  <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.mckissock.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+  <link rel="icon" href="https://www.mckissock.com/wp-content/uploads/2017/06/cropped-mckissock-colibri-only-524x524-32x32.png" sizes="32x32"> 
+  <link rel="icon" href="https://www.mckissock.com/wp-content/uploads/2017/06/cropped-mckissock-colibri-only-524x524-192x192.png" sizes="192x192"> 
+  <link rel="apple-touch-icon-precomposed" href="https://www.mckissock.com/wp-content/uploads/2017/06/cropped-mckissock-colibri-only-524x524-180x180.png"> 
+  <meta name="msapplication-TileImage" content="https://www.mckissock.com/wp-content/uploads/2017/06/cropped-mckissock-colibri-only-524x524-270x270.png"> 
+  <noscript>
+   <style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style>
+  </noscript>
+ </head> 
+ <body class="post-template-default single single-post postid-3232 single-format-standard mega-menu-primary no-vc-elements group-blog no-js has-hero wpb-js-composer js-comp-ver-5.0.1 vc_responsive"> 
+  <svg style="display: none;">
+   <defs>
+    <path id="chevron-dove-SVGID_1_" d="M-2587.7 433.3l4.6 5.4c0 .1.1.1.1.1.1 0 .1-.1.2-.1l.5-.6c.1-.1.1-.1.1-.3 0-.1-.1-.2-.1-.3l-3.8-4.5 3.9-4.6c.1-.1.1-.1.1-.3 0-.1-.1-.2-.1-.3l-.5-.5c-.1-.1-.2-.1-.3-.1s-.1 0-.2.1l-4.5 5.4c-.1.1-.2.2-.2.3.1.1.1.2.2.3l3-.5" />
+    <path id="chevron-left-thin-dove-SVGID_2_" d="M7.1 8.4l6.5 7.7c.1.1.2.2.3.2.1 0 .2-.1.3-.2l.7-.8c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4L9.4 8l5.5-6.5c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4l-.7-.8c-.1-.1-.2-.2-.3-.2-.1 0-.2.1-.3.2L7.1 7.6c-.1.1-.2.2-.2.4.1.1.1.3.2.4l4.2-.7" />
+    <path id="chevron-left-thin-SVGID_2_" d="M7.1 8.4l6.5 7.7c.1.1.2.2.3.2.1 0 .2-.1.3-.2l.7-.8c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4L9.4 8l5.5-6.5c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4l-.7-.8c-.1-.1-.2-.2-.3-.2-.1 0-.2.1-.3.2L7.1 7.6c-.1.1-.2.2-.2.4.1.1.1.3.2.4l4.2-.7" />
+    <path id="chevron-purple-a" d="M.3 7.3l4.6 5.4c0 .1.1.1.1.1.1 0 .1-.1.2-.1l.5-.6c.1-.1.1-.1.1-.3 0-.1-.1-.2-.1-.3L1.9 7l3.9-4.6c.1-.1.1-.1.1-.3 0-.1-.1-.2-.1-.3l-.5-.5c-.1-.1-.2-.1-.3-.1s-.1 0-.2.1L.3 6.7c-.1.1-.2.2-.2.3.1.1.1.2.2.3l3-.5" />
+    <path id="chevron-right-thin-dove-SVGID_1_" d="M-280.2 396l-6.5-7.7c-.1-.1-.2-.2-.3-.2-.1 0-.2.1-.3.2l-.7.8c-.1.1-.2.2-.2.4s.1.3.2.4l5.5 6.5-5.5 6.5c-.1.1-.2.2-.2.4 0 .1.1.3.2.4l.7.8c.1.1.2.2.3.2.1 0 .2-.1.3-.2l6.5-7.7c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4l-4.2.7" />
+    <path id="chevron-right-thin-SVGID_1_" d="M-280.2 396l-6.5-7.7c-.1-.1-.2-.2-.3-.2-.1 0-.2.1-.3.2l-.7.8c-.1.1-.2.2-.2.4s.1.3.2.4l5.5 6.5-5.5 6.5c-.1.1-.2.2-.2.4 0 .1.1.3.2.4l.7.8c.1.1.2.2.3.2.1 0 .2-.1.3-.2l6.5-7.7c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4l-4.2.7" />
+    <style>.cls-1{fill:#666;stroke:#666;stroke-width:1px;fill-rule:evenodd}</style>
+    <style>.cls-1{fill:#666;stroke:#666;stroke-width:1px;fill-rule:evenodd}</style>
+    <style>.cls-1{fill:#92288c}.cls-2{fill:#fff;stroke:#fff;stroke-width:1px}</style>
+    <style>.cls-1{fill:#92288c}.cls-2{fill:#fff;stroke:#fff;stroke-width:1px}</style>
+   </defs>
+   <symbol viewbox="0 0 26 46" id="icon-arrow-left">
+    <path d="M21.885 43.01l1.14-1.11-19.3-18.81a.4.4 0 0 1 0-.57l18.87-18.4-1.14-1.1-18.87 18.39a1.944 1.944 0 0 0 0 2.78l19.3 18.82z" stroke="#666" stroke-width="3" fill-rule="evenodd" />
+   </symbol>
+   <symbol viewbox="0 0 26 46" id="icon-arrow-right">
+    <path d="M4.14 43.01L3 41.9l19.3-18.81a.4.4 0 0 0 0-.57L3.43 4.12l1.14-1.1 18.87 18.39a1.944 1.944 0 0 1 0 2.78L4.14 43.01z" stroke="#666" stroke-width="3" fill-rule="evenodd" />
+   </symbol>
+   <symbol viewbox="0 0 24 28" id="icon-bars">
+    <path d="M24 21v2q0 .406-.297.703T23 24H1q-.406 0-.703-.297T0 23v-2q0-.406.297-.703T1 20h22q.406 0 .703.297T24 21zm0-8v2q0 .406-.297.703T23 16H1q-.406 0-.703-.297T0 15v-2q0-.406.297-.703T1 12h22q.406 0 .703.297T24 13zm0-8v2q0 .406-.297.703T23 8H1q-.406 0-.703-.297T0 7V5q0-.406.297-.703T1 4h22q.406 0 .703.297T24 5z" />
+   </symbol>
+   <symbol viewbox="-2588 426 6 14" id="icon-chevron-dove">
+    <style>.st0{fill:#92288c}.st1{clip-path:url(#SVGID_2_);fill:#666}</style>
+    <path id="chevron-dove-a" class="st0" d="M-2587.7 433.3l4.6 5.4c0 .1.1.1.1.1.1 0 .1-.1.2-.1l.5-.6c.1-.1.1-.1.1-.3 0-.1-.1-.2-.1-.3l-3.8-4.5 3.9-4.6c.1-.1.1-.1.1-.3 0-.1-.1-.2-.1-.3l-.5-.5c-.1-.1-.2-.1-.3-.1s-.1 0-.2.1l-4.5 5.4c-.1.1-.2.2-.2.3.1.1.1.2.2.3l3-.5" />
+    <clippath id="chevron-dove-SVGID_2_">
+     <use xlink:href="#chevron-dove-SVGID_1_" overflow="visible" />
+    </clippath>
+    <path class="st1" d="M-2591.3 423.6h12.7v18.7h-12.7v-18.7z" />
+   </symbol>
+   <symbol viewbox="2 -6 20 28" id="icon-chevron-left-thin-dove">
+    <style>.st0,.st1{fill:#666}.st1{clip-path:url(#SVGID_3_)}</style>
+    <path id="chevron-left-thin-dove-SVGID_1_" class="st0" d="M7.1 8.4l6.5 7.7c.1.1.2.2.3.2.1 0 .2-.1.3-.2l.7-.8c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4L9.4 8l5.5-6.5c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4l-.7-.8c-.1-.1-.2-.2-.3-.2-.1 0-.2.1-.3.2L7.1 7.6c-.1.1-.2.2-.2.4.1.1.1.3.2.4l4.2-.7" />
+    <clippath id="chevron-left-thin-dove-SVGID_3_">
+     <use xlink:href="#chevron-left-thin-dove-SVGID_2_" overflow="visible" />
+    </clippath>
+    <path class="st1" d="M2-5.3h18.1v26.5H2z" />
+   </symbol>
+   <symbol viewbox="2 -6 20 28" id="icon-chevron-left-thin">
+    <style>.st0,.st1{fill:#fff}.st1{clip-path:url(#SVGID_3_)}</style>
+    <path id="chevron-left-thin-SVGID_1_" class="st0" d="M7.1 8.4l6.5 7.7c.1.1.2.2.3.2.1 0 .2-.1.3-.2l.7-.8c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4L9.4 8l5.5-6.5c.1-.1.2-.2.2-.4 0-.1-.1-.3-.2-.4l-.7-.8c-.1-.1-.2-.2-.3-.2-.1 0-.2.1-.3.2L7.1 7.6c-.1.1-.2.2-.2.4.1.1.1.3.2.4l4.2-.7" />
+    <clippath id="chevron-left-thin-SVGID_3_">
+     <use xlink:href="#chevron-left-thin-SVGID_2_" overflow="visible" />
+    </clippath>
+    <path class="st1" d="M2-5.3h18.1v26.5H2z" />
+   </symbol>
+   <symbol viewbox="0 0 6 14" id="icon-chevron-purple">
+    <use xlink:href="#chevron-purple-a" overflow="visible" />
+    <clippath id="chevron-purple-b">
+     <use xlink:href="#chevron-purple-a" overflow="visible" />
+    </clippath>
+    <path clip-path="url(#chevron-purple-b)" d="M-3.3-2.4H9.4v18.7H-3.3V-2.4z" />
+   </symbol>
+   <symbol viewbox="-295 383 20 28" id="icon-chevron-right-thin-dove">
+    <style>.st0{clip-path:url(#SVGID_2_);fill:#666}</style>
+    <use xlink:href="#chevron-right-thin-dove-SVGID_1_" overflow="visible" fill-rule="evenodd" clip-rule="evenodd" />
+    <clippath id="chevron-right-thin-dove-SVGID_2_">
+     <use xlink:href="#chevron-right-thin-dove-SVGID_1_" overflow="visible" />
+    </clippath>
+    <path class="st0" d="M-293.1 383.1h18.1v26.5h-18.1z" />
+   </symbol>
+   <symbol viewbox="-295 383 20 28" id="icon-chevron-right-thin">
+    <style>.st0{clip-path:url(#SVGID_2_);fill:#fff}</style>
+    <use xlink:href="#chevron-right-thin-SVGID_1_" overflow="visible" fill-rule="evenodd" clip-rule="evenodd" />
+    <clippath id="chevron-right-thin-SVGID_2_">
+     <use xlink:href="#chevron-right-thin-SVGID_1_" overflow="visible" />
+    </clippath>
+    <path class="st0" d="M-293.1 383.1h18.1v26.5h-18.1z" />
+   </symbol>
+   <symbol viewbox="0 0 80 84" id="icon-clock-b">
+    <g fill-rule="evenodd">
+     <path d="M73.41 21.25a3 3 0 1 0-5 3.3c8.931 13.573 7.01 31.568-4.583 42.951-11.595 11.383-29.622 12.971-43.028 3.792C7.392 62.113 2.354 44.732 8.773 29.806 15.193 14.88 31.276 6.582 47.16 10l-1.73 4 14.86-1.67-8.87-12-1.82 4.09C30.965-.171 11.7 9.145 3.727 26.602-4.246 44.059 1.328 64.72 17 75.797c15.672 11.078 37.009 9.44 50.805-3.902 13.797-13.34 16.15-34.61 5.605-50.645z" />
+     <path d="M42.42 37.37L40 13.57l-2.64 26.15a4.45 4.45 0 1 0 7 2.89l16.59-20.36-18.53 15.12z" />
+    </g>
+   </symbol>
+   <symbol viewbox="0 0 24 24" id="icon-clock">
+    <path d="M10.14 6.14A.48.48 0 0 1 10.5 6h1a.49.49 0 0 1 .36.14.48.48 0 0 1 .14.36V12h3.5a.49.49 0 0 1 .36.14.48.48 0 0 1 .14.36v1a.49.49 0 0 1-.14.36.48.48 0 0 1-.36.14h-5a.49.49 0 0 1-.36-.14.48.48 0 0 1-.14-.36v-7a.49.49 0 0 1 .14-.36zm-5.5 10.13a8.47 8.47 0 0 0 3.09 3.09A8.32 8.32 0 0 0 12 20.5a8.29 8.29 0 0 0 4.27-1.14 8.49 8.49 0 0 0 3.09-3.09 8.55 8.55 0 0 0 0-8.53 8.49 8.49 0 0 0-3.09-3.09A8.29 8.29 0 0 0 12 3.5a8.32 8.32 0 0 0-4.26 1.14 8.47 8.47 0 0 0-3.1 3.09 8.55 8.55 0 0 0 0 8.54zM1.61 6A12 12 0 0 1 6 1.61 11.73 11.73 0 0 1 12 0a11.75 11.75 0 0 1 6 1.61A11.93 11.93 0 0 1 22.39 6 11.74 11.74 0 0 1 24 12a11.74 11.74 0 0 1-1.61 6A11.93 11.93 0 0 1 18 22.39 11.75 11.75 0 0 1 12 24a11.73 11.73 0 0 1-6-1.61A12 12 0 0 1 1.61 18 11.74 11.74 0 0 1 0 12a11.74 11.74 0 0 1 1.61-6z" />
+   </symbol>
+   <symbol viewbox="0 0 22 28" id="icon-close">
+    <path d="M20.28 20.656q0 .625-.437 1.062l-2.125 2.125q-.438.438-1.062.438t-1.062-.434L11 19.25l-4.594 4.593q-.438.438-1.062.438t-1.062-.434L2.157 21.72q-.438-.44-.438-1.063t.434-1.062L6.75 15l-4.593-4.594q-.438-.438-.438-1.062t.434-1.062L4.28 6.157q.44-.438 1.063-.438t1.062.434L11 10.75l4.594-4.593q.438-.438 1.062-.438t1.062.434l2.125 2.125q.438.44.438 1.062t-.434 1.062L15.25 15l4.593 4.594q.438.438.438 1.062z" />
+   </symbol>
+   <symbol viewbox="0 0 73 75" id="icon-comment">
+    <path d="M36.39 0C16.29 0 0 14.07 0 31.43c0 11 6.55 20.66 16.45 26.28 0 0-4.45 10.59-11.01 13.24-1 1.4.14 4.18 6.41 4 6.27-.18 17.54-4.67 21.59-12.23 1 .07 1.94.13 2.93.13 20.09 0 36.39-14.07 36.39-31.43S56.48 0 36.39 0z" fill-rule="evenodd" />
+   </symbol>
+   <symbol viewbox="0.1 -2.9 29.8 29.8" id="icon-envelope-icon">
+    <style>.st0{fill:#bcbcbc}</style>
+    <path class="st0" d="M29 9.1v12.4c0 .7-.2 1.3-.7 1.8-.5.5-1.1.7-1.8.7h-23c-.7 0-1.3-.2-1.8-.7-.5-.5-.7-1.1-.7-1.8V9.1c.5.5 1 1 1.6 1.4 3.8 2.6 6.4 4.4 7.8 5.4.6.4 1.1.8 1.4 1s.9.5 1.5.8 1.2.3 1.7.3 1.1-.1 1.7-.4 1.1-.5 1.5-.8c.4-.2.9-.6 1.4-1 1.8-1.3 4.4-3.1 7.8-5.4.6-.4 1.2-.8 1.6-1.3zm0-4.6c0 .8-.3 1.6-.8 2.4-.5.8-1.1 1.4-1.9 1.9-3.9 2.7-6.4 4.4-7.3 5.1-.1.1-.3.2-.7.5-.3.2-.6.4-.8.6s-.5.3-.8.5-.6.3-.9.4c-.3.1-.5.1-.8.1-.2 0-.5 0-.8-.1-.3-.1-.6-.2-.9-.4s-.6-.4-.8-.5-.5-.3-.8-.6-.6-.4-.7-.5c-1-.7-2.3-1.7-4.1-2.9S4 9 3.7 8.8C3 8.3 2.4 7.7 1.9 7 1.3 6.2 1 5.5 1 4.8c0-.8.2-1.5.6-2S2.7 2 3.5 2h23c.7 0 1.3.2 1.8.7.5.5.7 1.1.7 1.8z" />
+   </symbol>
+   <symbol viewbox="0 0 54 60" id="icon-event">
+    <path d="M37.57 14V2.63A2.61 2.61 0 0 1 40.2 0a2.56 2.56 0 0 1 2.63 2.63V14a2.63 2.63 0 0 1-5.25 0h-.01zm-26.92 0V2.63A2.61 2.61 0 0 1 13.28 0a2.56 2.56 0 0 1 2.62 2.63V14a2.63 2.63 0 0 1-5.25 0zm36.82 39.3H5.93v-29h41.55l-.01 29zm0-44.55h-2.7V19.2h-9.45V8.78H18.07V19.2H8.62V8.78H5.93A5.94 5.94 0 0 0 0 14.7v38.63a5.94 5.94 0 0 0 5.93 5.93h41.55a5.94 5.94 0 0 0 5.93-5.93V14.7a5.94 5.94 0 0 0-5.93-5.92l-.01-.03z" fill-rule="evenodd" />
+   </symbol>
+   <symbol viewbox="0 0 161.3 123.7" id="icon-exam-icon">
+    <path d="M154.2 16.8v89.3c0 3.6-1.3 6.7-3.9 9.3-2.6 2.6-5.7 3.9-9.3 3.9H20.3c-3.6 0-6.7-1.3-9.3-3.9-2.6-2.6-3.9-5.7-3.9-9.3V16.8c0-3.6 1.3-6.7 3.9-9.3 2.6-2.6 5.7-3.9 9.3-3.9h120.8c3.6 0 6.7 1.3 9.3 3.9 2.5 2.6 3.8 5.7 3.8 9.3zm-10.5 89.3V37.8c0-.7-.3-1.3-.8-1.9-.5-.5-1.1-.8-1.8-.8H20.3c-.7 0-1.3.3-1.8.8s-.8 1.1-.8 1.9v68.3c0 .7.3 1.3.8 1.8s1.1.8 1.8.8h120.8c.7 0 1.3-.3 1.8-.8s.8-1.1.8-1.8zm-105-57.8v5.3c0 .7-.3 1.3-.8 1.9-.5.5-1.1.8-1.8.8h-5.2c-.7 0-1.3-.3-1.8-.8s-.8-1.1-.8-1.9v-5.3c0-.7.3-1.3.8-1.8s1.1-.8 1.8-.8H36c.7 0 1.3.3 1.8.8.6.5.9 1.1.9 1.8zm0 21v5.3c0 .7-.3 1.3-.8 1.8s-1.1.8-1.8.8h-5.2c-.7 0-1.3-.3-1.8-.8s-.8-1.1-.8-1.8v-5.3c0-.7.3-1.3.8-1.8s1.1-.8 1.8-.8H36c.7 0 1.3.3 1.8.8.6.5.9 1.1.9 1.8zm0 21v5.3c0 .7-.3 1.3-.8 1.8s-1.1.8-1.8.8h-5.2c-.7 0-1.3-.3-1.8-.8s-.8-1.1-.8-1.8v-5.3c0-.7.3-1.3.8-1.8s1.1-.8 1.8-.8H36c.7 0 1.3.3 1.8.8.6.5.9 1.1.9 1.8zm94.5-42v5.3c0 .7-.3 1.3-.8 1.9-.5.5-1.1.8-1.8.8H51.8c-.7 0-1.3-.3-1.8-.8s-.8-1.1-.8-1.9v-5.3c0-.7.3-1.3.8-1.8s1.1-.8 1.8-.8h78.8c.7 0 1.3.3 1.8.8s.8 1.1.8 1.8zm0 21v5.3c0 .7-.3 1.3-.8 1.8s-1.1.8-1.8.8H51.8c-.7 0-1.3-.3-1.8-.8s-.8-1.1-.8-1.8v-5.3c0-.7.3-1.3.8-1.8s1.1-.8 1.8-.8h78.8c.7 0 1.3.3 1.8.8s.8 1.1.8 1.8zm0 21v5.3c0 .7-.3 1.3-.8 1.8s-1.1.8-1.8.8H51.8c-.7 0-1.3-.3-1.8-.8s-.8-1.1-.8-1.8v-5.3c0-.7.3-1.3.8-1.8s1.1-.8 1.8-.8h78.8c.7 0 1.3.3 1.8.8s.8 1.1.8 1.8z" />
+   </symbol>
+   <symbol viewbox="-1.7 -10.9 19.3 33.8" id="icon-facebook">
+    <path d="M15.6-8.8V-4h-2.8c-1 0-1.7.2-2 .7-.3.5-.6 1-.6 2v3.5h5.2l-.7 5.4h-4.5v13.8H4.9v-14H.3V2h4.5v-4c0-2.2.6-4 1.8-5.2s2.8-1.9 4.9-1.9c1.9 0 3.1.2 4.1.3z" />
+   </symbol>
+   <symbol viewbox="30 -25.3 65.3 65.3" id="icon-googleplus">
+    <path d="M58.7 11.3c-1.7-1.2-3.3-3-3.3-3.5 0-1 .1-1.5 2.3-3.2 2.9-2.3 4.5-5.2 4.5-8.4 0-2.8-.9-5.4-2.3-7.1H61c.2 0 .5-.1.7-.2l3.2-2.3c.4-.3.6-.8.4-1.3-.2-.5-.6-.8-1.1-.8H49.9c-1.6 0-3.2.3-4.7.8-5.2 1.8-8.9 6.2-8.9 10.8 0 6.5 5 11.4 11.7 11.5-.1.5-.2 1-.2 1.5 0 1 .3 1.9.8 2.9h-.2c-6.4 0-12.1 3.1-14.3 7.8-.6 1.2-.9 2.4-.9 3.6s.3 2.3.9 3.4c1.4 2.5 4.3 4.4 8.3 5.4 2.1.5 4.3.8 6.6.8 2.1 0 4-.3 5.9-.8 5.7-1.6 9.3-5.8 9.3-10.6 0-4.7-1.5-7.5-5.5-10.3zM40.6 21.9c0-3.4 4.3-6.3 9.2-6.3h.1c1.1 0 2.1.2 3.1.5.3.2.7.5 1 .7 2.3 1.5 3.7 2.6 4.2 4.2.1.4.1.8.1 1.2 0 4.2-3.1 6.3-9.3 6.3-4.7-.1-8.4-3-8.4-6.6zm4.5-31.8c.7-.9 1.7-1.4 2.9-1.4h.1c3.2.1 6.2 3.6 6.7 7.9.3 2.4-.2 4.6-1.4 6-.8.9-1.7 1.3-2.9 1.3h-.1c-3.1-.1-6.2-3.8-6.7-8-.3-2.4.2-4.5 1.4-5.8zm24 8.7h23v2.4h-23z" />
+    <path d="M79.3-11.5h2.4v23h-2.4z" />
+   </symbol>
+   <symbol viewbox="0 0 161.3 130" id="icon-icon-exam">
+    <text transform="translate(11.767 118.478)" font-family="'FontAwesome'" font-size="138.482">
+     
+    </text>
+   </symbol>
+   <symbol viewbox="37 -33 80 80" id="icon-linkedin">
+    <path d="M57.1 41V-4H43.2v45h13.9zm0-60.9C57-24 54.4-27 50-27s-7.2 3-7.2 7.1c0 3.9 2.8 7.1 7.1 7.1h.1c4.4 0 7.1-3.2 7.1-7.1zM79.8 41V15.4c0-1.3.1-2.8.5-3.7 1.1-2.8 3.7-5.6 7.9-5.6 5.5 0 8.9 3.2 8.9 9.3V41h14V14.7C111.1.7 103.6-6 93.5-6c-8.3 0-11.8 4.6-13.9 7.7l.1-6H65.9c.3 4.3 0 45.3 0 45.3h13.9z" />
+   </symbol>
+   <symbol viewbox="13 -9 32 32" id="icon-mail-icon">
+    <path d="M43-4.4H15c-1.1 0-2 .9-2 2V1l16 6.4L45 1v-3.4c0-1.1-.9-2-2-2zM13 4.2v13.4c0 1.1.9 2 2 2h28c1.1 0 2-.9 2-2V4.2l-16 6.4-16-6.4z" />
+   </symbol>
+   <symbol viewbox="13 -9 32 32" id="icon-pencil-edit-icon">
+    <path d="M33.6 15.2L39 17l-1.8-5.4L26.9 1.3l-3.6 3.6 10.3 10.3zM21.2 2.8l3.6-3.6-2.6-2.6c-1-1-2.6-1-3.6 0s-1 2.6 0 3.6l2.6 2.6zM43-9H15c-1.1 0-2 .9-2 2v28c0 1.1.9 2 2 2h28c1.1 0 2-.9 2-2V-7c0-1.1-.9-2-2-2zm0 30H15V-7h28v28z" />
+   </symbol>
+   <symbol viewbox="0 0 23.969 43" id="icon-post-carousel-arrow-left">
+    <path id="post-carousel-arrow-left-Arrow_Left" data-name="Arrow Left" class="cls-1" d="M125.864 3477.99l1.136 1.11-19.27 18.81a.4.4 0 0 0 0 .57l18.841 18.4-1.132 1.11-18.841-18.4a1.935 1.935 0 0 1 0-2.78z" transform="translate(-104.531 -3476.5)" />
+   </symbol>
+   <symbol viewbox="0 0 24.03 43" id="icon-post-carousel-arrow-right">
+    <path id="post-carousel-arrow-right-Arrow_Left_copy" data-name="Arrow Left copy" class="cls-1" d="M1472.14 3477.99l-1.14 1.11 19.3 18.81a.4.4 0 0 1 0 .57l-18.87 18.4 1.14 1.11 18.87-18.4a1.944 1.944 0 0 0 0-2.78z" transform="translate(-1469.5 -3476.5)" />
+   </symbol>
+   <symbol viewbox="13 -9.8 32 33.8" id="icon-profile-icon">
+    <g>
+     <path d="M29 2.4c-5.5 0-10.5 6-10.5 13.4s21.1 7.4 21.1 0S34.5 2.4 29 2.4z" />
+     <path stroke="#FCFCFC" stroke-miterlimit="10" d="M35.3-.8c0-3.4-2.9-6.3-6.3-6.3s-6.3 2.9-6.3 6.3 2.9 6.3 6.3 6.3 6.3-3 6.3-6.3z" />
+    </g>
+   </symbol>
+   <symbol viewbox="0 0 43.56 43.56" id="icon-purple-post-carousel-arrow-left">
+    <circle class="cls-1" cx="21.78" cy="21.78" r="21.78" />
+    <path id="purple-post-carousel-arrow-left-Arrow_Left_copy" data-name="Arrow Left copy" class="cls-2" d="M14.61 24.18a1.46 1.46 0 0 0 0 2.06L28.75 40l.85-.83-14.14-13.74a.3.3 0 0 1 0-.42L29.93 10.9l-.85-.83z" transform="translate(-3.22 -2.31)" />
+   </symbol>
+   <symbol viewbox="0 0 43.56 43.56" id="icon-purple-post-carousel-arrow-right">
+    <circle class="cls-1" cx="21.78" cy="21.78" r="21.78" />
+    <path id="purple-post-carousel-arrow-right-Arrow_Left_copy" data-name="Arrow Left copy" class="cls-2" d="M20.93 10.07l-.85.83L34.54 25a.3.3 0 0 1 0 .42l-14.15 13.8.85.83 14.15-13.79a1.46 1.46 0 0 0 0-2.06z" transform="translate(-3.22 -2.31)" />
+   </symbol>
+   <symbol viewbox="0 0 24 24" id="icon-star_outline">
+    <path d="M12 15.422l3.75 2.25-.984-4.266 3.328-2.906-4.406-.375L12 6.095l-1.688 4.03-4.406.375 3.328 2.906-.984 4.266zm9.984-6.188l-5.438 4.734 1.64 7.03L12 17.25 5.81 21l1.642-7.03-5.438-4.734 7.172-.61L12 2.016l2.812 6.61z" />
+   </symbol>
+   <symbol viewbox="0 0 24 24" id="icon-star">
+    <path d="M12 17.25L5.812 21l1.64-7.03-5.437-4.735 7.172-.61L12 2.018l2.813 6.61 7.172.608-5.438 4.734 1.64 7.03z" />
+   </symbol>
+   <symbol viewbox="0 0 149 121" id="icon-stars">
+    <g fill-rule="evenodd">
+     <path d="M10.83 33.32l17.52 12.73 17.52-12.73-6.69 20.59 17.51 12.74-21.65-.01-6.7 20.6-6.68-20.6H0l17.52-12.73z" />
+     <path d="M56.7 0l17.52 12.73L91.74.01 85.05 20.6l17.51 12.73H80.91l-6.7 20.59-6.68-20.59-21.66-.01L63.39 20.6zm-.01 66.65l17.52 12.73 17.52-12.73-6.69 20.6 17.51 12.73-21.65-.01-6.7 20.6-6.68-20.6H45.86l17.52-12.73zm45.87-33.32l17.52 12.73 17.52-12.72-6.69 20.59 17.51 12.73h-21.65l-6.7 20.59-6.68-20.59-21.66-.01 17.52-12.72z" />
+    </g>
+   </symbol>
+   <symbol viewbox="68 -74 142.7 163" id="icon-tags-icon">
+    <style>.st0{fill:#92278e}</style>
+    <path class="st0" d="M202.4 19.7l-52.7-62.9c-2.4-2.9-5.7-4.7-9.3-5.2-.1 0-.2-.1-.3 0L89.2-59.8l-.8-.2c-6.7-1-15.3 4.9-15.5 13v.4l2.4 53.1c0 .3-.1.7 0 1 .1 3.2 1.3 6.3 3.4 8.8l52.7 62.9c5 6 13.9 7 19.7 2.2L201 39.5c2.7-2.3 4.4-5.5 4.7-9.1.4-3.8-.8-7.7-3.3-10.7zM94.6-30.1C89.2-29 84-32.4 82.9-37.8c-1.2-5.4 2.3-10.6 7.7-11.6 5.4-1.2 10.6 2.3 11.6 7.7 1.2 5.3-2.3 10.5-7.6 11.6z" />
+   </symbol>
+   <symbol viewbox="0 0 213.7 204.7" id="icon-tick-icon">
+    <path d="M100.4 184.8l-8.8 13.7-4.1-15.7-10.7 12.1-1.6-16.1L62.7 189l.9-16.1-13.9 8.2 3.4-15.9-15 6 5.9-15.1-15.9 3.4 8.2-13.9-16.1.9L30.4 134l-16.1-1.6 12.1-10.7-15.6-4.1 13.6-8.8-14.8-6.4 14.8-6.5-13.6-8.8 15.6-4-12.1-10.8 16.1-1.6-10.2-12.5 16.1.9-8.2-13.9L44 48.7l-5.9-15.1 15 5.9-3.4-15.9 13.9 8.2-.9-16.1L75.2 26l1.6-16.2 10.7 12.1 4.1-15.6 8.8 13.6 6.5-14.8 6.4 14.8 8.8-13.6 4.1 15.6 10.7-12.1 1.6 16.2L151 15.7l-.9 16.1 13.9-8.2-3.4 15.9 15-5.9-5.9 15.1 15.9-3.5-8.2 13.9 16.1-.9-10.2 12.5 16.1 1.6-12.1 10.8 15.6 4-13.6 8.8 14.8 6.5-14.8 6.4 13.6 8.8-15.6 4.1 12.1 10.7-16.1 1.6 10.2 12.5-16.1-.9 8.2 13.9-15.9-3.4 5.9 15.1-15-6 3.4 15.9-13.9-8.2.9 16.1-12.5-10.2-1.6 16.1-10.7-12.1-4.1 15.7-8.8-13.7-6.4 14.9z" />
+    <path d="M106.9 10.1l6.2 14.1 8.3-13 3.9 14.9 10.2-11.5 1.5 15.3 11.9-9.8-.9 15.3 13.3-7.8-3.3 15 14.3-5.6-5.6 14.3 15-3.3-7.8 13.3 15.3-.9-9.8 11.9 15.3 1.5L183.1 84l14.9 3.9-13 8.3 14.1 6.2-14.1 6.2 13 8.3-14.9 3.9 11.5 10.2-15.3 1.5 9.8 11.9-15.3-.9 7.8 13.3-15-3.3 5.6 14.3-14.3-5.6 3.3 15-13.3-7.8.9 15.3-11.9-9.8-1.5 15.3-10.2-11.5-3.9 14.9-8.3-13-6.2 14.1-6.2-14.1-8.3 13-3.9-14.9-10.2 11.5-1.5-15.3-11.9 9.8.9-15.3-13.1 7.6 3.3-15-14.3 5.6 5.6-14.3-15 3.3 7.8-13.3-15.3.9 9.8-11.9-15.3-1.5 11.5-10.2-14.9-3.9 13-8.3-14.1-6.2L28.8 96l-13-8.3L30.6 84 19.1 73.8l15.3-1.5-9.8-11.9 15.4 1-7.8-13.3 15 3.3-5.6-14.3 14.3 5.6-3.3-15 13.3 7.8-.9-15.3L76.9 30l1.5-15.3 10.2 11.5 3.9-14.9 8.3 13 6.1-14.2m0-10l-3.7 8.4-3.2 7.2L95.8 9l-4.9-7.7-2.3 8.9-2 7.6-5.2-5.9-6.1-6.8-.9 9.1-.8 7.8-6.1-5-7.1-5.8.5 9.1.5 7.9-6.8-4-7.9-4.6 2 8.9 1.7 7.7-7.4-2.8-8.5-3.4 3.3 8.5 2.9 7.3-7.7-1.6-8.9-2 4.6 7.9 4 6.8-7.9-.5-9.1-.5 5.8 7.1 5 6.1-7.8.8-9.1.9 6.8 6.1 5.9 5.2-7.6 2-8.9 2.3 7.7 4.9 6.6 4.2-7.2 3.2-8.4 3.7 8.4 3.7 7.2 3.2-6.6 4.2-7.7 4.9 8.9 2.3 7.6 2-5.9 5.2-6.8 6.1 9.1.9 7.8.8-5 6.1-5.8 7.1 9.1-.5 7.9-.5-4 6.8-4.6 7.9 8.9-2 7.7-1.7-2.9 7.3-3.3 8.5 8.5-3.3 7.3-2.9-1.7 7.7-2 8.9 7.9-4.6 6.8-4-.5 7.9-.5 9.1 7.1-5.8 6.1-5 .8 7.8.9 9.1 6.1-6.8 5.2-5.9 2 7.6 2.3 8.9 4.9-7.7 4.2-6.6 3.2 7.2 3.7 8.4 3.7-8.4 3.2-7.2 4.2 6.6 4.9 7.7 2.3-8.9 2-7.6 5.2 5.9 6.1 6.8.9-9.1.8-7.8 6.1 5 7.1 5.8-.5-9.1-.5-7.9 6.8 4 7.9 4.6-2-8.9-1.7-7.7 7.3 2.9 8.5 3.3-3.3-8.5-2.9-7.3 7.7 1.7 8.9 2-4.6-7.9-4-6.8 7.9.5 9.1.5-5.8-7.1-5-6.1 7.8-.8 9.1-.9-6.8-6.1-5.9-5.2 7.6-2 8.9-2.3-7.7-4.9-6.6-4.2 7.2-3.2 8.4-3.7-8.4-3.7-7.2-3.2 6.6-4.2 7.7-4.9-8.9-2.3-7.6-2 5.9-5.2 6.8-6.1-9.1-.9-7.8-.8 5-6.1 5.8-7.1-9.1.5-7.9.5 4-6.8 4.6-7.9-8.9 2-7.7 1.7 2.9-7.3 3.3-8.5-8.5 3.3-7.3 2.9 1.7-7.7 2-8.9-7.9 4.6-6.8 4 .5-7.9.5-9.1-7.1 5.8-6.1 5-.8-7.8-.9-9.1-6.1 6.8-5.2 5.9-2-7.6-2.3-8.9-4.9 7.6-4.2 6.6-3.2-7.2-3.6-8.3z" />
+    <circle stroke="#FFF" stroke-width="1.6" stroke-miterlimit="10" cx="106.9" cy="102.4" r="65.3" />
+    <path d="M60.8 107.2c2.2-2 4.3-4.1 6.6-6.2 7.5 5.4 15.1 10.7 22.8 16.3 1.7-2.2 3.3-4.3 5-6.4 13.2-16.3 27.7-31.2 44.8-43.4.8-.5 1.5-1.1 2.3-1.7h9.4c.3 0 .5.3.8.4-3.7 3.6-7.7 7-11.1 10.8-16.5 18.1-29.9 38.4-42.7 59.1-2.5 4.1-5 8.3-7.4 12.5-.3.5-.5 1.1-.7 1.6h-.8c-.3-.7-.5-1.4-.9-2-3-4.6-5.9-9.3-9.1-13.8-6.3-8.9-12.7-17.6-19.1-26.4.1-.2.1-.5.1-.8z" />
+   </symbol>
+   <symbol viewbox="0 0 60 74" id="icon-trophy">
+    <path d="M49.87 7.17V1.5A1.5 1.5 0 0 0 48.36 0H11.68a1.5 1.5 0 0 0-1.5 1.5v5.67C4.57 7.17 0 12.3 0 18.59S4.57 30 10.18 30a9.13 9.13 0 0 0 1.09-.07 19.91 19.91 0 0 0 7.82 10.12 12.77 12.77 0 0 1 5.61 12.26l-1.3 10.26h-8.88a1.5 1.5 0 0 0-1.5 1.5v8.33a1.5 1.5 0 0 0 1.5 1.5h31a1.5 1.5 0 0 0 1.5-1.5v-8.33a1.5 1.5 0 0 0-1.5-1.5h-8.88l-1.3-10.26A12.77 12.77 0 0 1 41 40.07a19.91 19.91 0 0 0 7.82-10.12 9.14 9.14 0 0 0 1.09.07C55.48 30 60 24.89 60 18.59S55.48 7.17 49.87 7.17zM10.18 27C6.22 27 3 23.24 3 18.59s3.22-8.42 7.18-8.42v13.35A19.89 19.89 0 0 0 10.5 27h-.32zm39.69 0h-.32a19.89 19.89 0 0 0 .32-3.48V10.17c4 0 7.18 3.78 7.18 8.42 0 4.64-3.22 8.41-7.18 8.41z" fill-rule="evenodd" />
+   </symbol>
+   <symbol viewbox="0 -8 29.3 28" id="icon-twitter">
+    <path d="M28-2.3c-.8 1.1-1.6 2.1-2.7 2.8v.8c0 1.5-.2 2.9-.6 4.4s-1.1 2.8-1.9 4.2c-.9 1.3-1.9 2.5-3.1 3.6-1.2 1.1-2.7 1.8-4.3 2.5-1.7.6-3.6.9-5.5 1-3 0-5.8-.9-8.4-2.5.4 0 .9.1 1.3.1 2.5 0 4.8-.8 6.8-2.4-1.2 0-2.3-.4-3.1-1.1s-1.7-1.8-2-2.8c.3.1.8.1 1 .1.4 0 1-.1 1.4-.2-1.2-.3-2.3-1-3.1-1.9S2.4 4.1 2.4 2.8v-.1c.9.4 1.7.6 2.6.7-.8-.5-1.4-1.2-1.8-1.9s-.7-1.8-.7-2.6c0-1 .2-1.9.8-2.7 1.4 1.6 3 3 5 4s4 1.6 6.3 1.7c-.1-.4-.1-.9-.1-1.3 0-1.5.5-2.8 1.6-3.9s2.3-1.6 3.8-1.6c1.6 0 2.9.5 4 1.7 1.2-.2 2.4-.6 3.5-1.3-.4 1.3-1.2 2.3-2.4 3 .9-.1 1.9-.4 3-.8z" />
+   </symbol>
+   <symbol viewbox="-2.2 -2 24.6 28" id="icon-user-icon">
+    <style>.st0{fill:#bcbcbc}</style>
+    <path class="st0" d="M21 20c0 1.2-.4 2.2-1.1 3-.8.7-1.8 1.1-3 1.1H3.2c-1.3 0-2.3-.4-3-1.1-.8-.8-1.2-1.8-1.2-3 0-.6 0-1.1.1-1.6s.1-1.1.2-1.7.2-1.2.4-1.7.4-1 .7-1.5.6-.9 1-1.3c.4-.3.8-.6 1.3-.8s1.1-.4 1.7-.4c.1 0 .3.1.7.3.3.2.7.5 1.2.8.4.3 1 .5 1.7.8.7.2 1.4.3 2.1.3s1.4-.1 2.1-.3c.7-.2 1.3-.5 1.7-.8.4-.3.8-.5 1.2-.8.3-.2.6-.3.7-.3.6 0 1.2.1 1.7.3s1 .5 1.3.8c.4.3.7.8 1 1.3s.5 1 .7 1.5c.2.5.3 1.1.4 1.7s.2 1.2.2 1.7-.1 1.1-.1 1.7zM16 6c0 1.7-.6 3.1-1.8 4.2S11.7 12 10 12s-3.1-.6-4.2-1.8S4 7.7 4 6s.6-3.1 1.8-4.2S8.3 0 10 0c1.7 0 3.1.6 4.2 1.8S16 4.3 16 6z" />
+   </symbol>
+  </svg>
+  <div id="page" class="site real-estate-blog"> 
+   <a class="skip-link screen-reader-text" href="#main">Skip to content</a> 
+   <nav id="brand-navigation" class="brand-menu"> 
+    <div class="menu-container"> 
+     <div class="menu-brand-menu-container">
+      <ul id="brand-menu" class="menu">
+       <li id="menu-item-6" class="rex menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a target="_blank" href="https://www.realestateexpress.com">Real Estate Express</a></li> 
+       <li id="menu-item-5" class="mckissock menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a href="#">McKissock</a></li> 
+       <li id="menu-item-7" class="institute menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a target="_blank" href="http://www.luxuryhomemarketing.com">Institute <span>for</span> Luxury Home Marketing</a></li> 
+      </ul>
+     </div> 
+    </div>
+    <!-- .menu-container --> 
+   </nav>
+   <!-- #brand-navigation --> 
+   <header id="masthead" class="site-header real-estate"> 
+    <!--[if lte IE 10]>
+        <div id="updateBrowser">
+            <p>We've noticed your browser is out-of-date. In order to get the best experience from our website, we strongly suggest upgrading your browser. We recommend <a href="https://www.mozilla.org/en-US/firefox/new/" rel="nofollow" target="_blank">Firefox</a>.</p>
+        </div>
+        <![endif]--> 
+    <div class="wrap"> 
+     <div class="site-branding"> 
+      <a href="https://www.mckissock.com/" rel="home" class="site-logo"><span class="screen-reader-text">McKissock Learning Logo</span></a> 
+     </div>
+     <!-- .site-branding --> 
+     <button class="menu-show-hide"><span class="screen-reader-text">Show or hide the navigation menus</span>
+      <svg class="icon icon-bars"> 
+       <use xlink:href="#icon-bars"></use>
+      </svg></button> 
+     <nav id="site-navigation" class="main-navigation"> 
+      <div class="menu-secondary-menu-container">
+       <ul id="secondary-menu" class="menu dropdown menu-secondary">
+        <li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="tel:8667397277">Call Us: <span class="phone-link">800.328.2008</span></a></li> 
+        <li id="menu-item-14434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14434"><a href="https://www.mckissock.com/about-us/">About Us</a></li> 
+        <li id="menu-item-19649" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-19649"><a href="https://www.mckissock.com/blog/">Blog</a></li> 
+        <li id="menu-item-10641" class="faq-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-10641"><a href="/faqs/">FAQs</a></li> 
+        <li id="menu-item-10643" class="cart-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-10643"><a href="http://checkout.mckissock.com/magi/commonforms/shoppingcart/viewcart.aspx">MY CART</a></li> 
+        <li id="menu-item-14" class="login menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a href="http://checkout.mckissock.com/MAGI/CommonForms/SignIn/SignIn.aspx?ReturnUrl=">Log in</a></li> 
+       </ul>
+      </div> 
+      <div id="mega-menu-wrap-primary" class="mega-menu-wrap">
+       <div class="mega-menu-toggle" tabindex="0">
+        <div class="mega-toggle-block mega-menu-toggle-block mega-toggle-block-right mega-toggle-block-1" id="mega-toggle-block-1"></div>
+       </div>
+       <ul id="mega-menu-primary" class="mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="disabled" data-effect-speed="200" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="600" data-unbind="true">
+        <li class="mega-appraisal-menu mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-14996" id="mega-menu-item-14996"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/" aria-haspopup="true" tabindex="0">Appraisal</a> 
+         <ul class="mega-sub-menu"> 
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16565" id="mega-menu-item-16565"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/licensing/">Get your license</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16566" id="mega-menu-item-16566"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/upgrade/">Upgrade your license</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16569" id="mega-menu-item-16569"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/continuing-education/">Continuing education</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16570" id="mega-menu-item-16570"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/professional-development/">Professional development</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17697" id="mega-menu-item-17697"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/featured/">Featured products</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-18231" id="mega-menu-item-18231"><a class="mega-menu-link" href="https://www.mckissock.com/appraisal/unlimited-learning-pass/">Membership</a></li>
+          <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-20001" id="mega-menu-item-20001"><a class="mega-menu-link" href="http://info.mckissock.com/corporate">Corporate solutions</a></li>
+         </ul> </li>
+        <li class="mega-real-estate-menu mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-14997" id="mega-menu-item-14997"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/" aria-haspopup="true" tabindex="0">Real Estate</a> 
+         <ul class="mega-sub-menu"> 
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16575" id="mega-menu-item-16575"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/licensing/">Get your license</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16572" id="mega-menu-item-16572"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/broker/">Upgrade your license</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16573" id="mega-menu-item-16573"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/post-license/">Post-license</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16576" id="mega-menu-item-16576"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/continuing-education/">Continuing education</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16574" id="mega-menu-item-16574"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/professional-development/">Professional development</a></li>
+          <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-18232" id="mega-menu-item-18232"><a class="mega-menu-link" href="https://www.mckissock.com/real-estate/ce-plus/">Membership</a></li>
+          <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-20000" id="mega-menu-item-20000"><a class="mega-menu-link" href="http://info.mckissock.com/corporate">Corporate solutions</a></li>
+         </ul> </li>
+        <li class="mega-real-estate-menu mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-14998" id="mega-menu-item-14998"><a class="mega-menu-link" href="https://www.mckissock.com/home-inspection/" aria-haspopup="true" tabindex="0">Home Inspection</a> 
+         <ul class="mega-sub-menu"> 
+          <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19451" id="mega-menu-item-19451"><a class="mega-menu-link" href="/home-inspection/ashi/">American Society of Home Inspectors (ASHI)</a></li>
+          <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19453" id="mega-menu-item-19453"><a class="mega-menu-link" href="/home-inspection/iachi">International Association of Certified Home Inspectors (InterNACHI)</a></li>
+          <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-19454" id="mega-menu-item-19454"><a class="mega-menu-link" href="/home-inspection/creia/">California Real Estate Inspection Association (CREIA)</a></li>
+         </ul> </li>
+        <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-14999" id="mega-menu-item-14999"><a class="mega-menu-link" href="https://www.mckissock.com/land-surveyor/" tabindex="0">Land Surveyor</a></li>
+        <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-15000" id="mega-menu-item-15000"><a class="mega-menu-link" href="https://www.mckissock.com/professional-engineer/" tabindex="0">Engineering</a></li>
+       </ul>
+      </div> 
+     </nav>
+     <!-- #site-navigation --> 
+    </div>
+    <!-- .wrap --> 
+   </header>
+   <!-- #masthead --> 
+   <div id="content" class="site-content"> 
+    <div class="wrap"> 
+     <div class="primary content-area"> 
+      <main id="main" class="site-main"> 
+       <article id="post-3232" class="post-3232 post type-post status-publish format-standard hentry category-property-management category-real-estate-career tag-property-management tag-property-management-skills tag-real-estate-continuing-education tag-residential-property-manager tag-residential-property-managers"> 
+        <header class="entry-header"> 
+         <div class="post-category">
+           Property Management: 
+         </div> 
+         <h1 class="entry-title">6 Skills You Need to Be a Residential Property Manager</h1> 
+         <div class="entry-meta-wrapper"> 
+          <div class="entry-meta"> 
+           <div class="author-image"> 
+            <img alt="" src="https://secure.gravatar.com/avatar/2c42bf0e83469d0b1cfa224b329fa346?s=65&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/2c42bf0e83469d0b1cfa224b329fa346?s=130&amp;d=mm&amp;r=g 2x" class="avatar avatar-65 photo" height="65" width="65"> 
+           </div> 
+           <div class="posted-on-wrap"> 
+            <span class="byline"> By: <span class="author vcard fn n">McKissock</span></span>
+            <span class="posted-on"><time class="entry-date published" datetime="2016-08-04T08:00:33+00:00">August 4, 2016</time><time class="updated" datetime="2017-06-29T15:35:49+00:00">June 29, 2017</time></span> 
+           </div> 
+          </div> 
+          <div class="share-tag-wrapper"> 
+           <div class="social-share-wrapper">
+            Share:
+            <ul class="social-share-links"> 
+             <li class="social-icon facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+               <svg class="icon icon-facebook"> 
+                <title>Facebook</title> 
+                <desc>
+                 Share on Facebook
+                </desc> 
+                <use xlink:href="#icon-facebook"></use>
+               </svg><span class="screen-reader-text">Share on Facebook</span></a></li> 
+             <li class="social-icon linkedin"><a href="https://www.linkedin.com/shareArticle?title=6+Skills+You+Need+to+Be+a+Residential+Property+Manager&amp;url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+               <svg class="icon icon-linkedin"> 
+                <title>LinkedIn</title> 
+                <desc>
+                 Share on LinkedIn
+                </desc> 
+                <use xlink:href="#icon-linkedin"></use>
+               </svg><span class="screen-reader-text">Share on LinkedIn</span></a></li> 
+             <li class="social-icon twitter"><a href="https://twitter.com/share?text=6+Skills+You+Need+to+Be+a+Residential+Property+Manager&amp;url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+               <svg class="icon icon-twitter"> 
+                <title>Twitter</title> 
+                <desc>
+                 Share on Twitter
+                </desc> 
+                <use xlink:href="#icon-twitter"></use>
+               </svg><span class="screen-reader-text">Share on Twitter</span></a></li> 
+             <li class="social-icon googleplus"><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+               <svg class="icon icon-googleplus"> 
+                <title>Google Plus</title> 
+                <desc>
+                 Share on Google Plus
+                </desc> 
+                <use xlink:href="#icon-googleplus"></use>
+               </svg><span class="screen-reader-text">Share on Google Plus</span></a></li>
+            </ul>
+           </div> 
+          </div> 
+         </div>
+         <!-- .entry-meta --> 
+        </header>
+        <!-- .entry-header --> 
+        <div class="entry-content"> 
+         <p><a href="http://blogs.mckissock.com/real-estate/wp-content/uploads/sites/7/2016/08/blog_image_skills-property-manager.png"><img class="alignleft wp-image-3236 size-full" src="http://blogs.mckissock.com/real-estate/wp-content/uploads/sites/7/2016/08/blog_image_skills-property-manager.png" alt="6 Skills You Need to Be a Residential Property Manager" width="378" height="243"></a>Since 2005,<a href="http://money.cnn.com/2016/01/14/real_estate/older-renters/" target="_blank"> the U.S. has seen a gradual uptick</a> in renters. The Great Recession played a role in that, preventing people from either being able to afford a home or qualify for a mortgage. However, increasingly people are choosing to rent over buy. Millennials for years have delayed making a home purchase, and Boomers and older generations are deciding to unload the big house and all its financial responsibilities in favor of a smaller rental. The boom in renters has made the profession of residential property manager appealing to many people—and with good reason. The pay is decent and the outlook for job security is promising.</p> 
+         <p>It’s not all rosy, however. In fact, it’s hard work. So before you consider taking the steps to become a <a href="http://www.mckissock.com/commonforms/searchcourses/coursedescription.aspx?course=3110&amp;mst=MI&amp;mlt=2">residential property manager</a>, make sure you possess these six critical skills.<span id="more-3232"></span></p> 
+         <h2>1. A customer service whiz</h2> 
+         <p>You must meet the needs of both the property owner and the tenant. That means quickly and efficiently providing solutions they can live with, being attentive—and serving it all up with a smile and loads of enthusiasm, even when people are being total jerks. If you can’t do that, you aren’t cut out to be a residential property manager.</p> 
+         <h2>2. A great communicator</h2> 
+         <p>Be honest. Right now, how would you react if a property owner insulted you over something you couldn’t control? Or how would you handle a distraught renter who can’t make this month’s rent? Communication and interpersonal skills are a must. As a residential property manager, you will be working with tenants, property owners, contractors, banks, real estate agents, and more on a regular basis. You’ll have to grin and bear scathing criticism, deal with rude behavior, manage awkward and difficult conversations, and resolve conflicts. It is critical that you know how to actively listen and effectively relay information to others.</p> 
+         <h2>3. An expert at managing time</h2> 
+         <p>You could potentially field dozens of calls and answer hundreds of emails a day. You’ll need to conduct inspections, attend board meetings, market and show properties, and much more. You must be detailed and organized, or you will never manage it all.</p> 
+         <h2>4. Resourceful</h2> 
+         <p>You could be responsible for multiple properties, each with several tenants, and those units could span counties, states or even the country. When you are juggling all that, you have to be able to problem solve quickly and effectively. That means being able to think on your feet and come up with alternate solutions in a moment’s notice. At times, you won’t be able to wait from approval from a superior. You will have to know what authority you have and then be prepared to act within that authority—without second guessing yourself. Decisiveness, especially in emergencies, is key.</p> 
+         <h2>5. Detail-oriented</h2> 
+         <p>First of all, each property you manage requires a great deal of paperwork, including legally binding contracts, so you need to be on top of your administrative game. Additionally, you need to be highly observant. On a regular basis, you will be conducting routine inspections of the properties you manage. If you miss or overlook problems or you aren’t paying attention to the work contractors or handymen complete under your direction, you could cost your property owners money. If an inspection is required by a government agency, you could face bigger problems. The inspector’s goal is to discover property violations. If they do, you could be blamed if a property doesn’t pass inspection and is deemed unlivable.</p> 
+         <h2>6. Sales-minded</h2> 
+         <p>Of course, it’s not all administrative duties and fielding phone calls. You actually have to keep tenants in the property, and that requires you to wear many hats. You’ll need to market the property—writing great copy and sharing images that entice people to take a second look. You’ll need to show the property and sell all the features that make it great. Perhaps most importantly, you’ll need to sell yourself to property owners, especially those who may have had bad experiences with residential property managers in the past.</p> 
+         <h2>How to develop your skills as a residential property manager</h2> 
+         <p>If you don’t already possess the six property management skills outlined above, you should at least be willing to develop them. Want to gain the skills necessary to be a rock star residential property manager? Take McKissock’s <a href="http://www.mckissock.com/commonforms/searchcourses/coursedescription.aspx?course=3110&amp;mst=MI&amp;mlt=2">The Property Management Primer course</a> to learn the ropes.</p> 
+         <p><strong><a href="http://www.mckissock.com/commonforms/searchcourses/coursedescription.aspx?course=3110&amp;mst=MI&amp;mlt=2">Sign up for The Property Management Primer course here.</a> For more real estate continuing education opportunities, visit <a href="http://www.mckissock.com/real-estate/continuing-education/default.aspx">McKissock.com</a>.</strong></p> 
+        </div>
+        <!-- .entry-content --> 
+        <footer class="entry-footer"> 
+         <div class="social-share-wrapper">
+          Share:
+          <ul class="social-share-links"> 
+           <li class="social-icon facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+             <svg class="icon icon-facebook"> 
+              <title>Facebook</title> 
+              <desc>
+               Share on Facebook
+              </desc> 
+              <use xlink:href="#icon-facebook"></use>
+             </svg><span class="screen-reader-text">Share on Facebook</span></a></li> 
+           <li class="social-icon linkedin"><a href="https://www.linkedin.com/shareArticle?title=6+Skills+You+Need+to+Be+a+Residential+Property+Manager&amp;url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+             <svg class="icon icon-linkedin"> 
+              <title>LinkedIn</title> 
+              <desc>
+               Share on LinkedIn
+              </desc> 
+              <use xlink:href="#icon-linkedin"></use>
+             </svg><span class="screen-reader-text">Share on LinkedIn</span></a></li> 
+           <li class="social-icon twitter"><a href="https://twitter.com/share?text=6+Skills+You+Need+to+Be+a+Residential+Property+Manager&amp;url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+             <svg class="icon icon-twitter"> 
+              <title>Twitter</title> 
+              <desc>
+               Share on Twitter
+              </desc> 
+              <use xlink:href="#icon-twitter"></use>
+             </svg><span class="screen-reader-text">Share on Twitter</span></a></li> 
+           <li class="social-icon googleplus"><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.mckissock.com%2Fblog%2Freal-estate%2Freal-estate-career%2F6-skills-residential-property-manager%2F">
+             <svg class="icon icon-googleplus"> 
+              <title>Google Plus</title> 
+              <desc>
+               Share on Google Plus
+              </desc> 
+              <use xlink:href="#icon-googleplus"></use>
+             </svg><span class="screen-reader-text">Share on Google Plus</span></a></li>
+          </ul>
+         </div> 
+         <div class="tags-wrap">
+          <a href="https://www.mckissock.com/blog/tag/property-management/" rel="tag">property management</a>, 
+          <a href="https://www.mckissock.com/blog/tag/property-management-skills/" rel="tag">property management skills</a>, 
+          <a href="https://www.mckissock.com/blog/tag/real-estate-continuing-education/" rel="tag">real estate continuing education</a>, 
+          <a href="https://www.mckissock.com/blog/tag/residential-property-manager/" rel="tag">residential property manager</a>, 
+          <a href="https://www.mckissock.com/blog/tag/residential-property-managers/" rel="tag">residential property managers</a>
+         </div> 
+        </footer>
+        <!-- .entry-footer --> 
+       </article>
+       <!-- #post-## --> 
+       <div class="related-posts-wrapper">
+        <h3 class="section-title">Related Posts</h3>
+        <ul class="related-posts-list"> 
+         <li class="related-post"> <a href="https://www.mckissock.com/blog/real-estate/real-estate-career/location-importance-in-real-estate-ranks-high/" class="featured-image" rel="bookmark" title="Are You Keeping Up With These Location Trends in Real Estate?"><img width="65" height="42" src="https://www.mckissock.com/wp-content/uploads/2017/08/blog_image_location-importance-in-real-estate@2x-65x42.jpg" class="attachment-related-posts size-related-posts wp-post-image" alt="location importance in real estate"></a> <h3 class="related-post-title"><a href="https://www.mckissock.com/blog/real-estate/real-estate-career/location-importance-in-real-estate-ranks-high/" rel="bookmark" title="Are You Keeping Up With These Location Trends in Real Estate?">Are You Keeping Up With These Location Trends in Real Estate?</a></h3> </li> 
+         <li class="related-post"> <a href="https://www.mckissock.com/blog/real-estate/real-estate-career/3-secrets-to-making-the-most-out-of-social-media-marketing-for-real-estate/" class="featured-image" rel="bookmark" title="3 Secrets to Making the Most Out Social Media Marketing for Real Estate"><img width="65" height="42" src="https://www.mckissock.com/wp-content/uploads/2017/07/blog_image_social-media-marketing-for-real-estate-agents@2x-65x42.jpg" class="attachment-related-posts size-related-posts wp-post-image" alt="social media marketing for real estate agents"></a> <h3 class="related-post-title"><a href="https://www.mckissock.com/blog/real-estate/real-estate-career/3-secrets-to-making-the-most-out-of-social-media-marketing-for-real-estate/" rel="bookmark" title="3 Secrets to Making the Most Out Social Media Marketing for Real Estate">3 Secrets to Making the Most Out Social Media Marketing for Real Estate</a></h3> </li> 
+        </ul>
+       </div> 
+      </main>
+      <!-- #main --> 
+     </div>
+     <!-- .primary --> 
+     <div class="secondary widget-area" role="complementary"> 
+      <aside id="wds-rex-custom-widgets-explore-postcategories-4" class="widget wds-rex-custom-widgets-explore-postcategories">
+       <h3 class="widget-title">Explore Categories</h3>
+       <ul class="real-estate">
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-career/" alt="View all posts filed under Real Estate Career">Real Estate Career</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-marketing/" alt="View all posts filed under Real Estate Marketing">Real Estate Marketing</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/running-real-estate-business/" alt="View all posts filed under Running Your Real Estate Business">Running Your Real Estate Business</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-insights/" alt="View all posts filed under Real Estate Insights">Real Estate Insights</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-technology/" alt="View all posts filed under Real Estate Technology">Real Estate Technology</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/selling-real-estate/" alt="View all posts filed under Selling Real Estate">Selling Real Estate</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-investment/" alt="View all posts filed under Real Estate Investment">Real Estate Investment</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/buyer-representation/" alt="View all posts filed under Buyer Representation">Buyer Representation</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-tips-2/" alt="View all posts filed under Real Estate Tips">Real Estate Tips</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/property-management/" alt="View all posts filed under Property Management">Property Management</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-education/" alt="View all posts filed under Real Estate Education">Real Estate Education</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-ethics/" alt="View all posts filed under Real Estate Ethics">Real Estate Ethics</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-prospecting/" alt="View all posts filed under Real Estate Prospecting">Real Estate Prospecting</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-financing/" alt="View all posts filed under Real Estate Financing">Real Estate Financing</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-branding/" alt="View all posts filed under Real Estate Branding">Real Estate Branding</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-specialization/" alt="View all posts filed under Real Estate Specialization">Real Estate Specialization</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-guides-and-tools/" alt="View all posts filed under Real Estate Guides and Tools">Real Estate Guides and Tools</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-safety/" alt="View all posts filed under Real Estate Safety">Real Estate Safety</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-success-stories/" alt="View all posts filed under Real Estate Success Stories">Real Estate Success Stories</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/green-homes/" alt="View all posts filed under Green Homes">Green Homes</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/home-staging/" alt="View all posts filed under Home Staging">Home Staging</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-negotiations/" alt="View all posts filed under Real Estate Negotiations">Real Estate Negotiations</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-brokers/" alt="View all posts filed under Real Estate Brokers">Real Estate Brokers</a></li>
+        <li><a href="https://www.mckissock.com/blog/real-estate/real-estate-listings/" alt="View all posts filed under Real Estate Listings">Real Estate Listings</a></li>
+       </ul>
+      </aside>
+      <aside id="wds-rex-custom-widgets-email-subscribe-2" class="widget wds-rex-custom-widgets-email-subscribe"> 
+       <section class="subscribe-form-section"> 
+        <div class="subscribe-form-container"> 
+         <h3 class="widget-title">Stay up-to-date and grow your skills</h3> 
+         <div class="widget-form-wrap"> 
+          <div class="light-text">
+           Get fresh tips and insights emailed to you
+          </div> 
+          <form name="subscribe-form" id="subscribe-form" data-location="blog" class="subscribe-form"> 
+           <span class="error-msg firstname hidden">First name required</span> 
+           <input type="text" name="firstname" placeholder="First Name"> 
+           <span class="error-msg last_name hidden">Last name required</span> 
+           <input type="text" name="last_name" placeholder="Last Name"> 
+           <span class="error-msg email hidden">Email name required</span> 
+           <input type="text" name="email" placeholder="Email Address"> 
+           <input type="hidden" name="pageUrl" value="https://www.mckissock.com/blog/real-estate/real-estate-career/6-skills-residential-property-manager/"> 
+           <input type="hidden" name="pageName" value="6 Skills You Need to Be a Residential Property Manager"> 
+           <input type="hidden" name="ipAddress" value="122.165.117.24"> 
+           <input type="hidden" name="form_submit" value="69fea6f1-68ff-4033-989b-c6b742914a05"> 
+           <span class="error-msg state hidden">State required</span> 
+           <select id="dropdown_state_609" name="state" class="no-hide select-box subscribe-form-widget"> <option value="" disabled selected>Select State</option> <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">Washington D.C.</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="GU">Guam</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VI">Virgin Islands</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option> </select> 
+           <input class="form-submit button color-moss" id="subscribe-form" type="submit" value="Sign me Up"> 
+          </form> 
+         </div> 
+         <div class="subscribe-form-success hidden"> 
+          <h3 class="section-title">Thanks for subscribing.</h3> 
+          <div class="submit-text-wrap"> 
+           <p class="light-text">Emails full of tips, news, resources and advice will be sent your way soon.</p> 
+          </div> 
+          <div class="success-bird"></div> 
+         </div> 
+        </div> 
+       </section> 
+      </aside>
+      <aside id="wds-rex-custom-widgets-popular-posts-3" class="widget wds-rex-custom-widgets-popular-posts">
+       <h3 class="widget-title">Popular Posts</h3> 
+       <ul xmlns="http://www.w3.org/1999/html"> 
+        <li> <a href="https://www.mckissock.com/blog/real-estate/real-estate-career/6-skills-residential-property-manager/" class="featured-image" title="6 Skills You Need to Be a Residential Property Manager"> </a> <a href="https://www.mckissock.com/?post_type=post&amp;p=2788" class="post-link">Traditional Vs. Discount Real Estate Brokers: The Battle Rages On</a></li> 
+       </ul> 
+      </aside>
+     </div>
+     <!-- .secondary --> 
+    </div>
+    <!-- .wrap --> 
+   </div>
+   <!-- #content --> 
+   <div class="vc_row wpb_row vc_row-fluid"> 
+    <div class="vc_col-sm-12 wpb_column vc_column_container bottom-button"> 
+     <div class="wpb_wrapper"> 
+      <section class="text-module color-white">
+       <div class="content-container"> 
+        <img width="531" height="102" src="https://www.mckissock.com/wp-content/uploads/2016/10/flying-bird-retina-ready.png" class="single-image" alt=""> 
+        <div class="wpb_text_column wpb_content_element "> 
+         <div class="wpb_wrapper"> 
+          <h3 style="text-align: center;">Each year more than 100,000 professionals advance their career with McKissock Learning.</h3> 
+         </div> 
+        </div> 
+        <p class="intro-text ">Hear what they have to say.</p> 
+        <a href="/reviews/" class="button ghost color-pumpkin button-background"><span class="button-text">See More Reviews</span></a> 
+       </div>
+       <!-- .content-container -->
+      </section>
+      <!-- .text-module --> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="vc_row wpb_row vc_row-fluid" style="min-height: 375px;">
+    <div class="vc_col-sm-12 wpb_column vc_column_container">
+     <div class="wpb_wrapper">
+      <section class="media-grid-carousel">
+       <div class="grid-area"> 
+        <div class="grid-column"> 
+         <article class="grid-item item-half image-as-background center" style="background-image: url(https://www.mckissock.com/wp-content/themes/rex/assets/images/media-gallery-overlay.png), url(https://www.mckissock.com/wp-content/uploads/2017/04/fact-woman-laptop-red-min.jpg);
+						"> 
+          <p class="grid-content "> <span class="grid-stat">24/7</span> <span class="grid-stat-desc">online access</span> </p> 
+         </article>
+         <!-- .grid-item --> 
+        </div> 
+        <!--/grid-column--> 
+        <div class="grid-column item-full"> 
+         <article class="grid-item image-as-background color-violet" style="background-image: url(https://www.mckissock.com/wp-content/themes/rex/assets/images/media-gallery-overlay.png), url(https://www.mckissock.com/wp-content/uploads/2016/03/thumbnail-1-386x375.png)"> 
+          <div class="grid-content "> 
+           <p>McKissock offers the best courses I've taken. They're easy to understand and concise. I feel like I'm leaving the course moving forward in my career.</p> 
+           <div class="client-info"> 
+            <span class="client-name">Shelly R, </span>
+            <span class="client-location">Pennsylvania</span> 
+           </div> 
+           <!--/.client-info--> 
+          </div> 
+          <!--/.grid-content--> 
+         </article>
+         <!-- .grid-item --> 
+        </div> 
+        <!--/.grid-column--> 
+        <div class="grid-column">
+         <article class="grid-item item-cta image-as-background" style="background-image: url(https://www.mckissock.com/wp-content/themes/rex/assets/images/media-gallery-overlay.png), url(https://www.mckissock.com/wp-content/uploads/2016/03/thumbnail-4-300x213.png);">
+          <p class="grid-content "></p>
+         </article> 
+         <!--/grid-item-->
+         <article class="grid-item item-color color-beech">
+          <p class="grid-content"><span class="grid-stat">4.5/5</span><span class="grid-stat-desc"> average customer rating</span></p>
+         </article> 
+         <!--/grid-item-->
+        </div> 
+        <div class="grid-column item-full"> 
+         <article class="grid-item image-as-background color-violet" style="background-image: url(https://www.mckissock.com/wp-content/themes/rex/assets/images/media-gallery-overlay.png), url(https://www.mckissock.com/wp-content/uploads/2016/03/thumbnail-2-386x375.png)"> 
+          <div class="grid-content "> 
+           <p>I love McKissock courses because I can learn at my own pace. The material was insightful and the format was very convenient.</p> 
+           <div class="client-info"> 
+            <span class="client-name">Paul D, </span>
+            <span class="client-location">Ohio</span> 
+           </div> 
+           <!--/.client-info--> 
+          </div> 
+          <!--/.grid-content--> 
+         </article>
+         <!-- .grid-item --> 
+        </div> 
+        <!--/.grid-column--> 
+        <div class="grid-column"> 
+         <article class="grid-item item-half image-as-background center" style="background-image: url(https://www.mckissock.com/wp-content/themes/rex/assets/images/media-gallery-overlay.png), url(https://www.mckissock.com/wp-content/uploads/2016/03/thumbnail-3.png);
+						"> 
+          <p class="grid-content "> <span class="grid-stat"></span> <span class="grid-stat-desc">Gain new skills with more than 250 courses (and counting!)</span> </p> 
+         </article>
+         <!-- .grid-item --> 
+        </div> 
+        <!--/grid-column--> 
+        <div class="grid-column">
+         <article class="grid-item item-color color-beech">
+          <p class="grid-content"><span class="grid-stat">25+</span><span class="grid-stat-desc"> years perfecting courses</span></p>
+         </article> 
+         <!--/grid-item-->
+         <article class="grid-item item-cta image-as-background" style="background-image: url(https://www.mckissock.com/wp-content/themes/rex/assets/images/media-gallery-overlay.png), url(https://www.mckissock.com/wp-content/uploads/2016/03/thumbnail-8-300x213.png);">
+          <p class="grid-content "></p>
+         </article> 
+         <!--/grid-item-->
+        </div> 
+       </div>
+      </section>
+     </div>
+    </div>
+   </div>
+  </div> 
+  <div class="footer-area footer"> 
+   <div class="footer-wrap wrap"> 
+    <div class="footer-column col-1"> 
+     <aside id="nav_menu-2" class="widget widget_nav_menu">
+      <h3 class="widget-title">McKissock</h3>
+      <div class="menu-footer-first-column-navigation-container">
+       <ul id="menu-footer-first-column-navigation" class="menu">
+        <li id="menu-item-14202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14202"><a href="https://www.mckissock.com/about-us/">About us</a></li> 
+        <li id="menu-item-14450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14450"><a href="https://www.mckissock.com/about-us/team/">Our team</a></li> 
+        <li id="menu-item-14451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14451"><a href="https://www.mckissock.com/about-us/instructors/">Our instructors</a></li> 
+        <li id="menu-item-20342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20342"><a target="_blank" href="http://www.colibrigroup.com/careers/">Careers</a></li> 
+        <li id="menu-item-14452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14452"><a target="_blank" href="https://docs.google.com/a/mckissock.com/forms/d/e/1FAIpQLSfaDhEheNT0A-OnYQIbVGMkEOYkl_MTTaxJD1g9WpGl5qTSIw/viewform">Become a course author</a></li> 
+        <li id="menu-item-14453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14453"><a href="https://www.mckissock.com/reviews/">Customer testimonials</a></li> 
+       </ul>
+      </div>
+     </aside> 
+    </div> 
+    <div class="footer-column col-2"> 
+     <aside id="nav_menu-3" class="widget widget_nav_menu">
+      <h3 class="widget-title">Insights</h3>
+      <div class="menu-footer-second-column-navigation-container">
+       <ul id="menu-footer-second-column-navigation" class="menu">
+        <li id="menu-item-14455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14455"><a href="/blog/appraisal/">Appraisal blog</a></li> 
+        <li id="menu-item-14456" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14456"><a href="/blog/real-estate/">Real estate blog</a></li> 
+        <li id="menu-item-15845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15845"><a href="https://www.mckissock.com/real-estate/additional-resources/">Real estate helpful resources</a></li> 
+       </ul>
+      </div>
+     </aside> 
+    </div> 
+    <div class="footer-column col-3"> 
+     <aside id="nav_menu-4" class="widget widget_nav_menu">
+      <h3 class="widget-title">Professions</h3>
+      <div class="menu-footer-third-column-navigation-container">
+       <ul id="menu-footer-third-column-navigation" class="menu">
+        <li id="menu-item-15203" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15203"><a href="https://www.mckissock.com/appraisal/">Appraisal</a></li> 
+        <li id="menu-item-15204" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15204"><a href="https://www.mckissock.com/real-estate/">Real estate</a></li> 
+        <li id="menu-item-15205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15205"><a href="https://www.mckissock.com/home-inspection/">Home inspection</a></li> 
+        <li id="menu-item-15206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15206"><a href="https://www.mckissock.com/land-surveyor/">Land surveying</a></li> 
+        <li id="menu-item-15207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15207"><a href="https://www.mckissock.com/professional-engineer/">Engineering</a></li> 
+       </ul>
+      </div>
+     </aside> 
+    </div> 
+    <div class="footer-column col-4"> 
+     <aside id="nav_menu-5" class="widget widget_nav_menu">
+      <h3 class="widget-title">My Account</h3>
+      <div class="menu-footer-fourth-column-navigation-container">
+       <ul id="menu-footer-fourth-column-navigation" class="menu">
+        <li id="menu-item-106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106"><a href="http://checkout.mckissock.com/MAGI/CommonForms/SignIn/SignIn.aspx?ReturnUrl=">Login / register</a></li> 
+        <li id="menu-item-4434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4434"><a href="http://checkout.mckissock.com/magi/commonforms/proctors/proctor-reg.aspx">Proctor registration</a></li> 
+       </ul>
+      </div>
+     </aside> 
+    </div> 
+    <div class="footer-column col-5"> 
+     <aside id="nav_menu-6" class="widget widget_nav_menu">
+      <h3 class="widget-title">Legal</h3>
+      <div class="menu-footer-fifth-column-navigation-container">
+       <ul id="menu-footer-fifth-column-navigation" class="menu">
+        <li id="menu-item-14992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14992"><a href="https://www.mckissock.com/copyright/">Copyright</a></li> 
+        <li id="menu-item-4433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4433"><a href="https://www.mckissock.com/privacy-policy/">Privacy policy</a></li> 
+        <li id="menu-item-14465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14465"><a href="https://www.mckissock.com/satisfaction-guarantee/">Satisfaction guarantee</a></li> 
+        <li id="menu-item-4430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4430"><a href="https://www.mckissock.com/terms-conditions/">Terms and conditions</a></li> 
+       </ul>
+      </div>
+     </aside> 
+    </div> 
+    <div class="footer-column col-6"> 
+     <aside id="nav_menu-30" class="widget widget_nav_menu">
+      <h3 class="widget-title">Contact</h3>
+      <div class="menu-footer-sixth-column-navigation-container">
+       <ul id="menu-footer-sixth-column-navigation" class="menu">
+        <li id="menu-item-14466" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14466"><a href="tel:8003282008">Appraisal – 800.328.2008</a></li> 
+        <li id="menu-item-14467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14467"><a href="tel:8003282008">Real estate – 877.277.5376</a></li> 
+        <li id="menu-item-14468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14468"><a href="tel:8003282008">General – 800.328.2008</a></li> 
+        <li id="menu-item-14819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14819"><a href="https://www.mckissock.com/contact-us/">Email, address &amp; hours</a></li> 
+        <li id="menu-item-14470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14470"><a href="https://www.mckissock.com/faqs/">FAQs</a></li> 
+       </ul>
+      </div>
+     </aside> 
+    </div> 
+   </div> 
+  </div> 
+  <footer id="colophon" class="footer-bottom"> 
+   <div class="footer-bottom-wrap"> 
+    <div class="footer-social-links"> 
+     <aside id="wds-rex-social-follow-wds-rex-social-follow-2" class="widget wds-rex-social-follow-wds-rex-social-follow">
+      <h3 class="widget-title">Connect With Us</h3> 
+      <div class="social-section"> 
+       <ul class="social-icons"> 
+        <li class="social-icon facebook"> <a href="https://www.facebook.com/McKissockEducation/" title="Facebook" target="_blank"><span class="screen-reader-text">Like us on Facebook</span>
+          <svg class="icon icon-facebook"> 
+           <use xlink:href="#icon-facebook"></use>
+          </svg></a> </li> 
+        <li class="social-icon twitter"> <a href="https://twitter.com/McKissockRE" title="Twitter" target="_blank"><span class="screen-reader-text">Follow us on Twitter</span>
+          <svg class="icon icon-twitter"> 
+           <use xlink:href="#icon-twitter"></use>
+          </svg></a> </li> 
+        <li class="social-icon linkedin"> <a href="https://www.linkedin.com/company/mckissock-lp" title="Linkedin" target="_blank"><span class="screen-reader-text">Follow us on Linkedin</span>
+          <svg class="icon icon-linkedin"> 
+           <use xlink:href="#icon-linkedin"></use>
+          </svg></a> </li> 
+       </ul> 
+      </div> 
+     </aside> 
+    </div> 
+    <div class="copyright-info"> 
+     <span class="copyright-text">© 2017 McKissock. All Rights Reserved</span> 
+    </div>
+    <!-- .site-info --> 
+    <div class="back-to-top-wrap"> 
+     <a href="#masthead">Back To Top</a> 
+    </div> 
+   </div>
+   <!-- .wrap --> 
+  </footer>
+  <!-- #colophon --> 
+  <!-- #page --> 
+  <!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: First Visit Welcome -->
+  <div id="om-api4ebxqdmqnlnoedm4y-holder"></div>
+  <script>var api4ebxqdmqnlnoedm4y,api4ebxqdmqnlnoedm4y_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){api4ebxqdmqnlnoedm4y_poll(function(){if(window['om_loaded']){if(!api4ebxqdmqnlnoedm4y){api4ebxqdmqnlnoedm4y=new OptinMonsterApp();return api4ebxqdmqnlnoedm4y.init({"u":"21618.592738","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;api4ebxqdmqnlnoedm4y=new OptinMonsterApp();api4ebxqdmqnlnoedm4y.init({"u":"21618.592738","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script>
+  <!-- / OptinMonster -->
+  <!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: First Visit Welcome Mobile -->
+  <div id="om-dxkinxik1m0k44qqdif4-holder"></div>
+  <script>var dxkinxik1m0k44qqdif4,dxkinxik1m0k44qqdif4_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){dxkinxik1m0k44qqdif4_poll(function(){if(window['om_loaded']){if(!dxkinxik1m0k44qqdif4){dxkinxik1m0k44qqdif4=new OptinMonsterApp();return dxkinxik1m0k44qqdif4.init({"u":"21618.594066","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;dxkinxik1m0k44qqdif4=new OptinMonsterApp();dxkinxik1m0k44qqdif4.init({"u":"21618.594066","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script>
+  <!-- / OptinMonster --> 
+  <script type="text/javascript">var api4ebxqdmqnlnoedm4y_shortcode = true;var dxkinxik1m0k44qqdif4_shortcode = true;</script> 
+  <link rel="stylesheet" id="js_composer_front-css" href="https://www.mckissock.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.0.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="slick-carousel-css-css" href="https://www.mckissock.com/wp-content/themes/rex/assets/bower_components/slick-carousel/slick/slick.css?ver=4.7.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="slick-carousel-css-theme-css" href="https://www.mckissock.com/wp-content/themes/rex/assets/bower_components/slick-carousel/slick/slick-theme.css?ver=4.7.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="jetpack_css-css" href="https://www.mckissock.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.5" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201740"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/www.mckissock.com\/wp-admin\/admin-ajax.php","ajax_nonce":"ef95592194"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/wds-rex-vc/assets/js/wds-vc-course-search.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/wds-rex-vc/assets/js/wds-fact-stats.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/wds-rex-vc/assets/js/wds-course-details-table.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/wds-rex-vc/assets/js/wds-vc-appraisal-course-search.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/wds-select-dropdown.min.js?ver=10.26.16"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/wds-select-replace.min.js?ver=10.26.16"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/wds-search-validate.min.js?ver=10.26.16"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var WDS_VARS = {"ajaxurl":"https:\/\/www.mckissock.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/project.min.js?ver=10.26.16"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-includes/js/comment-reply.min.js?ver=4.7.2"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/wds-social-buttons.min.js?ver=10.26.16"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/bower_components/slick-carousel/slick/slick.min.js?ver=1.3.2"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/wds-media-carousel.min.js?ver=1.3.2"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/ns-vc-elements/js/unslider.js?ver=1.0"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/ns-vc-elements/js/custom.js?ver=1.0"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.3.4"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-includes/js/wp-embed.min.js?ver=4.7.2"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/themes/rex/assets/js/wds-subscribe-form-dropdown-replace.min.js?ver=10.26.16"></script> 
+  <script type="text/javascript" src="https://www.mckissock.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.0.1"></script> 
+  <script type="text/javascript" src="https://stats.wp.com/e-201740.js" async defer></script> 
+  <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.5',blog:'108612814',post:'3232',tz:'0',srv:'www.mckissock.com'} ]);
+	_stq.push([ 'clickTrackerInit', '108612814', '3232' ]);
+</script> 
+  <script type="application/ld+json">{"headline":"6 Skills You Need to Be a Residential Property Manager","datePublished":"2016-08-04 08:00:33","dateModified":"2017-06-29 15:35:49","mainEntityOfPage":{"@id":"https:\/\/www.mckissock.com\/blog\/real-estate\/real-estate-career\/6-skills-residential-property-manager\/","@type":"WebPage"},"author":{"name":"McKissock","@type":"Person"},"publisher":{"name":"McKissock","logo":{"@type":"ImageObject","url":"https:\/\/www.mckissock.com\/wp-content\/themes\/reximages\/mck-seo-logo.png","width":60,"height":33},"@type":"Organization"},"description":"Since 2005, the U.S. has seen a gradual uptick in renters. The Great Recession played a role in that, preventing people from either being able to afford a home or qualify for a mortgage. However, increasingly people are choosing to rent over buy. Millennials for years have delayed making a home purchase, and Boomers and [&hellip;]","@context":"http:\/\/schema.org","@type":"NewsArticle","image":{"url":"https:\/\/www.mckissock.com\/wp-content\/uploads\/2017\/07\/blog_image_social-media-marketing-for-real-estate-agents@2x.jpg","height":538,"width":754,"@type":"ImageObject"}}</script>
+  <script type="application/ld+json">{"name":"McKissock","url":"https:\/\/www.mckissock.com","logo":"https:\/\/www.mckissock.com\/wp-content\/themes\/reximages\/mckissock-logo.svg","sameAs":["https:\/\/www.facebook.com\/McKissockEducation\/","https:\/\/twitter.com\/McKissockRE","https:\/\/www.linkedin.com\/company\/mckissock-lp"],"@context":"http:\/\/schema.org","@type":"Organization"}</script> 
+  <script type="text/javascript">var omapi_localized = { ajax: 'https://www.mckissock.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1', nonce: '3f483e8f60' };</script> 
+  <!-- begin crazy egg code --> 
+  <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0051/8339.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script> 
+  <!-- end crazy egg code --> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d3297f89b8","applicationID":"59945821","transactionName":"Y11aN0dRVhJWAhELWFoXeQBBWVcPGBIMDFBYXQ==","queueTime":0,"applicationTime":1089,"atts":"TxpZQQ9LRRw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

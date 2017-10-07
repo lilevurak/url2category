@@ -1,0 +1,930 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-au" xml:lang="en-au" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:tga="urn:my-scripts">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+  <meta name="Description" content="Australian Government Department of Education and Training - Training.Gov.Au">
+  <meta name="Copyright" content="Copyright (©) 2011-2013 by Hammond Street Developments Pty. Ltd.">
+  <meta name="Keywords" content="training, tp, vet, isc"> 
+  <link rel="icon" type="image/vnd.microsoft.icon" href="/Content/images/favicon.ico"> 
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/Content/images/favicon.ico"> 
+  <link rel="stylesheet" type="text/css" href="/Content/Styles/Site.css"> 
+  <link rel="stylesheet" type="text/css" media="print" href="/Content/Styles/print.css"> 
+  <link rel="stylesheet" type="text/css" href="/Content/Styles/redmond/jquery-ui-1.8.2.custom.css"> 
+  <!--[if IE]>
+        <link rel="stylesheet" media="screen" type="text/css" href="/Content/Styles/IeStylesheet.css"/>
+    <![endif]--> 
+  <!--[if IE 9]>
+        <link rel="stylesheet" media="screen" type="text/css" href="/Content/Styles/Ie9Stylesheet.css"/>
+    <![endif]--> 
+  <!--[if IE 8]>
+        <link rel="stylesheet" media="screen" type="text/css" href="/Content/Styles/Ie8Stylesheet.css"/>
+    <![endif]--> 
+  <!--[if IE 7]>
+        <link rel="stylesheet" media="screen" type="text/css" href="/Content/Styles/Ie7Stylesheet.css"/>
+    <![endif]--> 
+  <!--[if lte IE 6]>
+        <link rel="stylesheet" media="screen" type="text/css" href="/Content/Styles/Ie6Stylesheet.css"/>        
+    <![endif]--> 
+  <script type="text/javascript" src="/Scripts/jquery-1.4.3.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery-ui-1.8.2.custom.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery.easing.1.3.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery-1.0.jstree.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery.ba-bbq.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery.cookie.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery.infinitecarousel2.js"></script> 
+  <script type="text/javascript" src="/Scripts/jquery.watermark.js"></script> 
+  <script type="text/javascript" src="/Scripts/shortcut.js"></script> 
+  <script type="text/javascript" src="/Scripts/MicrosoftAjax.js"></script> 
+  <script type="text/javascript" src="/Scripts/MicrosoftMvcAjax.js"></script> 
+  <script type="text/javascript" src="/Scripts/MicrosoftMvcValidation.js"></script> 
+  <script type="text/javascript" src="/Scripts/hsd.captcha.core.js"></script> 
+  <script type="text/javascript" src="/Scripts/deewr.tga.web.js"></script> 
+  <script type="text/javascript" src="/Scripts/TelerikGridPager.js"></script> 
+  <script type="text/javascript">
+        <!--
+        	var showAlertBoxes = true;
+        	var staticAssistant = false;
+        	var twoCol = false;
+
+            $(document).ready(function() {
+
+                shortcut.add("s", function() {
+                    window.location = "/Search";
+                    return false;
+	            },{
+	                'type':'keydown',
+                    'propagate':false,
+                    'disable_in_input':true,
+                    'target':document
+	            });
+
+                shortcut.add("h", function() {
+                    window.location = "/Home/Tga";
+                    return false;
+	            },{
+	                'type':'keydown',
+                    'propagate':false,
+                    'disable_in_input':true,
+                    'target':document
+	            });
+	            
+                $("body").bind("mousemove", function() {
+	                $("body").unbind("mousemove");
+	                showAlertBoxes = false;
+	            });	            
+
+                $('input').filter('$[value*=Submit]')
+                    .add($('input').filter('$[value*=submit]'))
+                    .add($('input').filter('$[value*=Add]'))
+                    .bind("click", function (e) {
+                    $("#fakelinktoerrormsg").focus();
+            });
+               
+            });
+        //-->
+    </script> 
+  <link type="text/css" href="/asset.axd?id=vQAAAB-LCAAAAAAABACrVkpRsoquVipQslJyzs8rSc0r0TcyMDTQM9YzNDQ0UNJRSgPL5wHlS1JzUosys_WS83Nz8_P0cjPz9JKLi4FK8pWsDGpja3VQjQkuqcxJLcZqQkl6IkKrIVBrrI5ScglYQUWJPkSmDMhFdUky0KnGZqZAhpJVSVFpai0ADM2Fk70AAAA%3d" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="/TrainingComponentFiles/styles.css"> 
+  <title>training.gov.au - CHCEDS015 - Support development of student research skills</title> 
+  <script type="text/javascript">
+    <!--
+        //toggle the display of history (querystring) in the export to pdf and doc links
+        function togglePrintHistory(flag) {
+            $("a[class^=linkPrint]").querystring({ displayHistory: flag });
+        }
+        
+       
+        $(document).ready(function () {
+            if (!(window.history && window.history.replaceState)) {
+                var theTagName = $('ul.breadcrumbs>li:last')[0].innerHTML;
+                var properSize = $.cookie(theTagName);
+                if (properSize) {
+                    $.cookie(theTagName,null);
+                    window.location.replace(properSize);
+                }
+            }
+
+            $(".history").hide();
+            $(".historyCheckbox").show();
+            togglePrintHistory(false);            
+
+  
+            $("#validationMessage").hide();
+
+            $("#comparisonForm").submit(function () {
+                var checked = $("input[type=checkbox][name='comparisonItem']:checked").length;
+                if (checked > 2) {
+                    $("#validationMessage").show();
+                    $("#validationMessage").text("You can only compare two items at a time.");
+                    return false;
+                }
+                if (checked < 2) {
+                    $("#validationMessage").show();
+                    $("#validationMessage").text("You have not selected enough items to compare. Please select two items and then click the Compare button.");
+                    return false;
+                }
+            });
+
+            $("#tableQualifications .t-grouping-header").hide();
+            $('a.t-ps-link').click(function () {
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState({}, '', this.href);
+                }
+                else
+                {
+                    var tempSection = $(this).closest('table').closest('div').attr('id');
+                    if (tempSection) {
+                        $.cookie(theTagName, this.href + '#' + tempSection);
+                    } else {
+                        $.cookie(theTagName, this.href);
+                    }
+                }
+                
+            });
+        });        
+    //-->
+    </script> 
+  <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl" : "http://www"); 
+var _gaq = _gaq || []; 
+_gaq.push(['_setAccount', 'UA-30207537-1']); 
+_gaq.push(['_trackPageview']); 
+(function(){
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true; 
+ga.src = gaJsHost + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);})();
+</script> 
+  <script type="text/javascript">
+    <!--    
+    $(document).ready(function () {
+        if (getParameterByName("setFocus") != null) {
+            $("#" + getParameterByName("setFocus") + " a:first").focus();
+        }
+    });
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results == null ? null : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    //-->
+    </script> 
+ </head> 
+ <body> 
+  <script>
+    var lastFocus;
+    $(document).ready(function () {
+        $('a').focusout(function () {
+            lastFocus = this;
+        });
+    });
+
+    //Bad code to get around skipping anchor in IE
+    function SkipFocus() {
+        var ntabindex = parseFloat(lastFocus.getAttribute('tabindex'));
+        if (ntabindex == 3 || ntabindex == 4) {
+            var nextElem = $('[tabindex=6]').focus();
+            if (nextElem != null) {
+                nextElem.focus();
+            }
+        } else if (ntabindex == 6) {
+            var prevElem;
+            
+            prevElem = $('[tabindex=4]');
+            
+            if (prevElem != null) {
+                prevElem.focus();
+            }
+        }
+    }
+
+</script> 
+  <div id="page"> 
+   <div id="header"> 
+    <div id="title"> 
+     <a href="/Home/Tga" tabindex="1" title="Link to home" id="TGALogo"> <img src="/Content/images/training-logo-red-RGB-237.png" alt="training.gov.au - logo"> </a> 
+    </div> 
+    <div id="accessibilityLinks"> 
+     <a href="#content" tabindex="2">Skip to content</a> 
+     <a href="#navigation" tabindex="3">Skip to primary navigation</a> 
+     <a href="#breadcrumbnavigation" tabindex="4">Skip to breadcrumb navigation</a> 
+    </div> 
+    <div id="headerLogoGov"> 
+     <img src="/Content/images/ausgov-stacked-w150.png" alt="Australian Government Logo"> 
+    </div> 
+    <div id="menucontainer"> 
+     <span class="skipLink"><a name="navigation" id="navigation" tabindex="5" onfocus="SkipFocus();">&nbsp;</a></span> 
+     <!-- onfocus="SkipFocus();" --> 
+     <ul class="t-widget t-reset t-header t-menu t-MenuHeader" id="menuleft">
+      <li class="t-item t-state-default"><a class="t-link" href="/Home/Tga" tabindex="6" title="Link to home">Home</a></li>
+      <li class="t-item t-state-default"><a class="t-link" href="/Search" tabindex="8" title="Link to search">Search</a></li>
+      <li class="t-item t-state-default"><a class="t-link" href="/Reporting" tabindex="9" title="Link to reports">Reports</a></li>
+      <li class="t-item t-state-default"><a class="t-link" href="/Link" tabindex="11" title="Link to related links page">Links</a></li>
+      <li class="t-item t-state-default"><a class="t-link" href="/Home/SiteMap" tabindex="13" title="Link to site map page">Site map</a></li>
+     </ul>
+     <ul class="t-widget t-reset t-header t-menu t-MenuHeader" id="menuright">
+      <li class="t-item t-state-default" id="liveAssistantToggleLiId" style="float: right; display:none;margin-left:0.1em;"><a class="t-link" href="/" id="liveAssistantToggleLink" style="padding-left:0.3em;padding-right:0.2em;" tabindex="18" title="Toggle quick help"><img alt="Quick help - show/hide below the you are here links" class="t-image" src="/Content/images/liveassistanttoggle.png" style="padding-top:0.5em;margin: 0 !important;"></a></li>
+      <li class="t-item t-state-default" style="float: right;border-left:1px;border-style: solid;border-color: #4A70AE;"><a class="t-link" href="https://training.gov.au:443/Account/SignIn?returnUrl=/Training/Details/CHCEDS015" tabindex="17" title="Link to sign in">Sign in</a></li>
+     </ul> 
+    </div> 
+   </div> 
+   <div id="layoutWrapper"> 
+    <div id="twoColLayoutWrapper"> 
+     <div id="twoColLayoutLeft"> 
+      <div id="breadcrumbs"> 
+       <span class="skipLink"><a name="breadcrumbnavigation" id="breadcrumbnavigation">&nbsp;</a></span> 
+       <span class="accessibilityOnly">You are here: </span> 
+       <ul class="breadcrumbs"> 
+        <li><a href="/Home/Tga">Home</a></li>
+        <li><a href="/Training">Training</a></li>
+        <li>CHCEDS015</li> 
+       </ul> 
+      </div> 
+      <div id="newQuickHelpDiv"></div> 
+      <div class="layoutContentWrapper" id="layoutContentWrapper"> 
+       <span class="skipLink"> <a name="content" id="content" tabindex="-1">&nbsp;</a> </span> 
+       <div id="headerPrint">
+        &nbsp;
+       </div> 
+       <div id="printButtons"> 
+        <a class="linkPrintDoc" href="/Training/DetailsPrint?NrtId=3038a82a-5ffb-4c2e-8c1b-440b54d85afb&amp;NrtReleaseId=52a45131-b381-48e8-93ba-e28ab7dfdb83&amp;Format=doc&amp;displayHistory=true" title="Export this information to Word">Export summary to Word</a> 
+        <a class="linkPrintPdf" href="/Training/DetailsPrint?NrtId=3038a82a-5ffb-4c2e-8c1b-440b54d85afb&amp;NrtReleaseId=52a45131-b381-48e8-93ba-e28ab7dfdb83&amp;Format=pdf&amp;displayHistory=true" title="Export this information to PDF">Export summary to PDF</a> 
+        <!--a href="/Training/DetailsPrint?NrtId=3038a82a-5ffb-4c2e-8c1b-440b54d85afb&NrtReleaseId=52a45131-b381-48e8-93ba-e28ab7dfdb83&Format=print" target="_blank" title="Print" class="linkPrintReport">Print</a--> 
+        <a class="linkEmail" href="/ChangeNotification/NotificationAdd?NrtId=3038a82a-5ffb-4c2e-8c1b-440b54d85afb&amp;ReturnTo=TrainingDetails" id="lnkNotify" title="Notify me of changes to this Training component">Notify me of changes</a> 
+       </div> 
+       <h1>Unit of competency details</h1> 
+       <h2>CHCEDS015 - Support development of student research skills <span style="font-weight: normal">(Release 2)</span></h2> 
+       <script type="text/javascript">
+        $(document).ready(function () {
+            $("#displayHistory").attr("checked", false);
+            $("#displayHistory").click(function () {
+                $(".history").toggle("slow");
+                togglePrintHistory($("#displayHistory").attr("checked"));
+            });
+
+            $("#displayHistoryLabel").bind("click", linkHistoryCheckbox);
+            $(".historyCheckbox").show();
+        });
+
+        function linkHistoryCheckbox() {
+            $("#displayHistory").attr("checked", !$("#displayHistory").attr("checked"));
+            $("#displayHistory").click();
+            $("#displayHistory").attr("checked", !$("#displayHistory").attr("checked"));
+            return false;
+        }
+
+    </script> 
+       <div class="outer"> 
+        <h2 class="legend">Summary</h2> 
+        <div class="fieldset"> 
+         <form action="/Training/DetailsCompare" id="comparisonForm" method="post"> 
+          <input id="id" type="hidden" name="id" value="3038a82a-5ffb-4c2e-8c1b-440b54d85afb"> 
+          <div class="display-row"> 
+           <div class="display-label">
+            Releases:
+           </div> 
+           <div class="display-field-info"> 
+            <div> 
+             <span id="validationMessage" class="field-validation-error"></span> 
+            </div> 
+            <div class="display-field-info" style="vertical-align: middle;"> 
+             <div class="t-widget t-grid" id="tableReleaseHistory">
+              <table cellspacing="0" summary="Table listing the release history of this unit of competency" title="Table listing of Releases">
+               <colgroup>
+                <col>
+                <col style="width:80px">
+                <col style="width:110px">
+                <col style="width:80px">
+               </colgroup>
+               <thead class="t-grid-header">
+                <tr>
+                 <th class="t-header" scope="col">Release</th>
+                 <th class="t-header" scope="col">Status</th>
+                 <th class="t-header" scope="col">Release date</th>
+                 <th class="t-last-header t-header" scope="col"><input id="compareButton" name="compareButton" type="submit" value="Compare" title="Select 2 releases below and press to compare their metadata" class="t-button"></th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr>
+                 <td> <label for="comparisonItem2"><strong>2</strong> </label> <span class="accessibilityOnly"> 2 </span><strong> (this release)</strong></td>
+                 <td><strong><span class="green">Current</span></strong></td>
+                 <td> <strong> 06/Aug/2015</strong></td>
+                 <td class="centered-grid-column t-last"> <input type="checkbox" name="comparisonItem" id="comparisonItem2" value="52a45131-b381-48e8-93ba-e28ab7dfdb83"><label for="comparisonItem2" class="accessibilityOnly">Compare 2</label></td>
+                </tr>
+                <tr class="t-alt">
+                 <td> <label for="comparisonItem1">1 </label> (<a href="/Training/Details/CHCEDS015?releaseId=1995521a-8fd9-4949-8c0e-d73bce4b0b4c" title="View details for release 1">View details<span class="accessibilityOnly"> for release 1</span></a>) </td>
+                 <td>Replaced</td>
+                 <td>01/Jul/2013 </td>
+                 <td class="centered-grid-column t-last"> <input type="checkbox" name="comparisonItem" id="comparisonItem1" value="1995521a-8fd9-4949-8c0e-d73bce4b0b4c"><label for="comparisonItem1" class="accessibilityOnly">Compare 1</label></td>
+                </tr>
+               </tbody>
+              </table>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </form> 
+         <br> 
+         <div class="display-row"> 
+          <div class="display-label">
+           Usage recommendation:
+          </div> 
+          <div class="display-field"> 
+           <span class="green">Current</span> 
+          </div> 
+         </div> 
+         <div class="display-row"> 
+          <div class="display-label">
+           Mapping:
+          </div> 
+          <div class="display-field-info"> 
+           <div class="t-widget t-grid" id="tableMappings">
+            <table cellspacing="0" summary="Table listing the mapping information for this unit of competency" title="Table listing Mapping information">
+             <colgroup>
+              <col>
+              <col>
+              <col>
+             </colgroup>
+             <thead class="t-grid-header">
+              <tr>
+               <th class="t-header" scope="col">Mapping</th>
+               <th class="t-header" scope="col">Notes</th>
+               <th class="t-last-header t-header" scope="col">Date</th>
+              </tr>
+             </thead>
+             <tbody>
+              <tr>
+               <td>Supersedes <a href="/Training/Details/CHCEDS323A" title="View details for CHCEDS323A">CHCEDS323A</a> - Support development of student research skills</td>
+               <td>This version was released in CHC Community Services Training Package release 1.0 and meets the requirements of the New Standards for Training Packages. Changes to application and scope of unit. New evidence requirements for assessment.&nbsp;</td>
+               <td class="t-last">30/Jun/2013</td>
+              </tr>
+             </tbody>
+            </table>
+           </div> 
+          </div> 
+         </div>
+         <br> 
+         <div class="display-row"> 
+          <div class="display-label">
+           Companion volumes:
+          </div> 
+          <div class="display-field-info">
+            Unit Of competency 
+           <ul style="padding-left: 20px;margin-top: 2px;margin-bottom: 4px;" title="List of companion volumes for the Unit Of competency "> 
+            <li><a href="https://vetnet.education.gov.au/Pages/TrainingDocs.aspx?q=5e0c25cc-3d9d-4b43-80d3-bd22cc4f1e53" rel="external" class="">Companion Volume implementation guides are found in VETNet</a></li>
+           </ul> Assessment requirements 
+           <ul style="padding-left: 20px;margin-top: 2px;margin-bottom: 4px;" title="List of companion volumes for the Assessment requirements "> 
+            <li><a href="https://vetnet.education.gov.au/Pages/TrainingDocs.aspx?q=5e0c25cc-3d9d-4b43-80d3-bd22cc4f1e53" rel="external" class="">Companion Volume implementation guides are found in VETNet</a></li>
+           </ul> 
+          </div>
+         </div>
+         <br> 
+         <div class="display-row"> 
+          <div class="display-label">
+           Delivery:
+          </div> 
+          <div class="display-field"> 
+           <a href="/Search/SearchOrganisation?nrtCodeTitle=CHCEDS015&amp;scopeItem=Unit&amp;tabIndex=1&amp;ImplicitNrtScope=True&amp;orgSearchByScopeSubmit=Search&amp;IncludeUnregisteredRtosForScopeSearch=False">Find RTOs approved to deliver this unit of competency.</a> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Release specific information --> 
+       <div class="outer">
+        <h3 class="legend">Training packages that include this unit</h3>
+        <div class="fieldset">
+         <div class="t-widget t-grid" id="tableTrainingPackges">
+          <table cellspacing="0" summary="Table listing Training packages that include this unit" title="Table listing Training packages that include this unit">
+           <colgroup>
+            <col style="width:120px">
+            <col>
+            <col style="width:120px">
+           </colgroup>
+           <thead class="t-grid-header">
+            <tr>
+             <th class="t-header" scope="col">Code</th>
+             <th class="t-header" scope="col"><a class="t-link" href="/Training/Details/CHCEDS015?tableTrainingPackges-orderBy=Title-asc" rel="nofollow">Title<span class="t-icon t-arrow-up" style="display: none;"></span><span class="accessibilityOnly">Sort Table listing Training packages that include this unit by the Title column</span></a></th>
+             <th class="t-last-header t-header" scope="col">Release</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td><a href="/Training/Details/CHC" title="View details for training package code CHC">CHC<span class="accessibilityOnly"> - Community Services</span></a></td>
+             <td>Community Services&nbsp;</td>
+             <td class="t-last">2.0-3.0&nbsp;</td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </div>
+       </div>
+       <div class="outer">
+        <h3 class="legend">Qualifications that include this unit</h3>
+        <div class="fieldset">
+         <div class="t-widget t-grid" id="tableQualifications">
+          <table cellspacing="0" summary="Table listing Qualifications that include this unit" title="Table listing Qualifications that include this unit">
+           <colgroup>
+            <col style="width:120px">
+            <col>
+            <col style="width:120px">
+           </colgroup>
+           <thead class="t-grid-header">
+            <tr>
+             <th class="t-header" scope="col">Code</th>
+             <th class="t-header" scope="col"><a class="t-link" href="/Training/Details/CHCEDS015?tableQualifications-orderBy=Title-asc" rel="nofollow">Title<span class="t-icon t-arrow-up" style="display: none;"></span><span class="accessibilityOnly">Sort Table listing Qualifications that include this unit by the Title column</span></a></th>
+             <th class="t-last-header t-header" scope="col">Release</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td><a href="/Training/Details/CHC30213" title="View details for qualification code CHC30213">CHC30213<span class="accessibilityOnly"> - Certificate III in Education Support</span></a></td>
+             <td>Certificate III in Education Support&nbsp;</td>
+             <td class="t-last">1-3&nbsp;</td>
+            </tr>
+           </tbody>
+           <tfoot>
+            <tr>
+             <td class="t-pager-wrapper" colspan="3">
+              <div class="t-status">
+               <a class="t-icon t-refresh" href="/Training/Details/CHCEDS015" onclick=" $('#tableQualifications a:first').focus();" title="Refresh table content"><span class="accessibilityOnly">Refresh information in 'Table listing Qualifications that include this unit'</span></a>
+              </div>
+              <div class="t-pager t-reset">
+               <a class="t-link t-state-disabled" href="#" onclick=" $('#tableQualifications a:first').focus();" tabindex="-1" title="First Page"><span class="t-icon t-arrow-first">Navigate to first page in table listing Qualifications that include this unit.</span></a>
+               <a class="t-link t-state-disabled" href="#" onclick=" $('#tableQualifications a:first').focus();" tabindex="-1" title="Previous page"><span class="t-icon t-arrow-prev">Navigate to previous page in table listing Qualifications that include this unit.</span></a>
+               <div class="t-numeric">
+                <span class="t-state-active" onclick=" $('#tableQualifications a:first').focus();"><span class="accessibilityOnly">Navigate to page </span>1<span class="accessibilityOnly"> in table listing Qualifications that include this unit</span></span>
+               </div>
+               <a class="t-link t-state-disabled" href="#" onclick=" $('#tableQualifications a:first').focus();" tabindex="-1" title="Next page"><span class="t-icon t-arrow-next">Navigate to the next page in table listing Qualifications that include this unit.</span></a>
+               <a class="t-link t-state-disabled" href="#" onclick=" $('#tableQualifications a:first').focus();" tabindex="-1" title="Last Page"><span class="t-icon t-arrow-last">Navigate to the last page in table listing Qualifications that include this unit.</span></a>
+              </div>
+              <div class="t-pagesize-wrapper">
+               Items per page 
+               <span class="t-pagesize-wrapper-selected">10</span> | 
+               <span class="">20</span> | 
+               <span class="">50</span> | 
+               <span class="">100</span>
+              </div>
+              <div class="t-status-text">
+               Displaying items 1 - 1 of 1
+              </div></td>
+            </tr>
+           </tfoot>
+          </table>
+         </div>
+        </div>
+       </div> 
+       <div class="outer"> 
+        <h2 class="legend">Classifications</h2> 
+        <div class="historyCheckbox" style="display:none;height:15px;margin-right:20px;"> 
+         <input type="checkbox" name="displayHistory" id="displayHistory" value="true" checked title="Display history (below each table)"> 
+         <a href="#" id="displayHistoryLabel" style="cursor: pointer;">Display history</a> 
+        </div> 
+        <div class="clear"></div> 
+        <div class="fieldset"> 
+         <div class="t-widget t-grid" id="tableClassifications">
+          <table cellspacing="0" summary="Table listing all current Classifications" title="Table listing all current Classifications">
+           <colgroup>
+            <col>
+            <col style="width:100px">
+            <col>
+           </colgroup>
+           <thead class="t-grid-header">
+            <tr>
+             <th class="t-header" scope="col">Scheme</th>
+             <th class="t-header" scope="col">Code</th>
+             <th class="t-last-header t-header" scope="col">Classification value</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td>ASCED Module/Unit of Competency Field of Education Identifier&nbsp;</td>
+             <td>070107&nbsp;</td>
+             <td class="t-last">Teacher-Librarianship &nbsp;</td>
+            </tr>
+           </tbody>
+          </table>
+         </div> 
+         <div class="history"> 
+          <h3>Classification history</h3> 
+          <div class="t-widget t-grid" id="tableClassificationsHistory">
+           <table cellspacing="0" summary="Table listing complete Classifications history" title="Table listing complete Classifications history">
+            <colgroup>
+             <col>
+             <col style="width:100px">
+             <col>
+             <col style="width:80px">
+             <col style="width:80px">
+            </colgroup>
+            <thead class="t-grid-header">
+             <tr>
+              <th class="t-header" scope="col">Scheme</th>
+              <th class="t-header" scope="col">Code</th>
+              <th class="t-header" scope="col">Classification value</th>
+              <th class="t-header" scope="col">Start date</th>
+              <th class="t-last-header t-header" scope="col">End date</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <td>ASCED Module/Unit of Competency Field of Education Identifier&nbsp;</td>
+              <td>070107&nbsp;</td>
+              <td>Teacher-Librarianship &nbsp;</td>
+              <td>01/Nov/2013</td>
+              <td class="t-last">&nbsp;</td>
+             </tr>
+            </tbody>
+           </table>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="accessibilityOnly">
+        The content being displayed has been produced by a third party, while all attempts have been made to make this content as accessible as possible it cannot be guaranteed. If you are encountering issues following the content on this page please consider downloading the content in its original form
+       </div> 
+       <div class="outer"> 
+        <h2 class="legend">Content</h2> 
+        <div class="fieldset"> 
+         <div class="display-row">
+          <div class="display-label">
+           Compare:
+          </div>
+          <div class="display-field-info"> 
+           <a href="/Comparison/ComparisonWizard?nrtId=3038a82a-5ffb-4c2e-8c1b-440b54d85afb" id="compareText" title="Starts comparison wizard">Compare content of this unit of competency with other releases or training components</a> 
+          </div>
+         </div> 
+         <div class="display-row"> 
+          <div class="display-label">
+           Download:
+          </div> 
+          <div class="display-field-info"> 
+           <ul class="contentLinksShort"> 
+            <li><a href="/TrainingComponentFiles/CHC/CHCEDS015_R2.docm" rel="external" class="linkWord" title="Download Unit Of competency in Word format."><span class="accessibilityOnly">Download Unit Of competency in Word format.</span>Unit Of competency (234.37 KB)</a> </li> 
+            <li><a href="/TrainingComponentFiles/CHC/CHCEDS015_R2.pdf" rel="external" class="linkPdf" title="Download Unit Of competency in PDF format."><span class="accessibilityOnly">Download Unit Of competency in PDF format.</span>Unit Of competency (192.28 KB)</a> </li>
+           </ul> 
+           <ul class="contentLinksShort"> 
+            <li><a href="/TrainingComponentFiles/CHC/CHCEDS015_AssessmentRequirements_R2.docm" rel="external" class="linkWord" title="Download Assessment requirements in Word format."><span class="accessibilityOnly">Download Assessment requirements in Word format.</span>Assessment requirements (234.19 KB)</a> </li> 
+            <li><a href="/TrainingComponentFiles/CHC/CHCEDS015_AssessmentRequirements_R2.pdf" rel="external" class="linkPdf" title="Download Assessment requirements in PDF format."><span class="accessibilityOnly">Download Assessment requirements in PDF format.</span>Assessment requirements (155.59 KB)</a> </li>
+           </ul> 
+          </div>
+         </div> 
+        </div> 
+       </div> 
+       <h1>Unit Of competency</h1>
+       <!--?xml-stylesheet type="text/xsl" href="AuthorIT.xslt"-->  
+       <h2>Modification History</h2> 
+       <table class="ait-table" width="943"> 
+        <tbody>
+         <tr> 
+          <td style="border:2px solid #333333;;vertical-align: top;" width="336"> <p class="
+                ait4"><strong class="
+                ait24">Release</strong>&nbsp;</p> </td> 
+          <td style="border-left: 0px solid #333333;border-right: 2px solid #333333;border-top: 2px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="667"> <p class="
+                ait4"><strong class="
+                ait24">Comments</strong>&nbsp;</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border-left: 2px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="336"> <p class="
+                ait4">Release 2</p> </td> 
+          <td style="border-left: 0px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="667"> <p class="
+                ait4">Updated:</p>
+           <ul class="ait13">
+            <li>assessor requirements statement</li> 
+            <li>foundation skills lead in statement</li> 
+            <li>licensing statement</li> 
+            <li>modification history to reflect 2012 standards</li>
+           </ul><p class="
+                ait4">Equivalent outcome.</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border-left: 2px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="336"> <p class="
+                ait4">Release 1</p> </td> 
+          <td style="border-left: 0px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="667"> <p class="
+                ait4">This version was released in <em class="
+                ait7">CHC Community Services Training Package release 1.0</em> and meets the requirements of the 2012 Standards for Training Packages.</p> <p class="
+                ait4">Changes to application and scope of unit. </p> <p class="
+                ait4">New evidence requirements for assessment.</p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p class="
+                ait4"></p> 
+       <h2>Application</h2> 
+       <p class="
+                ait4">This unit describes the skills and knowledge required for an education support worker to assist students in obtaining information relevant to their learning needs.</p> 
+       <p class="
+                ait4"></p> 
+       <p class="
+                ait4">The unit applies to education support work in a variety of contexts and the work is to be undertaken with appropriate guidance, support and supervision by a nominated teacher or other education professional.</p> 
+       <p class="
+                ait4"></p> 
+       <p class="
+                ait4"></p> 
+       <p class="
+                ait4"><em class="
+                ait7">The skills in this unit must be applied in accordance with Commonwealth and State/Territory legislation, Australian/New Zealand standards and industry codes of practice</em>.</p> 
+       <p class="
+                ait4"></p> 
+       <h2>Elements and Performance Criteria</h2> 
+       <table class="ait-table" width="943"> 
+        <tbody>
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4"><strong class="
+                ait24">ELEMENT</strong>&nbsp;</p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4"><strong class="
+                ait24">PERFORMANCE CRITERIA</strong>&nbsp;</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4"><em class="
+                ait7">Elements define the essential outcomes.</em></p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4"><em class="
+                ait7"> Performance criteria specify the level of performance needed to demonstrate achievement of the element. </em></p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4">1. Determine student’s information requirements in consultation with teacher </p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4">1.1 Determine the information required by the student</p> <p class="
+                ait4">1.2 Identify the reason for the request and prior efforts to access information</p> <p class="
+                ait4">1.3 Consider additional sources of information and type of assistance required</p> <p class="
+                ait4">1.4 Assist student to identify key questions to inform the research</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4"></p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4"></p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4">2. Advise students to access and source additional information in consultation with teacher </p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4">2.1 Support students to extend their research skills</p> <p class="
+                ait4">2.2 Demonstrate use of reference tools and equipment using developmentally appropriate communication techniques</p> <p class="
+                ait4">2.3 Advise students on alternative sources of information </p> <p class="
+                ait4">2.4 Inform students of access constraints regarding use of reference tools, equipment and information</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4"></p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4"></p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="358"> <p class="
+                ait4">3. Encourage students to source and evaluate information</p> </td> 
+          <td style="border:0;;vertical-align: top;" width="626"> <p class="
+                ait4">3.1 Promote students’ independent use of available resources</p> <p class="
+                ait4">3.2 Encourage students to evaluate information</p> <p class="
+                ait4">3.3 Support students to assemble information in an appropriate format for individual use</p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p class="
+                ait4"></p> 
+       <h2>Foundation Skills</h2> 
+       <p class="
+                ait4"><em class="
+                ait7">The Foundation Skills describe those required skills (language, literacy, numeracy and employment skills) that are essential to performance.</em></p> 
+       <p class="
+                ait4"></p>
+       <ul class="ait13">
+        <li><em class="
+                ait7">Digital literacy</em> – in order to navigate and use appropriate functions of computer and/or digital resources.</li>
+       </ul>
+       <p class="
+                ait4">The remaining foundation skills essential to performance are explicit in the performance criteria of this unit.</p> 
+       <h2>Unit Mapping Information</h2> 
+       <p class="
+                ait4">No equivalent unit.</p> 
+       <h2>Links</h2> 
+       <p class="
+                ait4">Companion Volume implementation guides are found in VETNet - https://vetnet.education.gov.au/Pages/TrainingDocs.aspx?q=5e0c25cc-3d9d-4b43-80d3-bd22cc4f1e53</p>   
+       <div>
+        &nbsp;
+       </div> 
+       <hr>
+       <h1>Assessment requirements</h1>
+       <!--?xml-stylesheet type="text/xsl" href="AuthorIT.xslt"-->  
+       <h2>Modification History</h2> 
+       <table class="ait-table" width="943"> 
+        <tbody>
+         <tr> 
+          <td style="border:2px solid #333333;;vertical-align: top;" width="336"> <p class="
+                ait4"><strong class="
+                ait24">Release</strong>&nbsp;</p> </td> 
+          <td style="border-left: 0px solid #333333;border-right: 2px solid #333333;border-top: 2px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="667"> <p class="
+                ait4"><strong class="
+                ait24">Comments</strong>&nbsp;</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border-left: 2px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="336"> <p class="
+                ait4">Release 2</p> </td> 
+          <td style="border-left: 0px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="667"> <p class="
+                ait4">Updated:</p>
+           <ul class="ait13">
+            <li>assessor requirements statement</li> 
+            <li>foundation skills lead in statement</li> 
+            <li>licensing statement</li> 
+            <li>modification history to reflect 2012 standards</li>
+           </ul><p class="
+                ait4">Equivalent outcome.</p> </td> 
+         </tr> 
+         <tr> 
+          <td style="border-left: 2px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="336"> <p class="
+                ait4">Release 1</p> </td> 
+          <td style="border-left: 0px solid #333333;border-right: 2px solid #333333;border-top: 0px solid #333333;border-bottom: 2px solid #333333;;vertical-align: top;" width="667"> <p class="
+                ait4">This version was released in <em class="
+                ait7">CHC Community Services Training Package release 1.0</em> and meets the requirements of the 2012 Standards for Training Packages.</p> <p class="
+                ait4">Changes to application and scope of unit. </p> <p class="
+                ait4">New evidence requirements for assessment.</p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p class="
+                ait4"></p> 
+       <h2>Performance Evidence</h2> 
+       <table class="ait-table" width="943"> 
+        <tbody>
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="943"> <p class="
+                ait4">The candidate must show evidence of the ability to complete tasks outlined in elements and performance criteria of this unit, manage tasks and manage contingencies in the context of the job role. There must be demonstrated evidence that the candidate has completed the following tasks at least once: </p>
+           <ul class="ait13">
+            <li>worked in consultation with a teacher to determine a student’s information needs, including:</li>
+           </ul>
+           <ul class="ait14">
+            <li>identifying the student’s requirements, assisting the student and encouraging them to collate the information in an appropriate form.</li>
+           </ul></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p class="
+                ait4"></p> 
+       <h2>Knowledge Evidence</h2> 
+       <table class="ait-table" width="943"> 
+        <tbody>
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="943"> <p class="
+                ait4">The candidate must be able to demonstrate essential knowledge required to effectively do the task outlined in elements and performance criteria of this unit, manage the task and manage contingencies in the context of the work role. </p> <p class="
+                ait4">These include knowledge of:</p>
+           <ul class="ait13">
+            <li>organisation policy in relation to assisting students in research projects</li> 
+            <li>organisation policy related to accessing external information</li> 
+            <li>sources for answering common student requests</li> 
+            <li>features of the organisation’s resource centre and information management process</li> 
+            <li>bibliographic tools</li> 
+            <li>grammar, punctuation and spelling sufficient to guide student’s work</li> 
+            <li>how to use digital technologies to access information</li> 
+            <li>available references</li> 
+            <li>copyright, moral rights and intellectual property, and appropriate referencing in academic work.</li>
+           </ul></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p class="
+                ait4"></p> 
+       <h2>Assessment Conditions</h2> 
+       <table class="ait-table" width="943"> 
+        <tbody>
+         <tr> 
+          <td style="border:0;;vertical-align: top;" width="943"> <p class="
+                ait4">Skills must be demonstrated in the workplace.</p> <p class="
+                ait4"></p> <p class="
+                ait4">In addition, simulations and scenarios must be used where the full range of contexts and situations cannot be provided in the workplace or may occur only rarely. These are situations relating to emergency or unplanned procedures where assessment in these circumstances would be unsafe or is impractical.</p> <p class="
+                ait4"></p> <p class="
+                ait4">Simulated assessment environments must simulate the real-life working environment where these skills and knowledge would be performed, with all the relevant equipment and resources of that working environment.</p> <p class="
+                ait4"></p> <p class="
+                ait4">Assessment must ensure use of:</p>
+           <ul class="ait13">
+            <li>computer and internet connection to assist student learning with digital technologies</li>
+           </ul><p class="
+                ait4"></p> <p class="
+                ait4">Assessors must satisfy the Standards for Registered Training Organisations (RTOs) 2015/AQTF mandatory competency requirements for assessors.</p> <p class="
+                ait4"></p> <p class="
+                ait4"></p> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <p class="
+                ait4"></p> 
+       <h2>Links</h2> 
+       <p class="
+                ait4">Companion Volume implementation guides are found in VETNet - https://vetnet.education.gov.au/Pages/TrainingDocs.aspx?q=5e0c25cc-3d9d-4b43-80d3-bd22cc4f1e53</p>   
+       <div class="backtotop"> 
+        <a href="#navigation" title="Scroll back to the top of this page.">Back to top</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="twoColLayoutRight"> 
+      <div class="layoutContentWrapper"> 
+       <script type="text/javascript">
+    <!--
+        $(document).ready(function () {
+            if (!staticAssistant) {
+                $("div#boxLiveAssistantPopup").appendTo("div#newQuickHelpDiv");
+            }
+        });
+    //-->
+</script> 
+       <div id="boxLiveAssistantPopup" class="widgetLiveAssistant"> 
+        <div id="boxLiveAssistantPopupHeader" class="widgetLiveAssistantHeader"> 
+         <h2> <a href="#" style="display: block; text-decoration: none; color: inherit; font-family: inherit; cursor: default;" tabindex="19">Quick help </a></h2> 
+         <div id="boxLiveAssistantToggleCloseId" class="widgetLiveAssistantClose" style="display:none;"> 
+          <a href="#" style="text-decoration: none; color: inherit; font-family: inherit" tabindex="20"><img src="/Content/images/navigate_cross.png" alt="Close live assistant button"></a> 
+         </div> 
+        </div> 
+        <div class="widgetLiveAssistantContent"> 
+         <strong>Training component details</strong> 
+         <br> The following details are displayed for each different NRT:- 
+         <h2>Training packages</h2> - Training package details 
+         <br> - Training package components 
+         <h2>Qualifications</h2> - Qualification details 
+         <br> - Qualification components 
+         <h2>Accredited courses</h2> - Accredited course details 
+         <h2>Modules</h2> - Module details 
+         <h2>Units of competency</h2> - Units of competency details 
+         <br> - Unit components 
+         <h2>Skill sets</h2> - Skill set details 
+         <br> - Skill set components 
+         <br>
+         <br> Click on the 
+         <strong>Export</strong> link to export the NRT information to MS Word or PDF. 
+         <br>
+         <br> Click on the 
+         <strong>Manage notification</strong> link to create or change a notification for this NRT. 
+         <br>
+         <br> When selecting the 
+         <strong>Display history</strong> check box a set of tables will appear displaying a log of historical values describing what has changed and when over time. 
+         <br>
+         <br> If you have access to make changes to an NRT, click on the 
+         <strong>Edit</strong> link on the upper right hand side of the summary box. 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="layoutFooter"> 
+    <div id="footer"> 
+     <div id="logo"> 
+      <img src="/Content/images/stones-32x32-transparent.png" alt="TGA Logo stepping stones"> 
+     </div> 
+     <div id="version">
+       [Site version 3.8.4.1] 
+     </div> 
+     <div id="siteLinks"> 
+      <ul> 
+       <li><a href="/Home/About">About training.gov.au</a></li> 
+       <li><a href="/Home/PrivacyPolicy">Privacy policy</a></li> 
+       <li><a href="/Home/Copyright">Copyright</a></li> 
+       <li><a href="/Home/TermsOfUse">Terms of use</a></li> 
+       <li><a href="/Home/Contact">Contact</a></li> 
+       <li><a href="/Home/News">News</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+  <!--End of Page div--> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.common.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.grid.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.calendar.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.datepicker.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.grid.editing.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/jquery.validate.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.grid.filtering.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.autocomplete.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.combobox.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.grid.grouping.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.list.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/2010.3.1110/telerik.menu.min.js"></script> 
+  <script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function(){
+if (!jQuery.telerik) jQuery.telerik = {};
+jQuery.telerik.cultureInfo={"shortDate":"dd/MMM/yyyy","longDate":"dddd, d MMMM yyyy","longTime":"h:mm:ss tt","shortTime":"h:mm tt","fullDateTime":"dddd, d MMMM yyyy h:mm:ss tt","sortableDateTime":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","universalSortableDateTime":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","generalDateShortTime":"dd/MMM/yyyy h:mm tt","generalDateTime":"dd/MMM/yyyy h:mm:ss tt","monthDay":"dd MMMM","monthYear":"MMMM yyyy","days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"abbrDays":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"abbrMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"months":["January","February","March","April","May","June","July","August","September","October","November","December",""],"am":"AM","pm":"PM","dateSeparator":"/","timeSeparator":":","currencydecimaldigits":2,"currencydecimalseparator":".","currencygroupseparator":",","currencygroupsize":3,"currencynegative":1,"currencypositive":0,"currencysymbol":"$","numericdecimaldigits":2,"numericdecimalseparator":".","numericgroupseparator":",","numericgroupsize":3,"numericnegative":1,"percentdecimaldigits":2,"percentdecimalseparator":".","percentgroupseparator":",","percentgroupsize":3,"percentnegative":0,"percentpositive":0,"percentsymbol":"%"};
+jQuery('#menuleft').tMenu();
+jQuery('#menuright').tMenu();
+jQuery('#tableReleaseHistory').tGrid({columns:[{},{"title":"Status","member":"Currency","type":"Enum","values":{"Current":0,"Replaced":1,"Draft":2}},{},{"attr":" class=\"centered-grid-column\""}], urlFormat:'/Training/Details/CHCEDS015', pageSize:0});
+jQuery('#tableMappings').tGrid({columns:[{},{"title":"Notes","member":"Notes","type":"String"},{"title":"Date","member":"MappingDate","type":"Date","format":"{0:d}"}], urlFormat:'/Training/Details/CHCEDS015', pageSize:0});
+jQuery('#tableUnitContextualisations').tGrid({columns:[{"template":"\u003ca href=\"/Training/Details/%3C%23%3d%20Code%20%23%3E\" title=\"View details for unit contextualisation \u003c#= Title #\u003e\"\u003eDetails\u003cspan class=\"accessibilityOnly\"\u003e - \u003c#= Title #\u003e\u003c/span\u003e\u003c/a\u003e"},{"template":"\u003c#= Title #\u003e","title":"Title","member":"Title","type":"String"}], pageSize:0, ajax:{"selectUrl":"/Training/AjaxGetUnitUnitContextualisations/CHCEDS015?releaseId=52a45131-b381-48e8-93ba-e28ab7dfdb83"}});
+jQuery('#tableTrainingPackges').tGrid({columns:[{"template":"\u003ca href=\"/Training/Details/%3C%23%3d%20Code%20%23%3E\" title=\"View details for training package code \u003c#= Code #\u003e\"\u003e\u003c#= Code #\u003e\u003cspan class=\"accessibilityOnly\"\u003e - \u003c#= Title #\u003e\u003c/span\u003e\u003c/a\u003e"},{"title":"Title","member":"Title","type":"String"},{"title":"Release","member":"Releases","type":"String"}], pageSize:0, sortMode:'single', orderBy:'Code-desc', ajax:{"selectUrl":"/Training/AjaxGetReleaseTrainingPackages/CHCEDS015?releaseId=52a45131-b381-48e8-93ba-e28ab7dfdb83"}});
+jQuery('#tableQualifications').tGrid({columns:[{"template":"\u003ca href=\"/Training/Details/%3C%23%3d%20Code%20%23%3E\" title=\"View details for qualification code \u003c#= Code #\u003e\"\u003e\u003c#= Code #\u003e\u003cspan class=\"accessibilityOnly\"\u003e - \u003c#= Title #\u003e\u003c/span\u003e\u003c/a\u003e"},{"title":"Title","member":"Title","type":"String"},{"title":"Release","member":"Releases","type":"String"}], total:1, currentPage:1, sortMode:'single', orderBy:'Code-desc', ajax:{"selectUrl":"/Training/AjaxGetUnitQualifications/CHCEDS015"}});
+jQuery('#tableSkillSets').tGrid({columns:[{"template":"\u003ca href=\"/Training/Details/%3C%23%3d%20Code%20%23%3E\" title=\"View details for skill set \u003c#= Title #\u003e\"\u003e\u003c#= Code#\u003e\u003cspan class=\"accessibilityOnly\"\u003e - \u003c#= Title #\u003e\u003c/span\u003e\u003c/a\u003e"},{"title":"Title","member":"Title","type":"String","order":"desc"},{"title":"Release","member":"Releases","type":"String"}], total:0, currentPage:1, sortMode:'single', orderBy:'Title-desc', ajax:{"selectUrl":"/Training/AjaxGetUnitSkillSets/CHCEDS015"}});
+jQuery('#tableClassifications').tGrid({columns:[{"title":"Scheme","member":"Value.Scheme.Description","type":"String"},{"title":"Code","member":"Value.Value","type":"String"},{"title":"Classification value","member":"Value.Name","type":"String"}], urlFormat:'/Training/Details/CHCEDS015', pageSize:0});
+jQuery('#tableClassificationsHistory').tGrid({columns:[{"title":"Scheme","member":"Value.Scheme.Description","type":"String"},{"title":"Code","member":"Value.Value","type":"String"},{"title":"Classification value","member":"Value.Name","type":"String"},{"title":"Start date","member":"StartDate","type":"Date","format":"{0:d}"},{"title":"End date","member":"EndDate","type":"Date","format":"{0:d}"}], urlFormat:'/Training/Details/CHCEDS015', pageSize:0});});
+//]]>
+</script>   
+ </body>
+</html>

@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" class="no-js">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYFVVRbCxAHXVBWAwcEVg=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script> 
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <link rel="dns-prefetch" href="//media.thetab.com/"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="https://thetab.com/us/bu/xmlrpc.php"> 
+  <!--[if lt IE 9]>
+		<script src="https://thetab.com/wp-content/themes/thetab-three/assets/_lib/html5shiv/dist/html5shiv.min.js"></script>
+	<![endif]--> 
+  <title>The best ways to give back in 2017</title> 
+  <link rel="apple-touch-icon" sizes="57x57" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-57x57.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="60x60" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-60x60.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="72x72" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-72x72.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="76x76" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-76x76.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="114x114" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-114x114.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="120x120" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-120x120.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="144x144" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-144x144.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="152x152" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-152x152.png?v=m22nPrj50M"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/apple-touch-icon-180x180.png?v=m22nPrj50M"> 
+  <link rel="icon" type="image/png" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/favicon-32x32.png?v=m22nPrj50M" sizes="32x32"> 
+  <link rel="icon" type="image/png" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/android-chrome-192x192.png?v=m22nPrj50M" sizes="192x192"> 
+  <link rel="icon" type="image/png" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/favicon-96x96.png?v=m22nPrj50M" sizes="96x96"> 
+  <link rel="icon" type="image/png" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/favicon-16x16.png?v=m22nPrj50M" sizes="16x16"> 
+  <link rel="manifest" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/manifest.json?v=m22nPrj50M"> 
+  <link rel="shortcut icon" href="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/favicon.ico?v=m22nPrj50M"> 
+  <meta name="apple-mobile-web-app-title" content="The Tab Boston University"> 
+  <meta name="application-name" content="The Tab Boston University"> 
+  <meta name="msapplication-TileColor" content="#fd4248"> 
+  <meta name="msapplication-TileImage" content="https://thetab.com/wp-content/themes/thetab-three/assets/_img/favicons/mstile-144x144.png?v=m22nPrj50M"> 
+  <meta name="theme-color" content="#fd4248"> 
+  <meta name="news_keywords" content="news, student news, university, sport, fashion, the tab, campus, education, youth, headlines, lifestyle, entertainment, undergraduate, degree, societies, boston, boston university"> 
+  <meta name="original-source" content="https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912"> 
+  <link rel="canonical" href="https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="The best ways to give back in 2017"> 
+  <meta property="og:description" content="This year, ditch the normal, run-of-the-mill resolutions and do something that makes a difference"> 
+  <meta property="og:url" content="https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912"> 
+  <meta property="og:site_name" content="The Tab Boston University"> 
+  <meta property="article:publisher" content="https://www.facebook.com/thetabBU"> 
+  <meta property="article:section" content="Life"> 
+  <meta property="article:published_time" content="2016-12-30T16:27:46+00:00"> 
+  <meta property="fb:app_id" content="352812984826567"> 
+  <meta property="og:image" content="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design.png"> 
+  <meta property="og:image:secure_url" content="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design.png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="stylesheet" id="fillet-css-css" href="https://thetab.com/wp-content/plugins/fillet/assets/css/fillet-css.css?ver=1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="ttl_main-css" href="https://thetab.com/wp-content/themes/thetab-three/assets/_css/main.min.css?ver=1.2.10" type="text/css" media="screen"> 
+  <link rel="stylesheet" id="ttl_fonts-css" href="https://fonts.googleapis.com/css?family=Lato%3A900%2C700%2C400%7CSource+Sans+Pro%3A400%2C400italic%2C600%2C700%2C700italic&amp;&amp;ver=1.0.2#038;ver=1.0.1" type="text/css" media="screen"> 
+  <link rel="https://api.w.org/" href="https://thetab.com/us/bu/wp-json/"> 
+  <link rel="alternate" type="application/json+oembed" href="https://thetab.com/us/bu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthetab.com%2Fus%2Fbu%2F2016%2F12%2F30%2Fbest-ways-give-back-2017-9912"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://thetab.com/us/bu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthetab.com%2Fus%2Fbu%2F2016%2F12%2F30%2Fbest-ways-give-back-2017-9912&amp;format=xml"> 
+  <meta property="fb:pages" content="178946012253116"> 
+  <meta property="fb:pages" content="215623998554803"> 
+  <meta property="fb:pages" content="425679450775949"> 
+  <meta property="fb:pages" content="414316998608385"> 
+  <meta property="fb:pages" content="127403731009"> 
+  <meta property="fb:pages" content="184052994950676"> 
+  <meta property="fb:pages" content="411933975505209"> 
+  <meta property="fb:pages" content="320378071318191"> 
+  <meta property="fb:pages" content="414681041899634"> 
+  <meta property="fb:pages" content="219159554848690"> 
+  <meta property="fb:pages" content="218610544922102"> 
+  <meta property="fb:pages" content="377397232276124"> 
+  <meta property="fb:pages" content="398058306905981"> 
+  <meta property="fb:pages" content="364823096908895"> 
+  <meta property="fb:pages" content="359303650748040"> 
+  <meta property="fb:pages" content="455993497760627"> 
+  <meta property="fb:pages" content="100461823414725"> 
+  <meta property="fb:pages" content="294063157347553"> 
+  <meta property="fb:pages" content="430322286978284"> 
+  <meta property="fb:pages" content="354931727894949"> 
+  <meta property="fb:pages" content="339220812811324"> 
+  <meta property="fb:pages" content="411267235570329"> 
+  <meta property="fb:pages" content="426948203996751"> 
+  <meta property="fb:pages" content="425520824167617"> 
+  <meta property="fb:pages" content="383692758335012"> 
+  <meta property="fb:pages" content="351710431592187"> 
+  <meta property="fb:pages" content="214025875383856"> 
+  <meta property="fb:pages" content="243524065749113"> 
+  <meta property="fb:pages" content="189917554463706"> 
+  <meta property="fb:pages" content="149072385244437"> 
+  <meta property="fb:pages" content="133077403535748"> 
+  <meta property="fb:pages" content="241221155928226"> 
+  <meta property="fb:pages" content="604616659591197"> 
+  <meta property="fb:pages" content="400648090039753"> 
+  <meta property="fb:pages" content="680604165284632"> 
+  <meta property="fb:pages" content="505992529467861"> 
+  <meta property="fb:pages" content="608968892478551"> 
+  <meta property="fb:pages" content="156504904549396"> 
+  <meta property="fb:pages" content="396500727093898"> 
+  <meta property="fb:pages" content="554130657978172"> 
+  <meta property="fb:pages" content="288124057944881"> 
+  <meta property="fb:pages" content="577023035711831"> 
+  <meta property="fb:pages" content="586120624816013"> 
+  <meta property="fb:pages" content="271617619662824"> 
+  <meta property="fb:pages" content="146398632143137"> 
+  <meta property="fb:pages" content="1387177191542893"> 
+  <meta property="fb:pages" content="1498058123766904"> 
+  <meta property="fb:pages" content="1464253620506479"> 
+  <meta property="fb:pages" content="1528299780739498"> 
+  <meta property="fb:pages" content="1579896695584358"> 
+  <meta property="fb:pages" content="778650505546751"> 
+  <meta property="fb:pages" content="558984347538493"> 
+  <meta property="fb:pages" content="427404197326900"> 
+  <meta property="fb:pages" content="623903977744791"> 
+  <meta property="fb:pages" content="1602641783347657"> 
+  <meta property="fb:pages" content="178946012253116"> 
+  <meta property="fb:pages" content="824952010957707"> 
+  <meta property="fb:pages" content="1477142669275822"> 
+  <meta property="fb:pages" content="985734094781040"> 
+  <meta property="fb:pages" content="965697800142884"> 
+  <meta property="fb:pages" content="610075622355998"> 
+  <meta property="fb:pages" content="557436457652079"> 
+  <meta property="fb:pages" content="888673304519483"> 
+  <meta property="fb:pages" content="810272762371436"> 
+  <meta property="fb:pages" content="1008053585891910"> 
+  <meta property="fb:pages" content="217724125046181"> 
+  <meta property="fb:pages" content="1657772187770548"> 
+  <meta property="fb:pages" content="798628183540478"> 
+  <meta property="fb:pages" content="1610355909213125"> 
+  <meta property="fb:pages" content="1047198575304482"> 
+  <meta property="fb:pages" content="888673304519483"> 
+  <meta property="fb:pages" content="1484285975199632"> 
+  <meta property="fb:pages" content="929159990490685"> 
+  <meta property="fb:pages" content="455164537996633"> 
+  <meta property="fb:pages" content="166102160392188"> 
+  <meta property="fb:pages" content="981278871910278"> 
+  <meta property="fb:pages" content="1626403284299569"> 
+  <meta property="fb:pages" content="865549150203505"> 
+  <meta property="fb:pages" content="940442339346403"> 
+  <meta property="fb:pages" content="1681704905392964"> 
+  <meta property="fb:pages" content="702966686504149"> 
+  <meta property="fb:pages" content="656775161127823"> 
+  <meta property="fb:pages" content="116957565350668"> 
+  <meta property="fb:pages" content="1549151228731631"> 
+  <meta property="fb:pages" content="129218350464812"> 
+  <meta property="fb:pages" content="695070440569306"> 
+  <meta property="fb:pages" content="558436444217222"> 
+  <meta property="fb:pages" content="569089153195630"> 
+  <meta property="fb:pages" content="136957143159495"> 
+  <meta property="fb:pages" content="775939695778077"> 
+  <meta property="fb:pages" content="1461498684085019"> 
+  <meta property="fb:pages" content="364947703608428"> 
+  <meta property="fb:pages" content="385253791560592"> 
+  <meta property="fb:pages" content="192227730943255"> 
+  <meta property="fb:pages" content="146500752214260"> 
+  <meta property="fb:pages" content="772267319491411"> 
+  <meta property="fb:pages" content="1391825814449752"> 
+  <meta property="fb:pages" content="523034961193418"> 
+  <meta property="fb:pages" content="1752661254961486"> 
+  <meta property="fb:pages" content="1656192891286166"> 
+  <meta property="fb:pages" content="1664429667169242"> 
+  <meta property="fb:pages" content="1647378935529719"> 
+  <meta property="fb:pages" content="697662703667285"> 
+  <meta property="fb:pages" content="200340103638138"> 
+  <meta property="fb:pages" content="1661614077438650"> 
+  <meta property="fb:pages" content="986331094767829"> 
+  <meta property="fb:pages" content="634614756681152"> 
+  <meta property="fb:pages" content="1488617898113702"> 
+  <meta property="fb:pages" content="420189694836259"> 
+  <meta property="fb:pages" content="1740055892892385"> 
+  <meta property="fb:pages" content="1060441080641856"> 
+  <meta property="fb:pages" content="1540179556307191"> 
+  <meta property="fb:pages" content="511543889022880"> 
+  <meta property="fb:pages" content="979101368826987"> 
+  <meta property="fb:pages" content="1392356254397326"> 
+  <meta property="fb:pages" content="189088878119797"> 
+  <meta property="fb:pages" content="1533729610290504"> 
+  <meta property="fb:pages" content="498029123717235"> 
+  <meta property="fb:pages" content="1714272535456452"> 
+  <meta property="fb:pages" content="1068495793200638"> 
+  <meta property="fb:pages" content="238203869850006"> 
+  <meta property="fb:pages" content="625457814273793"> 
+  <meta property="fb:pages" content="1715091325426805"> 
+  <meta property="fb:pages" content="963160530442383"> 
+  <meta property="fb:pages" content="202720636769089"> 
+  <meta property="fb:pages" content="246263275709405"> 
+  <meta property="fb:pages" content="615182151966245"> 
+  <meta property="fb:pages" content="206735253031778"> 
+  <meta property="fb:pages" content="1311870285506679"> 
+  <meta property="fb:pages" content="869181826498792"> 
+  <meta property="fb:pages" content="1191507594194866"> 
+  <link rel="amphtml" href="https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912/amp"> 
+  <script type="text/javascript" src="https://analytics.thetab.com/tablytics.prod.js"></script> 
+  <script type="text/javascript">
+  window.tablytics.init(
+    'eu-west-1',
+    'AKIAIMLFB6EN3JYC6I6A',
+    'lCU9Ic/fo/Q+AqcMduipAQt5lAjo7AoI0QsNc7qz',
+    'tablytics-prod'
+  );
+  window.tablytics.sendEvent(
+    'pageview',
+    {userId: '0',
+      postId: '9912',
+      universityId: '92',
+      tags: null,
+      categories: ["life"],
+      authorIds: [37701],
+      url: window.location.href
+    },
+    function(data) {console.log(data)},
+    function(err) {console.log(err)}
+  );
+</script> 
+  <script>
+  dataLayer = [{
+    'article_title': "The best ways to give back in 2017",
+    'article_published_date': "December 30, 2016",
+    'category': "life",
+    'tags': "",
+    'author': "maileproctor",
+    'university':  "92",
+    'site' : "thetab"
+  }];
+</script> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBSWGF3');</script> 
+ </head> 
+ <body class="post-template-default single single-post postid-9912 single-format-standard"> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBSWGF3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <header class="header"> 
+   <div class="container"> 
+    <div class="logo"> 
+     <a href="https://thetab.com/us/bu"> <img src="https://thetab.com/wp-content/themes/thetab-three/assets/_img/thetab-logo-red.png" alt="The Tab Boston University"> </a> 
+    </div> 
+    <div class="uni-button"> 
+     <a class="js-universities-menu-trigger" href="#"> BU </a> 
+     <span class="uni-button__icon js-universities-menu-trigger" aria-hidden="true"></span> 
+    </div> 
+    <div class="writefor-mob"> 
+     <a href="https://writefor.thetab.com/global/mobile/header/link">Write</a> 
+    </div> 
+    <nav class="top-navigation"> 
+     <ul> 
+      <li class="top-navigation__item"> <a href="https://rosebud.thetab.com/us/bu/header/link"> <span>Write For Us</span> </a> </li> 
+      <li class="top-navigation__item"> <a href="https://advertise.thetab.com/"> <span>Advertise</span> </a> </li> 
+      <li class="top-navigation__item"> <a href="https://thetab.com/us/who-we-are"> <span>About Us</span> </a> </li> 
+     </ul> 
+    </nav> 
+   </div> 
+  </header> 
+  <div class="universities_menu_wrapper"> 
+   <div id="universities_menu" class="tabs university-list top" style="display:none;"> 
+    <div class="container"> 
+     <div class="tabs-container"> 
+      <input type="radio" name="tabs" value="1" id="tab-1" checked> 
+      <label for="tab-1"> <i class="fa fa-html5"></i><span>US</span> </label> 
+      <input type="radio" name="tabs" value="2" id="tab-2"> 
+      <label for="tab-2"> <i class="fa fa-html5"></i><span>UK</span> </label> 
+     </div> 
+     <ul id="tab-content-1" class="tab-content university-list__container" style=""> 
+      <li class="university-list__title">US</li> 
+      <li></li> 
+      <li class="university-list__item child"> <a data-id="203" href="https://thetab.com/us/arizonastate"> Arizona State </a> </li> 
+      <li class="university-list__item child current"> <a data-id="92" href="https://thetab.com/us/bu"> BU </a> </li> 
+      <li class="university-list__item child"> <a data-id="95" href="https://thetab.com/us/brown"> Brown </a> </li> 
+      <li class="university-list__item child"> <a data-id="231" href="https://thetab.com/us/bucknell"> Bucknell </a> </li> 
+      <li class="university-list__item child"> <a data-id="96" href="https://thetab.com/us/columbia"> Columbia </a> </li> 
+      <li class="university-list__item child"> <a data-id="105" href="https://thetab.com/us/cornell"> Cornell </a> </li> 
+      <li class="university-list__item child"> <a data-id="205" href="https://thetab.com/us/cu-boulder"> CU-Boulder </a> </li> 
+      <li class="university-list__item child"> <a data-id="186" href="https://thetab.com/us/florida"> Florida </a> </li> 
+      <li class="university-list__item child"> <a data-id="192" href="https://thetab.com/us/floridastate"> Florida State </a> </li> 
+      <li class="university-list__item child"> <a data-id="103" href="https://thetab.com/us/georgetown"> Georgetown </a> </li> 
+      <li class="university-list__item child"> <a data-id="107" href="https://thetab.com/us/harvard"> Harvard </a> </li> 
+      <li class="university-list__item child"> <a data-id="169" href="https://thetab.com/us/iowa"> Iowa </a> </li> 
+      <li class="university-list__item child"> <a data-id="123" href="https://thetab.com/us/ithaca"> Ithaca </a> </li> 
+      <li class="university-list__item child"> <a data-id="170" href="https://thetab.com/us/indiana"> IU </a> </li> 
+      <li class="university-list__item child"> <a data-id="139" href="https://thetab.com/us/jmu"> JMU </a> </li> 
+      <li class="university-list__item child"> <a data-id="156" href="https://thetab.com/us/michigan"> Michigan </a> </li> 
+      <li class="university-list__item child"> <a data-id="178" href="https://thetab.com/us/michigan-state"> Michigan State </a> </li> 
+      <li class="university-list__item child"> <a data-id="141" href="https://thetab.com/us/ncstate"> NC State </a> </li> 
+      <li class="university-list__item child"> <a data-id="94" href="https://thetab.com/us/nyu"> NYU </a> </li> 
+      <li class="university-list__item child"> <a data-id="157" href="https://thetab.com/us/ohio-state"> Ohio State </a> </li> 
+      <li class="university-list__item child"> <a data-id="224" href="https://thetab.com/us/oregon"> Oregon </a> </li> 
+      <li class="university-list__item child"> <a data-id="98" href="https://thetab.com/us/pennstate"> Penn State </a> </li> 
+      <li class="university-list__item child"> <a data-id="115" href="https://thetab.com/us/pitt"> Pitt </a> </li> 
+      <li class="university-list__item child"> <a data-id="106" href="https://thetab.com/us/princeton"> Princeton </a> </li> 
+      <li class="university-list__item child"> <a data-id="110" href="https://thetab.com/us/rutgers"> Rutgers </a> </li> 
+      <li class="university-list__item child"> <a data-id="99" href="https://thetab.com/us/syracuse"> Syracuse </a> </li> 
+      <li class="university-list__item child"> <a data-id="119" href="https://thetab.com/us/temple"> Temple </a> </li> 
+      <li class="university-list__item child"> <a data-id="176" href="https://thetab.com/us/uc-berkeley"> UC Berkeley </a> </li> 
+      <li class="university-list__item child"> <a data-id="218" href="https://thetab.com/us/uc-irvine"> UC Irvine </a> </li> 
+      <li class="university-list__item child"> <a data-id="179" href="https://thetab.com/us/ucla"> UCLA </a> </li> 
+      <li class="university-list__item child"> <a data-id="190" href="https://thetab.com/us/ucsb"> UCSB </a> </li> 
+      <li class="university-list__item child"> <a data-id="145" href="https://thetab.com/us/udel"> UDel </a> </li> 
+      <li class="university-list__item child"> <a data-id="117" href="https://thetab.com/us/umass-amherst"> UMass Amherst </a> </li> 
+      <li class="university-list__item child"> <a data-id="104" href="https://thetab.com/us/unc"> UNC </a> </li> 
+      <li class="university-list__item child"> <a data-id="187" href="https://thetab.com/us/usc"> USC </a> </li> 
+      <li class="university-list__item child"> <a data-id="100" href="https://thetab.com/us/uva"> UVA </a> </li> 
+      <li class="university-list__item child"> <a data-id="149" href="https://thetab.com/us/virginiatech"> Virginia Tech </a> </li> 
+      <li class="university-list__item child"> <a data-id="164" href="https://thetab.com/us/wisconsin"> Wisconsin </a> </li> 
+     </ul> 
+     <ul id="tab-content-2" class="tab-content university-list__container" style="display:none;"> 
+      <li class="university-list__title">UK</li> 
+      <li></li> 
+      <li class="university-list__item child"> <a data-id="50" href="https://thetab.com/uk/aberdeen"> Aberdeen </a> </li> 
+      <li class="university-list__item child"> <a data-id="56" href="https://thetab.com/uk/belfast"> Belfast </a> </li> 
+      <li class="university-list__item child"> <a data-id="4" href="https://thetab.com/uk/birmingham"> Birmingham </a> </li> 
+      <li class="university-list__item child"> <a data-id="57" href="https://thetab.com/uk/bournemouth"> Bournemouth </a> </li> 
+      <li class="university-list__item child"> <a data-id="5" href="https://thetab.com/uk/bristol"> Bristol </a> </li> 
+      <li class="university-list__item child"> <a data-id="44" href="https://thetab.com/uk/brookes"> Brookes </a> </li> 
+      <li class="university-list__item child"> <a data-id="7" href="https://thetab.com/uk/cambridge"> Cambridge </a> </li> 
+      <li class="university-list__item child"> <a data-id="6" href="https://thetab.com/uk/cardiff"> Cardiff </a> </li> 
+      <li class="university-list__item child"> <a data-id="8" href="https://thetab.com/uk/durham"> Durham </a> </li> 
+      <li class="university-list__item child"> <a data-id="9" href="https://thetab.com/uk/edinburgh"> Edinburgh </a> </li> 
+      <li class="university-list__item child"> <a data-id="10" href="https://thetab.com/uk/exeter"> Exeter </a> </li> 
+      <li class="university-list__item child"> <a data-id="272" href="https://thetab.com/uk/falmouth"> Falmouth </a> </li> 
+      <li class="university-list__item child"> <a data-id="11" href="https://thetab.com/uk/glasgow"> Glasgow </a> </li> 
+      <li class="university-list__item child"> <a data-id="30" href="https://thetab.com/uk/hull"> Hull </a> </li> 
+      <li class="university-list__item child"> <a data-id="34" href="https://thetab.com/uk/kent"> Kent </a> </li> 
+      <li class="university-list__item child"> <a data-id="35" href="https://thetab.com/uk/kings"> King's </a> </li> 
+      <li class="university-list__item child"> <a data-id="13" href="https://thetab.com/uk/leeds"> Leeds </a> </li> 
+      <li class="university-list__item child"> <a data-id="41" href="https://thetab.com/uk/leicester"> Leicester </a> </li> 
+      <li class="university-list__item child"> <a data-id="31" href="https://thetab.com/uk/lincoln"> Lincoln </a> </li> 
+      <li class="university-list__item child"> <a data-id="14" href="https://thetab.com/uk/liverpool"> Liverpool </a> </li> 
+      <li class="university-list__item child"> <a data-id="15" href="https://thetab.com/uk/london"> London </a> </li> 
+      <li class="university-list__item child"> <a data-id="63" href="https://thetab.com/uk/loughborough"> Loughborough </a> </li> 
+      <li class="university-list__item child"> <a data-id="16" href="https://thetab.com/uk/manchester"> Manchester </a> </li> 
+      <li class="university-list__item child"> <a data-id="17" href="https://thetab.com/uk/newcastle"> Newcastle </a> </li> 
+      <li class="university-list__item child"> <a data-id="18" href="https://thetab.com/uk/norwich"> Norwich </a> </li> 
+      <li class="university-list__item child"> <a data-id="19" href="https://thetab.com/uk/nottingham"> Nottingham </a> </li> 
+      <li class="university-list__item child"> <a data-id="20" href="https://thetab.com/uk/oxford"> Oxford </a> </li> 
+      <li class="university-list__item child"> <a data-id="126" href="https://thetab.com/uk/portsmouth"> Portsmouth </a> </li> 
+      <li class="university-list__item child"> <a data-id="73" href="https://thetab.com/uk/reading"> Reading </a> </li> 
+      <li class="university-list__item child"> <a data-id="58" href="https://thetab.com/uk/rhul"> Royal Holloway </a> </li> 
+      <li class="university-list__item child"> <a data-id="29" href="https://thetab.com/uk/sheffield"> Sheffield </a> </li> 
+      <li class="university-list__item child"> <a data-id="155" href="https://thetab.com/uk/soton"> Soton </a> </li> 
+      <li class="university-list__item child"> <a data-id="48" href="https://thetab.com/uk/stand"> St Andrews </a> </li> 
+      <li class="university-list__item child"> <a data-id="32" href="https://thetab.com/uk/sussex"> Sussex </a> </li> 
+      <li class="university-list__item child"> <a data-id="60" href="https://thetab.com/uk/trent"> Trent </a> </li> 
+      <li class="university-list__item child"> <a data-id="55" href="https://thetab.com/uk/uwe"> UWE </a> </li> 
+      <li class="university-list__item child"> <a data-id="21" href="https://thetab.com/uk/warwick"> Warwick </a> </li> 
+      <li class="university-list__item child"> <a data-id="22" href="https://thetab.com/uk/york"> York </a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="article"> 
+   <div class="container"> 
+    <div style="text-align:center;z-index:999;margin-bottom: 40px;" class="tpd-box__banner" id="tpd-banner-ad-a"> 
+     <script>
+					document.addEventListener('DOMContentLoaded', function () {
+						googletag.cmd.push( function() {
+							googletag.display( 'tpd-banner-ad-a' );
+						});
+					});
+				</script> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="article"> 
+   <div class="container"> 
+    <div class="article__body-container"> 
+     <div class="article__body"> 
+      <div class="article__category"> 
+       <span><a href="https://thetab.com/us/bu/category/life" rel="category tag">Life</a></span> 
+       <time>9 months ago</time> 
+      </div> 
+      <div class="article__image"> 
+       <img lazy src="https://thetab.com/wp-content/themes/thetab-three/assets/_img/thetab-placeholder.png" data-src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-600x284.png" width="600" height="284">
+       <noscript>
+        <img src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-600x284.png" width="600" height="284">
+       </noscript> 
+      </div> 
+      <h1 class="article__title"> The best ways to give back in 2017 </h1> 
+      <div class="container"> 
+       <div class="share"> 
+        <a class="share__facebook big" target="_blank" rel="nofollow" href="https://www.facebook.com/sharer.php?u=https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912" onclick="return popup(this.href, 'Facebook', 670, 360);">Share</a> 
+       </div> 
+       <div class="authors"> 
+        <div class="author"> 
+         <div class="author__info"> 
+          <div class="author__name"> 
+           <a href="http://thetab.com/author/maileproctor"> Maile Proctor </a> 
+          </div> 
+         </div> 
+         <div class="author__image"> 
+          <a href="http://thetab.com/author/maileproctor"> <img class="ab-image" src="https://secure.gravatar.com/avatar/3b219e54b3ddb8dd95e30234f9d3783b?s=96&amp;d=blank&amp;r=g" alt="Maile Proctor"> </a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="article__excerpt"> 
+       <p>This year, ditch the normal, run-of-the-mill resolutions and do something that makes a difference</p> 
+      </div> 
+      <div class="article__text"> 
+       <p><span style="font-weight: 400">A new year means new beginnings, goals, resolutions, and intentions. While the </span><a href="http://www.nielsen.com/us/en/insights/news/2015/2015s-top-new-years-resolution-fitness.html"><span style="font-weight: 400">most popular resolutions</span></a><span style="font-weight: 400"> are to get fit, lose weight, and save money, why not set your sights on something a little more meaningful this year?</span></p> 
+       <p><span style="font-weight: 400">Giving back is one of the most beneficial and rewarding things you can do. It costs next to nothing and no gesture is too small. Smile at strangers, lend your time, or perform random acts of kindness. According to </span><a href="https://www.couponbox.com/kidkindness/facts.php"><span style="font-weight: 400">studies</span></a><span style="font-weight: 400">, science shows that humans are wired for kindness — we prefer compassion and our capacity grows with practice. So flex your kindness muscle in 2017. Here are seven easy ways to give back and help those in need.</span></p> 
+       <h3><b>Volunteer</b></h3> 
+       <p><img class="aligncenter wp-image-9935 size-full" src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-1.png" alt="untitled-design" width="640" height="480"></p>
+       <div style="text-align:center;margin:auto;width:300px;" id="tpd-box-ad-b"> 
+        <script type="text/javascript">
+				document.addEventListener('DOMContentLoaded', function () {
+					if (TPD_Mobile == true) {
+						googletag.cmd.push( function() {
+							googletag.display( 'tpd-box-ad-b' );
+						});
+					}
+					});
+			</script> 
+       </div>
+       <p></p> 
+       <p>Many people look for opportunities to volunteer during the holidays, but the truth is, volunteers are needed all year long. If you’re not excited about lending your time, consider all the benefits, not just to those you help, but for you as well. “Each person benefits from volunteering uniquely, so in a sense, the benefits can be limitless,” says Basil Sadiq, Marketing Associate at VolunteerMatch. “In addition to feeling good, volunteering helps you learn (and build on) new skills, meet new people, and explore alternate career paths while giving back directly to your community. All in all, it’s a win-win.”</p> 
+       <p><span style="font-weight: 400">There are countless ways to volunteer your time, you can serve food at a homeless shelter or soup kitchen, volunteer at a local school, coach a youth sports team, volunteer at a hospital, and more. Search online for </span><a href="http://www.volunteermatch.org/"><span style="font-weight: 400">volunteer opportunities</span></a><span style="font-weight: 400"> in your area. If you can, find an activity you enjoy so you’re more likely to stick with it.</span></p>
+       <div style="text-align:center;" id="tpd-native-ad-c"> 
+        <script type="text/javascript">
+				document.addEventListener('DOMContentLoaded', function () {
+						googletag.cmd.push( function() {
+						googletag.display( 'tpd-native-ad-c' );
+					});
+				});
+			</script> 
+       </div>
+       <p></p> 
+       <h3><b>Donate</b></h3> 
+       <p><img class="size-full wp-image-9938 aligncenter" src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-4.png" alt="untitled-design" width="640" height="480"></p> 
+       <p>In a world of excess — food, clothes, technology, etc. — it’s easy to forget those who may be less fortunate. Rather than take our possessions and luxuries for granted, donate items to local organizations and charities. You can donate money, clothes, food, and/or time.</p>
+       <div style="text-align:center;margin:auto;width:300px;" id="tpd-box-ad-c"> 
+        <script type="text/javascript">
+				document.addEventListener('DOMContentLoaded', function () {
+					if (TPD_Mobile == true) {
+						googletag.cmd.push( function() {
+							googletag.display( 'tpd-box-ad-c' );
+						});
+					}
+					});
+			</script> 
+       </div>
+       <p></p> 
+       <p><span style="font-weight: 400">Besides the tax deduction, there are many benefits to donating items or service including helping others, setting a positive example, developing a greater appreciation for your own things, and more. Donating to others puts things in perspective, “giving to others increases your capacity for love,” according to </span><a href="https://familyshare.com/2078/6-reasons-why-you-should-donate-to-charities"><span style="font-weight: 400">FamilyShare</span></a><span style="font-weight: 400">. “It makes you realize that even if you don’t have much, you have enough to share with others.”</span></p> 
+       <h3><b>Give blood</b></h3> 
+       <p><img class="size-full wp-image-9936 aligncenter" src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-2.png" alt="untitled-design" width="640" height="480"><span style="font-weight: 400">If you get queasy around needles, go ahead and skip down to the next suggestion, if not, consider donating blood for a good cause. Blood transfusion is needed for women with complications of pregnancy, children with severe anemia, people with trauma, cancer patients, and many other medical and surgical procedures, according to </span><a href="http://www.who.int/features/qa/61/en/"><span style="font-weight: 400">World Health Organization</span></a><span style="font-weight: 400">.</span></p> 
+       <p><span style="font-weight: 400">Donating blood doesn’t cost you anything, besides your time, and in some cases you can earn money. If you’re a first-time blood donor, make sure you read these guidelines from the </span><a href="http://www.redcrossblood.org/donating-blood/why-donate-blood"><span style="font-weight: 400">American Red Cross</span></a><span style="font-weight: 400">.</span></p> 
+       <h3><b>Be a Big Brother or Big Sister</b></h3> 
+       <p><img class="size-full wp-image-9940 aligncenter" src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-5.png" alt="untitled-design" width="640" height="480"></p> 
+       <p>Your own siblings may have annoyed you growing up, but some kids aren’t fortunate enough to have an older brother or sister for the good times and the sibling rivalry. Most of all, however, some children don’t have a positive role model or friend.</p> 
+       <p><span style="font-weight: 400">When you become a big brother or big sister, you have the opportunity to help </span><a href="http://www.bbbs.org/get-involved/"><span style="font-weight: 400">shape a child’s future</span></a><span style="font-weight: 400"> for the better by empowering him or her to achieve. If you want to make a difference in 2017, give the gift of friendship and lend your time to a kid in need. Check out the Big Brothers Big Sisters of America </span><a href="http://www.bbbs.org/"><span style="font-weight: 400">website</span></a><span style="font-weight: 400"> to learn more.</span></p> 
+       <h3><b>Write letters or donate items to Operation Gratitude</b></h3> 
+       <p><img class="size-full wp-image-9941 aligncenter" src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-6.png" alt="untitled-design" width="640" height="480"></p>
+       <div style="text-align:center;margin:auto;width:300px;" id="tpd-box-ad-d"> 
+        <script type="text/javascript">
+				document.addEventListener('DOMContentLoaded', function () {
+					if (TPD_Mobile == true) {
+						googletag.cmd.push( function() {
+							googletag.display( 'tpd-box-ad-d' );
+						});
+					}
+					});
+			</script> 
+       </div>
+       <p></p> 
+       <p><a href="https://www.operationgratitude.com/"><span style="font-weight: 400">Operation Gratitude </span></a><span style="font-weight: 400">sends care packages and letters to veterans, first responders, wounded heroes, caregivers, and more. You can donate money or items, help to assemble care packages, or write letters of appreciation. Check out the website to find out how you can get involved and say “thank you” to our service members.</span></p> 
+       <h3><b>Spend time with senior citizens</b></h3> 
+       <p><img class="size-full wp-image-9937 aligncenter" src="https://media.thetab.com/blogs.dir/92/files/2016/12/untitled-design-3.png" alt="untitled-design" width="640" height="480"></p> 
+       <p><span style="font-weight: 400">There are several different ways to help the elderly in your community. You can visit an assisted-living facility or spend time with a loved one or even a complete stranger who would otherwise feel lonely. You can also get involved in a companion program like </span><a href="http://www.elderhelpers.org/"><span style="font-weight: 400">Elder Helpers</span></a><span style="font-weight: 400"> or </span><a href="https://www.nationalservice.gov/programs/senior-corps/senior-corps-programs/senior-companions"><span style="font-weight: 400">Senior Companions</span></a><span style="font-weight: 400"> and be a caregiver to elders who may require some daily assistance.</span></p> 
+       <p><span style="font-weight: 400">Not only will you be helping someone in need, but think of the stories you will hear and the wisdom and life lessons you will learn when you spend time with senior citizens. Your support and friendship can go a long way, according to </span><a href="http://createthegood.org/campaign/volunteeringwithseniors"><span style="font-weight: 400">create the good</span></a><span style="font-weight: 400">, you’ll benefit just as much as they do — and you can learn a lot too!</span></p> 
+       <h3><b>Random acts of kindness</b></h3> 
+       <p>So far, most of our suggestions have been organized ways to give back, but the best part of spreading kindness and compassion is that you can do it yourself every single day. If you’ve ever been the recipient of a random act of kindness, you know that even small things can lift your mood and brighten your day.</p> 
+       <p><span style="font-weight: 400">When you perform a random act of kindness for someone else, you share that same positivity and mood-boosting power with someone else. “You have the power to change someone’s life for the better in practicing a random act of kindness,” according to </span><a href="http://www.mindbodygreen.com/0-5838/Why-You-Should-Practice-Random-Acts-of-Kindness.html"><span style="font-weight: 400">Mind Body Green</span></a><span style="font-weight: 400"> so why not do what you can on a daily basis?</span></p> 
+       <p><span style="font-weight: 400">Remember, random acts of kindness don’t need to be elaborate, even little things can make a big difference;<span style="text-decoration: line-through">.</span></span></p> 
+      </div> 
+     </div> 
+     <div style="display: block; position: relative; max-width: 600px;"> 
+      <div id="videoTitle">
+       NOW WATCH:
+      </div> 
+      <video id="myPlayerID" style="width: 100%; height: 340px;" data-playlist-id="5325590733001" data-account="5295890407001" data-player="Hyll0cUIug" data-embed="default" class="video-js" controls=""></video> 
+     </div> 
+     <script src="https://players.brightcove.net/5295890407001/Hyll0cUIug_default/index.min.js"></script> 
+     <script type="text/javascript">
+								videojs('myPlayerID').ready(function(){
+									var myPlayer = this;
+									myPlayer.on('loadstart',function(){
+										console.log(myPlayer.mediainfo);
+										document.getElementById("videoTitle").innerHTML = '<h3>NOW WATCH: ' + myPlayer.mediainfo.name + '</h3>';
+									})
+								});
+							</script> 
+     <div class="container"> 
+      <div class="share"> 
+       <a class="share__facebook big" target="_blank" rel="nofollow" href="https://www.facebook.com/sharer.php?u=https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912" onclick="return popup(this.href, 'Facebook', 670, 360);">Share on Facebook</a> 
+      </div> 
+     </div> 
+     <div style="text-align:center;" id="tpd-contextual-ad-a"> 
+      <div id="taboola-below-article-thumbnails-7"></div> 
+      <script type="text/javascript">
+								window._taboola = window._taboola || [];
+								_taboola.push({
+									mode: 'thumbnails-l',
+									container: 'taboola-below-article-thumbnails-7',
+									placement: 'Below Article Thumbnails 7',
+									target_type: 'mix'
+								});
+							</script> 
+     </div> 
+     <div class="article__more"> 
+      <div class="btn btn-red">
+       More
+      </div> 
+      <a class="btn" href="https://thetab.com/us/bu">The Tab Boston University</a> 
+     </div> 
+     <div data-block="recommended_footer" data-blog-id="92" data-post-id="9912"></div> 
+     <div style="text-align:center;" id="tpd-native-ad-a"> 
+      <script type="text/javascript">
+								document.addEventListener('DOMContentLoaded', function () {
+									googletag.cmd.push( function() {
+										googletag.display( 'tpd-native-ad-a');
+									});
+								});
+								</script> 
+     </div> 
+     <div id="fb-root"></div> 
+     <script>
+	(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=352812984826567";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script> 
+     <div class="fb-comments" data-href="https://thetab.com/us/bu/2016/12/30/best-ways-give-back-2017-9912"></div> 
+    </div> 
+    <aside class="article__sidebar hide-mobile"> 
+     <div class="small-picture classic"> 
+      <div data-block="recommended_sidebar" data-blog-id="92" data-callback="tabRightSidebarAdsCb"></div> 
+      <div class="story popular ad-box"> 
+       <div class="ad-scroller-anchor"></div> 
+       <div class="ad-scroller" id="tpd-box-ad-a"> 
+        <script type="text/javascript">
+								document.addEventListener('DOMContentLoaded', function () {
+									if (TPD_Mobile == false) {
+										googletag.cmd.push( function() {
+											googletag.display( 'tpd-box-ad-a' );
+										});
+									}
+								});
+							</script> 
+       </div> 
+      </div> 
+     </div> 
+    </aside> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div class="highlight-section bottom"> 
+    <div class="container"> 
+     <ul class="university-list__container"> 
+      <li class="university-list__title">US</li> 
+      <li></li> 
+      <li class="university-list__item"> <a data-id="203" href="https://thetab.com/us/arizonastate"> Arizona State </a> </li> 
+      <li class="university-list__item"> <a data-id="92" href="https://thetab.com/us/bu"> BU </a> </li> 
+      <li class="university-list__item"> <a data-id="95" href="https://thetab.com/us/brown"> Brown </a> </li> 
+      <li class="university-list__item"> <a data-id="231" href="https://thetab.com/us/bucknell"> Bucknell </a> </li> 
+      <li class="university-list__item"> <a data-id="96" href="https://thetab.com/us/columbia"> Columbia </a> </li> 
+      <li class="university-list__item"> <a data-id="105" href="https://thetab.com/us/cornell"> Cornell </a> </li> 
+      <li class="university-list__item"> <a data-id="205" href="https://thetab.com/us/cu-boulder"> CU-Boulder </a> </li> 
+      <li class="university-list__item"> <a data-id="186" href="https://thetab.com/us/florida"> Florida </a> </li> 
+      <li class="university-list__item"> <a data-id="192" href="https://thetab.com/us/floridastate"> Florida State </a> </li> 
+      <li class="university-list__item"> <a data-id="103" href="https://thetab.com/us/georgetown"> Georgetown </a> </li> 
+      <li class="university-list__item"> <a data-id="107" href="https://thetab.com/us/harvard"> Harvard </a> </li> 
+      <li class="university-list__item"> <a data-id="169" href="https://thetab.com/us/iowa"> Iowa </a> </li> 
+      <li class="university-list__item"> <a data-id="123" href="https://thetab.com/us/ithaca"> Ithaca </a> </li> 
+      <li class="university-list__item"> <a data-id="170" href="https://thetab.com/us/indiana"> IU </a> </li> 
+      <li class="university-list__item"> <a data-id="139" href="https://thetab.com/us/jmu"> JMU </a> </li> 
+      <li class="university-list__item"> <a data-id="156" href="https://thetab.com/us/michigan"> Michigan </a> </li> 
+      <li class="university-list__item"> <a data-id="178" href="https://thetab.com/us/michigan-state"> Michigan State </a> </li> 
+      <li class="university-list__item"> <a data-id="141" href="https://thetab.com/us/ncstate"> NC State </a> </li> 
+      <li class="university-list__item"> <a data-id="94" href="https://thetab.com/us/nyu"> NYU </a> </li> 
+      <li class="university-list__item"> <a data-id="157" href="https://thetab.com/us/ohio-state"> Ohio State </a> </li> 
+      <li class="university-list__item"> <a data-id="224" href="https://thetab.com/us/oregon"> Oregon </a> </li> 
+      <li class="university-list__item"> <a data-id="98" href="https://thetab.com/us/pennstate"> Penn State </a> </li> 
+      <li class="university-list__item"> <a data-id="115" href="https://thetab.com/us/pitt"> Pitt </a> </li> 
+      <li class="university-list__item"> <a data-id="106" href="https://thetab.com/us/princeton"> Princeton </a> </li> 
+      <li class="university-list__item"> <a data-id="110" href="https://thetab.com/us/rutgers"> Rutgers </a> </li> 
+      <li class="university-list__item"> <a data-id="99" href="https://thetab.com/us/syracuse"> Syracuse </a> </li> 
+      <li class="university-list__item"> <a data-id="119" href="https://thetab.com/us/temple"> Temple </a> </li> 
+      <li class="university-list__item"> <a data-id="176" href="https://thetab.com/us/uc-berkeley"> UC Berkeley </a> </li> 
+      <li class="university-list__item"> <a data-id="218" href="https://thetab.com/us/uc-irvine"> UC Irvine </a> </li> 
+      <li class="university-list__item"> <a data-id="179" href="https://thetab.com/us/ucla"> UCLA </a> </li> 
+      <li class="university-list__item"> <a data-id="190" href="https://thetab.com/us/ucsb"> UCSB </a> </li> 
+      <li class="university-list__item"> <a data-id="145" href="https://thetab.com/us/udel"> UDel </a> </li> 
+      <li class="university-list__item"> <a data-id="117" href="https://thetab.com/us/umass-amherst"> UMass Amherst </a> </li> 
+      <li class="university-list__item"> <a data-id="104" href="https://thetab.com/us/unc"> UNC </a> </li> 
+      <li class="university-list__item"> <a data-id="187" href="https://thetab.com/us/usc"> USC </a> </li> 
+      <li class="university-list__item"> <a data-id="100" href="https://thetab.com/us/uva"> UVA </a> </li> 
+      <li class="university-list__item"> <a data-id="149" href="https://thetab.com/us/virginiatech"> Virginia Tech </a> </li> 
+      <li class="university-list__item"> <a data-id="164" href="https://thetab.com/us/wisconsin"> Wisconsin </a> </li> 
+     </ul> 
+     <ul class="university-list__container"> 
+      <li class="university-list__title">UK</li> 
+      <li></li> 
+      <li class="university-list__item"> <a data-id="50" href="https://thetab.com/uk/aberdeen"> Aberdeen </a> </li> 
+      <li class="university-list__item"> <a data-id="56" href="https://thetab.com/uk/belfast"> Belfast </a> </li> 
+      <li class="university-list__item"> <a data-id="4" href="https://thetab.com/uk/birmingham"> Birmingham </a> </li> 
+      <li class="university-list__item"> <a data-id="57" href="https://thetab.com/uk/bournemouth"> Bournemouth </a> </li> 
+      <li class="university-list__item"> <a data-id="5" href="https://thetab.com/uk/bristol"> Bristol </a> </li> 
+      <li class="university-list__item"> <a data-id="44" href="https://thetab.com/uk/brookes"> Brookes </a> </li> 
+      <li class="university-list__item"> <a data-id="7" href="https://thetab.com/uk/cambridge"> Cambridge </a> </li> 
+      <li class="university-list__item"> <a data-id="6" href="https://thetab.com/uk/cardiff"> Cardiff </a> </li> 
+      <li class="university-list__item"> <a data-id="8" href="https://thetab.com/uk/durham"> Durham </a> </li> 
+      <li class="university-list__item"> <a data-id="9" href="https://thetab.com/uk/edinburgh"> Edinburgh </a> </li> 
+      <li class="university-list__item"> <a data-id="10" href="https://thetab.com/uk/exeter"> Exeter </a> </li> 
+      <li class="university-list__item"> <a data-id="272" href="https://thetab.com/uk/falmouth"> Falmouth </a> </li> 
+      <li class="university-list__item"> <a data-id="11" href="https://thetab.com/uk/glasgow"> Glasgow </a> </li> 
+      <li class="university-list__item"> <a data-id="30" href="https://thetab.com/uk/hull"> Hull </a> </li> 
+      <li class="university-list__item"> <a data-id="34" href="https://thetab.com/uk/kent"> Kent </a> </li> 
+      <li class="university-list__item"> <a data-id="35" href="https://thetab.com/uk/kings"> King's </a> </li> 
+      <li class="university-list__item"> <a data-id="13" href="https://thetab.com/uk/leeds"> Leeds </a> </li> 
+      <li class="university-list__item"> <a data-id="41" href="https://thetab.com/uk/leicester"> Leicester </a> </li> 
+      <li class="university-list__item"> <a data-id="31" href="https://thetab.com/uk/lincoln"> Lincoln </a> </li> 
+      <li class="university-list__item"> <a data-id="14" href="https://thetab.com/uk/liverpool"> Liverpool </a> </li> 
+      <li class="university-list__item"> <a data-id="15" href="https://thetab.com/uk/london"> London </a> </li> 
+      <li class="university-list__item"> <a data-id="63" href="https://thetab.com/uk/loughborough"> Loughborough </a> </li> 
+      <li class="university-list__item"> <a data-id="16" href="https://thetab.com/uk/manchester"> Manchester </a> </li> 
+      <li class="university-list__item"> <a data-id="17" href="https://thetab.com/uk/newcastle"> Newcastle </a> </li> 
+      <li class="university-list__item"> <a data-id="18" href="https://thetab.com/uk/norwich"> Norwich </a> </li> 
+      <li class="university-list__item"> <a data-id="19" href="https://thetab.com/uk/nottingham"> Nottingham </a> </li> 
+      <li class="university-list__item"> <a data-id="20" href="https://thetab.com/uk/oxford"> Oxford </a> </li> 
+      <li class="university-list__item"> <a data-id="126" href="https://thetab.com/uk/portsmouth"> Portsmouth </a> </li> 
+      <li class="university-list__item"> <a data-id="73" href="https://thetab.com/uk/reading"> Reading </a> </li> 
+      <li class="university-list__item"> <a data-id="58" href="https://thetab.com/uk/rhul"> Royal Holloway </a> </li> 
+      <li class="university-list__item"> <a data-id="29" href="https://thetab.com/uk/sheffield"> Sheffield </a> </li> 
+      <li class="university-list__item"> <a data-id="155" href="https://thetab.com/uk/soton"> Soton </a> </li> 
+      <li class="university-list__item"> <a data-id="48" href="https://thetab.com/uk/stand"> St Andrews </a> </li> 
+      <li class="university-list__item"> <a data-id="32" href="https://thetab.com/uk/sussex"> Sussex </a> </li> 
+      <li class="university-list__item"> <a data-id="60" href="https://thetab.com/uk/trent"> Trent </a> </li> 
+      <li class="university-list__item"> <a data-id="55" href="https://thetab.com/uk/uwe"> UWE </a> </li> 
+      <li class="university-list__item"> <a data-id="21" href="https://thetab.com/uk/warwick"> Warwick </a> </li> 
+      <li class="university-list__item"> <a data-id="22" href="https://thetab.com/uk/york"> York </a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="container privacy">
+     © 2017 The Tab &nbsp;&nbsp;•&nbsp;&nbsp; 
+    <a href="http://thetab.com/privacy" target="_blank">Privacy Policy</a> 
+   </div> 
+  </div> 
+  <div style="text-align:center;" class="hide-desktop mobile-sticky-ad" id="tpd-banner-ad-b"> 
+   <script>
+					document.addEventListener('DOMContentLoaded', function () {
+						if (TPD_Mobile == true) {
+							googletag.cmd.push( function() {
+								googletag.display( 'tpd-banner-ad-b' );
+							});
+						}
+					});
+				</script> 
+  </div> 
+  <script type="text/html" id="tmpl-stats_article">
+	<div class="article-stats__item">
+		<span class="article-stats__item--figure" data-tabalytics="pageviews/92/9912"></span>
+		<span class="article-stats__item--text">
+			views		</span>
+	</div>
+	<div class="article-stats__item">
+		<# if ( data.post && data.post.stats && data.post.stats.facebookEngagements && data.post.stats.facebookEngagements > 0 ) { #>
+			<span class="article-stats__item--figure">
+				{{ data.post.stats.facebookEngagements.toLocaleString() }}
+			</span>
+			<span class="article-stats__item--text">
+				shares			</span>
+		<# } #>
+	</div>
+</script> 
+  <script type="text/html" id="tmpl-recommended_footer">
+	<aside class="popular-container">
+
+		<# if ( data.post.recommendPosts && data.post.recommendPosts.length > 0  ) { #>
+
+			<h3 class="related_articles--title">You may also like</h3>
+
+			<# _.each(data.post.recommendPosts, function(post, index) { #>
+
+				<div class="story popular">
+
+					<div class="story__image">
+						<a href="{{ post.permalink }}">
+							<img src="{{ post.featuredImageUrl }}" />
+						</a>
+					</div> <!-- .story__image -->
+
+					<h3 class="story__title">
+						<a href="{{ post.permalink }}">{{ post.postTitle }}</a>
+					</h3> <!-- .story__title -->
+
+					<# if ( post.postExcerpt ) { #>
+						<p class="story__excerpt">{{ post.postExcerpt }}</p>
+					<# } #>
+
+				</div> <!-- .story popular -->
+
+			<# }); #>
+
+		<# }; #>
+
+	</aside> <!-- .popular-container -->
+</script> 
+  <script type="text/html" id="tmpl-recommended_sidebar">
+
+	<# if ( data.university.recommendPosts && data.university.recommendPosts.length > 0 ) { #>
+
+		<h3 class="related_articles__sidebar--title">Popular</h3>
+
+		<# _.each(data.university.recommendPosts, function(post, index) { #>
+
+							<# if ( 2 == index ) { #>
+					<div class="story popular">
+						<!-- <div class="tpd-box" data-tpd-id="native-ad-b"></div> -->
+					</div>
+				<# } #>
+			
+			<div class="story popular">
+
+				<div class="story__image">
+					<a href="{{ post.permalink }}">
+						<img src="{{ post.featuredImageUrl }}" />
+					</a>
+				</div> <!-- .story__image -->
+
+				<h3 class="story__title">
+					<a href="{{ post.permalink }}">{{ post.postTitle }}</a>
+				</h3> <!-- .story__title -->
+
+				<# if ( post.postExcerpt ) { #>
+					<p class="story__excerpt">{{ post.postExcerpt }}</p>
+				<# } #>
+
+			</div> <!-- .story popular -->
+
+		<# }); #>
+
+	<# } #>
+
+	
+</script> 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+  <script type="text/javascript">
+window.jQuery || document.write('<script src="https://thetab.com/us/bu/wp-includes/js/jquery/jquery.js?var=1.12.4">\x3C/script>')
+</script> 
+  <script type="text/javascript" src="https://thetab.com/wp-content/plugins/fillet/assets/js/fillet.js?ver=1"></script> 
+  <script type="text/javascript" src="https://thetab.com/us/bu/wp-includes/js/underscore.min.js?ver=1.8.3"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/us\/bu\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://thetab.com/us/bu/wp-includes/js/wp-util.min.js?ver=4.8.1"></script> 
+  <script type="text/javascript" src="https://thetab.com/wp-content/themes/thetab-three/assets/_lib/moment/min/moment.min.js?ver=2.18.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var tab = {"ajaxurl":"https:\/\/thetab.com\/us\/bu\/wp-admin\/admin-ajax.php","facebookPage":"https:\/\/www.facebook.com\/thetabBU","imagePlaceholder":"https:\/\/thetab.com\/wp-content\/themes\/thetab-three\/assets\/_img\/thetab-placeholder.png","canonicalUrl":"https:\/\/thetab.com\/us\/bu\/2016\/12\/30\/best-ways-give-back-2017-9912","pageType":"single-post"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://thetab.com/wp-content/themes/thetab-three/assets/_js/main.min.js?ver=1.7.11"></script> 
+  <script type="text/javascript" src="https://thetab.com/wp-content/themes/thetab-three/assets/_lib/lazyloadxt/dist/jquery.lazyloadxt.min.js?ver=1.0.5"></script> 
+  <script type="text/javascript" src="https://thetab.com/wp-content/themes/thetab-three/assets/_lib/waypoints/lib/jquery.waypoints.min.js?ver=4.0.0"></script> 
+  <script type="text/javascript" src="https://thetab.com/us/bu/wp-includes/js/wp-embed.min.js?ver=4.8.1"></script> 
+  <script type="text/javascript" src="https://native.sharethrough.com/assets/sfp.js"></script> 
+  <script src="https://s.206ads.com/thetab_config.js"></script> 
+  <script async src="//www.googletagservices.com/tag/js/gpt.js"></script> 
+  <script>
+
+				var bannerAd_A;
+				var bannerAd_B;
+				var boxAd_A;
+				var boxAd_B;
+				var boxAd_C;
+				var boxAd_D;
+				var nativeAd_A;
+				var nativeAd_C;
+				var oopAd_A;
+				var oopAd_B;
+				var TPD_Mobile;
+
+
+
+				googletag.cmd.push(function () {
+
+					
+					bannerAd_A = googletag.defineSlot('/134702932/0133-thetab.com', prebidLeaderboard, 'tpd-banner-ad-a').addService(googletag.pubads()).setTargeting("position", pos_bannerAdA).setCollapseEmptyDiv(true);
+					bannerAd_B = googletag.defineSlot('/134702932/0133-thetab.com', prebidLeaderboard_B, 'tpd-banner-ad-b').addService(googletag.pubads()).setTargeting("position", pos_bannerAdB).setCollapseEmptyDiv(true);
+					boxAd_A = googletag.defineSlot('/134702932/0133-thetab.com', prebidBoxAd_A, 'tpd-box-ad-a').addService(googletag.pubads()).setTargeting("position", pos_boxAdA).setCollapseEmptyDiv(true);
+					boxAd_B = googletag.defineSlot('/134702932/0133-thetab.com', prebidBoxAd_B, 'tpd-box-ad-b').addService(googletag.pubads()).setTargeting("position", pos_boxAdB).setCollapseEmptyDiv(true);
+					boxAd_C = googletag.defineSlot('/134702932/0133-thetab.com', prebidBoxAd_C, 'tpd-box-ad-c').addService(googletag.pubads()).setTargeting("position", pos_boxAdC).setCollapseEmptyDiv(true);
+					boxAd_D = googletag.defineSlot('/134702932/0133-thetab.com', prebidBoxAd_D, 'tpd-box-ad-d').addService(googletag.pubads()).setTargeting("position", pos_boxAdD).setCollapseEmptyDiv(true);
+					nativeAd_A = googletag.defineSlot('/134702932/0133-thetab.com', prebidNativeAd_A, 'tpd-native-ad-a').addService(googletag.pubads()).setTargeting("position", pos_nativeAdA).setTargeting("strnativekey", nativeAdA_STR_Key).setCollapseEmptyDiv(true);
+					nativeAd_C = googletag.defineSlot('/134702932/0133-thetab.com.native', prebidNativeAd_C, 'tpd-native-ad-c').addService(googletag.pubads()).setTargeting("position", pos_nativeAdC).setCollapseEmptyDiv(true);
+					oopAd_A = googletag.defineSlot('/134702932/0133-thetab.com', prebidOOPAd_A, 'tpd-oop-ad-a').addService(googletag.pubads()).setTargeting("position", pos_oopAdA).setCollapseEmptyDiv(true);
+					oopAd_B = googletag.defineSlot('/134702932/0133-thetab.com', prebidOOPAd_B, 'tpd-oop-ad-b').addService(googletag.pubads()).setTargeting("position", pos_oopAdB).setCollapseEmptyDiv(true);
+
+					googletag.pubads().setTargeting("Domain", TPD_Domain);
+					googletag.pubads().setTargeting("Path", TPD_Path);
+					googletag.pubads().setTargeting("URL", TPD_URL);
+					googletag.pubads().setTargeting("Testmode", TPD_Testmode);
+					googletag.pubads().setTargeting("gs_cat", gs_channels);
+
+					googletag.pubads().setTargeting('Country', ['US']);googletag.pubads().setTargeting('University', ['bu']);googletag.pubads().setTargeting('PostID', ['9912']);googletag.pubads().setTargeting('Page-Type', ['single']);googletag.pubads().setTargeting('Post-Type', ['post']);googletag.pubads().setTargeting('Post-Author', ['Maile Proctor']);googletag.pubads().setTargeting('Category', ['life']);
+					//googletag.pubads().enableSingleRequest();
+					//googletag.pubads().disableInitialLoad();
+					googletag.enableServices();
+
+
+				});
+			</script> 
+  <script type="text/javascript">
+			  		//TAB.COM Grapeshot
+
+					var gs_channels="DEFAULT";
+			  		(function() {
+			  			var gsurl=window.location!=window.top.location?document.referrer:window.location;
+						//var gsurl='http://www.thesun.co.uk';
+			  			var s=document.createElement('script');
+			  			s.async=true;
+			  			s.onload=function(){
+			  				googletag.cmd.push(function() {
+			  					googletag.pubads().setTargeting("gs_cat", gs_channels);
+			  				});
+			  			}
+			  			s.src='//tab-ams.gscontxt.net/main/channels.cgi?url=' +encodeURIComponent(gsurl);
+
+					document.head.appendChild(s);
+			  		})();
+			  </script>  
+ </body>
+</html>

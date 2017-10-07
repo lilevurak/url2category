@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <title>How To Make Friends On Campus When You Know No One | Chegg Play</title> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.5.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Making friends on campus can be hard. See tips on how to make new friends at college."> 
+  <link rel="canonical" href="https://www.chegg.com/play/student-life/freshman-real-talk/how-to-make-friends-on-campus-when-you-know-no-one/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="How To Make Friends On Campus When You Know No One | Chegg Play"> 
+  <meta property="og:description" content="Making friends on campus can be hard. See tips on how to make new friends at college."> 
+  <meta property="og:url" content="https://www.chegg.com/play/student-life/freshman-real-talk/how-to-make-friends-on-campus-when-you-know-no-one/"> 
+  <meta property="og:site_name" content="Chegg Play"> 
+  <meta property="article:section" content="Freshman Year"> 
+  <meta property="article:published_time" content="2017-08-03T17:01:42-07:00"> 
+  <meta property="article:modified_time" content="2017-08-01T10:17:47-07:00"> 
+  <meta property="og:updated_time" content="2017-08-01T10:17:47-07:00"> 
+  <meta property="og:image" content="/play/wp-content/uploads/sites/3/2014/08/friends.png"> 
+  <meta property="og:image:secure_url" content="/play/wp-content/uploads/sites/3/2014/08/friends.png"> 
+  <meta property="og:image:width" content="1626"> 
+  <meta property="og:image:height" content="842"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="Making friends on campus can be hard. See tips on how to make new friends at college."> 
+  <meta name="twitter:title" content="How To Make Friends On Campus When You Know No One | Chegg Play"> 
+  <meta name="twitter:image" content="http://chegg.com/play/wp-content/uploads/sites/3/2014/08/friends.png"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.chegg.com\/play\/","name":"Chegg Play","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.chegg.com\/play\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » Feed" href="https://www.chegg.com/play/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » Comments Feed" href="https://www.chegg.com/play/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Chegg Play » How To Make Friends On Campus When You Know No One Comments Feed" href="https://www.chegg.com/play/student-life/freshman-real-talk/how-to-make-friends-on-campus-when-you-know-no-one/feed/"> 
+  <link rel="stylesheet" id="apss-frontend-css-css" href="/play/wp-content/plugins/accesspress-social-share/css/frontend.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="baskerville_style-css" href="/play/wp-content/themes/baskerville-child/style.css?ver=4.8.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="/play/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="/play/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/stop-user-enumeration/js/commentauthor.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var CheggContest = {"ajax_url":"\/play\/wp-admin\/admin-ajax.php","nonce":"bb86496ca3"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/chegg_contest//contest.js?ver=4.8.2"></script> 
+  <link rel="https://api.w.org/" href="https://www.chegg.com/play/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.chegg.com/play/xmlrpc.php?rsd"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="shortlink" href="https://www.chegg.com/play/?p=16648"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.chegg.com/play/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Fstudent-life%2Ffreshman-real-talk%2Fhow-to-make-friends-on-campus-when-you-know-no-one%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.chegg.com/play/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Fstudent-life%2Ffreshman-real-talk%2Fhow-to-make-friends-on-campus-when-you-know-no-one%2F&amp;format=xml"> 
+  <script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.chegg.com/play/?wordfence_logHuman=1&hid=323F6B49918EF2E507239D5D1447AE6E');
+</script> 
+  <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style> 
+  <script type="text/javascript">
+				jQuery(document).ready(function(){
+											jQuery(".related_post").on('click', function () {
+							window.location=jQuery(this).find("a").attr("href");
+						});
+						jQuery(".popular-wrap").on('click', function () {
+							window.location=jQuery(this).find("a").attr("href");
+						});
+									});
+			</script> 
+  <script>
+				var ScrollSneak = function(prefix, wait) {
+					// clean up arguments (allows prefix to be optional - a bit of overkill)
+					if (typeof(wait) == 'undefined' && prefix === true) prefix = null, wait = true;
+					prefix = (typeof(prefix) == 'string' ? prefix : window.location.host).split('_').join('');
+					var pre_name;
+
+					// scroll function, if window.name matches, then scroll to that position and clean up window.name
+					this.scroll = function() {
+						if (window.name.search('^'+prefix+'_(\\d+)_(\\d+)_') == 0) {
+							var name = window.name.split('_');
+							window.scrollTo(name[1], name[2]);
+							window.name = name.slice(3).join('_');
+						}
+					}
+					// if not wait, scroll immediately
+					if (!wait) this.scroll();
+
+					this.sneak = function() {
+					// prevent multiple clicks from getting stored on window.name
+					if (typeof(pre_name) == 'undefined') pre_name = window.name;
+
+					// get the scroll positions
+						var top = 0, left = 0;
+						if (typeof(window.pageYOffset) == 'number') { // netscape
+							top = window.pageYOffset, left = window.pageXOffset;
+						} else if (document.body && (document.body.scrollLeft || document.body.scrollTop)) { // dom
+							top = document.body.scrollTop, left = document.body.scrollLeft;
+						} else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) { // ie6
+							top = document.documentElement.scrollTop, left = document.documentElement.scrollLeft;
+						}
+					// store the scroll
+						if (top || left) window.name = prefix + '_' + left + '_' + top + '_' + pre_name;
+						return true;
+					}
+				}
+			</script> 
+  <script type="text/javascript">
+				jQuery(document).ready(function($) {
+											sessionpass = 0;
+						
+
+					if(sessionpass ==1){
+						$("#popularity").addClass("seek");
+						$("#recentlink").removeClass("seek");
+
+						$("#popularity").parent().addClass("seeker1");
+						$("#recentlink").parent().addClass("seeker2");
+						$("#popularity").parent().removeClass("seeker1a");
+						$("#recentlink").parent().removeClass("seeker2a");
+					}
+					if(sessionpass ==0){
+						$("#popularity").removeClass("seek");
+						$("#recentlink").addClass("seek");
+
+						$("#popularity").parent().removeClass("seeker1");
+						$("#recentlink").parent().removeClass("seeker2");
+						$("#popularity").parent().addClass("seeker1a");
+						$("#recentlink").parent().addClass("seeker2a");
+					}
+					jQuery("#popularity").on('click', function (e) {
+						var sorting = 'popular';
+						var catsort
+												if (catsort== null) {
+							catsort = "";
+						}
+						var pagenumber = $('.archive-nav .active a').html();
+						var popclicked = 1;
+						e.preventDefault();
+						$("#popularity").addClass("seek");
+						$("#recentlink").removeClass("seek");
+						$("#popularity").parent().addClass("seeker1");
+						$("#recentlink").parent().addClass("seeker2");
+						$("#popularity").parent().removeClass("seeker1a");
+						$("#recentlink").parent().removeClass("seeker2a");
+						$.ajax({
+							type: "post",
+							url: "wp-admin/admin-ajax.php",
+							data: {
+								'action':'example_ajax_request_alt2',
+								'sorting' : sorting,
+								'pagenumber' : pagenumber,
+								'popclicked' : popclicked,
+								'catsort' : catsort
+							},
+							beforeSend : function(){
+								 $(".ajax-gif").css('visibility','visible');
+							},
+							success:function(html) {
+								$(".ajax-gif").css('visibility','hidden');
+								 if (html.length > 0) {
+									 $(".posts").html(html);
+									 var $container = $(".posts");
+									 $container.imagesLoaded(function(){
+									 $container.masonry('reloadItems');
+									 $container.masonry('layout');
+									 });
+								}
+							},
+							error: function(errorThrown){
+								console.log(errorThrown);
+							}
+						});
+					});
+
+					jQuery("#recentlink").on('click', function (e) {
+						// We'll pass this variable to the PHP function example_ajax_request
+						var sorting = 'recent';
+						var catsort
+												if (catsort== null) {
+							catsort = "";
+						}
+						e.preventDefault();
+						var pagenumber = $('.archive-nav .active a').html();
+						var popclicked = 0;
+						$("#popularity").removeClass("seek");
+						$("#recentlink").addClass("seek");
+						$("#popularity").parent().removeClass("seeker1");
+						$("#recentlink").parent().removeClass("seeker2");
+						$("#popularity").parent().addClass("seeker1a");
+						$("#recentlink").parent().addClass("seeker2a");
+
+						$.ajax({
+							type: "post",
+							url: "wp-admin/admin-ajax.php",
+							data: {
+								'action':'example_ajax_request_alt2',
+								'sorting' : sorting,
+								'pagenumber' : pagenumber,
+								'popclicked' : popclicked,
+								'catsort' : catsort
+							},
+							beforeSend : function(){
+								 $(".ajax-gif").css('visibility','visible');
+							},
+							success:function(html) {
+								$(".ajax-gif").css('visibility','hidden');
+								if (html.length > 0) {
+									$(".posts").html(html);
+									var $container = $(".posts");
+									$container.imagesLoaded(function(){
+									$container.masonry('reloadItems');
+									$container.masonry('layout');
+									});
+								}
+							},
+							error: function(errorThrown){
+								console.log(errorThrown);
+							}
+						});
+					});
+
+					/*touch events for hamburger menu */
+					jQuery('body').click(function() {
+					   $(".chgg-menu").addClass("hidden");
+					});
+
+					jQuery("#app-switch-btn").click(function(event) {
+						$(".chgg-menu").removeClass("hidden");
+						event.stopImmediatePropagation();
+						return false;
+					});
+
+					jQuery(".chgg-menu-items").click(function(event) {
+						event.stopImmediatePropagation();
+					});
+				});
+			</script> 
+  <script type="text/javascript">
+  if (!window.digitalData) {
+            var digitalData = {};
+            digitalData = {
+                page: {
+                    pageInfo: {
+					pageName: "Post",
+					pageNameDetailed: "16648",
+       				 experience: "Responsive"
+					},
+                    category: {
+					 pageType: "blog",
+					 primaryCategory: "Chegg",
+					 subCategory1: "Web",
+        			subCategory2: "me",
+					subCategory3: "Play"
+					}
+                }
+            };
+        }
+</script> 
+  <script src="//assets.adobedtm.com/e157c7ff34e2d6bd3c151937f4c67f693db0150f/satelliteLib-bfe19886e39a4d20710fc37fd1e213b09fadbdbe.js"></script> 
+  <script>var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32128268-1']);
+			_gaq.push(['_setDomainName', 'chegg.com']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();
+		</script> 
+ </head> 
+ <body class="post-template-default single single-post postid-16648 single-format-standard has-featured-image"> 
+  <div class="topnav-wrap"> 
+   <nav> 
+    <div id="app-switch-container"> 
+     <a id="app-switch-btn" data-wpel-link="internal"></a> 
+    </div> 
+    <!--hidden menu--> 
+    <nav class="chgg-menu hidden"> 
+     <div class="carrot">
+      <div class="chgg-menu-icon icon-chegg-cancel"></div>
+     </div> 
+     <ul class="chgg-menu-items"> 
+      <li id="chgg-menu-home"><a class="chgg-menu-item home" href="/" title="Chegg home" data-wpel-link="internal"> 
+        <div class="chgg-menu-image chegg-home-icon"></div> <span>Chegg home</span> </a></li> 
+      <li id="chgg-menu-books"><a class="chgg-menu-item books" href="/books/" title="Books" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-books"></div> <span>Books</span> </a></li> 
+      <li id="chgg-menu-study"><a class="chgg-menu-item study" href="/study/" title="Study" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-study2"></div> <span>Study</span> </a></li> 
+      <li id="chgg-menu-tutors"><a class="chgg-menu-item tutors" href="/tutors/" title="Tutors" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-tutors-person"></div> <span>Tutors</span> </a></li> 
+      <li id="chgg-menu-test-prep"><a class="chgg-menu-item testprep" href="/test-prep/" title="Test Prep" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-TestPrep"></div> <span>Test Prep</span> </a></li> 
+      <li id="chgg-menu-internships"><a class="chgg-menu-item internships" href="/app/internships/" title="Internships" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-career"></div> <span>Internships</span> </a></li> 
+      <li id="chgg-menu-colleges"><a class="chgg-menu-item colleges" href="/schools/" title="Colleges" data-wpel-link="internal"> 
+        <div class="chgg-menu-image icon-chegg-colleges2"></div> <span>Colleges</span> </a></li> 
+     </ul> 
+    </nav> 
+    <!--end hidden menu--> 
+    <a href="/play/" data-wpel-link="internal"><img src="/wp-content/themes/baskerville-child/assets/chegg-play-logo.png" alt="chegg play" height="25"></a> 
+   </nav> 
+   <div id="searchwrap"> 
+    <form method="get" class="searchform" action="https://www.chegg.com/play/"> 
+     <input type="search" value="" placeholder="Search Play" name="s" class="s"> 
+     <input type="submit" class="searchsubmit" value=""> 
+    </form> 
+   </div> 
+  </div> 
+  <!--smart slider here --> 
+  <!--end smart slider here--> 
+  <style>
+/* style reset for navbar on individual article pages */
+.topnav-wrap {position: relative; z-index:1 }
+.searchform {border: 1px solid #adadad;}
+input::-webkit-input-placeholder {color: #666 !important;}
+input:-moz-placeholder {color: #666 !important; opacity: 1}
+input::-moz-placeholder {color: #666 !important;opacity: 1}
+input:-ms-input-placeholder {color: #666 !important;}
+#app-switch-btn {background-image:url('/wp-content/themes/baskerville-child/assets/app-switcher-alt.png');}
+</style> 
+  <div class="borderline">
+   &nbsp;
+  </div> 
+  <div class="wrapper section medium-padding"> 
+   <div class="section-inner"> 
+    <div class="content fleft"> 
+     <p id="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/" rel="v:url" property="v:title" data-wpel-link="internal">Home</a> // <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/student-life/" rel="v:url" property="v:title" data-wpel-link="internal">Student Life</a> // <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.chegg.com/play/student-life/freshman-real-talk/" rel="v:url" property="v:title" data-wpel-link="internal">Freshman Year</a> // <span class="breadcrumb_last">How To Make Friends On Campus When You Know No One</span></span></span></span></span></p> 
+     <div id="post-16648" class="post-16648 post type-post status-publish format-standard has-post-thumbnail hentry category-freshman-real-talk"> 
+      <div class="post-header"> 
+       <div class="category-list">
+        <a href="https://www.chegg.com/play/student-life/freshman-real-talk/" rel="category tag" data-wpel-link="internal">Freshman Year</a>
+       </div> 
+       <h1 class="post-title">How To Make Friends On Campus When You Know No One</h1> 
+       <div class="first-author">
+        <span>Chegg</span>
+       </div> 
+      </div> 
+      <!-- /post-header --> 
+      <div class="featured-media"> 
+       <img width="945" height="489" src="/play/wp-content/uploads/sites/3/2014/08/friends-945x489.png" class="attachment-post-image size-post-image wp-post-image" alt="How to make friends on campus"> 
+      </div> 
+      <!-- /featured-media --> 
+      <div class="post-content"> 
+       <p dir="ltr">I think one of the most nerve-racking things for any incoming freshman is not knowing anyone else on campus. When I was a freshman, a lot of my friends were going to the same schools, and that made their transition to college easier. But what was I supposed to do? <strong>I didn’t know anyone</strong>.</p> 
+       <p>But here I am all these semesters later, and so far so good. Here are few tips on making friends on campus based on my own experiences (and what I’ve been told by friends). Trust me, it’s not as bad as it seems!</p> 
+       <h2>Orientation</h2> 
+       <p>If your university has orientation and you have a chance to attend, I say <strong>definitely go</strong>. Everyone is really friendly, so it’s one of the best chances you’ll get to meet new friends! I met one of my first friends at orientation. We ended up sitting next to each other, began talking, and realized we had a lot of similar interests as well as a similar sense of humor. We exchanged numbers to keep in contact and agreed to meet up again once school started. Turned out we were taking a few of the same classes first quarter, so it was awesome already having someone to sit next to the first day of class. Two years later, we’re still really close!</p> 
+       <p>&nbsp;</p> 
+       <h2>Volunteering</h2> 
+       <p><a href="https://giphy.com/gifs/primerstories-hands-agree-vote-xTiTnsjKXiCp0uMnsY" data-wpel-link="external" rel="nofollow"><img src="https://media.giphy.com/media/xTiTnsjKXiCp0uMnsY/giphy.gif" alt="Primer GIF - Find &amp; Share on GIPHY" width="1280" height="842"></a></p> 
+       <p>Many universities now have freshmen take part in something called “Volunteer Day,” which usually takes place the first few week students start school in the fall. For one whole day, students volunteer at different locations all over town. When I participated my freshman year, I met a lot of new people who eventually became my really good friends. We all started shyly talking to each other on the bus ride over to the volunteer site. At the end of the day, we were laughing non-stop on the bus ride back.</p> 
+       <p>If your university doesn’t have a volunteer day, no worries, volunteer anyway! You’ll still meet really cool people who care about the same things you care about.</p> 
+       <p>&nbsp;</p> 
+       <h2>Online</h2> 
+       <p>My university really utilizes Facebook. A lot of incoming freshman should look out for Facebook pages specific to your university and graduating class year. For example, when I was an incoming freshman, I searched for “UCLA Class of 2016” and a group popped up. Within that Facebook group, I found hundreds of incoming freshmen with the same questions and worries I had. It was awesome because at the beginning of the year, some people posted in the group asking if anyone wanted to grab lunch at one of the dining halls. Since people didn’t really know anyone else, a lot of people were up for it and went!</p> 
+       <h2>People In Your Dorm</h2> 
+       <p><img class="aligncenter" src="http://media.giphy.com/media/NtkfBl3QHEJgY/giphy.gif" alt="" width="360" height="202"></p> 
+       <p>If you’re living in a dorm, the first week is prime time to make new friends. Often people will leave their dorm-room doors open. People will walk in and out and introduce themselves. It’s a lot about getting to know each other and finding out who on your floor has similar interests. Everyone usually loves decorating their room with things from home and favorite band/movie posters. You’ll definitely find that person with the same <em>Game of Thrones</em> poster you have on your wall, and having that shared interest makes it incredibly easy to get a conversation started.</p> 
+       <p>&nbsp;</p> 
+       <h2>Your Classes</h2> 
+       <p>During the first few days of class (especially if you have discussion sections), other students will introduce themselves to one another. Getting to know people in your classes is another great way to start making friends. Plus, it automatically helps you start to form study groups, which become really helpful in college. You’ll often find people in your class are pursuing the same major as you, which means you’ll be seeing them around often for the next four years, so why not get to know them?</p> 
+       <p>&nbsp;</p> 
+       <h2>Events</h2> 
+       <p>There are A TON of activities that go on during the first week of the fall semester/quarter for freshmen. You can usually find out about them through your Resident Assistant (aka R.A.), people on your floor, and club events. During my first week at school, my R.A. held a fun event in our lounge. There was food and ice breaker activities for people to get to know each other.</p> 
+       <p>If your R.A. doesn’t have something like that, the best thing to do is to just keep your eyes open for things posted on bulletin boards around campus. You’re bound to come across an event you’ll want to attend, and you’ll definitely meet people there!</p> 
+       <p dir="ltr">Making friends in college can actually be a lot easier than you think.&nbsp; I understand how putting yourself out there to meet people can be difficult, but know you’re not alone! My suggestion for you is to attend events that you’re interested in because you’re more likely to find people who share the same interests as you. I’m definitely an introvert, but I enjoyed meeting new people and learning about them. Most importantly, I realized I had nothing to be shy about!</p> 
+       <p dir="ltr">Go Forth &amp; good luck!</p> 
+       <address>&nbsp;</address> 
+       <address>—&nbsp;</address> 
+       <address>Francesca Manto is a soon-to-be junior at UCLA. She enjoys the art of eating, video journalism, and all things social media. She has a new-found love for the world of tech. Tweet her&nbsp;<a href="https://twitter.com/fmantoe" data-wpel-link="external" rel="nofollow">@fmantoe</a>&nbsp;to talk about life and stuffz.</address> 
+       <p>&nbsp;</p> 
+       <div class="clear"></div> 
+      </div> 
+      <!-- /post-content --> 
+      <div class="post-meta-container"> 
+       <div class="post-author"> 
+        <div class="post-author-content"> 
+         <div class="author-photo-wrap"> 
+          <img src="/play/wp-content/uploads/sites/3/userphoto/22.jpg" alt="Chegg" width="148" height="150" class="photo"> 
+         </div> 
+         <p class="author-intro">MEET THE AUTHOR</p> 
+         <h4>Chegg</h4> 
+         <p class="author-description-meta"> Chegg, the student hub, is transforming the way millions of students learn by connecting them to the people and tools needed to succeed in school. We work hard, and play hard. As the leading student-first connected learning platform, Chegg is making higher education more affordable, more accessible, and more successful for students. For more information, visit www.chegg.com/. </p> 
+        </div> 
+        <!-- /post-author-content --> 
+       </div> 
+       <!-- /post-author --> 
+       <div class="post-meta"> 
+        <div class="apss-social-share apss-theme-3 clearfix"> 
+         <div class="apss-email apss-single-icon"> 
+          <a rel="nofollow" class="share-email-popup" title="Share it on Email" target="_blank" href="mailto:?subject=Check out this post from Chegg Play&amp;body=Hi!, I found this information for you: &quot;How%20To%20Make%20Friends%20On%20Campus%20When%20You%20Know%20No%20One&quot;. Here is the website link: https://www.chegg.com/play/student-life/freshman-real-talk/how-to-make-friends-on-campus-when-you-know-no-one/. Thank you."> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa  fa-envelope"></i> 
+            <span class="apss-social-text">Send email</span> 
+            <span class="apss-share">Mail</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-twitter apss-single-icon"> 
+          <a rel="nofollow" href="https://twitter.com/intent/tweet?text=How%20To%20Make%20Friends%20On%20Campus%20When%20You%20Know%20No%20One&amp;url=https%3A%2F%2Fwww.chegg.com%2Fplay%2Fstudent-life%2Ffreshman-real-talk%2Fhow-to-make-friends-on-campus-when-you-know-no-one%2F&amp;" title="Share on Twitter" target="_blank" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-twitter"></i> 
+            <span class="apss-social-text">Share on Twitter</span>
+            <span class="apss-share">Tweet</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-pinterest apss-single-icon"> 
+          <a rel="nofollow" title="Share on Pinterest" href="javascript:pinIt();" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-pinterest"></i> 
+            <span class="apss-social-text">Share on Pinterest</span> 
+            <span class="apss-share">Share</span> 
+           </div> </a> 
+         </div> 
+         <div class="apss-facebook apss-single-icon"> 
+          <a rel="nofollow" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chegg.com/play/student-life/freshman-real-talk/how-to-make-friends-on-campus-when-you-know-no-one/" data-wpel-link="internal"> 
+           <div class="apss-icon-block clearfix"> 
+            <i class="fa fa-facebook"></i> 
+            <span class="apss-social-text">Share on Facebook</span> 
+            <span class="apss-share">Share</span> 
+           </div> </a> 
+         </div> 
+        </div> 
+        <!--<p class="post-date">August 3, 2017</p>--> 
+        <!--<p class="post-categories"><a href="https://www.chegg.com/play/student-life/freshman-real-talk/" rel="category tag" data-wpel-link="internal">Freshman Year</a></p>--> 
+        <div class="clear"></div> 
+       </div> 
+       <!-- /post-meta --> 
+       <div class="clear"></div> 
+      </div> 
+      <!-- /post-meta-container --> 
+      <!--post navigation here--> 
+      <div class="post-nav"> 
+       <a class="post-nav-prev" title="Previous post: 5 Ways Living on Campus Could be a Distraction" href="https://www.chegg.com/play/student-life/dorm-life/5-ways-living-on-campus-could-be-a-distraction/" data-wpel-link="internal"><span class="prevnextintro">Previous article</span><br> <span class="prevnexttitle">5 Ways Living on Campus Could be a...</span> </a> 
+       <a class="post-nav-next" title="Next post: I Got Tutored By Jamie Drummond, Who Co-Founded An Organization That’s Changing The World" href="https://www.chegg.com/play/student-life/chegg-for-good/master-session-jamie-drummond/" data-wpel-link="internal"><span class="prevnextintro">Next article</span><br><span class="prevnexttitle">I Got Tutored By Jamie Drummond, Who...</span></a> 
+       <div class="clear"></div> 
+      </div> 
+      <!--end post navigation here--> 
+      <!--related posts--> 
+      <div class="related-wrap"> 
+       <h4>You might like:</h4> 
+       <ul id="joints-related-posts"> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/advice-to-my-freshman-self/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/08/freshman-self-600x311.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Dorm Life
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/advice-to-my-freshman-self/" title="Advice To My Freshman Year Self" data-wpel-link="internal">Advice To My Freshman Year Self</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/ilennon/" data-wpel-link="internal">Isabel Lennon</a>
+         </div> </li> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/things-to-bring-to-college-that-you-didnt-know-you-needed/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/08/List-600x311.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Things to bring to college"></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            Dorm Life
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/things-to-bring-to-college-that-you-didnt-know-you-needed/" title="Things To Bring To College That You Didn’t Know You Needed" data-wpel-link="internal">Things To Bring To College That You Didn’t Know You Needed</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/frida/" data-wpel-link="internal">Frida Schaefer Bastian</a>
+         </div> </li> 
+        <li class="related_post"> 
+         <div class="related-image">
+          <a href="/play/life-hacks/diy/diy-the-ultimate-photo-gallery/" data-wpel-link="internal"><img width="600" height="311" src="/play/wp-content/uploads/sites/3/2017/06/framehero-600x311.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="DIY Photo Frame"></a> 
+          <div class="category-tape">
+           <div class="category-orange">
+            DIY
+           </div>
+          </div> 
+         </div> 
+         <div class="related-box"> 
+          <a class="entry-unrelated" href="/play/life-hacks/diy/diy-the-ultimate-photo-gallery/" title="DIY The Ultimate Photo Gallery" data-wpel-link="internal">DIY The Ultimate Photo Gallery</a> 
+         </div> 
+         <div class="related-author">
+          By 
+          <a class="author-related" title="Author archive" href="https://www.chegg.com/play/author/britco/" data-wpel-link="internal">Brit + Co</a>
+         </div> </li> 
+       </ul> 
+      </div> 
+      <!--end related posts--> 
+      <div id="respond" class="comment-respond"> 
+       <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/play/student-life/freshman-real-talk/how-to-make-friends-on-campus-when-you-know-no-one/#respond" style="display:none;" data-wpel-link="internal">Cancel reply</a></small></h3> 
+       <form action="https://www.chegg.com/play/wp-comments-post.php" method="post" id="commentform" class="comment-form"> 
+        <p class="commenter-count"> COMMENTS (0)</p>
+        <p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" placeholder="Leave a comment" required></textarea></p>
+        <p class="comment-form-author"><input id="author" name="author" type="text" placeholder="Name" value="" size="30"><label for="author">Author</label> <span class="required">*</span></p> 
+        <p class="comment-form-email"><input id="email" name="email" type="text" placeholder="Email" value="" size="30"><label for="email">Email</label> <span class="required">*</span></p> 
+        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="SUBMIT"> <input type="hidden" name="comment_post_ID" value="16648" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p> 
+       </form> 
+      </div>
+      <!-- #respond --> 
+     </div> 
+     <!-- /post --> 
+    </div> 
+    <!-- /content --> 
+    <div class="sidebar fright" role="complementary"> 
+     <div class="widget widget_text">
+      <div class="widget-content"> 
+       <div class="textwidget"></div> 
+      </div>
+      <div class="clear"></div>
+     </div> 
+     <!--most popular posts--> 
+     <div class="popular-posts"> 
+      <h3>MOST POPULAR</h3>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/MDT-1275_Play_Quiz_Hero_Trivia_bell-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Trivia - How Well Do You Know College?</h4>
+        <span class="popular-author">By Victoria Holliday</span>
+        <a href="https://www.chegg.com/play/entertainment/trivia-well-know-college/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/06/cell-battery-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="cell phone battery life">
+        <div class="category-tape">
+         <div class="category-orange">
+          Life Hacks
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Cell Phone Self-Care: How to Extend Your Phone's Battery Life</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/life-hacks/self-care-phone-battery/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/murder-your-plants-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Dorm Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>How not to murder your new plant</h4>
+        <span class="popular-author">By Katie Levinthal</span>
+        <a href="https://www.chegg.com/play/student-life/not-murder-new-plant/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/gym-thoughts-800x414.png" class="attachment-medium size-medium wp-post-image" alt="41 Thoughts Every College Student Has At The Gym">
+        <div class="category-tape">
+         <div class="category-orange">
+          Fitness
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>39 Thoughts Every College Student Has At The Gym</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/food-and-fit/17-thoughts-every-college-student-has-at-the-gym/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/09/napping-800x414.png" class="attachment-medium size-medium wp-post-image" alt="7 famous people who napped">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>7 Famous People Who Napped</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/entertainment/5-famous-nappers/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/03/MDT-1103-CP-NicoleLapin-2-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Money
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>How to Recover from the Freshman (Spending) 15</h4>
+        <span class="popular-author">By Nicole Lapin</span>
+        <a href="https://www.chegg.com/play/life-hacks/money/how-to-recover-from-the-freshman-spending-15/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/Nope-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Productivity
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Top 10 SAT Words That You'll Never Actually Use</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/top-10-sat-words-that-youll-never-actually-use/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/weird-jobs-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Entertainment
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>The Weirdest Careers To Spice Up Your Job Search</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/entertainment/jobs-you-didnt-know-existed/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/10/23-facts-800x414.jpg" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Life Hacks
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>23 Study Tips Backed By Science</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/23-study-tips-backed-by-science/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/shutterstock_503426647-800x414.png" class="attachment-medium size-medium wp-post-image" alt="">
+        <div class="category-tape">
+         <div class="category-orange">
+          Student Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>There Are 4 Types of Introverts: Which One Are You?</h4>
+        <span class="popular-author">By Cady Kopsky</span>
+        <a href="https://www.chegg.com/play/student-life/there-are-4-types-of-introverts-which-one-are-you/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/07/pencils-SAT-800x414.png" class="attachment-medium size-medium wp-post-image" alt="What to bring to the SAT">
+        <div class="category-tape">
+         <div class="category-orange">
+          Productivity
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>The Ultimate SAT/ACT Packing List</h4>
+        <span class="popular-author">By Katie Levinthal</span>
+        <a href="https://www.chegg.com/play/life-hacks/productivity/the-ultimate-satact-packing-list/" data-wpel-link="internal"></a>
+       </div>
+      </div>
+      <div class="popular-wrap">
+       <div class="related-image">
+        <img width="800" height="414" src="/play/wp-content/uploads/sites/3/2017/08/quiz-800x414.png" class="attachment-medium size-medium wp-post-image" alt="What Type Of Learner Are You?">
+        <div class="category-tape">
+         <div class="category-orange">
+          Student Life
+         </div>
+        </div>
+       </div>
+       <div class="popular-post-box">
+        <h4>Quiz: What Type Of Learner Are You?</h4>
+        <span class="popular-author">By Frida Schaefer Bastian</span>
+        <a href="https://www.chegg.com/play/student-life/quiz-what-type-of-learner-are-you/" data-wpel-link="internal"></a>
+       </div>
+      </div> 
+     </div> 
+     <!--end most popular posts--> 
+    </div>
+    <!-- /sidebar --> 
+    <div class="clear"></div> 
+   </div> 
+   <!-- /section-inner --> 
+  </div> 
+  <!-- /wrapper --> 
+  <div class="chg-footer"> 
+   <div class="chg-footer-pattern"> 
+    <div class="chg-footer-container"> 
+     <nav> 
+      <div class="row"> 
+       <div class="col-12 col-first col-last"> 
+        <div class="chg-footer-nav"> 
+         <div class="chg-footer-nav-column"> 
+          <h4>ABOUT CHEGG</h4> 
+          <ul> 
+           <li><a href="http://www.chegg.com/press/" title="About Chegg" data-noajax="&quot;true&quot;" data-wpel-link="internal">Media Center</a></li> 
+           <li><a rel="nofollow" href="http://blog.chegg.com/category/chegg-for-good/" title="Chegg For Good" data-wpel-link="internal">Chegg For Good</a></li> 
+           <li><a href="http://collegemarketing.chegg.com/" title="College Marketing" data-wpel-link="internal">College Marketing</a></li> 
+           <li> <a rel="nofollow" href="http://www.chegg.com/privacypolicy/" title="Privacy Policy" data-wpel-link="internal">Privacy Policy</a> </li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/privacypolicy/#california" title="Your CA Privacy Rights" data-wpel-link="internal">Your CA Privacy Rights</a></li> 
+           <li> <a rel="nofollow" href="http://www.chegg.com/termsofuse/" title="Terms of Use" data-wpel-link="internal">Terms of Use</a> </li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/generalpolicies/" title="General Policies" data-wpel-link="internal">General Policies</a></li> 
+           <li><a rel="nofollow" href="http://www.chegg.com/copyright/" title="Intellectual Property Rights" data-wpel-link="internal">Intellectual Property Rights</a></li> 
+           <li><a rel="nofollow" href="http://investor.chegg.com/" title="Investor Relations" data-wpel-link="internal">Investor Relations</a></li> 
+           <li><a href="http://edu.chegg.com/" title="Enrollment Services" data-wpel-link="internal">Enrollment Services</a></li> 
+          </ul> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>RESOURCES</h4> 
+           <ul> 
+            <li><a href="http://www.chegg.com/sitemap" title="Site Map" data-wpel-link="internal">Site Map</a></li> 
+            <li><a href="http://www.chegg.com/mobile" title="Mobile" data-noajax="true" data-wpel-link="internal">Mobile</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/publishers" title="Publishers" data-noajax="true" data-wpel-link="internal">Publishers</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/affiliatesignuppage/" title="Join Our Affiliate Program" data-noajax="true" data-wpel-link="internal">Join Our Affiliate Program</a></li> 
+            <li><a rel="nofollow" href="http://preferences-mgr.truste.com/?pid=chegg01&amp;aid=chegg_pub02&amp;type=cheggdirect" target="_new" title="Advertising Choices" data-noajax="" data-wpel-link="external">Advertising Choices</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>TEXTBOOK LINKS</h4> 
+           <ul> 
+            <li><a rel="nofollow" href="http://www.chegg.com/my/account/returnbooks" data-wpel-link="internal">Return Your Books</a></li> 
+            <li><a href="http://www.chegg.com/textbooks/" title="Textbook Rental" data-noajax="true" data-wpel-link="internal">Textbook Rental</a></li> 
+            <li><a href="http://www.chegg.com/etextbooks" title="eTextbooks" data-noajax="true" data-wpel-link="internal">eTextbooks</a></li> 
+            <li><a href="http://www.chegg.com/used-textbooks" title="Used Textbooks" data-wpel-link="internal">Used Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/cheap-textbooks" title="Cheap Textbooks" data-wpel-link="internal">Cheap Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/college-textbooks" title="College Textbooks" data-wpel-link="internal">College Textbooks</a></li> 
+            <li><a href="http://www.chegg.com/sell-textbooks" title="Sell Textbooks" data-noajax="true" class="sell-textbooks" data-wpel-link="internal">Sell Textbooks</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>STUDENT SERVICES</h4> 
+           <ul> 
+            <li><a href="http://www.chegg.com/chegg-coupon" title="Chegg Coupon" data-wpel-link="internal">Chegg Coupon</a></li> 
+            <li><a href="http://www.chegg.com/scholarships" title="Scholarships" data-noajax="true" data-wpel-link="internal">Scholarships</a></li> 
+            <li><a href="http://www.chegg.com/career-center/explore" title="Career Search" data-noajax="true" data-wpel-link="internal">Career Search</a></li> 
+            <li><a href="http://www.chegg.com/app/internships/" title="Internships" data-noajax="true" data-wpel-link="internal">Internships</a></li> 
+            <li><a href="http://www.chegg.com/schools/" title="College Search" data-noajax="true" data-wpel-link="internal">College Search</a></li> 
+            <li><a href="http://www.chegg.com/majors" title="College Majors" data-noajax="true" data-wpel-link="internal">College Majors</a></li> 
+            <li><a href="http://www.chegg.com/redemption/scholarship" title="Scholarship Redemption" data-noajax="true" data-wpel-link="internal">Scholarship Redemption</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>COMPANY</h4> 
+           <ul> 
+            <li><a href="http://blog.chegg.com/" title="Blog" data-noajax="true" data-wpel-link="internal">Chegg College Blog</a></li> 
+            <li><a href="https://www.chegg.com/jobs/" title="Jobs" data-noajax="true" data-wpel-link="internal">Jobs</a></li> 
+            <li><a rel="nofollow" href="http://www.chegg.com/contactus/" title="Customer Service" data-noajax="true" data-wpel-link="internal">Customer Service</a></li> 
+            <li><a rel="nofollow" href="mailto:danlr@chegg.com" title="Give Us Feedback" data-noajax="true">Give Us Feedback</a></li> 
+            <li><a href="https://www.chegg.com/tutors/become-a-tutor/" title="Become a Tutor" data-noajax="true" data-wpel-link="internal">Become a Tutor</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="chg-footer-nav-column"> 
+          <div class="footer-nav-blk"> 
+           <h4>LEARNING SERVICES</h4> 
+           <ul> 
+            <li><a href="https://www.chegg.com/tutors" title="Online Tutoring" data-noajax="true" data-wpel-link="internal">Online Tutoring</a></li> 
+            <li><a href="http://www.chegg.com/study" title="Chegg Study Help" data-noajax="true" data-wpel-link="internal">Chegg Study Help</a></li> 
+            <li><a href="http://www.chegg.com/homework-help/solutions-manual" title="Solutions Manual" data-noajax="true" data-wpel-link="internal">Solutions Manual</a></li> 
+            <li><a href="https://www.chegg.com/tutors/cities" title="Tutors by City" data-noajax="true" data-wpel-link="internal">Tutors by City</a></li> 
+            <li><a href="http://www.chegg.com/homework-help/gpa-calculator" title="GPA Calculator" data-wpel-link="internal">GPA Calculator</a></li> 
+            <li><a href="http://www.chegg.com/test-prep" title="Test Prep" data-wpel-link="internal">Test Prep</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </nav> 
+     <footer> 
+      <div class="row chg-footer-copyright"> 
+       <div class="col-3 col-first"> 
+        <div title="Over 6 million trees planted" class="chg-mil-trees">
+         Over 6 million trees planted
+        </div> 
+        <div class="img-chg-plant-tree" title="Chegg Plants Trees">
+         Chegg Plants Trees
+        </div> 
+       </div> 
+       <div class="col-6 chg-copyright"> 
+        <div class="chg-copyright-blk"> 
+         <a rel="nofollow" href="http://www.paypal.com" title="PayPal" data-noajax="true" data-wpel-link="external"><img src="//c.cheggcdn.com/images/paypal_logo.gif" alt="PayPal"></a> 
+         <div class="chg-footer-truste-seal">
+          <div id="2d7d0c26-8294-4d5a-8841-1769f715fb08">
+           <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/Chegg,-Inc-/asc?rid=2d7d0c26-8294-4d5a-8841-1769f715fb08"></script>
+           <a data-in-app="true" href="//privacy.truste.com/privacy-seal/Chegg,-Inc-/validation?rid=066d8958-84e3-4256-8903-54ca5b4b297a" title="TRUSTe online privacy certification" target="_blank" data-wpel-link="external" rel="nofollow"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/Chegg,-Inc-/seal?rid=840d171e-655f-4821-8e68-58819b3cd2d2" alt="TRUSTe online privacy certification"></a>
+          </div>
+         </div> 
+         <a rel="nofollow" href="http://www.bbb.org/sanjose/business-reviews/books-textbooks-new-and-used/cheggcom-in-santa-clara-ca-238456" title="BBB" data-noajax="true" data-wpel-link="external"><img src="//c.cheggcdn.com/images/bbbseal1.gif" alt="BBB"></a> 
+         <p>© 2003-2016 Chegg Inc. All rights reserved.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </footer> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="/play/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var frontend_ajax_object = {"ajax_url":"https:\/\/www.chegg.com\/play\/wp-admin\/admin-ajax.php","ajax_nonce":"1c8c1f5877"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="/play/wp-content/plugins/accesspress-social-share/js/frontend.js?ver=4.3.4"></script> 
+  <script type="text/javascript" src="/play/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <link rel="stylesheet" id="apss-font-awesome-css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css?ver=4.1.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="apss-font-opensans-css" href="//fonts.googleapis.com/css?family=Open+Sans&amp;ver=4.5.3" type="text/css" media="all"> 
+  <script type="text/javascript">_satellite.pageBottom();</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1fabaefecb","applicationID":"52986996","transactionName":"NQcDYUAEXxJYUhFfXQxNIFZGDF4PFkIMWFUOBw==","queueTime":0,"applicationTime":3686,"atts":"GUAAFwgeTBw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

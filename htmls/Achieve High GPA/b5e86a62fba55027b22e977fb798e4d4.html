@@ -1,0 +1,578 @@
+<!doctype html>
+<!--[if lt IE 7]>     <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>        <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>        <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>        <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+ <!--<![endif]-->
+ <head profile="http://www.w3.org/1999/xhtml/vocab"> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="shortcut icon" href="https://college.harvard.edu/sites/all/themes/harvard/css/images/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="description" content="I'm sorry, guys, but I have to confess something. It deeply troubles me to say, but Harvard has lied to you."> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://college.harvard.edu/admissions/hear-our-students/student-blogs/my-morning-routine"> 
+  <link rel="shortlink" href="https://college.harvard.edu/node/64561"> 
+  <meta name="google-site-verification" content="y67J8Jo7YiMeew7p4lMBYchKQx8mzhts7HFDhSkhs24"> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=156643444746123&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <title>My Morning Routine | Harvard College</title> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_C93nyXgBhSQuo3Iv_GbDSbFfle0R4zz3-YNEK7jL94s.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_DnvLRZdhU1iBaJ_Zf_WwGCIDJmDG62GCal7Vnrj9Ckg.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_NaGbBgx6qTFiIqUYv15e0DGuMsv2HzPH6UtALgUzxG0.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_qpHURMTtcGa8w9tkG0TIBf6gPihw4BtY77D2XojDszg.css" media="print"> 
+  <link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_RgpUXGXoFRWpl-qpsMgbHgDZnSyDtShtNU0jvscD0AU.css" media="all"> 
+  <!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_5vwjkRw45NusIP78-M83achliNJznka1sNkxAz8Zvr0.css" media="all" />
+<![endif]--> 
+  <!--[if lt IE 8]>
+<link type="text/css" rel="stylesheet" href="https://college.harvard.edu/sites/default/files/css/css_Hj9fXY775g2eA7RUp7hysigbxUIt5lX4nXdeRHMLbrY.css" media="all" />
+<![endif]--> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_WkOMkSyjg9rxsesVK2mUAVX_dhZTWbIE6jpIzuL-ygM.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_hz7rEVp7QZx7Hm_cNS0nyqP4SDGaPUYN1aaOa0pZLhE.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_CDGBrxcsUei5uGpIel7O_d4I9Vwm1GeWQO_r0AtTrBE.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_vTnSOD35UuAH2q7-tp4TVkn0VpgajBcWRq2vKDmeJR8.js"></script> 
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-42906607-5", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_r9p12DhdkpD6Skcv5P884Yym85k42EITbZQyqMIN81c.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_GlTwym0fQnw9fk0TgVbamTBG7RbjARtKVlnsICoJRWY.js"></script> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_wsddnd40CcZNElnyzYtHzN70I34CUiw1SCs0IWoeFm4.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"harvard","theme_token":"fy77b08d025TLAdgVfuQ3M0HJ8mLNTOAKpTym4IjbG0","jquery_version":"1.10","js":{"sites\/all\/modules\/contrib\/addthis\/addthis.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/media\/js\/media.core.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.resizable.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.button.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.dialog.min.js":1,"sites\/all\/modules\/contrib\/media\/js\/util\/json2.js":1,"sites\/all\/modules\/contrib\/media\/js\/util\/ba-debug.min.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/custom\/harvard_icons\/harvard_icons.js":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"misc\/collapse.js":1,"misc\/textarea.js":1,"sites\/all\/modules\/contrib\/media\/js\/media.popups.js":1,"misc\/progress.js":1,"modules\/filter\/filter.js":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/js\/media_wysiwyg.filter.js":1,"\/\/platform.twitter.com\/widgets.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/contrib\/google_analytics_et\/js\/google_analytics_et.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/chart.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/detect.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/matchMedia.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/matchMedia.addListener.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/enquire.min.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.chosen.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.datepicker.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.equalheights.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.masonry.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.royalslider.min.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.select.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.waypoints.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/jquery.sticky.js":1,"sites\/all\/themes\/harvard\/js\/plugins\/modernizr.js":1,"sites\/all\/themes\/harvard\/js\/dist\/all.js":1,"sites\/all\/themes\/harvard\/js\/script.js":1,"public:\/\/facebook_tracking_pixel\/fb_tkpx.156643444746123.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/all\/modules\/contrib\/media\/css\/media.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/field_collection_ajax\/css\/field-collection-ajax.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr_cc_icons_on_hover.css":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/typogrify\/typogrify.css":1,"sites\/all\/themes\/harvard\/layouts\/harvard_template_q\/harvard_template_q.css":1,"modules\/filter\/filter.css":1,"sites\/all\/modules\/contrib\/field_group\/field_group.field_ui.css":1,"sites\/all\/modules\/contrib\/twitter\/twitter.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/twocol\/twocol.css":1,"sites\/all\/themes\/harvard\/css\/print.css":1,"sites\/all\/themes\/harvard\/css\/patchwork.css":1,"sites\/all\/themes\/harvard\/css\/screen.css":1,"sites\/all\/themes\/harvard\/css\/harvard.main.css":1,"sites\/all\/themes\/harvard\/css\/ie.css":1,"sites\/all\/themes\/harvard\/css\/ie--lt8.css":1}},"better_exposed_filters":{"views":{"recent_blog_articles":{"displays":{"panel_pane_1":{"filters":[]}}},"most_popular_student_blog_topics":{"displays":{"panel_pane_1":{"filters":[]}}},"student_bloggers":{"displays":{"default":{"filters":[]}}},"author_of_node":{"displays":{"panel_pane_1":{"filters":[]}}},"harvard_recent_tweet":{"displays":{"block":{"filters":[]}}}}},"addthis":{"async":0,"domready":1,"widget_url":"https:\/\/s7.addthis.com\/js\/300\/addthis_widget.js","addthis_config":{"pubid":"ra-5978dd9d6b28b544","services_compact":"facebook,linkedin,pinterest_share,twitter,more","services_exclude":"","data_track_clickback":true,"ui_508_compliant":true,"ui_click":false,"ui_cobrand":"","ui_delay":0,"ui_header_background":"","ui_header_color":"","ui_open_windows":false,"ui_use_css":true,"ui_use_addressbook":false,"ui_language":"en"},"addthis_share":{"templates":{"twitter":"{{title}} {{url}} via @applytoharvard"}}},"media":{"browserUrl":"\/media\/browser?render=media-popup","styleSelectorUrl":"\/media\/-media_id-\/format-form?render=media-popup","dialogOptions":{"dialogclass":"media-wrapper","modal":true,"draggable":false,"resizable":false,"minwidth":500,"width":670,"height":280,"position":"center","overlay":{"backgroundcolor":"#000000","opacity":0.4},"zindex":10000},"wysiwyg_allowed_attributes":["alt","title","height","width","hspace","vspace","border","align","style","class","id","usemap","data-picture-group","data-picture-align","data-picture-mapping","data-delta"],"img_alt_field":"field_file_image_alt_text","img_title_field":"field_file_image_title_text"},"mediaDoLinkText":true,"wysiwyg":{"triggers":{"edit-comment-body-und-0-value":{"field":"edit-comment-body-und-0-value","resizable":1,"select":"edit-comment-body-und-0-format--2"}}},"urlIsAjaxTrusted":{"\/admissions\/hear-our-students\/student-blogs\/my-morning-routine#comment-form":true},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extIconPlacement":0,"extSubdomains":0,"extExclude":"(www\\.youvisit\\.com)","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"googleAnalyticsETSettings":{"selectors":[{"event":"click","selector":".pane-fpid-606 form[action*=\u0022net-price-calculator\u0022] button[type=\u0022submit\u0022]","category":"NPC","action":"click","label":"module_large","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-636 a[href*=\u0022net-price\u0022]","category":"NPC","action":"click","label":"module_small","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-251 a[href*=\u0022application-tips\u0022]","category":"module","action":"click","label":"tips","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-246 a[href*=\u0022what-we-look\u0022]","category":"module","action":"click_look","label":"apply","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-246 a[href*=\u0022application-timeline\u0022]","category":"module","action":"click_when","label":"apply","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-246 a[href*=\u0022application-requirements\u0022]","category":"module","action":"click_submit","label":"apply","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-866 a[href*=\u0022admissions\/apply\u0022]","category":"module","action":"click_apply","label":"belong","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-866 a[href*=\u0022coming-home\u0022]","category":"module","action":"click_watchvideo","label":"belong","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-866 a[href*=\u0022hear-students\/video\u0022]","category":"module","action":"click_allvideos","label":"belong","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .pane-fpid-71 a","category":"module","action":"click","label":"aid","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .content .page-content .container .carousel .carousel-viewport a","category":"carousel","action":"click","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-system-main.block .content .page-content .container .carousel .carousel-viewport a+a","category":"carousel","action":"click","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022https:\/\/itunes.apple.com\/us\/app\/\u0022]","category":"Appdownload","action":"offsiteclick","label":"iTunes","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022https:\/\/play.google.com\/store\/apps\/\u0022]","category":"Appdownload","action":"offsiteclick","label":"Googleplay","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href$=\u0022.pdf\u0022]","category":"download","action":"pdf","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href$=\u0022.doc\u0022]","category":"download","action":"doc","label":"!href","value":0,"noninteraction":false},{"event":"change","selector":"select[name=\u0022submitted[faq_topic]\u0022]","category":"Contactus","action":"submit","label":"!text","value":0,"noninteraction":false},{"event":"change","selector":"select[name=\u0022submitted[email_form][subject]\u0022]","category":"Contactus","action":"selectsubject","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"#webform-client-form-846--2 input#edit-submit--2","category":"Contactus","action":"submit","label":"topic_subject","value":0,"noninteraction":false},{"event":"mousedown","selector":"form#webform-client-form-846--2.webform-client-form div fieldset#webform-component-email-form.webform-component-fieldset div.fieldset-wrapper div#webform-component-email-form--subject.form-item div#s2id_edit-submitted-email-form-subject--2.select2-container","category":"Contactus","action":"selectsubject","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022http\u0022]:not(a[href*=\u0022college.harvard.edu\u0022])","category":"offsitelink","action":"offsiteclick","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href*=\u0022user\/login\u0022]","category":"Login","action":"click","label":"!currentPage","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href*=\u0022\/about\/news-announcements\/\u0022]","category":"News","action":"click","label":"!currentPage","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href*=\u0022\/college-events\/\u0022]","category":"Events","action":"click","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-menu-menu-primary-menu li a","category":"nav_main","action":"click","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"#block-harvard-site-harvard-audience-links ul li a","category":"nav_audience","action":"click","label":"!text","value":0,"noninteraction":false},{"event":"mousedown","selector":"ul.first-level.in li.last.expanded.active-trail.menu-level-2 ul.second-level li.leaf.menu-level-3","category":"Reply","action":"action","label":"label","value":0,"noninteraction":false},{"event":"mousedown","selector":"a[href^=\u0022http:\/\/news.harvard.edu\/gazette\u0022]","category":"Gazette","action":"offsiteclick","label":"!href","value":0,"noninteraction":false},{"event":"mousedown","selector":".pane-fpid-176 form[action*=\u0022net-price-calculator\u0022] button[type=\u0022submit\u0022]","category":"NPC","action":"click","label":"module_FAO","value":0,"noninteraction":false}],"settings":[]}});
+//--><!]]>
+</script> 
+  <!-- BEGIN inc/meta.php --> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content=""> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- END inc/meta.php --> 
+  <!-- BEGIN inc/cssReference.php (conditional js only) --> 
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/sites/all/themes/harvard/js/plugins/html5shiv.js"></script>
+  <script type="text/javascript" src="/sites/all/themes/harvard/js/plugins/ie8.js"></script>
+  <![endif]--> 
+  <!-- END inc/cssReference.php --> 
+  <script src="https://use.typekit.net/eqx7xwa.js"></script> 
+  <script>try{Typekit.load(
+{ async: true }
+);}catch(e){}</script> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-64561 node-type-student-blog node-promoted "> 
+  <!-- BEGIN inc/skip.php --> 
+  <a class="anchor-link element-invisible element-focusable" href="#main-top">Skip to main content</a> 
+  <!-- END inc/skip.php --> 
+  <!-- BEGIN inc/page-header.php --> 
+  <header class="page-header" role="banner"> 
+   <div class="high-level"> 
+    <div class="wrap"> 
+     <strong class="title"><a href="http://www.harvard.edu" class="logo ir">Harvard University</a></strong> 
+     <span class="url in"><a href="http://www.harvard.edu">harvard.edu</a></span> 
+    </div> 
+   </div> 
+   <div class="top-level"> 
+    <div class="sticky-background"></div> 
+    <div class="wrap"> 
+     <div class="title bk3-1of3"> 
+      <div class="in"> 
+       <strong><a href="/" class="logo ir logo-child">Harvard College Admissions &amp; Financial Aid</a></strong> 
+      </div> 
+     </div> 
+     <div class="header-toolbar right-align in bk4-2of3"> 
+      <ul class="header-toolbar-triggers row"> 
+       <li><a href="#search" data-target="search-global" class="search"><span class="icon-search"></span><span class="nodisplay">Search</span></a></li> 
+       <li><a href="#global-menu" data-target="nav" class="menu"><span class="icon-menu"></span><span class="nodisplay">Menu</span></a></li> 
+      </ul> 
+      <div class="header-toolbar-window"> 
+       <div class="in"> 
+        <div class="region region-utility-links"> 
+         <nav id="block-menu-menu-utility-links" class="block block-menu" aria-labelledby="menu-utility-links" role="navigation"> 
+          <h2 class="element-invisible" id="menu-utility-links">Utility Links</h2> 
+          <div class="content"> 
+           <ul class="utility-links utility-links--primary">
+            <li class="first leaf menu-level-1"><a href="http://my.harvard.edu" title="">my.harvard</a></li> 
+            <li class="leaf menu-level-1"><a href="/frequently-asked-questions" title="">FAQs</a></li> 
+            <li class="leaf menu-level-1"><a href="https://www.directory.harvard.edu/phonebook/" title="">Directory</a></li> 
+            <li class="last leaf menu-level-1"><a href="/college-events" title="">College Events</a></li> 
+           </ul>
+           <ul class="utility-links utility-links--secondary">
+            <li class="utility-links__link--admitted-students"><a href="/admitted-students-login">Admitted Students</a></li>
+           </ul> 
+          </div> 
+         </nav> 
+        </div> 
+        <div class="search-wrapper"> 
+         <form action="/search-results" method="get" id="search" class="search search-global"> 
+          <div class="search-wrap"> 
+           <label for="searchtext">Search:</label> 
+           <div class="form-input-search"> 
+            <input type="text" id="searchtext" name="searchtext"> 
+           </div> 
+           <div class="form-input-submit"> 
+            <button type="submit" class="icon-search"><span class="element-invisible">Submit search</span></button> 
+           </div> 
+          </div> 
+         </form> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <nav id="global-menu" class="global-nav nav" role="navigation" aria-labelledby="menu-primary-menu"> 
+    <div class="wrap"> 
+     <div class="in"> 
+      <div class="region region-header"> 
+       <div id="block-menu-menu-primary-menu" class="block block-menu" aria-labelledby="menu-primary-menu"> 
+        <h2 class="element-invisible" id="menu-primary-menu">Main menu</h2> 
+        <div class="content"> 
+         <ul class="menu">
+          <li class="first leaf"><a href="/about" title="">About</a></li> 
+          <li class="leaf"><a href="/admissions" title="" class="active">Admissions</a></li> 
+          <li class="leaf"><a href="/financial-aid" title="">Financial Aid</a></li> 
+          <li class="leaf"><a href="/academics" title="">Academics</a></li> 
+          <li class="last leaf"><a href="/student-residentiallife" title="">Student &amp; Residential Life</a></li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <!-- END inc/page-header.php --> 
+  <div> 
+   <div id="page-wrapper">
+    <div id="page"> 
+     <div id="main-wrapper">
+      <div id="main" class="clearfix" role="main" tabindex="-1">
+       <a name="main-top" id="main-top"><span class="element-invisible">Main content</span></a> 
+       <div id="content" class="column">
+        <div class="section"> 
+         <a id="main-content"><span class="element-invisible">Main content</span></a> 
+         <div class="region region-content"> 
+          <div id="block-system-main" class="block block-system"> 
+           <div class="content"> 
+            <div class="page-title"> 
+             <div class="wrap"> 
+              <div class="panel-pane pane-page-breadcrumb"> 
+               <div class="pane-content"> 
+                <nav class="breadcrumbs in" aria-label="Breadcrumbs"> 
+                 <ul> 
+                  <li><a href="/">Home</a></li> 
+                  <li><a href="/admissions">Admissions</a></li> 
+                  <li><a href="/admissions/hear-our-students">Hear from Our Students</a></li> 
+                  <li><a href="/admissions/hear-our-students/student-blogs">Student Blog</a></li> 
+                 </ul> 
+                </nav> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="page-content blog"> 
+             <div class="container"> 
+              <div class="wrap"> 
+               <div class="page-title-article row"> 
+                <!-- search and share --> 
+                <div class="page-search bk3-1of3 bk4-3of12"> 
+                 <div class="in"> 
+                 </div> 
+                </div> 
+                <!-- title --> 
+                <div class="bk3-2of3 bk4-9of12"> 
+                 <h1 class="beta in">My Morning Routine</h1> 
+                </div> 
+               </div> 
+               <div class="row"> 
+                <div class="page-content-primary bk3-2of3 bk4-9of12"> 
+                 <!-- topics (tags) --> 
+                 <div class="in"> 
+                  <div class="panel-pane pane-entity-field pane-node-field-topics"> 
+                   <div class="pane-content"> 
+                    <div class="tags-container"> 
+                     <i class="icon-tag"></i> 
+                     <ul class="tags"> 
+                      <li><a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=1616" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">breakfast</a></li> 
+                      <li><a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=1621" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">routine</a></li> 
+                     </ul> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <!-- left side author/post info --> 
+                 <div class="page-blog-content"> 
+                  <div class="panel-pane pane-block pane-addthis-addthis-block"> 
+                   <div class="pane-content"> 
+                    <div class="addthis_toolbox addthis_default_style  ">
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_facebook"></a> 
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_twitter"></a> 
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_google_plusone_share"></a> 
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_googleplus"></a> 
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_tumblr"></a> 
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_pinterest_share"></a> 
+                     <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_linkedin"></a> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="panel-separator"></div>
+                  <div class="news-item-alpha profile-item row bk3-3of12"> 
+                   <a href="/user/2021"> <img src="https://college.harvard.edu/sites/default/files/styles/107x107/public/pictures/picture-2021-1381930863.jpg?itok=G7AeN0kS" class="bk1-float bk3-break in"> </a> 
+                   <div class="in"> 
+                    <h2 class="epsilon"> <a href="/user/2021"> Charlene Hong </a> </h2> 
+                    <p class="iota">November 1, 2013</p> 
+                    <a class="iota article-comments"> No comments </a> 
+                   </div> 
+                  </div> 
+                  <!-- content --> 
+                  <div class="bk3-9of12"> 
+                   <div class="page-content-block in"> 
+                    <!-- content body, author info, comments, & comment form --> 
+                    <div class="panel-pane pane-node-body"> 
+                     <div class="pane-content"> 
+                      <div class="field field-name-body field-type-text-with-summary field-label-hidden"> 
+                       <div class="field-items"> 
+                        <div class="field-item even" property="content:encoded">
+                         <p>I’m sorry, guys, but I have to confess something. It deeply troubles me to say, but Harvard has lied to&nbsp;you.</p> 
+                         <p>You know the new admissions video? You can see it on the homepage or on YouTube&nbsp;<a href="http://www.youtube.com/watch?v=C5pKtnmHTxg">here</a>. The video makes you fall in love with Harvard, for good reason. The amazing financial aid, the incredible professors, the professional opportunities, the potential to become Jeremy Lin (?!). It’s all here at Harvard where anything can happen (croons Ellie Goulding). All these wonderful reasons to fall in love with Harvard are&nbsp;true.&nbsp;</p> 
+                         <p>However, there is one blatant lie that stands out from all the scenes in the video. As a recent Crimson article points out: “The video shows not one, but two scenes with people eating breakfast. “Breakfast? What’s that?” current Harvard students are no doubt wondering. “But you don’t even have class until, like, 10 a.m.,” prospective students are thinking, “surely you can squeeze breakfast in before then.” Wrong. The truth of the matter is that you will not eat breakfast if your first class is at 10 a.m. or 11 a.m. or even 4 p.m. You will not eat breakfast at Annenberg or the Houses (obviously, because they don’t even have hot breakfast). You will not eat breakfast here or there. You will not eat breakfast&nbsp;anywhere.”</p> 
+                         <p>Yes, dear reader. Harvard has deceived you about how often students eat breakfast here. To be completely honest, I remember being awake early enough to eat breakfast only twice since I arrived on campus for orientation week. 99.9% of my friends do not eat breakfast. However, this week, I was determined to change&nbsp;that.</p> 
+                         <p>I actually managed to wake myself up for breakfast at 9 am sharp every day. I have class at 10 am or 11:30 am on varying days of the week, so I gave myself about an hour every morning to get dressed and get myself down to Annenberg for delicious oatmeal and&nbsp;waffles.</p> 
+                         <p>I&nbsp;<em>love</em>&nbsp;my new morning&nbsp;routine.</p> 
+                         <p>Changing the way I do mornings has made me feel so much productive as a student.&nbsp;My typical Monday looked like this last&nbsp;week:</p> 
+                         <p>9:30 am: Wake up and get&nbsp;ready</p> 
+                         <p>10 am: Rush to Korean class, get there barely on&nbsp;time</p> 
+                         <p>11:45 am: Head to&nbsp;lunch</p> 
+                         <p>1-3pm: History and Literature&nbsp;seminar</p> 
+                         <p>3-5pm: Chill in my room. Surf the web. Literally do&nbsp;nothing.</p> 
+                         <p>6pm:&nbsp;Dinner</p> 
+                         <p>7pm: <span class="caps">IOP</span> Internships and Career Services committee&nbsp;meeting</p> 
+                         <p>8pm: Entryway study&nbsp;break!</p> 
+                         <p>11pm: Talk with&nbsp;roommates</p> 
+                         <p>12am-3am: Frantically work on my&nbsp;homework</p> 
+                         <p>3am:&nbsp;Sleep</p> 
+                         <p>However, since I’ve changed my morning routine, I feel energized, not only because I have hot food and coffee in my system, but I get to bed earlier because I start my work earlier in the day. Since I already feel like I have achieved so much just by being up early (ask my roommate; she’ll tell you what an accomplishment this is for me), I feel so productive and that motivates me to work hard for the rest of the day. Because I’ve been more motivated to get my work for the day done faster right after classes, I have more time at the end of the day to hang with friends and relax before I sleep.&nbsp;Now, my schedule looks like&nbsp;this:</p> 
+                         <p>9am: Get up and go to&nbsp;breakfast</p> 
+                         <p>10am: Casually walk into Korean class on time from a good breakfast in the&nbsp;Berg</p> 
+                         <p>11am-1pm: Eat lunch while re-reading my seminar work and starting other&nbsp;work</p> 
+                         <p>1-3pm:&nbsp;Seminar</p> 
+                         <p>3-5pm: Sit in Lamont Library and get work&nbsp;done</p> 
+                         <p>6pm: Dinner with&nbsp;friends</p> 
+                         <p>7pm: <span class="caps">IOP</span>&nbsp;meeting</p> 
+                         <p>8pm: Study&nbsp;break</p> 
+                         <p>8-11pm:&nbsp;Work</p> 
+                         <p>11pm-12am: Chill with roommates and other&nbsp;friends</p> 
+                         <p>1am:&nbsp;Sleep!</p> 
+                         <p>When you become a college student, you have 24 hours, and you have complete control of what activities to spend those hours on. Too often, especially in midterm season, we college students start to procrastinate and start becoming really unproductive. However, the energy my mornings have given me have allowed me to have a better distribution of my hours on work, play, sleep, and eating so that I maximize every day of my life here.&nbsp;I only have 4 years to live what I’m sure I’ll look back on as the greatest time of my life. I have to make the most of every&nbsp;day!</p> 
+                         <p>Now, if I can only get myself to go for a run every morning,&nbsp;too…</p> 
+                        </div> 
+                       </div> 
+                      </div> 
+                     </div> 
+                    </div> 
+                    <div class="panel-separator"></div>
+                    <article class="module article-comment-start"> 
+                     <h1 class="module-title zeta">About the author</h1> 
+                     <div class="module-body theta"> 
+                      <p> Hey y’all! My name is Charlene Hong, and I am a proud homegirl from right outside Nashville, Tennessee. I am a freshmen, and I can’t decide whether to concentrate in either Government... <a href="/user/2021" class="iota">View full profile</a> </p> 
+                     </div> 
+                    </article> 
+                    <div class="panel-separator"></div>
+                    <div class="panel-pane pane-block pane-addthis-addthis-block"> 
+                     <div class="pane-content"> 
+                      <div class="addthis_toolbox addthis_default_style  ">
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_facebook"></a> 
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_twitter"></a> 
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_google_plusone_share"></a> 
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_googleplus"></a> 
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_tumblr"></a> 
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_pinterest_share"></a> 
+                       <a href="https://www.addthis.com/bookmark.php?v=300" class="addthis_button_linkedin"></a> 
+                      </div> 
+                     </div> 
+                    </div> 
+                    <div class="panel-separator"></div>
+                    <div class="panel-pane pane-node-comment-form"> 
+                     <div class="pane-content"> 
+                      <form class="comment-form boxed" action="/admissions/hear-our-students/student-blogs/my-morning-routine#comment-form" method="post" id="comment-form" accept-charset="UTF-8">
+                       <div>
+                        <div class="in">
+                         <h2 class="epsilon">Add a Comment</h2>
+                         <div class="legend">
+                          <span class="iota"><span class="required">*</span> Required fields</span>
+                         </div>
+                         <div class="form-item form-type-textfield form-item-name"> 
+                          <label for="edit-name">Name </label> 
+                          <input type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text"> 
+                         </div> 
+                         <input type="hidden" name="form_build_id" value="form-OUJDn36aC-fSfQ6-VRzj_NRd1872q4-r89dG2XM8iuA"> 
+                         <input type="hidden" name="form_id" value="comment_node_student_blog_form"> 
+                         <div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body">
+                          <div id="comment-body-add-more-wrapper">
+                           <div class="text-format-wrapper">
+                            <div class="form-item form-type-textarea form-item-comment-body-und-0-value"> 
+                             <label for="edit-comment-body-und-0-value">Comment <span class="form-required" title="This field is required.">*</span></label> 
+                             <div class="form-textarea-wrapper resizable">
+                              <textarea class="text-full wysiwyg form-textarea required" id="edit-comment-body-und-0-value" name="comment_body[und][0][value]" cols="60" rows="5"></textarea>
+                             </div> 
+                            </div> 
+                            <fieldset class="filter-wrapper form-wrapper" id="edit-comment-body-und-0-format">
+                             <div class="fieldset-wrapper">
+                              <div class="filter-help form-wrapper" id="edit-comment-body-und-0-format-help">
+                               <p><a href="/filter/tips" target="_blank">More information about text formats</a></p>
+                              </div>
+                              <div class="form-item form-type-select form-item-comment-body-und-0-format"> 
+                               <label for="edit-comment-body-und-0-format--2">Text format </label> 
+                               <select class="filter-list form-select" id="edit-comment-body-und-0-format--2" name="comment_body[und][0][format]"><option value="filtered_html" selected>Filtered HTML</option><option value="plain_text">Plain text</option></select> 
+                              </div> 
+                              <div class="filter-guidelines form-wrapper" id="edit-comment-body-und-0-format-guidelines">
+                               <div class="filter-guidelines-item filter-guidelines-filtered_html">
+                                <h3>Filtered HTML</h3>
+                                <ul class="tips">
+                                 <li>Global tokens will be replaced with their respective token values (e.g. [site:name] or [current-page:title]).</li>
+                                 <li>Global tokens will be replaced with their respective token values (e.g. [site:name] or [current-page:title]).</li>
+                                 <li>Web page addresses and e-mail addresses turn into links automatically.</li>
+                                 <li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;blockquote&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;</li>
+                                 <li>Lines and paragraphs break automatically.</li>
+                                 <li>Typographic refinements will be added.</li>
+                                </ul>
+                               </div>
+                               <div class="filter-guidelines-item filter-guidelines-plain_text">
+                                <h3>Plain text</h3>
+                                <ul class="tips">
+                                 <li>Global tokens will be replaced with their respective token values (e.g. [site:name] or [current-page:title]).</li>
+                                 <li>No HTML tags allowed.</li>
+                                 <li>Web page addresses and e-mail addresses turn into links automatically.</li>
+                                 <li>Lines and paragraphs break automatically.</li>
+                                </ul>
+                               </div>
+                              </div>
+                             </div>
+                            </fieldset> 
+                           </div> 
+                          </div>
+                         </div>
+                        </div>
+                        <div class="form-actions form-wrapper" id="edit-actions">
+                         <input type="submit" id="edit-submit" name="op" value="Save" class="form-submit">
+                        </div>
+                       </div>
+                      </form> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="page-content-secondary bk3-1of3 bk4-3of12"> 
+                 <div class="row"> 
+                  <div class="bk2-1of2 bk3-break">
+                   <div class="in">
+                    <article class="module"> 
+                     <h2 class="module-title zeta">Most Recent Posts</h2> 
+                     <div class="module-body theta"> 
+                      <div class="view view-recent-blog-articles view-id-recent_blog_articles view-display-id-panel_pane_1 module view-dom-id-7300f66a168cc49e250f2c020b270e45"> 
+                       <div class="view-content"> 
+                        <ul class="items"> 
+                         <li> <a href="/every-moment-present-present">Every Moment Present is a Present</a> </li> 
+                         <li> <a href="/adventures-awaiting">Adventures Awaiting...</a> </li> 
+                         <li> <a href="/you-live-and-you-learn">You Live and You Learn</a> </li> 
+                         <li> <a href="/admissions/hear-our-students/student-blog/ouroboros-probably-not-still">Ouroboros? Probably not, but still...</a> </li> 
+                         <li> <a href="/admissions/hear-our-students/student-blog/exploring-what-you-love">Exploring What You Love</a> </li> 
+                        </ul> 
+                       </div> 
+                      </div> 
+                     </div> 
+                    </article> 
+                    <div class="panel-separator"></div>
+                    <article class="module"> 
+                     <h2 class="module-title zeta"><a class="sr-only" href="#anchor">Most Popular Topics</a></h2> 
+                     <div class="module-body theta"> 
+                      <div class="view view-most-popular-student-blog-topics view-id-most_popular_student_blog_topics view-display-id-panel_pane_1 module view-dom-id-d1b17296bce059843fad476db358cbd7"> 
+                       <div class="view-content"> 
+                        <ul class="items totals list-crop"> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=3466">Harvard College Connection</a> (231) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=4251">HFGP</a> (70) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=4646">UMRP</a> (61) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=996">freshmen</a> (57) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=771">extracurriculars</a> (44) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=1476">freshman</a> (41) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=101">student life</a> (39) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=776">summer</a> (37) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=1416">Boston</a> (31) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=726">academics</a> (26) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=1381">house life</a> (26) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=2751">study abroad</a> (24) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=4256">Harvard First Generation Program</a> (20) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=1166">food</a> (18) </li> 
+                         <li> <a href="https://college.harvard.edu/admissions/hear-our-students/student-blogs?tid=3151">Freshman Year</a> (18) </li> 
+                        </ul> 
+                       </div> 
+                       <div class="view-footer"> 
+                        <p><a href="https://college.harvard.edu/" class="view-more iota">View more popular&nbsp;topics</a></p> 
+                       </div> 
+                      </div> 
+                     </div> 
+                    </article> 
+                   </div>
+                  </div>
+                  <div class="bk2-1of2 bk3-break">
+                   <div class="in">
+                    <div class="panel-pane pane-block pane-harvard-site-harvard-student-bloggers-select"> 
+                     <div class="pane-content"> 
+                      <script type="text/javascript">
+    /* only show the submit button if a blogger is selected */
+  (function($) {
+    $( document ).ready(function() {
+        validate_button();
+        $('#block-system-main .bk2-1of2 form.blogger-redirect select[name=url]').change(validate_button);
+    });
+
+    function validate_button(){
+
+        if($('#block-system-main .bk2-1of2 form.blogger-redirect select[name=url] option:selected').val()!="Select a blogger")
+        {
+            $('#block-system-main .bk2-1of2 form.blogger-redirect button.button-secondary[type=submit]').show();
+        }
+        else
+        {
+            $('#block-system-main .bk2-1of2 form.blogger-redirect button.button-secondary[type=submit]').hide();
+        }
+    }
+  })(jQuery);
+</script> 
+                      <article class="module"> 
+                       <h2 class="module-title zeta">View by author</h2> 
+                       <form class="blogger-redirect" action="/redirect" method="post"> 
+                        <label for="blogger"> <select name="url"> <option>Select a blogger</option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1786"> Herman Bhupal </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1806"> Rebecca Ramos </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1816"> Jasmine Burnett </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1956"> James Holloway </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1966"> Carlino Mark Natividad </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1986"> Dianisbeth Acquie </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=1996"> Student Blogger </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=2006"> Lena Felton </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=2021"> Charlene Hong </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=2031"> Max Meehan </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=2036"> Ariel Smolik-Valles </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=2056"> Inesha Premaratne </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=26136"> Michael Richard </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=27691"> Savannah Fritz </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=27706"> Viona Shina Leboo </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=27711"> Emily Zoffer </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=27716"> Nu Xiong </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=27861"> Sophie Carroll </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=27911"> Andrea Delgado </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=29081"> Alvin Gordian-Arroyo </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=29091"> Claire Chen </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=29096"> Alice Hu </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=29101"> Halie Olson </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=29106"> Andrew Pardue </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=29196"> Kendall Jackson </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=49757"> Alicia Hamilton </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=49762"> Sarah Grammar </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=49772"> Sarah Gonzalez </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=53921"> William Oh </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=64576"> Ted White </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=64581"> Yesenia Ortiz </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=66676"> Holly Breuer </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=66681"> Gaby Giotti </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=66686"> Cyrus Motanya </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=66711"> Gabriela Thorne </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=66776"> Hunter Richards </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=67431"> Damon Clark </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=67436"> David Olvera-Sanchez </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=67451"> Udodiri Okwandu </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=67546"> Timothy Makalinao </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=77236"> Hasani Hayden </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=77241"> Narayan Narasimhan </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=77366"> McKayla Gourneau </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86086"> Diana Barreto </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86091"> Alexis Brown </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86096"> Jayne Pilachowski </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86131"> Anshi Moreno Jimenez </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86136"> Ana Barros </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86191"> Matthew Sarpong </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86196"> Leo Kim </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86201"> Genesis De Los Santos </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86206"> Elizabeth Quiñonez </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86316"> Ahilya Khadka </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86321"> Marley Brown </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86326"> Louis Aghanwa </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86331"> Laura Doherty </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=86631"> Alexis Machabanski </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=87666"> Noah Cominsky </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=87676"> Bruno Villegas </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109506"> Jessie King </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109511"> Bhekinkosi "BK" Sibanda </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109551"> Alexa Brown </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109556"> Juliana Lamy </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109561"> Julius Wade </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109571"> Laura Veira-Ramirez </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109576"> Cata Butler </option> <option value="https://college.harvard.edu/admissions/hear-our-students/student-blogs?uid=109586"> Rhea Bennett </option> </select> </label> 
+                        <button class="button-secondary" type="submit">View Posts</button> 
+                       </form> 
+                      </article> 
+                     </div> 
+                    </div> 
+                   </div>
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="row in">
+                <div class="hr"></div>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="block-block-21" class="block block-block"> 
+            <div class="content"> 
+             <script type="text/javascript">
+      var addthis_config = {
+         data_ga_property: 'UA-42906607-5'
+      }; 
+</script> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div> 
+        <!-- /.section, /#content --> 
+       </div>
+      </div> 
+      <!-- /#main, /#main-wrapper --> 
+     </div>
+    </div> 
+    <!-- /#page, /#page-wrapper --> 
+    <div class="region region-footer"> 
+     <div id="block-panels-mini-footer-main" class="block block-panels-mini"> 
+      <div class="content"> 
+       <div class="panel-display panel-2col clearfix" id="mini-panel-footer_main"> 
+        <div class="panel-panel panel-col-first"> 
+         <div class="inside">
+          <nav class="panel-pane pane-block pane-menu-menu-quick-links" aria-labelledby="menu-quick-links"> 
+           <h2 class="pane-title" id="menu-quick-links"> College Quick Links </h2> 
+           <div class="pane-content"> 
+            <ul class="quick-links row">
+             <li class="first leaf menu-level-1"><a href="https://apply.college.harvard.edu/status" title="">Applicant Login</a></li> 
+             <li class="leaf menu-level-1"><a href="/contact-us" title="">Contact Us</a></li> 
+             <li class="leaf menu-level-1"><a href="http://www.fas.harvard.edu/home/" title="">Faculty of Arts &amp; Sciences</a></li> 
+             <li class="leaf menu-level-1"><a href="http://www.harvard.edu" title="">Harvard.edu</a></li> 
+             <li class="leaf menu-level-1"><a href="http://map.harvard.edu/" title="">Maps &amp; Directions</a></li> 
+             <li class="last leaf menu-level-1"><a href="http://www.registrar.fas.harvard.edu/" title="">Registrar</a></li> 
+            </ul> 
+           </div> 
+          </nav> 
+         </div> 
+        </div> 
+        <div class="panel-panel panel-col-last"> 
+         <div class="inside">
+          <div class="panel-pane pane-harvard-icons"> 
+           <div class="pane-content"> 
+            <div class="harvard_icons">
+             <a href="http://twitter.com/applytoharvard" class="harvard-icons-twitter">twitter</a>
+             <a href="http://www.facebook.com/harvardadmissions" class="harvard-icons-facebook">facebook</a>
+             <a href="http://www.instagram.com/harvard_admissions" class="harvard-icons-instagram">instagram</a>
+             <a href="http://harvard.tumblr.com/" class="harvard-icons-tumblr">tumblr</a>
+             <a href="https://plus.google.com/b/110269133928001503487/110269133928001503487/posts" class="harvard-icons-googleplus">googleplus</a>
+             <a href="https://www.youtube.com/user/discoverharvard" class="harvard-icons-youtube">youtube</a>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <footer class="page-footer" role="contentinfo"> 
+     <div class="wrap"> 
+      <div class="in"> 
+       <p>Copyright © 2017 The President and Fellows of Harvard College | <a href="http://www.harvard.edu/privacy-statement">Privacy</a> | <a href="http://dmca.harvard.edu/pages/annual-copyright-disclosure">Copyright Disclosure</a> | <a href="http://accessibility.harvard.edu/">Accessibility</a></p> 
+      </div> 
+     </div> 
+    </footer> 
+    <nav id="people-menu" class="nav people-nav"> 
+     <h2 class="element-invisible">Audience</h2> 
+     <div class="wrap"> 
+      <p class="zeta in">For <i class="icon-caret-right"></i></p> 
+      <div class="region region-audience-links"> 
+       <div id="block-harvard-site-harvard-audience-links" class="block block-harvard-site" aria-labelledby="harvard_audience_links" role="navigation"> 
+        <h2 class="element-invisible" id="harvard_audience_links">Audience links</h2> 
+        <div class="content"> 
+         <ul class="row in">
+          <div class="split-left">
+           <li class="first leaf menu-level-1"><a href="/alumni" title="">Alumni</a></li> 
+           <li class="leaf menu-level-1"><a href="/current-students-0" title="">Current Students</a></li> 
+           <li class="leaf menu-level-1"><a href="/faculty" title="">Faculty</a></li> 
+          </div>
+          <div class="split-right">
+           <li class="leaf menu-level-1"><a href="/parents" title="">Parents &amp; Families</a></li> 
+           <li class="leaf menu-level-1"><a href="/prospective-students" title="">Prospective Students</a></li> 
+           <li class="leaf menu-level-1"><a href="/school-counselors" title="">School Counselors</a></li> 
+           <li class="last leaf menu-level-1"><a href="/informacion-en-espanol" title="">Información en Español</a></li> 
+          </div>
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </nav> 
+   </div> 
+   <!-- /.page-content --> 
+  </div> 
+  <div id="modal-container"> 
+   <div class="modal-window"> 
+    <a href="#" class="modal-close icon-remove"></a> 
+    <div class="modal-target"></div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="https://college.harvard.edu/sites/default/files/js/js_MLVgtzZ1ORq9krYqkeOsRay6ou_T-0QZytivuM9tTT8.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d5ee19a50a","applicationID":"56250227","transactionName":"YlwDMksDCEcAW0JeX1sWIAVNCwlaTkhXUFVqVAAIWAUDRj5WWVNVak8IA049FlUGXQ==","queueTime":0,"applicationTime":819,"atts":"ThsARAMZG0k=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

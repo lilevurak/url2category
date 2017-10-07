@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="en-us">
+ <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# sokanufb: http://ogp.me/ns/fb/sokanufb#"> 
+  <title>Sokanu Career Test: The best career aptitude test, free</title> 
+  <!-- Favicon --> 
+  <link rel="icon" type="image/x-icon" href="https://d2imr2faqwhte6.cloudfront.net/static/compiled/images/favicon.222f00b8f086.ico"> 
+  <!-- Zoom limitations for mobile browsers --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <link rel="stylesheet" href="https://d2imr2faqwhte6.cloudfront.net/static/compiled/styles/global.fb299ffe5fd0.css"> 
+  <link type="text/css" rel="stylesheet" href="https://d2imr2faqwhte6.cloudfront.net/static/compiled/styles/career-landing.f7378eaadaca.css"> 
+  <script>
+window.STATIC_URL = "https://d2imr2faqwhte6.cloudfront.net/";
+window.SKNLDR_THROW_ERRORS = false;
+window.SKNLDR_RAVEN_TRACKER_USER_EMAIL = undefined;
+
+(function (w) {
+    var doc = w.document;
+    var ref = doc.getElementsByTagName('script')[0];
+
+    var sknldr = window.sknldr = {
+
+        // track <script> or <link> `el`, callback list for each `nickname` that is initialized
+        assets: {},
+
+        // throws errors that are encountered in callbacks rather than capturing them in Raven
+        throwErrors: window.SKNLDR_THROW_ERRORS || false,
+
+        // provides an optional email address that is passed when logging errors to Raven
+        ravenTrackerUserEmail: window.SKNLDR_RAVEN_TRACKER_USER_EMAIL || undefined,
+
+        load: function(assets, callback) {
+            /* takes an `assets` object, which can be a dictionary, array, or string. The loader will behave differently based on what is passed in:
+
+               - Dictionary: takes an `assets` dictionary, which should contain all the items to be loaded indexed by their 'nickname' key. Loads each item
+                             in the dictionary asynchronously (at the same time)
+                             
+                             e.g. sknldr.load({'jquery': path-to-jquery, 'underscore': path-to-underscore});
+
+               - Array:      takes an array of `assets`, which can either be dictionaries, strings, or even (if you want to be crazy) another array
+                             loads each item in the array  sequentially, waiting until each asset is initialized before loading the next. 
+
+                             e.g. sknldr.load([{'jquery': path-to-jquery, 'underscore': path-to-underscore}, path-to-jquery-dependent-library]);
+
+               - String:     takes a URL to the corresponding asset path
+                             
+                             e.g. sknldr.load('http://jquerycdn.com/jquery.min.js');
+
+
+                The optional `callback` method is run when all assets are loaded
+            */
+            if((typeof assets == 'object') && Array.isArray(assets)) {
+                return sknldr.loadSequence(assets, callback);
+            } else if(typeof assets == 'object') {
+                return sknldr.loadDictionary(assets, callback);
+            } else if(typeof assets == 'string') {
+                return sknldr.loadIndividual(assets, assets, callback);
+            } else {
+                throw Error('sknldr.load cannot parse asset', assets);
+            }
+        },
+
+        done: function (nickname, callback) {
+            /* takes a `nickname` and triggers the `callback` method when the asset with the corresponding `nickname` is loaded. Multiple callback events
+               can be bound on an individual asset. The callback method will be called instantly if the corresponding `nickname` asset has already been
+               loaded at the time that this method is triggered
+            */
+            if (!sknldr.assets[nickname]) { initializeAsset(nickname); }
+            var asset = sknldr.assets[nickname];
+
+            if (asset.loaded) {
+                try { callback(); }
+                catch (e) { sknldr.trackError(e, nickname); }
+            } else {
+                asset.callbacks.push(callback);
+            }
+        },
+
+        loadSequence: function(assets, callback) {
+            /* takes an array of `assets`, which can either be dictionaries, strings, or even (if you want to be crazy) another array
+               calls sknldr.load sequentially, waiting for each item to be loaded in DOM before moving on to the next. When all items in the sequence have been
+               loaded, calls the optional `callback` 
+               Should not be called directly, as the `sknldr.load` method will determine take the same arguments and run the correct loader
+               e.g. sknldr.load([{'jquery': path-to-jquery, 'underscore': path-to-underscore}, path-to-jquery-dependent-library]);
+            */
+            var sequenceStep = 0;
+            var stepsInSequence = assets.length;
+
+            var sequenceLoadedCallback = function() {
+                sequenceStep++;
+                // console.log('---- sequence', sequenceStep, 'of', stepsInSequence, 'completed! ------');
+                if(sequenceStep == stepsInSequence) {
+                    if(callback) { callback(); }
+                } else {
+                    sknldr.load(assets[sequenceStep], sequenceLoadedCallback);
+                }
+            }
+            sknldr.load(assets[sequenceStep], sequenceLoadedCallback);
+        },
+
+        loadDictionary: function(assets, callback) {
+            /* takes an `assets` dictionary, which should contain all the items to be loaded indexed by their 'nickname' key. Loads each item
+               in the dictionary asynchronously (at the same time) and triggers the optional `callback` when all items are loaded
+               Should not be called directly, as the `sknldr.load` method will determine take the same arguments and run the correct loader
+               e.g. sknldr.load({'jquery': path-to-jquery, 'underscore': path-to-underscore});
+            */
+            var assetsLoaded = 0;
+            var totalAssets = Object.keys(assets).length;
+
+            for(var key in assets) {
+                var asset = assets[key];
+                sknldr.loadIndividual(key, asset, function(key, asset) {
+                    assetsLoaded++;
+                    // console.log('loaded asset', assetsLoaded, 'of', totalAssets, ':', key, 'for', assets);
+                    if(assetsLoaded == totalAssets) {
+                        // console.log('all assets loaded for', assets);
+                        if(callback) { callback(); }
+                    }
+                }.bind(this, key, asset));
+            }
+        },
+
+        loadIndividual: function (nickname, src, callback) {
+            /* takes a `nickname` and a `src` path and loads the asset. Runs the optional `callback` method on load. */
+            // set up the callback if one is provided
+            if(callback) {
+                sknldr.done(nickname, callback);
+            }
+
+            // add the static url if a relative path is passed
+            var is_absolute = /^(?:[a-z]+:)?\/\//i.test(src);
+            var has_static_path = (src.indexOf(window.STATIC_URL) == 0);
+            if(!is_absolute && !has_static_path) {
+                src = window.STATIC_URL + src;
+            }
+
+            // don't call load if an element with the same nickname has already been initialized in DOM
+            if (sknldr.assets[nickname] && sknldr.assets[nickname]['el']) return false;
+
+            var el;
+            var asset;
+            var type = (src.split('.').pop() == 'css') ? 'stylesheet' : 'script';
+
+            // initialize local storage
+            var ls = false;
+            try { ls = w.localStorage; }
+            catch (e) { /* Some browsers have local storage disabled for security (e.name == 'SecurityError'). This isn't crucial. */ }
+
+            // store source string in local strage to indicate that it is stored locally; this will cause it to be loaded in blocking manner
+            if (ls && !ls[src]) {
+                try { ls[src] = 'true'; }
+                catch (e) {}
+            }
+
+            // initialize <script> or <link> `el`
+            if (type == 'script') {
+                el = doc.createElement('script');
+                el.src = src;
+                if (!ls || !ls[src]) {
+                    el.async = 'true';
+                }
+            } else {
+                el = doc.createElement('link');
+                el.rel = 'stylesheet';
+                if (!ls || !ls[src]) {
+                    el.media = 'only foo';
+                    setTimeout(function () { el.media = 'all'; });
+                }
+                el.href = src;
+            }
+
+            // store reference to <link> or <script> element in assets dictionary
+            if (!sknldr.assets[nickname]) {
+                initializeAsset(nickname);
+            }
+            asset = sknldr.assets[nickname];
+            asset.el = el;
+
+            // handle callbacks
+            el.onload = el.onReadyStateChange = function () {
+                // console.log('individual asset loaded', nickname);
+                if (this.readyState && this.readyState != 'complete' && this.readyState != 'loaded') return;
+                asset.loaded = true;
+                for (var i = 0; i < asset.callbacks.length; i++) {
+                    try { asset.callbacks[i](); }
+                    catch (e) { sknldr.trackError(e, nickname); }
+                }
+            };
+
+            // everything that tests timeouts
+            var timeOut = setTimeout(function () {
+                sknldr.trackError('Asset Timed Out', nickname);
+            }, 15000);
+
+            // unshift to ensure that timeout is called first
+            asset.callbacks.unshift(function () { clearTimeout(timeOut); });
+
+            // finally, add the element into the DOM
+            ref.parentNode.insertBefore(el, ref);
+        },
+
+        trackError: function(e, assetName) {
+            // make sure errors are instances of Error class
+            if(typeof e == 'string') {
+                e = new Error(e);
+            }
+            if(sknldr.throwErrors) {
+                throw e;
+            }
+            if((typeof window.mixpanel == 'undefined') || (typeof Raven == 'undefined')) {
+                return setTimeout(function () { sknldr.trackError(e, assetName) }, 250);
+            }
+
+            // track in mixpanel
+            mixpanel.track('Script Load Fail', {
+                'Asset Name': assetName,
+                'Error': e
+            });
+
+            // track in raven
+            if(sknldr.ravenTrackerUserEmail) {
+                Raven.setUserContext({email: sknldr.ravenTrackerUserEmail})
+            }
+            Raven.captureException(e, {
+                extra: {
+                    'Asset Name': assetName
+                }
+            });
+        }
+    };
+
+    function initializeAsset (nickname) {
+        sknldr.assets[nickname] = {'el': undefined, 'callbacks': [], loaded: false};
+    }
+
+
+})(this);
+</script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="https://d2imr2faqwhte6.cloudfront.net/static/lib/jquery/jquery-2.1.4.min.f9c7afd05729.js"><\/script>');</script> 
+  <script>
+            function initHasJS () {
+                var body = document.querySelector('body');
+                body.classList = body.className.replace('nojs', '');
+            }
+
+            function preloadSplashPhotos () {
+                try {
+                    var pageHeaderPhoto = document.querySelector('.page-header-photo');
+                    if (pageHeaderPhoto) {
+                        var pageHeaderPhotoPreloader = new Image();
+                        pageHeaderPhotoPreloader.onload = setTimeout(function () {
+                            // This timeout is needed to make IE work.
+                            pageHeaderPhoto.className = pageHeaderPhoto.className.replace('preload', '');
+                        }.bind(this), 100);
+                        pageHeaderPhotoPreloader.src = pageHeaderPhoto.style.backgroundImage.split('("')[1].split('")')[0];
+                    }
+                } catch (e) {}
+            }
+        </script> 
+ </head> 
+ <body class="s-logged-out  nojs"> 
+  <script>initHasJS();</script> 
+  <div id="fb-root" role="presentation" aria-hidden="true"></div> 
+  <!-- required for any facebook UI interaction --> 
+  <nav class="top-bar logged-in-False " role="navigation" data-options="is_hover: false" data-topbar> 
+   <ul class="title-area"> 
+    <li class="name clearfix"> <a class="logo" href="/" data-track="mixpanel" data-target="Home" data-link-type="Logo">sokanu</a> </li> 
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> 
+   </ul> 
+   <section class="top-bar-section" id="navbar-content" role="banner"> 
+    <!-- global navigation --> 
+    <ul class="left"> 
+     <li class="active"> <a href="/career-test/" data-track="mixpanel" data-target="Career Test" data-link-type="Header">Career Test</a> </li> 
+     <li class=""> <a href="/careers/" data-track="mixpanel" data-target="Careers" data-link-type="Header">Careers</a> </li> 
+     <li class=""> <a href="/jobs/" data-track="mixpanel" data-target="Jobs" data-link-type="Header">Jobs</a> </li> 
+     <li class=""> <a href="/degrees/" data-track="mixpanel" data-target="Degrees" data-link-type="Header">Degrees</a> </li> 
+     <li class=""> <a href="#" data-reveal-id="sign-up" data-track="mixpanel-modal" data-target="Sign Up Modal" data-link-type="Header">Sign Up</a> </li> 
+     <li class=""> <a href="#" data-reveal-id="login" data-track="mixpanel-modal" data-target="Login" data-link-type="Header">Log In</a> </li> 
+     <li class=""> <a href="/blog/" data-track="mixpanel" data-target="Blog" data-link-type="Header">Blog</a> </li> 
+    </ul> 
+    <!-- end global navigation --> 
+    <!-- help icon --> 
+    <div class="right"> 
+     <a href="/faqs/" class="faq-anchor" title="Get Help" aria-label="Get Help">?</a> 
+    </div> 
+    <!-- end help icon --> 
+    <!-- account dropdown --> 
+    <ul class="right navbar-sokanu-account"> 
+     <!-- autocompleting search for careers --> 
+     <form class="right site-search " role="combobox" aria-autocomplete="both" aria-haspopup="true" action="/search/"> 
+      <div class="js-site-search" data-value="" name="q"></div> 
+      <button type="submit" class="site-search-button js-button" aria-label="Clear search query"><span style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Search</span> <img class="icon search" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/search.d71717d1d8e7.svg" alt="Search"> <img class="icon close" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/close.69c5e89a412e.svg" alt="Clear search box"> <img class="icon check" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/check.0bb4606521b4.svg" alt="Search pending"> </button> 
+     </form> 
+     <!-- end search --> 
+    </ul>
+   </section> 
+   <div class="global-progress"> 
+   </div> 
+  </nav> 
+  <div role="main"> 
+   <header class="page-header large test-header landing no-burst"> 
+    <div class="page-header-photo header-photo-bright" style="background-image: url(https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/career-test-splash.c8ce586bba03.jpg)" role="presentation" aria-hidden="true"></div> 
+    <div class="row"> 
+     <div class="small-12 medium-8 large-6 columns"> 
+      <h1>Sokanu <span>Career Test</span></h1> 
+      <div class="page-header-description"> 
+       <p class="leader">The world's best career aptitude test, 100% free. Discover your perfect career in about 20 minutes.</p> 
+      </div> 
+      <a href="#" class="button primary large test-cta" data-reveal-id="sign-up" data-track="mixpanel-modal" data-target="Sign Up Modal" data-link-type="Take The Free Career Test" data-default-test="general" data-show-test-picker="false">Take the free career test</a> 
+      <div class="row test-stats"> 
+       <div class="column small-4 medium-3"> 
+        <span id="general-num-careers" class="test-stat-value">800</span> 
+        <label for="general-num-careers" class="test-stat-label">Careers </label>
+       </div> 
+       <div class="column small-4 medium-3"> 
+        <span id="general-test-length" class="test-stat-value">20</span> 
+        <label for="general-test-length" class="test-stat-label">Minutes </label>
+       </div> 
+       <div class="column small-4 medium-3 end"> 
+        <span id="general-num-reports" class="test-stat-value">3</span> 
+        <label for="general-num-reports" class="test-stat-label">Reports </label>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header> 
+   <section class="page-section full white has-video"> 
+    <div class="row"> 
+     <div class="small-12 medium-7 medium-push-5 columns"> 
+      <h2>What is the Sokanu Career Test?</h2> 
+      <p class="leader"> Sokanu has developed the most comprehensive career test ever built. </p> 
+      <p> The Sokanu career test is a 20 minute interest, personality, and preference assessment that measures you against over 100 traits and uses that data to accurately match you to over 800 careers. </p> 
+      <p> Other career finder quiz sites ask you obvious questions to match you against generic careers like teacher, nurse, and fireman. Our career test actually builds a psychometric model of <em>who you are</em> and matches you against career data we collect from multiple sources. </p> 
+     </div> 
+     <div class="small-10 small-pull-1 medium-5 medium-pull-7 columns"> 
+      <div class="demo-video"> 
+       <img src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/career-test/iphone.50eba4189a52.png" style="" alt="The sokanu career test works great on an iPhone!"> 
+       <video class="" width="350" height="672" autoplay loop> 
+        <source src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/career-test/assessment.d2a0e184ac54.mp4" type="video/mp4"> 
+       </video> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <section class="page-section checkout full primary-color"> 
+    <br> 
+    <div class="row text-center"> 
+     <div class="columns"> 
+      <h2>4 Dimensions of Fit</h2> 
+      <p class="leader">What does it mean to "fit" with a career? We measure it four different ways.</p> 
+     </div> 
+    </div> 
+    <div class="row spacing-top-6 text-center"> 
+     <div class="small-12 medium-3 columns"> 
+      <img style="max-height:50px; height:auto;" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/scalegroup-icons/interests.3dfa946e4b5a.png" aria-hidden="true"> 
+      <h4>Interests</h4> 
+      <p><strong>Will I find this career interesting?</strong></p> 
+      <p>Research shows that people's interests in a career are the number one predictor of satisfaction.</p> 
+     </div> 
+     <div class="small-12 medium-3 columns"> 
+      <img style="max-height:50px; height:auto;" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/scalegroup-icons/personality.b43f7c1abbb0.png" aria-hidden="true"> 
+      <h4>Personality</h4> 
+      <p><strong>Will I be good at this career?</strong></p> 
+      <p>Personality fit with a career is the best predictor of on-job performance. Jobs with high personality fit are not always obvious and might surprise you.</p> 
+     </div> 
+     <div class="small-12 medium-3 columns"> 
+      <img style="max-height:50px; height:auto;" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/scalegroup-icons/work-environment.b508972f2ce5.png" aria-hidden="true"> 
+      <h4>Workplace</h4> 
+      <p><strong>Will the typical workplace of this career make me happy?</strong></p> 
+      <p>Whether you're in office or outside, with supervisors or independent, are a large determinant of at-work happiness.</p> 
+     </div> 
+     <div class="small-12 medium-3 columns"> 
+      <img style="max-height:50px; height:auto;" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/scalegroup-icons/experience.75f5b9027ac2.png" aria-hidden="true" data-equalizer-watch> 
+      <h4>History &amp; Goals</h4> 
+      <p><strong>Will my life position help me get a job in this career?</strong></p> 
+      <p>Where you live, your experience, and your salary expectations are all important when looking at not just careers but jobs.</p> 
+     </div> 
+    </div> 
+    <br>
+    <br>
+    <br> 
+   </section> 
+   <section class="page-section full"> 
+    <div class="row"> 
+     <div class="small-12 columns text-center"> 
+      <h2 class="spacing-top-10">How the Career Test Works</h2> 
+      <p class="muted leader"> Our assessment measures who you are and matches you against several aspects of what make a perfect career. </p> 
+      <br> 
+      <img src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/career-test/how-career-test-works.213fc6f144cb.png" class="spacing-top-4 spacing-bottom-10" alt="To determine your match, the sokanu career test compares the discrete elements of what makes you unique, and what makes a career unique"> 
+     </div> 
+    </div> 
+   </section> 
+   <section class="page-section full white faq"> 
+    <div class="row"> 
+     <h2>Frequently Asked Questions</h2> 
+     <div class="question-wrap"> 
+      <div class="question"> 
+       <h4>Is Sokanu really free?</h4> 
+       <p> We want to help everyone learn more about themselves and make more informed career decisions, so we've made the entire Sokanu assessment free. We also offer an <a href="/edu">education product</a> that helps the career services departments of schools connect with their students. </p> 
+      </div> 
+      <div class="question"> 
+       <h4>How long is the Sokanu career test?</h4> 
+       <p> The full assessment takes about 20 minutes to take. However, our assessment is comprised of four components and each component will unlock one dimension of fit. While we suggest completing the entire assessment for the best results, you should see decent career recommendations after about 5 minutes. </p> 
+      </div> 
+      <div class="question"> 
+       <h4>How is Sokanu different from other career placement tests, career aptitude tests, etc.?</h4> 
+       <p> Most career tests use something called <a href="https://en.wikipedia.org/wiki/Holland_Codes" target="_blank">Holland Codes</a> to measure your interests and match you to a small set of generic careers like Nurse, Firefighter, or teacher. The problem with that approach is that interests are <em>only one measure</em> of compatibility. You might be interested in being an Investment Banker, but what if you don't like long hours or sitting down a lot? You might like being a teacher, but what if you care about opportunities for career advancement? </p> 
+       <p> Sokanu gathers information about who you are in many aspects, including your interests, personality, work history, salary expectations, work style preferences, and much more. We gather more than 140 unique traits about who you are, and use this information to give you the best possible recommendations. </p> 
+      </div> 
+      <div class="question"> 
+       <h4>Who developed the Sokanu career test?</h4> 
+       <p> Our items were developed by a team of I/O psychologists with experience writing and administering personality and cognitive ability assessments. Career data comes from numerous sources, including the U.S. Department of Labour's <a href="https://www.onetonline.org/" target="blank">O*Net database</a>, the UK Government, User data, the Bureau of Labor Statistics, and Sokanu's proprietary content team. The test platform was developed by Sokanu engineers. </p> 
+      </div> 
+      <div class="question"> 
+       <h4>Does your test discriminate?</h4> 
+       <p> We work hard to make sure our test doesn't discriminate against race, gender, or age where relevant. We publish all of our <a href="/science/group-difference/" target="_blank">group discrimination data</a>. </p> 
+      </div> 
+      <div class="question"> 
+       <h4>How good are you at predicting what career is right for me?</h4> 
+       <p> The short answer is very. We have more data and tools to optimize our career predictions than any other career test on the planet. We validate our career predictions using two methods. First we cross-reference our interest predictions with users' propensity to "like" a career on our website to ensure that our interest scales do indeed predict interest. Second, we validate our overall predictions with users' actual review of their career history in order to optimize the predictive ability of our overall match score. Learn more about the <a href="/science/career-prediction-validity/">validity of our career predictions here</a>. </p> 
+      </div> 
+      <div class="question"> 
+       <h4>Is this career test for adults? Is this career test for teens and high school students?</h4> 
+       <p> Both. People change careers any many different stages of life, and nothing about our assessment is age specific. </p> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+  </div> 
+  <div class="site-footer-container"> 
+   <div class="container"> 
+    <footer class="site-footer" role="contentinfo"> 
+     <div class="row"> 
+      <div class="columns medium-3"> 
+       <h6 class="underline" id="for-individuals">For Individuals</h6> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="for-individuals"> 
+        <li><a href="#" data-reveal-id="login" class="small">Login to Your Account</a></li> 
+        <li><a href="#" data-reveal-id="sign-up" class="small">Create a New Account</a></li> 
+        <li><a href="/career-test/" data-track="mixpanel" data-link-type="Footer" data-target="Career Test" class="small">The Sokanu Career Test</a></li> 
+        <li><a href="/careers/collections/" data-track="mixpanel" data-link-type="Footer" data-target="Collections">Career Collections</a></li> 
+        <li><a href="/faqs/" data-track="mixpanel" data-link-type="Footer" data-target="FAQ">FAQ Knowledge Base</a></li> 
+       </ul> 
+      </div> 
+      <div class="columns medium-3"> 
+       <h6 class="underline" id="for-organizations">For Organizations</h6> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="for-organizations"> 
+        <li><a href="/edu/" data-track="mixpanel" data-link-type="Footer" data-target="Edu Site" class="small">Sokanu Edu</a></li> 
+        <li><a href="/science/" data-track="mixpanel" data-link-type="Footer" data-target="Technical Manual" class="small">Technical Manual</a></li> 
+       </ul> 
+      </div> 
+      <div class="columns medium-6"> 
+       <h6 class="underline">© Sokanu 2017 <span class="light hide-for-small" style="display: inline !important;">- Made in Vancouver, Canada</span></h6> 
+       <div class="row"> 
+        <div class="columns medium-6"> 
+         <ul class="no-bullet" role="navigation"> 
+          <li><a href="/about/" data-track="mixpanel" data-link-type="Footer" data-target="About Sokanu">About Sokanu</a></li> 
+          <li><a href="/contact/" data-track="mixpanel" data-link-type="Footer" data-target="Contact">Contact</a></li> 
+          <li><a href="/work/" data-track="mixpanel" data-link-type="Footer" data-target="Work at Sokanu">Work at Sokanu</a></li> 
+         </ul> 
+        </div> 
+        <div class="columns medium-6"> 
+         <ul class="no-bullet" role="navigation"> 
+          <li><a href="/terms/" data-track="mixpanel" data-link-type="Footer" data-target="Terms &amp; Conditions">Terms &amp; conditions</a></li> 
+          <li><a href="/privacy/" data-track="mixpanel" data-link-type="Footer" data-target="Privacy">Privacy</a></li> 
+          <!-- <li><a href="#">Sitemap</a></li> --> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row secondary-links"> 
+      <div class="columns medium-6"> 
+       <h6 id="popular-careers-footer">Popular careers</h6> 
+       <p class="description small" id="popular-careers-footer-def"> Dive in and expose yourself to a vast expanse of knowledge covering over 800 careers. Here are some of the questions people often ask. </p> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="popular-careers-footer" aria-describedby="popular-careers-footer-def"> 
+        <li><a href="/careers/accountant/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does an accountant do?</a></li> 
+        <li><a href="/careers/neurologist/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does a neurologist do?</a></li> 
+        <li><a href="/careers/chiropractor/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does an chiropractor do?</a></li> 
+        <li><a href="/careers/social-worker/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does a social worker do?</a></li> 
+        <li><a href="/careers/paralegal/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does a paralegal do?</a></li> 
+        <li><a href="/careers/mechanical-engineer/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does a mechanical engineer do?</a></li> 
+        <li><a href="/careers/psychologist/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does a psychologist do?</a></li> 
+        <li><a href="/careers/medical-assistant/" data-track="mixpanel" data-link-type="Footer" data-target="Career" class="small">What does a medical assistant do?</a></li> 
+       </ul> 
+      </div> 
+      <div class="columns medium-6"> 
+       <h6 id="salary-information-footer">Salary information</h6> 
+       <p class="description small" id="salary-information-footer-def"> How important is money? Whatever your answer is, sokanu has great information for you. See career salary ranges based on location, experience and more. </p> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="salary-information-footer" aria-describedby="salary-information-footer-def"> 
+        <li><a href="/careers/physical-therapist/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Physical therapist salary</a></li> 
+        <li><a href="/careers/pharmacist/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Pharmacist salary</a></li> 
+        <li><a href="/careers/medical-assistant/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Medical assistant salary</a></li> 
+        <li><a href="/careers/anesthesiologist/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Anesthesiologist salary</a></li> 
+        <li><a href="/careers/flight-attendant/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Flight attendant salary</a></li> 
+        <li><a href="/careers/dentist/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Dentist salary</a></li> 
+        <li><a href="/careers/radiologist/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Radiologist salary</a></li> 
+        <li><a href="/careers/paralegal/salary/" data-track="mixpanel" data-link-type="Footer" data-target="Career Salary" class="small">Paralegal salary</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="row secondary-links"> 
+      <div class="columns medium-6"> 
+       <h6 id="job-listings-footer">Job listings</h6> 
+       <p class="description small" id="job-listings-footer-def"> Find your perfect career then find real job positions to really kick things off. We provide job listings for most careers through our partners. </p> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="job-listings-footer" aria-describedby="job-listings-footer-def"> 
+        <li><a href="/jobs/?careers=102" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Flight attendant jobs</a></li> 
+        <li><a href="/jobs/?careers=345" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Receptionist jobs</a></li> 
+        <li><a href="/jobs/?careers=291" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Medical assistant jobs</a></li> 
+        <li><a href="/jobs/?careers=487" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Nanny jobs</a></li> 
+        <li><a href="/jobs/?careers=11" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Firefighter jobs</a></li> 
+        <li><a href="/jobs/?careers=100" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Pilot jobs</a></li> 
+        <li><a href="/jobs/?careers=382" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Dental assistant jobs</a></li> 
+        <li><a href="/jobs/?careers=311" data-track="mixpanel" data-link-type="Footer" data-target="Jobs" class="small">Paralegal jobs</a></li> 
+       </ul> 
+      </div> 
+      <div class="columns medium-6"> 
+       <h6 id="career-collections-footer">Career collections</h6> 
+       <p class="description small" id="career-collections-footer-def"> <em>Lists of careers</em> that help you see careers in a new light. Which are the <a href="/careers/collections/best-careers-2015/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="plain">best careers for 2017</a>? Which careers offer the <a href="/careers/collections/highest-paying-jobs/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="plain">highest paying jobs</a>? What are the <a href="/careers/collections/careers-for-introverts/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="plain">best careers for introverts</a>? </p> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="career-collections-footer" aria-describedby="career-collections-footer-def"> 
+        <li><a href="/careers/collections/creative-careers/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="small">Creative Careers</a></li> 
+        <li><a href="/careers/collections/best-careers-2015/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="small">Best Careers for 2015</a></li> 
+        <li><a href="/careers/collections/highest-paying-jobs/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="small">Highest Paying Jobs</a></li> 
+        <li><a href="/careers/collections/intj-careers/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="small">INTJ Careers</a></li> 
+        <li><a href="/careers/collections/outdoor-careers/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="small">Outdoor Careers</a></li> 
+        <li><a href="/careers/collections/careers-for-introverts/" data-track="mixpanel" data-link-type="Footer" data-target="Collection" class="small">Careers for Introverts</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="row secondary-links"> 
+      <div class="columns medium-6"> 
+       <h6 id="what-can-i-do-footer">What can I do with my degree?</h6> 
+       <p class="description small" id="what-can-i-do-footer-def"> Sometimes it's obvious what you can do with a degree. Sometimes it's not. Our degree pages let you explore career options for your degree. </p> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="what-can-i-do-footer" aria-describedby="what-can-i-do-footer-def"> 
+        <li><a href="/degrees/psychology/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with a psychology degree?</a></li> 
+        <li><a href="/degrees/environmental-science/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with a environmental science degree?</a></li> 
+        <li><a href="/degrees/nursing/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with a nursing degree?</a></li> 
+        <li><a href="/degrees/social-work/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with a social work degree?</a></li> 
+        <li><a href="/degrees/sociology/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with an sociology degree?</a></li> 
+        <li><a href="/degrees/economics/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with an economics degree?</a></li> 
+        <li><a href="/degrees/history/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with a history degree?</a></li> 
+        <li><a href="/degrees/communications/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">What can I do with a communications degree?</a></li> 
+       </ul> 
+      </div> 
+      <div class="columns medium-6"> 
+       <h6 id="popular-degrees-footer">Popular Degrees</h6> 
+       <p class="description small" id="popular-degrees-footer-def"> Explore some of our more popular degrees. Learn how popular a degree is, how much graduates earn, and what the job market looks like for over 200 degrees. </p> 
+       <ul class="no-bullet" role="navigation" aria-labelledby="popular-degrees-footer" aria-describedby="popular-degrees-footer-def"> 
+        <li><a href="/degrees/photography/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Photography Degree</a></li> 
+        <li><a href="/degrees/graphic-design/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Graphic Design Degree</a></li> 
+        <li><a href="/degrees/computer-forensics/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Computer Forensics Degree</a></li> 
+        <li><a href="/degrees/cosmetology/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Cosmetology Degree</a></li> 
+        <li><a href="/degrees/geography/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Geography Degree</a></li> 
+        <li><a href="/degrees/petroleum-engineering/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Petroleum Engineering Degree</a></li> 
+        <li><a href="/degrees/botany/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Botany Degree</a></li> 
+        <li><a href="/degrees/physiology/" data-track="mixpanel" data-link-type="Footer" data-target="Degree" class="small">Physiology Degree</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+            window.mixpanel_track_links_json = {};
+            window.mixpanel_track_links_source = 'Career Test';
+        </script> 
+  <input type="hidden" name="csrfmiddlewaretoken" value="bFiwWmiqaGPZ82Od7VIx2doc3Qp5OlZ4"> 
+  <!--[if !(IE 8)]><!--> 
+  <script>
+        // Ignore list based off: https://gist.github.com/1878283
+        var ravenOptions = {
+            // Will cause a deprecation warning, but the demise of `ignoreErrors` is still under discussion.
+            // See: https://github.com/getsentry/raven-js/issues/73
+            whitelistUrls: [
+                /https?:\/\/(www\.?)sokanu\.com/,
+                /https?:\/\/sokanu-staging\.heroku-app\.com/,
+                /https?:\/\/localhost:8000/,
+                /https?:\/\/.*cloudfront\.net/,
+                'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
+                '//cdn.ravenjs.com/1.1.19/backbone,jquery,native/raven.min.js',
+                'https://js.stripe.com/v2/',
+                'https://gdc.indeed.com/ads/apiresults.js',
+                'https://www.google.com/jsapi'
+            ],
+            ignoreErrors: [
+                // Random plugins/extensions
+                'top.GLOBALS',
+                // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
+                'originalCreateNotification',
+                'canvas.contentDocument',
+                'MyApp_RemoveAllHighlights',
+                'http://tt.epicplay.com',
+                'Can\'t find variable: ZiteReader',
+                'jigsaw is not defined',
+                'ComboSearch is not defined',
+                'http://loading.retry.widdit.com/',
+                'atomicFindClose',
+                // Facebook borked
+                'fb_xd_fragment',
+                // ISP "optimizing" proxy `Cache-Control: no-transform` seems to reduce this. (thanks @acdha)
+                // See http://stackoverflow.com/questions/4113268/how-to-stop-javascript-injection-from-vodafone-proxy
+                'bmi_SafeAddOnload',
+                'EBCallBackMessageReceived',
+                // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
+                'conduitPage'
+            ],
+            ignoreUrls: [
+                // Facebook flakiness
+                /graph\.facebook\.com/i,
+                // Facebook blocked
+                /connect\.facebook\.net\/en_US\/all\.js/i,
+                // Woopra flakiness
+                /eatdifferent\.com\.woopra-ns\.com/i,
+                /static\.woopra\.com\/js\/woopra\.js/i,
+                // Chrome extensions
+                /extensions\//i,
+                /^chrome:\/\//i,
+                // Other plugins
+                /127\.0\.0\.1:4001\/isrunning/i,  // Cacaoweb
+                /webappstoolbarba\.texthelp\.com\//i,
+                /metrics\.itunes\.apple\.com\.edgesuite\.net\//i
+            ]
+        };
+        sknldr.load('https://d2imr2faqwhte6.cloudfront.net/static/lib/raven.e6c9f96233b4.js', function() { Raven.config('https://ca13334bd5204bf68f27a3d45d877a9f@app.getsentry.com/70825', ravenOptions).install(); });
+    </script> 
+  <!--<![endif]--> 
+  <!-- mixpanel initialization --> 
+  <script>
+
+    // Load mixpanel tracker
+    (function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+    mixpanel.init("7d3d3d7f76b416df31df49815b670e19", {
+        'loaded': window.mixpanelLoadedCallback
+    });
+
+    // Link events to member
+    
+
+    // Track member registration
+    
+
+
+    
+
+    // Register site-wide mixpanel superproperties
+    mixpanel.register({
+        'Is Possible Bot': false,
+        'Authenticated': false,
+        'Is Super User': false,
+        'Is Staff': false,
+        'From Email': false,
+        'Is Schools Member': false,
+        'Experiment: Career Report Hover CTA': "Want to see how you compare?",
+        'GA Full-Page Bottom CTA Experiment': false,
+        'Career Wiki System': true,
+        'XP: Zip Emails': '2nd Modal: Control',
+        
+        
+    });
+
+    
+
+    // Patch the a `track` method on the mixpanel library
+    // This method is identical to `mixpanel.track`, but it executes the callback if mixpanel has not returned within 350ms
+    // Addresses an issue in the mixpanel library where the library has not been loaded (becuase of a timeout or blocked by library),
+    // and the initialized version is used instead. When this occurs, callbacks are never triggered
+    var unpatchedMixpanelTrack = mixpanel.track;
+    mixpanel.track = function(event_name, properties, callback) {
+        if(!callback) {
+            return unpatchedMixpanelTrack(event_name, properties);
+        } else {
+            // make it 50ms over mixpanel's default 300ms callback timeout
+            var callbackSafetyTimeout = setTimeout(function() { callback(); }, 350);
+            unpatchedMixpanelTrack(event_name, properties, function() {
+                clearTimeout(callbackSafetyTimeout);
+                callback();
+            });
+        }
+    };
+</script> 
+  <!-- end mixpanel initialization --> 
+  <script>
+    // Passing important vars from Django to JS.
+    var STATIC_URL = window.STATIC_URL = 'https://d2imr2faqwhte6.cloudfront.net/',
+        DEBUG = window.DEBUG = false,
+        FACEBOOK_APP_ID = window.FACEBOOK_APP_ID = '263514677100821';
+    // Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    if(window.ga) {
+        
+            ga('create', 'UA-29974300-1', 'auto');
+        
+        
+        ga('send', 'pageview');
+    }
+</script> 
+  <script>
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    function sameOrigin(url) {
+        // test that a given url is a same-origin URL
+        // url could be relative or scheme relative or absolute
+        var host = document.location.host; // host + port
+        var protocol = document.location.protocol;
+        var sr_origin = '//' + host;
+        var origin = protocol + sr_origin;
+        // Allow absolute or scheme relative URLs to same origin
+        return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+            (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+            // or any other URL that isn't scheme relative or absolute i.e relative.
+            !(/^(\/\/|http:|https:).*/.test(url));
+    }
+
+    function ajaxCSRFSetup() {
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                    // Send the token to same-origin, relative URLs only.
+                    // Send the token only if the method warrants CSRF protection
+                    // Using the CSRFToken value acquired earlier
+                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                }
+            }
+        });
+    }
+
+    $(function () {
+        window.getCookie = function (name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = $.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        var csrftoken = window.csrftoken = getCookie('csrftoken');
+
+        ajaxCSRFSetup();
+    });
+</script> 
+  <script>
+    $(function () {
+        // helper method for functions that generate 'Link Clicked' mixpanel tracking events
+        function generateLinkClickedProperties(el) {
+            return $.extend({}, {
+                'Source': window.mixpanel_track_links_source,
+                'Target': $(el).data('target'),
+                'Link Type': $(el).data('linkType')
+            }, window.mixpanel_track_links_json);
+        }
+
+        // Mixpanel link tracking
+        mixpanel.track_links($('a[data-track="mixpanel"]'), 'Link Clicked', generateLinkClickedProperties);
+
+        // Foundation modals and mixpanel.track_links conflict necessitates separate tracking method
+        $('a[data-track="mixpanel-modal"]').off('click.modal').on('click.modal', function (e) {
+            e.preventDefault();
+            mixpanel.track('Link Clicked', generateLinkClickedProperties(this));
+        });
+
+        mixpanel.track_forms('.js-track-form', 'Form Submitted', function (el) {
+            return $.extend({}, {
+                action: $(el).data('action'),
+                'Target': $(el).data('target'),
+                'Source': window.mixpanel_track_links_source
+            }, window.mixpanel_track_links_json);
+        });
+
+        sknldr.load('https://d2imr2faqwhte6.cloudfront.net/static/lib/foundation/js/vendor/fastclick.7dd167608163.js');
+
+        // load foundation
+        sknldr.load([{'modernizr': 'https://d2imr2faqwhte6.cloudfront.net/static/lib/foundation/js/vendor/modernizr.439d2e61fa82.js'}, {'foundation': 'https://d2imr2faqwhte6.cloudfront.net/static/lib/foundation/js/foundation.min.6b2ec41c18b2.js'}]);
+        sknldr.done('foundation', function() {
+            Foundation.global.namespace = '';
+
+            $(document).foundation({ reveal: { animation: 'fade' } });
+            $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+                if($(this).find("input:not([type=hidden])")[0]){
+                    $(this).find("input:not([type=hidden])")[0].focus();
+                }
+                else if($(this).first("h1, h2, h3, h4, h5, h6")){
+                    $(this).first("h1, h2, h3, h4, h5, h6").focus();
+                }
+            });
+        });
+
+        // load react, typeahead, and serach libraries
+        sknldr.load([
+            {'react': 'https://d2imr2faqwhte6.cloudfront.net/static/lib/react.c7d287011191.js'},
+            {'typeahead': 'https://d2imr2faqwhte6.cloudfront.net/static/compiled/scripts/typeahead-bundle.fd29d5a82587.js'},
+            {'search': 'https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/scripts/search.5a10a9b6a1ea.js'}
+        ]);
+
+        // test that react initialized properly
+        sknldr.done('react', function() {
+            if(typeof React == 'undefined') {
+                sknldr.trackError('Asset Test Failed', 'react');
+            }
+        });
+
+        
+        // Non-blocking Facebook authentication
+        sknldr.load({'fb_login': 'https://d2imr2faqwhte6.cloudfront.net/static/compiled/scripts/facebook/login.5f1ec377af6f.js'}, function() { $('.js-fb-auth').facebook_login(); });
+        
+
+        // Non-blocking Typekit
+        sknldr.load({'typekit': '//use.typekit.net/eja1dls.js'}, function() {
+            Typekit.load({
+                active: function () { if(window.typekit_loaded) { window.typekit_loaded(); } },
+                inactive: function() { if(window.typekit_loaded) { window.typekit_loaded(); } }
+            });
+        });
+
+    });
+</script> 
+  <script>
+
+    // Tracking
+    if(window.ga) { ga('send', 'event', 'careertest', 'view career test'); }
+    mixpanel.people.set({'Has Viewed Career Test': true});
+    mixpanel.track('View Landing', {
+        'Page': 'Career Test'
+    });
+
+</script> 
+  <script>
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'www.fullstory.com';
+    window['_fs_org'] = '2C3J2';
+    window['_fs_namespace'] = 'FS';
+    (function(m,n,e,t,l,o,g,y){
+        if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
+        g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+        o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+        y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+        g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+        g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+        g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+        d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+        ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+    })(window,document,window['_fs_namespace'],'script','user');
+</script> 
+  <div id="sign-up" class="auth-modal reveal-modal" data-reveal aria-hidden="true" role="dialog"> 
+   <a href="#" class="auth-close close-reveal-modal" aria-label="Close">Close ×</a> 
+   <div class="auth-logo"></div> 
+   <div class="auth-content"> 
+    <form method="POST" id="sign-up-form" action="/members/register/?next="> 
+     <input type="hidden" name="registration_form" value="email_only"> 
+     <input type="hidden" name="csrfmiddlewaretoken" value="bFiwWmiqaGPZ82Od7VIx2doc3Qp5OlZ4"> 
+     <div class="auth-body"> 
+      <div class="auth-title">
+       Start your free career test
+      </div> 
+      <div class="auth-tag">
+       We’ll email you a password to keep your test progress.
+      </div> 
+      <div class="auth-option"> 
+       <div class="auth-bullet active" data-reg-type="email"></div> 
+       <div class="auth-label">
+        Email Address
+       </div> 
+       <input type="email" name="email" class="auth-input" placeholder="you@example.com"> 
+      </div> 
+      <div class="auth-option"> 
+       <div class="auth-bullet" data-reg-type="fb"></div> 
+       <div class="auth-label">
+        Facebook
+       </div> 
+      </div> 
+      <input type="text" name="first-name" placeholder="If you're a human leave this blank" style="display:none;"> 
+      <button class="auth-button">Start</button> 
+     </div> 
+     <div class="auth-footer"> 
+      <div class="auth-point"> 
+       <div class="auth-icon free-icon"></div> 
+       <div class="auth-copy">
+        This career test and all of the reports are 
+        <strong>100% free</strong>
+       </div> 
+      </div> 
+      <div class="auth-point"> 
+       <div class="auth-icon knowledgebase-icon"></div> 
+       <div class="auth-copy">
+        Everything you need to know about 
+        <strong>800 careers</strong>, including how you match
+       </div> 
+      </div> 
+      <div class="auth-point"> 
+       <div class="auth-icon accurate-icon"></div> 
+       <div class="auth-copy">
+        You get the most 
+        <strong>accurate matches</strong>, thanks to our powerful algorithm
+       </div> 
+      </div> 
+      <a class="auth-more" href="/career-test/" data-track="mixpanel" data-target="Career Test">Learn More</a> 
+     </div> 
+     <a href="#" class="button block facebook-blue js-fb-auth js-track-link sign-up-facebook hide" data-fail-url-base="/members/register/" data-success-url-base="/facebook/login_success/" data-next-url="" data-link="sign up with facebook #3" tabindex="3"><span>Sign up with facebook</span></a> 
+    </form> 
+   </div> 
+  </div> 
+  <div id="sign-up-jobs" class="auth-modal reveal-modal" data-reveal aria-hidden="true" role="dialog"> 
+   <div class="auth-logo"></div> 
+   <div class="auth-content"> 
+    <div class="auth-body"> 
+     <div class="auth-title space-bottom-2">
+      Are you looking for a job?
+     </div> 
+     <img class="space-bottom-4" src="https://d2imr2faqwhte6.cloudfront.net/static/sokanu/compiled/images/auth-modal-icons/job-opt-in-xp.de5f325ad4a4.svg"> 
+     <p>Activate automatic email notifications to recieve new job matches every day.</p> 
+     <div class="space-bottom-3 js-job-toggle job-toggle"> 
+      <div class="switch no-space"> 
+       <input type="checkbox" id="job-email"> 
+       <label for="job-email" class="no-space"></label> 
+      </div> 
+      <label class="space-left-1" for="job-email">Job notifications turned <strong class="js-job-status">OFF</strong></label> 
+     </div> 
+     <button class="primary no-space js-job-submit">Start Assessment</button> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+    window.sessionSchoolSlug = false;
+
+    sknldr.done('foundation', function() {
+
+        $(function() {
+
+            // Radio button functionality
+            $('#sign-up .auth-bullet, #sign-up .auth-label').click(function (e) {
+                $('.auth-bullet').removeClass('active');
+                var bullet = ($(this).hasClass('auth-bullet')) ? $(this) : $(this).siblings('.auth-bullet');
+                bullet.addClass('active');
+                if (bullet.data('reg-type') == 'email') {
+                    $(this).siblings('input').focus();
+                }
+            });
+
+            $('a[data-reveal-id="sign-up"]').on('click.modal', function(e) {
+                e.preventDefault();
+
+                // Hijack the sign up modal for schools users
+                if (window.sessionSchoolSlug) {
+                    e.stopPropagation();
+                    mixpanel.track('Schools Modal Hijacked', {}, function () {
+                        window.location = '/edu/' + window.sessionSchoolSlug + '/register/';
+                    });
+                    return;
+                }
+
+                // launch the modal
+                var modal = $('div#sign-up[data-reveal]');
+                $(modal).foundation('reveal', 'open');
+
+                // initialize facebook button's next url property with the current test
+                // only replace facebook button's next url if a custom next url has not already been provided
+                var fbButton = $(modal).find('.js-fb-auth');
+                window.fbButton = fbButton;
+                if(!fbButton.data('nextUrl')) {
+                    $(modal).find('input[name=next]').on('change', function() {
+                        // update facebook button's next url
+                        fbButton.data('nextUrl', $(this).val());
+                    });
+
+                    // initialize facebook button's next url with selected test's next url
+                    fbButton.data('nextUrl', $(modal).find('input[name=next]:checked').val());
+                };
+
+                // track when sign up modal launched
+                mixpanel.track('Sign Up Modal Launched', {
+                    'Test Picker Shown': false,
+                });
+            });
+
+            
+                
+                    bindSignUpForm()
+                
+            
+
+        });
+    });
+
+    function bindSignUpForm () {
+        $('#sign-up form').on('submit', function (e) {
+
+            $(this).find('input:submit').attr('disabled', true);
+
+            if ($('.auth-bullet.active').data('reg-type') == 'email') {
+                return true;
+            } else {
+                $('.js-fb-auth').click();
+                return false;
+            }
+        });
+    }
+</script> 
+  <div id="login" class="auth-modal no-logo reveal-modal" data-reveal aria-labelledby="myModalLabel" aria-hidden="true" role="dialog"> 
+   <a href="#" class="auth-close close-reveal-modal" aria-label="Close">Close ×</a> 
+   <div class="auth-content"> 
+    <form method="POST" action="/members/login/?next=/career-test/" class="modal-dialog js-track-form" data-action="email login"> 
+     <input type="hidden" name="csrfmiddlewaretoken" value="bFiwWmiqaGPZ82Od7VIx2doc3Qp5OlZ4"> 
+     <div class="auth-body"> 
+      <div class="auth-title">
+       Login with email or Facebook
+      </div> 
+      <div class="auth-tag">
+       We emailed you a password when you signed up.
+      </div> 
+      <div class="auth-label">
+       Login with your email
+      </div> 
+      <input type="email" name="email" class="auth-input" id="id_email" placeholder="you@example.com"> 
+      <input type="password" class="auth-input" id="id_password" name="password" placeholder="password"> 
+      <a href="/forgot-password/" class="js-track-link auth-forgot-password" data-link="forgot password">Forgot Password</a> 
+      <button class="auth-button">Login</button> 
+     </div> 
+     <div class="auth-footer"> 
+      <div class="facebook-registration-container clearfix"> 
+       <div class="auth-label">
+        Or log in with Facebook
+       </div> 
+       <a href="#" class="auth-button button facebook-blue js-fb-auth js-track-link" data-fail-url-base="/members/register/" data-success-url-base="/facebook/login_success/" data-next-url="/career-test/" data-link="login with facebook" onclick="$(&quot;#sign-up&quot;).foundation(&quot;reveal&quot;, &quot;close&quot;);">Facebook Login</a> 
+      </div> 
+     </div> 
+    </form> 
+   </div> 
+  </div>   
+ </body>
+</html>

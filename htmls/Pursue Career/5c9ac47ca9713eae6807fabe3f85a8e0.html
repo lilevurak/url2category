@@ -1,0 +1,1069 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"> 
+  <link rel="icon" href="http://coveteur.com/content/themes/the-coveteur/images/c.png" type="image/x-icon"> 
+  <link rel="shortcut icon" href="http://coveteur.com/content/themes/the-coveteur/images/c.png" type="image/x-icon"> 
+  <meta name="p:domain_verify" content="6e7b9aef6e0a4a3be6ccfd54229329b5"> 
+  <title>How to Get Your First Job in Fashion - The Coveteur - Coveteur</title> 
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,600,700,900|Cardo:400,400italic" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="//fast.fonts.net/jsapi/12ecdcdc-c088-4eea-8dbc-31edae97ab28.js?v=999"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.js"></script> 
+  <script>window.post_media = []; window.googleAdTags = {};</script> 
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]--> 
+  <!--[if lte IE 7]>
+    <script src="http://coveteur.com/content/themes/the-coveteur/js/lte-ie7.js"></script>
+  <![endif]--> 
+  <meta property="og:title" content="How to Get Your First Job in Fashion"> 
+  <meta property="og:description" content="Fashion is one of those industries that can seem near impossible to enter—whether your dream is to become an editor, stylist, designer, photographer, creative director, buyer, publicist… (okay, so there are a lot of options). Even here at TC, we get emails every day asking about potential internships, opportunities to freelance and possible jobs. And […]"> 
+  <meta property="og:url" content="http://coveteur.com/2016/03/10/first-fashion-jobs/"> 
+  <meta property="og:image" content="http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1-728x385.jpg"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:site_name" content="Coveteur"> 
+  <script src="//cdn.optimizely.com/js/2109131233.js"></script> 
+  <!-- Begin DFP Tag --> 
+  <script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+      var gads = document.createElement('script');
+      gads.async = true;
+      gads.type = 'text/javascript';
+      var useSSL = 'https:' == document.location.protocol;
+      gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(gads, node);
+    })();
+  </script> 
+  <script type="text/javascript">
+  var DFPGPTPassback = (function() {
+    var slots = {};
+    return {
+      slots: slots,
+      init: function() {
+        var proxied = googletag.defineSlot;
+        googletag.defineSlot = function() {
+          var slot = proxied.apply(this, arguments);
+          slots[slot.getSlotElementId()] = slot;
+          return slot;
+        };
+      },
+      passback: function(iframeName, passback) {
+        var container = document.getElementById(iframeName + '__container__');
+          var iframeParent = container.parentNode;
+          var slotId = iframeParent.id;
+          if( ! slots.hasOwnProperty(slotId) ) {
+            slots[slotId] = {};
+          }
+          var slot = slots[slotId];
+          if( ! slot.hasOwnProperty('passbacks') ) {
+            slot.passbacks = [];
+          }
+          slot.passbacks.push(passback);
+          slot.setTargeting('passback', slot.passbacks);
+          googletag.pubads().refresh([slot]);
+      }
+    };
+  })();
+  </script> 
+  <script type="text/javascript">
+    googletag.cmd.push(function() {
+
+      window.mappingMobMidFeed = googletag.sizeMapping()
+        .addSize([1024, 0], [])
+        .addSize([0,0], [300,250])
+        .build();
+
+
+      window.mappingBreakerLeaderboard = googletag.sizeMapping()
+          .addSize([971, 0], [[728, 90], [970, 90], [970, 250], [970, 400]])
+          .addSize([768, 0], [[728, 90]])
+          .addSize([0, 0], [[320, 50], [300, 50], [320, 100], [300, 100], [300, 250]])
+          .build();
+
+      window.mappingLeaderboard = googletag.sizeMapping()
+          .addSize([971, 0], [[728, 90], [970, 90], [970, 250], [970, 400]])
+          .addSize([768, 0], [[728, 90]])
+          .addSize([0, 0], [[320, 50], [300, 50], [300, 250], [320, 100], [300, 100]])
+          .build();
+          
+      window.mappingMedRecShort = googletag.sizeMapping()
+          .addSize([768, 0], [[300, 250]])
+          .addSize([0, 0], [300, 250])
+          .build();
+      
+      window.mappingMedRecTall = googletag.sizeMapping()
+          .addSize([768, 0], [[300, 600]])
+          .addSize([0, 0], [300, 250])
+          .build();
+
+      window.mappingMobAdhesive = googletag.sizeMapping()
+        .addSize([768, 0], [])
+        .addSize([0,0], [320,50])
+        .build();
+
+      window.googleAdTags['div-gpt-ad-lightbox_rectangle'] = googletag.defineSlot('/23131952/Lightbox_Rectangle', [300, 250], 'div-gpt-ad-lightbox_rectangle').addService(googletag.pubads());
+      window.googleAdTags['div-gpt-ad-lightbox_leaderboard'] = googletag.defineSlot('/23131952/Lightbox_Leaderboard', [[320, 50], [728, 90]], 'div-gpt-ad-lightbox_leaderboard').defineSizeMapping(googletag.sizeMapping().addSize([0, 0], [320, 50]).addSize([939, 0], [728, 90]).build()).addService(googletag.pubads());
+      window.googleAdTags['div-gpt-ad-Interstitial'] = googletag.defineSlot('/23131952/Interstitial', [1, 1], 'div-gpt-ad-Interstitial').addService(googletag.pubads());
+      window.googleAdTags['div-gpt-ad-Video_Scroller'] = googletag.defineSlot('/23131952/Video_Scroller', [1, 2], 'div-gpt-ad-Video_Scroller').addService(googletag.pubads());
+      
+            window.googleAdTags['div-gpt-ad-ros_leaderboard'] = googletag.defineSlot('/23131952/ROS_Leaderboard', [[320, 50], [300, 50], [320, 100], [300, 100], [728, 90], [970, 90], [970, 250], [970, 400]], 'div-gpt-ad-ros_leaderboard').defineSizeMapping(mappingLeaderboard).addService(googletag.pubads());
+      window.googleAdTags['div-gpt-ad-ROS_Mobile_Adhesive'] = googletag.defineSlot('/23131952/ROS_Mobile_Adhesive', [[320, 50]], 'div-gpt-ad-ROS_Mobile_Adhesive').defineSizeMapping(mappingMobAdhesive).addService(googletag.pubads());
+
+      
+
+
+      // allows targeting to test server
+      
+      googletag.pubads().setTargeting('is_testing', 'no');
+
+      googletag.pubads().setCentering(true);
+      googletag.pubads().collapseEmptyDivs();
+      googletag.enableServices();
+    });
+
+    <!-- Begin comScore Tag -->
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "16440169" });
+    (function() {
+      var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+      s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+      el.parentNode.insertBefore(s, el);
+    })();
+
+  </script> 
+  <!-- /End DFP Tag --> 
+  <noscript> &lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;amp;c2=16440169&amp;amp;cv=2.0&amp;amp;cj=1"&gt; 
+  </noscript> 
+  <!-- End comScore Tag --> 
+  <script type="text/javascript">var _kmq = _kmq || [];
+    var _kmk = _kmk || '67e56c1e67673d174b0dd56a9c9e8c3f064a4fed';
+    function _kms(u){
+      setTimeout(function(){
+        var d = document, f = d.getElementsByTagName('script')[0],
+        s = d.createElement('script');
+        s.type = 'text/javascript'; s.async = true; s.src = u;
+        f.parentNode.insertBefore(s, f);
+      }, 1);
+    }
+    _kms('//i.kissmetrics.com/i.js');
+    _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+  </script> 
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script> 
+  <!-- Quantcast Tag --> 
+  <script type="text/javascript">
+  var _qevents = _qevents || [];
+
+  (function() {
+  var elem = document.createElement('script');
+  elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+  elem.async = true;
+  elem.type = "text/javascript";
+  var scpt = document.getElementsByTagName('script')[0];
+  scpt.parentNode.insertBefore(elem, scpt);
+  })();
+
+  _qevents.push({
+  qacct:"p-f3byk8QdGee2w"
+  });
+  </script> 
+  <noscript> &lt;div style="display:none;"&gt; &lt;img src="//pixel.quantserve.com/pixel/p-f3byk8QdGee2w.gif" border="0" height="1" width="1" alt="Quantcast"&gt;  
+  </noscript> 
+  <!--Plugin WP Missed Schedule 2013.1231.2013 Build 2014-09-13 Active - Tag 6707293c0218e2d8b7aa38d418ffa608--> 
+  <!-- This website is patched against a big problem not solved from WordPress 2.5+ to date --> 
+  <!-- This site is optimized with the Yoast SEO plugin v3.7.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)"> 
+  <meta name="robots" content="noodp"> 
+  <link rel="canonical" href="http://coveteur.com/2016/03/10/first-fashion-jobs/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="How to Get Your First Job in Fashion - The Coveteur"> 
+  <meta property="og:description" content="9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)"> 
+  <meta property="og:url" content="http://coveteur.com/2016/03/10/first-fashion-jobs/"> 
+  <meta property="og:site_name" content="Coveteur"> 
+  <meta property="article:publisher" content="https://www.facebook.com/coveteur"> 
+  <meta property="article:section" content="Fashion"> 
+  <meta property="article:published_time" content="2016-03-10T13:00:57-04:00"> 
+  <meta property="article:modified_time" content="2016-03-14T11:12:32-04:00"> 
+  <meta property="og:updated_time" content="2016-03-14T11:12:32-04:00"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/phillip_picardi-4.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Kate-Titus-1.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Hayley-Bloomingdale-1.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Kate-Alper-2.png"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/02/Micaela_Erlanger_086.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Sophie-Quy.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Kevin-Breen-1.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Hannah-Sider-2.jpg"> 
+  <meta property="og:image" content="http://coveteur.com/wp-content/uploads/2016/03/Melissa_Rubini-103.jpg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)"> 
+  <meta name="twitter:title" content="How to Get Your First Job in Fashion - The Coveteur"> 
+  <meta name="twitter:site" content="@coveteur"> 
+  <meta name="twitter:image" content="http://coveteur.com/wp-content/uploads/2016/03/phillip_picardi-4.jpg"> 
+  <meta name="twitter:creator" content="@coveteur"> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/coveteur.com\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.2-alpha-38895"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="siteorigin-panels-front-css" href="http://coveteur.com/content/plugins/siteorigin-panels/css/front.css?ver=2.4.17" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tc_lightbox-css" href="http://coveteur.com/content/plugins/the-coveteur-lightbox/css/tc-lightbox.css?ver=4.6.2-alpha-38895" type="text/css" media="all"> 
+  <link rel="stylesheet" id="the_coveteur-css" href="http://coveteur.com/content/themes/the-coveteur/style.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="reset-css" href="http://coveteur.com/content/themes/the-coveteur/css/reset.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="base-css" href="http://coveteur.com/content/themes/the-coveteur/css/base.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="flexslider-css" href="http://coveteur.com/content/themes/the-coveteur/css/flexslider.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="main-css" href="http://coveteur.com/content/themes/the-coveteur/css/main.css?ver=1.02" type="text/css" media="all"> 
+  <link rel="stylesheet" id="media_queries-css" href="http://coveteur.com/content/themes/the-coveteur/css/media-queries.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fonts-css" href="http://coveteur.com/content/themes/the-coveteur/css/fonts.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="advent-css" href="http://coveteur.com/content/themes/the-coveteur/css/advent.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="flickity-css" href="http://coveteur.com/content/themes/the-coveteur/css/flickity.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="app-css" href="http://coveteur.com/content/themes/the-coveteur/public/css/app.css?ver=1.24" type="text/css" media="all"> 
+  <script type="text/javascript" src="http://coveteur.com/wordpress/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="http://coveteur.com/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/plugins/the-coveteur-lightbox/js/tc-lightbox.js?ver=1.9"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.flexslider-min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/shop.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.followTo.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/malibu.min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.dotdotdot.min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.infinitescroll.min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/headhesive.min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.nearest.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery-ias.min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.cookie.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/adWatcher.js?ver=1.02"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/slideshower.js?ver=1.05"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/jquery.sticky.js?ver=1.00"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/flickity.min.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/sticky-header.js?ver=1.03"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/sticky-share.js?ver=1.03"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/ga-events.js?ver=1.02"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/parsely-events.js?ver=1.0"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/main.js?ver=1.16"></script> 
+  <script type="text/javascript" src="http://coveteur.com/content/themes/the-coveteur/js/right-rail.js?ver=1.01"></script> 
+  <link rel="https://api.w.org/" href="http://coveteur.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://coveteur.com/wordpress/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://coveteur.com/wordpress/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.6.2-alpha-38895"> 
+  <link rel="shortlink" href="http://coveteur.com/?p=135567"> 
+  <link rel="alternate" type="application/json+oembed" href="http://coveteur.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcoveteur.com%2F2016%2F03%2F10%2Ffirst-fashion-jobs%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="http://coveteur.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcoveteur.com%2F2016%2F03%2F10%2Ffirst-fashion-jobs%2F&amp;format=xml"> 
+  <meta name="pubexchange:title" content="How to Get Your First Job in Fashion"> 
+  <script type="text/javascript">
+		var ajaxurl = 'http://coveteur.com/wordpress/wp-admin/admin-ajax.php';
+	</script> 
+  <!-- BEGIN wp-parsely Plugin Version 1.10.2 --> 
+  <meta name="wp-parsely_version" id="wp-parsely_version" content="1.10.2"> 
+  <script type="application/ld+json">
+   {"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/coveteur.com\/2016\/03\/10\/first-fashion-jobs\/"},"headline":"How to Get Your First Job in Fashion","url":"http:\/\/coveteur.com\/2016\/03\/10\/first-fashion-jobs\/","thumbnailUrl":"http:\/\/coveteur.com\/wp-content\/uploads\/2016\/03\/phillip_picardi-4.jpg","image":{"@type":"ImageObject","url":"http:\/\/coveteur.com\/wp-content\/uploads\/2016\/03\/phillip_picardi-4.jpg"},"dateCreated":"2016-03-10T18:00:57Z","datePublished":"2016-03-10T18:00:57Z","dateModified":"1970-01-01T00:00:00Z","articleSection":"Fashion","author":[{"@type":"Person","name":"Emily Ramshaw"}],"creator":["Katie Boyle"],"publisher":{"@type":"Organization","name":"Coveteur"},"keywords":[]}   </script> 
+  <!-- END wp-parsely Plugin Version 1.10.2 --> 
+  <style type="text/css" media="all" id="siteorigin-panels-grids-wp_head">/* Layout 135567 */ #pg-135567-0 , #pg-135567-1 , #pg-135567-2 , #pg-135567-3 , #pg-135567-4 , #pg-135567-5 , #pg-135567-6 , #pg-135567-7 , #pg-135567-8 , #pg-135567-9 , #pg-135567-10 , #pg-135567-11 , #pl-135567 .panel-grid-cell .so-panel { margin-bottom:30px } #pg-135567-0 .panel-grid-cell , #pg-135567-1 .panel-grid-cell , #pg-135567-3 .panel-grid-cell , #pg-135567-4 .panel-grid-cell , #pg-135567-5 .panel-grid-cell , #pg-135567-7 .panel-grid-cell , #pg-135567-8 .panel-grid-cell , #pg-135567-9 .panel-grid-cell , #pg-135567-10 .panel-grid-cell , #pg-135567-11 .panel-grid-cell , #pg-135567-12 .panel-grid-cell { float:none } #pgc-135567-2-0 , #pgc-135567-2-1 , #pgc-135567-2-2 , #pgc-135567-6-0 , #pgc-135567-6-1 , #pgc-135567-6-2 { width:33.333% } #pg-135567-2 .panel-grid-cell , #pg-135567-6 .panel-grid-cell { float:left } #pl-135567 .panel-grid-cell .so-panel:last-child { margin-bottom:0px } #pg-135567-0 , #pg-135567-1 , #pg-135567-2 , #pg-135567-3 , #pg-135567-4 , #pg-135567-5 , #pg-135567-6 , #pg-135567-7 , #pg-135567-8 , #pg-135567-9 , #pg-135567-10 , #pg-135567-11 , #pg-135567-12 { margin-left:-15px;margin-right:-15px } #pg-135567-0 .panel-grid-cell , #pg-135567-1 .panel-grid-cell , #pg-135567-2 .panel-grid-cell , #pg-135567-3 .panel-grid-cell , #pg-135567-4 .panel-grid-cell , #pg-135567-5 .panel-grid-cell , #pg-135567-6 .panel-grid-cell , #pg-135567-7 .panel-grid-cell , #pg-135567-8 .panel-grid-cell , #pg-135567-9 .panel-grid-cell , #pg-135567-10 .panel-grid-cell , #pg-135567-11 .panel-grid-cell , #pg-135567-12 .panel-grid-cell { padding-left:15px;padding-right:15px } @media (max-width:780px){ #pg-135567-0 .panel-grid-cell , #pg-135567-1 .panel-grid-cell , #pg-135567-2 .panel-grid-cell , #pg-135567-3 .panel-grid-cell , #pg-135567-4 .panel-grid-cell , #pg-135567-5 .panel-grid-cell , #pg-135567-6 .panel-grid-cell , #pg-135567-7 .panel-grid-cell , #pg-135567-8 .panel-grid-cell , #pg-135567-9 .panel-grid-cell , #pg-135567-10 .panel-grid-cell , #pg-135567-11 .panel-grid-cell , #pg-135567-12 .panel-grid-cell { float:none;width:auto } #pgc-135567-2-0 , #pgc-135567-2-1 , #pgc-135567-6-0 , #pgc-135567-6-1 { margin-bottom:30px } #pl-135567 .panel-grid , #pl-135567 .panel-grid-cell {  } #pl-135567 .panel-grid .panel-grid-cell-empty { display:none } #pl-135567 .panel-grid .panel-grid-cell-mobile-last { margin-bottom:0px }  } </style> 
+  <script>
+   
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-19766291-2', 'auto');
+
+
+    
+      ga('set', 'dimension1', 'Emily Ramshaw');
+              ga('set', 'dimension3', 'Career');
+      
+    
+    ga('send', 'pageview');
+
+    </script> 
+  <script async src="https://www.google-analytics.com/analytics.js"></script> 
+  <!-- BAM JS TAG --> 
+  <script type="text/javascript">
+      (function (window, document, account) {
+        var b = document.createElement('script');
+        b.type = 'text/javascript';
+        b.src = '//static.bam-x.com/tags/' + account + '.js';
+        b.async = true;
+        var a = document.getElementsByTagName('script')[0];
+        a.parentNode.insertBefore(b,a);
+      })(window, document, 'thecoveteur');
+    </script> 
+ </head> 
+ <body class="single single-post postid-135567 single-format-standard siteorigin-panels"> 
+  <script>
+googletag.cmd.push(function() {googletag.pubads().setTargeting('post_id', '135567');
+googletag.pubads().setTargeting('post_tags', []);
+googletag.pubads().setTargeting('post_cats', ['fashion', 'living']);
+googletag.pubads().setTargeting('post_series', []);
+googletag.pubads().setTargeting('post_supertags', []);
+googletag.pubads().setTargeting('post_keywords', ['fashion', 'living', '', 'first-fashion-jobs']);
+googletag.pubads().setTargeting('is_home', 'no');
+});</script> 
+  <div class="site-header-ad-sticky-spacer"></div> 
+  <div class="site-header-ad-wrap"> 
+   <div class="header-leader"> 
+    <div class="center-wrap"> 
+     <div class="header-ad-zone"> 
+      <!-- /23131952/ROS_Leaderboard --> 
+      <div id="div-gpt-ad-ros_leaderboard"> 
+       <script type="text/javascript">
+                    googletag.cmd.push(function() {
+                      googletag.display('div-gpt-ad-ros_leaderboard');
+                    });
+                  </script> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <header class="site-header"> 
+    <div class="menu-header-menu-container">
+     <ul id="menu-header-menu" class="site-header__links">
+      <li id="menu-item-160744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160744"><a href="http://coveteur.com/closet">Closet</a></li> 
+      <li id="menu-item-160745" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160745"><a href="http://coveteur.com/beauty">Beauty</a></li> 
+      <li id="menu-item-160746" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160746"><a href="http://coveteur.com/fashion">Fashion</a></li> 
+      <li id="menu-item-160747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160747"><a href="http://coveteur.com/wellness">Wellness</a></li> 
+      <li id="menu-item-160748" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160748"><a href="http://coveteur.com/video">Video</a></li> 
+      <li id="menu-item-160749" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160749"><a href="http://coveteur.com/shopping">Shopping</a></li> 
+      <li id="menu-item-160750" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160750"><a href="http://coveteur.com/living">Living</a></li> 
+      <li id="menu-item-235414" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-235414"><a href="http://coveteur.com/tag/fall-style-edit/">Fall Style Edit</a></li> 
+     </ul>
+    </div> 
+    <div id="site-header-anchor"></div> 
+    <div class="site-header__burger js-menu-toggle"> 
+     <img srcset="http://coveteur.com/content/themes/the-coveteur/public/images/burger.png 1x, http://coveteur.com/content/themes/the-coveteur/public/images/burger@2x.png 2x"> 
+    </div> 
+    <div class="site-header__search js-search-toggle"> 
+     <img srcset="http://coveteur.com/content/themes/the-coveteur/public/images/search.png 1x, http://coveteur.com/content/themes/the-coveteur/public/images/search@2x.png 2x"> 
+    </div> 
+    <a href="/" title="Coveteur Home"> <img class="site-header__logo" srcset="http://coveteur.com/content/themes/the-coveteur/public/images/coveteur-logo.png 1x, http://coveteur.com/content/themes/the-coveteur/public/images/coveteur-logo@2x.png 2x"> </a> 
+   </header> 
+  </div> 
+  <div id="ad-skin-container"> 
+  </div> 
+  <!-- /23131952/Interstitial --> 
+  <div id="div-gpt-ad-Interstitial"> 
+   <script type="text/javascript">
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-Interstitial'); });
+    </script> 
+  </div> 
+  <!-- /23131952/Video_Scroller --> 
+  <div id="div-gpt-ad-Video_Scroller"> 
+   <script type="text/javascript">
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-Video_Scroller'); });
+    </script> 
+  </div> 
+  <div class="search-form" id="#searchform"> 
+   <div class="container"> 
+    <div class="search-form__form-container"> 
+     <form role="search" method="get" id="searchform" class="search-form__form" action="/"> 
+      <input autocomplete="off" class="search-form__query" type="text" placeholder="NEW SEARCH" value="" name="s" id="s"> 
+      <div class="search-field-container"> 
+       <input class="search-form__category" type="hidden" name="category_name" value=""> 
+       <input class="search-form__submit" type="submit" id="searchsubmit" value="SUBMIT"> 
+      </div> 
+     </form> 
+    </div> 
+    <div class="search-form__filters"> 
+     <a data-filter="" class="js-filter active" href="?s=">ALL</a> 
+     <a data-filter="video" class="js-filter " href="/?s=&amp;category_name=video">VIDEOS</a> 
+     <a data-filter="shopping" class="js-filter " href="/?s=&amp;category_name=shopping">SHOPPING</a> 
+    </div> 
+    <div class="search-form__count"></div> 
+   </div> 
+  </div> 
+  <div class="js-menu-toggle site-menu__close"> 
+   <img srcset="http://coveteur.com/content/themes/the-coveteur/public/images/close.png 1x, http://coveteur.com/content/themes/the-coveteur/public/images/close@2x.png 2x"> 
+  </div> 
+  <div class="site-menu-cover"></div> 
+  <div class="site-menu" id="menu"> 
+   <div class="site-menu__container"> 
+    <div class="menu-header-menu-container">
+     <ul id="menu-header-menu-1" class="site-menu__links">
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160744"><a href="http://coveteur.com/closet">Closet</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160745"><a href="http://coveteur.com/beauty">Beauty</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160746"><a href="http://coveteur.com/fashion">Fashion</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160747"><a href="http://coveteur.com/wellness">Wellness</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160748"><a href="http://coveteur.com/video">Video</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160749"><a href="http://coveteur.com/shopping">Shopping</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160750"><a href="http://coveteur.com/living">Living</a></li> 
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-235414"><a href="http://coveteur.com/tag/fall-style-edit/">Fall Style Edit</a></li> 
+     </ul>
+    </div>
+    <div class="menu-main-sub-menu-container">
+     <ul id="menu-main-sub-menu" class="site-menu__sub-links">
+      <li id="menu-item-160739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160739"><a href="http://coveteur.com/about">About</a></li> 
+      <li id="menu-item-160740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160740"><a href="http://coveteur.com/press">Press</a></li> 
+      <li id="menu-item-160741" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160741"><a href="http://coveteur.com/awards">Awards</a></li> 
+      <li id="menu-item-160742" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160742"><a href="http://coveteur.com/contact">Contact</a></li> 
+      <li id="menu-item-160743" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-160743"><a href="http://coveteur.com/jobs">Jobs</a></li> 
+     </ul>
+    </div> 
+    <hr> 
+    <div class="site-menu__social-links"> 
+     <h3>Social</h3> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Facebook');" href="https://www.facebook.com/coveteur" target="_blank"><span aria-hidden="true" class="icon -facebook"></span></a> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Twitter');" href="https://twitter.com/coveteur" target="_blank"><span aria-hidden="true" class="icon -twitter"></span></a> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Instagram');" href="http://instagram.com/coveteur" target="_blank"><span aria-hidden="true" class="icon -instagram"></span></a> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Pinterest');" href="http://www.pinterest.com/coveteur" target="_blank"><span aria-hidden="true" class="icon -pinterest"></span></a> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Tumblr');" href="https://coveteur.tumblr.com" target="_blank"><span aria-hidden="true" class="icon -tumblr"></span></a> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Youtube');" href="http://www.youtube.com/user/thecoveteur" target="_blank"><span aria-hidden="true" class="icon -youtube"></span></a> 
+     <a onclick="ga('send', 'event', 'MenuSocial', 'Bloglovin');" href="https://www.bloglovin.com/blogs/coveteur-11335299" target="_blank"><span aria-hidden="true" class="icon -bloglovin"></span></a> 
+    </div> 
+    <div class="site-menu__newsletter"> 
+     <h3>Newsletter</h3> 
+     <a class="site-menu__newsletter__sign-up" href="/newsletter">SIGN UP NOW <span class="icon -arrow-right"></span></a> 
+     <form id="newsletter-form" class="js-newsletter-submit" data-path="http://coveteur.com/content/themes/the-coveteur/constant_contact_ajax.php"> 
+      <input id="email_address" type="email" class="email" placeholder="Email" name="email_address"> 
+      <input id="" type="submit" value="SIGN UP" class="submit newsletter_signup" placeholder="sign up"> 
+      <p class="success messages">You did it! Thanks for joining our newsletter list.</p> 
+      <p class="exists messages">Looks like you have already subscribed.</p> 
+      <p class="error messages">Error, please enter a valid email address</p> 
+     </form> 
+    </div> 
+    <div class="site-menu__legal"> 
+     <a class="site-menu__legal__terms" href="/terms-of-use" title="Terms of Use">TERMS OF USE</a> 
+     <a class="site-menu__legal__privacy" href="/privacy-policy" title="Privacy Policy">PRIVACY POLICY</a> 
+    </div> 
+    <div class="site-menu__copyright">
+     <p>© 2010-2017 The Coveteur Inc. All Rights Reserved. The Coveteur, Coveteurs, and Coveteur'd are trademarks of The Coveteur Inc.</p>
+    </div> 
+   </div> 
+  </div> 
+  <!-- share template --> 
+  <div class="share-hover-template"> 
+   <div class="share-hover share-links"> 
+    <p>SHARE</p> 
+    <a href="#" class="facebook"></a> 
+    <a href="#" class="pinterest"></a> 
+    <a href="#" class="twitter"></a> 
+   </div> 
+  </div> 
+  <!-- <div class="js-sticky-share-anchor"></div>
+    <div class="sticky-share js-sticky-share">
+      <span>SHARE</span>
+      <a href='http://coveteur.com/2016/03/10/first-fashion-jobs/' title='Share on Facebook' class='js-share-facebook facebook'></a>
+      <a href='http://coveteur.com/2016/03/10/first-fashion-jobs/' title='Share on Pinterest' class='js-share-pinterest pinterest'></a>
+      <a href='http://coveteur.com/2016/03/10/first-fashion-jobs/' title='Share on Twitter' class='js-share-twitter twitter'></a>
+    </div> --> 
+  <div id="content" data-id="135567"> 
+   <div class="post-rail-container" data-url="http://coveteur.com/2016/03/10/first-fashion-jobs/" data-id="135567"> 
+    <script>
+googletag.cmd.push(function() {googletag.pubads().setTargeting('post_id', '135567');
+googletag.pubads().setTargeting('post_tags', []);
+googletag.pubads().setTargeting('post_cats', ['fashion', 'living']);
+googletag.pubads().setTargeting('post_series', []);
+googletag.pubads().setTargeting('post_supertags', []);
+googletag.pubads().setTargeting('post_keywords', ['fashion', 'living', '', 'first-fashion-jobs']);
+googletag.pubads().setTargeting('is_home', 'no');
+});</script> 
+    <div class="container"> 
+     <div class="ad--single-leaderboard" id="Breaker_Leaderboard_135567"></div> 
+    </div> 
+    <div class="container"> 
+     <article class="post post--single post--full article--career" data-id="135567" data-term-id="287" data-term-name="Career"> 
+      <div class="post__thumb"> 
+       <div class="post__thumb__inner"> 
+        <img data-attachment-id="135638" width="870" height="460" alt="" src="http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1.jpg" srcset="http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1.jpg 1x, http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1.jpg 2x"> 
+       </div> 
+      </div> 
+      <div class="post__details"> 
+       <div class="post__details__inner"> 
+        <div class="post__details__links"> 
+         <a class="post-category-link category-link" href="http://coveteur.com/supertags/career/" title="Career">Career</a> 
+         <div class="js-share post-share post-share--article" data-image="http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1.jpg" data-description="9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)" data-facebook-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?utm_source=facebook&amp;utm_campaign=socialbutton&amp;utm_medium=social" data-pinterest-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?utm_source=pinterest&amp;utm_campaign=socialbutton&amp;utm_medium=social" data-twitter-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?tr=1">
+          <img srcset="http://coveteur.com/content/themes/the-coveteur/public/images/share.png 1x, http://coveteur.com/content/themes/the-coveteur/public/images/share@2x.png 2x">
+         </div> 
+        </div> 
+       </div> 
+       <h1 class="post-title">How to Get Your First Job in Fashion</h1> 
+       <p class="post-subtitle">9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)</p> 
+       <div class="post-credit"> 
+        <span>By:</span> 
+        <a href="http://coveteur.com/author/emily-ramshaw/">Emily Ramshaw</a> 
+       </div> 
+      </div> 
+      <div data-image="http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1.jpg" data-description="9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)" data-facebook-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?utm_source=facebook&amp;utm_campaign=socialbutton&amp;utm_medium=social" data-pinterest-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?utm_source=pinterest&amp;utm_campaign=socialbutton&amp;utm_medium=social" data-twitter-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?tr=1" class="post-share__bar post-share__bar--header"> 
+       <a href="#" title="Share on Facebook" class="js-share-facebook facebook"><span class="icon -facebook"></span></a> 
+       <a href="#" title="Share on Pinterest" class="js-share-pinterest pinterest"><span class="icon -pinterest"></span></a> 
+       <a href="#" title="Share on Twitter" class="js-share-twitter icon twitter"><span class="icon -twitter"></span></a> 
+      </div> 
+      <div class="post__content"> 
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Fashion is one of those industries that can seem near impossible to enter—whether your dream is to become an editor, stylist, designer, photographer, creative director, buyer, publicist… (okay, so there are a lot of options). Even here at TC, we get emails every day asking about potential internships, opportunities to freelance and possible jobs. And we get it; we’ve been there. Getting your foot in the door is the ultimate challenge, which will lead (fingers crossed) to the ultimate reward: your dream job. So we started asking around, because everyone has to start somewhere. Herein, how people who work at some of our favorite companies in fashion, from Net-A-Porter and Moda Operandi to <em>Teen Vogue</em> and <em>Paper</em> Magazine, talk about how they got in the door and what they look for when they’re hiring. Prepare your resumés accordingly, friends!</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135639">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135639"><img width="728" height="384" src="http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-728x384.jpg" class="attachment-featured size-featured" alt="phillip_picardi-4" srcset="http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-728x384.jpg 728w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-300x158.jpg 300w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-1024x541.jpg 1024w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-501x264.jpg 501w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-191x101.jpg 191w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-376x198.jpg 376w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-375x198.jpg 375w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-189x100.jpg 189w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-100x52.jpg 100w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4-416x220.jpg 416w, http://coveteur.com/content/uploads/2016/03/phillip_picardi-4.jpg 1300w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">PHILLIP PICARDI</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Digital Editorial Director, Teen Vogue</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“I love telling stories about my time interning at <em>Teen Vogue</em> in the web department because my role now makes that such a full circle moment. But my first official internship was at Racked NY, and my boss was the truly brilliant Izzy Grinspan. I actually had just moved to New York City and was a freshman at NYU. I was overly-bronzed, overly-waxed, and wearing overly-tight clothes. (Really living the dream!) I finished NYU Welcome Week and then literally was seated (and/or standing) at Fashion Week right after, reviewing shows like Alexandre Herchcovitch and Hayden Harnett. (Full disclosure: I CRINGE at the thought of discovering my old clips.) I also covered sample sales, which is how I entered credit card debt! The great thing about Racked is that I got to build my writing experience and discover a voice far outside of magazine-land, all while working for an editor with a nearly encyclopedic knowledge of the industry. I walked into an interview with <em>Teen Vogue</em> at the end of my fall semester and was really confident I could handle the work. I was hired there, interned with the brand for a year and a half…and, some time later, I’m their digital editorial director!</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>The industry is a lot different now. I was really privileged to have parents supporting me through college and the ability to work retail on the weekends during my school years for extra spending money. NYU Gallatin was also great in that they gave me school credit for interning. If you’re an aspiring writer NOW, though, I can honestly say that you don’t need extensive clips—you just need a great voice. Some of my favorite (and most incendiary!) pieces we’ve published on TeenVogue.com have come from students who we ended up following on Twitter. You can tell a lot about someone’s voice from their tweets and who they choose to interact with on the platform. Plus, this is good experience for you—as an editor (and someone who worked in beauty editorial), you really do have to use social media to your advantage to stand out. Beyond that, though, if you can find a paid internship or an editorial fellowship, those are great ways to build contacts and practical work experience.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>One of the things that I learned from working at <em>Teen Vogue</em> is that editors are often willing to take meetings with up-and-coming young people to offer advice. There’s a right way and a wrong way to go about this—you can email the editor once, politely asking for 15 minutes of someone’s time over the phone or in person, and then follow up once. Beyond that, you might be pestering. If they say yes, show up on time, with questions prepared, and please make sure you’ve read the latest issue of the magazine and/or the site’s last couple days’ of content. Also, Google the person you’re meeting with and make sure you’re familiar with their body of work. More often than not, impressing someone simply means taking the time to genuinely appreciate the work they’re doing—not wearing the great outfit or having the killer résumé.</p> 
+       </div>
+       <div class="three-row-img-wrap clearfix">
+        <div class="one-third-img prod-overlay">
+         <div class="overlay square shoppable">
+          <p class="center"><a href="http://rstyle.me/n/bgnu5nu2y6" class="btn" target="_blank">Shop Item</a></p>
+         </div>
+         <img width="228" height="228" src="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-228x228.jpg" class="attachment-thumbnail size-thumbnail" alt="Screen-Shot-2016-03-08-at-2.54.18-PM" srcset="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-228x228.jpg 228w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-300x300.jpg 300w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-298x298.jpg 298w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-147x147.jpg 147w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-376x376.jpg 376w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-340x340.jpg 340w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-250x250.jpg 250w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-76x76.jpg 76w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-72x72.jpg 72w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-101x101.jpg 101w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-375x375.jpg 375w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-100x100.jpg 100w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM-220x220.jpg 220w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.54.18-PM.jpg 400w" sizes="(max-width: 228px) 100vw, 228px">
+        </div>
+        <div class="one-third-img prod-overlay">
+         <div class="overlay square shoppable">
+          <p class="center"><a href="http://rstyle.me/n/bkdmkzu2y6" class="btn" target="_blank">Shop Item</a></p>
+         </div>
+         <img width="228" height="228" src="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-228x228.jpg" class="attachment-thumbnail size-thumbnail" alt="Screen-Shot-2016-03-08-at-2.51.49-PM" srcset="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-228x228.jpg 228w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-300x300.jpg 300w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-298x298.jpg 298w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-147x147.jpg 147w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-376x376.jpg 376w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-340x340.jpg 340w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-250x250.jpg 250w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-76x76.jpg 76w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-72x72.jpg 72w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-101x101.jpg 101w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-375x375.jpg 375w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-100x100.jpg 100w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM-220x220.jpg 220w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.51.49-PM.jpg 400w" sizes="(max-width: 228px) 100vw, 228px">
+        </div>
+        <div class="one-third-img prod-overlay">
+         <div class="overlay square shoppable">
+          <p class="center"><a href="http://rstyle.me/n/bjzg52u2y6" class="btn" target="_blank">Shop Item</a></p>
+         </div>
+         <img width="228" height="228" src="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-228x228.jpg" class="attachment-thumbnail size-thumbnail" alt="Screen-Shot-2016-03-08-at-2.43.17-PM" srcset="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-228x228.jpg 228w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-300x300.jpg 300w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-298x298.jpg 298w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-147x147.jpg 147w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-376x376.jpg 376w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-340x340.jpg 340w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-250x250.jpg 250w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-76x76.jpg 76w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-72x72.jpg 72w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-101x101.jpg 101w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-375x375.jpg 375w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-100x100.jpg 100w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM-220x220.jpg 220w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.43.17-PM.jpg 400w" sizes="(max-width: 228px) 100vw, 228px">
+        </div>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Entry-level jobs are, in my experience, the most fun to fill. I once received an email that was made as a GIF Listicle of 10 reasons that person was perfect for the job, and I laughed out loud (in a good way!) the entire time I read it. Entry-level positions require a can-do attitude, which sounds so contrived, but it can really mean anything—from attending the epic Kendall Jenner event because your editor got busy, to processing a month’s worth of invoices. The best thing you can project in an interview is a willingness to bite off more than you can chew. In this industry, your actual role is never limited to the bullet points on HR’s job description. Beyond that, you wouldn’t believe how many people I’ve met with who cannot answer a single question about what TeenVogue.com published in the past week, or what their favorite photo shoot has been in the magazine (beyond, of course, the cover sitting on my desk). That’s a non-starter… know your product before you sit down to be hired.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>In terms of knowing if someone is the right fit, I always follow our editor-in-chief, <a href="http://bit.ly/24SOg3I" target="_blank">Amy Astley’s</a> rule. A lot of managers tend to hire specifically for one role without anticipating the future. Amy hires people who she knows will grow. I now understand a little bit about why—it’s rewarding to see members of my staff shine bright and, now, hire their own people and become their own managers. If your résumé can show me that you’ve managed an internship and a job, or that you started freelance writing while you were still in college, or you have an epic Tumblr with a great voice, I am already seeing potential. Ambition cannot be taught—but it can definitely be spotted.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>To apply for a job, do your research (it’s not hard in the age of Instagram and Twitter) to make an educated guess about who the hiring editor is for the role. Submit through the traditional way, of course, with Human Resources, but never be afraid to email the editor with your resumé and a personalized note expressing your interest. And another thing? We don’t have to have a job posting to be hiring. One of our freelance writers was doing such an astounding job covering sexual health and gender identity that I decided to hire her as our Wellness Editor before the job even became public. In fact, she just launched <em>Teen Vogue</em>’s first-ever Wellness vertical! You never know what could happen, but in my best experience, good, timely, and efficient work will eventually pay off.”</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135627">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135627"><img width="728" height="384" src="http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-728x384.jpg" class="attachment-featured size-featured" alt="Kate-Titus-1" srcset="http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-728x384.jpg 728w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-300x158.jpg 300w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-501x264.jpg 501w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-191x101.jpg 191w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-376x198.jpg 376w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-375x198.jpg 375w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-189x100.jpg 189w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-100x52.jpg 100w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1-416x220.jpg 416w, http://coveteur.com/content/uploads/2016/03/Kate-Titus-1.jpg 785w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Kate Titus</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Senior Art Director, Digital Innovation, Refinery29</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“The year that I graduated from the University of Illinois I enrolled in a summer residency program in photography at the School of Visual Arts in New York City. I had a BFA in Graphic Design, but I'd also dabbled in photography in college and was interested in honing my skills. On top of that, I wanted to see if I could cut it in the Big Apple.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>That summer I got an internship at the talent agency Jed Root, which represents some of the top fashion photographers, stylists, and hair and makeup artists in the industry. I worked in the photography department and basically organized prints and updated the photographers’ portfolios all day. I remember my manager apologizing about how mundane my tasks were, but I couldn't have been happier to get up close and personal with the work of these talents I so admired. I spent most of my time in a small back room filled with filing cabinets, drooling over prints of Michael Thompson's work.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>I got the internship by... applying! I was really determined to get some experience in the fashion industry under my belt while in New York. I must have applied for 15 internships that summer. I still have a folder on my computer with every thoughtful cover letter and resume—<em>Vogue</em>, <em>Interview</em> Magazine, Milk Studios, etc. Most of them never even contacted me, but Jed Root did and I jumped at the opportunity.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>After that summer, I went back home and lived in Chicago for a few years before making a permanent move to New York City. At that point, even though I had been working as a professional for several years, I still had to start from scratch trying to get my foot in the door of the fashion industry. I reached out to my old manager at Jed Root to see if he had any connections or leads. Even if you're not a 'networking' kind of a person, it's so vital to make relationships. The industry can be surprisingly small, even in New York City, and referrals and word of mouth can really spark all kinds of opportunities for you.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p style="text-align: center;">[My advice:]</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p><big><big><strong>1.</strong></big></big> <strong>Be persistent.</strong> You just need one person to take a chance on you and then you can quickly prove your abilities and worth.</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p><strong><big><big>2.</big></big> All experience is good experience.</strong> Your internship may not be as glamorous as you expected, but you have to start somewhere. And sometimes the bad experiences teach you more than the good—the kind of people you do or don't want to work for, the kind of environment or industry you do or don't want to be a part of. Those experiences help you pivot and take the right next steps for yourself.</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p><strong><big><big>3.</big></big> Work hard and be nice to people.</strong></p> 
+        <p>I always say this, because it's truly my only motto: work hard and be nice to people.</p> 
+        <p>[When I hire I look for] authenticity, drive and enthusiasm.</p> 
+        <p>In my specific line of work, my attention is always captured by people who put time and effort into the presentation of their portfolio. Nowadays, that's a well produced website or an iPad presentation. I'm the person who notices if you've written extra thoughtful descriptions of your work on your site, if you've labored over the typography in your resume or made sure all of your portfolio imagery is color corrected and crisp. To me, it's a reflection of your work ethic.</p> 
+        <p>I also look for people who are independent. People who take initiative to solve a problem, bring something new to the table and go beyond what was asked of them.”</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135659">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135659"><img width="728" height="406" src="http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-728x406.jpg" class="attachment-featured size-featured" alt="Hayley-Bloomingdale-1" srcset="http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-728x406.jpg 728w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-300x167.jpg 300w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-1024x572.jpg 1024w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-501x279.jpg 501w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-376x210.jpg 376w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-180x101.jpg 180w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-375x209.jpg 375w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-179x100.jpg 179w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-100x55.jpg 100w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1-393x220.jpg 393w, http://coveteur.com/content/uploads/2016/03/Hayley-Bloomingdale-1.jpg 1536w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Hayley Bloomingdale</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">UK Communications Director, Moda Operandi</h4> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“I used to call myself a professional intern because I started fashion internships at the age of 14 and pretty much kept them up for ten years. My first real gig was at Paige Premium Denim in LA—I sent jeans to celebrities and learned sample trafficking (lifelong skill), and when I moved to New York for grad school I interned at Tory Burch and DVF. The teams at both companies were amazing and I felt very lucky to be working for such strong female leaders. I kept in touch with many of the girls I worked for and they all helped me get my next internships and then my first official job.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Intern in as many areas as possible. I interned everywhere: a magazine, an emerging designer, a denim company, a contemporary brand, an events company, a modeling agency and a luxury brand—by the time I was ready for a real job I had experience in every single area of the business.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>[When I hire for an internship or entry level position, I look for] energy and a genuine interest to learn and work hard. Some activities might actually be getting coffee or organizing supply closets, but other ones will be event planning or assisting on shoots—it’s not all glamorous (and neither is the real job itself), but if you can smile and be energetic throughout all of it, you will be remembered as a great intern and other doors will open after. I can always tell if a potential intern has the hunger to be there or simply wants something to put on his or her resume.”</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="three-row-img-wrap clearfix">
+        <div class="one-third-img prod-overlay">
+         <div class="overlay square shoppable">
+          <p class="center"><a href="http://rstyle.me/n/bjvnthu2y6" class="btn" target="_blank">Shop Item</a></p>
+         </div>
+         <img width="228" height="228" src="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-228x228.jpg" class="attachment-thumbnail size-thumbnail" alt="Screen-Shot-2016-03-08-at-2.37.13-PM" srcset="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-228x228.jpg 228w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-300x300.jpg 300w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-298x298.jpg 298w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-147x147.jpg 147w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-376x376.jpg 376w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-340x340.jpg 340w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-250x250.jpg 250w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-76x76.jpg 76w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-72x72.jpg 72w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-101x101.jpg 101w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-375x375.jpg 375w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-100x100.jpg 100w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM-220x220.jpg 220w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.13-PM.jpg 400w" sizes="(max-width: 228px) 100vw, 228px">
+        </div>
+        <div class="one-third-img prod-overlay">
+         <div class="overlay square shoppable">
+          <p class="center"><a href="http://rstyle.me/n/bibe4zu2y6" class="btn" target="_blank">Shop Item</a></p>
+         </div>
+         <img width="228" height="228" src="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-228x228.jpg" class="attachment-thumbnail size-thumbnail" alt="Screen-Shot-2016-03-08-at-2.39.13-PM" srcset="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-228x228.jpg 228w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-300x300.jpg 300w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-298x298.jpg 298w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-147x147.jpg 147w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-376x376.jpg 376w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-340x340.jpg 340w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-250x250.jpg 250w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-76x76.jpg 76w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-72x72.jpg 72w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-100x100.jpg 100w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-375x375.jpg 375w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-99x100.jpg 99w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM-219x220.jpg 219w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.39.13-PM.jpg 399w" sizes="(max-width: 228px) 100vw, 228px">
+        </div>
+        <div class="one-third-img prod-overlay">
+         <div class="overlay square shoppable">
+          <p class="center"><a href="http://rstyle.me/n/bkdktsu2y6" class="btn" target="_blank">Shop Item</a></p>
+         </div>
+         <img width="228" height="228" src="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-228x228.jpg" class="attachment-thumbnail size-thumbnail" alt="Screen-Shot-2016-03-08-at-2.37.28-PM" srcset="http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-228x228.jpg 228w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-300x300.jpg 300w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-298x298.jpg 298w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-147x147.jpg 147w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-376x376.jpg 376w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-340x340.jpg 340w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-250x250.jpg 250w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-76x76.jpg 76w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-72x72.jpg 72w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-101x101.jpg 101w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-375x375.jpg 375w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-100x100.jpg 100w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM-220x220.jpg 220w, http://coveteur.com/content/uploads/2016/03/Screen-Shot-2016-03-08-at-2.37.28-PM.jpg 400w" sizes="(max-width: 228px) 100vw, 228px">
+        </div>
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135633">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135633"><img width="728" height="385" src="http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-728x385.png" class="attachment-featured size-featured" alt="Kate Alper-2" srcset="http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-728x385.png 728w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-300x158.png 300w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-501x265.png 501w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-191x101.png 191w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-376x198.png 376w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-190x101.png 190w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-375x198.png 375w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-188x100.png 188w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-100x52.png 100w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2-415x220.png 415w, http://coveteur.com/content/uploads/2016/03/Kate-Alper-2.png 735w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Kate Alper</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Senior Digital Publicist. KCD</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“My first internship in the fashion industry was the summer after my freshman year of college at a website called SeenON! in San Francisco, where I wrote about celebrity style and coordinated samples. I discovered this opportunity online and was excited to find a fashion internship in San Francisco, which was rare at the time! This internship really gave me a sense of what editorial and PR were and how the two work together. When the summer was over, I was confident that I wanted to work in fashion and went back to school eager to intern more.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>I attended the University of Southern California in LA which was a great place to go to school because there are so many fashion companies in the area. The school was great about letting us create schedules that were conducive to interning. By the time I was a senior, I had completed six internships at a range of companies, such as E!Online, Gucci, Who What Wear, and with Cristina Ehrlich. Interning in different parts of the industry led me to the realization that I wanted to pursue a career in public relations and move to NYC upon graduation.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Interning is the best way to learn what you want to do. Not only does it help hone your skill set, but the connections you can make during an internship can lead to a job. It’s also important to recognize the people around you that you can learn from and nurture those relationships after the internship has ended. I always look for interns that are eager, knowledgeable about the industry and excited to learn.</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="shop-corner">
+         <span aria-hidden="true" class="icon-shop"></span>
+        </div>
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="132719">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="132719"><img width="728" height="485" src="http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-728x485.jpg" class="attachment-featured size-featured" alt="Micaela_Erlanger_086" srcset="http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-728x485.jpg 728w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-300x200.jpg 300w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-1024x682.jpg 1024w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-501x334.jpg 501w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-376x250.jpg 376w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-151x101.jpg 151w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-647x432.jpg 647w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-375x250.jpg 375w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-149x100.jpg 149w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-100x66.jpg 100w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086-329x220.jpg 329w, http://coveteur.com/content/uploads/2016/02/Micaela_Erlanger_086.jpg 1300w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Micaela Erlanger</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Stylist</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“I've had many jobs and internships over the years (working at boutiques, interning in PR and sales showrooms, and even Condé Nast's exclusive and competitive summer internship program), but I think the most influential experience I had was interning at <em>Cosmopolitan</em>. I interned for the senior fashion editor and it was my job to attend all of the shoots and be on set dressing the models and steaming the clothes. I was still in college at the time and I remember thinking to myself, THIS is what I want to do. I became obsessed with work and with styling from that moment on. After that, I went on to intern for my mentor, stylist <a href="http://bit.ly/1QJHQOm" target="_blank">Annabel Tollman</a>, which turned into six years of assisting.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Treat your internship like a JOB and make yourself invaluable. Show up early and stay late. Ask questions. Do whatever you can to gain and learn from the opportunity and write down everything. The variety of experience will prove to be incredibly valuable and will shape your ability to work in what is known to be an incredibly fast paced and competitive business.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>It's all about attitude. You have to really want to be here and you have to live, sleep, eat, breathe fashion. Styling is very hard work and it's not always as glamorous as it seems... Organizational and time management skills are also key, as is resourcefulness. I'm looking for candidates who want to learn, can handle the fast pace and pressure and understand that we are always working on a New York Minute!”</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135630">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135630"><img width="728" height="385" src="http://coveteur.com/content/uploads/2016/03/Sophie-Quy-728x385.jpg" class="attachment-featured size-featured" alt="Sophie-Quy" srcset="http://coveteur.com/content/uploads/2016/03/Sophie-Quy-728x385.jpg 728w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-300x158.jpg 300w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-1024x541.jpg 1024w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-501x265.jpg 501w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-191x101.jpg 191w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-376x198.jpg 376w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-190x101.jpg 190w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-375x198.jpg 375w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-188x100.jpg 188w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-100x52.jpg 100w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy-415x220.jpg 415w, http://coveteur.com/content/uploads/2016/03/Sophie-Quy.jpg 1300w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Sophie Quy</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Fine Jewelry Buyer, Net-A-Porter</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“My first proper internship in fashion was working for Adam Lippes in the summer of 2007 in New York City. It was an invigorating experience and Adam was hugely inspiring. I got a glimpse of how a brand truly operates at all levels, and most importantly, saw the sales team in action. I was able watch the sales team interact with all of the buyers who came to the showroom. Watching them in action made me realize I absolutely had to become a buyer. As soon as I got back to London, I got a job at Harrods as a personal shopper, which I loved. After a year of working in personal shopping, I got a job as a buyer’s clerk for jewelry and accessories. I worked my way up the rungs (it took five years), and moved to Net-A-Porter three and a half years ago as the jewelry and fine jewelry buyer.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Don’t be afraid to start at the bottom. It gives you the most amazing perspective, and understanding—you get to learn the ins and outs of every process, and, more importantly, you get to know everyone in the business. Learn from everyone you meet, and take the time to get to know them. You never know who you might need to call a favor in from or ask for help at some point. Don’t give up, don’t lose sight of where you want to get to, and have fun. It helps you work the crazy hours you might need to along the way.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>I look for someone who is interested and excited about the industry and prospective job. Passion and drive is the essential groundwork to your career, the rest you can learn as you go.”</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135628">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135628"><img width="728" height="385" src="http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-728x385.jpg" class="attachment-featured size-featured" alt="Kevin-Breen-1" srcset="http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-728x385.jpg 728w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-300x158.jpg 300w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-501x264.jpg 501w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-191x101.jpg 191w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-376x198.jpg 376w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-190x101.jpg 190w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-375x198.jpg 375w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-189x100.jpg 189w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-100x52.jpg 100w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1-415x220.jpg 415w, http://coveteur.com/content/uploads/2016/03/Kevin-Breen-1.jpg 968w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Kevin Breen</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Market Editor, Paper</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“I started as an intern here at <em>Paper</em> and haven’t been able to leave! It’s my home away from home and my family here in New York. The internship required a well-rounded set of skills. With a company like <em>Paper</em> the tasks varied from hanging disco balls from the ceilings at Webster Hall, to the typical fashion returns and everything in between. I was originally introduced to <em>Paper</em> through a friend that was attending school in New York. When I graduated from college I was interested in fashion and media and thought that a magazine internship would be the best way to see if it was the right fit.</p> 
+        <p>Work hard and work smart! People notice when you put the extra effort into what you are doing! Set goals and map out your career path.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>I look for someone who is humble, friendly, flexible, and, most importantly, hard working. I am always impressed with a resumé that has been mailed directly to the magazine. You should always dress up for an interview and immediately follow up with a thank you! I believe when you are meeting someone you can get a real sense of the individual. Once you have reviewed qualifications it is important to rely on your gut feelings!"</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135624">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135624"><img width="728" height="482" src="http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-728x482.jpg" class="attachment-featured size-featured" alt="Hannah Sider 2" srcset="http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-728x482.jpg 728w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-300x198.jpg 300w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-1024x678.jpg 1024w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-501x331.jpg 501w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-376x249.jpg 376w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-152x101.jpg 152w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-652x432.jpg 652w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-375x248.jpg 375w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-150x100.jpg 150w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-100x66.jpg 100w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2-332x220.jpg 332w, http://coveteur.com/content/uploads/2016/03/Hannah-Sider-2.jpg 1280w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Hannah Sider</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Photographer</h4> 
+        <p style="text-align: center;">&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>“I worked retail at a boutique in Toronto called Carte Blanche, selling Gareth Pugh, Jean Pierre Braganza, Horace, Passarella Death Squad, Cheap Monday and some other cool brands. I did more than just sales though—I helped them start a blog that I created content for, I shot lookbooks for them, and helped them organize parties in the store. I was in school for fashion and had to do 400 work-study hours. I wanted to come intern in NYC in the summers so I would send out applications out everywhere. Every job I did I made sure I went above and beyond, finding ways to utilize my skills in photography and social media.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>Social media is an amazing platform to connect with people in the industry and show your skills, but above all your work ethic is really what will determine how far you go. Regardless of what position you start in, if you show a commitment to it, that’s how you get noticed.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>I like having assistants that are knowledgeable and organized, but also genuinely excited about the projects we’re working on. It’s so important to have good energy around you, especially when you’re on set. It’s also important to be attentive. Sometimes it can get boring on shoots if you’re not constantly looking for something that needs to be done. I love my interns because they anticipate what I need before I even know I need it.”</p> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="full-width-img img-overlay">
+        <div class="drawer">
+         <p>... <a href="#" class="tc_lightbox" data-media-id="135657">View More</a></p>
+        </div>
+        <a href="#" class="tc_lightbox" data-media-id="135657"><img width="728" height="486" src="http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-728x486.jpg" class="attachment-featured size-featured" alt="Melissa_Rubini-103" srcset="http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-728x486.jpg 728w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-300x200.jpg 300w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-1024x683.jpg 1024w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-501x334.jpg 501w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-376x251.jpg 376w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-151x101.jpg 151w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-647x432.jpg 647w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-375x250.jpg 375w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-149x100.jpg 149w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-100x66.jpg 100w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103-329x220.jpg 329w, http://coveteur.com/content/uploads/2016/03/Melissa_Rubini-103.jpg 1300w" sizes="(max-width: 728px) 100vw, 728px"></a>
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <blockquote>
+         <h2 style="text-align: center;">Melissa Rubini</h2> 
+        </blockquote> 
+        <h4 style="text-align: center;">Fashion Director, InStyle</h4> 
+        <p>&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>"If I can remember correctly my very first fashion job was assisting Edward Enninful for an Italian <em>Vogue</em> editorial shoot with photographer Craig McDean. I was the second assistant at that shoot which basically entailed organizing all samples, steaming all looks, and, to my surprise, lending part of what I was wearing to Edward, since the theme of the shoot involved a certain punk mood and I was dressed with a combination of vintage pieces and Trash &amp; Vaudeville favorites. That recommendation came through friends while I was still studying photography and art history. I loved how creative the day was and continued to work with Edward on many more projects whenever he was in NY.</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>[My advice is to] be persistent, do your homework and try to learn as much as possible about the industry; and don't ever think you are above a certain task... You never know who will recommend you to your next job.&nbsp;</p> 
+       </div>
+       <div class="one-col-paragraph wpcollab-hello-emoji">
+        <p>The fashion world is extremely competitive, and therefore you have to give your best. Knowledge about designers, brands and the industry as a whole is key both in print and digitally—that is a given.&nbsp;I receive resumes frequently and archive the ones I think could potentially be needed in the near future.&nbsp;After making sure that a candidate has the qualifications for the job, I try my best to identify the guiding forces someone has... Strong work ethic, team work, kindness and my ability to trust every person in my team are very important to me."&nbsp;</p> 
+        <p>&nbsp;</p> 
+       </div> 
+      </div> 
+      <script>window.post_media[135567] = {
+  			  tc_lightbox_post_subtitle: "",
+  			  tc_lightbox_post_title: "How to Get Your First Job in Fashion",
+  			  media_ids: [135639,135590,135589,135588,135627,135659,135579,135581,135580,135633,132719,135630,135628,135624,135657],
+  			  media_data: {"135639":{"next_id":"135590","prev_id":"135657","count":1,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/phillip_picardi-4-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/phillip_picardi-4.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135590":{"next_id":"135589","prev_id":"135639","count":2,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.54.18-PM-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.54.18-PM.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135589":{"next_id":"135588","prev_id":"135590","count":3,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.51.49-PM-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.51.49-PM.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135588":{"next_id":"135627","prev_id":"135589","count":4,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.43.17-PM-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.43.17-PM.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135627":{"next_id":"135659","prev_id":"135588","count":5,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Titus-1-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Titus-1.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135659":{"next_id":"135579","prev_id":"135627","count":6,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hayley-Bloomingdale-1-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hayley-Bloomingdale-1.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135579":{"next_id":"135581","prev_id":"135659","count":7,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.37.13-PM-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.37.13-PM.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135581":{"next_id":"135580","prev_id":"135579","count":8,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.39.13-PM-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.39.13-PM.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135580":{"next_id":"135633","prev_id":"135581","count":9,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.37.28-PM-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Screen-Shot-2016-03-08-at-2.37.28-PM.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135633":{"next_id":"132719","prev_id":"135580","count":10,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Alper-2-76x76.png","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Alper-2.png","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"132719":{"next_id":"135630","prev_id":"135633","count":11,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/02\/Micaela_Erlanger_086-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/02\/Micaela_Erlanger_086.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"","credits":"Suit, Pallas; Shoes, Christian Louboutin","shoppable":{"rs_1":{"image_url":"http:\/\/images.rewardstyle.com\/img?v=1.3&p=42028936","link":"http:\/\/rstyle.me\/hH-n\/bicv6iu2y6"},"rs_2":{"image_url":"http:\/\/images.rewardstyle.com\/img?v=1.3&p=43332303","link":"http:\/\/rstyle.me\/hH-n\/bjknyru2y6"},"rs_3":{"image_url":"http:\/\/images.rewardstyle.com\/img?v=1.3&p=43331619","link":"http:\/\/rstyle.me\/hH-n\/bjknbdu2y6"}}},"135630":{"next_id":"135628","prev_id":"132719","count":12,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Sophie-Quy-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Sophie-Quy.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135628":{"next_id":"135624","prev_id":"135630","count":13,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kevin-Breen-1-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kevin-Breen-1.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135624":{"next_id":"135657","prev_id":"135628","count":14,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hannah-Sider-2-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hannah-Sider-2.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]},"135657":{"next_id":"135639","prev_id":"135624","count":15,"full_count":15,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Melissa_Rubini-103-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Melissa_Rubini-103.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"","shoppable":[]}}  			}</script> 
+     </article> 
+     <div class="rail"> 
+      <div class="js-rail-anchor"></div> 
+      <div class="js-rail-sticky"> 
+       <div class="widget sidebar-ad-zone"> 
+        <script>googletag.cmd.push(function(){window.googleAdTags['div-gpt-ad-ros_medrec_1_135567'] = googletag.defineSlot('/23131952/ROS_MedRec_1', [[300, 250]], 'div-gpt-ad-ros_medrec_1_135567').defineSizeMapping(mappingMedRecShort).addService(googletag.pubads())})</script>
+        <!-- /23131952/ROS_MedRec_1 -->
+        <div id="div-gpt-ad-ros_medrec_1_135567" class="ad-autoload"></div> 
+       </div> 
+       <div class="widget sidebar-ad-zone"> 
+        <script>googletag.cmd.push(function(){window.googleAdTags['div-gpt-ad-ros_medrec_2_135567'] = googletag.defineSlot('/23131952/ROS_MedRec_2', [[300, 600]], 'div-gpt-ad-ros_medrec_2_135567').defineSizeMapping(mappingMedRecTall).addService(googletag.pubads())})</script>
+        <!-- /23131952/ROS_MedRec_2 -->
+        <div id="div-gpt-ad-ros_medrec_2_135567" class="ad-autoload"></div> 
+       </div> 
+       <div class="widget most-talked-about"> 
+        <h4>MOST TALKED ABOUT</h4> 
+        <div class="widget-posts"> 
+         <div class="widget-post" data-id="235467"> 
+          <a href="http://coveteur.com/2017/09/25/topshop-personal-shopping-fashion-week-looks/" title="The Fall Trends Coveteur’s Co-Founder Is Wearing To Fashion Week"> 
+           <div class="widget-post__thumb"> 
+            <img src="http://coveteur.com/content/uploads/2017/09/Topshop_Steph_Mark-84-homepage-250x250.jpg" width="250" height="250" alt=""> 
+           </div> 
+           <div class="widget-post__details">
+             The Fall Trends Coveteur’s Co-Founder Is Wearing To Fashion Week
+            <br> 
+           </div> </a> 
+         </div> 
+         <div class="widget-post" data-id="236853"> 
+          <a href="http://coveteur.com/2017/09/25/topshop-personal-shopping-service-stephanie-mark-denim-wardrobe/" title="All The Ways We’re Wearing Denim This Fall"> 
+           <div class="widget-post__thumb"> 
+            <img src="http://coveteur.com/content/uploads/2017/09/Topshop_Steph_Mark-96-homepage-250x250.jpg" width="250" height="250" alt=""> 
+           </div> 
+           <div class="widget-post__details">
+             All The Ways We’re Wearing Denim This Fall
+            <br> 
+           </div> </a> 
+         </div> 
+         <div class="widget-post" data-id="238623"> 
+          <a href="http://coveteur.com/2017/09/25/topshop-personal-shopping-service-editor-how-to/" title="What Happened When I Let a Stranger Pick Out My Entire Wardrobe"> 
+           <div class="widget-post__thumb"> 
+            <img src="http://coveteur.com/content/uploads/2017/09/Topshop_Steph_Mark-108-2-homepage-250x250.jpg" width="250" height="250" alt=""> 
+           </div> 
+           <div class="widget-post__details">
+             What Happened When I Let a Stranger Pick Out My Entire Wardrobe
+            <br> 
+           </div> </a> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="widget sidebar-ad-zone"> 
+        <script>googletag.cmd.push(function(){window.googleAdTags['div-gpt-ad-ros_medrec_3_135567'] = googletag.defineSlot('/23131952/ROS_MedRec_3', [[300, 250]], 'div-gpt-ad-ros_medrec_3_135567').defineSizeMapping(mappingMedRecShort).addService(googletag.pubads())})</script>
+        <!-- /23131952/ROS_MedRec_3 -->
+        <div id="div-gpt-ad-ros_medrec_3_135567" class="ad-autoload"></div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="pagination"> 
+      <div class="previous"> 
+       <a href="http://coveteur.com/2016/03/10/how-to-move-to-canada/" rel="next">next</a>
+       <a href="http://coveteur.com/2016/03/10/how-to-move-to-canada/" rel="next">next</a> 
+      </div> 
+      <div class="next">
+       <a href="http://coveteur.com/2016/03/10/alicia-yoon-korean-skincare/" rel="prev">previous</a>
+      </div> 
+     </div> 
+     <!-- footer --> 
+     <div class="post-footer js-rail-blocker -no-tags"> 
+      <div class="post-footer__tags">
+        Tags: 
+      </div> 
+      <div class="js-sticky-share-anchor"></div> 
+      <div data-image="http://coveteur.com/content/uploads/2016/03/Nikki_Erwin-23-1.jpg" data-description="9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)" data-facebook-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?utm_source=facebook&amp;utm_campaign=socialbutton&amp;utm_medium=social" data-pinterest-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?utm_source=pinterest&amp;utm_campaign=socialbutton&amp;utm_medium=social" data-twitter-link="http://coveteur.com/2016/03/10/first-fashion-jobs/?tr=1" class="post-share__bar post-share__bar--footer js-sticky-share"> 
+       <a href="#" title="Share on Facebook" class="js-share-facebook facebook"><span class="icon -facebook"></span></a> 
+       <a href="#" title="Share on Pinterest" class="js-share-pinterest pinterest"><span class="icon -pinterest"></span></a> 
+       <a href="#" title="Share on Twitter" class="js-share-twitter icon twitter"><span class="icon -twitter"></span></a> 
+      </div> 
+     </div> 
+     <!-- pubexchange --> 
+     <div class="pubexchange_module" id="pubexchange_below_content_2" data-pubexchange-module-id="2074"></div> 
+     <script>(function(w, d, s, id) {
+          w.PUBX=w.PUBX || {pub: "the_coveteur", discover: false, lazy: true};
+          var js, pjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id; js.async = true;
+          js.src = "//main.pubexchange.com/loader.min.js";
+          pjs.parentNode.insertBefore(js, pjs);
+          }(window, document, "script", "pubexchange-jssdk"));</script> 
+     <!-- 970x250 ad --> 
+     <div class="js-rail-blocker article-breaker-ad"></div> 
+    </div> 
+   </div> 
+   <div class="news-pop newsletter-pop"> 
+    <a href="#" class="close news-pop__close">×</a> 
+    <div class="widget newsletter"> 
+     <h4 class="no-border">Wake up to Louboutins with our newsletter.<br> <span>Sign up Already!</span>&nbsp;<span aria-hidden="true" class="icon-mail"></span></h4> 
+     <p>It's the internet equivalent of a friendship bracelet.</p> 
+     <form class="clearfix" id="pop_newsletter_signup"> 
+      <input id="email_address" type="email" class="email" placeholder="Email" name="email_address"> 
+      <input id="" type="submit" value="SIGN UP" class="submit newsletter_signup" placeholder="sign up"> 
+      <p class="success messages" style="text-align: left">You did it! Thanks for joining our newsletter list.</p> 
+      <p class="exists messages" style="text-align: left">Looks like you have already subscribed.</p> 
+      <p class="error messages" style="text-align: left">Error, please enter a valid email address</p> 
+     </form> 
+    </div> 
+   </div> 
+   <div id="fb-root"></div> 
+   <script>
+		window.fbAsyncInit = function() {
+						FB.init({
+				appId      : 173072073205322,
+				xfbml      : false,
+				version    : 'v2.8'
+			});
+			FB.AppEvents.logPageView();
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script> 
+   <script type="text/javascript">
+		    var _sf_async_config={};
+		    /** CONFIGURATION START **/
+		    _sf_async_config.uid = 56709;
+		    _sf_async_config.domain = 'thecoveteur.com';
+		    _sf_async_config.useCanonical = true;
+		    _sf_async_config.sections = 'Main Page';
+		    _sf_async_config.authors = 'Coveteur Author';
+		    /** CONFIGURATION END **/
+		    (function(){
+		      function loadChartbeat() {
+		        window._sf_endpt=(new Date()).getTime();
+		        var e = document.createElement('script');
+		        e.setAttribute('language', 'javascript');
+		        e.setAttribute('type', 'text/javascript');
+		        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+		        document.body.appendChild(e);
+		      }
+		      var oldonload = window.onload;
+		      window.onload = (typeof window.onload != 'function') ?
+		         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+		    })();
+		</script> 
+   <!-- Facebook Pixel Code --> 
+   <script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window,document,'script',
+		'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '1112425415570790');
+		fbq('track', 'PageView');
+		</script> 
+   <noscript> 
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=1112425415570790&amp;ev=PageView &amp;noscript=1"> 
+   </noscript> 
+   <!-- End Facebook Pixel Code --> 
+   <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script> 
+   <!-- Place this tag in your head or just before your close body tag. --> 
+   <script src="https://apis.google.com/js/platform.js" async defer></script> 
+   <!--Plugin WP Missed Schedule 2013.1231.2013 Build 2014-09-13 Active - Tag 6707293c0218e2d8b7aa38d418ffa608--> 
+   <!-- This website is patched against a big problem not solved from WordPress 2.5+ to date --> 
+   <div class="tc_loader_wrapper" style="display:none;"> 
+    <div class="tc_loader"></div> 
+   </div> 
+   <div class="lightbox"> 
+    <div class="lightbox__nav"> 
+     <!-- /23131952/Lightbox_Leaderboard --> 
+     <div id="div-gpt-ad-lightbox_leaderboard"></div> 
+     <div class="lightbox__nav__inner"> 
+      <a href="/" title="Coveteur Home"> <img class="lightbox-logo" srcset="http://coveteur.com/content/themes/the-coveteur/public/images/coveteur-logo.png 1x, http://coveteur.com/content/themes/the-coveteur/public/images/coveteur-logo@2x.png 2x"> </a> 
+      <div class="lightbox-close"> 
+       <a href="#" class="close">
+        <div class="lightbox-close-icon"></div></a> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- end light nav --> 
+    <div class="lightbox-inner"> 
+     <div class="light-content clearfix"> 
+      <div class="light-image-wrap"> 
+       <div class="light-arrow light-prev"> 
+        <a class="icon -arrow-left-gallery" href="#" data-prev=""> </a> 
+       </div> 
+       <div class="light-image"> 
+        <img src="" alt="" class="main"> 
+       </div> 
+       <div class="light-arrow light-next"> 
+        <a class="icon -arrow-right-gallery" href="#" data-next=""> </a> 
+       </div> 
+       <div class="light-share"> 
+        <a href="" class="light-share-link icon -facebook"></a> 
+        <a href="" class="light-share-link icon -pinterest"></a> 
+       </div> 
+      </div> 
+      <div class="light-rail"> 
+       <div class="light-rail-inner"> 
+        <div class="light-rail-inner-scroll"> 
+         <a class="post-category-link category-link" href="" title=""></a> 
+         <h2 class="title"></h2> 
+         <div class="light-counter"></div> 
+         <div class="description"></div> 
+         <p class="credits"></p> 
+         <div class="light-shop"> 
+          <h3><span aria-hidden="true" class="icon-shop"></span>Shop the Look</h3> 
+          <ul class="fav-look-prod-wrap clearfix"> 
+          </ul> 
+         </div> 
+         <!-- end light shop --> 
+        </div>
+        <!-- end light-rail-inner-scroll --> 
+        <!-- /23131952/Lightbox_Rectangle --> 
+        <div id="div-gpt-ad-lightbox_rectangle"></div> 
+       </div> 
+       <!-- end light-rail-inner --> 
+      </div> 
+      <!-- end light-rail --> 
+     </div> 
+     <!-- end light content --> 
+    </div> 
+   </div> 
+   <!-- end lightbox -->
+   <script type="text/javascript">var tc_lightbox_post_title = "How to Get Your First Job in Fashion";var tc_lightbox_post_subtitle = "9 fashion professionals on how they got in and what they’re looking for in their next hire. (It could be you!)";var mediaids = [135639,135627,135659,135633,132719,135630,135628,135624,135657];var mediadata = {"135639":{"next_id":"135627","prev_id":"135657","count":1,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/phillip_picardi-4-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/phillip_picardi-4.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"135627":{"next_id":"135659","prev_id":"135639","count":2,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Titus-1-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Titus-1.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"135659":{"next_id":"135633","prev_id":"135627","count":3,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hayley-Bloomingdale-1-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hayley-Bloomingdale-1.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"135633":{"next_id":"132719","prev_id":"135659","count":4,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Alper-2-76x76.png","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kate-Alper-2.png","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"132719":{"next_id":"135630","prev_id":"135633","count":5,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/02\/Micaela_Erlanger_086-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/02\/Micaela_Erlanger_086.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"","credits":"Suit, Pallas; Shoes, Christian Louboutin","shoppable":{"rs_1":{"image_url":"http:\/\/images.rewardstyle.com\/img?v=1.3&p=42028936","link":"http:\/\/rstyle.me\/hH-n\/bicv6iu2y6"},"rs_2":{"image_url":"http:\/\/images.rewardstyle.com\/img?v=1.3&p=43332303","link":"http:\/\/rstyle.me\/hH-n\/bjknyru2y6"},"rs_3":{"image_url":"http:\/\/images.rewardstyle.com\/img?v=1.3&p=43331619","link":"http:\/\/rstyle.me\/hH-n\/bjknbdu2y6"}}},"135630":{"next_id":"135628","prev_id":"132719","count":6,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Sophie-Quy-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Sophie-Quy.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"135628":{"next_id":"135624","prev_id":"135630","count":7,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kevin-Breen-1-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Kevin-Breen-1.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"135624":{"next_id":"135657","prev_id":"135628","count":8,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hannah-Sider-2-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Hannah-Sider-2.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]},"135657":{"next_id":"135639","prev_id":"135624","count":9,"full_count":9,"thumb_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Melissa_Rubini-103-76x76.jpg","full_img":"http:\/\/coveteur.com\/content\/uploads\/2016\/03\/Melissa_Rubini-103.jpg","title":"How to Get Your First Job in Fashion","category":"Career","categoryLink":"http:\/\/coveteur.com\/supertags\/career\/","description":"How to Get Your First Job in Fashion","credits":"9 fashion professionals on how they got in and what they\u2019re looking for in their next hire. (It could be you!)","shoppable":[]}}</script> 
+   <!-- START Parse.ly Include: Standard --> 
+   <div id="parsely-root" style="display: none"> 
+    <div id="parsely-cfg" data-parsely-site="coveteur.com"></div> 
+   </div> 
+   <script data-cfasync="false">
+(function(s, p, d) {
+  var h=d.location.protocol, i=p+"-"+s,
+      e=d.getElementById(i), r=d.getElementById(p+"-root"),
+      u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+      :"static."+p+".com";
+  if (e) return;
+  e = d.createElement(s); e.id = i; e.async = true;
+  e.setAttribute('data-cfasync', 'false'); e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script> 
+   <!-- END Parse.ly Include: Standard --> 
+   <script type="text/javascript" src="http://coveteur.com/content/plugins/hello-emoji/lib/jquery-emoji/jquery.emoji.js?ver=0.1.0"></script> 
+   <script type="text/javascript">
+/* <![CDATA[ */
+var hello_emoji = {"images_src":"http:\/\/coveteur.com\/content\/plugins\/hello-emoji\/images\/emoji"};
+/* ]]> */
+</script> 
+   <script type="text/javascript" src="http://coveteur.com/content/plugins/hello-emoji/js/hello-emoji.js?ver=0.1.0"></script> 
+   <script type="text/javascript" src="http://coveteur.com/wordpress/wp-includes/js/underscore.min.js?ver=1.8.3"></script> 
+   <script type="text/javascript" src="http://coveteur.com/wordpress/wp-includes/js/imagesloaded.min.js?ver=3.2.0"></script> 
+   <script type="text/javascript" src="http://coveteur.com/wordpress/wp-includes/js/masonry.min.js?ver=3.3.2"></script> 
+   <script type="text/javascript" src="http://coveteur.com/wordpress/wp-includes/js/wp-embed.min.js?ver=4.6.2-alpha-38895"></script> 
+   <script src="http://coveteur.com/content/themes/the-coveteur/public/javascripts/app.js"></script> 
+   <!-- /23131952/ROS_Mobile_Adhesive --> 
+   <div id="div-gpt-ad-ROS_Mobile_Adhesive" class="ad-autoload"></div> 
+   <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3685c10485","applicationID":"6385637","transactionName":"YQNTZkAHXUFTW0BRDVhJcFFGD1xcHUtdVgVaAw==","queueTime":0,"applicationTime":1330,"atts":"TURQEAgdTk8=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+   <!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using disk: enhanced
+
+ Served from: coveteur.com @ 2017-10-05 08:38:53 by W3 Total Cache -->
+  </div>
+ </body>
+</html>

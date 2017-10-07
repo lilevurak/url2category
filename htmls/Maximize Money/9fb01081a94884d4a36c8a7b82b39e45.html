@@ -1,0 +1,933 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>100 Ways to Save Money in College</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- pinterest verification -- temporary 7/13/16 --> 
+  <meta name="p:domain_verify" content="fd3ac43e4b062437bc99b4980c14937a"> 
+  <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WN9Q2WP');</script> 
+  <!-- End Google Tag Manager --> 
+  <meta name="description" content="Students can save a lot of money by using the following 100 proven tips for saving money in college."> 
+  <meta name="keywords" content="saving money in college"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="x-dns-prefetch-control" content="on"> 
+  <link rel="dns-prefetch" href="//wisebread.killeracesmedia.netdna-cdn.com"> 
+  <meta property="og:title" content="100 Ways to Save Money in College"> 
+  <meta property="og:description" content="Heading off to college this fall? We've got 100 tips to help students save money."> 
+  <meta property="og:image" content="http://www.wisebread.com/files/fruganomics/blog-images/woman_piggy_bank_000019734269.jpg"> 
+  <meta property="og:url" content="http://www.wisebread.com/100-ways-to-save-money-in-college"> 
+  <meta property="og:site_name" content="Wise Bread"> 
+  <link rel="shortcut icon" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/wisebread/favicon-leaves.ico" type="image/x-icon"> 
+  <link rel="canonical" href="http://www.wisebread.com/100-ways-to-save-money-in-college"> 
+  <meta name="revisit-after" content="1 day"> 
+  <!--This page is not a news article. googlebot-news IS blocked--> 
+  <meta name="GOOGLEBOT-NEWS" content="NOINDEX, NOFOLLOW"> 
+  <!-- CSS aggregated by CDN module. --> 
+  <link type="text/css" rel="stylesheet" media="all" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/css/cdn_css_http_23a2e37aa733c9514f5416da0e778f07.css"> 
+  <link type="text/css" rel="stylesheet" media="print" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/css/cdn_css_http_726eb9f5b9224e75bcf6f8d0ccdae963.css"> 
+  <!-- CSS aggregated by CDN module. --> 
+  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/sites/default/themes/custom/wisebread/ie.css" /><![endif]--> 
+  <!--If Less Than or Equal (lte) to IE 7--> 
+  <!--[if lte IE 7]><link type="text/css" rel="stylesheet" media="all" href="/sites/default/themes/custom/wisebread/ie7.css" /><![endif]--> 
+  <!--If Less Than or Equal (lte) to IE 7--> 
+  <script type="text/javascript" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/js/js_b8be3127307358767645f992dc427eba.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved or changed.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"custom_search":{"form_target":"_self","solr":1},"CToolsUrlIsAjaxTrusted":{"\/100-ways-to-save-money-in-college":[true,true]},"quicktabs":{"qt_2":{"tabs":[0]},"qt_4":{"tabs":[0]}}});
+//--><!]]>
+</script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ga('set', 'contentGroup5', '')
+//--><!]]>
+</script> 
+  <!-- start dfp --> 
+  <script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script> 
+  <script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/1038175/WB_floating_160x600', [160, 600], 'div-gpt-ad-1396207921741-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_leaderboard_728x90_homepage_only', [728, 90], 'div-gpt-ad-1396232301203-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_top_sidebar_300x250_homepage_only', [300, 250], 'div-gpt-ad-1396234280862-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_300x250_skype_nodes', [300, 250], 'div-gpt-ad-1396239767493-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_leaderboard_728x90_skype_nodes', [728, 90], 'div-gpt-ad-1396271697630-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/Skype_midarticle_300x250', [300, 250], 'div-gpt-ad-1396271961711-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/wb_midarticle', [[300, 250], [336, 280]], 'div-gpt-ad-1396904310695-0').addService(googletag.pubads());
+
+    googletag.enableServices();
+    });
+    </script> 
+  <!-- end dfp --> 
+  <!-- start bing event tracking --> 
+  <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"4019141"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script> 
+  <!-- end bing event tracking --> 
+  <!-- facebook --> 
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1585036571784545']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script> 
+  <noscript>
+   &lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1585036571784545&amp;amp;ev=PixelInitialized"&gt; 
+  </noscript> 
+  <!-- end facebook --> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1585036571784545');
+    fbq('track', "PageView");</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585036571784545&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+  <!-- taboola pixel code --> 
+  <script src="//cdn.taboola.com/libtrc/killeraces-sc/tfa.js"></script> 
+  <!-- end taboola pixel code --> 
+  <!-- gemini tracking code --> 
+  <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10001363796857','properties':{'pixelId':'440576'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script> 
+  <noscript> &lt;img src="https://sp.analytics.yahoo.com/spp.pl?a=10001363796857&amp;amp;.yp=440576"&gt; 
+  </noscript> 
+  <!-- end gemini tracking code --> 
+  <!-- FM tracking pixel --> 
+  <script type="text/javascript" src="http://static.fmpub.net/header/wisebread"></script> 
+  <!-- FM tracking pixel --> 
+  <!-- outbrain pixel --> 
+ </head>
+ <body class="sidebar-right node-page">
+  <img src="//amplifypixel.outbrain.com/pixel?mid=007c2e4d9609448c076cadb4c1d5e14d52">   
+  <!-- Google Tag Manager (noscript) --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN9Q2WP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <!-- End Google Tag Manager (noscript) --> 
+  <!-- facebook widget --> 
+  <div id="fb-root"></div> 
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=6743596911";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> 
+  <!-- facebook widget --> 
+  <!-- Layout --> 
+  <div class="super-container"> 
+   <div class="side-float"> 
+   </div> 
+   <div class="container" style="display:inline-block;"> 
+    <!-- add "showgrid" class to display grid --> 
+    <div id="header" class="clearfix"> 
+     <div id="block-menu-menu-utility" class="block block-menu"> 
+      <div class="content clear"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/about" title="">About</a></li> 
+        <li class="leaf odd"><a href="/about/contact" title="">Contact</a></li> 
+        <li class="leaf last even"><a href="/advertise" title="">Advertise</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="header-left"> 
+      <div id="block-block-181" class="block block-block"> 
+       <div class="content clear"> 
+        <strong><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=hs"> 0% APR Up To 21 Months<br> See Wise Bread's Picks for<br> Best Balance Transfer Cards </a></strong> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#header-left --> 
+     <div id="logo"> 
+      <a href="/" title="Home" rel="home"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/wisebread/personal-finance-blog-logo.png" alt="logo for personal finance blog Wise Bread" id="logo"></a> 
+     </div> 
+     <!-- /logo-title --> 
+     <div id="mobilehead"> 
+      <a class="nav-menu-icon" href="#"> <img src="/sites/default/themes/custom/wisebread/images/icon_menu.png" alt="More" width="20px" height="20px"> </a> 
+      <div id="nav-menu-main" class="navhead clearfix"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a></li> 
+        <li class="leaf last odd"><a href="/topic/personal-finance" title="">Personal Finance</a></li> 
+       </ul> 
+      </div> 
+      <div class="clear-block"></div> 
+      <div class="nav-menu-secondary"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/frugal-living" title="">Frugal Living</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income" title="">Career</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks" title="">Life Hacks</a></li> 
+        <li class="leaf odd"><a href="/bestdeals/today" title="">Best Deals</a></li> 
+        <li class="leaf last even"><a href="/top-100-most-popular-personal-finance-blogs" title="">Top PF Blogs</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="search-box">
+      <form action="/100-ways-to-save-money-in-college" accept-charset="UTF-8" method="post" id="search-theme-form" class="search-form"> 
+       <div>
+        <div id="search" class="container-inline"> 
+         <div class="form-item" id="edit-search-theme-form-1-wrapper"> 
+          <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" class="form-text NormalTextBox txtSearch"> 
+         </div> 
+         <fieldset class="custom_search-popup"></fieldset> 
+         <input type="image" name="op" value="Search" id="edit-submit" class="form-submit" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/images/search-button.jpg"> 
+         <input type="hidden" name="form_build_id" id="form-LWu9zCBWfMDYQK1Ngs75bl-in9cPunqg1J8_o7b6DG8" value="form-LWu9zCBWfMDYQK1Ngs75bl-in9cPunqg1J8_o7b6DG8"> 
+         <input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"> 
+         <input type="hidden" name="default_text" id="edit-default-text" value="" class="default-text"> 
+        </div> 
+       </div>
+      </form> 
+     </div> 
+    </div> 
+    <!-- /#header --> 
+    <div id="nav" class="navhead clearfix"> 
+     <ul class="menu">
+      <li class="expanded first odd"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="http://www.wisebread.com/the-5-best-secured-credit-cards?ref=nav" title="">Secured Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=nav" title="">Balance Transfer Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=nav" title="">Cash Back Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=nav" title="">Travel Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/the-best-5-credit-cards-for-groceries?ref=nav" title="">Groceries Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/the-5-best-credit-cards-for-dining-out?ref=nav" title="">Restaurant Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/the-best-low-interest-rate-credit-cards?ref=nav" title="">Low Interest Credit Cards</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/the-5-best-credit-cards-for-small-businesses?ref=nav" title="">Small Business Credit Cards</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/topic/personal-finance" title="">Personal Finance</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/personal-finance/banking" title="">Banking</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/cars-and-transportation" title="">Cars and Transportation</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/debt-management" title="">Debt Management</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/financial-news" title="">Financial News</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/insurance" title="">Insurance</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/investment" title="">Investment</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/real-estate-and-housing" title="">Real Estate and Housing</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/retirement" title="">Retirement</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/taxes" title="">Taxes</a></li> 
+        <li class="leaf last even"><a href="/topic/personal-finance" title="">More in Personal Finance</a></li> 
+       </ul></li> 
+      <li class="expanded even"><a href="/topic/frugal-living" title="">Frugal Living</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/frugal-living/budgeting" title="">Budgeting</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/diy" title="">DIY</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/entertainment" title="">Entertainment</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/food-and-drink" title="">Food and Drink</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/green-living" title="">Green Living</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/health-and-beauty" title="">Health and Beauty</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/home" title="">Home</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/lifestyle" title="">Lifestyle</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/shopping" title="">Shopping</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/style" title="">Style</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/travel" title="">Travel</a></li> 
+        <li class="leaf last odd"><a href="/topic/frugal-living" title="">More in Frugal Living</a></li> 
+       </ul></li> 
+      <li class="expanded even"><a href="/topic/career-and-income" title="">Career</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="/topic/career-and-income/career-building" title="">Career Building</a></li> 
+        <li class="leaf even"><a href="/newgrads" title="">New College Grads</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income/education-training" title="">Education &amp; Training</a></li> 
+        <li class="leaf even"><a href="/topic/career-and-income/entrepreneurship" title="">Entrepreneurship</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income/extra-income" title="">Extra Income</a></li> 
+        <li class="leaf even"><a href="/topic/career-and-income/job-hunting" title="">Job Hunting</a></li> 
+        <li class="leaf last odd"><a href="/topic/career-and-income" title="">More in Career &amp; Income</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/topic/life-hacks" title="">Life Hacks</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="/topic/life-hacks/consumer-affairs" title="">Consumer Affairs</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/family" title="">Family</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/general-tips" title="">General Tips</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/organization" title="">Organization</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/personal-development" title="">Personal Development</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/productivity" title="">Productivity</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/technology" title="">Technology</a></li> 
+        <li class="leaf last even"><a href="/topic/life-hacks" title="">More in Life Hacks</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/bestdeals/today" title="Best deals of the day; handpicked every weekday!">Best Deals</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/bestdeals/today" title="">Daily Deals</a></li> 
+        <li class="leaf odd"><a href="/topic/deals-and-coupons/giveaways" title="">Giveaways</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/coupons" title="">Coupon Codes</a></li> 
+        <li class="leaf odd"><a href="/printable-coupons" title="">Printable Coupons</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/credit-card-guide/?ref=nav" title="Wise Bread picks for credit cards that are good deals.">Best Credit Cards</a></li> 
+       </ul></li> 
+      <li class="leaf even"><a href="http://www.wisebread.com/top-100-most-popular-personal-finance-blogs/" title="">Top PF Blogs</a></li> 
+      <li class="expanded last odd"><a href="/all" title="">More</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="http://www.wisebread.com/guides" title="">How-To Guides</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/money-saving-book/" title="">Wise Bread Book</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/money-tips/" title="">Money Tips Network</a></li> 
+        <li class="leaf even"><a href="/make-money-writing-for-wise-bread" title="">Write For Us</a></li> 
+        <li class="leaf odd"><a href="/about/contact" title="">Contact Us</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/bloggers" title="">About Our Writers</a></li> 
+       </ul></li> 
+     </ul>
+     <div class="clear-block"></div> 
+    </div> 
+    <!-- /#nav --> 
+    <div class="body-container clearfix"> 
+     <div id="main" class=""> 
+      <div class="breadcrumb">
+       <a href="/">Home</a> » 
+       <a href="/topic/personal-finance">Personal Finance</a> » 100 Ways to Save Money in College
+      </div> 
+      <h1 class="page-title ">100 Ways to Save Money in College</h1> 
+      <div id="above-content"> 
+       <div id="block-block-110" class="block block-block"> 
+        <div class="content clear"> 
+         <script src="http://www.anrdoezrs.net/am/2822544/include/joined/sid/autoDL/am.js"></script> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="node-1437358" class="node node-blog"> 
+       <div class="credits">
+         By 
+        <a href="/amy-lu" title="View user profile.">Amy Lu</a> 
+        <span class="date">on 6 June 2015</span> 
+        <span class="comments"><a href="/100-ways-to-save-money-in-college#comments" class="active">0 comments</a></span> 
+       </div> 
+       <div class="sharing-chicklets"> 
+        <span class="facebook-plugins-like-button_count"> 
+         <div class="fb-share-button" data-href="/100-ways-to-save-money-in-college" data-type="button_count"></div> </span> 
+        <span class="retweet"> <a href="https://twitter.com/share" class="twitter-share-button" data-via="wisebread" data-text="100 Ways to Save Money in College">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </span> 
+        <span class="pinit"> <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles/fruganomics/blog-images/woman_piggy_bank_000019734269.jpg&amp;description=100 Ways to Save Money in College" data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png"></a> </span> 
+       </div> 
+       <div class="sharing-chicklets-top-article big-share-buttons"> 
+        <a class="big-share-btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college"><img src="http://www.wisebread.com/files/fruganomics/facebook-17x17.png"><span>Share on Facebook</span></a> 
+        <a class="big-share-btn twitter" target="_blank" href="http://twitter.com/home/?status=100 Ways to Save Money in College http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college via @wisebread"><img src="http://www.wisebread.com/files/fruganomics/twitter-17x17.png"><span>Tweet This</span></a> 
+        <a class="big-share-btn pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fblog-images%2Fwoman_piggy_bank_000019734269.jpg&amp;description=100 Ways to Save Money in College"><img src="http://www.wisebread.com/files/fruganomics/pinterest-17x17.png"><span>Pin It</span></a> 
+       </div> 
+       <!-- end big share buttons --> 
+       <div class="body"> 
+        <div id="big-main-image"> 
+         <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/605x340/blog-images/woman_piggy_bank_000019734269.jpg" alt="" title="" class="" width="605" height="340"> 
+        </div> 
+        <br> 
+        <div class="image-and-share below-big-image"> 
+         <!-- editors pick block below image --> 
+         <style>
+  div.custom-belimg {
+    border:1px solid #d2d2d2;
+    padding: 5px;
+    font: 12px helvetica, arial, sans;
+  }
+  div.custom-belimg div.belimg-heading {
+   border-bottom:1px solid #c2c2c2;
+   font: bold 13px helvetica, arial, sans;
+   margin: 0 10px 15px 10px;
+   padding: 5px;
+  }
+  div.custom-belimg .belimg-content ul {
+  }
+  div.custom-belimg .belimg-content ul li {
+    line-height: 1.5em;
+    background: none;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+  div.custom-belimg .belimg-content ul li a {
+    border-bottom: none;
+  }
+</style> 
+         <div class="custom-belimg"> 
+          <!-- 1437358 --> 
+          <div class="belimg-heading"> 
+           <img src="http://www.wisebread.com/favicon.ico" style="position:relative;top:3px;margin-right:3px;"> Wise Bread Picks 
+          </div> 
+          <div class="belimg-content"> 
+           <ul> 
+            <li><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=belimg-all" title="5 Best Travel Rewards Credit Cards Reviewed">Travel Rewards Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=belimg-all" title="Top 5 Cash Back Credit Cards">Cash Back Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=belimg-a" title="Best 0% Balance Transfer Credit Cards">0% Balance Transfer Credit Cards</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- midarticle: first half -->
+        <p>Many college students know exactly what it's like to live from day to day with no extra money. However, there are lots of ways students can save money. Here are 100 of them! One more simple way to save money is to get a credit card that offers rewards. If you know you can be responsible and pay off your balance every month, we've picked out the <a href="http://www.wisebread.com/the-5-best-credit-cards-for-college-students?ref=seealso">best credit cards for college students</a>.</p> 
+        <h2>Food</h2> 
+        <p><strong>1. Stock your kitchen.</strong> Even if you have two meals a day from the dollar menu at the local fast food joint, you'll be spending more than you would on food you&nbsp; make at home.</p> 
+        <p><strong>2. Purchase off-brand. </strong>The ingredients are usually the same. You're just paying less for the packaging and name.</p> 
+        <p><strong>3. Grab extra condiments.</strong> If you pick up packets of sugar, ketchup, mustard, mayonnaise and creamer when you eat out, you won't have to purchase them.</p> 
+        <p><strong>4. Try ramen noodles.</strong> They're cheap and generally well-liked. To avoid a sodium overdose, don't use the seasoning packet. Add a little butter, garlic and green onion to the noodles instead.</p> 
+        <p><strong>5. Plan cheap meals.</strong> Tuna sandwiches, macaroni and cheese with bacon bits, rice and beans, etc. are tasty and easy on your wallet. Be creative!</p> 
+        <p><strong>6. Make your own coffee.</strong> You can literally save hundreds of dollars each semester by skipping the trip to Starbucks.</p> 
+        <p><strong>7. Use coupons.</strong> Check your weekly paper and try to do your grocery shopping on days when grocery stores are doing 'double coupon day' or 'triple coupon' day. You could end up getting products for free!</p> 
+        <p><strong>8. Create a budget goal. </strong>Know how much you can spend at the grocery store each week. If you need to eat on $25 or $50 for the week, make it happen.</p> 
+        <p><strong>9. Carry a calculator.</strong> Add the price of the items as you shop. This is a great way to ensure that you stick to your budget.</p> 
+        <p><strong>10. Plan meals with a friend.</strong> For instance, you can create a meal for you and your friend on Mondays, Wednesdays, and Fridays. You friend can do the cooking on Tuesdays, Thursdays, and Saturdays.</p> 
+        <p><strong>11. Buy in bulk.</strong> Most grocery stores have bulk sections so you can stock up on the goods you use most.</p> 
+        <p><strong>12. Stick to your list.</strong> You can really save a lot of money if you buy only what you need. Avoid endcaps and checkout shelves, as the items are mostly unnecessary and can add up quickly.</p> 
+        <p><strong>13. Check the store sales papers.</strong> Determine where you can save money every week and plan accordingly.</p> 
+        <p><strong>14. Price match.</strong> Find out if your grocery store has this policy. If it does, take advantage of it and carry other stores' sales papers with you.</p> 
+        <h2><img src="http://www.wisebread.com/files/fruganomics/u11/student_library_000018190590.jpg" width="605" height="339" alt=""></h2> 
+        <h2>General Supplies and Shopping</h2> 
+        <p><strong>15. Look for cheap hygiene supplies.</strong> Find the ones with 25% or 50% more in the bottles. Many manufacturers do this in order to boost sales, and the products will last longer. Avoid brand names with items like shampoo, deodorant, toothpaste, conditioner, soap, and face wash.</p> 
+        <p><strong>16. Go for 'Buy One Get One Free' deals.</strong> They're advertised at the store and in the coupon section of the paper. Only buy things you would have purchased anyway, though.</p> 
+        <p><strong>17. Grab free product samples.</strong> You can find them online at places like <a href="http://www.TotallyFreeCrap.com">Totally Free Crap</a>. If you see something you would use, sign up for a sample to save money.</p> 
+        <p><strong>18. Buy used clothing.</strong> Shop at Goodwill, thrift shops, and yard sales. There are lots of clothes for sale that are brand name and practically brand new — all for a fraction of the cost of department stores.</p> 
+        <p><strong>19. Sign up for </strong><a href="http://www.Freecycle.org"><strong>Freecycle</strong></a><strong>.</strong> You'll receive an email when someone in your local group wants to give something away for free. You'd be surprised to find what people are willing to get rid of for nothing.</p> 
+        <p><strong>20. Post 'wanted' emails.</strong> Individuals can respond to you if they have the item you need. (You can do this on Freecycle, too.)</p> 
+        <p><strong>21. Take hotel goodies.</strong> Don't leave all the extra shampoo, conditioner, and soap. You can use this and save money rather than purchasing your own.</p> 
+        <p><strong>22. Buy from the farmer's market.</strong> It's a great way to save money on fruits and vegetables, and the produce is likely fresher and better quality.</p> 
+        <p><strong>23. Email companies.</strong> Tell them you'd like to try their product but are wary of purchasing it first. Most companies will send a free sample and you can get samples of shampoo, conditioner, cleaning supplies, soap, food, drinks, and anything else you can think of. Simply find their website and the 'contact' link to get an email address.</p> 
+        <p><strong>24. Reuse simple things. </strong>Think Ziploc bags, liquid soap dispensers, etc.</p> 
+        <p><strong>25. Save containers.</strong> Wash and reuse things like butter and sour cream containers rather than purchasing Tupperware.</p> 
+        <h2>Off-Campus Living</h2> 
+        <p><strong>26. Get a roommate.</strong> Make sure it's someone trustworthy and dependable. If possible, get two. This will cut the cost of living significantly.</p> 
+        <p><strong>27. Rent a room in someone else's house.</strong> This is generally cheaper than renting your own apartment. Just be sure it's someone dependable and honest.</p> 
+        <h2>Holidays and Birthdays</h2> 
+        <p><strong>28. Make gifts.</strong> If you have supplies from a hobby you enjoy, you can use these rather than having to buy gifts for friends and family.</p> 
+        <p><strong>29. Trade with friends.</strong> You make handmade items for their family members and receive handmade items for your family members from your friends. This is a great way to toss up the gifts your family and friends are getting, and can be cheap and fun as well.</p> 
+        <p><strong>30. Ask for things you can use.</strong> For instance, gift cards to the local grocery store, stationery supplies, and books are practical things that you will use; if someone else gives them to you, you save money.</p> 
+        <p><strong>31. Re-gift.</strong> It may seem tacky to some people, but if you really think another friend or family member would like and use the gift, it's fine. Just make sure you give the gift to someone who isn't likely to come across the person who gave it to you!</p> 
+        <p><strong>32. Return duplicate gifts.</strong> Use the money for something practical.</p> 
+        <p><strong>33. Return expensive but needed gifts.</strong> Instead, buy a less expensive version of the same thing. Then put the extra money in your savings account.</p> 
+        <p><strong>34. Carpool.</strong> Ride with a responsible person going the same way and share gas costs.</p> 
+        <p><strong>35. Pack food and drinks to share.</strong> Don't stop for fast food on your road trips home.</p> 
+        <h2><img src="http://www.wisebread.com/files/fruganomics/u11/piggy-bank-iStock_000046923706_Small.jpg" width="605" height="340" alt=""></h2> 
+        <h2>Managing Your Money Correctly</h2> 
+        <p><strong>36. Put your change into a free account.</strong> Either checking or savings (or both) would work. You'd be surprised how quickly it adds up!</p> 
+        <p><strong>37. Pay off your credit card each month.</strong> Even if you can't, try to avoid charges that are not absolutely necessary. Doing this will save you a ton of money in interest fees.</p> 
+        <p><strong>38. Don't use the ATM.</strong> Many ATMs charge $1.50 to $2.50 every time you use them if they aren't part of your bank's network. Take out a lump amount at the bank each week and make it last.</p> 
+        <p><strong>39. Balance your checkbook correctly.</strong> This will help keep your checks from bouncing. The fees that come with bounced checks can quickly drain your bank account.</p> 
+        <p><strong>40. Keep receipts.</strong> It'll help you keep track of your purchases. At the end of the month, total it up and determine where you spent the most money. Cut back on this particular spending habit. Creating a limit of what you can spend and sticking to it is a good idea.</p> 
+        <p><strong>41. Manage your money with a journal.</strong> Plan out what you can spend on each category, from entertainment to food to other necessities. Stick to your plan and place any extra money in a savings account.</p> 
+        <p><strong>42. Don't use coin counting machines.</strong> You'll get charged a fee at best and ripped off at worst. Roll your own money.</p> 
+        <p><strong>43. Tip selectively.</strong> Pizza delivery guys and cashiers at check-out counters already make a salary per hour. Anything you tip is extra. Waitresses are different since their tips actually make up a large part of their paychecks.</p> 
+        <p><strong>44. Pay with cash.</strong> It makes it easier to keep track of what you're spending.</p> 
+        <p><strong>45. Bank online.</strong> Take advantage of this service to check your account every week. This can help you keep track of what you have in the bank and avoid overdraft charges.</p> 
+        <p><img src="http://www.wisebread.com/files/fruganomics/u11/students_study_000039499760.jpg" width="605" height="339" alt=""></p> 
+        <h2>Textbooks and School Supplies</h2> 
+        <p><strong>46. Buy used textbooks.</strong> There are many different websites where students can find used textbooks.</p> 
+        <p><strong>47. Sell your old textbooks.</strong> Make the money to purchase the new ones.</p> 
+        <p><strong>48. Find student discounts.</strong> Some stores offer discounts for students on school supplies like paper, pens, and pencils.</p> 
+        <h2>Furnishing Your Dorm or Apartment</h2> 
+        <p><strong>49. Try the flea market.</strong> You're sure to find a great assortment of fun and eccentric furniture for less money.</p> 
+        <p><strong>50. Haggle.</strong> Most of the time, flea market merchants are willing to drop the price a little.</p> 
+        <p><strong>51. Create your own art.</strong> This can be very cheap if you're taking art in college. The supplies are there and you don't have to spend a dime.</p> 
+        <p><strong>52. Visit church missions.</strong> See if you can get furniture for free. Many places give out unwanted or unneeded furniture like sofas, tables, beds, nightstands, and more.</p> 
+        <p><strong>53. Ask family members.</strong> They may have unwanted items that you can use to furnish your dorm or apartment.</p> 
+        <p><strong>54. Shop outlet stores.</strong> Outlet stores and huge discounts stores have furnishings and other accessories at great prices.</p> 
+        <!-- midarticle: middle --> 
+        <div id="kamidarticle" class="ggnoads"> 
+         <!--
+    <div id="kamidarticle-adnotice">
+      ARTICLE CONTINUES BELOW    </div>
+    --> 
+         <div id="kamidarticle-middle-content"> 
+          <div class="desktop-ad"> 
+           <script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=269302");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script> 
+          </div> 
+          <div class="mobile-ad"> 
+           <script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=269303");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- midarticle: second half --> 
+        <p><strong>55. Look for curbside goods.</strong> While dumpster diving is illegal in some places, many people put old furniture out by the side of the road. If it's in good shape and something you need, grab it.</p> 
+        <h2>Utilities and Bills</h2> 
+        <p><strong>56. Use calling apps.</strong> Many apps allow you to make phone calls via Wi-Fi, either for free or for a low fee.</p> 
+        <p><strong>57. Use free Wi-Fi.</strong> Don't pay for an Internet bill if free Wi-Fi is available on campus.</p> 
+        <p><strong>58. Skip cable.</strong> Or only pay for basic cable and avoid Pay-Per-View.</p> 
+        <p><strong>59. Turn off what you don't use.</strong> This goes for every light and electrical appliance.</p> 
+        <p><strong>60. Don't use the dishwasher.</strong> Or at least wait until it's completely full to use it.</p> 
+        <p><strong>61. Do laundry with a full load.</strong> Also, time the dryer so that it doesn't over-dry your clothes. This will cost more money in electric bills and will also ruin your clothing faster.</p> 
+        <p><strong>62. Take quick showers.</strong> It saves money on water if you pay a water bill, and it also saves on the electricity used to heat the water. Not to mention, it's more eco-friendly.</p> 
+        <p><strong>63. Pay bills online.</strong> You'll save a stamp and help the environment.</p> 
+        <p><strong>64. Layer up.</strong> Instead of turning the heat up, put on extra clothes to save on your heating bill.</p> 
+        <p><strong>65. Use box fans or ceiling fans.</strong> This alternative to turning up the air conditioner saves money on the utility bill.</p> 
+        <p><strong>66. Hang dark drapes over the windows.</strong> This will save a lot of money on the utility bill in the summer, since the sun shining in windows accounts for a great deal of the heat you'll feel inside.</p> 
+        <p><strong>67. Shut down your computer at night.</strong> This saves a lot more energy than you would realize and can cut down your electricity bills.</p> 
+        <h2>Transportation</h2> 
+        <p><strong>68. Walk.</strong> Not only is it better for your health and the environment, but you'll also save money.</p> 
+        <p><strong>69. Use public transportation.</strong> A few dollars a week for a bus ride is cheaper than filling your car up with gas.</p> 
+        <p><strong>70. Ride with a friend.</strong> If you're going to the same place, why not?</p> 
+        <p><strong>71. Buy gas early in the morning.</strong> The heat in the afternoon makes the gas expand and you get less for your money.</p> 
+        <p><strong>72. Multitask your trip.</strong> If you must make several trips a week, try to make them all at the same time. This way, you can save gas and get all of your errands finished while you're out.</p> 
+        <p><strong>73. Take your bike.</strong> It'll help you get around at college. It's also a great way to stay in shape, and it's good for the environment.</p> 
+        <p><strong>74. Have a designated driver.</strong> It's cheaper than calling a cab to take you home if you've been out and drinking.</p> 
+        <p><img src="http://www.wisebread.com/files/fruganomics/u11/students_000023181407.jpg" width="605" height="342" alt=""></p> 
+        <h2>Entertainment</h2> 
+        <p><strong>75. Use RedBox.</strong> You can rent movies for $1 a night rather than having cable or a video store membership.</p> 
+        <p><strong>76. Share DVD rentals with friends.</strong> Several people can watch the DVD before it's due back and the cost will be cut into fractions, saving you money.</p> 
+        <p><strong>77. Use YouTube and other streaming services.</strong> It's cheap entertainment!</p> 
+        <p><strong>78. Do game nights. </strong>Have friends gather at the apartment or dorm room for games rather than going out where you're likely to spend money. Make your own snacks rather than purchasing extra.</p> 
+        <p><strong>79. Go to free concerts.</strong> You don't have to pay for a concert or show to have a good time.</p> 
+        <p><strong>80. Catch the matinee.</strong> And while you're there, don't order drinks or popcorn at the movie theater, because this is how they really make their money. $4 for a small Coke just isn't practical.</p> 
+        <p><strong>81. Read library books.</strong> This is a great way to catch up on the books you've wanted to read, and keep yourself entertained at the same time.</p> 
+        <p><strong>82. Avoid cover fees.</strong> If you do go out with friends, check for places that charge cover fees — and find somewhere else.</p> 
+        <p><strong>83. Visit clubs on ladies' night.</strong> Or if you're a guy, look for guys' night. Free drinks = savings. Just make sure you leave when the hours are over.</p> 
+        <p><strong>84. Make your own drinks.</strong> Have get-togethers in your apartment or dorm rather than going out (if this is allowed). You can buy cheap vodka or tequila for mixing and save tons of money on the cost of mixed drinks.</p> 
+        <h2>Dates</h2> 
+        <p><strong>85. Cook for your date.</strong> Instead of eating out, invite your date over for a home-cooked meal. Research cheap but elegant meals that are easy to make, such as spaghetti and garlic bread, stuffed bell peppers, or chicken Parmesan.</p> 
+        <p><strong>86. Skip the restaurant dinner.</strong> No one said every date has to include it. Come up with creative date ideas like a picnic that you've packed on the beach or at the park.</p> 
+        <p><strong>87. Eat buffet.</strong> Depending on how much (and what) you eat, the buffet restaurant may be a better deal than ordering from the menu.</p> 
+        <p><strong>88. Gift creatively.</strong> Pick some wildflowers and tie a ribbon around them. This is absolutely classy and thoughtful — and very cheap. Or write your date a poem.</p> 
+        <p><strong>89. Ask your friends for help.</strong> For example, have a buddy do a favor for you and cook (you supply the ingredients) and serve you and your date. Return the favor later. This will make the atmosphere more fun and you get wait staff without the fancy restaurant cost.</p> 
+        <h2>Making a Few Extra Dollars</h2> 
+        <p><strong>90. Sell your old stuff.</strong> You may not need or want them, but someone on eBay might. A free PayPal account will allow you to accept payments instantly.</p> 
+        <p><strong>91. Sell ad space.</strong> Create a free blog with <a href="http://www.blogger.com">Blogger</a> or <a href="http://www.wordpress.com">WordPress</a> and place Google Adsense ads on your blog to make a bit of extra money.</p> 
+        <p><strong>92. Ask for donations.</strong> Put a PayPal donation button on your blog, so individuals can send a few dollars if your blog is interesting or useful to them.</p> 
+        <p><strong>93. Sell your crafts.</strong> If you create handmade things, list them for sale on <a href="http://www.Etsy.com">Etsy</a> to make some extra money.</p> 
+        <p><strong>94. Sell makeup.</strong> Make extra money selling Avon or MaryKay to your fellow college students.</p> 
+        <p><strong>95. Sell your skills.</strong> Offer discounted services like web design or logo design if you're taking graphic arts in college.</p> 
+        <p><strong>96. Do odd jobs.</strong> If you have any free time at all, walk dogs, babysit or do errands to earn a few extra dollars.</p> 
+        <p><strong>97. Tutor.</strong> If you're particularly good at a subject, you can get paid by teaching it to someone else.</p> 
+        <p><strong>98. Sell your jewelry.</strong> If you've got old jewelry or broken jewelry that you no longer want, sell it for extra money.</p> 
+        <p><strong>99. Freelance over the Internet.</strong> Your hours are flexible and you can work from anywhere.</p> 
+        <p><strong>100. Housesit.</strong> You can do it on the weekends for people taking trips, or offer to housesit over the summer to rack up some cash before the next semester.</p> 
+        <div id="below-content" class="mobile-ad"> 
+        </div> 
+       </div> 
+       <div class="mobile-ad"> 
+        <div class="image-and-share below-big-image"> 
+         <!-- editors pick block below image --> 
+         <style>
+  div.custom-belimg {
+    border:1px solid #d2d2d2;
+    padding: 5px;
+    font: 12px helvetica, arial, sans;
+  }
+  div.custom-belimg div.belimg-heading {
+   border-bottom:1px solid #c2c2c2;
+   font: bold 13px helvetica, arial, sans;
+   margin: 0 10px 15px 10px;
+   padding: 5px;
+  }
+  div.custom-belimg .belimg-content ul {
+  }
+  div.custom-belimg .belimg-content ul li {
+    line-height: 1.5em;
+    background: none;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+  div.custom-belimg .belimg-content ul li a {
+    border-bottom: none;
+  }
+</style> 
+         <div class="custom-belimg"> 
+          <!-- 1437358 --> 
+          <div class="belimg-heading"> 
+           <img src="http://www.wisebread.com/favicon.ico" style="position:relative;top:3px;margin-right:3px;"> Wise Bread Picks 
+          </div> 
+          <div class="belimg-content"> 
+           <ul> 
+            <li><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=belimg-all" title="5 Best Travel Rewards Credit Cards Reviewed">Travel Rewards Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=belimg-all" title="Top 5 Cash Back Credit Cards">Cash Back Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=belimg-a" title="Best 0% Balance Transfer Credit Cards">0% Balance Transfer Credit Cards</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="big-share-buttons" style="margin:30px 0 60px;"> 
+        <a class="big-share-btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college"><img src="http://www.wisebread.com/files/fruganomics/facebook-17x17.png"><span>Share on Facebook</span></a> 
+        <a class="big-share-btn twitter" target="_blank" href="http://twitter.com/home/?status=100 Ways to Save Money in College http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college via @wisebread"><img src="http://www.wisebread.com/files/fruganomics/twitter-17x17.png"><span>Tweet This</span></a> 
+        <a class="big-share-btn pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wisebread.com%2F100-ways-to-save-money-in-college&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fblog-images%2Fwoman_piggy_bank_000019734269.jpg&amp;description=100 Ways to Save Money in College"><img src="http://www.wisebread.com/files/fruganomics/pinterest-17x17.png"><span>Pin It</span></a> 
+       </div> 
+       <!-- end big share buttons --> 
+       <div id="adsense-end-article"> 
+        <!-- end-of-article ad placeholder --> 
+       </div> 
+       <div class="terms" style="margin-bottom:10px;"> 
+        <strong>Tagged: </strong>
+        <a href="/topic/personal-finance">Personal Finance</a>, 
+        <a href="/topic/career-and-income/education-training">Education &amp; Training</a>, 
+        <a href="/topic/college-0">college</a> 
+       </div> 
+       <div class="related-posts" style="clear:both;"> 
+        <div id="related-links-title" style="margin-bottom:7px;">
+         <strong>Related and Popular</strong>
+        </div> 
+        <div class="view view-similarterms view-id-similarterms view-display-id-block_1 view-dom-id-1"> 
+         <div class="view-content"> 
+          <div class="views-row views-row-1 views-row-odd views-row-first"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/9-signs-your-identity-was-stolen?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/anonymus_with_laptop.jpg" alt="Anonymous with laptop" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 9 Signs Your Identity Was Stolen </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-2 views-row-even"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/how-to-protect-your-credit-after-the-equifax-breach?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/woman_concerned_paperwork_603316058.jpg" alt="Woman protecting her credit after equifax breach" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> How to Protect Your Credit After the Equifax Breach </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-3 views-row-odd"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/who-really-owns-your-digital-assets?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/sporty_woman_taking_a_break_after_running_outdoors.jpg" alt="Sporty woman taking a break after running outdoors" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> Who Really Owns Your Digital Assets? </span></a></span> 
+           </div> 
+          </div> 
+          <div style="" class="clear">
+           &nbsp;
+          </div> 
+          <div class="views-row views-row-4 views-row-even"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/7-things-your-credit-report-does-not-include?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/iStock-629305628_0.jpg" alt="these things don't show up in your credit reports" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 7 Things Your Credit Report Does NOT Include </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-5 views-row-odd"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/how-your-bad-credit-can-impact-your-kids?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/working_at_home.jpg" alt="Working at home" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> How Your Bad Credit Can Impact Your Kids </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-6 views-row-even views-row-last"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/8-college-perks-you-might-be-missing-out-on?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/i_am_prepared_for_exam_very_well.jpg" alt="I am prepared for exam very well" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 8 College Perks You Might Be Missing Out On </span></a></span> 
+           </div> 
+          </div> 
+          <div style="" class="clear">
+           &nbsp;
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Render ZergNet --> 
+       <div id="zergnet-widget-33455"></div> 
+       <script language="javascript" type="text/javascript">
+    (function() {
+        var zergnet = document.createElement('script');
+        zergnet.type = 'text/javascript'; zergnet.async = true;
+        zergnet.src = 'http://www.zergnet.com/zerg.js?id=33455';
+        var znscr = document.getElementsByTagName('script')[0];
+        znscr.parentNode.insertBefore(zergnet, znscr);
+    })();
+</script> 
+       <!-- End of ZergNet --> 
+       <div class="bottom"> 
+        <span class="part fivestar">
+         <form action="/100-ways-to-save-money-in-college" accept-charset="UTF-8" method="post" id="fivestar-form-node-1437358" class="fivestar-widget fivestar-combo-stars"> 
+          <div>
+           <div class="fivestar-form-vote-1437358 clear-block">
+            <div class="fivestar-static-form-item">
+             <div class="form-item"> 
+              <div class="fivestar-widget-static fivestar-widget-static-vote fivestar-widget-static-5 clear-block">
+               <div class="star star-1 star-odd star-first">
+                <span class="on">4.5</span>
+               </div>
+               <div class="star star-2 star-even">
+                <span class="on"></span>
+               </div>
+               <div class="star star-3 star-odd">
+                <span class="on"></span>
+               </div>
+               <div class="star star-4 star-even">
+                <span class="on"></span>
+               </div>
+               <div class="star star-5 star-odd star-last">
+                <span class="on" style="width: 50%"></span>
+               </div>
+              </div> 
+              <div class="description">
+               <div class="fivestar-summary fivestar-summary-average-count">
+                <span class="average-rating">Average: <span>4.5</span></span> 
+                <span class="total-votes">(<span>2</span> votes)</span>
+               </div>
+              </div> 
+             </div> 
+            </div>
+            <input type="hidden" name="content_type" id="edit-content-type" value="node"> 
+            <input type="hidden" name="content_id" id="edit-content-id" value="1437358"> 
+            <div class="fivestar-form-item  fivestar-combo-text fivestar-combo-stars fivestar-labels-hover">
+             <div class="form-item" id="edit-vote-wrapper"> 
+              <input type="hidden" name="vote_count" id="edit-vote-count" value="2"> 
+              <input type="hidden" name="vote_average" id="edit-vote-average" value="90"> 
+              <input type="hidden" name="auto_submit_path" id="edit-auto-submit-path" value="/fivestar/vote/node/1437358/vote" class="fivestar-path"> 
+              <select name="vote" class="form-select" id="edit-vote-1"><option value="-">Select rating</option><option value="20">Not useful</option><option value="40">Somewhat useful</option><option value="60">Useful</option><option value="80">Very useful</option><option value="100">Extremely useful</option></select>
+              <input type="hidden" name="auto_submit_token" id="edit-auto-submit-token" value="733af9cd9786566559bec017d9420f7c" class="fivestar-token"> 
+              <div class="description">
+               <div class="fivestar-summary fivestar-summary-user">
+                <span class="user-rating">Your rating: <span>None</span></span>
+               </div>
+              </div> 
+             </div> 
+            </div>
+            <input type="hidden" name="destination" id="edit-destination" value="node/1437358"> 
+            <input type="submit" name="op" id="edit-fivestar-submit" value="Rate" class="form-submit fivestar-submit"> 
+            <input type="hidden" name="form_build_id" id="form-8K2PV4a4XYwGw5bi9vNSjmnQG1k0nCUTJv2DNSKE1ko" value="form-8K2PV4a4XYwGw5bi9vNSjmnQG1k0nCUTJv2DNSKE1ko"> 
+            <input type="hidden" name="form_id" id="edit-fivestar-form-node-1437358" value="fivestar_form_node_1437358"> 
+           </div> 
+          </div>
+         </form> </span> 
+        <span class="part sharethis"><a href="http://www.wisebread.com/100-ways-to-save-money-in-college" class="sharethis-link" title="100 Ways to Save Money in College" rel="nofollow">ShareThis</a></span> 
+        <div class="clear-block" style="width: 100%; clear: both;"></div> 
+       </div> 
+       <div id="block-block-192" class="block block-block"> 
+        <div class="content clear"> 
+         <p><em>Disclaimer: The links and mentions on this site may be affiliate links. But they do not affect the actual opinions and recommendations of the authors.</em></p> 
+         <p>Wise Bread is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.</p> 
+        </div> 
+       </div> 
+      </div> 
+      <br style="clear: both;"> 
+      <div id="block-views-comments-block_1" class="block block-views"> 
+       <div class="content clear"> 
+        <div class="view view-comments view-id-comments view-display-id-block_1 view-dom-id-1"> 
+         <div class="view-empty"> 
+          <p>&nbsp;</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#main --> 
+     <div id="sidebar-right" class="sidebar"> 
+      <div id="block-ka_author_block-0" class="block block-ka_author_block"> 
+       <div class="content clear"> 
+        <div id="ka_author_block-0" class="block yespic nobio"> 
+         <div class="author-picture"> 
+          <a href="http://www.wisebread.com/amy-lu" title="View author's profile"><img width="85" height="85" class="author-picture" alt="" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/pictures/picture-784.jpg"></a> 
+         </div> 
+         <div class="author-name"> 
+          <a href="http://www.wisebread.com/amy-lu" title="View Amy's profile">Amy Lu</a> 
+         </div> 
+         <div class="author-title">
+           Contributing Editor 
+         </div> 
+         <div class="author-more"> 
+          <a href="/amy-lu">More from Amy »</a> 
+         </div> 
+         <div class="author-icons"> 
+          <a href="/amy-lu" title="Amy's profile"><img id="author-icon-profile" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fugue-icons/icons/user.png"></a>
+          <a href="/contact-wise-bread-writer?uid=784" title="Contact Amy"><img id="author-icon-contact" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fugue-icons/icons/mail.png"></a> 
+         </div> 
+         <div class="author-short-bio-empty">
+           &nbsp; 
+         </div> 
+        </div> 
+        <!-- author_block cached 2017/10/03 - 06:19 --> 
+       </div> 
+      </div>
+      <div id="block-block-88" class="block block-block"> 
+       <div class="content clear"> 
+        <center> 
+         <!-- Begin Medium Rectangle 1 --> 
+         <script type="text/javascript" src="http://static.fmpub.net/zone/2230"></script> 
+         <!-- End Medium Rectangle 1 --> 
+         <!-- FM Tracking Pixel --> 
+         <script type="text/javascript" src="http://static.fmpub.net/site/wisebread"></script> 
+         <!-- FM Tracking Pixel --> 
+        </center> 
+       </div> 
+      </div>
+      <div id="block-quicktabs-2" class="block block-quicktabs"> 
+       <div class="content clear"> 
+        <div id="quicktabs-2" class="quicktabs_wrapper quicktabs-style-default">
+         <ul class="quicktabs_tabs quicktabs-style-default">
+          <li class="qtab-0 active first last"><a href="/100-ways-to-save-money-in-college?quicktabs_2=0#quicktabs-2" id="quicktabs-tab-2-0" class="qt_tab active">Most Popular</a></li>
+         </ul>
+         <div id="quicktabs_container_2" class="quicktabs_main quicktabs-style-default">
+          <div id="quicktabs_tabpage_2_0" class="quicktabs_tabpage">
+           <div class="view view-most-views-commented view-id-most_views_commented view-display-id-block_1 view-dom-id-2"> 
+            <div class="view-content"> 
+             <div class="views-row views-row-1 views-row-odd views-row-first"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/the-best-0-balance-transfer-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/woman_credit_card_phone_000053601330.jpg" alt="Woman using her credit card on the phone" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/the-best-0-balance-transfer-credit-cards?ref=pop">The Best 0% Balance Transfer Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-2 views-row-even"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/top-5-travel-reward-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/couples-vacation-beach.jpg" alt="Couple on the beach" title="Couple on the beach" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/top-5-travel-reward-credit-cards?ref=pop">The Best Travel Reward Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-3 views-row-odd"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/5-best-cash-back-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/woman-with-cash.jpg" alt="" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/5-best-cash-back-credit-cards?ref=pop">The Best Cash Back Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-4 views-row-even"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/the-5-best-secured-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/couple_credit_card_000023241164.jpg" alt="Young couple with secured credit card" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/the-5-best-secured-credit-cards?ref=pop">The Best Secured Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-5 views-row-odd views-row-last"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/netspend-the-story-of-the-visa-debit-card-we-did-not-apply-for?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/7123758_0475304ba3_z.jpg" alt="debit card" title="debit card" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/netspend-the-story-of-the-visa-debit-card-we-did-not-apply-for?ref=pop">netSpend: The Story of the Visa Debit Card We Did Not Apply For</a> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="more-link"> 
+             <a href="/popular/today"> more </a> 
+            </div> 
+           </div> 
+          </div>
+         </div>
+        </div> 
+       </div> 
+      </div>
+      <div id="block-block-196" class="block block-block"> 
+       <div class="content clear"> 
+        <div style="padding:0 auto;">
+         <a style="position:relative;top:5px;"></a>
+         <a href="https://advertisers.federatedmedia.net/explore/view/wisebread"><img src="http://static.fmpub.net/assets/badges/FM_Business_Advertise_Vertical.gif" border="0" width="100" height="150"></a> &nbsp; &nbsp; 
+        </div> 
+       </div> 
+      </div> 
+      <div class="sidebar-split"> 
+       <div class="split-left"></div> 
+       <div class="split-right"></div> 
+      </div> 
+     </div> 
+     <!-- /#sidebar-right --> 
+     <div class="clear-block"></div> 
+    </div> 
+    <div class="footer-dividor"></div> 
+    <div id="footer" class="clear"> 
+     <div class="clear-block"></div> 
+     <div class="footer-message"> 
+      <div>
+        © 2017 
+       <a href="/">Wise Bread</a> | 
+       <a href="/about">About</a> | 
+       <a href="/advertise">Advertise</a> | 
+       <a href="/about/contact">Contact</a> | 
+       <a href="http://feeds.killeraces.com/wisebread">Subscribe</a> 
+      </div> 
+      <div> 
+       <strong><a href="/legal/user-agreement">User Agreement</a></strong> | 
+       <strong><a href="/legal/privacy-policy">Privacy Policy</a></strong> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- /#footer --> 
+    <div id="subfooter" class="clear"> 
+     <div id="block-block-155" class="block block-block"> 
+      <div class="content clear"> 
+       <!-- crazyegg --> 
+       <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0006/5275.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script> 
+       <!-- Start Quantcast tag --> 
+       <script type="text/javascript">
+
+_qoptions={
+
+qacct:"p-b0fVTrG87oLhU"
+
+};
+
+</script> 
+       <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script> 
+       <noscript> 
+        <img src="http://pixel.quantserve.com/pixel/p-b0fVTrG87oLhU.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"> 
+       </noscript> 
+       <!-- End Quantcast tag --> 
+       <!-- FM Insight Tag --> 
+       <script type="text/javascript">
+  var _bizo_data_partner_id = "901";
+</script> 
+       <script type="text/javascript">
+  var _bizo_p = (("https:" == document.location.protocol) ? "https://sjs." : "http://js.");
+  document.write(unescape("%3Cscript src='" + _bizo_p + "bizographics.com/convert_data.js?partner_id=" + _bizo_data_partner_id + "' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+       <noscript> 
+        <img height="1" width="1" alt="" style="display:none;" src="http://www.bizographics.com/collect/?pid=901&amp;fmt=gif"> 
+       </noscript> 
+       <!-- end FM Insight Tag --> 
+       <!-- itunes auto link tag --> 
+       <script type="text/javascript">var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '10lpjh']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script> 
+       <!-- end itunes auto link tag --> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- /.container --> 
+  </div>
+  <!-- /.super-container--> 
+  <!-- /layout --> 
+  <script type="text/javascript" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/js/js_8bc3ed918a14cc5031380764b134a6cd.js"></script> 
+  <!-- pinterest js --> 
+  <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1fdce76940","applicationID":"12902797","transactionName":"MgZVbBQHXBAEUhFZXgtMdlsSD10NSl8KVFQ6E1ZfAzlECgBG","queueTime":0,"applicationTime":1004,"atts":"HkFWGlwdTx4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

@@ -1,0 +1,906 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="dns-prefetch" href="//quickbooks.intuit.com"> 
+  <link rel="dns-prefetch" href="//ensighten-partner.intuitstatic.com"> 
+  <link rel="dns-prefetch" href="//sci.intuit.com"> 
+  <link rel="dns-prefetch" href="//nexus.ensighten.com"> 
+  <link rel="dns-prefetch" href="//js-agent.newrelic.com"> 
+  <link rel="dns-prefetch" href="//www.firmofthefuture.com"> 
+  <link rel="dns-prefetch" href="//sbgmarketing.api.intuit.com"> 
+  <link rel="dns-prefetch" href="//static.criteo.net"> 
+  <link rel="dns-prefetch" href="//dwum8argi892z.cloudfront.net"> 
+  <link rel="dns-prefetch" href="//marketdataservice.api.intuit.com"> 
+  <link rel="dns-prefetch" href="//search2.quickbooks.com"> 
+  <link rel="dns-prefetch" href="//search2.payroll.com"> 
+  <link rel="dns-prefetch" href="//search2.quickbooksonline.com"> 
+  <link rel="dns-prefetch" href="//sbconnect.intuit.com"> 
+  <link rel="dns-prefetch" href="//lptag.liveperson.net"> 
+  <link rel="dns-prefetch" href="//bam.nr-data.net"> 
+  <link rel="dns-prefetch" href="//intuitquickbooks.evergage.com"> 
+  <link rel="dns-prefetch" href="//sslwidget.criteo.com"> 
+  <link rel="dns-prefetch" href="//tmsasset-s3.intuitstatic.com"> 
+  <link rel="dns-prefetch" href="//19175958.va.cobrowse.liveperson.net"> 
+  <link rel="dns-prefetch" href="//lpcdn.lpsnmedia.net"> 
+  <link rel="dns-prefetch" href="//va.v.liveperson.net"> 
+  <link rel="dns-prefetch" href="//accounts.intuit.com"> 
+  <link rel="dns-prefetch" href="//trinity.platform.intuit.com"> 
+  <link rel="dns-prefetch" href="//dis.us.criteo.com"> 
+  <link rel="dns-prefetch" href="//ssum-sec.casalemedia.com"> 
+  <link rel="dns-prefetch" href="//dis.criteo.com"> 
+  <title>12 Secrets to Achieving a Good Work-Life Balance as a Business Owner</title> 
+  <meta name="description" content="If you're a small business owner, you probably know there is no way to achieve the mythical work-life balance. But there are ways to focus on what's important."> 
+  <link rel="canonical" href="https://quickbooks.intuit.com/r/productivity/12-secrets-to-achieving-a-good-work-life-balance-as-a-business-owner/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="12 Secrets to Achieving a Good Work-Life Balance as a Business Owner"> 
+  <meta property="og:description" content="If you're a small business owner, you probably know there is no way to achieve the mythical work-life balance. But there are ways to focus on what's important."> 
+  <meta property="og:url" content="https://quickbooks.intuit.com/r/productivity/12-secrets-to-achieving-a-good-work-life-balance-as-a-business-owner/"> 
+  <meta property="og:site_name" content="QuickBooks"> 
+  <meta property="article:publisher" content="https://www.facebook.com/IntuitQuickBooks"> 
+  <meta property="article:section" content="Productivity"> 
+  <meta property="article:published_time" content="2015-10-13T09:11:00-07:00"> 
+  <meta property="article:modified_time" content="2016-12-21T09:26:18-07:00"> 
+  <meta property="og:updated_time" content="2016-12-21T09:26:18-07:00"> 
+  <meta property="og:image" content="https://usmentor.qbcontent.com/content/uploads/2015/10/2015_9_25-small-am-12_secrets_to_achieving_a_good_work-life_balance_as_a_business_owner.jpg"> 
+  <meta property="og:image:secure_url" content="https://usmentor.qbcontent.com/content/uploads/2015/10/2015_9_25-small-am-12_secrets_to_achieving_a_good_work-life_balance_as_a_business_owner.jpg"> 
+  <meta property="og:image:width" content="400"> 
+  <meta property="og:image:height" content="400"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:description" content="If you're a small business owner, you probably know there is no way to achieve the mythical work-life balance. But there are ways to focus on what's important."> 
+  <meta name="twitter:title" content="12 Secrets to Achieving a Good Work-Life Balance as a Business Owner"> 
+  <meta name="twitter:site" content="@QuickBooks"> 
+  <meta name="twitter:image" content="https://usmentor.qbcontent.com/content/uploads/2015/10/2015_9_25-small-am-12_secrets_to_achieving_a_good_work-life_balance_as_a_business_owner.jpg"> 
+  <meta name="twitter:creator" content="@QuickBooks"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/quickbooks.intuit.com\/r\/","name":"QuickBooks Resource Center","potentialAction":{"@type":"SearchAction","target":"https:\/\/quickbooks.intuit.com\/r\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/quickbooks.intuit.com\/r\/productivity\/12-secrets-to-achieving-a-good-work-life-balance-as-a-business-owner","sameAs":["https:\/\/www.facebook.com\/IntuitQuickBooks","https:\/\/www.youtube.com\/user\/Quickbooks","https:\/\/twitter.com\/QuickBooks"],"@id":"#organization","name":"Intuit QuickBooks","logo":"https:\/\/ussbc2.qbcontent.com\/content\/uploads\/2016\/11\/QuickBooks-Logo-Preferred-RGB.png"}</script> 
+  <link rel="dns-prefetch" href="//usmentor.qbcontent.com"> 
+  <link rel="dns-prefetch" href="//nexus.ensighten.com"> 
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> 
+  <link rel="dns-prefetch" href="//cdn.evergage.com"> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="QuickBooks » 12 Secrets to Achieving a Good Work-Life Balance as a Business Owner Comments Feed" href="https://quickbooks.intuit.com/r/productivity/12-secrets-to-achieving-a-good-work-life-balance-as-a-business-owner/feed/"> 
+  <link rel="stylesheet" id="qb-vc-menu-css-css" href="https://usmentor.qbcontent.com/content/mu-plugins/vc-intuit/vc-elements/qb-vc-menu/css/style.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="ls-google-fonts-css-css" href="https://fonts.googleapis.com/css?family=Lato%3A100%2C300%2Cregular%2C700%2C900%7COpen+Sans%3A300%7CIndie+Flower%3Aregular%7COswald%3A300%2Cregular%2C700" type="text/css" media="all"> 
+  <link rel="stylesheet" id="crp-style-rounded-thumbs-css" href="https://usmentor.qbcontent.com/content/plugins/un-contextual-related-posts/css/default-style.css" type="text/css" media="all"> 
+  <style id="crp-style-rounded-thumbs-inline-css" type="text/css">
+
+.crp_related a {
+  width: 150px;
+  height: 150px;
+  text-decoration: none;
+}
+.crp_related img {
+  max-width: 150px;
+  margin: auto;
+}
+.crp_related .crp_title {
+  width: 150px;
+}
+                
+</style> 
+  <link rel="stylesheet" id="standard-4e79f0aed445ab6c23e5b325ce4ee5ec-style-css" href="https://usmentor.qbcontent.com/content/themes/themosis-theme/resources/assets_demo/styles.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="un-bootstrap-style-css" href="https://usmentor.qbcontent.com/content/themes/themosis-theme/resources/assets/css/bootstrap.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="un-components-style-css" href="https://usmentor.qbcontent.com/content/themes/themosis-theme/build/components.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="un-app-style-css" href="https://usmentor.qbcontent.com/content/themes/themosis-theme/build/app.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="qs-style-css" href="https://usmentor.qbcontent.com/content/themes/sbc2/resources/assets/css/style.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="qs-build-css" href="https://usmentor.qbcontent.com/content/themes/sbc2/resources/assets/css/build.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="js_composer_front-css" href="https://usmentor.qbcontent.com/content/mu-plugins/js_composer/assets/css/js_composer.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bsf-Defaults-css" href="https://usmentor.qbcontent.com/content/uploads/smile_fonts/Defaults/Defaults.css" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+  <script type="text/javascript" src="//cdn.evergage.com/beacon/intuitquickbooks/production/scripts/evergage.min.js"></script> 
+  <link rel="https://api.w.org/" href="https://usmentor.qbcontent.com/wp-json/"> 
+  <style name="un-vc-inject">.vc_custom_1476286812070{margin-bottom: 0px !important;}.vc_custom_1478642389273{margin-bottom: 0px !important;padding-right: 0px !important;padding-left: 0px !important;}.vc_custom_1478623748657{margin-top: 0px !important;margin-bottom: 0px !important;background-color: #ffffff !important;}.vc_custom_1476219331490{padding-top: 15px !important;}.vc_custom_1474061791944{margin-bottom: 0px !important;}.vc_custom_1476222451034{margin-bottom: 0px !important;}.vc_custom_1476220055753{padding-right: 0px !important;padding-left: 0px !important;}.vc_custom_1476285042136{margin-bottom: 0px !important;}</style>
+  <script type="text/javascript">ajaxurl = 'https://quickbooks.intuit.com/r/wp-admin/admin-ajax.php';</script>
+  <script type="text/javascript">
+//<![CDATA[
+var themosis = {
+ajaxurl: 'https://usmentor.qbcontent.com/cms/wp-admin/admin-ajax.php',
+};
+//]]>
+</script>
+  <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://usmentor.qbcontent.com/content/mu-plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+  <!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://usmentor.qbcontent.com/content/mu-plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+  <noscript>
+   <style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style>
+  </noscript> 
+  <script type="text/javascript">
+		if (typeof wa === 'undefined') {
+		   wa={}
+		}
+		wa.pageLoadStart = new Date();
+		wa.siteName = "fms";
+		wa.siteGroup = "mktg";
+		wa.siteHost = "quickbooks";
+	</script> 
+ </head> 
+ <body class="post-template-default single single-post postid-3704 single-format-standard wpb-js-composer js-comp-ver-4.11.1 vc_responsive"> 
+  <header id="un_header" data-header-key="2017-05-26 18:02:54">
+   <div class="vc_row wpb_row vc_row-fluid header-container vc_custom_1476286812070"> 
+    <div class="wpb_column vc_column_container vc_col-sm-12"> 
+     <div class="vc_column-inner vc_custom_1478642389273"> 
+      <div class="wpb_wrapper"> 
+       <div class="wpb_raw_code wpb_content_element wpb_raw_html"> 
+        <div class="wpb_wrapper"> 
+         <style>
+
+.qb-share {
+    cursor: pointer;
+}
+
+.wpb_wrapper .qb-btn-header a{
+    height: 34px!important;
+}
+
+
+.wpb_wrapper .container-fluid{
+    padding-left: 10px!important; 
+    padding-right: 10px!important;
+} 
+.header-menu-mobile {
+    display: none;
+    background-color: #393a3e;
+}
+nav.navbar.navbar-inverse {
+    margin-bottom: 0px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #d4dcd7;
+    font-size: 14px;
+    font-family: AvenirNextRegular;
+}
+.navbar-inverse .navbar-nav>li.open {
+    border-bottom: 4px solid #2ca01c;
+}
+.navbar-inverse .navbar-nav>.open>a {
+    background-color: #393a3e !important;
+}
+.dropdown-menu {
+    background-color: transparent;
+    border: 0;
+    padding-bottom: 0;
+}
+.dropdown-menu li {
+    background-color: #393a3e;
+}
+.dropdown-menu li a {
+    color: #d4dcd7; 
+    color:#393a3d; 
+    background-color: #FFF;
+    border: 2px solid #d4d7dc; 
+    border-bottom: none; 
+    border-top: none; 
+    padding: 10px 20px;
+}
+.dropdown-menu li:first-child a{
+    padding-top:20px;
+}
+.dropdown-menu li:last-child a{
+    border-bottom: 2px solid #d4d7dc;padding-bottom:20px;
+}
+.dropdown-menu li a:hover {
+    color: #fff;color:#000;
+    background-color: #393a3e;
+    background-color: #eceef1;
+    font-weight: 900;
+}
+.top-separator {
+    background-image: url(//quickbooks-s3.intuitstatic.com/showroom_cms/image/content/dam/intuit/quickbooks/Flyout-triangle.png);
+    background-repeat: no-repeat;
+    border-bottom: 6px solid #67a043;
+    height: 16px;
+}
+li.seperater.top-separator {
+    background-color: transparent;
+}
+ul.nav.navbar-nav.navbar-right {
+    border-right: 1px #000 solid;
+    border-left: 1px #000 solid;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+@media (min-width: 415px){
+   .navbar-inverse .navbar-nav>li:hover {
+        border-bottom: none !important;
+    }
+}
+@media (min-width: 768px){
+    .navbar-inverse .navbar-nav>li:hover {
+        border-bottom: 4px solid #2ca01c;
+    }
+    .navbar-inverse .navbar-nav>li {
+        height:54px;
+    }
+    .navbar-inverse .navbar-nav>li:hover {
+         border-bottom: 4px solid #2ca01c;
+    }
+}
+@media (max-width: 768px){
+    header .container-fluid .navbar-brand {
+        padding: 15px 20px;
+    }
+    .navbar-inverse .navbar-nav>li {
+        height:auto !important;
+    }
+    ul.nav.navbar-nav {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .navbar-inverse .navbar-nav>li>a {
+          box-shadow: 1px 1px 0px #101010;
+    }
+    li.seperater.top-separator {
+        display: none;
+    }
+    .header-menu-desktop {
+        display: none;
+    }
+    .header-menu-mobile {
+        display: block;
+    }
+    .navbar-inverse .navbar-nav>li.open {
+        border-bottom: none;
+    }
+    .navbar-inverse .navbar-nav:last-child > li:first-child a{
+        background: #24a205;
+        color: #fff;
+        margin-top: -28px;
+        margin-bottom: 28px;
+        width: 45%;
+        height: 34px;
+        line-height: 17px;
+        text-align: left;
+        font-size: 15px;
+        padding-left: 10px;
+        text-align: center;
+        margin: 20px auto 16px;
+    }
+    .navbar-inverse .navbar-nav:last-child > li:last-child a{
+        background: transparent;
+        color: #fff;
+        margin-top: -28px;
+        margin-bottom: 28px;
+        width: 45%;
+        height: 34px;
+        line-height: 11px;
+        text-align: left;
+        font-size: 15px;
+        padding-left: 10px;
+        text-align: center;
+        margin: 16px auto 20px;
+        border: 1px solid #fff;
+    }
+    div.header-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5000;
+    }
+    div.sub-header-container {
+        padding-top: 52px;
+    }
+    .header-menu-mobile {
+        background-color: transparent;
+        border-bottom: 0;
+    }
+    .navbar-header{
+        background-color: #393a3e;
+    }
+    button.navbar-toggle {
+        float: left;
+        margin-left: 15px;
+        margin-right: 0;
+    }
+    #myNavbar {
+        background-color:#393a3e;
+    }
+    .navbar-nav .open .dropdown-menu>li>a{
+        height: 44px; 
+        line-height: 34px;
+    }
+    .navbar-nav .open .dropdown-menu>li>a:hover{
+        background-color:#f4f5f8;
+        color:#2ca01c;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover, 
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #2ca01c;
+        background-color: #f4f5f8;
+    }
+    .navbar-inverse .navbar-nav>.open>a {
+        box-shadow: none;
+    }
+}
+@media (max-width: 767px) and (min-width: 415px) {
+    #myNavbar{
+        width: 55%;
+        border-bottom: none;
+    }
+    .navbar-inverse .navbar-nav>li.open {
+        height: auto;
+    }
+}
+</style> 
+         <nav class="navbar navbar-inverse header-menu-mobile" style="border-radius: 0; background-color: #393a3e;"> 
+          <div class="container-fluid"> 
+           <div class="navbar-header"> 
+            <button class="navbar-toggle" style="max-height: 40px;" type="button" data-toggle="collapse" data-target="#myNavbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+            <a class="navbar-brand" href="https://quickbooks.intuit.com/"> <img src="https://usqs2.qbcontent.com/content/themes/qs2/resources/assets/img/LOGO_US_top_nav_desktop_tablet_146x28.png"> </a> 
+           </div> 
+           <div id="myNavbar" class="collapse navbar-collapse"> 
+            <ul class="nav navbar-nav"> 
+             <li class="dropdown"> <a class="dropdown-toggle" href="https://quickbooks.intuit.com/smallbusiness/" data-toggle="dropdown" data-wa-link="hdr-quickbooks-forsmallbusiness">Small Business</a> 
+              <ul class="dropdown-menu"> 
+               <li><a href="https://quickbooks.intuit.com/features/" data-wa-link="hdr-quickbooks-forsmallbusiness-features">Features</a></li> 
+               <li><a href="https://quickbooks.intuit.com/pricing/" data-wa-link="hdr-quickbooks-forsmallbusiness-pricing">Pricing</a></li> 
+               <li><a href="https://quickbooks.intuit.com/payroll-service/" data-wa-link="hdr-quickbooks-forsmallbusiness-payroll">Payroll</a></li> 
+               <li><a href="https://intuitmarket.com/mainnav" data-wa-link="hdr-quickbooks-forsmallbusiness-checksandsupplies">Checks &amp; Supplies</a></li> 
+               <li><a href="https://quickbooks.intuit.com/products#apps" data-wa-link="hdr-quickbooks-forsmallbusiness-apps">Apps</a></li> 
+               <li><a href="https://quickbooks.intuit.com/move-to-quickbooks-online/" data-wa-link="hdr-quickbooks-forsmallbusiness-dtm">Switch to QuickBooks Online</a></li> 
+               <li class="seperater"></li> 
+               <li><a href="https://quickbooks.intuit.com/online/" data-wa-link="hdr-quickbooks-forsmallbusiness-qbo">QuickBooks Online</a></li> 
+               <li><a href="//quickbooks.intuit.com/self-employed/" data-wa-link="test_hp_nav_selfemployed">QuickBooks Self-Employed</a></li> 
+               <li><a href="https://enterprisesuite.intuit.com/" data-wa-link="hdr-quickbooks-forsmallbusiness-enterprise">QuickBooks Enterprise</a></li> 
+               <li><a href="https://quickbooks.intuit.com/products/" data-wa-link="hdr-quickbooks-forsmallbusiness-allproducts">See All Products</a></li> 
+              </ul> </li> 
+             <li class="dropdown"><a class="dropdown-toggle" href="//quickbooks.intuit.com/accountants/" data-toggle="dropdown" data-wa-link="hdr-quickbooks-foraccountants">Accountants</a> 
+              <ul class="dropdown-menu"> 
+               <li><a title="QuickBooks Online Accountant" href="https://quickbooks.intuit.com/accountants/quickbooks-accountant/" data-wa-link="hdr-quickbooks-foraccountants-quickbooksaccountant">QuickBooks Online Accountant</a></li> 
+               <li><a title="QuickBooks ProAdvisor Program" href="https://quickbooks.intuit.com/accountants/proadvisor/" data-wa-link="hdr-quickbooks-foraccountants-quickbooksproadvisor">QuickBooks ProAdvisor Program</a></li> 
+               <li><a title="QuickBooks Self-Employed" href="https://quickbooks.intuit.com/accountants/self-employed/" data-wa-link="hdr-quickbooks-foraccountants-qbse">Self-Employed</a></li> 
+               <li><a title="Payroll" href="https://quickbooks.intuit.com/accountants/payroll/quickbooks-online/" data-wa-link="hdr-quickbooks-foraccountants-payroll">Payroll</a></li> 
+               <li><a href="https://quickbooks.intuit.com/accountants/payroll/quickbooks-full-service/" data-wa-link="hdr-quickbooks-foraccountants-payrollfullservice">Payroll Full Service</a></li> 
+               <li><a title="Payments" href="https://quickbooks.intuit.com/accountants/payments/" data-wa-link="hdr-quickbooks-foraccountants-payments">Payments</a></li> 
+               <li><a href="https://taxpro.intuit.com/?s_cid=QB.com_Accountants-nav_TaxPro-Home" data-wa-link="hdr-quickbooks-foraccountants-taxproducts">Tax Products</a></li> 
+               <li><a title="Accountant Learn &amp; Support" href="https://quickbooks.intuit.com/accountants/resources/" data-wa-link="hdr-quickbooks-foraccountants-accountantCenter">Accountant Learn &amp; Support</a></li> 
+               <li><a title="Discounts for Your Clients" href="https://quickbooks.intuit.com/accountants/client-discounts/" data-wa-link="hdr-quickbooks-foraccountants-clientdiscounts">Discounts for Your Clients</a></li> 
+              </ul> </li> 
+             <li class="dropdown"><a class="dropdown-toggle" href="https://help.quickbooks.intuit.com/" data-toggle="dropdown" data-wa-link="hdr-quickbooks-learnandsupport">Learn &amp; Support</a> 
+              <ul class="dropdown-menu"> 
+               <li><a href="https://help.quickbooks.intuit.com/" data-wa-link="hdr-quickbooks-learnandsupport-quickbookshelp">QuickBooks Help</a></li> 
+               <li><a href="https://quickbooks.intuit.com/tutorials/" data-wa-nav-link="hdr-quickbooks-tutorials">QuickBooks Tutorials</a></li> 
+               <li><a href="https://proadvisor.intuit.com/fap/" data-wa-link="hdr-quickbooks-learnandsupport-findanaccountant">Find a QuickBooks Expert</a></li> 
+               <li><a href="//quickbooks.intuit.com/r/" data-wa-link="hdr-quickbooks-learnandsupport-smallbusinessresources">QuickBooks Resource Center</a></li> 
+               <li><a href="//qboblog.com/" data-wa-link="hdr-quickbooks-learnandsupport-quickbooksblog">QuickBooks Online Blog</a></li> 
+              </ul> </li> 
+            </ul> 
+            <ul class="nav navbar-nav navbar-right"> 
+             <li><a href="https://qbo.intuit.com/">Sign In</a></li> 
+             <li><a href="https://quickbooks.intuit.com/pricing">Free Trial</a></li> 
+            </ul> 
+           </div> 
+          </div> 
+         </nav> 
+         <nav class="navbar navbar-inverse header-menu-desktop" style="border-radius: 0; background-color: #393a3e;"> 
+          <div class="container-fluid"> 
+           <div class="navbar-header"> 
+            <button class="navbar-toggle" style="max-height: 40px;" type="button" data-toggle="collapse" data-target="#myNavbar"></button> 
+            <a class="navbar-brand" href="https://quickbooks.intuit.com/"> <img src="https://usqs2.qbcontent.com/content/themes/qs2/resources/assets/img/LOGO_US_top_nav_desktop_tablet_146x28.png"> </a> 
+           </div> 
+           <div id="myNavbar" class="collapse navbar-collapse"> 
+            <ul class="nav navbar-nav"> 
+             <li class="dropdown"> <a class="dropdown-toggle" href="https://quickbooks.intuit.com/smallbusiness/" data-wa-link="hdr-quickbooks-forsmallbusiness">Small Business</a> 
+              <ul class="dropdown-menu"> 
+               <li><a href="https://quickbooks.intuit.com/features/" data-wa-link="hdr-quickbooks-forsmallbusiness-features">Features</a></li> 
+               <li><a href="https://quickbooks.intuit.com/pricing/" data-wa-link="hdr-quickbooks-forsmallbusiness-pricing">Pricing</a></li> 
+               <li><a href="https://quickbooks.intuit.com/payroll-service/" data-wa-link="hdr-quickbooks-forsmallbusiness-payroll">Payroll</a></li> 
+               <li><a href="https://intuitmarket.com/mainnav" data-wa-link="hdr-quickbooks-forsmallbusiness-checksandsupplies">Checks &amp; Supplies</a></li> 
+               <li><a href="https://quickbooks.intuit.com/products#apps" data-wa-link="hdr-quickbooks-forsmallbusiness-apps">Apps</a></li> 
+               <li><a href="https://quickbooks.intuit.com/move-to-quickbooks-online/" data-wa-link="hdr-quickbooks-forsmallbusiness-dtm">Switch to QuickBooks Online</a></li> 
+               <li class="seperater"></li> 
+               <li><a href="https://quickbooks.intuit.com/online/" data-wa-link="hdr-quickbooks-forsmallbusiness-qbo">QuickBooks Online</a></li> 
+               <li><a href="https://quickbooks.intuit.com/self-employed/" data-wa-link="test_hp_nav_selfemployed">QuickBooks Self-Employed</a></li> 
+               <li><a href="https://enterprisesuite.intuit.com/" data-wa-link="hdr-quickbooks-forsmallbusiness-enterprise">QuickBooks Enterprise</a></li> 
+               <li><a href="https://quickbooks.intuit.com/products/" data-wa-link="hdr-quickbooks-forsmallbusiness-allproducts">See All Products</a></li> 
+              </ul> </li> 
+             <li class="dropdown"><a class="dropdown-toggle" href="https://quickbooks.intuit.com/accountants/" data-wa-link="hdr-quickbooks-foraccountants">Accountants</a> 
+              <ul class="dropdown-menu"> 
+               <li><a title="QuickBooks Online Accountant" href="https://quickbooks.intuit.com/accountants/quickbooks-accountant/" data-wa-link="hdr-quickbooks-foraccountants-quickbooksaccountant">QuickBooks Online Accountant</a></li> 
+               <li><a title="QuickBooks ProAdvisor Program" href="https://quickbooks.intuit.com/accountants/proadvisor/" data-wa-link="hdr-quickbooks-foraccountants-quickbooksproadvisor">QuickBooks ProAdvisor Program</a></li> 
+               <li><a title="QuickBooks Self-Employed" href="https://quickbooks.intuit.com/accountants/self-employed/" data-wa-link="hdr-quickbooks-foraccountants-qbse">Self-Employed</a></li> 
+               <li><a title="Payroll" href="https://quickbooks.intuit.com/accountants/payroll/quickbooks-online/" data-wa-link="hdr-quickbooks-foraccountants-payroll">Payroll</a></li> 
+               <li><a href="https://quickbooks.intuit.com/accountants/payroll/quickbooks-full-service/" data-wa-link="hdr-quickbooks-foraccountants-payrollfullservice">Payroll Full Service</a></li> 
+               <li><a title="Payments" href="https://quickbooks.intuit.com/accountants/payments/" data-wa-link="hdr-quickbooks-foraccountants-payments">Payments</a></li> 
+               <li><a href="https://taxpro.intuit.com/?s_cid=QB.com_Accountants-nav_TaxPro-Home" data-wa-link="hdr-quickbooks-foraccountants-taxproducts">Tax Products</a></li> 
+               <li><a title="Accountant Learn &amp; Support" href="https://quickbooks.intuit.com/accountants/resources/" data-wa-link="hdr-quickbooks-foraccountants-accountantCenter">Accountant Learn &amp; Support</a></li> 
+               <li><a title="Discounts for Your Clients" href="https://quickbooks.intuit.com/accountants/client-discounts/" data-wa-link="hdr-quickbooks-foraccountants-clientdiscounts">Discounts for Your Clients</a></li> 
+              </ul> </li> 
+             <li class="dropdown"><a class="dropdown-toggle" href="//help.quickbooks.intuit.com/" data-wa-link="hdr-quickbooks-learnandsupport">Learn &amp; Support</a> 
+              <ul class="dropdown-menu"> 
+               <li><a href="https://help.quickbooks.intuit.com/" data-wa-link="hdr-quickbooks-learnandsupport-quickbookshelp">QuickBooks Help</a></li> 
+               <li><a href="https://quickbooks.intuit.com/tutorials/" data-wa-nav-link="hdr-quickbooks-tutorials">QuickBooks Tutorials</a></li> 
+               <li><a href="https://proadvisor.intuit.com/fap/" data-wa-link="hdr-quickbooks-learnandsupport-findanaccountant">Find a QuickBooks Expert</a></li> 
+               <li><a href="//quickbooks.intuit.com/r/" data-wa-link="hdr-quickbooks-learnandsupport-smallbusinessresources">QuickBooks Resource Center</a></li> 
+               <li><a href="//qboblog.com/" data-wa-link="hdr-quickbooks-learnandsupport-quickbooksblog">QuickBooks Online Blog</a></li> 
+              </ul> </li> 
+            </ul> 
+            <ul class="nav navbar-nav navbar-right"> 
+             <li><a href="https://qbo.intuit.com/">Sign In</a></li> 
+             <li><a href="https://quickbooks.intuit.com/pricing">Free Trial</a></li> 
+            </ul> 
+           </div> 
+          </div> 
+         </nav> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div>
+   <div class="vc_row wpb_row vc_row-fluid sub-header-container vc_custom_1478623748657 vc_row-has-fill"> 
+    <div class="navigation-wrapper wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-12 vc_col-md-offset-0 vc_col-md-12 vc_col-sm-offset-0 vc_col-xs-12"> 
+     <div class="vc_column-inner vc_custom_1476219331490"> 
+      <div class="wpb_wrapper"> 
+       <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1474061791944"> 
+        <div class="wpb_column vc_column_container vc_col-sm-10 vc_col-lg-6 vc_col-md-6 vc_hidden-sm vc_col-xs-6 vc_hidden-xs"> 
+         <div class="vc_column-inner "> 
+          <div class="wpb_wrapper"> 
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html"> 
+            <div class="wpb_wrapper"> 
+             <div class="subheader-subtitle"> 
+              <p><a href="//quickbooks.intuit.com/r/">QuickBooks Resource Center</a></p> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="wpb_column vc_column_container vc_col-sm-2 vc_col-lg-offset-0 vc_col-lg-6 vc_col-md-offset-0 vc_col-md-6 vc_col-sm-offset-5 vc_hidden-sm vc_col-xs-offset-2 vc_col-xs-4 vc_hidden-xs"> 
+         <div class="vc_column-inner "> 
+          <div class="wpb_wrapper"> 
+           <div data-qb-class="pull-right qb-btn-header align-right" data-qb-style="QB-green" data-qb-url="https://quickbooks.intuit.com/pricing/" data-qb-text="Join them" data-qb-sitecat="" data-qb-target="_self" data-qb-button> 
+           </div> 
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html"> 
+            <div class="wpb_wrapper"> 
+             <p class="qb-header-label">4.3 million businesses use QuickBooks</p> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="vc_row wpb_row vc_inner vc_row-fluid animated-search-row vc_custom_1476222451034"> 
+        <div class="wpb_column vc_column_container vc_col-sm-11 vc_col-lg-11 vc_col-md-11 vc_hidden-sm vc_col-xs-9 vc_hidden-xs"> 
+         <div class="vc_column-inner "> 
+          <div class="wpb_wrapper"> 
+           <nav class="main-navigation-menu"> 
+            <ul> 
+             <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/" title="" target="" data-wa-link="qbc-nav-start_here">Start Here</a> </li> 
+             <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/articles/" title="" target="" data-wa-link="qbc-nav-article">Articles</a> </li> 
+             <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/guides/" title="" target="" data-wa-link="qbc-nav-guide">Guides</a> </li> 
+             <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/tools/" title="" target="" data-wa-link="qbc-nav-tools">Tools</a> </li> 
+             <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/videos/" title="" target="" data-wa-link="qbc-nav-videos">Videos</a> </li> 
+            </ul> 
+           </nav> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="animated-search-column wpb_column vc_column_container vc_col-sm-1 vc_col-lg-offset-0 vc_col-lg-1 vc_col-md-offset-0 vc_col-md-1 vc_col-sm-offset-5 vc_hidden-sm vc_col-xs-offset-2 vc_col-xs-1 vc_hidden-xs"> 
+         <div class="vc_column-inner vc_custom_1476220055753"> 
+          <div class="wpb_wrapper"> 
+           <div data-qb-placeholder="Search QuickBooks Resource Center" data-qb-url="https://quickbooks.intuit.com/r/search" data-qb-sitecat="" data-qb-animatedsearch> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="vc_row wpb_row vc_inner vc_row-fluid animated-search-row mobile vc_custom_1476285042136"> 
+        <div class="mobile-subheader-menu-wrapper wpb_column vc_column_container vc_col-sm-7 vc_hidden-lg vc_hidden-md vc_col-sm-offset-0 vc_col-xs-12"> 
+         <div class="vc_column-inner "> 
+          <div class="wpb_wrapper"> 
+           <div class="wpb_raw_code wpb_content_element wpb_raw_html"> 
+            <div class="wpb_wrapper"> 
+             <div class="subheader-subtitle"> 
+              <p><a href="//quickbooks.intuit.com/r/">QuickBooks Resource Center</a></p> 
+             </div> 
+             <button style="cursor: pointer;" class="open-menu-btn">&nbsp;</button> 
+            </div> 
+           </div> 
+           <ul class="subheader-options"> 
+            <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/" title="" target="" data-wa-link="qbc-nav-start_here">Start Here</a> </li> 
+            <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/articles/" title="" target="" data-wa-link="qbc-nav-article">Articles</a> </li> 
+            <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/guides/" title="" target="" data-wa-link="qbc-nav-guide">Guides</a> </li> 
+            <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/tools/" title="" target="" data-wa-link="qbc-nav-tools">Tools</a> </li> 
+            <li class="dropdown"> <a href="https://quickbooks.intuit.com/r/videos/" title="" target="" data-wa-link="qbc-nav-videos">Videos</a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="animated-search-column wpb_column vc_column_container vc_col-sm-2 vc_hidden-lg vc_hidden-md vc_col-sm-offset-3 vc_hidden-xs"> 
+         <div class="vc_column-inner "> 
+          <div class="wpb_wrapper"> 
+           <div data-qb-placeholder="Search Small Business" data-qb-url="https://quickbooks.intuit.com/r/search" data-qb-sitecat="" data-qb-animatedsearch> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </header> 
+  <div id="app" data-basepath="r" data-api-url="https://usmentor.qbcontent.com/wp-json"> 
+   <div id="main"> 
+    <div class="qb-wrapper"> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="col-md-12"> 
+        <div class="qb-post-banner-component"> 
+         <div class="row"> 
+          <div class="col-md-6 col-sm-6 description"> 
+           <h1>12 Secrets to Achieving a Good Work-Life Balance as a Business Owner</h1> 
+           <p>by <a href="https://quickbooks.intuit.com/r/author/414/">Megan Sullivan</a></p> 
+           <span>8 min read</span> 
+           <div class="block"> 
+            <hr> 
+            <ul> 
+            </ul> 
+            <button class="qb-button">Try QuickBooks Free</button> 
+           </div> 
+          </div> 
+          <div class="col-md-6 col-sm-6 side-right"> 
+           <div class="graphic" style="background: url(https://usmentor.qbcontent.com/content/uploads/2015/10/2015_9_25-small-am-12_secrets_to_achieving_a_good_work-life_balance_as_a_business_owner.jpg); background-size: cover; background-position: top center; background-repeat: no-repeat;"></div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="container qb-float-component article"> 
+      <div class="row"> 
+       <div class="col-md-9"> 
+        <div class="qb-post-component qb-space-top-sm"> 
+         <p>Many small business owners suffer from constantly being in “overdrive,” always working at a pace that makes mere mortals seem slow by comparison. And while a fast pace can definitely aid small business owners in getting ahead of the competition, it can also lead to burnout, and you can’t compete when you’re burned out.</p> 
+         <p>For years, many have sought to achieve the seemingly mythical ideal of “work-life balance.” While many experts say it’s simply not possible, the truth is that defining one’s work-life balance is really in the eye of the beholder.</p> 
+         <p>To help you find your own work-life balance, we’ll explore 12 different things to try, culled from the experience of entrepreneurs and small business owners who have struggled and succeeded.</p> 
+         <h3>1.&nbsp;It’s Not About Balance. It’s a Give-and-Take</h3> 
+         <p>Achieving a true balance in a mathematical sense will likely drive you mad. There will be days when your business will require more time and attention. Conversely, there will be days when your personal life requires more time and attention. Try not to think of splitting your attention between the two evenly, but giving your attention to each as it is needed.</p> 
+         <p>For instance, when you’re first starting out and trying to build your business from the ground up, chances are you’ll be spending a lot more time on business-related activities. Your family or personal life may be neglected as a result. During this time, try to remember that your business won’t always demand this much attention. Also, for your own sanity and personal well-being, you’ll need to take a step back at some point and recharge.</p> 
+         <h3>2.&nbsp;Set Boundaries and Keep Them</h3> 
+         <p>This can apply to many different aspects of your work and personal lives, but the most important boundaries to set for small business owners are those pertaining&nbsp;to work hours. Many entrepreneurs fall into the trap of working around the clock, sacrificing weekends, sleep, family meals and breaks to keep their business going.</p> 
+         <p>Consider the long-term effects of attempting to sustain that pace: sleep deprivation and exhaustion. When you’re sleep-deprived and exhausted, meeting those heightened expectations becomes a memory, and your personal relationships suffer too. Try to establish the following boundaries:</p> 
+         <ul> 
+          <li><strong>Time: </strong>Set distinct work hours, and adhere to them. Determine which days you’re going to take off, and stick to them. Embrace personal time and/or vacation days.</li> 
+          <li><strong>Space:</strong> Leave your work at the “office,” whether it’s a room inside your home or a space down the road. Try to limit this in an effort to create a separation between work space and living space.</li> 
+          <li><strong>Access:</strong> Determine when you will be accessible for professional and personal inquiries. Of course, there will always be emergencies, but don’t fall into the trap of allowing a client’s emergency to become your emergency. Unless a product or service you have provided to the client is failing, chances are you can manage expectations for how long it will take to remedy the situation. The same is true for family and friends.&nbsp;Increased connectivity and mobility makes it easier to abuse, so be mindful of what you respond to—and when you respond to it.</li> 
+         </ul> 
+         <h3>3.&nbsp;When You Say You’re Taking Time Off, Take Time Off</h3> 
+         <p>Again, connectivity is a blessing and a curse. Because it’s easy to quickly check email, call a client or edit a proposal, you may find yourself doing these things on days you’ve designated as time-off or, even worse, on sick days. If you’ve told people you’re taking time off, honor that commitment to yourself. It will make it easier for others to honor it as well.</p> 
+         <h3>4.&nbsp;Keep Your Social Commitments</h3> 
+         <p>If you’ve planned to attend a friend’s dinner party, a family picnic or a child’s school performance, keep those plans. Chances are that nothing will fall apart if you’re out of the office for an hour or two, or turn off your phone for the evening. If you feel that you must make the time up, do so after the commitment has been honored.</p> 
+         <p>You should view these types of fun “non-work” events as if they are work events. Give them the same level of importance, and you’ll find it’s much easier to keep them.</p> 
+         <h3>5.&nbsp;Yes, Even You Deserve a Vacation</h3> 
+         <p>In spite of what you might believe, taking vacations is considered important for everyone, especially small business owners. Similar to setting boundaries and taking time off, taking vacation time is a great way to reinvigorate yourself and rekindle the motivation to keep working toward your goals. Everyone gets tired and overwhelmed. Rather than overworking yourself further by trying to power through the fatigue, take a vacation.</p> 
+         <h3>6.&nbsp;Take Care of Yourself</h3> 
+         <p>You’ll work better and more effectively if you’re healthy. A large of part of your personal health is eating right and exercising. If you already have an established routine of gym time or a personal trainer, keep that routine.</p> 
+         <p>It’s possible you may need to scale it back a bit due to demands on your time, but try as hard as you can to keep this time set aside for yourself. Also, try not to fall into the trap of eating fast food or fattening snacks and sodas from the vending machine down the hall. Natural foods help keep your body functioning well and maintain your energy level during the day.</p> 
+         <h3>7.&nbsp;Delegate</h3> 
+         <p>It’s important to distinguish between the tasks that only you can perform and tasks that you can ask someone else to handle. If you don’t have any employees, then delegating may involve outsourcing relevant tasks to a third party or hiring someone on a part-time basis. If you do have employees, remember that you hired them for a reason.</p> 
+         <p>Ideally, that reason was their competence. Remember that the more you exclusively hold on to projects and tasks, the less likely your employees—and by extension your business—will grow. Employees who feel that there aren’t opportunities for growth will eventually leave. And then what will you do?</p> 
+         <h3>8. Remember to Ask for Help</h3> 
+         <p>Chances are you have someone in your life—or a few people if you’re lucky—that you go to for help. It could be emotional help, financial help or strategic help, but they provide you with support nonetheless. When you feel yourself starting to get overwhelmed, don’t forget to reach out to the folks who are your support system. Even if it’s just an excuse to get out of the office for an hour, this respite can make a world of difference to your mood and motivation.</p> 
+         <p>You might also consider finding a business mentor. A good mentor will be willing to guide you through the pitfalls of running a business from their own unique perspective, which can save you time and money, as well as sanity.</p> 
+         <h3>9. Take Breaks</h3> 
+         <p>This is about pacing yourself during the workday. It’s best to view the hours in the office as a marathon, not a sprint. Step away from your desk for five or 10 minutes. Go outside for a breath of fresh air or a brisk walk. Grab some water from the kitchen and spend a few minutes talking about last night’s game with an employee.</p> 
+         <p>However you choose to take a break from work throughout the day, make it part of your routine and stick to it. One trick: schedule 10- or 15-minute breaks in your calendar at specific times during the day. When you get the reminder that it’s time to take a walk around the block, get up and do it.</p> 
+         <h3>10.&nbsp;Pace Yourself</h3> 
+         <p>Unless you’ve just invented the ultimate widget that no one can live without, your business will not be built overnight. It will take time to grow your business, build your brand and find ongoing success. As a result, trying to achieve all of your business goals in the first six months of hanging up a shingle isn’t realistic, and the pace could kill you. Spend time prioritizing your most immediate goals and tasks, with some left over. Don’t try to finish everything at once.</p> 
+         <h3>11. Set Your Own Norms</h3> 
+         <p>While it’s important to understand how other small businesses or entrepreneurs work, embrace the idea that their method for success may not be yours. Don’t try to copy someone else; focus on the schedule, timing and boundaries that work for you.</p> 
+         <h3>12.&nbsp;Don’t Be Afraid to Say No</h3> 
+         <p>This is probably the hardest lesson to learn, but it might be the most important. You will be faced with clients, employees, partners, friends and family who will demand your time and attention for a variety of reasons, some valid, some not.</p> 
+         <p>In the case of the latter, learn how to gently but firmly say no. While outright refusal is the ultimate boundary you can set, sometimes it is the only answer that will satisfy someone. Before you say no, analyze the request, the time it will take you to fulfill it and the potential return from fulfilling it. If the numbers add up, then maybe figuring out a way to fit the request into your schedule is a good idea. If they don’t, you might need to turn them down.</p> 
+         <p>Achieving work-life balance is difficult; any entrepreneur, small business owner or employee will tell you that. But by setting your boundaries, treating your social commitments similar to your work ones and seeking help when you need it, you might be able to find an equilibrium you can live with.</p> 
+         <p>For a few more secrets to being more efficient, read our article on <a href="http://quickbooks.intuit.com/r/trends/5-ways-to-manage-your-time-more-efficiently/" target="_blank">how to manage your time</a> for maximum results.</p> 
+        </div> 
+       </div> 
+       <div class="col-md-3"> 
+        <div class="qb-call-in-action-reference"> 
+         <div class="qb-post-popular-component qb-space-top-sm"> 
+          <div class="title">
+           Popular Articles
+          </div> 
+          <ul> 
+           <li> <a href="https://quickbooks.intuit.com/r/pricing-strategy/6-different-pricing-strategies-which-is-right-for-your-business/">6 Different Pricing Strategies: Which Is Right for Your Business?</a> </li> 
+           <li> <a href="https://quickbooks.intuit.com/r/payroll/salary-or-draw-how-to-pay-yourself-as-business-owner/">Salary or Draw? How to Pay Yourself as a Business Owner</a> </li> 
+           <li> <a href="https://quickbooks.intuit.com/r/bookkeeping/5-simple-ways-create-balance-sheet/">5 Simple Ways to Create a Balance Sheet</a> </li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="qb-call-in-action-component floating"> 
+         <div class="graphic" style="background: url('https://ussbc2.qbcontent.com/content/themes/themosis-theme/resources/assets_demo/qb-cia-sign-up-graphic1_exj8wf.png'); background-size: 100%; background-position: center; background-repeat: no-repeat; margin-top: 0;"></div> 
+         <div class="block"> 
+          <h3>Help Your Business Thrive</h3> 
+          <p style="margin-bottom: 20px;">Get our Newsletter</p> 
+         </div> 
+         <div class="block">
+          <form class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl" method="post">
+           <input name="meta_web_form_id" type="hidden" value="2086179488"> 
+           <input name="meta_split_id" type="hidden" value=""> 
+           <input name="listname" type="hidden" value="awlist3521696"> 
+           <input id="redirect_76060e8579a3a076c9023e7218883ffe" name="redirect" type="hidden" value="http://quickbooks.intuit.com/r/thank-you/"> 
+           <input name="meta_adtracking" type="hidden" value="US_Nucleus_-_No_name"> 
+           <input name="meta_message" type="hidden" value="1"> 
+           <input name="meta_required" type="hidden" value="email"> 
+           <input name="meta_tooltip" type="hidden" value=""> 
+           <input id="awf_field-87180928" class="text" tabindex="500" name="email" type="text" value="" placeholder="Enter email address"> 
+           <input class="qb-action" tabindex="501" name="submit" type="submit" value="Subscribe" data-wa-link="qrc_newsletter">
+          </form>
+         </div> 
+         <div class="clearfix"></div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="qb-space-top-sm"> 
+      <div class="qb-background-gray"> 
+       <div class="container"> 
+        <div class="qb-post-related-component"> 
+         <h3>Related Articles</h3> 
+         <div class="row"> 
+          <div class="col-md-4 col-sm-4 section"> 
+           <a href="https://quickbooks.intuit.com/r/productivity/106-business-tools-freelancers-consultants-side-hustlers/"> 
+            <div class="graphic" style="background: url(https://usmentor.qbcontent.com/content/uploads/2017/09/tools-for-freelancers.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;"></div> </a> 
+           <div class="description"> 
+            <a href="https://quickbooks.intuit.com/r/productivity/"> <span class="hidden-sm hidden-xs"> productivity </span> </a> 
+            <h2> <a href="https://quickbooks.intuit.com/r/productivity/106-business-tools-freelancers-consultants-side-hustlers/">106 Business Tools for Freelancers, Consultants and Side Hustlers</a> </h2> 
+            <p>For freelancers, productivity is an asset. The more efficient you are, the…</p> 
+            <a href="https://quickbooks.intuit.com/r/productivity/106-business-tools-freelancers-consultants-side-hustlers/">Read more</a> 
+            <span class="read-time hidden-md hidden-lg">39 min read</span> 
+           </div> 
+          </div> 
+          <div class="col-md-4 col-sm-4 section"> 
+           <a href="https://quickbooks.intuit.com/r/starting-up/your-financing-options/"> 
+            <div class="graphic" style="background: url(https://usmentor.qbcontent.com/content/uploads/2017/01/your-financing-options-feature.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;"></div> </a> 
+           <div class="description"> 
+            <a href="https://quickbooks.intuit.com/r/starting-up/"> <span class="hidden-sm hidden-xs"> starting-up </span> </a> 
+            <h2> <a href="https://quickbooks.intuit.com/r/starting-up/your-financing-options/">Your Financing Options</a> </h2> 
+            <p>Current financing options are broken into three categories: Small Business or High-Growth…</p> 
+            <a href="https://quickbooks.intuit.com/r/starting-up/your-financing-options/">Read more</a> 
+            <span class="read-time hidden-md hidden-lg">18 min read</span> 
+           </div> 
+          </div> 
+          <div class="col-md-4 col-sm-4 section"> 
+           <a href="https://quickbooks.intuit.com/r/starting-up/military-servicemembers-guide-starting-business/"> 
+            <div class="graphic" style="background: url(https://usmentor.qbcontent.com/content/uploads/2016/11/Featured-The-Military-Servicemember’s-Guide-to-Starting-a-Business.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;"></div> </a> 
+           <div class="description"> 
+            <a href="https://quickbooks.intuit.com/r/starting-up/"> <span class="hidden-sm hidden-xs"> starting-up </span> </a> 
+            <h2> <a href="https://quickbooks.intuit.com/r/starting-up/military-servicemembers-guide-starting-business/">The Military Servicemember’s Guide to Starting a Business</a> </h2> 
+            <p>Many of the personality traits that make a person an ideal candidate…</p> 
+            <a href="https://quickbooks.intuit.com/r/starting-up/military-servicemembers-guide-starting-business/">Read more</a> 
+            <span class="read-time hidden-md hidden-lg">14 min read</span> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer id="un_footer" data-footer-key="2017-07-25 18:56:17">
+   <style>
+.bridge-watercooler-boiler .content-container a {font-size: 11px}.qb-share{cursor: pointer;}</style> 
+   <div> 
+    <section class="ccontainer"> 
+     <div class="include-container"> 
+      <section class="ccontainer None r-site-footer resp-site-footer"> 
+       <section class="ccontainer"> 
+        <section id="accordion" class="ccontainer r-site-footer"> 
+         <div class="content-container"> 
+          <section class="ccontainer r-footer-propertylinks footer-blacktext"> 
+           <div class="row resp_grid grid-container-100 no-gutters"> 
+            <div class="span3 col-md-3 col-sm-3 col-xs-12 "> 
+             <section class="ccontainer"> 
+              <div class="ctext"> 
+               <h5 data-target="#panel0">Products</h5> 
+               <ul id="panel0"> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/self-employed/" data-wa-link="ftr-quickbooks-products-selfemployed">QuickBooks Self-Employed</a></li> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/online/" data-wa-link="ftr-quickbooks-products-quickbooksonline">QuickBooks Online</a></li> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/pro/" data-wa-link="ftr-quickbooks-products-quickbookspro">QuickBooks Pro</a></li> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/premier/" data-wa-link="ftr-quickbooks-products-quickbookspremier">QuickBooks Premier</a></li> 
+                <li><a class="p3" href="https://enterprisesuite.intuit.com/" data-wa-link="ftr-quickbooks-products-enterprise">QuickBooks Enterprise</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/mac/" data-wa-link="ftr-quickbooks-products-quickbooksmac">QuickBooks for Mac</a></li> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/payments/" data-wa-link="ftr-quickbooks-products-payments">QuickBooks Payments</a></li> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/payroll-service/" data-wa-link="ftr-quickbooks-products-payroll">QuickBooks Payroll</a></li> 
+                <li><a class="p3" href="http://quickbooks.intuit.com/point-of-sale-systems/" data-wa-link="ftr-quickbooks-products-pos">QuickBooks Point of Sale</a></li> 
+                <li><a class="p3" href="https://quickbooks.intuit.com/products/#apps" data-wa-link="ftr-quickbooks-products-apps">QuickBooks Apps</a></li> 
+               </ul> 
+              </div> 
+             </section> 
+            </div> 
+            <div class="span3 col-md-3 col-sm-3 col-xs-12 "> 
+             <section class="ccontainer"> 
+              <div class="ctext"> 
+               <h5 data-target="#panel1">Business Types</h5> 
+               <ul id="panel1"> 
+                <li><a class="p3" href="//quickbooks.intuit.com/self-employed/" data-wa-link="Ftr-quickbooks-biztype-indcontractor">Independent Contractor</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/business-type/project/" data-wa-link="Ftr-quickbooks-biztype-projbased">Professional and Field Services</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/business-type/product-sellers/" data-wa-link="Ftr-quickbooks-biztype-productsellers">Product Sellers</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/business-type/non-profit/" data-wa-link="Ftr-quickbooks-biztype-nonprofit">Non-profit Organization</a></li> 
+               </ul> 
+              </div> 
+             </section> 
+            </div> 
+            <div class="span3 col-md-3 col-sm-3 col-xs-12 "> 
+             <section class="ccontainer"> 
+              <div class="ctext"> 
+               <h5 data-target="#panel2">Resources</h5> 
+               <ul id="panel2"> 
+                <li><a class="p3" href="//quickbooks.intuit.com/quickbooks-faq/" data-wa-link="ftr-quickbooks-additionalresources-faq">QuickBooks FAQs</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/reviews/" data-wa-link="ftr-quickbooks-additionalresources-reviews">QuickBooks Reviews</a></li> 
+                <li><a class="p3" href="http://quickbooks.intuit.com/tutorials/" data-wa-link="ftr-quickbooks-additionalresources-quickbookstutorials">QuickBooks Tutorials</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/move-to-quickbooks-online/">Switch to QuickBooks Online</a></li> 
+                <li><a class="p3" href="//community.intuit.com/quickbooks-online" data-wa-link="ftr-quickbooks-additionalresources-quickbooksusercommunity">QuickBooks User Community</a></li> 
+                <li><a class="p3" href="//quickbookstraining.com/" data-wa-link="ftr-quickbooks-additionalresources-quickbookstraining">QuickBooks Training Classes</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/software-licenses/" data-wa-link="ftr-quickbooks-resources-prdtlicenseagreements">Product License Agreements</a></li> 
+                <li><a class="p3" href="http://quickbooks.intuit.com/r/" data-wa-link="ftr-quickbooks-resources-smallbusinesscenter">QuickBooks Resource Center</a></li> 
+                <li><a class="p3" href="http://quickbooks.intuit.com/blog/" data-wa-link="ftr-quickbooks-resources-onlineblog">QuickBooks Online Blog</a></li> 
+                <li><a class="p3" href="//quickbooks.intuit.com/currency-converter/" data-wa-link="ftr_converter">Currency Converter</a></li> 
+               </ul> 
+              </div> 
+             </section> 
+            </div> 
+            <div class="span3 col-md-3 col-sm-3 col-xs-12 "> 
+             <section class="ccontainer"> 
+              <div class="ctext"> 
+               <h5 data-target="#panel3">For Developers</h5> 
+               <ul id="panel3"> 
+                <li><a class="p3" href="https://developer.intuit.com/" data-wa-link="ftr-quickbooks-developers-intuitdeveloper">Intuit Developer</a></li> 
+                <li><a class="p3" href="https://developer.intuit.com/hub/blog" data-wa-link="ftr-quickbooks-developers-developercommunity">Developer Community</a></li> 
+               </ul> 
+              </div> 
+             </section> 
+            </div> 
+           </div> 
+           <section class="ccontainer None r-footer-social"> 
+            <div class="ctext"> 
+             <ul id="panel4"> 
+              <li><a href="https://www.facebook.com/intuit" data-wa-link="ftr-corporate-Facebook"><span class="visually-hidden-text footer-icon-facebook" style="display: inline-block;">&nbsp;</span></a></li> 
+              <li><a href="https://www.twitter.com/intuit" data-wa-link="ftr-corporate-Twitter"><span class="visually-hidden-text footer-icon-twitter" style="display: inline-block;">&nbsp;</span></a></li> 
+              <li><a href="https://plus.google.com/+quickbooks" data-wa-link="ftr-quickbooks-googleplus"><span class="visually-hidden-text footer-icon-gplus" style="display: inline-block;">&nbsp;</span></a></li> 
+              <li><a href="http://www.youtube.com/user/Intuit" data-wa-link="ftr-corporate-YouTube"><span class="visually-hidden-text footer-icon-youtube" style="display: inline-block;">&nbsp;</span></a></li> 
+              <li><a href="https://www.linkedin.com/company/quickbooks?trk=company_name" data-wa-link="ftr-quickbooks-googleplus"><span class="visually-hidden-text footer-icon-linkedin" style="display: inline-block;">&nbsp;</span></a></li> 
+             </ul> 
+            </div> 
+            <hr class="interspace_divider"> 
+            <form id="isearch" action="/search/" method="post">
+             <label class="visually-hidden" for="search_term">Search Intuit Small Business</label>
+             <input id="search_term" class="search-intuit" name="search_term" type="text" value="" placeholder="Search this site" data-wa-link="ftr-quickbooks-searchsubmit">
+             <input id="searchSubmitButton" class="search-submit-button search-submit-eyebrow" type="submit" value="Search Submit Button">
+            </form> 
+           </section> 
+          </section> 
+          <section class="ccontainer center-sm"> 
+           <div class="row resp_grid grid-container-100 no-gutters"> 
+            <div class="span9 col-md-9 col-sm-9 col-xs-12 "> 
+             <section class="ccontainer r-footer-company dotspace"> 
+              <div class="ctext"> 
+               <ul> 
+                <li class="hidden-xs is-first-on-desktop"><a class="p3" href="https://quickbooks.intuit.com/sitemap/" data-wa-link="ftr-quickbooks-sitemap">Sitemap</a></li> 
+                <li class="is-first-on-mobile"><a class="p3" href="http://careers.intuit.com/" data-wa-link="ftr-quickbooks-careers">Careers</a></li> 
+                <li class="hidden-xs"><a class="p3" href="http://www.intuit.com/company/contact/" data-wa-link="ftr-quickbooks-contact">Contact</a></li> 
+                <li class="hidden-xs"><a class="p3" href="https://community.intuit.com/quickbooks-online" data-wa-link="ftr-quickbooks-intuitcommunity">Intuit Community</a></li> 
+                <li><a class="p3" href="http://quickbooks.intuit.com/r/" data-wa-link="ftr-quickbooks-smallbusinessblog">Small Business Center</a></li> 
+               </ul> 
+              </div> 
+             </section> 
+            </div> 
+            <div class="span3 col-md-3 col-sm-3 col-xs-12 "> 
+             <section class="ccontainer None r-footer-global"> 
+              <div class="ctext"> 
+               <p><a class="p3 footer-sprite footer-icon-global" href="//global.intuit.com/choose-country.jsp" data-wa-link="ftr-quickbooks-selectacountry">Select A Country</a></p> 
+              </div> 
+             </section> 
+            </div> 
+           </div> 
+          </section> 
+         </div> 
+        </section> 
+        <section class="ccontainer bg-royal-blue rfooter-legal resp-site-footer" style="padding-top: 20px;"> 
+         <div class="content-container"> 
+          <div class="row resp_grid grid-container-100 no-gutters"> 
+           <div class="span6 col-md-6 col-sm-6 col-xs-12 "> 
+            <section class="ccontainer None rfooter-brand rfooter-bk"> 
+             <div class="ctext">
+              <a class="r-footer-intuit-logo" title="Intuit" href="//intuit.com" data-wa-nav-link="ftr-global-intuitbrand"> &nbsp; </a>
+             </div> 
+            </section> 
+           </div> 
+           <div class="span6 col-md-6 col-sm-6 col-xs-12 "> 
+            <section class="ccontainer None rfooter-legal-links dotspace"> 
+             <div class="ctext"> 
+              <ul> 
+               <li style="list-style-type: none;"> 
+                <ul> 
+                 <li><a href="http://www.intuit.com/legal/">Legal</a></li> 
+                 <li><a href="https://security.intuit.com/index.php/privacy">Privacy</a></li> 
+                 <li><a href="https://security.intuit.com/">Security</a></li> 
+                </ul> </li> 
+              </ul> 
+              <div></div> 
+             </div> 
+            </section> 
+           </div> 
+          </div> 
+          <div class="row resp_grid grid-container-100 no-gutters"> 
+           <div class="span9 col-md-9 col-sm-9 col-xs-12 "> 
+            <section class="ccontainer None rfooter-copyright"> 
+             <div class="ctext"> 
+              <p>© <b>2017 Intuit Inc. All rights reserved.</b> Intuit and QuickBooks are registered trademarks of Intuit Inc. Terms and conditions, features, support, pricing, and service options subject to change without notice.</p> 
+              <p>&nbsp;</p> 
+              <p>&nbsp;</p> 
+             </div> 
+            </section> 
+           </div> 
+           <div class="span3 col-md-3 col-sm-3 col-xs-12 "></div> 
+          </div> 
+         </div> 
+        </section> 
+       </section> 
+      </section> 
+     </div> 
+    </section> 
+   </div> 
+   <div class="qb-ft-footer"> 
+    <div class="qb-ft-footer-container container-fluid"> 
+     <p> </p> 
+     <div class="qb-social-media" style="display:none"> 
+      <ul> 
+       <li><span class="qb-share qb-ft-footer-btn-share-facebook"><i class="fa fa-facebook-square" aria hidden="true">&nbsp;</i></span></li> 
+       <li><span class="qb-share qb-ft-footer-btn-share-twitter"><i class="fa fa-twitter-square" aria hidden="true">&nbsp;</i></span></li> 
+       <li><span class="qb-share qb-ft-footer-btn-share-linkedin"><i class="fa fa-linkedin-square" aria hidden="true">&nbsp;</i></span></li> 
+       <li><span class="qb-share qb-ft-footer-btn-share-gplus"><i class="fa fa-share-alt" aria hidden="true">&nbsp;</i></span></li> 
+      </ul> 
+     </div> 
+     <div class="qb-content-description">
+      Run your entire business with QuickBooks
+      <a id="btn" class="qb-action qb-button-secondary" href="https://quickbooks.intuit.com/pricing/" data-wa-link="fdr-quickbooks-tryitfree">Try it free</a>
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/mu-plugins/vc-intuit/vc-elements/qb-vc-conditional-container/script.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/mu-plugins/vc-intuit/vc-elements/qb-vc-menu/js/qb-vc-menu-js.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/cms/wp-includes/js/imagesloaded.min.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/cms/wp-includes/js/masonry.min.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/sbc2/resources/components/vc-intuit-nucleus/vc-elements/vc-blocks-grid/js/index.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/sbc2/resources/assets/js/qb-floating-footer.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/sbc2/resources/assets/js/video-modal.js"></script> 
+  <script type="text/javascript" src="//nexus.ensighten.com/intuit/us_fms_prod/Bootstrap.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/themosis-theme/resources/assets/js/framework.js"></script> 
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/themosis-theme/resources/assets/js/header.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/themosis-theme/build/app.min.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/themes/themosis-theme/build/components.min.js"></script> 
+  <script type="text/javascript" src="https://usmentor.qbcontent.com/content/mu-plugins/js_composer/assets/js/dist/js_composer_front.min.js"></script> 
+  <div id="un_loaded_assets" style="display: none">
+   a:2:{s:3:"css";a:1:{i:0;s:101:"https://usmentor.qbcontent.com/content/mu-plugins/vc-intuit/vc-elements/qb-vc-menu/css/style.css?v=29";}s:2:"js";a:2:{i:0;s:109:"https://usmentor.qbcontent.com/content/mu-plugins/vc-intuit/vc-elements/qb-vc-conditional-container/script.js";i:1;s:110:"https://usmentor.qbcontent.com/content/mu-plugins/vc-intuit/vc-elements/qb-vc-menu/js/qb-vc-menu-js.js?cache=4";}} 
+   <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+{ (i[r].q=i[r].q||[]).push(arguments)}
+,i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-94024640-1', 'auto');
+ga('send', 'pageview');
+</script> 
+  </div> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ae0508e4dc","applicationID":"26692027","transactionName":"blxVZEVVV0JQBk0IW1cWdlNDXVZfHgxXBVFB","queueTime":0,"applicationTime":7179,"atts":"QhtWEg1PREw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

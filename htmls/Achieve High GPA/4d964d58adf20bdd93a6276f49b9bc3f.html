@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+ <head profile="http://www.w3.org/1999/xhtml/vocab"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Open+Sans+Condensed:300,300italic,700" rel="stylesheet" type="text/css"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+  <script src="/sites/all/themes/uw_madison_student_advising/js/uw_madison_student_advising.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://advising.wisc.edu/gpacalculator"> 
+  <link rel="shortlink" href="https://advising.wisc.edu/node/320"> 
+  <title>GPA Calculator | Student Advising</title> 
+  <style type="text/css" media="all">
+@import url("https://advising.wisc.edu/modules/system/system.base.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/system/system.menus.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/system/system.messages.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/system/system.theme.css?opoxeg");
+</style> 
+  <style type="text/css" media="all">
+@import url("https://advising.wisc.edu/sites/all/modules/calendar/css/calendar_multiday.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/comment/comment.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/date/date_api/date.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/date/date_repeat_field/date_repeat_field.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/field/theme/field.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/node/node.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/search/search.css?opoxeg");
+@import url("https://advising.wisc.edu/modules/user/user.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/views/css/views.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/ckeditor/css/ckeditor.css?opoxeg");
+</style> 
+  <style type="text/css" media="all">
+@import url("https://advising.wisc.edu/sites/all/libraries/colorbox/example4/colorbox.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/ctools/css/ctools.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/shib_auth/shib_auth.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/gpacalculator/css/responsive-tabs.css?opoxeg");
+</style> 
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" media="all"> 
+  <style type="text/css" media="all">
+@import url("https://advising.wisc.edu/sites/all/modules/gpacalculator/css/gpacalculator.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/modules/custom_search/custom_search.css?opoxeg");
+</style> 
+  <style type="text/css" media="all">
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/alpha-reset.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/alpha-mobile.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/alpha-alpha.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/omega/css/omega-text.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/omega/css/omega-branding.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/omega/css/omega-menu.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/omega/css/omega-forms.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/omega/css/omega-visuals.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/uw_madison_omega-master-TEST/css/global.css?opoxeg");
+@import url("https://advising.wisc.edu/sites/all/themes/uw_madison_student_advising/css/style.css?opoxeg");
+</style> 
+  <!--[if (lt IE 9)&(!IEMobile)]>
+<style type="text/css" media="all">
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/grid/alpha_default/normal/alpha-default-normal-12.css?opoxeg");
+</style>
+<![endif]--> 
+  <!--[if gte IE 9]><!--> 
+  <style type="text/css" media="all and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)">
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/grid/alpha_default/narrow/alpha-default-narrow-12.css?opoxeg");
+</style> 
+  <!--<![endif]--> 
+  <!--[if gte IE 9]><!--> 
+  <style type="text/css" media="all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)">
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/grid/alpha_default/normal/alpha-default-normal-12.css?opoxeg");
+</style> 
+  <!--<![endif]--> 
+  <!--[if gte IE 9]><!--> 
+  <style type="text/css" media="all and (min-width: 1220px)">
+@import url("https://advising.wisc.edu/sites/all/themes/alpha/css/grid/alpha_default/wide/alpha-default-wide-12.css?opoxeg");
+</style> 
+  <!--<![endif]--> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/misc/jquery.once.js?v=1.2"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/misc/drupal.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/gpacalculator/js/libraries/responsiveTabs.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/libraries/colorbox/jquery.colorbox-min.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/colorbox/js/colorbox.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/colorbox/js/colorbox_load.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/colorbox/js/colorbox_inline.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/custom_search/js/custom_search.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/google_analytics/googleanalytics.js?opoxeg"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-43197521-2", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/themes/uw_madison_omega-master-TEST/js/brandbar.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/themes/uw_madison_student_advising/js/jquery.formalize.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/themes/uw_madison_student_advising/js/omega-mediaqueries.js?opoxeg"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"uw_madison_student_advising","theme_token":"U7r4j9QJFGLZlhKz2VeXmhOyLGgTgcY3EqPlHMnVJHI","js":{"sites\/all\/modules\/gpacalculator\/js\/gpacalculator_utils.js":1,"sites\/all\/modules\/gpacalculator\/js\/gpacalculator_calculategpa.js":1,"sites\/all\/modules\/gpacalculator\/js\/gpacalculator_raisegpa.js":1,"sites\/all\/modules\/gpacalculator\/js\/gpacalculator_init.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/gpacalculator\/js\/libraries\/responsiveTabs.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/uw_madison_omega-master-TEST\/js\/brandbar.js":1,"sites\/all\/themes\/uw_madison_student_advising\/js\/jquery.formalize.js":1,"sites\/all\/themes\/uw_madison_student_advising\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/libraries\/colorbox\/example4\/colorbox.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/shib_auth\/shib_auth.css":1,"sites\/all\/modules\/gpacalculator\/css\/responsive-tabs.css":1,"https:\/\/maxcdn.bootstrapcdn.com\/bootstrap\/3.3.2\/css\/bootstrap.min.css":1,"https:\/\/maxcdn.bootstrapcdn.com\/bootstrap\/3.3.2\/css\/bootstrap-theme.min.css":1,"sites\/all\/modules\/gpacalculator\/css\/gpacalculator.css":1,"sites\/all\/modules\/custom_search\/custom_search.css":1,"sites\/all\/themes\/alpha\/css\/alpha-reset.css":1,"sites\/all\/themes\/alpha\/css\/alpha-mobile.css":1,"sites\/all\/themes\/alpha\/css\/alpha-alpha.css":1,"sites\/all\/themes\/uw_madison_student_advising\/css\/formalize.css":1,"sites\/all\/themes\/omega\/css\/omega-text.css":1,"sites\/all\/themes\/omega\/css\/omega-branding.css":1,"sites\/all\/themes\/omega\/css\/omega-menu.css":1,"sites\/all\/themes\/omega\/css\/omega-forms.css":1,"sites\/all\/themes\/omega\/css\/omega-visuals.css":1,"sites\/all\/themes\/uw_madison_omega-master-TEST\/css\/global.css":1,"sites\/all\/themes\/uw_madison_student_advising\/css\/style.css":1,"ie::normal::sites\/all\/themes\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"sites\/all\/themes\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-12.css":1,"sites\/all\/themes\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"sites\/all\/themes\/alpha\/css\/grid\/alpha_default\/wide\/alpha-default-wide-12.css":1}},"colorbox":{"transition":"none","speed":"100","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"maxWidth":"98%","maxHeight":"98%","initialWidth":"300","initialHeight":"250","fixed":true,"scrolling":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"custom_search":{"form_target":"_self","solr":0},"better_exposed_filters":{"views":{"learning_resource_info_notes":{"displays":{"block":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"urlIsAjaxTrusted":{"\/gpacalculator":true},"omega":{"layouts":{"primary":"normal","order":["narrow","normal","wide"],"queries":{"narrow":"all and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+//--><!]]>
+</script> 
+ </head> 
+ <body onresize="resetMenu(window.innerWidth)" class="html not-front not-logged-in page-node page-node- page-node-320 node-type-page context-gpacalculator"> 
+  <div id="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <div class="region region-page-top" id="region-page-top"> 
+   <div class="region-inner region-page-top-inner"> 
+   </div> 
+  </div> 
+  <div class="page clearfix" id="page"> 
+   <header id="section-header" class="section section-header"> 
+    <div id="zone-user-wrapper" class="zone-wrapper zone-user-wrapper clearfix"> 
+     <div id="zone-user" class="zone zone-user clearfix container-12"> 
+      <div class="grid-4 region region-user-first" id="region-user-first"> 
+       <div class="region-inner region-user-first-inner"> 
+        <!--     <a href="http://www.wisc.edu/" title="Go to Wisc.edu"><img id="UofWtype" src="./sites/all/themes/uw_madison_student_advising/images/UofWtype1.png" alt="University of Wisconsin-Madison" /></a>
+ --> 
+        <a href="http://www.wisc.edu/" title="Go to Wisc.edu"><img id="UofWtype" src="/sites/all/themes/uw_madison_student_advising/images/UofWtype1.png"></a> 
+       </div> 
+      </div>
+      <div class="grid-8 region region-user-second" id="region-user-second"> 
+       <div class="region-inner region-user-second-inner"> 
+        <div class="block block-menu block-menu-utility-menu block-menu-menu-utility-menu odd block-without-title" id="block-menu-menu-utility-menu"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <ul class="menu">
+            <li class="first leaf"><a href="http://wiscmail.wisc.edu/">Email/Calendar</a></li> 
+            <li class="leaf"><a href="http://my.wisc.edu/">My UW</a></li> 
+            <li class="leaf"><a href="https://learnuw.wisc.edu/">Learn@UW</a></li> 
+            <li class="leaf"><a href="http://www.library.wisc.edu/">Libraries</a></li> 
+            <li class="leaf"><a href="http://map.wisc.edu/">Map</a></li> 
+            <li class="leaf"><a href="http://www.wisc.edu/directories/">Directory</a></li> 
+            <li class="leaf"><a href="http://www.supportuw.org/?utm_source=wisc_edu&amp;utm_medium=online&amp;utm_content=header&amp;utm_campaign=campus">Giving to UW</a></li> 
+            <li class="last leaf"><a href="https://advising.wisc.edu/contact.php">Help</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix"> 
+     <div id="zone-branding" class="zone zone-branding clearfix container-12"> 
+      <div class="grid-12 region region-branding" id="region-branding"> 
+       <div class="region-inner region-branding-inner"> 
+        <div class="branding-data clearfix"> 
+         <div class="logo-img"> 
+          <a href="/" rel="home" title="Student Advising"><img src="https://advising.wisc.edu/sites/all/libraries/uw_madison_student_advising/images-assets/uwCrest.png" alt="Student Advising" id="logo"></a> 
+         </div> 
+         <hgroup class="site-name-slogan"> 
+          <img id="site-name" src="/sites/all/themes/uw_madison_student_advising/images/advisingType.png"> 
+         </hgroup> 
+        </div> 
+        <div class="block block-custom-search-blocks block-1 block-custom-search-blocks-1 odd block-without-title" id="block-custom-search-blocks-1"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <form class="search-form" action="/gpacalculator" method="post" id="custom-search-blocks-form-1" accept-charset="UTF-8">
+            <div>
+             <div class="form-item form-type-textfield form-item-custom-search-blocks-form-1"> 
+              <label class="element-invisible" for="edit-custom-search-blocks-form-1--2">Search this site </label> 
+              <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="Search this site" type="text" id="edit-custom-search-blocks-form-1--2" name="custom_search_blocks_form_1" value="" size="15" maxlength="128"> 
+             </div> 
+             <input type="hidden" name="delta" value="1"> 
+             <input type="hidden" name="form_build_id" value="form-2hWgfaZFU96m5NywrqrlUqlOZ-ESGv7ci5dxUevAUIk"> 
+             <input type="hidden" name="form_id" value="custom_search_blocks_form_1"> 
+             <div class="form-actions form-wrapper" id="edit-actions">
+              <input type="submit" id="edit-submit" name="op" value="Go!" class="form-submit">
+             </div>
+            </div>
+           </form> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-header-wrapper" class="zone-wrapper zone-header-wrapper clearfix"> 
+     <div id="zone-header" class="zone zone-header clearfix container-12"> 
+      <div class="grid-6 region region-header-second" id="region-header-second"> 
+       <div class="region-inner region-header-second-inner"> 
+        <div class="block block-search block-form block-search-form odd block-without-title" id="block-search-form"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <form class="search-form" action="/gpacalculator" method="post" id="search-block-form" accept-charset="UTF-8">
+            <div>
+             <div class="container-inline"> 
+              <h2 class="element-invisible">Search form</h2> 
+              <div class="form-item form-type-textfield form-item-search-block-form"> 
+               <label for="edit-search-block-form--2">Search this site </label> 
+               <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128"> 
+              </div> 
+              <div class="form-item form-type-select form-item-custom-search-types"> 
+               <label for="edit-custom-search-types">Search for </label> 
+               <select class="custom-search-selector custom-search-types form-select" id="edit-custom-search-types" name="custom_search_types"><option value="c-all" selected>-Any-</option><option value="c-article">Article</option><option value="c-page">Basic page</option><option value="c-event">Event</option></select> 
+              </div> 
+              <div class="form-actions form-wrapper" id="edit-actions--2">
+               <input type="submit" id="edit-submit--2" name="op" value="Search" class="form-submit">
+              </div>
+              <input type="hidden" name="form_build_id" value="form-GcAgmo13mU84lx1VVWhqFyFtdFXKWzQHFOWLRjoQP0U"> 
+              <input type="hidden" name="form_id" value="search_block_form"> 
+             </div> 
+            </div>
+           </form> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix"> 
+     <div id="zone-menu" class="zone zone-menu clearfix container-12"> 
+      <div class="grid-12 region region-menu" id="region-menu"> 
+       <div class="region-inner region-menu-inner"> 
+        <button class="menu-toggle" onclick="menuToggle()"></button> 
+        <nav id="navigation" class="navigation"> 
+         <ul class="menu">
+          <li class="first leaf"><a href="/">Home</a></li> 
+          <li class="leaf"><a href="/content/find-an-advisor">Find an Advisor</a></li> 
+          <li class="expanded"><a href="/content/about-advising">About Advising</a>
+           <ul class="menu">
+            <li class="first leaf"><a href="/content/what-advising">What is Advising?</a></li> 
+            <li class="leaf"><a href="/content/who-are-advisors">Who are Advisors?</a></li> 
+            <li class="leaf"><a href="/content/why-should-i-see-advisor" class="sub-menu">Why Should I See an Advisor?</a></li> 
+            <li class="leaf"><a href="/content/when-should-i-see-advisor" class="sub-menu">When should I see an advisor?</a></li> 
+            <li class="leaf"><a href="/content/how-do-i-make-appointment" class="sub-menu">How Do I Make an Appointment?</a></li> 
+            <li class="leaf"><a href="/content/how-prepare-advising">How To Prepare for Advising</a></li> 
+            <li class="leaf"><a href="/content/expectations-about-advising">Expectations About Advising</a></li> 
+            <li class="leaf"><a href="/content/high-school-vs-college-advising">High School vs College Advising</a></li> 
+            <li class="leaf"><a href="http://advising.wisc.edu/content/advising-faqs">Advising FAQS</a></li> 
+            <li class="last leaf"><a href="/content/tell-your-parents">Tell Your Parents!</a></li> 
+           </ul></li> 
+          <li class="expanded"><a href="/content/your-major">Your Major</a>
+           <ul class="menu">
+            <li class="first leaf"><a href="/content/majors-certificates">Majors &amp; Certificates</a></li> 
+            <li class="leaf"><a href="/content/exploring-majors-certificates">Exploring Majors &amp; Certificates</a></li> 
+            <li class="leaf"><a href="/content/declaring-major">Declaring a Major</a></li> 
+            <li class="leaf"><a href="/content/benefits-declaring-major">Benefits of Declaring a Major</a></li> 
+            <li class="leaf"><a href="/content/your-path-graduation">Your Path to Graduation</a></li> 
+            <li class="leaf"><a href="/content/staying-track" class="sub-menu">Staying on Track</a></li> 
+            <li class="leaf"><a href="/content/one-size-doesnt-fit-all" class="sub-menu">One Size Doesn't Fit All</a></li> 
+            <li class="last leaf"><a href="/content/do-majors-careers">Do Majors = Careers?</a></li> 
+           </ul></li> 
+          <li class="expanded"><a href="/content/your-career">Your Career</a>
+           <ul class="menu">
+            <li class="first leaf"><a href="/content/career-advising">Career Advising</a></li> 
+            <li class="leaf"><a href="/content/career-resources">Career Exploration Resources</a></li> 
+            <li class="last leaf"><a href="/content/schoolcollege-career-centers">School/College Career Centers</a></li> 
+           </ul></li> 
+          <li class="expanded"><a href="/content/beyond-classroom">Beyond the Classroom</a>
+           <ul class="menu">
+            <li class="first last leaf"><a href="/content/wisconsin-experience">The Wisconsin Experience</a></li> 
+           </ul></li> 
+          <li class="expanded"><a href="/content/helpful-resources-0">Helpful Resources</a>
+           <ul class="menu">
+            <li class="first leaf"><a href="https://advising.wisc.edu/campus-resources">Campus Resources</a></li> 
+            <li class="leaf"><a href="http://advising.wisc.edu/tutoring">Tutoring &amp; Learning Support</a></li> 
+            <li class="last leaf"><a href="/content/leadership-retention-academic-excellence">Leadership, Retention, Academic Excellence</a></li> 
+           </ul></li> 
+          <li class="last expanded"><a href="/content/soar">SOAR</a>
+           <ul class="menu">
+            <li class="first leaf"><a href="/content/advising-soar">Advising at SOAR</a></li> 
+            <li class="leaf"><a href="/content/preparing-soar-advising">Preparing for SOAR Advising</a></li> 
+            <li class="leaf"><a href="/content/choosing-advising-group-soar">Choosing an Advising Group</a></li> 
+            <li class="last leaf"><a href="/content/soar-advising-group-options">SOAR Advising Group Options</a></li> 
+           </ul></li> 
+         </ul> 
+        </nav> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header> 
+   <section id="section-content" class="section section-content"> 
+    <div id="zone-sidebar" class="zone zone-sidebar clearfix container-12"> 
+     <aside class="grid-6 region region-sidebar-first" id="region-sidebar-first"> 
+      <div class="region-inner region-sidebar-first-inner"> 
+       <h3 class="sidebar-title"> Tools &amp; Resources </h3> 
+       <hr> 
+       <div class="block block-block block-10 block-block-10 odd block-without-title" id="block-block-10"> 
+        <div class="block-inner clearfix"> 
+         <div class="content clearfix"> 
+          <div class="sidebar-links">
+           <a href="?q=calendar-node-field-event-date"><img alt="Event Calendar" src="/sites/default/files/pictures/calendar.png"><span>Calendar</span></a>
+          </div> 
+          <div class="sidebar-links">
+           <a href="/content/tools"><img alt="Tools" src="/sites/default/files/pictures/tools.png"><span>Tools</span></a>
+          </div> 
+          <div class="sidebar-links">
+           <a href="/gpacalculator"><img alt="GPA Calculator" src="/sites/default/files/pictures/gpa_calculator.png"><span>GPA Calculator</span></a>
+          </div> 
+          <div class="sidebar-links">
+           <a href="/my-advisor"><img alt="My Advisor" src="/sites/default/files/pictures/icons/png%20versions/binoculars-23.png"><span>My Advisor</span></a>
+          </div> 
+          <div class="sidebar-links">
+           <a href="/glossary"><img alt="Glossary" src="/sites/default/files/pictures/glossary.png"><span>Glossary</span></a>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+     </aside> 
+     <aside class="grid-6 region region-sidebar-second" id="region-sidebar-second"> 
+      <div class="region-inner region-sidebar-second-inner"> 
+       <h3 class="sidebar-title"> Quick Links </h3> 
+       <hr> 
+       <div id="quicklinks"> 
+        <div class="block block-block block-6 block-block-6 odd block-without-title" id="block-block-6"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <p><a href="https://advising.wisc.edu/content/why-should-i-see-advisor">Why See an Advisor?</a></p> 
+           <p><a href="/content/enrollment">Enrollment Resources</a></p> 
+           <p><a href="https://advising.wisc.edu/tutoring">Tutoring/Learning Support</a></p> 
+           <p><a href="/campus-resources">Campus Resources</a></p> 
+           <p><a href="/content/prospective-student" style="line-height: 20.8px;">For Prospective Students</a></p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </aside> 
+    </div> 
+    <div id="zone-content-wrapper" class="zone-wrapper zone-content-wrapper clearfix"> 
+     <div id="zone-content" class="zone zone-content clearfix container-12"> 
+      <div id="breadcrumb" class="grid-12">
+       <h2 class="element-invisible">You are here</h2>
+       <div class="breadcrumb">
+        <a href="/">Home</a>
+       </div>
+      </div> 
+      <div class="grid-9 region region-content" id="region-content"> 
+       <div class="region-inner region-content-inner"> 
+        <a id="main-content"></a> 
+        <h1 class="title" id="page-title">GPA Calculator</h1> 
+        <div class="block block-gpacalculator block-gpacalculator block-gpacalculator-gpacalculator odd block-without-title" id="block-gpacalculator-gpacalculator"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <div id="block-gpacalculator" class="gpacalculator-block-output"> 
+            <div class="content"> 
+             <div id="responsiveTabs"> 
+              <ul class=""> 
+               <li><a href="#calcGPA">Calculate GPA</a></li> 
+               <li><a href="#raiseGPA">Raise GPA</a></li> 
+              </ul> 
+              <div id="calcGPA"> 
+               <div id="currentGPAContainer" class="container-fluid"> 
+                <div class="row"> 
+                 <div class="col-md-4 col-sm-6 col-md-offset-2 text-header"> 
+                  <div class="form-group"> 
+                   <label for="totalCredits">Current Total Credits</label> 
+                   <input type="text" class="form-control" name="currentCredits"> 
+                  </div> 
+                 </div> 
+                 <div class="col-md-4 col-sm-6 text-header"> 
+                  <div class="form-group"> 
+                   <label for="currentGPA">Current Cumulative GPA</label> 
+                   <input type="text" class="form-control" name="currentGPA"> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div id="currentSemester" class="container-fluid"> 
+                <div class="row no-padding"> 
+                 <div class="col-md-12 header">
+                   Current Semester 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="row" id="controls"> 
+                <div class="col-md-1"> 
+                </div> 
+                <div class="col-md-11"> 
+                 <div class="col-md-3 col-md-offset-1"> 
+                  <button id="addClassBtn" class="btn btn-info btn-block">Add class</button> 
+                 </div> 
+                 <div class="col-md-3"> 
+                  <button id="calcGPABtn" class="btn btn-success btn-block">Calculate GPA</button> 
+                 </div> 
+                 <div class="col-md-3"> 
+                  <button id="resetCalcGPA" class="btn btn-warning btn-block">Reset fields</button> 
+                 </div> 
+                </div> 
+               </div> 
+               <div id="newGPAContainer" class="container-fluid"> 
+                <div class="row"> 
+                 <div class="col-md-4 col-sm-6 col-md-offset-2 text-header"> 
+                  <div class="form-group"> 
+                   <label for="newSemesterGPA" class="control-label">Semester GPA</label> 
+                   <p id="newSemesterGPA" class="form-control-static"></p> 
+                  </div> 
+                 </div> 
+                 <div class="col-md-4 col-sm-6 text-header"> 
+                  <div class="form-group"> 
+                   <label for="newCumulativeGPA" class="control-label">New Cumulative GPA</label> 
+                   <p id="newCumulativeGPA" class="form-control-static"></p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+              <div id="raiseGPA"> 
+               <div id="raiseGPAContent" class="container-fluid"> 
+                <div class="row"> 
+                 <div class="col-md-4 col-sm-6 col-md-offset-2 text-header"> 
+                  <div class="form-group"> 
+                   <label for="totalCreditsRaiseGPA">Current Total Credits</label> 
+                   <input type="text" class="form-control" name="totalCreditsRaiseGPA"> 
+                  </div> 
+                 </div> 
+                 <div class="col-md-4 col-sm-6 text-header"> 
+                  <div class="form-group"> 
+                   <label for="currentGPARaiseGPA">Current Cumulative GPA</label> 
+                   <input type="text" class="form-control" name="currentGPARaiseGPA"> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div id="neededAverage"> 
+                 <div class="row"> 
+                  <div class="col-md-12"> 
+                   <p>I'm taking <input type="text" class="form-control" placeholder="00" name="creditsTakingNeededAverage"> credits this semester. If I want to raise my GPA <input type="text" class="form-control" placeholder="0.0" name="GPAPointsNeededAverage"> points, what GPA will I need this semester? </p> 
+                   <div class="form-group"> 
+                    <label class="control-label">GPA Needed: </label> 
+                    <p id="gpaNeeded" class="form-control-static"></p> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="row" id="controls2"> 
+                  <div class="col-md-4"> 
+                   <button id="calcGPANeeded" class="btn btn-success btn-block">Calculate GPA</button> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div id="addCreditsNeeded"> 
+                 <div class="row"> 
+                  <div class="col-md-12"> 
+                   <p>I'd like to raise my GPA <input type="text" class="form-control" placeholder="0.0" name="GPAPointsCreditsNeeded"> points. If I achieve a <input type="text" class="form-control" placeholder="0.0" name="GPAAverageCreditsNeeded"> average GPA, it will take how many more credits? </p> 
+                   <div class="form-group"> 
+                    <label class="control-label">Credits Needed: </label> 
+                    <p id="creditsNeeded" class="form-control-static"></p> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="row" id="controls2"> 
+                  <div class="col-md-4"> 
+                   <button id="calcCredits" class="btn btn-info btn-block">Calculate Credits</button> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-system block-main block-system-main even block-without-title" id="block-system-main"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <article about="/gpacalculator" typeof="foaf:Document" class="node node-page node-published node-not-promoted node-not-sticky author-gwsmith odd clearfix" id="node-page-320"> 
+            <span property="dc:title" content="GPA Calculator" class="rdf-meta element-hidden"></span>
+            <span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span> 
+            <div class="content clearfix"> 
+             <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+               <div class="field-item even" property="content:encoded">
+                <div> 
+                 <div style="font-weight: normal; line-height: 1.2; color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS';">
+                  &nbsp;
+                 </div> 
+                 <div style="font-weight: normal; line-height: 1.2; color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS';">
+                  <a href="/content/tutoring-learning-support-resources"><u><span style="font-size:16px;"><strong>Tutoring &amp; Learning Support Resources</strong></span></u></a>
+                 </div> 
+                 <div style="color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS'; font-size: 13px; line-height: 16.64px;"> 
+                  <p style="margin-top: 20px; margin-bottom: 20px;"><span style="font-size:16px;">Learning support resources come in many forms and everyone can benefit from them – no matter who you are, or what your grades are. Follow this link for&nbsp;a list of&nbsp;<strong>FREE</strong>&nbsp;tutoring and learning support units on campus, FAQs, student testimonials, and resources to help you achieve academic success.</span></p> 
+                 </div> 
+                </div> 
+               </div>
+              </div>
+             </div> 
+            </div> 
+            <div class="clearfix"> 
+             <nav class="links node-links clearfix"></nav> 
+            </div> 
+           </article> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-postscript-wrapper" class="zone-wrapper zone-postscript-wrapper clearfix"> 
+     <div id="zone-postscript" class="zone zone-postscript clearfix container-12"> 
+     </div> 
+    </div> 
+   </section> 
+   <footer id="section-footer" class="section section-footer"> 
+    <div id="zone-footer-wrapper" class="zone-wrapper zone-footer-wrapper clearfix"> 
+     <div id="zone-footer" class="zone zone-footer clearfix container-12"> 
+      <div class="grid-3 region region-footer-first" id="region-footer-first"> 
+       <div class="region-inner region-footer-first-inner"> 
+        <section class="block block-block block-2 block-block-2 odd" id="block-block-2"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title">INFORMATION:</h2> 
+          <div class="content clearfix"> 
+           <div>
+            <a href="/content/prospective-student">Prospective Students</a>
+           </div> 
+           <div>
+            <a href="http://parent.wisc.edu/" target="_blank">Parents</a>
+           </div> 
+           <div>
+            <a href="http://advising.wisc.edu/facstaff" target="_blank">Faculty/Staff</a>
+           </div> 
+          </div> 
+         </div> 
+        </section> 
+       </div> 
+      </div>
+      <div class="grid-3 region region-footer-second" id="region-footer-second"> 
+       <div class="region-inner region-footer-second-inner"> 
+        <section class="block block-block block-3 block-block-3 odd" id="block-block-3"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title">PARTNERSHIPS:</h2> 
+          <div class="content clearfix"> 
+           <div>
+            <a href="http://info.wisc.edu//" target="_blank">Campus &amp;&nbsp;Visitor Relations</a>
+           </div> 
+           <div>
+            <a href="http://www.newstudent.wisc.edu/" target="_blank">Center for the First-Year Experience</a>
+           </div> 
+           <div>
+            <a href="https://admissions.wisc.edu/" target="_blank">Office of Admissions &amp; Recruitment</a>
+           </div> 
+           <div>
+            <a href="https://registrar.wisc.edu/" target="_blank">Office of the Registrar</a>
+           </div> 
+           <div>
+            &nbsp;
+           </div> 
+          </div> 
+         </div> 
+        </section> 
+       </div> 
+      </div>
+      <div class="grid-3 region region-footer-third" id="region-footer-third"> 
+       <div class="region-inner region-footer-third-inner"> 
+        <div class="block block-block block-4 block-block-4 odd block-without-title" id="block-block-4"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <p><img alt="" src="/sites/default/files/ctools/footerUWlogotype_03_0.png"></p> 
+           <p>Copyright © 2015&nbsp;The Board of Regents of the University of Wisconsin System.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+      <div class="grid-3 region region-footer-fourth" id="region-footer-fourth"> 
+       <div class="region-inner region-footer-fourth-inner"> 
+        <div class="block block-block block-5 block-block-5 odd block-without-title" id="block-block-5"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <div>
+            Office of Undergraduate Advising 1155 Observatory Dr. Madison, WI 53706-1397 
+            <a href="mailto:info@advising.wisc.edu">info@advising.wisc.edu</a>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </footer> 
+  </div> 
+  <div class="region region-page-bottom" id="region-page-bottom"> 
+   <div class="region-inner region-page-bottom-inner"> 
+   </div> 
+  </div>
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/gpacalculator/js/gpacalculator_utils.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/gpacalculator/js/gpacalculator_calculategpa.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/gpacalculator/js/gpacalculator_raisegpa.js?opoxeg"></script> 
+  <script type="text/javascript" src="https://advising.wisc.edu/sites/all/modules/gpacalculator/js/gpacalculator_init.js?opoxeg"></script>  
+ </body>
+</html>

@@ -1,0 +1,1651 @@
+<!doctype html>
+<html lang="en-US">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"> 
+  <title>Break Into Corporate Development as an Engineer</title> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="https://www.mergersandinquisitions.com/xmlrpc.php"> 
+  <!-- Favicons! --> 
+  <link rel="shortcut icon" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicon.ico"> 
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-57x57.png"> 
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-60x60.png"> 
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-72x72.png"> 
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-76x76.png"> 
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-114x114.png"> 
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-120x120.png"> 
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-144x144.png"> 
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-152x152.png"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/apple-icon-180x180.png"> 
+  <link rel="icon" type="image/png" sizes="192x192" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/android-icon-192x192.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="96x96" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/favicon-96x96.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/favicon-16x16.png"> 
+  <link rel="manifest" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/manifest.json"> 
+  <meta name="msapplication-config" content="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/favicons/browserconfig.xml"> 
+  <script>var et_site_url='https://www.mergersandinquisitions.com';var et_post_id='4145';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script>
+  <title>Break Into Corporate Development as an Engineer</title> 
+  <!-- Start PushCrew Asynchronous Code --> 
+  <script type="text/javascript">
+(function(p,u,s,h) {
+    p._pcq = p._pcq || [];
+    p._pcq.push(['_currentTime', Date.now()]);
+    s = u.createElement('script'); s.type = 'text/javascript'; s.async = true;
+    s.src = 'https://cdn.pushcrew.com/js/975134410b221eea286895f32d5e6e2f.js';
+    h = u.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+})(window,document);
+</script> 
+  <!-- End PushCrew Asynchronous Code --> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.3.2 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="How to Break Into Corporate Development as an Engineer without Any Finance Experience and without Any Networking: A True Story."> 
+  <link rel="canonical" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.mergersandinquisitions.com\/","name":"Mergers &amp; Inquisitions","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.mergersandinquisitions.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//a.optnmstr.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Mergers &amp; Inquisitions » Feed" href="https://www.mergersandinquisitions.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Mergers &amp; Inquisitions » Comments Feed" href="https://www.mergersandinquisitions.com/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Mergers &amp; Inquisitions » How to Break Into Corporate Development as an Engineer with No Finance Experience Comments Feed" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/feed/"> 
+  <!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.2 - Using Analytics tracking - https://www.monsterinsights.com/ --> 
+  <script type="text/javascript" data-cfasync="false">
+		var disableStr = 'ga-disable-UA-2751266-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-2751266-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+</script> 
+  <!-- / Google Analytics by MonsterInsights --> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.mergersandinquisitions.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="contact-form-7-css" href="https://www.mergersandinquisitions.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.9" type="text/css" media="all"> 
+  <link rel="stylesheet" id="toc-screen-css" href="https://www.mergersandinquisitions.com/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=1509" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-pagenavi-css" href="https://www.mergersandinquisitions.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70" type="text/css" media="all"> 
+  <link rel="stylesheet" id="et-gf-open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" media="all"> 
+  <link rel="stylesheet" id="et_monarch-css-css" href="https://www.mergersandinquisitions.com/wp-content/plugins/monarch/css/style.css?ver=1.3.18" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mi-css-css" href="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/css/mi.css?ver=1500279462" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-chiyo-font-css" href="https://fonts.googleapis.com/css?family=Chivo%3A400%2C900&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-roboto-font-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500%2C700&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-robotoCondensed-font-css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%2C700%2C300&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="google-merriWeather-font-css" href="https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="youtube-channel-gallery-css" href="https://www.mergersandinquisitions.com/wp-content/plugins/youtube-channel-gallery/styles.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="jquery.magnific-popup-css" href="https://www.mergersandinquisitions.com/wp-content/plugins/youtube-channel-gallery/magnific-popup.css?ver=4.8.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" data-cfasync="false" id="omapi-script" async src="//a.optnmstr.com/app/js/api.min.js?ver=1.2.1"></script> 
+  <link rel="https://api.w.org/" href="https://www.mergersandinquisitions.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.mergersandinquisitions.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.mergersandinquisitions.com/wp-includes/wlwmanifest.xml"> 
+  <link rel="shortlink" href="https://www.mergersandinquisitions.com/?p=4145"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.mergersandinquisitions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.mergersandinquisitions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;format=xml"> 
+  <style type="text/css" media="screen">
+      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
+        text-decoration: none;
+        border: none;
+      }
+    </style> 
+  <style type="text/css" media="screen">
+          div.printfriendly {
+            margin: 0px 0px 0px 0px;
+            position: relative;
+            z-index: 1000;
+          }
+          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
+            font-size: 18px;
+            color: #0053a6;
+            vertical-align: bottom;
+          }
+          .printfriendly a {
+            box-shadow:none;
+          }
+          .printfriendly a:hover {
+            cursor: pointer;
+          }
+          .printfriendly a img  {
+            border: none;
+            padding:0;
+            margin-right: 6px;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+          }
+          .printfriendly a span{
+            vertical-align: bottom;
+          }
+          .pf-alignleft {
+            float: left;
+          }
+          .pf-alignright {
+            float: right;
+          }
+          div.pf-aligncenter {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+          }
+        </style> 
+  <style type="text/css" media="print">
+          .printfriendly {
+            display: none;
+          }
+        </style> 
+  <link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://www.mergersandinquisitions.com/feed/podcast"> 
+  <style type="text/css">div#toc_container {width: 33%;}div#toc_container ul li {font-size: 75%;}</style> 
+  <!-- Facebook Like Thumbnail (v0.4) --> 
+  <meta property="og:image" content="https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development.jpg"> 
+  <!-- using first attachment --> 
+  <!-- Facebook Like Thumbnail (By Ashfame - https://github.com/ashfame/facebook-like-thumbnail) --> 
+  <style type="text/css" id="et-social-custom-css">
+				 
+			</style>
+  <!-- Google Tag Manager --> 
+  <noscript>
+   &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-T4RDJX" height="0" width="0" style="display:none;visibility:hidden"&gt; 
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T4RDJX');
+</script> 
+  <!-- End Google Tag Manager --> 
+  <script type="text/javascript"> 
+// popup tracking 
+jQuery(document).ready(function(){ 
+	jQuery('.simplemodal-data>div>a#wm').click(function(){ 
+		_gaq.push(['_trackPageview', 'popup/optin-success']); 
+	});
+
+	if (window.location.search.match(/inf_contact_key/)) {
+		console.log(location.search);
+		jQuery('<a id="monster-qw9yfiogfa4cetc6" style="display:none;" href="#" class="manual-optin-trigger" data-optin-slug="qw9yfiogfa4cetc6">MonsterLink</a>').appendTo('body');
+		jQuery('#monster-qw9yfiogfa4cetc6').click();
+	}
+})
+</script> 
+  <!-- Start Visual Website Optimizer Asynchronous Code --> 
+  <script type="text/javascript">
+var _vwo_code=(function(){
+	var account_id=28282,
+	settings_tolerance=2000,
+	library_tolerance=2500,
+	use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script> 
+  <!-- End Visual Website Optimizer Asynchronous Code --> 
+  <!--script to measure outreach campaigns and detect inbound links in real time--> 
+  <script type="text/javascript">
+	tracker = new Object(); 
+	tracker.code="292abecf09b47dd18173702225f0fef3";
+</script> 
+  <script src="https://app.freshlinkfinder.com/jsfile/tracker.js"></script> 
+  <style>
+	.nav-primary .genesis-nav-menu li>a{padding:0 19px 0 15px !important;}
+</style> 
+  <!--Push crew code--> 
+  <script type="text/javascript">
+(function(p,u,s,h) {
+	p._pcq = p._pcq || [];
+	p._pcq.push(['_currentTime', Date.now()]);
+	s = u.createElement('script'); s.type = 'text/javascript'; s.async = true;
+	s.src = 'https://cdn.pushcrew.com/js/975134410b221eea286895f32d5e6e2f.js';
+	h = u.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+})(window,document);
+</script> 
+  <!--Facebook Pixelling Code--> 
+  <script>(function() {
+	var _fbq = window._fbq || (window._fbq = []);
+	if (!_fbq.loaded) {
+		var fbds = document.createElement('script');
+		fbds.async = true;
+		fbds.src = '//connect.facebook.net/en_US/fbds.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(fbds, s);
+		_fbq.loaded = true;
+	}
+		_fbq.push(['addPixelId', '793479334037532']);
+	})();
+	window._fbq = window._fbq || [];
+	window._fbq.push(['track', 'PixelInitialized', {}]);
+</script> 
+  <noscript>
+   &lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=793479334037532&amp;amp;ev=PixelInitialized"&gt;
+  </noscript> 
+  <!--Qualaroo Script--> 
+  <script type="text/javascript">
+	var _kiq = _kiq || [];
+  	(function(){
+		setTimeout(function(){
+			var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+			s.async = true; s.src = '//s3.amazonaws.com/ki.js/52648/bl-.js'; f.parentNode.insertBefore(s, f);
+			}, 1);
+  	})();
+</script> 
+  <!-- Google Thumbnail for search (v0.4) --> 
+  <meta name="thumbnail" content="https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development.jpg"> 
+  <!-- using first attachment --> 
+  <script data-no-minify="1" data-cfasync="false">(function(w,d){function a(){var b=d.createElement("script");b.async=!0;b.src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-rocket/inc/front/js/lazyload.1.0.5.min.js";var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)}w.attachEvent?w.attachEvent("onload",a):w.addEventListener("load",a,!1)})(window,document);</script>
+ </head> 
+ <body class="post-template-default single single-post postid-4145 single-format-standard et_monarch gecko group-blog"> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-T4RDJX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+			new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+			"//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,"script","dataLayer","GTM-T4RDJX");</script> 
+  <!-- End Google Tag Manager -->
+  <div id="page" class="site"> 
+   <header id="masthead" class="c-header" role="banner"> 
+    <div class="o-wrapper-f"> 
+     <div class="c-header__branding"> 
+      <div class="brand-logo"> 
+       <h1 class="logo"><a href="https://www.mergersandinquisitions.com/" rel="home"><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/logo.png" alt=""></a></h1>
+       <a href="https://www.mergersandinquisitions.com/" rel="home"> </a>
+      </div>
+      <a href="https://www.mergersandinquisitions.com/" rel="home"> </a>
+      <div class="brand-description">
+       <a href="https://www.mergersandinquisitions.com/" rel="home"> <p class="">307,012+ Monthly Readers</p> </a>
+       <a href="#" class="c-btn modal-opener" modal-opener="true" data-modal-id="header_subscribe">Free banker blueprint</a> 
+       <div class="modal" id="header_subscribe"> 
+        <span class="close" modal-closeme="true">+</span> 
+        <div class="modal-body"> 
+         <h2>Discover How To Break Into Investment Banking, Hedge Funds or Private Equity,<span> The Easy Way.</span></h2> 
+         <div class="modal-content"> 
+          <div class="left"> 
+           <img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/modal-book.jpg" alt=""> 
+          </div> 
+          <div class="right"> 
+           <h6>Get Free and Instant Access To <em><b>The Banker Blueprint</b></em>: 57 Pages Of Career Boosting Advice Already Downloaded By 115,341+ Industry Peers.</h6> 
+           <form accept-charset="UTF-8" action="https://ym931.infusionsoft.com/app/form/process/b3ac45c05dfff04a9155bf713f0e3451" class="infusion-form af-form-wrapper" method="POST" name="Banker Blueprint - Squeeze Page"> 
+            <input name="inf_form_xid" type="hidden" value="b3ac45c05dfff04a9155bf713f0e3451"> 
+            <input name="inf_form_name" type="hidden" value="Banker Blueprint - Squeeze Page"> 
+            <input name="infusionsoft_version" type="hidden" value="1.24.3.17"> 
+            <div class="c-input"> 
+             <input type="text" tabindex="500" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}" class="text" name="inf_field_FirstName" id="inf_field_FirstName"> 
+            </div> 
+            <div class="c-input"> 
+             <input type="text" tabindex="501" value="Email Address" onfocus="if (this.value == 'Email Address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email Address';}" name="inf_field_Email" id="inf_field_Email" class="text"> 
+            </div> 
+            <div class="c-sub-btn"> 
+             <input type="submit" name="submit" class="submit-btn" value="FREE INSTANT ACCESS" tabindex="502"> 
+            </div> 
+            <input class="inf_custom_Source" name="inf_custom_Source" type="hidden" value=""> 
+            <input class="inf_custom_Medium" name="inf_custom_Medium" type="hidden" value=""> 
+            <input class="inf_custom_Keyword" name="inf_custom_Keyword" type="hidden" value=""> 
+            <input class="inf_custom_Campaign" name="inf_custom_Campaign" type="hidden" value=""> 
+            <input class="inf_custom_ActualKeyword" name="inf_custom_ActualKeyword" type="hidden" value=""> 
+           </form> 
+           <p><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/lock-icon.png"> We respect your privacy.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div>
+     <!-- .site-branding --> 
+    </div> 
+    <div class="c-hamburger" data-hamburger="true"> 
+     <span></span> 
+     <span></span> 
+     <span></span> 
+     <span></span> 
+     <span></span> 
+     <span></span> 
+    </div> 
+    <nav id="hamburger" class="c-nav"> 
+     <div class="o-wrapper-f"> 
+      <div class="menu-primary-menu-new-container">
+       <ul id="primary-menu" class="menu">
+        <li id="menu-item-23818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23818"><a href="https://www.mergersandinquisitions.com/get-started/">Start Here</a></li> 
+        <li id="menu-item-24294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24294"><a href="https://www.mergersandinquisitions.com/recent-posts/">Recent Posts</a></li> 
+        <li id="menu-item-23860" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23860"><a href="https://www.mergersandinquisitions.com/articles/">Articles</a></li> 
+        <li id="menu-item-23820" class="c-triangle menu-item menu-item-type-custom menu-item-object-custom menu-item-23820"><a href="http://www.youtube.com/user/financialmodeling" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://www.youtube.com/user/financialmodeling', 'Videos');" target="_blank">Videos</a></li> 
+        <li id="menu-item-23821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23821"><a href="https://www.mergersandinquisitions.com/investment-banking-coaching/">Coaching</a></li> 
+        <li id="menu-item-23822" class="c-triangle menu-item menu-item-type-custom menu-item-object-custom menu-item-23822"><a href="https://breakingintowallstreet.com/biws/breaking-into-wall-street-courses/?_ga=1.245916420.1649141708.1462356272&amp;utm_source=mergers_inquisitions&amp;utm_medium=blog&amp;utm_campaign=blog_links" onclick="__gaTracker('send', 'event', 'outbound-menu', 'https://breakingintowallstreet.com/biws/breaking-into-wall-street-courses/?_ga=1.245916420.1649141708.1462356272&amp;utm_source=mergers_inquisitions&amp;utm_medium=blog&amp;utm_campaign=blog_links', 'Courses');" target="_blank">Courses</a></li> 
+        <li id="menu-item-23861" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23861"><a href="https://www.mergersandinquisitions.com/about/">About</a></li> 
+        <li id="menu-item-23862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23862"><a href="https://www.mergersandinquisitions.com/faq/">FAQ</a></li> 
+        <li id="menu-item-23863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23863"><a href="https://www.mergersandinquisitions.com/contact/">Contact</a></li> 
+       </ul>
+      </div> 
+      <div class="c-search h-m-l"> 
+       <span class="c-search--icon"><i class="fa fa-search" aria-hidden="true"></i></span> 
+       <div class="c-search__form c-input"> 
+        <form method="get" class="searchform search-form" id="cse-search-box" action="/search-results/"> 
+         <input type="hidden" name="cx" value="005193182713088867110:yzg6vbti_ck"> 
+         <input type="hidden" name="cof" value="FORID:11;NB:1"> 
+         <input type="hidden" name="ie" value="UTF-8"> 
+         <input type="text" value="Enter keyword" name="q" class="s search-input" onfocus="if (this.value == 'Enter keyword') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter keyword';}" id="q" dir="ltr" autocomplete="off" spellcheck="false"> 
+         <button type="submit" class="searchsubmit c-btn search-submit" value="Search">Search</button> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </nav>
+    <!-- #site-navigation --> 
+    <div class="c-search h-d"> 
+     <span class="c-search--icon"><i class="fa fa-search" aria-hidden="true"></i></span> 
+     <div class="c-search__form c-input"> 
+      <form method="get" class="searchform search-form" id="cse-search-box" action="/search-results/"> 
+       <input type="hidden" name="cx" value="005193182713088867110:yzg6vbti_ck"> 
+       <input type="hidden" name="cof" value="FORID:11;NB:1"> 
+       <input type="hidden" name="ie" value="UTF-8"> 
+       <input type="text" value="Enter keyword" name="q" class="s search-input" onfocus="if (this.value == 'Enter keyword') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter keyword';}" id="q" dir="ltr" autocomplete="off" spellcheck="false"> 
+       <button type="submit" class="searchsubmit c-btn search-submit" value="Search">Search</button> 
+      </form> 
+     </div> 
+    </div> 
+   </header>
+  </div> 
+  <!-- #masthead --> 
+  <div id="primary" class="content-area"> 
+   <main id="main" class="site-main" role="main"> 
+    <div class="blog blog__post"> 
+     <div class="blog__body"> 
+      <div class="o-wrapper-f"> 
+       <div class="c-breadcrumb"> 
+        <a href="https://www.mergersandinquisitions.com/">HOME</a> 
+        <a href="https://www.mergersandinquisitions.com/category/corporate-development-exit-opportunities/">Corporate Development &amp; Corporate Finance</a> 
+        <a href="https://www.mergersandinquisitions.com/category/corporate-development-exit-opportunities/corporate-finance-recruiting/">Corporate Development &amp; Corporate Finance - Recruiting</a> 
+        <!--span>How to Break Into Corporate Development as an Engineer with No Finance Experience</span--> 
+       </div> 
+       <div class="o-wrapper"> 
+        <div class="blog__header"> 
+         <div class="blog__author-name"> 
+          <span>by Shen Han Lee</span> 
+          <a class="c-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development//#comments">Comments (35)</a> 
+         </div> 
+         <h2 class="blog__title">How to Break Into Corporate Development as an Engineer with No Finance Experience</h2> 
+        </div> 
+        <div class="blog__detail c-bp"> 
+         <div class="wwsgd" style="display:none;">
+          <p style="border:thin dotted black; padding:3mm;">If you're new here, <a href="https://www.mergersandinquisitions.com/banker-blueprint/" target="_blank">please click here to get my FREE 57-page investment banking recruiting guide - plus, get weekly updates so that you can break into investment banking</a>. Thanks for visiting!</p>
+         </div>
+         <p><img class="alignright size-full wp-image-4146" title="Engineer to Corporate Development" alt="Engineer to Corporate Development" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development.jpg" width="288" height="204" data-lazy-srcset="https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development.jpg 411w, https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development-300x213.jpg 300w" data-lazy-sizes="(max-width: 288px) 100vw, 288px">
+          <noscript>
+           <img class="alignright size-full wp-image-4146" title="Engineer to Corporate Development" alt="Engineer to Corporate Development" src="https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development.jpg" width="288" height="204" srcset="https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development.jpg 411w, https://www.mergersandinquisitions.com/wp-content/uploads/2011/09/engineer-to-corporate-development-300x213.jpg 300w" sizes="(max-width: 288px) 100vw, 288px">
+          </noscript>No one wants to be an engineer anymore.</p> 
+         <p>Engineering graduates are no longer going into engineering, and even current engineers want out.</p> 
+         <p>The cream of the crop moves into finance and consulting, seeking excitement, glory, and more bottles than a meager engineer’s salary could afford.</p> 
+         <p>The interviewee you’re about to hear from was an engineering graduate who came to that proverbial fork in the road and decided that the engineering path had one too many potholes.</p> 
+         <p>So he moved into <strong>corporate development in the oil &amp; gas industry</strong> instead – which took a lot of hustle and a few extra steps – and is now considering another career change, after getting an offer on an <strong>oil trading desk</strong>.</p> 
+         <p>Here’s what you’re about to learn from him:</p> 
+         <ul> 
+          <li>How to leverage an <strong>unrelated degree</strong> into a career in corporate development.</li> 
+          <li>How to make the jump from <strong>Big 4 advisory</strong> to corporate development.</li> 
+          <li>What to expect in the recruiting process as an <strong>Asian multinational</strong>.</li> 
+          <li>What the working culture at a <strong>Korean firm</strong> is like – and how many bottles of soju they’ll make you drink every night.</li> 
+          <li>The <strong>pros and cons</strong> of working in corporate development, and whether or not it’s right for you.</li> 
+         </ul> 
+         <p>Let’s get started:</p> 
+         <p><strong>I Don’t Want to Be an Engineer!</strong></p> 
+         <p><strong>Q</strong><strong>: So, tell us about your background and how you got interested in corporate development.</strong></p> 
+         <p><strong>A</strong><strong>:</strong> I studied <strong>e</strong><strong>l</strong><strong>e</strong><strong>ctrical engineering</strong> at a local university in Singapore, and during my 3<sup>rd</sup> year there I went on a student exchange in Germany. It was my first time out of Asia for a long period of time, and I loved every minute of it!</p> 
+         <p>I wanted to extend my stay and do my industrial attachment there, so I started knocking on doors in the telecom, semiconductor, and oil &amp; gas industries, despite knowing only limited German.</p> 
+         <p>Surprisingly, that actually worked and I secured an internship with an <strong>oil &amp; gas super-major</strong> at a refinery near Cologne, and spent 6 months there beta-testing new control software they wanted to implement plant-wide.</p> 
+         <p>During my 6 months there, I decided that I wanted a more exciting and commercial role after graduation.</p> 
+         <p><strong>Q: Right… so you were pretty certain back then that you didn’t want to work as an engineer after graduation?</strong></p> 
+         <p><strong>A:</strong> Definitely. When I was still in school it seemed that there were a lot of promising engineering jobs in Singapore, but as I moved toward graduation I started to feel that a career in engineering wouldn’t satisfy my personal ambitions.</p> 
+         <p>The starting pay was lousy and it didn’t improve much over time – and like most ambitious people I was drawn toward higher-paying jobs in investment banking and management consulting.</p> 
+         <p>But I didn’t want to work 100 hours per week and <a href="https://www.mergersandinquisitions.com/banker-vs-consultant-why-the-banker-wins-with-a-knockout-in-round-1/" target="_blank">I didn’t want to travel to the middle of nowhere in a jungle in Southeast Asia each week for business</a>, so I felt that <strong>corporate development</strong> would be a better fit so that <a href="https://www.mergersandinquisitions.com/corporate-development-on-the-job/" target="_blank">I could get a good balance of lifestyle and pay</a>.</p> 
+         <p><strong>Q: The best of both worlds! So did you start applying for corporate development jobs right after graduation?</strong></p> 
+         <p><strong>A:</strong> I was realistic enough to know that it might happen from the get-go, so in addition to corporate development positions I applied for more “commercial” technical roles that might lead to corporate development in the future.</p> 
+         <p>I got a job in a US-based multinational corporation supplying process technology to oil &amp; gas companies as an “intellectual property analyst” – I had to find licensing opportunities and search for infringement of the company’s patents, technologies, and trademarks.</p> 
+         <p>That may not sound much better than engineering, but the job also got me involved with the <strong>valuation of intellectual property</strong> in the company’s M&amp;A and licensing activities.</p> 
+         <p>I worked there for about a year, and then spun the experience to land an offer at a Big 4 firm in their petroleum advisory arm.</p> 
+         <p><strong>The Arm of a Big 4</strong></p> 
+         <p><strong>Q: OK, so let me stop you right there – how exactly did you make that move? You don’t just “accidentally” end up at a Big 4 firm.</strong></p> 
+         <p><strong>A:</strong> I was transitioning from the US to Shanghai on an internal posting, and spent about a month in Singapore – when I returned home, I casually applied for a few positions on an online job portal and I got an interview for a valuation position at a Big 4 firm.</p> 
+         <div> 
+          <p>I went through three rounds of interviews – a technical interview with a programming test using Excel, a phone interview with the UK valuation team leader, and a final interview with the Singapore hiring team.</p> 
+          <p>The company was looking for someone who had experience in the oil &amp; gas space as well as valuation and programming skills – even though I had limited experience in oil &amp; gas, I managed to get the job because of my strong technical skills. Guess my engineering degree was good for something after all!</p> 
+          <p><strong>Q</strong><strong>: Yeah, I guess there’s merit to the “nerd meets oil &amp; gas baron” angle.</strong></p> 
+          <p><strong>This was closer to what you wanted, but it still wasn’t corporate development – why didn’t you try applying to corp dev jobs directly at this point?</strong></p> 
+          <p><strong>A</strong><strong>:</strong> I felt that my experience was still not relevant enough – and that I <strong>hadn’t</strong> <strong>networked enough</strong> to have a shot at corporate development at a large firm. And I thought that the <a href="https://www.mergersandinquisitions.com/big-4-restructuring-to-investment-banking/" target="_blank">Big 4 advisory role</a> would put me in a better position to move into corporate development in the future, since it was more relevant than the IP analyst job.</p> 
+          <p><strong>Into Corporate Development?</strong></p> 
+          <p><strong>Q</strong><strong>: Right, networking is a fantastic tool but it’s even better when coupled with solid working experience.</strong></p> 
+          <p><strong>So how did you finally make the move into corporate development from the Big 4 firm?</strong></p> 
+          <p><strong>A:</strong> I actually got the job through a <strong>headhunter</strong> – what I did in oil &amp; gas advisory at the Big 4 firm was directly relevant to what I would be doing in the new company.</p> 
+          <p>So unfortunately I don’t have an <a href="https://www.mergersandinquisitions.com/investment-banking-engineer-no-finance-background/" target="_blank">epic networking story that involves contacting 500 people</a>, <a href="https://www.mergersandinquisitions.com/rocky-investment-banking-mindset-success/" target="_blank">having more persistence than Rocky</a>, and pounding the pavement until I got interviews.</p> 
+          <p>The main piece of advice I would offer is that <strong>there are many paths into corporate development</strong>.</p> 
+          <p>In my case, I switched between several different jobs that looked increasingly relevant, and then used all my full-time work experience to win the attention of headhunters and get placed in a relevant position.</p> 
+          <p>If you’re an undergraduate that approach wouldn’t work as well; and <a href="https://www.mergersandinquisitions.com/corporate-development-recruiting/" target="_blank">if you’re an investment banker, you’ll probably have better luck going through referrals or clients</a>.</p> 
+          <p><strong>Q: That’s great advice. So what’s your current company like? Let’s hear everything, from the good bits to the bad bits to the bottles of soju.</strong></p> 
+          <p><strong>A</strong><strong>:</strong> I’ve been working for a Korean multinational in the oil &amp; gas space. I can’t talk too much about it but you can probably guess which company it is if you did enough digging.</p> 
+          <p>“Business development” for an energy company means <strong>knowing every last detail about what’s going on in the region</strong>, i.e. what projects are being built or planned, the development status of projects, what other companies are doing, etc. You need to develop a system to monitor the market efficiently.</p> 
+          <p>Like every other job, it has its good bits and its bad bits. The fun parts are when you get to develop a promising project from start to finish for the company – origination, development and management of the project. You really get a <strong>sense of fulfillment</strong> working on these large-scale projects because you can see the results of your work.</p> 
+         </div> 
+         <div> 
+          <p>The bad bits are when these projects take an <strong>e</strong><strong>xtremely long time to complete</strong>. There’s a lot of to and fro between counterparts, a lot of internal politicking and general indecisiveness. Sometimes, management has no clue on how to proceed and you have no investment guidelines to assist you in originating projects.</p> 
+          <p>Without proper direction, it’s like finding a needle in a haystack. You have to constantly search for new projects and it gets tiring to see a high percentage of your recommendations shot down.</p> 
+          <p>Also, a little too much time is spent on “internal strategy development,” coordination and making sexy PowerPoint decks. Sometimes what we do really does seem to come straight out of a <strong>Dil</strong><strong>bert comic</strong>.</p> 
+          <p>That said, for a great balance between lifestyle, pay, and interesting work, I think it’s hard to beat a career in corporate development.</p> 
+          <p><strong>Q</strong><strong>: Very interesting, but you still haven’t answered my question about those soju bottles.</strong></p> 
+          <p><strong>C</strong><strong>a</strong><strong>n you tell us a bit more about what it’s like to work in a Korean company? How is it different from the Big 4 firm you were at?</strong></p> 
+          <p><strong>A</strong><strong>:</strong> You could say that it takes some getting used to. The Korean work environment is very traditional and the mentality is not to open up so easily – the pace is a little slower and people really deliberate before making decisions.</p> 
+          <p>It’s also more hierarchical in the sense that senior management is less approachable; you should always discuss things with your immediate senior first before going higher up. In a Big 4 environment, there’s still a hierarchy but there’s more of an open door policy where you can approach someone higher up more easily.</p> 
+          <p>The hiring process takes longer, with many rounds of interviews to check cultural fit. They prefer to hire individuals who have more patience and latitude toward understanding them and their culture.</p> 
+          <p>Other than that, not too much is different – you just need to have the right skills and be someone they think they could get along with.</p> 
+          <p>And as far as drinking, they definitely enjoy going out after work but you’d likely be pressured into drinking a lot more if you actually worked in the country instead of working at a foreign branch of the company.</p> 
+          <p><strong>Advice on Getting Into Corporate Development</strong></p> 
+          <p><strong>Q</strong><strong>: Interesting, so it sounds like the culture is not quite as different as you might expect.</strong></p> 
+          <p><strong>Let’s go back to how you broke in and what you’d tell to anyone else who’s interested – </strong><strong>h</strong><strong>o</strong><strong>w valuable is a reference from someone in the company? Does it help substantially with getting an interview?</strong></p> 
+          <p><strong>A</strong><strong>:</strong> Definitely. Trust is an important part of Korean corporate culture and internal references are taken very seriously – much more so than in the other companies I was working at.</p> 
+          <p>But also keep in mind that references aren’t given out that easily – you know just how much your recommendation can weigh on a hiring manager in their final decision.</p> 
+         </div> 
+         <div> 
+          <p><strong>Q</strong><strong>: So it’s like sponsoring someone to get into the mafia. You’re basically telling your hiring manager that “this guy is a friend of ours” – it’s a pretty heavy responsibility.</strong></p> 
+          <p><strong>A</strong><strong>:</strong> Pretty much. Fortunately, though, you don’t get whacked when you leave the company.</p> 
+          <p><strong>Q</strong><strong>: Do you have any advice for fresh graduates looking to work in corporate development? Not everyone can follow your exact path of getting lots of full-time work experience before breaking in.</strong></p> 
+          <p><strong>A</strong><strong>:</strong> This varies from industry to industry but <strong>corporate development positions in the oil &amp; gas sector are seldom available to fresh graduates</strong>, as you need a lot of industry knowledge to succeed in the role.</p> 
+          <p>It’s not <em>impossible</em> but you’ll really have to work at it – I do see a lot of people coming into this sector from different backgrounds within the oil &amp; gas industry, so it’s not like investment banking where the back-office-to-front-office move rarely works.</p> 
+          <p>If you can’t get a corporate development job from the get-go, find something relevant to do within the oil &amp; gas sector (or whatever your preferred industry is) and move in from there.</p> 
+          <p>Also, understand what you’ll be getting into – the job isn’t suited for everyone. Corporate development can be tremendously exciting when a deal goes through, but there will be long periods of <strong>boredom and inactivity</strong>.</p> 
+          <p>You need a lot of patience to originate a project and you need to spend a lot of time on research and internal presentations, which sometimes seem like a gigantic waste of time; very often, you go around chasing a lot of dead ends.</p> 
+          <p>But overseeing a project from start to finish is an incredibly rewarding experience, and it provides a scope of learning that’s similar to investment banking – only more in terms of corporate strategy, management reporting, project origination and post deal management.</p> 
+          <p><strong>Q</strong><strong>: What about advice for career switchers? Any tips based on your own personal experience?</strong></p> 
+          <p><strong>A</strong><strong>:</strong> Well, you already know my view on industry experience – it’s very important especially for the oil &amp; gas sector. If you don’t have any experience in energy, an <strong>MBA from a top school</strong> still has some cache in terms of getting your foot in the door of corporate strategy.</p> 
+          <p>A consultancy can be a good place to start building industry knowledge, and oil &amp; gas companies are quite keen on hiring individuals from consulting backgrounds.</p> 
+         </div> 
+         <p><strong>Q</strong><strong>: One final question before we call it a day. You mentioned to me before that you’re currently entertaining an offer to become an oil trader in your company.</strong></p> 
+         <p><strong>I’</strong><strong>m</strong><strong> ac</strong><strong>t</strong><strong>ually quite surprised because it seems like such a big change – and getting into trading from your background seems like a pretty drastic career change.</strong></p> 
+         <p><strong>A</strong><strong>:</strong> It does seem like a pretty drastic switch, doesn’t it? But that’s the beautiful thing about working in corporate development – since you interface with all the departments internally, you get to know a lot of people and that makes it slightly easier to transfer internally.</p> 
+         <p>I can’t say too much about the trading job yet, but I didn’t actively campaign for the offer. I’m very happy working in corporate development, so this was more of a great fit combined with some luck than anything else. As of right now, I’m not certain which direction I’ll take but I’m still entertaining the offer.</p> 
+         <p><strong>Q</strong><strong>: No problem. &nbsp;Maybe we’ll do another interview a year later after you decide what to do. It was great to hear your story. Thanks for sharing!</strong></p> 
+         <p><strong>A</strong><strong>:</strong> No problem. It was fun chatting.</p> 
+         <span class="et_social_bottom_trigger"></span> 
+        </div> 
+        <div class="c-blog-comment"> 
+         <div class="item left"> 
+          <a href="#respond">Leave a Comment</a> 
+         </div> 
+         <div class="item"> 
+          <div class="printfriendly pf-alignright">
+           <a href="#" rel="nofollow" onclick="window.print(); return false;" class="noslimstat" title="Printer Friendly, PDF &amp; Email">Print as PDF</a>
+          </div> 
+         </div> 
+         <div class="item right"> 
+          <div class="c-social"> 
+           <div class="c-social__content"> 
+            <span>Share</span> 
+            <a href="http://twitter.com/share?url=https://www.mergersandinquisitions.com/engineer-to-corporate-development/&amp;text=How to Break Into Corporate Development as an Engineer with No Finance Experience&amp;via=briand_mi" class="tw" target="_blank" title="Tweet This!"><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/twitter-icon.svg"></a> 
+            <a href="http://www.facebook.com/sharer.php?u=https://www.mergersandinquisitions.com/engineer-to-corporate-development/&amp;t=How to Break Into Corporate Development as an Engineer with No Finance Experience" class="fb" target="_blank" title="Share This on Facebook"><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/facebook-icon.svg" alt=""></a> 
+            <a class="gplus" href="https://plus.google.com/share?url=https://www.mergersandinquisitions.com/engineer-to-corporate-development/" target="_blank" title="Post it on Google+"><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/google-plus.svg" <> </a>
+            <a class="linkdin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.mergersandinquisitions.com/engineer-to-corporate-development/&amp;title=How to Break Into Corporate Development as an Engineer with No Finance Experience" target="_blank" title="Share This on LinkedIn"><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/linkedin.svg"></a> 
+            <a class="email_to_friend comments_above" rel="nofollow" href="mailto:?subject=Mergers%20%26%20Inquisitions%3A%20How%20to%20Get%20Into%20Investment%20Banking%20from%20an%20Unknown%20State%20School%20with%20No%20Finance%20Background%3A%20Case%20Study&amp;body=I%20wanted%20to%20share%20this%20post%20with%20you%3A%20How%20to%20Get%20Into%20Investment%20Banking%20from%20an%20Unknown%20State%20School%20with%20No%20Finance%20Background%3A%20Case%20Study%20-%20http%3A%2F%2Fmi.local%2Fget-investment-banking-unknown-state-school-no-finance-background-case-study%2F" title="Send by email : How to Get Into Investment Banking from an Unknown State School with No Finance Background: Case Study"><img src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/envelope.svg" <></a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="blog__author c-col_media"> 
+         <div class="media"> 
+          <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://secure.gravatar.com/avatar/d4138d19f378a090e6ee141747885114?s=140&amp;d=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-150x150.png&amp;r=g" width="140" height="140" alt="" class="avatar avatar-140wp-user-avatar wp-user-avatar-140 alignnone photo avatar-default">
+          <noscript>
+           <img src="https://secure.gravatar.com/avatar/d4138d19f378a090e6ee141747885114?s=140&amp;d=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-150x150.png&amp;r=g" width="140" height="140" alt="" class="avatar avatar-140wp-user-avatar wp-user-avatar-140 alignnone photo avatar-default">
+          </noscript> 
+         </div> 
+         <div class="content"> 
+          <h3 class="content__head">About the Author</h3> 
+          <p>Shen Han Lee is a recovering stockbroker who drinks copious amounts of coffee and now spends his time writing books and creating products.<br> <br> His books are available on Amazon, and <a href="http://www.amazon.com/Shane-Lee/e/B009PIQQQ0/ref=ntt_athr_dp_pel_1">you can take a look at them&nbsp;here</a>.</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="blog__optin"> 
+      <div class="o-wrapper"> 
+       <div class="blog__optin__content">
+        <div class="blog__optin__left">
+         <h2>Break Into Investment Banking</h2>
+         <p><strong>Free Exclusive Report:</strong> 57-page guide with the action plan you need to break into investment banking - how to tell your story, network, craft a winning resume, and dominate your interviews</p>
+        </div>
+        <div class="blog__optin__right video"> 
+         <div class="video">
+          <div id="mediaplayer">
+           Loading the player...
+          </div> 
+          <script type="text/javascript">jwplayer.key = "yLlog9w/GMF2JySZ5iC27LWm4VjFh5d3dNZlvGRUnYQ=";//jwplayer key</script> 
+          <script type="text/javascript">
+						jwplayer("mediaplayer").setup({
+							"id": "playerID",
+							"width": "100%",
+							"autostart": false,
+							"file": "http://blueprint.mergersandinquisitions.com.s3.amazonaws.com/MI-Final-464-270.mp4",
+							"image": "https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/images/mergers.png",
+							"skin": "https://www.mergersandinquisitions.com/wp-content/uploads/six.xml",
+							"modes": [
+								{type: "flash", src: "https://www.mergersandinquisitions.com/wp-content/uploads/player.swf"},
+								{
+									type: "html5",
+									config: {
+										"file": "http://blueprint.mergersandinquisitions.com.s3.amazonaws.com/MI-Final-464-270.mp4",
+										"provider": "video"
+								}
+								},
+								{
+									type: "download",
+									config: {
+										"file": "http://blueprint.mergersandinquisitions.com.s3.amazonaws.com/MI-Final-464-270.mp4",
+										"provider": "video"
+								  }
+								}
+							]
+						});
+					</script> 
+         </div>
+        </div>
+       </div>
+       <div class="form">
+        <form accept-charset="UTF-8" action="https://ym931.infusionsoft.com/app/form/process/0f639786a9cfbb902463701f115b04fa" class="infusion-form" method="post" name="Banker Blueprint - Sidebar">
+         <input name="inf_form_xid" type="hidden" value="0f639786a9cfbb902463701f115b04fa">
+         <input name="inf_form_name" type="hidden" value="Banker Blueprint - Sidebar">
+         <input name="infusionsoft_version" type="hidden" value="1.24.3.17">
+         <div class="blog__optin__form"> 
+          <div class="c-input"> 
+           <input type="text" name="inf_field_FirstName" placeholder="First Name"> 
+          </div> 
+          <div class="c-input"> 
+           <input type="text" name="inf_field_Email" placeholder="Email Address"> 
+          </div>
+          <input class="inf_custom_Source" name="inf_custom_Source" type="hidden" value="">
+          <input class="inf_custom_Medium" name="inf_custom_Medium" type="hidden" value="">
+          <input class="inf_custom_Keyword" name="inf_custom_Keyword" type="hidden" value="">
+          <input class="inf_custom_Campaign" name="inf_custom_Campaign" type="hidden" value="">
+          <input class="inf_custom_ActualKeyword" name="inf_custom_ActualKeyword" type="hidden" value=""> 
+          <div class="c-btn"> 
+           <button type="submit">submit</button> 
+          </div> 
+         </div>
+        </form>
+        <span class="privacy">We respect your email privacy</span>
+       </div> 
+      </div> 
+     </div> 
+     <div class="blog__comment blog__section"> 
+      <div class="o-wrapper"> 
+       <h3 class="blog__subhead">Comments</h3> 
+       <div class="blog__section__respond"> 
+        <p>Read below or <a href="#respond">Add a comment</a></p> 
+       </div> 
+       <div id="comments" class="comments-area comments"> 
+        <!--
+							<h3 class="blog__subhead">
+								35 thoughts on &ldquo;<span>How to Break Into Corporate Development as an Engineer with No Finance Experience</span>&rdquo;							</h3>
+							--> 
+        <ol class="comments__list"> 
+         <li class="comment even thread-even depth-1 parent" id="comment-207235"> 
+          <div id="div-comment-207235" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Geo</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-207235"> June 15, 2014</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Hello,</p> 
+           <p>First of all, really great site, so much useful information on here.</p> 
+           <p>I am a geologist working in the Canadian mining industry and I am hoping to transition into a corporate development role at a large mining company. I have 4 years of work experience and I will be attending a top 5 Canadian MBA program this September.</p> 
+           <p>Do you think that moving into a corporate development role right after graduation is possible? Or do you think some consulting/analyst experience is necessary before moving into corp dev?</p> 
+           <p>As someone with no business/finance experience, what technical skills should I focus on the most in order to succeed in a corp dev role?</p> 
+           <p>Any info would be greatly appreciated!</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=207235#respond" onclick="return addComment.moveForm( &quot;div-comment-207235&quot;, &quot;207235&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Geo">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee odd alt depth-2 parent" id="comment-207258"> 
+            <div id="div-comment-207258" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-207258"> June 15, 2014</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Yes that’s possible after your MBA. The experience you mentioned isn’t necessary but it can help. I’d say analytical, financial modelling and communication skills <a href="https://www.mergersandinquisitions.com/corporate-development-on-the-job/" rel="nofollow">https://www.mergersandinquisitions.com/corporate-development-on-the-job/</a></p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=207258#respond" onclick="return addComment.moveForm( &quot;div-comment-207258&quot;, &quot;207258&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> 
+            <ol class="children"> 
+             <li class="comment even depth-3" id="comment-207304"> 
+              <div id="div-comment-207304" class="comment-body"> 
+               <div class="comment-author vcard"> 
+                <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                <noscript>
+                 <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                </noscript> 
+                <div class="comments__author"> 
+                 <cite class="fn name">Geo</cite> 
+                 <div class="comment-meta commentmetadata">
+                  <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-207304"> June 16, 2014</a> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Thanks for the reply!</p> 
+               <div class="reply"> 
+                <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=207304#respond" onclick="return addComment.moveForm( &quot;div-comment-207304&quot;, &quot;207304&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Geo">Reply</a> 
+               </div> 
+              </div> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment odd alt thread-odd thread-alt depth-1" id="comment-73311"> 
+          <div id="div-comment-73311" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Cheryl</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-73311"> July 4, 2013</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Hey Brian, </p> 
+           <p>Thank you for this article- How to Break Into Corporate Development as an Engineer with No Finance Experience. I am a fresh graduate in Singapore (undergraduate degree in Accountancy and Finance) and I am thinking of pursuing a career in corporate development. However, I do not think there are many entry level positions in this division and would like to seek your advice in planning a career route to corporate development. </p> 
+           <p>I would like to find out more about the background of the person you interviewed. He stated that he worked at a Big 4 Advisory role. </p> 
+           <p>Based on my understanding, I believe that the exit opportunities for Big 4 Transactionary Services, Valuations and Corporate Finance Division differ quite significantly as the skills and training obtained are quite specialised. </p> 
+           <p>My questions are:<br> 1) Which of these division would provide me with the appropriate exposure and skills set to increase my chances of landing a role in a corporate development division in a multinational firm? </p> 
+           <p>2) Secondly what is the number of years I must at least stay in the related division to gain substantial experience? 3? 5 years?</p> 
+           <p>3) Also, do people transfer frequently from the big 4 advisory services to corporate development divisions or was his case a one off, due to a particular competitive advantage he had? </p> 
+           <p>Thank you for your time and assistance in answering my queries. </p> 
+           <p>Warm Regards<br> Cheryl</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=73311#respond" onclick="return addComment.moveForm( &quot;div-comment-73311&quot;, &quot;73311&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Cheryl">Reply</a> 
+           </div> 
+          </div> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-even depth-1 parent" id="comment-72217"> 
+          <div id="div-comment-72217" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Will</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-72217"> June 21, 2013</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>I’m in a dilemma. I’m a rising senior and will most likely get into at least one semi-target school(UVA), and possibly a couple others (Northwestern, Berkeley, possibly an ivy). </p> 
+           <p>The problem is that although I may get into these schools, it is unlikely that I will be able to afford them as I would have to take out extreme student loans with no financial aid.</p> 
+           <p>The affordable option would be to pay in state tuition at a Colorado school and I feel that Colorado School of Mines, a small rigorous petroleum engineering school, would be my best back up in case I didn’t make it into finance.</p> 
+           <p>Would I have any chance of breaking into investment banking from a small engineering school in Colorado? or should I really focus all efforts for finding a way to afford a more presitgious school?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=72217#respond" onclick="return addComment.moveForm( &quot;div-comment-72217&quot;, &quot;72217&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Will">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee odd alt depth-2 parent" id="comment-72268"> 
+            <div id="div-comment-72268" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-72268"> June 22, 2013</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>The schools you mentioned are actually great schools so I wouldn’t worry too much about it if you do decide to go to those schools (other than the one in Colorado). I’m not quite sure about the Colorado School of Mines – perhaps it may help you for O&amp;G finance roles. You may want to check with the school’s career center. </p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=72268#respond" onclick="return addComment.moveForm( &quot;div-comment-72268&quot;, &quot;72268&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> 
+            <ol class="children"> 
+             <li class="comment even depth-3 parent" id="comment-72273"> 
+              <div id="div-comment-72273" class="comment-body"> 
+               <div class="comment-author vcard"> 
+                <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                <noscript>
+                 <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                </noscript> 
+                <div class="comments__author"> 
+                 <cite class="fn name">Will</cite> 
+                 <div class="comment-meta commentmetadata">
+                  <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-72273"> June 22, 2013</a> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Thanks for the reply. What I was trying to say was that although I will most likely get into at least UVA and possibly a few other top schools, it doesn’t look like I’ll be able to afford anything not in Colorado without giant student loans.</p> 
+               <div class="reply"> 
+                <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=72273#respond" onclick="return addComment.moveForm( &quot;div-comment-72273&quot;, &quot;72273&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Will">Reply</a> 
+               </div> 
+              </div> 
+              <ol class="children"> 
+               <li class="comment byuser comment-author-nicole-lee odd alt depth-4" id="comment-72289"> 
+                <div id="div-comment-72289" class="comment-body"> 
+                 <div class="comment-author vcard"> 
+                  <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                  <noscript>
+                   <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                  </noscript> 
+                  <div class="comments__author"> 
+                   <cite class="fn name">M&amp;I - Nicole</cite> 
+                   <div class="comment-meta commentmetadata">
+                    <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-72289"> June 22, 2013</a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <p>I can understand. Some students have broken into the industry from non targets though I have to admit it can be more challenging. </p> 
+                 <p>We have quite a few articles on how our readers successfully broke into the industry from non target and you may find them interesting:<br> <a href="https://www.mergersandinquisitions.com/non-target-bulge-bracket-investment-banking-offers/" rel="nofollow">https://www.mergersandinquisitions.com/non-target-bulge-bracket-investment-banking-offers/</a><br> <a href="https://www.mergersandinquisitions.com/investment-banking-from-state-school-no-finance-background/" rel="nofollow">https://www.mergersandinquisitions.com/investment-banking-from-state-school-no-finance-background/</a></p> 
+                 <div class="reply"> 
+                  <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=72289#respond" onclick="return addComment.moveForm( &quot;div-comment-72289&quot;, &quot;72289&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+                 </div> 
+                </div> </li>
+               <!-- #comment-## --> 
+              </ol>
+              <!-- .children --> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-odd thread-alt depth-1 parent" id="comment-43832"> 
+          <div id="div-comment-43832" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Razi Ahmad</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-43832"> July 13, 2012</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>i have done B.tech in computer science in 2010 but i have drop my degree and i have complete this year. my programming language skills is not good. but i had president in my engineering college.i have management skills. suggest me what i can do.</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=43832#respond" onclick="return addComment.moveForm( &quot;div-comment-43832&quot;, &quot;43832&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Razi Ahmad">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee odd alt depth-2" id="comment-43836"> 
+            <div id="div-comment-43836" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-43836"> July 13, 2012</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Given the limited info you provided us, I can only suggest you to visit the links below:<br> <a href="https://www.mergersandinquisitions.com/getting-a-finance-job-from-engineering/" rel="nofollow">https://www.mergersandinquisitions.com/getting-a-finance-job-from-engineering/</a><br> <a href="https://www.mergersandinquisitions.com/investment-banking-engineer-no-finance-background/" rel="nofollow">https://www.mergersandinquisitions.com/investment-banking-engineer-no-finance-background/</a></p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=43836#respond" onclick="return addComment.moveForm( &quot;div-comment-43836&quot;, &quot;43836&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-even depth-1" id="comment-43719"> 
+          <div id="div-comment-43719" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Tyler</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-43719"> July 9, 2012</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>I have the opportunity to work in the supply chain department at a very large energy company’s start up fracking subsidiary. I am very interested in breaking into corporate development either at the corporate level of this company or at a service company in the future. Is this a good stepping stone?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=43719#respond" onclick="return addComment.moveForm( &quot;div-comment-43719&quot;, &quot;43719&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Tyler">Reply</a> 
+           </div> 
+          </div> </li>
+         <!-- #comment-## --> 
+         <li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-26612"> 
+          <div id="div-comment-26612" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">MDS77</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26612"> September 18, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>I’m currently president of a business club, chairman of community service committee in an honor society and secretary in another organization. Also, I’m taking 12 credit hours with a 4.0 GPA. HOWEVER, I’m at an Community College (long story) </p> 
+           <p>what else could I do to better position myself to transfer to a target school? I’m doing all I have knowledge of at the moment but I feel like I can keep moving forward. </p> 
+           <p>Maybe some sort of research publication? If you would happen to have any ideas about things like that.</p> 
+           <p>Regards<br> MDS</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26612#respond" onclick="return addComment.moveForm( &quot;div-comment-26612&quot;, &quot;26612&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to MDS77">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee even depth-2" id="comment-26622"> 
+            <div id="div-comment-26622" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26622"> September 19, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>College admissions companies (google is your best friend) can help. We teach people how to get into finance, not universities. Sorry!</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26622#respond" onclick="return addComment.moveForm( &quot;div-comment-26622&quot;, &quot;26622&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment odd alt thread-even depth-1 parent" id="comment-26572"> 
+          <div id="div-comment-26572" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://secure.gravatar.com/avatar/6dc0b133fb6f89a7a8c27b22e6c4209c?s=32&amp;d=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-32x32.png&amp;r=g" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://secure.gravatar.com/avatar/6dc0b133fb6f89a7a8c27b22e6c4209c?s=32&amp;d=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-32x32.png&amp;r=g" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">jack</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26572"> September 17, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>how’s the pay in corporate development? any perks?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26572#respond" onclick="return addComment.moveForm( &quot;div-comment-26572&quot;, &quot;26572&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to jack">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee even depth-2" id="comment-26578"> 
+            <div id="div-comment-26578" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26578"> September 18, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Don’t have exact figures and I believe the pay &amp; perks vary depending on which firm you work for. I believe most corp dev roles don’t pay as well as roles in IB.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26578#respond" onclick="return addComment.moveForm( &quot;div-comment-26578&quot;, &quot;26578&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+           <li class="comment byuser comment-author-mi-brian-2 odd alt depth-2" id="comment-26609"> 
+            <div id="div-comment-26609" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="https://www.mergersandinquisitions.com/wp-content/uploads/2016/10/brian-150x150.png" width="32" height="32" alt="M&amp;I - Brian" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo"> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.mergersandinquisitions.com" rel="external nofollow" class="url">M&amp;I - Brian</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26609"> September 18, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Read this: <a href="https://www.mergersandinquisitions.com/corporate-development-on-the-job/" rel="nofollow">https://www.mergersandinquisitions.com/corporate-development-on-the-job/</a></p> 
+             <p>Base is around $100K USD at many companies with much smaller bonuses. As you move up pay increases but it still tends to be much lower than IB unless you’re at a huge company.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26609#respond" onclick="return addComment.moveForm( &quot;div-comment-26609&quot;, &quot;26609&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Brian">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-odd thread-alt depth-1 parent" id="comment-26499"> 
+          <div id="div-comment-26499" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Joe</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26499"> September 15, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>I’m in Canada. RBC is the biggest Canadian dealer. However Merrill Lynch has got a strong presence here as well, and definitely better than other Bulge Bracket banks in Canada.</p> 
+           <p>How would you choose between RBC and Merrill Lynch in Canada? (Considering exit opportunities, pays, business school opportunities, etc.)</p> 
+           <p>Hope everyone can chip in some insight. Thanks</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26499#respond" onclick="return addComment.moveForm( &quot;div-comment-26499&quot;, &quot;26499&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Joe">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee odd alt depth-2" id="comment-26504"> 
+            <div id="div-comment-26504" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26504"> September 15, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>I believe BAML has a better name in the States (and globally). I’m not in Canada but I presume RBC is also highly regarded in Canada. With regards to exit oppty etc, I believe , judging purely on the brand names alone, BAML offers better opportunities. With the above being said, BAML is laying off peeps and I’m not sure if the bank is doing so well. You also need to consider at the individual teams you are interviewing for.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26504#respond" onclick="return addComment.moveForm( &quot;div-comment-26504&quot;, &quot;26504&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+           <li class="comment byuser comment-author-mike-moran even depth-2 parent" id="comment-26513"> 
+            <div id="div-comment-26513" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.lifeonthebuyside.com" rel="external nofollow" class="url">M&amp;I - Mike</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26513"> September 16, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>ML is much bigger and will afford better exit opps. But if you plan to stay in Canada, RBC is probably close to being on par with ML.</p> 
+             <p>Regarding Nicole’s reference to the layoffs, most of those are occurring at bank branches, etc. and not at ML.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26513#respond" onclick="return addComment.moveForm( &quot;div-comment-26513&quot;, &quot;26513&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Mike">Reply</a> 
+             </div> 
+            </div> 
+            <ol class="children"> 
+             <li class="comment byuser comment-author-nicole-lee odd alt depth-3 parent" id="comment-26515"> 
+              <div id="div-comment-26515" class="comment-body"> 
+               <div class="comment-author vcard"> 
+                <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                <noscript>
+                 <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                </noscript> 
+                <div class="comments__author"> 
+                 <cite class="fn name">M&amp;I - Nicole</cite> 
+                 <div class="comment-meta commentmetadata">
+                  <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26515"> September 16, 2011</a> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Actually BAML is planning to cut its IB employees in HK. This may not pertain to US/Canada, but they are def cutting their IB staff here.</p> 
+               <div class="reply"> 
+                <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26515#respond" onclick="return addComment.moveForm( &quot;div-comment-26515&quot;, &quot;26515&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+               </div> 
+              </div> 
+              <ol class="children"> 
+               <li class="comment byuser comment-author-mike-moran even depth-4 parent" id="comment-26520"> 
+                <div id="div-comment-26520" class="comment-body"> 
+                 <div class="comment-author vcard"> 
+                  <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                  <noscript>
+                   <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                  </noscript> 
+                  <div class="comments__author"> 
+                   <cite class="fn name"><a href="http://www.lifeonthebuyside.com" rel="external nofollow" class="url">M&amp;I - Mike</a></cite> 
+                   <div class="comment-meta commentmetadata">
+                    <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26520"> September 16, 2011</a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <p>Interesting. There are a lot of rumors floating around the US, but the only thing anyone can “confirm” is that there are going to be a lot less bank branches.</p> 
+                 <div class="reply"> 
+                  <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26520#respond" onclick="return addComment.moveForm( &quot;div-comment-26520&quot;, &quot;26520&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Mike">Reply</a> 
+                 </div> 
+                </div> 
+                <ol class="children"> 
+                 <li class="comment odd alt depth-5" id="comment-26539"> 
+                  <div id="div-comment-26539" class="comment-body"> 
+                   <div class="comment-author vcard"> 
+                    <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                    <noscript>
+                     <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+                    </noscript> 
+                    <div class="comments__author"> 
+                     <cite class="fn name">Joe</cite> 
+                     <div class="comment-meta commentmetadata">
+                      <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26539"> September 16, 2011</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                   <p>I agree with Mike, but on the other hand, if US banks were to lay off people, it’s very likely to happen in Canada, since most of the deals here can be sourced back to New York.</p> 
+                   <div class="reply"> 
+                   </div> 
+                  </div> </li>
+                 <!-- #comment-## --> 
+                </ol>
+                <!-- .children --> </li>
+               <!-- #comment-## --> 
+              </ol>
+              <!-- .children --> </li>
+             <!-- #comment-## --> 
+            </ol>
+            <!-- .children --> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-even depth-1 parent" id="comment-26466"> 
+          <div id="div-comment-26466" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">josh</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26466"> September 15, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>“No one wants to be an engineer anymore.</p> 
+           <p>Engineering graduates are no longer going into engineering, and even current engineers want out.</p> 
+           <p>The cream of the crop moves into finance and consulting, seeking excitement, glory, and more bottles than a meager engineer’s salary could afford.”</p> 
+           <p>Sad but true. A great friend of mine still works for a large construction company, but he moved onto the competitive bidding team and works on alternative financing and procurement on the private side.</p> 
+           <p>It’s gonna be scary when all of the former engineers are trying to get back into engineering.</p> 
+           <p>Side Note: Brian, what kind of engineering did you study? Did you end up graduating with a degree in engineering? How did the education shape the way you think?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26466#respond" onclick="return addComment.moveForm( &quot;div-comment-26466&quot;, &quot;26466&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to josh">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-mi-brian-2 odd alt depth-2" id="comment-26498"> 
+            <div id="div-comment-26498" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="https://www.mergersandinquisitions.com/wp-content/uploads/2016/10/brian-150x150.png" width="32" height="32" alt="M&amp;I - Brian" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo"> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.mergersandinquisitions.com" rel="external nofollow" class="url">M&amp;I - Brian</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26498"> September 15, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>I did CS at Stanford and graduated with the degree (my senior project: <a href="http://www.stanford.edu/class/cs194/faire/projects2006.html" rel="nofollow">http://www.stanford.edu/class/cs194/faire/projects2006.html</a>).</p> 
+             <p>It definitely still helps me although I don’t use it directly anymore – just in terms of thinking logically, understanding how product development happens, understanding what’s possible and what isn’t possible etc.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26498#respond" onclick="return addComment.moveForm( &quot;div-comment-26498&quot;, &quot;26498&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Brian">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-odd thread-alt depth-1 parent" id="comment-26441"> 
+          <div id="div-comment-26441" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Curious</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26441"> September 14, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Hi,</p> 
+           <p>How long should I wait before contacting a very big shot (higher than MD) at a bank? I got his info at a networking session. Should I follow the 3 day rule?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26441#respond" onclick="return addComment.moveForm( &quot;div-comment-26441&quot;, &quot;26441&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Curious">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-mi-brian-2 odd alt depth-2" id="comment-26450"> 
+            <div id="div-comment-26450" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="https://www.mergersandinquisitions.com/wp-content/uploads/2016/10/brian-150x150.png" width="32" height="32" alt="M&amp;I - Brian" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo"> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.mergersandinquisitions.com" rel="external nofollow" class="url">M&amp;I - Brian</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26450"> September 14, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>If you met him at a networking session, contact him as soon as possible so he remembers you. No reason to wait even 3 days – the longer you wait the more likely he is to forget your conversation.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26450#respond" onclick="return addComment.moveForm( &quot;div-comment-26450&quot;, &quot;26450&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Brian">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-even depth-1 parent" id="comment-26436"> 
+          <div id="div-comment-26436" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Erogohoc</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26436"> September 14, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Brian,<br> How did investment banking analysts create financial models before the invention of excel?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26436#respond" onclick="return addComment.moveForm( &quot;div-comment-26436&quot;, &quot;26436&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Erogohoc">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee odd alt depth-2" id="comment-26438"> 
+            <div id="div-comment-26438" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26438"> September 14, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Before excel, Lotus 1-2-3 was the software people used in business in the 1990s <a href="http://en.wikipedia.org/wiki/Financial_modeling" rel="nofollow">http://en.wikipedia.org/wiki/Financial_modeling</a><br> Also check out <a href="http://dssresources.com/history/sshistory.html" rel="nofollow">http://dssresources.com/history/sshistory.html</a></p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26438#respond" onclick="return addComment.moveForm( &quot;div-comment-26438&quot;, &quot;26438&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+           <li class="comment byuser comment-author-mi-brian-2 even depth-2" id="comment-26449"> 
+            <div id="div-comment-26449" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="https://www.mergersandinquisitions.com/wp-content/uploads/2016/10/brian-150x150.png" width="32" height="32" alt="M&amp;I - Brian" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo"> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.mergersandinquisitions.com" rel="external nofollow" class="url">M&amp;I - Brian</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26449"> September 14, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Pen and paper? Also physical spreadsheets and ledgers and so on. But in general models were much simpler as well and you didn’t have as much going on before computers.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26449#respond" onclick="return addComment.moveForm( &quot;div-comment-26449&quot;, &quot;26449&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Brian">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+           <li class="comment odd alt depth-2" id="comment-26463"> 
+            <div id="div-comment-26463" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">Lee</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26463"> September 15, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>I know a guy who started the CF practice at his firm waaaay back in the day. He was doing all his modelling on pen and paper, and a good part of his calculations there too.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26463#respond" onclick="return addComment.moveForm( &quot;div-comment-26463&quot;, &quot;26463&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Lee">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment even thread-odd thread-alt depth-1 parent" id="comment-26407"> 
+          <div id="div-comment-26407" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">real estate</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26407"> September 14, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Hey Brain,</p> 
+           <p>Is a background in commercial real estate (doing capital markets, valuation, property investment etc) with a professional RE firm (like jones lang LaSalle/savills) a good preparation for REPE (or maybe RE banking or other finance jobs)?</p> 
+           <p>many people talk about I-banks, consultancies, big 4 etc. but very few people talk about (or even know) property firms like JLL/Savills/KF/CBRE etc… are they less respected or simply less well known?</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26407#respond" onclick="return addComment.moveForm( &quot;div-comment-26407&quot;, &quot;26407&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to real estate">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-nicole-lee odd alt depth-2" id="comment-26412"> 
+            <div id="div-comment-26412" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name">M&amp;I - Nicole</cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26412"> September 14, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>No, people in real estate know of these firms. I am not in RE and I know of these firms! Yes, your background helps.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26412#respond" onclick="return addComment.moveForm( &quot;div-comment-26412&quot;, &quot;26412&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Nicole">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+           <li class="comment byuser comment-author-mike-moran even depth-2" id="comment-26415"> 
+            <div id="div-comment-26415" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              <noscript>
+               <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+              </noscript> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.lifeonthebuyside.com" rel="external nofollow" class="url">M&amp;I - Mike</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26415"> September 14, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Your experience is good. Check out this article:</p> 
+             <p><a href="https://www.mergersandinquisitions.com/commercial-real-estate/" rel="nofollow">https://www.mergersandinquisitions.com/commercial-real-estate/</a></p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26415#respond" onclick="return addComment.moveForm( &quot;div-comment-26415&quot;, &quot;26415&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Mike">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+         <li class="comment odd alt thread-even depth-1 parent" id="comment-26387"> 
+          <div id="div-comment-26387" class="comment-body"> 
+           <div class="comment-author vcard"> 
+            <img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            <noscript>
+             <img src="https://www.mergersandinquisitions.com/wp-content/plugins/wp-user-avatar/images/wpua-32x32.png" width="32" height="32" alt="" class="avatar avatar-32wp-user-avatar wp-user-avatar-32 alignnone photo avatar-default">
+            </noscript> 
+            <div class="comments__author"> 
+             <cite class="fn name">Corp Dev M&amp;A</cite> 
+             <div class="comment-meta commentmetadata">
+              <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26387"> September 13, 2011</a> 
+             </div> 
+            </div> 
+           </div> 
+           <p>“Corporate development can be tremendously exciting when a deal goes through, but there will be long periods of boredom and inactivity.” This comment is dead on. When I first started my role in corporate development there were two deals just getting started at the LOI phase- I jumped right in to the intense process of diligence, negotiations, and ultimately the closings- it was a whirlwind experience with significant travel, late nights, and exciting work. After those two deals closed, I spent a very boring and quiet 5 months while other potential deals percolated and developed, reading information memos, talking to potential sellers, etc. While it was a bit boring, I was able to get away with a 40-45hr work week, work out 5 days a week, take an actual vacation, read and research as much I wanted. Now the heat is turning back up and I have 4 deals going at various stages of the transaction process, its exciting and intense again- but it’s still not even close to IB hours. It can be a pretty sweet gig.</p> 
+           <div class="reply"> 
+            <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26387#respond" onclick="return addComment.moveForm( &quot;div-comment-26387&quot;, &quot;26387&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to Corp Dev M&amp;A">Reply</a> 
+           </div> 
+          </div> 
+          <ol class="children"> 
+           <li class="comment byuser comment-author-mi-brian-2 even depth-2" id="comment-26395"> 
+            <div id="div-comment-26395" class="comment-body"> 
+             <div class="comment-author vcard"> 
+              <img src="https://www.mergersandinquisitions.com/wp-content/uploads/2016/10/brian-150x150.png" width="32" height="32" alt="M&amp;I - Brian" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo"> 
+              <div class="comments__author"> 
+               <cite class="fn name"><a href="http://www.mergersandinquisitions.com" rel="external nofollow" class="url">M&amp;I - Brian</a></cite> 
+               <div class="comment-meta commentmetadata">
+                <a class="date" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/#comment-26395"> September 13, 2011</a> 
+               </div> 
+              </div> 
+             </div> 
+             <p>Yeah, thanks for adding that. You think getting an LOI is exciting at first until you realize it just means there’s a small chance of something happening… one day… maybe.</p> 
+             <div class="reply"> 
+              <a rel="nofollow" class="comment-reply-link" href="https://www.mergersandinquisitions.com/engineer-to-corporate-development/?replytocom=26395#respond" onclick="return addComment.moveForm( &quot;div-comment-26395&quot;, &quot;26395&quot;, &quot;respond&quot;, &quot;4145&quot; )" aria-label="Reply to M&amp;I - Brian">Reply</a> 
+             </div> 
+            </div> </li>
+           <!-- #comment-## --> 
+          </ol>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+        </ol>
+        <!-- .comment-list --> 
+        <nav id="comment-nav-below" class="navigation comment-navigation" role="navigation"> 
+         <!--
+								<h2 class="screen-reader-text">Comment navigation</h2>
+							--> 
+         <div class="nav-links c-tc"> 
+          <nav id="comment-nav-header" class="navigation" role="navigation"> 
+           <div class="nav"> 
+            <a href="#comments" " class="comments__header--nav-previous" style="display:none">prev</a>
+            <span class="comments__current-page" title="Current Page / Total">1/1</span>
+            <a href="#comments" " class="comments__header--nav-next" style="display:none">next</a> 
+           </div> 
+          </nav> 
+         </div>
+         <!-- .nav-links --> 
+        </nav>
+        <!-- #comment-nav-below --> 
+        <div id="respond" class="comment-respond"> 
+         <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/engineer-to-corporate-development/#respond" style="display:none;">Cancel reply</a></small></h3> 
+         <form action="https://www.mergersandinquisitions.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate> 
+          <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+          <p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required></textarea></p>
+          <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required></p> 
+          <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required></p> 
+          <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p> 
+          <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="4145" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p>
+          <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="bd69a876ee"></p>
+          <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="173"></p> 
+         </form> 
+        </div>
+        <!-- #respond --> 
+       </div>
+       <!-- #comments --> 
+      </div> 
+     </div> 
+     <!-- #main --> 
+    </div>
+    <!-- #primary --> 
+   </main>
+  </div>
+  <!-- #content --> 
+  <footer class="c-footer"> 
+   <hr class="c-strip-border"> 
+   <hr class="c-strip-dark"> 
+   <div class="c-footer__p-nav"> 
+    <div class="o-wrapper-f"> 
+     <div class="menu-footer-primary-container">
+      <ul id="footer-primary-menu" class="menu">
+       <li id="menu-item-23811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23811"><a href="https://www.mergersandinquisitions.com/get-started/">Get Started</a></li> 
+       <li id="menu-item-23864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23864"><a href="https://www.mergersandinquisitions.com/articles/">Articles</a></li> 
+       <li id="menu-item-23813" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23813"><a href="http://www.youtube.com/user/financialmodeling" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://www.youtube.com/user/financialmodeling', 'Videos');" target="_blank">Videos</a></li> 
+       <li id="menu-item-23814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23814"><a href="https://www.mergersandinquisitions.com/investment-banking-coaching/">Coaching</a></li> 
+       <li id="menu-item-23866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23866"><a href="https://www.mergersandinquisitions.com/case-studies/">Case Studies</a></li> 
+       <li id="menu-item-23865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23865"><a href="https://www.mergersandinquisitions.com/faq/">FAQ</a></li> 
+       <li id="menu-item-23817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23817"><a href="https://www.mergersandinquisitions.com/best-of/">Best Of</a></li> 
+      </ul>
+     </div> 
+    </div> 
+   </div> 
+   <div class="c-footer__s-nav"> 
+    <div class="o-wrapper-f"> 
+     <div class="c-copyright">
+      <a href="#">© 2017 Capital Capable Media LLC</a>
+     </div> 
+     <div class="menu-footer-secondary-container">
+      <ul id="footer-secondary-menu" class="menu">
+       <li id="menu-item-23826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23826"><a href="https://www.mergersandinquisitions.com/terms-of-use/">Terms of Use</a></li> 
+       <li id="menu-item-23827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23827"><a href="https://www.mergersandinquisitions.com/privacy-policy/">Privacy Policy</a></li> 
+       <li id="menu-item-23828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23828"><a href="https://www.mergersandinquisitions.com/disclaimer/">Disclaimer</a></li> 
+       <li id="menu-item-24289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24289"><a href="https://www.mergersandinquisitions.com/dmca-policy/">DMCA Policy</a></li> 
+       <li id="menu-item-23829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23829"><a href="https://www.facebook.com/mergersandinquisitions" onclick="__gaTracker('send', 'event', 'outbound-menu', 'https://www.facebook.com/mergersandinquisitions', 'Facebook');" target="_blank">Facebook</a></li> 
+       <li id="menu-item-23830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23830"><a href="https://twitter.com/briand_mi" onclick="__gaTracker('send', 'event', 'outbound-menu', 'https://twitter.com/briand_mi', 'Twitter');" target="_blank">Twitter</a></li> 
+       <li id="menu-item-23831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23831"><a href="http://www.linkedin.com/in/briandechesare" onclick="__gaTracker('send', 'event', 'outbound-menu', 'http://www.linkedin.com/in/briandechesare', 'LinkedIn');" target="_blank">LinkedIn</a></li> 
+      </ul>
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal modal--small" id="biws_subscribe"> 
+    <span class="close" modal-closeme="true">+</span> 
+    <h5>Enter Your Email to Get These Two Sets of <strong>Financial Modeling Tutorials</strong> for Free!</h5> 
+    <div class="modal-content"> 
+     <div class="enteremail" id="sign_up"> 
+      <form class="infusion-form" accept-charset="UTF-8" action="https://ym931.infusionsoft.com/app/form/process/605499737f5f4e18e3de12a6c5d0be59" method="POST"> 
+       <input name="inf_form_xid" type="hidden" value="605499737f5f4e18e3de12a6c5d0be59"> 
+       <input name="inf_form_name" type="hidden" value="BIWS Opt-In Form 2013.01.10"> 
+       <input name="infusionsoft_version" type="hidden" value="1.27.7.27"> 
+       <input class="inf_custom_Source" name="inf_custom_Source" type="hidden" value=""> 
+       <input class="inf_custom_Medium" name="inf_custom_Medium" type="hidden" value=""> 
+       <input class="inf_custom_Keyword" name="inf_custom_Keyword" type="hidden" value=""> 
+       <input class="inf_custom_Campaign" name="inf_custom_Campaign" type="hidden" value=""> 
+       <input class="inf_custom_ActualKeyword" name="inf_custom_ActualKeyword" type="hidden" value=""> 
+       <div class="c-input"> 
+        <input type="text" class="email input-field" name="inf_field_Email" placeholder="Email address"> 
+       </div> 
+       <div class="c-sub-input"> 
+        <input type="submit" class="c-btn" alt="financial modeling tips" value="Get FREE Tutorials"> 
+       </div> 
+      </form> 
+      <p>We guarantee 100% privacy. Your information will not be shared.</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer>
+  <!-- #colophon --> 
+  <!-- #page --> 
+  <script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myUser@email.com"; // OPTIONAL: include your user's email address or order ID
+    // _pa.revenue = "19.99"; // OPTIONAL: include dynamic purchase value for the conversion
+    // _pa.onLoadEvent = "sign_up"; // OPTIONAL: name of segment/conversion to be fired on script load
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/52ddfc037824dacfa2000022.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/plugins/what-would-seth-godin-do/jquery.cookie.js"></script> 
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+        var count;
+        if ( !jQuery.cookie('wwsgd_visits') ) {
+            count = 1;
+        }
+        else {
+            count = parseInt(jQuery.cookie('wwsgd_visits'), 10) + 1;
+        }
+        jQuery.cookie('wwsgd_visits', count, { expires: 365, path: "/" });
+
+        if ( count <= 2 ) {
+            jQuery(".wwsgd").show();
+        }
+    });
+</script> 
+  <div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_grow et_social_withtotalcount et_social_space et_social_mobile_on"> 
+   <div class="et_social_totalcount et_social_dark"> 
+    <span class="et_social_totalcount_count et_social_total_share" data-post_id="4145"></span> 
+    <span class="et_social_totalcount_label">Shares</span> 
+   </div> 
+   <ul class="et_social_icons_container">
+    <li class="et_social_twitter"> <a href="http://twitter.com/share?text=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience&amp;url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;via=briand_mi" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_twitter"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_facebook"> <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;t=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_facebook"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_googleplus"> <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;t=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_googleplus"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_linkedin"> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;title=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_linkedin"></i> <span class="et_social_overlay"></span> </a> </li>
+    <li class="et_social_gmail"> <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience&amp;body=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_gmail"></i> <span class="et_social_overlay"></span> </a> </li>
+   </ul> 
+   <span class="et_social_hide_sidebar et_social_icon"></span> 
+  </div>
+  <div class="et_social_mobile_button"></div> 
+  <div class="et_social_mobile et_social_fadein"> 
+   <div class="et_social_heading">
+    Share This
+   </div> 
+   <span class="et_social_close"></span> 
+   <div class="et_social_networks et_social_simple et_social_rounded et_social_left"> 
+    <ul class="et_social_icons_container">
+     <li class="et_social_twitter"> <a href="http://twitter.com/share?text=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience&amp;url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;via=briand_mi" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_twitter"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Twitter
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_facebook"> <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;t=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_facebook"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Facebook
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_googleplus"> <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;t=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_googleplus"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Google+
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_linkedin"> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;title=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_linkedin"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         LinkedIn
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+     <li class="et_social_gmail"> <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;su=How%20to%20Break%20Into%20Corporate%20Development%20as%20an%20Engineer%20with%20No%20Finance%20Experience&amp;body=https%3A%2F%2Fwww.mergersandinquisitions.com%2Fengineer-to-corporate-development%2F&amp;ui=2&amp;tf=1" class="et_social_share" rel="nofollow" data-social_name="gmail" data-post_id="4145" data-social_type="share" data-location="sidebar"> <i class="et_social_icon et_social_icon_gmail"></i> 
+       <div class="et_social_network_label">
+        <div class="et_social_networkname">
+         Gmail
+        </div>
+       </div> <span class="et_social_overlay"></span> </a> </li>
+    </ul> 
+   </div> 
+  </div> 
+  <div class="et_social_mobile_overlay"></div>
+  <script type="text/javascript">
+		(function() {
+		  var mrTracking = document.createElement('script');
+		  mrTracking.type = 'text/javascript';
+		  mrTracking.async = true;
+		  mrTracking.src = '//breakingintowallstreet.com/biws/wp-content/themes/Anatta-Theme/js/mr.ifs.tracking.ecommerce.js';
+		  document.getElementsByTagName('head')[0].appendChild(mrTracking);
+		})();
+		</script>
+  <!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: BIWS Free Tutorials Snippet Pop-Up (Aug 17) -->
+  <div id="om-ilges5cutjbxnpsqauhu-holder"></div>
+  <script>var ilges5cutjbxnpsqauhu,ilges5cutjbxnpsqauhu_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){ilges5cutjbxnpsqauhu_poll(function(){if(window['om_loaded']){if(!ilges5cutjbxnpsqauhu){ilges5cutjbxnpsqauhu=new OptinMonsterApp();return ilges5cutjbxnpsqauhu.init({"u":"1495.640382","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;ilges5cutjbxnpsqauhu=new OptinMonsterApp();ilges5cutjbxnpsqauhu.init({"u":"1495.640382","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script>
+  <!-- / OptinMonster -->
+  <!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Mobile Merger Pop Up -->
+  <div id="om-eqesid56mk-mobile-holder"></div>
+  <script>var eqesid56mk_mobile,eqesid56mk_mobile_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){eqesid56mk_mobile_poll(function(){if(window['om_loaded']){if(!eqesid56mk_mobile){eqesid56mk_mobile=new OptinMonsterApp();return eqesid56mk_mobile.init({"u":"1495.508803","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;eqesid56mk_mobile=new OptinMonsterApp();eqesid56mk_mobile.init({"u":"1495.508803","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script>
+  <!-- / OptinMonster -->
+  <!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: BIWS Free Tutorials -->
+  <div id="om-qw9yfiogfa4cetc6-holder"></div>
+  <script>var qw9yfiogfa4cetc6,qw9yfiogfa4cetc6_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){qw9yfiogfa4cetc6_poll(function(){if(window['om_loaded']){if(!qw9yfiogfa4cetc6){qw9yfiogfa4cetc6=new OptinMonsterApp();return qw9yfiogfa4cetc6.init({"u":"1495.307637","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;qw9yfiogfa4cetc6=new OptinMonsterApp();qw9yfiogfa4cetc6.init({"u":"1495.307637","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script>
+  <!-- / OptinMonster --> 
+  <script type="text/javascript">
+
+          var pfHeaderImgUrl = '';
+          var pfHeaderTagline = '';
+          var pfdisableClickToDel = '0';
+          var pfImagesSize = 'full-size';
+          var pfImageDisplayStyle = 'left';
+          var pfDisableEmail = '0';
+          var pfDisablePDF = '0';
+          var pfDisablePrint = '0';
+          var pfCustomCSS = '';
+          var pfPlatform = 'Wordpress';
+      (function() {
+            var e = document.createElement('script'); e.type="text/javascript";
+            e.src = 'https://cdn.printfriendly.com/printfriendly.js';
+            document.getElementsByTagName('head')[0].appendChild(e);
+        })();
+      </script> 
+  <script type="text/javascript">var ilges5cutjbxnpsqauhu_shortcode = true;var eqesid56mk_mobile_shortcode = true;var qw9yfiogfa4cetc6_shortcode = true;</script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.mergersandinquisitions.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.9"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/plugins/table-of-contents-plus/front.min.js?ver=1509"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/plugins/monarch/js/idle-timer.min.js?ver=1.3.18"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/www.mergersandinquisitions.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/www.mergersandinquisitions.com\/engineer-to-corporate-development\/","stats_nonce":"ce1d8725f7","share_counts":"255abb3e26","follow_counts":"1ed7ecdfea","total_counts":"a51daa73cc","media_single":"715b1bf8fd","media_total":"2d889d879d","generate_all_window_nonce":"da0ceec960","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/plugins/monarch/js/custom.js?ver=1.3.18"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/js/jquery-migrate-1.4.1.min.js?ver=20151215"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var MERGERS = {"ajaxurl":"https:\/\/www.mergersandinquisitions.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/js/main.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/themes/anatta-theme/js/skip-link-focus-fix.js?ver=20151215"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.mergersandinquisitions.com/wp-content/plugins/akismet/_inc/form.js?ver=3.3.4"></script> 
+  <script type="text/javascript">var omapi_localized = { ajax: 'https://www.mergersandinquisitions.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1', nonce: 'cdd0305275', slugs: {"ilges5cutjbxnpsqauhu":{"slug":"ilges5cutjbxnpsqauhu","mailpoet":false},"eqesid56mk_mobile":{"slug":"eqesid56mk_mobile","mailpoet":false},"qw9yfiogfa4cetc6":{"slug":"qw9yfiogfa4cetc6","mailpoet":false}} };</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8a1065017e","applicationID":"8120462","transactionName":"bldUMEIFWUAHVUVbVlcddwdEDVhdSUVYXF5VVw==","queueTime":0,"applicationTime":1945,"atts":"QhBXRgofSk4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

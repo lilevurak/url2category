@@ -1,0 +1,571 @@
+<!doctype html>
+<!-- Sorry no IE7 support! -->
+<!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head> 
+  <!--[if IE]><![endif]--> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, maximum-scale = 1.0"> 
+  <meta http-equiv="ImageToolbar" content="false"> 
+  <link rel="shortcut icon" href="https://www.wailana.com/sites/all/themes/wailana7/images/wailana/gbl/favicon.ico"> 
+  <meta name="description" content="Modern technology allows us to stay in touch, increase productivity and have access to instant entertainment. With smart phones, tablets, laptop computers, WIFI and other technology, are interconnected more than ever before. However, it’s also easy to subtly increase our stress levels from being “wired” all the time. Excess stress gradually takes a toll on mental and physical well being; chronic stress raises our risk for a multitude of health problems. Some signs of excess stress include:"> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology"> 
+  <link rel="shortlink" href="https://www.wailana.com/node/816"> 
+  <meta property="og:site_name" content="Wai Lana"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology"> 
+  <meta property="og:title" content="How to Reduce Stress in the Age of Technology"> 
+  <meta property="og:description" content="Modern technology allows us to stay in touch, increase productivity and have access to instant entertainment. With smart phones, tablets, laptop computers, WIFI and other technology, are interconnected more than ever before. However, it’s also easy to subtly increase our stress levels from being “wired” all the time. Excess stress gradually takes a toll on mental and physical well being; chronic stress raises our risk for a multitude of health problems. Some signs of excess stress include:"> 
+  <meta property="og:updated_time" content="2015-11-01T08:38:01-08:00"> 
+  <meta property="article:published_time" content="2014-09-09T14:35:37-07:00"> 
+  <meta property="article:modified_time" content="2015-11-01T08:38:01-08:00"> 
+  <meta name="dcterms.title" content="How to Reduce Stress in the Age of Technology"> 
+  <meta name="dcterms.creator" content="Wai Lana Webmaster"> 
+  <meta name="dcterms.description" content="Modern technology allows us to stay in touch, increase productivity and have access to instant entertainment. With smart phones, tablets, laptop computers, WIFI and other technology, are interconnected more than ever before. However, it’s also easy to subtly increase our stress levels from being “wired” all the time. Excess stress gradually takes a toll on mental and physical well being; chronic stress raises our risk for a multitude of health problems. Some signs of excess stress include:"> 
+  <meta name="dcterms.date" content="2014-09-09T14:35-07:00"> 
+  <meta name="dcterms.type" content="Text"> 
+  <meta name="dcterms.format" content="text/html"> 
+  <meta name="dcterms.identifier" content="https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology"> 
+  <meta name="dcterms.language" content="en"> 
+  <title>How to Reduce Stress in the Age of Technology | Wai Lana</title> 
+  <link rel="stylesheet" href="https://www.wailana.com/sites/default/files/advagg_css/css__mAiNTA0eu2N6GS3UBkbqCjeOlD4fUcmWnNbeFJtIpNE__kaDBOErkCyeXaiCeWlO0yOEhX0v5VShN_LC8aLmHIGA__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.css"> 
+  <link rel="stylesheet" href="https://www.wailana.com/sites/default/files/advagg_css/css__OhcXglwIIsIV4TaYTiDjfjiVG6yfJ-AvLeh4Awm0TcI__mGsKBQzHfFpbafk9ouENxMJTchrYejYn52SP63YZSls__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.css"> 
+  <link rel="stylesheet" href="https://www.wailana.com/sites/default/files/advagg_css/css__-QrM3MmuNwIy7eVO3I7_hVlWOL405c9CLGlLSVyfa9U__gjUuTJ4pIpybKwAtbEHA3KqDMEHruwNDug_O-dYIZSQ__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.css"> 
+  <link rel="stylesheet" href="https://www.wailana.com/sites/default/files/advagg_css/css__3mB4PUvOaH3TztohfhrEyi-ReXN0mi_90wnd8cryLzY__T8eoVQwXrlW7K3DrRNV3awtfLIFBfZeCkjZhTsrYMvk__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.css"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+  <script>window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")</script> 
+  <script src="https://www.wailana.com/sites/default/files/advagg_js/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__ZHqvWr-79k4Y5DRTd0KcuNHgFp9UJZlb3B0Bi5eGu3M__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script> 
+  <script>window.jQuery.ui || document.write("<script src='/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")</script> 
+  <script src="https://www.wailana.com/sites/all/libraries/mediaelement/build/mediaelement-and-player.min.js?v=2.1.6"></script> 
+  <script src="https://www.wailana.com/sites/default/files/advagg_js/js__zjA3Q6h15MUm1kCjQzNpC6KDyOwVVNteOY9dj8UAYHQ__LXdyDpyNxlpRejIYtUxNRSNBX77UQT2_nTnB-4CobX4__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.js"></script> 
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-92293-1", {"cookieDomain":".wailana.com"});ga("send", "pageview");</script> 
+  <script src="https://www.wailana.com/sites/default/files/advagg_js/js__csvHNxU6BsRD4x3zoBe3Y9kFKIyrW_UA8d8W3eqBbTc__P2DLeaVvPFtmoYQh_fUOWeFCdEyztm55cl5S-yf_Khc__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.js"></script> 
+  <script src="https://use.fontawesome.com/d1c1516f93.js"></script> 
+  <script src="https://www.wailana.com/sites/default/files/advagg_js/js__PKdPOfUhgmhdcEtaTPrK0-xioVBjaQzVGBxOK4KkcaE__DGTydIj4b-pqgpQngcpf_W8bwiGx1MfkKtsfn92yXE0__YW0yBZOrn5ihK1ka4vM44mkL0CaQAD3wWlowqdZxW48.js"></script> 
+  <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"wailana7","theme_token":"qOlkkcPz8lwH2oMMiKzop4U6mibwBx2p4hu84TXlHb4","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.menu.css":1,"misc\/ui\/jquery.ui.autocomplete.css":1,"sites\/all\/libraries\/mediaelement\/build\/mediaelementplayer.min.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/rate\/rate.css":1,"sites\/all\/modules\/video\/css\/video.css":1,"sites\/all\/modules\/social_buttons\/social_buttons.css":1,"sites\/all\/themes\/wailana7\/css\/pullquote_styles.css":1,"sites\/all\/themes\/zurb-foundation\/css\/normalize.css":1,"sites\/all\/themes\/zurb-foundation\/css\/foundation.min.css":1,"sites\/all\/themes\/wailana7\/css\/wailana7.css":1},"js":{"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.7.2\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"sites\/all\/libraries\/mediaelement\/build\/mediaelement-and-player.min.js":1,"sites\/all\/modules\/gss\/scripts\/autocomplete.js":1,"sites\/all\/modules\/mediaelement\/mediaelement.js":1,"sites\/all\/modules\/video\/js\/video.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/themes\/zurb-foundation\/js\/behavior\/reveal.js":1,"https:\/\/use.fontawesome.com\/d1c1516f93.js":1,"sites\/all\/modules\/pullquote\/pullquote.js":1,"sites\/all\/themes\/wailana7\/js\/vendor\/custom.modernizr.js":1,"sites\/all\/themes\/zurb-foundation\/js\/foundation.min.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.alerts.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.dropdown.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.forms.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.magellan.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.placeholder.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.reveal.js":1,"sites\/all\/themes\/wailana7\/js\/foundation\/foundation.tooltips.js":1,"sites\/all\/themes\/wailana7\/js\/wailana7.js":1}},"gss":{"key":"007541140331938052152:joua0m8h4r4"},"mediaelementAll":true,"urlIsAjaxTrusted":{"\/lifestyle\/articles\/tips-healthy-living\/how-to-reduce-stress-age-technology":true},"better_exposed_filters":{"views":{"featured_products":{"displays":{"block_2":{"filters":[]}}},"asanas":{"displays":{"block_2":{"filters":[]}}},"yoga_insights":{"displays":{"block_4":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":"1"}});</script> 
+  <!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]--> 
+  <!-- @todo convert fallback into head alter function --> 
+  <!-- Check for Zepto support, load jQuery if necessary --> 
+  <script type="text/javascript">
+	  (function() {
+	    var config = {
+	      kitId: 'rms2wyo',
+	      scriptTimeout: 3000
+	    };
+	    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+	  })();
+  </script> 
+  <!-- Bing 2017-09 --> 
+  <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5714564"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+  <noscript>
+   &lt;img src="//bat.bing.com/action/0?ti=5714564&amp;amp;Ver=2" height="0" width="0" style="display:none; visibility: hidden;"&gt;
+  </noscript> 
+ </head> 
+ <body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-816 node-type-article i18n-en lang-en section-lifestyle lifestyle articles tips-healthy-living how-to-reduce-stress-age-technology"> 
+  <!--[if lte IE 7]>
+  <script src="/sites/all/themes/wailana7/js/ie/localization/en_US.js"></script>
+  <script src="/sites/all/themes/wailana7/js/ie/warning.js"></script>
+  <script>
+    window.onload=function(){
+      ie6Warning(function() {
+        var languageMap = {};
+          //specifies a JSON hash table for localization
+        if(window.IE6WarningLocalizations) {
+          languageMap = window.IE6WarningLocalizations;
+        }
+        
+        return {
+          imgPath: "/sites/all/themes/wailana7/js/ie/", //specifies the path to the icons of each browser
+          localizations:  languageMap
+        };
+      });
+    };
+  </script>
+<![endif]--> 
+  <div class="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <div id="pageContainer"> 
+   <!-- shop menu --> 
+   <div class="top-shop hide-for-small"> 
+    <div class="row"> 
+     <div class="large-3 columns"> 
+      <section class="block block-wl-search-block block-wl-search-block-wl-gss-search"> 
+       <h2 class="block-title"> </h2> 
+       <div class="block-content"> 
+        <form action="/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology" method="post" id="wl-search-block-search-block-form" accept-charset="UTF-8">
+         <div>
+          <div class="row collapse">
+           <div class="large-9 columns">
+            <div class="form-item form-type-textfield form-item-keys"> 
+             <input class=" search-gss-field  form-text required" placeholder="Search WaiLana.com" type="text" id="edit-keys" name="keys" value="" size="15" maxlength="128"> 
+            </div> 
+           </div>
+           <div class="large-3 columns">
+            <button class="button success postfix button form-submit" id="edit-submit" name="op" value="Go" type="submit">Go</button> 
+           </div>
+          </div>
+          <input type="hidden" name="form_build_id" value="form-UutdCyBoq9CixtEscKAFld9l4i-TR-qMjBixrNt1_vY"> 
+          <input type="hidden" name="form_id" value="wl_search_block_search_block_form"> 
+         </div>
+        </form> 
+       </div> 
+      </section> 
+     </div> 
+     <div class="large-9 columns"> 
+      <div class="row"> 
+       <div class="large-5 columns text-right phone-number"> 
+        <h3>Call us on 1-800-228-5145</h3> 
+       </div> 
+       <div class="large-7 columns"> 
+        <ul class="shop-menu"> 
+         <li><a href="/contact">Contact Us</a></li> 
+         <li><a href="http://shop.wailana.com/account.php">My Account</a></li> 
+         <li><a href="http://shop.wailana.com/login.php?action=create_account">Create New Account</a></li> 
+         <li><a href="http://shop.wailana.com/cart.php">My Cart</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- End shop menu --> 
+   <div class="wl-header"> 
+    <div class="wl-header__inner"> 
+     <strong class="brand"><a href="/" title="Home"><span>Wai Lana</span></a></strong> 
+    </div> 
+    <nav id="wl-mainmenu" class="wl-mainmenu"> 
+     <ul> 
+      <li class="wl-maindrop wl-maindrop--shop"> <a href="#">Shop</a> 
+       <div class="wl-mainsub"> 
+        <div class="wl-mainsub__inner"> 
+         <div class="row"> 
+          <div class="small-12 large-6 wl-maindrop__menu columns"> 
+           <h2 class="wl-maindrop__title"><a href="https://shop.wailana.com">Shop</a></h2> 
+           <div class="row"> 
+            <div class="small-12 large-6 columns"> 
+             <h4><a href="http://shop.wailana.com/categories/yoga-products.html">Yoga Products</a></h4> 
+             <ul class="side-nav">
+              <li class="menu-2157 first"><a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds.html" title="">Yoga DVDs</a></li> 
+              <li class="menu-2158"><a href="http://shop.wailana.com/categories/yoga-products/music-meditation.html" title="">Meditation &amp; Music</a></li> 
+              <li class="menu-2159"><a href="http://shop.wailana.com/categories/yoga-products/yoga-pilates-mats.html" title="">Yoga &amp; Pilates Mats</a></li> 
+              <li class="menu-2160"><a href="http://shop.wailana.com/categories/yoga-products/yoga-mat-bags.html" title="">Yoga Mat Bags</a></li> 
+              <li class="menu-2161"><a href="http://shop.wailana.com/categories/yoga-products/eco-friendly-yoga-gear.html" title="">Eco-Friendly Yoga Gear</a></li> 
+              <li class="menu-2162"><a href="http://shop.wailana.com/categories/yoga-products/yoga-for-kids.html" title="">Yoga for Kids</a></li> 
+              <li class="menu-2163"><a href="http://shop.wailana.com/categories/yoga-products/yoga-pilates-kits.html" title="">Yoga &amp; Pilates Kits</a></li> 
+              <li class="menu-2164 last"><a href="http://shop.wailana.com/categories/yoga-products/yoga-props.html" title="">Yoga Props</a></li> 
+             </ul> 
+            </div> 
+            <div class="small-12 large-6 columns"> 
+             <h4><a href="http://shop.wailana.com/categories/lifestyle-products.html">Lifestyle Products</a></h4> 
+             <ul class="side-nav">
+              <li class="menu-3326 first"><a href="http://shop.wailana.com/categories/yoga-music-merchandise.html" title="">Yoga Music Merchandise</a></li> 
+              <li class="menu-2166"><a href="http://shop.wailana.com/categories/lifestyle-products/snacks-food.html" title="">Gluten-Free Snacks &amp; Food</a></li> 
+              <li class="menu-2167"><a href="http://shop.wailana.com/categories/lifestyle-products/yogaroma.html" title="">Yogaroma™ Body Care</a></li> 
+              <li class="menu-2168"><a href="http://shop.wailana.com/categories/lifestyle-products/super-fruits.html" title="">Super Fruits</a></li> 
+              <li class="menu-2169"><a href="http://shop.wailana.com/categories/lifestyle-products/books.html" title="">Books</a></li> 
+              <li class="menu-2170"><a href="http://shop.wailana.com/categories/lifestyle-products/accessories.html" title="">Accessories</a></li> 
+              <li class="menu-2171 last"><a href="http://shop.wailana.com/categories/lifestyle-products/gift-baskets.html" title="">Gift Baskets</a></li> 
+             </ul> 
+            </div> 
+           </div> 
+           <section class="block block-block block-block-66"> 
+            <div class="block-content"> 
+             <p class="free-shipping"><a href="/shop/promo/shipping"><i class="fa fa-truck"></i> FREE Shipping on all orders over $50 and up within the U.S. (Click for details)</a></p> 
+            </div> 
+           </section> 
+          </div> 
+          <div class="small-12 large-6 wl-maindrop__supplement columns"> 
+           <section class="block block-views block-views-featured-products-block-2"> 
+            <h2 class="block-title">Featured Products</h2> 
+            <div class="block-content"> 
+             <div class="view view-featured-products view-id-featured_products view-display-id-block_2 view-dom-id-20090739f620f0d5ffeb5a730b11e662"> 
+              <div class="view-content"> 
+               <ul class="small-block-grid-2"> 
+                <li class="product-item"> <a href="http://shop.wailana.com/products/alive-forever-namaste-t-shirt-womens.html" class="th radius"><img typeof="foaf:Image" src="https://www.wailana.com/sites/default/files/styles/medium/public/products/images/wl_womens-shirt_75980.1467878672.1280.1280.jpg?itok=a6F4fSs5" alt=""></a> <h6><a href="http://shop.wailana.com/products/alive-forever-namaste-t-shirt-womens.html ">Womens' Alive Forever/Namaste T-shirt</a></h6> <strong class="sale-price"></strong> </li> 
+                <li class="product-item"> <a href="http://shop.wailana.com/products/yoga-nidra-cd.html" class="th radius"><img typeof="foaf:Image" src="https://www.wailana.com/sites/default/files/styles/medium/public/products/images/wai_lana_yoga_nidra_55421.1432878666.1280.1280.jpg?itok=E1ym6rJ6" alt=""></a> <h6><a href="http://shop.wailana.com/products/yoga-nidra-cd.html ">Wai Lana's Yoga Nidra CD</a></h6> <strong class="sale-price"></strong> </li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+           </section> 
+           <div class="shop-pop"> 
+            <section class="block block-block block-block-34"> 
+             <div class="block-content"> 
+              <h5>Popular shopping</h5> 
+              <div class="row"> 
+               <div class="large-4 columns"> 
+                <a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds.html" data-tooltip="" class="has-tip" title="Yoga DVDs"><img src="/sites/all/themes/wailana7/images/wailana/shop/shop-pop-yoga.png"></a> 
+               </div> 
+               <div class="large-4 columns"> 
+                <a href="http://shop.wailana.com/categories/lifestyle-products/snacks-food.html" data-tooltip="" class="has-tip" title="Gluten Free Snacks"><img src="/sites/all/themes/wailana7/images/wailana/shop/shop-pop-chips.png"></a> 
+               </div> 
+               <div class="large-4 columns"> 
+                <a href="http://shop.wailana.com/categories/lifestyle-products/supplements/noni.html" data-tooltip="" class="has-tip" title="Noni Products"><img src="/sites/all/themes/wailana7/images/wailana/shop/shop-pop-noni.png"></a> 
+               </div> 
+              </div> 
+             </div> 
+            </section> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <!-- /inner --> 
+       </div>
+       <!-- /sub --> </li> 
+      <li class="wl-maindrop wl-maindrop--lifestyle"> <a href="#">Lifestyle</a> 
+       <div class="wl-mainsub"> 
+        <div class="wl-mainsub__inner"> 
+         <div class="row"> 
+          <div class="small-12 large-6 wl-maindrop__menu columns"> 
+           <h2 class="wl-maindrop__title"><a href="/lifestyle">Lifestyle</a></h2> 
+           <div class="row"> 
+            <div class="small-12 large-6 columns"> 
+             <ul class="side-nav">
+              <li class="menu-510 first"><a href="/lifestyle" title="">Lifestyle Home</a></li> 
+              <li class="menu-509"><a href="/lifestyle/articles" title="">Tips for Healthy Living</a></li> 
+              <li class="menu-508"><a href="/lifestyle/recipes" title="">Recipes</a></li> 
+              <li class="menu-451"><a href="/lifestyle/stories" title="Real stories from real people">Inspirational Stories</a></li> 
+              <li class="menu-620"><a href="/lifestyle/meditation" title="">Meditation</a></li> 
+              <li class="menu-594 last"><a href="/lifestyle/relaxation" title="">Relaxation Club™</a></li> 
+             </ul> 
+            </div> 
+            <div class="small-12 large-6 columns"> 
+             <h4><a href="/lifestyle/meditation">Yoga Meditation</a></h4> 
+             <ul class="side-nav">
+              <li class="menu-2173 first"><a href="/lifestyle/meditation/yoga-sound-meditation" title="">Yoga Sound</a></li> 
+              <li class="menu-2175"><a href="/lifestyle/meditation/gems" title="">Gems of Wisdom</a></li> 
+              <li class="menu-2174 last"><a href="/lifestyle/meditation/visual" title="">Visual Meditation</a></li> 
+             </ul> 
+            </div> 
+           </div> 
+           <a href="/lifestyle" class="wl-browse">Browse Lifestyle »</a> 
+          </div> 
+          <div class="small-12 large-6 wl-maindrop__supplement columns"> 
+           <section class="block block-block block-block-115"> 
+            <div class="block-content"> 
+             <a href="/af"><img src="/sites/default/files/images/gbl/watch-alive-forever.jpg"></a> 
+             <h4 class="watch-title">Watch Wai Lana's Music Videos</h4> 
+            </div> 
+           </section> 
+           <section class="block block-block block-block-114"> 
+            <div class="block-content"> 
+             <a href="/lifestyle/namaste"><img src="/sites/default/files/images/gbl/watch-namaste.jpg"></a> 
+            </div> 
+           </section> 
+          </div> 
+         </div> 
+        </div>
+        <!-- /inner --> 
+       </div>
+       <!-- /sub --> </li> 
+      <li class="wl-maindrop wl-maindrop--yoga"> <a href="#">Yoga</a> 
+       <div class="wl-mainsub"> 
+        <div class="wl-mainsub__inner"> 
+         <div class="row"> 
+          <div class="small-12 large-6 wl-maindrop__menu columns"> 
+           <h2 class="wl-maindrop__title"><a href="/yoga">Yoga</a></h2> 
+           <div class="row"> 
+            <div class="small-12 large-6 columns"> 
+             <ul class="side-nav">
+              <li class="menu-503 first"><a href="/yoga" title="">Yoga Home</a></li> 
+              <li class="menu-486"><a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds.html" title="">Shop Yoga DVDs</a></li> 
+              <li class="menu-436"><a href="/yoga/asanas" title="">Yoga Asanas</a></li> 
+              <li class="menu-397"><a href="/yoga/insights" title="">Yoga Insights</a></li> 
+              <li class="menu-350"><a href="/yoga/pilates">Pilates</a></li> 
+              <li class="menu-512"><a href="/yoga/picture-gallery" title="">Yoga Photo Gallery</a></li> 
+              <li class="menu-355 last"><a href="/yoga/wai-lana-yoga-tv-series" title="">Yoga TV Series</a></li> 
+             </ul> 
+            </div> 
+            <div class="small-12 large-6 columns"> 
+             <section class="block block-block block-block-49"> 
+              <div class="block-content"> 
+               <ul class="large-block-grid-2">
+                <li><a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds/yoga-for-everyone-dvds.html" class="th" data-tooltip="" title="Easy Series"><img src="/sites/default/files/styles/thumbnail_product/public/products/images/easy-tripack.jpg"></a></li> 
+                <li><a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds/hello-fitness-yoga-dvds.html" class="th" data-tooltip="" title="Hello Fitness Series"><img src="/sites/default/files/styles/thumbnail_product/public/products/images/hello-fitness-tripack.jpg"></a></li> 
+                <li><a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds/fun-challenge-yoga-dvds.html" class="th" data-tooltip="" title="Fun Challenge Series"><img src="/sites/default/files/styles/thumbnail_product/public/products/images/fun-tripack.jpg"></a></li> 
+                <li><a href="http://shop.wailana.com/categories/yoga-products/yoga-dvds/yoga-for-everyone-dvds.html" class="th" data-tooltip="" title="Yoga for Everyone"><img src="/sites/default/files/styles/thumbnail_product/public/products/images/DVD004-Yoga-For-Everyone-Tripack.jpg"></a></li> 
+               </ul> 
+              </div> 
+             </section> 
+            </div> 
+           </div> 
+           <a href="/yoga" class="wl-browse">Browse Yoga »</a> 
+          </div> 
+          <div class="small-12 large-6 wl-maindrop__supplement columns"> 
+           <div class="row full-height"> 
+            <div class="small-12 large-6 columns"> 
+             <section class="block block-views block-views-asanas-block-2"> 
+              <h2 class="block-title">Featured Asana</h2> 
+              <div class="block-content"> 
+               <div class="view view-asanas view-id-asanas view-display-id-block_2 view-dom-id-c2d776b462a39c54446d1bc3226ac89b"> 
+                <div class="view-content"> 
+                 <div class="box"> 
+                  <div id="file-1646" class="file file-video file-video-youtube"> 
+                   <h2 class="element-invisible"><a href="/file/1646">Double Angle Pose by Wai Lana</a></h2> 
+                   <div class="content"> 
+                    <img typeof="foaf:Image" src="https://www.wailana.com/sites/default/files/styles/large/public/media-youtube/12h11JwU1q0.jpg?itok=cWMPh5KM" alt="Double Angle Pose by Wai Lana"> 
+                   </div> 
+                  </div> 
+                  <p><a href="/yoga/asanas/1976">Double Angle Pose</a></p> 
+                 </div> 
+                </div> 
+                <div class="more-link"> 
+                 <a href="/yoga/asanas"> View all Asanas </a> 
+                </div> 
+               </div> 
+              </div> 
+             </section> 
+            </div> 
+            <div class="small-12 large-6 columns"> 
+             <div class="menu-featured-recipe"> 
+              <section class="block block-views block-views-yoga-insights-block-4"> 
+               <h2 class="block-title">Featured Insight</h2> 
+               <div class="block-content"> 
+                <div class="view view-yoga-insights view-id-yoga_insights view-display-id-block_4 view-dom-id-5f944b6474ec3a01ad0ee96ca42b7db2"> 
+                 <div class="view-content"> 
+                  <div> 
+                   <a href="/yoga/insights/yoga-tools-for-healing"><img typeof="foaf:Image" src="https://www.wailana.com/sites/default/files/styles/medium/public/images/insights/yoga-tools-for-healing.jpg?itok=yIza1YXn" alt=""></a> 
+                   <p><a href="/yoga/insights/yoga-tools-for-healing">Yoga Tools for Healing</a></p> 
+                  </div> 
+                 </div> 
+                 <div class="more-link"> 
+                  <a href="/yoga/insights"> View all Insights </a> 
+                 </div> 
+                </div> 
+               </div> 
+              </section> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+        <!-- /inner --> 
+       </div>
+       <!-- /sub --> </li> 
+      <li class="wl-maindrop wl-maindrop--more"> <a href="#"><i class="fa fa-bars"></i> <span class="more-text">More…</span></a> 
+       <div class="wl-mainsub"> 
+        <div class="wl-mainsub__inner"> 
+         <div class="row"> 
+          <div class="large-12 columns"> 
+           <ul class="large-block-grid-3 small-block-grid-3 more-menu">
+            <li class="menu-2153 first"><a href="/about-wai-lana" title="">About</a></li> 
+            <li class="menu-2154"><a href="/snacks" title="">Snacks</a></li> 
+            <li class="menu-2155 last"><a href="/blog" title="">Blog</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="row"> 
+          <div class="large-12 columns"> 
+           <ul class="large-block-grid-4 small-block-grid-2 extra-menu">
+            <li class="menu-568 first"><a href="/wai-lana-wholesale" title="">Wholesale Info</a></li> 
+            <li class="menu-3481"><a href="/dropship" title="">Drop Ship Program</a></li> 
+            <li class="menu-569"><a href="/wai-lana-affiliate-program" title="">Affiliates</a></li> 
+            <li class="menu-570"><a href="/shipping-returns" title="">Shipping &amp; Returns</a></li> 
+            <li class="menu-576"><a href="/contact" title="">Contact Us</a></li> 
+            <li class="menu-571"><a href="/worldwide-distributors" title="">Worldwide Distributors</a></li> 
+            <li class="menu-572"><a href="/privacy-security" title="">Privacy &amp; Security</a></li> 
+            <li class="menu-573 last"><a href="/terms-conditions" title="">Terms &amp; Conditions</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="row"> 
+          <div class="large-12 columns"> 
+          </div> 
+         </div> 
+        </div>
+        <!-- /inner --> 
+       </div>
+       <!-- /sub --> </li> 
+     </ul> 
+    </nav> 
+   </div> 
+   <section class="block block-block block-block-18"> 
+    <div class="block-content"> 
+     <div class="page-header health-tips"> 
+      <div class="row"> 
+       <div class="large-12 columns"> 
+        <h3>Tips for Healthy Living</h3> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <div id="main-wrapper"> 
+    <div id="main-wrapper-inner"> 
+     <div class="row hide-for-print"> 
+      <div class="large-12 columns"> 
+       <h2 class="element-invisible">You are here</h2>
+       <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/lifestyle">Lifestyle</a></li>
+        <li><a href="/lifestyle/articles">Tips for Healthy Living</a></li>
+        <li class="current"><a href="#">How to Reduce Stress in the Age of Technology</a></li>
+       </ul> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="large-12 columns"> 
+       <h1 id="page-title" class="title">How to Reduce Stress in the Age of Technology</h1> 
+      </div> 
+     </div> 
+     <div id="main-content"> 
+      <div class="main-row row"> 
+       <div id="main" class="large-8 columns"> 
+        <div class="main-inner"> 
+         <a id="main-content"></a> 
+         <div class="block-content"> 
+          <article id="node-816" class="node node-article view-mode-full" about="/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology" typeof="sioc:Item foaf:Document"> 
+           <span property="dc:title" content="How to Reduce Stress in the Age of Technology" class="rdf-meta element-hidden"></span> 
+           <div class="field field-name-field-article-image field-type-image field-label-hidden field-wrapper">
+            <img typeof="foaf:Image" src="https://www.wailana.com/sites/default/files/styles/main-width/public/images/articles/reduce-stress-technology.jpg?itok=m8ioRAM6" alt="">
+           </div>
+           <div class="field field-name-field-share field-type-social-buttons field-label-hidden field-wrapper">
+            <div class="social-buttons">
+             <span class="social-button"><a class="share facebook-share" href="http://facebook.com/sharer.php?u=https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology&amp;t=How to Reduce Stress in the Age of Technology" target="_blank"><i class="fa fa-facebook"></i></a> </span>
+             <span class="social-button"><a class="share twitter-share" href="http://twitter.com/intent/tweet?url=https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology&amp;text=How to Reduce Stress in the Age of Technology" target="_blank"><i class="fa fa-twitter"></i></a></span>
+             <span class="social-button"><a class="share pinterest-share" href="http://pinterest.com/pin/create/button/?url=https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology&amp;media=https://www.wailana.com/sites/default/files/images/articles/reduce-stress-technology.jpg&amp;description=How to Reduce Stress in the Age of Technology" target="_blank"><i class="fa fa-pinterest"></i></a></span>
+             <span class="social-button"><a class="share google-share" href="https://plus.google.com/share?url=https://www.wailana.com/lifestyle/articles/tips-healthy-living/how-to-reduce-stress-age-technology" target="_blank"><i class="fa fa-google-plus"></i></a></span>
+            </div>
+           </div>
+           <div class="field field-name-body field-type-text-with-summary field-label-hidden field-wrapper body field">
+            <p class="lead">Modern technology allows us to stay in touch, increase productivity and have access to instant entertainment. With smart phones, tablets, laptop computers, WIFI and other technology, are interconnected more than ever before. However, it’s also easy to subtly increase our stress levels from being “wired” all the time.</p> 
+            <p>Excess stress gradually takes a toll on mental and physical well being; chronic stress raises our risk for a multitude of health problems. Some signs of excess stress include:</p> 
+            <ul class="disc">
+             <li>Fatigue</li> 
+             <li>Difficulty falling asleep or staying asleep</li> 
+             <li>Digestive problems</li> 
+             <li>Loss of appetite/excess appetite</li> 
+             <li>Weakened immune system</li> 
+             <li>Muscle tension</li> 
+             <li>Headaches</li> 
+             <li>Irritability, anxiety and depression</li> 
+            </ul>
+            <p>It’s important to try to maintain a healthy balance in our lives to keep stress levels under control. Here are some tips for banishing excess stress:</p> 
+            <p><strong>Unplug at night</strong><br> Getting a good night’s sleep is essential for good health and managing day to day stress. Turning off TVs, smart phones, computers, etc. at least an hour before bedtime will help you wind down and allow your body and mind to go into “rest and restore” mode.&nbsp; Some research shows that sleeping near an active smart phone interferes with zzzzz’s, so even if you don’t turn it off, you can put your phone in “airplane” mode to help prevent smart phone-related sleep issues.</p> 
+            <p><strong>Avoid the night time blues</strong><br> The blue light emitted by TVs, smart phones and tablets suppresses your body’s release of melatonin and may interfere with sleep. Even a little blue light at nighttime can negatively affect sleep. In addition to turning off devices, you can purchase removable screen covers that filter out blue light in the evening.</p> 
+            <p><strong>Practice mindfulness</strong><br> In the age of smart phone technology, it’s easy to lose sight of the meaning of the moment. Putting a phone or tablet down when we’re spending time with family, eating meals, walking etc. is important both for cultivating good relationships as well as safety.</p> 
+            <p><strong>Stay active outdoors</strong><br> Spending time outdoors is particularly beneficial for helping to release our natural “feel good” hormones that counteract the effects of stress. Walking, hiking, swimming, and biking are all simple, inexpensive ways to enjoy the restorative effects of Mother Nature.</p> 
+            <p><strong>Cultivate the relaxation response</strong><br> The “relaxation response” is a term researchers have coined for the physical and mental state that is the opposite of the “fight or flight” stress response—blood pressure decreases, stress hormones decline, heart rate is lowered, and the brain goes into a peaceful state. The relaxation response can be learned and cultivated and there are a number of different ways to make conscious relaxation part of your daily life. For example, tai chi, yoga, and <a href="/lifestyle/meditation/yoga-sound-meditation">Yoga Sound Meditation</a> are all proven ways to induce the relaxation response.&nbsp;</p> 
+           </div> 
+          </article> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="sidebar-second" class="large-4 columns sidebar"> 
+        <section class="block block-menu block-menu-menu-lifestyle block-even clearfix"> 
+         <div class="row"> 
+          <div class="small-8 columns"> 
+           <h2 class="block-title">Lifestyle</h2> 
+          </div> 
+          <div class="small-4 columns hide-for-small"> 
+           <img src="/sites/all/themes/wailana7/images/wailana/blocks/bg-lifestyle-menu.png" alt="" class="menu-icon"> 
+          </div> 
+         </div> 
+         <div class="block-content"> 
+          <ul class="menu">
+           <li class="first leaf"><a href="/lifestyle" title="">Lifestyle Home</a></li> 
+           <li class="leaf"><a href="/lifestyle/articles" title="">Tips for Healthy Living</a></li> 
+           <li class="leaf"><a href="/lifestyle/recipes" title="">Recipes</a></li> 
+           <li class="leaf"><a href="/lifestyle/stories" title="Real stories from real people">Inspirational Stories</a></li> 
+           <li class="collapsed"><a href="/lifestyle/meditation" title="">Meditation</a></li> 
+           <li class="last collapsed"><a href="/lifestyle/relaxation" title="">Relaxation Club™</a></li> 
+          </ul> 
+         </div> 
+        </section> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- main-content --> 
+    </div>
+    <!--main-wrapper-inner --> 
+   </div>
+   <!-- main-wrapper --> 
+   <div class="row hide-for-print"> 
+    <div class="large-12 columns"> 
+    </div> 
+   </div> 
+   <div class="bottom-bar-wrapper">
+    <div class="bottom-bar"> 
+     <div class="row"> 
+      <div class="large-12 columns"> 
+       <div class="hide-for-print"> 
+        <section class="block block-block block-block-30"> 
+         <div class="block-content"> 
+          <div class="text-center"> 
+           <i class="wl-icon-dancer"></i> 
+           <ul class="social-list">
+            <li><a href="https://www.instagram.com/wai_lana"><i class="fa fa-instagram"></i></a></li> 
+            <li><a href="https://www.facebook.com/wailana"><i class="fa fa-facebook"></i></a></li> 
+            <li><a href="https://twitter.com/wailanayoga"><i class="fa fa-twitter"></i></a></li> 
+            <li><a href="https://www.youtube.com/user/wailanayoga"><i class="fa fa-youtube"></i></a></li> 
+            <li><a href="http://www.pinterest.com/wailanayoga"><i class="fa fa-pinterest"></i></a></li> 
+            <li><a href="https://plus.google.com/+wailanayoga"><i class="fa fa-google-plus"></i></a></li> 
+            <li><a href="https://soundcloud.com/wai-lana"><i class="fa fa-soundcloud"></i></a></li> 
+            <li><a href="https://wailana.bandcamp.com"><i class="fa fa-music"></i></a></li> 
+           </ul>
+          </div> 
+         </div> 
+        </section> 
+        <section class="block block-menu block-menu-menu-footer-menu"> 
+         <div class="block-content"> 
+          <ul class="menu">
+           <li class="first leaf"><a href="/wai-lana-wholesale" title="">Wholesale Info</a></li> 
+           <li class="leaf"><a href="/dropship" title="">Drop Ship Program</a></li> 
+           <li class="leaf"><a href="/wai-lana-affiliate-program" title="">Affiliates</a></li> 
+           <li class="leaf"><a href="/shipping-returns" title="">Shipping &amp; Returns</a></li> 
+           <li class="leaf"><a href="/contact" title="">Contact Us</a></li> 
+           <li class="leaf"><a href="/worldwide-distributors" title="">Worldwide Distributors</a></li> 
+           <li class="leaf"><a href="/privacy-security" title="">Privacy &amp; Security</a></li> 
+           <li class="last leaf"><a href="/terms-conditions" title="">Terms &amp; Conditions</a></li> 
+          </ul> 
+         </div> 
+        </section> 
+       </div> 
+       <p class="copy"> All Prices are in USD. © 2017 Wai Lana Productions, LLC. All rights reserved. </p> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="large-6 columns"> 
+      </div> 
+      <div class="large-6 small-12 columns"> 
+      </div> 
+     </div> 
+    </div>
+   </div> 
+  </div> 
+  <script>
+    (function ($, Drupal, window, document, undefined) {
+      $(document).foundation();
+    })(jQuery, Drupal, this, this.document);
+  </script> 
+  <!-- retargeting code 2015-01-21 --> 
+  <script type="text/javascript"> 
+    adroll_adv_id = "4YPKCMHNCJDRLOKL2JIKZN"; 
+    adroll_pix_id = "XFQ5DAIEDFHQJL4RCDYZ4G"; 
+    (function () { 
+    var oldonload = window.onload; 
+    window.onload = function(){ 
+       __adroll_loaded=true; 
+       var scr = document.createElement("script"); 
+       var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com"); 
+       scr.setAttribute('async', 'true'); 
+       scr.type = "text/javascript"; 
+       scr.src = host + "/j/roundtrip.js"; 
+       ((document.getElementsByTagName('head') || [null])[0] || 
+        document.getElementsByTagName('script')[0].parentNode).appendChild(scr); 
+       if(oldonload){oldonload()}}; 
+    }()); 
+    </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"da6fc26a1d","applicationID":"67263551","transactionName":"bwBQYxBTXENRBRVdCVZKc1QWW11eHwgOUANnFVNQB21EWVUR","queueTime":0,"applicationTime":834,"atts":"Q0dTFVhJT00=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

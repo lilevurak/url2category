@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" class="">
+ <head> 
+  <meta charset="utf-8"> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"fa0dce3777","applicationID":"2962695","transactionName":"JVhcRkFWXVkDFhhURBJeUV5WSh5cCABSTQ==","queueTime":0,"applicationTime":204,"agent":""}</script> 
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAAAWF5XGwEJUlNUDgQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(15)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(15)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(15)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){g.push(t),h&&(b?b.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(15)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,y="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(y,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===y||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],15:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=h(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[w[n]];return d&&d.push([g,n,r,a]),a}}function p(t,e){y[t]=h(t).concat(e)}function h(t){return y[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",w[n]=e,e in u||(u[e]=[])})}var y={},w={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:v,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(12),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(w,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){s("mark",["domContent",a()+x.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-x.offset}var c=(new Date).getTime(),s=t("handle"),f=t(12),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},g=m&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:c,now:a,origin:y,features:{},xhrWrappable:g};t(9),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),s("mark",["firstbyte",c],null,"api");var b=0,E=t(14)},{}]},{},["loader",2,7]);</script> 
+  <!-- enable mobile, set viewport to device width --> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="MobileOptimized" content="320"> 
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="mobile-web-app-capable" content="yes"> 
+  <link rel="canonical" href="https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students"> 
+  <meta name="description" content="Plymouth University Student Life Magazine issue 5. Eight of the best money-saving websites for students, chosen by students – find out how to save money at university. "> 
+  <title>Eight money saving websites for students - University of Plymouth</title> 
+  <link rel="stylesheet" media="screen" href="/assets/application-35a418748aea5c66aa1d86b14cfbc23d.css"> 
+  <style type="text/css" media="screen">
+  #hero_element_1 {
+    background-image: url('https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/xsmall_Money_saving.jpg');
+    background-repeat: no-repeat;
+  }
+  @media screen and (min-width: 600px) and (min-height: 600px) {
+    #hero_element_1 {
+      background-image: url('https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/small_Money_saving.jpg');
+    }
+  }
+    @media screen and (min-width: 320px) {
+      #hero_element_1 {
+        background-image: url('https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/small_Money_saving.jpg');
+      }
+    }
+    @media screen and (min-width: 600px) and (min-height: 320px) {
+      #hero_element_1 {
+        background-image: url('https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/medium_Money_saving.jpg');
+      }
+    }
+    @media screen and (min-width: 960px) and (min-height: 600px) {
+      #hero_element_1 {
+        background-image: url('https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/xlarge_Money_saving.jpg');
+      }
+    }
+</style> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="4YkChOPnruBpjmYHtZ9XJZbvZEHpvSWJLSgtZc04O0ATQv4vGOcssjm4iVCwo4CnFQI1gE5c4j/PMXLLuGOeJg=="> 
+  <!--[if lt IE 8]>
+      <link rel="stylesheet" media="screen" href="/assets/lt-ie8-d0b54dd563966c42aad5fd85b1c1f713.css" />
+    <![endif]--> 
+  <!--[if lt IE 9]>
+      <link rel="stylesheet" media="screen" href="/assets/lt-ie9-3f67f2703e872f18b89d315b4bf8b5a2.css" />
+      <script src="https://d39ner1f41xyl1.cloudfront.net/assets/html5shiv-e40548957f08f6bd0b9480f564eac4ba.js"></script>
+    <![endif]--> 
+  <!-- device icons --> 
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/180-f1a5f4d5587ece6b4eff04e4c472aff1.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/152-8b4daed5707a44fc5ca77b79a7602a48.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/144-b104b6387f207bf8d60133cf6ccd9e77.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/120-4278b5087430ff3fe60495f8212767e7.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/114-43894cc0dd27ce2268cc4c7b58a16eec.png"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/72b-c9dfa148e8f48b6e699bef7998ae8236.png"> 
+  <link rel="apple-touch-icon-precomposed" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/57b-82f7371bd2f3f75ad0c1c627c0b14702.png"> 
+  <meta name="application-name" content="University of Plymouth"> 
+  <meta name="msapplication-tooltip" content="Succeed with University of Plymouth"> 
+  <meta name="msapplication-starturl" content="./"> 
+  <meta name="msapplication-navbutton-color" content="#FFFFFF"> 
+  <meta name="msapplication-TileColor" content="#FFFFFF"> 
+  <meta name="msapplication-TileImage" content="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/144-b104b6387f207bf8d60133cf6ccd9e77.png"> 
+  <meta name="msapplication-square70x70logo" content="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/70b-b2d8ffc12feb8dabf18a30a9fd52fa54.png"> 
+  <meta name="msapplication-square150x150logo" content="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/150-22dc1325e380bf80f950ca72d7d90b36.png"> 
+  <meta name="msapplication-wide310x150logo" content="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/310x150-9d6886fe308016e35604e1ef9fd910d7.png"> 
+  <meta name="msapplication-square310x310logo" content="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/310-796b04a83c5caf76570695182cd3c387.png"> 
+  <link rel="shortcut icon" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/favicon-55f41e933a1716837383d1af11e0c5cd.png"> 
+  <link rel="shortcut icon" href="https://d39ner1f41xyl1.cloudfront.net/assets/favicons/favicon-01b84dfa35ee545edf7a81f4a6837043.ico"> 
+  <!-- Google+ --> 
+  <meta itemprop="name" content="Eight money saving websites for students"> 
+  <meta itemprop="description" content="Plymouth University Student Life Magazine issue 5. Eight of the best money-saving websites for students, chosen by students – find out how to save money..."> 
+  <meta itemprop="image" content="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/medium_Money_saving.jpg"> 
+  <!-- Twitter --> 
+  <meta property="twitter:card" content="summary"> 
+  <meta property="twitter:site" content="@PlymUni"> 
+  <meta property="twitter:creator" content="@PlymUni"> 
+  <meta property="twitter:title" content="Eight money saving websites for students"> 
+  <meta property="twitter:description" content="Plymouth University Student Life Magazine issue 5. Eight of the best money-saving websites for students, chosen by students – find out how to save money at university. "> 
+  <meta property="twitter:image" content="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/medium_Money_saving.jpg"> 
+  <!-- Facebook --> 
+  <meta property="og:title" content="Eight money saving websites for students"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students"> 
+  <meta property="og:image" content="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/medium_Money_saving.jpg"> 
+  <meta property="og:description" content="Plymouth University Student Life Magazine issue 5. Eight of the best money-saving websites for students, chosen by students – find out how to save money..."> 
+  <meta property="og:site_name" content="University of Plymouth"> 
+  <meta property="fb:admins" content="197301773649201"> 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feeds/news"> 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feeds/events"> 
+ </head> 
+ <body class="dark-lavendar"> 
+  <noscript> 
+   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=691348174304950&amp;ev=PageView&amp;noscript=1" alt="facebook tracking pixel"> 
+  </noscript> 
+  <input id="main_navigation_menu" type="checkbox"> 
+  <div class="app"> 
+   <img alt="Succeed with University of Plymouth" class="plymuni" src="https://d39ner1f41xyl1.cloudfront.net/assets/plymouth-university-e020c7b0f8acb6555e91bb937924ecd3.png"> 
+   <nav class="main-navigation"> 
+    <div class="responsive-module"> 
+     <div class="login-link"> 
+      <a href="http://portal.plymouth.ac.uk/" class="login"><strong>Login</strong></a> 
+     </div> 
+     <div class="grid-container" id="topnav-links"> 
+      <label for="main_navigation_menu" class="hamburger">MENU</label> 
+      <ul> 
+       <li><a href="/study">Courses &amp;&nbsp;Study</a></li> 
+       <li><a href="/student-life">Student Life</a></li> 
+       <li><a href="/your-university">Your University</a></li> 
+       <li><a href="/international">International Plymouth</a></li> 
+       <li><a href="/research">Research &amp;&nbsp;Expertise</a></li> 
+       <li><a href="/business-partners">Business &amp;&nbsp;Partners</a></li> 
+       <li><a href="/alumni-friends">Alumni &amp;&nbsp;Friends</a></li> 
+       <li><a href="/about-us">About Us</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+   <section itemprop="breadcrumb" class="breadcrumb"> 
+    <div class="responsive-module"> 
+     <nav class="grid-container" id="breadcrumb-links">
+      / 
+      <a href="/">Home</a> / 
+      <a href="/student-life">Student life</a> / 
+      <a href="/student-life/magazine">Magazine</a> / 
+      <a href="/student-life/magazine/issue-5">Issue 5</a> / 
+      <span>Eight money saving websites for students</span>
+     </nav> 
+    </div>
+   </section> 
+   <header class="header-main"> 
+    <div class="responsive-module"> 
+     <div class="grid-container"> 
+      <!-- search box --> 
+      <form data-module="validate" action="/search" accept-charset="UTF-8" method="get">
+       <input name="utf8" type="hidden" value="✓"> 
+       <input type="hidden" name="filter" id="header_filter" value="all"> 
+       <label style="display:none;" for="headerq">Search</label> 
+       <input type="text" name="q" id="headerq" placeholder="Search..." required class="course-finder-input" maxlength="75"> 
+       <button type="submit" class="search-button">GO<span></span></button> 
+      </form> 
+      <!-- responsive logo --> 
+      <a class="home" id="header-logo-link" href="/"> <img alt="Succeed With University of Plymouth" class="logo-small" src="https://d39ner1f41xyl1.cloudfront.net/assets/plym-uni-logo-e61413efaab923113c383fe49b6ab0a4.png"><img alt="Succeed With University of Plymouth" class="logo-large" src="https://d39ner1f41xyl1.cloudfront.net/assets/logo-5bbeca6e75e1119941ff5d8fd1e38b0e.png"> </a> 
+      <!-- header links (login, share, etc) --> 
+      <ul> 
+       <li>
+        <div class="sharing_menu colour"> 
+         <input id="sharemenu" type="checkbox"> 
+         <label for="sharemenu" class="sharing"><strong>Share</strong></label> 
+         <ul> 
+          <li> <a class="share twitter" href="http://www.twitter.com/share?url=https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students">Twitter</a> </li> 
+          <li> <a class="share facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students">Facebook</a> </li> 
+          <li> <a class="share linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students">LinkedIn</a> </li> 
+          <li> <a class="share googleplus" href="https://plus.google.com/share?url=https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students">Google+</a> </li> 
+          <li> <a class="share email" href="mailto:?body=https://www.plymouth.ac.uk/student-life/magazine/issue-5/eight-money-saving-websites-for-students&amp;subject=Eight%20money%20saving%20websites%20for%20students%20-%20University%20of%20Plymouth">Email</a> </li> 
+         </ul> 
+        </div></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="main" itemprop="about" itemscope itemtype="http://schema.org/Article"> 
+    <div class="main-content"> 
+     <section class="hero small-colour-light small-position-bottom medium-colour-light medium-position-bottom-left medium-width-full large-colour-light large-position-bottom-left large-width-full article"> 
+      <div class="responsive-module"> 
+       <article id="hero_element_1" class="primary"> 
+        <header class="metadata grid-container"> 
+         <h1 class="hero-heading" itemprop="name">Eight money saving websites for students</h1> 
+         <h6 class="hero-title">Use these websites to find exclusive student discounts, rewards, freebies, vouchers, money-saving tips and more, to help your funds go further</h6> 
+        </header> 
+        <img alt="Eight money saving websites for students" itemprop="primaryImageOfPage" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/small_Money_saving.jpg"> 
+       </article> 
+       <!--[if lt IE 9]>
+<style type="text/css" media="screen">
+  #hero_element_1 {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/small_Money_saving.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/17/17885/small_Money_saving.jpg', sizingMethod='scale')";
+  }
+</style>
+<![endif]--> 
+      </div>
+     </section> 
+     <section class="article"> 
+      <div class="responsive-module"> 
+       <div class="grid-container"> 
+        <article class="res-article-body" itemprop="text"> 
+         <p>Books, socialising, rent, food – a student loan and a part-time job can only go so far, so it’s important to save money at university wherever you can. From clothes to utilities, there are plenty of discounts and rewards available, some of them exclusively for students. <br><br>We’ve made it easier for you by putting together a list of money-saving websites suggested by students. <br><br>1. <a href="https://www.gimmea.uk/">Gimmea</a>&nbsp;<br>By combining an incentives and reward scheme, a Plymouth University graduate developed GIMMEA to offer discounts, buying guides, blogs and ideas to make student life cheaper.<br><br>2.<a href="https://www.myunidays.com"> myunidays.com</a>&nbsp;<br>This website is the holy grail of offers discounts and rewards for students, from the latest tech to offers on the newest wardrobe additions. And it’s free. <br><br>3. <a href="https://www.nus.org.uk">nus.org.uk</a>&nbsp;<br>For a small fee, the NUS extra card provides the best student discounts across the board, including a half-price Amazon student account and 10 per cent off all Co-op purchases, so you don’t have to live on beans alone. <br><br>4. <a href="http://www.iswapbooks.co.uk">iswapbooks.co.uk</a>&nbsp;<br>Buying your course reading list can be expensive (and heavy) but with this website you can sell or swap your unwanted books, or maybe even grab a bargain for next year’s list, so that you can get ahead on your reading…<br><br>5. <a href="https://www.studentbeans.com">studentbeans.com</a>&nbsp;<br>As well as offering handy voucher codes for high street shops, this site also produces an excellent blog that offers advice and tips on maintaining a savvy student lifestyle.<br><br>6. <a href="http://www.savethestudent.org">savethestudent.org</a>&nbsp;&nbsp;<br>This site offers very practical ideas on how to save and earn as much money as you can during your time at university. It also provides advice on how to budget and balance your bank account to make sure you have enough money for essentials like household bills. <br><br>7. <a href="https://www.studentmoneysaver.co.uk">studentmoneysaver.co.uk</a>&nbsp;<br>Alongside discounts on everyday brands from coffee to gadgets, this site offers freebies, competitions, student news and ways to make money at home in your spare time, such as becoming a product tester. <br><br>8. <a href="http://www.moneysavingexpert.com">moneysavingexpert.com</a>&nbsp;<br>Whilst this site isn’t dedicated to students, it can be invaluable when trying to save money on utility bills, phone contracts, insurance, and even to help reduce the cost traveling abroad. It also lists the latest discounts available on restaurants and shopping. <br></p> 
+        </article> 
+       </div> 
+      </div>
+     </section> 
+     <section class="call-to-actions"> 
+      <div class="responsive-module"> 
+       <div data-module="content-with-toggles" id="cta-links"> 
+        <a class="call-to-action cta-width" title="Register for an open day" href="http://www.plymouth.ac.uk/mag/openday"> <span class="cta-icon">6</span> <p class="cta-text">Register for an open day</p> </a> 
+        <a class="call-to-action cta-width" title="Request the next issue" href="https://www.plymouth.ac.uk/magazine/request"> <span class="cta-icon">8</span> <p class="cta-text">Request the next issue</p> </a> 
+       </div> 
+      </div>
+     </section> 
+     <section class="section-photo-strip"> 
+      <div class="responsive-module"> 
+       <header class="headings grid-container"> 
+        <h2 class="heading-slate">Student Life magazine - issue 5</h2> 
+        <p></p> 
+       </header> 
+       <div class="photo-strip"> 
+        <div class="thumbnails-container" data-module="carousel"> 
+         <ul class="thumbnails"> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/student-life-magazine">
+            <div>
+             <img alt="A lifestyle magazine. Check out the fifth edition" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18125/xsmall_Cover_student_life_5_jpg_square.jpg">
+            </div> <h4 class="title">Student Life Magazine</h4> <h5 class="description">A lifestyle magazine. Check out the fifth edition</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/eight-money-saving-websites-for-students">
+            <div>
+             <img alt="Exclusive student discounts, rewards, freebies, vouchers, money-saving tips and more" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18146/xsmall_Money_saving_websites_for_students.jpg">
+            </div> <h4 class="title">Eight money saving websites for students</h4> <h5 class="description">Exclusive student discounts, rewards, freebies, vouchers, money-saving tips and more</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/whats-the-best-thing-about-your-first-semester-at-university">
+            <div>
+             <img alt="Plymouth University students share highlights from their first semesters, from joining societies to enjoying the scenery" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18148/xsmall_MAIN_IMAGE_First_semester_highlights.jpg">
+            </div> <h4 class="title">What’s the best thing about your first semester at university?</h4> <h5 class="description">Plymouth University students share highlights from their first semesters, from joining societies to enjoying the scenery</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/how-to-get-a-job-at-university">
+            <div>
+             <img alt="Your guide to finding part-time work while you study" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18157/xsmall_How_to_get_a_job_1_.jpg">
+            </div> <h4 class="title">How to get a job at university</h4> <h5 class="description">Your guide to finding part-time work while you study</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/how-to-get-an-internship-with-a-top-global-brand">
+            <div>
+             <img alt="Fancy having a work placement at one of the most famous companies in the world, like Disney?" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18143/xsmall_Mickey_GettyImages-538564003.jpg">
+            </div> <h4 class="title">How to get an internship with a top global brand</h4> <h5 class="description">Fancy having a work placement at one of the most famous companies in the world, like Disney?</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/12-ways-to-stay-positive">
+            <div>
+             <img alt="Got the winter blues? Been a bit self-critical lately? Use this list of ways to help maintain a positive mental attitude" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18138/xsmall_12_ways_to_stay_positive.jpg">
+            </div> <h4 class="title">12 ways to stay positive</h4> <h5 class="description">Got the winter blues? Been a bit self-critical lately? Use this list of ways to help maintain a positive mental attitude</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/explore-our-animal-science-pod">
+            <div>
+             <img alt="The animal science pod at Dartmoor Zoo gives Plymouth University students up-close access to the animals" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18139/xsmall_as10.jpg">
+            </div> <h4 class="title">Explore our animal science pod</h4> <h5 class="description">The animal science pod at Dartmoor Zoo gives Plymouth University students up-close access to the animals</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/whats-the-best-open-day-youve-been-to">
+            <div>
+             <img alt="Prospective cruise management students at Plymouth University recently attended an open day on board a cruise ship" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18142/xsmall_Main_image.jpg">
+            </div> <h4 class="title">What’s the best open day you’ve been to?</h4> <h5 class="description">Prospective cruise management students at Plymouth University recently attended an open day on board a cruise ship</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/independent-plymouth">
+            <div>
+             <img alt="From coffee to clothes, Plymouth’s array of independent businesses offers something a bit different" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18141/xsmall_Independent_Plymouth_main_image.jpg">
+            </div> <h4 class="title">Independent Plymouth </h4> <h5 class="description">From coffee to clothes, Plymouth’s array of independent businesses offers something a bit different</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/what-to-do-if-you-miss-the-ucas-deadline">
+            <div>
+             <img alt="The UCAS deadline might have passed, but it’s not too late to apply to university…" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18145/xsmall_missed_UCAS_application_deadline.jpg">
+            </div> <h4 class="title">What to do if you miss the UCAS deadline</h4> <h5 class="description">The UCAS deadline might have passed, but it’s not too late to apply to university…</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/will-you-miss-microbeads">
+            <div>
+             <img alt="A Plymouth University academic has contributed to the banning of microbeads, which release harmful plastics into our oceans" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18144/xsmall_Microbeads.jpg">
+            </div> <h4 class="title">Will you miss microbeads?</h4> <h5 class="description">A Plymouth University academic has contributed to the banning of microbeads, which release harmful plastics into our oceans</h5></a> </li> 
+          <li class="thumbnail"> <a href="/student-life/magazine/issue-5/why-more-girls-should-study-stem-subjects">
+            <div>
+             <img alt="Well-paid, satisfying careers await girls who choose STEM, says an engineering lecturer at Plymouth University" class="thumbnail" src="https://d39ner1f41xyl1.cloudfront.net/uploads/production/media_asset/file/18/18147/xsmall_stem1.jpg">
+            </div> <h4 class="title">Why more girls should study STEM subjects</h4> <h5 class="description">Well-paid, satisfying careers await girls who choose STEM, says an engineering lecturer at Plymouth University</h5></a> </li> 
+         </ul> 
+         <a href="#" class="button previous" rel="nofollow">Previous</a> 
+         <a href="#" class="button next" rel="nofollow">Next</a> 
+        </div> 
+       </div> 
+      </div>
+     </section> 
+     <section class="tag-group"> 
+      <div class="responsive-module"> 
+       <div class="grid-container"> 
+        <ul class="tags"> 
+         <li><a rel="tag" href="/tags/student-life">student-life</a></li> 
+         <li><a rel="tag" href="/tags/student-life-magazine">student-life-magazine</a></li> 
+         <li><a rel="tag" href="/tags/issue-5">issue-5</a></li> 
+        </ul> 
+       </div> 
+      </div>
+     </section> 
+     <section class="secondary-navigation"> 
+      <div class="responsive-module"> 
+       <nav class="grid-container"> 
+        <ul> 
+         <li class="also-in"><b>Also in </b><a href="/student-life/magazine/issue-5">Issue 5</a></li> 
+         <li><a href="/student-life/magazine/issue-5/12-ways-to-stay-positive">12 ways to stay positive </a></li> 
+         <li><a href="/student-life/magazine/issue-5/competition">Competition: win a mini-break! </a></li> 
+         <li><a href="/student-life/magazine/issue-5/explore-our-animal-science-pod">Explore our animal science pod </a></li> 
+         <li><a href="/student-life/magazine/issue-5/how-to-get-a-job-at-university">How to get a job at university</a></li> 
+         <li><a href="/student-life/magazine/issue-5/how-to-get-an-internship-with-a-top-global-brand">How to get an internship with a top global brand</a></li> 
+         <li><a href="/student-life/magazine/issue-5/independent-plymouth">Independent Plymouth </a></li> 
+         <li><a href="/student-life/magazine/issue-5/student-life-magazine">Student Life Magazine</a></li> 
+         <li><a href="/student-life/magazine/issue-5">Student Life Magazine - Spring 2017 issue 5</a></li> 
+         <li><a href="/student-life/magazine/issue-5/what-to-do-if-you-miss-the-ucas-deadline">What to do if you miss the UCAS deadline</a></li> 
+         <li><a href="/student-life/magazine/issue-5/whats-the-best-open-day-youve-been-to">What’s the best open day you’ve been to? </a></li> 
+         <li><a href="/student-life/magazine/issue-5/whats-the-best-thing-about-your-first-semester-at-university">What’s the best thing about your first semester at university? </a></li> 
+         <li><a href="/student-life/magazine/issue-5/why-more-girls-should-study-stem-subjects">Why more girls should study STEM subjects</a></li> 
+         <li><a href="/student-life/magazine/issue-5/will-you-miss-microbeads">Will you miss microbeads?</a></li> 
+        </ul> 
+       </nav> 
+      </div>
+     </section> 
+    </div> 
+   </div> 
+   <footer class="footer-main"> 
+    <div class="responsive-module" id="footer-links"> 
+     <nav class="grid-container module-100-50-25"> 
+      <ul> 
+       <li><a href="/study">Courses &amp;&nbsp;study</a></li> 
+       <li><a href="/student-life">Student life</a></li> 
+       <li><a href="/your-university">Your university</a></li> 
+       <li><a href="/international">International Plymouth</a></li> 
+       <li><a href="/research">Research &amp;&nbsp;expertise</a></li> 
+       <li><a href="/business-partners">Business &amp;&nbsp;partners</a></li> 
+       <li><a href="/alumni-friends">Alumni &amp;&nbsp;friends</a></li> 
+       <li><a href="/about-us">About us</a></li> 
+      </ul> 
+     </nav> 
+     <nav class="info grid-container module-100-50-25"> 
+      <ul> 
+       <li><a class="rss" href="/feeds/news">News RSS feed</a></li> 
+       <li><a class="date" href="webcal://www.plymouth.ac.uk/events/feed">Events iCal feed</a></li> 
+       <li><a href="/help/cookies" class="alert">About cookies</a></li> 
+      </ul> 
+     </nav> 
+     <section class="vcard grid-container module-100-50-25" itemprop="publisher" itemscope itemtype="http://schema.org/CollegeOrUniversity"> 
+      <a class="url fn org" itemprop="name" href="/">University of Plymouth</a> 
+      <img alt="University of Plymouth" class="plymuni logo photo" itemprop="logo" src="https://d39ner1f41xyl1.cloudfront.net/assets/plymouth-university-e020c7b0f8acb6555e91bb937924ecd3.png"> 
+      <div class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> 
+       <span class="street-address" itemprop="streetAddress">Drake Circus</span> 
+       <span class="locality" itemprop="addressLocality">Plymouth</span> 
+       <span class="region" itemprop="addressRegion">Devon</span> 
+       <span class="postal-code" itemprop="postalCode">PL4 8AA</span> 
+       <span class="country-name" itemprop="addressCountry">United Kingdom</span> 
+      </div> 
+      <p><a class="tel" itemprop="telephone" href="tel:+441752600600">+44 1752 600600</a></p> 
+      <p><a href="https://maps.google.co.uk/maps?daddr=Plymouth+PL4+8AA&amp;hl=en&amp;sll=51.48931,-0.08819&amp;sspn=1.078278,2.06543&amp;oq=PL4+8AA&amp;mra=ls&amp;t=m&amp;z=17" class="mappin">Maps &amp; directions</a></p> 
+      <p><a href="/your-university/visit" class="visit">Visit us</a></p> 
+      <p><a href="/your-university/jobs" class="jobs">Job vacancies</a></p> 
+     </section> 
+     <section class="grid-container module-100-50-25"> 
+      <a id="footer-logo-link" href="/"> <img alt="Connect With University of Plymouth" src="https://d39ner1f41xyl1.cloudfront.net/assets/crest-small-white-73c500709845a85f1d7aebd572617066.png"> </a> 
+      <ul class="social-sharing colour"> 
+       <li><a href="http://www.facebook.com/plymouthuni" class="facebook"></a>Facebook</li> 
+       <li><a href="http://www.twitter.com/plymuni" class="twitter"></a>Twitter</li> 
+       <li><a href="http://www.youtube.com/user/PlymouthUniversity" class="youtube"></a>Youtube</li> 
+       <li><a href="http://www.instagram.com/plymuni" class="instagram"></a>Instagram</li> 
+       <li><a href="http://www.pinterest.com/plymuni" class="pinterest"></a>Pinterest</li> 
+       <li><a href="https://www.snapchat.com/add/plymuni" class="snapchat"></a>Snapchat</li> 
+       <li><a href="http://www.linkedin.com/edu/school?id=12719" class="linkedin"></a>Linkedin</li> 
+       <li><a href="http://plus.google.com/+plymouthuniversity?rel=author" class="googleplus"></a>Googleplus</li> 
+      </ul> 
+     </section> 
+    </div> 
+   </footer> 
+  </div> 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45498918-1', 'plymouth.ac.uk');
+  ga('send', 'pageview');
+
+</script> 
+  <script type="text/javascript">
+	/*<![CDATA[*/
+	(function() {
+	var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+	sz.src = '//siteimproveanalytics.com/js/siteanalyze_9961.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+	})();
+	/*]]>*/
+</script> 
+  <!-- Facebook Tracking code --> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '691348174304950');
+fbq('track', 'PageView');
+</script> 
+  <script>
+//<![CDATA[
+
+  var Plymouth = Plymouth || {};
+  Plymouth.User = {};
+
+//]]>
+</script> 
+  <script src="https://d39ner1f41xyl1.cloudfront.net/assets/application-81634a3bbf9b5578e3cd3438bdb97e01.js"></script> 
+  <!--[if IE 8]>
+  <script src="https://d39ner1f41xyl1.cloudfront.net/assets/ie8-load-last-72d67d6628fedceeaa1917294184345f.js"></script>
+<![endif]--> 
+ </body>
+</html>

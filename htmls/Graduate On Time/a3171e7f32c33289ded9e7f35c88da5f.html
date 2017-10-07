@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Entrance, Graduation year|Calculate the calendar|Calculator Site</title> 
+  <meta name="robots" content="index,follow"> 
+  <meta name="robots" content="all"> 
+  <meta name="description" content="Entrance year and graduation year of school is calculated at the specified date of birth."> 
+  <meta name="keywords" content="entrance,graduation,year,list,japaense calendar,calculation,calculator"> 
+  <meta name="copyright" content="http://www.calc-site.com"> 
+  <meta http-equiv="Content-Style-Type" content="text/css"> 
+  <meta http-equiv="Content-Script-Type" content="text/javascript"> 
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/calendar.css">
+  <link rel="stylesheet" type="text/css" href="/css/calculator.css">
+  <link rel="stylesheet" type="text/css" href="/css/stopwatch.css">
+  <link rel="stylesheet" type="text/css" href="/css/contact.css">
+  <script type="text/javascript" src="/js/onload.js"></script>
+  <script type="text/javascript" src="/js/addevent.js"></script>
+  <script type="text/javascript" src="/js/calendar.js"></script>
+  <script type="text/javascript" src="/js/calculator.js"></script>
+  <script type="text/javascript" src="/js/time.js"></script>
+  <!--<script type="text/javascript" src="time.js"></script>--> 
+  <!--<link rel="stylesheet" type="text/css" href="css/common.css" />--> 
+  <!--/img/logo.jpg--> 
+  <script type="text/javascript">
+onload = function() {
+	var	fc = '';
+	if(fc){ fc; }
+};
+</script> 
+  <script type="text/javascript">
+var year = 2017;
+var month = 9;
+var day = 5;
+var root_dir = '/';
+var lang = 'en';
+</script> 
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20871439-36']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+ </head> 
+ <body> 
+  <!--|====================FACEBOOK=====================|--> 
+  <div id="fb-root"></div> 
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> 
+  <!--|====================FACEBOOK=====================|--> 
+  <div id="container"> 
+   <!--|====================HEADER=====================|--> 
+   <div id="header"> 
+    <div id="logo">
+     <a href="http://en.calc-site.com/"><img src="/img/logo_en.jpg" width="145" height="28" alt="Calculator Site"></a>
+    </div> 
+    <div id="sitemap"> 
+     <div id="language"> 
+      <a href="http://www.calc-site.com/"><img src="/img/japanese.png" width="24" height="24" alt="Japanese"></a> 
+      <a href="http://en.calc-site.com/"><img src="/img/english.png" width="24" height="24" alt="English"></a> 
+     </div> 
+     <a href="/sitemaps">Site Map</a> 
+    </div> 
+    <div id="headline"> 
+     <h1>Entrance year and graduation year of school is calculated at the specified date of birth.</h1> 
+     <h2>Entrance and graduation of junior high school and high school is calculated by christian era and japanese calendar and displayed.</h2> 
+    </div> 
+    <div id="head_search"> 
+     <div id="head_search_date"> 
+     </div> 
+     <div id="head_search_all"> 
+     </div> 
+    </div> 
+   </div> 
+   <!--|====================/HEADER====================|--> 
+   <!--|====================MENU=======================|--> 
+   <div id="menu" class="clearfix"> 
+    <ul> 
+     <li><a href="/">Front page</a></li> 
+     <li><a href="/search_dates/10/5/2017">Today's calendar</a></li> 
+     <li><a href="/times">Calculate time</a></li> 
+     <li><a href="/dates">Calculate date</a></li> 
+     <li><a href="/calendars">Calculate calendar</a></li> 
+     <li><a href="/probabilities">Probability</a></li> 
+     <li><a href="/units">Convert unit</a></li> 
+     <li><a href="/triangles">Calculate triangle</a></li> 
+    </ul> 
+   </div> 
+   <!--|====================/MENU======================|--> 
+   <!--|====================CONTENTS===================|--> 
+   <div id="contents" class="clearfix"> 
+    <div id="left_navi"> 
+     <!--
+<div class="left_navi01">
+	<div class="left_navi02"><img src="/img/left_title01.jpg" alt="Current time" width="190" height="30" /></div>
+	<div class="left_navi03">
+		<div id="time_window"></div>
+	</div>
+</div>
+--> 
+     <div class="left_navi01"> 
+      <div class="left_navi02">
+       <img src="/img/left_title02_en.jpg" alt="Calendar" width="200" height="30">
+      </div> 
+      <div class="left_navi03"> 
+       <div id="calendar_body">
+        <table border="0" cellpadding="0" cellspacing="0"> 
+         <tbody>
+          <tr>
+           <td colspan="7"> 
+            <table border="0" cellpadding="0" cellspacing="0" class="title"> 
+             <tbody>
+              <tr>
+               <td class="left arrow"> <a href="javascript:void(0);" onclick="show_calendar(2016,9,5);">&lt;&lt;</a> </td>
+               <td class="left arrow"> <a href="javascript:void(0);" onclick="show_calendar(2017,8,5);">&lt;</a> </td>
+               <td class="center"> Oct. 2017 </td>
+               <td class="right arrow"> <a href="javascript:void(0);" onclick="show_calendar(2017,10,5);">&gt;</a> </td>
+               <td class="right arrow"> <a href="javascript:void(0);" onclick="show_calendar(2018,9,5);">&gt;&gt;</a> </td>
+              </tr> 
+             </tbody>
+            </table> </td>
+          </tr> 
+          <tr>
+           <td class="sunday">Sun</td>
+           <td class="weekday">Mon</td>
+           <td class="weekday">Tue</td>
+           <td class="weekday">Wed</td>
+           <td class="weekday">Thu</td>
+           <td class="weekday">Fri</td>
+           <td class="saturday">Sat</td>
+          </tr> 
+          <tr> 
+           <td class="sunday"> <a href="/search_dates/10/1/2017">1</a></td> 
+           <td><a href="/search_dates/10/2/2017">2</a></td> 
+           <td><a href="/search_dates/10/3/2017">3</a></td> 
+           <td><a href="/search_dates/10/4/2017">4</a></td> 
+           <td><a href="/search_dates/10/5/2017">5</a></td> 
+           <td><a href="/search_dates/10/6/2017">6</a></td> 
+           <td class="saturday"> <a href="/search_dates/10/7/2017">7</a></td> 
+          </tr> 
+          <tr> 
+           <td class="sunday"> <a href="/search_dates/10/8/2017">8</a></td> 
+           <td><a href="/search_dates/10/9/2017">9</a></td> 
+           <td><a href="/search_dates/10/10/2017">10</a></td> 
+           <td><a href="/search_dates/10/11/2017">11</a></td> 
+           <td><a href="/search_dates/10/12/2017">12</a></td> 
+           <td><a href="/search_dates/10/13/2017">13</a></td> 
+           <td class="saturday"> <a href="/search_dates/10/14/2017">14</a></td> 
+          </tr> 
+          <tr> 
+           <td class="sunday"> <a href="/search_dates/10/15/2017">15</a></td> 
+           <td><a href="/search_dates/10/16/2017">16</a></td> 
+           <td><a href="/search_dates/10/17/2017">17</a></td> 
+           <td><a href="/search_dates/10/18/2017">18</a></td> 
+           <td><a href="/search_dates/10/19/2017">19</a></td> 
+           <td><a href="/search_dates/10/20/2017">20</a></td> 
+           <td class="saturday"> <a href="/search_dates/10/21/2017">21</a></td> 
+          </tr> 
+          <tr> 
+           <td class="sunday"> <a href="/search_dates/10/22/2017">22</a></td> 
+           <td><a href="/search_dates/10/23/2017">23</a></td> 
+           <td><a href="/search_dates/10/24/2017">24</a></td> 
+           <td><a href="/search_dates/10/25/2017">25</a></td> 
+           <td><a href="/search_dates/10/26/2017">26</a></td> 
+           <td><a href="/search_dates/10/27/2017">27</a></td> 
+           <td class="saturday"> <a href="/search_dates/10/28/2017">28</a></td> 
+          </tr> 
+          <tr> 
+           <td class="sunday"> <a href="/search_dates/10/29/2017">29</a></td> 
+           <td><a href="/search_dates/10/30/2017">30</a></td> 
+           <td><a href="/search_dates/10/31/2017">31</a></td> 
+           <td class="otherday"><a href="/search_dates/11/1/2017">1</a></td> 
+           <td class="otherday"><a href="/search_dates/11/2/2017">2</a></td> 
+           <td class="otherday"><a href="/search_dates/11/3/2017">3</a></td> 
+           <td class="otherday"><a href="/search_dates/11/4/2017">4</a></td> 
+          </tr> 
+         </tbody>
+        </table> 
+       </div> 
+       <!--echo $calendar->makeCalendar('ja'); --> 
+      </div> 
+     </div> 
+     <div class="left_navi01"> 
+      <div class="left_navi02">
+       <img src="/img/left_title03_en.jpg" alt="Calculator Site Contents" width="200" height="30">
+      </div> 
+      <div class="left_navi03"> 
+       <ul> 
+        <li class="li_title icon"><a href="/times"><img src="/img/icon/time.png" alt="Calculate time" width="32" height="32">Calculate time</a></li> 
+        <li class="li_title icon"><a href="/dates"><img src="/img/icon/date.png" alt="Calculate date" width="32" height="32">Calculate date</a></li> 
+        <li class="li_title icon"><a href="/calendars"><img src="/img/icon/calendar.png" alt="Calculate calendar" width="32" height="32">Calculate calendar</a></li> 
+        <li class="li_title icon"><a href="/biorhythms"><img src="/img/icon/biorhythm.png" alt="Calculate biorhythm" width="32" height="32">Calculate biorhythm</a></li> 
+        <li class="li_title icon"><a href="/letters"><img src="/img/icon/letter.png" alt="Convert character" width="32" height="32">Convert character</a></li> 
+        <li class="li_title icon"><a href="/units"><img src="/img/icon/unit.png" alt="Convert unit" width="32" height="32">Convert unit</a></li> 
+        <li class="li_title icon"><a href="/maps"><img src="/img/icon/map.png" alt="Calculate map" width="32" height="32">Calculate map</a></li> 
+        <li class="li_title icon"><a href="/randoms"><img src="/img/icon/random.png" alt="Calculate random numbers" width="32" height="32">Calculate random numbers</a></li> 
+        <li class="li_title icon"><a href="/probabilities"><img src="/img/icon/probability.png" alt="Calculate probability" width="32" height="32">Calculate probability</a></li> 
+        <li class="li_title icon"><a href="/areas"><img src="/img/icon/area.png" alt="Calculate area" width="32" height="32">Calculate area</a></li> 
+        <li class="li_title icon"><a href="/volumes"><img src="/img/icon/volume.png" alt="Calculate volume" width="32" height="32">Calculate volume</a></li> 
+        <li class="li_title icon"><a href="/triangles"><img src="/img/icon/triangle.png" alt="Calculate triangle" width="32" height="32">Calculate triangle</a></li> 
+        <li class="li_title icon"><a href="/divisors"><img src="/img/icon/divisor.png" alt="Calculate divisor and multiple" width="32" height="32">Calculate divisor and multiple</a></li> 
+        <li class="li_title icon"><a href="/progressions"><img src="/img/icon/progression.png" alt="Calculate progression" width="32" height="32">Calculate progression</a></li> 
+        <li class="li_title">Information 
+         <ul> 
+          <li><a href="/informations/disclaimer">About exemption matters</a></li> 
+         </ul> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="left_navi01"> 
+      <div class="left_navi02">
+       <img src="/img/left_title04_en.jpg" alt="Search in site" width="200" height="30">
+      </div> 
+      <div class="left_navi03"> 
+       <div id="search-box"> 
+        <form action="http://www.google.com" id="cse-search-box" target="_blank"> 
+         <div> 
+          <input type="hidden" name="cx" value="partner-pub-1096968304667910:5961968678"> 
+          <input type="hidden" name="ie" value="UTF-8"> 
+          <input type="text" name="q" size="55"> 
+          <input type="submit" name="sa" value="Search"> 
+         </div> 
+        </form> 
+        <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="left_navi04"> 
+      <script type="text/javascript"><!--
+google_ad_client = "ca-pub-1096968304667910";
+/* calc-site left2 */
+google_ad_slot = "4308608673";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script> 
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+     </div> 
+    </div> 
+    <div id="main"> 
+     <script type="text/javascript" src="/js/day_count.js"></script>
+     <!--|====================PANKUZU====================|--> 
+     <div id="pankuzu" class="clearfix"> 
+      <ul> 
+       <li class="start"><a href="/">Front page</a></li> 
+       <li><a href="/calendars">Calculate calendar</a></li> 
+       <li>Calculate entrance and graduation year</li> 
+      </ul> 
+     </div> 
+     <!--|====================/PANKUZU===================|--> 
+     <h2>Calculate entrance and graduation year</h2> 
+     <div class="sns_tmp"> 
+      <!-- Place this tag where you want the +1 button to render. --> 
+      <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+      <!-- Place this tag after the last +1 button tag. --> 
+      <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script> 
+      <a href="http://www.facebook.com/share.php?u=http://en.calc-site.com/calendars/graduation" onclick="window.open(this.href, 'facebookwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;"><img src="/img/facebook.png" width="20" height="20" alt="Share"></a> 
+      <a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a> 
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+     </div>
+     <div class="text"> 
+      <div id="head_search"> 
+       <div id="head_search_date"> 
+        <div class="explain"> 
+         <p>The list of entrance and graduation year calculated by date of birth is displayed.</p> 
+         <p>When you enter the date of birth and click the button "calculate entrance and graduation year,", the age of each entrance and graduation of elementary school, junior high school, high school, junior college, and four‐year university is calculated by the Christian era and japanese calendar and displayed.</p> 
+         <p>It changes as new year on April 2, previous year on April 1.</p> 
+         <p>Neither repeating a year nor the failed student are included in the calculation.</p> 
+         <p>(Elementary school: 6 years, Junior high school: 3 years, High school: 3 years, Junior college: 2 years, Four‐year university: 4 years,)</p> 
+        </div> 
+        <form action="" method="post"> 
+         <div class="under_pad">
+           Date of birth: YEAR
+          <select name="from_year" id="from_year" onchange="day_change(1);"> <option value="0"></option> <option value="1902">1902</option><option value="1903">1903</option><option value="1904">1904</option><option value="1905">1905</option><option value="1906">1906</option><option value="1907">1907</option><option value="1908">1908</option><option value="1909">1909</option><option value="1910">1910</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017" selected>2017</option> </select> MONTH
+          <select name="from_month" id="from_month" onchange="day_change(1);"> <option value="0"></option> <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10" selected>October</option><option value="11">November</option><option value="12">December</option> </select> DAY
+          <select name="from_day" id="from_day"> <option value="0"></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option> </select> 
+         </div> 
+         <div class="under_pad"> 
+          <input type="submit" value="Calculate entrance and graduation year"> 
+         </div> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+     <h3>The list of entrance and graduation year of birth on October 5, 2017</h3> 
+     <table border="0" cellpadding="0" cellspacing="0" class="anno"> 
+      <tbody>
+       <tr> 
+        <th>Entrance and graduation</th>
+        <th>A.D.</th>
+        <th>Japanese calendar</th> 
+       </tr> 
+       <tr> 
+        <td>Enter Elementary school</td>
+        <td>April, 2024</td>
+        <td>Heisei 36</td> 
+       </tr> 
+       <tr> 
+        <td>Graduate Elementary school</td>
+        <td>March, 2030</td>
+        <td>Heisei 42</td> 
+       </tr> 
+       <tr> 
+        <td>Enter Junior high school</td>
+        <td>April, 2030</td>
+        <td>Heisei 42</td> 
+       </tr> 
+       <tr> 
+        <td>Graduate Junior high school</td>
+        <td>March, 2033</td>
+        <td>Heisei 45</td> 
+       </tr> 
+       <tr> 
+        <td>Enter High school</td>
+        <td>April, 2033</td>
+        <td>Heisei 45</td> 
+       </tr> 
+       <tr> 
+        <td>Graduate High school</td>
+        <td>March, 2036</td>
+        <td>Heisei 48</td> 
+       </tr> 
+       <tr> 
+        <td>Enter Junior college<br>Enter Four‐year university</td>
+        <td>April, 2036</td>
+        <td>Heisei 48</td> 
+       </tr> 
+       <tr> 
+        <td>Graduate Junior college</td>
+        <td>March, 2038</td>
+        <td>Heisei 50</td> 
+       </tr> 
+       <tr> 
+        <td>Enter Four‐year university</td>
+        <td>March, 2040</td>
+        <td>Heisei 52</td> 
+       </tr> 
+      </tbody>
+     </table> 
+     <!--
+<div class="under_banner_outer">
+	<div class="under_banner">
+	</div>
+</div>
+--> 
+     <div class="pagetop clear_b">
+      <a href="#header">Go to top</a>
+     </div> 
+     <div class="category_main_body"> 
+      <li class="category_main_padding"><a href="/calendars"><span class="title">Calculate calendar</span></a> 
+       <ul> 
+        <li class="little sitemap_float">･<a href="/calendars/ad_conversion">Christian era and japanese calendar conversion table</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/age_list">Age Chart</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/graduation">Calculate entrance and graduation year</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/zodiac">Calculate the sexagenary cycle</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/old_calendar">Old calendar conversion table</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/climate">Calculate the 72 divisions of the solar year</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/solar_year">Calculate the 24 divisions of the solar year</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/moon_age">Calculate the age of the moon</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/twenty_eight_mansion">Calculate the 28 mansions of Chinese astronomy</a></li> 
+        <li class="little sitemap_float">･<a href="/calendars/twelve_word">Calculate the 12 words used to mark the old calendar</a></li> 
+       </ul> </li> 
+      <br class="clear_b"> 
+     </div> 
+    </div> 
+    <div id="right_navi"> 
+     <div class="under_pad"> 
+      <script type="text/javascript"><!--
+google_ad_client = "ca-pub-1096968304667910";
+/* calc-site right2 */
+google_ad_slot = "9184839877";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script> 
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+     </div> 
+     <div class="left_navi01"> 
+      <div class="left_navi05">
+       <h3><img src="/img/icon/calendar.png" alt="Calculate calendar" width="32" height="32">Calculate calendar</h3>
+      </div> 
+      <div class="left_navi03"> 
+       <div id="search-box"> 
+        <ul> 
+         <li class="li_title"><a href="/calendars/ad_conversion">Christian era and japanese calendar conversion table</a></li> 
+         <li class="li_title"><a href="/calendars/age_list">Age Chart</a></li> 
+         <li class="li_title">Calculate entrance and graduation year</li> 
+         <li class="li_title"><a href="/calendars/zodiac">Calculate the sexagenary cycle</a></li> 
+         <li class="li_title"><a href="/calendars/old_calendar">Old calendar conversion table</a></li> 
+         <li class="li_title"><a href="/calendars/climate">Calculate the 72 divisions of the solar year</a></li> 
+         <li class="li_title"><a href="/calendars/solar_year">Calculate the 24 divisions of the solar year</a></li> 
+         <li class="li_title"><a href="/calendars/moon_age">Calculate the age of the moon</a></li> 
+         <li class="li_title"><a href="/calendars/twenty_eight_mansion">Calculate the 28 mansions of Chinese astronomy</a></li> 
+         <li class="li_title"><a href="/calendars/twelve_word">Calculate the 12 words used to mark the old calendar</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="left_navi01"> 
+      <div class="left_navi05">
+       <h3><img src="/img/icon/calculator.png" alt="Calculator" width="32" height="32">Simple Calculator</h3>
+      </div> 
+      <div class="left_navi03"> 
+       <div id="calculator"> 
+        <div class="calc_box"> 
+         <input type="text" id="calc_display" value=""> 
+        </div> 
+        <div class="calc_button"> 
+         <table border="0" cellpadding="0" cellspacing="0" class="calculator"> 
+          <tbody>
+           <tr> 
+            <td><input type="image" src="/img/calculator/button_c.png" width="58" height="38" onclick="calc('c')"></td> 
+            <td><input type="image" src="/img/calculator/button_bs.png" width="58" height="38" onclick="calc('bs')"></td> 
+            <td><input type="image" src="/img/calculator/button_parl.png" width="58" height="38" onclick="calc('(')"></td> 
+            <td><input type="image" src="/img/calculator/button_parr.png" width="58" height="38" onclick="calc(')')"></td> 
+           </tr> 
+           <tr> 
+            <td><input type="image" src="/img/calculator/button7.png" width="58" height="38" onclick="calc('7')"></td> 
+            <td><input type="image" src="/img/calculator/button8.png" width="58" height="38" onclick="calc('8')"></td> 
+            <td><input type="image" src="/img/calculator/button9.png" width="58" height="38" onclick="calc('9')"></td> 
+            <td><input type="image" src="/img/calculator/button_divide.png" width="58" height="38" onclick="calc('/')"></td> 
+           </tr> 
+           <tr> 
+            <td><input type="image" src="/img/calculator/button4.png" width="58" height="38" onclick="calc('4')"></td> 
+            <td><input type="image" src="/img/calculator/button5.png" width="58" height="38" onclick="calc('5')"></td> 
+            <td><input type="image" src="/img/calculator/button6.png" width="58" height="38" onclick="calc('6')"></td> 
+            <td><input type="image" src="/img/calculator/button_cross.png" width="58" height="38" onclick="calc('*')"></td> 
+           </tr> 
+           <tr> 
+            <td><input type="image" src="/img/calculator/button1.png" width="58" height="38" onclick="calc('1')"></td> 
+            <td><input type="image" src="/img/calculator/button2.png" width="58" height="38" onclick="calc('2')"></td> 
+            <td><input type="image" src="/img/calculator/button3.png" width="58" height="38" onclick="calc('3')"></td> 
+            <td><input type="image" src="/img/calculator/button_minus.png" width="58" height="38" onclick="calc('-')"></td> 
+           </tr> 
+           <tr> 
+            <td><input type="image" src="/img/calculator/button0.png" width="58" height="38" onclick="calc('0')"></td> 
+            <td><input type="image" src="/img/calculator/button_dot.png" width="58" height="38" onclick="calc('.')"></td> 
+            <td><input type="image" src="/img/calculator/button_equal.png" width="58" height="38" onclick="calc('=')"></td> 
+            <td><input type="image" src="/img/calculator/button_plus.png" width="58" height="38" onclick="calc('+')"></td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+       </div> 
+       <div class="temporary"> 
+        <span class="temp_save" onclick="temp_copy()">Save results in a temporary</span> 
+        <div id="temp_area"></div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="left_navi01"> 
+      <div class="left_navi05">
+       <h3><img src="/img/icon/popular.png" alt="Popular page" width="32" height="32">Popular page</h3>
+      </div> 
+      <div class="left_navi03"> 
+       <div id="search-box"> 
+        <ul> 
+         <li class="li_title">1. <a href="/calendars/graduation">Calculate entrance and graduation year</a></li> 
+         <li class="li_title">2. <a href="/letters/convert_full_half">Convert full-width &lt;--&gt; half-width</a></li> 
+         <li class="li_title">3. <a href="/letters/convert_kana">Converte to Hiragana &lt;--&gt; Katakana</a></li> 
+         <li class="li_title">4. <a href="/calendars/ad_conversion">Christian era and japanese calendar conversion table</a></li> 
+         <li class="li_title">5. <a href="/units/volume">Convert volume</a></li> 
+         <li class="li_title">6. <a href="/units/length">Convert length</a></li> 
+         <li class="li_title">7. <a href="/letters/convert_space">Convert space</a></li> 
+         <li class="li_title">8. <a href="/units/hour">Convert time</a></li> 
+         <li class="li_title">9. <a href="/units/weight">Convert weight</a></li> 
+         <li class="li_title">10. <a href="/units/area">Convert area</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="left_navi01"> 
+      <!--
+	<a href="" target="_blank"><img src="/img/mocchin.jpg" alt="Line Sticker Mocchin" width="300" height="250" /></a>
+--> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+      <!-- calc-site right3 --> 
+      <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-1096968304667910" data-ad-slot="2469440674"></ins> 
+      <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+     </div> 
+    </div> 
+   </div> 
+   <!--|====================/CONTENTS==================|--> 
+   <!--|====================FOOTER=====================|--> 
+   <div id="footer"> 
+    <ul> 
+     <li class="start"><a href="/times">Calculate time</a></li> 
+     <li class="li_title"><a href="/dates">Calculate date</a></li> 
+     <li class="li_title"><a href="/calendars">Calculate calendar</a></li> 
+     <li class="li_title"><a href="/biorhythms">Calculate biorhythm</a></li> 
+     <li class="li_title"><a href="/letters">Convert character</a></li> 
+     <li class="li_title"><a href="/units">Convert unit</a></li> 
+     <li class="li_title"><a href="/maps">Calculate map</a></li> 
+     <li class="li_title"><a href="/randoms">Calculate random numbers</a></li> 
+     <li class="li_title"><a href="/probabilities">Calculate probability</a></li> 
+    </ul> 
+    <ul> 
+     <li class="start"><a href="/areas">Calculate area</a></li> 
+     <li class="li_title"><a href="/volumes">Calculate volume</a></li> 
+     <li class="li_title"><a href="/triangles">Calculate triangle</a></li> 
+     <li class="li_title"><a href="/divisors">Calculate divisor and multiple</a></li> 
+     <li class="li_title"><a href="/progressions">Calculate progression</a></li> 
+     <li class="li_title"><a href="/informations/disclaimer">About exemption matters</a></li> 
+    </ul> 
+    <!--
+	<ul class="end">
+
+	</ul>
+	--> 
+    <div class="copyright">
+     Copyright (C) 2013 Calculator Site All Rights Reserved.
+    </div> 
+   </div> 
+   <!--|====================/FOOTER====================|--> 
+  </div>  
+ </body>
+</html>

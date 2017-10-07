@@ -1,0 +1,1116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="alternate" type="application/rss+xml" href="https://www.onetcenter.org/rss/whatsnew.xml"> 
+  <link rel="stylesheet" type="text/css" href="/shared/bubblepop/bubblepop-1.0.css"> 
+  <link rel="stylesheet" type="text/css" href="/shared/fancybox-2.1.5/jquery.fancybox.css"> 
+  <link rel="stylesheet" type="text/css" href="/shared/base.css"> 
+  <link rel="stylesheet" type="text/css" href="/shared/header.css"> 
+  <link rel="stylesheet" type="text/css" href="/css_main.css"> 
+  <script type="text/javascript" src="/shared/jquery/jquery-1.9.1.min.js"></script> 
+  <script type="text/javascript" src="/shared/jquery/jquery-migrate-1.1.1.min.js"></script> 
+  <script type="text/javascript" src="/shared/bubblepop/bubblepop-1.0.js"></script> 
+  <script type="text/javascript" src="/shared/fancybox-2.1.5/jquery.fancybox.pack.js"></script> 
+  <script type="text/javascript" src="/shared/base.js"></script> 
+  <script type="text/javascript" src="/js_main.js"></script> 
+  <style type="text/css">
+.help_popup {
+  width: 400px;
+}
+.backlink, .openlink {
+  position: absolute;
+  color: white !important;
+  text-decoration: none;
+  font-size: 11px;
+  text-shadow: 1px 1px 3px black, -1px -1px 3px black;
+}
+.backlink {
+  top: -20px;
+  left: 0;
+}
+.openlink {
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+li.task ul {
+  margin-top: 6px;
+}
+ul.moreinfo {
+  list-style-type: none;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+ul.moreinfo li {
+  position: relative;
+  margin: 0 0 6px 0;
+  padding: 0;
+}
+ul.moreinfo li a.more {
+  position: absolute;
+  top: 1px;
+  left: -20px;
+}
+div.moreinfo {
+  position: relative;
+  padding: 0 0 0 20px;
+}
+div.moreinfo a.more {
+  position: absolute;
+  top: 1px;
+  left: 0;
+}
+.long { display: none; }
+
+</style> 
+  <script type="text/javascript">
+var loadPopup;
+function openFrame() {
+  var outer = $('.fancybox-iframe').get(0).contentWindow;
+  var src = outer.document.getElementById('extFrame').src;
+  window.open(src, '_blank');
+  return false;
+}
+function toggle_section(section, show)
+{
+  if (show)
+  {
+    $('.section_' + section + ' .long').show();
+    $('.section_' + section + ' .short').hide();
+  }
+  else
+  {
+    $('.section_' + section + ' .long').hide();
+    $('.section_' + section + ' .short').show();
+  }
+  return false;
+}
+
+$(document).ready(function(){
+
+$('.long').hide();
+$('.short').show();
+$('.start_expanded .long').show();
+$('.start_expanded .short').hide();
+
+if ($('.switch-to-tools').get(0)) {
+  $('#wrapper_ToolsUsed').hide(0);
+}
+$('.switch-to-tools').on('click', function() {
+  $('#wrapper_ToolsUsed').show();
+  $('#wrapper_TechnologySkills').hide();
+  return false;
+  });
+$('.switch-to-tech').on('click', function() {
+  $('#wrapper_TechnologySkills').show();
+  $('#wrapper_ToolsUsed').hide();
+  return false;
+  });
+
+$('#anchor-TechnologySkills-0').on('click', function() {
+  $('#wrapper_TechnologySkills').show();
+  $('#wrapper_ToolsUsed').hide();
+  return true;
+  });
+$('#anchor-ToolsUsed-0').on('click', function() {
+  $('#wrapper_ToolsUsed').show();
+  $('#wrapper_TechnologySkills').hide();
+  return true;
+  });
+
+StateReady('stid');
+StateReady('stid2');
+StateReady('stidcred');
+StateReady('stwage');
+
+      var fbShow = function() {
+        $("#allcontent").attr('aria-hidden', 'true');
+        var fwrap = $(".fancybox-wrap");
+        fwrap.attr('role', 'dialog');
+        fwrap.attr('aria-hidden', 'false');
+        fwrap.focus();
+      };
+      var fbClose = function() {
+        $("#allcontent").attr('aria-hidden', 'false');
+      };
+        
+$(".mpopup").fancybox({
+  width : 500,
+  height : 'auto',
+  autoHeight : true,
+  afterShow : fbShow,
+  afterClose : fbClose,
+  type : 'ajax',
+  beforeLoad : function() {
+    url = $(this.element).attr("href");
+    if (url.indexOf('?') < 0)
+      this.href = url + "?fb=ajax";
+    else
+      this.href = url + "&amp;fb=ajax";
+  }
+});
+$(".cpopup").fancybox({
+  width : 320,
+  height : 210,
+  afterShow : fbShow,
+  afterClose : fbClose,
+  type : 'iframe'
+});
+$(".jpopup").fancybox({
+  width : 320,
+  height : 250,
+  afterShow : fbShow,
+  afterClose : fbClose,
+  type : 'iframe'
+});
+$(".credpopup").fancybox({
+  width : 1064,
+  minWidth : 1064,
+  height : 800,
+  padding : 0,
+  margin : [ 50, 20, 50, 20 ],
+  autoResize : true,
+  afterShow : fbShow,
+  afterClose : fbClose,
+  tpl : {
+    closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><\/a><a title="Close" class="fancybox-item backlink" href="javascript:;">&lt;&lt; Back to <b>Educational, Guidance, School, and Vocational Counselors<\/b><\/a><a class="fancybox-item openlink" href="javascript:;" onclick="return openFrame()">Open in new tab<\/a>' },
+  type : 'iframe'
+});
+$('.help_bubble').bubblepop({ 
+  customClass : 'help_popup',
+  toggleBubble : true,
+  hideOnOutsideClick : true,
+  invert : true
+});
+
+var fb = $.fancybox;
+
+loadPopup = function(url, w, h, forcewidth) {  
+  fb.close();
+  $(':animated').finish();
+  
+  fb.open({
+    href : url,
+    width : w,
+    minWidth : (forcewidth ? w : 100),
+    maxWidth : w,
+    height : (h ? h : 1000),
+    minHeight : 100,
+    maxHeight : (h ? h : 2000),
+    padding : 0,
+    margin : [ 50, 20, 50, 20 ],
+    autoResize : true,
+    tpl : {
+    closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><\/a><a title="Close" class="fancybox-item backlink" href="javascript:;">&lt;&lt; Back to <b>Educational, Guidance, School, and Vocational Counselors<\/b><\/a><a class="fancybox-item openlink" href="javascript:;" onclick="return openFrame()">Open in new tab<\/a>' },
+    type : 'iframe' });
+ };
+
+});
+</script> 
+  <title>21-1012.00 - Educational, Guidance, School, and Vocational Counselors</title> 
+ </head> 
+ <body> 
+  <!--[if lte IE 6]>
+<script type="text/javascript" src="/shared/base_ie6.js"></script>
+<![endif]--> 
+  <!--[if lte IE 7]>
+<script type="text/javascript" src="/shared/base_ie7.js"></script>
+<![endif]--> 
+  <a name="top"></a> 
+  <div id="allcontent"> 
+   <a href="#postnav" id="skipnav" class="screenreader">Skip navigation</a> 
+   <div id="headprint" style="display: none; width: 500px"> 
+    <img src="/shared/image/newui/onet_logo_print.png" alt="O*NET" width="100" height="74" style="width: 100px">
+    <img src="/shared/image/newui/header_online_print.png" width="400" height="74" alt="O*NET OnLine" style="width: 400px"> 
+   </div> 
+   <div id="head" style="position: relative; height: 88px; width: 938px; margin: 0 auto; overflow: hidden"> 
+    <div style="position: absolute; left: 0; top: 7px; width: 100px; height: 74px; background: transparent url(/shared/image/newui/onet_logo_print.png) no-repeat"></div> 
+    <a href="/" style="position: absolute; left: 100px; top: 21px"><img src="/shared/image/header_online.png" width="450" height="40" alt="O*NET OnLine"></a> 
+    <div style="position: absolute; right: 0; top: 0; width: 400px; height: 80px"> 
+     <form action="/find/quick" method="GET"> 
+      <label for="quick" style="color: #147; font-family: Verdana; font-size: 10px; font-weight: bold; width: 228px; position: absolute; right: 0; bottom: 50px">Occupation Quick Search:</label> 
+      <div style="width: 250px; height: 26px; position: absolute; right: 0; top: 31px; background: transparent url(/shared/image/newui/searchbar.gif)"> 
+       <input type="text" class="txt" name="s" id="quick" maxlength="100" title="Examples: 25-1011.00, dental assistant" style="width: 190px; height: 18px; line-height: 18px; outline: none; border: none; padding: 0; margin: 0; position: absolute; top: 4px; left: 22px; font-family: Verdana; font-size: 12px"> 
+       <input type="image" name="g" value="Go" src="/shared/image/newui/searchbar_go.png" alt="Go" style="width: 18px; height: 18px; position: absolute; right: 4px; top: 4px" onclick="this.form.submit(); return false"> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+   <div id="menubar"> 
+    <div id="popup_help_btn"> 
+     <a id="popup_help_href" class="popupbutton_out" href="/help/online/summary">Help</a> 
+     <ul id="popup_help_menu" style="display: none"> 
+      <li><a href="/help/online/summary">OnLine Help</a></li> 
+      <li><a href="https://www.onetcenter.org/overview.html">About O*NET</a></li> 
+      <li><a href="/help/online/deskaid">OnLine Desk Aid</a></li> 
+      <li><a href="/shared/jobhelp">Job Seeker Help</a></li> 
+      <li><a href="/help/online/accom">Job Accommodations</a></li> 
+      <li><a href="https://www.onetcenter.org/links.html">Related Sites</a></li> 
+      <li><a href="/">Home</a></li> 
+     </ul>
+    </div> 
+    <div id="popup_findocc_btn"> 
+     <a id="popup_findocc_href" class="popupbutton_out" href="/find/">Find Occupations</a> 
+     <ul id="popup_findocc_menu" style="display: none"> 
+      <li><a href="/find/bright">Bright Outlook</a></li> 
+      <li><a href="/find/career">Career Cluster</a></li> 
+      <li><a href="/find/green">Green Economy Sector</a></li> 
+      <li><a href="/find/industry">Industry</a></li> 
+      <li><a href="/find/family">Job Family</a></li> 
+      <li><a href="/find/zone">Job Zone</a></li> 
+      <li><a href="/find/stem">STEM</a></li> 
+     </ul>
+    </div> 
+    <div id="popup_advsearch_btn"> 
+     <a id="popup_advsearch_href" class="popupbutton_out" href="/search/">Advanced Search</a> 
+     <ul id="popup_advsearch_menu" style="display: none"> 
+      <li><a href="/find/descriptor/browse">Browse by O*NET Data:</a></li> 
+      <li><a href="/find/descriptor/browse/Abilities/">&nbsp;&nbsp;—&nbsp;Abilities</a></li> 
+      <li><a href="/find/descriptor/browse/Interests/">&nbsp;&nbsp;—&nbsp;Interests</a></li> 
+      <li><a href="/find/descriptor/browse/Knowledge/">&nbsp;&nbsp;—&nbsp;Knowledge</a></li> 
+      <li><a href="/find/descriptor/browse/Skills/">&nbsp;&nbsp;—&nbsp;Skills</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Activities/">&nbsp;&nbsp;—&nbsp;Work Activities</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Context/">&nbsp;&nbsp;—&nbsp;Work Context</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Styles/">&nbsp;&nbsp;—&nbsp;Work Styles</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Values/">&nbsp;&nbsp;—&nbsp;Work Values</a></li> 
+      <li><a href="/search/dwa/">Related DWA Search</a></li> 
+      <li><a href="/search/task/">Related Task Search</a></li> 
+      <li><a href="/skills/">Skills Search</a></li> 
+      <li><a href="/search/t2/">Tools &amp; Technology</a></li> 
+     </ul>
+    </div> 
+    <div id="popup_crosswalk_btn"> 
+     <a id="popup_crosswalk_href" class="popupbutton_out" href="/crosswalk/">Crosswalks</a> 
+     <ul id="popup_crosswalk_menu" style="display: none"> 
+      <li><a href="/crosswalk/RAPIDS/">Apprenticeship</a></li> 
+      <li><a href="/crosswalk/DOT/">DOT</a></li> 
+      <li><a href="/crosswalk/CIP/">Education</a></li> 
+      <li><a href="/crosswalk/MOC/">Military</a></li> 
+      <li><a href="/crosswalk/OOH/">Occupation Handbook</a></li> 
+      <li><a href="/crosswalk/SOC/">SOC</a></li> 
+     </ul>
+    </div> 
+    <div id="popup_network_btn"> 
+     <a id="popup_network_href" class="popupbutton_out" href="https://www.onetcenter.org/sites.html">O*NET Sites</a> 
+     <ul id="popup_network_menu" style="display: none"> 
+      <li><a href="https://www.mynextmove.org/">My Next Move</a></li> 
+      <li><a href="https://www.miproximopaso.org/">Mi Próximo Paso</a></li> 
+      <li><a href="https://www.mynextmove.org/vets/">My Next Move for Veterans</a></li> 
+      <li><a href="https://www.onetcenter.org/">Resource Center</a></li> 
+      <li><a href="https://services.onetcenter.org/">O*NET Web Services</a></li> 
+      <li><a href="https://www.onetcodeconnector.org/">Code Connector</a></li> 
+      <li><a href="http://www.onetacademy.org/">O*NET Academy</a></li> 
+      <li><a href="https://onet.rti.org/">Data Collection Program</a></li> 
+      <li><a href="https://www.doleta.gov/programs/onet/eta_default.cfm">U.S. Department of Labor</a></li> 
+      <li><a href="https://www.onetcenter.org/links.html">Related Sites</a></li> 
+     </ul>
+    </div> 
+    <div id="popup_share_btn"> 
+     <a id="popup_share_href" class="popupbutton_out" href="https://www.onetcenter.org/share/?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">Share</a> 
+     <ul id="popup_share_menu" style="display: none"> 
+      <li><a href="https://www.onetcenter.org/share/f?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">Facebook</a></li> 
+      <li><a href="https://www.onetcenter.org/share/t?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">Twitter</a></li> 
+      <li><a href="https://www.onetcenter.org/share/l?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">Delicious</a></li> 
+      <li><a href="https://www.onetcenter.org/share/d?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">Digg</a></li> 
+      <li><a href="https://www.onetcenter.org/share/r?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">Reddit</a></li> 
+      <li><a href="https://www.onetcenter.org/share/s?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">StumbleUpon</a></li> 
+      <li><a href="https://www.onetcenter.org/share/a?t=21-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" target="_share">More sites...</a></li> 
+     </ul>
+    </div> 
+   </div> 
+   <div id="realcontent"> 
+    <div id="content"> 
+     <a name="postnav" tabindex="1"></a> 
+     <div class="updates"> 
+      <a href="/link/updates/21-1012.00">Updated 2017</a> 
+     </div> 
+     <!-- begin content --> 
+     <h2>Summary Report for:<br> <span class="titleb">21-1012.00 - Educational, Guidance, School, and Vocational Counselors</span></h2> 
+     <p>Counsel individuals and provide group educational and vocational guidance services.</p>
+     <p> <b>Sample of reported job titles:</b> Academic Advisor, Academic Counselor, Advisor, Career Center Director, Career Counselor, Career Services Director, College Counselor, Counselor, Guidance Counselor, School Counselor </p> 
+     <div class="reporthead">
+      View report:&nbsp;
+      <span class="reportheadchosen">Summary</span>&nbsp;&nbsp;
+      <span class="reportheadnot"><a href="https://www.onetonline.org/link/details/21-1012.00">Details</a></span>&nbsp;&nbsp;
+      <span class="reportheadnot"><a href="https://www.onetonline.org/link/custom/21-1012.00">Custom</a></span>
+     </div>
+     <p class="sm"> <a name="menu"></a> <a id="anchor-Tasks-0" href="#Tasks">Tasks</a> &nbsp;|&nbsp; <a id="anchor-TechnologySkills-0" href="#TechnologySkills">Technology Skills</a> &nbsp;|&nbsp; <a id="anchor-ToolsUsed-0" href="#ToolsUsed">Tools Used</a> &nbsp;|&nbsp; <a id="anchor-Knowledge-0" href="#Knowledge">Knowledge</a> &nbsp;|&nbsp; <a id="anchor-Skills-0" href="#Skills">Skills</a> &nbsp;|&nbsp; <a id="anchor-Abilities-0" href="#Abilities">Abilities</a> &nbsp;|&nbsp; <a id="anchor-WorkActivities-0" href="#WorkActivities">Work Activities</a> &nbsp;|&nbsp; <a id="anchor-DetailedWorkActivities-0" href="#DetailedWorkActivities">Detailed Work Activities</a> &nbsp;|&nbsp; <a id="anchor-WorkContext-0" href="#WorkContext">Work Context</a> &nbsp;|&nbsp; <a id="anchor-JobZone-0" href="#JobZone">Job Zone</a> &nbsp;|&nbsp; <a id="anchor-Education-0" href="#Education">Education</a> &nbsp;|&nbsp; <a id="anchor-Credentials-0" href="#Credentials">Credentials</a> &nbsp;|&nbsp; <a id="anchor-Interests-0" href="#Interests">Interests</a> &nbsp;|&nbsp; <a id="anchor-WorkStyles-0" href="#WorkStyles">Work Styles</a> &nbsp;|&nbsp; <a id="anchor-WorkValues-0" href="#WorkValues">Work Values</a> &nbsp;|&nbsp; <a id="anchor-RelatedOccupations-0" href="#RelatedOccupations">Related Occupations</a> &nbsp;|&nbsp; <a id="anchor-WagesEmployment-0" href="#WagesEmployment">Wages &amp; Employment</a> &nbsp;|&nbsp; <a id="anchor-JobOpenings-0" href="#JobOpenings">Job Openings</a> &nbsp;|&nbsp; <a id="anchor-AdditionalInformation-0" href="#AdditionalInformation">Additional Information</a> </p> 
+     <a name="Tasks"></a>
+     <div id="wrapper_Tasks">
+      <h3 class="reportdesc">Tasks</h3> 
+      <div class="reportsubdesc">
+       <div class="section_Tasks"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('Tasks', true); return false" title="Show all 33"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 33 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('Tasks', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 33 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_Tasks">
+       <ul class="moreinfo">
+        <li>Counsel individuals to help them understand and overcome personal, social, or behavioral problems affecting their educational or vocational situations. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5605?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Provide crisis intervention to students when difficult situations occur at schools. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5608?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Confer with parents or guardians, teachers, administrators, and other professionals to discuss children's progress, resolve behavioral, academic, and other problems, and to determine priorities for students and their resource needs. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18624?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Maintain accurate and complete student records as required by laws, district policies, and administrative regulations. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5606?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Prepare students for later educational experiences by encouraging them to explore learning opportunities and to persevere with challenging tasks. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5611?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Evaluate students' or individuals' abilities, interests, and personality characteristics, using tests, records, interviews, or professional sources. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18625?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Identify cases of domestic abuse or other family problems and encourage students or parents to seek additional assistance from mental health professionals. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18626?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Counsel students regarding educational issues, such as course and program selection, class scheduling and registration, school adjustment, truancy, study habits, and career planning. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18627?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Provide special services such as alcohol and drug prevention programs and classes that teach students to handle conflicts without resorting to violence. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5633?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Conduct follow-up interviews with counselees to determine if their needs have been met. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5621?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Instruct individuals in career development techniques, such as job search and application strategies, resume writing, and interview skills. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5626?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Collaborate with teachers and administrators in the development, evaluation, and revision of school programs and in the preparation of master schedules for curriculum offerings. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18628?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Assess needs for assistance, such as rehabilitation, financial aid, or additional vocational training, and refer clients to the appropriate services. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5625?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Prepare reports on students and activities as required by administration. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5623?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Observe students during classroom and play activities to evaluate students' performance, behavior, social development, and physical health. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18629?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Teach classes and present self-help or information sessions on subjects related to education and career planning. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5619?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Plan and conduct orientation programs and group conferences to promote the adjustment of individuals to new life experiences, such as starting college. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5624?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Attend meetings, educational conferences, and training workshops and serve on committees. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18630?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Plan and promote career and employment-related programs and events, such as career planning presentations, work experience programs, job fairs, and career workshops. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18631?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Establish and enforce administration policies and rules governing student behavior. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18632?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Address community groups, faculty, and staff members to explain available counseling services. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5627?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Review transcripts to ensure that students meet graduation or college entrance requirements and write letters of recommendation. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5631?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Provide students with information on topics, such as college degree programs and admission requirements, financial aid opportunities, trade and technical schools, and apprenticeship programs. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5616?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Compile and study occupational, educational, and economic information to assist counselees in determining and carrying out vocational and educational objectives. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5629?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Refer students to degree programs based on interests, aptitudes, or educational assessments. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5632?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Interview clients to obtain information about employment history, educational background, and career goals, and to identify barriers to employment. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5636?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Refer qualified counselees to employers or employment services for job placement. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5639?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Establish contacts with employers to create internship and employment opportunities for students. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18633?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Plan, direct, and participate in recruitment and enrollment activities. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18634?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Supervise, train, and direct professional staff and interns. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/18635?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Provide disabled students with assistive devices, supportive technology, and assistance accessing facilities, such as restrooms. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5634?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Establish and supervise peer counseling and peer tutoring programs. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5637?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Provide information for teachers and staff members involved in helping students or graduates identify and pursue employment opportunities. <a class="more mpopup" title="See more occupations related to this task." href="/link/moreinfo/task/5630?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+       <p class="long"><a href="/search/task/choose/21-1012.00">Find occupations related to multiple tasks</a></p> 
+      </div>
+     </div>
+     <a name="TechnologySkills"></a>
+     <div id="wrapper_TechnologySkills">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Technology Skills</h3> 
+      <div class="reportsubdesc">
+       <div class="section_TechnologySkills"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('TechnologySkills', true); return false" title="Show all 20"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 20 displayed &nbsp; &nbsp; 
+         <a href="#" class="switch-to-tools" style="font-weight: bold">Show 13 tools used</a>
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('TechnologySkills', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 20 displayed &nbsp; &nbsp; 
+         <a href="#" class="switch-to-tools" style="font-weight: bold">Show 13 tools used</a>
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_TechnologySkills">
+       <ul class="moreinfo"> 
+        <li><b>Analytical or scientific software</b> — ACT WorkKeys; Computerized diagnostic programs; Computerized testing programs; Counseling software <span class="sm long"><a href="/link/tt/21-1012.00/43232605/">(see all 7 examples)</a></span> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232605?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Data base user interface and query software</b> — Microsoft Access <a href="/search/hot_tech/detail/33"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> ; Social Solutions ETO; Student information systems SIS; Zoomerang <span class="sm long"><a href="/link/tt/21-1012.00/43232306/">(see all 21 examples)</a></span> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232306?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Desktop publishing software</b> — Microsoft Publisher <a href="/search/hot_tech/detail/54"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232112?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Electronic mail software</b> — Email software; Microsoft Outlook <a href="/search/hot_tech/detail/26"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> ; Yahoo! Email <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43233501?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Enterprise resource planning ERP software</b> <a href="/search/hot_tech/detail/1"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> — Oracle PeopleSoft <a href="/search/hot_tech/detail/31"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43231602?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Graphics or photo imaging software</b> — Adobe Systems Adobe Photoshop <a href="/search/hot_tech/detail/23"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232102?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Information retrieval or search software</b> — LexisNexis <a href="/search/hot_tech/detail/130"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232309?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Instant messaging software</b> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43233504?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Internet browser software</b> — Microsoft Internet Explorer; Web browser software <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232705?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Medical software</b> — Athena Software Penelope Case Management <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232610?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Network conferencing software</b> — Chat software <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43233503?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Network monitoring software</b> — Computer-assisted live supervision <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232801?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Office suite software</b> — Microsoft Office <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43231513?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Presentation software</b> — Blackboard Wimba; Microsoft PowerPoint <a href="/search/hot_tech/detail/5"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> ; Prezi <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232106?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Project management software</b> — Palm Pal Transana; Productivity software <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43231507?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Spreadsheet software</b> — EZAnalyze; Microsoft Excel <a href="/search/hot_tech/detail/4"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232110?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Video conferencing software</b> — Citrix GoToMeeting <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43233502?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Web page creation and editing software</b> — LinkedIn <a href="/search/hot_tech/detail/165"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> ; Orbius; Web page design and editing software <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232107?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Web platform development software</b> — Ext JS <a href="/search/hot_tech/detail/125"><img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology" title="Hot technology"></a> <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232408?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Word processing software</b> — Microsoft Word <a class="more mpopup" title="See more occupations related to this technology." href="/link/moreinfo/t2/43232104?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul> 
+       <a name="ttsoft"></a> 
+       <p class="sm"> <img src="/image/ht_sm.png" width="13" height="15" alt="Hot technology"> Hot Technology — a technology requirement frequently included in employer job postings. </p> 
+      </div>
+     </div>
+     <a name="ToolsUsed"></a>
+     <div id="wrapper_ToolsUsed">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Tools Used</h3> 
+      <div class="reportsubdesc">
+       <div class="section_ToolsUsed"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('ToolsUsed', true); return false" title="Show all 13"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 13 displayed &nbsp; &nbsp; 
+         <a href="#" class="switch-to-tech" style="font-weight: bold">Show 20 technology skills</a>
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('ToolsUsed', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 13 displayed &nbsp; &nbsp; 
+         <a href="#" class="switch-to-tech" style="font-weight: bold">Show 20 technology skills</a>
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_ToolsUsed">
+       <ul class="moreinfo"> 
+        <li class="long"><b>Desktop computers</b> <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/43211507?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Digital camcorders or video cameras</b> — Video recorders <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/45121516?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Digital video disk players or recorders</b> — Digital video disk DVD players <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/52161516?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Digital voice recorders</b> — Audio recorders <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/52161535?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Instant messaging platform</b> — Yahoo! Messenger <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/43223205?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Liquid crystal display projector</b> — Liquid crystal display LCD projectors; Projection equipment <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/45111614?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Notebook computers</b> — Laptop computers <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/43211503?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Overhead projectors</b> — Overhead display projectors <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/45111607?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Personal computers</b> <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/43211508?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Personal digital assistant PDAs or organizers</b> — Personal digital assistants PDA <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/43211504?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Photocopiers</b> — Photocopying equipment <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/44101501?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Video cassette players or recorders</b> — Video cassette recorders VCR <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/52161529?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Videoconferencing systems</b> — Videoconferencing equipment <a class="more mpopup" title="See more occupations related to this tool." href="/link/moreinfo/t2/45111902?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul> 
+      </div>
+     </div>
+     <a name="Knowledge"></a>
+     <div id="wrapper_Knowledge">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Knowledge</h3> 
+      <div class="reportsubdesc">
+       <div class="section_Knowledge"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('Knowledge', true); return false" title="Show all 9"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 9 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('Knowledge', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 9 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_Knowledge">
+       <ul class="moreinfo">
+        <li><b>Psychology</b> — Knowledge of human behavior and performance; individual differences in ability, personality, and interests; learning and motivation; psychological research methods; and the assessment and treatment of behavioral and affective disorders. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.4.e?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Therapy and Counseling</b> — Knowledge of principles, methods, and procedures for diagnosis, treatment, and rehabilitation of physical and mental dysfunctions, and for career counseling and guidance. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.5.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>English Language</b> — Knowledge of the structure and content of the English language including the meaning and spelling of words, rules of composition, and grammar. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.7.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Education and Training</b> — Knowledge of principles and methods for curriculum and training design, teaching and instruction for individuals and groups, and the measurement of training effects. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.6?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Customer and Personal Service</b> — Knowledge of principles and processes for providing customer and personal services. This includes customer needs assessment, meeting quality standards for services, and evaluation of customer satisfaction. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.1.e?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Sociology and Anthropology</b> — Knowledge of group behavior and dynamics, societal trends and influences, human migrations, ethnicity, cultures and their history and origins. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.4.f?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Administration and Management</b> — Knowledge of business and management principles involved in strategic planning, resource allocation, human resources modeling, leadership technique, production methods, and coordination of people and resources. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.1.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Clerical</b> — Knowledge of administrative and clerical procedures and systems such as word processing, managing files and records, stenography and transcription, designing forms, and other office procedures and terminology. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.1.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Computers and Electronics</b> — Knowledge of circuit boards, processors, chips, electronic equipment, and computer hardware and software, including applications and programming. <a class="more mpopup" title="See more occupations related to this knowledge." href="/link/moreinfo/knowledge/2.C.3.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+      </div>
+     </div>
+     <a name="Skills"></a>
+     <div id="wrapper_Skills">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Skills</h3> 
+      <div class="reportsubdesc">
+       <div class="section_Skills"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('Skills', true); return false" title="Show all 20"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 20 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('Skills', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 20 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_Skills">
+       <ul class="moreinfo">
+        <li><b>Active Listening</b> — Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.1.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Speaking</b> — Talking to others to convey information effectively. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.1.d?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Reading Comprehension</b> — Understanding written sentences and paragraphs in work related documents. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.1.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Social Perceptiveness</b> — Being aware of others' reactions and understanding why they react as they do. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.1.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Critical Thinking</b> — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions or approaches to problems. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.2.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Writing</b> — Communicating effectively in writing as appropriate for the needs of the audience. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.1.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Judgment and Decision Making</b> — Considering the relative costs and benefits of potential actions to choose the most appropriate one. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.4.e?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Active Learning</b> — Understanding the implications of new information for both current and future problem-solving and decision-making. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.2.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Complex Problem Solving</b> — Identifying complex problems and reviewing related information to develop and evaluate options and implement solutions. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.2.i?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Service Orientation</b> — Actively looking for ways to help people. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.1.f?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Instructing</b> — Teaching others how to do something. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.1.e?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Learning Strategies</b> — Selecting and using training/instructional methods and procedures appropriate for the situation when learning or teaching new things. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.2.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Negotiation</b> — Bringing others together and trying to reconcile differences. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.1.d?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Time Management</b> — Managing one's own time and the time of others. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.5.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Coordination</b> — Adjusting actions in relation to others' actions. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.1.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Monitoring</b> — Monitoring/Assessing performance of yourself, other individuals, or organizations to make improvements or take corrective action. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.A.2.d?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Persuasion</b> — Persuading others to change their minds or behavior. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.1.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Systems Analysis</b> — Determining how a system should work and how changes in conditions, operations, and the environment will affect outcomes. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.4.g?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Management of Personnel Resources</b> — Motivating, developing, and directing people as they work, identifying the best people for the job. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.5.d?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Systems Evaluation</b> — Identifying measures or indicators of system performance and the actions needed to improve or correct performance, relative to the goals of the system. <a class="more mpopup" title="See more occupations related to this skill." href="/link/moreinfo/skills/2.B.4.h?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+      </div>
+     </div>
+     <a name="Abilities"></a>
+     <div id="wrapper_Abilities">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Abilities</h3> 
+      <div class="reportsubdesc">
+       <div class="section_Abilities"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('Abilities', true); return false" title="Show all 16"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 16 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('Abilities', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 16 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_Abilities">
+       <ul class="moreinfo">
+        <li><b>Oral Expression</b> — The ability to communicate information and ideas in speaking so others will understand. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.a.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Oral Comprehension</b> — The ability to listen to and understand information and ideas presented through spoken words and sentences. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.a.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Written Comprehension</b> — The ability to read and understand information and ideas presented in writing. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.a.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Written Expression</b> — The ability to communicate information and ideas in writing so others will understand. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.a.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Deductive Reasoning</b> — The ability to apply general rules to specific problems to produce answers that make sense. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Problem Sensitivity</b> — The ability to tell when something is wrong or is likely to go wrong. It does not involve solving the problem, only recognizing there is a problem. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Speech Clarity</b> — The ability to speak clearly so others can understand you. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.4.b.5?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Inductive Reasoning</b> — The ability to combine pieces of information to form general rules or conclusions (includes finding a relationship among seemingly unrelated events). <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.5?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Speech Recognition</b> — The ability to identify and understand the speech of another person. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.4.b.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Information Ordering</b> — The ability to arrange things or actions in a certain order or pattern according to a specific rule or set of rules (e.g., patterns of numbers, letters, words, pictures, mathematical operations). <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.6?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Fluency of Ideas</b> — The ability to come up with a number of ideas about a topic (the number of ideas is important, not their quality, correctness, or creativity). <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Near Vision</b> — The ability to see details at close range (within a few feet of the observer). <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.4.a.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Originality</b> — The ability to come up with unusual or clever ideas about a given topic or situation, or to develop creative ways to solve a problem. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Category Flexibility</b> — The ability to generate or use different sets of rules for combining or grouping things in different ways. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.b.7?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Selective Attention</b> — The ability to concentrate on a task over a period of time without being distracted. <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.g.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Time Sharing</b> — The ability to shift back and forth between two or more activities or sources of information (such as speech, sounds, touch, or other sources). <a class="more mpopup" title="See more occupations related to this ability." href="/link/moreinfo/abilities/1.A.1.g.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+      </div>
+     </div>
+     <a name="WorkActivities"></a>
+     <div id="wrapper_WorkActivities">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Work Activities</h3> 
+      <div class="reportsubdesc">
+       <div class="section_WorkActivities"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('WorkActivities', true); return false" title="Show all 28"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 28 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('WorkActivities', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 28 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_WorkActivities">
+       <ul class="moreinfo">
+        <li><b>Assisting and Caring for Others</b> — Providing personal assistance, medical attention, emotional support, or other personal care to others such as coworkers, customers, or patients. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.5?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Establishing and Maintaining Interpersonal Relationships</b> — Developing constructive and cooperative working relationships with others, and maintaining them over time. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Communicating with Supervisors, Peers, or Subordinates</b> — Providing information to supervisors, co-workers, and subordinates by telephone, in written form, e-mail, or in person. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Getting Information</b> — Observing, receiving, and otherwise obtaining information from all relevant sources. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.1.a.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Making Decisions and Solving Problems</b> — Analyzing information and evaluating results to choose the best solution and solve problems. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.b.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Organizing, Planning, and Prioritizing Work</b> — Developing specific goals and plans to prioritize, organize, and accomplish your work. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.b.6?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Updating and Using Relevant Knowledge</b> — Keeping up-to-date technically and applying new knowledge to your job. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.b.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Resolving Conflicts and Negotiating with Others</b> — Handling complaints, settling disputes, and resolving grievances and conflicts, or otherwise negotiating with others. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.7?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Communicating with Persons Outside Organization</b> — Communicating with people outside the organization, representing the organization to customers, the public, government, and other external sources. This information can be exchanged in person, in writing, or by telephone or e-mail. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Documenting/Recording Information</b> — Entering, transcribing, recording, storing, or maintaining information in written or electronic/magnetic form. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.3.b.6?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Thinking Creatively</b> — Developing, designing, or creating new applications, ideas, relationships, systems, or products, including artistic contributions. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.b.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Interacting With Computers</b> — Using computers and computer systems (including hardware and software) to program, write software, set up functions, enter data, or process information. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.3.b.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Coaching and Developing Others</b> — Identifying the developmental needs of others and coaching, mentoring, or otherwise helping others to improve their knowledge or skills. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.b.5?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Developing Objectives and Strategies</b> — Establishing long-range objectives and specifying the strategies and actions to achieve them. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.b.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Provide Consultation and Advice to Others</b> — Providing guidance and expert advice to management or other groups on technical, systems-, or process-related topics. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.b.6?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Training and Teaching Others</b> — Identifying the educational needs of others, developing formal educational or training programs or classes, and teaching or instructing others. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.b.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Interpreting the Meaning of Information for Others</b> — Translating or explaining what information means and how it can be used. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Performing for or Working Directly with the Public</b> — Performing for people or dealing directly with the public. This includes serving customers in restaurants and stores, and receiving clients or guests. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.a.8?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Scheduling Work and Activities</b> — Scheduling events, programs, and activities, as well as the work of others. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.b.5?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Processing Information</b> — Compiling, coding, categorizing, calculating, tabulating, auditing, or verifying information or data. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.a.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Identifying Objects, Actions, and Events</b> — Identifying information by categorizing, estimating, recognizing differences or similarities, and detecting changes in circumstances or events. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.1.b.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Developing and Building Teams</b> — Encouraging and building mutual trust, respect, and cooperation among team members. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.b.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Evaluating Information to Determine Compliance with Standards</b> — Using relevant information and individual judgment to determine whether events or processes comply with laws, regulations, or standards. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.a.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Analyzing Data or Information</b> — Identifying the underlying principles, reasons, or facts of information by breaking down information or data into separate parts. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.a.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Performing Administrative Activities</b> — Performing day-to-day administrative tasks such as maintaining information files and processing paperwork. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.c.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Monitor Processes, Materials, or Surroundings</b> — Monitoring and reviewing information from materials, events, or the environment, to detect or assess problems. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.1.a.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Judging the Qualities of Things, Services, or People</b> — Assessing the value, importance, or quality of things or people. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.2.a.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Coordinating the Work and Activities of Others</b> — Getting members of a group to work together to accomplish tasks. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/workactivities/4.A.4.b.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+      </div>
+     </div>
+     <a name="DetailedWorkActivities"></a>
+     <div id="wrapper_DetailedWorkActivities">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Detailed Work Activities</h3> 
+      <div class="reportsubdesc">
+       <div class="section_DetailedWorkActivities"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('DetailedWorkActivities', true); return false" title="Show all 28"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 28 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('DetailedWorkActivities', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 28 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_DetailedWorkActivities">
+       <ul class="moreinfo">
+        <li>Counsel clients regarding educational or vocational issues. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.6.I07.D04?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Counsel clients regarding interpersonal issues. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.6.I10.D04?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Counsel clients or patients regarding personal issues. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.6.I10.D07?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Evaluate characteristics of individuals to determine needs or eligibility. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.a.1.I01.D03?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li>Write reports or evaluations. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.3.b.6.I03.D06?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Intervene in crisis situations to assist clients. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.6.I10.D01?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Collaborate with other professionals to assess client needs or plan treatments. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.2.I05.D03?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Confer with family members to discuss client treatment plans or progress. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.1.I05.D02?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Complete documentation required by programs or regulations. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.3.b.6.I14.D07?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Evaluate potential problems in home or work environments of clients. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.a.1.I01.D01?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Develop educational programs. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.b.2.I15.D08?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Interview clients to gather information about their backgrounds, needs, or progress. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.1.a.1.I23.D08?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Teach life skills or strategies to clients or their families. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.3.I01.D02?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Refer individuals to educational or work programs. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.5.I01.D05?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Assess individual or community needs for educational or social services. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.a.1.I01.D04?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Collaborate with other professionals to develop education or assistance programs. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.2.I07.D01?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Refer clients to community or social service programs. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.5.I01.D06?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Plan programs to address community mental wellness needs. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.b.2.I17.D01?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Lead classes or community events. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.3.I02.D04?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Maintain professional social services knowledge. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.b.3.I01.D02?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Develop working relationships with others to facilitate program activities. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.4.I01.D03?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Promote educational institutions or programs. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.6.I03.D06?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Present social services program information to the public. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.3.I02.D09?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Supervise workers providing client or patient services. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.4.I01.D12?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Train staff members in social services skills. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.3.I04.D21?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Develop educational policies. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.2.b.2.I15.D11?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Assist clients in handling details of daily life. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.a.5.I09.D03?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long">Advise others on social or educational issues. <a class="more mpopup" title="See more occupations related to this activity." href="/link/moreinfo/dwa/4.A.4.b.6.I07.D01?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+       <p class="long"><a href="/search/dwa/choose/21-1012.00">Find occupations related to multiple detailed work activities</a></p> 
+      </div>
+     </div>
+     <a name="WorkContext"></a>
+     <div id="wrapper_WorkContext">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Work Context</h3> 
+      <div class="reportsubdesc">
+       <div class="section_WorkContext"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('WorkContext', true); return false" title="Show all 23"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 23 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('WorkContext', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 23 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_WorkContext">
+       <ul class="moreinfo">
+        <li><b>Electronic Mail</b> — 100% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.a.2.h?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Telephone</b> — 100% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.a.2.f?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Face-to-Face Discussions</b> — 91% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.a.2.l?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Letters and Memos</b> — 74% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.a.2.j?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Contact With Others</b> <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.a.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Indoors, Environmentally Controlled</b> — 80% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.2.a.1.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Work With Work Group or Team</b> <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.b.1.e?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Deal With External Customers</b> — 59% responded “Very important.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.b.1.f?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Freedom to Make Decisions</b> — 60% responded “Some freedom.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.a.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Duration of Typical Work Week</b> — 66% responded “More than 40 hours.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.d.8?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Frequency of Conflict Situations</b> — 40% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.d.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Coordinate or Lead Others</b> — 30% responded “Extremely important.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.b.1.g?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Structured versus Unstructured Work</b> — 46% responded “Some freedom.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.b.8?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Frequency of Decision Making</b> — 25% responded “Every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.a.2.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Impact of Decisions on Co-workers or Company Results</b> — 27% responded “Moderate results.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.a.2.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Deal With Unpleasant or Angry People</b> — 65% responded “Once a week or more but not every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.d.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Physical Proximity</b> — 60% responded “Moderately close (at arm's length).” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.2.a.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Spend Time Sitting</b> — 61% responded “More than half the time.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.2.d.1.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Time Pressure</b> — 77% responded “Once a week or more but not every day.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.d.1?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Importance of Being Exact or Accurate</b> — 48% responded “Very important.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.b.4?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Importance of Repeating Same Tasks</b> — 66% responded “Very important.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.3.b.7?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Deal With Physically Aggressive People</b> — 28% responded “Once a month or more but not every week.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.d.3?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Responsibility for Outcomes and Results</b> — 38% responded “Moderate responsibility.” <a class="more mpopup" title="See more occupations related to this work context." href="/link/moreinfo/workcontext/4.C.1.c.2?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+      </div>
+     </div>
+     <a name="JobZone"></a>
+     <div id="wrapper_JobZone">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="report">Job Zone</h3> 
+      <div> 
+       <table width="100%" cellpadding="3" cellspacing="3" border="0" summary="Job Zone information for this occupation"> 
+        <tbody>
+         <tr> 
+          <td class="report2b" width="20%">Title</td> 
+          <td class="report2" width="80%">Job Zone Five: Extensive Preparation Needed</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="20%">Education</td> 
+          <td class="report2" width="80%">Most of these occupations require graduate school. For example, they may require a master's degree, and some require a Ph.D., M.D., or J.D. (law degree).</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="20%">Related Experience</td> 
+          <td class="report2" width="80%">Extensive skill, knowledge, and experience are needed for these occupations. Many require more than five years of experience. For example, surgeons must complete four years of college and an additional five to seven years of specialized medical training to be able to do their job.</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="20%">Job Training</td> 
+          <td class="report2" width="80%">Employees may need some on-the-job training, but most of these occupations assume that the person will already have the required skills, knowledge, work-related experience, and/or training.</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="20%">Job Zone Examples</td> 
+          <td class="report2" width="80%">These occupations often involve coordinating, training, supervising, or managing the activities of others to accomplish goals. Very advanced communication and organizational skills are required. Examples include librarians, lawyers, astronomers, biologists, clergy, surgeons, and veterinarians.</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="20%">SVP Range</td> 
+          <td class="report2" width="80%">(8.0 and above)</td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+     </div>
+     <a name="Education"></a>
+     <div id="wrapper_Education">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="report">Education</h3> 
+      <div> 
+       <table width="100%" cellpadding="3" cellspacing="3" border="0" summary="Education information for this occupation"> 
+        <tbody>
+         <tr> 
+          <th class="reltitlea" width="10%" scope="col"><img src="/shared/image/blank.gif" width="100" height="1" alt=" "><br>Percentage of Respondents</th> 
+          <th class="reltitle" width="90%" scope="col">Education Level Required</th> 
+         </tr> 
+         <tr> 
+          <td class="report2a" width="10%"><b>93</b>&nbsp;<img src="/image/pixel_blue.gif" width="62" height="5" alt=" "><img src="/image/pixel_grayD.gif" width="5" height="5" alt=" "></td> 
+          <td class="report2" width="90%">Master's degree</td> 
+         </tr> 
+         <tr> 
+          <td class="report2a" width="10%"><b>4</b>&nbsp;<img src="/image/pixel_blue.gif" width="2" height="5" alt=" "><img src="/image/pixel_grayD.gif" width="65" height="5" alt=" "></td> 
+          <td class="report2" width="90%">Post-master's certificate <a href="/help_popup/education-category-9" class="help_bubble" target="window_2"><img src="/image/help_icon.png" alt="Help" style="vertical-align: top"></a></td> 
+         </tr> 
+         <tr> 
+          <td class="report2a" width="10%"><b>2</b>&nbsp;<img src="/image/pixel_blue.gif" width="1" height="5" alt=" "><img src="/image/pixel_grayD.gif" width="66" height="5" alt=" "></td> 
+          <td class="report2" width="90%">Bachelor's degree</td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+     </div>
+     <a name="Credentials"></a>
+     <div id="wrapper_Credentials">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="report">Credentials</h3> 
+      <div style="padding: 0.5em 3em"> 
+       <a class="cpopup" href="/link/cpopup/t/21-1012.00" title="Find training programs"><img src="/image/btn_training.png" alt="Find Training" width="115" height="30" style="vertical-align: middle; padding: 5px 10px"></a> 
+       <a class="credpopup" href="/link/credentials/21-1012.00?c=1" title="Find certifications"><img src="/image/btn_cert.png" alt="Find Certifications" width="115" height="30" style="vertical-align: middle; padding: 5px 10px"></a> 
+       <a class="cpopup" href="/link/cpopup/l/21-1012.00" title="Find licenses"><img src="/image/btn_license.png" alt="Find Licenses" width="115" height="30" style="vertical-align: middle; padding: 5px 10px"></a> 
+       <a class="cpopup" href="/link/cpopup/a/21-1012.00" title="Find registered apprenticeship sponsors"><img src="/image/btn_appren.png" alt="Find Apprenticeships" width="130" height="30" style="vertical-align: middle; padding: 5px 10px"></a> 
+      </div> 
+     </div>
+     <a name="Interests"></a>
+     <div id="wrapper_Interests">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Interests</h3> 
+      <div class="reportsubdesc">
+       <div class="collapse short" style="display: none">
+        <img src="/image/more_dis.png" alt="Show fewer" width="28" height="14"> All 1 displayed
+       </div> 
+      </div> 
+      <p> Interest code: <b>S</b> </p> 
+      <ul class="moreinfo">
+       <li><b>Social</b> — Social occupations frequently involve working with, communicating with, and teaching people. These occupations often involve helping or providing service to others. <a class="more mpopup" title="See more occupations related to this interest." href="/link/moreinfo/interests/1.B.1.d?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+      </ul>
+     </div>
+     <a name="WorkStyles"></a>
+     <div id="wrapper_WorkStyles">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Work Styles</h3> 
+      <div class="reportsubdesc">
+       <div class="section_WorkStyles"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('WorkStyles', true); return false" title="Show all 16"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 16 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('WorkStyles', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 16 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_WorkStyles">
+       <ul class="moreinfo">
+        <li><b>Concern for Others</b> — Job requires being sensitive to others' needs and feelings and being understanding and helpful on the job. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.3.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Integrity</b> — Job requires being honest and ethical. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.5.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Cooperation</b> — Job requires being pleasant with others on the job and displaying a good-natured, cooperative attitude. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.3.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Self Control</b> — Job requires maintaining composure, keeping emotions in check, controlling anger, and avoiding aggressive behavior, even in very difficult situations. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.4.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li><b>Adaptability/Flexibility</b> — Job requires being open to change (positive or negative) and to considerable variety in the workplace. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.4.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Dependability</b> — Job requires being reliable, responsible, and dependable, and fulfilling obligations. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.5.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Initiative</b> — Job requires a willingness to take on responsibilities and challenges. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.1.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Social Orientation</b> — Job requires preferring to work with others rather than alone, and being personally connected with others on the job. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.3.c?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Stress Tolerance</b> — Job requires accepting criticism and dealing calmly and effectively with high stress situations. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.4.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Leadership</b> — Job requires a willingness to lead, take charge, and offer opinions and direction. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.2.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Attention to Detail</b> — Job requires being careful about detail and thorough in completing work tasks. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.5.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Persistence</b> — Job requires persistence in the face of obstacles. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.1.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Independence</b> — Job requires developing one's own ways of doing things, guiding oneself with little or no supervision, and depending on oneself to get things done. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.6?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Innovation</b> — Job requires creativity and alternative thinking to develop new ideas for and answers to work-related problems. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.7.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Achievement/Effort</b> — Job requires establishing and maintaining personally challenging achievement goals and exerting effort toward mastering tasks. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.1.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+        <li class="long"><b>Analytical Thinking</b> — Job requires analyzing information and using logic to address work-related issues and problems. <a class="more mpopup" title="See more occupations related to this work style." href="/link/moreinfo/workstyles/1.C.7.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       </ul>
+      </div>
+     </div>
+     <a name="WorkValues"></a>
+     <div id="wrapper_WorkValues">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Work Values</h3> 
+      <div class="reportsubdesc">
+       <div class="collapse short" style="display: none">
+        <img src="/image/more_dis.png" alt="Show fewer" width="28" height="14"> All 3 displayed
+       </div> 
+      </div> 
+      <ul class="moreinfo">
+       <li><b>Relationships</b> — Occupations that satisfy this work value allow employees to provide service to others and work with co-workers in a friendly non-competitive environment. Corresponding needs are Co-workers, Moral Values and Social Service. <a class="more mpopup" title="See more occupations related to this work value." href="/link/moreinfo/workvalues/1.B.2.d?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       <li><b>Achievement</b> — Occupations that satisfy this work value are results oriented and allow employees to use their strongest abilities, giving them a feeling of accomplishment. Corresponding needs are Ability Utilization and Achievement. <a class="more mpopup" title="See more occupations related to this work value." href="/link/moreinfo/workvalues/1.B.2.a?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+       <li><b>Working Conditions</b> — Occupations that satisfy this work value offer job security and good working conditions. Corresponding needs are Activity, Compensation, Independence, Security, Variety and Working Conditions. <a class="more mpopup" title="See more occupations related to this work value." href="/link/moreinfo/workvalues/1.B.2.b?r=summary&amp;j=21-1012.00"><img src="/image/moreinfo.png" alt=" "></a> </li> 
+      </ul>
+     </div>
+     <a name="RelatedOccupations"></a>
+     <div id="wrapper_RelatedOccupations">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Related Occupations</h3> 
+      <div class="reportsubdesc">
+       <div class="section_RelatedOccupations"> 
+        <div class="collapse short" style="display: none">
+         <a href="#" onclick="toggle_section('RelatedOccupations', true); return false" title="Show all 10"><img src="/image/more.png" alt="Show all" width="28" height="14"></a> 5 of 10 displayed
+        </div> 
+        <div class="collapse long" style="display: none">
+         <a href="#" onclick="toggle_section('RelatedOccupations', false); return false" title="Show top 5"><img src="/image/less.png" alt="Show fewer" width="28" height="14"></a> All 10 displayed
+        </div> 
+       </div> 
+      </div> 
+      <div class="section_RelatedOccupations">
+       <div> 
+        <table class="occ" cellpadding="0" cellspacing="0" border="0" summary="Occupation listing"> 
+         <tbody>
+          <tr> 
+           <td class="occcode">19-3031.01</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/19-3031.01">School Psychologists</a> &nbsp; <a href="/help/bright/19-3031.01" title="Bright Outlook" style="text-decoration: none"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"> <span style="font-size: xx-small; font-weight: bold; font-family: Verdana; color: #f83">Bright Outlook</span> </a> &nbsp; </td> 
+          </tr> 
+          <tr class="long"> 
+           <td class="occcode">19-3031.03</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/19-3031.03">Counseling Psychologists</a> <a href="/help/bright/19-3031.03" title="Bright Outlook"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"></a> </td> 
+          </tr> 
+          <tr> 
+           <td class="occcode">21-1013.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/21-1013.00">Marriage and Family Therapists</a> <a href="/help/bright/21-1013.00" title="Bright Outlook"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"></a> </td> 
+          </tr> 
+          <tr> 
+           <td class="occcode">21-1014.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/21-1014.00">Mental Health Counselors</a> <a href="/help/bright/21-1014.00" title="Bright Outlook"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"></a> </td> 
+          </tr> 
+          <tr class="long"> 
+           <td class="occcode">25-1066.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/25-1066.00">Psychology Teachers, Postsecondary</a> <a href="/help/bright/25-1066.00" title="Bright Outlook"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"></a> </td> 
+          </tr> 
+          <tr> 
+           <td class="occcode">25-1081.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/25-1081.00">Education Teachers, Postsecondary</a> </td> 
+          </tr> 
+          <tr> 
+           <td class="occcode">25-1113.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/25-1113.00">Social Work Teachers, Postsecondary</a> <a href="/help/bright/25-1113.00" title="Bright Outlook"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"></a> </td> 
+          </tr> 
+          <tr class="long"> 
+           <td class="occcode">25-2031.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/25-2031.00">Secondary School Teachers, Except Special and Career/Technical Education</a> <a href="/help/bright/25-2031.00" title="Bright Outlook"><img src="/image/bf_sm.png" width="11" height="10" alt="Bright Outlook"></a> </td> 
+          </tr> 
+          <tr class="long"> 
+           <td class="occcode">25-3011.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/25-3011.00">Adult Basic and Secondary Education and Literacy Teachers and Instructors</a> </td> 
+          </tr> 
+          <tr class="long"> 
+           <td class="occcode">25-9031.00</td> 
+           <td class="occtitle"><a href="https://www.onetonline.org/link/summary/25-9031.00">Instructional Coordinators</a> </td> 
+          </tr> 
+         </tbody>
+        </table> 
+       </div> 
+      </div>
+     </div>
+     <a name="WagesEmployment"></a>
+     <div id="wrapper_WagesEmployment">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="report">Wages &amp; Employment Trends</h3> 
+      <div> 
+       <table width="100%" cellpadding="3" cellspacing="3" border="0" summary="Wages &amp; Employment Trends information for this occupation"> 
+        <tbody>
+         <tr> 
+          <td class="report2b" width="33%">Median wages (2016)</td> 
+          <td class="report2" width="67%">$26.23 hourly, $54,560 annual</td> 
+         </tr> 
+         <tr> 
+          <td class="report2bmid" width="33%">State wages</td> 
+          <td class="report2mid" width="67%"><a class="cpopup" href="/link/cpopup/w/21-1012.00" title="State and national wages"><img src="/image/btn_wages.png" alt="Local Salary Info" width="115" height="30" style="vertical-align: middle"></a> </td> 
+         </tr> 
+         <tr> 
+          <td class="smallrow" colspan="2">&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="33%">Employment (2014)</td> 
+          <td class="report2" width="67%">273,000 employees</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="33%">Projected growth (2014-2024)</td> 
+          <td class="report2" width="67%"><img src="/image/growth/g2.gif" width="23" height="5" border="0" alt="Average (5% to 8%)"> Average (5% to 8%) </td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="33%">Projected job openings (2014-2024)</td> 
+          <td class="report2" width="67%">79,700</td> 
+         </tr> 
+         <tr> 
+          <td class="report2bmid" width="33%">State trends</td> 
+          <td class="report2mid" width="67%"><a class="cpopup" href="/link/cpopup/e/21-1012.00" title="State and national employment trends"><img src="/image/btn_trends.png" alt="Employment Trends" width="115" height="30" style="vertical-align: middle"></a> </td> 
+         </tr> 
+         <tr> 
+          <td class="smallrow" colspan="2">&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td class="report2b" width="33%">Top industries (2014)</td> 
+          <td class="report2" width="67%">
+           <div>
+            <a href="/find/industry?j=21-1012.00&amp;i=61">Educational Services</a>
+           </div> 
+           <div>
+            <a href="/find/industry?j=21-1012.00&amp;i=62">Health Care and Social Assistance</a>
+           </div> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <p class="sm"> Source: Bureau of Labor Statistics <a href="https://www.bls.gov/oes/" title="https://www.bls.gov/oes/" target="_blank">2016 wage data</a> <a href="/help/exit?u=https%3A//www.bls.gov/oes/&amp;t=2016%20wage%20data" title="external site"><img src="/shared/image/external.gif" height="10" width="10" alt="external site"></a> and <a href="https://www.bls.gov/emp/" title="https://www.bls.gov/emp/" target="_blank">2014-2024 employment projections</a> <a href="/help/exit?u=https%3A//www.bls.gov/emp/&amp;t=2014-2024%20employment%20projections" title="external site"><img src="/shared/image/external.gif" height="10" width="10" alt="external site"></a>. "Projected growth" represents the estimated change in total employment over the projections period (2014-2024). "Projected job openings" represent openings due to growth and replacement. </p> 
+     </div>
+     <a name="JobOpenings"></a>
+     <div id="wrapper_JobOpenings">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="report">Job Openings on the Web</h3> 
+      <div style="padding: 0.5em 3em"> 
+       <a class="jpopup" href="/link/cpopup/j/21-1012.00" title="Find job openings in your state"><img src="/image/btn_jobs.png" alt="Find Jobs" width="115" height="30" style="vertical-align: middle; padding: 5px 10px"></a> 
+      </div> 
+     </div>
+     <a name="AdditionalInformation"></a>
+     <div id="wrapper_AdditionalInformation">
+      <p class="sm"> <a href="#menu">back to top</a> </p> 
+      <h3 class="reportdesc">Sources of Additional Information</h3> 
+      <div class="reportsubdesc">
+       <div class="collapse short" style="display: none">
+        <img src="/image/more_dis.png" alt="Show fewer" width="28" height="14"> All 1 displayed
+       </div> 
+      </div> 
+      <p> <b>Disclaimer:</b> Sources are listed to provide additional information on related jobs, specialties, and/or industries. Links to non-DOL Internet sites are provided for your convenience and do not constitute an endorsement. </p> 
+      <ul> 
+       <li class="addinfo"><a href="http://www.bls.gov/OOH/community-and-social-service/school-and-career-counselors.htm" title="http://www.bls.gov/OOH/community-and-social-service/school-and-career-counselors.htm" target="_blank">Occupational Outlook Handbook: School and career counselors</a> <a href="/help/exit?u=http%3A//www.bls.gov/OOH/community-and-social-service/school-and-career-counselors.htm&amp;t=Occupational%20Outlook%20Handbook%3A%20School%20and%20career%20counselors" title="external site"><img src="/shared/image/external.gif" height="10" width="10" alt="external site"></a></li> 
+      </ul> 
+     </div>
+     <p class="sm"> <a href="#menu">back to top</a> </p> 
+     <!-- end content --> 
+    </div> 
+   </div> 
+   <div id="menubarb"> 
+    <div id="bpopup_help_btn"> 
+     <a id="bpopup_help_href" class="popupbutton_out" href="/help/online/summary">Help</a> 
+     <ul id="bpopup_help_menu" style="display: none"> 
+      <li><a href="/help/online/summary">OnLine Help</a></li> 
+      <li><a href="https://www.onetcenter.org/overview.html">About O*NET</a></li> 
+      <li><a href="/help/online/deskaid">OnLine Desk Aid</a></li> 
+      <li><a href="/shared/jobhelp">Job Seeker Help</a></li> 
+      <li><a href="/help/online/accom">Job Accommodations</a></li> 
+      <li><a href="https://www.onetcenter.org/links.html">Related Sites</a></li> 
+      <li><a href="/">Home</a></li> 
+     </ul>
+    </div> 
+    <div id="bpopup_findocc_btn"> 
+     <a id="bpopup_findocc_href" class="popupbutton_out" href="/find/">Find Occupations</a> 
+     <ul id="bpopup_findocc_menu" style="display: none"> 
+      <li><a href="/find/bright">Bright Outlook</a></li> 
+      <li><a href="/find/career">Career Cluster</a></li> 
+      <li><a href="/find/green">Green Economy Sector</a></li> 
+      <li><a href="/find/industry">Industry</a></li> 
+      <li><a href="/find/family">Job Family</a></li> 
+      <li><a href="/find/zone">Job Zone</a></li> 
+      <li><a href="/find/stem">STEM</a></li> 
+     </ul>
+    </div> 
+    <div id="bpopup_advsearch_btn"> 
+     <a id="bpopup_advsearch_href" class="popupbutton_out" href="/search/">Advanced Search</a> 
+     <ul id="bpopup_advsearch_menu" style="display: none"> 
+      <li><a href="/find/descriptor/browse">Browse by O*NET Data:</a></li> 
+      <li><a href="/find/descriptor/browse/Abilities/">&nbsp;&nbsp;—&nbsp;Abilities</a></li> 
+      <li><a href="/find/descriptor/browse/Interests/">&nbsp;&nbsp;—&nbsp;Interests</a></li> 
+      <li><a href="/find/descriptor/browse/Knowledge/">&nbsp;&nbsp;—&nbsp;Knowledge</a></li> 
+      <li><a href="/find/descriptor/browse/Skills/">&nbsp;&nbsp;—&nbsp;Skills</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Activities/">&nbsp;&nbsp;—&nbsp;Work Activities</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Context/">&nbsp;&nbsp;—&nbsp;Work Context</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Styles/">&nbsp;&nbsp;—&nbsp;Work Styles</a></li> 
+      <li><a href="/find/descriptor/browse/Work_Values/">&nbsp;&nbsp;—&nbsp;Work Values</a></li> 
+      <li><a href="/search/dwa/">Related DWA Search</a></li> 
+      <li><a href="/search/task/">Related Task Search</a></li> 
+      <li><a href="/skills/">Skills Search</a></li> 
+      <li><a href="/search/t2/">Tools &amp; Technology</a></li> 
+     </ul>
+    </div> 
+    <div id="bpopup_crosswalk_btn"> 
+     <a id="bpopup_crosswalk_href" class="popupbutton_out" href="/crosswalk/">Crosswalks</a> 
+     <ul id="bpopup_crosswalk_menu" style="display: none"> 
+      <li><a href="/crosswalk/RAPIDS/">Apprenticeship</a></li> 
+      <li><a href="/crosswalk/DOT/">DOT</a></li> 
+      <li><a href="/crosswalk/CIP/">Education</a></li> 
+      <li><a href="/crosswalk/MOC/">Military</a></li> 
+      <li><a href="/crosswalk/OOH/">Occupation Handbook</a></li> 
+      <li><a href="/crosswalk/SOC/">SOC</a></li> 
+     </ul>
+    </div> 
+    <div id="bpopup_network_btn"> 
+     <a id="bpopup_network_href" class="popupbutton_out" href="https://www.onetcenter.org/sites.html">O*NET Sites</a> 
+     <ul id="bpopup_network_menu" style="display: none"> 
+      <li><a href="https://www.mynextmove.org/">My Next Move</a></li> 
+      <li><a href="https://www.miproximopaso.org/">Mi Próximo Paso</a></li> 
+      <li><a href="https://www.mynextmove.org/vets/">My Next Move for Veterans</a></li> 
+      <li><a href="https://www.onetcenter.org/">Resource Center</a></li> 
+      <li><a href="https://services.onetcenter.org/">O*NET Web Services</a></li> 
+      <li><a href="https://www.onetcodeconnector.org/">Code Connector</a></li> 
+      <li><a href="http://www.onetacademy.org/">O*NET Academy</a></li> 
+      <li><a href="https://onet.rti.org/">Data Collection Program</a></li> 
+      <li><a href="https://www.doleta.gov/programs/onet/eta_default.cfm">U.S. Department of Labor</a></li> 
+      <li><a href="https://www.onetcenter.org/links.html">Related Sites</a></li> 
+     </ul>
+    </div> 
+   </div> 
+   <div id="foot"> 
+    <div class="ftest"> 
+     <div class="block"> 
+      <div class="imgline">
+       &nbsp; 
+       <span class="thumbsline"><span style="padding-right: 5px" class="thumbslabel">Was this page helpful?</span> <a href="/shared/rate?h=y&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" target="window_2" class="helpful_popup thumbsup" title="Yes, it was helpful"><img src="/shared/image/16/thumbs_up.png" width="32" height="24" alt="Yes" title="Yes, it was helpful"></a> <a href="/shared/rate?h=n&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" target="window_2" class="helpful_popup thumbsdown" title="No, it was not helpful"><img src="/shared/image/16/thumbs_down.png" width="32" height="24" alt="No" title="No, it was not helpful"></a></span> &nbsp;
+      </div> 
+      <div> 
+       <a href="/shared/jobhelp?from=footer" class="popup_jobhelp" target="window_2">Job Seeker Help</a> • 
+       <a href="/shared/contact?from=footer&amp;u=https%3A//www.onetonline.org/link/summary/21-1012.00" class="popup_contact_footer" target="window_2">Contact Us</a>
+       <span class="mailto_exp"> (onet@onetcenter.org)</span>
+      </div> 
+     </div> 
+     <div class="block"> 
+      <div class="imgline">
+       <span style="padding-right: 5px">Share:</span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/f?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="Facebook"><img src="/shared/image/16/facebook.png" width="16" height="16" alt="Facebook" title="Facebook"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/t?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="Twitter"><img src="/shared/image/16/twitter.png" width="16" height="16" alt="Twitter" title="Twitter"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/l?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="Delicious"><img src="/shared/image/16/delicious.png" width="16" height="16" alt="Delicious" title="Delicious"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/d?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="Digg"><img src="/shared/image/16/digg.png" width="16" height="16" alt="Digg" title="Digg"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/r?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="Reddit"><img src="/shared/image/16/reddit.png" width="16" height="16" alt="Reddit" title="Reddit"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/s?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="StumbleUpon"><img src="/shared/image/16/stumbleupon.png" width="16" height="16" alt="StumbleUpon" title="StumbleUpon"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/share/a?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" title="More sites..."><img src="/shared/image/16/addthis.png" width="16" height="16" alt="AddThis" title="More sites..."></a></span> 
+      </div> 
+      <div>
+       <a href="https://www.onetcenter.org/linkToOnet.html">Link to Us</a> • 
+       <a href="/shared/cite?u=https%3A//www.onetonline.org/link/summary/21-1012.00&amp;t=O%2ANET%20OnLine%20-%2021-1012.00%20-%20Educational%2C%20Guidance%2C%20School%2C%20and%20Vocational%20Counselors" class="citation" target="window_2">Cite this Page</a>
+      </div> 
+      <div>
+       <a href="/help/license" title="License"><img src="/shared/image/license-footer.png" width="48" height="24" style="vertical-align: middle"></a> 
+       <a href="/help/license">License</a>
+      </div> 
+      <div style="display: none">
+       <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">21-1012.00 - Educational, Guidance, School, and Vocational Counselors</span> by 
+       <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.onetonline.org/link/summary/21-1012.00" property="cc:attributionName" rel="cc:attributionURL">U.S. Department of Labor, Employment and Training Administration</a> is licensed under a 
+       <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div> 
+     </div> 
+     <div class="block"> 
+      <div class="imgline">
+       <span style="padding-right: 5px">Follow us:</span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/follow/facebook" title="O*NET on Facebook"><img src="/shared/image/16/facebook.png" width="16" height="16" alt="Facebook" title="O*NET on Facebook"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/follow/twitter" title="O*NET on Twitter"><img src="/shared/image/16/twitter.png" width="16" height="16" alt="Twitter" title="O*NET on Twitter"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/follow/rss-feed" title="O*NET RSS Feed"><img src="/shared/image/16/rss.png" width="16" height="16" alt="RSS" title="O*NET RSS Feed"></a></span> 
+       <span class="imgwrap"><a href="https://www.onetcenter.org/follow/mailing-list" title="O*NET Updates mailing list"><img src="/shared/image/16/email.png" width="16" height="16" alt="Email" title="O*NET Updates mailing list"></a></span> 
+      </div> 
+      <div>
+       <a href="/help/online/">About this Site</a> • 
+       <a href="/help/privacy/">Privacy</a> • 
+       <a href="/help/disclaimer/">Disclaimer</a> 
+      </div> 
+      <div>
+       Site updated August 1, 2017
+      </div> 
+     </div> 
+     <div style="clear: both; height: 10px"></div> 
+    </div>
+   </div> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html id="htmlProfile1918">
+ <head> 
+  <meta charset="iso-8859-1">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="canonical" href="https://www.ithaca.edu/sacl/careers/ourservices/search/"> 
+  <link rel="stylesheet" href="/css2/blueprint/screen.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/css2/blueprint/print.css" type="text/css" media="print"> 
+  <link rel="stylesheet" href="/css2/style.css?v=20150311" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/css2/style-modules.css?v1.2" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/css2/style-print.css?v1.1" type="text/css" media="print"> 
+  <script type="text/javascript" src="/css2/js/jquery-1.4.4.min.js"></script> 
+  <script type="text/javascript" src="/css2/js/jquery.tools.min.js"></script> 
+  <script type="text/javascript" src="/css2/js/jquery.valign.js"></script> 
+  <script type="text/javascript" src="/css2/js/typehelper/EventHelpers.js"></script> 
+  <script type="text/javascript" src="/css2/js/typehelper/TypeHelpers.js"></script> 
+  <script src="/css2/js/jquery.textfill.min.js" type="text/javascript"></script> 
+  <script type="text/javascript">
+			
+			jQuery(function($){
+			
+				
+				$('.jtextfill').textfill({ maxFontPixels: 42 });
+				
+				$("#headerapply").tooltip({ 
+					effect: 'toggle', 
+					tipClass: 'applyoptions', 
+					position: 'bottom center', 
+					relative: true, 
+					offset: [-5,0],
+					opacity: 0.9
+				});
+
+                /* this removes underlines from inline images that are linked */
+                $(".img_responsive").closest("a").css('text-decoration','none').css('border','0');
+
+
+			});
+			
+
+            function trackBadge(badge,description,destination,source) {
+                try {
+                    _gaq.push(['_trackEvent','Badge',description,source]);
+                } catch(err){}
+                setTimeout(function() {
+                    document.location.href = destination;
+                }, 100);
+            }
+
+
+
+		</script> 
+  <link rel="SHORTCUT ICON" href="/favicon.ico"> 
+  <title>Job and Internship Search - Career Services - Ithaca College</title> 
+  <style type="text/css">
+		/* <![CDATA[ */
+
+		
+
+		/* ]]> */
+		</style> 
+  <script type="text/javascript">
+		setTimeout(function(){var a=document.createElement("script");
+		var b=document.getElementsByTagName("script")[0];
+		a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/4825.js?"+Math.floor(new Date().getTime()/3600000);
+		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+		</script> 
+  <link rel="alternate" href="/profiles/feeds/1918_news.xml" type="application/rss+xml" charset="iso-8859-1" title="Career Services News"> 
+  <meta name="description" content="Deciding on, finding, and applying for jobs or internships is an important process. Career Services offers individualized career counseling, job/internship search..."> 
+  <!--[if lt IE 8 ]>
+		<link rel="stylesheet" href="/css2/style-ie.css?v1.1" type="text/css" media="all" />
+		
+		<![endif]--> 
+  <!--[if lt IE 7]>
+		<link rel="stylesheet" href="/css2/style-ie6.css?v1.1" type="text/css" media="all" />
+		<script type="text/javascript" src="/css2/js/supersleight/supersleight-min.js"></script>
+		
+		<![endif]--> 
+ </head> 
+ <body itemscope itemtype="http://schema.org/WebPage"> 
+  <!-- Google Tag Manager --> 
+  <noscript> 
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WS3PNN" height="0" width="0" style="display:none;visibility:hidden"></iframe> 
+  </noscript> 
+  <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WS3PNN');</script> 
+  <!-- End Google Tag Manager --> 
+  <!-- wrap in profile id for site specific changes --> 
+  <div id="profile_1918" class="page19174" data-role="page"> 
+   <!--googleoff: index--> 
+   <!-- BEGIN TopBar -->
+   <!-- END TopBar -->
+   <!-- BEGIN ICBrandHeader --> 
+   <!-- Begin Header --> 
+   <div id="header_wrapper"> 
+    <div class="globalmenu_wrapper"> 
+     <div class="container"> 
+      <div id="globalmenu" class="span-24 last"> 
+       <ul> 
+        <li><a href="/about/" rel="#aboutic" class="aboutic panelslide">About IC</a></li> 
+        <li><a href="/admission/" rel="#admission" class="admission panelslide">Admission</a></li> 
+        <li><a href="/academics/" rel="#academics" class="academics panelslide">Academics</a></li> 
+        <li><a href="/alumni_parents_friends/" rel="#apf" class="apf panelslide">Alumni, Parents, &amp; Friends</a></li> 
+        <li><a href="/athletics/" rel="#athletics" class="athletics panelslide">Athletics</a></li> 
+        <li><a href="/campuslife/" rel="#campuslife" class="campus panelslide">Campus Life</a></li> 
+        <li><a href="/newsevents/" rel="#newsevents" class="news panelslide">News &amp; Events</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- THE DRAWER --> 
+    <div class="logoheader_wrapper"> 
+     <div class="container"> 
+      <div id="header" class="span-24 last"> 
+       <div class="printlogo">
+        <img src="/css2/images/ic_print_logo.png" width="330" height="52" border="0" alt="Ithaca College">
+       </div> 
+       <h1 class="png_bg">Ithaca College</h1> 
+       <a href="/" id="header_home_link"></a> 
+       <ul> 
+        <li><a href="/admission/" id="headerapply">Apply Now</a> 
+         <ul class="applyoptions"> 
+          <li><a href="/admission/apply/" id="popapply_ug">Undergraduate</a></li> 
+          <li><a href="/gps/gradprograms/admission/apply/" id="popapply_grad">Graduate</a></li> 
+         </ul> </li> 
+        <li><a href="/directories/site_index.php">Site Index</a></li> 
+        <li><a href="/directories/">Directories</a></li> 
+       </ul> 
+       <div id="sitesearch"> 
+        <script>
+  (function() {
+    var cx = '018112999141108794150:p53dpbdxjii';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script> 
+        <gcse:searchbox-only gname="header-search" resultsurl="/search.php"></gcse:searchbox-only> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <script type="text/javascript" src="/css2/js/drawer/ic_drawer.js" async defer></script> 
+   <!-- End Header --> 
+   <!-- END ICBrandHeader --> 
+   <!--googleon: index--> 
+   <!-- blueprint wraps things with this --> 
+   <div class="container page19174"> 
+    <!-- Begin Content --> 
+    <div id="body_wrap" class="span-24   ent_type_sacl"> 
+     <div id="cms_body_wrap" class=""> 
+      <!-- breadcrumbs --> 
+      <!--googleoff: index--> 
+      <div id="breadcrumbs" class="span-24">
+       <div id="breadcrumbs_wrap" itemprop="breadcrumb">
+        <!-- BEGIN BreadcrumbPrefix -->
+        <!-- END BreadcrumbPrefix -->
+        <a href="/sacl/careers/">Career Services</a>&nbsp; »&nbsp; 
+        <a href="/sacl/careers/ourservices/">Our Services</a>&nbsp; »&nbsp; 
+       </div>
+      </div> 
+      <!-- end breadcrumbs --> 
+      <!--googleon: index--> 
+      <div id="content_wrap" class="span-24"> 
+       <div id="col_left" class="span-7"> 
+        <div id="site_title" class=""> 
+         <a href="/sacl/careers/"> <h1 class="jtextfill"> <span>Career Services</span> </h1> </a> 
+        </div> 
+        <!--googleoff: index--> 
+        <div id="menu" data-role="footer"> 
+         <div id="nav"> 
+          <ul> 
+           <li class="menuli_career_services"><a href="/sacl/careers/" class="">Career Services</a></li> 
+           <li class="menuli_our_services"><a href="/sacl/careers/ourservices/" class="menuOpen">Our Services</a> 
+            <ul> 
+             <li class="menuli_creating_a_four_year_plan"><a href="/sacl/careers/ourservices/fouryearplan/" class="">Creating a Four Year Plan</a></li> 
+             <li class="menuli_choosing_a_major_"><a href="/sacl/careers/ourservices/choosingamajor/" class="">Choosing A Major </a></li> 
+             <li class="menuli_resume_and_cover_letter_writing"><a href="/sacl/careers/ourservices/resumecovletter/" class="">Resume and Cover Letter Writing</a></li> 
+             <li class="menuli_job_and_internship_search"><a href="/sacl/careers/ourservices/search/" class="menuOn">Job and Internship Search</a></li> 
+             <li class="menuli_professional_networking"><a href="/sacl/careers/ourservices/networking/" class="">Professional Networking</a></li> 
+             <li class="menuli_interview_preparation"><a href="/sacl/careers/ourservices/intprep/" class="">Interview Preparation</a></li> 
+             <li class="menuli_graduate_school_search"><a href="/sacl/careers/ourservices/gradsearch/" class="">Graduate School Search</a></li> 
+             <li class="menuli_credential_files"><a href="/sacl/careers/ourservices/creds/" class="">Credential Files</a></li> 
+            </ul>
+            <div class="clearable"></div></li> 
+           <li class="menuli_recruiting_visits"><a href="/sacl/careers/recruiter_visits/" class="">Recruiting Visits</a></li> 
+           <li class="menuli_upcoming_events"><a href="/sacl/careers/events1/" class="">Upcoming Events</a></li> 
+           <li class="menuli_icareers_-_find_jobs,_internships__online_resources"><a href="/sacl/careers/resources/" class="">iCareers - Find Jobs, Internships &amp; Online Resources</a></li> 
+           <li class="menuli_employer_spotlight:_currently_hiring_check_out_handshake"><a href="/sacl/careers/spotlight/" class="">Employer Spotlight: Currently Hiring! Check out Handshake!</a></li> 
+           <li class="menuli_for_alumni"><a href="/sacl/careers/alumni/" class="">For Alumni</a></li> 
+           <li class="menuli_for_family_and_friends"><a href="/sacl/careers/family/" class="">For Family and Friends</a></li> 
+           <li class="menuli_for_faculty_and_staff"><a href="/sacl/careers/faculty/" class="">For Faculty and Staff</a></li> 
+           <li class="menuli_for_employers"><a href="/sacl/careers/recruit/" class="">For Employers</a></li> 
+           <li class="menuli_peer_career_advisors"><a href="/sacl/careers/pcas/" class="">Peer Career Advisors</a></li> 
+           <li class="menuli_office_information"><a href="/sacl/careers/office/" class="">Office Information</a></li> 
+           <li class="menuli_scholarships__fellowships"><a href="/sacl/careers/scholarships/" class="">Scholarships &amp; Fellowships</a></li> 
+          </ul>
+          <div class="clearable"></div> 
+         </div> 
+         <div id="subnav"> 
+          <ul> 
+           <li class="menuli_documents"><a href="/sacl/careers/docs/" class="">Documents</a></li> 
+           <li class="menuli_photo_galleries"><a href="/sacl/careers/gallery/" class="">Photo Galleries</a></li> 
+           <li class="menuli_news"><a href="/sacl/careers/news/" class="">News</a></li> 
+           <li class="menuli_site_map"><a href="/sacl/careers/map/" class="">Site Map</a></li> 
+           <li class="menuli_student_affairs_and_campus_life"><a href="/sacl/" class=" external">Student Affairs and Campus Life</a></li> 
+          </ul>
+          <div class="clearable"></div> 
+         </div> 
+        </div> 
+        <!--googleon: index--> 
+       </div> 
+       <div id="col_right" class="span-17 last"> 
+        <div class="span-11">
+         <!-- BEGIN SubHeader -->
+         <!-- END SubHeader -->
+         <!-- BEGIN SectionHeader -->
+         <!-- END SectionHeader -->
+         <div id="section">
+          <h2>Our Services</h2>
+         </div>
+         <!-- BEGIN AboveContentArea -->
+         <!-- END AboveContentArea --> 
+         <div id="content" data-role="content"> 
+          <div class="cms_wrap">
+           <div class="cmscontent" id="cmscontent">
+            <h1>Job and Internship Search</h1>
+            <p>Deciding on, finding, and applying for jobs or internships is an important process. Career Services offers individualized career counseling, job/internship search assistance, various online and print resources, and multiple on- and off-campus events to help you along the way. Here are some helpful quick tips to assist you with finding a job or internship, and be sure to check out our <a href="/sacl/careers/events1/">Upcoming Events</a> and <a href="/sacl/careers/resources/">Online Resources</a>:</p> 
+            <ul> 
+             <li>Find out who you are. Evaluate your interests, skills and values. This information can help you to decide upon different career opportunities.</li> 
+             <li>Conduct informational interviews or job shadows to learn firsthand what your field is about. Research occupations using <a href="http://www.onetonline.org/">O*Net</a> and <a href="http://www.bls.gov/ooh/">OOH</a>.</li> 
+             <li>Think about geographical preferences and your ideal work environment (size and office culture). Research specific companies and job descriptions, and save them in self-created files using <a href="http://www.careershift.com/Default.aspx?sc=Ithaca">CareerShift</a>.&nbsp; View our Career Tip Tuesdays video which highlights the topic of <a href="https://www.youtube.com/watch?v=XkjZ2_pZ5YQ&amp;list=UUipJ-DRK4cs3eJwOUUMomKA">gender inequality in the workplace</a>.</li> 
+             <li>Have your resume and cover letter critiqued multiple times, including by Career Services.</li> 
+             <li>Attend recruiting events on and off campus including the <strong><a href="https://ithaca.joinhandshake.com/career_fairs/1083">Job and Internship Fair</a></strong> and <a href="https://ithaca.joinhandshake.com/interview_schedules">on-campus interviews</a>.</li> 
+             <li><a href="/sacl/careers/ourservices/networking/">Network</a> with family, friends, alumni, professors and past employers who may be able to help in the process. Consider attending a local <strong>Speed Networking</strong> event or <strong>Network Nights</strong>.</li> 
+             <li>Start a job/internship application and follow up file.</li> 
+             <li>Use Career Services' <a href="/sacl/careers/resources/">Online Resources </a>to help you with your search process.</li> 
+             <li>Be prepared for a conversation about salary. See the "<strong>Salary Negotiation</strong>" section of the<a href="/sacl/careers/docs/Guides/CareerServicesGuide.pdf"> Ithaca College Career Guide</a>.</li> 
+            </ul> 
+            <p>For further information, refer to the "<strong>Job and Internship Search Strategies</strong>" and "<strong>Networking and Professional Etiquette</strong>" sections of the<a href="/sacl/careers/docs/Guides/CareerServicesGuide.pdf"> Ithaca College Career&nbsp;Guide</a>.</p> 
+            <p>We encourage you to use the<a href="/ogc/docs/releases/"> Internship Release</a> and <a href="/ogc/docs/internships/">Internship Agreement Forms</a> found on the Ithaca College Office of the General Counsel website.</p> 
+           </div>
+          </div> 
+         </div> 
+        </div> 
+        <div id="sidebar" class="span-6 last"> 
+         <div id="sidebar_inner" class=""> 
+          <div class="sidebar_item sidebar_callout body_rightcolumn_more"> 
+           <h4>Who Recruits at IC?</h4> 
+           <p>Ithaca College maintains recruiting relationships with over 6,000 employers and graduate schools.&nbsp; During the 2015-2016&nbsp;academic year, over 7,000 job and internship opportunities were made available to Ithaca College students and alumni.&nbsp;</p> 
+           <ul> 
+            <li><a href="/sacl/careers/docs/Recruiting201516.pdf">See who recruited in 2015-201</a>6</li> 
+            <li><a href="https://ithaca.joinhandshake.com/">Current opportunities in HandShake</a></li> 
+           </ul> 
+           <div class="clear"></div> 
+          </div> 
+          <div class="sidebar_item "> 
+           <div class="sidebar_thumb">
+            <a href="/sacl/careers/docs/Guides/jobsearchchecklist.pdf"><img src="/profiles/images/doc_imgs/doc_pdf.png" align="left" border="0"></a>
+           </div> 
+           <div class="sidebar_feature hasicon">
+            <h5>Featured Document:<br><a href="/sacl/careers/docs/Guides/jobsearchchecklist.pdf">Job Search Checklist and Flowchart </a></h5>
+           </div> 
+           <div class="clear"></div> 
+          </div> 
+         </div> 
+         <div id="sidebar_foot">
+          <img src="/css2/images/sidebar_bottom.png" border="0" alt="">
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <!-- end body wrap --> 
+     </div> 
+    </div> 
+    <!-- BEGIN SiteFooter -->
+    <!-- END SiteFooter --> 
+    <!-- End of new template content --> 
+    <!-- Begin Footer --> 
+    <div id="footer" class="span-24"> 
+     <div id="footer_address">
+      953 Danby Road, Ithaca, NY 14850
+     </div> 
+     <div id="footer_links"> 
+      <ul> 
+       <li><a href="/map/">Campus Map</a></li> 
+       <li><a href="/contact/">Contact</a></li> 
+       <li><a href="/giving/">Giving</a></li> 
+       <li><a href="https://myhome.ithaca.edu/">myHome</a></li> 
+       <li><a href="/hr/">Work at Ithaca</a></li> 
+       <li><a href="/its/general/policies/privacy/">Privacy</a></li> 
+       <li><a href="?mobile" rel="nofollow">Mobile Site</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div id="copyright" class="span-24"> 
+     <div id="who">
+      Created using the 
+      <a href="https://www.ithaca.edu:8889/profiles/">Ithaca College Web Profile Manager</a>
+     </div> 
+     <!-- BEGIN Copyright -->
+     <p id="copyright" class="wrap_760">© Copyright Ithaca College. All rights reserved; unauthorized use prohibited. All material on this server is produced by our community but, except for designated pages, is neither approved nor verified by Ithaca College.</p>
+     <!-- END Copyright -->
+     <!-- BEGIN CopyrightAddendum -->
+     <!-- END CopyrightAddendum --> 
+    </div> 
+    <!-- End Footer --> 
+   </div> 
+  </div> 
+  <!-- end wrappers --> 
+  <script type="text/javascript">
+        //if (!ic_tracking_code_running) {
+            var _gaq = _gaq || [];
+            var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+            _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+            ic_tracking_code_running = true;
+            _gaq.push(['_setAccount','UA-1253946-6']);
+            _gaq.push(['_setDomainName','.ithaca.edu']);
+            _gaq.push(['_setAllowLinker',true]);
+
+                        _gaq.push(['_trackPageview']);
+            
+            (function(d) {
+                var s=d.getElementsByTagName('script')[0];
+
+                var ga=d.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.defer=true;
+                ga.src=('https:'==d.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(ga,s);
+
+                var ext=d.createElement('script'); ext.type='text/javascript'; ext.async=true; ext.defer=true;
+                ext.src='/css2/js/gaext.js';
+                s.parentNode.insertBefore(ext,s);
+            })(document);
+        //}
+        </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2d1cd29110","applicationID":"56261744","transactionName":"NFdSN0pVCkVYUkRbDQ0dcxZLQAtbFkJRUQ5MUVERXVEWRRZeRUARBkBGCltRFxlKVFFAAQsd","queueTime":0,"applicationTime":244,"atts":"GBBRQQJPGUs=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

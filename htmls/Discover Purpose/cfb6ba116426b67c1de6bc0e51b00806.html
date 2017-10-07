@@ -1,0 +1,1038 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+  <link rel="icon" href="http://www.drwaynedyer.com/wp-content/themes/waynedyer/favicon.ico" type="image/x-icon"> 
+  <link rel="stylesheet" href="/wp-content/themes/waynedyer/css/normalize.css?v=1445918155"> 
+  <link rel="stylesheet" href="/wp-content/themes/waynedyer/css/main.css?v=1445918155"> 
+  <link rel="stylesheet" href="/wp-content/themes/waynedyer/style.css?v=1480621735"> 
+  <script src="/wp-content/themes/waynedyer/js/vendor/modernizr-2.6.1.min.js?v=1445918155"></script> 
+  <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700|Roboto+Condensed:300,400,700" rel="stylesheet" type="text/css"> 
+  <meta name="msvalidate.01" content="D1DEEA0C1E64FBE6815D5850C089F68C"> 
+  <meta name="google-site-verification" content="SgA8dOu4bJtejCnK9TKpqh9oMUIg_69lnN_yPLjkAv8"> 
+  <meta property="fb:app_id" content="707913955966365"> 
+  <meta property="fb:app_id" content="1500921073482373"> 
+  <meta property="article:author" content="https://www.facebook.com/drwaynedyer"> 
+  <script src="https://www.google.com/recaptcha/api.js"></script> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1484450748452989');
+fbq('track', "PageView");</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1484450748452989&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+  <script type="text/javascript">
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50818130-1', 'auto');
+  ga('send', 'pageview');
+</script> 
+  <!-- This site is optimized with the Yoast SEO Premium plugin v5.4 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <title>How Do You Know Your Life Purpose? - Dr. Wayne W. Dyer</title> 
+  <meta name="description" content="-How Do You Know Your Life Purpose? - %%sitename%"> 
+  <meta name="keywords" content=", ,"> 
+  <link rel="canonical" href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="How Do You Know Your Life Purpose? - Dr. Wayne W. Dyer"> 
+  <meta property="og:description" content="-How Do You Know Your Life Purpose? - %%sitename%"> 
+  <meta property="og:url" content="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/"> 
+  <meta property="og:site_name" content="Dr. Wayne W. Dyer"> 
+  <meta property="article:publisher" content="http://www.facebook.com/drwaynedyer"> 
+  <meta property="og:image" content="http://www.drwaynedyer.com/wp-content/uploads/2015/10/dyer-your-life-purpose.jpg"> 
+  <meta property="og:image:width" content="840"> 
+  <meta property="og:image:height" content="429"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="-How Do You Know Your Life Purpose? - %%sitename%"> 
+  <meta name="twitter:title" content="How Do You Know Your Life Purpose? - Dr. Wayne W. Dyer"> 
+  <meta name="twitter:site" content="@DrWayneWDyer"> 
+  <meta name="twitter:image" content="https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/10/dyer-your-life-purpose.jpg?fit=840%2C429"> 
+  <meta name="twitter:creator" content="@DrWayneWDyer"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.drwaynedyer.com\/","name":"Dr. Wayne W. Dyer","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.drwaynedyer.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Person","url":"http:\/\/www.drwaynedyer.com\/video\/how-to-know-your-life-purpose\/","sameAs":["http:\/\/www.facebook.com\/drwaynedyer","https:\/\/instagram.com\/hayhouseinc","https:\/\/www.youtube.com\/user\/HayHousePresents","https:\/\/www.pinterest.com\/hayhouseinc\/","https:\/\/twitter.com\/DrWayneWDyer"],"@id":"#person","name":"Wayne Dyer"}</script> 
+  <!-- / Yoast SEO Premium plugin. --> 
+  <link rel="dns-prefetch" href="//s0.wp.com"> 
+  <link rel="dns-prefetch" href="//w.sharethis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Dr. Wayne W. Dyer » Feed" href="http://www.drwaynedyer.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Dr. Wayne W. Dyer » Comments Feed" href="http://www.drwaynedyer.com/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Dr. Wayne W. Dyer » How Do You Know Your Life Purpose? Comments Feed" href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/feed/"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.drwaynedyer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="contact-form-7-css" href="http://www.drwaynedyer.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.9" type="text/css" media="all"> 
+  <link rel="stylesheet" id="collapseomatic-css-css" href="http://www.drwaynedyer.com/wp-content/plugins/jquery-collapse-o-matic/light_style.css?ver=1.6" type="text/css" media="all"> 
+  <link rel="stylesheet" id="jquery-smooth-scroll-css" href="http://www.drwaynedyer.com/wp-content/plugins/jquery-smooth-scroll/css/jss-style.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="rs-plugin-settings-css" href="http://www.drwaynedyer.com/wp-content/plugins/revslider/rs-plugin/css/settings.css?rev=4.6.0&amp;ver=4.8.2" type="text/css" media="all"> 
+  <style id="rs-plugin-settings-inline-css" type="text/css">
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style> 
+  <link rel="stylesheet" id="ssbp_styles-css" href="http://www.drwaynedyer.com/wp-content/plugins/simple-share-buttons-plus/ssbp.min.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tve_style_family_tve_flt-css" href="http://www.drwaynedyer.com/wp-content/plugins/thrive-leads/tcb/editor/css/thrive_flat.css?ver=2.0.9" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tve_leads_forms-css" href="//www.drwaynedyer.com/wp-content/plugins/thrive-leads/editor-layouts/css/frontend.css?ver=2.0.9" type="text/css" media="all"> 
+  <link rel="stylesheet" id="responsive-menu-css" href="http://www.drwaynedyer.com/wp-content/plugins/responsive-menu-data/css/responsive-menu-1.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="ubermenu-css" href="http://www.drwaynedyer.com/wp-content/plugins/ubermenu/pro/assets/css/ubermenu.min.css?ver=3.0.3.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="ubermenu-font-awesome-css" href="http://www.drwaynedyer.com/wp-content/plugins/ubermenu/assets/css/fontawesome/css/font-awesome.min.css?ver=4.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="jetpack_css-css" href="http://www.drwaynedyer.com/wp-content/plugins/jetpack/css/jetpack.css?ver=5.3" type="text/css" media="all"> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20150408"></script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min.js?rev=4.6.0&amp;ver=4.8.2"></script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?rev=4.6.0&amp;ver=4.8.2"></script> 
+  <script id="st_insights_js" type="text/javascript" src="http://w.sharethis.com/button/st_insights.js?publisher=4d48b7c5-0ae3-43d4-bfbe-3ff8c17a8ae6&amp;product=simple-share-pro"></script> 
+  <link rel="https://api.w.org/" href="http://www.drwaynedyer.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.drwaynedyer.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.drwaynedyer.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="shortlink" href="http://www.drwaynedyer.com/?p=13365"> 
+  <link rel="alternate" type="application/json+oembed" href="http://www.drwaynedyer.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.drwaynedyer.com%2Fvideo%2Fhow-to-know-your-life-purpose%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="http://www.drwaynedyer.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.drwaynedyer.com%2Fvideo%2Fhow-to-know-your-life-purpose%2F&amp;format=xml"> 
+  <style id="ubermenu-custom-generated-css">
+/** UberMenu Custom Menu Styles (Customizer) **/
+/* main */
+.ubermenu-main.ubermenu-transition-fade .ubermenu-item .ubermenu-submenu-drop { margin-top:0; }
+.ubermenu-main .ubermenu-submenu.ubermenu-submenu-drop { background-color:#789fa5; }
+.ubermenu-main .ubermenu-item-level-0 > .ubermenu-submenu-drop { box-shadow:0 0 20px rgba(0,0,0, .3); }
+.ubermenu-main .ubermenu-item-normal > .ubermenu-target { font-size:16px; }
+
+
+/* Status: Loaded from Transient */
+
+</style>
+  <script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.drwaynedyer.com/?wordfence_logHuman=1&hid=B1A07B3E09E027F613644A678F6CE0E8');
+</script> 
+  <link rel="dns-prefetch" href="//v0.wordpress.com"> 
+  <link rel="dns-prefetch" href="//i0.wp.com"> 
+  <link rel="dns-prefetch" href="//i1.wp.com"> 
+  <link rel="dns-prefetch" href="//i2.wp.com"> 
+  <style type="text/css">img#wpstats{display:none}</style>
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/"> 
+  <meta property="og:title" content="How Do You Know Your Life Purpose?"> 
+  <meta property="og:site_name" content="Dr. Wayne W. Dyer"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:description" content="Are you living your life as intended? Are you listening to the infinite intelligence within? In Dr. Dyer’s free video series, he shares profound spiritual lessons he’s discovered in living from that place of infinite intelligence within and how living..."> 
+  <meta property="og:image" content="https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/10/dyer-your-life-purpose.jpg?resize=150%2C150"> 
+  <meta property="fb:app_id" content="707913955966365"> 
+  <link rel="stylesheet" type="text/css" id="wp-custom-css" href="http://www.drwaynedyer.com/?custom-css=2aec83adab"> 
+ </head> 
+ <body class="hh_video-template-default single single-hh_video postid-13365 responsive-menu-push-left"> 
+  <div id="pushWrapper"> 
+   <div id="fb-root"></div> 
+   <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> 
+   <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+  <![endif]--> 
+   <header id="header" role="banner" class="clearfix"> 
+    <div id="top"> 
+     <div class="container clearfix"> 
+      <div class="col-6">
+        Get Updates 
+       <div class="nlcontent"> 
+        <form method="POST" action="/index.php"> 
+         <p> <input type="email" name="email" placeholder="your email" value=""> <span class="error"></span> <input name="submit" type="submit" value="Subscribe"> </p> 
+        </form> 
+       </div> 
+      </div> 
+      <div class="col-6 right"> 
+       <ul class="social"> 
+        <li class="connect">Connect with Wayne</li> 
+        <li class="facebook"><a href="https://www.facebook.com/DrWayneDyer" target="_blank">Facebook</a></li> 
+        <li class="twitter"><a href="https://twitter.com/drwaynewdyer" target="_blank">Twitter</a></li> 
+        <li class="instagram"><a href="http://www.instagram.com/HayHouseInc" target="_blank">Instagram</a></li> 
+        <li class="pinterest"><a href="http://www.pinterest.com/HayHouseInc" target="_blank">Pinterest</a></li> 
+        <li class="youtube"><a href="http://www.youtube.com/HayHousePresents" target="_blank">YouTube</a></li> 
+        <li class="soundcloud"><a href="http://www.soundcloud.com/hay-house" target="_blank">SoundCloud</a></li> 
+        <li class="hyl"><a href="http://www.healyourlife.com" target="_blank">Heal Your Life</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <section class="masthead"> 
+     <div class="container"> 
+      <div id="click-menu" class="hh-click-menu"> 
+       <div id="RM3Lines" class="threeLines"> 
+        <div class="line"></div> 
+        <div class="line"></div> 
+        <div class="line"></div> 
+       </div> 
+      </div> 
+      <div class="logo">
+       <a href="http://www.drwaynedyer.com/">Dr. Wayne W. Dyer</a>
+      </div> 
+      <div class="header-search"> 
+       <form role="search" method="get" class="search-form" action="http://www.drwaynedyer.com/"> 
+        <label> <input type="search" class="search-field" placeholder="Search articles, books, events, etc." value="" name="s" title="Search for:"> </label> 
+        <input type="submit" class="search-submit" value="Search"> 
+       </form>
+      </div> 
+     </div> 
+    </section> 
+    <nav id="primary" class="clearfix"> 
+     <div class="container"> 
+      <nav id="ubermenu-main-21-header-nav" class="ubermenu ubermenu-nojs ubermenu-main ubermenu-menu-21 ubermenu-loc-header-nav ubermenu-responsive ubermenu-responsive-default ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-shift ubermenu-trigger-hover_intent ubermenu-skin-none ubermenu-bar-align-full ubermenu-items-align-left ubermenu-bound ubermenu-sub-indicators ubermenu-retractors-responsive">
+       <ul id="ubermenu-nav-main-21-header-nav" class="ubermenu-nav">
+        <li id="menu-item-535" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-535 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/about-dr-wayne-dyer/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">About Dr. Wayne Dyer</span></a></li>
+        <li id="menu-item-534" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-534 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/events/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Events</span></a></li>
+        <li id="menu-item-536" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-536 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Books &amp; Products</span></a>
+         <ul class="ubermenu-submenu ubermenu-submenu-id-536 ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width ubermenu-autoclear">
+          <li id="menu-item-2634" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2634 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/books/"><span class="ubermenu-target-title ubermenu-target-text">Books</span></a></li>
+          <li id="menu-item-2635" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2635 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/audio-books/"><span class="ubermenu-target-title ubermenu-target-text">Audio Books</span></a></li>
+          <li id="menu-item-2636" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2636 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/audio-cds/"><span class="ubermenu-target-title ubermenu-target-text">Audio CDs</span></a></li>
+          <li id="menu-item-2637" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2637 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/apps/"><span class="ubermenu-target-title ubermenu-target-text">Apps</span></a></li>
+          <li id="menu-item-2639" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2639 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/dvds/"><span class="ubermenu-target-title ubermenu-target-text">DVDs</span></a></li>
+          <li id="menu-item-2640" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2640 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/ebooks/"><span class="ubermenu-target-title ubermenu-target-text">eBooks</span></a></li>
+          <li id="menu-item-2638" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2638 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/childrens-books/"><span class="ubermenu-target-title ubermenu-target-text">Children’s Books</span></a></li>
+          <li id="menu-item-2641" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2641 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/calendars/"><span class="ubermenu-target-title ubermenu-target-text">Calendars</span></a></li>
+          <li id="menu-item-2642" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2642 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/online-courses/"><span class="ubermenu-target-title ubermenu-target-text">Online Courses</span></a></li>
+          <li id="menu-item-2643" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_products_format ubermenu-item-2643 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-1-5"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/products/format/streaming-videos/"><span class="ubermenu-target-title ubermenu-target-text">Streaming Videos</span></a></li>
+          <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li>
+         </ul></li>
+        <li id="menu-item-538" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current_page_parent ubermenu-item-538 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/blog/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Wayne’s Blog</span></a></li>
+        <li id="menu-item-537" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-537 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/wayne-dyer-quotes/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Daily Inspiration</span></a></li>
+        <li id="menu-item-532" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-532 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Video</span></a>
+         <ul class="ubermenu-submenu ubermenu-submenu-id-532 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item ubermenu-autoclear">
+          <li id="menu-item-2644" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_video_category ubermenu-item-2644 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/category/divine-purpose/"><span class="ubermenu-target-title ubermenu-target-text">Divine Purpose</span></a></li>
+          <li id="menu-item-2645" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_video_category ubermenu-item-2645 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/category/power-of-intention/"><span class="ubermenu-target-title ubermenu-target-text">Power of Intention</span></a></li>
+          <li id="menu-item-2646" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_video_category ubermenu-item-2646 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/category/biology-of-miracles/"><span class="ubermenu-target-title ubermenu-target-text">Biology of Miracles</span></a></li>
+          <li id="menu-item-2647" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_video_category ubermenu-item-2647 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/category/i-can-do-it-tour/"><span class="ubermenu-target-title ubermenu-target-text">I Can Do It! Tour</span></a></li>
+          <li id="menu-item-2648" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_video_category ubermenu-item-2648 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/category/miracles/"><span class="ubermenu-target-title ubermenu-target-text">Miracles</span></a></li>
+          <li id="menu-item-2649" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-hh_video_category ubermenu-item-2649 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/video/category/spirituality-2/"><span class="ubermenu-target-title ubermenu-target-text">Spirituality</span></a></li>
+          <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li>
+         </ul></li>
+        <li id="menu-item-531" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-531 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.drwaynedyer.com/press/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Press &amp; Media</span></a></li>
+        <li id="menu-item-2184" class="connect ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2184 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="#" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Connect with Wayne</span></a></li>
+        <li id="menu-item-2180" class="facebook ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2180 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="http://www.facebook.com" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">facebook.com/DrWayneDyer</span></a></li>
+        <li id="menu-item-2413" class="twitter ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2413 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="http://twitter.com/drwaynewdyer" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">@drwaynewdyer</span></a></li>
+        <li id="menu-item-2418" class="youtube ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2418 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="http://www.youtube.com/HayHousePresents" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">youtube.com/HayHousePresents</span></a></li>
+        <li id="menu-item-2415" class="pinterest ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2415 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="http://www.pinterest.com/HayHouseInc" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">pinterest.com/HayHouseInc</span></a></li>
+        <li id="menu-item-2414" class="instagram ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2414 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="http://www.instagram.com/HayHouseInc" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">instagram.com/HayHouseInc</span></a></li>
+       </ul>
+      </nav> 
+     </div> 
+    </nav> 
+   </header> 
+   <div id="main" role="main" class="clearfix"> 
+    <div class="container"> 
+     <div id="breadcrumbs">
+      <span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="http://www.drwaynedyer.com/" rel="v:url" property="v:title">Home</a> / <span rel="v:child" typeof="v:Breadcrumb"><a href="http://www.drwaynedyer.com/video/" rel="v:url" property="v:title">Videos</a> / <span rel="v:child" typeof="v:Breadcrumb"><a href="http://www.drwaynedyer.com/video/category/i-am/" rel="v:url" property="v:title">I AM</a> / <strong class="breadcrumb_last">How Do You Know Your Life Purpose?</strong></span></span></span></span>
+     </div> 
+     <div id="content"> 
+      <h2>Video Gallery<span><a href="/video">View all</a></span></h2> 
+      <article class="post-13365 hh_video type-hh_video status-publish has-post-thumbnail hentry hh_video_category-i-am" id="post-13365"> 
+       <header> 
+        <h1 class="entry-title">How Do You Know Your Life Purpose?</h1> 
+       </header> 
+       <div class="responsive-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4nIAwUJv2Eo" frameborder="0" allowfullscreen></iframe>
+       </div> 
+       <!-- Simple Share Buttons Plus (v1.2.4) simplesharebuttons.com/plus -->
+       <div class="ssbp-set--one ssbp--state-hidden ssbp-wrap ssbp-- ssbp--theme-1" data-ssbp-counts="true" data-ssbp-responsive="true">
+        <button class="ssbp-toggle-switch ssbp-toggle-close"><span></span></button>
+        <div class="ssbp-container" data-ssbp-share-text="" data-ssbp-url="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/" data-ssbp-title="How Do You Know Your Life Purpose?" data-ssbp-short-url="" data-ssbp-post-id="13365"></div>
+       </div>
+       <div class="ssbp-set--two ssbp--state-hidden ssbp-wrap ssbp--fixed-left ssbp--theme-1" data-ssbp-counts="true">
+        <button class="ssbp-toggle-switch ssbp-toggle-close"><span></span></button>
+        <div class="ssbp-container" data-ssbp-share-text="" data-ssbp-url="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/" data-ssbp-title="How Do You Know Your Life Purpose?" data-ssbp-short-url="" data-ssbp-post-id="13365"></div>
+       </div>
+       <p>Are you living your life as intended? Are you listening to the infinite intelligence within? </p> 
+       <p>In Dr. Dyer’s <a href="/iamlight-index1" target="_blank">free video series</a>, he shares profound spiritual lessons he’s discovered in living from that place of infinite intelligence within and how living in the light provides positive changes in our lives. In this powerful video, you’ll learn the biggest regret of the dying as written by Bronnie Ware in The Top Five Regrets of the Dying. Do you wish you had the courage to live the life you know you are destined to live? </p> 
+       <p>In this free video, Dr. Dyer shares two very personal moments that completely changed the course of his life. Both of these moments were occurred because he listened to those inner callings we all have. After listening to the infinite wisdom, his life began to change in profound and positive ways. What he discovered on his journey was we all came here with a purpose, with something greater to accomplish. We are not the physical body we inhabit but are part of the infinite intelligence of all creation. When you summon the courage and heed that inner calling, listen to that infinite intelligence within, that’s when your life begins to have purpose. </p> 
+       <p>In Dr. Dyer’s new online video course, <a href="/iamlight-course" target="_blank">Manifest Your Soul’s Purpose</a>, you’ll use powerful meditations with readings that will help you understand that “the laws of the material world do not apply in the presence of the God realized.” </p> 
+       <p>The thoughts you think are not just happenstance; they are within you for a reason, for a purpose, for a destiny you are called to fulfill and that is unique to you. You’ll realize the light of who you really are and why you are here. Dr. Dyer and several spiritual teachers including Anita Moorjani, Immaculée Ilibagiza and Scarlet Lewis take you on a remarkable journey where you’ll discover that you are capable of using this divine intelligence to create the life you were destined to live, the power of forgiveness, and recognizing the light within! </p> 
+       <p>Wayne Dyer will teach you how to go to the place of silence within. He will share 4 powerful meditations with some readings that when you understand them, you’ll understand things like your intuition, you’ll get rid of fears that will dominate your life, things like synchronicity, which demonstrate to you that “what you place your attention on will begin to manifest. There is no happenstance in this universe. It’s all held together by a divine light.”</p> 
+       <p>Discover this for yourself with Wayne Dyer’s last course, <a href="/iamlight-course" target="_blank">Manifest Your Soul’s Purpose: Using the I AM LIGHT Principles</a>.</p> 
+       <span id="tve_leads_end_content" style="display: block; visibility: hidden; border: 1px solid transparent;"></span> 
+       <div id="jp-relatedposts" class="jp-relatedposts"> 
+        <h3 class="jp-relatedposts-headline"><em>Related</em></h3> 
+       </div> 
+       <nav> 
+        <div>
+         « 
+         <a href="http://www.drwaynedyer.com/video/infinity-soul-yoga/" rel="prev">Wayne Dyer on Infinity, The Soul &amp; Yoga</a>
+        </div> 
+        <div>
+         <a href="http://www.drwaynedyer.com/video/forever-wisdom-wayne-dyer-pbs/" rel="next">Forever Wisdom of Wayne Dyer on PBS</a> »
+        </div> 
+       </nav> 
+       <script>
+  (function($) {
+    $(function() {
+      if (!$('#fb-root').size()) {
+        $('body').append('<div id="fb-root"></div>');
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk')); 
+      }
+    });
+    $.post('http://www.drwaynedyer.com/wp-admin/admin-ajax.php', {
+      action: 'fbc_ping',
+      post_id: '13365',
+      nonce: '74721a41a4'
+    });  
+  })(jQuery);
+</script> 
+       <a name="comments"></a> 
+       <h3>Comments</h3> 
+       <div id="FatPandaFacebookComments"> 
+        <noscript> 
+         <div class="facebook even thread-even depth-1" id="comment-7049"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=1606848476" rel="external nofollow" class="url">Paula Cristofaro</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-7049"> June 16, 2016 at 7:26 am</a> 
+          </div> 
+          <p>I love you Wayne! Paula from Italy</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook odd alt thread-odd thread-alt depth-1" id="comment-6976"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=760120815" rel="external nofollow" class="url">Ingrid Roberta Peña Iradi</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6976"> May 16, 2016 at 10:26 am</a> 
+          </div> 
+          <p>Nunca moriras para mi querido dyer..</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook even thread-even depth-1" id="comment-6444"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=100001418463508" rel="external nofollow" class="url">Latif Choudhury</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6444"> March 15, 2016 at 10:24 pm</a> 
+          </div> 
+          <p>Wayne Dyer change everything. In my life…</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook odd alt thread-odd thread-alt depth-1" id="comment-6434"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=847940536" rel="external nofollow" class="url">Yarí Marrero</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6434"> March 14, 2016 at 9:09 am</a> 
+          </div> 
+          <p>Wow! This short video made a huge impact on my soul. Thanks for this message of Light!</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook even thread-even depth-1" id="comment-6349"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=1073199034" rel="external nofollow" class="url">Tae Lee</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6349"> February 19, 2016 at 12:39 am</a> 
+          </div> 
+          <p>Wayne is my hero!!</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook odd alt thread-odd thread-alt depth-1" id="comment-6236"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=100000262182364" rel="external nofollow" class="url">Joanie McCann</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6236"> January 4, 2016 at 2:39 pm</a> 
+          </div> 
+          <p>what book is he reading from? i want it</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook even thread-even depth-1" id="comment-6213"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=100006410551690" rel="external nofollow" class="url">Atim Faith</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6213"> December 16, 2015 at 8:54 pm</a> 
+          </div> 
+          <p>Be blessed</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook odd alt thread-odd thread-alt depth-1" id="comment-6202"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=1466048231" rel="external nofollow" class="url">Geraldine Dalce</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6202"> December 10, 2015 at 11:09 am</a> 
+          </div> 
+          <p>One of the best speakers ever.</p> 
+         </div>
+         <!-- #comment-## --> 
+         <div class="facebook even thread-even depth-1" id="comment-6188"> 
+          <div class="comment-author vcard"> 
+           <cite class="fn"><a href="http://facebook.com/profile.php?id=100005637133309" rel="external nofollow" class="url">Mulcaster Mews</a></cite> 
+           <span class="says">says:</span> 
+          </div> 
+          <div class="comment-meta commentmetadata">
+           <a href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/#comment-6188"> November 30, 2015 at 4:54 pm</a> 
+          </div> 
+          <p>totally awesome……….</p> 
+         </div>
+         <!-- #comment-## --> 
+        </noscript> 
+        <div class="fb-comments" data-colorscheme="light" data-href="http://www.drwaynedyer.com/video/how-to-know-your-life-purpose/" data-num-posts="10" data-publish_feed="true" data-width="100%"></div> 
+       </div> 
+       <div class="navigation"> 
+        <div class="alignleft"></div> 
+        <div class="alignright"></div> 
+       </div> 
+       <div class="commentlist"> 
+       </div> 
+       <div class="navigation"> 
+        <div class="alignleft"></div> 
+        <div class="alignright"></div> 
+       </div> 
+      </article> 
+     </div>
+     <!-- End #content --> 
+     <aside id="sidebar"> 
+      <section> 
+       <form role="search" method="get" class="search-form" action="http://www.drwaynedyer.com/"> 
+        <label> <input type="search" class="search-field" placeholder="Search articles, books, events, etc." value="" name="s" title="Search for:"> </label> 
+        <input type="submit" class="search-submit" value="Search"> 
+       </form>
+      </section>
+      <section>
+       <h2 class="widgettitle">New to Dr. Dyer’s Work? Start Here</h2> 
+       <div class="feat-prod"> 
+        <div class="feat-prod-img"> 
+         <a href="http://www.hayhouse.com/the-essential-wayne-dyer-collection?utm_source=WD.com&amp;utm_medium=Sidebar&amp;utm_campaign=WD.com_EssentialWayneDyerCollection" target="_blank"><img width="140" height="216" src="http://www.drwaynedyer.com/wp-content/uploads/2014/09/essential-wayne-dyer.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="The Essential Wayne Dyer Collection"> </a> 
+        </div> 
+        <div class="feat-prod-title">
+         <a href="http://www.hayhouse.com/the-essential-wayne-dyer-collection?utm_source=WD.com&amp;utm_medium=Sidebar&amp;utm_campaign=WD.com_EssentialWayneDyerCollection" target="_blank">The Essential Wayne Dyer Collection</a>
+        </div> 
+        <div class="prod-format">
+         Hardcover
+        </div> 
+        <div class="author">
+         Dr. Wayne W. Dyer
+        </div> 
+        <div class="prod-price"> 
+         <span class="price">$29.95</span> 
+         <span class="sale-price">$26.95 (save 10%)</span> 
+        </div> 
+        <a href="http://www.hayhouse.com/the-essential-wayne-dyer-collection?utm_source=WD.com&amp;utm_medium=Sidebar&amp;utm_campaign=WD.com_EssentialWayneDyerCollection" class="btn" target="_blank">More Details</a> 
+       </div> 
+      </section>
+      <section> 
+       <div class="textwidget">
+        <!--a href="http://www.hayhouse.com/reviews/?utm_source=WD.com&utm_medium=Sidebar&utm_campaign=WD.com_SpecialOffer_Win2FreePasses" target="_blank"><img src="https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2016/09/450x350-HH.com-Celebration-HHLive.jpg" alt="Leave a Review" data-recalc-dims="1" /></a-->
+       </div> 
+      </section>
+      <section></section>
+      <section>
+       <h2 class="widgettitle">Most Popular Articles<span><a href="/blog/">View all</a></span></h2> 
+       <div class="pop-posts"> 
+        <div class="pop-posts-img">
+         <a href="http://www.drwaynedyer.com/blog/how-to-forgive-someone-in-15-steps/"><img width="736" height="1128" src="http://www.drwaynedyer.com/wp-content/uploads/2015/06/how-to-forgive_pin.jpg" class="attachment- size- wp-post-image" alt="How to Forgive Someone Who Has Hurt You in 15 Steps — by Dr. Wayne Dyer" srcset="https://i1.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/06/how-to-forgive_pin.jpg?w=736 736w, https://i1.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/06/how-to-forgive_pin.jpg?resize=196%2C300 196w, https://i1.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/06/how-to-forgive_pin.jpg?resize=668%2C1024 668w" sizes="(max-width: 736px) 100vw, 736px"></a>
+        </div> 
+        <div class="feat-prod-title">
+         <a href="http://www.drwaynedyer.com/blog/how-to-forgive-someone-in-15-steps/">How To Forgive Someone Who Has Hurt You: In 15 Steps</a>
+        </div> 
+        <div class="pop-posts-excerpt">
+         <a href="http://www.drwaynedyer.com/blog/how-to-forgive-someone-in-15-steps/">Even When Forgiveness Feels Impossible</a>
+        </div> 
+        <a href="http://www.drwaynedyer.com/blog/how-to-forgive-someone-in-15-steps/#comments">
+         <div class="pop-posts-comments">
+          398 Comments
+         </div></a> 
+       </div> 
+       <div class="pop-posts"> 
+        <div class="pop-posts-img">
+         <a href="http://www.drwaynedyer.com/blog/create-balance-dreams-habits/"><img width="736" height="1128" src="http://www.drwaynedyer.com/wp-content/uploads/2006/09/being-in-balance_pin.jpg" class="attachment- size- wp-post-image" alt="" srcset="https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2006/09/being-in-balance_pin.jpg?w=736 736w, https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2006/09/being-in-balance_pin.jpg?resize=196%2C300 196w, https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2006/09/being-in-balance_pin.jpg?resize=668%2C1024 668w" sizes="(max-width: 736px) 100vw, 736px"></a>
+        </div> 
+        <div class="feat-prod-title">
+         <a href="http://www.drwaynedyer.com/blog/create-balance-dreams-habits/">How to Create Life Balance Between Dreams and Habits</a>
+        </div> 
+        <div class="pop-posts-excerpt">
+         <a href="http://www.drwaynedyer.com/blog/create-balance-dreams-habits/">An Excerpt from Wayne Dyer's Bestselling Book Being In Balance</a>
+        </div> 
+        <a href="http://www.drwaynedyer.com/blog/create-balance-dreams-habits/#respond"></a> 
+       </div> 
+       <div class="pop-posts"> 
+        <div class="pop-posts-img">
+         <a href="http://www.drwaynedyer.com/blog/9-habits-creative-genius/"><img width="736" height="1128" src="http://www.drwaynedyer.com/wp-content/uploads/2015/03/creative-genius_pin.jpg" class="attachment- size- wp-post-image" alt="9 Habits of Creative Genius That You May Already Practice" srcset="https://i0.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/03/creative-genius_pin.jpg?w=736 736w, https://i0.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/03/creative-genius_pin.jpg?resize=196%2C300 196w, https://i0.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/03/creative-genius_pin.jpg?resize=668%2C1024 668w" sizes="(max-width: 736px) 100vw, 736px"></a>
+        </div> 
+        <div class="feat-prod-title">
+         <a href="http://www.drwaynedyer.com/blog/9-habits-creative-genius/">9 Habits of Creative Genius</a>
+        </div> 
+        <div class="pop-posts-excerpt">
+         <a href="http://www.drwaynedyer.com/blog/9-habits-creative-genius/">That You May Already Practice</a>
+        </div> 
+        <a href="http://www.drwaynedyer.com/blog/9-habits-creative-genius/#comments">
+         <div class="pop-posts-comments">
+          79 Comments
+         </div></a> 
+       </div> 
+       <div class="pop-posts"> 
+        <div class="pop-posts-img">
+         <a href="http://www.drwaynedyer.com/blog/manifesting-101-mastering-the-art-of-getting-what-you-want/"><img width="736" height="1128" src="http://www.drwaynedyer.com/wp-content/uploads/2015/10/manifesting_pin.jpg" class="attachment- size- wp-post-image" alt="Manifesting 101: Mastering the Art of Getting What You Want — Dr. Wayne Dyer #manifesting #co-creating #wish #fulfilled" srcset="https://i0.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/10/manifesting_pin.jpg?w=736 736w, https://i0.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/10/manifesting_pin.jpg?resize=196%2C300 196w, https://i0.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/10/manifesting_pin.jpg?resize=668%2C1024 668w" sizes="(max-width: 736px) 100vw, 736px"></a>
+        </div> 
+        <div class="feat-prod-title">
+         <a href="http://www.drwaynedyer.com/blog/manifesting-101-mastering-the-art-of-getting-what-you-want/">Manifesting 101: Mastering the Art of Getting What You Want</a>
+        </div> 
+        <div class="pop-posts-excerpt">
+         <a href="http://www.drwaynedyer.com/blog/manifesting-101-mastering-the-art-of-getting-what-you-want/">13 Powerful Habits for Creating a Life You Love</a>
+        </div> 
+        <a href="http://www.drwaynedyer.com/blog/manifesting-101-mastering-the-art-of-getting-what-you-want/#comments">
+         <div class="pop-posts-comments">
+          20 Comments
+         </div></a> 
+       </div> 
+      </section>
+      <section>
+       <h2 class="widgettitle">Wayne’s NYT Bestselling Memoir</h2> 
+       <div class="feat-prod"> 
+        <div class="feat-prod-img"> 
+         <a href="http://www.hayhouse.com/i-can-see-clearly-now-hardcover?utm_source=WD.com&amp;utm_medium=Sidebar&amp;utm_content=memoir&amp;utm_campaign=WD.com_ICanSeeClearlyNow" target="_blank"> <img src="http://www.drwaynedyer.com/wp-content/uploads/2014/09/i-can-see-clearly-now_new-140.jpg"> </a> 
+        </div> 
+        <div class="feat-prod-title">
+         <a href="http://www.hayhouse.com/i-can-see-clearly-now-hardcover?utm_source=WD.com&amp;utm_medium=Sidebar&amp;utm_content=memoir&amp;utm_campaign=WD.com_ICanSeeClearlyNow" target="_blank">I Can See Clearly Now</a>
+        </div> 
+        <div class="prod-format">
+         Hardcover
+        </div> 
+        <div class="author">
+         Dr. Wayne W. Dyer
+        </div> 
+        <div class="prod-price"> 
+         <span class="price">$27.95</span> 
+         <span class="sale-price">$25.16 (save 10%)</span> 
+        </div> 
+        <a href="http://www.hayhouse.com/i-can-see-clearly-now-hardcover?utm_source=WD.com&amp;utm_medium=Sidebar&amp;utm_content=memoir&amp;utm_campaign=WD.com_ICanSeeClearlyNow" class="btn" target="_blank">More Details</a> 
+       </div> 
+      </section>
+      <section>
+       <h2 class="widgettitle">Subscribe to Wayne’s Podcast</h2> 
+       <div class="textwidget">
+        <a href="https://itunes.apple.com/us/podcast/dr.-wayne-w.-dyer-podcast/id988177838?mt=2" title="Listen to Wayne Dyer Podcast on iTunes" target="_blank"><img src="https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2015/04/367x357-Wayne-Dyer-Podcast.jpg" alt="Listen to Dr Wayne Dyer Podcast on iTunes" data-recalc-dims="1"></a>
+        <br> 
+        <!--a href="http://www.hayhouseradio.com/#!/host/dr-wayne-w-dyer" title="Sign up for Wisdom Community and Listen to Dr. Wayne Dyer Show Archives on HayHouseRadio.com® - radio for your soul®" target="_blank"><img src="https://i2.wp.com/www.drwaynedyer.com/wp-content/uploads/2014/10/wayne-dyer-hayhouseradio.jpg" alt="Listen to Dr Wayne Dyer on HayHouseRadio® Radio for Your Soul® Banner" data-recalc-dims="1" /></a-->
+       </div> 
+      </section>
+      <section>
+       <h2 class="widgettitle">Discover Wayne’s Keys to Higher Awareness</h2> 
+       <div class="nlcontent"> 
+        <div class="nlimg">
+         <img src="/wp-content/uploads/2016/09/keys-higher-awareness_2.jpg">
+        </div> 
+        <p>Listen to the entire audio lecture The Keys to Higher Awareness, by Dr. Wayne Dyer. FREE when you sign up for the weekly Wayne Dyer newsletter.</p> 
+        <form method="POST" action="/index.php"> 
+         <p> <input type="text" name="name" placeholder="your first name" value=""> </p> 
+         <p> <input type="email" name="email" placeholder="your email" value=""> <span class="error"></span> <input name="submit" type="submit" value="Subscribe"> </p> 
+        </form> 
+       </div> 
+      </section>
+      <section> 
+       <div class="textwidget">
+        <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/53424581&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+       </div> 
+      </section>   
+     </aside> 
+    </div>
+    <!-- End .container --> 
+   </div> 
+   <footer id="footer"> 
+    <div class="container clearfix"> 
+     <div class="col-3 footer-logo">
+      <img src="http://www.drwaynedyer.com/wp-content/uploads/2014/08/w-mark.png" alt="Dr. Wayne W. Dyer">
+     </div> 
+     <div class="col-3"> 
+      <h4>Also Featured On</h4> 
+      <nav id="featured" class="clearfix"> 
+       <ul id="menu-footer-also-featured-on" class="menu">
+        <li id="menu-item-539" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-539"><a target="_blank" href="http://www.hayhouse.com/authorbio/dr-wayne-w-dyer?utm_source=WD.com&amp;utm_medium=Footer&amp;utm_campaign=WD.com">Hay House, Inc.</a></li> 
+        <li id="menu-item-13718" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13718"><a href="http://www.hayhouseu.com?utm_source=WD.com&amp;utm_medium=Footer&amp;utm_campaign=WD.com_HHU">Hay House Online Learning</a></li> 
+        <li id="menu-item-540" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-540"><a target="_blank" href="http://www.hayhouseradio.com">Hay House Radio</a></li> 
+        <li id="menu-item-541" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-541"><a target="_blank" href="http://www.healyourlife.com">Heal Your Life</a></li> 
+        <li id="menu-item-542" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-542"><a target="_blank" href="http://www.louisehay.com">Louise Hay</a></li> 
+       </ul> 
+      </nav> 
+     </div> 
+     <div class="col-3"> 
+      <h4>Keep In Touch</h4> 
+      <nav id="featured" class="clearfix"> 
+       <ul id="menu-footer-keep-in-touch" class="menu">
+        <li id="menu-item-548" class="facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-548"><a target="_blank" href="http://www.facebook.com/DrWayneDyer">facebook.com/DrWayneDyer</a></li> 
+        <li id="menu-item-549" class="twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-549"><a target="_blank" href="https://twitter.com/DrWayneWDyer">@DrWayneWDyer</a></li> 
+        <li id="menu-item-550" class="youtube menu-item menu-item-type-custom menu-item-object-custom menu-item-550"><a title="Watch Wayne Dyer and Other Hay House Authors at HayHousePresents" href="http://www.youtube.com/HayHousePresents">HayHousePresents</a></li> 
+        <li id="menu-item-551" class="pinterest menu-item menu-item-type-custom menu-item-object-custom menu-item-551"><a target="_blank" href="http://www.pinterest.com/HayHouseInc">pinterest.com/HayHouseInc</a></li> 
+        <li id="menu-item-552" class="instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-552"><a target="_blank" href="http://www.instagram.com/HayHouseInc">instagram.com/HayHouseInc</a></li> 
+       </ul> 
+      </nav> 
+     </div> 
+     <div class="col-3"> 
+      <h4>Contact</h4> 
+      <nav id="featured" class="clearfix"> 
+       <ul>
+        <li><a href="https://secure.hayhouse.com/customer/" target="_blank">Customer Care</a></li>
+        <li class="us-icon">US (800) 654-5126 Ext 1</li>
+        <li class="intl-icon">Intl (760) 431-7695 Ext 1</li>
+        <li id="menu-item-546" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-546"><a href="http://www.drwaynedyer.com/affiliate-program/">Affiliate Program</a></li> 
+        <li id="menu-item-13527" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13527"><a href="http://www.hayhouse.com/contact">Contact Us</a></li> 
+       </ul> 
+      </nav> 
+     </div> 
+    </div> 
+    <div id="bottom"> 
+     <div class="container clearfix"> 
+      <ul>
+       <li>© 2017 Hay House, Inc. All Rights Reserved.</li>
+       <li id="menu-item-543" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-543"><a href="http://www.drwaynedyer.com/sitemap/">Sitemap</a></li> 
+       <li id="menu-item-13667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13667"><a href="http://www.drwaynedyer.com/priv-policy/">Privacy Policy</a></li> 
+       <li id="menu-item-545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545"><a href="http://www.drwaynedyer.com/terms-use/">Terms of Use</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </footer> 
+  </div> 
+  <script src="/wp-content/themes/waynedyer/js/plugins.js?v=1445918155"></script> 
+  <script>
+		var advanced_ads_adsense_UID = false;
+		/**
+ * Check if an ad blocker is enabled.
+ *
+ * @param {function} callback A callback function that is executed after the check has been done.
+ *                            The 'is_enabled' (bool) variable is passed as the callback's first argument.
+ */
+;advanced_ads_check_adblocker = ( function( callback ) {
+	var pending_callbacks = [];
+	var is_enabled = null;
+
+	function RAF( RAF_callback ) {
+		var fn = window.requestAnimationFrame
+		|| window.mozRequestAnimationFrame
+		|| window.webkitRequestAnimationFrame
+		|| function( RAF_callback ) { return setTimeout( RAF_callback, 16 ); };
+
+		fn.call( window, RAF_callback );
+	}
+
+	RAF( function() {
+		// Create a bait.
+		var ad = document.createElement( 'div' );
+		ad.innerHTML = '&nbsp;';
+		ad.setAttribute( 'class', 'ad_unit ad-unit text-ad text_ad pub_300x250' );
+		ad.setAttribute( 'style', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -1000px !important; top: -1000px !important;' );
+		document.body.appendChild( ad );
+
+		RAF( function() {
+			var styles = window.getComputedStyle( ad );
+
+			is_enabled = styles.getPropertyValue( 'display' ) === 'none'
+			|| styles.getPropertyValue( '-moz-binding' ).indexOf( 'about:' ) !== -1;
+
+			// Call pending callbacks.
+			for ( var i = 0; i < pending_callbacks.length; i++ ) {
+				pending_callbacks[ i ]( is_enabled );
+			}
+			pending_callbacks = [];
+		} );
+	} );
+
+	return function( callback ) {
+		if ( is_enabled === null ) {
+			pending_callbacks.push( callback );
+			return;
+		}
+		// Run the callback immediately
+		callback( is_enabled );
+	}
+}());
+
+(function() {
+	var advadsTracker = function( name, UID ) {
+		this.name = name;
+		this.UID = UID;
+		this.analyticsObject = null;
+		var that = this;
+		var data = {
+			hitType: 'event',
+			eventCategory: 'Advanced Ads',
+			eventAction: 'AdBlock',
+			eventLabel: 'Yes',
+			nonInteraction: true,
+			transport: 'beacon'
+		};
+
+		/**
+		 * check if someone has already requested the analytics.js and created a GoogleAnalyticsObject
+		 */
+		this.analyticsObject = ( 'string' == typeof( GoogleAnalyticsObject ) && 'function' == typeof( window[GoogleAnalyticsObject] ) )? window[GoogleAnalyticsObject] : false;
+
+		if ( false === this.analyticsObject ) {
+			// No one has requested analytics.js at this point. Require it
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','_advads_ga');
+
+			_advads_ga( 'create', that.UID, 'auto', this.name );
+			_advads_ga( that.name + '.send', data );
+		} else {
+			// someone has already created a variable, use it to avoid conflicts.
+			window.console && window.console.log( "Advanced Ads Analytics >> using other's variable named `" + GoogleAnalyticsObject + "`" );
+			window[GoogleAnalyticsObject]( 'create', that.UID, 'auto', this.name );
+			window[GoogleAnalyticsObject]( that.name + '.send', data );
+		}
+	}
+
+	advanced_ads_check_adblocker( function( is_enabled ) {
+		// Send data to Google Analytics if an ad blocker was detected.
+		if ( is_enabled && 'string' === typeof advanced_ads_adsense_UID && advanced_ads_adsense_UID ) {
+			new advadsTracker( 'advadsTracker', advanced_ads_adsense_UID );
+		}
+	} );
+}());
+
+		</script>
+  <script type="text/javascript">
+var colomatduration = 'fast';
+var colomatslideEffect = 'slideFade';
+</script> 
+  <style>
+.collapseomatic_excerpt, .collapseomatic_content { margin-left: 0;  }
+.collapseomatic { color: #d96953; background-position: 0 4px; }
+
+</style> 
+  <a id="scroll-to-top" href="#" title="Scroll to Top">Top</a> 
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', '', 'auto');
+ga('send', 'pageview');
+</script> 
+  <script>
+          jQuery(document).ready(function ($) {
+            $("#drop-nav").change( function() {
+                    document.location.href =  $(this).val();
+            });
+          });
+        </script> 
+  <span style="display:none" class="tl-placeholder-f-type-screen_filler"></span>
+  <button id="responsive-menu-button" class="responsive-menu-button responsive-menu-boring
+        " type="button" aria-label="Menu"> <span class="responsive-menu-box"> <span class="responsive-menu-inner"></span> </span> <span class="responsive-menu-label responsive-menu-label-bottom"> <span class="responsive-menu-button-text"></span> </span> </button>
+  <div id="responsive-menu-container" class="push-left"> 
+   <div id="responsive-menu-wrapper"> 
+    <ul id="responsive-menu" class="">
+     <li id="responsive-menu-item-535" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="http://www.drwaynedyer.com/about-dr-wayne-dyer/" class="responsive-menu-item-link">About Dr. Wayne Dyer</a></li>
+     <li id="responsive-menu-item-534" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="http://www.drwaynedyer.com/events/" class="responsive-menu-item-link">Events</a></li>
+     <li id="responsive-menu-item-536" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a href="http://www.drwaynedyer.com/products/" class="responsive-menu-item-link">Books &amp; Products
+       <div class="responsive-menu-subarrow">
+        ▼
+       </div></a>
+      <ul class="responsive-menu-submenu responsive-menu-submenu-depth-1">
+       <li id="responsive-menu-item-2634" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/books/" class="responsive-menu-item-link">Books</a></li>
+       <li id="responsive-menu-item-2635" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/audio-books/" class="responsive-menu-item-link">Audio Books</a></li>
+       <li id="responsive-menu-item-2636" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/audio-cds/" class="responsive-menu-item-link">Audio CDs</a></li>
+       <li id="responsive-menu-item-2637" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/apps/" class="responsive-menu-item-link">Apps</a></li>
+       <li id="responsive-menu-item-2639" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/dvds/" class="responsive-menu-item-link">DVDs</a></li>
+       <li id="responsive-menu-item-2640" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/ebooks/" class="responsive-menu-item-link">eBooks</a></li>
+       <li id="responsive-menu-item-2638" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/childrens-books/" class="responsive-menu-item-link">Children’s Books</a></li>
+       <li id="responsive-menu-item-2641" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/calendars/" class="responsive-menu-item-link">Calendars</a></li>
+       <li id="responsive-menu-item-2642" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/online-courses/" class="responsive-menu-item-link">Online Courses</a></li>
+       <li id="responsive-menu-item-2643" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_products_format responsive-menu-item"><a href="http://www.drwaynedyer.com/products/format/streaming-videos/" class="responsive-menu-item-link">Streaming Videos</a></li>
+      </ul></li>
+     <li id="responsive-menu-item-538" class=" menu-item menu-item-type-post_type menu-item-object-page current_page_parent responsive-menu-item"><a href="http://www.drwaynedyer.com/blog/" class="responsive-menu-item-link">Wayne’s Blog</a></li>
+     <li id="responsive-menu-item-537" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="http://www.drwaynedyer.com/wayne-dyer-quotes/" class="responsive-menu-item-link">Daily Inspiration</a></li>
+     <li id="responsive-menu-item-532" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a href="http://www.drwaynedyer.com/video/" class="responsive-menu-item-link">Video
+       <div class="responsive-menu-subarrow">
+        ▼
+       </div></a>
+      <ul class="responsive-menu-submenu responsive-menu-submenu-depth-1">
+       <li id="responsive-menu-item-2644" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_video_category responsive-menu-item"><a href="http://www.drwaynedyer.com/video/category/divine-purpose/" class="responsive-menu-item-link">Divine Purpose</a></li>
+       <li id="responsive-menu-item-2645" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_video_category responsive-menu-item"><a href="http://www.drwaynedyer.com/video/category/power-of-intention/" class="responsive-menu-item-link">Power of Intention</a></li>
+       <li id="responsive-menu-item-2646" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_video_category responsive-menu-item"><a href="http://www.drwaynedyer.com/video/category/biology-of-miracles/" class="responsive-menu-item-link">Biology of Miracles</a></li>
+       <li id="responsive-menu-item-2647" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_video_category responsive-menu-item"><a href="http://www.drwaynedyer.com/video/category/i-can-do-it-tour/" class="responsive-menu-item-link">I Can Do It! Tour</a></li>
+       <li id="responsive-menu-item-2648" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_video_category responsive-menu-item"><a href="http://www.drwaynedyer.com/video/category/miracles/" class="responsive-menu-item-link">Miracles</a></li>
+       <li id="responsive-menu-item-2649" class=" menu-item menu-item-type-taxonomy menu-item-object-hh_video_category responsive-menu-item"><a href="http://www.drwaynedyer.com/video/category/spirituality-2/" class="responsive-menu-item-link">Spirituality</a></li>
+      </ul></li>
+     <li id="responsive-menu-item-531" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="http://www.drwaynedyer.com/press/" class="responsive-menu-item-link">Press &amp; Media</a></li>
+     <li id="responsive-menu-item-2184" class="connect menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a href="#" class="responsive-menu-item-link">Connect with Wayne</a></li>
+     <li id="responsive-menu-item-2180" class="facebook menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="http://www.facebook.com" class="responsive-menu-item-link">facebook.com/DrWayneDyer</a></li>
+     <li id="responsive-menu-item-2413" class="twitter menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="http://twitter.com/drwaynewdyer" class="responsive-menu-item-link">@drwaynewdyer</a></li>
+     <li id="responsive-menu-item-2418" class="youtube menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="http://www.youtube.com/HayHousePresents" class="responsive-menu-item-link">youtube.com/HayHousePresents</a></li>
+     <li id="responsive-menu-item-2415" class="pinterest menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="http://www.pinterest.com/HayHouseInc" class="responsive-menu-item-link">pinterest.com/HayHouseInc</a></li>
+     <li id="responsive-menu-item-2414" class="instagram menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a target="_blank" href="http://www.instagram.com/HayHouseInc" class="responsive-menu-item-link">instagram.com/HayHouseInc</a></li>
+    </ul> 
+    <div id="responsive-menu-search-box"> 
+     <form action="http://www.drwaynedyer.com" class="responsive-menu-search-form" role="search"> 
+      <input type="search" name="s" placeholder="Search" class="responsive-menu-search-box"> 
+     </form> 
+    </div> 
+    <div id="responsive-menu-additional-content"></div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.drwaynedyer.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.9"></script> 
+  <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201740"></script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/jquery-smooth-scroll/js/jss-script.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var ssbpLazy = {"ajax_url":"http:\/\/www.drwaynedyer.com\/wp-admin\/admin-ajax.php","security":"fd4e5973b9"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/simple-share-buttons-plus/js/ssbp_lazy_tracking.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var ssbpAjax = {"ajax_url":"http:\/\/www.drwaynedyer.com\/wp-admin\/admin-ajax.php","security":"98001cee40"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/simple-share-buttons-plus/js/ssbp_page.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var tve_frontend_options = {"is_editor_page":"","page_events":[],"is_single":"1","ajaxurl":"http:\/\/www.drwaynedyer.com\/wp-admin\/admin-ajax.php","social_fb_app_id":"","dash_url":"http:\/\/www.drwaynedyer.com\/wp-content\/plugins\/thrive-leads\/thrive-dashboard","translations":{"Copy":"Copy"}};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/thrive-leads/tcb/editor/js/dist/frontend.min.js?ver=2.0.9"></script> 
+  <script type="text/javascript" src="//www.drwaynedyer.com/wp-content/plugins/thrive-leads/js/frontend.min.js?ver=2.0.9"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"http:\/\/www.drwaynedyer.com\/wp-admin\/admin-ajax.php","is_crawler":""};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/thrive-leads/thrive-dashboard/js/dist/frontend.min.js?ver=2.0.9"></script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/responsive-menu-data/js/responsive-menu-1.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var ubermenu_data = {"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","responsive_breakpoint":"0","accessible":"on","retractor_display_strategy":"responsive"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-content/plugins/ubermenu/assets/js/ubermenu.min.js?ver=3.0.3.2"></script> 
+  <script type="text/javascript" src="http://www.drwaynedyer.com/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">/*<![CDATA[*/if ( !window.TL_Const ) var TL_Const={"security":"e9d08df2f8","ajax_url":"\/\/www.drwaynedyer.com\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":13906,"display_options":{"allowed_post_types":["post","hh_products","hh_video","hh_press"],"flag_url_match":false},"custom_post_data":{"get_data":{"q":"\/video\/how-to-know-your-life-purpose\/"},"http_referrer":"google.com"},"current_screen":{"screen_type":5,"screen_id":13365},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]}/*]]> */</script>
+  <script type="text/javascript" src="https://stats.wp.com/e-201740.js" async defer></script> 
+  <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.3',blog:'102950022',post:'13365',tz:'-7',srv:'www.drwaynedyer.com'} ]);
+	_stq.push([ 'clickTrackerInit', '102950022', '13365' ]);
+</script> 
+  <script type="text/javascript">
+  jQuery(document).ready(function($) {
+      $(document).on('submit', 'form', function (e) {
+          var formElement = $(this);
+          if (!formElement.find('#gRecaptcha').length) {
+              formElement.find('input').each(function () {
+                  var placeholder = $(this).attr('placeholder');
+                  if (placeholder) {
+                      if (placeholder.toLowerCase().indexOf('email') > -1) {
+                          formElement.append('<div id="captcha-message"></div><div id="gRecaptcha"></div>');
+                          var widgetId = grecaptcha.render('gRecaptcha', {
+                              'sitekey': '6Ld39SIUAAAAALld6yZd0aRHpKU9W1I2Zcs6zfis',
+                              'size': 'invisible',
+                              'badge': 'inline',
+                              'callback': function () {
+                                  formElement.find('input[type=submit]').trigger('click');
+                                  formElement.find('button[type=submit]').trigger('click');
+                              }
+                          });
+                          $(formElement).find('.grecaptcha-badge').parent().css('display', 'none');
+                          grecaptcha.execute(widgetId);
+                          $(formElement).data('recaptcha-widget', widgetId);
+                          e.preventDefault();
+                      }
+                  }
+              });
+          } else {
+              if (!grecaptcha.getResponse()) {
+                  grecaptcha.execute();
+                  e.preventDefault();
+              }
+          }
+      });
+	$('#news_check').submit(function(event){
+		silverpop_ajax();
+		event.preventDefault();
+	});
+
+	// Resize left module
+	var nlwidget = $('.module.col-6.right').css('height');
+	
+	if ($(window).width() > 480) {
+		$('.module.col-6.left').css('height', nlwidget);
+	}
+
+	// Resize content
+	var sidebar = $('#sidebar').css('height');
+	var content = $('#content').css('height');
+	
+	if ($(window).width() > 480 && sidebar > content ) {
+		$('#content').css('min-height', sidebar);
+	}
+
+	// Events Up and Down Scroll
+	var eventHeight = $('ul.uc-event').height() + 30;
+	var animationOffset = $('#uc-events-container').height() - $('.uc-events-wrapper').height();
+	var margin = 0;
+
+
+	$('.down').click(function(){
+		if ( margin > animationOffset ) {
+			margin -= eventHeight;
+			//$('.uc-event li').append(margin);
+			$('.uc-events-wrapper').animate({'marginTop': '-='+eventHeight}, 800);
+		}
+	});
+
+
+	$('.up').click(function(){
+		if ( margin < 0 ) {
+			margin += eventHeight;
+			//$('.uc-event li').append(margin);
+			$('.uc-events-wrapper').animate({'marginTop': '+='+eventHeight}, 800);
+		}
+	});
+
+	// Contact Form Country Check
+	$('input:checkbox').prop('checked',true);
+	$( "#news_check #country" ).change(function() {
+		if ( $('#country').val() != 'United States') {
+			$('input:checkbox').prop('checked',false);
+		} else {
+			$('input:checkbox').prop('checked',true);
+		}
+	});
+
+
+// Parallax effect
+if ($(window).width() > 480) {
+	$window = $(window);
+	$('#main[data-type="background"]').each(function(){
+        	var $bgobj = $(this); // assigning the object
+    
+        	$(window).scroll(function() {
+            		var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+            
+            		// Put together our final background position
+            		var coords = '50% '+ yPos + 'px';
+
+            		// Move the background
+            		$bgobj.css({ backgroundPosition: coords });
+        	}); 
+    	});    
+}
+
+});
+
+   function silverpop_ajax(){
+
+	if (jQuery('#silverpop_checkbox input').is(':checked')){
+		var data = {
+	   	'action': 'silverpop',
+	   	'email': document.getElementById('silverpop_email').value,
+	   	'first-name': document.getElementById('silverpop_fname').value,
+		'last-name': document.getElementById('silverpop_lname').value,
+        'g-recaptcha-response': grecaptcha.getResponse()
+        };
+
+		var ajaxurl = 'http://www.drwaynedyer.com/wp-admin/admin-ajax.php';
+
+		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+		jQuery.post(ajaxurl, data, function(response) {
+			//alert('Got this from the server: ' + response);
+		});
+
+	}
+
+   }
+</script> 
+  <!-- Please call pinit.js only once per page --> 
+  <script type="text/javascript" async defer data-pin-color="red" data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c1c155ba6e","applicationID":"17488404","transactionName":"ZwEDbEZTV0BSBRVRDl5LIFtAW1ZdHBUIVgZcAUxQXG1PWlcDDg==","queueTime":0,"applicationTime":482,"atts":"S0YAGg5JRE4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+  <!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+ Served from: www.drwaynedyer.com @ 2017-10-03 09:01:41 by W3 Total Cache -->
+ </body>
+</html>

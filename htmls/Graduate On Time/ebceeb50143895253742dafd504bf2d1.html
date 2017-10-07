@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="initial-scale=1.0"> 
+  <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MT5JKMJ');</script> 
+  <!-- End Google Tag Manager --> 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i|Open+Sans:400,400i,700,700i" rel="stylesheet"> 
+  <script src="//assets.adobedtm.com/89397c5d44043fdc2ddab2d8b5ebe2e29cd95ab2/satelliteLib-b284dca965035f0b4a53c4ec0ad639513b5c647f.js"></script> 
+  <link rel="alternate" type="application/rss+xml" title="Accredited Online Colleges » RSS Feed" href="http://www.accreditedonlinecolleges.org/feed/"> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.5.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <title>Accredited Online Early Childhood Education Degree Programs</title> 
+  <meta name="description" content="Early childhood education is a subject for people who are passionate about helping young children grow and learn."> 
+  <link rel="canonical" href="http://www.accreditedonlinecolleges.org/early-childhood-education/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Accredited Online Early Childhood Education Degree Programs"> 
+  <meta property="og:description" content="Early childhood education is a subject for people who are passionate about helping young children grow and learn."> 
+  <meta property="og:url" content="http://www.accreditedonlinecolleges.org/early-childhood-education/"> 
+  <meta property="og:site_name" content="Accredited Online Colleges"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.accreditedonlinecolleges.org\/","name":"Accredited Online Colleges","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.accreditedonlinecolleges.org\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net"> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//colleges.accreditedonlinecolleges.org"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.accreditedonlinecolleges.org\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="instantsearch_css-css" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css?ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="toc-screen-css" href="/wp-content/plugins/table-of-contents-plus/screen.css?ver=1404" type="text/css" media="all"> 
+  <link rel="stylesheet" id="aoc2014-css" href="/wp-content/themes/aocorg-theme/assets/dist/style.min.css" type="text/css" media="all"> 
+  <script type="text/javascript" src="/wp-content/themes/aocorg-theme/assets/dist/header.min.js"></script> 
+  <link rel="https://api.w.org/" href="http://www.accreditedonlinecolleges.org/wp-json/"> 
+  <link rel="alternate" type="application/json+oembed" href="http://www.accreditedonlinecolleges.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.accreditedonlinecolleges.org%2Fearly-childhood-education%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="http://www.accreditedonlinecolleges.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.accreditedonlinecolleges.org%2Fearly-childhood-education%2F&amp;format=xml"> 
+ </head> 
+ <body id="widget-recovery" class="page-template-default page page-id-4860 singular"> 
+  <!-- Google Tag Manager (noscript) --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MT5JKMJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <!-- End Google Tag Manager (noscript) --> 
+  <header class="site-header" role="banner"> 
+   <div class="wrapper"> 
+    <a href="http://www.accreditedonlinecolleges.org/" rel="home" class="site-logo">
+     <svg aria-hidden="true" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 41.23"> 
+      <defs> 
+       <style>
+      .cls-1, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #f30f23;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style> 
+      </defs> 
+      <g> 
+       <g> 
+        <path class="cls-1" d="M121.19,18.07a2.18,2.18,0,0,0,1.52-.52,1.79,1.79,0,0,0,.57-1.4,1.35,1.35,0,0,0-.51-1.12,2.09,2.09,0,0,0-1.32-.4,2.24,2.24,0,0,0-1.51.52,1.63,1.63,0,0,0-.61,1.29,1.56,1.56,0,0,0,.46,1.2A2,2,0,0,0,121.19,18.07Z" transform="translate(0 -0.39)" /> 
+        <path class="cls-1" d="M151.22,9.07q-2,0-3.14,3.09a28.3,28.3,0,0,0-1.6,7.25,6.08,6.08,0,0,0-2.91,1.16A6.75,6.75,0,0,0,141.52,23a7.15,7.15,0,0,0-.74,3,7.44,7.44,0,0,1-1.35,1,4.82,4.82,0,0,1-2.26.69,2.16,2.16,0,0,1-2.09-1A7.89,7.89,0,0,0,138.77,25a3.56,3.56,0,0,0,1.09-2.61,2.77,2.77,0,0,0-.77-2.06,2.8,2.8,0,0,0-2.05-.76,4.47,4.47,0,0,0-2.57.77,5.24,5.24,0,0,0-1.78,2.08,6.39,6.39,0,0,0-.57,3.72,9.76,9.76,0,0,1-.88.81,2.63,2.63,0,0,1-1.68.57,1.83,1.83,0,0,1-1.71-.93,6.85,6.85,0,0,1-.54-3.22q0-.62,0-1.72h2.69q2.49,0,2.49-1.52a.82.82,0,0,0-.15-.57.7.7,0,0,0-.51-.15h-2.47a7.72,7.72,0,0,0,2.87-6,3.69,3.69,0,0,0-.53-2.05,1.65,1.65,0,0,0-1.46-.82,3.18,3.18,0,0,0-2.35,1.19,10,10,0,0,0-1.86,3.2,21.42,21.42,0,0,0-1.15,4.43h-1.26q-1,0-1,1.24a1.09,1.09,0,0,0,.23.77,1.23,1.23,0,0,0,.89.24h.86q-.07,1-.07,2c0,.48,0,.93.06,1.36a.85.85,0,0,0-.37.25,19.67,19.67,0,0,1-1.59,1.74,1.66,1.66,0,0,1-1,.55.61.61,0,0,1-.6-.35,2.32,2.32,0,0,1-.18-1,19.07,19.07,0,0,1,.53-3.29,17.33,17.33,0,0,0,.42-2.56q0-.75-1.12-.75a1.7,1.7,0,0,0-1.06.26,1.87,1.87,0,0,0-.53,1,23.69,23.69,0,0,0-.65,2.9,18.13,18.13,0,0,0-.24,2.21A12.19,12.19,0,0,1,117.22,27a1.89,1.89,0,0,1-1.21.53.87.87,0,0,1-.76-.55,4.8,4.8,0,0,1-.39-1.83,42.93,42.93,0,0,0,3.24-6.79,17.16,17.16,0,0,0,1.21-5.78,4.41,4.41,0,0,0-.63-2.6,1.89,1.89,0,0,0-1.58-.86q-1.92,0-3.1,3a27.72,27.72,0,0,0-1.6,7.31,6,6,0,0,0-2.94,1.14A6.68,6.68,0,0,0,107.41,23a7.22,7.22,0,0,0-.74,3,7.45,7.45,0,0,1-1.35,1,4.82,4.82,0,0,1-2.26.69,2.16,2.16,0,0,1-2.09-1A7.89,7.89,0,0,0,104.66,25a3.56,3.56,0,0,0,1.09-2.61,2.77,2.77,0,0,0-.77-2.06,2.8,2.8,0,0,0-2.05-.76,4.47,4.47,0,0,0-2.57.77,5.24,5.24,0,0,0-1.78,2.08,6.25,6.25,0,0,0-.53,1.69,1.26,1.26,0,0,1-.53.15q-.55,0-.55-.77a8.12,8.12,0,0,1,.18-1.1,11,11,0,0,0,.2-1.39,1.27,1.27,0,0,0-1.43-1.43,3.23,3.23,0,0,0-1.6.51,6.4,6.4,0,0,0-1.78,1.7,12.54,12.54,0,0,0-1.63,3.09,15.79,15.79,0,0,1,.22-1.63q.13-.66.35-1.54a8.44,8.44,0,0,0,.33-1.59.45.45,0,0,0-.18-.42,1.24,1.24,0,0,0-.62-.11,2.29,2.29,0,0,0-1.27.3,1.66,1.66,0,0,0-.65.94,17.83,17.83,0,0,0-.8,5A7.19,7.19,0,0,1,86.76,27a3.94,3.94,0,0,1-2,.61q-2.23,0-2.23-2.56a5.2,5.2,0,0,1,.26-1.7,3.21,3.21,0,0,1,.71-1.22,1.31,1.31,0,0,1,.95-.45.53.53,0,0,1,.41.15.63.63,0,0,1,.14.44,2,2,0,0,1-.11.62l-.07.29a1.62,1.62,0,0,0,0,.35.66.66,0,0,0,.25.55,1.06,1.06,0,0,0,.67.2,1.23,1.23,0,0,0,1.07-.64,2.85,2.85,0,0,0,.41-1.57,2.58,2.58,0,0,0-.67-1.84,2.46,2.46,0,0,0-1.89-.72,4.28,4.28,0,0,0-2.36.73,5.38,5.38,0,0,0-1.83,2.07,6.64,6.64,0,0,0-.71,3.13,5.83,5.83,0,0,0,.05.65,6.76,6.76,0,0,1-1.19.9,3.94,3.94,0,0,1-2,.61q-2.23,0-2.23-2.56a5.2,5.2,0,0,1,.26-1.7,3.21,3.21,0,0,1,.71-1.22,1.31,1.31,0,0,1,.95-.45.53.53,0,0,1,.41.15.63.63,0,0,1,.14.44,2,2,0,0,1-.11.62l-.07.29a1.62,1.62,0,0,0,0,.35.66.66,0,0,0,.25.55,1.06,1.06,0,0,0,.67.2,1.23,1.23,0,0,0,1.07-.64,2.85,2.85,0,0,0,.41-1.57,2.58,2.58,0,0,0-.67-1.84,2.46,2.46,0,0,0-1.89-.72,4.28,4.28,0,0,0-2.36.73,5.38,5.38,0,0,0-1.83,2.07,6.64,6.64,0,0,0-.71,3.13,5.83,5.83,0,0,0,.05.7,6.61,6.61,0,0,1-.74.66,2.22,2.22,0,0,1-1.34.47,1.2,1.2,0,0,1-1.08-.54A3.26,3.26,0,0,1,68.2,25a23.77,23.77,0,0,1,.47-3.94q.47-2.59,1-4.73a1.88,1.88,0,0,0,.07-.44q0-1-1.57-1a2.18,2.18,0,0,0-1.06.22,1.17,1.17,0,0,0-.53.84A53,53,0,0,1,65,22.66a10.2,10.2,0,0,1-1.85,3.57,3.11,3.11,0,0,1-2.36,1.1,2.27,2.27,0,0,1-1.93-1,4.89,4.89,0,0,1-.74-2.9,11.9,11.9,0,0,1,1-4.81A8.29,8.29,0,0,1,62,15a8.17,8.17,0,0,1,4.76-1.36,11.79,11.79,0,0,1,1.72.12q.82.12,2,.39l.26,0a1.28,1.28,0,0,0,1-.51,1.64,1.64,0,0,0,.43-1.08.82.82,0,0,0-.62-.88,11.88,11.88,0,0,0-2.11-.46,16.51,16.51,0,0,0-2.17-.15,12.54,12.54,0,0,0-6.73,1.73,11.24,11.24,0,0,0-4.23,4.59,13.64,13.64,0,0,0-1.43,6.21A7.48,7.48,0,0,0,55.57,27a5,5,0,0,0,4.67,2.92q3.18,0,4.81-3.42A4.19,4.19,0,0,0,66.24,29a3.48,3.48,0,0,0,2.49.89,4.5,4.5,0,0,0,2.54-.68,8.31,8.31,0,0,0,1.22-1,4,4,0,0,0,.38.47,4.5,4.5,0,0,0,3.36,1.22A6.43,6.43,0,0,0,79,29.22a7.06,7.06,0,0,0,1.56-1,4,4,0,0,0,.4.51,4.5,4.5,0,0,0,3.36,1.22,6.43,6.43,0,0,0,2.79-.69,7.08,7.08,0,0,0,1.33-.83,4,4,0,0,0,.17.64,1.21,1.21,0,0,0,1.18.88,1.27,1.27,0,0,0,1-.36,3.44,3.44,0,0,0,.56-1.4,15.81,15.81,0,0,1,.86-2.56,10.4,10.4,0,0,1,1.07-2q.54-.74.87-.74t.24.35q0,.15,0,.6a3.38,3.38,0,0,0-.07.66,2.15,2.15,0,0,0,.61,1.61,2.43,2.43,0,0,0,1.78.6,3.57,3.57,0,0,0,1.38-.3,4.2,4.2,0,0,0,1.16,2.24,4.91,4.91,0,0,0,3.59,1.26,6.39,6.39,0,0,0,3.19-.84,10.26,10.26,0,0,0,1.13-.74,3.3,3.3,0,0,0,.39.57,2.81,2.81,0,0,0,2.22,1,3.21,3.21,0,0,0,1.62-.4A6.32,6.32,0,0,0,113,28a2.79,2.79,0,0,0,2.56,2,3.64,3.64,0,0,0,2.14-.78,10.17,10.17,0,0,0,1-.8,3.46,3.46,0,0,0,.29.56,2.29,2.29,0,0,0,2.08,1q1.9,0,4.08-2.67s0-.07.05-.1a3.88,3.88,0,0,0,4,2.77,4.55,4.55,0,0,0,2.58-.75,8.85,8.85,0,0,0,1.24-1,4,4,0,0,0,.42.51,4.91,4.91,0,0,0,3.59,1.26,6.39,6.39,0,0,0,3.19-.84,10.27,10.27,0,0,0,1.13-.74,3.3,3.3,0,0,0,.4.57,2.8,2.8,0,0,0,2.22,1,3.3,3.3,0,0,0,1.55-.35,5.32,5.32,0,0,0,1.51-1.39l0,.09a3.57,3.57,0,0,0,.67,1.41,1.39,1.39,0,0,0,1,.37q1.21,0,1.21-1a2,2,0,0,0-.09-.6,29.48,29.48,0,0,1-.71-3.57,44.54,44.54,0,0,0,3.15-6.68,16.8,16.8,0,0,0,1.19-5.67,4.41,4.41,0,0,0-.63-2.6A1.89,1.89,0,0,0,151.22,9.07Zm-23,6.71A11.74,11.74,0,0,1,129,13.5q.41-.83.74-.83.48,0,.49,1.3a6.12,6.12,0,0,1-.65,2.55,7.53,7.53,0,0,1-2,2.52A30.8,30.8,0,0,1,128.19,15.79Zm-12.88.83a27.19,27.19,0,0,1,.72-3.89q.42-1.49.84-1.49.2,0,.34.46a4.6,4.6,0,0,1,.14,1.3q0,3.26-2.47,8.64Q115,19,115.31,16.62Zm-14.7,8.31a4.42,4.42,0,0,1,.56-2.29,1.62,1.62,0,0,1,1.38-.95.81.81,0,0,1,.63.25,1,1,0,0,1,.23.67,1.82,1.82,0,0,1-.75,1.43,5,5,0,0,1-2.05.93Zm10.74,2.41a1.33,1.33,0,0,1-.84.34q-1.1,0-1.1-1.61a5,5,0,0,1,.81-2.77,3.69,3.69,0,0,1,2-1.62q0,1.19,0,1.72a14.69,14.69,0,0,0,.22,2.67A6.49,6.49,0,0,1,111.35,27.34Zm23.37-2.41a4.42,4.42,0,0,1,.56-2.29,1.62,1.62,0,0,1,1.38-.95.81.81,0,0,1,.63.25,1,1,0,0,1,.23.67,1.82,1.82,0,0,1-.75,1.43,5,5,0,0,1-2.05.93Zm10.75,2.43a1.33,1.33,0,0,1-.85.33q-1.1,0-1.1-1.61a5.1,5.1,0,0,1,.79-2.78,3.53,3.53,0,0,1,2-1.61q0,.38,0,1.06a24.49,24.49,0,0,0,.22,3.33A6.25,6.25,0,0,1,145.48,27.35ZM149,21.6a60.28,60.28,0,0,1,.76-7.1q.56-3.26,1.2-3.26.2,0,.34.46a4.61,4.61,0,0,1,.14,1.3Q151.47,16.31,149,21.6Z" transform="translate(0 -0.39)" /> 
+        <path class="cls-1" d="M170.88,12a7.13,7.13,0,0,0-3.54-.88,8.28,8.28,0,0,0-4.66,1.39,9.51,9.51,0,0,0-3.33,3.95,13.54,13.54,0,0,0-1.22,5.91,8.46,8.46,0,0,0,.93,4.09,6.35,6.35,0,0,0,2.5,2.59,7.13,7.13,0,0,0,3.54.88,8.29,8.29,0,0,0,4.66-1.39,9.51,9.51,0,0,0,3.33-3.95,13.54,13.54,0,0,0,1.22-5.91,8.47,8.47,0,0,0-.93-4.09A6.36,6.36,0,0,0,170.88,12Zm-.52,11.32a6.69,6.69,0,0,1-2,2.94,4.69,4.69,0,0,1-3,1.06A3.5,3.5,0,0,1,162.47,26a6.19,6.19,0,0,1-1.1-4,11.84,11.84,0,0,1,.73-4.29,6.8,6.8,0,0,1,2-2.93,4.64,4.64,0,0,1,3-1A3.5,3.5,0,0,1,170,15.06a6.19,6.19,0,0,1,1.1,4A12.12,12.12,0,0,1,170.36,23.31Z" transform="translate(0 -0.39)" /> 
+        <path class="cls-1" d="M195.39,17.64a2,2,0,0,0,1.39.43,2.18,2.18,0,0,0,1.52-.52,1.79,1.79,0,0,0,.57-1.4,1.35,1.35,0,0,0-.51-1.12,2.09,2.09,0,0,0-1.32-.4,2.24,2.24,0,0,0-1.51.52,1.63,1.63,0,0,0-.61,1.29A1.56,1.56,0,0,0,195.39,17.64Z" transform="translate(0 -0.39)" /> 
+        <path class="cls-1" d="M218.15,25.55a.76.76,0,0,0-.6.33,7.21,7.21,0,0,1-1.36,1.41,2.49,2.49,0,0,1-1.49.42,1.85,1.85,0,0,1-1.79-1A7.92,7.92,0,0,0,216.64,25a3.57,3.57,0,0,0,1.09-2.61,2.76,2.76,0,0,0-.77-2.06,2.79,2.79,0,0,0-2.05-.76,4.46,4.46,0,0,0-2.57.77,5.24,5.24,0,0,0-1.78,2.08,6.38,6.38,0,0,0-.64,2.83,6.88,6.88,0,0,0,.07.94c-.3.33-.56.6-.78.79a1.72,1.72,0,0,1-1,.54q-.64,0-.64-.88a15.28,15.28,0,0,1,.42-2.54,17.76,17.76,0,0,0,.49-3.11A1.27,1.27,0,0,0,207,19.53a3.23,3.23,0,0,0-1.6.51,6.4,6.4,0,0,0-1.78,1.7A12.54,12.54,0,0,0,202,24.82a15.79,15.79,0,0,1,.22-1.63q.13-.66.35-1.54a8.44,8.44,0,0,0,.33-1.59.45.45,0,0,0-.18-.42,1.24,1.24,0,0,0-.62-.11,2.29,2.29,0,0,0-1.27.3,1.66,1.66,0,0,0-.65.94,17.84,17.84,0,0,0-.8,5,15.23,15.23,0,0,1-1.07,1.14,1.66,1.66,0,0,1-1,.55.61.61,0,0,1-.6-.35,2.32,2.32,0,0,1-.18-1,19.07,19.07,0,0,1,.53-3.29,17.33,17.33,0,0,0,.42-2.56q0-.75-1.12-.75a1.7,1.7,0,0,0-1.06.26,1.87,1.87,0,0,0-.53,1,23.69,23.69,0,0,0-.65,2.9,18.17,18.17,0,0,0-.24,2.2A9.25,9.25,0,0,1,192.72,27a2.56,2.56,0,0,1-1.59.52,1.19,1.19,0,0,1-.93-.39,2.55,2.55,0,0,1-.51-1.29A33.67,33.67,0,0,0,193.65,19a16,16,0,0,0,1.46-6.09,5.38,5.38,0,0,0-.61-2.81,1.87,1.87,0,0,0-1.66-1q-1.87,0-3.23,2.47a20.8,20.8,0,0,0-2.05,5.91,31.36,31.36,0,0,0-.69,6.13,13.29,13.29,0,0,0,.15,1.93,15.75,15.75,0,0,1-1.35,1.43,1.72,1.72,0,0,1-1,.54q-.64,0-.64-.88a15.28,15.28,0,0,1,.42-2.54,17.76,17.76,0,0,0,.49-3.11,1.27,1.27,0,0,0-1.43-1.43,3.23,3.23,0,0,0-1.6.51,6.4,6.4,0,0,0-1.78,1.7,12.54,12.54,0,0,0-1.63,3.09,15.79,15.79,0,0,1,.22-1.63q.13-.66.35-1.54a8.44,8.44,0,0,0,.33-1.59.45.45,0,0,0-.18-.42,1.24,1.24,0,0,0-.62-.11,2.29,2.29,0,0,0-1.27.3,1.66,1.66,0,0,0-.65.94,18,18,0,0,0-.82,5.45,8.45,8.45,0,0,0,.34,2.82,1.21,1.21,0,0,0,1.18.88,1.27,1.27,0,0,0,1-.36,3.44,3.44,0,0,0,.56-1.4,15.15,15.15,0,0,1,.87-2.56,11.88,11.88,0,0,1,1.06-2q.52-.74.81-.74t.24.35a11.43,11.43,0,0,1-.29,1.92,13.73,13.73,0,0,0-.31,2.21,2.77,2.77,0,0,0,.57,1.89,2.14,2.14,0,0,0,1.7.65,4.28,4.28,0,0,0,2.48-.75,9.48,9.48,0,0,0,1.59-1.43c.06.14.11.28.18.41a3.06,3.06,0,0,0,2.88,1.76,4.42,4.42,0,0,0,2.52-.75,8.78,8.78,0,0,0,1-.82,3.46,3.46,0,0,0,.29.56,2.29,2.29,0,0,0,2.08,1,4.48,4.48,0,0,0,2.94-1.44,3.73,3.73,0,0,0,.16.56,1.21,1.21,0,0,0,1.18.88,1.27,1.27,0,0,0,1-.36,3.44,3.44,0,0,0,.56-1.4,15.15,15.15,0,0,1,.87-2.56,11.88,11.88,0,0,1,1.06-2q.52-.74.81-.74t.24.35a11.43,11.43,0,0,1-.29,1.92,13.73,13.73,0,0,0-.31,2.21,2.77,2.77,0,0,0,.57,1.89,2.14,2.14,0,0,0,1.7.65,4.28,4.28,0,0,0,2.48-.75,9.06,9.06,0,0,0,1.17-1,4,4,0,0,0,.34.46,4.24,4.24,0,0,0,3.29,1.27,5.06,5.06,0,0,0,2.39-.53,4.29,4.29,0,0,0,1.62-1.48,2.44,2.44,0,0,0,.37-1.37,1.37,1.37,0,0,0-.17-.73A.51.51,0,0,0,218.15,25.55Zm-28.07-7.92a30.09,30.09,0,0,1,1.12-4.54q.64-1.83,1.15-1.83t.62,1.68a14.16,14.16,0,0,1-.93,4.73,28.41,28.41,0,0,1-2.49,5.17A32.86,32.86,0,0,1,190.08,17.63Zm22.51,7.3a4.42,4.42,0,0,1,.56-2.29,1.62,1.62,0,0,1,1.38-.95.81.81,0,0,1,.63.25,1,1,0,0,1,.23.67,1.82,1.82,0,0,1-.75,1.43,5,5,0,0,1-2.05.93Z" transform="translate(0 -0.39)" /> 
+        <path class="cls-1" d="M299.64,25.38a14,14,0,0,0-1.07-1.58,8.24,8.24,0,0,1-.72-1,1.47,1.47,0,0,1-.23-.73,3.14,3.14,0,0,1,.4-1.35,3.21,3.21,0,0,0,.24-.57,1.63,1.63,0,0,0,.09-.42.37.37,0,0,0-.24-.35,2.32,2.32,0,0,0-.86-.11,1.7,1.7,0,0,0-1.74,1q-.66,1.52-1.07,2.4a14.25,14.25,0,0,1-.8,1.52c-.29.46-.69,1-1.17,1.64a7.43,7.43,0,0,1-1.57,1.2,4.82,4.82,0,0,1-2.26.69,2.16,2.16,0,0,1-2.09-1A7.89,7.89,0,0,0,290.22,25a3.56,3.56,0,0,0,1.09-2.61,2.77,2.77,0,0,0-.77-2.06,2.8,2.8,0,0,0-2.05-.76,4.47,4.47,0,0,0-2.57.77,5.24,5.24,0,0,0-1.78,2.08,6.38,6.38,0,0,0-.64,2.83c0,.09,0,.17,0,.25-.88.59-1.79,1.24-2.73,2l.21-1.33q.1-.63.19-1.16.46-2.78.55-3.46a3.12,3.12,0,0,0,0-.42.76.76,0,0,0-.23-.65,1.4,1.4,0,0,0-.78-.17,4.82,4.82,0,0,0-1,.09,1.59,1.59,0,0,0-.28-.67.86.86,0,0,0-.65-.19,4.9,4.9,0,0,0-2.88,1A7,7,0,0,0,273.8,23,7.15,7.15,0,0,0,273,26a7.45,7.45,0,0,1-1.35,1,4.82,4.82,0,0,1-2.26.69,2.16,2.16,0,0,1-2.09-1A7.89,7.89,0,0,0,271,25a3.56,3.56,0,0,0,1.09-2.61,2.77,2.77,0,0,0-.77-2.06,2.8,2.8,0,0,0-2.05-.76,4.47,4.47,0,0,0-2.57.77,5.24,5.24,0,0,0-1.78,2.08,6.43,6.43,0,0,0-.57,3.74,8.14,8.14,0,0,1-.91.84,2.56,2.56,0,0,1-1.59.52,1.19,1.19,0,0,1-.93-.39,2.55,2.55,0,0,1-.51-1.29A33.67,33.67,0,0,0,264.36,19a16,16,0,0,0,1.46-6.09,5.38,5.38,0,0,0-.61-2.81,1.87,1.87,0,0,0-1.66-1q-1.87,0-3.23,2.47a20.8,20.8,0,0,0-2.05,5.91,31.36,31.36,0,0,0-.69,6.13,13.29,13.29,0,0,0,.14,1.93A10.84,10.84,0,0,1,256.25,27a2.56,2.56,0,0,1-1.59.52,1.19,1.19,0,0,1-.93-.39,2.55,2.55,0,0,1-.51-1.29A33.67,33.67,0,0,0,257.18,19a16,16,0,0,0,1.46-6.09,5.38,5.38,0,0,0-.61-2.81,1.87,1.87,0,0,0-1.66-1q-1.87,0-3.23,2.47a20.8,20.8,0,0,0-2.05,5.91,32,32,0,0,0-.68,5.81,12,12,0,0,1-1.64.26,5,5,0,0,0-1.2-2.86,3.44,3.44,0,0,0-2.7-1.16,4.44,4.44,0,0,0-2.49.74,5,5,0,0,0-1.76,2.05,6.74,6.74,0,0,0-.64,3,5.86,5.86,0,0,0,.06.79,21.45,21.45,0,0,1-2.52.83,12,12,0,0,1-2.9.36,6,6,0,0,1-4.37-1.44,5.46,5.46,0,0,1-1.48-4.09,10.74,10.74,0,0,1,.82-4.38,6.63,6.63,0,0,1,2.14-2.79,4.7,4.7,0,0,1,2.78-.95q2.14,0,2.14,2a5.67,5.67,0,0,1-.13,1.06,5.33,5.33,0,0,0-.09.73,1,1,0,0,0,.35.84,1.62,1.62,0,0,0,2.33-.53,4.29,4.29,0,0,0,.47-2.16,4.34,4.34,0,0,0-1.23-3.23,4.93,4.93,0,0,0-3.62-1.22,8.29,8.29,0,0,0-4.65,1.38,9.51,9.51,0,0,0-3.32,3.89,13,13,0,0,0-1.22,5.76,7.94,7.94,0,0,0,1,4.1,6.91,6.91,0,0,0,3,2.72,10.19,10.19,0,0,0,4.56,1,17.23,17.23,0,0,0,3.21-.32,15.15,15.15,0,0,0,3.25-1,3.22,3.22,0,0,0,.39-.22,4,4,0,0,0,.92.9,3.91,3.91,0,0,0,2.26.64,4.07,4.07,0,0,0,2.8-1.11,5.5,5.5,0,0,0,1.65-3,10.53,10.53,0,0,0,2-.28,8.05,8.05,0,0,0,.79,2.59,3.06,3.06,0,0,0,2.88,1.76,4.42,4.42,0,0,0,2.52-.75,9.27,9.27,0,0,0,1.61-1.43c.06.14.11.29.18.41a3.06,3.06,0,0,0,2.88,1.76,4.42,4.42,0,0,0,2.52-.75,9,9,0,0,0,1.23-1,4,4,0,0,0,.42.51,4.91,4.91,0,0,0,3.59,1.26,6.39,6.39,0,0,0,3.19-.84,10.32,10.32,0,0,0,1.1-.72,3.25,3.25,0,0,0,.37.56,2.68,2.68,0,0,0,2.18,1,2.66,2.66,0,0,0,2.18-1.24l-.13.86A22.37,22.37,0,0,0,273.41,34a6,6,0,0,0-1.23,3.36,2.44,2.44,0,0,0,.71,1.82,2.5,2.5,0,0,0,1.83.69q2.1,0,3.45-2.61A26.23,26.23,0,0,0,280.35,30l1.41-.95L284,27.55a4,4,0,0,0,.77,1.1,4.91,4.91,0,0,0,3.59,1.26,6.39,6.39,0,0,0,3.19-.84c.26-.14.49-.29.72-.44a1.3,1.3,0,0,0,.55-.33l.37-.38a6.2,6.2,0,0,0,.67-.68,1.59,1.59,0,0,0,.09-.16l.35-.41a14.41,14.41,0,0,0,1.36-2.16q.31.35.66.83a5.42,5.42,0,0,1,.58,1,2.84,2.84,0,0,1,.25,1.08l-.58-.08a4.88,4.88,0,0,0-.67-.06,1.67,1.67,0,0,0-1.23.42,1.36,1.36,0,0,0-.42,1,1.56,1.56,0,0,0,.61,1.19,2.59,2.59,0,0,0,1.75.53,3.14,3.14,0,0,0,1.76-.51,3.5,3.5,0,0,0,1.2-1.33A3.75,3.75,0,0,0,300,26.8,2.87,2.87,0,0,0,299.64,25.38ZM245.52,27a1.6,1.6,0,0,1-1.22.57,1.37,1.37,0,0,1-1.11-.64,3.07,3.07,0,0,1-.47-1.85,4.18,4.18,0,0,1,.58-2.39,1.73,1.73,0,0,1,1.47-.85h.11a3.83,3.83,0,0,0-.07.71,3.59,3.59,0,0,0,.36,1.59,3,3,0,0,0,1,1.21A3.18,3.18,0,0,1,245.52,27Zm8.08-9.37a30.09,30.09,0,0,1,1.12-4.54q.64-1.83,1.15-1.83t.62,1.68a14.16,14.16,0,0,1-.93,4.73,28.41,28.41,0,0,1-2.49,5.17A32.86,32.86,0,0,1,253.6,17.63Zm7.19,0a30.09,30.09,0,0,1,1.12-4.54q.64-1.83,1.15-1.83t.62,1.68a14.16,14.16,0,0,1-.93,4.73,28.41,28.41,0,0,1-2.49,5.17A32.86,32.86,0,0,1,260.79,17.63Zm6.15,7.3a4.42,4.42,0,0,1,.56-2.29,1.62,1.62,0,0,1,1.38-.95.81.81,0,0,1,.63.25,1,1,0,0,1,.23.67A1.82,1.82,0,0,1,269,24a5,5,0,0,1-2.05.93Zm9.25,11.44q-.7,1.32-1.25,1.32a.51.51,0,0,1-.47-.24,1.2,1.2,0,0,1-.14-.62,4,4,0,0,1,.75-2.05,12.83,12.83,0,0,1,2.45-2.62A18.13,18.13,0,0,1,276.19,36.37Zm2.22-11.07a4.11,4.11,0,0,1-.66,1.76,1.27,1.27,0,0,1-1,.62.93.93,0,0,1-.76-.33,1.56,1.56,0,0,1-.28-1,6,6,0,0,1,.46-2.34,4.73,4.73,0,0,1,1.23-1.77,2.6,2.6,0,0,1,1.68-.69Zm7.76-.37a4.42,4.42,0,0,1,.56-2.29,1.62,1.62,0,0,1,1.38-.95.81.81,0,0,1,.63.25,1,1,0,0,1,.23.67,1.82,1.82,0,0,1-.75,1.43,5,5,0,0,1-2.05.93Z" transform="translate(0 -0.39)" /> 
+       </g> 
+       <g> 
+        <path class="cls-2" d="M17.31,40.67V5.6H28.54V40.13L23,34.64Z" transform="translate(0 -0.39)" /> 
+        <path class="cls-1" d="M16.81,41.61V4.93H29v36.5l-6-6Zm1-35.68V39.19L23,34l5,5V5.94Z" transform="translate(0 -0.39)" /> 
+        <g> 
+         <path class="cls-3" d="M14.89,6.59V9.21L6.35,4.3V25.8l8.54,4.35v2.49l-9.53-4.8a2.27,2.27,0,0,1-1.28-2V.39Z" transform="translate(0 -0.39)" /> 
+         <polygon class="cls-3" points="14.89 11.32 14.89 13.93 8.14 10.06 8.14 7.44 14.89 11.32" /> 
+         <polygon class="cls-3" points="14.89 15.85 14.89 18.46 8.14 14.58 8.14 11.97 14.89 15.85" /> 
+         <polygon class="cls-3" points="14.89 20.37 14.89 22.99 8.14 19.11 8.14 16.5 14.89 20.37" /> 
+         <polygon class="cls-3" points="14.89 24.91 14.89 27.41 8.14 23.85 8.14 21.19 14.89 24.91" /> 
+         <path class="cls-3" d="M2.27,3.35V26.06h0v.53a3.33,3.33,0,0,0,1.91,3l3.45,1.64,7.26,3.47v2.45L3.2,31.62a5.61,5.61,0,0,1-3.2-5V2.07Z" transform="translate(0 -0.39)" /> 
+        </g> 
+        <path class="cls-3" d="M30.93,6.59V9.21l8.54-4.9V25.8l-8.54,4.35v2.49l9.53-4.8a2.27,2.27,0,0,0,1.28-2V.39Z" transform="translate(0 -0.39)" /> 
+        <polygon class="cls-3" points="30.93 11.32 30.93 13.93 37.68 10.06 37.68 7.44 30.93 11.32" /> 
+        <polygon class="cls-3" points="30.93 15.85 30.93 18.46 37.68 14.58 37.68 11.97 30.93 15.85" /> 
+        <polygon class="cls-3" points="30.93 20.37 30.93 22.99 37.68 19.11 37.68 16.5 30.93 20.37" /> 
+        <polygon class="cls-3" points="30.93 24.91 30.93 27.41 37.68 23.85 37.68 21.19 30.93 24.91" /> 
+        <path class="cls-3" d="M43.55,3.35V26.06h0v.53a3.33,3.33,0,0,1-1.91,3l-3.45,1.64-7.26,3.47v2.45l11.69-5.52a5.61,5.61,0,0,0,3.2-5V2.07Z" transform="translate(0 -0.39)" /> 
+       </g> 
+      </g> 
+     </svg> </a> 
+    <nav class="site-nav" role="navigation"> 
+     <h6 class="screen-reader-text">Primary Navigation</h6> 
+     <ul class="site-nav-list"> 
+      <li> <span>Colleges by State</span> 
+       <ul class="sub-menu wide"> 
+        <li><a href="http://www.accreditedonlinecolleges.org/alabama/">Alabama</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/alaska/">Alaska</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/arizona/">Arizona</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/arkansas/">Arkansas</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/california/">California</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/colorado/">Colorado</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/connecticut/">Connecticut</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/delaware/">Delaware</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/florida/">Florida</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/georgia/">Georgia</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/hawaii/">Hawaii</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/idaho/">Idaho</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/illinois/">Illinois</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/indiana/">Indiana</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/iowa/">Iowa</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/kansas/">Kansas</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/kentucky/">Kentucky</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/louisiana/">Louisiana</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/maine/">Maine</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/maryland/">Maryland</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/massachusetts/">Massachusetts</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/michigan/">Michigan</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/minnesota/">Minnesota</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/mississippi/">Mississippi</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/missouri/">Missouri</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/montana/">Montana</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/nebraska/">Nebraska</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/nevada/">Nevada</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/new-hampshire/">New Hampshire</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/new-jersey/">New Jersey</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/new-mexico/">New Mexico</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/new-york/">New York</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/north-carolina/">North Carolina</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/north-dakota/">North Dakota</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/ohio/">Ohio</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/oklahoma/">Oklahoma</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/oregon/">Oregon</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/pennsylvania/">Pennsylvania</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/rhode-island/">Rhode Island</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/south-carolina/">South Carolina</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/south-dakota/">South Dakota</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/tennessee/">Tennessee</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/texas/">Texas</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/utah/">Utah</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/vermont/">Vermont</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/virginia/">Virginia</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/washington-dc/">Washington DC</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/washington-state/">Washington State</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/west-virginia/">West Virginia</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/wisconsin/">Wisconsin</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/wyoming/">Wyoming</a></li> 
+       </ul> </li> 
+      <li> <a href="http://www.accreditedonlinecolleges.org/degree-programs/">Undergraduate</a> 
+       <ul class="sub-menu wide"> 
+        <li><a href="http://www.accreditedonlinecolleges.org/accounting/">Accounting</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/art/">Art</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/business/">Business</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/computer-science/">Computer Sci</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/construction-management/">Construction Management</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/counseling/">Counseling</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/criminal-justice/">Criminal Justice</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/early-childhood-education/">Early Childhood Education</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/economics/">Economics</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/education/">Education</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/engineering/">Engineering</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/english/">English</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/finance/">Finance</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/graphic-design/">Graphic Design</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/health-administration/">Health Administration</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/history/">History</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/hospitality-management/">Hospitality Management</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/information-technology/">Information Technology</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/marketing/">Marketing</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/medical-coding/">Medical Coding</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/medical-transcription/">Medical Transcription</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/nursing/">Nursing</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/nutrition/">Nutrition</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/paralegal/">Paralegal</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/photography/">Photography</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/project-management/">Project Management</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/psychology/">Psychology</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/public-administration/">Public Administration</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/public-health/">Public Health</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/public-policy/">Public Policy</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/social-work/">Social Work</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/sociology/">Sociology</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/teaching/">Teaching</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/video-game-design/">Video Game Design</a></li> 
+       </ul> </li> 
+      <li> <span>Graduate</span> 
+       <ul class="sub-menu"> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-degree/">Masters Degree Overview</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-in-counseling/">Master's in Counseling</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-in-criminal-justice/">Master's in Criminal Justice</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-in-education/">Master's in Education</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-in-human-resources/">Master's in Human Resource Management</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-in-nursing/">Master's in Nursing</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/masters-in-psychology/">Master's in Psychology</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/online-mba-programs/">Master's in Business</a></li> 
+       </ul> </li> 
+      <li> <a href="http://www.accreditedonlinecolleges.org/resources/">Guide &amp; Resources</a> 
+       <ul class="sub-menu"> 
+        <li><a href="http://www.accreditedonlinecolleges.org/guide/">Accreditation Guide</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/affordable-schools-online/">Affordable Schools</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/resources/best-accredited-online-colleges/">Best Online Colleges for 2015</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/online-colleges-that-offer-laptops-for-students/">Colleges that Offer Laptops</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/resources/getting-into-graduate-school/">Getting Into Graduate School</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/resources/accredited-online-colleges-and-disability-education/">Guide for Online Colleges &amp; Disabilities</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/resources/veteran-continuing-ed/">Continuing Education Resources for Veterans</a></li> 
+        <li><a href="http://www.accreditedonlinecolleges.org/fafsa-guide/">FAFSA Guide for Students</a></li> 
+       </ul> </li> 
+     </ul> 
+    </nav> 
+    <button class="btn-mobile" id="js-mobile"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </button> 
+   </div> 
+   <div id="widget-cta"> 
+    <button>Search Colleges</button> 
+   </div> 
+  </header> 
+  <div class="main-container"> 
+   <div class="container js-container"> 
+    <div class="monetization enable-sticky-monet"> 
+     <div class="monet_widget_container mz"> 
+      <div class="edu-widget widget-degree-finder"> 
+       <form method="post" target="_blank" action="http://colleges.accreditedonlinecolleges.org/search" autocomplete="off" class="dfw-form-1"> 
+        <fieldset> 
+         <legend>Find Your College</legend> 
+         <label for="degree"> <select name="degree_level_id" class="edudirect-degree_level_id"> <option value="0">Select a Degree</option> </select> <span>Degrees</span> </label> 
+         <label for="category"> <select name="category_id" class="edudirect-category_id"> <option value="0">Select a Category</option> </select> <span>Categories</span> </label> 
+         <label for="subject"> <select name="subject_id" class="edudirect-subject_id"> <option value="0">Select a Subject</option> </select> <span>Subjects</span> </label> 
+        </fieldset> 
+        <input type="submit" name="submit" value="Search" class="btn-critical"> 
+        <input type="hidden" value="accreditedonlinecolleges.org" name="publisher"> 
+       </form> 
+      </div> 
+      <div class="d-links"> 
+       <div class="d-links-title">
+        Featured Colleges
+       </div> 
+       <ul class="d-links-list"> 
+        <li class="d-links-list__item"> <a rel="nofollow" href="http://colleges.accreditedonlinecolleges.org/forms/ecpi-university?lead%5Bprogram%5D=21423&amp;publisher=accreditedonlinecolleges.org"> <img src="http://www.accreditedonlinecolleges.org/wp-content/uploads/ecpi-university.364x100.png"> <button class="d-link-school-link-button">Click Here to Learn More</button> </a> </li> 
+        <li class="d-links-list__item"> <a rel="nofollow" href="http://colleges.accreditedonlinecolleges.org/forms/capella-university"> <img src="/assets/images/capella-university.364x100.png"> <button class="d-link-school-link-button">Click Here to Learn More</button> </a> </li> 
+        <li class="d-links-list__item"> <a rel="nofollow" href="http://colleges.accreditedonlinecolleges.org/forms/walden-university"> <img src="/assets/images/walden-university.364x100.png"> <button class="d-link-school-link-button">Click Here to Learn More</button> </a> </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="two-column"> 
+     <div class="main-content"> 
+      <div class="tocplus_content entry-content"> 
+       <header class="entry-header">
+        <h1 class="entry-title">Accredited Online Schools That Offer Early Childhood Education Degrees</h1>
+       </header>
+       <p>Does creative play seem like a good thing to do during a workday? Are you interested in the processes involved in learning? Do you enjoy activities like lesson planning or helping kids to learn? If so, you are probably an ideal candidate for a career in early childhood education.</p> 
+       <div id="toc_container" class="toc_white no_bullets">
+        <p class="toc_title">TABLE of CONTENTS</p>
+        <div class="toc_list">
+         <ul>
+          <li><a href="#Directory">Directory</a></li>
+          <li><a href="#Available_Degrees">Degrees</a></li>
+          <li><a href="#Scholarship_Directory">Scholarship Directory</a></li>
+         </ul>
+        </div>
+       </div> 
+       <p>Early childhood education usually refers to what takes places at childcare centers, but also covers education up to grade three. You can use what you learn in your training to shape a career in many different areas. From public schools to administrative roles, people who study and earn degrees and certification in early childhood education have a lot of options.</p> 
+       <p>What you need to study, which degrees or certificates are required, and the total amount of education you must pursue will vary according to the state in which you want to work. Some can start to work with an associate’s degree, or even less. Some need to continue to the highest levels of education to reach their career goals.</p> 
+       <p>However, all who work in early childhood education share a passion about helping children learn and grow during one of the most critical developmental stages of human life. Working in this field is really playing a lead role in the future.<br> </p>
+       <h2><span id="Directory">Directory</span></h2> 
+       <div class="directory" id="directory-schools"> 
+        <div class="directory-filters"> 
+         <div class="main-title">
+          Advanced Search
+         </div> 
+         <form> 
+          <div class="filter-section"> 
+           <div class="h-data-sorts h-data-sorts--schools" id="algolia-sortBySelector"></div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Search for School Name
+            </div> 
+            <div id="algolia-searchBox"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Programs by Location
+            </div> 
+            <span class="filter-expand-header js-toggle-category">Select State</span> 
+            <div class="filter-checklist"> 
+             <div id="algolia-refinementList-state"></div> 
+            </div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             School Type
+            </div> 
+            <div id="algolia-toggle-school_control-public" class="check-button"></div> 
+            <div id="algolia-toggle-school_control-private-np" class="check-button"></div> 
+            <div id="algolia-toggle-school_control-private-fp" class="check-button"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Programs by Degree Level
+            </div> 
+            <div id="algolia-toggle-degrees-deg_bach" class="check-button"></div> 
+            <div id="algolia-toggle-degrees-deg_mast" class="check-button"></div> 
+            <div id="algolia-toggle-degrees-deg_doct" class="check-button"></div> 
+            <div id="algolia-toggle-degrees-cert" class="check-button"></div> 
+           </div> 
+           <div id="clear-all"></div> 
+          </div> 
+         </form> 
+        </div> 
+        <div class="directory-results"> 
+         <div class="result-stats"> 
+          <div class="result-count" id="algolia-stats"></div> 
+         </div> 
+         <ul id="algolia-hits" class="list"></ul> 
+         <div class="directory-pagination" id="algolia-pagination"></div> 
+        </div> 
+       </div> 
+       <div class="section"> 
+        <h2 data="disabled"><span id="Quick_Answers">Quick Answers</span></h2> 
+        <div class="blockquote"> 
+         <h3><span data-value="1"></span><strong>What is early childhood education?</strong></h3> 
+         <p>It is the education that children receive from birth to age eight. It can come from their daycare providers, preschool teachers, kindergarten experience, and their first three years of schooling. It is not the same as a traditional teaching career because the emphasis is on preparing kids for education. This is why it involves physical movement and creative play, and why the role of an early childhood educator can include assessing children’s progress and development as well as teaching them.</p> 
+         <h3><span data-value="1"></span><strong>Do I need to get a bachelor’s degree to work in this field?</strong></h3> 
+         <p>No. In fact, you may not even need an associate’s degree to begin, but if you are interested in advancing your career, higher education is essential. Every state has different requirements, and what course you follow relates directly to the career you want. For example, if you want to teach in an elementary school, you will need a bachelor’s degree and probably even more certification in order to teach.</p> 
+         <h3><span data-value="1"></span><strong>How do I know I have the right personality for this career?</strong></h3> 
+         <p>Those who succeed best in early childhood education careers are usually people comfortable assuming leadership roles, and who really enjoy a lot of interaction with others. They can stay calm when things get a bit chaotic, and yet they are also playful people who really appreciate the opportunities for creative learning and movement that are part of early childhood education. Organization is important, and being an observant person is a very valuable trait.</p> 
+         <h3><span data-value="1"></span><strong>Can I become an early childhood educator through online programs?</strong></h3> 
+         <p>While you can do a tremendous amount of coursework online, almost all degree programs require that you work in a classroom or professional setting. Documented hours of experience are part of almost all degree programs, and so you cannot get your full certification or degree online due to the six to twelve months as a student teacher most are required to accomplish.</p> 
+        </div> 
+       </div> 
+       <h2 data="Degrees"><span id="Available_Degrees">Available Degrees</span></h2> 
+       <p>Every level of academic degree is available to those in early childhood education, including undergraduate and graduate certificates. You can pursue an associate’s, bachelor’s, master’s and doctorate level degree, but will have to choose your path according to the type of setting you want to work in, which state you’ll work, and if you are interested in public or private schools. Remember too that childcare centers and preschools may demand a Childhood Development Associate (CDA) credential. This is not a certificate or a teaching credential, and it can often be earned while the student is still in high school. We discuss this a bit later, but it too can be part of the educational requirements.</p> 
+       <ul class="bold-bullet-points"> 
+        <li><b>Certificates: </b>Available at undergraduate and graduate levels, but they do not have the same value as teaching licenses or the CDA. The hours will apply toward an undergraduate or graduate degree program.</li> 
+        <li><b>Associate’s (AA or AS): </b>Both are similar programs with the AA focused more on liberal arts and the AS on the math and science core. This is a two-year degree. There is also the AAS or Applied Science degree that helps you jump right into the workforce rather than transferring into a four-year program.</li> 
+        <li><b>Bachelor’s (BA or BS): </b>Similar to the associates level programs, the differences between BA and BS are really just the core classes you want to study. The BA is a humanities oriented program while the BS is focused on math and science. It is a four-year program. Upon completion you should be able to teach in a preschool or serve in a lead role in a childcare center. If you also pursue a state teaching license you need to find a teaching internship and sit for your state exam.</li> 
+        <li><b>Master’s (MA or MS): </b>One of the most common reasons for an early childhood educator to obtain their masters degree is because they must pursue CEUs or continuing education units per state licensing guidelines. However, some also pursue this graduate level degree in order to become an administrative level professional. There is also the Master’s of Education (MEd), which is not a teaching degree but a graduate level track most effective for those interested in administrating a school. This level usually requires one to three years of study.</li> 
+        <li><b>Doctorate (PhD or EDD): </b>The PhD is the highest level of schooling for an early childhood educator and allows them to assume leadership roles at any level. This is a path followed by those interested in administrating schools or even university programs. The EdD is a Doctor of Education degree that is not a teaching degree and ideal for those who want to do research in the field of education.</li> 
+       </ul> 
+       <h2 data="disabled"><span id="Online_Degrees_Accreditation"><strong><b>Online Degrees &amp; Accreditation</b></strong></span></h2> 
+       <p>Remember you can always pursue a tremendous amount of your degree work online, but to graduate with your early childhood education degree, you will usually need time in a classroom and under observation. There are some “hybrid” opportunities allowing basic coursework to be completed through an online program and then real world training in the appropriate settings, however, these are very uncommon. If you are pursuing a bachelor’s degree or higher, you may want to avoid the online degree options because few have student internship opportunities – and these are essential for anyone looking to become an teacher in a public school setting.</p> 
+       <p>One significant factor to keep in mind is that any teaching certification you wish to obtain must be through an accredited program. No public schools will hire teachers of any level trained in programs that are not through accredited institutions.</p> 
+       <p>Additional resources for researching accredited degree programs of study:</p> 
+       <p>If you are interested in finding accredited programs visit the <a href="http://www.naeyc.org/accreditation/search" target="_blank">National Association for the Education of Young Children website</a> and view their long list of accredited programs.</p> 
+       <p><a href="http://www.ncate.org/" target="_blank">The National Council for Accreditation of Teacher Education</a> is also helpful.</p> 
+       <h2 data="disabled"><span id="Course_of_Study">Course of Study</span></h2> 
+       <p>Associate’s and bachelor’s degrees are the most common pathways to earning a degree in early childhood education. The courses that these programs emphasize will be based on whether you pursue the arts or the science core.</p> 
+       <p>In the case of the AA or the BA, your coursework will emphasize the humanities as well as the general education studies (math, science, etc.). When it is the AS or the BS, the focus is on the math and science areas with general requirements and also includes some humanities.</p> 
+       <p>All students in early childhood education programs will have to learn about child development, child psychology, educational technologies, special education principles, child health, safety, and classroom management principles. A four-year program will include a teaching internship. Some associates programs also incorporate this component.</p> 
+       <p>You may complete your course of study with the need to take the state-licensing exam, or you may pursue your CDA.</p> 
+       <h2 data="disabled"><span id="Careers">Careers</span></h2> 
+       <h3>Careers With a BA or BS Degree in Early Childhood Education</h3> 
+       <div class="shift-right"> 
+        <b><strong>Childcare Provider</strong>:</b>
+        <br> You may find that your state allows you to assume this role with an associate’s degree or even a certificate. You will work in a daycare setting, as a home care provider or even in a preschool setting.
+        <br> 
+        <b><strong>Elementary teacher (first to third grade)</strong>:</b>
+        <br> Your BA or BS will prepare you for providing children up to age eight with an introduction to education. You will work alone or with teaching assistants in a formal classroom setting, chart each child’s progress, create lesson plans, work with the administration, and interact with colleagues and parents.
+        <br> 
+        <b><strong>Kindergarten teacher</strong>:</b>
+        <br> With the BA or BS and your teaching credential you can begin working in a public or private kindergarten introducing students to their first years of formal education. You will prepare lesson plans and chart each child’s progress, working with special education when needed and interacting with colleagues and parents.
+        <br> 
+        <b><strong>Preschool teacher</strong>:</b>
+        <br> The BA or BS prepares you to enter your career as a teacher upon completion of your teaching exam. Do note some states allow the AAS graduates to assume teaching roles at the preschool level, but you will have to determine if this applies to your location. 
+       </div> 
+       <h3>Careers Requiring Advanced Degrees or Degrees in Other Fields</h3> 
+       <p>Though you may obtain advanced degrees in early childhood education, if you do not obtain teaching certification, you will be unable to find work in a public school system. Ensure your programs are accredited as well since advanced degrees from colleges lacking accreditation also null the option of using those degrees to advance in your career.</p> 
+       <div class="shift-right"> 
+        <b><strong>Childcare or Preschool Director</strong>:</b>
+        <br> An MA or MS in early childhood education will provide you with the training needed to become a teacher. You may also be well qualified to serve in an administrative role, handling everything from curriculum to assessments.
+        <br> 
+        <b><strong>Academic researcher</strong>:</b>
+        <br> The work you did to obtain an MA or MS would prepare you for advanced research projects and theses. Because of this, many who pursue this degree will also be more interested in writing about or teaching others about early childhood education.
+        <br> 
+        <b><strong>University teacher</strong>:</b>
+        <br> It is usually only with a doctorate in early childhood education that you can teach at the university level. 
+       </div> 
+       <h2 data="disabled"><span id="Licensing_Certifications_and_Exams">Licensing, Certifications, and Exams</span></h2> 
+       <p>To become an early childhood educator, you will need training. The most basic would be the CDA or a certificate program. The requirements vary according to state, and whether or not you wish to work in a public or private setting and because early childhood educators also work in childcare centers and preschools, they too might have specific demands for their staff.</p> 
+       <p>The most basic requirements are:</p> 
+       <ul class="bold-bullet-points"> 
+        <li>Associates degree in early childhood education, though the bachelor’s degree is now becoming more significant and relevant.</li> 
+        <li>CDA or Childhood Development Associate credential. Although, this will not get you into schools, many preschools and childcare facilities require this national credential from the <a href="https://www.cdacouncil.org/" target="_blank">Council for Professional Recognition</a>. However, you must have 120 hours of early childhood education and 480 hours of experience to apply.</li> 
+        <li>Teaching license. Every state has a requirement for a teaching license, and most require that you have a bachelor’s degree and that you complete the state’s formal teaching program. You will work in a classroom setting, with a mentor, to qualify for the test, and you will also need CEUs to maintain your license throughout the years you work.</li> 
+       </ul> 
+       <h3>Additional Resources for Certification information</h3> 
+       <div class="shift-right"> 
+        <a href="http://www.naeyc.org" target="_blank">National Association for the Education of Young Children</a>
+        <p></p> 
+        <p><a href="http://www.nbpts.org/" target="_blank">National Board for Professional Teaching Standards</a></p> 
+        <p><a href="http://www.ncate.org/" target="_blank">National Council for Accreditation of Teacher Education</a> </p>
+       </div> 
+       <h2><span id="Scholarship_Directory">Scholarship Directory</span></h2> 
+       <div class="directory" id="directory-scholarships"> 
+        <div class="directory-filters"> 
+         <div class="main-title">
+          Advanced Search
+         </div> 
+         <form> 
+          <div class="filter-section"> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Search for Name
+            </div> 
+            <div id="algolia-scholarships-searchBox"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Programs by Location
+            </div> 
+            <span class="filter-expand-header js-toggle-category">Select State</span> 
+            <div class="filter-checklist"> 
+             <div id="algolia-scholarships-refinementList-state"></div> 
+            </div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Browse by Renewability
+            </div> 
+            <div id="algolia-scholarships-toggle-renewable-y" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-renewable-n" class="check-button"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Browse by Minimum GPA
+            </div> 
+            <div id="algolia-scholarships-toggle-min_gpa-4" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-min_gpa-3" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-min_gpa-2" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-min_gpa-1" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-min_gpa-0" class="check-button"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Sponsored by School
+            </div> 
+            <div id="algolia-scholarships-toggle-sponsor-y" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-sponsor-n" class="check-button"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Ethnicity Preference
+            </div> 
+            <div id="algolia-scholarships-toggle-races-african_american" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-south_american" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-american_indian" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-asian" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-mexican" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-puerto_rican" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-other" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-races-white" class="check-button"></div> 
+           </div> 
+           <div class="filter-category"> 
+            <div class="filter-label">
+             Enrollment Level
+            </div> 
+            <div id="algolia-scholarships-toggle-enroll_level-high_school_freshman" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-high_school_sophomore" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-high_school_junior" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-high_school_senior" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-college_freshman" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-college_sophomore" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-college_junior" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-college_senior" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-masters_level_study" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-doctoral_level" class="check-button"></div> 
+            <div id="algolia-scholarships-toggle-enroll_level-other_postgraduate_level" class="check-button"></div> 
+           </div> 
+           <div id="clear-all-scholarships"></div> 
+          </div> 
+         </form> 
+        </div> 
+        <div class="directory-results"> 
+         <div class="result-stats"> 
+          <div class="result-count" id="algolia-scholarships-stats"></div> 
+         </div> 
+         <ul id="algolia-scholarships-hits" class="list"></ul> 
+         <div class="directory-pagination" id="algolia-scholarships-pagination"></div> 
+        </div> 
+       </div> 
+       <h2 data="Outlook"><strong><b>Future Outlook for Primary Career</b></strong></h2> 
+       <p>Noted as a growth industry, early childhood education is expected to grow by almost 20% over the next decade. This, as the <a href="http://www.bls.gov/ooh/Education-Training-and-Library/Preschool-teachers.htm" target="_blank">Bureau of Labor Statistics</a> points out is, “Faster than the expected growth for all occupations.”</p> 
+       <p>Because this industry is known for having a high turnover rate (because many early childhood educators decide to advance to higher grade levels), it is a relatively easy field in which to find employment.</p> 
+       <p>However, although it is seen as a remarkably important and rewarding field, it is also known to be a low paying industry. Though earnings do vary according to location and the level of education that the individual has obtained, most agree that it is those with bachelor’s level degrees (or higher) taking the higher paying positions with the better benefits options.</p> 
+       <h2 data="Salary"><strong><b>Salary Expectations</b></strong></h2> 
+       <p>The median earnings for someone working as an early childhood educator in 2012 were $27,130 per year. This is someone with an associate’s degree working in a preschool setting. However, the elementary school teachers in the BLS Occupational Outlook Handbook were noted as earning a median income of over $41,000 per year. What this tells us is that those studying early childhood education that are willing to take the lengthier programs are going to experience an increase in earning potential.</p> 
+       <h2 data="disabled">Marketable Skills</h2> 
+       <p>The early childhood education student is going to learn a great deal about many different things during their years of study. This knowledge base can be seen as a range of marketable skills. These skills include:</p> 
+       <ul class="bold-bullet-points"> 
+        <li>Project planning</li> 
+        <li>Substitute teaching</li> 
+        <li>Teaching assistant</li> 
+        <li>Research</li> 
+        <li>Behavioral and developmental assessments</li> 
+        <li>Learning disability support</li> 
+        <li>Tutoring</li> 
+        <li>Creative play</li> 
+        <li>Creative movement</li> 
+        <li>Writing</li> 
+       </ul> 
+       <h2 data="disabled">Undergraduate&nbsp;Internships</h2> 
+       <p>If you are interested in earning a teaching license you are required to do a teaching internship within an approved program. You will have to work with your school and according to state guidelines before you can obtain an internship, but it is invaluable towards your degree and career.</p> 
+       <p>You may also want to pursue other internship options during your years of study. Remember to carefully document any such experiences in order to have them count toward a degree. The following is a list of internship possibilities for an early childhood education major:</p> 
+       <ul class="bold-bullet-points"> 
+        <li>Childhood education centers</li> 
+        <li>Daycare centers</li> 
+        <li>Summer camp programs</li> 
+        <li>Library programming</li> 
+        <li>Community center programs with children</li> 
+        <li>After school programs such as sports or cultural programs</li> 
+       </ul> 
+       <h3>Professional Associations</h3> 
+       <ul class="bold-bullet-points"> 
+        <li><a href="http://www.naeyc.org" target="_blank">National Association for the Education of Young Children</a></li> 
+        <li><a href="http://www.nccic.org" target="_blank">National Childcare Information Center</a></li> 
+        <li><a href="https://www.cdacouncil.org/" target="_blank">Council for Professional Recognition</a></li> 
+       </ul> 
+       <h2 data="disabled">Suggested Online Degree Programs</h2> 
+       <ul class="bold-bullet-points"> 
+        <li><a href="http://www.kendall.edu/" target="_blank" rel="nofollow">Kendall College</a> – Chosen as a top accredited institution for online learning, the Illinois Board of Education also approved its program.</li> 
+        <li><a href="http://www.post.edu/" target="_blank" rel="nofollow">Post University</a> – Consistently recognized as a top provider of online education, it allows credit transfers into its early childhood education program.</li> 
+        <li><a href="http://www.massachusetts.edu/" target="_blank" rel="nofollow">UMASS</a> – The University of Massachusetts is one of the few hybrid programs with an option for substituting up to 30 hours of credits with hands-on fieldwork.</li> 
+       </ul> 
+       <h3>Resources</h3> 
+       <p><a href="http://www.bls.gov/ooh/Education-Training-and-Library/Preschool-teachers.htm" target="_blank">BLS Occupational Outlook Handbook for Preschool Teachers</a></p> 
+       <p><a href="http://www.bls.gov/ooh/personal-care-and-service/childcare-workers.htm" target="_blank">BLS Data for Childcare Workers</a></p> 
+       <p><a href="http://www.naeyc.org" target="_blank">National Association for the Education of Young Children</a></p> 
+       <p><a href="https://www.cdacouncil.org/" target="_blank">Council for Professional Recognition</a></p> 
+       <script>var tocplus = {"smooth_scroll":true,"visibility_show":"show","visibility_hide":"hide","width":"Auto","smooth_scroll_offset":"80"};</script> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer class="site-footer"> 
+   <div class="wrapper"> 
+    <!-- Footer Navigation --> 
+    <nav class="site-nav-footer"> 
+     <h6 class="screen-reader-text">Footer Navigation</h6> 
+     <ul class="site-nav-list-footer"> 
+      <li><a href="http://www.accreditedonlinecolleges.org/">Home</a></li> 
+      <li><a href="http://www.accreditedonlinecolleges.org/contact/">Contact</a></li> 
+      <li><a href="http://www.accreditedonlinecolleges.org/about/">About &amp; Privacy Policy</a></li> 
+     </ul> 
+    </nav> 
+   </div> 
+   <!-- Legal --> 
+   <p class="legal"> © 2017 Accredited Online Colleges </p> 
+  </footer> 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+  <script type="text/javascript" src="/wp-content/plugins/table-of-contents-plus/front.js?ver=1404"></script> 
+  <script type="text/javascript" src="http://colleges.accreditedonlinecolleges.org/assets/js/widgets/QuickDegreeFinder.jquery.min.js"></script> 
+  <script type="text/javascript" src="/wp-content/themes/aocorg-theme/assets/dist/footer.min.js"></script> 
+  <script type="text/javascript" src="http://www.accreditedonlinecolleges.org/wp/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script>
+    var hitsPerPage   = 20;
+    var degrees       = { "deg_bach": "Bachelors Degree", "deg_mast": "Masters Degree", "deg_doct": "Doctoral Degree", "cert": "Certificate",  };
+    var search        = instantsearch({
+      appId: 'QT4LTISCL1',
+      apiKey: 'd0e8d6b8c0a788a3b2810a38c932f92c',
+      indexName: 'he_ipeds_v2.0',
+      urlSync: false,
+      searchParameters: {
+        disjunctiveFacetsRefinements: {
+          
+          
+          
+        },
+        facetsRefinements: {
+          'distance_learning.online': [ '1' ],
+          'subjects.offered.all': [ 'Early Childhood Education' ],
+        },
+        attributesToRetrieve: [ 'school_name', 'school_id', 'school_slug', 'address.street', 'address.city', 'address.state', 'address.zip', 'address.phone', 'school_control', 'school_locale', 'url.institution', 'completions', 'distance_learning', 'degrees', 'accreditations' ]
+      }
+    });
+    var subject       = 'Early Childhood Education';
+    // School
+function sanitize_school( item ) {
+
+  // Count
+  item.count = item.__hitIndex + 1;
+
+  // Profile URL
+  item.profile_url = '/schools/' + item.school_id + '-' + item.school_slug + '/';
+
+  // Return Item
+  return item;
+}
+
+// State Abbreviation to Name
+function stateAbbrToName( item ) {
+  var states = {
+    "AL": "Alabama",
+    "AK": "Alaska",
+    "AS": "American Samoa",
+    "AZ": "Arizona",
+    "AR": "Arkansas",
+    "CA": "California",
+    "CO": "Colorado",
+    "CT": "Connecticut",
+    "DE": "Delaware",
+    "DC": "District Of Columbia",
+    "FM": "Federated States Of Micronesia",
+    "FL": "Florida",
+    "GA": "Georgia",
+    "GU": "Guam",
+    "HI": "Hawaii",
+    "ID": "Idaho",
+    "IL": "Illinois",
+    "IN": "Indiana",
+    "IA": "Iowa",
+    "KS": "Kansas",
+    "KY": "Kentucky",
+    "LA": "Louisiana",
+    "ME": "Maine",
+    "MH": "Marshall Islands",
+    "MD": "Maryland",
+    "MA": "Massachusetts",
+    "MI": "Michigan",
+    "MN": "Minnesota",
+    "MS": "Mississippi",
+    "MO": "Missouri",
+    "MT": "Montana",
+    "NE": "Nebraska",
+    "NV": "Nevada",
+    "NH": "New Hampshire",
+    "NJ": "New Jersey",
+    "NM": "New Mexico",
+    "NY": "New York",
+    "NC": "North Carolina",
+    "ND": "North Dakota",
+    "MP": "Northern Mariana Islands",
+    "OH": "Ohio",
+    "OK": "Oklahoma",
+    "OR": "Oregon",
+    "PW": "Palau",
+    "PA": "Pennsylvania",
+    "PR": "Puerto Rico",
+    "RI": "Rhode Island",
+    "SC": "South Carolina",
+    "SD": "South Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "UT": "Utah",
+    "VT": "Vermont",
+    "VI": "Virgin Islands",
+    "VA": "Virginia",
+    "WA": "Washington",
+    "WV": "West Virginia",
+    "WI": "Wisconsin",
+    "WY": "Wyoming"
+  };
+
+  item.highlighted = states[ item.name ];
+  return item;
+}var ipeds_tpl = '<li>\
+                  <div class="icon count" data-count="{{count}}"></div>\
+                  <a href="{{profile_url}}" rel="nofollow" class="school-name">{{school_name}}</a>\
+                  <a href="{{profile_url}}" rel="nofollow" class="school-button">School Information</div>\
+                </li>';// Result Count
+search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#algolia-stats',
+    templates: {
+      body: '<span class="count-total schools">{{nbHits}}</span> Schools'
+    }
+  })
+);
+
+// Pagination
+search.addWidget(
+  instantsearch.widgets.pagination({
+    container: '#algolia-pagination',
+    scrollTo: '#directory-schools',
+    labels: {
+      first: 'First',
+      previous: 'Previous',
+      next: 'Next',
+      last: 'Last'
+    },
+    padding: 2,
+    cssClasses: {
+      root: 'pagination',
+      disabled: 'pagination-disabled',
+      active: 'pagination-active'
+    }
+  })
+);// Result Sorter
+// search.addWidget(
+//   instantsearch.widgets.sortBySelector({
+//     container: '#algolia-sortBySelector',
+//     indices: [
+//       {name: 'he_ipeds_headcount_asc',    label: 'School size (Smalllest to Largest)'},
+//       {name: 'he_ipeds_headcount_desc',   label: 'School size (Largest to Smallest)'},
+//       {name: 'he_ipeds',                  label: 'Name (A-Z)'},
+//       {name: 'he_ipeds_school_name_desc', label: 'Name (Z-A)'},
+//       {name: 'he_ipeds_tuition_asc',      label: 'Tuition (Lowest to Highest)'},
+//       {name: 'he_ipeds_tuition_desc',     label: 'Tuition (Highest to Lowest)'},
+//       {name: 'he_ipeds_grad_rate_asc',    label: 'Graduation Rate (Lowest to Highest)'},
+//       {name: 'he_ipeds_grad_rate_desc',   label: 'Graduation Rate (Highest to Lowest)'}
+//     ]
+//   })
+// );
+
+// Result display
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#algolia-hits',
+    templates: {
+      empty: 'Sorry, no results found.',
+      item: ipeds_tpl
+    },
+    transformData: {
+     item: sanitize_school
+    },
+    hitsPerPage: hitsPerPage
+  })
+);// Filters: Search by name/city
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#algolia-searchBox',
+    placeholder: 'Enter College Name',
+    autofocus: false
+  })
+);
+
+// Filters: classes for groups of filters
+var dropdownClasses = {
+      root: 'filter-expand',
+      header: 'filter-expand-header',
+      body: 'filter-expand-body',
+      item: 'filter-expand-item',
+      active: 'active',
+      count: 'filter-count'
+    };
+var toggleClasses = {
+      count: 'filter-count',
+      active: 'active'
+    };
+
+
+// Filters: clear all
+search.addWidget(
+  instantsearch.widgets.clearAll({
+    container: '#clear-all',
+    templates: {
+      link: 'Clear Filters'
+    },
+    autoHideContainer: false,
+    cssClasses: {
+      link: 'btn-secondary'
+    }
+  })
+);
+
+
+// Filters: State dropdown
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#algolia-refinementList-state',
+    attributeName: 'address.state',
+    operator: 'or',
+    sortBy: ['name:asc', 'count:desc'],
+    limit: 99,
+    cssClasses: dropdownClasses,
+    collapsible: {
+      collapsed: false
+    },
+    transformData: {
+      item: stateAbbrToName
+    }
+  })
+);
+
+
+// Filters: Toggles
+var toggleFilters = {
+  'school_control-public': {
+    attribute: 'school_control',
+    label: 'Public',
+    on: 'Public'
+  },
+  'school_control-private-np': {
+    attribute: 'school_control',
+    label: 'Private (Non Profit)',
+    on: 'Private (Non Profit)'
+  },
+  'school_control-private-fp': {
+    attribute: 'school_control',
+    label: 'Private (For Profit)',
+    on: 'Private (For Profit)'
+  },
+  'degrees-deg_bach': {
+    attribute: 'degrees.deg_bach',
+    label: 'Bachelor\'s',
+    on: 'Bachelors Degree'
+  },
+  'degrees-deg_mast': {
+    attribute: 'degrees.deg_mast',
+    label: 'Master\'s',
+    on: 'Masters Degree'
+  },
+  'degrees-deg_doct': {
+    attribute: 'degrees.deg_doct',
+    label: 'Doctorate',
+    on: 'Doctoral Degree'
+  },
+  'degrees-cert': {
+    attribute: 'degrees.cert',
+    label: 'Certificate',
+    on: 'Certificate'
+  }
+};
+
+if ( subject ) {
+  toggleFilters['degrees-deg_bach'] = {
+    attribute: 'subjects.offered.deg_bach',
+    label: 'Bachelor\'s',
+    on: subject
+  }
+
+  toggleFilters['degrees-deg_mast'] = {
+    attribute: 'subjects.offered.deg_mast',
+    label: 'Master\'s',
+    on: subject
+  }
+
+  toggleFilters['degrees-deg_doct'] = {
+    attribute: 'subjects.offered.deg_doct',
+    label: 'Doctorate',
+    on: subject
+  }
+
+  toggleFilters['degrees-cert'] = {
+    attribute: 'subjects.offered.cert',
+    label: 'Certificate',
+    on: subject
+  }
+}
+
+for ( var key in toggleFilters ) {
+  search.addWidget(
+    instantsearch.widgets.toggle({
+      container: '#algolia-toggle-' + key,
+      attributeName: toggleFilters[ key ].attribute,
+      label: toggleFilters[ key ].label,
+      values: {
+        on: toggleFilters[ key ].on
+      },
+      cssClasses: toggleClasses
+    })
+  );
+}
+
+
+(function($) {
+
+  $(window).load(function() {
+
+    // Filters: Dropdown Click
+    $('#directory-schools .main-title').click( function() {
+      if ( $( window ).width() > 1010 ) return;
+      $(this).next('form').toggleClass( 'is-active' );
+    });
+
+    // Filters: Dropdown Click
+    $('#directory-schools .js-toggle-category').click( function() {
+      $(this).closest('.filter-category').toggleClass( 'is-active' );
+    });
+
+    // Filters: Dropdown Mouse Leave
+    $('#directory-schools .filter-category').mouseleave( function() {
+      if ( /Mobi/.test( navigator.userAgent ) ) return;
+      $(this).removeClass( 'is-active' );
+    });
+
+  });
+
+  function updateCount() {
+    var currentPage = search.helper.state.page;
+
+    $('.ais-hits--item .count').each( function() {
+      var $this = $(this);
+      var count = parseInt( $this.data('count') );
+      $this.text( hitsPerPage * currentPage + count );
+    });
+  }
+  search.on( 'render', updateCount );
+
+})(jQuery);
+search.start() </script>
+  <script>
+    var scholarships_hitsPerPage = 20;
+    var scholarships_search      = instantsearch({
+      appId: 'QT4LTISCL1',
+      apiKey: 'd0e8d6b8c0a788a3b2810a38c932f92c',
+      indexName: 'he_scholarships_v2.0',
+      urlSync: false,
+      searchParameters: {
+        disjunctiveFacetsRefinements: {
+          
+        },
+        facetsRefinements: {
+          'study_areas': [ 'Early Childhood Education' ],
+        },
+        attributesToRetrieve: [ 'name', 'contact', 'requirements', 'application_url', 'deadline', 'min_gpa', 'study_areas', 'enrollment_levels', 'renewable', 'sponsor', 'avg', 'races' ]
+      }
+    });
+
+    // Scholarship
+function sanitize_scholarship( item ) {
+
+
+  // Study Areas
+  if ( item.study_areas ) {
+    item.study_areas = capitlizedWords( item.study_areas )
+  }
+
+
+  // Average
+  if ( item.avg ) {
+    item.avg = numberFormat( item.avg );
+  }
+
+
+  // Renewable
+  if ( item.renewable ) {
+    item.renewable = ( item.renewable == 'Y' ) ? 'Yes' : 'No';
+  }
+
+
+  // Enrollement Levels
+  var enrollment_levels = '';
+  if ( item.enrollment_levels && item.enrollment_levels[0] != '' ) {
+    for ( var key in item.enrollment_levels ) {
+        enrollment_levels = key != ( item.enrollment_levels.length - 1 ) ? item.enrollment_levels[ key ] + ', ' : item.enrollment_levels[ key ] + ' ';
+    }
+  }
+  item.enrollment_levels = enrollment_levels;
+
+
+  // Races
+  var races = '';
+  if ( item.races && item.races[0] != '' ) {
+    var races = '';
+    for ( var key in item.races ) {
+        races = key != ( item.races.length - 1 ) ? item.races[ key ] + ', ' : item.races[ key ] + ' ';
+    }
+  }
+  item.races = races;
+
+
+  // Return Item
+  return item;
+}
+
+
+// Format Phone
+function formatPhone( str ) {
+  return str.replace( /\D/g, '' ).substring( 0, 10 ).replace( /(\d{3})(\d{3})(\d{4})/, '($1) $2-$3' );
+}
+
+
+// Format Number
+function numberFormat( num ) {
+  return num.toString().replace( /\B(?=(\d{3})+(?!\d))/g, "," );
+}
+
+
+// Capitlized Words
+function capitlizedWords( str ) {
+    return str.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
+
+
+// State Abbreviation to Name
+function stateAbbrToName( item ) {
+  var states = {
+    "AL": "Alabama",
+    "AK": "Alaska",
+    "AS": "American Samoa",
+    "AZ": "Arizona",
+    "AR": "Arkansas",
+    "CA": "California",
+    "CO": "Colorado",
+    "CT": "Connecticut",
+    "DE": "Delaware",
+    "DC": "District Of Columbia",
+    "FM": "Federated States Of Micronesia",
+    "FL": "Florida",
+    "GA": "Georgia",
+    "GU": "Guam",
+    "HI": "Hawaii",
+    "ID": "Idaho",
+    "IL": "Illinois",
+    "IN": "Indiana",
+    "IA": "Iowa",
+    "KS": "Kansas",
+    "KY": "Kentucky",
+    "LA": "Louisiana",
+    "ME": "Maine",
+    "MH": "Marshall Islands",
+    "MD": "Maryland",
+    "MA": "Massachusetts",
+    "MI": "Michigan",
+    "MN": "Minnesota",
+    "MS": "Mississippi",
+    "MO": "Missouri",
+    "MT": "Montana",
+    "NE": "Nebraska",
+    "NV": "Nevada",
+    "NH": "New Hampshire",
+    "NJ": "New Jersey",
+    "NM": "New Mexico",
+    "NY": "New York",
+    "NC": "North Carolina",
+    "ND": "North Dakota",
+    "MP": "Northern Mariana Islands",
+    "OH": "Ohio",
+    "OK": "Oklahoma",
+    "OR": "Oregon",
+    "PW": "Palau",
+    "PA": "Pennsylvania",
+    "PR": "Puerto Rico",
+    "RI": "Rhode Island",
+    "SC": "South Carolina",
+    "SD": "South Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "UT": "Utah",
+    "VT": "Vermont",
+    "VI": "Virgin Islands",
+    "VA": "Virginia",
+    "WA": "Washington",
+    "WV": "West Virginia",
+    "WI": "Wisconsin",
+    "WY": "Wyoming"
+  };
+
+  item.highlighted = states[ item.name ];
+  return item;
+}var scholarships_tpl = '<li>\
+				                  <div class="scholarship-icon"></div>\
+				                  <span class="school-name">{{name}}</span>\
+				                  <span class="school-button">View Information</span>\
+				                	<div class="scholarship-container">\
+				                		{{#sponsor.name}}<span class="scholarship-name">Sponsored by {{sponsor.name}}</span>{{/sponsor.name}}\
+				                		{{#contact.address_1}}\
+					                		<h3 class="scholarship-expand-header">Location</h3>\
+					                		<div class="scholarship-address-1 scholarship-data">{{contact.address_1}}</div>\
+					                		{{#contact.city}}<div class="scholarship-address-2 scholarship-data">{{contact.city}}, {{contact.state}} {{contact.zip}}</div>{{/contact.city}}\
+					                		<h3 class="scholarship-expand-header">Contact Info</h3>\
+					                		{{#contact.email}}<div class="scholarship-email scholarship-data">{{contact.email}}</div>{{/contact.email}}\
+					                		{{#contact.phone}}<div class="scholarship-phone scholarship-data">{{contact.phone}}</div>{{/contact.phone}}\
+				                		{{/contact.address_1}}\
+          									<h3 class="scholarship-expand-header">Application</h3>\
+          									{{#requirements}}<div class="scholarship-criteria scholarship-data">{{requirements}}</div>{{/requirements}}\
+          									{{#application_url}}<a class="btn-primary" href="{{application_url}}" title="{{sponsor.name}} - {{name}}" target="_blank" rel="nofollow">See Scholarship</a>{{/application_url}}\
+          									<h3 class="scholarship-expand-header">Additional Information</h3>\
+									          {{#deadline}}<div class="scholarship-data"><b>Deadline:</b> {{deadline}}</div>{{/deadline}}\
+									          {{#avg}}<div class="scholarship-data"><b>Average Amount Awarded:</b> ${{avg}}</div>{{/avg}}\
+									          {{#min_gpa}}<div class="scholarship-data"><b>Minimum GPA:</b> {{min_gpa}}.0</div>{{/min_gpa}}\
+									          {{#study_areas}}<div class="scholarship-data"><b>Study Areas:</b> {{study_areas}}</div>{{/study_areas}}\
+									          {{#enrollment_levels}}<div class="scholarship-data"><b>Enrollment Level:</b> {{enrollment_levels}}</div>{{/enrollment_levels}}\
+									          {{#races}}<div class="scholarship-data"><b>Ethnicity Preference:</b> {{races}}</div>{{/races}}\
+    											</div>\
+				                </li>';
+// Result Count
+scholarships_search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#algolia-scholarships-stats',
+    templates: {
+      body: '<span class="count-total scholarships">{{nbHits}}</span> Scholarships'
+    }
+  })
+);
+
+// Pagination
+scholarships_search.addWidget(
+  instantsearch.widgets.pagination({
+    container: '#algolia-scholarships-pagination',
+    scrollTo: '#directory-scholarships',
+    labels: {
+      first: 'First',
+      previous: 'Previous',
+      next: 'Next',
+      last: 'Last'
+    },
+    padding: 2,
+    cssClasses: {
+      root: 'pagination',
+      disabled: 'pagination-disabled',
+      active: 'pagination-active'
+    }
+  })
+);// Result Sorter
+// scholarships_search.addWidget(
+//   instantsearch.widgets.sortBySelector({
+//     container: '#algolia-sortBySelector',
+//     indices: [
+//       {name: 'he_ipeds_headcount_asc',    label: 'School size (Smalllest to Largest)'},
+//       {name: 'he_ipeds_headcount_desc',   label: 'School size (Largest to Smallest)'},
+//       {name: 'he_ipeds',                  label: 'Name (A-Z)'},
+//       {name: 'he_ipeds_school_name_desc', label: 'Name (Z-A)'},
+//       {name: 'he_ipeds_tuition_asc',      label: 'Tuition (Lowest to Highest)'},
+//       {name: 'he_ipeds_tuition_desc',     label: 'Tuition (Highest to Lowest)'},
+//       {name: 'he_ipeds_grad_rate_asc',    label: 'Graduation Rate (Lowest to Highest)'},
+//       {name: 'he_ipeds_grad_rate_desc',   label: 'Graduation Rate (Highest to Lowest)'}
+//     ]
+//   })
+// );
+
+// Result display
+scholarships_search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#algolia-scholarships-hits',
+    templates: {
+      empty: 'Sorry, no results found.',
+      item: scholarships_tpl
+    },
+    transformData: {
+     item: sanitize_scholarship
+    },
+    hitsPerPage: scholarships_hitsPerPage
+  })
+);// Filters: Search by name/city
+scholarships_search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#algolia-scholarships-searchBox',
+    placeholder: 'Enter Scholarship Name',
+    autofocus: false
+  })
+);
+
+// Filters: classes for groups of filters
+var dropdownClasses = {
+      root: 'filter-expand',
+      header: 'filter-expand-header',
+      body: 'filter-expand-body',
+      item: 'filter-expand-item',
+      active: 'active',
+      count: 'filter-count'
+    };
+var toggleClasses = {
+      count: 'filter-count',
+      active: 'active'
+    };
+
+
+// Filters: clear all
+scholarships_search.addWidget(
+  instantsearch.widgets.clearAll({
+    container: '#clear-all-scholarships',
+    templates: {
+      link: 'Clear Filters'
+    },
+    autoHideContainer: false,
+    cssClasses: {
+      link: 'btn-secondary'
+    }
+  })
+);
+
+
+// Filters: State dropdown
+scholarships_search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#algolia-scholarships-refinementList-state',
+    attributeName: 'states',
+    operator: 'or',
+    sortBy: ['name:asc', 'count:desc'],
+    limit: 99,
+    cssClasses: dropdownClasses,
+    collapsible: {
+      collapsed: false
+    },
+    transformData: {
+      item: stateAbbrToName
+    }
+  })
+);
+
+
+// Filters: Toggles
+var toggleFilters = {
+  'renewable-y': {
+    attribute: 'renewable',
+    label: 'Yes',
+    on: 'Y'
+  },
+  'renewable-n': {
+    attribute: 'renewable',
+    label: 'No',
+    on: 'N'
+  },
+  'min_gpa-4': {
+    attribute: 'min_gpa',
+    label: '4.0',
+    on: '4'
+  },
+  'min_gpa-3': {
+    attribute: 'min_gpa',
+    label: '3.0',
+    on: '3'
+  },
+  'min_gpa-2': {
+    attribute: 'min_gpa',
+    label: '2.0',
+    on: '2'
+  },
+  'min_gpa-1': {
+    attribute: 'min_gpa',
+    label: '1.0',
+    on: '1'
+  },
+  'min_gpa-0': {
+    attribute: 'min_gpa',
+    label: 'Not Specified',
+    on: '0'
+  },
+  'sponsor-y': {
+    attribute: 'sponsor.is_school',
+    label: 'Yes',
+    on: 'Y'
+  },
+  'sponsor-n': {
+    attribute: 'sponsor.is_school',
+    label: 'No',
+    on: 'N'
+  },
+  'races-african_american': {
+    attribute: 'races',
+    label: 'African American or Black',
+    on: 'African American or Black'
+  },
+  'races-south_american': {
+    attribute: 'races',
+    label: 'South American, Latin American, Central American, or Hispanic/Latino',
+    on: 'South American, Latin American, Central American, or Hispanic/Latino'
+  },
+  'races-american_indian': {
+    attribute: 'races',
+    label: 'American Indian or Alaskan Native',
+    on: 'American Indian or Alaskan Native'
+  },
+  'races-asian': {
+    attribute: 'races',
+    label: 'Asian/Asian American or Pacific Islander',
+    on: 'Asian/Asian American or Pacific Islander'
+  },
+  'races-mexican': {
+    attribute: 'races',
+    label: 'Mexican/Mexican American',
+    on: 'Mexican/Mexican American'
+  },
+  'races-puerto_rican': {
+    attribute: 'races',
+    label: 'Puerto Rican',
+    on: 'Puerto Rican'
+  },
+  'races-other': {
+    attribute: 'races',
+    label: 'Other Racial/Ethnic Group',
+    on: 'Other Racial/Ethnic Group'
+  },
+  'races-white': {
+    attribute: 'races',
+    label: 'White',
+    on: 'White'
+  },
+  'enroll_level-high_school_freshman': {
+    attribute: 'enrollment_levels',
+    label: 'High School Freshman',
+    on: 'High School Freshman'
+  },
+  'enroll_level-high_school_sophomore': {
+    attribute: 'enrollment_levels',
+    label: 'High School Sophomore',
+    on: 'High School Sophomore'
+  },
+  'enroll_level-high_school_junior': {
+    attribute: 'enrollment_levels',
+    label: 'High School Junior',
+    on: 'High School Junior'
+  },
+  'enroll_level-high_school_senior': {
+    attribute: 'enrollment_levels',
+    label: 'High School Senior',
+    on: 'High School Senior'
+  },
+  'enroll_level-college_freshman': {
+    attribute: 'enrollment_levels',
+    label: 'College Freshman',
+    on: 'College Freshman'
+  },
+  'enroll_level-college_sophomore': {
+    attribute: 'enrollment_levels',
+    label: 'College Sophomore',
+    on: 'College Sophomore'
+  },
+  'enroll_level-college_junior': {
+    attribute: 'enrollment_levels',
+    label: 'College Junior',
+    on: 'College Junior'
+  },
+  'enroll_level-college_senior': {
+    attribute: 'enrollment_levels',
+    label: 'College Senior',
+    on: 'College Senior'
+  },
+  'enroll_level-masters_level_study': {
+    attribute: 'enrollment_levels',
+    label: 'Master\'s-level Study',
+    on: "Master's-level Study"
+  },
+  'enroll_level-doctoral_level': {
+    attribute: 'enrollment_levels',
+    label: 'Doctoral-level Study',
+    on: 'Doctoral-level Study'
+  },
+  'enroll_level-other_postgraduate_level': {
+    attribute: 'enrollment_levels',
+    label: 'Other Postgraduate-level Study',
+    on: 'Other Postgraduate-level Study'
+  }
+};
+
+for ( var key in toggleFilters ) {
+  scholarships_search.addWidget(
+    instantsearch.widgets.toggle({
+      container: '#algolia-scholarships-toggle-' + key,
+      attributeName: toggleFilters[ key ].attribute,
+      label: toggleFilters[ key ].label,
+      values: {
+        on: toggleFilters[ key ].on
+      },
+      cssClasses: toggleClasses
+    })
+  );
+}
+
+
+(function($) {
+
+  $(window).load(function() {
+
+    // Filters: Dropdown Click
+    $('#directory-scholarships .main-title').click( function() {
+      if ( $( window ).width() > 1010 ) return;
+      $(this).next('form').toggleClass( 'is-active' );
+    });
+
+    // Filters: Dropdown Click
+    $('#directory-scholarships .js-toggle-category').click( function() {
+      $(this).closest('.filter-category').toggleClass( 'is-active' );
+    });
+
+    // Filters: Dropdown Mouse Leave
+    $('#directory-scholarships .filter-category').mouseleave( function() {
+      if ( /Mobi/.test( navigator.userAgent ) ) return;
+      $(this).removeClass( 'is-active' );
+    });
+
+    // Scholarship Expand
+    $('body').on('click', '#directory-scholarships .school-name, #directory-scholarships .school-button', function(ev) {
+      ev.preventDefault();
+      $(this).siblings('.scholarship-container').toggleClass( 'is-active' );
+    });
+
+
+  });
+
+})(jQuery);
+scholarships_search.start() </script> 
+  <script type="text/javascript">_satellite.pageBottom();</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"122ecb3574","applicationID":"25439365","transactionName":"ZlNVbEVSWEVSBUNdC18ZdltDWllYHBZWUwE=","queueTime":0,"applicationTime":62,"atts":"ShRWGg1IS0s=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

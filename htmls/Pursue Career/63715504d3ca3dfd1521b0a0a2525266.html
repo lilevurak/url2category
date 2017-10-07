@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <link rel="icon" type="image/png" href="https://www.biddytarot.com/favicon.png">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#582564">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="shortcut icon" href="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x.png">
+  <title>BTP44: How to Find Your Dream Job with Tarot as a Guide | BiddyTarot Podcast</title>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="canonical" href="https://www.biddytarot.com/btp44-dream-job/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BTP44: How to Find Your Dream Job with Tarot as a Guide | BiddyTarot Podcast">
+  <meta property="og:description" content="At some point or another in our lives, we reach a point where our work or careers are no longer engaging or satisfying. We drag ourselves out of bed for yet another day of work, just praying for the weekend to come. And we trick ourselves into thinking that we’ll just hang on that little while longer until more of the mortgage has been paid off.">
+  <meta property="og:url" content="https://www.biddytarot.com/btp44-dream-job/">
+  <meta property="og:site_name" content="Biddy Tarot">
+  <meta property="article:section" content="Everyday Tarot">
+  <meta property="article:published_time" content="2016-09-20T07:00:27+00:00">
+  <meta property="article:modified_time" content="2017-07-27T18:49:29+00:00">
+  <meta property="og:updated_time" content="2017-07-27T18:49:29+00:00">
+  <meta property="og:image" content="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg">
+  <meta property="og:image:secure_url" content="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="628">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="At some point or another in our lives, we reach a point where our work or careers are no longer engaging or satisfying. We drag ourselves out of bed for yet another day of work, just praying for the weekend to come. And we trick ourselves into thinking that we’ll just hang on that little while longer until more of the mortgage has been paid off.">
+  <meta name="twitter:title" content="BTP44: How to Find Your Dream Job with Tarot as a Guide | BiddyTarot Podcast">
+  <meta name="twitter:image" content="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.biddytarot.com\/","name":"Biddy Tarot","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.biddytarot.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.biddytarot.com\/btp44-dream-job\/","sameAs":[],"@id":"#organization","name":"Biddy Tarot","logo":"https:\/\/www.biddytarot.com\/wp-content\/uploads\/logo-gradient-1.png"}</script> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//s.w.org">
+  <link rel="alternate" type="application/rss+xml" title="Biddy Tarot » Feed" href="https://www.biddytarot.com/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Biddy Tarot » Comments Feed" href="https://www.biddytarot.com/comments/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Biddy Tarot » BTP44: How to Find Your Dream Job with Tarot as a Guide Comments Feed" href="https://www.biddytarot.com/btp44-dream-job/feed/"> 
+  <script type="text/javascript">window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.biddytarot.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);</script> 
+  <style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+  <link rel="stylesheet" id="style1-css" href="https://www.biddytarot.com/wp-content/plugins/certified-readers/ctrstyle.css" type="text/css" media="all">
+  <link rel="stylesheet" id="tm_clicktotweet-css" href="https://www.biddytarot.com/wp-content/plugins/click-to-tweet-by-todaymade/assets/css/styles.css" type="text/css" media="all">
+  <link rel="stylesheet" id="search-filter-plugin-styles-css" href="https://www.biddytarot.com/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="player-buttons-css" href="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/css/player-buttons.css" type="text/css" media="all">
+  <link rel="stylesheet" id="bar-ui-css" href="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/css/bar-ui.css" type="text/css" media="all">
+  <link rel="stylesheet" id="popover-css-css" href="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/css/jquery.webui-popover.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="jquery-reveal-css-css" href="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/css/reveal.css" type="text/css" media="all">
+  <link rel="stylesheet" id="spp-clickable-tweet-css" href="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/css/spp-tweet-styles.css" type="text/css" media="all">
+  <link rel="stylesheet" id="spp-clammr-css" href="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/css/spp-clammr-styles.css" type="text/css" media="all">
+  <link rel="stylesheet" id="fa-css" href="https://www.biddytarot.com/wp-content/themes/salient/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="font-awesome-css" href="https://www.biddytarot.com/wp-content/themes/salient/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="parent-style-css" href="https://www.biddytarot.com/wp-content/themes/salient/style.css" type="text/css" media="all">
+  <link rel="stylesheet" id="montserrat-css" href="https://www.biddytarot.com/wp-content/themes/bt_16/fonts/montserrat/montserrat-stylesheet.css" type="text/css" media="all">
+  <link rel="stylesheet" id="g_bt-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Montserrat:400,700" type="text/css" media="all">
+  <link rel="stylesheet" id="rgs-css" href="https://www.biddytarot.com/wp-content/themes/salient/css/rgs.css" type="text/css" media="all">
+  <link rel="stylesheet" id="main-styles-css" href="https://www.biddytarot.com/wp-content/themes/bt_16/style.css" type="text/css" media="all">
+  <link rel="stylesheet" id="pretty_photo-css" href="https://www.biddytarot.com/wp-content/themes/salient/css/prettyPhoto.css" type="text/css" media="all"> 
+  <!--[if lt IE 9]><link rel='stylesheet' id='nectar-ie8-css'  href='https://www.biddytarot.com/wp-content/themes/salient/css/ie8.css' type='text/css' media='all' /> <![endif]-->
+  <link rel="stylesheet" id="responsive-css" href="https://www.biddytarot.com/wp-content/themes/salient/css/responsive.css" type="text/css" media="all">
+  <link rel="stylesheet" id="dynamic-css-css" href="https://www.biddytarot.com/wp-content/themes/bt_16/css/dynamic-combined.css" type="text/css" media="all">
+  <link rel="stylesheet" id="wpgform-css-css" href="https://www.biddytarot.com/wp-content/plugins/wpgform/css/wpgform.css" type="text/css" media="all">
+  <link rel="stylesheet" id="sccss_style-css" href="https://www.biddytarot.com/?sccss=1&amp;ver=4.8.2" type="text/css" media="all">
+  <link rel="stylesheet" id="fancybox-css" href="https://www.biddytarot.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.css" type="text/css" media="screen"> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/itro-popup/scripts/itro-scripts.js?ver=4.8.2"></script> 
+  <script type="text/javascript">/*  */
+var SF_LDATA = {"ajax_url":"https:\/\/www.biddytarot.com\/wp-admin\/admin-ajax.php","home_url":"https:\/\/www.biddytarot.com\/"};
+/*  */</script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.3.3"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.3.3"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/soundmanager2.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/bar-ui.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/sm_timestamp.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/transcript.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/jquery.webui-popover.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/clammrit.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/jquery.reveal.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/rotator.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/themes/salient/js/modernizr.js?ver=2.6.2"></script> 
+  <link rel="https://api.w.org/" href="https://www.biddytarot.com/wp-json/">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.biddytarot.com/xmlrpc.php?rsd">
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.biddytarot.com/wp-includes/wlwmanifest.xml">
+  <link rel="shortlink" href="https://www.biddytarot.com/?p=30648">
+  <link rel="alternate" type="application/json+oembed" href="https://www.biddytarot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.biddytarot.com%2Fbtp44-dream-job%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://www.biddytarot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.biddytarot.com%2Fbtp44-dream-job%2F&amp;format=xml">
+  <style type="text/css" media="screen">.g { margin:0px; padding:0px; overflow:hidden; line-height:1; zoom:1; }
+	.g img { height:auto; }
+	.g-col { position:relative; float:left; }
+	.g-col:first-child { margin-left: 0; }
+	.g-col:last-child { margin-right: 0; }
+	.g-1 { margin:1px; }
+	.g-2 { margin:1px; }
+	.g-3 { margin:1px; }
+	.g-4 { margin:1px; }
+	@media only screen and (max-width: 480px) {
+		.g-col, .g-dyn, .g-single { width:100%; margin-left:0; margin-right:0; }
+	}
+.adrotate_widgets { overflow:hidden; padding:0; }</style> 
+  <script type="text/javascript" async defer data-pin-color="gray" data-pin-height="28" data-pin-hover="true" src="https://www.biddytarot.com/wp-content/plugins/pinterest-pin-it-button-on-image-hover-and-post/js/pinit.js"></script> 
+  <meta property="og:url" content="https://www.biddytarot.com/btp44-dream-job/">
+  <meta property="og:site_name" content="Biddy Tarot">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BTP44: How to Find Your Dream Job with Tarot as a Guide">
+  <meta property="og:description" content="  >> Download Free PDF: How to use the Tarot to find your dream job At some point or another in our lives, we reach a point where our work or careers are no longer engaging or satisfying. We drag ourselves out of bed for yet another day of work, just praying for the weekend to come. And we trick ourselves into thinking that we’ll just hang on that little while longer until more of the mortgage has been paid off. I know it because I've been there before… It’s hard to move from st">
+  <meta property="og:image" content="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg">
+  <meta property="og:image:type" content="image/jpeg"> 
+  <style type="text/css">body .section-title #portfolio-nav a:hover i{opacity:0.75;}.pagination-navigation{-webkit-filter:url("https://www.biddytarot.com/btp44-dream-job/#goo");filter:url("https://www.biddytarot.com/btp44-dream-job/#goo");}</style>
+  <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."> 
+  <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.biddytarot.com/wp-content/plugins/js_composer_salient/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+  <!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://www.biddytarot.com/wp-content/plugins/js_composer_salient/assets/css/vc-ie8.min.css" media="screen"><![endif]--> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NZ3N53B');</script> 
+  <link rel="icon" href="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x-50x50.png" sizes="32x32">
+  <link rel="icon" href="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x.png" sizes="192x192">
+  <link rel="apple-touch-icon-precomposed" href="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x.png">
+  <meta name="msapplication-TileImage" content="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x.png"> 
+  <script type="text/javascript">/*  */
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton' : true, 'margin' : 20, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale' : true, 'speedIn' : 500 };
+var easy_fancybox_handler = function(){
+	/* Inline */
+	jQuery('a.fancybox-inline, area.fancybox-inline, li.fancybox-inline a').fancybox( jQuery.extend({}, fb_opts, { 'type' : 'inline', 'autoDimensions' : true, 'scrolling' : 'auto', 'transitionIn' : 'elastic', 'easingIn' : 'easeOutBack', 'transitionOut' : 'elastic', 'easingOut' : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false }) );
+}
+var easy_fancybox_auto = function(){
+	/* Auto-click */
+	setTimeout(function(){jQuery('#fancybox-auto').trigger('click')},1000);
+}
+/*  */</script> 
+  <noscript>
+   <style type="text/css">.wpb_animate_when_almost_visible { opacity: 1; }</style>
+  </noscript>
+ </head>
+ <body class="post-template-default single single-post postid-30648 single-format-standard wpb-js-composer js-comp-ver-4.12.1 vc_responsive" data-footer-reveal="false" data-footer-reveal-shadow="none" data-cae="linear" data-cad="650" data-aie="none" data-ls="pretty_photo" data-apte="standard" data-hhun="0" data-fancy-form-rcs="default" data-form-style="default" data-is="minimal" data-button-style="default" data-header-inherit-rc="false" data-header-search="true" data-animated-anchors="true" data-ajax-transitions="false" data-full-width-header="true" data-slide-out-widget-area="true" data-loading-animation="spin" data-bg-header="false" data-ext-responsive="true" data-header-resize="1" data-header-color="custom" data-transparent-header="false" data-smooth-scrolling="0" data-permanent-transparent="false" data-responsive="1">
+  <div id="header-space" data-header-mobile-fixed="1"></div>
+  <div id="header-outer" data-has-menu="true" data-mobile-fixed="1" data-ptnm="false" data-lhe="default" data-user-set-bg="#ffffff" data-format="default" data-permanent-transparent="false" data-cart="false" data-transparency-option="0" data-shrink-num="40" data-full-width="true" data-using-secondary="0" data-using-logo="1" data-logo-height="60" data-m-logo-height="80" data-padding="20" data-header-resize="1">
+   <div id="search-outer" class="nectar">
+    <div id="search">
+     <div class="container">
+      <div id="search-box">
+       <div class="col span_12">
+        <form action="https://www.biddytarot.com" method="GET"> 
+         <input type="text" name="s" id="s" value="Start Typing..." data-placeholder="Start Typing...">
+        </form>
+       </div>
+      </div>
+      <div id="close">
+       <a href="#"><span class="icon-salient-x" aria-hidden="true"></span></a>
+      </div>
+     </div>
+    </div>
+   </div> 
+   <header id="top">
+    <div class="no-container">
+     <div class="row">
+      <div class="col span_2"> 
+       <a id="logo" href="https://www.biddytarot.com"> <img class="stnd default-logo" alt="Biddy Tarot" src="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x.png"><img class="retina-logo " alt="Biddy Tarot" src="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-BiddyTarotLogo-@2x.png"> </a>
+      </div>
+      <div class="col span_9">
+       <div class="slide-out-widget-area-toggle">
+        <div> 
+         <a href="#sidewidgetarea" class="closed"> <i class="icon-reorder"></i> </a>
+        </div>
+       </div> 
+       <nav>
+        <ul class="buttons" data-user-set-ocm="off">
+         <li id="search-btn">
+          <div>
+           <a href="#searchbox"><span class="icon-salient-search" aria-hidden="true"></span></a>
+          </div></li>
+         <li class="slide-out-widget-area-toggle">
+          <div> 
+           <a href="#sidewidgetarea" class="closed"> <span> <i class="lines-button x2"> <i class="lines"></i> </i> </span> </a>
+          </div></li>
+        </ul>
+        <ul class="sf-menu">
+         <li id="menu-item-20126" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20126"><a href="https://www.biddytarot.com/">Home</a></li>
+         <li id="menu-item-20215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sf-with-ul menu-item-20215"><a href="https://www.biddytarot.com/learn-tarot/">Learn Tarot<span class="sf-sub-indicator"><i class="icon-angle-down"></i></span></a>
+          <ul class="sub-menu">
+           <li id="menu-item-37577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37577"><a href="https://www.biddytarot.com/certification/">Tarot Certification</a></li>
+           <li id="menu-item-21313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21313"><a href="https://www.biddytarot.com/learn-tarot/">Learn Tarot</a></li>
+           <li id="menu-item-20596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20596"><a href="https://www.biddytarot.com/free-tarot-resources/">Free Downloads</a></li>
+           <li id="menu-item-20594" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20594"><a href="https://www.biddytarot.com/tarot-card-meanings/">Tarot Card Meanings<span class="sf-sub-indicator"><i class="icon-angle-right"></i></span></a>
+            <ul class="sub-menu">
+             <li id="menu-item-21035" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21035"><a href="/tarot-card-meanings/">Tarot Card Meanings</a></li>
+             <li id="menu-item-20595" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20595"><a href="https://www.biddytarot.com/tarot-card-meanings/major-arcana/">Major Arcana Tarot Card Meanings</a></li>
+             <li id="menu-item-20593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20593"><a href="https://www.biddytarot.com/tarot-card-meanings/minor-arcana/">Minor Arcana Tarot Card Meanings</a></li>
+            </ul></li>
+           <li id="menu-item-20598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20598"><a href="https://www.biddytarot.com/tarot-guides/">eBooks &amp; Guides</a></li>
+           <li id="menu-item-21131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21131"><a href="https://www.biddytarot.com/courses/">Online Tarot Courses</a></li>
+          </ul></li>
+         <li id="menu-item-21136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sf-with-ul menu-item-21136"><a href="http://community.biddytarot.com/join/">Community<span class="sf-sub-indicator"><i class="icon-angle-down"></i></span></a>
+          <ul class="sub-menu">
+           <li id="menu-item-21268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21268"><a href="http://community.biddytarot.com/join">Join the Community</a></li>
+           <li id="menu-item-21137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21137"><a href="http://community.biddytarot.com/">Login</a></li>
+          </ul></li>
+         <li id="menu-item-20218" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sf-with-ul menu-item-20218"><a href="https://www.biddytarot.com/tarotreading/">Get a Tarot Reading<span class="sf-sub-indicator"><i class="icon-angle-down"></i></span></a>
+          <ul class="sub-menu">
+           <li id="menu-item-21133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21133"><a href="https://www.biddytarot.com/tarotreading/">Professional Readings</a></li>
+           <li id="menu-item-21396" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21396"><a href="http://community.biddytarot.com/free-tarot-readings/">Free Tarot Card Reading</a></li>
+           <li id="menu-item-23814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23814"><a href="https://www.biddytarot.com/certified-tarot-readers/">Certified Biddy Tarot Readers</a></li>
+          </ul></li>
+         <li id="menu-item-20216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sf-with-ul menu-item-20216"><a href="https://www.biddytarot.com/soul-powered-business/">Soul-Powered Business<span class="sf-sub-indicator"><i class="icon-angle-down"></i></span></a>
+          <ul class="sub-menu">
+           <li id="menu-item-32212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32212"><a href="https://www.biddytarot.com/courses/grow-your-tarot-business-online/">Grow Your Tarot Business Online</a></li>
+           <li id="menu-item-21034" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21034"><a href="https://www.biddytarot.com/work-with-me/">1:1 Business Coaching</a></li>
+          </ul></li>
+         <li id="menu-item-20131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sf-with-ul menu-item-20131"><a href="https://www.biddytarot.com/blog/">Blog<span class="sf-sub-indicator"><i class="icon-angle-down"></i></span></a>
+          <ul class="sub-menu">
+           <li id="menu-item-20604" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-20604"><a href="https://www.biddytarot.com/category/podcast/">Podcast</a></li>
+          </ul></li>
+         <li id="menu-item-20130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sf-with-ul menu-item-20130"><a href="https://www.biddytarot.com/about/">About<span class="sf-sub-indicator"><i class="icon-angle-down"></i></span></a>
+          <ul class="sub-menu">
+           <li id="menu-item-21033" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21033"><a href="https://www.biddytarot.com/about/">Meet Brigit</a></li>
+           <li id="menu-item-20597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20597"><a href="https://www.biddytarot.com/contact-faq/">Contact and FAQ</a></li>
+          </ul></li>
+         <li id="menu-item-32350" class="nav-cta short menu-item menu-item-type-custom menu-item-object-custom menu-item-32350"><a href="/quiz">TAKE THE QUIZ</a></li>
+        </ul> 
+       </nav>
+      </div>
+      <div class="col span_3 col_last"></div>
+     </div>
+    </div> 
+   </header>
+   <div class="ns-loading-cover"></div>
+  </div>
+  <div id="mobile-menu" data-mobile-fixed="1">
+   <div class="container">
+    <ul>
+     <li><a href="">No menu assigned!</a></li>
+    </ul>
+   </div>
+  </div>
+  <div id="ajax-loading-screen" data-disable-fade-on-click="0" data-effect="standard" data-method="standard"> 
+   <span class="loading-icon spin"> </span>
+  </div>
+  <div id="ajax-content-wrap">
+   <div id="bt-posts-header" class="custom-header">
+    <div class="custom-header-wrapper"></div>
+   </div>
+   <div id="top-optin-bar">
+    <div id="text-53" class="widget widget_text bt-sidebars topbar-widget">
+     <div class="textwidget">
+      <h2 style="font-size: 38px; font-family: montserrat; margin: 0; text-align: center; letter-spacing: 1px; font-weight: 400;" class="green">QUIZ</h2>
+     </div>
+    </div>
+    <div id="text-54" class="widget widget_text bt-sidebars topbar-widget">
+     <div class="textwidget">
+      <div style="text-align: center; color: #fff;">
+       Are you a seeker, Magician or High Priestess?
+      </div>
+     </div>
+    </div>
+    <div id="text-75" class="widget widget_text bt-sidebars topbar-widget">
+     <div class="textwidget">
+      <p><a href="/quiz">TAKE THE QUIZ</a></p>
+     </div>
+    </div>
+   </div>
+   <div class="container-wrap  ">
+    <div class="container main-content">
+     <div class="row heading-title" data-header-style="default">
+      <div class="col span_12 section-title blog-title">
+       <h1 class="entry-title">BTP44: How to Find Your Dream Job with Tarot as a Guide</h1>
+       <div id="single-below-header"> 
+        <span class="meta-author vcard author"><span class="fn">By <a href="https://www.biddytarot.com/author/biddy-tarot/" title="Posts by Brigit" rel="author">Brigit</a></span></span>
+        <span class="meta-date date updated">September 20, 2016</span>
+        <span class="meta-category"><a href="https://www.biddytarot.com/category/everyday-tarot/">Everyday Tarot</a>, <a href="https://www.biddytarot.com/category/podcast/">Podcast</a></span>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div id="post-area" class="col span_9"> 
+       <article id="post-30648" class="regular post-30648 post type-post status-publish format-standard has-post-thumbnail hentry category-everyday-tarot category-podcast">
+        <div class="inner-wrap animated">
+         <div class="post-content">
+          <div class="content-inner">
+           <p><img class="aligncenter wp-image-25999" src="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg" width="820" height="429" srcset="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg 1200w, https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide-480x251.jpg 480w" sizes="(max-width: 820px) 100vw, 820px"></p>
+           <p style="text-align: center;"></p>
+           <div class="player_container player-30648">
+            <div class="spp_player_textabove">
+             <b>BTP44: How to Find Your Dream Job with Tarot as a Guide </b>
+            </div>
+            <div id="sm2-30648" class="sm2-bar-ui compact flat full-width full-width-player">
+             <div class="bd sm2-main-controls">
+              <div class="sm2-inline-element sm2-button-element">
+               <div class="sm2-button-bd" style="background: transparent url() repeat scroll 0% 0% / cover ;">
+                <div id="spp-player-background"></div> 
+                <a href="#play" class="sm2-inline-button play-pause">Play / pause</a>
+                <div class="eq"> 
+                 <span class="bar bar-1"></span> 
+                 <span class="bar bar-2"></span> 
+                 <span class="bar bar-3"></span> 
+                 <span class="bar bar-4"></span>
+                </div>
+               </div>
+              </div>
+              <div class="sm2-inline-element sm2-inline-status progressbar">
+               <div class="sm2-button-bd" style="">
+                <div class="playerpitch">
+                 1x
+                </div>
+                <div class="playerpitch1" style="display:none;">
+                 1.5x
+                </div>
+                <div class="playerpitch2" style="display:none;">
+                 2x
+                </div>
+               </div>
+               <div class="sm2-button-bd" style="">
+                <div class="secrewind"></div>
+               </div>
+               <div class="sm2-playlist">
+                <div class="sm2-playlist-target"></div>
+               </div>
+               <div class="sm2-progress">
+                <div class="sm2-progress-bd">
+                 <div class="sm2-progress-track">
+                  <div class="sm2-progress-bar1" style="display:none;"></div>
+                  <div class="sm2-progress-bar"></div>
+                  <div class="sm2-progress-ball">
+                   <div class="icon-overlay"></div>
+                  </div>
+                 </div>
+                </div>
+                <div class="sm2-row timestamp">
+                 <div class="sm2-inline-time1 timestamp" style="display:none;">
+                  0:00
+                 </div>
+                 <div class="sm2-inline-time timestamp">
+                  0:00
+                 </div>
+                 <div class="sm2-inline-duration timestamp">
+                  0:00
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="sm2-inline-element sm2-button-element sm2-volume" style="display:none;">
+               <div class="sm2-button-bd"> 
+                <span class="sm2-inline-button sm2-volume-control volume-shade"></span> 
+                <a href="#volume" class="sm2-inline-button sm2-volume-control" style="">volume</a>
+               </div>
+              </div>
+             </div>
+             <div class="bd sm2-playlist-drawer sm2-element">
+              <div class="sm2-playlist-wrapper">
+               <ul class="sm2-playlist-bd">
+                <li><a href="http://traffic.libsyn.com/biddytarot/BTP44_How_to_Find_Your_Dream_Job_with_Tarot_as_a_Guide.mp3">BTP44: How to Find Your Dream Job with Tarot as a Guide</a></li>
+               </ul>
+              </div>
+             </div>
+            </div>
+            <div class="sppbuttons" style="">
+             <a class="button-itunes" target="_blank" style="" href="https://itunes.apple.com/au/podcast/biddy-tarot-podcast-tarot/id1071716704?ls=1">iTunes</a>
+             <a class="button-g-play" target="_blank" style="display:none !important;" href="">Google Play</a>
+             <a class="button-share" target="_blank" style="display:none !important;" href="#">Share</a>
+             <div class="webui-popover-content share-buttons"> 
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.biddytarot.com/btp44-dream-job/" title="Share on Facebook" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
+              <a href="https://twitter.com/share?text=BTP44%3A+How+to+Find+Your+Dream+Job+with+Tarot+as+a+Guide -&amp;url=https://www.biddytarot.com/btp44-dream-job/" title="Share on Twitter" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a> 
+              <a href="https://plus.google.com/share?url=https://www.biddytarot.com/btp44-dream-job/" title="Share on Google+" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a>
+             </div>
+             <a class="button-sppreview" target="_blank" style="" href="http://getpodcast.reviews/id/1071716704">Leave a Review</a>
+             <a class="button-clammr" href="javascript:sppClammrIt_30648();" style="display:none !important;">Clammr It</a>
+             <a class="button-spplisten" style="" href="javascript:window.open('http://traffic.libsyn.com/biddytarot/BTP44_How_to_Find_Your_Dream_Job_with_Tarot_as_a_Guide.mp3','','width=500,height=250')">Listen in a New Window</a>
+             <a class="button-download" target="_blank" style="" href="http://traffic.libsyn.com/biddytarot/BTP44_How_to_Find_Your_Dream_Job_with_Tarot_as_a_Guide.mp3">Download</a>
+             <a class="button-soundcloud" target="_blank" style="display:none !important;" href="">SoundCloud</a>
+             <a class="button-stitcher" target="_blank" style="display:none !important;" href="">Stitcher</a>
+             <a class="button-sppandroid" target="_blank" style="display:none !important;" href="http://subscribeonandroid.com/biddytarot.libsyn.com/rss">Subscribe on Android</a>
+             <a class="button-spprss" target="_blank" style="" href="http://biddytarot.libsyn.com/rss?more=true">Subscribe via RSS</a>
+             <a class="spp-button-custom1" target="_blank" style="display:none !important;" href=""></a>
+             <a class="spp-button-custom2" target="_blank" style="display:none !important;" href=""></a>
+             <a class="spp-button-custom3" target="_blank" style="display:none !important;" href=""></a>
+             <a class="spp-button-custom4" target="_blank" style="display:none !important;" href=""></a>
+             <a class="spp-button-custom5" target="_blank" style="display:none !important;" href=""></a>
+             <a class="spp-button-custom6" target="_blank" style="display:none !important;" href=""></a>
+            </div>
+           </div>
+           <p style="text-align: center;"><a data-opf-trigger="p2c23279f259">&gt;&gt; Download Free PDF: How to use the Tarot to find your dream job</a><script type="text/javascript" async="true" src="https://app.ontraport.com/js/ontraport/opt_assets/drivers/opf.js" data-opf-uid="p2c23279f259" data-opf-params="borderColor=#fff&amp;borderSize=5px&amp;formHeight=912&amp;formWidth=60%&amp;popPosition=mc&amp;instance=n115326863"></script></p>
+           <p>At some point or another in our lives, we reach a point where our work or careers are no longer engaging or satisfying. We drag ourselves out of bed for yet another day of work, just praying for the weekend to come. And we trick ourselves into thinking that we’ll just hang on that little while longer until more of the mortgage has been paid off.</p>
+           <p>I know it because I’ve been there before… It’s hard to move from stability to the unknown, and making that leap can be scary. Thankfully we have the Tarot cards to help guide us towards finding our dream job and career. It really is possible to get the job you want, with a little help from our friends – the Tarot cards.</p>
+           <p>In this episode, you’ll learn:<br> • How I used the Tarot to find my true calling<br> • Why I making that leap into the unknown was so, so worth it<br> • 7 practical ways to use the Tarot cards to find (and get) your dream job!</p>
+           <h2>Additional Resources</h2>
+           <ul>
+            <li><a data-opf-trigger="p2c23279f259">Download the free PDF reference card and learn how to use the Tarot to find your dream job</a><script type="text/javascript" async="true" src="https://app.ontraport.com/js/ontraport/opt_assets/drivers/opf.js" data-opf-uid="p2c23279f259" data-opf-params="borderColor=#fff&amp;borderSize=5px&amp;formHeight=912&amp;formWidth=60%&amp;popPosition=mc&amp;instance=n115326863"></script></li>
+            <li>Join the <a href="http://community.biddytarot.com/join/" target="_blank">Biddy Tarot Community</a>.</li>
+           </ul>
+           <div class="tm-tweet-clear"></div>
+           <div class="tm-click-to-tweet">
+            <div class="tm-ctt-text">
+             <a href="https://twitter.com/share?text=Tell+me%3A+How+have+you+used+Tarot+in+your+career%3F+%40biddytarot&amp;url=https://www.biddytarot.com/btp44-dream-job/" target="_blank">Tell me: How have you used Tarot in your career? @biddytarot</a>
+            </div>
+            <p><a href="https://twitter.com/share?text=Tell+me%3A+How+have+you+used+Tarot+in+your+career%3F+%40biddytarot&amp;url=https://www.biddytarot.com/btp44-dream-job/" target="_blank" class="tm-ctt-btn">Click To Tweet</a></p>
+            <div class="tm-ctt-tip"></div>
+           </div>
+           <h2>Podcast Transcript</h2>
+           <p><strong>Brigit:</strong> You’re listening to the Biddy Tarot Podcast, and this is Episode 42: Five Simple Ways to Deliver a Tarot Reading Online.</p>
+           <h2>Voice-Over</h2>
+           <p>Welcome to the Biddy Tarot podcast, where you will learn how to connect more deeply with your intuition and live an empowered and enlightened life with the Tarot cards as your guide.</p>
+           <p>Listen as Brigit and her guests share their very best tips and strategies to help you read Tarot with confidence.</p>
+           <p>And now, here is your host Brigit Esselmont.</p>
+           <h2>Introduction</h2>
+           <p><strong>Brigit:</strong>&nbsp; Hello and welcome back to the Biddy Tarot&nbsp;podcast, as always I am so thrilled to have you here and to be talking about Tarot with&nbsp;you.</p>
+           <p>Now before I get into today’s episode I just want to say a big thank you to everybody who’s been&nbsp;leaving amazing reviews for us on&nbsp;iTunes and elsewhere. I just wanted to share two gorgeous, gorgeous reviews with you to celebrate and really to&nbsp;say thank you to these folks who’ve&nbsp;left a review. And&nbsp;remember if you want to share your feedback with us&nbsp;then please head to&nbsp;iTunes and if you feel&nbsp;compelled to do so please leave us a 5-star review that would be&nbsp;awesome, and your comments.</p>
+           <p>Now this comes from&nbsp;Sylvia and she writes:</p>
+           <p>“Thank heavens we have someone like Biddy&nbsp;to introduce us to the world of unique Tarot readers&nbsp;from around the world as well as our beloved Australia and&nbsp;sharing them with us.&nbsp;I’m constantly learning&nbsp;from Biddy’s courses&nbsp;as well as these very&nbsp;generous podcast&nbsp;that have immense&nbsp;value&nbsp;of content&nbsp;and thank you,&nbsp;thank you, thank you,” says Sylvia.</p>
+           <p>Awww, thank you and that’s absolutely gorgeous&nbsp;and it’s my pleasure to be here with you, helping you to learn to Tarot.</p>
+           <p>And here’s another one from Megan Rumpy and she’s from Australia, and so is&nbsp;Sylvia is also from Australia and Megan says:</p>
+           <p>“I love, love, love Biddy Tarot podcast.&nbsp;Useful, informative and fun information to make you feel empowered on your Tarot journey.”</p>
+           <p>Yes!&nbsp;I’m so happy,&nbsp;thank you so much, Megan&nbsp;and I’m really glad&nbsp;you are feeling empowered on your Tarot journey,&nbsp;because that’s exactly what I want to do,&nbsp;I want to show you how to use Tarot in a way that leaves you feeling awesome&nbsp;and empowered&nbsp;and able to create whatever kind of future you truly want and deserve.</p>
+           <p>Okay so&nbsp;big, big love for all of those beautiful&nbsp;iTunes reviews&nbsp;I really, really do appreciate them.</p>
+           <p><strong>Brigit:</strong> &nbsp;Now, let’s get into today’s episode.&nbsp;Well at some point or another in our lives we reach a point&nbsp;where our work or careers&nbsp;are no longer engaging or satisfying.&nbsp;Maybe we’re dragging ourselves out of bed&nbsp;for another day of work and just praying for the weekend to come&nbsp;and we trick ourselves into thinking that if we just hang on just a little bit while longer&nbsp;until maybe more of the mortgage has been paid off.&nbsp;I know it because I’ve been there before,&nbsp;I’ve worked in corporate for over 10 years and by the time I reached my early 30s I just knew&nbsp;I could not keep working this way. My work had become boring&nbsp;and tedious and I really&nbsp;did grow very cynical&nbsp;of the corporate work place.</p>
+           <p>Now thankfully I&nbsp;had Biddy Tarot running a long&nbsp;in the background&nbsp;and as a hobby project and I began to feel really strong calling to do this Biddy Tarot&nbsp;work full time&nbsp;and through my connection with the Tarot cards themselves I realized I just had to follow that calling.&nbsp;It was really, really too loud to ignore&nbsp;so in 2012 I finally left&nbsp;and pursued Biddy Tarot full-time&nbsp;and now four years later I have never looked back.&nbsp;We’ve got such a wonderful lifestyle&nbsp;as a family thanks to the Biddy Tarot&nbsp;business and I am doing something I love&nbsp;and&nbsp;that really serves the world&nbsp;in a big and beautiful way.</p>
+           <p>But making that leap&nbsp;can be really, really scary&nbsp;but we’re really in a cool position as Tarot readers because we’ve got the Tarot cards to help us and guide us towards finding our dream job and career.&nbsp;And it really is possible to get the job that you want&nbsp;with a little help from our friends the Tarot cards.</p>
+           <p>So, in this podcast I’m going to give you 7 practical ways&nbsp;to use the Tarot cards&nbsp;to find your dream job.&nbsp;And&nbsp;if you’re out and about while you’re listening to this podcast episode,&nbsp;I have created a free PDF download for you&nbsp;you can head on over&nbsp;to&nbsp;<a href="https://www.biddytarot.com/44" target="_blank">www.biddytarot.com/44</a>&nbsp;to access the PDF.&nbsp;Now I’ve brought all of these Seven Different Ways that You Can Use the Tarot Cards to Find Your Dream Job&nbsp;and I put them&nbsp;that all in the&nbsp;one place in this PDF. Just go to&nbsp;<a href="https://www.biddytarot.com/44" target="_blank">www.biddytarot.com/44</a>&nbsp;and you can access the PDF, you can also see the transcript for today’s call and the show notes and of course you can always check out Biddy Tarot while you’re there.</p>
+           <p>So, let’s get in to today’s episode. Our first way of using Tarot to find your dream job is to discover your true passions.</p>
+           <p>So, what is it that you really love doing?</p>
+           <p>What makes you want to keep working on a project even when everyone else has gone home or gone to bed or is out with friends doing all this other stuff. And you’re like: “Nope, I’m staying at home, I want to work on this project.” What is it?</p>
+           <p>And what do you love talking about to your friends?</p>
+           <p>If you want to discover where your true passions lie, certainly connecting first intuitively into your hearts space and thinking, ok what is my true passion. But if you need a little bit of extra help, then of course you’ve got the Tarot cards. Just draw three Tarot cards and meditate on each individual card and the three cards combined to explore what makes you truly, truly passionate. You might even draw another card to understand how you can leverage these passions to earn an income.</p>
+           <p>So, let me see if a can do a quick example while I have my Tarot cards here. Let’s see, so if I was asking what am I truly passionate about? Let’s see what’s the one thing that’s going to come up, I’m going to just draw one card for this. Let’s see, Six of Wands reversed, well, hmm, yeah, ok, now I get it. Six of Wands reversed, might be that sort of internal sense of confidence and doing something that truly matters but knowing that within yourself.</p>
+           <p>You might look at that card and go: “Ok, maybe I’m really passionate about building up confidence, self confidence in not just my self but in other people as well,” and maybe self confidence might be part of what your dream job and career is all about. If you want, draw another couple of cards and see how they all come together and just do a bit of free writing as well. Give yourself the space for your intuition to kick into gear whilst you’ve got these Tarot cards in front of you. Remember that the cards are not the thing that give you the answer, the answer is already inside of you. The cards are helping you connect with that answer. I want that to be really, really clear.</p>
+           <p>Ok, let’s move on to the next step for finding your dream job and that is to identify your strengths and development areas. So, being aware of your strengths and development areas is key to being able to find the perfect job. You’ve got to be able to play to your strengths and address any of those sort of weaknesses or things that you could probably do better. So, to help you do this, bring out your Tarot cards and you might draw one card for your strengths and one card for your development areas, things that you’ve got to focus on. Let’s see, I’ve just drawn, as an example the Nine of Cups as the strength and maybe that might be in writing or being able to create a story or paint a picture in somebody’s mind using emotions or being able to connect people to an emotional story perhaps. And then the High Priestess reversed as a development area, well that’s interesting, so maybe that’s about trusting your own intuition and really connecting with your intuition on a much deeper personal level. That might just give you some clues and again, here’s the thing, I want you to be looking at the cards but also asking yourself and thinking: “Ok, if I’m to think of what are my key strengths?” and come up with that in addition to what your seeing in the Tarot cards.</p>
+           <p>I also suggest that you take note of any Tarot cards that might be reversed, particularly in the development areas. So, on the one hand reversed cards can indicate sort of more internal processes, things that are happening on a more private level but they can indicate things that are in your unconscious awareness. So, things that you may not be aware of yet. For example, if I’m looking at the High Priestess and I’m looking at it as an unconscious awareness, it might be that I’m not actually aware that I need to trust my intuition even more but this card right now is highlighting that. That’s interesting and it’s funny because when I saw that card, I had a bit of resistance, I’m like: “What are you talking about I need to trust my intuition more?” This is like my life, my career, intuition but that in itself could be an example of an unconscious awareness, maybe I still&nbsp;have more opportunity to connect to my intuition. Love it!</p>
+           <p>As soon as you’ve seen those reversed cards, the great thing is that it’s bringing into your conscious awareness and that means that you can actually take action around it when it’s in your conscious awareness, things that we are not aware of, we can’t really take action on but they may continue to influence us so it’s better if we can become consciously aware of these kinds of things. All right, that was looking at your strength and development areas.</p>
+           <p>Now the third step is to develop an action plan for finding a job. I wish that we could just lay out the cards that say: “Oh, look&nbsp;Ace of Pentacles, here’s comes your job.” And you’re like: “Yep, don’t need to do anything.” But I think that is absolute rubbish and I think if we want to create the future in the way that we want it to then we have to take action and we have to be very mindful about what that action is. So, you can use your Tarot cards to assist you in finding a job and mapping out your action plan.</p>
+           <p>You might draw three Tarot cards to understand what it is that you need to do to find the right job for you and you want to be on the lookout for Tarot cards that might indicate how to go about finding a job, such as maybe using a recruitment agency or online search or personal networks and so on. So, for example the Three of Cups or the Queen of Wands emphasizes the importance of social networking or the Hierophant or Three of Pentacles points to being a part of a professional association. And maybe the Three of Wands suggest an online job search with a possibility of working over seas and the Emperor might even indicate a recruitment agency.</p>
+           <p>So, here’s the thing, I’ve just laid out three cards as another example and I’ve got the Seven of Swords, Five of Swords and Three of Swords. Lots of Swords so that tells us that the action plan needs to involve some kind of mental process. And it might be about being a little bit more discerning about which opportunities to take, certainly in the Seven of Swords it’s about leaving things behind that may not be serving you and being a little bit more about being strategic about what you take with you. Similar to the Five of Swords where it’s like you can’t take everything, you can’t be a winner all of the time. These cards may point to an action plan that’s about having more criteria about which jobs you want to take and which ones are more in alignment with your dream job.</p>
+           <p>Let’s move on to number four, and that is identify where you find your best opportunity. Using the Tarot cards, you can find out what kind of company, industry, boss or vocation will suit you best. Now, of course there isn’t a card in the Tarot deck that says Canada, or there isn’t on that says Apple, but I do find that the cards can be quite interesting in giving you little clues as to what a good company or industry might do for you or might be in alignment with your dream job.</p>
+           <p>Here’s the thing, you can draw a card for each of these factors or add in your own factors. You might be thinking: “What do I need to know in terms of my best opportunity is? I already know that I’m going to stay in my city, so I’m not going to be worried about location, but maybe I’ve been tossing up between the pharmaceutical industry or the Tech industry.” And you might even just draw a couple of cards for those to say: “Well, what might I experience if I work in Pharma or if I work in Tech, what might I experience?” Or it might be a bit like: “I’ve got no idea what kind of industry that I’m going to work in.”</p>
+           <p>So, let’s just do a bit of a random one and see what comes up and hopefully we’ll get some clues here. Industry, hmm, ok, so I’ve got the Five of Pentacles, and we know that this is with the two beggars at the front, one’s sort of injured and then there’s the church in the background. The big theme for this card is about giving and receiving but helping the poor and helping people in need.</p>
+           <p>So if you where thinking about: “Where’s my best opportunity?” well it could be in the not for profit, it could be working for a church, it could be working for some organization that helps people who have very little. It could even be in a homeless shelter, something along those lines. So even by looking at the imagery in the card, that can give you some clues about where your best opportunities lie. Now again, always check in with the intuition and say: “Ok, well which one feels in alignment with what I truly want in my career?” You might be thinking: “Well a homeless shelter, umm, no not really for me, but I would be happy working in an organization that does support people who’ve been injured in someway.” Maybe that has a trigger for you and you can follow and pursue that.</p>
+           <p>Ok, so number five is ace your interviews. If you’ve started to find some dream jobs, maybe start to apply for those dream jobs or you’re connecting in with your social networks then the natural next step is that you are going to go through some kind of selection or interview process. Now you can use your Tarot cards to help you understand how you can prepare and what you need to emphasize or avoid or even what qualities or skills that the employer is looking for and how to present yourself. And you might even want to draw a card to find out how the interview might go and what you need to look out for.</p>
+           <p>Let’s say, we might draw a card, ok what do I need to do to prepare for the interview? I’ve got the Temperance card, ok number one you’ve got to stay calm and maybe it’s about looking out for balance in different things and you might just get really clear about how can you show a very balanced point of view when your presenting to a potential employer. How can you show what your personal mission is and how that aligns to this particular company, for example. Maybe there’s something else, maybe presenting yourself in a way that is quite balanced and moderate and in connection with sort of the bigger picture, is what I’m seeing. And certainly if you where going to go off and your going to work in a church or in an&nbsp;organization, I’m thinking back to our Five of Pentacles, then you might want to just really show off your, well not show off, be clear that you have this connection to the Divine and that’s important to you as well. These are examples.</p>
+           <p>Maybe you’re drawing a card for: “Ok, what do I need to emphasize in the interview?” and we’ve got the Ace of Pentacles. Maybe that’s like your a real go getter, you get things started, what do you need to avoid or not emphasize? Ok, Seven of Swords again, well that might be about, I just had a cheeky thought, that last time you stole from the company, don’t mention that in your interview. That’s terrible isn’t it? But you might be aspects that you don’t want to talk about, maybe sort of like the darker side of your previous job. I’m thinking might be getting side tracked here but I’m thinking of when I use to work in Human Resources and I did a few job interviews with candidates and sometimes they would mention just all sorts of negative stuff from their previous employer and your thinking: “Why are you telling me this? Don’t tell me about like&nbsp;how it didn’t work out, and how your previous boss was a Narcissist and don’t talk about that.” You want to bring positive energy into a job interview. So, the Seven of Swords might be an indication to avoid some of that.&nbsp;Be fluid and flexible with the questions that you’re asking the Tarot cards and think what is it that I really need to know in order to ace my interview and just draw a couple of cards to help you with that.</p>
+           <p>Ok, let’s move on, were up to step number six, and that is decide between&nbsp;perspective&nbsp;employers. You might have a few&nbsp;opportunities&nbsp;in the pipeline and the Tarot cards are perfect for understanding the pro’s and con’s of each&nbsp;opportunity in helping you to make a decision. So, let’s say you were going work for employer A or employer B. You might go: “Ok, all right Tarot cards, what like the pro’s of working for employer A, what’s some of the con’s? What am I not gonna really enjoy? And overall what might I experience if I go and work for this employer?” And then you can do the same for employer B, and based on those cards you might use that to help you&nbsp;understand is this the right opportunity, which is the right one for me?</p>
+           <p>Now the cards are not going to say to you: “Right, do this, go with employer A.” It will give you a picture, an idea of this is what you might experience if you are engaged with this employer but you ultimately need to take accountability for making that decision and making a decision that is in alignment with what you really want out of your career and your job. The cards will not make that decision for you, that is up to you.</p>
+           <p>All right, then also in addition to that you might draw another card to figure out: “Ok, what is it that I need to know to make a good decision here? What’s kind of like the deciding factor?” For example, Eight of Pentacles, now the deciding factor&nbsp;for you might be; which opportunity is going to give me training and the ability to improve my skills? Maybe employer A is paying less but I’m going to get a huge amount of on-the-job training that I can use later on. So that might be something that helps you make the decision.</p>
+           <p>All right, and our final step here is to create a weekly forecast. So, if you like to use your Tarot cards for future guidance or even for a little bit of prediction, you can draw one card for each week ahead and you might even be able to see when the perfect job opportunity is about to come up as well as what to expect during the next. So, even if you don’t get the Ace of Pentacles straight away, you can identify what you need to watch out for or what you need to focus on for each week and you can really use this as a tool for empowerment as well as for&nbsp;prediction.</p>
+           <p>Let’s&nbsp;see, if you were like, your on the job hunt, you’re thinking: “What’s going to come up over the next few weeks, how’s it going to influence me with my job hunting?” Let’s see, we’ve got the Eight of Swords this week, well maybe you’re a bit limited you’re not really finding anything online. The Death card reversed for next week maybe you’re actually realizing you’ve got to make some personal changes first before you can really find that new job. The Five of Cups reversed, well, might be one that sort of slipped away that wasn’t quite in alignment with what you really wanted. Five of Pentacles reversed, yeah, not so great either.</p>
+           <p>Don’t let it bog you down, I know these four cards, not particularly positive in terms of finding that job, but just let it be a way of you saying: “Ok, I might have this potential challenge this week, what can I do to prepare for that and how can I potentially avoid it from happening?” Say with the Five of Cups reversed, well maybe just prime yourself to say: “Look, if I don’t get this job that’s just meant to be, the universe is not going to give me a job that’s out alignment and maybe this that I was applying for just wasn’t in alignment with what I wanted. So I’m just going to be at peace with that.” And then, you know, you’re much better prepared for that week, so use it as that tool for empowerment but also a little bit of like what might be coming up ahead.</p>
+           <p>So there you have it, those are the Seven Ways to Find Your Dream Job with Tarot as a Guide. And I’ll pop through them again and remember you can go to&nbsp;<a href="https://www.biddytarot.com/44">www.biddytarot.com/44</a>&nbsp;to access the free PDF with all of these seven steps in it.</p>
+           <p>One, discover your true passions.</p>
+           <p>Two, identify your strengths and development areas.</p>
+           <p>Three, develop an action plan for finding a job.</p>
+           <p>Four, identify where you’ll find your best opportunity.</p>
+           <p>Five, ace your interviews.</p>
+           <p>Six, decide between perspective employers.</p>
+           <p>Seven, create a weekly forecast.</p>
+           <p>And if you want to know even more ways to use the Tarot cards in fantastically, practical ways then you’re going to really love the Biddy Tarot Community. Inside the community, you can access over 500 aspiring Tarot readers who are already members of the community and who are engaging in awesome conversations about Tarot in our forums. You can also connect with one another and create study buddies, I have the Tarot 101 course to help you get started with Tarot. We have monthly training webinars so that you can get right across all&nbsp;the different Tarot topics and you can even practice your Tarot reading skills inside of our Free Tarot readings platform. There is so much goodness in there and it’s all designed to help you become a more confident Tarot reader and to really integrate Tarot into your everyday life and really connect with your intuition so that you can live a more empowered and inspired life. To check it out head on over to&nbsp;<a href="https://www.biddytarot.com/tarot-spread-best-year/" target="_blank">www.biddtytarot.com/community</a>&nbsp;and you can find all of the details inside of there.</p>
+           <p>All right, thank you so very much for listening, I really, really do appreciate it and next week we’ve got a very special guest, Ethony, who will be talking with us about How to Become a Tarot Authority and you know how to really build up your reputation within the Tarot community and your potential clients and that’s going to be an awesome, awesome interview together.</p>
+           <p>Have a really good week and I can’t wait to connect with you again soon, thank you and good-bye.</p>
+          </div>
+         </div>
+        </div> 
+       </article>
+       <div id="post-share-icons"> 
+        <span>Share this Post:</span> 
+        <a class="fb-share-button share-button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.biddytarot.com/btp44-dream-job/&amp;title=BTP44: How to Find Your Dream Job with Tarot as a Guide"></a> 
+        <a class="tw-share-button share-button" target="_blank" href="//twitter.com/intent/tweet?status=BTP44: How to Find Your Dream Job with Tarot as a Guide+https://www.biddytarot.com/btp44-dream-job/%20%23BiddyTarot"></a> 
+        <a class="gg-share-button share-button" target="_blank" href="//plus.google.com/share?url=https://www.biddytarot.com/btp44-dream-job/"></a>
+       </div>
+       <div id="post-btm-ad"> 
+        <img src="/admin/wp-content/uploads/5SS-3D-Book.jpg" alt="" class="">
+        <div class="post-ad-text">
+         <h1 class="upper purple">LOVE THIS BLOG POST?</h1>
+         <h5 class="purple lower small">You'll love my FREE ebook</h5>
+         <h5 class="upper gold">5 Simple Steps to Read Tarot with Confidence</h5>
+         <p>Sign up for my free tutorials + my weekly newsletter</p> 
+         <a target="_blank" href="/5ss/" class="green-button button-long">DOWNLOAD THE FREE WORKBOOK</a>
+        </div>
+       </div>
+       <div id="post-next-prev">
+        <h2 class="purple upper center-text green-brd-btm">READ MORE</h2>
+        <div class="post-nav-block post-prev">
+          « 
+         <a href="https://www.biddytarot.com/justice-sarah-barry/" rel="prev">Justice with Sarah Barry</a>
+        </div>
+        <div class="post-nav-block post-next"> 
+         <a href="https://www.biddytarot.com/tarot-spotlight-katherine-smith/" rel="next">Tarot Spotlight: Katherine Smith</a> »
+        </div>
+       </div>
+      </div>
+      <div id="sidebar" class="col span_3 col_last">
+       <div id="text-79" class="widget widget_text bt-sidebars-widget">
+        <h2 class="offscreen">Hi I’m Brigit!</h2>
+        <div class="textwidget">
+         <div id="sb-intro"> 
+          <img src="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-About-Image-01.png" alt="Learn Tarot" width="110">
+          <h2>Hi I'm Brigit</h2>
+          <div class="green-separator"></div>
+          <p>I’m a professional Tarot reader &amp; teacher, intuitive business coach and spiritual entrepreneur. I help purpose-driven people live an intuitive life with Tarot as a guide.</p> 
+          <a href="/about/">Read More</a>
+         </div>
+        </div>
+       </div>
+       <div id="text-78" class="widget widget_text bt-sidebars-widget">
+        <h2 class="offscreen">5SS ad</h2>
+        <div class="textwidget">
+         <div class="order-sidebar">
+          <h2><b>FREE</b> WORKBOOK</h2>
+          <div class="order"> 
+           <a href="/5ss" class="green-btn">DOWNLOAD NOW</a>
+          </div>
+         </div>
+         <style>.order-sidebar  {
+	padding: 10px;
+	background-image: url(https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2015/11/5ss-sidebar-bg.png);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;	
+        text-align: center;
+}
+.order-sidebar h2 {
+    font-size: 22px;
+    font-family: Montserratlight;
+    line-height: 1.3;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 235px;
+}
+.order-sidebar h2 b {
+     font-family: montserrat;
+    font-weight: 700;
+    font-size: 24px;
+}
+.order-sidebar .green-btn {
+    color: #fff;
+    padding: 8px 20px;
+    border: 2px solid #66c3c9;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 25px auto 0;
+    display: block;
+    width: 180px;
+    text-align: center;  
+    background: #66c9c3;
+}
+.order-sidebar .green-btn:hover {
+    color: #66c9c3;
+    background: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+	.order-sidebar  {
+		background-position: 50% 50%;
+		max-width: 300px;
+		margin: 0 auto;
+	}	
+}</style>
+        </div>
+       </div>
+       <div id="categories-3" class="widget widget_categories bt-sidebars-widget">
+        <h2 class="offscreen">CATEGORIES</h2>
+        <label class="screen-reader-text" for="cat">CATEGORIES</label>
+        <select name="cat" id="cat" class="postform"><option value="-1">Select Category</option><option class="level-0" value="102">Ask Brigit</option><option class="level-0" value="68">Everyday Tarot</option><option class="level-0" value="166">Major Arcana Stories</option><option class="level-0" value="137">Monthly Tarot Forecast</option><option class="level-0" value="140">Podcast</option><option class="level-0" value="81">Reviews</option><option class="level-0" value="11">Tarot Basics</option><option class="level-0" value="91">Tarot Circle</option><option class="level-0" value="156">Tarot Spotlight</option><option class="level-0" value="138">Tarot Spreads</option><option class="level-0" value="134">Tarot Tutorials</option><option class="level-0" value="14">Tarotpreneurs</option><option class="level-0" value="18">Top 10 Tarot Cards</option><option class="level-0" value="1">Uncategorized</option> </select> 
+        <script type="text/javascript">/*  */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "https://www.biddytarot.com/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/*  */</script> 
+       </div>
+       <div id="text-77" class="widget widget_text bt-sidebars-widget">
+        <h2 class="offscreen">Biddy Tarot Community</h2>
+        <div class="textwidget">
+         <div id="sb-community-join"> 
+          <a href="http://community.biddytarot.com/join/" target="_blank">JOIN US</a>
+         </div>
+        </div>
+       </div>
+       <div id="recent-posts-6" class="widget widget_recent_entries bt-sidebars-widget">
+        <h2 class="offscreen">Latest Posts</h2>
+        <ul>
+         <li> <a href="https://www.biddytarot.com/btp94-grete/">BTP94: How Grete Learned How to Read From the Heart, Not Just the Book</a></li>
+         <li> <a href="https://www.biddytarot.com/october-2017-tarot-forecast/">Monthly Tarot Forecast for October 2017</a></li>
+         <li> <a href="https://www.biddytarot.com/btp93-certified-tarot-reader/">BTP 93: Becoming a Certified Biddy Tarot Reader with Jess Carlson</a></li>
+         <li> <a href="https://www.biddytarot.com/tarot-certification-andrew-barker/">Tarot Certification: Andrew’s Story</a></li>
+         <li> <a href="https://www.biddytarot.com/btp92-create-your-own-tarot-spreads/">BTP92: How to Create Your Own Tarot Spreads</a></li>
+        </ul>
+       </div>
+       <div id="text-76" class="widget widget_text bt-sidebars-widget">
+        <h2 class="offscreen">TAROT PODCAST</h2>
+        <div class="textwidget">
+         <a href="https://itunes.apple.com/au/podcast/biddy-tarot-podcast-tarot/id1071716704" target="_blank">
+          <div id="sb-podcasts-wrap">
+           <h2>THE BIDDY TAROT PODCASTS</h2>
+           <div class="green-separator"></div> 
+           <img src="https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/BT-Blog-ListenNow-@2x.png" alt="Biddy Podcast">
+           <p>Listen Now</p>
+          </div> </a>
+        </div>
+       </div>
+       <div id="text-55" class="widget widget_text bt-sidebars-widget">
+        <h2 class="offscreen">FOLLOW US</h2>
+        <div class="textwidget">
+         <div id="sb-social">
+          <h2>FOLLOW US</h2> 
+          <a class="sb-social-icon sb-social-fb" href="http://www.facebook.com/biddytarot" target="_blank"></a> 
+          <a class="sb-social-icon sb-social-tw" href="https://twitter.com/biddytarot" target="_blank"></a> 
+          <a class="sb-social-icon sb-social-inst" href="http://www.instagram.com/biddytarot" target="_blank"></a> 
+          <a class="sb-social-icon sb-social-ytb" href="https://www.youtube.com/user/biddytarot" target="_blank"></a> 
+          <a class="sb-social-icon sb-social-gg" href="https://plus.google.com/+Biddytarot" target="_blank"></a> 
+          <a class="sb-social-icon sb-social-pin" href="http://www.pinterest.com/biddytarot" target="_blank"></a>
+          <div class="green-separator"></div>
+          <div id="sb-fb-box"> 
+           <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fbiddytarot&amp;width=250&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=342332788431" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:258px;" allowtransparency="true"></iframe>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="text-80" class="widget widget_text bt-sidebars-widget">
+        <h2 class="offscreen">PSYCHIC READINGS AT ORANUM</h2>
+        <div class="textwidget">
+         <div id="sb-orandum">
+          <h2>PSYCHIC READINGS AT ORANUM</h2>
+          <div class="a-single a-40">
+           <script src="//ap.oranum.com/br/iag/embed.php?type=livefeed_140&amp;s=1&amp;p=6&amp;w=100620&amp;t=216&amp;c=0&amp;only_adblock=0" type="text/javascript"></script>
+           <div id="oranum_livefeed_container"></div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row"></div>
+    </div>
+   </div>
+   <div id="footer-outer" data-midnight="light" data-using-widget-area="true">
+    <div id="footer-widgets">
+     <div class="container">
+      <div class="row col center">
+       <div class="col span_2">
+        <div id="nav_menu-3" class="widget widget_nav_menu">
+         <h4>GET STARTED</h4>
+         <div class="menu-get-started-container">
+          <ul id="menu-get-started" class="menu">
+           <li id="menu-item-20251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20251"><a href="https://www.biddytarot.com/tarot-card-meanings/">Tarot Card Meanings</a></li>
+           <li id="menu-item-29646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29646"><a href="https://www.biddytarot.com/free-tarot-resources/">Free Tarot Resources</a></li>
+           <li id="menu-item-20253" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20253"><a href="https://www.biddytarot.com/blog/">Blog</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col span_2">
+        <div id="nav_menu-4" class="widget widget_nav_menu">
+         <h4>LEARN WITH US</h4>
+         <div class="menu-learn-tarot-container">
+          <ul id="menu-learn-tarot" class="menu">
+           <li id="menu-item-20257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20257"><a href="https://www.biddytarot.com/tarot-guides/">Tarot Guides &amp; eBooks</a></li>
+           <li id="menu-item-29644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29644"><a href="https://www.biddytarot.com/courses/">Online Tarot Courses</a></li>
+           <li id="menu-item-29645" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29645"><a href="http://community.biddytarot.com/join/">Biddy Tarot Community</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col span_2">
+        <div id="nav_menu-5" class="widget widget_nav_menu">
+         <h4>GET IN TOUCH</h4>
+         <div class="menu-get-in-touch-container">
+          <ul id="menu-get-in-touch" class="menu">
+           <li id="menu-item-20247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20247"><a href="https://www.biddytarot.com/contact-faq/">Contact and FAQ</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col span_2">
+        <div id="text-59" class="widget widget_text">
+         <h4>FOLLOW US</h4>
+         <div class="textwidget">
+          <div id="follow-us"> 
+           <a class="follow-icon follow-fb" href="http://www.facebook.com/biddytarot" target="_blank"></a> 
+           <a class="follow-icon follow-pin" href="http://www.pinterest.com/biddytarot" target="_blank"></a> 
+           <a class="follow-icon follow-twit" href="http://www.twitter.com/biddytarot" target="_blank"></a> 
+           <a class="follow-icon follow-inst" href="http://www.instagram.com/biddytarot" target="_blank"></a>
+           <a class="follow-icon follow-yt" href="http://www.youtube.com/user/biddytarot" target="_blank"></a>
+          </div>
+         </div>
+        </div>
+        <div id="search-3" class="widget widget_search">
+         <form role="search" method="get" class="search-form" action="https://www.biddytarot.com/"> 
+          <input type="text" class="search-field" placeholder="Search..." value="" name="s" title="Search for:"> 
+          <input type="submit" class="search-submit" value="Search">
+         </form>
+        </div>
+       </div>
+       <div class="col span_4 footer-logo center">
+        <img src="/admin/wp-content/uploads/BT-Header-Logo-@2x.png" alt="">
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="row" id="copyright">
+     <div class="container">
+      <div class="col span_12 center">
+       <p><a href="https://www.biddytarot.com/plain-terms/">Terms</a>.&nbsp; <a href="https://www.biddytarot.com/privacy-policy/"> Privacy</a>.&nbsp; © 2017 Biddy Tarot. All Rights Reserved. All prices in USD. Tarot card images in banner courtesy of the The Wild Unknown.</p>
+       <p style="text-align:center;">Webdesign and Development by <a href="http://www.gifdesignstudios.com/" target="_blank">GiF Design Studios</a></p>
+      </div>
+      <div class="col span_7 col_last">
+       <ul id="social"></ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="slide-out-widget-area-bg" class="slide-out-from-right dark"></div>
+   <div id="slide-out-widget-area" class="slide-out-from-right" data-back-txt="Back">
+    <div class="inner">
+     <a class="slide_out_area_close" href="#"><span class="icon-salient-x icon-default-style"></span></a>
+     <div class="off-canvas-menu-container mobile-only">
+      <ul class="menu">
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20126"><a href="https://www.biddytarot.com/">Home</a></li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20215"><a href="https://www.biddytarot.com/learn-tarot/">Learn Tarot</a>
+        <ul class="sub-menu">
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37577"><a href="https://www.biddytarot.com/certification/">Tarot Certification</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21313"><a href="https://www.biddytarot.com/learn-tarot/">Learn Tarot</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20596"><a href="https://www.biddytarot.com/free-tarot-resources/">Free Downloads</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20594"><a href="https://www.biddytarot.com/tarot-card-meanings/">Tarot Card Meanings</a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21035"><a href="/tarot-card-meanings/">Tarot Card Meanings</a></li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20595"><a href="https://www.biddytarot.com/tarot-card-meanings/major-arcana/">Major Arcana Tarot Card Meanings</a></li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20593"><a href="https://www.biddytarot.com/tarot-card-meanings/minor-arcana/">Minor Arcana Tarot Card Meanings</a></li>
+          </ul></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20598"><a href="https://www.biddytarot.com/tarot-guides/">eBooks &amp; Guides</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21131"><a href="https://www.biddytarot.com/courses/">Online Tarot Courses</a></li>
+        </ul></li>
+       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-21136"><a href="http://community.biddytarot.com/join/">Community</a>
+        <ul class="sub-menu">
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21268"><a href="http://community.biddytarot.com/join">Join the Community</a></li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21137"><a href="http://community.biddytarot.com/">Login</a></li>
+        </ul></li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20218"><a href="https://www.biddytarot.com/tarotreading/">Get a Tarot Reading</a>
+        <ul class="sub-menu">
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21133"><a href="https://www.biddytarot.com/tarotreading/">Professional Readings</a></li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21396"><a href="http://community.biddytarot.com/free-tarot-readings/">Free Tarot Card Reading</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23814"><a href="https://www.biddytarot.com/certified-tarot-readers/">Certified Biddy Tarot Readers</a></li>
+        </ul></li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20216"><a href="https://www.biddytarot.com/soul-powered-business/">Soul-Powered Business</a>
+        <ul class="sub-menu">
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32212"><a href="https://www.biddytarot.com/courses/grow-your-tarot-business-online/">Grow Your Tarot Business Online</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21034"><a href="https://www.biddytarot.com/work-with-me/">1:1 Business Coaching</a></li>
+        </ul></li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20131"><a href="https://www.biddytarot.com/blog/">Blog</a>
+        <ul class="sub-menu">
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-20604"><a href="https://www.biddytarot.com/category/podcast/">Podcast</a></li>
+        </ul></li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20130"><a href="https://www.biddytarot.com/about/">About</a>
+        <ul class="sub-menu">
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21033"><a href="https://www.biddytarot.com/about/">Meet Brigit</a></li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20597"><a href="https://www.biddytarot.com/contact-faq/">Contact and FAQ</a></li>
+        </ul></li>
+       <li class="nav-cta short menu-item menu-item-type-custom menu-item-object-custom menu-item-32350"><a href="/quiz">TAKE THE QUIZ</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <a id="to-top" class="mobile-enabled"><i class="icon-angle-up"></i></a>
+  <style type="text/css">powerpress_links, p.powerpress_links, .powerpress_links_mp3 {
+                        display:none; }</style>
+  <script type="text/javascript" data-cfasync="false">function base64_encode(e){var r,t,c,a,h,n,o,A,i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",d=0,l=0,s="",u=[];if(!e)return e;do r=e.charCodeAt(d++),t=e.charCodeAt(d++),c=e.charCodeAt(d++),A=r<<16|t<<8|c,a=A>>18&63,h=A>>12&63,n=A>>6&63,o=63&A,u[l++]=i.charAt(a)+i.charAt(h)+i.charAt(n)+i.charAt(o);while(d<e.length);s=u.join("");var C=e.length%3;var decoded = (C?s.slice(0,C-3):s)+"===".slice(C||3);decoded = decoded.replace("+", "-");decoded = decoded.replace("/", "_");return decoded;} var url = base64_encode(location.href);var parentUrl = (window.parent.location.href) ? ('/' + base64_encode(window.parent.location.href)) : '';(function() {var s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.setAttribute("data-scriptid", "dfunifiedcode");s.src ="https://deadlinefunnel.com/unified/eyJpdiI6IjhtOTRBNmR3aCtsXC9WRG5HOHg2aVlRPT0iLCJ2YWx1ZSI6IlA5ZmNuVHN3TEExb1hLeVQyRTNzc3c9PSIsIm1hYyI6IjBkZjliOTY5ZjJiZGQyMDgzMzU3YzdhZTJjYTNhYTUwNmJiMjExZDM3MzcyMjYxNWRlYmQ5YmE3ZGI4N2UwNTEifQ==/"+url+parentUrl;var s2 = document.getElementsByTagName('script')[0];s2.parentNode.insertBefore(s, s2);})();</script> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ3N53B" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-12507634-1', 'auto');
+	  ga('send', 'pageview');</script> 
+  <script src="https://optassets.ontraport.com/tracking.js" type="text/javascript" async="true" onload="_mri=&quot;23279&quot;,_mr_domain=&quot;biddytarot.ontraport.com&quot;,mrtracking();"></script> 
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+	fbq('init', '342033679332480');
+	fbq('track', "PageView");</script> 
+  <noscript>
+   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=342033679332480&amp;ev=PageView&amp;noscript=1">
+  </noscript> 
+  <script src="https://www.biddytarot.com/wp-content/themes/bt_16/js/ClassyCountdown/js/jquery.classycountdown.min.js"></script> 
+  <script src="https://www.biddytarot.com/wp-content/themes/bt_16/js/ClassyCountdown/js/jquery.knob.js"></script> 
+  <script src="https://www.biddytarot.com/wp-content/themes/bt_16/js/ClassyCountdown/js/jquery.throttle.js"></script> 
+  <link rel="stylesheet" type="text/css" href="https://www.biddytarot.com/wp-content/themes/bt_16/js/ClassyCountdown/css/jquery.classycountdown.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.biddytarot.com/wp-content/themes/bt_16/js/Slick-slider/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://www.biddytarot.com/wp-content/themes/bt_16/js/Slick-slider/slick-theme.css"> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/themes/bt_16/js/Slick-slider/slick.min.js"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/wp-a11y.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">/*  */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/*  */</script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4"></script> 
+  <script type="text/javascript">/*  */
+var MyAcSearch = {"url":"https:\/\/www.biddytarot.com\/wp-admin\/admin-ajax.php"};
+/*  */</script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/themes/salient/nectar/assets/functions/ajax-search/wpss-search-suggest.js"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4"></script> 
+  <script type="text/javascript">jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});</script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/themes/salient/js/prettyPhoto.js?ver=7.0.1"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/themes/salient/js/superfish.js?ver=1.4.8"></script> 
+  <script type="text/javascript">/*  */
+var nectarLove = {"ajaxurl":"https:\/\/www.biddytarot.com\/wp-admin\/admin-ajax.php","postID":"30648","rooturl":"https:\/\/www.biddytarot.com","pluginPages":[],"disqusComments":"false","loveNonce":"fdd9df6e35","mapApiKey":""};
+/*  */</script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/themes/salient/js/init.js?ver=7.6"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/simple-podcast-press/responsive_audio_player/js/inline.js?ver=4.8.2"></script> 
+  <script type="text/javascript">jQuery(document).ready(function($) {   
+		$('.sm2-inline-button .menu').click(function() {
+			$(".sm2-bar-ui .sm2-inline-element:first-of-type").css('border-bottom-left-radius', '0px');
+		  });
+	$('.playlist-open .sm2-inline-button .menu').click(function() {
+			$(".sm2-bar-ui .sm2-inline-element:first-of-type").css('border-bottom-left-radius', '6px');
+		  });
+		jQuery(".timestamp").removeAttr("href");
+		jQuery("#sm2-30648 .playerpitch").on('click',function(){
+		  jQuery(this).css('display', 'none');
+		  jQuery("#sm2-30648 .playerpitch1").css('display', 'block');
+			for (i = window.soundManager.soundIDs.length-1; i >= 0; i--) {
+				 soundId = window.soundManager.soundIDs[i];
+				 soundManager.setPlaybackRate(soundId, 1.5);
+			}
+		});
+		jQuery("#sm2-30648 .playerpitch1").on('click',function(){	  
+		  jQuery(this).css('display', 'none');
+		  jQuery("#sm2-30648 .playerpitch2").css('display', 'block');
+		 for (i = window.soundManager.soundIDs.length-1; i >= 0; i--) {
+				 soundId = window.soundManager.soundIDs[i];
+					soundManager.setPlaybackRate(soundId, 2);
+		}
+		});
+		jQuery("#sm2-30648 .playerpitch2").on('click',function(){
+		  jQuery(this).css('display', 'none');
+		  jQuery("#sm2-30648 .playerpitch").css('display', 'block');
+			for (i = window.soundManager.soundIDs.length-1; i >= 0; i--) {
+				 soundId = window.soundManager.soundIDs[i];
+				soundManager.setPlaybackRate(soundId, 1);
+			}
+		});
+		jQuery("#sm2-30648 .eq").on('click',function(){	  
+				 for (i = window.soundManager.soundIDs.length-1; i >= 0; i--) {
+						 soundId = window.soundManager.soundIDs[i];
+						soundManager.getSoundById(soundId).pause();
+				}
+						
+		  });
+			jQuery("#sm2-30648 .secrewind").on('click',function(){	  
+				 for (i = window.soundManager.soundIDs.length-1; i >= 0; i--) {
+						 soundId = window.soundManager.soundIDs[i];
+						 var spp15Ms = 15 * 1000;
+						 var sppCurStartTimeMs = soundManager.getSoundById(soundId).position;
+						 SetPosition = sppCurStartTimeMs - 	spp15Ms;
+						 sound = window.soundManager.getSoundById(soundId);
+						 sound.setPosition(SetPosition);
+				}
+						
+		  });
+			function fluctuate(bar) {
+				var height = Math.floor(Math.random() * 25) + 1;
+				//Animate the equalizer bar repeatedly
+				bar.animate({
+					height: height
+				},150, function() {
+					fluctuate($(this));
+				});
+			}
+
+			jQuery(".bar").each(function(i) {
+				fluctuate(jQuery(this));
+			});
+function secsToTime(e){
+					for (ids = window.soundManager.soundIDs.length-1; ids >= 0; ids--) {
+						soundId = window.soundManager.soundIDs[ids];
+					 //soundId = window.soundManager.soundIDs[0];
+					 i = window.soundManager.getSoundById(soundId);
+
+					
+							if (null != i) var s = null !== i.duration ? i.duration : i.durationEstimate;
+							if (null != i && null !== s && s > 0 &&  i.loaded) {
+								var n = jQuery("#sm2-30648 .sm2-progress").outerWidth();
+									a = s * e / n / 1e3;
+									o = Math.floor(a % 60);
+									r = Math.floor(a / 60 % 60);
+									l = Math.floor(a / 3600);
+									p = r + ":";
+								p += o > 9 ? o : "0" + o, l > 0 && (p = r > 9 ? l + ":" + p : l + ":0" + p);
+								return p;
+							
+						}
+					}
+	}
+	var startCoords = {}, endCoords = {}; var totalwidth; var oldXPos;
+		jQuery("#sm2-30648 .sm2-progress-track").bind("touchstart", function(event) {
+				
+				jQuery('#sm2-30648 .sm2-inline-time').css('display', 'none');
+				jQuery('#sm2-30648 .sm2-inline-time1').css('display', 'table-cell');
+
+
+				jQuery('#sm2-30648 .sm2-progress-bar').css('display', 'none');
+				jQuery('#sm2-30648 .sm2-progress-bar1').css('display', 'block');
+
+				for (ids = window.soundManager.soundIDs.length-1; ids >= 0; ids--) {
+					soundId = window.soundManager.soundIDs[ids];
+					 i = window.soundManager.getSoundById(soundId);
+					if (null != i &&  i.loaded) {
+						isDragging = true;
+					}else{
+						isDragging = false;
+					}
+				}
+			
+			endCoords = event.originalEvent.targetTouches[0];
+			oldXPos  = event.originalEvent.targetTouches[0].pageX;
+			startCoords.pageX = event.originalEvent.targetTouches[0].pageX;
+			startCoords.pageY = event.originalEvent.targetTouches[0].pageY;
+		});
+
+		jQuery("#sm2-30648 .sm2-progress-track").bind("touchmove", function(event) {
+			event.preventDefault();
+					 if (isDragging)
+					{
+						 var touch = event.originalEvent.touches[0];
+						  var elm = jQuery(this).offset();
+						  var x = touch.pageX - elm.left;
+						  var y = touch.pageY - elm.top;
+						  totalwidth = jQuery('#sm2-30648 .sm2-progress').width();
+						  var percent =	x  /  totalwidth * 100;
+							
+
+						  if(x < jQuery(this).width() && x > 0){
+							  if(y < jQuery(this).height() && y > 0){
+									jQuery('#sm2-30648 .sm2-progress-bar1').width(percent + '%');
+									 jQuery('#sm2-30648 .sm2-inline-time1').text(secsToTime(x));
+							  }
+						  }
+
+								  
+					}
+
+			
+			
+		});
+
+		jQuery("#sm2-30648 .sm2-progress-track").bind("touchend", function(event) {
+						var e = event.originalEvent.changedTouches[event.originalEvent.changedTouches.length - 1];
+                                var n = jQuery(this).offset();
+                                    pageX = e.pageX - n.left;
+									var elm = jQuery(this).offset();
+									var x = e.pageX - elm.left;
+									var y = e.pageY - elm.top;
+						if(x < jQuery(this).width() && x > 0){
+							if(y < jQuery(this).height() && y > 0){
+								for (ids = window.soundManager.soundIDs.length-1; ids >= 0; ids--) {
+									soundId = window.soundManager.soundIDs[ids];
+									var outerw = jQuery("#sm2-30648 .sm2-progress").outerWidth();
+									sound = window.soundManager.getSoundById(soundId);
+										 
+													if (sound.playState === 1) {
+														if (null != i) var s = null !== sound.duration ? sound.duration : sound.durationEstimate;
+														axes = pageX / outerw;
+														sound.setPosition(axes*s);
+														setTimeout(function (){
+															jQuery('.sm2-progress-bar').css('display', 'block');
+															jQuery('.sm2-progress-bar1').css('display', 'none');
+															jQuery('.sm2-inline-time1').css('display', 'none');
+															jQuery('.sm2-inline-time').css('display', 'table-cell');
+															isDragging = false;
+														;}, 1500);
+
+													}
+										}
+									}
+							}
+		});
+
+	
+
+});
+
+
+
+jQuery(document).ready(function($){
+	if ( $('.button-share').webuiPopover )
+		$('.button-share').webuiPopover({placement:'bottom'});
+});
+		
+		
+function sppClammrIt_30648() {
+	var sppReferralName = 'SimplePodcastPress';
+	var sppCurStartTime = '00:00';	
+	var sppCurStartTimeMs = 0;
+	var sppCurEndTimeMs = 0;
+	var clammrUrlEncoded = ''; 
+	
+	if (document.getElementsByClassName("sppaudioplayer").item(0) != null) {
+		jQuery('.sppaudioplayer').trigger("pause");
+		sppCurStartTime = document.getElementsByClassName("audioplayer-time audioplayer-time-current").item(0).innerHTML;
+		var p = sppCurStartTime.split(':'),s = 0, m = 1;
+
+    	while (p.length > 0) {
+			s += m * parseInt(p.pop(), 10);
+			m *= 60;
+    	}
+
+   		sppCurStartTimeMs = s * 1000;
+		
+	}
+	
+	// SM players
+	else if (window.soundManager) {
+		var soundId = window.soundManager.soundIDs[0];
+		if (soundId == null) {
+      
+			  if (window.sm2BarPlayers)
+				  window.sm2BarPlayers[0].actions.play();
+			  else {
+				jQuery('span.spp-play').click();
+				jQuery( ".spp-play-pause").click();
+			  }
+			  soundId = window.soundManager.soundIDs[0];
+			  soundManager.getSoundById(soundId).pause();
+			  jQuery("div.smart-track-player").removeClass("spp-playing");
+			  sppCurStartTimeMs = soundManager.getSoundById(soundId).position;
+		}
+	
+		else if (window.soundManager.enabled) {
+			
+			sppCurStartTimeMs = soundManager.getSoundById(soundId).position;
+			if (soundManager.getSoundById(soundId).paused === false) {
+					  soundManager.getSoundById(soundId).pause();
+					  jQuery("div.smart-track-player").removeClass("spp-playing");
+			}
+		}
+	}
+	
+    sppCurEndTimeMs = sppCurStartTimeMs + 24000;
+                 
+clammrUrlEncoded = "http://www.clammr.com/app/clammr/crop";
+clammrUrlEncoded += "?audioUrl=" + encodeURIComponent("http://traffic.libsyn.com/biddytarot/BTP44_How_to_Find_Your_Dream_Job_with_Tarot_as_a_Guide.mp3");
+clammrUrlEncoded += "&imageUrl=" + encodeURIComponent("https://biddytarot-dist.s3.amazonaws.com/wp-content/uploads/2016/09/FB-BTP44-how-to-find-your-dream-job-with-tarot-as-a-guide.jpg");
+clammrUrlEncoded += "&audioStartTime=" + encodeURIComponent(sppCurStartTimeMs);
+clammrUrlEncoded += "&audioEndTime=" + encodeURIComponent(sppCurEndTimeMs);
+clammrUrlEncoded += "&title=" + "BTP44%3A%20How%20to%20Find%20Your%20Dream%20Job%20with%20Tarot%20as%20a%20Guide";
+clammrUrlEncoded += "&description=" + encodeURIComponent("https%3A%2F%2Fwww.biddytarot.com%2Fbtp44-dream-job%2F%20-%20%20%20%3E%3E%20Download%20Free%20PDF%3A%20How%20to%20use%20the%20Tarot%20to%20find%20your%20dream%20job%20At%20some%20point%20or%20another%20in%20our%20lives%2C%20we%20reach%20a%20point%20where%20our%20work%20or%20careers%20are%20no%20longer%20engaging%20or%20satisfying.%20We%20drag%20ourselves%20out%20of%20bed%20for%20yet%20another%20day%20of%20work%2C%20just%20praying%20for%20the%20weekend%20to%20come.%20And%20we%20trick%20ourselves%20into%20thinking%20that%20we%E2%80%99ll%20just%20hang%20on%20that%20little%20while%20longer%20until%20more%20of%20the%20mortgage%20has%20been%20paid%20off.%20I%20know%20it%20because%20I%27ve%20been%20there%20before%E2%80%A6%20It%E2%80%99s%20hard%20to%20move%20from%20stabili%20...");
+clammrUrlEncoded += "&referralName=" + encodeURIComponent("SimplePodcastPress");
+ 	                 
+   window.open(clammrUrlEncoded, 'cropPlugin', 'width=1000, height=750, top=50, left=200');
+}</script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.js?ver=1.6"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/easy-fancybox/js/jquery.easing.min.js?ver=1.4.0"></script> 
+  <script type="text/javascript" src="https://www.biddytarot.com/wp-content/plugins/easy-fancybox/js/jquery.mousewheel.min.js?ver=3.1.13"></script> 
+  <script type="text/javascript">jQuery(document).on('ready post-load', function(){ jQuery('.nofancybox,a.pin-it-button,a[href*="pinterest.com/pin/create/button"]').addClass('nolightbox'); });
+jQuery(document).on('ready post-load',easy_fancybox_handler);
+jQuery(document).on('ready',easy_fancybox_auto);</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f635e0d6dd","applicationID":"41538963","transactionName":"NgBTbRQEWRVZB0ddWA9KcFoSDFgIFxdaWlANAA==","queueTime":0,"applicationTime":580,"atts":"GkdQG1weShs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,1451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <!-- InstanceBegin template="../../templates/academics.dwt" codeOutsideHTMLIsLocked="false" -->
+ <head> 
+  <!-- InstanceBeginEditable name="doctitle" --> 
+  <title>Sample Student Schedules - About Macalester College</title> 
+  <!-- InstanceEndEditable --> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="content-language" content="en"> 
+  <meta name="language" content="en"> 
+  <meta name="ICBM" content="44.940319, -93.167442"> 
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+  <!-- Framework CSS --> 
+  <link rel="stylesheet" href="/resources/v2/css/blueprint/screen.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/resources/v2/css/blueprint/print.css" type="text/css" media="print"> 
+  <!--[if lt IE 8]><link rel="stylesheet" href="/resources/v2/css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]--> 
+  <link rel="stylesheet" href="/resources/v2/css/layout.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/resources/v2/css/mainNav2.css" type="text/css" media="screen, projection"> 
+  <!--[if lt IE 8]><link rel="stylesheet" href="/resources/v2/css/layout-ie.css" type="text/css" media="screen, projection" /><![endif]--> 
+  <!--[if lt IE 7]><link rel="stylesheet" href="/resources/v2/css/layout-ie6.css" type="text/css" media="screen, projection" /><![endif]--> 
+  <link rel="stylesheet" href="/resources/v2/css/text.css" type="text/css" media="screen, projection"> 
+  <link rel="stylesheet" href="/resources/v2/css/print.css" type="text/css" media="print"> 
+  <!-- InstanceParam name="subsection" type="text" value="'quickfacts'" --> 
+  <!-- InstanceBeginEditable name="head" --> 
+  <meta name="title" content="Macalester College: Private Liberal Arts College"> 
+  <meta content="Macalester College is a private undergraduate liberal arts college located in St. Paul, Minnesota, USA.  Macalester College emphasizes academic excellence in the context of internationalism, diversity, and a commitment to service." name="Description"> 
+  <meta content="macalester, macalister, macallister, mcallister, mcalister, liberal arts college, liberal arts colleges, undergraduate, internationalism, midwest, midwestern, st. paul, minnesota" name="Keywords"> 
+  <link rel="image_src" href="/favicon.ico" type="image/x-icon"> 
+  <!--<link rel="alternate" type="application/rss+xml" title="Macalester Top Stories" href="http://www.macalester.edu/news/index.xml"  />--> 
+  <link href="/resources/libraries/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" href="/resources/libraries/anythingslider/css/anythingslider.css"> 
+  <link rel="stylesheet" href="/resources/v2/css/galleriffic/galleriffic-macalester.css" type="text/css"> 
+  <link rel="stylesheet" href="/resources/libraries/jquery.mobile-1.1.0/jquery.mobile-1.1.0.min.css" type="text/css"> 
+  <style>
+
+.popupBox {
+	/*background-color: rgba(234,129,6,.75);*/
+	background-color:rgba(174,192,182,.75);
+	width: 600px;
+	padding: 10px;	
+	min-height: 130px;
+}
+
+	.popupBox p{
+		margin: 0;
+		padding: 10px;
+		color: white;	
+	}
+	
+	.popupBox h3{
+		color: white;
+	}
+	
+	.popupBox .more{
+		color:#604969;	
+	}
+	
+	.popupBox a:visited{
+		color: #82329E;	
+	}
+	
+	.popupBox .movie{
+		margin-left: 20px;
+		clear: both;	
+	}
+
+#fancybox-outer {
+	background: none;
+}
+
+img.headBG {
+	position:absolute; 
+	bottom: 0px; 
+	right: -32px; 
+	top: -38px;
+}
+
+
+#scheduleSlider{ 
+		width: 932px; 
+		height: 802px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		/* Prevent FOUC (see AnythingSlider FAQ page) and keep things readable if javascript is disabled */
+		overflow-y: auto;
+		overflow-x: hidden;
+		/*border-top: 25px solid #FFF;
+		background-color:#FFF;*/
+		
+}
+
+/*FAILED ATTEMPT
+.popupContent{
+	margin: 0;
+	padding: 0;
+	width: 580px;
+	height: 500px;
+	overflow: hidden;	
+}
+
+ul.photoSlider {
+	margin: 0;
+	padding: 0;
+	width: 580px;
+	height: 500px;
+	overflow: hidden
+}
+
+	ul.photoSlider li div {
+		margin: 0; 
+		padding:0; 
+		width: 580px; 
+		height: 480px; 
+		overflow: hidden;
+		text-align: center;
+		background: #e7e4ec;
+	}
+	ul.photoSlider li div img {
+		height: 100%;
+	}*/
+	
+div#gallery {
+	width: 580px;
+	background-color: #605969;
+	margin-left:10px;
+	clear: both;
+}
+
+div.loader {
+	width: 580px;
+	height: 440px; /* This should be set to be at least the height of the largest image in the slideshow */
+	margin-left:10px;
+}
+
+div.navigation {
+	width: 580px;
+	margin-left:10px;
+}
+
+div.caption-container {
+	width: 588px;
+}
+
+div.slideshow a.advance-link {
+	width: 580px;
+}
+ 
+.swipe-overlay {
+		position: absolute;
+		width: 932px;
+		height: 98px;
+		top: 0;
+		left: 0;
+}
+
+@-moz-document url-prefix() {
+	 div.anythingSlider{
+			   padding: 84px 45px 28px 45px; /*BB - Changed top padding from 0 to 84 to make room for H1 purple bar in our layout - Firefox only issue */	
+	}
+}
+
+</style> 
+  <!-- Older IE stylesheet, to reposition navigation arrows, added AFTER the theme stylesheet --> 
+  <!--[if lte IE 7]>
+	<link rel="stylesheet" href="/resources/libraries/anythingslider/css/anythingslider-ie.css" type="text/css" media="screen" />
+	<![endif]--> 
+  <!-- InstanceEndEditable --> 
+  <script>
+  var dataLayer = [{'generator': 'static'}];
+  var _gaq = _gaq || [];
+</script> 
+ </head> 
+ <body>
+  <!-- Google Tag Manager -->
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NXTP7S" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXTP7S');</script>
+  <!-- End Google Tag Manager -->
+  <div id="docBody"> 
+   <!-- HEADER --> 
+   <div id="header"> 
+    <div class="navBar"> 
+     <div id="macWordmark"> 
+      <h1><a href="http://www.macalester.edu/" title="Macalester home page"><img src="/resources/v2/web-imgs/macalester_bw.gif" alt="Macalester College" width="300" height="29"></a></h1> 
+     </div> 
+     <ul id="mainNav"> 
+      <li class="navAbout"><a href="http://www.macalester.edu/about/" class="linkOff">About Macalester</a></li> 
+      <li class="navAcad"><a href="http://www.macalester.edu/academics/" class="linkOn">Academics</a></li> 
+      <li class="navLife"><a href="http://www.macalester.edu/lifeatmac/" class="linkOff">Life at Mac</a></li> 
+      <li class="navAdmis"><a href="http://www.macalester.edu/admissions/" class="linkOff">Admissions &amp; Financial Aid</a></li> 
+      <li class="navSupport"><a href="http://www.macalester.edu/supportmac/" class="linkOff">Support Mac</a></li> 
+     </ul> 
+     <div id="tasks"> 
+      <div id="siteSearch"> 
+       <form method="get" action="http://webapps.macalester.edu/search/index.html"> 
+        <p> <input class="placehold" type="text" id="siteSearchInput" name="q" value="search directory and site"> <button name="submit" type="submit"><img src="/resources/v2/web-imgs/searchicon.gif" width="16" height="15" alt="Go"></button> </p> 
+       </form> 
+      </div> 
+      <ul id="taskNav"> 
+       <li><a href="http://www.macalester.edu/siteindex/" class="navAZList">A-Z index</a></li> 
+       <li><a href="http://events.macalester.edu/" class="navEvents">Events</a></li> 
+       <li><a href="http://www.macalester.edu/give/web" class="navGift">Make a gift</a></li> 
+       <li class="seeMoreBody"><span class="seeMoreOptionsLabel">Log In</span> 
+        <ul id="internalLinks"> 
+         <li> 
+          <ul> 
+           <li><a href="http://1600grand.macalester.edu" title="portal for current students, faculty and staff">1600grand</a></li> 
+           <li><a href="http://mail.google.com/" title="mail, calendar, docs">Google Apps</a></li> 
+           <li><a href="http://moodle.macalester.edu" title="course support system">Moodle</a></li> 
+           <li><a href="http://www.macalester.edu/alumni/macdirect/" title="online community for alumni">MacDirect</a></li> 
+           <li><a href="https://orgsync.com/login/macalester-college/" title="student org portal">OrgSync</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+     <div id="audienceBar"> 
+      <ul id="audienceNav"> 
+       <li class="navStudents"><a href="http://www.macalester.edu/currentstudents/">Current Students</a></li> 
+       <li class="navFacStaff"><a href="http://www.macalester.edu/facultystaff/">Faculty/Staff</a></li> 
+       <li class="navParentsFam"><a href="http://www.macalester.edu/parents/">Parents &amp; Families</a></li> 
+       <li class="navAlumni"><a href="http://www.macalester.edu/alumni/">Alumni</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- BODY --> 
+   <div id="body"> 
+    <div class="mainBlock container"> 
+     <div class="documentHead span-24"> 
+      <div class="documentDescFull"> 
+       <div class="pageCrumbs"> 
+        <ul> 
+         <li><a href="/" title="Macalester College home page">Home</a></li> 
+         <!-- InstanceBeginEditable name="BreadCrumbs" --> 
+         <li class="bc"><a href="/academics/">Academics</a></li> 
+         <li class="last-bc">Sample Student Schedules</li> 
+         <!-- InstanceEndEditable --> 
+        </ul> 
+       </div> 
+       <!-- InstanceBeginEditable name="DocumentTitle" --> 
+       <h1 style="position: relative;">Sample Student Schedules<img class="headBG" src="images/Master-Orange-Logo.png" alt="peeling orange" width="170"></h1> 
+       <!-- InstanceEndEditable --> 
+      </div> 
+     </div> 
+     <!-- InstanceBeginEditable name="AcademicsContent" --> 
+     <div style="min-height: 950px;"> 
+      <ul id="scheduleSlider"> 
+       <li id="patrick"> <img src="images/patrick_schedule.jpg" alt="Patrick's calendar" width="930" height="802" border="0" usemap="#PatrickMap"> <map name="PatrickMap" id="PatrickMap"> <area class="contentMapper" shape="rect" coords="65,158,159,284" href="#patrickWorkStudy"> <area class="contentMapper" shape="rect" coords="159,432,254,556" href="#patrickWorkStudy"> <area class="contentMapper" shape="rect" coords="347,432,441,558" href="#patrickWorkStudy"> <area class="contentMapper" shape="rect" coords="160,578,254,663" href="#patrickStuGovMtg"> <area class="contentMapper" shape="rect" coords="160,663,253,704" href="#patrickHabitat"> <area class="contentMapper" shape="rect" coords="253,158,348,284" href="#patrickWorkStudy"> <area class="contentMapper" shape="rect" coords="441,158,536,283" href="#patrickWorkStudy"> <area class="contentMapper" shape="rect" coords="64,285,159,327" href="#patrickGERM204"> <area class="contentMapper" shape="rect" coords="254,286,348,327" href="#patrickGERM204"> <area class="contentMapper" shape="rect" coords="440,284,536,327" href="#patrickGERM204"> <area class="contentMapper" shape="rect" coords="65,328,160,375" href="#patrickBIOL112"> <area class="contentMapper" shape="rect" coords="253,329,348,376" href="#patrickBIOL112"> <area class="contentMapper" shape="rect" coords="441,329,536,376" href="#patrickBIOL112"> <area class="contentMapper" shape="rect" coords="66,381,161,426" href="#patrickHISP420"> <area class="contentMapper" shape="rect" coords="253,380,347,427" href="#patrickHISP420"> <area class="contentMapper" shape="rect" coords="441,380,535,427" href="#patrickHISP420"> <area class="contentMapper" shape="rect" coords="161,381,253,426" href="#patrickGERM204"> <area class="contentMapper" shape="rect" coords="159,116,254,179" href="#patrickINTL384"> <area class="contentMapper" shape="rect" coords="348,117,441,179" href="#patrickINTL384"> <area class="contentMapper" shape="rect" coords="159,179,252,265" href="#patrickStuGovOffice"> <area class="contentMapper" shape="rect" coords="348,179,442,265" href="#patrickStuGovOffice"> <area class="contentMapper" shape="rect" coords="66,488,159,612" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="254,508,347,597" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="441,496,537,617" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="66,650,159,729" href="#patrickHangOut"> <area class="contentMapper" shape="rect" coords="160,707,256,791" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="254,664,348,704" href="#patrickStuGovOffice"> <area class="contentMapper" shape="rect" coords="255,705,346,746" href="#patrickStuGovMtg"> <area class="contentMapper" shape="rect" coords="347,326,441,368" href="#patrickStuGovMtg"> <area class="contentMapper" shape="rect" coords="347,368,442,431" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="348,561,441,705" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="346,705,440,788" href="#patrickHangOut"> <area class="contentMapper" shape="rect" coords="444,430,536,495" href="#patrickGym"> <area class="contentMapper" shape="rect" coords="442,619,535,690" href="#patrickHangOut"> <area class="contentMapper" shape="rect" coords="538,595,630,661" href="#patrickHangOut"> <area class="contentMapper" shape="rect" coords="538,284,728,590" href="#patrickHomework"> <area class="contentMapper" shape="rect" coords="630,662,729,705" href="#patrickStuGovMtg"> </map> 
+        <div style="display: none;"> 
+         <div id="patrickWorkStudy" class="popupBox"> 
+          <img src="images/workstudy.jpg" width="110" height="110" alt="Work Study" class="left"> 
+          <p><strong>9 a.m.-Noon MWF, 3:30-6:30 p.m. TR, Work Study</strong></p> 
+          <p><a href="/studentemployment/" class="more">Student Employment</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="patrickHomework" class="popupBox"> 
+          <img src="images/textbooks.png" width="110" height="110" alt="Text Books" class="left"> 
+          <p><strong>HOMEWORK!</strong></p> 
+          <p>From the MAX Center Study Skills webpage:</p> 
+          <div class="clear" style="border: 2px solid white; padding: 4px;"> 
+           <h3>Having trouble balancing academics and life at Macalester?</h3> 
+           <p>The MAX Center staff will help you establish learning goals, develop effective learning strategies, and set academic priorities that optimize use of time and learning outcomes.</p> 
+           <p>In either a group setting or individually, you will learn how to get the most out of your writing, reading, and organizational skills.</p> 
+          </div> 
+          <p><a href="/max/studyskills/" class="more">MAX Center Study Skills</a></p> 
+         </div> 
+         <!--Close .popupBox--> 
+         <div id="patrickStuGovOffice" class="popupBox"> 
+          <img src="images/gavel.png" width="110" height="110" alt="Text Books" class="left"> 
+          <p><strong>Student Government Office Hours</strong></p> 
+          <p> The purpose of the Macalester College Student Government is to ensure direct student participation in campus governance, to uphold and protect the rights and freedoms of the Student Body as expressed in the Students' Rights, Freedoms, and Responsibilities document, to incorporate the needs and desires of the Student Body in Macalester College policy and programs, and to distribute the student activity fee to student organizations. </p> 
+          <p><a href="/mcsg/" class="more">Macalester College Student Government</a></p> 
+         </div> 
+         <!--Close .popupBox--> 
+         <div id="patrickStuGovMtg" class="popupBox"> 
+          <img src="images/gavel.png" width="110" height="110" alt="Text Books" class="left"> 
+          <p><strong>Student Government Legislative Body Meeting</strong></p> 
+          <p>MCSG is led by six elected executive members that comprise the Executive Board: the President, Vice President, and the chairs of the Financial Affairs Committee, Academic Affairs Committee, Student Organization Committee, and the Program Board. The Vice President also serves as chair of the Student Services and Relations Committee.</p> 
+          <p>Five elected members from each class serve as the Legislative Body, meeting weekly to discuss and vote on issues current to Macalester. Each member of the Legislative Body serves on a committee as well.</p> 
+          <p><a href="/mcsg/" class="more">Macalester College Student Government</a></p> 
+         </div> 
+         <!--Close .popupBox--> 
+         <div id="patrickHabitat" class="popupBox"> 
+          <img src="images/habitat.jpg" width="110" height="110" alt="Habitat for Humanity" class="left"> 
+          <p><strong>9-10 p.m., Habitat for Humanity Meeting</strong></p> 
+          <p>Macalester Habitat for Humanity works with other Twin Cities colleges and high schools to sponsor and build a house every year. We also organize fundraisers, educational opportunities and trips during Fall and Spring Breaks.</p> 
+          <p><a href="/directory/studentorganizations/" class="more">Student Organizations</a></p> 
+         </div> 
+         <!--Close .popupBox--> 
+         <div id="patrickGERM204" class="popupBox"> 
+          <img src="images/germanflag.jpg" width="110" height="110" alt="German Flag" class="left"> 
+          <p><strong>Noon-1 p.m. MWF, 2:20-3:20 p.m. T, Intermediate German II, German Studies, with Professor David Martyn, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>GERM 204: "Intermediate German II" - </em> The course aims to help students attain a comfort level with extended discourse in German within culturally appropriate contexts. Students develop the ability to comprehend authentic spoken German on a variety of topics at length. They develop effective strategies for comprehending a variety of texts and text types. They gain increased facility with extended discourse, such as narrating and describing. Writing in German is also developed so that students can write extensively about familiar topics. Three hours per week plus laboratory conversation hour. </p> 
+          <p><a href="/german/" class="more">German Studies Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv10"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="patrickBIOL112" class="popupBox"> 
+          <img src="images/dinosaur.png" width="110" height="110" alt="Dinosaur Skeleton" class="left"> 
+          <p><strong>1:10-2:10 p.m., Origins, Biology, with Professor Sarah Boyer, <a href="http://www.macalester.edu/about/virtualtour/#Olin-RiceScienceCenter">Olin-Rice Science Center</a></strong></p> 
+          <p><em>BIOL 112: "Origins" - </em> Life! It is everywhere on Earth, from the poles to the equator, from the deepest oceans to the tallest mountains, from frozen ice to boiling hot springs. Over the last 3.6 billion years, living organisms on Earth have evolved and adapted to almost every imaginable environment. In this course we will journey back to the beginning of the story and explore the major originations and transitions of life on Earth, from the origin of life itself to the development of flight, flowering plants, and the return of land-dwelling organisms to the sea. This is a course about evolution on a grand scale, set on the Earth's remarkable stage. Counts toward a biology minor. Three lecture hours per week. </p> 
+          <p><a href="/biology" class="more">Biology Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv11"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/olinrice/olinrice_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/olinrice/olinrice__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/olinrice/olinrice.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/olinrice/olinrice_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/olinrice/olinrice.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="patrickHISP420" class="popupBox"> 
+          <p><strong>2:20-3:20 p.m. MWF, One Hundred Years of Plenitude: Modern and Postmodern Hispanic Fiction, Hispanic &amp; Latin American Studies, with Professor Margaret Olsen, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>HISP 420: "One Hundred Years of Plenitude: Modern and Postmodern Hispanic Fiction" - </em> The rise of modern fiction produced a series of remarkable novels in Latin America and Spain all throughout the 20th century and into the present. The course will focus primarily on the Latin American "Boom" from the 1960s onwards. We will also study the appearance and enduring presence of postmodernism in Hispanic fiction. The course refines the analysis of literary works from a variety of perspectives (historical, political, social, ethical, aesthetic, etc.) and provides a comprehensive view of the evolution of Hispanic narrative from the dawn of modernity to the present. It targets those students who enjoy literature and believe in the pleasure of the text. </p> 
+          <p><a href="/hispanicstudies/" class="more">Hispanic and Latin American Studies Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv12"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="patrickINTL384" class="popupBox"> 
+          <img src="images/LangstonHughes.jpg" width="110" height="110" alt="Habitat for Humanity" class="left"> 
+          <p><strong>8-9:30 a.m. TR, Langston Hughes: Global Writer, International Studies, with Professor David Moore, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>INTL 384: "Langston Hughes: Global Writer" - </em> The great African American writer Langston Hughes (1902-1967) is best known as the poet laureate of the Harlem Renaissance. But his career was vaster still. He was a Soviet screenwriter, Spanish Civil War journalist, African literary anthologist, humorist, playwright, translator, social critic, writer of over 10,000 letters, and much more. This course engages Hughes's full career, bridging race and global issues, politics and art, and makes use of little-known archival materials. </p> 
+          <p><a href="/internationalstudies/" class="more">International Studies Department</a></p> 
+         </div> 
+         <!--Close .popupBox--> 
+         <div id="patrickHangOut" class="popupBox"> 
+          <img src="images/controller.png" width="110" height="78" alt="Video game controller" class="left"> 
+          <p><strong>Hang out with Friends</strong></p> 
+         </div> 
+         <!--Close .popupBox--> 
+         <div id="patrickGym" class="popupBox"> 
+          <img src="images/sneakers.png" width="110" height="110" alt="Sneakers" class="left"> 
+          <p><strong>3:30-4:30 p.m., Go to the gym or run outside if nice, <a href="http://www.macalester.edu/about/virtualtour/#LeonardCenter">Leonard Center</a></strong></p> 
+          <div class="movie"> 
+           <div id="movieDiv13"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+        </div>
+        <!--Close display:none DIV--> </li>
+       <!--Close #patrick--> 
+       <li id="nora"> <img src="images/nora_schedule.jpg" alt="Nora's calendar" width="930" height="802" border="0" usemap="#NoraMap"> <map name="NoraMap" id="NoraMap"> <area class="contentMapper" shape="rect" coords="264,106,358,167" href="#noraGym"> <area shape="rect" coords="265,167,358,233" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="266,236,360,279" href="#noraLING200"> <area shape="rect" coords="264,283,360,327" href="" class="noraVeggie"> <area class="noraMaxCtr" shape="rect" coords="265,326,360,431" href=""> <area class="contentMapper" shape="rect" coords="266,432,360,494" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="266,495,359,557" href="#noraLOCmtg"> <area class="contentMapper" shape="rect" coords="360,71,455,137" href="#noraRun"> 
+         <!--<area class="contentMapper" shape="rect" coords="359,136,454,185" href="http://www.macalester.edu/academics/studentschedules/photoboxes/veggiecoop2.html?iframe" />--> <area shape="rect" coords="359,136,454,185" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="360,185,454,256" href="#noraPOLI390"> <area class="noraMaxCtr" shape="rect" coords="359,283,454,326" href=""> <area class="contentMapper" shape="rect" coords="360,331,451,404" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="361,410,455,473" href="#noraTHDA265"> <area class="contentMapper" shape="rect" coords="360,472,454,579" href="#noraESL"> <area shape="rect" coords="360,579,453,636" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="361,642,456,728" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="455,82,549,153" href="#noraGym"> <area class="noraVeggie" shape="rect" coords="453,154,547,220" href=""> <area class="contentMapper" shape="rect" coords="454,234,548,278" href="#noraLING200"> <area shape="rect" coords="454,278,547,351" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="454,351,547,473" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="455,474,548,513" href="#noraAsIs"> <area shape="rect" coords="455,512,548,578" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="453,579,548,704" href="#noraLING205"> <area class="contentMapper" shape="rect" coords="455,713,548,758" href="#noraUnion"> <area class="contentMapper" shape="rect" coords="548,68,643,129" href="#noraRun"> <area class="contentMapper" shape="rect" coords="548,158,643,250" href="#noraPOLI390"> <area class="contentMapper" shape="rect" coords="548,262,642,306" href="#noraIGC"> <area shape="rect" coords="548,305,641,347" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="547,346,643,411" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="548,412,642,473" href="#noraTHDA265"> <area class="contentMapper" shape="poly" coords="549,473,551,557,641,556,642,534,690,535,692,513,643,504,640,475" href="#noraCook"> <area class="contentMapper" shape="rect" coords="548,569,642,719" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="642,94,737,155" href="#noraGym"> <area shape="rect" coords="641,154,736,221" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="642,235,735,276" href="#noraLING200"> <area class="contentMapper" shape="rect" coords="642,275,735,330" href="#noraCafeMac"> <area class="noraMaxCtr" shape="rect" coords="642,329,737,474" href=""> <area class="contentMapper" shape="poly" coords="686,482,698,542,644,551,644,675,775,659,725,479" href="#noraFriday"> <area class="contentMapper" shape="rect" coords="737,199,831,269" href="#noraRun"> <area class="contentMapper" shape="rect" coords="736,270,832,520" href="#noraSaturday"> <area class="contentMapper" shape="rect" coords="832,196,927,255" href="#noraRun"> <area shape="rect" coords="832,255,927,331" href="" class="noraVeggie"> <area class="contentMapper" shape="rect" coords="832,337,927,474" href="#noraHomework"> <area class="contentMapper" shape="rect" coords="831,494,927,537" href="#noraVeggieMtg"> <area shape="rect" coords="830,536,928,580" href="" class="noraVeggie"> <area class="noraMaxCtr" shape="rect" coords="830,580,926,705" href=""> <area shape="rect" coords="454,156,548,220" href="" class="noraVeggie"> </map> 
+        <div style="display:none;"> 
+         <div id="noraGym" class="popupBox"> 
+          <img src="images/dumbbells.png" width="110" height="110" alt="Dumbbells" class="left"> 
+          <p><strong>8 a.m., Wake up and head to the gym, <a href="http://www.macalester.edu/about/virtualtour/#LeonardCenter">Leonard Center</a></strong></p> 
+          <div class="movie"> 
+           <div id="movieDiv18"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraRun" class="popupBox"> 
+          <img src="images/sneakers.png" width="110" height="110" alt="Sneakers" class="left"> 
+          <p><strong>7:30 a.m. TR, 10 a.m. Sat-Sun, Go for a run</strong></p> 
+          <p>Yes, outside. Even in winter.</p> 
+         </div>
+         <!--Close .popupBox--> 
+         <!--<div id="noraVeggie" class="popupBox">
+                    <img src="images/broccoli.png" width="110" height="110" alt="Broccoli" class="left" />
+                <p><strong>Breakfast, lunch, and dinner, vegetarian meals, <a href="http://www.macalester.edu/about/virtualtour/#VeggieCo-Op">Veggie Co-Op</a></strong></p>
+                
+                <p>I help make food in the Veggie Co-Op and chat with my friends (and try to slip in some homework there, too).</p>
+                <div id="galleryContainerThree">
+                              <img src="http://farm4.staticflickr.com/3357/5815625348_43b5cf8be9.jpg" id="galPlaceholderThree" alt="" />
+                    </div>
+                
+              </div>-->
+         <!--Close .popupBox--> 
+         <div id="noraLING200" class="popupBox"> 
+          <p><strong>10:50-11:50 a.m. English Syntax, Linguistics, with Professor John Haiman</strong></p> 
+          <p><em>LING 200: "English Syntax" - </em> This course deals with the formal properties of discourse organization above the word level. Using local English as our test case, we introduce and refine the conceptual apparatus of theoretical syntax: syntactic, semantic, and pragmatic categories, the ways they are coded in English, phrase structure rules and recursion, semantic and pragmatic motivations for formal structures, movement rules, anaphora, and dependence relations. Some properties of English are (probable) language universals. </p> 
+          <p><a href="/linguistics" class="more">Linguistics</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <!--<div id="noraMaxCtr" class="popupBox">
+                <p><strong>1-3:30 p.m. M, 1-4:30 F, 7-10 p.m. Sun, Student Employment: MAX Center writing tutor <a href="http://www.macalester.edu/about/virtualtour/#KaginCommons">Kagin Commons</a></strong></p>
+                
+                <p><a href="/max/" class="more">MAX Center</a><br />
+                <a href="/studentemployment/" class="more">Student Employment</a></p>
+                
+                <div id="galleryContainerFour">
+                              <img src="http://farm8.staticflickr.com/7149/6436950841_2bd6793813.jpg" id="galPlaceholderFour" alt="" />
+                </div>
+                
+              </div>-->
+         <!--Close .popupBox--> 
+         <div id="noraHomework" class="popupBox"> 
+          <img src="images/textbooks.png" width="110" height="110" alt="Textbooks" class="left"> 
+          <p><strong>Homework, <a href="http://www.macalester.edu/about/virtualtour/#DewittWallaceLibrary">DeWitt Wallace Library</a></strong></p> 
+          <p>Head to the library to study (and hope that I'm not too distracted by everyone else "studying").</p> 
+          <div class="movie"> 
+           <div id="movieDiv19"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/library/library_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/library/library__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/library/library.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/library/library_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/library/library.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraLOCmtg" class="popupBox"> 
+          <p><strong>5-6:30 p.m., Lives of Commitment Meeting and Dinner</strong></p> 
+          <p>We meet as a full group for dinner and discussion or in smaller groups to ask the big questions about meaning and vocation in our lives. </p> 
+          <p><a href="/lilly/programs/loc/" class="more">Lives of Commitment</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraPOLI390" class="popupBox"> 
+          <img src="images/chuckgreen.png" width="110" height="110" alt="Textbooks" class="left"> 
+          <p><strong>7-11:30 a.m. TR, Chuck Green Civic Engagement Fellowship, Political Science, with Professor Paul Dosh</strong></p> 
+          <p>Sometimes, we take field trips on Thursdays, so we could start as early as 7 a.m. and finish as late as 1 p.m. Other weeks, we have breakfast together before class.</p> 
+          <p><em>POLI 390: "Chuck Green Civic Engagement Fellowship" - </em> In his 40-year career at Macalester, Professor Chuck Green functioned as a one-man "leadership academy" — inspiring and guiding students to make the transition from detached observers to engaged citizens. Through his teaching, mentoring, and example, Professor Green instilled in students a sense of confidence and optimism about their ability to engage proactively in the world. The Chuck Green Civic Engagement Fellowship honors this legacy. Students with sophomore or junior standing may apply for this seven-month fellowship that includes a spring seminar and a full-time, fully-funded summer field experience. Chuck Green Fellows will study democratic engagement in social and organizational change, identify a client organization working for the public good with whom the student can analyze and address a problem, and then work with that client on a mutually agreed-upon solution. The Fellowship culminates in the early fall with an event in which Fellows, faculty, and clients have an opportunity to reflect on the fellowship experience. The Fellowship fulfills both the practicum and advanced course requirements of the political science major. </p> 
+          <p><a href="/politicalscience" class="more">Political Science Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraTHDA265" class="popupBox"> 
+          <p><strong>3-4:30 p.m. TR, Oral History Project, Theatre and Dance, with Professor Lara Nielsen</strong></p> 
+          <p><em>THDA 265: "The Oral History Project" - </em> This seminar trains students in the methods and theories of Oral History which have become so important for contemporary artists engaging with "real" subjects and social locations. Of particular concern for the course are questions about what it means to work between orality, work in the field, and the documentations of writing. Secondary, primary, and other sources are all used for this research project, in which students learn to evaluate their deployments of sources, as they contribute to critical reflections on their own critically creative working processes. Throughout the semester, students examine theories and methods of oral history, orality, performance, and writing - at the same time that they develop research for their own 'oral history' projects in Theatre and Performance research. </p> 
+          <p><a href="/theatreanddance" class="more">Theatre and Dance Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraESL" class="popupBox"> 
+          <p><strong>4:30-7 p.m., Teach ESL in Minneapolis</strong></p> 
+          <p>Teach ESL at the English Learning Center in Minneapolis through Macalester's Lives of Commitment Program.</p> 
+          <p><a href="/lilly/programs/loc/" class="more">Lives of Commitment</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraAsIs" class="popupBox"> 
+          <p><strong>4:30-5:30 p.m., As Is</strong></p> 
+          <p>A group for LGBTQ students.</p> 
+          <p><a href="/multiculturallife/lgbtq/OnCampusResources.html" class="more">On-Campus LGBTQ Resources</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraLING205" class="popupBox"> 
+          <p><strong>7-10 p.m., Phonology, Linguistics, with Professor Christina Esposito</strong></p> 
+          <p><em>LING 205: "Phonology" - </em> Although all humans are born with the capacity to learn the sounds of any language, part of learning our native language is learning to categorize sounds into groups specific to that language, thereby filtering out many of the actual phonetic distinctions and concentrating only on those that are important. Just as we, as English speakers, may have trouble hearing the difference between the voiced and voiceless click consonants in Zulu, so speakers of other languages may not hear the difference between the vowels in "beat" and "bit," because this small distinction isn't important in their language. Phonology is the study of how different languages organize sounds into perceptual categories. In this class we will look at data from a wide variety of different languages, as well as from several dialects of English, including children's acquisition of a phonological system. Emphasis will be on practical skills in solving problem sets. </p> 
+          <p><a href="/linguistics" class="more">Linguistics Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraUnion" class="popupBox"> 
+          <p><strong>10:15 p.m. Queer Union meeting, student organization</strong></p> 
+          <p><em>Queer Union Mission Statement:</em> To serve the social and organizational needs of lesbian, gay, bisexual, transgender, and queer identified students at Macalester College. Queer Union seeks to educate and support the Macalester community with regard to the issues and concerns of these individuals on this campus and in local, national, and global contexts.</p> 
+          <p><a href="/multiculturallife/lgbtq/OnCampusResources.html" class="more">On-Campus LGBTQ Resources</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraIGC" class="popupBox"> 
+          <p><strong>11:30 a.m. - 12:30 p.m. Institute for Global Citizenship Student Council Meeting</strong></p> 
+          <p><em>IGC Student Council Mission Statement:</em> IGC Student Council mission is to support the vision of the IGC by empowering Macalester students to engage with others in exploring meaningful understandings and expressions of global citizenship. Together with Macalester faculty, staff and alumni we seek to inspire visions and actions for a more ethical and just world.</p> 
+          <p><a href="/igc/igcstudentcouncil/" class="more">IGC Student Council</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraCafeMac" class="popupBox"> 
+          <img src="images/froyo.png" width="110" height="110" alt="Frozen yogurt" class="left"> 
+          <p><strong>Noon, Head to Café Mac to meet friends for lunch, <a href="http://www.macalester.edu/about/virtualtour/#RuthStrickerDaytonCampusCenter">Ruth Stricker Dayton Campus Center</a></strong></p> 
+          <p>Even though the Veggie Coop is off the meal plan, Café Mac is a great place to see a lot of people at once.</p> 
+          <p><a href="http://www.cafebonappetit.com/macalester/cafes/cafemac/" class="more">Café Mac</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv20"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/videos/admissions/cafemac.jpg"> 
+              <source src="http://www.macalester.edu/news/videos/cafemac.f4v"> 
+             </video> 
+            </noscript> 
+           </div> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraFriday" class="popupBox"> 
+          <img src="images/scooter.png" width="110" height="110" alt="Scooter" class="left"> 
+          <p><strong>4:30 p.m. - 2 a.m. (or so), Free Time</strong></p> 
+          <p>Finally, the weekend, so no schedule here! I usually make dinner with friends or go out, but anything can happen after that. I hang out at someone's room or a house off-campus, see a performance by a student org or the Theatre department, or end up racing a scooter down the hall in a ball gown (it happens!).</p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraSaturday" class="popupBox"> 
+          <p><strong>Saturday</strong></p> 
+          <p>Saturdays are great. Sometimes, I'll have a retreat for Lives of Commitment or Chuck Green Fellowship; great social justice and leadership trainings run by the CEC or Campus Programs; or a marathon meeting for the IGC Student Council or MacPlayers. When I don't have plans, I love to head into Minneapolis and St. Paul and spend the day exploring a new neighborhood or going to a museum. Also, sometimes I finally get around to doing my laundry or writing that paper I've been thinking about. </p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraCook" class="popupBox"> 
+          <img src="images/wok.png" width="110" height="110" alt="Wok" class="left"> 
+          <p><strong>4:30 p.m. Team up with another veggie co-oper to cook dinner for all twenty of us</strong></p> 
+          <p><strong>6:30 p.m. Dinner time</strong></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="noraVeggieMtg" class="popupBox"> 
+          <p><strong>5-6 p.m., Veggie Co-op Meeting</strong></p> 
+          <p>Since we live communally and make our own decisions about money, eating, and living together, we meet weekly to keep everything running smoothly.</p> 
+         </div>
+         <!--Close .popupBox--> 
+        </div>
+        <!--Close display:none--> </li> 
+       <!--Close #nora--> 
+       <li id="salvador"> <img src="images/salvador_schedule3.jpg" alt="Salvador's calendar" width="930" height="802" border="0" usemap="#SalvadorMap"> <map name="SalvadorMap" id="SalvadorMap"> <area class="contentMapper" shape="rect" coords="267,183,361,229" href="#french2" alt="French II" title="Parlez vous?"> <area class="contentMapper" shape="rect" coords="267,237,361,280" href="#LATI308" alt="LATI308"> <area class="contentMapper" shape="rect" coords="266,329,361,374" href="#tourism" alt="Tourism"> <area class="contentMapper" shape="rect" coords="266,428,360,490" href="#bonner" alt="Bonner Meeting"> <area class="contentMapper" shape="rect" coords="265,533,361,596" href="#cosmos" alt="NASA"> <area class="contentMapper" shape="rect" coords="453,185,549,227" href="#french2" alt="French Flag"> <area class="contentMapper" shape="rect" coords="454,238,549,279" href="#LATI308" alt="LATI308"> <area class="contentMapper" shape="rect" coords="454,331,548,372" href="#tourism" alt="Tourism"> <area class="contentMapper" shape="rect" coords="642,185,736,227" href="#french2" alt="French Flag"> <area class="contentMapper" shape="rect" coords="642,237,737,279" href="#LATI308" alt="LATI308"> <area class="contentMapper" shape="rect" coords="643,330,736,371" href="#tourism" alt="Tourism"> <area class="contentMapper" shape="rect" coords="359,116,456,180" href="#econ" alt="Supply and demand"> <area class="contentMapper" shape="rect" coords="548,115,643,180" href="#econ" alt="Supply and demand"> <area class="contentMapper" shape="rect" coords="361,199,454,369" href="#bonnertutor" alt="Pencils"> <area class="contentMapper" shape="rect" coords="549,200,642,369" href="#bonnertutor" alt="Pencils"> <area class="contentMapper" shape="rect" coords="736,95,831,537" href="#bonnerworld" alt="Globe"> <area class="contentMapper" shape="rect" coords="548,430,643,473" href="#frenchlab" alt="French Flag"> <area class="contentMapper" shape="rect" coords="359,662,456,706" href="#adelante" alt="Adelante Meeting"> <area class="contentMapper" shape="rect" coords="453,714,548,757" href="#queerunion" alt="Queer Union Meeting"> </map> 
+        <div style="display: none;"> 
+         <div id="french2" class="popupBox"> 
+          <img src="images/french_flag.jpg" width="110" height="110" alt="French Flag" class="left"> 
+          <p><strong>9:40 - 10:40 a.m. French II, French and Francophone Studies, with Professor Anne Carayon, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>FREN 102: "French II" - </em> Conducted entirely in French, this course continues the development of the skills of listening, speaking, reading, and writing, with increasing emphasis on the practice of reading and writing. It includes introduction to the cultural background of France and the Francophone world. Class sessions are supplemented by weekly small group meetings with a French graduate assistant. </p> 
+          <p><a href="/french" class="more">French and Francophone Studies Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv1"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="frenchlab" class="popupBox"> 
+          <img src="images/french_flag.jpg" width="110" height="110" alt="French Flag" class="left"> 
+          <p><strong>3:30 - 4:30 p.m. French Lab II, French and Francophone Studies</strong></p> 
+          <p><em>FREN 102: "French II" - </em> Conducted entirely in French, this course continues the development of the skills of listening, speaking, reading, and writing, with increasing emphasis on the practice of reading and writing. It includes introduction to the cultural background of France and the Francophone world. Class sessions are supplemented by weekly small group meetings with a French graduate assistant. </p> 
+          <p><a href="/french" class="more">French and Francophone Studies Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="LATI308" class="popupBox"> 
+          <p><strong>10:50-11:50 a.m. Introduction to U.S. Latino Studies, Hispanic Studies, with Professor Alicia Muňoz, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>LATI 308: "Introduction to U.S. Latino Studies" - </em> This course provides an interdisciplinary discussion of the Latino experience in the United States with a focus on Mexican, Puerto Rican, Dominican, and Cuban-Americans. Using fiction, poetry, films and critical essays, we will examine issues of race and ethnicity, language, identity, gender and sexuality, politics, and immigration. Students will further engage with the Latino population of the Twin Cities by working with a local community organization. </p> 
+          <div class="movie"> 
+           <div id="movieDiv2"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="tourism" class="popupBox"> 
+          <img src="images/Suitcase-Antique.png" width="110" height="110" alt="Suitcase" class="left"> 
+          <p><strong>1:10 - 2:10 p.m. Tourism in the Modern Age, International Studies, with Professor Igor Tchoukarine, <a href="http://www.macalester.edu/about/virtualtour/#CarnegieHall">Carnegie Hall</a></strong></p> 
+          <p><a href="/internationalstudies" class="more">International Studies Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv3"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/carnegie/carnegie_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/carnegie/carnegie__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/carnegie/carnegie.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/carnegie/carnegie_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/carnegie/carnegie.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="bonner" class="popupBox"> 
+          <img src="images/bonner.jpg" width="110" height="110" alt="Bonner tutoring school" class="left"> 
+          <p><strong>4:30 p.m.- 6 p.m. Bonner Meeting</strong></p> 
+          <p>The Bonner Community Scholars Program is a four-year civic engagement program providing leadership programming, academic support, engagement opportunities and a social network. Being a Bonner Scholar involves a commitment not only to service, but also to learning how to be an effective change agent for one's campus, community, and beyond. To achieve this, Bonners are required to complete 280 hours of service and training each academic year, which is completed through working 8 - 10 hours a week with a community partner, as work-study.</p> 
+          <p><a href="/cec/civicleadershipprograms/bonnerscholars/" class="more">Bonner Scholars Program</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="bonnertutor" class="popupBox"> 
+          <img src="images/bonner.jpg" width="110" height="110" alt="Bonner tutoring school" class="left"> 
+          <p><strong>10 a.m. - 2 p.m. Tutor middle school students at Highland Junior High School (Bonner Program)</strong></p> 
+          <p>The Bonner Community Scholars Program is a four-year civic engagement program providing leadership programming, academic support, engagement opportunities and a social network. Being a Bonner Scholar involves a commitment not only to service, but also to learning how to be an effective change agent for one's campus, community, and beyond. To achieve this, Bonners are required to complete 280 hours of service and training each academic year, which is completed through working 8 - 10 hours a week with a community partner, as work-study.</p> 
+          <p><a href="/cec/civicleadershipprograms/bonnerscholars/" class="more">Bonner Scholars Program</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="bonnerworld" class="popupBox"> 
+          <img src="http://events.macalester.edu/event-imgs/large/WACSpring2009%20007.jpg" width="110" height="110" alt="World Affairs Challenge" class="left"> 
+          <p><strong>7:30 - 6 p.m. Working at the World Affairs Challenge as part of responsibilities as a Bonner Scholar</strong></p> 
+          <p>The World Affairs Challenge engages teams of middle and high school students to explore some of today's most pressing local and global issues.</p> 
+          <p>The Bonner Community Scholars Program is a four-year civic engagement program providing leadership programming, academic support, engagement opportunities and a social network. Being a Bonner Scholar involves a commitment not only to service, but also to learning how to be an effective change agent for one's campus, community, and beyond. To achieve this, Bonners are required to complete 280 hours of service and training each academic year, which is completed through working 8 - 10 hours a week with a community partner, as work-study.</p> 
+          <p><a href="/cec/civicleadershipprograms/bonnerscholars/" class="more">Bonner Scholars Program</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="cosmos" class="popupBox"> 
+          <img src="images/galaxy.jpg" width="110" height="110" alt="Galaxy" class="left"> 
+          <p><strong>7 - 8:30 p.m. Cosmos</strong></p> 
+          <p><em>PHYS 112: "Cosmos: Perspectives and Reflections" - </em> This course seeks to acquaint students with recent advances in cosmology, particle physics, nuclear fusion, semiconductors, and genomics. Most of these topics will be presented by experts from major universities and national laboratories. </p> 
+          <p><a href="/physics" class="more">Physics and Astronomy Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="econ" class="popupBox"> 
+          <img src="images/Supply-and-demand.jpg" width="110" height="110" alt="Supply and demand" class="left"> 
+          <p><strong>8 - 9:30 a.m. Principles of Economics, Economics, with Professor Kristine Lamm West, <a href="http://www.macalester.edu/about/virtualtour/#CarnegieHall">Carnegie Hall</a></strong></p> 
+          <p><a href="/economics" class="more">Economics Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv4"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/carnegie/carnegie_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/carnegie/carnegie__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/carnegie/carnegie.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/carnegie/carnegie_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/carnegie/carnegie.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="adelante" class="popupBox"> 
+          <img src="images/adelante.jpg" width="110" height="110" alt="Adelante meeting" class="left"> 
+          <p><strong>9 p.m. Adelante meeting, student organization</strong></p> 
+          <p>Adelante! is dedicated to increasing awareness and appreciation of U.S. Latina/o, Chicana/o and Latin American culture, politics and society at Macalester. The group addresses local and global issues concerning Latina/os and encourages participation by all individuals both on campus and in the surrounding Twin Cities community.</p> 
+          <p><a href="/directory/studentorganizations/" class="more">Student Organizations</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="queerunion" class="popupBox"> 
+          <p><strong>10:15 p.m. Queer Union meeting, student organization</strong></p> 
+          <p><em>Queer Union Mission Statement:</em> To serve the social and organizational needs of lesbian, gay, bisexual, transgender, and queer identified students at Macalester College. Queer Union seeks to educate and support the Macalester community with regard to the issues and concerns of these individuals on this campus and in local, national, and global contexts.</p> 
+          <p><a href="/multiculturallife/lgbtq/OnCampusResources.html" class="more">On-Campus LGBTQ Resources</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+        </div>
+        <!--Close display:none DIV--> </li>
+       <!--Close #salvador--> 
+       <li id="julia"> <img src="images/julia_schedule.jpg" alt="Julia's calendar" width="930" height="802" border="0" usemap="#JuliaMap"> <map name="JuliaMap" id="JuliaMap"> <area class="contentMapper" shape="rect" coords="64,105,160,179" href="#breakfast" alt="Breakfast"> <area class="contentMapper" shape="rect" coords="64,183,159,232" href="#NEUR248" alt="Neuroscience Studies 248"> <area class="contentMapper" shape="rect" coords="65,282,159,328" href="#psychresearch" alt="Psychology Research"> <area class="contentMapper" shape="rect" coords="65,330,159,376" href="#SOCI294" alt="Sociology 294-01"> <area class="contentMapper" shape="rect" coords="64,380,159,425" href="#HISP203" alt="Hispanic Studies 203"> <area shape="rect" coords="76,429,139,498" href="#wallacehomework" alt="Wallace Hall" class="wallaceHomework"> <area class="contentMapper" shape="rect" coords="67,499,158,577" href="#dinner" alt="Dinner"> <area class="contentMapper" shape="rect" coords="53,599,161,709" href="#evening" alt="Hamster"> <area class="contentMapper" shape="rect" coords="159,235,253,299" href="#lunch" alt="Lunch"> <area class="contentMapper" shape="poly" coords="200,377,201,355,224,355,221,302,162,301,168,378" href="#halldirectors" alt="Wallace"> <area class="contentMapper" shape="rect" coords="203,358,250,430" href="#jimhoppe" alt="Jim Hoppe"> <area class="contentMapper" shape="rect" coords="159,431,253,473" href="#HISP203" alt="Hispanic Studies 203-L1"> <area class="contentMapper" shape="rect" coords="253,99,348,179" href="#breakfast" alt="Breakfast"> <area class="contentMapper" shape="rect" coords="254,183,348,231" href="#NEUR248" alt="Neuroscience Studies 248"> <area class="contentMapper" shape="rect" coords="253,283,348,328" href="#psychresearch" alt="Psychology Research"> <area class="contentMapper" shape="rect" coords="254,330,348,376" href="#SOCI294" alt="Sociology 294-01"> <area class="contentMapper" shape="rect" coords="252,379,348,424" href="#HISP203" alt="Hispanic Studies 203"> <area shape="rect" coords="253,429,349,508" href="#wallacehomework" alt="Homework" class="wallaceHomework"> <area class="contentMapper" shape="rect" coords="253,507,346,581" href="#dinner" alt="Dinner"> <area class="contentMapper" shape="rect" coords="253,646,347,738" href="#evening" alt="Sleep"> <area class="contentMapper" shape="rect" coords="347,239,441,289" href="#lunch" alt="Lunch"> <area class="contentMapper" shape="rect" coords="348,336,441,474" href="#NEUR248" alt="Psychology 248-L1"> <area class="contentMapper" shape="rect" coords="349,474,442,732" href="#homework" alt="Homework"> <area class="contentMapper" shape="rect" coords="443,97,535,182" href="#breakfast" alt="Breakfast"> <area class="contentMapper" shape="rect" coords="440,183,538,232" href="#NEUR248" alt="Neuroscience Studies 248"> <area class="contentMapper" shape="rect" coords="441,282,536,328" href="#psychresearch" alt="Psychology Research"> <area class="contentMapper" shape="rect" coords="441,332,535,376" href="#SOCI294" alt="Sociology 294-01"> <area class="contentMapper" shape="rect" coords="439,381,535,424" href="#HISP203" alt="Hispanic Studies 203"> <area shape="rect" coords="461,426,521,504" href="#wallacehomework" alt="Wallace Hall" class="wallaceHomework"> <area class="contentMapper" shape="rect" coords="442,506,535,588" href="#dinner" alt="Dinner"> <area class="contentMapper" shape="rect" coords="442,642,533,729" href="#evening" alt="Jigsaw Puzzle"> <area class="contentMapper" shape="circle" coords="679,265,44" href="#brunch" alt="Brunch"> <area class="contentMapper" shape="rect" coords="630,326,724,463" href="#homework" alt="Homework"> <area class="contentMapper" shape="rect" coords="537,131,627,771" href="#saturday" alt="Saturday"> <area class="contentMapper" shape="rect" coords="630,522,720,655" href="#dinner" alt="Cafe Mac"> <area class="contentMapper" shape="rect" coords="627,679,730,774" href="#tv" alt="Television"> </map> 
+        <div style="display: none;"> 
+         <div id="breakfast" class="popupBox"> 
+          <img src="images/coffee.png" width="110" height="110" alt="Cup of coffee" class="left"> 
+          <p><strong>8:30 a.m. Wake up and swing by Café Mac for breakfast, <a href="http://www.macalester.edu/about/virtualtour/#RuthStrickerDaytonCampusCenter">Ruth Stricker Dayton Campus Center</a></strong></p> 
+          <p><a href="http://www.cafebonappetit.com/macalester/cafes/cafemac/" class="more">Café Mac</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv5"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/videos/admissions/cafemac.jpg"> 
+              <source src="http://www.macalester.edu/news/videos/cafemac.f4v"> 
+             </video> 
+            </noscript> 
+           </div> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="dinner" class="popupBox"> 
+          <img src="images/froyo.png" width="110" height="110" alt="Frozen yogurt" class="left"> 
+          <p><strong>5:30 p.m. Dinner with friends in Café Mac, <a href="http://www.macalester.edu/about/virtualtour/#RuthStrickerDaytonCampusCenter">Ruth Stricker Dayton Campus Center</a></strong></p> 
+          <p><a href="http://www.cafebonappetit.com/macalester/cafes/cafemac/" class="more">Café Mac</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv6"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_poster_4.jpg"> 
+              <source src="http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_512.mp4"> 
+              <source src="http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_512.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_512.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="evening" class="popupBox"> 
+          <img src="images/hamsterball.png" width="110" height="110" alt="Hamster Ball" class="left"> 
+          <p><strong>7 - 10:30 p.m. Homework, <a href="http://www.macalester.edu/reslife/residencehalls/wallace/">Wallace Hall</a></strong></p> 
+          <p>Homework, some TV and maybe do a jigsaw puzzle with my friends to relax while my hamster rolls around in my room.</p> 
+          <p><a href="http://www.macalester.edu/reslife/residencehalls/wallace/" class="more">Wallace Hall</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="NEUR248" class="popupBox"> 
+          <p><strong>9:40 - 10:40 a.m. MWF, Behavioral Neuroscience, Neuroscience Studies, with Professor Eric Wiertelak, <a href="http://www.macalester.edu/about/virtualtour/#Olin-RiceScienceCenter">Olin-Rice Science Center</a></strong></p> 
+          <p><em>NEUR 248: "Behavioral Neuroscience" - </em> An examination of the role of the nervous system in the control of behavior. While the course features a systems approach to the investigation of sensory and perceptual mechanisms, molecular and cellular components of the nervous system will also be discussed in the context of course topics. Particular emphasis is given to the nature of learning, memory, and motor processes, motivation, emotion, homeostasis, cognition, and human neuropsychology. The laboratory will be used for a variety of instructor-demonstrative and student participatory research and laboratory activities. </p> 
+          <p><strong>1:20-4:30 p.m. R, Behavioral Neuroscience Lab</strong></p> 
+          <p>Although this may seem like a long time, the time passes incredibly quickly.</p> 
+          <p><a href="/neuroscience" class="more">Neuroscience Studies Studies Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv7"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/olinrice/olinrice_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/olinrice/olinrice__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/olinrice/olinrice.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/olinrice/olinrice_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/olinrice/olinrice.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="psychresearch" class="popupBox"> 
+          <img src="images/scatterplot.jpg" width="138" height="110" alt="Scatter plot" class="left"> 
+          <p><strong>7 - 8:30 p.m. Research in Psychology II, Psychology, <a href="http://www.macalester.edu/about/virtualtour/#Olin-RiceScienceCenter">Olin-Rice Science Center</a></strong></p> 
+          <p><em>PSYC 202: "Research in Psychology II" - </em> This course continues instruction begun in PSYC 201. We more closely examine key factors for planning and implementing research studies, such as validity, variable operationalization, and common ethical dilemmas faced by psychologists. Students gain in-depth experience in developing, interpreting, and communicating different types of empirical psychological research designs (e.g., experiments, surveys, interviews).</p> 
+          <p><a href="/psychology" class="more">Psychology Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="SOCI294" class="popupBox"> 
+          <p><strong>1:10 - 2:10 p.m. Topics Course, Sociology, Professor Terry Boychuk, <a href="http://www.macalester.edu/about/virtualtour/#CarnegieHall">Carnegie Hall</a></strong></p> 
+          <p><em>SOCI 294: "Higher Education in America" - </em> Why does Macalester College exist? How has the college changed over time? This course surveys the ongoing reconstruction of American higher education from colonial times to present day, with particular emphasis on situating our own institutional history within the context of larger social transformations that have reshaped the contours of colleges and universities over time. Select topics include: Who owns and governs colleges? What are economic foundations of higher education? Who gets to go to college? What will students learn when they get there? How did college teaching become a profession, and what does it matter?</p> 
+          <div class="movie"> 
+           <div id="movieDiv8"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/carnegie/carnegie_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/carnegie/carnegie__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/carnegie/carnegie.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/carnegie/carnegie_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/carnegie/carnegie.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="HISP203" class="popupBox"> 
+          <p><strong>2:20 - 3:20 p.m. MWF, 3:30-4:30 p.m. T, Intermediate Spanish, Hispanic Studies, with Professor Galo Gonzalez, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>HISP 203: "Intermediate Spanish I" - </em> Intermediate Spanish extends and deepens awareness and use of linguistic functions in Spanish. Formal introduction to history and culture of Hispanophone countries. For admission into HISP 204, students must have completed HISP 203, or its equivalent, with a minimum grade of C-. </p> 
+          <p><a href="/hispanicstudies" class="more">Hispanic and Latin American Studies Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv9"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/humanities/humanities.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <!--<div id="wallacehomework" class="popupBox">
+                    <img src="images/wallacehall.jpg" width="110" height="110" alt="Wallace Hall" class="left" />
+                <p><strong>3 - 5 p.m., Homework, <a href="http://www.macalester.edu/reslife/residencehalls/wallace/">Wallace Hall</a></strong></p>
+                    <p>Homework in my dorm room. Open hours for my sophomores&mdash;I'm a resident assistant.</p>
+                    <p><a href="/reslife" class="more">Residence Life</a></p>
+                    
+                       <div id="galleryContainerTwo">
+                              <img src="http://farm5.staticflickr.com/4059/4687760941_c2e1124079.jpg" id="galPlaceholderTwo" alt="" />
+                    </div>
+                    
+              </div>-->
+         <!--Close .popupBox--> 
+         <div id="lunch" class="popupBox"> 
+          <img src="images/burger.png" width="110" alt="Burger" class="left"> 
+          <p><strong>11 a.m. Lunch at Café Mac, <a href="http://www.macalester.edu/about/virtualtour/#RuthStrickerDaytonCampusCenter">Ruth Stricker Dayton Campus Center</a></strong></p> 
+          <p><a href="http://www.cafebonappetit.com/macalester/cafes/cafemac/" class="more">Café Mac</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="halldirectors" class="popupBox"> 
+          <img src="images/wallacehall.jpg" width="110" height="110" alt="Wallace Hall" class="left"> 
+          <p><strong>1-2 p.m., Residence Hall Director Meeting, <a href="http://www.macalester.edu/reslife/residencehalls/wallace/">Wallace Hall</a></strong></p> 
+          <p>This is a time for me to talk about issues as resident assistant. </p> 
+          <p><a href="/reslife" class="more">Residence Life</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="jimhoppe" class="popupBox"> 
+          <img src="images/jimhoppe.jpg" width="110" height="110" alt="Jim Hoppe" class="left"> 
+          <p><strong>2-3 p.m., Meeting with Jim Hoppe, Dean of Students</strong></p> 
+          <p>I occasionally have a meeting with Jim Hoppe, our Dean of Students, to discuss my future career plans in student affairs. He has been a fantastic resource as I plan for my future.</p> 
+          <p><a href="/studentaffairs" class="more">Office of Student Affairs</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="homework" class="popupBox"> 
+          <img src="images/wallacehall.jpg" width="110" height="110" alt="Wallace Hall" class="left"> 
+          <p><strong>6:30 - 10:30 p.m. R, Sunday Afternoon, Homework, <a href="http://www.macalester.edu/reslife/residencehalls/wallace/">Wallace Hall</a></strong></p> 
+          <p>I do homework in the lounge on my floor to see some of my residents and connect.</p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="brunch" class="popupBox"> 
+          <img src="images/bagel.png" width="110" height="110" alt="Bagel" class="left"> 
+          <p><strong>10:30 a.m. Wake up and head to brunch in Café Mac, <a href="http://www.macalester.edu/about/virtualtour/#RuthStrickerDaytonCampusCenter">Ruth Stricker Dayton Campus Center</a></strong></p> 
+          <p><a href="http://www.cafebonappetit.com/macalester/cafes/cafemac/" class="more">Café Mac</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="saturday" class="popupBox"> 
+          <img src="images/MOA.png" width="110" alt="Mall of America" class="left"> 
+          <p><strong>Saturday</strong></p> 
+          <p>Sleep in, eat brunch with friends in Café Mac, and doing a little homework. I prefer to try to get off campus on the weekends. If that means taking the bus to Mall of America or going into Minneapolis, then great! If I have a lot of homework though, sometimes I will study at St. Thomas in order to be in an academic environment but not be quite so distracted by people I know.</p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="tv" class="popupBox"> 
+          <img src="images/television.png" width="110" alt="Television" class="left"> 
+          <p><strong>10:30 p.m., Homework and TV</strong></p> 
+          <p>Complete any unfinished homework, catch up on some of my favorite TV shows, and get to bed.</p> 
+         </div>
+         <!--Close .popupBox--> 
+        </div>
+        <!--Close display:none DIV--> </li> 
+       <!--Close #julia--> 
+       <li id="john"> <img src="images/john_schedule.jpg" alt="John's calendar" width="930" height="802" border="0" usemap="#JohnMap"> <map name="JohnMap" id="JohnMap"> <area class="contentMapper" shape="rect" coords="65,185,159,273" href="#johnTHDA360"> <area class="contentMapper" shape="rect" coords="253,185,345,273" href="#johnTHDA360"> <area class="contentMapper" shape="rect" coords="441,185,535,273" href="#johnTHDA360"> <area class="contentMapper" shape="rect" coords="160,340,253,405" href="#johnPSYC220"> <area class="contentMapper" shape="rect" coords="347,339,443,404" href="#johnPSYC220"> <area class="contentMapper" shape="rect" coords="66,382,159,487" href="#johnTHDA350"> <area class="contentMapper" shape="rect" coords="253,382,347,489" href="#johnTHDA350"> <area class="contentMapper" shape="rect" coords="442,383,536,484" href="#johnTHDA350"> <area class="contentMapper" shape="rect" coords="159,409,253,454" href="#johnPE21"> <area class="contentMapper" shape="rect" coords="347,409,443,454" href="#johnPE21"> <area class="contentMapper" shape="rect" coords="65,536,160,704" href="#johnLPrehearsal"> <area class="contentMapper" shape="rect" coords="253,536,347,704" href="#johnLPrehearsal"> <area class="contentMapper" shape="rect" coords="347,537,441,705" href="#johnLPrehearsal"> <area class="contentMapper" shape="rect" coords="535,326,630,495" href="#johnLPrehearsal"> <area class="contentMapper" shape="rect" coords="631,325,725,494" href="#johnLPrehearsal"> <area class="contentMapper" shape="rect" coords="160,536,253,620" href="#johnLPrehearsal"> <area class="contentMapper" shape="rect" coords="64,704,160,790" href="#johnEmploy"> <area class="contentMapper" shape="rect" coords="630,537,725,704" href="#johnEmploy"> <area class="contentMapper" shape="rect" coords="160,621,253,663" href="#johnEmploy"> <area class="contentMapper" shape="rect" coords="442,621,536,663" href="#johnEmploy"> <area class="contentMapper" shape="rect" coords="159,59,254,255" href="#johnTime"> <area class="contentMapper" shape="rect" coords="348,131,441,331" href="#johnTime"> <area class="contentMapper" shape="rect" coords="630,93,727,291" href="#johnTime"> <area class="contentMapper" shape="circle" coords="488,528,46" href="#johnBasketball"> <area class="contentMapper" shape="circle" coords="582,254,47" href="#johnBasketball"> </map> 
+        <div style="display: none;"> 
+         <div id="johnLPrehearsal" class="popupBox"> 
+          <img src="images/laramieproject.jpg" width="110" height="110" alt="Laramie Project" class="left"> 
+          <p><strong>6-10 p.m. M-R, 1-5 p.m. Sat-Sun, <em>The Laramie Project</em> Rehearsal, <a href="http://www.macalester.edu/about/virtualtour/#TheaterBuilding">Theater Building</a></strong></p> 
+          <p><em>From the press release:</em> "The play, based on more than 200 interviews with about 100 Laramie residents as well as journal entries from the members of Tectonic Theater Project, resulted in a collage of reflections and reactions to the murder of Matthew Shepard."</p> 
+          <p><a href="/theatreanddance" class="more">Theatre and Dance Department</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv14"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/theater/theater_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/theater/theater__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/theater/theater.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/theater/theater_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/theater/theater.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnTHDA360" class="popupBox"> 
+          <img src="images/theatre_mask.png" height="110" alt="THDA360" class="left"> 
+          <p><strong>9:40-11:40 a.m. MWF, Acting Theory/Performance II, with Professor Harry Waters Jr., Theatre and Dance, <a href="http://www.macalester.edu/about/virtualtour/#TheaterBuilding">Theater Building</a></strong></p> 
+          <p><em>THDA 360: "Acting Theory/Performance II"</em> - Advanced work in characterization and additional acting techniques with continued focus on voice, movement, improvisation and textual analysis. A continuation of Acting Theory and Performance I, this course is designed to deepen the student's understanding of his/her instrument as well as develop an individualized working method. Included in the course is a consideration of style through scene work in other genres. Enrollment limited to 12 students.</p> 
+          <p><a href="/theatreanddance" class="more">Theatre and Dance Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnTHDA350" class="popupBox"> 
+          <img src="images/directors_chair.png" height="110" alt="THDA350" class="left"> 
+          <p><strong>2:30-4:30 p.m. MWF, Directing Theory/Production I, with Professor Beth Cleary, Theatre and Dance, <a href="http://www.macalester.edu/about/virtualtour/#TheaterBuilding">Theater Building</a></strong></p> 
+          <p><em>THDA 350: "Directing Theory/Production I"</em> - An introduction to the basic principles, skills, and methods of directing for the stage through emphasis on analysis and interpretation, director-actor communication, and stage composition. Laboratory experiences are integral to the course and consist of the in-class production of several short scenes. Enrollment limited to 12 students.</p> 
+          <p><a href="/theatreanddance" class="more">Theatre and Dance Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnPSYC220" class="popupBox"> 
+          <p><strong>1:20-4:30 p.m., Educational Psychology, with Professor Tina Krause, Educational Studies, <a href="http://www.macalester.edu/about/virtualtour/#HumanitiesBuilding">Humanities Building</a></strong></p> 
+          <p><em>PSYC 220/EDUC 220: "Educational Psychology"</em> - An introduction to theory and research in educational psychology. Topics include learning theory, learner characteristics, intelligence, creativity, motivation, measurement and evaluation, and models of teaching appropriate for diverse learners from early childhood through young adulthood. Students are required to complete observations in classroom settings.</p> 
+          <p><a href="/psychology" class="more">Psychology Department</a></p> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnPE21" class="popupBox"> 
+          <img src="images/swimgoggles.png" width="110" alt="PE21" class="left"> 
+          <p><strong>3-4 p.m. TR, PE 21 - Swim for Fitness, Physical Education, <a href="http://www.macalester.edu/about/virtualtour/#LeonardCenter">Leonard Center</a></strong></p> 
+          <div class="movie"> 
+           <div id="movieDiv15"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnBasketball" class="popupBox"> 
+          <img src="images/basketball.png" width="110" alt="Basketball" class="left"> 
+          <p><strong>Friday-Saturday, Intramural Basketball and Pick-up Games, <a href="http://www.macalester.edu/about/virtualtour/#LeonardCenter">Leonard Center</a></strong></p> 
+          <div class="movie"> 
+           <div id="movieDiv16"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/athletics/athletics.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnEmploy" class="popupBox"> 
+          <img src="images/workstudy.jpg" width="110" height="110" alt="Work Study" class="left"> 
+          <p><strong>Student Employment, Building Manager in the <a href="http://www.macalester.edu/about/virtualtour/#RuthStrickerDaytonCampusCenter">Ruth Stricker Dayton Campus Center</a></strong></p> 
+          <p><a href="/studentemployment/" class="more">Student Employment</a></p> 
+          <div class="movie"> 
+           <div id="movieDiv17"> 
+            <noscript> 
+             <video width="560" height="315" controls="yes" poster="http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter_poster_1.jpg"> 
+              <source src="http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter__512.mp4"> 
+              <source src="http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter.webm" type="video/webm"> 
+             </video> 
+            </noscript> 
+           </div> 
+           <p style="margin: 0px; padding-top: 5px; padding-bottom: 0px;"><small>Download: <a href="http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter_512.mp4">MPEG</a> | <a href="http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter.webm">WebM</a></small></p> 
+          </div> 
+         </div>
+         <!--Close .popupBox--> 
+         <div id="johnTime" class="popupBox"> 
+          <img src="images/melting_clock.png" height="110" alt="Melting Clock" class="left"> 
+          <p>I have not specified meal times, nor time set aside for homework because for me those are times that I don't have scheduled. I go to meals and do homework as time allows—not saying I have no time, but pretty much anything that's not specified on this schedule falls into those categories.</p> 
+         </div>
+         <!--Close .popupBox--> 
+        </div>
+        <!-- Close display:none--> </li> 
+       <!--Close #patrick--> 
+      </ul>
+      <!--Close #scheduleSlider--> 
+     </div>
+     <!-- Close min-height--> 
+    </div>
+    <!--Close .boxed-text--> 
+    <!-- InstanceEndEditable --> 
+    <!-- InstanceBeginEditable name="LeftColumn" -->
+    <!-- InstanceEndEditable --> 
+   </div> 
+  </div> 
+  <!-- FOOTER --> 
+  <div id="footer" style="position:relative"> 
+   <div class="container"> 
+    <div class="social span-11 append-1"> 
+     <p class="socLinks"> <a class="facebook" title="Find us on Facebook" href="http://www.facebook.com/pages/Saint-Paul-MN/Macalester-College/23345490827" target="_blank">Facebook</a> <a class="youtube" title="Find us on YouTube" href="http://www.youtube.com/macalester" target="_blank">YouTube</a> <a class="twitter" title="Find us on Twitter" href="http://www.twitter.com/macalester" target="_blank">Twitter</a> <a class="linkedin" title="Find us on LinkedIn" href="https://www.linkedin.com/edu/school?id=19967" target="_blank">LinkedIn</a> <a class="googleplus" title="Find us on Instagram" href="http://instagram.com/macalestercollege" target="_blank">Instagram</a> </p> 
+     <script type="text/javascript" id="fbinclude" src="/resources/v2/javascript/facebook.js"></script> 
+    </div> 
+    <!--Footer Links--> 
+    <ul class="footerLinks span-12 last"> 
+     <li class="about span-3"> <h3><a href="http://www.macalester.edu/about/">About</a></h3> 
+      <ul> 
+       <li><a href="http://www.macalester.edu/about/">Facts</a></li> 
+       <li><a href="http://www.macalester.edu/about/maps/">Maps &amp; Directions</a></li> 
+       <li><a href="http://www.macalester.edu/news/">News</a></li> 
+       <li><a href="http://www.macalester.edu/directory/offices/">Offices &amp; Services</a></li> 
+      </ul> </li> 
+     <li class="academics span-3"> <h3><a href="http://www.macalester.edu/academics/">Academics</a></h3> 
+      <ul> 
+       <li><a href="http://www.macalester.edu/academics/">Areas of Study</a></li> 
+       <li><a href="http://www.macalester.edu/academic/catalog/">Courses</a></li> 
+       <li><a href="http://www.macalester.edu/library/">Library</a></li> 
+      </ul> </li> 
+     <li class="lifeAtMac span-3"> <h3><a href="http://www.macalester.edu/lifeatmac/">Life At Mac</a></h3> 
+      <ul> 
+       <li><a href="http://www.macalester.edu/lifeatmac/finearts/">Arts, Music, &amp; Theater</a></li> 
+       <li><a href="http://www.macalester.edu/athletics/">Athletics</a></li> 
+       <li><a href="http://www.macalester.edu/lifeatmac/clubs/" class="private">Clubs &amp; Organizations</a></li> 
+       <li><a href="http://www.macalester.edu/lifeatmac/civicengagement/">Civic Engagement</a></li> 
+      </ul> </li> 
+     <li class="admissions span-3 last"> <h3><a href="http://www.macalester.edu/Admissions">Admissions</a></h3> 
+      <ul> 
+       <li><a href="http://www.macalester.edu/admissions/apply/">Apply</a></li> 
+       <li><a href="http://www.macalester.edu/admissions/financialaid/">Financial Aid &amp; Tuition</a></li> 
+       <li><a href="https://admissions.macalester.edu/register/connect">Join Our Mailing List</a></li> 
+       <li><a href="http://www.macalester.edu/admissions/visitcampus/">Visit Campus</a></li> 
+      </ul> </li> 
+    </ul> 
+    <div class="address span-24 last"> 
+     <p class="address white"><span class="schoolName">Macalester College, </span> 1600 Grand Avenue, Saint Paul, MN 55105, Tel: 651-696-6000 </p> 
+     <p class="copyright"><span class="contactLinks"><a href="http://www.macalester.edu/about/contactus/">Contact us</a> | <a href="http://www.macalester.edu/employmentservices/jobs.html">Employment Opportunities</a> | <a href="http://www.macalester.edu/about/nondiscrimination/">Notice of Non-Discrimination</a> | <a href="http://www.macalester.edu/about/studentconsumerinformation/">Student Consumer Information</a> | <a href="http://www.macalester.edu/titleix/">Title IX</a></span> <br> © 2015 Macalester College </p> 
+    </div> 
+   </div> 
+  </div>  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="//www.macalester.edu/resources/javascript/jquery-1.8.3.min.js"><\/script>')</script> 
+  <script type="text/javascript" src="/resources/v2/javascript/global.tagmanager.js"></script> 
+  <!-- InstanceBeginEditable name="CustomJavaScript" --> 
+  <script type="text/javascript" src="/resources/libraries/fancybox/jquery.fancybox-1.3.4.js"></script> 
+  <script type="text/javascript" src="/resources/v2/flash/jwplayer5/jwplayer.js"></script> 
+  <script type="text/javascript" src="/resources/libraries/anythingslider/js/jquery.anythingslider.js"></script> 
+  <script type="text/javascript" src="/resources/javascript/galleriffic.js"></script> 
+  <script type="text/javascript" src="/resources/javascript/galleries.js"></script> 
+  <script type="text/javascript" src="/resources/libraries/jquery.mobile-1.1.0/jquery.mobile-1.1.0.min.js"></script> 
+  <script type="text/javascript">
+					
+					$(document).ready(function() {
+						
+						/*FANCYBOX TRIGGER SCRIPT*/
+						
+						$('map > area.contentMapper').click(function(e) {	
+							e.preventDefault();
+							var url = $(this).attr('href');
+							$.fancybox({
+								'href' : url,
+								'scrolling': 'no',
+								'padding': 0,
+								'margin': 0,
+								'speedIn': 150,
+								'speedOut' : 200
+							});
+						
+						});
+					
+						/*FAILED ATTEMPT - SLIDESHOW WITHIN FANCYBOX SETUP SCRIPT*/
+						/*loadGallery("72157629998626422", $("#julia").find('div.popupContent'));*/
+						
+						/*PHOTO GALLERIES SETUP SCRIPT*/
+						
+						$('map > area.noraVeggie').click(function(e) {	
+							e.preventDefault();
+							var url = $(this).attr('href');
+							$.fancybox({
+								'href': 'http://www.macalester.edu/academics/studentschedules/photoboxes/veggiecoop.html',
+								'type': 'iframe',
+								'scrolling': 'no',
+								'padding': 0,
+								'margin': 0,
+								'speedIn': 150,
+								'speedOut' : 200,
+								'width': 620,
+								'height': 640
+							});
+						
+						});
+						
+						$('map > area.wallaceHomework').click(function(e) {	
+							e.preventDefault();
+							var url = $(this).attr('href');
+							$.fancybox({
+								'href': 'http://www.macalester.edu/academics/studentschedules/photoboxes/wallace.html',
+								'type': 'iframe',
+								'scrolling': 'no',
+								'padding': 0,
+								'margin': 0,
+								'speedIn': 150,
+								'speedOut' : 200,
+								'width': 620,
+								'height': 670
+							});
+						
+						});
+						
+						$('map > area.noraMaxCtr').click(function(e) {	
+							e.preventDefault();
+							var url = $(this).attr('href');
+							$.fancybox({
+								'href': 'http://www.macalester.edu/academics/studentschedules/photoboxes/maxcenter.html',
+								'type': 'iframe',
+								'scrolling': 'no',
+								'padding': 0,
+								'margin': 0,
+								'speedIn': 150,
+								'speedOut' : 200,
+								'width': 620,
+								'height': 650
+							});
+						
+						});
+						
+						
+					});
+
+			  
+			  	    /*JW PLAYER VIDEO EMBED SCRIPT*/
+			  
+                      /*
+                        var loadResult = function (e)
+                        {
+                        if (!e.success)
+                          $(e.id).replace("<div><a href=''></a></div>");
+                        }
+                        
+                        swfobject.embedSWF("http://www.macalester.edu/resources/flash/videoplayer/player.swf", "moviePlayer1", "664", "375", "9.0.0", "", { "backcolor": "eae1db", "frontcolor": "000000", "lightcolor": "d6c8bd", "screencolor": "6a5373", "plugins": "gapro-1", "gapro.accountid": "UA-3265888-3"}, {"allowfullscreen":"true"}, {}, loadResult);
+                        */
+                      
+                        jwplayer("movieDiv1").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+                      
+                      jwplayer("movieDiv2").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+                        
+                     jwplayer("movieDiv3").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/carnegie/carnegie_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/carnegie/carnegie_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });	
+						
+					jwplayer("movieDiv4").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/carnegie/carnegie_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/carnegie/carnegie_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });		
+						
+					jwplayer("movieDiv5").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/news/videos/cafemac.f4v",
+                        image: "http://www.macalester.edu/videos/admissions/cafemac.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });	
+						
+					jwplayer("movieDiv6").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_512.mp4",
+                        image: "http://www.macalester.edu/media/video/sos-cafemac/sos-cafemac_poster_4.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+						
+					jwplayer("movieDiv7").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/olinrice/olinrice_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/olinrice/olinrice_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+						
+					jwplayer("movieDiv8").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/carnegie/carnegie_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/carnegie/carnegie_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });				
+					
+					jwplayer("movieDiv9").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+						
+					jwplayer("movieDiv10").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+						
+					jwplayer("movieDiv11").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/olinrice/olinrice_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/olinrice/olinrice_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });	
+						
+					jwplayer("movieDiv12").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/humanities/humanities_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/humanities/humanities_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+					
+					jwplayer("movieDiv13").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+					
+					jwplayer("movieDiv14").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/theater/theater_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/theater/theater_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });	
+						
+					jwplayer("movieDiv15").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });		
+					
+					jwplayer("movieDiv16").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });		
+					
+					jwplayer("movieDiv17").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/campuscenter/campuscenter_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+						
+					jwplayer("movieDiv18").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/athletics/athletics_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/athletics/athletics_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });		
+						
+				     jwplayer("movieDiv19").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/media/virtualtour/library/library_512.mp4",
+                        image: "http://www.macalester.edu/media/virtualtour/library/library_poster_1.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });
+						
+					  jwplayer("movieDiv20").setup({
+                        autostart: false,
+                        file: "http://www.macalester.edu/news/videos/cafemac.f4v",
+                        image: "http://www.macalester.edu/videos/admissions/cafemac.jpg",
+                        "plugins": "gapro-1",
+                        "gapro.accountid": "UA-3265888-1",
+                        players: [
+                          { type: "flash", src: "/resources/v2/flash/jwplayer5/player.swf" },
+                          { type: "html5" }],
+                        volume: 100,
+                        width: 560,
+                        height: 315
+                        });																
+                 
+				/*ANYTHINGSLIDER SCRIPT*/
+				
+				var slider2 = ['Patrick', 'Nora', 'Salvador', 'Julia', 'John'];
+				
+                function formatText(index, panel) {
+                        return slider2[index - 1];
+                }
+				
+				$('#scheduleSlider').anythingSlider({
+					buildStartStop: false, 
+					resizeContents: false, 
+					navigationFormatter: formatText, 
+					/*onInitialized:sliderSwipeInit*/
+					onInitialized: function(e, slider) {
+						slider.$window
+							.bind('swipeleft', function(){
+								slider.goForward();
+							})
+							.bind('swiperight', function(){
+								slider.goBack();
+							});
+					}
+
+				});
+				
+				/*SLIDER TOUCHSCREEN SWIPE SCRIPT*/
+				
+				function sliderSwipeInit(e, slider) {
+
+					var time = 1000, // allow movement if < 1000 ms (1 sec)
+						range = 50,  // swipe movement of 50 pixels triggers the slider
+						x = 0, t = 0, touch = "ontouchend" in document,
+						st = (touch) ? 'touchstart' : 'mousedown',
+						mv = (touch) ? 'touchmove' : 'mousemove',
+						en = (touch) ? 'touchend' : 'mouseup';
+					
+					slider.$window
+						.bind(st, function(e){
+							// prevent image drag (Firefox)
+							e.preventDefault();
+							t = (new Date()).getTime();
+							x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX; 
+						})
+						.bind(en, function(e){
+							t = 0; x = 0;
+						})
+						.bind(mv, function(e){
+							e.preventDefault();
+							var newx = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+							r = (x === 0) ? 0 : Math.abs(newx - x),
+							// allow if movement < 1 sec
+							ct = (new Date()).getTime();
+							if (t !== 0 && ct - t < time && r > range) {
+								if (newx < x) { slider.goForward(); }
+								if (newx > x) { slider.goBack(); }
+								t = 0; x = 0;
+							}
+						});
+				}
+				
+		
+				
+				/*FAILED ATTEMPT - PHOTO GALLERY SLIDER WITHIN FANCYBOX SCRIPT
+				
+				function loadGallery(setID, insertElement) {
+					var galURL = 'http://webapps.macalester.edu/web2010/flickr/?photosetid=' + setID + '&format=json&callback=?';
+					$.getJSON(galURL, function(data) {
+						var items = [];
+						if (data.stat == "ok")
+						{
+							$.each(data.photoset.photo, function(key, val) {
+							items.push('<li><div><img src="' + val.url_m + '" /></div></li>');
+							});
+							$('<ul>', {
+								html: items.join('') }).appendTo(insertElement).addClass('photoSlider').anythingSlider({
+									buildNavigation: true, 
+									buildStartStop: false, 
+									resizeContents: false,
+									buildArrows:false,
+									onInitialized:sliderSwipeInit
+								});
+							
+						} else
+						{
+							alert('error loading gallery ' + galURL);
+						}	
+					});
+				}*/
+							
+				
+				</script> 
+  <!-- InstanceEndEditable -->  
+  <!-- InstanceEnd --> 
+ </body>
+</html>

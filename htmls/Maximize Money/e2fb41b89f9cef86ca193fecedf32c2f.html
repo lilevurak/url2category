@@ -1,0 +1,1214 @@
+<!doctype html>
+<!--[if lt IE 9]> <html class="lt-ie9 " lang="en-US"> <![endif]-->
+<!--[if IE 9]> <html class="ie9 " lang="en-US"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="" lang="en-US">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgEAWVdACQYHV1lRBgA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(19),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(20),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(p){"stack"in p&&(t(12),t(11),"addEventListener"in window&&t(6),s.xhrWrappable&&t(13),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){C++,M=y.hash,this[u]=b.now()}function o(){C--,y.hash!==M&&i(0,!0);var t=b.now();this[l]=~~this[l]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=b.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,h="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location,b=t("loader");if(w[v]&&b.xhrWrappable){var g=t(9),x=t(10),E=t(8),O=t(6),R=t(12),P=t(7),T=t(13),S=t("ee"),N=S.get("tracer");t(14),b.features.spa=!0;var M,j=w[v],C=0;S.on(u,r),S.on(p,r),S.on(d,o),S.on(h,o),S.buffer([u,d,"xhr-done","xhr-resolved"]),O.buffer([u]),R.buffer(["setTimeout"+s,"clearTimeout"+c,u]),T.buffer([u,"new-xhr","send-xhr"+c]),P.buffer([m+c,m+"-done",m+f+c,m+f+s]),E.buffer(["newURL"]),g.buffer([u]),x.buffer(["propagate",p,h,"executor-err","resolve"+c]),N.buffer([u,"no-"+u]),a(T,"send-xhr"+c),a(S,"xhr-resolved"),a(S,"xhr-done"),a(P,m+c),a(P,m+"-done"),E.on("pushState-end",i),E.on("replaceState-end",i),j("hashchange",i,!0),j("load",i,!0),j("popstate",function(){i(0,C>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(12),c=t(11),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",h="-start",l="-end",m="fn"+h,v="fn"+l,w="bstTimer",y="pushState",b=t("loader");b.features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=b.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,b.now()])}),a.on(m,function(t,e,n){this.bstStart=b.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),this.bstType])}),c.on(m,function(){this.bstStart=b.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),"requestAnimationFrame"])}),o.on(y+h,function(t){this.time=b.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(22)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(19);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,h="prototype";u&&d&&p&&(i(f,function(t,e){r(u[h],e,s),r(d[h],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(22)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("mutation"),o=t(22)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],10:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(22),a=t("ee").get("promise"),c=i(a),s=t(19),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],11:[function(t,e,n){var r=t("ee").get("raf"),o=t(22)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],12:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(22)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],13:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",c)}function i(t){b.push(t),l&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<b.length;t++)r([],b[t]);b.length&&(b=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(22)(u),p=NREUM.o,h=p.XHR,l=p.MO,m=p.PR,v=p.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],b=[];e.exports=u;var g=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(h,g),g.prototype=h.prototype,d.inPlace(g.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new l(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],14:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(15),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),h=t(18),l=t(17),m=window.XMLHttpRequest;a.features.xhr=!0,t(13),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],15:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],16:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(19),c=t(20),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var l=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){l[e]=o(h+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],19:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],20:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],21:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],22:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(20),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=l(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([b,n,r,a]),a}}function h(t,e){w[t]=l(t).concat(e)}function l(t){return w[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var w={},y={},b={on:h,emit:n,get:m,listeners:l,context:e,buffer:v,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(19),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!x++){var t=g.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+g.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+g.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-g.offset}var c=(new Date).getTime(),s=t("handle"),f=t(19),u=t("ee"),d=window,p=d.document,h="addEventListener",l="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1044.min.js"},b=m&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:c,now:a,origin:w,features:{},xhrWrappable:b};t(16),p[h]?(p[h]("DOMContentLoaded",i,!1),d[h]("load",r,!1)):(p[l]("onreadystatechange",o),d[l]("onload",r)),s("mark",["firstbyte",c],null,"api");var x=0,E=t(21)},{}]},{},["loader",2,14,5,3,4]);</script> 
+  <meta http-equiv="x-dns-prefetch-control" content="on"> 
+  <title>5 Tips to Get out of Debt | The Castillo Group</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+  <script>
+            window.bt = {
+                config: {
+                    ajaxUrl: '',
+                    apiUrl: 'https://flagshipapi.boomtownroi.com',
+                    newsstand: '',
+                    baseUrl: '',
+                    build: 10692,
+                    dataCookieName: 'BoomTownData',
+                    authCookieName: 'BoomTownAuth',
+                    dataCookieExpDate: new Date(1507044401000),
+                    tempCookieName: '',
+                    conversionCookieName: 'ConversionType',
+                    conversionQueryStringName: 'regformcomplete',
+                    registrationQueryStringName: 'regformdisplay',
+                    defaultLat: 29.424319,
+                    defaultLng: -98.492517,
+                    defaultZoom: 11,
+                    pageCount: 10,
+                    defaultView: 'hero',
+                    defaultSearchUrl: 'results-gallery',
+                    maxviews: 1,
+                    nonce: '',
+                    suggestApiUrl: 'https://suggest.boomtownroi.com',
+                    templateUrl: 'https://www.mysanantoniohomeguide.com/wp-content/themes/wp-base-theme/templates/',
+                    baseThemeUrl: 'https://www.mysanantoniohomeguide.com/wp-content/themes/wp-base-theme',
+                    themeUrl: 'https://www.mysanantoniohomeguide.com/wp-content/themes/wp-base-theme',
+                    browserTitle: "The Castillo Group",
+                    token: '3a1c1l1M0h212t2y1g1z3N1D3d1.1D0t3Z2G3u1G1m0012302z1B3W3w2W3W3E0t',
+                    viewCookieName: 'PropCount',
+                    searchCookieName: 'LastSearch',
+                    boardAlias: 'SABOR',
+                    boardHtml: {"AllDataPagesDisclaimer":"<br\/><br\/>\u00a9 [YEAR] San Antonio Board of REALTORS\u00ae All rights reserved. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but is not guaranteed accurate by the MLS or [TENANTNAME].  Last updated [UPDATEDTIMESTAMP].","ContentBottomHtml":"","DetailsBottomHtml":"All information deemed reliable but not guaranteed and should be independently verified. All properties are subject to prior sale, change or withdrawal. Neither listing broker(s) nor [TENANTNAME] shall be responsible for any typographical errors, misinformation, misprints and shall be held totally harmless. &copy; [YEAR] All rights reserved. Listing Courtesy of [OFFICENAME].","DetailsRemarksHtml":"","DetailsTopHtml":"","DisclaimerPageHtml":"","eAlertFooter":"","eAlertHtml":"","eAlertHtmlMore":"","FitScreenFooterHtml":"<span sytle=\"line-height: 11px\">Listings courtesy of the San Antonio Board of REALTORS (SABOR), Copyright [YEAR]. All rights reserved.\r\nThe IDX information provided on this website is exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Last updated [UPDATEDTIMESTAMP].<\/span>","FullDetailsDisclaimer":"Listing provided courtesy of [OFFICENAME].","HomePageAndMapDisclaimer":"","HomePageDisclaimer":"<br><br><a href=\"https:\/\/www.trec.texas.gov\/sites\/default\/files\/pdf-forms\/CN%201-2.pdf\">Texas Real Estate Commission Consumer Protection Notice<\/a>","MobileDisclaimer":"<span sytle=\"line-height: 11px\">Listings courtesy of the San Antonio Board of REALTORS (SABOR), Copyright [YEAR]. All rights reserved.\r\nThe IDX information provided on this website is exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Last updated [UPDATEDTIMESTAMP].<\/span> ","MobileFullViewCompliance":" ","MobileResultCompliance":" ","MultiMLSThumbcardDisclaimer":"\u00a9 [YEAR] San Antonio Board of REALTORS\u00ae.","PreviewDisclaimer":"","PreviewHtml":"","ResultsDisclaimer":"","ResultsHtml":"","ScriptBottom":"","TermsDisclaimer":"","ThumbCardDisclaimer":"","ThumbnailDisclaimer":"","ThumbnailLogo":"","TopFullDetailsDisclaimer":"","TopPopBottomHtml":"","TopPopHtml":""},
+                    boards: {"29":{"_ID":29,"BoardAlias":"SABOR","BoardName":"San Antonio Board of Realtors","Description":"","LastUpdated":"2017-10-03T09:32:43.13","RestrictMLS":false,"LastUpdatedAgo":54}},
+                    boardHTMLs: {"29":{"AllDataPagesDisclaimer":"<br\/><br\/>\u00a9 [YEAR] San Antonio Board of REALTORS\u00ae All rights reserved. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but is not guaranteed accurate by the MLS or [TENANTNAME].  Last updated [UPDATEDTIMESTAMP].","ContentBottomHtml":"","DetailsBottomHtml":"All information deemed reliable but not guaranteed and should be independently verified. All properties are subject to prior sale, change or withdrawal. Neither listing broker(s) nor [TENANTNAME] shall be responsible for any typographical errors, misinformation, misprints and shall be held totally harmless. &copy; [YEAR] All rights reserved. Listing Courtesy of [OFFICENAME].","DetailsRemarksHtml":"","DetailsTopHtml":"","DisclaimerPageHtml":"","eAlertFooter":"","eAlertHtml":"","eAlertHtmlMore":"","FitScreenFooterHtml":"<span sytle=\"line-height: 11px\">Listings courtesy of the San Antonio Board of REALTORS (SABOR), Copyright [YEAR]. All rights reserved.\r\nThe IDX information provided on this website is exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Last updated [UPDATEDTIMESTAMP].<\/span>","FullDetailsDisclaimer":"Listing provided courtesy of [OFFICENAME].","HomePageAndMapDisclaimer":"","HomePageDisclaimer":"<br><br><a href=\"https:\/\/www.trec.texas.gov\/sites\/default\/files\/pdf-forms\/CN%201-2.pdf\">Texas Real Estate Commission Consumer Protection Notice<\/a>","MobileDisclaimer":"<span sytle=\"line-height: 11px\">Listings courtesy of the San Antonio Board of REALTORS (SABOR), Copyright [YEAR]. All rights reserved.\r\nThe IDX information provided on this website is exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Last updated [UPDATEDTIMESTAMP].<\/span> ","MobileFullViewCompliance":" ","MobileResultCompliance":" ","MultiMLSThumbcardDisclaimer":"\u00a9 [YEAR] San Antonio Board of REALTORS\u00ae.","PreviewDisclaimer":"","PreviewHtml":"","ResultsDisclaimer":"","ResultsHtml":"","ScriptBottom":"","TermsDisclaimer":"","ThumbCardDisclaimer":"","ThumbnailDisclaimer":"","ThumbnailLogo":"","TopFullDetailsDisclaimer":"","TopPopBottomHtml":"","TopPopHtml":""}},
+                    overrideTenantRegFormSettings: 1,
+                    cookieDomain: '.mysanantoniohomeguide.com',
+                    boardUpdated: '10-03-2017',
+                    boardUpdatedTimestamp: '2017-10-03T09:32:43.13',
+                    debug: false,
+                    photoSqueeze: 0,
+                    powerfulFeaturesDeprecated: false,
+                    publicAssetUrl: 'https://bt-wpstatic.freetls.fastly.net/wp-content/',
+                    isMobile: 0,
+                    allowSoldData: false,
+                    btsource: '',
+                    cdnHost: "bt-wpstatic.freetls.fastly.net",
+inner_logo_uri: "https:\/\/bt-wpstatic.freetls.fastly.net\/wp-content\/blogs.dir\/1824\/files\/2016\/11\/innerpage-logo.png",
+
+                },
+                compliance:{
+                    HideLocalPics: false,
+                    HideYearBuilt: false,
+                    RestrictMLS: '',
+                    MaxListingResults: 0,
+                    HideDaysOld: false,
+                    MLSContentOnly: false,
+                    ReplaceUnderContract: 'Under Contract',
+                },
+                tenant: {
+                    id: 2023,
+                    street: "10999 IH10 Ste 175",
+                    legalName: "The Castillo Group with Keller Williams City View",
+                    city: "San Antonio",
+                    state: 'TX',
+                    zip: '78230',
+                    phone: '(210) 854-7894',
+                    email: 'bouncedemail@boomtownroi.com',
+                    formNumber: 2,
+                    facebookClientID: '385492418327012',
+                    facebookPixelID: '',
+                    allowFBLogin: '1',
+                    showAgentDDL: '',
+                    lenderChecked: true,
+                    conversionID: '948532919',
+                    signupLabel: '9oTqCPiX8l0Qt-2lxAM',
+                    clSqueeze: true,
+                    hideLender:  true,
+                    isCanadian: false,
+                    doubleOptIn: false,
+                    IsMultiBoard: false,
+                    brandLevelSearchNoResultsText: '',
+                    brandLevelSearchNoResultsPage: '',
+                    IsLiteCustomer: 0,
+                    testGroup: 2
+                },
+                network: {
+                    id: 0
+                },
+                visitorDetails: {"_ID":821862154,"ContactID":0,"IsRegistered":false,"TenantID":2023,"FirstName":"Guest","LastName":"Visitor","FavoriteCount":0,"ActiveSearchCount":0},
+                visitDetails: {"_ID":1198273655,"Source":"GOOGLE","StartDate":"2017-10-03T10:26:42.097","WebVisitorID":821862154,"Url":"https:\/\/www.mysanantoniohomeguide.com\/blog\/5-tips-to-get-out-of-debt\/","UserAgent":"Mozilla\/5.0 (Windows NT 6.3; rv:36.0) Gecko\/20100101 Firefox\/36.0","UrlReferrer":"google.com","IPAddress":"122.165.117.24"},
+                agentDetails: null,
+                globalVars: {"ImgDir":"https:\/\/bt-wpstatic.freetls.fastly.net\/wp-content\/themes\/wp-base-theme\/assets\/media\/build\/","footerBelow":""},
+template_variations: []
+            };
+        </script>
+  <script>if(window.newrelic){newrelic.setErrorHandler(function(err){if(err instanceof Error){err.message=err.message+' '+window.location.href;}return false;});}</script> 
+  <!-- Google Optimize Code --> 
+  <style>.async-hide { opacity: 0 !important} </style> 
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+            (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+            })(window,document.documentElement,'async-hide','dataLayer',4000,
+            {'GTM-M8C4ZPS':true});</script> 
+  <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-22147283-3', 'auto', {allowLinker: true});
+                ga('require', 'GTM-M8C4ZPS');
+                </script> 
+  <script type="text/javascript">
+
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+            {(i[r].q=i[r].q||[]).push(arguments)}
+            ,i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];
+            a.async=1;
+            a.src=g;
+            m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            window.bt.trackers = [['','UA-64551244-1,UA-64551244-2'],['b','UA-22147283-1']];
+
+            ga('create','UA-22147283-1', 'auto', {'name': 'globalAccount'});
+ga('globalAccount.require', 'displayfeatures');
+ga('globalAccount.set', 'dimension5', '0');
+ga('globalAccount.send', 'pageview', {"&uid":821862154,"dimension1":"Hawkeye","dimension4":"unregistered","dimension11":"821862154","dimension12":"grow"});
+ga('create','UA-64551244-1', 'mysanantoniohomeguide.com', {'name': 'clientAccount'});
+ga('clientAccount.require', 'displayfeatures');
+ga('clientAccount.send', 'pageview', {"&uid":821862154,"dimension4":"unregistered","dimension11":"821862154"});
+
+
+            (function() {
+                var ga = document.createElement('script'),
+                    s = document.getElementsByTagName('script')[0];
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = 'https://stats.g.doubleclick.net/dc.js';
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//www.mysanantoniohomeguide.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="dns-prefetch" href="//bt-wpstatic.freetls.fastly.net"> 
+  <link rel="dns-prefetch" href="//flagshipapi.boomtownroi.com"> 
+  <link rel="dns-prefetch" href="//suggest.boomtownroi.com"> 
+  <link href="https://www.mysanantoniohomeguide.com/wp-content/themes/wp-base-theme/assets/js/build/details.8f371c9b.min.js" as="script" rel="prefetch"> 
+  <link href="https://www.mysanantoniohomeguide.com/wp-content/themes/wp-base-theme/assets/js/build/results-gallery.db217d26.min.js" as="script" rel="prefetch"> 
+  <!-- BoomTown Facebook Pixel Code --> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '990130191007447');
+fbq('track', 'PageView');
+</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=990130191007447&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Boomtown Facebook Pixel Code --> 
+  <link rel="alternate" type="application/rss+xml" title="The Castillo Group » 5 Tips to Get out of Debt Comments Feed" href="https://www.mysanantoniohomeguide.com/blog/5-tips-to-get-out-of-debt/feed/"> 
+  <!-- Webmaster Tools Code --> 
+  <meta name="msvalidate.01" content="C62FE644C95BB0D3E07F50707FD9A868">
+  <meta name="verify-v1" content="HfrlOxI0tXOyQYVa5mn06aV6HRUw316FVZdvJN7S7Dg=">
+  <meta name="verify-v1" content="4B9FVONeQL4QgOvNN80STUWkDyrAlYC0719uBNXVK6Q=">
+  <meta name="y_key" content="caa407bf3d1005c3">
+  <link rel="stylesheet" id="jquery.bxslider-css" href="//www.mysanantoniohomeguide.com/wp-content/plugins/testimonials-widget/includes/libraries/bxslider-4/dist/jquery.bxslider.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="Axl_Testimonials_Widget-css" href="//www.mysanantoniohomeguide.com/wp-content/plugins/testimonials-widget/assets/css/testimonials-widget.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bt_pt-styles-css" href="https://bt-wpstatic.freetls.fastly.net/wp-content/themes/wp-base-theme/assets/css/build/wp-base-theme-10692.css" type="text/css" media="all"> 
+  <script type="text/javascript" crossorigin="anonymous" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <link rel="https://api.w.org/" href="https://www.mysanantoniohomeguide.com/wp-json/"> 
+  <link rel="prev" title="TCG December Military Heroes- Jacque and Brady Kornelis" href="https://www.mysanantoniohomeguide.com/blog/tcg-december-military-heroes-jacque-and-brady-kornelis/"> 
+  <link rel="next" title="Now Hiring: Inside Sales Agent" href="https://www.mysanantoniohomeguide.com/blog/careers-inbound-sales-agent/"> 
+  <link rel="shortlink" href="https://www.mysanantoniohomeguide.com/?p=1323"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.mysanantoniohomeguide.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mysanantoniohomeguide.com%2Fblog%2F5-tips-to-get-out-of-debt%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.mysanantoniohomeguide.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mysanantoniohomeguide.com%2Fblog%2F5-tips-to-get-out-of-debt%2F&amp;format=xml"> 
+  <!-- Meta Description --> 
+  <meta name="description" content="&nbsp; One of the most rewarding things about being a real estate agent is helping first time home buyers purchase their first home. Of course it isn’t always a smooth ride, however we always get here."> 
+  <!-- Meta Keywords --> 
+  <meta name="keywords" content="real estate"> 
+  <!-- Robots Instructions --> 
+  <!-- Open Graph --> 
+  <meta property="og:site_name" content="The Castillo Group"> 
+  <meta property="og:title" content="5 Tips to Get out of Debt | The Castillo Group"> 
+  <meta property="og:url" content="https://www.mysanantoniohomeguide.com/blog/5-tips-to-get-out-of-debt/"> 
+  <meta property="og:description" content="&nbsp; One of the most rewarding things about being a real estate agent is helping first time home buyers purchase their first home. Of course it isn’t always a smooth ride, however we always get here."> 
+  <meta property="og:image" content="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-460x690.png"> 
+  <!-- Schema.org Tags --> 
+  <meta itemprop="image" content="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-460x690.png"> 
+  <meta itemprop="name" content="The Castillo Group"> 
+  <meta itemprop="description" content="&nbsp; One of the most rewarding things about being a real estate agent is helping first time home buyers purchase their first home. Of course it isn’t always a smooth ride, however we always get here."> 
+  <link rel="canonical" href="https://www.mysanantoniohomeguide.com/blog/5-tips-to-get-out-of-debt/"> 
+  <link rel="apple-touch-icon" href="https://bt-wpstatic.freetls.fastly.net/wp-content/themes/wp-base-theme/assets/media/build/apple-touch-icon.png"> 
+  <link rel="shortcut icon" href="https://bt-wpstatic.freetls.fastly.net/wp-content/themes/wp-base-theme/assets/media/build/favicon.ico"> 
+  <style type="text/css" title="bt-theme-customizations">
+            a,
+            .uk-link {
+              color: #100b54;
+            }
+            a:hover,
+            .uk-link:hover {
+              color: #070527;
+            }
+            .uk-nav-side > li.uk-active > a {
+              background: #100b54;
+            }
+            .uk-nav-side ul a {
+              color: #100b54;
+            }
+            .uk-nav-side ul a:hover {
+              color: #070527;
+            }
+            .uk-nav-dropdown > li > a:hover,
+            .uk-nav-dropdown > li > a:focus {
+              background: #100b54;
+            }
+            .uk-nav-dropdown ul a {
+              color: #100b54;
+            }
+            .uk-nav-dropdown ul a:hover {
+              color: #070527;
+            }
+            .uk-nav-navbar > li > a:hover,
+            .uk-nav-navbar > li > a:focus {
+              background: #100b54;
+            }
+            .uk-nav-navbar ul a {
+              color: #100b54;
+            }
+            .uk-nav-navbar ul a:hover {
+              color: #070527;
+            }
+            .uk-subnav > * > :hover,
+            .uk-subnav > * > :focus {
+              color: #100b54;
+            }
+            .uk-subnav > .uk-active > * {
+              color: #100b54;
+            }
+            .uk-subnav-pill > .uk-active > * {
+              background: #100b54;
+            }
+            .uk-pagination > .uk-active > span {
+              background: #100b54;
+            }
+            .uk-tab > li > a {
+              color: #100b54;
+            }
+            .uk-tab > li > a:hover,
+            .uk-tab > li > a:focus,
+            .uk-tab > li.uk-open > a {
+              color: #070527;
+            }
+            .btn-primary,
+            .bt-listing-teaser__view-details,
+            .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details,
+            .calendar__day--active div {
+              background-color: #100b54;
+              border-color: #0c083d;
+            }
+            .btn-primary:hover,
+            .btn-primary:focus,
+            .bt-active > .btn-primary,
+            .bt-listing-teaser__view-details:hover,
+            .bt-listing-teaser__view-details:focus,
+            .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details:hover,
+            .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details:focus,
+            .calendar__day--active div:hover,
+            .calendar__day--active div:focus {
+              background-color: #0c083d;
+            }
+            .btn-primary:active,
+            .btn-primary.uk-active,
+            .bt-listing-teaser__view-details:active,
+            .bt-listing-teaser__view-details.uk-active,
+            .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details:active,
+            .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details.uk-active {
+              background-color: #070527;
+            }
+
+            html.uk-touch .btn-primary:hover,
+            html.uk-touch .btn-primary:focus,
+            html.uk-touch .bt-active > .btn-primary,
+            html.uk-touch .bt-listing-teaser__view-details:hover,
+            html.uk-touch .bt-listing-teaser__view-details:focus,
+            html.uk-touch .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details:hover,
+            html.uk-touch .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details:focus,
+            html.uk-touch .btn-primary:active,
+            html.uk-touch .btn-primary.uk-active,
+            html.uk-touch .btn-primary.active,
+            html.uk-touch .bt-listing-teaser__view-details:active,
+            html.uk-touch .bt-listing-teaser__view-details.uk-active,
+            html.uk-touch .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details:active,
+            html.uk-touch .bt-listing-teaser--vertical-wrapper .bt-listing-teaser__view-details.uk-active {
+                background-color: #100b54            }
+
+            .btn-link {
+              color: #100b54;
+            }
+            .btn-link:hover,
+            .btn-link:focus,
+            .btn-link:active,
+            .btn-link.uk-active {
+              color: #070527;
+            }
+            .uk-badge {
+              background: #100b54;
+            }
+            .uk-text-primary {
+              color: #100b54 !important;
+            }
+            .nav-autocomplete li.active > a {
+              background: #100b54;
+            }
+            .uk-datepicker-table a.uk-active {
+              background: #100b54;
+            }
+            form input[type]:focus,
+            form textarea:focus,
+            form select:focus {
+              box-shadow: 0 0 0 1px #100b54;
+            }
+            form input[type=radio]:checked:before {
+              background: #100b54;
+            }
+            form input[type=checkbox]:checked:before,
+            form input[type=checkbox]:indeterminate:before {
+              color: #100b54;
+              background-color: #100b54;
+            }
+            .uk-tab > li:not(.uk-active) > a,
+            .uk-tab > li.uk-open:not(.uk-active) {
+              color: #100b54;
+            }
+            .bt-background-primary {
+              background: #100b54;
+            }
+            .bt-gen-teaser[data-link]:hover {
+              box-shadow: 0 0 2px 1px rgba(16, 11, 84, 0.65);
+            }
+            .bt-ccomp__menu-list a:hover,
+            .bt-ccomp__menu-list a.bt-active {
+              background: #100b54;
+            }
+            .bt-search__price-list > li:hover,
+            .bt-search__price-list > li.active {
+              background: #100b54;
+            }
+            .marker-label {
+              color: #100b54;
+            }
+            .bt-listing-teaser:not(.bt-listing-teaser__offmarket):hover {
+              box-shadow: 0 0 2px 1px rgba(16, 11, 84, 0.65);
+            }
+            @media (min-width: 480px) {
+              #listings_view_gallery .bt-listing-teaser:not(.bt-listing-teaser__offmarket):hover {
+                box-shadow: 0 0 2px 1px rgba(16, 11, 84, 0.65);
+              }
+            }
+            .bt-listing-teaser--vertical-wrapper .bt-listing-teaser:not(.bt-listing-teaser__offmarket):hover {
+              box-shadow: 0 0 2px 1px rgba(16, 11, 84, 0.65);
+            }
+            .bt-listing-teaser--selected {
+              box-shadow: 0 0 0 1px #100b54;
+            }
+            .bt-listing__agent--card .bt-panel,
+            .bt-listing__agent__contact-widget__card .bt-panel {
+              border-color: #100b54;
+            }
+            .bt-listing__virtual-tour {
+              color: #100b54;
+            }
+            .bt-card-slider-nav__cell.is-selected {
+              border: 1px solid #100b54;
+            }
+            .main-sub-menu .sub-menu .sub-menu-link {
+              border-left: 2px solid #100b54;
+            }
+            
+            #hero {
+              background-image: url('/wp-content/blogs.dir/1824/files/2016/10/mini.jpg');
+            }
+            @media (min-width: 768px) {
+              #hero {
+                background-image: url('/wp-content/blogs.dir/1824/files/2016/10/small.jpg');
+              }
+            }
+            @media (min-width: 960px) {
+              #hero {
+                background-image: url('/wp-content/blogs.dir/1824/files/2016/10/default.jpg');
+              }
+            }
+            @media (min-width: 1220px) {
+              #hero {
+                background-image: url('/wp-content/blogs.dir/1824/files/2016/10/large.jpg');
+              }
+            }
+                </style> 
+ </head> 
+ <body class="post-template-default single single-post postid-1323 single-format-standard "> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5BDFQV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-5BDFQV');</script> 
+  <!--[if IE]>
+    <div id="browser-warning" class="alert alert-warning uk-text-center">
+      <h3 class="mb-5">Browser Warning</h3>
+      <p class="mt-5">You are running an unsupported browser. You need to upgrade or use a different browser, such as <a href="https://google.com/chrome" target="_blank">Google Chrome</a>, to use this site.</p>
+    </div>
+  <![endif]--> 
+  <div class="bt-off-canvas__wrapper js-off-canvas__wrapper"> 
+   <header id="top" class="js-header-top"> 
+    <nav class="bt-navbar js-hub"> 
+     <div class="container bt-navbar__container"> 
+      <div class="bt-navbar__left">
+       <ul id="menu-main-menu" class="uk-subnav">
+        <li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/">Home</a></li> 
+        <li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/agents/">Meet the Team</a></li> 
+        <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/results/">Search</a></li> 
+        <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/results-gallery/?userID=all&amp;proptype=SF,CC,VT,VC,MF,CM,RN,FM,CL,PH,M">Our Listings</a></li> 
+        <li id="menu-item-1266" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="https://www.mysanantoniohomeguide.com/recently-sold-homes/">Sold Homes</a></li> 
+        <li id="menu-item-1265" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/sell/">Sell</a></li> 
+        <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/buy/">Buy</a></li> 
+        <li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/finance/">Financing</a></li> 
+        <li id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="https://www.mysanantoniohomeguide.com/resources/raving-fans-of-the-castillo-group/">Raving Fans</a></li> 
+        <li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/blog/">Blog</a></li> 
+        <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/contactus/">Contact Us</a></li> 
+       </ul>
+      </div> 
+      <div class="bt-navbar__right"> 
+       <ul class="uk-subnav"> 
+        <li class="bt-ccomp js-saved-search-dropdown" data-bt-ccomp="dropdown"> <a class="js-savedsearcheslnk" href="#" data-bt-ccomp-trigger>Saved Searches <span class="js-savedsearchcount uk-badge uk-badge-notification">0</span></a> 
+         <div class="bt-ccomp__content bt-dropdown--right"> 
+          <ul class="bt-ccomp__menu-list bt-saved-searches__list js-searches-ddl"> 
+           <li class="bt-saved-searches__none js-saved-searches__none">You currently have no saved searches</li> 
+           <li class="bt-saved-searches__manage uk-hidden js-saved-searches__manage"><a rel="nofollow" href="/notifications/#searches">Manage Saved Searches 
+             <svg class="bt-icon bt-icon--smaller">
+              <use xlink:href="#bicon-arrow-right" />
+             </svg></a></li> 
+          </ul> 
+         </div> </li> 
+        <li><a class="js-favorites" rel="nofollow" href="/results-gallery/?favs=1">Favorites <span class="js-favoritescount uk-badge uk-badge-notification">0</span></a></li> 
+        <li class="js-leaveMeEmpty"></li> 
+        <li><a class="js-signin" rel="nofollow" href="#" title="Sign In">Sign In</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </nav> 
+   </header> 
+   <div class="js-mobile-header__wrapper uk-hidden-large uk-hidden-xlarge"> 
+    <div class="grid grid--center bt-header__mobile"> 
+     <div class="cell cell-xs-8 bt-header__mobile__left"> 
+      <a href="/" class="uk-display-inline-block"><img class="bt-inner-logo" src="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/11/innerpage-logo.png" alt="The Castillo Group with Keller Williams City View"></a> 
+     </div> 
+     <div class="cell text-xs--right"> 
+      <a href="#" class="bt-off-canvas__trigger js-off-canvas__trigger"> 
+       <svg class="bt-icon">
+        <use xlink:href="#bicon-menu-combo" />
+       </svg> Menu </a> 
+     </div> 
+    </div> 
+    <div id="jsx-results-header__mobile"> 
+    </div> 
+   </div> 
+   <div id="inner-viewport">
+    <div id="js-search-layout--search"> 
+     <div class="sticky-outer-wrapper"> 
+      <div class="sticky-inner-wrapper"> 
+       <div class="bt-listing-search-menu js-listing-search-menu js-results__page-header"> 
+        <div class="container bt-listing-search__wrapper js-filter-bar"> 
+         <div class="grid grid--gutters grid--center"> 
+          <div class="cell cell-md-3 bt-listing-search__logo"> 
+           <a class="js-inner-logo" href="https://www.mysanantoniohomeguide.com" title="The Castillo Group with Keller Williams City View"> <img class="bt-inner-logo" alt="The Castillo Group with Keller Williams City View" src="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/11/innerpage-logo.png"> <span class="sr-only" itemprop="legalName">The Castillo Group with Keller Williams City View</span> </a> 
+          </div> 
+          <div class="cell"> 
+           <div class="bt-filter-bar"> 
+            <form action="#"> 
+             <div class="btn-toolbar bt-filter-bar__components" role="toolbar" aria-label="Properties Search Toolbar"> 
+              <div class="input-group mr-10 uk-flex-item-1 bt-search__query-wrapper"> 
+               <div class="bt-search__query-inner"> 
+                <div class="bt-search-type__wrapper"> 
+                 <div class="bt-ccomp bt-react-dropdown"> 
+                  <button type="button"> Search By 
+                   <svg class="bt-icon bt-icon--smaller"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-arrow-down"></use> 
+                   </svg> </button> 
+                  <span></span> 
+                 </div> 
+                </div> 
+                <div class="bt-off-canvas__ballerbox-wrapper grid"> 
+                 <div class="bt-off-canvas__ballerbox-search-icon"> 
+                  <svg class="bt-icon bt-icon--larger"> 
+                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-search"></use> 
+                  </svg> 
+                 </div> 
+                 <div class="uk-autocomplete cell"> 
+                  <input type="text" name="inner-query" placeholder="Type any Area, Address, ZIP, School, etc" class="bt-search__query" autocomplete="off" value=""> 
+                  <div class="uk-dropdown width-1-1" aria-expanded="false"></div> 
+                 </div> 
+                 <input type="submit" class="uk-hidden"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="btn-group bt-search__options-wrapper" role="group" aria-label="Search Filters"> 
+               <div class="bt-ccomp bt-react-dropdown"> 
+                <button type="button" class="bt-filter__button btn-primary"> Price 
+                 <svg class="bt-icon bt-icon--smaller"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-arrow-down"></use> 
+                 </svg> </button> 
+                <span></span> 
+               </div> 
+               <div class="bt-ccomp bt-react-dropdown"> 
+                <button type="button" class="bt-filter__button btn-primary"> Type 
+                 <svg class="bt-icon bt-icon--smaller"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-arrow-down"></use> 
+                 </svg> </button> 
+                <span></span> 
+               </div> 
+               <div class="bt-ccomp bt-react-dropdown"> 
+                <button type="button" class="bt-filter__button js-search-beds btn-primary"> Beds 
+                 <svg class="bt-icon bt-icon--smaller"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-arrow-down"></use> 
+                 </svg> </button> 
+                <span></span> 
+               </div> 
+               <div class="bt-ccomp bt-react-dropdown"> 
+                <button type="button" class="bt-filter__button btn-primary"> Baths 
+                 <svg class="bt-icon bt-icon--smaller"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-arrow-down"></use> 
+                 </svg> </button> 
+                <span></span> 
+               </div> 
+               <div class="bt-ccomp-full-width bt-ccomp bt-react-dropdown"> 
+                <button type="button" class="bt-filter__button bt-more__trigger btn-primary"> More 
+                 <svg class="bt-icon bt-icon--smaller"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bicon-plus"></use> 
+                 </svg> </button> 
+                <span></span> 
+               </div> 
+              </div> 
+              <!-- /.btn-group --> 
+             </div> 
+            </form> 
+           </div> 
+           <div class="bt-search-filter-area mt-15 js-search-filter-area"> 
+            <div class="grid grid--gutters grid--noWrap grid--justifyBetween grid--center"> 
+             <div class="cell pr-0 bt-save-search__wrapper"> 
+              <div class="pr-15"> 
+               <button type="button" class="js-save-search uk-text-nowrap btn-small btn-primary at-save-search-btn">Save This Search</button> 
+              </div> 
+              <div class="bt-search-tags__container">
+               <ul class="bt-search-tags"></ul>
+              </div> 
+             </div> 
+             <div id="results-set-interactions" class="cell pl-10 bt-view-options__wrapper"> 
+              <div class="btn-toolbar grid--justifyEnd" role="toolbar" arial-label="Sort results options and results view switcher"> 
+               <div id="sort-button" class="bt-ccomp bt-ccomp__dropdown mr-10 sort-button"> 
+                <button class="bt-ccomp__trigger bt-sort-by btn-small width-1-1"> Sort 
+                 <svg class="bt-icon bt-icon--smaller"> 
+                  <use xlink:href="#bicon-arrow-down" /> 
+                 </svg> </button> 
+                <span></span> 
+               </div> 
+               <div class="btn-group bt-view-toggle ml-5" role="group" arial-label="Results View Switcher"> 
+                <a role="button" class="btn-small bt-view-toggle__show-map" title="Map View">
+                 <svg class="bt-icon bt-icon--larger">
+                  <use xlink:href="#bicon-map-marker" />
+                 </svg> Map</a> 
+                <a role="button" class="btn-small bt-view-toggle__show-hero" href="/results" title="Photo View">
+                 <svg class="bt-icon bt-icon--larger">
+                  <use xlink:href="#bicon-photo" />
+                 </svg> Photo</a> 
+                <a role="button" class="btn-small bt-view-toggle__show-gallery" href="/results-gallery" title="Gallery View">
+                 <svg class="bt-icon bt-icon--larger">
+                  <use xlink:href="#bicon-gallery" />
+                 </svg> Gallery</a> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="js-search-layout--main" class="view"> 
+     <section class="bt-content-wrapper"> 
+      <div class="container"> 
+       <article class="uk-article post-1323 post type-post status-publish format-standard has-post-thumbnail hentry category-resources tag-credit-score tag-down-payment tag-first-time-homebuyer tag-help-with-purchasing-a-house tag-how-to-get-credit-score-up tag-how-to-save-to-buy-a-house tag-real-estate"> 
+        <div class="bt-interior-content"> 
+         <div class="grid grid--gutters"> 
+          <div class="cell single-sidebar"> 
+           <ul class="uk-breadcrumb uk-hidden-small">
+            <li><a href="https://www.mysanantoniohomeguide.com">Home</a></li>
+            <li><a href="https://www.mysanantoniohomeguide.com/blog/category/resources/">Resources</a></li>
+            <li class="uk-active"><span>5 Tips to Get out of Debt</span></li>
+           </ul> 
+           <h1 class="uk-article-title">5 Tips to Get out of Debt</h1> 
+           <div class="entry-content"> 
+            <p><a href="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2.png"><img class="size-medium wp-image-1324 aligncenter" src="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-200x300.png" alt="5" width="200" height="300" srcset="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-200x300.png 200w, https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-768x1152.png 768w, https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-683x1024.png 683w, https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-460x690.png 460w, https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2-213x320.png 213w, https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/1824/files/2016/12/5-2.png 800w" sizes="(max-width: 200px) 100vw, 200px"></a></p> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">One of the most rewarding things about being a real estate agent is helping first time home buyers purchase their first home. Of course it isn’t always a smooth ride, however we always get here. If you ask me what are the biggest challenges for first time home buyers I would say:</span></p> 
+            <p>&nbsp;</p> 
+            <ol> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Credit is not where it needs to be</span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Debt is too high</span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Lack of down payment.</span></li> 
+            </ol> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;"> I know first hand how challenging it can be to pay off debt and saving money for a down payment. For us, what worked was getting a plan together that helped us purchase a house. </span></p> 
+            <p>&nbsp;</p> 
+            <ol> 
+             <li><b> Do not open credit cards or add more debt</b></li> 
+            </ol> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">Getting out of debt is simple just not easy. The first step is to stop adding debt of any kind. Leave all your credit cards at home so that the temptation of putting it on your card does not exist. Some like to carry a credit card for emergencies, which you can do, or you can simply carry two hundred dollar bills hidden in your wallet that can help if an emergency arises. </span></p> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">Do not open any more credit cards and hold off on purchasing a car until after you purchase your house. You will quickly start to see that when you start to pay off your credit cards, credit card companies will start to send you “offers” on their newest and best card. Don’t even open it, just throw it away! Remember what your goal is, staying out of debt! </span></p> 
+            <p>&nbsp;</p> 
+            <ol start="2"> 
+             <li><b> Track your spending</b></li> 
+            </ol> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">Keep yourself accountable! Tracking your spending will help you see where the gap is on your income and your spending. What we realized from tracking our expenses is that we spent money that did not need to be spent. For example, we realized that we were spending about $100 in starbucks drinks every month. We do love coffee however those $100 can be spent somewhere else. </span></p> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">Create a list of all the place of all the places your money goes every month. Then split that list in two separate lists. The first list should include items that you have to pay for every month (e.g. rent). The second list should include debts you can pay off. We did an example for you here: </span></p> 
+            <p>&nbsp;</p> 
+            <table style="height: 265px;" width="644"> 
+             <tbody> 
+              <tr> 
+               <td><b>Have to Pay</b></td> 
+               <td><b>Debts</b></td> 
+              </tr> 
+              <tr> 
+               <td><span style="font-weight: 400;">Rent</span></td> 
+               <td><span style="font-weight: 400;">Chase Credit Card- $1,245</span></td> 
+              </tr> 
+              <tr> 
+               <td><span style="font-weight: 400;">Electricity</span></td> 
+               <td><span style="font-weight: 400;">Target Credit Card- $520.00</span></td> 
+              </tr> 
+              <tr> 
+               <td><span style="font-weight: 400;">Car Payment</span></td> 
+               <td><span style="font-weight: 400;">Gas Credit Card- $150.00</span></td> 
+              </tr> 
+             </tbody> 
+            </table> 
+            <p><i><span style="font-weight: 400;">**Make sure you put highest balance of credit card first</span></i></p> 
+            <p>&nbsp;</p> 
+            <ol start="3"> 
+             <li><b> Eliminate Debt</b></li> 
+            </ol> 
+            <p><span style="font-weight: 400;">We used the Avalanche effect to pay off our debt. The Avalanche effect helps you take a big chunk out of your debt every month. </span></p> 
+            <ol> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Make the minimum payment for every bill.</span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Make an extra payment for the one item that is on the top of your list ( i.e Chase) </span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Repeat monthly until the item on the top of your list is paid in full.. </span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">After you’ve paid off the first item, take the money you were using to pay it off and apply it to the second item on the list. </span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Knock off each #1 item every month until all balances are paid in full.</span></li> 
+            </ol> 
+            <p>&nbsp;</p> 
+            <ol start="4"> 
+             <li><b> Save Money! </b></li> 
+            </ol> 
+            <p>Saving money can be fun! Once all the credit card debt is paid off, use the money you were once using to pay off the credit cards away and start saving. For example if you were paying about $400 every month to pay for credit cards and save for a year, you will have $4,800 in your savings! This is a down payment for an FHA loan on a $140,000 property!</p> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">Other ways you can save:</span></p> 
+            <p>&nbsp;</p> 
+            <ol> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Use coupons </span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Use tax return to pay off debt</span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Unsubscribe from magazines and monthly merchandise clubs. </span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Create a budget</span></li> 
+             <li style="font-weight: 400;"><span style="font-weight: 400;">Find deals for services</span></li> 
+            </ol> 
+            <p>&nbsp;</p> 
+            <ol start="5"> 
+             <li><b> Downpayment </b></li> 
+            </ol> 
+            <p>&nbsp;</p> 
+            <p><span style="font-weight: 400;">Contrary to what you have heard before you do not need to have 20% saved in order to purchase a house. There a lot of loan products that can be used instead of the 20% conventional loan. </span></p> 
+            <p><span style="font-weight: 400;">This past year we helped over 40 families purchase their first home, and we would be honored to do the same for you. To schedule a consultation with one of our buyer agents submit an inquiry below. </span></p> 
+            <p>http://www.mysanantoniohomeguide.com/contactus/</p> 
+           </div> 
+           <p class="uk-article-meta uk-clearfix"> Written by <a href="https://www.mysanantoniohomeguide.com/blog/author/bt-56840/" title="Mariana Aburto-Castillo">Mariana Aburto-Castillo</a> on <time datetime="2016-12-28">December 28, 2016</time>. Posted in <a href="https://www.mysanantoniohomeguide.com/blog/category/resources/" rel="category tag">Resources</a><br>Tags: <a href="https://www.mysanantoniohomeguide.com/blog/tag/credit-score/" rel="tag">credit score</a>, <a href="https://www.mysanantoniohomeguide.com/blog/tag/down-payment/" rel="tag">down payment</a>, <a href="https://www.mysanantoniohomeguide.com/blog/tag/first-time-homebuyer/" rel="tag">first time homebuyer</a>, <a href="https://www.mysanantoniohomeguide.com/blog/tag/help-with-purchasing-a-house/" rel="tag">help with purchasing a house</a>, <a href="https://www.mysanantoniohomeguide.com/blog/tag/how-to-get-credit-score-up/" rel="tag">how to get credit score up</a>, <a href="https://www.mysanantoniohomeguide.com/blog/tag/how-to-save-to-buy-a-house/" rel="tag">how to save to buy a house</a>, <a href="https://www.mysanantoniohomeguide.com/blog/tag/real-estate/" rel="tag">real estate</a></p> 
+           <p><a href="https://www.mysanantoniohomeguide.com/blog/5-tips-to-get-out-of-debt/trackback/">Trackback</a> from your site.</p> 
+           <section id="respond"> 
+            <h3>Leave a Reply</h3> 
+            <p class="cancel-comment-reply"><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/5-tips-to-get-out-of-debt/#respond" style="display:none;">Click here to cancel reply.</a></p> 
+            <form action="https://www.mysanantoniohomeguide.com/wp-comments-post.php" method="post" id="commentform" data-parsley-validate> 
+             <div class="grid grid--gutters grid-xs--full grid-md--thirds"> 
+              <div class="cell"> 
+               <label for="commentFullName">Name (required)</label> 
+               <input id="commentFullName" class="at-fullName-txt" type="text" name="author" value="" data-parsley-required> 
+              </div> 
+              <div class="cell"> 
+               <label for="commentEmailAddress">Email (required)</label> 
+               <input id="commentEmailAddress" class="at-email-txt" type="email" name="email" value="" data-parsley-required> 
+              </div> 
+              <div class="cell"> 
+               <label for="commentWebsite">Website</label> 
+               <input id="commentWebsite" class="form-control" type="url" name="url" value=""> 
+              </div> 
+              <div class="cell cell-xs-12"> 
+               <label for="commentMessage">Comment</label> 
+               <textarea id="commentMessage" name="comment" class="at-comment-txt" data-parsley-required></textarea> 
+              </div> 
+             </div> 
+             <button type="submit" class="mt-15 at-submit-btn">Submit Comment</button> 
+             <input type="hidden" name="comment_post_ID" value="1323" id="comment_post_ID"> 
+             <input type="hidden" name="comment_parent" id="comment_parent" value="0"> 
+             <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0de98ca8ee"></p>
+             <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="170"></p> 
+            </form> 
+           </section>
+           <!-- /#respond --> 
+          </div> 
+          <div class="cell cell-xs-12 cell-md-4 bt-sidebar"> 
+           <div class="bt-panel uk-panel uk-panel-box"> 
+            <div id="testimonials_widget-2" class="widget Axl_Testimonials_Widget_Slider_Widget">
+             <h3 class="widget-title">Testimonials</h3>
+             <div class="testimonials-widget-testimonials testimonials-widget-testimonials2"> 
+              <div class="testimonials-widget-testimonial post-798 testimonials-widget type-testimonials-widget status-publish hentry" style=""> 
+               <!-- testimonials-widget-testimonials:798: --> 
+               <blockquote>
+                <span class="open-quote"></span>Zach and Mariana gave us an amazing home buying experience! They bent over backwards to help us find the perfect home to raise our daughter and we could not be more grateful!!
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Tim &amp; Sarah Hoffman | Buyer in The Village at Knollcree | San Antonio</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Tim &amp; Sarah Hoffman | Buyer in The Village at Knollcree | San Antonio"> 
+                </div> 
+                <meta itemprop="reviewBody" content="Zach and Mariana gave us an amazing home buying experience! They bent over backwards to help us find the perfect home to raise our daughter and we could not be more grateful!!"> 
+                <meta itemprop="datePublished" content="2016-03-21"> 
+                <meta itemprop="dateModified" content="2016-03-21"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/tim-sarah-hoffman-buyer-in-the-village-at-knollcree-san-antonio/"> 
+                <meta itemprop="name" content="Zach and Mariana gave us an amazing home buying experience! They bent over backwards to help us find the perfect home to raise our daughter and we could not…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-920 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:920: --> 
+               <blockquote>
+                <span class="open-quote"></span>Amazing communication and excellent to work with. The Castillo group came highly recommended by a person in the industry and after working with them I can see why. I never had a question about where I was in the selling process and that’s not even the part! The best part was that they had a contract…
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Christopher Michael|Sold in San Antonio</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Christopher Michael|Sold in San Antonio"> 
+                </div> 
+                <meta itemprop="reviewBody" content="Amazing communication and excellent to work with. The Castillo group came highly recommended by a person in the industry and after working with them I can see why. I never had a question about where I was in the selling process and that's not even the part! The best part was that they had a contract on my house in less than a week! Very knowledgable, professional, and truly care about the client."> 
+                <meta itemprop="datePublished" content="2016-05-19"> 
+                <meta itemprop="dateModified" content="2016-05-19"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/christopher-michaelsold-in-san-antonio/"> 
+                <meta itemprop="name" content="Amazing communication and excellent to work with. The Castillo group came highly recommended by a person in the industry and after working with them I can s…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-816 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:816: --> 
+               <blockquote>
+                <span class="open-quote"></span>The Castillo Group was wonderful to work with and walked us through the process of buying our first home! They were always quick to respond, even to panicked late-night text messages. Would recommend to friends and family. Thanks so much!
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Colleen &amp; Zachery Olsen | Buyer in Encino Park</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Colleen &amp; Zachery Olsen | Buyer in Encino Park"> 
+                </div> 
+                <meta itemprop="reviewBody" content="The Castillo Group was wonderful to work with and walked us through the process of buying our first home! They were always quick to respond, even to panicked late-night text messages. Would recommend to friends and family. Thanks so much!"> 
+                <meta itemprop="datePublished" content="2016-03-23"> 
+                <meta itemprop="dateModified" content="2016-03-23"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/colleen-zachery-olsen-buyer-in-encino-park/"> 
+                <meta itemprop="name" content="The Castillo Group was wonderful to work with and walked us through the process of buying our first home! They were always quick to respond, even to panicke…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-1170 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:1170: --> 
+               <blockquote>
+                <span class="open-quote"></span>
+                <span id="yui_3_18_1_1_1472498275937_3114" class="preserve-whitespace">My wife and I met Daryl through fate when we asked to see homes for sale outside the first Realtor’s service area and were referred to her. Daryl stepped in in a most cooperative manner and gave us a list of available properties within hours. She showed the ones we selected twice in 3 days since</span>&nbsp;
+                <span id="yui_3_18_1_1_1472498275937_3112" class="minimize preserve-whitespace"> we…<span class="close-quote"></span></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Guy Mellor|Bought in Canyon Lake</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Guy Mellor|Bought in Canyon Lake"> 
+                </div> 
+                <meta itemprop="reviewBody" content="My wife and I met Daryl through fate when we asked to see homes for sale outside the first Realtor's service area and were referred to her. Daryl stepped in in a most cooperative manner and gave us a list of available properties within hours. She showed the ones we selected twice in 3 days since&nbsp; we were in from out of town. She then prepared an offer for us overnight and coordinated and closed a sale with the listing broker before we left town. I personally have real estate broker experience from the dark ages and at one time was licensed in 3 states, Texas, Colorado and Wyoming. Daryl's dedication and service delivery was like I have never seen before - totally professional, ethical and customer focused. She is awesome."> 
+                <meta itemprop="datePublished" content="2016-08-29"> 
+                <meta itemprop="dateModified" content="2016-08-29"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/guy-mellorbought-in-canyon-lake/"> 
+                <meta itemprop="name" content="My wife and I met Daryl through fate when we asked to see homes for sale outside the first Realtor's service area and were referred to her. Daryl stepped in…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-787 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:787: --> 
+               <blockquote>
+                <span class="open-quote"></span>“The Castillo Group is absolutely phenomenal! I’m a first-time homebuyer and they made the experience fun and worry-free. Mariana and Zach took the time to get to know me and what I wanted in a home. They made me feel very comfortable in the process and were with me every step of the way. I could no…
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Tamara Bustamante |&nbsp;Buyer in Apple Creek | San Antonio</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Tamara Bustamante |&nbsp;Buyer in Apple Creek | San Antonio"> 
+                </div> 
+                <meta itemprop="reviewBody" content="" the castillo group is absolutely phenomenal! i'm a first-time homebuyer and they made experience fun worry-free. mariana zach took time to get know me what i wanted in home. feel very comfortable process were with every step of way. could not have asked for better team!"> 
+                <meta itemprop="datePublished" content="2016-03-21"> 
+                <meta itemprop="dateModified" content="2016-03-21"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/tamara-bustamante-buyer-in-apple-creek-san-antonio/"> 
+                <meta itemprop="name" content="" the castillo group is absolutely phenomenal! i'm a first-time homebuyer and they made experience fun worry-free. mariana zach took time to …"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-817 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:817: --> 
+               <blockquote>
+                <span class="open-quote"></span>I was looking for my first home, so overwhelming to say the least. The minute I started working with Zach and Mariana, I immediately felt relaxed and cared for. So helpful every step of the way. I hope everyone is as lucky as I was to work with them.
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Vincent Alcozer | Buyer in Crown Meadows | San Antonio</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Vincent Alcozer | Buyer in Crown Meadows | San Antonio"> 
+                </div> 
+                <meta itemprop="reviewBody" content="I was looking for my first home, so overwhelming to say the least. The minute I started working with Zach and Mariana, I immediately felt relaxed and cared for. So helpful every step of the way. I hope everyone is as lucky as I was to work with them."> 
+                <meta itemprop="datePublished" content="2016-03-23"> 
+                <meta itemprop="dateModified" content="2016-04-29"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/vincent-alcozer-buyer-in-crown-meadows-san-antonio/"> 
+                <meta itemprop="name" content="I was looking for my first home, so overwhelming to say the least. The minute I started working with Zach and Mariana, I immediately felt relaxed and cared …"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-1167 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:1167: --> 
+               <blockquote>
+                <span class="open-quote"></span>I worked with TCG for both the sale of my condo and the purchase of a new home. They were enthusiastic from our initial contact, their marketing was fabulous (the pictures of my condo came out amazing), and we had 3 full asking offers within 1 week of listing! Zach was super helpful in figuring out …
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Rosana Oliveira | Sold in Alamo Heights Area Bought in Castle Hills Area</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Rosana Oliveira | Sold in Alamo Heights Area Bought in Castle Hills Area"> 
+                </div> 
+                <meta itemprop="reviewBody" content="I worked with TCG for both the sale of my condo and the purchase of a new home. They were enthusiastic from our initial contact, their marketing was fabulous (the pictures of my condo came out amazing), and we had 3 full asking offers within 1 week of listing! Zach was super helpful in figuring out what the best option for us was. They then worked diligently as we found the perfect home. Daryl was awesome to work with, always patient, giving sound advice, and the entire group was very patient throughout the coordination of these two transactions. Jorge was able to keep me calm and I know he was always working in my best interest, which was such a relief when working with so many different third parties. Every member of TCG is exactly what you would want in a real estate partner - motivated, hard-working, and honest. I am very grateful for all of their help and am so excited to move into our new home today!!!"> 
+                <meta itemprop="datePublished" content="2016-08-29"> 
+                <meta itemprop="dateModified" content="2016-08-30"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/rosana-oliveira-sold-in-alamo-heights-area-bought-in-castle-hills-area/"> 
+                <meta itemprop="name" content="I worked with TCG for both the sale of my condo and the purchase of a new home. They were enthusiastic from our initial contact, their marketing was fabulou…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-1171 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:1171: --> 
+               <blockquote>
+                <span class="open-quote"></span>Daryl was awesome and helped us find our perfect home. We were living in virginia at the time and Daryl took the time to face time us from the house so we could feel like we were there.
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Bought in San Antonio, TX.</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Bought in San Antonio, TX."> 
+                </div> 
+                <meta itemprop="reviewBody" content="Daryl was awesome and helped us find our perfect home. We were living in virginia at the time and Daryl took the time to face time us from the house so we could feel like we were there."> 
+                <meta itemprop="datePublished" content="2016-08-29"> 
+                <meta itemprop="dateModified" content="2016-08-29"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/bought-in-san-antonio-tx/"> 
+                <meta itemprop="name" content="Daryl was awesome and helped us find our perfect home. We were living in virginia at the time and Daryl took the time to face time us from the house so we c…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-810 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:810: --> 
+               <blockquote>
+                <span class="open-quote"></span>Amazing communication and excellent to work with. The Castillo group came highly recommended by a person in the industry and after working with them I can see why. I never had a question about where I was in the selling process and that’s not even the part! The best part was that they had a contract…
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Christoper Zoboroski | Sold in Wilshire Terrace | San Antonio</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Christoper Zoboroski | Sold in Wilshire Terrace | San Antonio"> 
+                </div> 
+                <meta itemprop="reviewBody" content="Amazing communication and excellent to work with. The Castillo group came highly recommended by a person in the industry and after working with them I can see why. I never had a question about where I was in the selling process and that's not even the part! The best part was that they had a contract on my house in less than a week! Very knowledgable, professional, and truly care about the client."> 
+                <meta itemprop="datePublished" content="2016-03-23"> 
+                <meta itemprop="dateModified" content="2016-03-23"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/christoper-zoboroski-sold-in-wilshire-terrace-san-antonio/"> 
+                <meta itemprop="name" content="Amazing communication and excellent to work with. The Castillo group came highly recommended by a person in the industry and after working with them I can s…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+              <div class="testimonials-widget-testimonial post-795 testimonials-widget type-testimonials-widget status-publish hentry" style="display: none;"> 
+               <!-- testimonials-widget-testimonials:795: --> 
+               <blockquote>
+                <span class="open-quote"></span>The Castillo group (and I mean the whole group!) helped to make our first home buying experience FLAWLESS! From working to find us the best houses to see, negotiating hard with the sellers, and knowing a resource for EVERY SINGLE STEP of the way- they took care of us from start to finish! We couldn’…
+                <span class="close-quote"></span>
+               </blockquote> 
+               <div class="credit">
+                <span class="author">Vickie Pustka | Buyer in Canyon Oaks | San Antonio</span>
+               </div> 
+               <div itemscope itemtype="http://schema.org/Review"> 
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                 <meta itemprop="name" content="Vickie Pustka | Buyer in Canyon Oaks | San Antonio"> 
+                </div> 
+                <meta itemprop="reviewBody" content="The Castillo group (and I mean the whole group!) helped to make our first home buying experience FLAWLESS! From working to find us the best houses to see, negotiating hard with the sellers, and knowing a resource for EVERY SINGLE STEP of the way- they took care of us from start to finish! We couldn't have imagined this process to be any easier because of this amazing team! THANK YOU GUYS from Vickie, Michael, and Talley!!!"> 
+                <meta itemprop="datePublished" content="2016-03-21"> 
+                <meta itemprop="dateModified" content="2016-03-21"> 
+                <meta itemprop="url" content="https://www.mysanantoniohomeguide.com/testimonial/vickie-pustka-buyer-in-canyon-oaks-san-antonio/"> 
+                <meta itemprop="name" content="The Castillo group (and I mean the whole group!) helped to make our first home buying experience FLAWLESS! From working to find us the best houses to see, n…"> 
+                <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                 <meta itemprop="name" content="The Castillo Group"> 
+                 <meta itemprop="url" content="http://wp.prod.boomtownroi.com/"> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div>
+      <!-- /.container --> 
+     </section>
+     <!-- /.bt-content-wrapper --> 
+    </div>
+    <!-- /.view --> 
+   </div>
+   <!-- /#inner-viewport --> 
+   <div id="footer"> 
+    <footer class="bt-footer"> 
+     <div class="container uk-text-small"> 
+      <div class="grid grid--gutters"> 
+       <div class="cell cell-xs-12 cell-md-3 cell-lg-2"> 
+        <h3 class="bt-footer-widget__title">Guides</h3> 
+        <ul class="uk-list"> 
+         <li><a class="js-footer-guides" href="https://www.mysanantoniohomeguide.com/guide/alamo-ranch/">Alamo Ranch</a></li> 
+         <li><a class="js-footer-guides" href="https://www.mysanantoniohomeguide.com/guide/timberwood-park/">Timberwood Park</a></li> 
+         <li><a class="js-footer-guides" href="https://www.mysanantoniohomeguide.com/guide/castle-hills/">Castle Hills</a></li> 
+         <li><a class="js-footer-guides" href="https://www.mysanantoniohomeguide.com/guide/two-creeks/">Two Creeks</a></li> 
+         <li><a class="js-footer-guides" href="https://www.mysanantoniohomeguide.com/guide/schertz-cibolo/">Schertz / Cibolo</a></li> 
+         <li><a href="/guides/" class="bt-more-bounce js-footer-guides">More Guides 
+           <svg class="bt-icon bt-icon--smaller">
+            <use xlink:href="#bicon-arrow-right" />
+           </svg></a></li> 
+        </ul> 
+       </div> 
+       <div class="cell cell-xs-12 cell-md-3 cell-lg-2"> 
+        <h3 class="bt-footer-widget__title">Company</h3> 
+        <ul class="uk-list"> 
+         <li><a class="js-footer-agents" href="/agents/" title="Meet our agents">Meet our agents</a></li> 
+         <li><a class="js-footer-blog" href="/blog/" title="Our blog">Our Blog</a></li> 
+        </ul> 
+       </div> 
+       <div class="cell cell-xs-12 cell-md-3 cell-lg-2"> 
+        <h3 class="bt-footer-widget__title">Resources</h3> 
+        <ul class="uk-list"> 
+         <li><a class="js-footer-buyhome" href="/buy/" title="Buy homes in Greater San Antonio">Buy Homes</a></li> 
+         <li><a class="js-footer-sellhome" href="/sell/" title="Sell homes in Greater San Antonio">Sell Your Home</a></li> 
+         <li><a class="js-footer-finance" href="/finance/" title="Finance your dream home in Greater San Antonio">Finance</a></li> 
+        </ul> 
+       </div> 
+       <div class="cell cell-xs-12 cell-md-3 cell-lg-2"> 
+        <h3 class="bt-footer-widget__title">Get Social</h3> 
+        <div class="bt-social-icons js-footer-social-icons">
+         <a href="/feed" title="rss" class="bt-icon__button bt-icon--rss js-footer-social-rss">
+          <svg class="bt-icon">
+           <use xlink:href="#bicon-rss" />
+          </svg></a> 
+         <a target="_blank" href="https://www.facebook.com/thecastillogroup/?fref=ts" title="facebook" class="bt-icon__button bt-icon--facebook js-footer-social-icons">
+          <svg class="bt-icon">
+           <use xlink:href="#bicon-facebook" />
+          </svg></a> 
+        </div> 
+       </div> 
+       <div class="cell cell-xs-12 cell-lg-4"> 
+        <div class="js-global-footer-about"> 
+         <h3 class="bt-footer-widget__title">About Us</h3> 
+         <div class="js-global-footer-about-tag">
+          <p>The Castillo Group is Greater San Antonio's most innovative real estate team.</p> 
+         </div> 
+        </div> 
+        <address class="js-global-footer-address"><p>The Castillo Group<br> Keller Williams City View<br> 10999 IH10 Ste 175<br> San Antonio, TX 78230<br> p :: (210) 854-7894</p> </address> 
+       </div> 
+      </div> 
+      <div class="mt-15 bt-disclaimer-bottom js-footer-bottom-links"> 
+       <p class="mb-5"><br><br>© 2017 San Antonio Board of REALTORS® All rights reserved. IDX information is provided exclusively for consumers' personal, non-commercial use and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Information is deemed reliable but is not guaranteed accurate by the MLS or The Castillo Group with Keller Williams City View. Last updated 2017-10-03T09:32:43.13.</p> 
+      </div> 
+     </div> 
+     <nav class="bt-footer-aux"> 
+      <div class="container"> 
+       <ul class="uk-subnav uk-subnav-line bt-disclaimer-menu mb-0"> 
+        <li class="bt-disclaimer-menu__copyright"> <a target="_blank" href="https://boomtownroi.com?utm_campaign=mysanantoniohomeguide.com&amp;utm_medium=bt_client_site_referral&amp;utm_source=client_sites" rel="nofollow" title="BoomTown © 2017"> 
+          <svg class="bt-icon bt-disclaimer__logo">
+           <use xlink:href="#bicon-boomtown" />
+          </svg> © 2017 </a> </li> 
+        <li><a href="/terms">Terms of Use</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="/dmca/">DMCA</a></li>
+        <li><a href="/sitemap/">Listings Sitemap</a></li> 
+       </ul> 
+      </div> 
+     </nav> 
+    </footer> 
+   </div> 
+  </div> 
+  <nav class="bt-off-canvas bt-off-canvas__common bt-off-canvas-main-menu js-hub"> 
+   <a href="#" class="bt-off-canvas-menu__close js-off-canvas__close">
+    <svg class="bt-icon">
+     <use xlink:href="#bicon-close" />
+    </svg></a> 
+   <div class="text-xs--center bt-off-canvas__header"> 
+    <svg class="bt-icon bt-user__off-canvas">
+     <use xlink:href="#bicon-user-circle" />
+    </svg> 
+   </div> 
+   <!-- This is a VERY hacky way of dynamically showing the correct user action buttons when filling out a
+      buy/sell/finance form and automatically signing them in. This will be addressed in a future sprint. --> 
+   <div class="js-user-instance--guest"> 
+    <div class="grid grid--gutters grid-xs--halves bt-off-canvas__account-btns"> 
+     <div class="cell text-xs--right"> 
+      <button type="button" class="js-signin" rel="nofollow">Sign In</button> 
+     </div> 
+     <div class="cell"> 
+      <button type="button" class="btn-primary js-register" rel="nofollow">Register</button> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="bt-user-instance--registered js-user-instance--registered"> 
+    <div class="grid grid--gutters grid-xs--halves bt-off-canvas__account-btns "> 
+     <div class="cell text-xs--right"> 
+      <a role="button" href="/account/" class="btn-primary" rel="nofollow">My Account</a> 
+     </div> 
+     <div class="cell"> 
+      <a role="button" href="#" class="js-signout" rel="nofollow">Sign Out</a> 
+     </div> 
+    </div> 
+   </div> 
+   <ul class="bt-nav-main">
+    <li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/">Home</a></li> 
+    <li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/agents/">Meet the Team</a></li> 
+    <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/results/">Search</a></li> 
+    <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/results-gallery/?userID=all&amp;proptype=SF,CC,VT,VC,MF,CM,RN,FM,CL,PH,M">Our Listings</a></li> 
+    <li id="menu-item-1266" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="https://www.mysanantoniohomeguide.com/recently-sold-homes/">Sold Homes</a></li> 
+    <li id="menu-item-1265" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/sell/">Sell</a></li> 
+    <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/buy/">Buy</a></li> 
+    <li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/finance/">Financing</a></li> 
+    <li id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-page "><a href="https://www.mysanantoniohomeguide.com/resources/raving-fans-of-the-castillo-group/">Raving Fans</a></li> 
+    <li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/blog/">Blog</a></li> 
+    <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="/contactus/">Contact Us</a></li> 
+   </ul> 
+   <ul class="bt-nav-main bt-off-canvas__ccomp-nav"> 
+    <li> 
+     <div class="bt-ccomp" data-bt-ccomp="toggle"> 
+      <a href="#" data-bt-ccomp-trigger>Saved Searches <span class="js-savedsearchcount uk-badge uk-badge-notification">0</span> 
+       <svg class="bt-icon bt-icon--smaller">
+        <use xlink:href="#bicon-arrow-down" />
+       </svg></a> 
+      <div class="bt-ccomp__content"> 
+       <ul class="bt-off-canvas__sub-menu bt-saved-searches__list js-searches-ddl"> 
+        <li class="bt-saved-searches__none js-saved-searches__none">You currently have no saved searches</li> 
+        <li class="bt-saved-searches__manage uk-hidden js-saved-searches__manage"><a rel="nofollow" href="/notifications/#searches">Manage Saved Searches 
+          <svg class="bt-icon bt-icon--smaller">
+           <use xlink:href="#bicon-arrow-right" />
+          </svg></a></li> 
+       </ul> 
+      </div> 
+     </div> </li> 
+    <li><a href="/results-gallery/?favs=1" class="js-favorites">
+      <svg class="bt-icon">
+       <use xlink:href="#bicon-favorite" />
+      </svg> Favorites <span class="js-favoritescount uk-badge uk-badge-notification">0</span></a></li> 
+   </ul> 
+  </nav> 
+  <div id="OffCanvas"></div>
+  <script type="text/javascript">
+ga('create','UA-64551244-2', 'mysanantoniohomeguide.com', {'name': 'customAccount'});
+ga('customAccount.require', 'displayfeatures');
+ga('customAccount.send', 'pageview', { '&uid': 821862154, 'dimension4': 'unregistered', 'dimension11': '821862154' });
+</script> 
+  <script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    floatPosition: google.translate.TranslateElement.FloatPosition.BOTTOM_RIGHT
+  });
+}
+</script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script> 
+  <!-- Client Provided November 30, 2016 --> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1708395702822531'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script> 
+  <noscript>
+   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1708395702822531&amp;ev=PageView&amp;noscript=1">
+  </noscript> 
+  <!-- DO NOT MODIFY --> 
+  <!-- End Facebook Pixel Code -->
+  <!-- Served from lWeb5.ad.boomtownroi.com -->
+  <script type="text/javascript" crossorigin="anonymous" src="https://bt-wpstatic.freetls.fastly.net/wp-content/plugins/akismet/_inc/form.js"></script> 
+  <script type="text/javascript" crossorigin="anonymous" src="https://bt-wpstatic.freetls.fastly.net/wp-includes/js/comment-reply.min.js"></script> 
+  <script type="text/javascript" crossorigin="anonymous" src="https://bt-wpstatic.freetls.fastly.net/wp-content/themes/wp-base-theme/assets/js/build/manifest.83b22621.min.js"></script> 
+  <script type="text/javascript" crossorigin="anonymous" src="https://bt-wpstatic.freetls.fastly.net/wp-content/themes/wp-base-theme/assets/js/build/deps.136c9ac9.min.js"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var bt_data = {"listings":null,"account":{"Offices":[{"_ID":2560,"Name":"The Castillo Group","MLS":"","Phone":"(210) 854-7894","Fax":"","Address1":"10999 IH10 Ste 175","Address2":"","City":"San Antonio","State":"TX","PostalCode":"78230","Website":"","PhotoUrl":""}],"SocialSettings":[{"Name":"RSS","Url":"\/feed","TenantID":2023},{"Name":"Facebook","Url":"https:\/\/www.facebook.com\/thecastillogroup\/?fref=ts","TenantID":2023}],"TimeZoneID":2,"Website":"MySanAntonioHomeGuide.com","CompanyName":"The Castillo Group","LegalName":"The Castillo Group with Keller Williams City View","OfficeMLS":"UserID=all","ServiceArea":"Greater San Antonio","EmailAddress":"bouncedemail@boomtownroi.com","WebPhoneNumber":"(210) 854-7894","PhoneNumber":"(210) 854-7894","FaxNumber":"","Street":"10999 IH10 Ste 175","City":"San Antonio","State":"TX","ZipCode":"78230","CraigsListArea":"sat,","GoogleCode":"UA-64551244-1,UA-64551244-2","AdwordsConversion":"948532919","AdwordsSignupLabel":"9oTqCPiX8l0Qt-2lxAM","AdwordsLeadLabel":"adwords lead label","GMapKey":"AIzaSyCe9dRO0NInXpWJWhkV4hjmN3RWuVpCjuc","TagLine":"","SubTagLine":"","ThemeName":"Hawkeye","HomeImageUrl":"homepage.jpg","DefaultMapLat":29.424319,"DefaultMapLng":-98.492517,"DefaultMapZoom":11,"OnStageServer":false,"HideStreet":0,"GuestUnbranded":false,"QuickSearchField":"CustomArea","ShowListingAreaOnPS":false,"ShowCountyOnPS":true,"AgentExportLeads":false,"IsCustomMapPin":false,"IsDiscountBroker":false,"ShowOpenHouse":false,"EmailDomain":"mysanantoniohomeguide.net","CancelDate":"0001-01-01T00:00:00","LaunchDate":"2015-07-02T00:00:00","CraigsListUseCityForCampaign":false,"RegisterNoAutoLender":false,"AdWordsProjected":0,"HomeGainProjected":0,"AllowListingComments":true,"AllowAgentComments":true,"FacebookAPI":"385492418327012","CraigsListLinkBehaviorID":0,"ShowSchoolSearch":true,"ShowSchoolDistrictSearch":true,"AllowAutoEAlert":true,"EAlertLocationType":"","AllowAgentEAlertOverride":true,"CustomScript":"<script>\r\nfunction googleTranslateElementInit() {\r\n  new google.translate.TranslateElement({\r\n    pageLanguage: 'en',\r\n    floatPosition: google.translate.TranslateElement.FloatPosition.BOTTOM_RIGHT\r\n  });\r\n}\r\n<\/script><script src=\"\/\/translate.google.com\/translate_a\/element.js?cb=googleTranslateElementInit\">\r\n<\/script>\r\n\r\n<!-- Client Provided November 30, 2016 -->\r\n<!-- Facebook Pixel Code -->\r\n<script>\r\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\r\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\r\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\r\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\r\ndocument,'script','https:\/\/connect.facebook.net\/en_US\/fbevents.js');\r\nfbq('init', '1708395702822531'); \/\/ Insert your pixel ID here.\r\nfbq('track', 'PageView');\r\n<\/script>\r\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\r\nsrc=\"https:\/\/www.facebook.com\/tr?id=1708395702822531&ev=PageView&noscript=1\"\r\n\/><\/noscript>\r\n<!-- DO NOT MODIFY -->\r\n<!-- End Facebook Pixel Code -->","SyndicationFilter":"UserID=all","AllowLeadModifyEAlert":true,"SyndicateTo":"none","AllowFBLogin":true,"ShowPriceHistory":true,"ZillowWidgetStatus":0,"ShowDripPlans":true,"ShowNeighborhoodSearch":true,"SuccessManagerID":36,"AssignedToSuccessManagerDate":"2015-07-02T00:00:00","UseInstantSearch":true,"Name":"The Castillo Group","Alias":"KWCastilloTX","BoardID":29,"BoardIDs":[29],"PrimaryDomain":"mysanantoniohomeguide.com","UseCityForLocation":false,"ShowAgentsOnSiteKey":0,"ShowAgentsOnSiteTypeID":0,"LeadDistributionID":0,"NetworkID":0,"MobileWebPhoneNumber":"(210) 854-7894","ShortServiceArea":"","TenantID":2023,"AllowGoogleLogin":false,"GoogleClientID":"","RentalsOnly":false,"AllowCraigslist":true,"LimitCraigslist":false,"RegisterShowOwnership":false,"PrimaryContactID":56839,"RegisterShowAgentDDL":false,"ShowSellerLeadCaptureForm":false,"BingWebmasterCode":"C62FE644C95BB0D3E07F50707FD9A868","ShowTopHoodsOnGuides":false,"NotifyBrokerAdminOnPublished":false,"CustomConversionScript":"<!-- Client Provided November 3, 2016 -->\r\n<!-- Google Code for Zachariah Castillo Leads Conversion Page -->\r\n<script type=\"text\/javascript\">\r\n\/* <![CDATA[ *\/\r\nvar google_conversion_id = 946329951;\r\nvar google_conversion_language = \"en\";\r\nvar google_conversion_format = \"3\";\r\nvar google_conversion_color = \"ffffff\";\r\nvar google_conversion_label = \"KDy8CPjyqmoQ37KfwwM\";\r\nvar google_remarketing_only = false;\r\n\/* ]]> *\/\r\n<\/script>\r\n<script type=\"text\/javascript\" src=\"\/\/www.googleadservices.com\/pagead\/conversion.js\">\r\n<\/script>\r\n<noscript>\r\n<div style=\"display:inline;\">\r\n<img height=\"1\" width=\"1\" style=\"border-style:none;\" alt=\"\" src=\"\/\/www.googleadservices.com\/pagead\/conversion\/946329951\/?label=KDy8CPjyqmoQ37KfwwM&amp;guid=ON&amp;script=0\"\/>\r\n<\/div>\r\n<\/noscript>\r\n\r\n<!-- Client Provided November 30, 2016 -->\r\n<!-- Facebook Pixel Code -->\r\n<script>\r\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\r\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\r\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\r\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\r\ndocument,'script','https:\/\/connect.facebook.net\/en_US\/fbevents.js');\r\nfbq('init', '1708395702822531'); \/\/ Insert your pixel ID here.\r\nfbq('track', 'PageView');\r\nfbq('track', 'CompleteRegistration');\r\n<\/script>\r\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\r\nsrc=\"https:\/\/www.facebook.com\/tr?id=1708395702822531&ev=PageView&noscript=1\"\r\n\/><\/noscript>\r\n<!-- DO NOT MODIFY -->\r\n<!-- End Facebook Pixel Code -->","IsCanadian":false,"IsLiteCustomer":false,"RequireIDXApproval":false,"ShowPreferredLender":false,"IsMultiBoard":false,"HomeIntroHtml":"","HomeMetaDescription":"","HomeMetaKeywords":""},"specialRules":{"ShowSchoolInfo":true,"ShowSchoolDistrictInfo":true,"ShowDaysOld":true,"ShowMapDisclaimer":false,"ShowYearBuilt":true,"ShowYearBuiltInDetails":true,"ShowNeighborhoodInfo":true,"ShowStatus":true,"ShowMobile":false,"HideStatusOnListingDetails":false,"HideAgentFromRequest":false,"HideContactMention":false,"HideSashTag":[""],"ShowPublicRemarks":true,"ShowFeatures":true,"ShowNumUnits":true,"ShowAcresSQFT":true,"ShowSQFT":true,"DisplaySQFT":true,"ShowDaysListed":true,"ShowPriceReduced":true,"ShowPricePerSqFt":true,"ShowGarages":true,"HideRentals":false,"ShowStories":true,"ShowHalfBaths":true,"ShowActiveContingent":true,"HideForeclosure":false,"HideShortsale":false,"ShowListingStatus":true,"ChangeSearchTitle":"MLS Home Search","ShowRemarks":true,"ShowICBM":false,"ShowRegisteredInfo":false,"HideMobileNumbers":false,"HideMarketTrends":false,"HideListingsLink":false,"HideLandingSellInfo":false,"HideCompanyAddress":false,"HideZillow":false,"CraigsListUsePostalCode":false,"ShowMostPopular":true,"CraigsListGoToPropDeets":false,"UseHoodlike":false,"HideLandingHoods":false,"ShowSqFtSource":false,"AddDecimalToCoordinates":false,"ShowOffMarketAddress":true,"FancyFeaturedHouses":false,"ShowAllLeadsOption":true,"AddDirections":false,"AddExtrasToRemarks":false,"DontUseMoreFolder":false,"MaxDeetsBeforeRegister":null,"UseSacramentoPricing":false,"RestrictMarketTrends":false,"FeaturedHousesByOffice":false,"MaxListingResults":0,"ShowPreviewOffice":true,"FeatureListDelimiter":",","UseRetsListingKeyForImport":false,"OverrideLenderSub":false,"ShowAverageTrends":true,"ShowSharing":true,"ShowFBLike":true,"ShowListingCountInBannerAndQuickSearch":true,"DistressedReplacementText":"Distressed","ClientIsCanadian":false,"BoardIsCanadian":false,"ShowForeclosureBanner":true,"UseMetersForAcreageConversions":false,"ShowAgentInMapResults":false,"HideBrandingOnFinancePage":false,"UseMasterEmailForSyndication":false,"LandingPageForMarketTrends":0,"ShowRegistrationFormOnFirstPropertyDetailViewForAdwords":true,"ShowRegistrationFormOnFirstPropertyDetailViewForAdcenter":false,"DisableSyndicationForBoard":false,"EnableSyndicationForTenant":false,"ListAgentEmailDelimiter":";","StripExtraApostrophesFromData":false,"DetailsListingCourtesyOfText":"Listing Courtesy Of","ShowCourtesyOfUnderPreviewImage":false,"FeaturedHomesWhereClause":"","HideVirtualTours":false,"AllowAdditionalCraigsListListings":false,"ShowCounty":true,"DownloadPhotosOneAtATime":false,"HideLotSize":false,"HideLocalPics":false,"MLSContentOnly":false,"ShowAcresSearch":true,"ShowHudSearchOption":false,"BypassCLRegForm":false,"ReplaceUnderContract":"Under Contract","UseSlashParsingForBedRooms":false,"PhotoSqueezeCount":0,"HideAgentFromPropDesc":false,"HideSponsoredLenderLanguage":false,"ShowIDXApproved":false,"ShowPreferredLender":false,"OptOutOfCASL":false},"searchFields":[{"FieldID":1,"Group":"PropType","FieldName":"Single-Family Home","FieldValue":"SF","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":2,"Group":"PropType","FieldName":"Condo","FieldValue":"C","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":3,"Group":"PropType","FieldName":"Villa \/ Townhouse","FieldValue":"VT","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":4,"Group":"PropType","FieldName":"Vacant Land \/ Lots","FieldValue":"VC","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":5,"Group":"PropType","FieldName":"Manufactured Home","FieldValue":"M","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":6,"Group":"PropType","FieldName":"Multi-Family","FieldValue":"MF","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":7,"Group":"PropType","FieldName":"Commercial","FieldValue":"CM","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":9,"Group":"PropType","FieldName":"Rentals","FieldValue":"RN","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":10,"Group":"PropType","FieldName":"Farm","FieldValue":"FM","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":11,"Group":"Feature","SubGroup":"Waterfront","FieldName":"Lake Front","FieldValue":"L","InQuickSearch":true,"ListingField":"IsLakefront","IsHidden":false},{"FieldID":12,"Group":"Feature","SubGroup":"Property Features","FieldName":"On Golf Course","FieldValue":"GC","InQuickSearch":true,"ListingField":"OnGolfCourse","IsHidden":false},{"FieldID":13,"Group":"Feature","SubGroup":"Community Features","FieldName":"Gated Community","FieldValue":"GT","InQuickSearch":true,"ListingField":"InGatedCommunity","IsHidden":false},{"FieldID":14,"Group":"Feature","SubGroup":"Waterfront","FieldName":"Waterfront","FieldValue":"W","InQuickSearch":true,"ListingField":"IsWaterfront","IsHidden":false},{"FieldID":18,"Group":"Feature","SubGroup":"Property Features","FieldName":"New Construction","FieldValue":"N","InQuickSearch":true,"ListingField":"IsNewHome","IsHidden":false},{"FieldID":19,"Group":"Feature","SubGroup":"Property Features","FieldName":"Historic Property","FieldValue":"H","InQuickSearch":true,"ListingField":"IsHistoric","IsHidden":false},{"FieldID":20,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Garage","FieldValue":"GR","InQuickSearch":true,"ListingField":"HasGarage","IsHidden":false},{"FieldID":21,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Pool","FieldValue":"P","InQuickSearch":true,"ListingField":"HasPool","IsHidden":false},{"FieldID":22,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Fireplace","FieldValue":"F","InQuickSearch":true,"ListingField":"HasFireplace","IsHidden":false},{"FieldID":23,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Master Downstairs","FieldValue":"MD","InQuickSearch":true,"ListingField":"IsMasterDown","IsHidden":false},{"FieldID":24,"Group":"Feature","SubGroup":"Property Features","FieldName":"Handicap Equipped","FieldValue":"HC","InQuickSearch":true,"ListingField":"IsHandicapped","IsHidden":false},{"FieldID":25,"Group":"Feature","SubGroup":"Property Features","FieldName":"Green \/ LEED","FieldValue":"G","InQuickSearch":true,"ListingField":"IsGreen","IsHidden":false},{"FieldID":26,"Group":"Feature","SubGroup":"Title Status","FieldName":"Foreclosure or Bank-owned","FieldValue":"BO","InQuickSearch":false,"ListingField":"IsBankOwned","IsHidden":false},{"FieldID":28,"Group":"Feature","SubGroup":"Title Status","FieldName":"Short Sale Listings","FieldValue":"SS","InQuickSearch":false,"ListingField":"IsShortSale","IsHidden":false},{"FieldID":29,"Group":"Feature","SubGroup":"Waterfront","FieldName":"River Front","FieldValue":"R","InQuickSearch":true,"ListingField":"IsRiverfront","IsHidden":false},{"FieldID":33,"Group":"Feature","SubGroup":"Community Features","FieldName":"Horse Property","FieldValue":"HP","InQuickSearch":true,"ListingField":"IsHorse","IsHidden":false},{"FieldID":111,"Group":"Feature","SubGroup":"Waterfront","FieldName":"Creek Front","FieldValue":"ICF","InQuickSearch":false,"ListingField":"IsCreekFront","IsHidden":false},{"FieldID":122,"Group":"Feature","SubGroup":"View","FieldName":"Poolside View","FieldValue":"IPSV","InQuickSearch":false,"ListingField":"IsPoolsideView","IsHidden":false},{"FieldID":125,"Group":"Feature","SubGroup":"View","FieldName":"City View","FieldValue":"ICTYV","InQuickSearch":false,"ListingField":"IsCityView","IsHidden":false},{"FieldID":128,"Group":"Feature","SubGroup":"View","FieldName":"Water View","FieldValue":"IWTRV","InQuickSearch":false,"ListingField":"IsWaterView","IsHidden":false},{"FieldID":130,"Group":"Feature","SubGroup":"Style","FieldName":"Cabin","FieldValue":"ICABN","InQuickSearch":false,"ListingField":"IsCabin","IsHidden":false},{"FieldID":131,"Group":"Feature","SubGroup":"Property Features","FieldName":"Currently A Rental","FieldValue":"IRENT","InQuickSearch":false,"ListingField":"IsCurrentRental","IsHidden":false},{"FieldID":132,"Group":"Feature","SubGroup":"Property Features","FieldName":"Cul-De-Sac","FieldValue":"ICDS","InQuickSearch":false,"ListingField":"InCulDeSac","IsHidden":false},{"FieldID":133,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Remodeled","FieldValue":"IREMOD","InQuickSearch":false,"ListingField":"IsRemodeled","IsHidden":false},{"FieldID":134,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Carport","FieldValue":"HCARP","InQuickSearch":false,"ListingField":"HasCarport","IsHidden":false},{"FieldID":136,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Fenced Yard","FieldValue":"ISFENCE","InQuickSearch":false,"ListingField":"IsFenced","IsHidden":false},{"FieldID":137,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Pool - Below Ground","FieldValue":"HPIGP","InQuickSearch":false,"ListingField":"HasPrivateInGroundPool","IsHidden":false},{"FieldID":138,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Pool - Above Ground","FieldValue":"HPAGP","InQuickSearch":false,"ListingField":"HasPrivateAboveGroundPool","IsHidden":false},{"FieldID":139,"Group":"Feature","SubGroup":"Community Features","FieldName":"Community Pool","FieldValue":"HCPOOL","InQuickSearch":false,"ListingField":"HasCommunityPool","IsHidden":false},{"FieldID":140,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Basement","FieldValue":"HBASE","InQuickSearch":false,"ListingField":"HasBasement","IsHidden":false},{"FieldID":144,"Group":"Feature","SubGroup":"Community Features","FieldName":"Golf Community","FieldValue":"GOLFC","InQuickSearch":false,"ListingField":"InGolfCommunity","IsHidden":false},{"FieldID":146,"Group":"Feature","SubGroup":"Style","FieldName":"Ranch \/ One Story","FieldValue":"ISS","InQuickSearch":false,"ListingField":"IsSingleStory","IsHidden":false},{"FieldID":147,"Group":"PropType","FieldName":"Commercial-Lease","FieldValue":"CL","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":153,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Parking - RV \/ Boat","FieldValue":"HBP","InQuickSearch":false,"ListingField":"HasBoatParking","IsHidden":false},{"FieldID":155,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Storage Buildings","FieldValue":"HSB","InQuickSearch":false,"ListingField":"HasStorageBuildings","IsHidden":false},{"FieldID":158,"Group":"Feature","SubGroup":"Community Features","FieldName":"Has HOA","FieldValue":"HOA","InQuickSearch":false,"ListingField":"HasHOA","IsHidden":false},{"FieldID":159,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Main Floor Bedroom","FieldValue":"HMFB","InQuickSearch":false,"ListingField":"HasMainFloorBedroom","IsHidden":false},{"FieldID":160,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Master Upstairs","FieldValue":"MBU","InQuickSearch":false,"ListingField":"IsMasterUp","IsHidden":false},{"FieldID":164,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Hardwood Floors","FieldValue":"HHF","InQuickSearch":false,"ListingField":"HasHardwoodFloors","IsHidden":false},{"FieldID":165,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Parking - Covered","FieldValue":"HCP","InQuickSearch":false,"ListingField":"HasCoveredParking","IsHidden":false},{"FieldID":168,"Group":"Feature","SubGroup":"Property Features","FieldName":"Investment Home","FieldValue":"IIH","InQuickSearch":false,"ListingField":"IsInvestmentHome","IsHidden":false},{"FieldID":170,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Parking - Off-Street","FieldValue":"HOFSP","InQuickSearch":false,"ListingField":"HasOffStreetParking","IsHidden":false},{"FieldID":196,"Group":"Feature","SubGroup":"Not Title Status","FieldName":"NOT Foreclosure or Bank-owned","FieldValue":"NBO","InQuickSearch":false,"ListingField":"IsBankOwned","IsHidden":false},{"FieldID":197,"Group":"Feature","SubGroup":"Not Title Status","FieldName":"NOT Short Sale Listings","FieldValue":"NSS","InQuickSearch":false,"ListingField":"IsShortSale","IsHidden":false},{"FieldID":198,"Group":"PropType","FieldName":"Patio Home","FieldValue":"PH","InQuickSearch":true,"ListingField":"","IsHidden":false},{"FieldID":200,"Group":"Feature","SubGroup":"Title Status","FieldName":"HUD Owned","FieldValue":"HUD","InQuickSearch":false,"ListingField":"IsHUD","IsHidden":false},{"FieldID":201,"Group":"Feature","SubGroup":"Financing","FieldName":"VA Loan","FieldValue":"VA","InQuickSearch":false,"ListingField":"IsVAHome","IsHidden":false},{"FieldID":207,"Group":"Feature","SubGroup":"Community Features","FieldName":"No HOA","FieldValue":"NHOA","InQuickSearch":false,"ListingField":"IsNotHOA","IsHidden":false},{"FieldID":208,"Group":"Feature","SubGroup":"Financing","FieldName":"Owner Financing","FieldValue":"IOWNF","InQuickSearch":false,"ListingField":"IsOwnerFinancing","IsHidden":false},{"FieldID":209,"Group":"Feature","SubGroup":"Financing","FieldName":"FHA Loan","FieldValue":"IFHA","InQuickSearch":false,"ListingField":"IsFHA","IsHidden":false},{"FieldID":211,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Garage - Attached","FieldValue":"HAG","InQuickSearch":false,"ListingField":"HasAttachedGarage","IsHidden":false},{"FieldID":212,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Garage - Detached","FieldValue":"HDC","InQuickSearch":false,"ListingField":"HasDetachedGarage","IsHidden":false},{"FieldID":217,"Group":"Feature","SubGroup":"Property Features","FieldName":"Public Water","FieldValue":"IPW","InQuickSearch":false,"ListingField":"IsPublicWater","IsHidden":false},{"FieldID":218,"Group":"Feature","SubGroup":"Property Features","FieldName":"Sewer","FieldValue":"IS","InQuickSearch":false,"ListingField":"IsSewer","IsHidden":false},{"FieldID":219,"Group":"Feature","SubGroup":"Property Features","FieldName":"Well","FieldValue":"IW","InQuickSearch":false,"ListingField":"IsWell","IsHidden":false},{"FieldID":220,"Group":"Feature","SubGroup":"Property Features","FieldName":"Septic","FieldValue":"ISP","InQuickSearch":false,"ListingField":"IsSeptic","IsHidden":false},{"FieldID":222,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Jacuzzi","FieldValue":"HJ","InQuickSearch":false,"ListingField":"HasJacuzzi","IsHidden":false},{"FieldID":223,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Wet Bar","FieldValue":"HWB","InQuickSearch":false,"ListingField":"HasWetBar","IsHidden":false},{"FieldID":224,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Walk-In Closet","FieldValue":"HWIC","InQuickSearch":false,"ListingField":"HasWalkInCloset","IsHidden":false},{"FieldID":226,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Sprinkler System","FieldValue":"HSS","InQuickSearch":false,"ListingField":"HasSprinklerSystem","IsHidden":false},{"FieldID":227,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Deck","FieldValue":"HD","InQuickSearch":false,"ListingField":"HasDeck","IsHidden":false},{"FieldID":228,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Patio","FieldValue":"HPTO","InQuickSearch":false,"ListingField":"HasPatio","IsHidden":false},{"FieldID":229,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Hot Tub","FieldValue":"HHT","InQuickSearch":false,"ListingField":"HasHotTub","IsHidden":false},{"FieldID":230,"Group":"Feature","SubGroup":"Property Features","FieldName":"Corner Lot","FieldValue":"ICL","InQuickSearch":false,"ListingField":"IsCornerLot","IsHidden":false},{"FieldID":231,"Group":"Feature","SubGroup":"Community Features","FieldName":"Community Playground","FieldValue":"HCPG","InQuickSearch":false,"ListingField":"HasCommunityPlayground","IsHidden":false},{"FieldID":233,"Group":"Feature","SubGroup":"Property Features","FieldName":"Pets Allowed","FieldValue":"IPA","InQuickSearch":false,"ListingField":"IsPetsAllowed","IsHidden":false},{"FieldID":237,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"No Pool","FieldValue":"HNP","InQuickSearch":false,"ListingField":"HasNoPool","IsHidden":false},{"FieldID":241,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Central Air Conditioning","FieldValue":"HCA","InQuickSearch":false,"ListingField":"HasCentralAir","IsHidden":false},{"FieldID":254,"Group":"Feature","SubGroup":"Style","FieldName":"Low Rise","FieldValue":"ILR","InQuickSearch":false,"ListingField":"IsLowRise","IsHidden":false},{"FieldID":255,"Group":"Feature","SubGroup":"Style","FieldName":"High Rise","FieldValue":"IHR","InQuickSearch":false,"ListingField":"IsHighRise","IsHidden":false},{"FieldID":266,"Group":"Feature","SubGroup":"Financing","FieldName":"Conventional Financing","FieldValue":"CNF","InQuickSearch":false,"ListingField":"IsConventional","IsHidden":false},{"FieldID":267,"Group":"Feature","SubGroup":"Financing","FieldName":"Lease Purchase","FieldValue":"LP","InQuickSearch":false,"ListingField":"IsLeasePurchase","IsHidden":false},{"FieldID":268,"Group":"Feature","SubGroup":"Financing","FieldName":"Lease Option","FieldValue":"LO","InQuickSearch":false,"ListingField":"IsLeaseOption","IsHidden":false},{"FieldID":269,"Group":"Feature","SubGroup":"Financing","FieldName":"Trade\/Exchange","FieldValue":"TE","InQuickSearch":false,"ListingField":"IsTradeExchange","IsHidden":false},{"FieldID":271,"Group":"Feature","SubGroup":"Style","FieldName":"Colonial","FieldValue":"COL","InQuickSearch":false,"ListingField":"IsColonial","IsHidden":false},{"FieldID":272,"Group":"Feature","SubGroup":"Style","FieldName":"Contemporary","FieldValue":"CT","InQuickSearch":false,"ListingField":"IsContemporary","IsHidden":false},{"FieldID":276,"Group":"Feature","SubGroup":"Style","FieldName":"Traditional","FieldValue":"TRD","InQuickSearch":false,"ListingField":"IsTraditional","IsHidden":false},{"FieldID":277,"Group":"Feature","SubGroup":"Style","FieldName":"Tudor","FieldValue":"TUD","InQuickSearch":false,"ListingField":"IsTudor","IsHidden":false},{"FieldID":278,"Group":"Feature","SubGroup":"Style","FieldName":"Victorian","FieldValue":"VIC","InQuickSearch":false,"ListingField":"IsVictorian","IsHidden":false},{"FieldID":279,"Group":"Feature","SubGroup":"Style","FieldName":"1.5 Story","FieldValue":"OHS","InQuickSearch":false,"ListingField":"IsOneAndHalfStory","IsHidden":false},{"FieldID":290,"Group":"Feature","SubGroup":"Property Features","FieldName":"Close to Public Transportation","FieldValue":"PT","InQuickSearch":false,"ListingField":"IsCloseToPubTrans","IsHidden":false},{"FieldID":292,"Group":"Feature","SubGroup":"Community Features","FieldName":"Community Fitness Room","FieldValue":"CFR","InQuickSearch":false,"ListingField":"HasCommFitnessRoom","IsHidden":false},{"FieldID":294,"Group":"Feature","SubGroup":"Community Features","FieldName":"Tennis Community","FieldValue":"TC","InQuickSearch":false,"ListingField":"InTennisCommunity","IsHidden":false},{"FieldID":299,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Brick","FieldValue":"BRC","InQuickSearch":false,"ListingField":"IsBrick","IsHidden":false},{"FieldID":307,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Elevator","FieldValue":"HE","InQuickSearch":false,"ListingField":"HasElevator","IsHidden":false},{"FieldID":312,"Group":"Feature","SubGroup":"Style","FieldName":"Mediterranean","FieldValue":"MED","InQuickSearch":false,"ListingField":"IsMediterranean","IsHidden":false},{"FieldID":314,"Group":"Feature","SubGroup":"Style","FieldName":"Spanish","FieldValue":"SPAN","InQuickSearch":false,"ListingField":"IsSpanish","IsHidden":false},{"FieldID":317,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Heat - Gas","FieldValue":"HEATG","InQuickSearch":false,"ListingField":"IsGasHeat","IsHidden":false},{"FieldID":318,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Heat - Electric","FieldValue":"HEATE","InQuickSearch":false,"ListingField":"IsElectricHeat","IsHidden":false},{"FieldID":323,"Group":"Feature","SubGroup":"Financing","FieldName":"Cash","FieldValue":"CASH","InQuickSearch":false,"ListingField":"IsCash","IsHidden":false},{"FieldID":324,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Laundry Hookup","FieldValue":"LAUND","InQuickSearch":false,"ListingField":"HasLaundryHookup","IsHidden":false},{"FieldID":329,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Loft","FieldValue":"LFT","InQuickSearch":false,"ListingField":"HasLoft","IsHidden":false},{"FieldID":331,"Group":"Feature","SubGroup":"Style","FieldName":"A-Frame","FieldValue":"AFR","InQuickSearch":false,"ListingField":"IsAFrame","IsHidden":false},{"FieldID":333,"Group":"Feature","SubGroup":"Style","FieldName":"1st Floor Unit","FieldValue":"FSTF","InQuickSearch":false,"ListingField":"IsFirstFloorUnit","IsHidden":false},{"FieldID":336,"Group":"Feature","SubGroup":"Property Features","FieldName":"Paved Street","FieldValue":"PVDS","InQuickSearch":false,"ListingField":"IsPavedStreet","IsHidden":false},{"FieldID":341,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Pantry","FieldValue":"PNTRY","InQuickSearch":false,"ListingField":"HasPantry","IsHidden":false},{"FieldID":348,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Guest House","FieldValue":"GHOUS","InQuickSearch":false,"ListingField":"HasGuestHouse","IsHidden":false},{"FieldID":354,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Roof - Tile","FieldValue":"TLROF","InQuickSearch":false,"ListingField":"IsTileRoof","IsHidden":false},{"FieldID":355,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Workshop","FieldValue":"WKSHP","InQuickSearch":false,"ListingField":"HasWorkshop","IsHidden":false},{"FieldID":356,"Group":"Feature","SubGroup":"Financing","FieldName":"USDA","FieldValue":"USDAF","InQuickSearch":false,"ListingField":"IsUSDA","IsHidden":false},{"FieldID":359,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Carpet Floors","FieldValue":"CPTFL","InQuickSearch":false,"ListingField":"IsCarpetFloor","IsHidden":false},{"FieldID":362,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Study","FieldValue":"ST","InQuickSearch":false,"ListingField":"HasStudy","IsHidden":false},{"FieldID":363,"Group":"Feature","SubGroup":"Interior Features","FieldName":"Tile Floors","FieldValue":"TLF","InQuickSearch":false,"ListingField":"IsTileFloor","IsHidden":false},{"FieldID":365,"Group":"Feature","SubGroup":"Property Features","FieldName":"Internet","FieldValue":"I","InQuickSearch":false,"ListingField":"HasInternet","IsHidden":false},{"FieldID":370,"Group":"Feature","SubGroup":"Property Features","FieldName":"Solar Utilities","FieldValue":"SOL","InQuickSearch":false,"ListingField":"IsSolar","IsHidden":false},{"FieldID":376,"Group":"Feature","SubGroup":"Style","FieldName":"Mid Rise","FieldValue":"MR","InQuickSearch":false,"ListingField":"IsMidRise","IsHidden":false},{"FieldID":379,"Group":"Feature","SubGroup":"Style","FieldName":"Split Level","FieldValue":"SL","InQuickSearch":false,"ListingField":"IsSplitLevel","IsHidden":false},{"FieldID":385,"Group":"Feature","SubGroup":"View","FieldName":"Greenbelt View","FieldValue":"GBV","InQuickSearch":false,"ListingField":"IsGreenbeltView","IsHidden":false},{"FieldID":386,"Group":"Feature","SubGroup":"Property Features","FieldName":"Corporate Owned","FieldValue":"ICO","InQuickSearch":false,"ListingField":"IsCorporateOwned","IsHidden":false},{"FieldID":387,"Group":"Feature","SubGroup":"Property Features","FieldName":"Single Level Living","FieldValue":"SLL","InQuickSearch":false,"ListingField":"IsSingleLevelLiving","IsHidden":false},{"FieldID":390,"Group":"Feature","SubGroup":"Exterior Features","FieldName":"Stucco","FieldValue":"STUC","InQuickSearch":false,"ListingField":"IsStucco","IsHidden":false},{"FieldID":391,"Group":"Feature","SubGroup":"Property Features","FieldName":"Manufactured Homes Allowed","FieldValue":"MHA","InQuickSearch":false,"ListingField":"IsManufacturedHomesAllowed","IsHidden":false}],"searchFieldsCondensed":{"expandedproptypes":{"SF":{"key":"SF","DDName":"Homes (Single Family)","TagName":"Homes","last":false},"C":{"key":"C","DDName":"Condos","TagName":"Condos","last":false},"VT":{"key":"VT","DDName":"Townhouses","TagName":"Townhouses","last":false},"VC":{"key":"VC","DDName":"Land & Lots","TagName":"Land & Lots","last":false},"M":{"key":"M","DDName":"Manufactured Home","TagName":"Manufactured Home","last":false},"MF":{"key":"MF","DDName":"Multi-Family","TagName":"Multi-Family","last":false},"CM":{"key":"CM","DDName":"Commercial","TagName":"Commercial","last":false},"RN":{"key":"RN","DDName":"Rentals","TagName":"Rentals","last":false},"FM":{"key":"FM","DDName":"Farm","TagName":"Farm","last":false},"CL":{"key":"CL","DDName":"Commercial-Lease","TagName":"Commercial-Lease","last":false},"PH":{"key":"PH","DDName":"Patio Home","TagName":"Patio Home","last":true}},"features":{"Community Features":{"Community Fitness Room":"CFR","Community Playground":"HCPG","Community Pool":"HCPOOL","Gated Community":"GT","Golf Community":"GOLFC","Has HOA":"HOA","Horse Property":"HP","No HOA":"NHOA","Tennis Community":"TC"},"Property Features":{"Close to Public Transportation":"PT","Corner Lot":"ICL","Corporate Owned":"ICO","Cul-De-Sac":"ICDS","Currently A Rental":"IRENT","Green \/ LEED":"G","Handicap Equipped":"HC","Historic Property":"H","Internet":"I","Investment Home":"IIH","Manufactured Homes Allowed":"MHA","New Construction":"N","On Golf Course":"GC","Paved Street":"PVDS","Pets Allowed":"IPA","Public Water":"IPW","Septic":"ISP","Sewer":"IS","Single Level Living":"SLL","Solar Utilities":"SOL","Well":"IW"},"Waterfront":{"Creek Front":"ICF","Lake Front":"L","River Front":"R","Waterfront":"W"},"View":{"City View":"ICTYV","Greenbelt View":"GBV","Poolside View":"IPSV","Water View":"IWTRV"},"Exterior Features":{"Brick":"BRC","Carport":"HCARP","Deck":"HD","Fenced Yard":"ISFENCE","Garage":"GR","Garage - Attached":"HAG","Garage - Detached":"HDC","Guest House":"GHOUS","Hot Tub":"HHT","No Pool":"HNP","Parking - Covered":"HCP","Parking - Off-Street":"HOFSP","Parking - RV \/ Boat":"HBP","Patio":"HPTO","Pool":"P","Pool - Above Ground":"HPAGP","Pool - Below Ground":"HPIGP","Roof - Tile":"TLROF","Sprinkler System":"HSS","Storage Buildings":"HSB","Stucco":"STUC","Workshop":"WKSHP"},"Interior Features":{"Basement":"HBASE","Carpet Floors":"CPTFL","Central Air Conditioning":"HCA","Elevator":"HE","Fireplace":"F","Hardwood Floors":"HHF","Heat - Electric":"HEATE","Heat - Gas":"HEATG","Jacuzzi":"HJ","Laundry Hookup":"LAUND","Loft":"LFT","Main Floor Bedroom":"HMFB","Master Downstairs":"MD","Master Upstairs":"MBU","Pantry":"PNTRY","Remodeled":"IREMOD","Study":"ST","Tile Floors":"TLF","Walk-In Closet":"HWIC","Wet Bar":"HWB"},"Style":{"1.5 Story":"OHS","1st Floor Unit":"FSTF","A-Frame":"AFR","Cabin":"ICABN","Colonial":"COL","Contemporary":"CT","High Rise":"IHR","Low Rise":"ILR","Mediterranean":"MED","Mid Rise":"MR","Ranch \/ One Story":"ISS","Spanish":"SPAN","Split Level":"SL","Traditional":"TRD","Tudor":"TUD","Victorian":"VIC"},"Financing":{"Cash":"CASH","Conventional Financing":"CNF","FHA Loan":"IFHA","Lease Option":"LO","Lease Purchase":"LP","Owner Financing":"IOWNF","Trade\/Exchange":"TE","USDA":"USDAF","VA Loan":"VA"},"popular":{"Waterfront":"W","New Construction":"N","Garage":"GR","Pool":"P","Fireplace":"F","Master Downstairs":"MD","Remodeled":"IREMOD","Basement":"HBASE"}},"locations":[{"Value":83791,"Name":"Alamo Heights"},{"Value":83792,"Name":"Alamo Ranch"},{"Value":83793,"Name":"Boerne"},{"Value":83794,"Name":"Castle Hills"},{"Value":83795,"Name":"Deerfield"},{"Value":83796,"Name":"Dominion"},{"Value":83797,"Name":"Fair Oaks Ranch"},{"Value":83798,"Name":"Rogers Ranch"},{"Value":83799,"Name":"Schertz \/ Cibolo"},{"Value":83800,"Name":"Shavano Park"},{"Value":83801,"Name":"Sonterra"},{"Value":83802,"Name":"Timberwood Park"},{"Value":83803,"Name":"Two Creeks"}],"year":[2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2000,1995,1990,1980,1970,1960,1950,1940,1930,1920,1900,1850,1800,1750]}};
+var flagship_theme = {"svgSpritePath":"https:\/\/bt-wpstatic.freetls.fastly.net\/wp-content\/themes\/wp-base-theme\/assets\/svg\/build\/sprite.svg"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" crossorigin="anonymous" src="https://bt-wpstatic.freetls.fastly.net/wp-content/themes/wp-base-theme/assets/js/build/components.5b0ff389.min.js"></script> 
+  <script type="text/javascript" crossorigin="anonymous" src="https://bt-wpstatic.freetls.fastly.net/wp-includes/js/wp-embed.min.js"></script> 
+  <script type="text/javascript" crossorigin="anonymous" src="//www.mysanantoniohomeguide.com/wp-content/plugins/testimonials-widget/includes/libraries/bxslider-4/dist/jquery.bxslider.min.js"></script> 
+  <script type="text/javascript">
+var tw_2 = null;
+
+jQuery(document).ready(function() {
+	tw_2 = jQuery('.testimonials-widget-testimonials2').bxSlider({
+		adaptiveHeight: true,
+		auto: true,
+		autoControls: true,
+		autoHover: true,
+		controls: false,
+		mode: 'fade',
+		pager: false,
+		pause: 3000,
+		video: false,
+		slideMargin: 2,
+		slideWidth: 0
+	});
+});
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7bce71ab19","applicationID":"15738311","transactionName":"ZlUBbRBSXUNSAhVQV18fIloWWlxeHBIIV19dVQ==","queueTime":0,"applicationTime":428,"atts":"ShIWG1hIThwRAEMDQ0xN","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

@@ -1,0 +1,1774 @@
+<!doctype html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+ <head>
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <link rel="stylesheet" type="text/css" href="https://www.health.harvard.edu/blog/wp/?w3tc_minify=19bcd.css" media="all"> 
+  <meta charset="UTF-8"> 
+  <title>Living to 100 and beyond: the right genes plus a healthy lifestyle - Harvard Health Blog - Harvard Health Publishing</title> 
+  <meta name="title" content="Living to 100 and beyond: the right genes plus a healthy lifestyle - Harvard Health Blog - Harvard Health Publishing"> 
+  <meta name="keywords" content="harvard health blog, health blog, health blogspot"> 
+  <meta name="author" content="Howard LeWine, M.D."> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="shortcut icon" href="/favicon.ico"> 
+  <meta name="verify-v1" content="0WUbqt/GzkqPtDPXf1aGXS/GUosExd+3XAyrNh/OqFY="> 
+  <meta name="verify-v1" content="17aKsaLDzPJUdIBWVEI75M7Ivc+38UEQF/iu+lG0L+I="> 
+  <meta name="verify-v1" content="ynVFsi9WmrI6X1eDUBLcorfGemNtxuH1/S5VuMXuXIA="> 
+  <meta name="google-site-verification" content="Eae3iDIO8NiqSHXdCKM_hPexLM5r8IQrrYSpd99LEfc"> 
+  <meta name="google-site-verification" content="rVNZFJgfV62EiwoqW6JZj2MKSZjLHzIZwJ8u7ayyIu8"> 
+  <!-- <link rel="stylesheet" href="https://hhpblog.s3.amazonaws.com/blog/content/themes/hhpn/style.css.gzip"> --> 
+  <link rel="stylesheet" href="/assets/css/global.css"> 
+  <link rel="stylesheet" href="/assets/css/blog.css"> 
+  <link rel="alternate" type="application/rss+xml" title="Harvard Health Blog RSS Feed" href="https://www.health.harvard.edu/blog/feed"> 
+  <script src="/js/site-init.min.js"></script> 
+  <script src="//use.typekit.net/agz3fxc.js"></script> 
+  <script>try{Typekit.load();}catch(e){}</script> 
+  <!-- This site is optimized with the Yoast SEO plugin v5.4.2 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <link rel="canonical" href="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Living to 100 and beyond: the right genes plus a healthy lifestyle - Harvard Health Blog"> 
+  <meta property="og:description" content="A new study from the ongoing New England Centenarian Study suggests that protective genes may make a big contribution to helping people live to age 100 and beyond. Researchers analyzed and deciphered the entire genetic codes of a man and a woman who lived past the age of 114. The two so-called supercentenarians had about as many disease-promoting genes as individuals who did not live as long. But they also had about 50 possible longevity-associated gene variants, some of which were unexpected and had not been seen before. The researchers hypothesize that the genes linked with long life may somehow offset the disease-linked genes. This might then allow an extended lifespan. There's no need to have your DNA sequenced to determine what genes you carry. It won't change what you need to do now. Instead, simple, straightforward healthy habits like exercising every day and not smoking, can help you have the longest, healthiest life possible."> 
+  <meta property="og:url" content="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092"> 
+  <meta property="og:site_name" content="Harvard Health Blog"> 
+  <meta property="article:section" content="Healthy Aging"> 
+  <meta property="article:published_time" content="2012-01-11T10:33:16-04:00"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.health.harvard.edu\/blog","name":"Harvard Health Blog","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.health.harvard.edu\/blog?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.health.harvard.edu\/blog\/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092","sameAs":[],"@id":"#organization","name":"Harvard Health Publications","logo":""}</script> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Harvard Health Blog » Living to 100 and beyond: the right genes plus a healthy lifestyle Comments Feed" href="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092/feed"> 
+  <!-- This site is powered by Shareaholic - https://shareaholic.com --> 
+  <script type="text/javascript" data-cfasync="false">
+  //<![CDATA[
+    _SHR_SETTINGS = {"endpoints":{"local_recs_url":"https:\/\/www.health.harvard.edu\/blog\/wp\/wp-admin\/admin-ajax.php?action=shareaholic_permalink_related","share_counts_url":"https:\/\/www.health.harvard.edu\/blog\/wp\/wp-admin\/admin-ajax.php?action=shareaholic_share_counts_api"},"url_components":{"year":"2012","monthnum":"01","day":"11","post_id":"4092","postname":"living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle","author":"howardlewine"}};
+  //]]>
+</script> 
+  <script type="text/javascript" data-cfasync="false" src="//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js" data-shr-siteid="1c67a6d6871c81fe0965125eeee4da17" async>
+</script> 
+  <!-- Shareaholic Content Tags --> 
+  <meta name="shareaholic:site_name" content="Harvard Health Blog"> 
+  <meta name="shareaholic:language" content="en-US"> 
+  <meta name="shareaholic:url" content="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092"> 
+  <meta name="shareaholic:keywords" content="healthy aging, post"> 
+  <meta name="shareaholic:article_published_time" content="2012-01-11T10:33:16-04:00"> 
+  <meta name="shareaholic:article_modified_time" content="2012-01-11T10:33:16-04:00"> 
+  <meta name="shareaholic:shareable_page" content="true"> 
+  <meta name="shareaholic:article_author_name" content="Howard LeWine, M.D."> 
+  <meta name="shareaholic:site_id" content="1c67a6d6871c81fe0965125eeee4da17"> 
+  <meta name="shareaholic:wp_version" content="8.4.4"> 
+  <meta name="shareaholic:image" content="https://hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/2012/01/Centenarian_birthday.jpg"> 
+  <!-- Shareaholic Content Tags End --> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.health.harvard.edu\/blog\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=a04a5ff62b9c9c5e18bbb64008eef3d7"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <style id="wp-polls-inline-css" type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('https://hhpblog.s3.amazonaws.com/blog/content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style> 
+  <script type="text/javascript" src="https://www.health.harvard.edu/blog/wp/?w3tc_minify=0b867.js"></script> 
+  <script type="text/javascript" src="https://www.health.harvard.edu/js/lib/flowplayer/3.2.7/flowplayer-3.2.6.min.js?ver=3.2.7"></script> 
+  <script type="text/javascript" src="https://www.health.harvard.edu/blog/wp/?w3tc_minify=e8afd.js"></script> 
+  <link rel="https://api.w.org/" href="https://www.health.harvard.edu/blog/wp-json/"> 
+  <link rel="shortlink" href="https://www.health.harvard.edu/blog/?p=4092"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.health.harvard.edu/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.health.harvard.edu%2Fblog%2Fliving-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.health.harvard.edu/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.health.harvard.edu%2Fblog%2Fliving-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092&amp;format=xml"> 
+  <!-- Google Analytics --> 
+  <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+if (typeof window.ga !== "function") {
+  window.ga = function() {};
+}
+
+ga('create', {
+    'trackingId':          'UA-512518-1',
+    'cookieDomain':        'health.harvard.edu',
+    'siteSpeedSampleRate': 5
+});
+
+
+ga('send', 'pageview');
+</script> 
+  <!-- End Google Analytics --> 
+  <script>
+var _prum = [['id', '57fea7bca62df617c879d625'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script> 
+  <!-- Delivra --> 
+  <script>
+;(function(){var obj={DOMReady:function(f){var that=this;if(/in/.test(document.readyState)){setTimeout(function(){that.DOMReady(f)},9)}else{f.apply(that)}},gch:function(name){var urlvalue=this.gup(name);if(urlvalue!=""){var currentDate=new Date;var shortDomain=this.trim_cookie_domain(document.domain);this.set_cookie(name,urlvalue,currentDate.getFullYear()+1,currentDate.getMonth(),currentDate.getDate(),"/",shortDomain);return urlvalue}else return this.get_cookie(name)},gup:function(name){var regexS="[\\?&]"+name+"=([^&#]*)";var regex=new RegExp(regexS);var tmpURL=window.location.href;var results=regex.exec(tmpURL);if(results==null)return"";else return results[1]},hasup:function(name,tmpURL){var tmpURL=tmpURL||window.location.href;var regexS="[\\?&]"+name+"=([^&#]*)";var regex=new RegExp(regexS);return regex.test(tmpURL)},trim_cookie_domain:function(domain){var ipregexS="\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}";var ipregex=new RegExp(ipregexS);if(ipregex.test(domain)){return null}var tldStart=domain.lastIndexOf(".");if(tldStart>0){var domainStart=domain.lastIndexOf(".",tldStart-1);if(domainStart>0){return domain.substring(domainStart+1)}}return null},get_cookie:function(cookie_name){var results=document.cookie.match(cookie_name+"=(.*?)(;|$)");if(results)return unescape(results[1]);else return""},set_cookie:function(name,value,exp_y,exp_m,exp_d,path,domain,secure){var cookie_string=name+"="+escape(value);if(exp_y&&exp_m&&exp_d){var expires=new Date(exp_y,exp_m,exp_d);cookie_string+="; expires="+expires.toGMTString()}if(path)cookie_string+="; path="+escape(path);if(domain)cookie_string+="; domain="+escape(domain);if(secure)cookie_string+="; secure";document.cookie=cookie_string},PersistTracking:function(){var that=this;var mid=that.gch("mid");var ml=that.gch("ml");if(!mid||!ml){return}if(typeof EXpersist==="undefined"||!EXpersist||!EXpersist.length){return}var patterns={};for(var i=0;i<EXpersist.length;i++){var persist=EXpersist[i];if(typeof persist==="string"&&persist.length>0){patterns[persist]=true}else if(persist&&persist.domain){if(typeof persist.path==="string"&&persist.path.length>0){patterns[persist.domain]=new RegExp(persist.path,"i")}else if(typeof persist.path==="undefined"){patterns[persist.domain]=true}}}var links=document.getElementsByTagName("a");for(var i=0;i<links.length;i++){var link=links[i];if(link.hostname!==window.location.hostname&&link.hostname in patterns){var pattern=patterns[link.hostname];if(pattern===true||pattern.test(link.pathname)){if(link.search.length==0){link.search="?mid="+mid+"&ml="+ml}else if(!that.hasup("mid",link.search)&&!that.hasup("ml",link.search)){link.search=link.search+"&mid="+mid+"&ml="+ml}}}}}};window.DlvTracking=obj;obj.DOMReady(obj.PersistTracking)})();(function(){var write_tag=function(EXcl,EXe,EXsl,EXu){var ga2=document.createElement("script");ga2.type="text/javascript";ga2.src="//integration.delivra.com/tracking/"+"default.aspx?mid="+DlvTracking.gch("mid")+"&ml="+DlvTracking.gch("ml")+"&cl="+escape(EXcl)+"&e="+escape(EXe)+"&sl="+escape(EXsl)+"&u="+escape(EXu)+"&l="+escape("")+"&url="+escape(window.location)+"&version=2";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga2,s)};window.push=function(ListName,Url){write_tag(ListName,"page",Url,"")};window.push_purchase=function(ListName,OrderID,Price,Quantity){var Exu="q="+Quantity+",p="+Price;write_tag(ListName,OrderID,"order confirmed",Exu)}})();
+  try {
+    push('harvardhealthpublications', window.location);
+  } catch(err) {}
+</script> 
+  <!-- End Delivra --> 
+  <script src="//load.sumome.com/" data-sumo-site-id="de661bf87183cd1d5bd408e0b2b1337ab3388a4010347564fd648fe662d08ba8" async></script> 
+ </head> 
+ <!--[if IE 8]>         <body class="blog lt-ie9"> <![endif]--> 
+ <!--[if IE 9]>         <body class="blog ie9"> <![endif]--> 
+ <!--[if gt IE 9]><!--> 
+ <body class="blog"> 
+  <!--<![endif]--> 
+  <!--[if lt IE 8]><p class="chromeframe">Your browser is outdated. <a href="http://browsehappy.com/" target="_blank">Upgrade to a modern browser</a> to better experience this site.</p> <![endif]--> 
+  <div class="hfeed"> 
+   <header class="global-header" id="global-header" role="banner"> 
+    <!-- mobile_nav generated: 2017-09-28 11:16:24 --> 
+    <div id="mobile-top-nav" class="mobile-top-nav visible-xs"> 
+     <ul class="mobile-top-nav-micro-ui-block list-ui"> 
+      <li class="mobile-top-nav-li"> <a href="#" class="mobile-top-nav-button-search mobile-top-nav-button icon-search"> <span class="sr-only">Search</span> </a> </li> 
+      <li class="mobile-top-nav-li"> <a href="/cart" class="mobile-top-nav-button-cart mobile-top-nav-button icon-cart"> <span class="sr-only">Cart</span> </a> </li> 
+      <li class="mobile-top-nav-li"> <a href="#" class="mobile-top-nav-button-menu mobile-top-nav-button icon-menu"> <span class="sr-only">Admin</span> </a> </li> 
+     </ul> 
+     <a href="#" class="mobile-top-nav-button-sections mobile-top-nav-button"><img class="icon-hhp-emblem" src="/images/logo-emblem-icon@2x.png" width="17" height="20">&nbsp;HEALTH TOPICS&nbsp;<span class="chevron-down">▼</span></a> 
+    </div> 
+    <div class="mobile-top-nav-backdrop"> 
+     <nav class="mobile-nav-menu mobile-nav-menu-topics" role="navigation" aria-label="Mobile Topics"> 
+      <h2 class="heading">Browse by Topic</h2> 
+      <ul class="mobile-nav-list-top-level mobile-nav-list"> 
+       <li class="mobile-nav-list-item-heart-health mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/heart-health">Heart Health</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/blood-pressure" class="mobile-nav-list-link">Blood Pressure</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/cholesterol" class="mobile-nav-list-link">Cholesterol</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/coronary-artery-disease" class="mobile-nav-list-link">Coronary Artery Disease</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/heart-attack" class="mobile-nav-list-link">Heart Attack</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/heart-failure" class="mobile-nav-list-link">Heart Failure</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/heart-medications" class="mobile-nav-list-link">Heart Medications</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/stroke" class="mobile-nav-list-link">Stroke</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-mind-and-mood mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/mind-and-mood">Mind &amp; Mood</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/addiction" class="mobile-nav-list-link">Addiction</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/adult-and-child-adhd" class="mobile-nav-list-link">Adult &amp; Child ADHD</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/alzheimers-and-dementia" class="mobile-nav-list-link">Alzheimer's &amp; Dementia</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/anxiety" class="mobile-nav-list-link">Anxiety</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/depression" class="mobile-nav-list-link">Depression</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/improving-memory" class="mobile-nav-list-link">Improving Memory</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/mental-health" class="mobile-nav-list-link">Mental Health</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/positive-psychology" class="mobile-nav-list-link">Positive Psychology</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/stress" class="mobile-nav-list-link">Stress</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-pain mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/pain">Pain</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/arthritis" class="mobile-nav-list-link">Arthritis</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/back-pain" class="mobile-nav-list-link">Back Pain</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/headache" class="mobile-nav-list-link">Headache</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/joint-replacement" class="mobile-nav-list-link">Joint Replacement</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/other-pain" class="mobile-nav-list-link">Other Pain</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-staying-healthy mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/staying-healthy">Staying Healthy</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/aging" class="mobile-nav-list-link">Aging</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/balance-and-mobility" class="mobile-nav-list-link">Balance &amp; Mobility</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/diet-and-weight-loss" class="mobile-nav-list-link">Diet &amp; Weight Loss</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/energy-and-fatigue" class="mobile-nav-list-link">Energy &amp; Fatigue</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/exercise-and-fitness" class="mobile-nav-list-link">Exercise &amp; Fitness</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/healthy-eating" class="mobile-nav-list-link">Healthy Eating</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/physical-activity" class="mobile-nav-list-link">Physical Activity</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-men" class="mobile-nav-list-link">Screening Tests for Men</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-women" class="mobile-nav-list-link">Screening Tests for Women</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/sleep" class="mobile-nav-list-link">Sleep</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-cancer mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/cancer">Cancer</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/breast-cancer" class="mobile-nav-list-link">Breast Cancer</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/colorectal-cancer" class="mobile-nav-list-link">Colorectal Cancer</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/other-cancers" class="mobile-nav-list-link">Other Cancers</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/prostate-health-and-disease" class="mobile-nav-list-link">Prostate Health &amp; Disease</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/skin-cancer" class="mobile-nav-list-link">Skin Cancer</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-diseases-and-conditions mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/diseases-and-conditions">Diseases &amp; Conditions</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/adult-and-child-adhd" class="mobile-nav-list-link">Adult &amp; Child ADHD</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/alzheimers-and-dementia" class="mobile-nav-list-link">Alzheimer's &amp; Dementia</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/diabetes" class="mobile-nav-list-link">Diabetes</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/digestive-health" class="mobile-nav-list-link">Digestive Health</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/heart-disease-overview" class="mobile-nav-list-link">Heart Disease</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/more-diseases-and-conditions" class="mobile-nav-list-link">More Diseases &amp; Conditions</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/osteoporosis" class="mobile-nav-list-link">Osteoporosis</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/stroke" class="mobile-nav-list-link">Stroke</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/thyroid-diseases" class="mobile-nav-list-link">Thyroid Diseases</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-mens-health mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/mens-health">Men's Health</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/erectile-dysfunction" class="mobile-nav-list-link">Erectile Dysfunction</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/exercise-and-fitness" class="mobile-nav-list-link">Exercise &amp; Fitness</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/healthy-eating" class="mobile-nav-list-link">Healthy Eating</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/mens-sexual-health" class="mobile-nav-list-link">Men's Sexual Health</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/prostate-cancer" class="mobile-nav-list-link">Prostate Cancer</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/prostate-health-and-disease" class="mobile-nav-list-link">Prostate Health &amp; Disease</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-men" class="mobile-nav-list-link">Screening Tests for Men</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-womens-health mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/womens-health">Women's Health</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/breast-health-and-disease" class="mobile-nav-list-link">Breast Health &amp; Disease</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/exercise-and-fitness" class="mobile-nav-list-link">Exercise &amp; Fitness</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/healthy-eating" class="mobile-nav-list-link">Healthy Eating</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/menopause" class="mobile-nav-list-link">Menopause</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/osteoporosis" class="mobile-nav-list-link">Osteoporosis</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/pregnancy" class="mobile-nav-list-link">Pregnancy</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-women" class="mobile-nav-list-link">Screening Tests for Women</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/womens-sexual-health" class="mobile-nav-list-link">Women's Sexual Health</a></li> 
+         </ul> 
+        </div> </li> 
+       <li class="mobile-nav-list-item-childrens-health mobile-nav-list-item mobile-nav-parent-li"> <a class="mobile-nav-list-link" href="https://www.health.harvard.edu/topics/childrens-health">Children's Health</a> 
+        <div class="mobile-nav-child-wrapper"> 
+         <button class="mobile-nav-button-back">« Back</button> 
+         <ul class="mobile-nav-list mobile-nav-child-list"> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/adult-and-child-adhd" class="mobile-nav-list-link">Adult &amp; Child ADHD</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/autism" class="mobile-nav-list-link">Autism</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/developmental-milestones" class="mobile-nav-list-link">Developmental Milestones</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/learning-disabilities" class="mobile-nav-list-link">Learning Disabilities</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/nutrition" class="mobile-nav-list-link">Nutrition</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/nutrition-for-children" class="mobile-nav-list-link">Nutrition for children</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/parenting-issues" class="mobile-nav-list-link">Parenting Issues</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/physical-activity" class="mobile-nav-list-link">Physical Activity</a></li> 
+          <li class="mobile-nav-list-item"><a href="https://www.health.harvard.edu/topics/vaccinations" class="mobile-nav-list-link">Vaccinations</a></li> 
+         </ul> 
+        </div> </li> 
+      </ul> 
+     </nav> 
+     <div class="mobile-nav-menu mobile-nav-menu-search"> 
+      <h2 class="heading">Search Harvard Health Publishing</h2> 
+      <p>What can we help you find? Enter search terms and tap the Search button. 
+       <!-- You can narrow your results by selecting to search within articles or products. -->Both articles and products will be searched.</p> 
+      <form class="global-search-form" action="/search" role="search"> 
+       <div class="form-row row"> 
+        <div class="form-column col-xs-12 col-sm-12"> 
+         <div class="form-field_block"> 
+          <input id="mobile-global-search" class="input-field" type="search" name="q" placeholder="Enter your search term(s)"> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="form-row row"> 
+        <div class="form-column col-xs-12 col-sm-12"> 
+         <input class="button button" type="submit" value="Search"> 
+        </div> 
+       </div> 
+      </form> 
+     </div> 
+     <div class="mobile-nav-menu mobile-nav-menu-cart"> 
+      <h2 class="heading">Shopping Cart</h2> 
+      <table id="mobile-nav-cart" class="mobile-nav-cart table-superminimal"> 
+       <thead> 
+        <tr> 
+         <th width="">Description</th> 
+         <th>Qty</th> 
+         <th>Price</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td> <a class="item-name">The Harvard Medical School 6-Week Plan for Healthy Eating</a> <span class="item-type">(Print - Free U.S. Shipping!)</span> </td> 
+         <td> <input class="mobile-cart-quantity" id="mobile-cart-quantity-1" type="number" name="mobile-cart-quantity-1" value="1"> </td> 
+         <td> $20.00 </td> 
+        </tr> 
+        <tr> 
+         <td> <a class="item-name">Improving Memory: Understanding Age-Related Memory Loss</a> <span class="item-type">(PDF - Lowest Price!)</span> </td> 
+         <td> <input class="mobile-cart-quantity" id="mobile-cart-quantity-2" type="number" name="mobile-cart-quantity-2" value="1"> </td> 
+         <td> $18.00 </td> 
+        </tr> 
+        <tr> 
+         <td> <a class="item-name">Harvard Health Letter</a> <span class="item-type">(Print &amp; Online Access (PDF)!)</span> </td> 
+         <td> <input class="mobile-cart-quantity" id="mobile-cart-quantity-3" type="number" name="mobile-cart-quantity-3" value="1"> </td> 
+         <td> $16.00 </td> 
+        </tr> 
+       </tbody> 
+       <tfoot> 
+        <tr> 
+         <td colspan="2">Subtotal</td> 
+         <td>$54.00</td> 
+        </tr> 
+       </tfoot> 
+      </table> 
+      <div class="content-block row"> 
+       <div class="col-xs-6"> 
+        <a href="#" class="button button-smaller button-subtle">Update Cart</a> 
+       </div> 
+       <div class="col-xs-6 text-right"> 
+        <a href="#" class="button button-smaller button-arrowed">Checkout</a> 
+       </div> 
+      </div> 
+      <p class="text-upper">Please note: If you have a promotional code you'll be prompted to enter it prior to confirming your order.</p> 
+     </div> 
+     <div class="mobile-nav-menu mobile-nav-menu-admin"> 
+      <h2 class="heading">Customer Sign In</h2> 
+      <h4 class="heading-lesser">Returning Customer</h4> 
+      <p>If you have an account, please sign in.</p> 
+      <form action="/login" method="post" accept-charset="utf-8" name="existing_customer_form" autocapitalize="off" autocorrect="off"> 
+       <div class="form-row row"> 
+        <div class="form-column col-xs-12 col-sm-12"> 
+         <div class="form-field_block"> 
+          <input class="input-field" type="email" name="email" placeholder="Enter an email address"> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="form-row row"> 
+        <div class="form-column col-xs-12 col-sm-12"> 
+         <div class="form-field_block"> 
+          <input class="input-field" type="password" name="password" placeholder="Enter your password"> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="form-row row"> 
+        <div class="form-column col-xs-12 col-sm-12"> 
+         <div class="form-field_block"> 
+          <input type="hidden" name="action" value="process"> 
+          <input class="button button" type="submit" value="Sign In"> 
+          <img class="loader" src="/images/misc/loader-processing_small.gif" width="24" height="24" alt="Processing..." border="0" style="display: none;"> 
+         </div> 
+        </div> 
+       </div> 
+      </form> 
+      <hr class="hr-light"> 
+      <h4 class="heading-lesser">New Customers</h4> 
+      <p>If you subscribe to any of our print newsletters and have never activated your online account, please activate your account below for online access. By activating your account, you will create a login and password. <strong>You only need to activate your account once.</strong></p> 
+      <p><a class="button button" href="/activate">Activate My Account</a></p> 
+     </div> 
+    </div> 
+    <div class="container"> 
+     <a id="global-logo" class="global-logo" href="/" title="Harvard Health Logo. Click to go to the Home Page."> <img class="global-logo-img" src="/images/logo-harvard_health-full-v2-@2x.png" alt="Harvard Health Publishing Logo" width="341" height="81"> </a> 
+     <nav id="global-user-account-nav" class="global-user-account-nav hidden-xs" role="navigation" aria-label="Account"> 
+      <ul class="list-ui link-list"> 
+       <li class="global-user-account-nav-top-li"> <a href="/cart" class="global-user-account-nav-link"> <span class="icon-cart"></span> Cart </a> </li> 
+       <li class="global-user-account-nav-top-li"> 
+        <!-- <a class="global-user-account-nav-link" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat">Free Healthbeat Signup</a> --> <a class="global-user-account-nav-link manual-optin-trigger" href="/healthbeat">Free Healthbeat Signup</a> </li> 
+       <li class="global-user-account-nav-top-li dropdown"> <a role="button" class="global-user-account-nav-link dropdown-toggle" data-toggle="dropdown" href="#">Shop ▼</a> 
+        <ul class="global-user-account-nav-dropdown dropdown-menu" role="menu"> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/subscribe">Subscribe</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/special-health-reports">Special Health Reports</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/books">Books</a> </li> 
+        </ul> </li> 
+       <li class="global-user-account-nav-top-li dropdown js-logged-in-show" style="display: none;"> <a role="button" class="global-user-account-nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account ▼</a> 
+        <ul class="global-user-account-nav-dropdown dropdown-menu" role="menu"> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/cart">Cart</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/library">Library</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/account">Manage Print Subscriptions</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/account/profile">Edit Account Settings</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/customer-service">Customer Service</a> </li> 
+         <li class="global-user-account-nav-dropdown-li" role="presentation"> <a class="global-user-account-nav-dropdown-link" role="menuitem" tabindex="-1" href="/login/logout">Sign Out</a> </li> 
+        </ul> </li> 
+       <li class="global-user-account-nav-top-li js-logged-in-hide"> <a class="global-user-account-nav-link" href="/login">Sign In</a> </li> 
+      </ul> 
+     </nav> 
+     <!-- Global Search --> 
+     <div class="global-search-wrapper hidden-xs"> 
+      <form class="global-search-form" action="/search" role="search"> 
+       <input class="global-search" id="global-search-input" type="search" placeholder="What can we help you find?" name="q" autocomplete="off"> 
+       <button id="button-global-search" title="Click here to search." class="button-global-search icon-search" type="submit"> <span class="sr-only">Search</span> </button> 
+      </form> 
+     </div> 
+    </div> 
+    <!-- nav generated: 2017-09-28 11:16:24 --> 
+    <nav id="global-nav" class="global-nav clearfix" role="navigation" aria-label="Topics"> 
+     <!-- Generated: 2017-09-28 11:16:24 --> 
+     <div class="nav-container container"> 
+      <ul class="global-nav-list list-ui nav"> 
+       <li class=" global-nav-li-heart-health global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/heart-health" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Heart Health</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Heart Health:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/blood-pressure" class="link-list-link">Blood Pressure</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/cholesterol" class="link-list-link">Cholesterol</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/coronary-artery-disease" class="link-list-link">Coronary Artery Disease</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/heart-attack" class="link-list-link">Heart Attack</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/heart-failure" class="link-list-link">Heart Failure</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/heart-medications" class="link-list-link">Heart Medications</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/stroke" class="link-list-link">Stroke</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="Air pollution: A threat to your heart and longevity?" href="https://www.health.harvard.edu/heart-health/air-pollution-a-threat-to-your-heart-and-longevity"> Air pollution: A threat to your heart and longevity?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="An advantage of adding almonds to your diet?" href="https://www.health.harvard.edu/heart-health/an-advantage-of-adding-almonds-to-your-diet"> An advantage of adding almonds to your diet?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Healthy lifestyle habits linked to lower drug costs" href="https://www.health.harvard.edu/heart-health/healthy-lifestyle-habits-linked-to-lower-drug-costs"> Healthy lifestyle habits linked to lower drug costs&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Not so fast: Pros and cons of the newest diet trend" href="https://www.health.harvard.edu/heart-health/not-so-fast-pros-and-cons-of-the-newest-diet-trend"> Not so fast: Pros and cons of the newest diet trend&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="What is vasculitis?" href="https://www.health.harvard.edu/heart-health/what-is-vasculitis"> What is vasculitis?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/heart-health" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/heart-health/making-sense-of-the-statin-guidelines"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/statin-heart-medication-statins-cholesterol-rogerashford-iStock_79016737_MEDIUM.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Making sense of the statin guidelines"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">Making sense of the statin guidelines</h4> 
+             <div class="entry-summary">
+               Image: rogerashford/ iStock For years, doctors prescribed cholesterol-lowing statins based largely on cholesterol test results. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/heart-health/4-ways-to-eat-your-way-to-lower-cholesterol"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/healhty-food-lower-cholesterol-heart-dietiStock_000083145271_Medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="4 ways to eat your way to lower cholesterol"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">4 ways to eat your way to lower cholesterol</h4> 
+             <div class="entry-summary">
+               Many people can reduce cholesterol levels simply by changing what they eat. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/heart-health/tips-to-measure-your-blood-pressure-correctly"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/2014/10/bigstock-Blood-pressure-29817749.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Tips to measure your blood pressure correctly"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Tips to measure your blood pressure correctly</h4> 
+             <div class="entry-summary">
+               To determine whether you have hypertension, a medical professional will take a blood pressure reading. 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-mind-and-mood global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/mind-and-mood" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Mind &amp; Mood</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Mind &amp; Mood:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/addiction" class="link-list-link">Addiction</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/adult-and-child-adhd" class="link-list-link">Adult &amp; Child ADHD</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/alzheimers-and-dementia" class="link-list-link">Alzheimer's &amp; Dementia</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/anxiety" class="link-list-link">Anxiety</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/depression" class="link-list-link">Depression</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/improving-memory" class="link-list-link">Improving Memory</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/mental-health" class="link-list-link">Mental Health</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/positive-psychology" class="link-list-link">Positive Psychology</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/stress" class="link-list-link">Stress</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="Opioid misuse rising among older adults" href="https://www.health.harvard.edu/mind-and-mood/opioid-misuse-rising-among-older-adults"> Opioid misuse rising among older adults&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Alcohol, even in moderation, could harm your brain" href="https://www.health.harvard.edu/mind-and-mood/alcohol-even-in-moderation-could-harm-your-brain"> Alcohol, even in moderation, could harm your brain&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Alzheimer’s wake-up call" href="https://www.health.harvard.edu/staying-healthy/alzheimers-wake-up-call"> Alzheimer’s wake-up call&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Better habits, better brain health" href="https://www.health.harvard.edu/staying-healthy/better-habits-better-brain-health"> Better habits, better brain health&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Putting off retirement may benefit your brain, health, and longevity" href="https://www.health.harvard.edu/staying-healthy/putting-off-retirement-may-benefit-your-brain-health-and-longevity"> Putting off retirement may benefit your brain, health, and longevity&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/mind-and-mood" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/staying-healthy/alzheimers-wake-up-call"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/p1_SleepingMan_N1709_ts84468240.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alzheimer’s wake-up call"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">Alzheimer’s wake-up call</h4> 
+             <div class="entry-summary">
+               Research has shown an association between poor sleep and a higher risk of accumulating beta-amyloid protein plaque in the brain, one of the hallmarks of Alzheimer’s disease. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/mind-and-mood/how-memory-and-thinking-ability-change-with-age"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/bigstock-Losing-memory-alzheimers-dementia-or-8040209-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="How memory and thinking ability change with age"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">How memory and thinking ability change with age</h4> 
+             <div class="entry-summary">
+               Scientists used to think that brain connections developed at a rapid pace in the first few years of life, until you reached your mental peak in your early 20s. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/pain/8-non-invasive-pain-relief-techniques-that-really-work"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/heating-pad-heat-therapy-joint(1).jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8 non-invasive pain relief techniques that really work"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">8 non-invasive pain relief techniques that really work</h4> 
+             <div class="entry-summary">
+               Sometimes pain has a purpose — it can alert us that we've sprained an ankle, for example. 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-pain global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/pain" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Pain</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Pain:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/arthritis" class="link-list-link">Arthritis</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/back-pain" class="link-list-link">Back Pain</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/headache" class="link-list-link">Headache</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/joint-replacement" class="link-list-link">Joint Replacement</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/other-pain" class="link-list-link">Other Pain</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="7 ways to safeguard your feet" href="https://www.health.harvard.edu/staying-healthy/7-ways-to-safeguard-your-feet"> 7 ways to safeguard your feet&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Does heartburn feel like a heart attack?" href="https://www.health.harvard.edu/diseases-and-conditions/does-heartburn-feel-like-a-heart-attack"> Does heartburn feel like a heart attack?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Don’t delay treatment for carpal tunnel syndrome" href="https://www.health.harvard.edu/diseases-and-conditions/dont-delay-treatment-for-carpal-tunnel-syndrome"> Don’t delay treatment for carpal tunnel syndrome&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Quick-start guide to headaches" href="https://www.health.harvard.edu/diseases-and-conditions/quick-start-guide-to-headaches"> Quick-start guide to headaches&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Lacing right to fight foot pain" href="https://www.health.harvard.edu/pain/lacing-right-to-fight-foot-pain"> Lacing right to fight foot pain&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/pain" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/pain/finding-relief-from-calluses-and-corns"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/foot-health-pain-feet.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Finding relief from calluses and corns"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">Finding relief from calluses and corns</h4> 
+             <div class="entry-summary">
+               &nbsp; Calluses and corns are areas of hardened, sometimes yellowish skin on the foot. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/pain/8-non-invasive-pain-relief-techniques-that-really-work"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/heating-pad-heat-therapy-joint(1).jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8 non-invasive pain relief techniques that really work"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">8 non-invasive pain relief techniques that really work</h4> 
+             <div class="entry-summary">
+               Sometimes pain has a purpose — it can alert us that we've sprained an ankle, for example. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/pain/surgery-free-pain-relief-for-hips-and-knees"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/knee-ultrasound-waves-pain-joint-mobility-GuillermoIosio-iStock_000010635979_Medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Surgery-free pain relief for hips and knees"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Surgery-free pain relief for hips and knees</h4> 
+             <div class="entry-summary">
+               Hip and knee pain can keep you from the activities you love, as well as make routine tasks difficult. 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-staying-healthy global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/staying-healthy" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Staying Healthy</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Staying Healthy:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/aging" class="link-list-link">Aging</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/balance-and-mobility" class="link-list-link">Balance &amp; Mobility</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/diet-and-weight-loss" class="link-list-link">Diet &amp; Weight Loss</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/energy-and-fatigue" class="link-list-link">Energy &amp; Fatigue</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/exercise-and-fitness" class="link-list-link">Exercise &amp; Fitness</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/healthy-eating" class="link-list-link">Healthy Eating</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/physical-activity" class="link-list-link">Physical Activity</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-men" class="link-list-link">Screening Tests for Men</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-women" class="link-list-link">Screening Tests for Women</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/sleep" class="link-list-link">Sleep</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="7 ways to safeguard your feet" href="https://www.health.harvard.edu/staying-healthy/7-ways-to-safeguard-your-feet"> 7 ways to safeguard your feet&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Does drinking coffee offer health benefits?" href="https://www.health.harvard.edu/staying-healthy/does-drinking-coffee-offer-health-benefits"> Does drinking coffee offer health benefits?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Harvard study: It’s not too late to start a healthy diet" href="https://www.health.harvard.edu/staying-healthy/harvard-study-its-not-too-late-to-start-a-healthy-diet"> Harvard study: It’s not too late to start a healthy diet&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Medical marijuana: Know the facts" href="https://www.health.harvard.edu/staying-healthy/medical-marijuana-know-the-facts"> Medical marijuana: Know the facts&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Working out in the office doesn’t lower productivity" href="https://www.health.harvard.edu/staying-healthy/working-out-in-the-office-doesnt-lower-productivity"> Working out in the office doesn’t lower productivity&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/staying-healthy" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/staying-healthy/the-ideal-stretching-routine"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/couple-stretching-exercising-fitnessiStock_000075997959_Medium(1).jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="The ideal stretching routine"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">The ideal stretching routine</h4> 
+             <div class="entry-summary">
+               Image: iStock Stretching promotes flexibility and helps your joints maintain a healthy range of motion, and in doing so, also lowers the chances of joint and muscle strain. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/staying-healthy/want-a-stronger-core-skip-the-sit-ups"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/bigstock-fitness-core-plank-diet-concept-63180394(1).jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Want a stronger core? Skip the sit-ups"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Want a stronger core? Skip the sit-ups</h4> 
+             <div class="entry-summary">
+               Sit-ups once ruled as the way to tighter abs and a slimmer waistline, while "planks" were merely flooring. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/staying-healthy/3-posture-tips-to-get-the-most-out-of-a-core-workout"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/half-foward-bend-yoagiStock_000074742499_Medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3 posture tips to get the most out of a core workout"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">3 posture tips to get the most out of a core workout</h4> 
+             <div class="entry-summary">
+               Good posture is important, even during exercise. 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-cancer global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/cancer" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Cancer</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Cancer:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/breast-cancer" class="link-list-link">Breast Cancer</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/colorectal-cancer" class="link-list-link">Colorectal Cancer</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/other-cancers" class="link-list-link">Other Cancers</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/prostate-health-and-disease" class="link-list-link">Prostate Health &amp; Disease</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/skin-cancer" class="link-list-link">Skin Cancer</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="Are colon cancer screenings necessary after a certain age?" href="https://www.health.harvard.edu/cancer/are-colon-cancer-screenings-necessary-after-a-certain-age"> Are colon cancer screenings necessary after a certain age?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Melanoma isn’t the only skin cancer" href="https://www.health.harvard.edu/cancer/melanoma-isnt-the-only-skin-cancer"> Melanoma isn’t the only skin cancer&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Teaching T cells to fight cancer" href="https://www.health.harvard.edu/cancer/teaching-t-cells-to-fight-cancer"> Teaching T cells to fight cancer&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Erectile dysfunction drugs not linked to melanoma" href="https://www.health.harvard.edu/mens-health/erectile-dysfunction-drugs-not-linked-to-melanoma"> Erectile dysfunction drugs not linked to melanoma&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Antibiotic use linked to increased risk of precancerous colon polyps" href="https://www.health.harvard.edu/cancer/antibiotic-use-linked-to-increased-risk-of-precancerous-colon-polyps"> Antibiotic use linked to increased risk of precancerous colon polyps&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/cancer" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/cancer/factors-that-increase-your-risk-for-a-secondary-cancer"> 
+            <div class="thumbnail img"> 
+             <img data-src="//d2ebzu6go672f3.cloudfront.net/media/content/images/W0414a-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Factors that increase your risk for a secondary cancer"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">Factors that increase your risk for a secondary cancer</h4> 
+             <div class="entry-summary">
+               Several factors can make you more likely to develop a secondary cancer. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/cancer/do-gel-manicures-increase-cancer-risk"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/p2_GelPolishDryer_WL1705_ts522623273.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Do gel manicures increase cancer risk?"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Do gel manicures increase cancer risk?</h4> 
+             <div class="entry-summary">
+               The level of risk from UVA radiation delivered by lamps used by professional manicurists to dry gel nail polish increases with the frequency of manicures. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/cancer/can-diet-help-fight-prostate-cancer"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/fruit-vegetables-fridge-healthy-foodiStock_000053154534_Medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Can diet help fight prostate cancer?"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Can diet help fight prostate cancer?</h4> 
+             <div class="entry-summary">
+               Can adopting a healthier diet help fight prostate cancer? 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-diseases-and-conditions global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/diseases-and-conditions" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Diseases &amp; Conditions</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Diseases &amp; Conditions:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/adult-and-child-adhd" class="link-list-link">Adult &amp; Child ADHD</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/alzheimers-and-dementia" class="link-list-link">Alzheimer's &amp; Dementia</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/diabetes" class="link-list-link">Diabetes</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/digestive-health" class="link-list-link">Digestive Health</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/heart-disease-overview" class="link-list-link">Heart Disease</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/more-diseases-and-conditions" class="link-list-link">More Diseases &amp; Conditions</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/osteoporosis" class="link-list-link">Osteoporosis</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/stroke" class="link-list-link">Stroke</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/thyroid-diseases" class="link-list-link">Thyroid Diseases</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="Does heartburn feel like a heart attack?" href="https://www.health.harvard.edu/diseases-and-conditions/does-heartburn-feel-like-a-heart-attack"> Does heartburn feel like a heart attack?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Have you checked your blood sugar lately?" href="https://www.health.harvard.edu/diseases-and-conditions/have-you-checked-your-blood-sugar-lately"> Have you checked your blood sugar lately?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Is my ear problem related to my age?" href="https://www.health.harvard.edu/diseases-and-conditions/is-my-ear-problem-related-to-my-age"> Is my ear problem related to my age?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Shingles may raise heart attack risk" href="https://www.health.harvard.edu/heart-health/shingles-may-raise-heart-attack-risk"> Shingles may raise heart attack risk&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Should you take an antiviral drug when you get the flu?" href="https://www.health.harvard.edu/diseases-and-conditions/should-you-take-an-antiviral-drug-when-you-get-the-flu"> Should you take an antiviral drug when you get the flu?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/diseases-and-conditions" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/diseases-and-conditions/frequently-asked-questions-about-colds-and-the-flu"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/man-sick-cold-flu-blowing-nose-AndreyPopov%20-iStock-464516703.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Frequently asked questions about colds and the flu"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">Frequently asked questions about colds and the flu</h4> 
+             <div class="entry-summary">
+               Here are the answers to six commonly asked questions about colds and the flu. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/diseases-and-conditions/7-ways-to-calm-your-upset-stomach"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/indigestion-stomach-pain.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="7 ways to get heartburn relief"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">7 ways to get heartburn relief</h4> 
+             <div class="entry-summary">
+               Maybe you've just eaten, or finished a meal an hour or so ago — and now your stomach just doesn't "feel right. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/diseases-and-conditions/healthy-eating-for-blood-sugar-control"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/Healthy-mixed-bowl-of-Fruit-Salad-63061912.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Healthy eating for blood sugar control"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Healthy eating for blood sugar control</h4> 
+             <div class="entry-summary">
+               If you have diabetes, a healthy eating plan for you is not that different from a healthy eating planfor people withoutdiabetes. 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-mens-health global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/mens-health" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Men's Health</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Men's Health:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/erectile-dysfunction" class="link-list-link">Erectile Dysfunction</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/exercise-and-fitness" class="link-list-link">Exercise &amp; Fitness</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/healthy-eating" class="link-list-link">Healthy Eating</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/mens-sexual-health" class="link-list-link">Men's Sexual Health</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/prostate-cancer" class="link-list-link">Prostate Cancer</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/prostate-health-and-disease" class="link-list-link">Prostate Health &amp; Disease</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-men" class="link-list-link">Screening Tests for Men</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="Lift weights to boost muscle" href="https://www.health.harvard.edu/mens-health/lift-weights-to-boost-muscle"> Lift weights to boost muscle&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Men (back) at work" href="https://www.health.harvard.edu/mens-health/men-back-at-work"> Men (back) at work&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Men may want to rethink surgery for early-stage prostate cancer" href="https://www.health.harvard.edu/mens-health/men-may-want-to-rethink-surgery-for-early-stage-prostate-cancer"> Men may want to rethink surgery for early-stage prostate cancer&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Erectile dysfunction drugs not linked to melanoma" href="https://www.health.harvard.edu/mens-health/erectile-dysfunction-drugs-not-linked-to-melanoma"> Erectile dysfunction drugs not linked to melanoma&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="How you deal with pain goes a long way toward relieving it" href="https://www.health.harvard.edu/pain/how-you-deal-with-pain-goes-a-long-way-toward-relieving-it"> How you deal with pain goes a long way toward relieving it&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/mens-health" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/mens-health/4-things-you-should-know-about-erectile-dysfunction"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/erectile-dysfunction-male-bed-coupleiStock_000020675337_Medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="4 things you should know about erectile dysfunction"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">4 things you should know about erectile dysfunction</h4> 
+             <div class="entry-summary">
+               Erectile dysfunction (ED), once shrouded in secrecy, is now in the spotlight, thanks to high-profile advertisements for drugs like Cialis, Viagra, Levitra, and Stendra. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/mens-health/understanding-the-risks-of-supplements-and-herbal-remedies-for-prostate-cancer"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/Supplements%26ED_dreamstime_m_85225350.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Understanding the risks of supplements and herbal remedies for prostate cancer"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Understanding the risks of supplements and herbal remedies for prostate cancer</h4> 
+             <div class="entry-summary">
+               Coping with prostate disease is never easy. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/mens-health/5-things-that-can-scuttle-good-sex"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/bigstock-Sad-woman-on-the-bed-with-her--27565094.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="5 things that can scuttle good sex"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">5 things that can scuttle good sex</h4> 
+             <div class="entry-summary">
+               "The brain is the body's most important sex organ. 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-womens-health global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/womens-health" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Women's Health</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Women's Health:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/breast-health-and-disease" class="link-list-link">Breast Health &amp; Disease</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/exercise-and-fitness" class="link-list-link">Exercise &amp; Fitness</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/healthy-eating" class="link-list-link">Healthy Eating</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/menopause" class="link-list-link">Menopause</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/osteoporosis" class="link-list-link">Osteoporosis</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/pregnancy" class="link-list-link">Pregnancy</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/screening-tests-for-women" class="link-list-link">Screening Tests for Women</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/womens-sexual-health" class="link-list-link">Women's Sexual Health</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="Don’t underestimate your heart risks" href="https://www.health.harvard.edu/womens-health/dont-underestimate-your-heart-risks"> Don’t underestimate your heart risks&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="An aspirin a day for your health?" href="https://www.health.harvard.edu/womens-health/an-aspirin-a-day-for-your-health"> An aspirin a day for your health?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Gender equality? Not when it comes to alcohol and the brain " href="https://www.health.harvard.edu/womens-health/gender-equality-not-when-it-comes-to-alcohol-and-the-brain"> Gender equality? Not when it comes to alcohol and the brain &nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Is my bruising normal?" href="https://www.health.harvard.edu/womens-health/is-my-bruising-normal"> Is my bruising normal?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="How clean should your skin be?" href="https://www.health.harvard.edu/womens-health/how-clean-should-your-skin-be"> How clean should your skin be?&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/womens-health" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <a class="nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/womens-health/two-keys-to-strong-bones-calcium-and-vitamin-d"> 
+            <div class="thumbnail img"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/orange-juice-calcium-vitamind-memoriesarecaptured-iStock_92015897_MEDIUM.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Two keys to strong bones: Calcium and Vitamin D"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="entry-title heading">Two keys to strong bones: Calcium and Vitamin D</h4> 
+             <div class="entry-summary">
+               Image: memoriesarecaptured/Thinkstock Although bone-weakening osteoporosis is quite common among older people, it isn't an inevitable part of aging. 
+             </div> 
+            </div> </a> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/womens-health/why-do-i-lose-a-lot-of-hair-each-fall"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/hair-loss-chemo-treatment-thinning-CatherineL-Prod%200iStock-578824392.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Why do I lose a lot of hair each fall?"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Why do I lose a lot of hair each fall?</h4> 
+             <div class="entry-summary">
+               Hair growth is cyclic, with more shed during the fall than at other times of the year. 
+             </div> 
+            </div> </a> 
+           <a class="media nav-media block-link in-case-you-missed-it-item" href="https://www.health.harvard.edu/womens-health/dont-fall-for-these-skin-myths"> 
+            <div class="thumbnail img thumbnail-secondary"> 
+             <img data-src="//www.health.harvard.edu/media/content/images/skin-care-mirroriStock_000054173388_Medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Don't fall for these skin myths"> 
+            </div> 
+            <div class="bd"> 
+             <h4 class="heading entry-title">Don't fall for these skin myths</h4> 
+             <div class="entry-summary">
+               Think you know a lot about skin and skin care? 
+             </div> 
+            </div> </a> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+       <li class=" global-nav-li-childrens-health global-nav-li nav-item dropdown"> 
+        <!-- active-section --> <a href="https://www.health.harvard.edu/topics/childrens-health" class="global-nav-link dropdown-toggle"> <span class="nav-text-wrapper">Children's Health</span> </a> 
+        <div class="sub-nav megamenu"> 
+         <div class="inner"> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading group-heading-main">Inside Children's Health:</h3> 
+           <ul class="link-list list-bare arrow-bullets"> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/adult-and-child-adhd" class="link-list-link">Adult &amp; Child ADHD</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/autism" class="link-list-link">Autism</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/developmental-milestones" class="link-list-link">Developmental Milestones</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/learning-disabilities" class="link-list-link">Learning Disabilities</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/nutrition" class="link-list-link">Nutrition</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/nutrition-for-children" class="link-list-link">Nutrition for children</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/parenting-issues" class="link-list-link">Parenting Issues</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/physical-activity" class="link-list-link">Physical Activity</a></li> 
+            <li class="link-list-item"><a href="https://www.health.harvard.edu/topics/vaccinations" class="link-list-link">Vaccinations</a></li> 
+           </ul> 
+          </div> 
+          <div class="sub-nav-group col-sm-3"> 
+           <h3 class="group-heading">Featured Content:</h3> 
+           <ul class="default-bullet-list dark-link-list link-list"> 
+            <li> <a title="CPR Resource Center" href="https://www.health.harvard.edu/heart-health/cpr-resource-center"> CPR Resource Center&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="School Lunches" href="https://www.health.harvard.edu/childrens-health/school-lunches"> School Lunches&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Attention deficit/hyperactivity disorder (ADHD) in children" href="https://www.health.harvard.edu/adult-and-child-adhd/attention-deficithyperactivity-disorder-adhd-in-children"> Attention deficit/hyperactivity disorder (ADHD) in children&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Acute bronchitis" href="https://www.health.harvard.edu/lung-health-and-disease/acute-bronchitis"> Acute bronchitis&nbsp;<span class="link-indicator">»</span> </a> </li> 
+            <li> <a title="Measles (Rubeola)" href="https://www.health.harvard.edu/diseases-and-conditions/measles-rubeola"> Measles (Rubeola)&nbsp;<span class="link-indicator">»</span> </a> </li> 
+           </ul> 
+           <p><a href="https://www.health.harvard.edu/topics/childrens-health" class="button button-smaller">See All</a></p> 
+          </div> 
+          <div class="sub-nav-group in-case-you-missed-it col-sm-6"> 
+           <h3 class="group-heading media-beneath">In Case You Missed It:</h3> 
+           <!-- </div>
+
+<div class="sub-nav-group col-sm-3"> --> 
+          </div> 
+         </div> 
+         <a class="footer button-arrowed button-arrowed-chevron" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat"> <span class="nav-footer-icon-envelope icon-envelope"></span> Get the latest news on health and wellness <span class="text-underline">delivered to your inbox</span>! </a> 
+        </div> </li> 
+      </ul> 
+     </div> 
+    </nav> 
+   </header> 
+   <main id="main" class="main" role="main"> 
+    <div class="container"> 
+     <div class="row"> 
+      <article class="main-content-column col-sm-8"> 
+       <div class="breadcrumbs"> 
+        <a href="/">Home</a>&nbsp;» 
+        <a href="https://www.health.harvard.edu/blog">Harvard Health Blog</a>&nbsp;» Living to 100 and beyond: the right genes plus a healthy lifestyle - Harvard Health Blog 
+       </div> 
+       <header class="entry-header"> 
+        <h1 class="entry-title"><a href="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092" rel="bookmark">Living to 100 and beyond: the right genes plus a healthy lifestyle</a></h1> 
+        <div class="post-gutter"> 
+         <div class="author-photo"> 
+          <img src="https://hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/2015/04/Howard-Lewine-150x150.jpg" width="96" height="96" alt="Howard LeWine, M.D." class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"> 
+         </div> 
+        </div> 
+        <time datetime="January 11, 2012" class="published dt-published"> Posted January 11, 2012, 10:33 am </time> 
+        <div class="author vcard"> 
+         <a class="url fn" href="https://www.health.harvard.edu/blog/author/howardlewine">Howard LeWine, M.D.</a>, 
+         <span>Chief Medical Editor, Internet Publishing, Harvard Health Publications</span> 
+        </div> 
+       </header> 
+       <section class="entry-content"> 
+        <div class="featured-image"> 
+         <img width="156" height="240" src="https://hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/2012/01/Centenarian_birthday.jpg" class="attachment-175x240 size-175x240 wp-post-image" alt=""> 
+        </div> 
+        <p>What is it that lets some people live to age 100 and beyond? A new study from the ongoing <a href="http://www.bumc.bu.edu/centenarian/">New England Centenarian Study</a> suggests that protective genes may make a big contribution.</p> 
+        <p>In what the researchers describe as the first study of its kind, they analyzed and deciphered the entire genetic codes of a man and a woman who lived past the age of 114. The two so-called supercentenarians had:</p> 
+        <ul> 
+         <li>DNA that appeared to be very similar to people who did not have long lives</li> 
+         <li>about the same number of gene variants linked to <em>increased</em> disease risk as seen in people from the general population whose genomes have been sequenced</li> 
+         <li>more than 50 possible longevity-associated variants in genes, some of which were unexpected and had not been seen before.</li> 
+        </ul> 
+        <p>The researchers hypothesize that the genes linked with long life may somehow offset the disease-linked genes. This might then allow an extended lifespan. The results were reported in the journal <a href="http://www.frontiersin.org/genetics_of_aging/10.3389/fgene.2011.00090/abstract"><em>Frontiers in Genetics</em></a><em>.</em></p> 
+        <h3>Taking control</h3> 
+        <p>At the beginning of the 20<sup>th</sup> century, the average life expectancy at birth in the United States was just under 50 years. Today, the average newborn can expect to reach 80 years. This great leap forward has little or nothing to do with genes, and everything to do with advances in public health and healthy lifestyles.</p> 
+        <p>During the first 75 years of life, genes have a relatively small influence on longevity, accounting for only 20% to 25% of the reasons that you make it to that age. Not smoking, eating healthfully, getting plenty of exercise, and limiting alcohol matter the most.</p> 
+        <p>Once you hit your mid-80s, genes matter more and more. And once your reach your 90s, how much longer you are likely to live was largely determined the day your father’s sperm fertilized your mother’s egg.</p> 
+        <p>There’s no need to have your DNA sequenced yet to determine what genes you carry. It won’t change what you need to do now. You have the power to change many things that influence your health and how long you live. Here are 10 steps that will help you have the longest, healthiest life possible:</p> 
+        <ol> 
+         <li>Don’t smoke.</li> 
+         <li>Be physically active every day.</li> 
+         <li>Eat a healthy diet rich in whole grains, lean protein, vegetables, and fruits. Reduce or avoid unhealthy saturated fats and trans fats. Instead, use healthier monounsaturated and polyunsaturated fats.</li> 
+         <li>Be sure to get enough vitamin D and calcium.</li> 
+         <li>Maintain a healthy weight and body shape.</li> 
+         <li>Challenge your mind.</li> 
+         <li>Build a strong social network.</li> 
+         <li>Protect your sight, hearing and general health by following preventive care guidelines.</li> 
+         <li>Floss, brush, and see a dentist regularly. Poor oral health may have many effects. It can lead to poor nutrition, pain and possibly even a higher risk of heart disease and stroke.</li> 
+         <li>Discuss with your doctor whether you need any medicine to help you stay healthy. These might include medicines to control high blood pressure, treat osteoporosis or lower cholesterol, for example.</li> 
+        </ol> 
+        <div style="break: both; margin-top: 10px; margin-bottom: 10px; padding: 5px 0;"> 
+         <h3 style="display: inline;">Related Information: <a href="https://www.health.harvard.edu/special-health-reports/living-better-living-longer-the-secrets-of-healthy-aging?utm_source=HHPBlog&amp;utm_medium=link&amp;utm_content=related-text&amp;utm_campaign=referral">Living Better, Living Longer: The secrets of healthy aging</a></h3> 
+        </div> 
+        <div class="shareaholic-canvas" data-app-id="26635458" data-app-id-name="post_below_content" data-app="share_buttons" data-title="Living to 100 and beyond: the right genes plus a healthy lifestyle" data-link="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092" data-summary="A new study from the ongoing New England Centenarian Study suggests that protective genes may make a big contribution to helping people live to age 100 and beyond. Researchers analyzed and deciphered the entire genetic codes of a man and a woman who lived past the age of 114. The two so-called supercentenarians had about as many disease-promoting genes as individuals who did not live as long. But they also had about 50 possible longevity-associated gene variants, some of which were unexpected"></div> 
+        <!-- Added by Brad 7/28/10 --> 
+        <div class="social_bar clearfix"> 
+         <div class="pull-left"> 
+         </div> 
+         <div class="pull-right"> 
+          <a href="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092/print/" title="Print" rel="nofollow"><img class="WP-PrintIcon" src="https://hhpblog.s3.amazonaws.com/blog/content/plugins/wp-print/images/print.gif" alt="Print" title="Print" style="border: 0px;"></a>&nbsp;
+          <a href="https://www.health.harvard.edu/blog/living-to-100-and-beyond-the-right-genes-plus-a-healthy-lifestyle-201201114092/print/" title="Print" rel="nofollow">Print</a> 
+         </div> 
+        </div> 
+       </section> 
+       <div class="crp_related ">
+        <h3>Related Posts:</h3>
+        <ul>
+         <li><a href="http://www.health.harvard.edu/blog/the-missing-rewards-that-motivate-healthy-lifestyle-changes-201603179301">
+           <div class="crp_title">
+            The missing rewards that motivate healthy lifestyle changes
+           </div></a></li>
+         <li><a href="http://www.health.harvard.edu/blog/new-recommend-kegels-and-other-treatments-for-incontinence-women-201409177438">
+           <div class="crp_title">
+            New guidelines recommend Kegels, other lifestyle treatments…
+           </div></a></li>
+         <li><a href="http://www.health.harvard.edu/blog/right-reasons-choose-sunscreen-right-way-use-2016071210017">
+           <div class="crp_title">
+            The right reasons to choose a sunscreen—and the right way…
+           </div></a></li>
+         <li><a href="http://www.health.harvard.edu/blog/people-type-1-diabetes-living-longer-201501087611">
+           <div class="crp_title">
+            People with type 1 diabetes are living longer
+           </div></a></li>
+         <li><a href="http://www.health.harvard.edu/blog/direct-to-consumer-drug-advertising-beyond-what-you-see-on-tv-201508318210">
+           <div class="crp_title">
+            Direct-to-consumer drug advertising — beyond what you see…
+           </div></a></li>
+        </ul>
+        <div class="crp_clear"></div>
+       </div> 
+       <footer class="entry-footer"> 
+        <div class="comments-info"> 
+         <div class="nameplate">
+          Comments
+         </div> 
+         <div class="comment-count">
+          10
+         </div> 
+        </div> 
+        <div class="taxonomy-info"> 
+         <div class="nameplate">
+          Topics
+         </div> 
+         <div class="topic-list"> 
+          <a href="https://www.health.harvard.edu/blog/categories/health/healthy-aging" title="See all posts in the Healthy Aging category">Healthy Aging</a> 
+         </div> 
+        </div> 
+       </footer> 
+       <section id="comments"> 
+        <h3>Comments:</h3> 
+        <div class="comment-link">
+         <a href="#respond" class="link-icon"><img src="https://www.health.harvard.edu/blog/content/themes/rbwp/images/icons/bubble-blog.gif"></a> 
+         <a href="#respond">Post a Comment</a>
+        </div> 
+        <ol class="comment-list"> 
+         <!-- New comment list, 4/26/10 --> 
+         <li id="comment-17765" class="comment even thread-even depth-1 post-4092-comment comment-17765 approved comment-1-in-list first reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-17765">Posted February 27th, 2012 at 10:42 pm</a></time> 
+           <div class="author">
+            DNA
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>Most of the people cannot reach 100 years old because of drinking alcohol and smoking cigarettes. If I will reach that one I am the most happiest person in the world. Base in what I read here is very important to take care of our health. And also do proper exercise and eat only healthy foods that rich in vitamins and minerals.</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-17053" class="comment odd alt thread-odd thread-alt depth-1 post-4092-comment comment-17053 approved comment-2-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-17053">Posted February 20th, 2012 at 9:51 am</a></time> 
+           <div class="author">
+            Anonymous
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>wow! what a wonderful search break through, that to some extend genes those matters how long one stay alive with quality health care.</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <!-- #comment-## --> 
+         <li id="comment-15864" class="comment even thread-even depth-1 post-4092-comment comment-15864 approved comment-3-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-15864">Posted February 2nd, 2012 at 1:10 am</a></time> 
+           <div class="author">
+            <a href="http://health-care-aus.org" rel="external nofollow" class="url">Geoffrey Leigh</a>
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>Born August 6 1930. In spite of father and his father in dementia by age 74, my having 9 TIAs in one day (Nov.2004) 7 in hospitlal and a lacuna Infarct 10 days laterand hospitalised 5 days,now working fifty hours per week, mind/brain better than ever and physicals amaze GPs. More by email if interested plus free E-Book The Myth of the Balanced Diet.</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-15211" class="comment odd alt thread-odd thread-alt depth-1 post-4092-comment comment-15211 approved comment-4-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-15211">Posted January 24th, 2012 at 2:26 am</a></time> 
+           <div class="author">
+            John Shiloh
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>Excellent steps to follow. Longevity is truly an art and science that takes a long time to master, but once you do get it right you can live a long time. I believe the human body was meant to live a long, long time. But when you start putting bad things in your body, it doesn’t function as it was designed to. This why nutrition is essential to feeding every cell of the body so we can prevent pre-mature aging and live a healthy, joyful life.</p> 
+           <p>Thanks for sharing practical steps that everyone should listen to.</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-15020" class="comment even thread-even depth-1 post-4092-comment comment-15020 approved comment-5-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-15020">Posted January 19th, 2012 at 10:14 pm</a></time> 
+           <div class="author">
+            Eva Hart
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>To: Greg Perock</p> 
+           <p>Sorry for the spelling error. I typed Perock not peroxide. I’ll have to check back up to word and be sure it’s correct.</p> 
+           <p>I want to add another thought here to my answer to your post. I discovers a cure for a mild case of Tinnitus I had and for free gave the cure to all the ear ENT clinics at hospitals in San Francisco. I gave it for free because I found compassion and the money was there when I needed it for a major surgery. I wanted to give back the wonderful care and compassion I found. Thus my even posting how Healthcare is Constitutional and a Democratic way of life. I was glad to do so.</p> 
+           <p>Consequently, maybe you have Tinnitus and will benefit from my cure once it is researched first. Furthermore, don’t you see how if you kindly and compassionately help others with Good Healthcare how you and your family<br> will benefit also! Eva L. Hart Sfc</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-15019" class="comment odd alt thread-odd thread-alt depth-1 post-4092-comment comment-15019 approved comment-6-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-15019">Posted January 19th, 2012 at 9:13 pm</a></time> 
+           <div class="author">
+            Eva Hart
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>To: Greg Peroxide</p> 
+           <p>It is a sad rendition that when someone as myself tries to open the Golden door to life saving healthcare and great deliverance from pain of any kind that all one can think of is the $ dollar bill and some negative angle to the article<br> I cannot believe such comments as yours. Think of how you will be compassionately saving a life and removing someone”s pain from cancer and so firth. What does Welfare have to do with my article showng Healthcare for all is Constitutional. Just think only of showing compassion in healing a person and being a nice person and be gla<br> d a Golden Door has opened. Maybe some day you’ll show some class and Thank me when your sick! Can you do that? Eva L. Hart Sfc</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-14984" class="comment even thread-even depth-1 post-4092-comment comment-14984 approved comment-7-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-14984">Posted January 18th, 2012 at 9:36 pm</a></time> 
+           <div class="author">
+            Lilia
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>I definitely enjoyed the empowerment I felt while reading this post, in the fact that we can take control our health by making necessary and important changes to our lifestyle, such as flossing everyday and eating a balanced/nutritious diet. Yet, I wished it included ways that one can achieve some of the 10 steps mentioned. For example, some of the steps seem a bit vague. Step 8 states, ‘Protect your sight, hearing and general health by following preventive care guidelines.’ However, few people may know what those preventative measures are to protect their vision, sight and hearing.</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-14612" class="comment odd alt thread-odd thread-alt depth-1 post-4092-comment comment-14612 approved comment-8-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-14612">Posted January 13th, 2012 at 6:47 pm</a></time> 
+           <div class="author">
+            Cassidy
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>An interesting study. I like the ten steps you list at the end; such common-sense measures and so alien to much of our society today. Many of these health practices were known as far back as 1833 when a young church leader named Joseph Smith brought forth a document listing them. Though there was no scientific evidence to back him up then, studies like this and The China Study now prove that what he claimed was true. You can see the original document here: <a href="http://josephsmithpapers.org/paperSummary/revelation-27-february-1833-dc-89" rel="nofollow">http://josephsmithpapers.org/paperSummary/revelation-27-february-1833-dc-89</a></p> 
+           <p>you can read the text here: <a href="http://lds.org/scriptures/dc-testament/dc/89?lang=eng" rel="nofollow">http://lds.org/scriptures/dc-testament/dc/89?lang=eng</a></p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> </li>
+         <!-- #comment-## --> 
+         <li id="comment-14566" class="comment even thread-even depth-1 post-4092-comment comment-14566 approved comment-9-in-list reader"> 
+          <header class="comment-header"> 
+           <time><a href="#comment-14566">Posted January 13th, 2012 at 5:26 am</a></time> 
+           <div class="author">
+            Eva Hart
+           </div> 
+          </header> 
+          <section class="comment-content"> 
+           <p>To: Harvard Health Blog</p> 
+           <p>Thank-you for your longevity article. Now before the US Supreme court is the sad issue of whether Healthcare is Constitutional or not. It’s sad because any smart person would want good health. No one wants to die. My contribution here<br> is that in our Preamble to the Constitution it states,”To promote the General Welfare means to consider the needs of all the people. It promotes the General Welfare by making the people “Healthy,”happy,and prosperous.” Taxes does this too. From Vanza Devereaux,’63 The Government of a Free Nation. CA State Education Dept. On Amazon bkstr. I say thus it is Constitutional to give all people life saving Health care. Eva Hart Sfc</p> 
+          </section> 
+          <footer class="comment-footer"> 
+           <!-- .reply --> 
+          </footer> 
+          <ul class="children"> 
+           <li id="comment-14930" class="comment odd alt depth-2 post-4092-comment comment-14930 approved comment-10-in-list reader"> 
+            <header class="comment-header"> 
+             <time><a href="#comment-14930">Posted January 17th, 2012 at 5:11 pm</a></time> 
+             <div class="author">
+              Greg Perock
+             </div> 
+            </header> 
+            <section class="comment-content"> 
+             <p>A Constitutionally limited government can not at the same time be a Welfare State! Smart people know that a healthy body contains a healthy brain–the body carries the lamp.</p> 
+            </section> 
+            <footer class="comment-footer"> 
+             <!-- .reply --> 
+            </footer> </li>
+           <!-- #comment-## --> 
+          </ul>
+          <!-- .children --> </li>
+         <!-- #comment-## --> 
+        </ol> 
+       </section> 
+      </article> 
+      <aside class="main-sidebar-column col-sm-4"> 
+       <div class="home-sidebar"> 
+        <!-- <div id="secondary" role="complementary"> --> 
+        <section class="content-box bordered-box"> 
+         <div class="module"> 
+          <div class="home_module"> 
+           <h2 class="sidebar-featured-content-heading heading like-h4"> <img border="0" align="right" width="44" height="44" alt="HEALTHbeat" src="/images/misc/icon-healthbeat.gif"> Sign Up Now For<br> <span style="font-size: 18px; font-weight: bold;"><span style="color: rgb(153, 0, 0);">HEALTH</span>beat</span><br> Our FREE E-Newsletter </h2> 
+           <p style="margin: 0.5em 0pt 0.25em; font-size: 12px;">Get weekly health information and advice from the experts at Harvard Medical School.</p> 
+           <form action="https://www.health.harvard.edu/healthbeat" method="get" class="healthbeat_signup"> 
+            <input type="text" value="" placeholder="Enter E-mail Address" name="email" size="24" class="textfield healthbeat_email_field"> 
+            <input type="image" value="Sign Up Now" src="/images/misc/button-sign_up_now.gif"> 
+            <input type="hidden" value="process" name="mode"> 
+           </form> 
+          </div> 
+         </div> 
+        </section>
+        <section class="content-box bordered-box"> 
+         <div class="section recent-posts-section"> 
+          <h4 class="sidebar-content-heading content-box-heading colored-heading">Recent Posts</h4> 
+          <ul class="link-list recent-post-link-list"> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/diabetes-adding-lifestyle-changes-medication-can-deliver-knockout-punch-2017092812468" title="Diabetes: Adding lifestyle changes to medication can deliver a knockout punch"> Diabetes: Adding lifestyle changes to medication can deliver a knockout punch </a> 
+            </div> 
+            <div class="post-date secondary-info">
+              Sep 28, 2017 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/flu-shots-during-pregnancy-2017092712458" title="Flu shots during pregnancy"> Flu shots during pregnancy </a> 
+            </div> 
+            <div class="post-date secondary-info">
+              Sep 27, 2017 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/four-ways-to-help-your-child-get-enough-sleep-2017092612472" title="4 ways to help your child get enough sleep"> 4 ways to help your child get enough sleep </a> 
+            </div> 
+            <div class="post-date secondary-info">
+              Sep 26, 2017 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/the-latest-scoop-on-the-health-benefits-of-coffee-2017092512429" title="The latest scoop on the health benefits of coffee"> The latest scoop on the health benefits of coffee </a> 
+            </div> 
+            <div class="post-date secondary-info">
+              Sep 25, 2017 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/leaky-gut-what-is-it-and-what-does-it-mean-for-you-2017092212451" title="Leaky gut: What is it, and what does it mean for you?"> Leaky gut: What is it, and what does it mean for you? </a> 
+            </div> 
+            <div class="post-date secondary-info">
+              Sep 22, 2017 
+            </div> </li> 
+          </ul> 
+         </div> 
+        </section>
+        <section class="content-box bordered-box">
+         <div class="section most-commented-posts-section"> 
+          <h4 class="sidebar-content-heading content-box-heading colored-heading">Most Commented</h4> 
+          <ul class="link-list most-commented-link-list"> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/harvard-to-usda-check-out-the-healthy-eating-plate-201109143344" title="Harvard to USDA: Check out the Healthy Eating Plate"> Harvard to USDA: Check out the Healthy Eating Plate </a> 
+            </div> 
+            <div class="post-comment-count secondary-info">
+              313 Comments 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/going-gluten-free-just-because-heres-what-you-need-to-know-201302205916" title="Going gluten-free just because? Here’s what you need to know"> Going gluten-free just because? Here's what you need to know </a> 
+            </div> 
+            <div class="post-comment-count secondary-info">
+              257 Comments 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/teens-who-smoke-pot-at-risk-for-later-schizophrenia-psychosis-201103071676" title="Teens who smoke pot at risk for later schizophrenia, psychosis"> Teens who smoke pot at risk for later schizophrenia, psychosis </a> 
+            </div> 
+            <div class="post-comment-count secondary-info">
+              123 Comments 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/electronic-cigarettes-help-or-hazard-201109223395" title="Electronic cigarettes: Help or hazard?"> Electronic cigarettes: Help or hazard? </a> 
+            </div> 
+            <div class="post-comment-count secondary-info">
+              117 Comments 
+            </div> </li> 
+           <li> 
+            <div class="post-title"> 
+             <a href="https://www.health.harvard.edu/blog/a-chia-pet-for-diabetes-20101217923" title="A Chia Pet for diabetes?"> A Chia Pet for diabetes? </a> 
+            </div> 
+            <div class="post-comment-count secondary-info">
+              102 Comments 
+            </div> </li> 
+          </ul> 
+         </div> 
+        </section>
+        <section class="content-box bordered-box"> 
+         <h4 class="sidebar-content-heading content-box-heading colored-heading">Archive</h4> 
+         <ul class="years"> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2017">2017</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2017/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2016">2016</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2016/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2015">2015</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2015/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2014">2014</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2014/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2013">2013</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2013/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2012">2012</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2012/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2011">2011</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/8">August</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/7">July</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/6">June</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/5">May</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/4">April</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/3">March</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/2">February</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2011/1">January</a> </li> 
+           </ul> </li> 
+          <li class=""> 
+           <div class="year-title"> 
+            <img src="/images/misc/expand.gif" alt="View Monthly Archives" title="View Monthly Archives"> 
+            <a href="https://www.health.harvard.edu/blog/2010">2010</a> 
+           </div> 
+           <ul class="months"> 
+            <li> <a href="https://www.health.harvard.edu/blog/2010/12">December</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2010/11">November</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2010/10">October</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2010/9">September</a> </li> 
+            <li> <a href="https://www.health.harvard.edu/blog/2010/8">August</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </section>
+        <section class="content-box bordered-box">
+         <h4 class="sidebar-content-heading content-box-heading colored-heading">Our Experts</h4>
+         <ul class="author-list"> 
+          <li> 
+           <div class="author-image"> 
+            <img src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/2015/02/Gregory-Curfman_395x500-150x150.jpg" alt="Gregory Curfman, M.D." width="80" height="80" class="photo"> 
+           </div> 
+           <div class="author-info"> 
+            <div class="name">
+             <a href="/blog/author/gregcurfman/">Gregory Curfman, M.D.</a>
+            </div> 
+            <div class="byline">
+             Editor in Chief, 
+             <em>Harvard Health Publishing</em>
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="author-image"> 
+            <img src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/userphoto/nancyferrari.thumbnail.jpg" alt="Nancy Ferrari" width="80" height="80" class="photo"> 
+           </div> 
+           <div class="author-info"> 
+            <div class="name">
+             <a href="/blog/author/nferrari/">Nancy Ferrari</a>
+            </div> 
+            <div class="byline">
+             Editor, 
+             <em>Harvard Health Publishing</em>
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="author-image"> 
+            <img src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/userphoto/41.thumbnail.jpg" alt="Heidi Godman" width="80" height="80" class="photo"> 
+           </div> 
+           <div class="author-info"> 
+            <div class="name">
+             <a href="/blog/author/hgodman/">Heidi Godman</a>
+            </div> 
+            <div class="byline">
+             Executive Editor, 
+             <em>Harvard Health Letter</em>
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="author-image"> 
+            <img src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/userphoto/59.thumbnail.jpg" alt="Beverly Merz" width="80" height="80" class="photo"> 
+           </div> 
+           <div class="author-info"> 
+            <div class="name">
+             <a href="/blog/author/bmerz/">Beverly Merz</a>
+            </div> 
+            <div class="byline">
+             Executive Editor, 
+             <em>Harvard Women's Health Watch</em>
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="author-image"> 
+            <img src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/2015/11/Bio-Photo_Solan-150x150.jpg" alt="Matthew Solan" width="80" height="80" class="photo"> 
+           </div> 
+           <div class="author-info"> 
+            <div class="name">
+             <a href="/blog/author/msolan/">Matthew Solan</a>
+            </div> 
+            <div class="byline">
+             Executive Editor, 
+             <em>Harvard Men's Health Watch</em>
+            </div> 
+           </div> </li> 
+          <li> 
+           <div class="author-image"> 
+            <img src="//hhpblog.s3.amazonaws.com/blog/wordpress/wp-content/uploads/userphoto/juliecorliss.thumbnail.jpg" alt="Julie Corliss" width="80" class="photo"> 
+           </div> 
+           <div class="author-info"> 
+            <div class="name">
+             <a href="/blog/author/juliecorliss/">Julie Corliss</a>
+            </div> 
+            <div class="byline">
+             Executive Editor, 
+             <em>Harvard Heart Letter</em>
+            </div> 
+           </div> </li> 
+         </ul> 
+         <p><a href="/blog/our-experts/">View all of our experts »</a></p> 
+        </section>
+        <section class="content-box bordered-box">
+         <h4 class="sidebar-content-heading content-box-heading colored-heading">Harvard Health Bestsellers</h4>
+         <ol class="link-list"> 
+          <li><a href="https://www.health.harvard.edu/special-health-reports/stretching-35-exercises-to-improve-flexibility-and-reduce-pain">Stretching: 35 exercises to improve flexibility and reduce pain</a></li> 
+          <li><a href="https://www.health.harvard.edu/special-health-reports/improving-memory-understanding-age-related-memory-loss">Improving Memory: Understanding age-related memory loss</a></li> 
+          <li><a href="https://www.health.harvard.edu/special-health-reports/controlling-your-blood-pressure">Controlling Your Blood Pressure </a></li> 
+          <li><a href="https://www.health.harvard.edu/special-health-reports/improving-sleep-a-guide-to-a-good-nights-rest">Improving Sleep: A guide to a good night's rest</a></li> 
+          <li><a href="https://www.health.harvard.edu/special-health-reports/better-balance-easy-exercises-to-improve-stability-and-prevent-falls">Better Balance: Easy exercises to improve stability and prevent falls</a></li> 
+         </ol> 
+        </section>
+        <section class="content-box bordered-box"> 
+         <h4>Follow Harvard Health Publications</h4> 
+         <ul class="social-box-link-list"> 
+          <li class="facebook">Become a Fan on <a target="_new" href="https://www.facebook.com/pages/Harvard-Health-Publications/70874266158">Facebook »</a></li> 
+          <li class="twitter">Follow us on <a target="_new" href="https://twitter.com/harvardhealth">Twitter »</a></li> 
+          <li class="rss">Subscribe to our <a target="_new" href="https://www.health.harvard.edu/blog/feed">RSS Feed »</a></li> 
+         </ul> 
+        </section>
+        <section class="content-box bordered-box">
+         <h4 class="sidebar-content-heading content-box-heading colored-heading">Disclaimer:</h4> 
+         <div class="textwidget">
+          <div class="full_disclaimer"> 
+           <p class="smaller">The contents displayed within this public group(s), such as text, graphics, and other material ("Content") are intended for educational purposes only. The Content is not intended to substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your healthcare provider with any questions you may have regarding your medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read in a public group(s).</p> 
+           <p class="smaller">If you think you may have a medical emergency, call your healthcare provider or 911 immediately. Any mention of products or services is not meant as a guarantee, endorsement, or recommendation of the products, services, or companies. Reliance on any information provided is solely at your own risk. Please discuss any options with your healthcare provider.</p> 
+           <p class="smaller">The information you share, including that which might otherwise be Protected Health Information, to this site is by design open to the public and is not a private, secure service. You should think carefully before disclosing any personal information in any public forum. What you have written may be seen, disclosed to, or collected by third parties and may be used by others in ways we are unable to control or predict, including to contact you or otherwise be used for unauthorized or unlawful purposes. As with any public forum on any site, this information may also appear in third-party search engines like Google, MSN, Yahoo, etc. Your use of this site is governed by Harvard University and its affiliates Terms of Use located at <a href="/privacy-policy">www.health.harvard.edu/privacy-policy</a> and may be amended from time to time.</p> 
+           <div class="expand_link">
+            <img src="/images/misc/button-up.png">View Less
+           </div> 
+          </div> 
+          <div class="short_disclaimer"> 
+           <p class="smaller"> The contents displayed within this public group(s), such as text, graphics, and other material ("Content") are intended for educational purposes only. The Content is not intended to substitute for professional medical advice, diagnosis, or treatment. . . .</p> 
+           <div class="expand_link">
+            <img src="/images/misc/button-down.png">View More 
+           </div> 
+          </div>
+         </div> 
+        </section>
+        <section class="content-box bordered-box">
+         <h4 class="sidebar-content-heading content-box-heading colored-heading">Topics</h4> 
+         <ul> 
+          <li class="cat-item cat-item-16"><a href="https://www.health.harvard.edu/blog/categories/health">Health</a> 
+           <ul class="children"> 
+            <li class="cat-item cat-item-4"><a href="https://www.health.harvard.edu/blog/categories/health/addiction">Addiction</a> </li> 
+            <li class="cat-item cat-item-17"><a href="https://www.health.harvard.edu/blog/categories/health/alzheimers-disease">Alzheimer's Disease</a> </li> 
+            <li class="cat-item cat-item-18"><a href="https://www.health.harvard.edu/blog/categories/health/anxiety-and-depression">Anxiety and Depression</a> </li> 
+            <li class="cat-item cat-item-19"><a href="https://www.health.harvard.edu/blog/categories/health/arthritis">Arthritis</a> </li> 
+            <li class="cat-item cat-item-20"><a href="https://www.health.harvard.edu/blog/categories/health/asthma-and-allergies">Asthma and Allergies</a> </li> 
+            <li class="cat-item cat-item-21"><a href="https://www.health.harvard.edu/blog/categories/health/back-pain">Back Pain</a> </li> 
+            <li class="cat-item cat-item-657"><a href="https://www.health.harvard.edu/blog/categories/health/behavioral-health">Behavioral Health</a> </li> 
+            <li class="cat-item cat-item-717"><a href="https://www.health.harvard.edu/blog/categories/health/brain-and-cognitive-health">Brain and cognitive health</a> </li> 
+            <li class="cat-item cat-item-22"><a href="https://www.health.harvard.edu/blog/categories/health/breast-cancer">Breast Cancer</a> </li> 
+            <li class="cat-item cat-item-23"><a href="https://www.health.harvard.edu/blog/categories/health/cancer">Cancer</a> </li> 
+            <li class="cat-item cat-item-24"><a href="https://www.health.harvard.edu/blog/categories/health/caregiving">Caregiving</a> </li> 
+            <li class="cat-item cat-item-67"><a href="https://www.health.harvard.edu/blog/categories/health/childrens-health">Children's Health</a> </li> 
+            <li class="cat-item cat-item-25"><a href="https://www.health.harvard.edu/blog/categories/health/cold-and-flu">Cold and Flu</a> </li> 
+            <li class="cat-item cat-item-170"><a href="https://www.health.harvard.edu/blog/categories/health/complementary-and-alternative-medicine-health">Complementary and alternative medicine</a> </li> 
+            <li class="cat-item cat-item-26"><a href="https://www.health.harvard.edu/blog/categories/health/dental-health">Dental Health</a> </li> 
+            <li class="cat-item cat-item-60"><a href="https://www.health.harvard.edu/blog/categories/health/diabetes">Diabetes</a> </li> 
+            <li class="cat-item cat-item-27"><a href="https://www.health.harvard.edu/blog/categories/health/diet-and-weight-loss">Diet and Weight Loss</a> </li> 
+            <li class="cat-item cat-item-28"><a href="https://www.health.harvard.edu/blog/categories/health/digestive-disorders">Digestive Disorders</a> </li> 
+            <li class="cat-item cat-item-64"><a href="https://www.health.harvard.edu/blog/categories/health/drugs-and-supplements">Drugs and Supplements</a> </li> 
+            <li class="cat-item cat-item-784"><a href="https://www.health.harvard.edu/blog/categories/health/and-throat">Ear, nose, and throat</a> </li> 
+            <li class="cat-item cat-item-71"><a href="https://www.health.harvard.edu/blog/categories/health/emergency-planing">Emergency Planning</a> </li> 
+            <li class="cat-item cat-item-718"><a href="https://www.health.harvard.edu/blog/categories/health/end-of-life">End of life</a> </li> 
+            <li class="cat-item cat-item-29"><a href="https://www.health.harvard.edu/blog/categories/health/exercise-and-fitness">Exercise and Fitness</a> </li> 
+            <li class="cat-item cat-item-30"><a href="https://www.health.harvard.edu/blog/categories/health/eye-health">Eye Health</a> </li> 
+            <li class="cat-item cat-item-31"><a href="https://www.health.harvard.edu/blog/categories/health/family-planning-and-pregnancy">Family Planning and Pregnancy</a> </li> 
+            <li class="cat-item cat-item-790"><a href="https://www.health.harvard.edu/blog/categories/health/first-aid">First Aid</a> </li> 
+            <li class="cat-item cat-item-32"><a href="https://www.health.harvard.edu/blog/categories/health/foot-care">Foot Care</a> </li> 
+            <li class="cat-item cat-item-94"><a href="https://www.health.harvard.edu/blog/categories/health/genes">Genes</a> </li> 
+            <li class="cat-item cat-item-770"><a href="https://www.health.harvard.edu/blog/categories/health/headache">Headache</a> </li> 
+            <li class="cat-item cat-item-121"><a href="https://www.health.harvard.edu/blog/categories/health/health-care">Health care</a> </li> 
+            <li class="cat-item cat-item-776"><a href="https://www.health.harvard.edu/blog/categories/health/health-policy">Health policy</a> </li> 
+            <li class="cat-item cat-item-5"><a href="https://www.health.harvard.edu/blog/categories/health/healthy-aging">Healthy Aging</a> </li> 
+            <li class="cat-item cat-item-33"><a href="https://www.health.harvard.edu/blog/categories/health/healthy-eating">Healthy Eating</a> </li> 
+            <li class="cat-item cat-item-34"><a href="https://www.health.harvard.edu/blog/categories/health/hearing-loss">Hearing Loss</a> </li> 
+            <li class="cat-item cat-item-35"><a href="https://www.health.harvard.edu/blog/categories/health/heart-health">Heart Health</a> </li> 
+            <li class="cat-item cat-item-36"><a href="https://www.health.harvard.edu/blog/categories/health/hypertension-and-stroke">Hypertension and Stroke</a> </li> 
+            <li class="cat-item cat-item-37"><a href="https://www.health.harvard.edu/blog/categories/health/incontinence">Incontinence</a> </li> 
+            <li class="cat-item cat-item-236"><a href="https://www.health.harvard.edu/blog/categories/health/infectious-diseases">Infectious diseases</a> </li> 
+            <li class="cat-item cat-item-785"><a href="https://www.health.harvard.edu/blog/categories/health/injuries">Injuries</a> </li> 
+            <li class="cat-item cat-item-714"><a href="https://www.health.harvard.edu/blog/categories/health/kidney-and-urinary-tract">Kidney and urinary tract</a> </li> 
+            <li class="cat-item cat-item-761"><a href="https://www.health.harvard.edu/blog/categories/health/lung-disease">Lung disease</a> </li> 
+            <li class="cat-item cat-item-768"><a href="https://www.health.harvard.edu/blog/categories/health/managing-your-health-care">Managing your health care</a> </li> 
+            <li class="cat-item cat-item-82"><a href="https://www.health.harvard.edu/blog/categories/health/medical-research">Medical Research</a> </li> 
+            <li class="cat-item cat-item-38"><a href="https://www.health.harvard.edu/blog/categories/health/memory">Memory</a> </li> 
+            <li class="cat-item cat-item-40"><a href="https://www.health.harvard.edu/blog/categories/health/mens-health">Men's Health</a> </li> 
+            <li class="cat-item cat-item-39"><a href="https://www.health.harvard.edu/blog/categories/health/menopause">Menopause</a> </li> 
+            <li class="cat-item cat-item-7"><a href="https://www.health.harvard.edu/blog/categories/health/mental-health">Mental Health</a> </li> 
+            <li class="cat-item cat-item-41"><a href="https://www.health.harvard.edu/blog/categories/health/migraines">Migraines</a> </li> 
+            <li class="cat-item cat-item-791"><a href="https://www.health.harvard.edu/blog/categories/health/neurological-conditions">Neurological conditions</a> </li> 
+            <li class="cat-item cat-item-646"><a href="https://www.health.harvard.edu/blog/categories/health/osteoarthritis">Osteoarthritis</a> </li> 
+            <li class="cat-item cat-item-42"><a href="https://www.health.harvard.edu/blog/categories/health/osteoporosis">Osteoporosis</a> </li> 
+            <li class="cat-item cat-item-43"><a href="https://www.health.harvard.edu/blog/categories/health/pain-management">Pain Management</a> </li> 
+            <li class="cat-item cat-item-639"><a href="https://www.health.harvard.edu/blog/categories/health/parenting">Parenting</a> </li> 
+            <li class="cat-item cat-item-83"><a href="https://www.health.harvard.edu/blog/categories/health/pets">Pets</a> </li> 
+            <li class="cat-item cat-item-93"><a href="https://www.health.harvard.edu/blog/categories/health/pregnancy">Pregnancy</a> </li> 
+            <li class="cat-item cat-item-66"><a href="https://www.health.harvard.edu/blog/categories/health/prevention">Prevention</a> </li> 
+            <li class="cat-item cat-item-44"><a href="https://www.health.harvard.edu/blog/categories/health/prostate-health">Prostate Health</a> </li> 
+            <li class="cat-item cat-item-68"><a href="https://www.health.harvard.edu/blog/categories/health/radiation">Radiation</a> </li> 
+            <li class="cat-item cat-item-122"><a href="https://www.health.harvard.edu/blog/categories/health/safety">Safety</a> </li> 
+            <li class="cat-item cat-item-715"><a href="https://www.health.harvard.edu/blog/categories/health/screening">Screening</a> </li> 
+            <li class="cat-item cat-item-70"><a href="https://www.health.harvard.edu/blog/categories/health/sex-health">Sex</a> </li> 
+            <li class="cat-item cat-item-45"><a href="https://www.health.harvard.edu/blog/categories/health/sexual-conditions">Sexual Conditions</a> </li> 
+            <li class="cat-item cat-item-46"><a href="https://www.health.harvard.edu/blog/categories/health/skin-and-hair-care">Skin and Hair Care</a> </li> 
+            <li class="cat-item cat-item-47"><a href="https://www.health.harvard.edu/blog/categories/health/sleep">Sleep</a> </li> 
+            <li class="cat-item cat-item-624"><a href="https://www.health.harvard.edu/blog/categories/health/smoking-cessation" title="quit smoking">Smoking cessation</a> </li> 
+            <li class="cat-item cat-item-48"><a href="https://www.health.harvard.edu/blog/categories/health/stress">Stress</a> </li> 
+            <li class="cat-item cat-item-647"><a href="https://www.health.harvard.edu/blog/categories/health/surgery">Surgery</a> </li> 
+            <li class="cat-item cat-item-120"><a href="https://www.health.harvard.edu/blog/categories/health/tests-and-procedures">Tests and procedures</a> </li> 
+            <li class="cat-item cat-item-49"><a href="https://www.health.harvard.edu/blog/categories/health/thyroid-disorders">Thyroid Disorders</a> </li> 
+            <li class="cat-item cat-item-719"><a href="https://www.health.harvard.edu/blog/categories/health/travel-health">Travel health</a> </li> 
+            <li class="cat-item cat-item-485"><a href="https://www.health.harvard.edu/blog/categories/health/vaccines">Vaccines</a> </li> 
+            <li class="cat-item cat-item-50"><a href="https://www.health.harvard.edu/blog/categories/health/womens-health">Women's Health</a> </li> 
+            <li class="cat-item cat-item-771"><a href="https://www.health.harvard.edu/blog/categories/health/workplace-health">Workplace health</a> </li> 
+            <li class="cat-item cat-item-716"><a href="https://www.health.harvard.edu/blog/categories/health/yoga">Yoga</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </section> 
+        <!-- </div> --> 
+       </div> 
+      </aside> 
+     </div> 
+    </div> 
+   </main> 
+   <!-- End Main --> 
+   <footer class="global-footer" role="contentinfo"> 
+    <a href="/" class="logo-footer" title="Go to the home page"> <img src="/images/logo-mobile-footer-low@2x.png" width="235" alt="Harvard Health Publishing logo"> </a> 
+    <div class="container"> 
+     <div class="row"> 
+      <div class="col-sm-12 column-main footer-col"> 
+       <ul class="footer-nav list-ui link-list"> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/">Home</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" data-toggle="modal" data-target="#healthbeat-modal" data-remote="false" href="/healthbeat">Sign up for HEALTHbeat</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/subscribe">Subscribe</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/special-health-reports">Special Health Reports</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/newsletters">Subscriptions</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/customer-service">Customer Service</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/about-us">About Us</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/permissions">Licensing/Permissions</a></li> 
+        <li class="footer-nav-li"><a class="mobile-footer-nav-link" href="/privacy-policy">Privacy Policy</a></li> 
+       </ul> 
+      </div> 
+      <div class="social-and-legal-container container"> 
+       <ul class="global-bottom_social social-icons list-ui"> 
+        <li class="global-bottom_social-li"> <a href="https://www.facebook.com/HarvardHealthPublications" target="_blank" title="Go to our Facebook page »" class="social-icon-link facebook icon-facebook-square"> <span class="sr-only">Facebook</span> </a> </li> 
+        <li class="global-bottom_social-li"> <a href="https://twitter.com/harvardhealth" target="_blank" title="Go to our Twitter profile »" class="social-icon-link twitter icon-twitter-square"> <span class="sr-only">Twitter</span> </a> </li> 
+        <li class="global-bottom_social-li"> <a href="/blog/feed" title="Go to our RSS feeds »" class="social-icon-link rss icon-feed-square"> <span class="sr-only">RSS</span> </a> </li> 
+       </ul> 
+       <div id="copyright" class="legal copyright privacy">
+         © 2010 - 2017 Harvard University. All rights reserved. 
+       </div> 
+      </div> 
+     </div>
+     <!-- end .row --> 
+    </div>
+    <!-- end .container --> 
+   </footer> 
+   <script src="/js/global.js"></script> 
+   <script type="text/javascript">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/www.health.harvard.edu\/blog\/wp\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script> 
+   <script type="text/javascript" src="https://www.health.harvard.edu/blog/wp/?w3tc_minify=f88f3.js"></script> 
+   <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"95a70e97b6","applicationID":"10070893","transactionName":"YAZUNkZQCEpUUEYPDVlMdwFAWAlXGkBbCAVbBg==","queueTime":0,"applicationTime":729,"atts":"TEFDQA5KRE1QXkIKA0MGFFgWbUlPVEFuSRVAFGpNQ0YRF11WUwoWX01eA0ZHB0tRHVcCF2tMQQdWbUlbWVxVOk1UDFgWUV8SZRpHWgMPUhBqTVxZFldpHEEPDFAPU0xEWRYbGRFCFA1TFlUWFgtEV1oeQAkOUkEaQEFCA0sXCRAIDUNOWg1TVgNdGFpcRB8bQVdADkobRA==","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+   <!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 4010/4109 objects using memcached
+Page Caching using disk: enhanced
+Minified using disk
+Database Caching using memcached
+Application Monitoring using New Relic
+
+ Served from: www.health.harvard.edu @ 2017-09-28 11:18:32 by W3 Total Cache -->
+  </div>
+ </body>
+</html>

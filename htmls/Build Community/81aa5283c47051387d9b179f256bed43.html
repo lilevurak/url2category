@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="shortcut icon" href="https://whitefusemedia.com/sites/all/themes/foundation/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="description" content="When creating a new website, typography can easily be overlooked. We take a look at the importance of the now standard web-fonts tech and how to choose the best fonts for your charity website."> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://whitefusemedia.com/blog/choosing-right-web-font-your-charity"> 
+  <link rel="shortlink" href="https://whitefusemedia.com/node/242"> 
+  <meta property="og:site_name" content="White Fuse"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://whitefusemedia.com/blog/choosing-right-web-font-your-charity"> 
+  <meta property="og:title" content="Choosing the Right Web Font for Your Charity"> 
+  <meta property="og:description" content="When creating a new website, typography can easily be overlooked. We take a look at the importance of the now standard web-fonts tech and how to choose the best fonts for your charity website."> 
+  <meta property="og:updated_time" content="2017-04-28T12:26:24+01:00"> 
+  <meta property="og:image" content="https://whitefusemedia.com/sites/default/files/images/WebFonts_WebFonts-FeaturedImage.png"> 
+  <meta property="article:published_time" content="2016-10-18T15:21:54+01:00"> 
+  <meta property="article:modified_time" content="2017-04-28T12:26:24+01:00"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab"> 
+  <title>Choosing the Right Web Font for Your Charity | White Fuse</title> 
+  <link type="text/css" rel="stylesheet" href="https://whitefusemedia.com/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://whitefusemedia.com/sites/default/files/css/css_tFrkhs6tW9ZJbgxRy_ORwSndXv2wHdR2449TDc8KokA.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://whitefusemedia.com/sites/default/files/css/css_MnXiytJtb186Ydycnpwpw34cuUsHaKc80ey5LiQXhSY.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://whitefusemedia.com/sites/default/files/css/css_hcWQnHQvdPetWpyYl0osapxurBIuV-Jru5-DbVHlbx0.css" media="all"> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.cookie = 'adaptive_image=' + Math.max(screen.width, screen.height) + '; path=/';
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://whitefusemedia.com/sites/default/files/js/js_tm1gahPj5RurExr4Zj4GdGvvL7W4-u6_XRVeEsXyp3Q.js"></script> 
+  <script type="text/javascript" src="https://whitefusemedia.com/sites/default/files/js/js_NpX2cwCeepkWZZ194B6-ViyVBHleaYLOx5R9EWBOMRU.js"></script> 
+  <script type="text/javascript" src="https://whitefusemedia.com/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://whitefusemedia.com/sites/default/files/googleanalytics/analytics.js?owolq9","ga");ga("create", "UA-20612431-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script> 
+  <script type="text/javascript" src="https://whitefusemedia.com/sites/default/files/js/js_s-dNnJSi2xwA9XKIEvgzGt7cNdlvZhJ1d8U7xo_7QCA.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"foundation","theme_token":"OGmn-O_W88TspZ_8ZjFlrETU43tHm7jkVb9gbxkn3u4","js":{"sites\/all\/modules\/addthis\/addthis.js":1,"0":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/extlink\/extlink.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/foundation\/scripts\/interface.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/adaptive_image\/css\/adaptive-image.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/extlink\/extlink.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/foundation\/styles\/foundation.css":1}},"better_exposed_filters":{"views":{"blog":{"displays":{"block_category":{"filters":[]},"block_related":{"filters":[]}}},"leader":{"displays":{"block_leader":{"filters":[]}}},"signposts_rc5_":{"displays":{"block_accreditation":{"filters":[]}}}}},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script> 
+ </head> 
+ <body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-242 node-type-blog"> 
+  <div id="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <div id="wrapper"> 
+   <div id="mobile-header"> 
+    <div class="site-logo"> 
+     <a href="/" title="Home" rel="home"><img src="https://whitefusemedia.com/sites/all/themes/foundation/logo.png" alt="Home"></a> 
+    </div> 
+    <div class="button-container"> 
+     <button type="button" aria-label="Toggle navigation" class="menu-toggle"> <span class="menu-button"></span> </button> 
+    </div>
+    <!-- /.button-container --> 
+   </div> 
+   <div id="header" class="section region-container"> 
+    <div class="holder clearfix"> 
+     <div class="site-info"> 
+      <a href="/" title="Home" rel="home" id="logo"><img src="https://whitefusemedia.com/sites/all/themes/foundation/logo.png" alt="Home"></a> 
+      <div id="site-name"> 
+       <a href="/" title="Home" rel="home"> <span class="title">White Fuse</span> <span class="slogan">Charity Digital Agency</span> </a> 
+      </div> 
+     </div> 
+     <div class="region region-header"> 
+      <div id="block-menu-block-1" class="block block-menu-block"> 
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1"> 
+         <ul class="menu">
+          <li class="first leaf menu-mlid-3624"><a href="/charity-website-design">Services</a></li> 
+          <li class="leaf menu-mlid-806"><a href="/case-studies">Case studies</a></li> 
+          <li class="leaf menu-mlid-3610"><a href="/guides">Guides</a></li> 
+          <li class="leaf menu-mlid-468"><a href="/blog">Blog</a></li> 
+          <li class="leaf menu-mlid-3640"><a href="/search" class="icon-search">Search</a></li> 
+          <li class="last leaf menu-mlid-3627"><a href="/contact" class="highlight">Get in touch</a></li> 
+         </ul>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="page"> 
+    <div id="orientation" class="section region-container"> 
+     <div class="holder clearfix"> 
+      <div id="breadcrumbs">
+       <h2 class="element-invisible">You are here</h2>
+       <div class="breadcrumb">
+        <a href="/">Home</a> » 
+        <a href="/blog">Blog</a> » Choosing the Right Web Font for Your Charity
+       </div>
+      </div> 
+     </div> 
+    </div> 
+    <div id="title" class="default region-container"> 
+     <div class="holder clearfix"> 
+      <h1 class="title" id="page-title">Choosing the Right Web Font for Your Charity</h1> 
+     </div> 
+    </div> 
+    <div id="main" class="default region-container"> 
+     <div class="holder clearfix"> 
+      <div id="menu" class="section"> 
+       <div class="region region-sidebar-first"> 
+        <div id="block-views-blog-block-category" class="block block-views"> 
+         <h2>Category</h2> 
+         <div class="content"> 
+          <div class="view view-blog view-id-blog view-display-id-block_category view-dom-id-9b456b9f3de56c1c964db738fd188975"> 
+           <div class="views-rows clearfix"> 
+            <div class="item-list"> 
+             <ul class="views-summary"> 
+              <li><a href="/blog/category/Content-Strategy">Content Strategy</a> </li> 
+              <li><a href="/blog/category/Fundraising">Fundraising</a> </li> 
+              <li><a href="/blog/category/Marketing">Marketing</a> </li> 
+              <li><a href="/blog/category/Photography">Photography</a> </li> 
+              <li><a href="/blog/category/Social-Media">Social Media</a> </li> 
+              <li><a href="/blog/category/Software-%26-Apps">Software &amp; Apps</a> </li> 
+              <li><a href="/blog/category/Website-Building">Website Building</a> </li> 
+              <li><a href="/blog/category/Website-Inspiration">Website Inspiration</a> </li> 
+             </ul> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="block-block-19" class="block block-block"> 
+         <div class="content"> 
+          <h4>Not what you were looking for?</h4> 
+          <p>Search our entire blog for digital tips for charities.</p> 
+          <p><a class="button-secondary" href="/search"><span style="font-family:FontAwesome"></span> Search now</a></p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="content" class="section clearfix"> 
+       <a id="main-content"></a> 
+       <div class="region region-content"> 
+        <div id="block-views-leader-block-leader" class="block block-views"> 
+         <div class="content"> 
+          <div class="view view-leader view-id-leader view-display-id-block_leader view-dom-id-e281ab759a9b3013cf8175bcd75f3554"> 
+           <div class="views-rows clearfix"> 
+            <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+             <div id="node-242-leader" class="node node-blog node-promoted node-leader" about="/blog/choosing-right-web-font-your-charity" typeof="sioc:Item foaf:Document"> 
+              <div class="body"> 
+               <div class="content clearfix"> 
+                <div class="field field-name-field-date field-type-datetime field-label-hidden">
+                 <div class="field-items">
+                  <div class="field-item even">
+                   <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-03-14T00:00:00+00:00">14 March 2016</span>
+                  </div>
+                 </div>
+                </div>
+                <div class="field field-name-field-author field-type-entityreference field-label-hidden">
+                 <div class="field-items">
+                  <div class="field-item even">
+                   <a href="/people/amy-reinecke">Amy Reinecke</a>
+                  </div>
+                 </div>
+                </div>
+                <div class="field field-name-field-addthis field-type-addthis field-label-hidden">
+                 <div class="field-items">
+                  <div class="field-item even"></div>
+                 </div>
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="block-system-main" class="block block-system"> 
+         <div class="content"> 
+          <div id="node-242" class="node node-blog node-promoted" about="/blog/choosing-right-web-font-your-charity" typeof="sioc:Item foaf:Document"> 
+           <div class="content clearfix"> 
+            <div class="field field-name-field-image field-type-image field-label-hidden field-image">
+             <div class="field-items">
+              <div class="field-item even">
+               <img typeof="foaf:Image" src="https://whitefusemedia.com/sites/default/files/styles/large/public/images/WebFonts_WebFonts-FeaturedImage.png?itok=Spxyhxlf" width="690" height="518" alt="Why Webfonts?">
+              </div>
+             </div>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+             <div class="field-items">
+              <div class="field-item even" property="content:encoded">
+               <p>When creating a new website, typography can easily be overlooked. It’s easy to assume the fonts specified in your brand guidelines will work on the web. Unfortunately a lot of the time they do not. In this post, we take a look at the importance of web fonts and how to choose the best ones for your charity website.</p> 
+               <h2>Why your brand font doesn’t work</h2> 
+               <p>When creating a brand, designers will choose typography that works to represent your image across all media. They are not primarily choosing a font with your website in mind. Unless they are designing both the brand and website at the same time, the font will likely be a desktop font that is created specifically for print purposes and not optimised or licenced for the web.</p> 
+               <h2>Web safe Vs Web based</h2> 
+               <h3>Web safe fonts</h3> 
+               <p>These are the fonts Microsoft, Apple and Linux operating systems have loaded as standard. These fonts will always display on the web as intented if they are already on your computer. Unfortunately, there aren’t many to choose from, and a few of them rate terribly for legibility and readability. You can view a list of <a href="http://www.cssfontstack.com/">these fonts here</a>.</p> 
+               <h3>Web based fonts</h3> 
+               <p>These are not preinstalled on your computer. Instead they are downloaded temporarily by your web browser whilst viewing a website. <a href="https://www.google.com/fonts">Google fonts</a> and <a href="https://typekit.com/">Typekit</a>&nbsp;are two of the largest Web based font services, and the ones we like to use. Many professional Font Foundries have allowed their font software to be licensed in this way so that the typefaces can be used on your website.</p> 
+               <p>You may not find your exact brand font in the libraries offered by such web based font services but the prospect of finding a good match is quite high.</p> 
+               <h2>How to choose the right web-font</h2> 
+               <blockquote>
+                <p>The whole point with type is for you not to be aware it is there...If you remember the shape of a spoon with which you just ate some soup, then the spoon had a poor shape. - Adrian Frutiger, type designer of London’s street signs&nbsp;</p> 
+               </blockquote> 
+               <h3>Legibility vs Readability</h3> 
+               <p>Legibility is how well individual letters are read whereas readability is how easily body copy is read. Body text need to be easily readable and headlines need to be legible. When choosing a font for body text, choose a font that is 'invisible'. An 'invisible' font would be something that is not fussy, decorative and distracting.</p> 
+               <p>Headlines and calls to action on the other hand, need a font that is legible with a level of interest. It needs to attract attention without being too decorative that it becomes unreadable.</p> 
+               <p>In most cases having a combination of two typefaces works well which allows you to have a more stylistic headline font and an easily readable body font.</p> 
+               <h3>What to choose</h3> 
+               <p>As previously mentioned, <a href="https://typekit.com/">Adobe Typekit</a> and <a href="https://www.google.com/fonts">Google Fonts</a> are two of the leading web based services available and we normally recommend choosing fonts that can found in one of their libraries. Together they offer a wide variety of typefaces from professional, global Font Foundries.</p> 
+               <p>With thousands to choose from, where do you start? To help you out we’ve selected just 5 of our favourites. They balance legibility, readability and are consistently used and considered as favourites on the web.</p> 
+               <h2>Five great fonts and combinations</h2> 
+               <h4><a href="https://www.theleagueofmoveabletype.com/raleway" target="_blank">Raleway</a></h4> 
+               <p><img alt="WebFonts-Raleway" src="/sites/default/files/images/WEbFonts-_WebFonts-Raleway.png" style="width: 690px; height: 300px;"></p> 
+               <p><img alt="WebFonts_Raleway-goodbadcombo" src="/sites/default/files/images/Webfonts_Raleway-goodcombo.png" style="width: 690px; height: 201px;"></p> 
+               <p>Both Raleway and Adelle work well as Headline fonts but as a body font, Adelle competes for attention.</p> 
+               <h4><a href="http://www.marksimonson.com/fonts/view/proxima-nova" target="_blank">Proxima Nova</a></h4> 
+               <p><img alt="WebFonts-ProximaNova" src="/sites/default/files/images/WEbFonts-_WebFonts-ProximaNova.png" style="width: 690px; height: 300px;"></p> 
+               <p><img alt="ProximaNova-goodbadcombo" src="/sites/default/files/images/Webfonts_ProximaNova-goodbadcombo(1).png" style="width: 690px; height: 201px;"></p> 
+               <p>Proxima Nova is safe but too simple and indistinct when paired with Raleway as a body font.</p> 
+               <h4><a href="https://www.google.com/fonts/specimen/Open+Sans" target="_blank">Open Sans</a></h4> 
+               <p><img alt="WebFonts-OpenSans" src="/sites/default/files/images/WEbFonts-_WebFonts-OpenSans.png" style="width: 690px; height: 300px;"></p> 
+               <p><img alt="OpenSans-goodbadcombo" src="/sites/default/files/images/Webfonts_OpenSans-goodbadcombo.png" style="width: 691px; height: 201px;"></p> 
+               <p>Open Sans lacks character as a headline font but works well in the body.</p> 
+               <h4><a href="https://typekit.com/fonts/adelle-web" target="_blank">Adelle</a></h4> 
+               <p><img alt="WebFonts-Adelle" src="/sites/default/files/images/WEbFonts-_WebFonts-Adelle.png" style="width: 690px; height: 300px;"></p> 
+               <p><img alt="Adelle-goodbadcombo" src="/sites/default/files/images/WebFonts_Adelle-goodbadcombo(1).png" style="width: 690px; height: 201px;"></p> 
+               <p>Adelle works well as a headline font but is less readable as body text.</p> 
+               <h4><a href="https://typekit.com/fonts/pt-sans" target="_blank">PT Sans (Normal, Caption, Narrow)</a></h4> 
+               <p><img alt="WebFonts-PTSans" src="/sites/default/files/images/WEbFonts-_WebFonts-Adelle%20copy.png" style="width: 690px; height: 300px;"></p> 
+               <p><img alt="PTSans-goodbadcombo" src="/sites/default/files/images/WebFonts_PTSans-goodbadcombo(1).png" style="width: 691px; height: 201px;"></p> 
+               <p>PT Sans is a great body font paired with something like Oswald for headings. See how it doesn't work the other way around?</p> 
+               <h2>What's your favourite web font?</h2> 
+               <p>Do you have a favourite you want to see more of on the web? What do you think of these <a href="/blog/3-fonts-created-good">3 fonts created specifically to support good causes</a>? Let us know in the comments.</p> 
+              </div>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="trailer" class="section region-container"> 
+     <div class="holder clearfix"> 
+      <div class="region region-trailer"> 
+       <div id="block-block-7" class="block block-block"> 
+        <div class="content"> 
+         <div class="body"> 
+          <p>Subscribe to our newsletter to get the latest tips&nbsp;straight to your inbox.</p> 
+          <!-- Begin MailChimp Signup Form -->
+          <div id="mc_embed_signup"> 
+           <form action="//whitefusemedia.us2.list-manage.com/subscribe/post?u=e7b4b56a4962269e756820417&amp;id=69be665dd1" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate target="_blank"> 
+            <div id="mc_embed_signup_scroll"> 
+             <div class="mc-field-group form-item">
+              <input class="required email" id="mce-EMAIL" name="EMAIL" placeholder="Email address" type="email" value="">
+             </div> 
+             <div style="position: absolute; left: -5000px;">
+              <input name="b_e7b4b56a4962269e756820417_69be665dd1" tabindex="-1" type="text" value="">
+             </div> 
+             <div class="form-action">
+              <input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe">
+             </div> 
+             <div class="clear" id="mce-responses"> 
+              <div class="response" id="mce-error-response" style="display:none">
+               &nbsp;
+              </div> 
+              <div class="response" id="mce-success-response" style="display:none">
+               &nbsp;
+              </div> 
+             </div> 
+             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </div> 
+           </form> 
+          </div> 
+         </div> 
+         <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+         <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='UBPAGEID';ftypes[3]='text';fnames[4]='UBVARIANT';ftypes[4]='text';fnames[5]='UBDATE';ftypes[5]='date';fnames[6]='PHONE';ftypes[6]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);
+//--><!]]>
+</script>
+         <!--End mc_embed_signup--> 
+        </div> 
+       </div> 
+       <div id="block-views-blog-block-related" class="block block-views"> 
+        <h2>Related blog posts</h2> 
+        <div class="content"> 
+         <div class="view view-blog view-id-blog view-display-id-block_related view-tile view-col view-col-2-4 view-float view-dom-id-7dbd18216dee8840deda420547858e37"> 
+          <div class="views-rows clearfix"> 
+           <div class="views-row views-row-1 views-row-odd views-row-first"> 
+            <div id="node-286-tile" class="node node-blog node-promoted node-tile" about="/blog/creating-donation-pages-work-your-charity" typeof="sioc:Item foaf:Document"> 
+             <div class="imagetitle"> 
+              <a href="/blog/creating-donation-pages-work-your-charity"> <span class="image"><img src="https://whitefusemedia.com/sites/default/files/styles/medium/public/images/03%20-%20Donation%20Pages_DonationPages-FeaturedImage.png?itok=VCuLW3Mo" alt=""></span> <span class="title">Creating Donation Pages That Work For Your Charity</span> </a> 
+             </div> 
+             <div class="body"> 
+              <div class="content clearfix"> 
+               <div class="field field-name-field-date field-type-datetime field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-05-10T00:00:00+01:00">10 May 2016</span>
+                 </div>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="views-row views-row-2 views-row-even"> 
+            <div id="node-290-tile" class="node node-blog node-promoted node-tile" about="/blog/3-fonts-created-good" typeof="sioc:Item foaf:Document"> 
+             <div class="imagetitle"> 
+              <a href="/blog/3-fonts-created-good"> <span class="image"><img src="https://whitefusemedia.com/sites/default/files/styles/medium/public/images/FeaturedImage-3_TYPEFORGOOD.png?itok=EAxhGou1" alt=""></span> <span class="title">3 Fonts Created For Good</span> </a> 
+             </div> 
+             <div class="body"> 
+              <div class="content clearfix"> 
+               <div class="field field-name-field-date field-type-datetime field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2015-03-30T00:00:00+01:00">30 Mar 2015</span>
+                 </div>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="views-row views-row-3 views-row-odd"> 
+            <div id="node-291-tile" class="node node-blog node-promoted node-tile" about="/blog/identifying-your-charity-website-users-and-designing-them" typeof="sioc:Item foaf:Document"> 
+             <div class="imagetitle"> 
+              <a href="/blog/identifying-your-charity-website-users-and-designing-them"> <span class="image"><img src="https://whitefusemedia.com/sites/default/files/styles/medium/public/images/FeaturedImage_01_0.png?itok=3VlehnG1" alt=""></span> <span class="title">Identifying Your Charity Website Users and Designing For Them</span> </a> 
+             </div> 
+             <div class="body"> 
+              <div class="content clearfix"> 
+               <div class="field field-name-field-date field-type-datetime field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-02-11T00:00:00+00:00">11 Feb 2014</span>
+                 </div>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="views-row views-row-4 views-row-even views-row-last"> 
+            <div id="node-306-tile" class="node node-blog node-promoted node-tile" about="/blog/4-design-principles-modern-website-platform" typeof="sioc:Item foaf:Document"> 
+             <div class="imagetitle"> 
+              <a href="/blog/4-design-principles-modern-website-platform"> <span class="image"><img src="https://whitefusemedia.com/sites/default/files/styles/medium/public/images/4-priciples-good-design_HomePageLayouts-FeaturedImage%20copy.png?itok=AynR3bVH" alt=""></span> <span class="title">4 Design Principles of a Modern Website Platform</span> </a> 
+             </div> 
+             <div class="body"> 
+              <div class="content clearfix"> 
+               <div class="field field-name-field-date field-type-datetime field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2015-12-02T00:00:00+00:00">2 Dec 2015</span>
+                 </div>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="block-block-15" class="block block-block"> 
+        <div class="content"> 
+         <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+         <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us2.list-manage.com","uuid":"e7b4b56a4962269e756820417","lid":"69be665dd1"}) })
+//--><!]]>
+</script> 
+        </div> 
+       </div> 
+       <div id="block-block-17" class="block block-block"> 
+        <div class="content"> 
+         <!-- Go to www.addthis.com/dashboard to customize your tools -->
+         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58299e50b953989a"></script> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="ribbon" class="section region-container"> 
+    <div class="holder clearfix"> 
+     <div class="region region-footer"> 
+      <div id="block-menu-block-4" class="block block-menu-block"> 
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-4 menu-name-menu-useful-links parent-mlid-0 menu-level-1"> 
+         <ul class="menu">
+          <li class="first leaf menu-mlid-3625"><a href="http://support.whitefusemedia.com">Support</a></li> 
+          <li class="leaf menu-mlid-633"><a href="/privacy-policy">Privacy</a></li> 
+          <li class="last leaf menu-mlid-3630"><a href="/newsletter">Newsletter</a></li> 
+         </ul>
+        </div> 
+       </div> 
+      </div> 
+      <div id="block-block-20" class="block block-block"> 
+       <div class="content"> 
+        <p>White Fuse Media Ltd is registered at International House, 24 Holborn Viaduct, London EC1A 2BN<br> under company number 06534733 and VAT number 990283204</p> 
+        <p>We use cookies to improve your experience using this website. <a href="/privacy-policy">Learn more</a></p> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="credit" class="section region-container"> 
+    <div class="holder clearfix"> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="https://whitefusemedia.com/sites/default/files/js/js_MLVgtzZ1ORq9krYqkeOsRay6ou_T-0QZytivuM9tTT8.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fc360a205e","applicationID":"31079103","transactionName":"YFYHNUMHCENYWxBYX1kcMBNYSUlZV1wBSR5HWxU=","queueTime":0,"applicationTime":9,"atts":"TBEEQwsdG00=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

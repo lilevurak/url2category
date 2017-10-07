@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>Get Out of Debt Faster With the "Debt Snowflake"</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- pinterest verification -- temporary 7/13/16 --> 
+  <meta name="p:domain_verify" content="fd3ac43e4b062437bc99b4980c14937a"> 
+  <!-- Google Tag Manager --> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WN9Q2WP');</script> 
+  <!-- End Google Tag Manager --> 
+  <meta name="description" content=" Use the debt snowflake approach to help you pay off your credit card debt. "> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="x-dns-prefetch-control" content="on"> 
+  <link rel="dns-prefetch" href="//wisebread.killeracesmedia.netdna-cdn.com"> 
+  <meta property="og:title" content="Get Out of Debt Faster With the &quot;Debt Snowflake&quot;"> 
+  <meta property="og:description" content="Every dollar counts during debt repayment. Finding small savings or windfalls to put toward your debt can help you pay off your balances faster."> 
+  <meta property="og:image" content="http://www.wisebread.com/files/fruganomics/blog-images/iStock-629801718.jpg"> 
+  <meta property="og:url" content="http://www.wisebread.com/get-out-of-debt-faster-with-the-debt-snowflake"> 
+  <meta property="og:site_name" content="Wise Bread"> 
+  <link rel="shortcut icon" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/wisebread/favicon-leaves.ico" type="image/x-icon"> 
+  <link rel="canonical" href="http://www.wisebread.com/get-out-of-debt-faster-with-the-debt-snowflake"> 
+  <meta name="revisit-after" content="1 day"> 
+  <!--This page is not a news article. googlebot-news IS blocked--> 
+  <meta name="GOOGLEBOT-NEWS" content="NOINDEX, NOFOLLOW"> 
+  <!-- CSS aggregated by CDN module. --> 
+  <link type="text/css" rel="stylesheet" media="all" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/css/cdn_css_http_23a2e37aa733c9514f5416da0e778f07.css"> 
+  <link type="text/css" rel="stylesheet" media="print" href="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/css/cdn_css_http_726eb9f5b9224e75bcf6f8d0ccdae963.css"> 
+  <!-- CSS aggregated by CDN module. --> 
+  <!--[if lte IE 8]><link type="text/css" rel="stylesheet" media="all" href="/sites/default/themes/custom/wisebread/ie.css" /><![endif]--> 
+  <!--If Less Than or Equal (lte) to IE 7--> 
+  <!--[if lte IE 7]><link type="text/css" rel="stylesheet" media="all" href="/sites/default/themes/custom/wisebread/ie7.css" /><![endif]--> 
+  <!--If Less Than or Equal (lte) to IE 7--> 
+  <script type="text/javascript" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/js/js_b8be3127307358767645f992dc427eba.js"></script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved or changed.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"custom_search":{"form_target":"_self","solr":1},"CToolsUrlIsAjaxTrusted":{"\/get-out-of-debt-faster-with-the-debt-snowflake":[true,true]},"quicktabs":{"qt_2":{"tabs":[0]},"qt_4":{"tabs":[0]}}});
+//--><!]]>
+</script> 
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ga('set', 'contentGroup5', 'Debt Management')
+//--><!]]>
+</script> 
+  <!-- start dfp --> 
+  <script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script> 
+  <script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/1038175/WB_floating_160x600', [160, 600], 'div-gpt-ad-1396207921741-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_leaderboard_728x90_homepage_only', [728, 90], 'div-gpt-ad-1396232301203-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_top_sidebar_300x250_homepage_only', [300, 250], 'div-gpt-ad-1396234280862-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_300x250_skype_nodes', [300, 250], 'div-gpt-ad-1396239767493-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/WB_leaderboard_728x90_skype_nodes', [728, 90], 'div-gpt-ad-1396271697630-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/Skype_midarticle_300x250', [300, 250], 'div-gpt-ad-1396271961711-0').addService(googletag.pubads());
+    googletag.defineSlot('/1038175/wb_midarticle', [[300, 250], [336, 280]], 'div-gpt-ad-1396904310695-0').addService(googletag.pubads());
+
+    googletag.enableServices();
+    });
+    </script> 
+  <!-- end dfp --> 
+  <!-- start bing event tracking --> 
+  <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"4019141"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script> 
+  <!-- end bing event tracking --> 
+  <!-- facebook --> 
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1585036571784545']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script> 
+  <noscript>
+   &lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1585036571784545&amp;amp;ev=PixelInitialized"&gt; 
+  </noscript> 
+  <!-- end facebook --> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1585036571784545');
+    fbq('track', "PageView");</script> 
+  <noscript>
+   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1585036571784545&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+  <!-- taboola pixel code --> 
+  <script src="//cdn.taboola.com/libtrc/killeraces-sc/tfa.js"></script> 
+  <!-- end taboola pixel code --> 
+  <!-- gemini tracking code disabled in mobile --> 
+  <!-- FM tracking pixel --> 
+  <script type="text/javascript" src="http://static.fmpub.net/header/wisebread"></script> 
+  <!-- FM tracking pixel --> 
+  <!-- outbrain pixel --> 
+ </head>
+ <body class="sidebar-right node-page">
+  <img src="//amplifypixel.outbrain.com/pixel?mid=007c2e4d9609448c076cadb4c1d5e14d52">   
+  <!-- Google Tag Manager (noscript) --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN9Q2WP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <!-- End Google Tag Manager (noscript) --> 
+  <!-- facebook widget --> 
+  <div id="fb-root"></div> 
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=6743596911";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> 
+  <!-- facebook widget --> 
+  <!-- Layout --> 
+  <div class="super-container"> 
+   <div class="side-float"> 
+   </div> 
+   <div class="container" style="display:inline-block;"> 
+    <!-- add "showgrid" class to display grid --> 
+    <div id="header" class="clearfix"> 
+     <div id="block-menu-menu-utility" class="block block-menu"> 
+      <div class="content clear"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/about" title="">About</a></li> 
+        <li class="leaf odd"><a href="/about/contact" title="">Contact</a></li> 
+        <li class="leaf last even"><a href="/advertise" title="">Advertise</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="header-left"> 
+      <div id="block-block-181" class="block block-block"> 
+       <div class="content clear"> 
+        <strong><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=hs"> 0% APR Up To 21 Months<br> See Wise Bread's Picks for<br> Best Balance Transfer Cards </a></strong> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#header-left --> 
+     <div id="logo"> 
+      <a href="/" title="Home" rel="home"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/wisebread/personal-finance-blog-logo.png" alt="logo for personal finance blog Wise Bread" id="logo"></a> 
+     </div> 
+     <!-- /logo-title --> 
+     <div id="mobilehead"> 
+      <a class="nav-menu-icon" href="#"> <img src="/sites/default/themes/custom/wisebread/images/icon_menu.png" alt="More" width="20px" height="20px"> </a> 
+      <div id="nav-menu-main" class="navhead clearfix"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a></li> 
+        <li class="leaf last odd"><a href="/topic/personal-finance" title="">Personal Finance</a></li> 
+       </ul> 
+      </div> 
+      <div class="clear-block"></div> 
+      <div class="nav-menu-secondary"> 
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/frugal-living" title="">Frugal Living</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income" title="">Career</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks" title="">Life Hacks</a></li> 
+        <li class="leaf odd"><a href="/bestdeals/today" title="">Best Deals</a></li> 
+        <li class="leaf last even"><a href="/top-100-most-popular-personal-finance-blogs" title="">Top PF Blogs</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div id="search-box">
+      <form action="/get-out-of-debt-faster-with-the-debt-snowflake" accept-charset="UTF-8" method="post" id="search-theme-form" class="search-form"> 
+       <div>
+        <div id="search" class="container-inline"> 
+         <div class="form-item" id="edit-search-theme-form-1-wrapper"> 
+          <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" class="form-text NormalTextBox txtSearch"> 
+         </div> 
+         <fieldset class="custom_search-popup"></fieldset> 
+         <input type="image" name="op" value="Search" id="edit-submit" class="form-submit" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/images/search-button.jpg"> 
+         <input type="hidden" name="form_build_id" id="form-NTO_U7yOpUIIf2JrFfcSVyng29LzyWqzIVpECIXgLl0" value="form-NTO_U7yOpUIIf2JrFfcSVyng29LzyWqzIVpECIXgLl0"> 
+         <input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"> 
+         <input type="hidden" name="default_text" id="edit-default-text" value="" class="default-text"> 
+        </div> 
+       </div>
+      </form> 
+     </div> 
+    </div> 
+    <!-- /#header --> 
+    <div id="nav" class="navhead clearfix"> 
+     <ul class="menu">
+      <li class="expanded first odd"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="http://www.wisebread.com/the-5-best-secured-credit-cards?ref=nav" title="">Secured Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=nav" title="">Balance Transfer Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=nav" title="">Cash Back Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=nav" title="">Travel Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/the-best-5-credit-cards-for-groceries?ref=nav" title="">Groceries Credit Cards</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/the-5-best-credit-cards-for-dining-out?ref=nav" title="">Restaurant Credit Cards</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/the-best-low-interest-rate-credit-cards?ref=nav" title="">Low Interest Credit Cards</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/the-5-best-credit-cards-for-small-businesses?ref=nav" title="">Small Business Credit Cards</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/topic/personal-finance" title="">Personal Finance</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/personal-finance/banking" title="">Banking</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/cars-and-transportation" title="">Cars and Transportation</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/credit-cards" title="">Credit Cards</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/debt-management" title="">Debt Management</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/financial-news" title="">Financial News</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/insurance" title="">Insurance</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/investment" title="">Investment</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/real-estate-and-housing" title="">Real Estate and Housing</a></li> 
+        <li class="leaf even"><a href="/topic/personal-finance/retirement" title="">Retirement</a></li> 
+        <li class="leaf odd"><a href="/topic/personal-finance/taxes" title="">Taxes</a></li> 
+        <li class="leaf last even"><a href="/topic/personal-finance" title="">More in Personal Finance</a></li> 
+       </ul></li> 
+      <li class="expanded even"><a href="/topic/frugal-living" title="">Frugal Living</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/topic/frugal-living/budgeting" title="">Budgeting</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/diy" title="">DIY</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/entertainment" title="">Entertainment</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/food-and-drink" title="">Food and Drink</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/green-living" title="">Green Living</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/health-and-beauty" title="">Health and Beauty</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/home" title="">Home</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/lifestyle" title="">Lifestyle</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/shopping" title="">Shopping</a></li> 
+        <li class="leaf odd"><a href="/topic/frugal-living/style" title="">Style</a></li> 
+        <li class="leaf even"><a href="/topic/frugal-living/travel" title="">Travel</a></li> 
+        <li class="leaf last odd"><a href="/topic/frugal-living" title="">More in Frugal Living</a></li> 
+       </ul></li> 
+      <li class="expanded even"><a href="/topic/career-and-income" title="">Career</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="/topic/career-and-income/career-building" title="">Career Building</a></li> 
+        <li class="leaf even"><a href="/newgrads" title="">New College Grads</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income/education-training" title="">Education &amp; Training</a></li> 
+        <li class="leaf even"><a href="/topic/career-and-income/entrepreneurship" title="">Entrepreneurship</a></li> 
+        <li class="leaf odd"><a href="/topic/career-and-income/extra-income" title="">Extra Income</a></li> 
+        <li class="leaf even"><a href="/topic/career-and-income/job-hunting" title="">Job Hunting</a></li> 
+        <li class="leaf last odd"><a href="/topic/career-and-income" title="">More in Career &amp; Income</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/topic/life-hacks" title="">Life Hacks</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="/topic/life-hacks/consumer-affairs" title="">Consumer Affairs</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/family" title="">Family</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/general-tips" title="">General Tips</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/organization" title="">Organization</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/personal-development" title="">Personal Development</a></li> 
+        <li class="leaf even"><a href="/topic/life-hacks/productivity" title="">Productivity</a></li> 
+        <li class="leaf odd"><a href="/topic/life-hacks/technology" title="">Technology</a></li> 
+        <li class="leaf last even"><a href="/topic/life-hacks" title="">More in Life Hacks</a></li> 
+       </ul></li> 
+      <li class="expanded odd"><a href="/bestdeals/today" title="Best deals of the day; handpicked every weekday!">Best Deals</a>
+       <ul class="menu">
+        <li class="leaf first even"><a href="/bestdeals/today" title="">Daily Deals</a></li> 
+        <li class="leaf odd"><a href="/topic/deals-and-coupons/giveaways" title="">Giveaways</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/coupons" title="">Coupon Codes</a></li> 
+        <li class="leaf odd"><a href="/printable-coupons" title="">Printable Coupons</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/credit-card-guide/?ref=nav" title="Wise Bread picks for credit cards that are good deals.">Best Credit Cards</a></li> 
+       </ul></li> 
+      <li class="leaf even"><a href="http://www.wisebread.com/top-100-most-popular-personal-finance-blogs/" title="">Top PF Blogs</a></li> 
+      <li class="expanded last odd"><a href="/all" title="">More</a>
+       <ul class="menu">
+        <li class="leaf first odd"><a href="http://www.wisebread.com/guides" title="">How-To Guides</a></li> 
+        <li class="leaf even"><a href="http://www.wisebread.com/money-saving-book/" title="">Wise Bread Book</a></li> 
+        <li class="leaf odd"><a href="http://www.wisebread.com/money-tips/" title="">Money Tips Network</a></li> 
+        <li class="leaf even"><a href="/make-money-writing-for-wise-bread" title="">Write For Us</a></li> 
+        <li class="leaf odd"><a href="/about/contact" title="">Contact Us</a></li> 
+        <li class="leaf last even"><a href="http://www.wisebread.com/bloggers" title="">About Our Writers</a></li> 
+       </ul></li> 
+     </ul>
+     <div class="clear-block"></div> 
+    </div> 
+    <!-- /#nav --> 
+    <div class="body-container clearfix"> 
+     <div id="main" class=""> 
+      <div class="breadcrumb">
+       <a href="/">Home</a> » 
+       <a href="/topic/personal-finance">Personal Finance</a> » 
+       <a href="/topic/personal-finance/debt-management">Debt Management</a> » Get Out of Debt Faster With the "Debt Snowflake"
+      </div> 
+      <h1 class="page-title ">Get Out of Debt Faster With the "Debt Snowflake"</h1> 
+      <div id="above-content"> 
+       <div id="block-block-110" class="block block-block"> 
+        <div class="content clear"> 
+         <script src="http://www.anrdoezrs.net/am/2822544/include/joined/sid/autoDL/am.js"></script> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="node-1930447" class="node node-blog"> 
+       <div class="credits">
+         By 
+        <a href="/kat-tretina" title="View user profile.">Kat Tretina</a> 
+        <span class="date">on 19 April 2017</span> 
+        <span class="comments"><a href="/get-out-of-debt-faster-with-the-debt-snowflake#comments" class="active">0 comments</a></span> 
+       </div> 
+       <div class="sharing-chicklets"> 
+        <span class="facebook-plugins-like-button_count"> 
+         <div class="fb-share-button" data-href="/get-out-of-debt-faster-with-the-debt-snowflake" data-type="button_count"></div> </span> 
+        <span class="retweet"> <a href="https://twitter.com/share" class="twitter-share-button" data-via="wisebread" data-text="Get Out of Debt Faster With the &quot;Debt Snowflake&quot;">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </span> 
+        <span class="pinit"> <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles/fruganomics/blog-images/iStock-629801718.jpg&amp;description=Get Out of Debt Faster With the &quot;Debt Snowflake&quot;" data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png"></a> </span> 
+       </div> 
+       <div class="sharing-chicklets-top-article big-share-buttons"> 
+        <a class="big-share-btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake"><img src="http://www.wisebread.com/files/fruganomics/facebook-17x17.png"><span>Share on Facebook</span></a> 
+        <a class="big-share-btn twitter" target="_blank" href="http://twitter.com/home/?status=Get Out of Debt Faster With the &quot;Debt Snowflake&quot; http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake via @wisebread"><img src="http://www.wisebread.com/files/fruganomics/twitter-17x17.png"><span>Tweet This</span></a> 
+        <a class="big-share-btn pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fblog-images%2FiStock-629801718.jpg&amp;description=Get Out of Debt Faster With the &quot;Debt Snowflake&quot;"><img src="http://www.wisebread.com/files/fruganomics/pinterest-17x17.png"><span>Pin It</span></a> 
+       </div> 
+       <!-- end big share buttons --> 
+       <div class="body"> 
+        <div id="big-main-image"> 
+         <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/605x340/blog-images/iStock-629801718.jpg" alt="" title="" class="" width="605" height="340"> 
+        </div> 
+        <br> 
+        <div class="image-and-share below-big-image"> 
+         <!-- editors pick block below image --> 
+         <style>
+  div.custom-belimg {
+    border:1px solid #d2d2d2;
+    padding: 5px;
+    font: 12px helvetica, arial, sans;
+  }
+  div.custom-belimg div.belimg-heading {
+   border-bottom:1px solid #c2c2c2;
+   font: bold 13px helvetica, arial, sans;
+   margin: 0 10px 15px 10px;
+   padding: 5px;
+  }
+  div.custom-belimg .belimg-content ul {
+  }
+  div.custom-belimg .belimg-content ul li {
+    line-height: 1.5em;
+    background: none;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+  div.custom-belimg .belimg-content ul li a {
+    border-bottom: none;
+  }
+</style> 
+         <div class="custom-belimg"> 
+          <!-- 1930447 --> 
+          <div class="belimg-heading"> 
+           <img src="http://www.wisebread.com/favicon.ico" style="position:relative;top:3px;margin-right:3px;"> Wise Bread Picks 
+          </div> 
+          <div class="belimg-content"> 
+           <ul> 
+            <li><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=belimg-all" title="5 Best Travel Rewards Credit Cards Reviewed">Travel Rewards Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=belimg-all" title="Top 5 Cash Back Credit Cards">Cash Back Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=belimg-a" title="Best 0% Balance Transfer Credit Cards">0% Balance Transfer Credit Cards</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- midarticle: first half -->
+        <p>Credit card debt can be very dangerous. With revolving balances and double-digit interest rates, your debt can quickly balloon out of control.</p> 
+        <p>There are several strategies experts recommend for paying off debt, including the <a href="http://www.wisebread.com/snowballs-or-avalanches-which-debt-reduction-strategy-is-best-for-you" target="_blank">debt avalanche and debt snowball methods</a>. With the debt avalanche approach, you prioritize paying off the card with the highest APR, saving you interest charges in the long run. With the debt snowball method, you focus on paying off the smallest debts first, racking up small wins quickly that can give you the motivation to stick with your debt payoff plan.</p> 
+        <p>Both methods rely on budgeting money every month for minimum payments on some debts, plus extra money to throw at the debt you're prioritizing. But what if you feel there is no money in your budget to set aside for these payments? That's where the snowflake method comes in. It doesn't replace the avalanche or snowball methods, but rather is a way to find the money you need for either approach.</p> 
+        <h2>What is the debt snowflake method?</h2> 
+        <p>Instead of worrying about how to come up with large lump sum payments for your debts, you look for ways to shave money off your everyday spending or earn a little extra pocket change. You then use that "found money" to make very small, frequent payments on your credit card accounts. While the amounts may seem microscopic compared to your overall debt balance, over time, the little payments add up and knock off months from your repayment term, saving you hundreds of dollars.</p> 
+        <p>Debt snowflake is a method that you can use in combination with other repayment methods. Whether you decide to tackle your highest interest debt first, or the debt with the lowest balance, using the snowflake approach can help you find money to pay down the debt.</p> 
+        <h2>How the debt snowflake method works</h2> 
+        <p>With the debt snowflake, you apply everyday savings directly to your debt right away. For example, let's say your weekly grocery budget is $50. But thanks to coupons, you only spent $46 this week. If you follow the debt snowflake approach, you will take that surplus and make a $4 payment on your credit card balance.</p> 
+        <p>You do this for every circumstance where you save a little money. If you normally spend $60 at the salon for a haircut, but you go to Hair Cuttery or Great Clips instead for $25, you would put that extra $35 toward your debt as soon as you get home.</p> 
+        <p>Little savings can add up quickly. If you swap out one restaurant lunch a week for a bagged lunch, carpool with coworkers, use coupons, or just go without, you can find a little extra change in your budget that can go toward your debt balance.</p> 
+        <h2>Is it really effective?</h2> 
+        <p>When facing a mountain of debt, the idea that an extra $4 or $5 here and there could make a difference may seem ludicrous. But those little snowflake payments can have a big impact.</p> 
+        <p>For example, say you have a credit card balance of $3,000 and with an APR of 15 percent. If your minimum payment is $100, it would take you 38 months to pay off the balance and you would pay $784 in interest.</p> 
+        <!-- midarticle: middle --> 
+        <div id="kamidarticle" class="ggnoads"> 
+         <!--
+    <div id="kamidarticle-adnotice">
+      ARTICLE CONTINUES BELOW    </div>
+    --> 
+         <div id="kamidarticle-middle-content"> 
+          <div class="desktop-ad"> 
+           <script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=269302");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script> 
+          </div> 
+          <div class="mobile-ad"> 
+           <script type="text/javascript">
+<!--//<![CDATA[
+   document.MAX_ct0 ='';
+   var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("zoneid=269303");document.write("&amp;nodis=1");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location).substring(0,1600));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+   }
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'></scr"+"ipt>");
+//]]>--></script> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- midarticle: second half --> 
+        <p>If you applied the debt snowflake approach, you could cut the repayment term and interest charges. Let's say you clipped coupons and shopped for deals at the grocery store, and were able to save $4 a week. If you applied that extra $16 a month to your debt payments, your repayment term would be just 32 months and you'd pay just $647 in interest. Applying your small savings each month gets you out of debt a full six months earlier!</p> 
+        <p>And if you look for additional savings and apply small windfalls (like gifts or a bonus from work) to your debt, your snowflakes can accumulate that much faster.</p> 
+        <h2>Using the debt snowflake approach</h2> 
+        <p>When facing credit card debt, finding large sums of money to repay your balance can be unrealistic. But that's why the debt snowflake is so effective. By being diligent about applying your little savings and daily wins, you can take control of your debt and pay off your balance ahead of schedule, saving yourself hundreds or even thousands of dollars. (See also: <a href="http://www.wisebread.com/5-ways-to-pay-off-high-interest-credit-card-debt?ref=seealso" target="_blank">5 Ways to Pay Off High Interest Credit Card Debt</a>)</p> 
+        <h2 style="text-align: center;">Like this article? Pin it!</h2> 
+        <div align="center">
+         <a data-pin-do="buttonPin" data-pin-count="above" data-pin-tall="true" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fu5180%2FGet%2520Out%2520of%2520Debt%2520Faster%2520With%2520the%2520Debt%2520Snowflake.jpg&amp;description=Get%20Out%20of%20Debt%20Faster%20With%20the%20Debt%20Snowflake"></a>
+         <p></p> 
+         <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+        </div> 
+        <p style="text-align: center;"><img src="http://www.wisebread.com/files/fruganomics/u5180/Get%20Out%20of%20Debt%20Faster%20With%20the%20Debt%20Snowflake.jpg" alt="Get Out of Debt Faster With the &quot;Debt Snowflake&quot;" width="250" height="374"></p> 
+        <div id="below-content" class="mobile-ad"> 
+        </div> 
+       </div> 
+       <div class="mobile-ad"> 
+        <div class="image-and-share below-big-image"> 
+         <!-- editors pick block below image --> 
+         <style>
+  div.custom-belimg {
+    border:1px solid #d2d2d2;
+    padding: 5px;
+    font: 12px helvetica, arial, sans;
+  }
+  div.custom-belimg div.belimg-heading {
+   border-bottom:1px solid #c2c2c2;
+   font: bold 13px helvetica, arial, sans;
+   margin: 0 10px 15px 10px;
+   padding: 5px;
+  }
+  div.custom-belimg .belimg-content ul {
+  }
+  div.custom-belimg .belimg-content ul li {
+    line-height: 1.5em;
+    background: none;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+  div.custom-belimg .belimg-content ul li a {
+    border-bottom: none;
+  }
+</style> 
+         <div class="custom-belimg"> 
+          <!-- 1930447 --> 
+          <div class="belimg-heading"> 
+           <img src="http://www.wisebread.com/favicon.ico" style="position:relative;top:3px;margin-right:3px;"> Wise Bread Picks 
+          </div> 
+          <div class="belimg-content"> 
+           <ul> 
+            <li><a href="http://www.wisebread.com/top-5-travel-reward-credit-cards?ref=belimg-all" title="5 Best Travel Rewards Credit Cards Reviewed">Travel Rewards Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/5-best-cash-back-credit-cards?ref=belimg-all" title="Top 5 Cash Back Credit Cards">Cash Back Credit Cards</a></li> 
+            <li><a href="http://www.wisebread.com/the-best-0-balance-transfer-credit-cards?ref=belimg-a" title="Best 0% Balance Transfer Credit Cards">0% Balance Transfer Credit Cards</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="big-share-buttons" style="margin:30px 0 60px;"> 
+        <a class="big-share-btn facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake"><img src="http://www.wisebread.com/files/fruganomics/facebook-17x17.png"><span>Share on Facebook</span></a> 
+        <a class="big-share-btn twitter" target="_blank" href="http://twitter.com/home/?status=Get Out of Debt Faster With the &quot;Debt Snowflake&quot; http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake via @wisebread"><img src="http://www.wisebread.com/files/fruganomics/twitter-17x17.png"><span>Tweet This</span></a> 
+        <a class="big-share-btn pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wisebread.com%2Fget-out-of-debt-faster-with-the-debt-snowflake&amp;media=http%3A%2F%2Fwww.wisebread.com%2Ffiles%2Ffruganomics%2Fblog-images%2FiStock-629801718.jpg&amp;description=Get Out of Debt Faster With the &quot;Debt Snowflake&quot;"><img src="http://www.wisebread.com/files/fruganomics/pinterest-17x17.png"><span>Pin It</span></a> 
+       </div> 
+       <!-- end big share buttons --> 
+       <div id="adsense-end-article"> 
+        <!-- end-of-article ad placeholder --> 
+       </div> 
+       <div class="terms" style="margin-bottom:10px;"> 
+        <strong>Tagged: </strong>
+        <a href="/topic/personal-finance/debt-management">Debt Management</a>, 
+        <a href="/topic/avalanche">avalanche</a>, 
+        <a href="/topic/debt-snowflake">debt snowflake</a>, 
+        <a href="/topic/debt-strategies">debt strategies</a>, 
+        <a href="/topic/micro-savings">micro savings</a>, 
+        <a href="/topic/repayment-methods">repayment methods</a>, 
+        <a href="/topic/saving-money">saving money</a>, 
+        <a href="/topic/snowball">snowball</a> 
+       </div> 
+       <div class="related-posts" style="clear:both;"> 
+        <div id="related-links-title" style="margin-bottom:7px;">
+         <strong>Related and Popular</strong>
+        </div> 
+        <div class="view view-similarterms view-id-similarterms view-display-id-block_1 view-dom-id-1"> 
+         <div class="view-content"> 
+          <div class="views-row views-row-1 views-row-odd views-row-first"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/6-ways-to-avoid-vacation-debt?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/travel_cost.jpg" alt="Travel cost" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 6 Ways to Avoid Vacation Debt </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-2 views-row-even"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/what-to-do-if-youre-retiring-with-debt?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/old_couple_having_problems_with_their_home_finances.jpg" alt="Old couple having problems with their home finances" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> What to Do If You're Retiring With Debt </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-3 views-row-odd"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/why-retiring-with-debt-isnt-the-end-of-the-world?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/calculating_our_day_to_day_living_cost.jpg" alt="Calculating our day-to-day living cost" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> Why Retiring With Debt Isn't the End of the World </span></a></span> 
+           </div> 
+          </div> 
+          <div style="" class="clear">
+           &nbsp;
+          </div> 
+          <div class="views-row views-row-4 views-row-even"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/7-easy-first-steps-to-paying-off-debt?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/worried_young_woman_counting_bills.jpg" alt="Worried young woman counting bills" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 7 Easy First Steps to Paying Off Debt </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-5 views-row-odd"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/7-strategies-for-paying-off-debt-when-living-on-a-variable-income?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/iStock-516427450.jpg" alt="Woman paying off debt on variable income" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> 7 Strategies for Paying Off Debt When Living on a Variable Income </span></a></span> 
+           </div> 
+          </div> 
+          <div class="views-row views-row-6 views-row-even views-row-last"> 
+           <div class="views-field-title"> 
+            <span class="field-content"><a href="http://www.wisebread.com/why-you-need-to-know-the-difference-between-secured-and-unsecured-debts?ref=relatedbox"><span> <img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/195x160a/blog-images/casual_man_paying_bills_at_home_with_laptop.jpg" alt="Casual man paying bills at home with laptop" title="" class="imagecache imagecache-195x160a imagecache-default imagecache-195x160a_default" width="195" height="160"> <br> Why You Need to Know the Difference Between Secured and Unsecured Debts </span></a></span> 
+           </div> 
+          </div> 
+          <div style="" class="clear">
+           &nbsp;
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- Render ZergNet --> 
+       <div id="zergnet-widget-33455"></div> 
+       <script language="javascript" type="text/javascript">
+    (function() {
+        var zergnet = document.createElement('script');
+        zergnet.type = 'text/javascript'; zergnet.async = true;
+        zergnet.src = 'http://www.zergnet.com/zerg.js?id=33455';
+        var znscr = document.getElementsByTagName('script')[0];
+        znscr.parentNode.insertBefore(zergnet, znscr);
+    })();
+</script> 
+       <!-- End of ZergNet --> 
+       <div class="bottom"> 
+        <span class="part fivestar">
+         <form action="/get-out-of-debt-faster-with-the-debt-snowflake" accept-charset="UTF-8" method="post" id="fivestar-form-node-1930447" class="fivestar-widget fivestar-combo-stars"> 
+          <div>
+           <div class="fivestar-form-vote-1930447 clear-block">
+            <div class="fivestar-static-form-item">
+             <div class="form-item"> 
+              <div class="fivestar-widget-static fivestar-widget-static-vote fivestar-widget-static-5 clear-block">
+               <div class="star star-1 star-odd star-first">
+                <span class="on">3.4</span>
+               </div>
+               <div class="star star-2 star-even">
+                <span class="on"></span>
+               </div>
+               <div class="star star-3 star-odd">
+                <span class="on"></span>
+               </div>
+               <div class="star star-4 star-even">
+                <span class="on" style="width: 40%"></span>
+               </div>
+               <div class="star star-5 star-odd star-last">
+                <span class="off"></span>
+               </div>
+              </div> 
+              <div class="description">
+               <div class="fivestar-summary fivestar-summary-average-count">
+                <span class="average-rating">Average: <span>3.4</span></span> 
+                <span class="total-votes">(<span>25</span> votes)</span>
+               </div>
+              </div> 
+             </div> 
+            </div>
+            <input type="hidden" name="content_type" id="edit-content-type" value="node"> 
+            <input type="hidden" name="content_id" id="edit-content-id" value="1930447"> 
+            <div class="fivestar-form-item  fivestar-combo-text fivestar-combo-stars fivestar-labels-hover">
+             <div class="form-item" id="edit-vote-wrapper"> 
+              <input type="hidden" name="vote_count" id="edit-vote-count" value="25"> 
+              <input type="hidden" name="vote_average" id="edit-vote-average" value="68"> 
+              <input type="hidden" name="auto_submit_path" id="edit-auto-submit-path" value="/fivestar/vote/node/1930447/vote" class="fivestar-path"> 
+              <select name="vote" class="form-select" id="edit-vote-1"><option value="-">Select rating</option><option value="20">Not useful</option><option value="40">Somewhat useful</option><option value="60">Useful</option><option value="80">Very useful</option><option value="100">Extremely useful</option></select>
+              <input type="hidden" name="auto_submit_token" id="edit-auto-submit-token" value="51e0e5361c5049ba4b1f948f52162749" class="fivestar-token"> 
+              <div class="description">
+               <div class="fivestar-summary fivestar-summary-user">
+                <span class="user-rating">Your rating: <span>None</span></span>
+               </div>
+              </div> 
+             </div> 
+            </div>
+            <input type="hidden" name="destination" id="edit-destination" value="node/1930447"> 
+            <input type="submit" name="op" id="edit-fivestar-submit" value="Rate" class="form-submit fivestar-submit"> 
+            <input type="hidden" name="form_build_id" id="form-8PHZJM8MMHxq_iZxwuihyiNj3GiejFCMp90DGaoNJVg" value="form-8PHZJM8MMHxq_iZxwuihyiNj3GiejFCMp90DGaoNJVg"> 
+            <input type="hidden" name="form_id" id="edit-fivestar-form-node-1930447" value="fivestar_form_node_1930447"> 
+           </div> 
+          </div>
+         </form> </span> 
+        <span class="part sharethis"><a href="http://www.wisebread.com/get-out-of-debt-faster-with-the-debt-snowflake" class="sharethis-link" title="Get Out of Debt Faster With the " debt snowflake"" rel="nofollow">ShareThis</a></span> 
+        <div class="clear-block" style="width: 100%; clear: both;"></div> 
+       </div> 
+       <div id="block-block-192" class="block block-block"> 
+        <div class="content clear"> 
+         <p><em>Disclaimer: The links and mentions on this site may be affiliate links. But they do not affect the actual opinions and recommendations of the authors.</em></p> 
+         <p>Wise Bread is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.</p> 
+        </div> 
+       </div> 
+      </div> 
+      <br style="clear: both;"> 
+      <div id="block-views-comments-block_1" class="block block-views"> 
+       <div class="content clear"> 
+        <div class="view view-comments view-id-comments view-display-id-block_1 view-dom-id-1"> 
+         <div class="view-empty"> 
+          <p>&nbsp;</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- /#main --> 
+     <div id="sidebar-right" class="sidebar"> 
+      <div id="block-ka_author_block-0" class="block block-ka_author_block"> 
+       <div class="content clear"> 
+        <div id="ka_author_block-0" class="block yespic yesbio"> 
+         <div class="author-picture"> 
+          <a href="http://www.wisebread.com/kat-tretina" title="View author's profile"><img width="85" height="85" class="author-picture" alt="" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/pictures/picture-5191.jpg"></a> 
+         </div> 
+         <div class="author-name"> 
+          <a href="http://www.wisebread.com/kat-tretina" title="View 's profile">Kat Tretina</a> 
+         </div> 
+         <div class="author-title">
+           Staff Writer 
+         </div> 
+         <div class="author-more"> 
+          <a href="/kat-tretina">More articles »</a> 
+         </div> 
+         <div class="author-icons"> 
+          <a href="/kat-tretina" title="'s profile"><img id="author-icon-profile" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fugue-icons/icons/user.png"></a>
+          <a href="/contact-wise-bread-writer?uid=5191" title="Contact "><img id="author-icon-contact" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fugue-icons/icons/mail.png"></a>
+          <a href="http://twitter.com/Felix_The_katt" title=" on Twitter"><img id="author-icon-twitter" width="16" height="16" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/fav-icons/twitter.ico"></a> 
+         </div> 
+         <div class="author-short-bio"> 
+          <div class="author-short-bio-text"> 
+           <img class="blockquote-image" src="http://wisebread.killeracesmedia.netdna-cdn.com/sites/default/themes/custom/wisebread/images/blockquote.gif"> 
+           <a href="http://www.wisebread.com/kat-tretina" title="View 's profile">Personal finance writer with a Masters in Communications</a> 
+          </div> 
+         </div> 
+        </div> 
+        <!-- author_block cached 2017/10/02 - 07:52 --> 
+       </div> 
+      </div>
+      <div id="block-block-88" class="block block-block"> 
+       <div class="content clear"> 
+        <center> 
+         <!-- Begin Medium Rectangle 1 --> 
+         <script type="text/javascript" src="http://static.fmpub.net/zone/2230"></script> 
+         <!-- End Medium Rectangle 1 --> 
+         <!-- FM Tracking Pixel --> 
+         <script type="text/javascript" src="http://static.fmpub.net/site/wisebread"></script> 
+         <!-- FM Tracking Pixel --> 
+        </center> 
+       </div> 
+      </div>
+      <div id="block-quicktabs-2" class="block block-quicktabs"> 
+       <div class="content clear"> 
+        <div id="quicktabs-2" class="quicktabs_wrapper quicktabs-style-default">
+         <ul class="quicktabs_tabs quicktabs-style-default">
+          <li class="qtab-0 active first last"><a href="/get-out-of-debt-faster-with-the-debt-snowflake?quicktabs_2=0#quicktabs-2" id="quicktabs-tab-2-0" class="qt_tab active">Most Popular</a></li>
+         </ul>
+         <div id="quicktabs_container_2" class="quicktabs_main quicktabs-style-default">
+          <div id="quicktabs_tabpage_2_0" class="quicktabs_tabpage">
+           <div class="view view-most-views-commented view-id-most_views_commented view-display-id-block_1 view-dom-id-2"> 
+            <div class="view-content"> 
+             <div class="views-row views-row-1 views-row-odd views-row-first"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/the-best-0-balance-transfer-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/woman_credit_card_phone_000053601330.jpg" alt="Woman using her credit card on the phone" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/the-best-0-balance-transfer-credit-cards?ref=pop">The Best 0% Balance Transfer Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-2 views-row-even"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/top-5-travel-reward-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/couples-vacation-beach.jpg" alt="Couple on the beach" title="Couple on the beach" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/top-5-travel-reward-credit-cards?ref=pop">The Best Travel Reward Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-3 views-row-odd"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/5-best-cash-back-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/woman-with-cash.jpg" alt="" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/5-best-cash-back-credit-cards?ref=pop">The Best Cash Back Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-4 views-row-even"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/the-5-best-secured-credit-cards?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/couple_credit_card_000023241164.jpg" alt="Young couple with secured credit card" title="" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/the-5-best-secured-credit-cards?ref=pop">The Best Secured Credit Cards</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="views-row views-row-5 views-row-odd views-row-last"> 
+              <div class="clearfix"> 
+               <div class="image"> 
+                <a href="/netspend-the-story-of-the-visa-debit-card-we-did-not-apply-for?ref=pop"><img src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/imagecache/82x72/blog-images/7123758_0475304ba3_z.jpg" alt="debit card" title="debit card" class="imagecache imagecache-82x72 imagecache-default imagecache-82x72_default" width="82" height="72"></a> 
+               </div> 
+               <div class="details"> 
+                <a href="/netspend-the-story-of-the-visa-debit-card-we-did-not-apply-for?ref=pop">netSpend: The Story of the Visa Debit Card We Did Not Apply For</a> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="more-link"> 
+             <a href="/popular/today"> more </a> 
+            </div> 
+           </div> 
+          </div>
+         </div>
+        </div> 
+       </div> 
+      </div>
+      <div id="block-block-196" class="block block-block"> 
+       <div class="content clear"> 
+        <div style="padding:0 auto;">
+         <a style="position:relative;top:5px;"></a>
+         <a href="https://advertisers.federatedmedia.net/explore/view/wisebread"><img src="http://static.fmpub.net/assets/badges/FM_Business_Advertise_Vertical.gif" border="0" width="100" height="150"></a> &nbsp; &nbsp; 
+        </div> 
+       </div> 
+      </div> 
+      <div class="sidebar-split"> 
+       <div class="split-left"></div> 
+       <div class="split-right"></div> 
+      </div> 
+     </div> 
+     <!-- /#sidebar-right --> 
+     <div class="clear-block"></div> 
+    </div> 
+    <div class="footer-dividor"></div> 
+    <div id="footer" class="clear"> 
+     <div class="clear-block"></div> 
+     <div class="footer-message"> 
+      <div>
+        © 2017 
+       <a href="/">Wise Bread</a> | 
+       <a href="/about">About</a> | 
+       <a href="/advertise">Advertise</a> | 
+       <a href="/about/contact">Contact</a> | 
+       <a href="http://feeds.killeraces.com/wisebread">Subscribe</a> 
+      </div> 
+      <div> 
+       <strong><a href="/legal/user-agreement">User Agreement</a></strong> | 
+       <strong><a href="/legal/privacy-policy">Privacy Policy</a></strong> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- /#footer --> 
+    <div id="subfooter" class="clear"> 
+     <div id="block-block-155" class="block block-block"> 
+      <div class="content clear"> 
+       <!-- crazyegg --> 
+       <script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0006/5275.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script> 
+       <!-- Start Quantcast tag --> 
+       <script type="text/javascript">
+
+_qoptions={
+
+qacct:"p-b0fVTrG87oLhU"
+
+};
+
+</script> 
+       <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script> 
+       <noscript> 
+        <img src="http://pixel.quantserve.com/pixel/p-b0fVTrG87oLhU.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"> 
+       </noscript> 
+       <!-- End Quantcast tag --> 
+       <!-- FM Insight Tag --> 
+       <script type="text/javascript">
+  var _bizo_data_partner_id = "901";
+</script> 
+       <script type="text/javascript">
+  var _bizo_p = (("https:" == document.location.protocol) ? "https://sjs." : "http://js.");
+  document.write(unescape("%3Cscript src='" + _bizo_p + "bizographics.com/convert_data.js?partner_id=" + _bizo_data_partner_id + "' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+       <noscript> 
+        <img height="1" width="1" alt="" style="display:none;" src="http://www.bizographics.com/collect/?pid=901&amp;fmt=gif"> 
+       </noscript> 
+       <!-- end FM Insight Tag --> 
+       <!-- itunes auto link tag --> 
+       <script type="text/javascript">var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '10lpjh']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script> 
+       <!-- end itunes auto link tag --> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- /.container --> 
+  </div>
+  <!-- /.super-container--> 
+  <!-- /layout --> 
+  <script type="text/javascript" src="http://wisebread.killeracesmedia.netdna-cdn.com/files/fruganomics/js/js_8bc3ed918a14cc5031380764b134a6cd.js"></script> 
+  <!-- pinterest js --> 
+  <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1fdce76940","applicationID":"12902797","transactionName":"MgZVbBQHXBAEUhFZXgtMdlsSD10NSl8KVFQ6E1ZfAzlECgBG","queueTime":0,"applicationTime":1173,"atts":"HkFWGlwdTx4=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

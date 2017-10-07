@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAAEUVdaGwUAV1NQDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"38c569029c","agent":"","transactionName":"MwcHNksEChcAUhZcDgpNIxdXBhANDl9NVBEUTA0DVwEIARNCWFEOBxcIB1cRFw==","applicationID":"6032288","errorBeacon":"bam.nr-data.net","applicationTime":361}</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="//smallbusiness.chron.com/style.css" type="text/css">
+  <link rel="shortcut icon" href="//smallbusiness.chron.com/favicon.ico">
+  <link rel="icon" href="//smallbusiness.chron.com/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title href="//smallbusiness.chron.com/rss/root.xml">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script async src="//cdn.optimizely.com/js/7431252.js"></script>
+  <!-- Custom Dimension dataLayer -->
+  <script title="dataLayer" type="text/javascript">[{"pagetype": "Article","subpagetype": "Topic View","studioid": "998fc1a3-4e2b-413c-b56b-2eefe8e5fe70","content_name": "How Can Leadership Skills Help You With Your Career Goals?","publish_date": "2012-02-09 01:30:15.427000","rating": "4","author": "Rose Johnson ","structure_rating": "4","ancestor_category1": "Leadership","ancestor_category2": "Human Resources","ancestor_category3": "Small Business","category": "Operations &amp; Management","has_image" : "TRUE","keyword1":"leadership skill benefits","keyword1":"workplace leadership skills","keyword1":"achieving career goals"}]</script>
+  <script type="text/javascript">
+var dataLayer = JSON.parse ( document.querySelectorAll("script[title=dataLayer]")[0].innerHTML );
+
+    // Remove dataLayer keys that have no value for the given page
+    for (var key in dataLayer[0]) {
+        if (dataLayer[0].hasOwnProperty(key)) {
+            if (dataLayer[0][key] == "") {
+                delete dataLayer[0][key];
+            }
+        }
+    }
+
+</script>
+  <!-- End Custom Dimension dataLayer -->
+  <!-- Bing Webmaster Tool Auth -->
+  <meta name="msvalidate.01" content="129B5DE6FF8DD0ECBDD457C93FF101E3">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "http://smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html",
+  "url": "http://smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html",
+  "name":"How Can Leadership Skills Help You With Your Career Goals?",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Website",
+          "@id": "http://smallbusiness.chron.com/leadership/",
+          "url": "http://smallbusiness.chron.com/leadership/",
+          "name": "Leadership"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Website",
+          "@id": "http://smallbusiness.chron.com/human-resources/",
+          "url": "http://smallbusiness.chron.com/human-resources/",
+          "name": "Human Resources"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Website",
+          "@id": "http://smallbusiness.chron.com/",
+          "url": "http://smallbusiness.chron.com/",
+          "name": "Small Business"
+        }
+      }
+    ]
+  },
+  "inLanguage":"en-US",
+  "mainEntity":{
+    "@type":"Article",
+    "@id": "http://smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html",
+    "url": "http://smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html",
+    "mainEntityOfPage": "true",
+    "datePublished":"2012-02-09 06:54:00",
+    "dateModified":"2016-10-26 17:32:21.729000",
+    "headline": "How Can Leadership Skills Help You With Your Career Goals?",
+    "description":"How Can Leadership Skills Help You With Your Career Goals?. Leadership skills are important traits to possess when owning a small business. Displaying leadership skills can help you throughout your career, especially with attracting clients, investors and creditors. Many small business owners and managers look for leadership skills in job candidates when making hiring decisions. Understanding the importance of leadership skills can help business owners set the tone for their organization and inspire employees to follow their words and actions.",
+    "keywords": "leadership skill benefits, workplace leadership skills, achieving career goals",
+    "Publisher": {
+      "@type": "Organization",
+      "name": "Chron.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "//smallbusiness.chron.com/images/channel-logo.png"}
+    },
+    "Author":{
+      "@type":"person",
+      "name":"Rose Johnson "
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://photos.demandstudios.com/getty/article/117/97/82399217_XS.jpg",
+      "height": "400",
+      "width": "290"
+    }
+  }
+}
+</script>
+  <title>How Can Leadership Skills Help You With Your Career Goals? | Chron.com</title>
+  <meta name="description" content="Leadership skills are important traits to possess when owning a small business. Displaying leadership skills can help you throughout your career, especially with attracting clients, investors and ...">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Leadership skills are important traits to possess when owning a small business. Displaying leadership skills can help you throughout your career, especially with attracting clients, investors and ...">
+  <meta property="og:title" content="How Can Leadership Skills Help You With Your Career Goals?">
+  <meta property="og:image" content="http://photos.demandstudios.com/getty/article/117/97/82399217_XS.jpg">
+  <link rel="canonical" href="http://smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html">
+  <script src="//smallbusiness.chron.com/scripts/google_ad_request.js"></script>
+  <script src="http://aps.hearstnp.com/scripts/loadAds.js?ver=2.0"></script>
+  <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+ </head> 
+ <body id="article-template" class="smallbusiness article topic-view"> 
+  <!-- body-top --> 
+  <!-- google tag manager --> 
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZCHF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZCHF');</script> 
+  <!-- end google tag manager -->
+  <!-- end body-top -->
+  <header id="header" class="clearfix">
+   <style>
+.site-nav {
+    background: #000;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+.shadow-nav {
+    -moz-box-shadow: 0 3px 4px -2px #222;
+    -webkit-box-shadow: 0 3px 4px -2px #222;
+    box-shadow: 0 3px 4px -2px #222;
+    height: 10px;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 401;
+}
+.site-nav .innerWrap {
+    display: flex;
+    float: none;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+ul.topnav {
+    clear: both;
+    display: flex;
+    height: 50px;
+    list-style: none;
+    z-index: 400;
+}
+ul.topnav li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+ul.topnav li a {
+    color: #FFF;
+    float: left;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-style: bold;
+    font-family: 'RobotoBold',arial,sans-serif;    
+}
+.no-mobile-header {
+    width: 120px;
+}
+li.home.mobile-header {
+    width: 120px;
+    margin-right: 60px;
+}
+
+li.mobile-back-button.mobile-header {
+   display: none;		    
+}
+.mobile-logo { 
+   background: url("http://www.chron.com/img/logo.svg") no-repeat;
+   background-position: 0 0;
+   background-size: 138px 84px;
+   margin-bottom: -moz-calc((55px - 28px) / 2);
+   margin-bottom: -webkit-calc((55px - 28px) / 2);
+   margin-bottom: -o-calc((55px - 28px) / 2);
+   margin-bottom: calc((55px - 28px) / 2);
+   margin-top: -moz-calc((55px - 28px) / 2);
+   margin-top: -webkit-calc((55px - 28px) / 2);
+   margin-top: -o-calc((55px - 28px) / 2);
+   margin-top: calc((55px - 28px) / 2);
+   display: flex;
+   float: left;
+   height: 28px;
+   margin-left: auto;
+   margin-right: auto;
+   webkit-transform: rotate(0deg);
+   moz-transform: rotate(0deg);
+   ms-transform: rotate(0deg);
+   o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   width: 138px;
+}
+.leaderboard {
+    display: block;
+    height: 90px;
+    padding: 2px 0 2px 0;
+    float: none;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+@media (max-width: 980px)  {
+ .leaderboard,
+ .no-mobile-header {
+    display: none;
+ }
+
+ .hst-siteheader {
+    top: 0;
+    position: fixed;
+    z-index: 40;
+    width: 100%;
+ }
+ 
+ li.home.mobile-header {
+    margin-left: 25px;
+    text-align: center;
+ }
+
+ li.mobile-back-button.mobile-header {
+    display: flex;
+    margin-left: 12px;
+ }
+
+ #page {
+    margin-top: 50px;
+ }
+}
+</style> 
+   <div class="leaderboard">
+    <!-- Begin Hearst Ad --> 
+    <div id="A728"> 
+     <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("A728");/*]]>*/</script> 
+    </div> 
+    <!-- End Hearst Ad -->
+   </div> 
+   <div class="hst-siteheader"> 
+    <nav id="siteNav" class="site-nav"> 
+     <div class="shadow-nav"></div> 
+     <div class="innerWrap"> 
+      <ul class="topnav"> 
+       <li class="mobile-back-button mobile-header"> <a href="//smallbusiness.chron.com" data-event="back nav"> 
+         <svg height="40" width="25" viewbox="0 0 40 25"> 
+          <path style="stroke:white;stroke-width:5;fill:none;" d="M25 40 L3 20 L25 0"></path> 
+         </svg> </a> </li> 
+       <li class="home mobile-header"> <a href="//chron.com" target="_blank"> 
+         <div class="mobile-logo"></div></a> </li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/news/houston-texas/">Local</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/news/nation-world/">US &amp; World</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/sports/">Sports</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/business/">Business</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/entertainment/">A&amp;E</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/life/">Life</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/jobs/">Jobs</a></li> 
+       <li class="no-mobile-header"><a href="http://cars.chron.com/">Cars</a></li> 
+       <li class="no-mobile-header"><a href="http://www.chron.com/homes/">Real Estate</a></li> 
+      </ul> 
+     </div> 
+    </nav> 
+   </div>
+  </header> 
+  <div id="page">
+   <a href="#main" id="skipLink">Skip to main content.</a>
+   <div id="content" class="clearfix">
+    <nav id="breadcrumbs"> 
+     <ol class="clearfix"> 
+      <li> <a href="http://smallbusiness.chron.com/"> Small Business</a><span class="sep">»</span></li> 
+      <li> <a href="http://smallbusiness.chron.com/human-resources/"> Human Resources</a><span class="sep">»</span></li> 
+      <li> <a href="http://smallbusiness.chron.com/leadership/"> Leadership</a><span class="sep">»</span></li> 
+     </ol> 
+    </nav>
+    <div id="main"> 
+     <header id="title"> 
+      <h1>How Can Leadership Skills Help You With Your Career Goals?</h1> 
+      <cite> by Rose Johnson </cite> 
+     </header> 
+     <article id="article-section"> 
+      <div id="top-image" class="clearfix"> 
+       <figure id="main-article-photo" class="article-image"> 
+        <img src="//img-aws.ehowcdn.com/340x221p/photos.demandstudios.com/getty/article/117/97/82399217.jpg" alt="The success of a company depends on its effectiveness of its leaders." title="Phil Ashley/Lifesize/Getty Images"> 
+        <figcaption class="article-image-credits"> 
+         <p class="photo-cap">The success of a company depends on its effectiveness of its leaders.</p> 
+         <p class="photo-attribution">Phil Ashley/Lifesize/Getty Images</p> 
+        </figcaption> 
+       </figure>
+       <div id="related-articles"> 
+        <h3>Related Articles</h3> 
+        <ul> 
+         <li><span>1 </span><a href="//smallbusiness.chron.com/importance-leadership-business-3117.html">[Importance] | The Importance of Leadership in Business</a></li> 
+         <li><span>2 </span><a href="//smallbusiness.chron.com/impact-leadership-organizational-performance-2970.html">[Organizational Performance] | The Impact of Leadership on Organizational Performance</a></li> 
+         <li><span>3 </span><a href="//smallbusiness.chron.com/benefits-effective-communication-workplace-20198.html">[Effective Communication] | What Are the Benefits of Effective Communication in the Workplace?</a></li> 
+         <li><span>4 </span><a href="//smallbusiness.chron.com/goals-increase-leadership-skills-personal-development-47595.html">[Increase Leadership Skills] | Goals to Increase Leadership Skills for Personal Development</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="section-0" class="section summary">
+       <p>Leadership skills are important traits to possess when owning a small business. Displaying leadership skills can help you throughout your career, especially with attracting clients, investors and creditors. Many small business owners and managers look for leadership skills in job candidates when making hiring decisions. Understanding the importance of leadership skills can help business owners set the tone for their organization and inspire employees to follow their words and actions.</p> 
+      </div> 
+      <div class="inline-ad"> 
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+       <!-- WORK_INLINE --> 
+       <ins class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;height:125px" data-ad-client="ca-pub-3235755782694080" data-ad-slot="1166178349"></ins> 
+       <script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script> 
+      </div> 
+      <div id="section-1" class="section">
+       <h2>Manage Effectively</h2> 
+       <p>Small business owners carry a great deal of responsibility, often filling the role of leader and manager. Although management and leadership are terms often used interchangeably, the definitions are slightly different. Small business managers must understand how to control environments, while small business leaders must know how to inspire others. Leadership skills can help a small business owner effectively manage his organization, placing the company in the best position to achieve success. Effective managers run efficient departments, maximize production and know how to manage employees.</p> 
+      </div>
+      <div id="section-2" class="section">
+       <h2>Help Gain Respect</h2> 
+       <p>Effective small business leaders not only possess the ability to get others to follow them, but also understand the importance of leading by example. Small business owners who display leadership skills in the workplace and lead by example create a trusting and respectful work environment. The respect of your employees can go a long way in helping you achieve your career goals. When employees respect their employer, they are more apt to flow with organizational changes and are motivated to produce at a high level.</p> 
+       <script>
+		var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+		if (VIEWPORT_WIDTH > 500) {
+
+	   	            document.write('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></scr'+'ipt><!-- SMALLBUSINESS_LOWLINE --><ins class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;height:75px" data-ad-client="ca-pub-3235755782694080" data-ad-slot="1530628549"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</scr'+'ipt>');	        
+		} 
+		</script> 
+      </div>
+      <div id="section-3" class="section">
+       <h2>Decision Making</h2> 
+       <p>The success of a small business is in part dependent upon a business owner's ability to make critical decisions. According to an article on the University of Baltimore’s website written by Professor Hossein Arsham, the first requisite of success is to possess the ability to focus your physical and mental energies on a particular decision without becoming discouraged. Leadership skills help you make critical decisions and set clear goals for your organization. Business owners must at times make decisions that are unpopular with employees or investors. Possessing leadership skills can help a business owner stick to his decision and conviction despite the rejection of others.</p> 
+      </div>
+      <div id="section-4" class="section">
+       <h2>Motivate Employees</h2> 
+       <p>Employee motivation is critical to the success of a small business. Motivated employees are more productive and are typically satisfied in their jobs. Unmotivated employees can hurt a business by working inefficiently and not producing according to the organization's standards. Leadership skills can help business owners motivate and influence their employees and build employee morale. Business owners must understand what factors motivate employees, which usually go beyond compensation. Important factors that motivate employees include recognition, positive performance feedback, and providing employees with the resources and tools they need to succeed.</p> 
+      </div> 
+      <div class="main-ad pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links"> 
+       <script>
+			var ad_height;
+			var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+                if (VIEWPORT_WIDTH > 500) {
+					ad_height = '455px';
+				} else {
+					ad_height = '550px';
+				}
+		</script> 
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+       <!-- WORK_MAIN --> 
+       <ins id="ggads" class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;" data-ad-client="ca-pub-3235755782694080" data-ad-slot="2642911548"> </ins> 
+       <script>
+		document.getElementById('ggads').style.height = ad_height;
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script> 
+      </div> 
+      <script>
+		var mainAds = $('.main-ad');
+		if (mainAds.length < 1 || mainAds.height() < 10) {
+			document.write('<div id="DMINSTR" type="adimpression" data-type="adTracking" name="&amp;adunit_id=2642911548&amp;ad_unit_type=CNT&amp;ad_unit_network=GAS&amp;revenue_basis=CPC&amp;ad_position=C2&amp;revenue_tag=pub-3235755782694080"> <div id="google-article-block" class="google-text"> <script type="text/javascript"> google_ad_channel = "2642911548"; google_ad_client = "pub-3235755782694080"; google_ad_output = "js"; google_max_num_ads = "4"; google_ad_type = "text"; google_image_size = "336x280"; google_feedback = "on"; google_skip = 1; google_url ="bottom"; google_class = "336x280"; google_label_text = "Ads"; </sc'+'ript> <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></scr'+'ipt> </div></div>');
+		}
+	</script> 
+      <div class="OUTBRAIN" data-src="http://smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html" data-widget-id="AR_2" data-ob-template="SmallBusinessChron" id="outbrain"></div>
+      <script async type="text/javascript" src="https://videos-by.vemba.io/v2/placements/19200.js"></script> 
+      <div id="references" class="section"> 
+       <h4><a class="link-toggle-list" href="#" onclick="return false;"> References <span id="references_count">(6)</span> <span class="icon icon-right-open"></span><span class="icon icon-down-open"></span> </a></h4> 
+       <ul>
+        <li><a href="http://insidetech.monster.com/benefits/articles/7944-develop-leadership-skills-in-any-job" rel="nofollow">Inside Tech: Developing Leadership Skills in Any Job</a></li>
+        <li><a href="http://community.gettinghired.com/blogs/articles/archive/2010/10/04/the-importance-of-leadership-in-the-workplace.aspx" rel="nofollow">Gettinghired.com: The Importance of Leadership in the Workplace</a></li>
+        <li><a href="http://www.entrepreneur.com/article/204500" rel="nofollow">Entrepreneur: It Takes Leadership</a></li>
+        <li><a href="http://home.ubalt.edu/ntsbarsh/opre640/partxiii.htm#rleaderManagerstyle" rel="nofollow">University of Baltimore: Leadership Decision Making</a></li>
+        <li><a href="http://www.mindtools.com/pages/article/newLDR_84.htm" rel="nofollow">Mindtools: Leadership Styles</a></li>
+        <li><a href="http://www.money-zine.com/Career-Development/Leadership-Skill/Motivation-Theory-and-Leadership/" rel="nofollow">Money-Zine.com: Motivation Theory and Leadership</a></li>
+       </ul> 
+      </div> 
+      <div id="photo-credits" class="section"> 
+       <h4>Photo Credits</h4> 
+       <ul> 
+        <li>Phil Ashley/Lifesize/Getty Images</li> 
+       </ul> 
+      </div> 
+      <div class="in-article-feedback"> 
+       <a target="_blank" href="mailto:partner.channelfeedback@leafgroup.com?subject=Article%20Feedback&amp;body=Hi.%20I%20have%20feedback%20about%20this%20article%20http%3A//smallbusiness.chron.com/can-leadership-skills-career-goals-39135.html on Small Business." data-reveal-id="feedback-container">Suggest an Article Correction</a> 
+      </div> 
+     </article> 
+    </div> 
+    <aside id="sidebar"> 
+     <div id="radlinks" class="widget"> 
+      <h3><span>Related</span> Searches</h3>
+      <script language="JavaScript">
+<!--
+function google_radlink_request_done(radlinks) {
+if (radlinks.length < 1)
+return;
+for(i=0; i < radlinks.length; ++i) {
+document.write("<ul><li class=\"entry\"><a target=\"_top\" href=\"" +
+"//smallbusiness.chron.com/rad-results.html?google_kw=" +
+radlinks[i].url_escaped_term +"&category=Human+Resources" +
+"&subcategory=Leadership" +"&media_type=Article" +"&channel=8507346042+9249798640" +"&google_rt=" + radlinks[i].radlink_token +
+"&google_page_url=" +
+encodeURIComponent(window.location) + "\">" +
+radlinks[i].term +
+"</a></li></ul>\n");
+}
+}
+// -->
+</script> 
+      <script language="JavaScript">
+<!--
+google_ad_client = 'ca-pub-3235755782694080';
+google_ad_channel = '';
+google_ad_output = 'js';
+google_max_num_ads = '0';
+google_language = 'en';
+google_encoding = 'utf8';
+google_safe = 'high';
+google_num_radlinks = '6';
+google_max_radlink_len = '30';
+google_num_radlinks_per_unit = '3,4,5';
+google_rl_mode = 'relevance';
+// -->
+</script> 
+      <script language="JavaScript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+     </div> 
+     <div id="top-300" class="widget">
+      <!-- Begin Hearst Ad --> 
+      <div id="A300"> 
+       <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("A300");/*]]>*/</script> 
+      </div> 
+      <!-- End Hearst Ad -->
+     </div> 
+     <!-- Ads move in script --> 
+     <script>
+		$(function(){
+			var adsMoveTo = null;
+			
+				if ($('[id^="section"]').length >= 4) {
+					adsMoveTo = 2;
+				}
+			
+			
+			
+			if ($(window).width() <= 760) {
+				if (adsMoveTo) {
+					$('#top-300').insertAfter('#section-' + adsMoveTo);
+				}
+			}
+		});
+	</script> 
+     <div id="more-read" class="widget clearfix"> 
+      <h3><span>More</span> Articles</h3> 
+      <ul> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/top-five-leadership-traits-qualities-skills-32557.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/getty/article/154/66/87818967.jpg" alt="[Leadership Traits Qualities] | &quot;Top Five Leadership Traits, Qualities &amp; Skills&quot;" title="[Leadership Traits Qualities] | &quot;Top Five Leadership Traits, Qualities &amp; Skills&quot;" width="137" height="77"> <p>[Leadership Traits Qualities] | "Top Five Leadership Traits, Qualities &amp; Skills"</p> </a></li> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/5-different-types-leadership-styles-17584.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/getty/article/88/26/86526669.jpg" alt="[Different Types] | 5 Different Types of Leadership Styles" title="[Different Types] | 5 Different Types of Leadership Styles" width="137" height="77"> <p>[Different Types] | 5 Different Types of Leadership Styles</p> </a></li> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/10-effective-qualities-team-leader-23281.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/getty/article/110/33/92861227.jpg" alt="[Team Leader] | The 10 Effective Qualities of a Team Leader" title="[Team Leader] | The 10 Effective Qualities of a Team Leader" width="137" height="77"> <p>[Team Leader] | The 10 Effective Qualities of a Team Leader</p> </a></li> 
+       <li class="clearfix"><a href="//smallbusiness.chron.com/organizational-skills-workplace-1277.html"> <img src="//img-aws.ehowcdn.com/137x77/photos.demandstudios.com/102/236/fotolia_681871_XS.jpg" alt="[Organizational Skills] | Organizational Skills in the Workplace" title="[Organizational Skills] | Organizational Skills in the Workplace" width="137" height="77"> <p>[Organizational Skills] | Organizational Skills in the Workplace</p> </a></li> 
+      </ul> 
+     </div> 
+     <div id="bottom-300" class="widget">
+      <!-- Begin Hearst Ad --> 
+      <div id="B300"> 
+       <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("B300");/*]]>*/</script> 
+      </div> 
+      <!-- End Hearst Ad -->
+     </div> 
+     <div id="also-viewed" class="widget"> 
+      <h3><span>Also</span> Viewed</h3> 
+      <ul> 
+       <li><a href="//smallbusiness.chron.com/assessment-tools-measure-mentor-leadership-skills-35036.html">[Measure Mentor Leadership Skills] | Assessment Tools to Measure Mentor Leadership Skills</a></li> 
+       <li><a href="//smallbusiness.chron.com/problem-solving-skills-training-workplace-11656.html">[Problem Solving Skills Training] | Problem Solving Skills Training &amp; the Workplace</a></li> 
+       <li><a href="//smallbusiness.chron.com/importance-leader-team-52168.html">[Importance] | Importance of a Leader In a Team</a></li> 
+       <li><a href="//smallbusiness.chron.com/advantages-disadvantages-leadership-company-business-35547.html">[Advantages] | What Are the Advantages &amp; Disadvantages in Leadership in a Company or Business?</a></li> 
+       <li><a href="//smallbusiness.chron.com/show-leader-56368.html">[Leader] | How to Show You're a Leader</a></li> 
+       <li><a href="//smallbusiness.chron.com/advantages-being-computer-literate-workforce-27703.html">[Computer Literate] | The Advantages of Being Computer Literate in the Workforce</a></li> 
+       <li><a href="//smallbusiness.chron.com/listening-can-improve-workplace-performance-13262.html">[Workplace Performance] | How Listening Can Improve Workplace Performance</a></li> 
+      </ul> 
+     </div> 
+     <div id="s-300" class="widget">
+      <!-- Begin Hearst Ad --> 
+      <div id="S300"> 
+       <script type="text/javascript">/*<![CDATA[*/hearstPlaceAd("S300");/*]]>*/</script> 
+      </div> 
+      <!-- End Hearst Ad -->
+     </div> 
+    </aside> 
+   </div>
+   <footer class="clearfix">
+    <footer> 
+     <div class="hdnce-e hdnce-item-41834">
+      <!-- mid:freeform.41834 --> 
+      <div class="header"> 
+       <span class="logo">Logo</span> 
+       <span class="top"><a href="#">Return to Top</a></span> 
+      </div> 
+      <div class="body"> 
+       <div class="about"> 
+        <h3>About</h3> 
+        <ul> 
+         <li><a href="http://www.hearst.com/newspapers/houston-chronicle">Our Company</a></li> 
+         <li><a href="http://www.chron.com/careers">Careers</a></li> 
+         <li><a href="http://marketing.chron.com/home">Advertise with Us</a></li> 
+         <li><a href="http://www.aboutads.info/choices/" class="adchoices">Ad Choices</a></li> 
+         <li><a href="http://www.chron.com/terms_of_use/">Terms &amp; Conditions</a></li> 
+         <li><a href="http://www.chron.com/privacy_policy/">Privacy Policy</a></li> 
+         <li><a href="http://www.chron.com/privacy_policy/#caprivacyrights">Your California Privacy Rights</a></li> 
+        </ul> 
+       </div> 
+       <div class="contact"> 
+        <h3>Contact</h3> 
+        <ul> 
+         <li><a href="https://myaccount.houstonchronicle.com/FAQ.aspx">Customer Service</a></li> 
+         <li><a href="http://www.chron.com/about/newsroom/">Newsroom Contacts</a></li> 
+        </ul> 
+       </div> 
+       <div class="connect"> 
+        <h3>Connect</h3> 
+        <ul> 
+         <li><a href="http://www.chron.com/newsletters/">Email Newsletter</a></li> 
+         <li><a href="https://www.facebook.com/chroncom" class="facebook">Facebook</a></li> 
+         <li><a href="https://twitter.com/houstonchron" class="twitter">Twitter</a></li> 
+         <li><a href="https://www.pinterest.com/houstonchron/" class="pinterest">Pinterest</a></li> 
+         <li><a href="https://plus.google.com/+houstonchronicle/posts" class="google">Google</a></li> 
+         <li><a href="https://instagram.com/houstonchron/" class="instagram">Instagram</a></li> 
+        </ul> 
+       </div> 
+       <div class="subscribe"> 
+        <h3>Subscribe</h3> 
+        <ul> 
+         <li><a href="http://www.chron.com/ipad/">iPad app</a></li> 
+         <li><a href="http://www.houstonchronicle.com/">HoustonChronicle.com</a></li> 
+         <li><a href="http://www.houstonchronicle.com/archive">Houston Chronicle Archives</a></li> 
+         <li><a href="http://digital.olivesoftware.com/Olive/ODN/HoustonChronicleDemo/">eEdition Demo</a></li> 
+         <li><a href="http://digital.olivesoftware.com/Olive/ODN/houstonchronicle/Default.aspx">Today's eNewspaper</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="footer"> 
+       <span class="logo">Hearst Newspapers</span> 
+       <span class="copyright">© Copyright 2017 Hearst Newspapers, LLC</span> 
+      </div> 
+     </div> 
+    </footer> 
+   </footer>
+  </div>
+  <script>(function(d,t){var cjs=d.createElement(t),dhd=d.getElementsByTagName(t)[0];cjs.async=1;cjs.src='//smallbusiness.chron.com/scripts/custom.js';dhd.parentNode.insertBefore(cjs,dhd);}(document,'script'));</script> 
+  <script type="text/javascript" src="//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"></script>  
+ </body>
+</html>

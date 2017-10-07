@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png"> 
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png"> 
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png"> 
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png"> 
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png"> 
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png"> 
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png"> 
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png"> 
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png"> 
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"> 
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png"> 
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"> 
+  <link rel="manifest" href="/favicon/manifest.json"> 
+  <meta name="msapplication-TileColor" content="#F4792C"> 
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png"> 
+  <meta name="theme-color" content="#F4792C"> 
+  <title>Best Master's Degrees in Communication 2017/2018</title> 
+  <meta name="description" content="Contact Schools Directly - Compare 111 Masters Degrees in Communication 2017/2018"> 
+  <link rel="stylesheet" href="//cdn03.masterstudies.com//css/ks_bootstrap.css"> 
+  <link rel="stylesheet" href="//cdn03.masterstudies.com//css/main.1507205349.css"> 
+  <link rel="stylesheet" href="//cdn02.masterstudies.com//css/frontpage.css"> 
+  <link rel="stylesheet" href="//cdn02.masterstudies.com//css/sprites/sprites.css"> 
+  <link rel="stylesheet" href="//cdn03.masterstudies.com//sprites/css/sprite_combined.css"> 
+  <script async src="https://www.googletagservices.com/tag/js/gpt.js"></script> 
+  <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script> 
+  <script>
+        googletag.cmd.push(function() {
+                        googletag.defineSlot('/5803363/gmat', [[120, 240], [120, 600], [160, 600]], 'gmat')
+                .addService(googletag.pubads());
+
+                        googletag.defineSlot('/5803363/toefl_subject_specific_pages', [[120, 240], [120, 600], [160, 600]], 'toefl_subject_specific_pages')
+                .addService(googletag.pubads());
+
+                        googletag.defineSlot('/5803363/gre_subject_specific_pages', [[120, 240], [120, 600], [160, 600]], 'gre_subject_specific_pages')
+                .addService(googletag.pubads());
+
+                        googletag.defineSlot('/5803363/listing_communication', [[120, 240], [120, 600], [160, 600]], 'listing_communication')
+                .addService(googletag.pubads()).setTargeting("Degree", "Masterstudies | Master");
+
+                        googletag.defineSlot('/5803363/listing_communication', [[120, 240], [120, 600], [160, 600]], 'listing_communication_2')
+                .addService(googletag.pubads()).setTargeting("Degree", "Masterstudies | Master");
+
+                        googletag.defineSlot('/5803363/listing_communication', [[120, 240], [120, 600], [160, 600]], 'listing_communication_3')
+                .addService(googletag.pubads()).setTargeting("Degree", "Masterstudies | Master");
+
+                                    googletag.defineSlot('/5803363/listing_communication', [300, 250], 'mobile_listing_communication').addService(googletag.pubads()).setTargeting("DegreeMobile", "Masterstudies | Master");
+                            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    </script> 
+  <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    
+      
+      ga('create', 'UA-3779280-55', {
+        'cookieDomain': 'none'         , allowLinker: true
+                });
+
+      
+      ga('send', 'pageview');
+
+                   // Tracking
+          
+      
+      ga('create', 'UA-3779280-1', {
+        'cookieDomain': 'auto'         , allowLinker: true
+                , name: 't2'
+                });
+
+      
+      ga('t2.send', 'pageview');
+
+                   // Tracking
+                </script> 
+  <link rel="canonical" href="https://www.masterstudies.com/Masters-Degree/Communication/"> 
+  <link rel="alternate" hreflang="en" href="https://www.masterstudies.com/Masters-Degree/Communication/"> 
+  <link rel="alternate" hreflang="en-CA" href="https://www.masterstudies.ca/Masters-Degree/Communication/"> 
+  <link rel="alternate" hreflang="en-GB" href="https://www.masterstudies.co.uk/Masters-Degree/Communication/"> 
+  <link rel="amphtml" href="https://www.masterstudies.com/Masters-Degree/Communication/amp/"> 
+  <link rel="next" href="https://www.masterstudies.com/Masters-Degree/Communication/?page=2"> 
+  <script src="https://cdn.logrocket.com/LogRocket.min.js"></script> 
+ </head> 
+ <body class=""> 
+  <!--header--> 
+  <!--first navbav--> 
+  <nav class="navbar navbar-default topnav hidden-xs" role="navigation"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-sm-12"> 
+      <div class="first-nav "> 
+       <div class="navbar-header"> 
+        <span>
+         <ul class="partner-sites nav navbar-nav navbar-left"></ul></span> 
+        <!-- landing --> 
+       </div> 
+       <div id="navbar" class="navbar-collapse collapse"> 
+        <ul class="nav navbar-nav pull-right buttons-navbar flip"> 
+         <li class="dropdown"> <button class="dropdown-toggle btn btn-default navbar-btn btn-sm navbar-languages" data-uri-id="{&quot;mode&quot;:&quot;all&quot;,&quot;idType&quot;:1,&quot;idSector&quot;:&quot;212&quot;,&quot;section&quot;:&quot;listing&quot;}" data-loaded="false" data-toggle="dropdown" type="button"> 
+           <div class="flag-icon-16 us site-language-flag pull-left"></div> English <span class="caret"></span> </button> 
+          <ul class="dropdown-menu pull-right"> 
+           <li class="language-loader"> 
+            <div class="text-center text-muted padding-10"> 
+             <i class="fa fa-spinner fa-pulse fa-2x"></i> 
+            </div> </li> 
+          </ul> </li> 
+         <li class="dropdown"> <button class="dropdown-toggle  btn btn-default navbar-btn btn-sm" data-toggle="dropdown" type="button">Student sign in <span class="caret"></span></button> 
+          <ul class="dropdown-menu sign-in-form pull-right"> 
+           <li> 
+            <form class="form-horizontal" action="/account/" method="post"> 
+             <div class="form-group"> 
+              <input class="form-control" type="text" id="inputEmail" placeholder="E-mail" name="mail"> 
+             </div> 
+             <div class="form-group"> 
+              <input class="form-control" type="password" id="inputPassword" placeholder="Password" name="password"> 
+             </div> 
+             <div class="form-group"> 
+              <button type="submit" class="btn btn-primary-master" name="submit_lp" value="1">Sign in</button> 
+             </div> 
+             <div class="form-group"> 
+              <a href="/account/forgotpassword/"> <small>Forgot your password?</small> </a> 
+              <a href="/account/create-new/" class="visible-sm"> <small>Join for free</small> </a> 
+             </div> 
+            </form> </li> 
+          </ul> </li> 
+         <li class="hidden-sm"> <p class="navbar-btn "> <a href="/account/create-new/" class="btn btn-contrast btn-sm "> Join for free <span class="caret-right"></span> </a> </p> </li> 
+        </ul> 
+       </div> 
+       <!--/.navbar-collapse --> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- for image, search and second navbar--> 
+  <div class="container second_nav"> 
+   <div class="row header-logo"> 
+    <div class="col-sm-8"> 
+     <a href="https://www.masterstudies.com/"> <img src="//cdn01.masterstudies.com/img/logo/Masters-Degree-ms-en.png" alt="Search Best Masters Degrees 2017/2018 - {number:programs} Masters Programs available" height="50"> </a> 
+    </div> 
+    <div class="col-sm-4 hidden-xs no-padding"> 
+     <form method="GET" action="/search/" role="search"> 
+      <div class="input-group"> 
+       <input type="text" class="form-control" placeholder="Search" name="q"> 
+       <div class="input-group-btn"> 
+        <button class="btn btn-contrast" type="submit"><i class="fa fa-search"></i></button> 
+       </div> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+   <div class="pull-right" id="tagline"> 
+    <h1>Masters Programs in Communication</h1> 
+   </div> 
+   <nav class="navbar navbar-default navbar-inverse" role="navigation"> 
+    <div class="container"> 
+     <div class="navbar-header visible-xs visible-sm"> 
+      <button type="button" class="expand-nav pull-right collapsed" data-toggle="collapse" data-target="#degree-nav" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars fa-2x"></i> </button> 
+      <button type="button" class="expand-nav pull-right collapsed visible-xs" data-toggle="collapse" data-target="#search-nav" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle search</span> <i class="fa fa-search fa-2x"></i> </button> 
+      <div class="xs-nav-entries visible-xs"> 
+       <a class="pull-left" href="https://www.masterstudies.com/Masters-Degree/">Master Degrees</a> 
+      </div> 
+      <div class="xs-nav-entries visible-sm pipe"> 
+       <a class="pull-left" href="https://www.masterstudies.com/Masters-Degree/">Master Degrees</a> 
+       <a class="pull-left" href="https://www.masterstudies.com/MSc/">Masters of Science</a> 
+      </div> 
+     </div> 
+     <div class="navbar-collapse collapse search-nav visible-xs visible-sm" id="search-nav"> 
+      <ul class="nav navbar-nav"> 
+       <li class="search-xs"> 
+        <form method="GET" action="/search/" role="search"> 
+         <div class="input-group"> 
+          <input type="text" class="form-control" placeholder="Search" name="q"> 
+          <div class="input-group-btn"> 
+           <button class="btn btn-contrast" type="submit"><i class="fa fa-search"></i></button> 
+          </div> 
+         </div> 
+        </form> </li> 
+      </ul> 
+     </div> 
+     <div class="navbar-collapse collapse" id="degree-nav"> 
+      <ul class="nav navbar-nav pipe"> 
+       <li class="hidden-xs hidden-sm"> <a href="https://www.masterstudies.com/Masters-Degree/">Master Degrees</a> </li> 
+       <li class=" hidden-sm"> <a href="https://www.masterstudies.com/MSc/">Masters of Science</a> </li> 
+       <li class=" "> <a href="https://www.masterstudies.com/MA/">Masters of Arts</a> </li> 
+       <li class=" "> <a href="https://www.academiccourses.com/Courses/">Courses</a> </li> 
+       <li class=" "> <a href="https://www.onlinestudies.com/Masters/">Online Degrees</a> </li> 
+       <li class=" "> <a href="https://www.masterstudies.com/universities/">Universities by Country</a> </li> 
+      </ul> 
+      <ul class="nav navbar-nav visible-xs"> 
+       <li> <a href="/account/login"> Student sign in</a> </li> 
+       <li> <a href="/account/create-new/">Join for free</a> </li> 
+       <li class="dropdown"> <a href="" class="dropdown-toggle navbar-languages" data-uri-id="{&quot;mode&quot;:&quot;all&quot;,&quot;idType&quot;:1,&quot;idSector&quot;:&quot;212&quot;,&quot;section&quot;:&quot;listing&quot;}" data-loaded="false" data-toggle="dropdown"> Languages <span class="caret"></span> </a> 
+        <ul class="dropdown-menu"> 
+         <li class="language-loader"> 
+          <div class="text-center text-muted padding-10"> 
+           <i class="fa fa-spinner fa-pulse fa-2x"></i> 
+          </div> </li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown">Degrees <span class="caret"></span></a> 
+        <ul class="dropdown-menu partner-sites-mobile"></ul> </li> 
+      </ul> 
+     </div> 
+     <!--/.navbar-collapse --> 
+    </div> 
+   </nav> 
+  </div> 
+  <!-- end image, search and second navbar--> 
+  <script type="application/ld+json">
+
+   [{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Official Master's Degree In Political And Institutional Communication (master's Degree In Marketing, Consulting And Political Communication - Usc)","duration":"P1Y0M0DT0H0M0S","location":{"@type":"Place","name":"Official Master's Degree In Political And Institutional Communication (master's Degree In Marketing, Consulting And Political Communication - Usc)-Spain-Madrid","address":{"@type":"PostalAddress","addressCountry":"Spain","addressLocality":"Madrid"}},"inLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"Spanish"}],"url":"https:\/\/www.masterstudies.com\/Official-Masters-Degree-In-Political-And-Institutional-Communication-(masters-Degree-In-Marketing-Consulting-And-Political-Communication-Usc)\/Spain\/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid)\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Official-Masters-Degree-In-Political-And-Institutional-Communication-(masters-Degree-In-Marketing-Consulting-And-Political-Communication-Usc)\/Spain\/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid)\/","price":"7000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Instituto Universitario de Investigaci\u00f3n Ortega y Gasset","telephone":"(+34) 91 700 41 42 \/ 00","address":{"@type":"PostalAddress","name":"Instituto Universitario de Investigaci\u00f3n Ortega y Gasset","url":"http:\/\/www.ortegaygasset.edu\/","telephone":"+34 917 00 41 00        ","postalCode":"28010","addressLocality":"Madrid","addressCountry":"Spain","streetAddress":"Calle de Fortuny 53"},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Spain\/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid)\/","url":"http:\/\/www.ortegaygasset.edu\/","logo":"http:\/\/cdn03.masterstudies.com\/gfx\/logo\/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid).png"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Corporate Communication: Public Relations, Protocol and Events Management in Barcelona","duration":"P1Y0M0DT0H0M0S","location":{"@type":"Place","name":"Master in Corporate Communication: Public Relations, Protocol and Events Management in Barcelona-Spain-Barcelona","address":{"@type":"PostalAddress","addressCountry":"Spain","addressLocality":"Barcelona"}},"inLanguage":[{"@type":"Language","name":"Spanish"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Corporate-Communication-Public-Relations-Protocol-and-Events-Management-in-Barcelona\/Spain\/ESERP-Business-School\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Corporate-Communication-Public-Relations-Protocol-and-Events-Management-in-Barcelona\/Spain\/ESERP-Business-School\/","price":"6500","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"ESERP Business School","telephone":"+34 91 350 12 12","address":[{"@type":"PostalAddress","streetAddress":"ESERP MADRID\r\nCalle Costa Rica, 9","addressLocality":"Madrid","postalCode":"28016","addressCountry":"Spain"},{"@type":"PostalAddress","streetAddress":"ESERP BARCELONA\r\nCalle Girona, 24","addressLocality":"Barcelona","postalCode":"08010","addressCountry":"Spain"},{"@type":"PostalAddress","streetAddress":"ESERP MALLORCA\r\nCalle Balmes, 50\r\n","addressLocality":"Palma de Mallorca","postalCode":"07004","addressCountry":"Spain"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Spain\/ESERP-Business-School\/"},"startDate":"2017-10"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Marketing, Communication and New Media","duration":"P1Y0M0DT0H0M0S","location":{"@type":"Place","name":"Master in Marketing, Communication and New Media-Italy-Bologna","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Bologna"}},"inLanguage":[{"@type":"Language","name":"English"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Marketing-Communication-and-New-Media\/Italy\/BBS\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Marketing-Communication-and-New-Media\/Italy\/BBS\/","price":"14800","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Bologna Business School","telephone":"+39 0512090111","address":{"@type":"PostalAddress","name":"Bologna Business School BBS","url":"http:\/\/www.bbs.unibo.it\/","telephone":"+39 051 209 0111              ","addressLocality":"Bologna","addressCountry":"Italia","streetAddress":"Via degli Scalini "},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/BBS\/","url":"http:\/\/www.bbs.unibo.it\/","logo":"http:\/\/cdn03.masterstudies.com\/gfx\/logo\/X-small\/BBS.png"},"startDate":"2017-12"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master In Communication And Political Marketing","duration":"P1Y0M0DT0H0M0S","location":{"@type":"Place","name":"Master In Communication And Political Marketing-Spain-Madrid","address":{"@type":"PostalAddress","addressCountry":"Spain","addressLocality":"Madrid"}},"inLanguage":[{"@type":"Language","name":"Spanish"}],"url":"https:\/\/www.masterstudies.com\/Master-In-Communication-And-Political-Marketing\/Spain\/CESCOMPOL-Centro-de-Estudios-Superiores-de-Comunicaci\u00f3n-y-Marketing-Pol\u00edtico\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-In-Communication-And-Political-Marketing\/Spain\/CESCOMPOL-Centro-de-Estudios-Superiores-de-Comunicaci\u00f3n-y-Marketing-Pol\u00edtico\/","price":"6000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"CESCOMPOL - Centro de Estudios Superiores de Comunicaci\u00f3n y Marketing Pol\u00edtico","telephone":"+34 917 69 72 05","address":[{"@type":"PostalAddress","streetAddress":"Calle Trinidad, 1\r\nAlcal\u00e1 de Henares","addressLocality":"Madrid","postalCode":"28801","addressCountry":"Spain"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Spain\/CESCOMPOL-Centro-de-Estudios-Superiores-de-Comunicaci\u00f3n-y-Marketing-Pol\u00edtico\/"},"startDate":"2018-09"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master of Advanced Studies in Intercultural Communication (MIC)","duration":"P1Y2M0DT0H0M0S","location":{"@type":"Place","name":"Master of Advanced Studies in Intercultural Communication (MIC)-Switzerland-Lugano","address":{"@type":"PostalAddress","addressCountry":"Switzerland","addressLocality":"Lugano"}},"inLanguage":[{"@type":"Language","name":"English"}],"url":"https:\/\/www.masterstudies.com\/Master-of-Advanced-Studies-in-Intercultural-Communication-(MIC)\/Switzerland\/USI\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-of-Advanced-Studies-in-Intercultural-Communication-(MIC)\/Switzerland\/USI\/","price":"13000","priceCurrency":"CHF"},"organizer":{"@type":"CollegeOrUniversity","name":"USI Universit\u00e0 della Svizzera italiana","telephone":"+41 (0) 586664795","address":{"@type":"PostalAddress","name":"Accademia di Architettura","url":"http:\/\/www.arc.usi.ch\/it","telephone":"+41 58 666 50 00    ","postalCode":"6850","addressLocality":"Mendrisio","addressCountry":"Switzerland","streetAddress":"Via Alfonso Turconi 25"},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Switzerland\/USI\/","url":"http:\/\/www.arc.usi.ch\/it","logo":"http:\/\/cdn01.masterstudies.com\/gfx\/logo\/Large\/USI.png"},"startDate":"2018-09"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Programme in Marketing, Services and Communication Management","duration":"P1Y6M0DT0H0M0S","location":{"@type":"Place","name":"Master's Programme in Marketing, Services and Communication Management-Switzerland-St.Gallen","address":{"@type":"PostalAddress","addressCountry":"Switzerland","addressLocality":"St.Gallen"}},"inLanguage":[{"@type":"Language","name":"English"}],"url":"https:\/\/www.masterstudies.com\/Masters-Programme-in-Marketing-Services-and-Communication-Management\/Switzerland\/HSG\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Programme-in-Marketing-Services-and-Communication-Management\/Switzerland\/HSG\/","price":"3326","priceCurrency":"CHF"},"organizer":{"@type":"CollegeOrUniversity","name":"University of St.Gallen (HSG), School of Management, Economics, Law, Social Sciences and International Affairs","telephone":"+41 71 224 37 03","address":{"@type":"PostalAddress","name":"University of St. Gallen","url":"http:\/\/www.unisg.ch\/","telephone":"+41 71 224 21 11      ","postalCode":"9000","addressLocality":"St. Gallen","addressCountry":"Switzerland","streetAddress":"Dufourstrasse 50"},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Switzerland\/HSG\/","url":"http:\/\/www.unisg.ch\/","logo":"http:\/\/cdn02.masterstudies.com\/gfx\/logo\/Large\/HSG.png"},"startDate":"2018-09-17"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Degree In Communication, Social Media And Web Marketing","duration":"P0Y0M0DT100H0M0S","location":{"@type":"Place","name":"Master's Degree In Communication, Social Media And Web Marketing-Italy-Napoli","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Napoli"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Up Level School of Management","address":[{"@type":"PostalAddress","streetAddress":"Piazza Carit\u00e0 32","addressLocality":"Napoli","postalCode":"80134","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Piazzale Flaminio 9","addressLocality":"Rome","postalCode":"00196","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Via Fabio Filzi 2\r\n","addressLocality":"Milan","postalCode":"20124","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Up-Level-School-of-Management\/"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Degree In Communication, Social Media And Web Marketing","duration":"P0Y0M0DT100H0M0S","location":{"@type":"Place","name":"Master's Degree In Communication, Social Media And Web Marketing-Italy-Napoli","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Napoli"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Up Level School of Management","address":[{"@type":"PostalAddress","streetAddress":"Piazza Carit\u00e0 32","addressLocality":"Napoli","postalCode":"80134","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Piazzale Flaminio 9","addressLocality":"Rome","postalCode":"00196","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Via Fabio Filzi 2\r\n","addressLocality":"Milan","postalCode":"20124","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Up-Level-School-of-Management\/"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Degree In Communication, Social Media And Web Marketing","duration":"P0Y0M0DT100H0M0S","location":{"@type":"Place","name":"Master's Degree In Communication, Social Media And Web Marketing-Italy-Rome","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Rome"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Up Level School of Management","address":[{"@type":"PostalAddress","streetAddress":"Piazza Carit\u00e0 32","addressLocality":"Napoli","postalCode":"80134","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Piazzale Flaminio 9","addressLocality":"Rome","postalCode":"00196","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Via Fabio Filzi 2\r\n","addressLocality":"Milan","postalCode":"20124","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Up-Level-School-of-Management\/"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Degree In Communication, Social Media And Web Marketing","duration":"P0Y0M0DT100H0M0S","location":{"@type":"Place","name":"Master's Degree In Communication, Social Media And Web Marketing-Italy-Rome","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Rome"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Up Level School of Management","address":[{"@type":"PostalAddress","streetAddress":"Piazza Carit\u00e0 32","addressLocality":"Napoli","postalCode":"80134","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Piazzale Flaminio 9","addressLocality":"Rome","postalCode":"00196","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Via Fabio Filzi 2\r\n","addressLocality":"Milan","postalCode":"20124","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Up-Level-School-of-Management\/"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Degree In Communication, Social Media And Web Marketing","duration":"P0Y0M0DT100H0M0S","location":{"@type":"Place","name":"Master's Degree In Communication, Social Media And Web Marketing-Italy-Milan","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Milan"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Up Level School of Management","address":[{"@type":"PostalAddress","streetAddress":"Piazza Carit\u00e0 32","addressLocality":"Napoli","postalCode":"80134","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Piazzale Flaminio 9","addressLocality":"Rome","postalCode":"00196","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Via Fabio Filzi 2\r\n","addressLocality":"Milan","postalCode":"20124","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Up-Level-School-of-Management\/"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master's Degree In Communication, Social Media And Web Marketing","duration":"P0Y0M0DT100H0M0S","location":{"@type":"Place","name":"Master's Degree In Communication, Social Media And Web Marketing-Italy-Milan","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Milan"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Masters-Degree-In-Communication-Social-Media-And-Web-Marketing\/Italy\/Up-Level-School-of-Management\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Up Level School of Management","address":[{"@type":"PostalAddress","streetAddress":"Piazza Carit\u00e0 32","addressLocality":"Napoli","postalCode":"80134","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Piazzale Flaminio 9","addressLocality":"Rome","postalCode":"00196","addressCountry":"Italy"},{"@type":"PostalAddress","streetAddress":"Via Fabio Filzi 2\r\n","addressLocality":"Milan","postalCode":"20124","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Up-Level-School-of-Management\/"},"startDate":"2018-05"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Media and Communication Management","duration":"P1Y6M0DT0H0M0S","location":{"@type":"Place","name":"Master in Media and Communication Management-Germany-Munich","address":{"@type":"PostalAddress","addressCountry":"Germany","addressLocality":"Munich"}},"inLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"German"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","price":"18000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Macromedia University of Applied Sciences","telephone":"+49 89 544151-0","address":[{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Munich\r\nBayerstra\u00dfe 85\r\n","addressLocality":"Munich","postalCode":"80335","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Berlin\r\nM33 H\u00f6fe\r\nMehringdamm 33","addressLocality":"Berlin","postalCode":"10961","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Hamburg\r\nGertrudenstra\u00dfe 3\r\n20095 Hamburg ","addressLocality":"Hamburg","postalCode":"20095","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Naststra\u00dfe 11, im R\u00f6merkastell\n70376 Stuttgart","addressLocality":"Stuttgart","postalCode":"70376","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Cologne\r\nBr\u00fcderstra\u00dfe 17\r\n50667 Cologne ","addressLocality":"Cologne","postalCode":"50667","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Stuttgart","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Hamburg","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Cologne","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Berlin Region","addressCountry":"Germany"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Germany\/MHMK\/"},"startDate":"2018-03-01"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Media and Communication Management","duration":"P1Y6M0DT0H0M0S","location":{"@type":"Place","name":"Master in Media and Communication Management-Germany-Stuttgart","address":{"@type":"PostalAddress","addressCountry":"Germany","addressLocality":"Stuttgart"}},"inLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"German"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","price":"18000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Macromedia University of Applied Sciences","telephone":"+49 89 544151-0","address":[{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Munich\r\nBayerstra\u00dfe 85\r\n","addressLocality":"Munich","postalCode":"80335","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Berlin\r\nM33 H\u00f6fe\r\nMehringdamm 33","addressLocality":"Berlin","postalCode":"10961","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Hamburg\r\nGertrudenstra\u00dfe 3\r\n20095 Hamburg ","addressLocality":"Hamburg","postalCode":"20095","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Naststra\u00dfe 11, im R\u00f6merkastell\n70376 Stuttgart","addressLocality":"Stuttgart","postalCode":"70376","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Cologne\r\nBr\u00fcderstra\u00dfe 17\r\n50667 Cologne ","addressLocality":"Cologne","postalCode":"50667","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Stuttgart","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Hamburg","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Cologne","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Berlin Region","addressCountry":"Germany"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Germany\/MHMK\/"},"startDate":"2017-10"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Media and Communication Management","duration":"P1Y6M0DT0H0M0S","location":{"@type":"Place","name":"Master in Media and Communication Management-Germany-Hamburg","address":{"@type":"PostalAddress","addressCountry":"Germany","addressLocality":"Hamburg"}},"inLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"German"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","price":"18000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Macromedia University of Applied Sciences","telephone":"+49 89 544151-0","address":[{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Munich\r\nBayerstra\u00dfe 85\r\n","addressLocality":"Munich","postalCode":"80335","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Berlin\r\nM33 H\u00f6fe\r\nMehringdamm 33","addressLocality":"Berlin","postalCode":"10961","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Hamburg\r\nGertrudenstra\u00dfe 3\r\n20095 Hamburg ","addressLocality":"Hamburg","postalCode":"20095","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Naststra\u00dfe 11, im R\u00f6merkastell\n70376 Stuttgart","addressLocality":"Stuttgart","postalCode":"70376","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Cologne\r\nBr\u00fcderstra\u00dfe 17\r\n50667 Cologne ","addressLocality":"Cologne","postalCode":"50667","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Stuttgart","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Hamburg","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Cologne","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Berlin Region","addressCountry":"Germany"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Germany\/MHMK\/"},"startDate":"2018-03"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Media and Communication Management","duration":"P1Y6M0DT0H0M0S","location":{"@type":"Place","name":"Master in Media and Communication Management-Germany-Cologne","address":{"@type":"PostalAddress","addressCountry":"Germany","addressLocality":"Cologne"}},"inLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"German"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","price":"18000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Macromedia University of Applied Sciences","telephone":"+49 89 544151-0","address":[{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Munich\r\nBayerstra\u00dfe 85\r\n","addressLocality":"Munich","postalCode":"80335","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Berlin\r\nM33 H\u00f6fe\r\nMehringdamm 33","addressLocality":"Berlin","postalCode":"10961","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Hamburg\r\nGertrudenstra\u00dfe 3\r\n20095 Hamburg ","addressLocality":"Hamburg","postalCode":"20095","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Naststra\u00dfe 11, im R\u00f6merkastell\n70376 Stuttgart","addressLocality":"Stuttgart","postalCode":"70376","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Cologne\r\nBr\u00fcderstra\u00dfe 17\r\n50667 Cologne ","addressLocality":"Cologne","postalCode":"50667","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Stuttgart","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Hamburg","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Cologne","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Berlin Region","addressCountry":"Germany"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Germany\/MHMK\/"},"startDate":"2018-03"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Media and Communication Management","duration":"P1Y6M0DT0H0M0S","location":{"@type":"Place","name":"Master in Media and Communication Management-Germany-Berlin Region","address":{"@type":"PostalAddress","addressCountry":"Germany","addressLocality":"Berlin Region"}},"inLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"German"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Media-and-Communication-Management\/Germany\/MHMK\/","price":"18000","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Macromedia University of Applied Sciences","telephone":"+49 89 544151-0","address":[{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Munich\r\nBayerstra\u00dfe 85\r\n","addressLocality":"Munich","postalCode":"80335","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Berlin\r\nM33 H\u00f6fe\r\nMehringdamm 33","addressLocality":"Berlin","postalCode":"10961","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Hamburg\r\nGertrudenstra\u00dfe 3\r\n20095 Hamburg ","addressLocality":"Hamburg","postalCode":"20095","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Naststra\u00dfe 11, im R\u00f6merkastell\n70376 Stuttgart","addressLocality":"Stuttgart","postalCode":"70376","addressCountry":"Germany"},{"@type":"PostalAddress","streetAddress":"Macromedia University of Applied Sciences - Cologne\r\nBr\u00fcderstra\u00dfe 17\r\n50667 Cologne ","addressLocality":"Cologne","postalCode":"50667","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Stuttgart","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Hamburg","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Cologne","addressCountry":"Germany"},{"@type":"PostalAddress","addressLocality":"Berlin Region","addressCountry":"Germany"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Germany\/MHMK\/"},"startDate":"2018-03-01"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Marketing and Communication","duration":"P0Y11M0DT0H0M0S","location":{"@type":"Place","name":"Master in Marketing and Communication-Italy-Turin","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Turin"}},"inLanguage":[{"@type":"Language","name":"Italian"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Marketing-and-Communication\/Italy\/IED-Torino\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Marketing-and-Communication\/Italy\/IED-Torino\/","price":"11900","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"IED \u2013 Istituto Europeo di Design Torino","telephone":"+39 011 541111","address":{"@type":"PostalAddress","name":"IED - Istituto Europeo di Design","url":"http:\/\/www.ied.it\/torino\/home","telephone":"+39 011 541111   ","postalCode":"10121","addressLocality":"Torino","addressCountry":"Italy","streetAddress":"Via San Quintino 39"},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/IED-Torino\/","url":"http:\/\/www.ied.it\/torino\/home","logo":"http:\/\/cdn02.masterstudies.com\/gfx\/logo\/XXX-small\/IED-Torino.png"},"startDate":"2017-11-23"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Global Politics and Communication","duration":"P2Y0M0DT0H0M0S","location":{"@type":"Place","name":"Master in Global Politics and Communication-Finland-Helsinki","address":{"@type":"PostalAddress","addressCountry":"Finland","addressLocality":"Helsinki"}},"inLanguage":[{"@type":"Language","name":"English"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Global-Politics-and-Communication\/Finland\/University-of-Helsinki\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Global-Politics-and-Communication\/Finland\/University-of-Helsinki\/"},"organizer":{"@type":"CollegeOrUniversity","name":"University of Helsinki","telephone":"+358504154541","address":{"@type":"PostalAddress","name":"University of Helsinki","url":"http:\/\/www.helsinki.fi\/yliopisto\/index.html","telephone":"+358 9 1911            ","postalCode":"00100","addressLocality":"Helsinki","addressCountry":"FI","streetAddress":"Yliopistonkatu 4"},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Finland\/University-of-Helsinki\/","url":"http:\/\/www.helsinki.fi\/yliopisto\/index.html","logo":"http:\/\/cdn04.masterstudies.com\/gfx\/logo\/X-small\/University-of-Helsinki.png"},"startDate":"2018-08"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Marketing & Communication Full Time","duration":"P2Y0M0DT0H0M0S","location":{"@type":"Place","name":"Master in Marketing & Communication Full Time-Morocco-Casablanca","address":{"@type":"PostalAddress","addressCountry":"Morocco","addressLocality":"Casablanca"}},"inLanguage":[{"@type":"Language","name":"English"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Marketing-and-Communication-Full-Time\/Morocco\/ESCA\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Marketing-and-Communication-Full-Time\/Morocco\/ESCA\/"},"organizer":{"@type":"CollegeOrUniversity","name":"ESCA School of Management","address":{"@type":"PostalAddress","name":"ESCA \u00c9cole de Management","url":"http:\/\/www.esca.ma\/","telephone":"+212 5222-09120","addressLocality":"Casablanca","addressCountry":"Morocco","streetAddress":" 7, rue Abou Youssef El Kindy Bd. Moulay Youssef"},"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Morocco\/ESCA\/","url":"http:\/\/www.esca.ma\/","logo":"http:\/\/cdn04.masterstudies.com\/gfx\/logo\/ESCA.png"},"startDate":"2018-08"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master - Strategic Communications Management In Advertising And Public Relations","duration":"P2Y0M0DT0H0M0S","location":{"@type":"Place","name":"Master - Strategic Communications Management In Advertising And Public Relations-Russia-Vladivostok","address":{"@type":"PostalAddress","addressCountry":"Russia","addressLocality":"Vladivostok"}},"inLanguage":[{"@type":"Language","name":"Russian"}],"url":"https:\/\/www.masterstudies.com\/Master-Strategic-Communications-Management-In-Advertising-And-Public-Relations\/Russia\/FEFU\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-Strategic-Communications-Management-In-Advertising-And-Public-Relations\/Russia\/FEFU\/"},"organizer":{"@type":"CollegeOrUniversity","name":"Far Eastern Federal University","telephone":"+7 (423) 2652424 ext.2206","address":[{"@type":"PostalAddress","streetAddress":"Far Eastern Federal University\r\nSuhanova st. 8","addressLocality":"Vladivostok","addressCountry":"Russia"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Russia\/FEFU\/"},"startDate":"2018-09"},{"@context":"http:\/\/schema.org\/","@type":"EducationEvent","name":"Master in Luxury Goods Communication Management","duration":"P0Y9M0DT0H0M0S","location":{"@type":"Place","name":"Master in Luxury Goods Communication Management-Italy-Milan","address":{"@type":"PostalAddress","addressCountry":"Italy","addressLocality":"Milan"}},"inLanguage":[{"@type":"Language","name":"English"}],"url":"https:\/\/www.masterstudies.com\/Master-in-Luxury-Goods-Communication-Management\/Italy\/Accademia-del-Lusso\/","offers":{"@type":"Offer","url":"https:\/\/www.masterstudies.com\/Master-in-Luxury-Goods-Communication-Management\/Italy\/Accademia-del-Lusso\/","price":"18900","priceCurrency":"EUR"},"organizer":{"@type":"CollegeOrUniversity","name":"Accademia del Lusso","telephone":"+39 0575782329","address":[{"@type":"PostalAddress","streetAddress":"Accademia del Lusso S.r.l. \r\nVia Montenapoleone 5  ","addressLocality":"Milan","postalCode":"20121 ","addressCountry":"Italy"}],"mainEntityOfPage":"https:\/\/www.masterstudies.com\/universities\/Italy\/Accademia-del-Lusso\/"},"startDate":"2018-02"}]
+
+</script> 
+  <div class="container listing-page"> 
+   <div class="row margin-top-5 main-breadcrumb"> 
+    <div class="col-sm-12"> 
+     <div class="pull-right flip"> 
+      <div class="hidden-xs addthis-container blue"> 
+       <div class="pull-right"> 
+        <a data-toggle="modal" class="addthis-modal-link" href="#linkToUsModal"> Link to this page </a> 
+       </div> 
+       <div class="addthis_toolbox"> 
+        <i class="fa fa-spinner fa-pulse loading-add-this"></i> 
+        <div class="custom_images"> 
+         <!--<a class="addthis_button_facebook addthis-button"><img src="//cdn01.masterstudies.com/img_new/addthis_facebook_blue.png" width="18" height="18" border="0" alt="Share to Facebook" /></a>
+      <a class="addthis_button_twitter addthis-button"><img src="//cdn02.masterstudies.com/img_new/addthis_twitter_blue.png" width="18" height="18" border="0" alt="Share to Twitter" /></a>--> 
+         <a class="addthis_button_facebook addthis-button"><img src="//cdn03.masterstudies.com/img_new/FB-f-Logo__blue_144_official.png" width="18" height="18" border="0" alt="Share to Facebook"></a> 
+         <a class="addthis_button_twitter addthis-button"><img src="//cdn02.masterstudies.com/img_new/Twitter_Logo_Blue_official.png" width="32" height="32" border="0" alt="Share to Twitter"></a> 
+         <a class="addthis_button_more addthis-button"><img src="//cdn02.masterstudies.com/img_new/addthis_more_blue.png" width="18" height="18" border="0" alt="More..."></a> 
+         <a class="addthis_counter addthis_bubble_style"></a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="hidden-xs"> 
+      <ul class="breadcrumb"> 
+       <li> <a href="/Masters-Degree/">Master</a> </li> 
+       <li> Communication </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <script type="application/ld+json">
+   {"@context":"http:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"\/Masters-Degree\/","name":"Master"}},{"@type":"ListItem","position":2,"item":{"name":"Communication"}}]}
+</script> 
+   <div class="row"> 
+    <div class="col-sm-12"> 
+     <div class="row"> 
+      <header class="margin-bottom-10 col-sm-12"> 
+       <h1 class="main-heading">Compare 111 Masters Programs in Communication</h1> 
+      </header> 
+     </div> 
+     <div class="row introduction"> 
+      <div class="col-sm-12 visible-xs margin-bottom-10"> 
+       <img class="img-responsive" src="//cdn02.masterstudies.com/gfx/image/listing-page/52/main/Communication.jpg" alt="Communication"> 
+      </div> 
+      <div class="col-sm-8 col-lg-9 listingText"> 
+       <p>Communication between people has grown very complicated nowadays. The virtual world and mass media often have more effect on us than the real face to face conversation. If you are interested in the ways in which the communication in modern world is affecting society, politics and culture, choosing a masters program in Communication would give answers to many of your questions.</p> 
+       <p><br>Students of the Communication studies have a chance to discover the interdisciplinary factors of this field of research and also to find out how communication between people has evolved through the ages. Communication programs are often comprised of humanities, liberal arts, social sciences and media practice. After completing your masters program, you can find satisfactory work challenges in the fields of media and journalism.</p> 
+       <p><br>Take a look at universities around the world, that are offering masters programs in Communication studies. Find the country, university and program that suits you best and contact the school directly from here to get more information!</p> 
+      </div> 
+      <div class="col-sm-4 col-lg-3 image hidden-xs"> 
+       <img class="img-responsive" src="//cdn02.masterstudies.com/gfx/image/listing-page/52/main/Communication.jpg" alt="Communication"> 
+      </div> 
+     </div> 
+     <div class="row read_more hide usedColor"> 
+      <div class="col-sm-12"> 
+       <i class="fa fa-fa fa-chevron-down"></i> Read More 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <h4 class="col-sm-12 hidden-xs"><b><span>111</span> Results in Communication</b></h4> 
+     </div> 
+     <div class="row"> 
+      <div class="hidden-xs col-sm-3 col-lg-2"> 
+       <div class="nav-accordion" id="accordion" role="tablist" aria-multiselectable="true"> 
+        <a class="nav-accordion-heading" role="tab" id="heading-nav-degrees" data-toggle="collapse" data-parent="#accordion" href="#collapse-nav-degrees" aria-expanded="true" aria-controls="collapse-nav-degrees"> Degrees <span class="pull-right"> <i class="fa fa-chevron-up"></i> <i class="fa fa-chevron-down"></i> </span> </a> 
+        <div id="collapse-nav-degrees" class="nav-accordion-content collapse in" role="tabpanel" aria-labelledby="heading-nav-degrees"> 
+         <div class="padding-10"> 
+          <a data-cookie="search_cross_degree" data-value="all" class="js-filter-setting label label-nav-default label-block" data-idtype="all" data-reload="true"> All (237) </a> 
+          <a data-cookie="search_cross_degree" data-value="1" class="js-filter-setting label label-nav-active label-block" data-idtype="1"> Master Degrees (111) </a> 
+          <a data-cookie="search_cross_degree" data-value="26" class="js-filter-setting label label-nav-default label-block" data-idtype="26" href="https://www.masterstudies.com/MSc/Communication/"> Masters of Science (54) </a> 
+          <a data-cookie="search_cross_degree" data-value="30" class="js-filter-setting label label-nav-default label-block" data-idtype="30" href="https://www.masterstudies.com/MA/Communication/"> Masters of Arts (72) </a> 
+         </div> 
+        </div> 
+        <a class="nav-accordion-heading" role="tab" id="heading-nav-location" data-toggle="collapse" data-parent="#accordion" href="#collapse-nav-location" aria-expanded="true" aria-controls="collapse-nav-location"> Location <span class="pull-right"> <i class="fa fa-chevron-up"></i> <i class="fa fa-chevron-down"></i> </span> </a> 
+        <div id="collapse-nav-location" class="nav-accordion-content collapse in" role="tabpanel" aria-labelledby="heading-nav-location"> 
+         <div class="padding-10"> 
+          <div class="btn-group margin-bottom-5"> 
+           <button type="button" class="btn btn-default btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Select Country <span class="caret"></span> </button> 
+           <ul class="dropdown-menu max-height-300 dropdown-searchable" role="menu"> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Africa/">Africa</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Asia/">Asia</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Central-America-and-Caribbean/">Central America and Caribbean</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Europe/">Europe</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Middle-East/">Middle East</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/North-America/">North America</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Oceania/">Oceania</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/South-America/">South America</a> </li> 
+            <li class="divider"></li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Australia/">Australia</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Austria/">Austria</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Belgium/">Belgium</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Bolivia/">Bolivia</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Brazil/">Brazil</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Chile/">Chile</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/China/">China</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Democratic-Republic-of-Congo/">Congo, DR</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Costa-Rica/">Costa Rica</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Croatia/">Croatia</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Czech-Republic/">Czech Republic</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Denmark/">Denmark</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Finland/">Finland</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/France/">France</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Germany/">Germany</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Greece/">Greece</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Italy/">Italy</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Japan/">Japan</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Kenya/">Kenya</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Lithuania/">Lithuania</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Luxembourg/">Luxembourg</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Malaysia/">Malaysia</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Mexico/">Mexico</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Morocco/">Morocco</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Netherlands/">Netherlands</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Peru/">Peru</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Poland/">Poland</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Portugal/">Portugal</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Romania/">Romania</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Russia/">Russia</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Senegal/">Senegal</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/South-Africa/">South Africa</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Spain/">Spain</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Sweden/">Sweden</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Switzerland/">Switzerland</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Turkey/">Turkey</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/USA/">USA</a> </li> 
+            <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/United-Kingdom/">United Kingdom</a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+        <a class="nav-accordion-heading" role="tab" id="heading-nav-type" data-toggle="collapse" data-parent="#accordion" href="#collapse-nav-type" aria-expanded="true" aria-controls="collapse-nav-type"> Study type <span class="pull-right"> <i class="fa fa-chevron-up"></i> <i class="fa fa-chevron-down"></i> </span> </a> 
+        <div id="collapse-nav-type" class="nav-accordion-content collapse in " role="tabpanel" aria-labelledby="heading-nav-type"> 
+         <div class="padding-10"> 
+          <a data-cookie="search_mode" data-value="all" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark active"></i> </span> All </a> 
+          <a data-cookie="search_mode" data-value="campus" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark "></i> </span> Campus </a> 
+          <a data-cookie="search_mode" data-value="online" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark "></i> </span> Online </a> 
+          <a data-cookie="search_mode" data-value="distance" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/Distance-learning/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark "></i> </span> Distance learning </a> 
+         </div> 
+        </div> 
+        <a class="nav-accordion-heading" role="tab" id="heading-nav-pace" data-toggle="collapse" data-parent="#accordion" href="#collapse-nav-pace" aria-expanded="true" aria-controls="collapse-nav-pace"> Pace <span class="pull-right"> <i class="fa fa-chevron-up"></i> <i class="fa fa-chevron-down"></i> </span> </a> 
+        <div id="collapse-nav-pace" class="nav-accordion-content collapse in" role="tabpanel" aria-labelledby="heading-nav-pace"> 
+         <div class="padding-10"> 
+          <a data-cookie="search_intensity" data-value="all" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark active"></i> </span> All </a> 
+          <a data-cookie="search_intensity" data-value="full_time" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark "></i> </span> Full time </a> 
+          <a data-cookie="search_intensity" data-value="part_time" class="js-filter-setting checkboxes" href="https://www.masterstudies.com/Masters-Degree/Communication/Part-time/"> <span class="checkbox-holder"> <i class="fa fa-check check-mark "></i> </span> Part time </a> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="text-left"> 
+        <div class="dfp_ads hidden-xs"> 
+         <div id="gmat" style="padding-bottom:25px; text-align: center;"> 
+          <script>
+              googletag.cmd.push(
+                  function() {
+                      googletag.display('gmat');
+                  });
+          </script> 
+         </div> 
+         <div id="toefl_subject_specific_pages" style="padding-bottom:25px; text-align: center;"> 
+          <script>
+              googletag.cmd.push(
+                  function() {
+                      googletag.display('toefl_subject_specific_pages');
+                  });
+          </script> 
+         </div> 
+         <div id="gre_subject_specific_pages" style="padding-bottom:25px; text-align: center;"> 
+          <script>
+              googletag.cmd.push(
+                  function() {
+                      googletag.display('gre_subject_specific_pages');
+                  });
+          </script> 
+         </div> 
+         <div id="listing_communication" style="padding-bottom:25px; text-align: center;"> 
+          <script>
+              googletag.cmd.push(
+                  function() {
+                      googletag.display('listing_communication');
+                  });
+          </script> 
+         </div> 
+         <div id="listing_communication_2" style="padding-bottom:25px; text-align: center;"> 
+          <script>
+              googletag.cmd.push(
+                  function() {
+                      googletag.display('listing_communication_2');
+                  });
+          </script> 
+         </div> 
+         <div id="listing_communication_3" style="padding-bottom:25px; text-align: center;"> 
+          <script>
+              googletag.cmd.push(
+                  function() {
+                      googletag.display('listing_communication_3');
+                  });
+          </script> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-sm-9 col-lg-10"> 
+       <div class="row navigation-box-container"> 
+        <div class="col-sm-12"> 
+         <h4 class="visible-xs is-filter-toggle clearfix"><b><span>111</span> Results in Communication</b> <small class="pull-right usedColor"><i class="fa fa-filter"></i> Filter <i class="fa fa-chevron-up filter-opened"></i><i class="fa fa-chevron-down filter-closed"></i></small> </h4> 
+        </div> 
+        <div class="col-sm-12" style="position:relative;"> 
+         <div style="position:absolute;right:15px;top:-20px;line-height:2em;color:#777;" class="hidden-xs text-right">
+           Other options within this field of study 
+          <div> 
+           <a class="usedColor" style="font-weight: bold;font-size:0.95em;" href="https://www.onlinestudies.com/Masters/Communication/">Online <i style="font-size:0.8em;" class="fa fa-external-link" aria-hidden="true"></i></a> | 
+           <a class="usedColor" style="font-weight: bold;font-size:0.95em;" href="https://www.phdstudies.com/PhD/Communication/">PhD <i style="font-size:0.8em;" class="fa fa-external-link" aria-hidden="true"></i></a> | 
+           <a class="usedColor" style="font-weight: bold;font-size:0.95em;" href="https://www.phdstudies.com/DBA/Communication/">DBA <i style="font-size:0.8em;" class="fa fa-external-link" aria-hidden="true"></i></a> | 
+           <a class="usedColor" style="font-weight: bold;font-size:0.95em;" href="https://www.onlinestudies.com/PhD/Communication/">PhD <i style="font-size:0.8em;" class="fa fa-external-link" aria-hidden="true"></i></a> 
+          </div> 
+         </div> 
+         <ul class="nav nav-tabs tab-shadow hidden-xs"> 
+          <li class="active"> <a>Programs</a> </li> 
+          <li> <a class="usedColor" style="color: #f4792c;" href="https://www.onlinestudies.com/Masters/Communication/"> Online </a> </li> 
+         </ul> 
+         <div class="navigation-box"> 
+          <div class="is-filter-setting-container"> 
+           <h2 class="is-sub-filter-toggle"> <i class="fa fa-chevron-up filter-opened"></i> <i class="fa fa-chevron-down filter-closed"></i> Communication </h2> 
+           <div class="filter-setting"> 
+            <ol class="breadcrumb"> 
+             <li><a href="/Masters-Degree/">Master</a></li> 
+             <li><a href="">Communication</a></li> 
+            </ol> 
+           </div> 
+           <div class="filter-setting"> 
+            <ul class="multicolumn list-unstyled"> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Audiovisual-Communication/">Audiovisual Communication</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Business-Communication/">Business Communication</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Communication-Management/">Communication Management</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Corporate-Communication/">Corporate Communication</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Digital-Communication/">Digital Communication</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/International-Communication/">International Communication</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Marketing-Communication/">Marketing Communication</a></li> 
+             <li><a href="https://www.masterstudies.com/Masters-Degree/Professional-Communication/">Professional Communication</a></li> 
+            </ul> 
+           </div> 
+          </div> 
+          <div class="row visible-xs"> 
+           <div class="col-sm-8 search-options-left "> 
+            <div class="is-filter-setting-container"> 
+             <h2 class="is-sub-filter-toggle"> <i class="fa fa-chevron-up filter-opened"></i> <i class="fa fa-chevron-down filter-closed"></i> Master Degrees </h2> 
+             <div class="filter-setting"> 
+              <h3 class="hidden-xs">Masterstudies</h3> 
+              <a data-cookie="search_cross_degree" data-value="all" class="js-filter-setting label label-default" data-idtype="all" data-reload="true"> All (237) </a> 
+              <a data-cookie="search_cross_degree" data-value="1" class="js-filter-setting label label-primary" data-idtype="1"> Master Degrees (111) </a> 
+              <a data-cookie="search_cross_degree" data-value="26" class="js-filter-setting label label-default" data-idtype="26" href="https://www.masterstudies.com/MSc/Communication/"> Masters of Science (54) </a> 
+              <a data-cookie="search_cross_degree" data-value="30" class="js-filter-setting label label-default" data-idtype="30" href="https://www.masterstudies.com/MA/Communication/"> Masters of Arts (72) </a> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-sm-4 search-options-right"> 
+            <div class="is-filter-setting-container"> 
+             <h2 class="is-sub-filter-toggle"> <i class="fa fa-chevron-up filter-opened"></i> <i class="fa fa-chevron-down filter-closed"></i> Location </h2> 
+             <div class="filter-setting"> 
+              <h3 class="hidden-xs">Location</h3> 
+              <div class="btn-group"> 
+               <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Select Country <span class="caret"></span> </button> 
+               <ul class="dropdown-menu max-height-300 dropdown-searchable" role="menu"> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Africa/"> Africa </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Asia/"> Asia </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Central-America-and-Caribbean/"> Central America and Caribbean </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Europe/"> Europe </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Middle-East/"> Middle East </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/North-America/"> North America </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Oceania/"> Oceania </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/South-America/"> South America </a> </li> 
+                <li class="divider"></li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Australia/"> Australia </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Austria/"> Austria </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Belgium/"> Belgium </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Bolivia/"> Bolivia </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Brazil/"> Brazil </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Chile/"> Chile </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/China/"> China </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Democratic-Republic-of-Congo/"> Congo, DR </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Costa-Rica/"> Costa Rica </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Croatia/"> Croatia </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Czech-Republic/"> Czech Republic </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Denmark/"> Denmark </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Finland/"> Finland </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/France/"> France </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Germany/"> Germany </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Greece/"> Greece </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Italy/"> Italy </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Japan/"> Japan </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Kenya/"> Kenya </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Lithuania/"> Lithuania </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Luxembourg/"> Luxembourg </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Malaysia/"> Malaysia </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Mexico/"> Mexico </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Morocco/"> Morocco </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Netherlands/"> Netherlands </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Peru/"> Peru </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Poland/"> Poland </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Portugal/"> Portugal </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Romania/"> Romania </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Russia/"> Russia </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Senegal/"> Senegal </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/South-Africa/"> South Africa </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Spain/"> Spain </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Sweden/"> Sweden </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Switzerland/"> Switzerland </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/Turkey/"> Turkey </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/USA/"> USA </a> </li> 
+                <li> <a href="https://www.masterstudies.com/Masters-Degree/Communication/United-Kingdom/"> United Kingdom </a> </li> 
+               </ul> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-sm-8 search-options-left"> 
+            <div class="is-filter-setting-container"> 
+             <h2 class="is-sub-filter-toggle"> <i class="fa fa-chevron-up filter-opened"></i> <i class="fa fa-chevron-down filter-closed"></i> Study type </h2> 
+             <div class="filter-setting"> 
+              <h3 class="hidden-xs">Study type</h3> 
+              <a data-cookie="search_mode" data-value="all" class="js-filter-setting label label-primary" href="https://www.masterstudies.com/Masters-Degree/Communication/"> All </a> 
+              <a data-cookie="search_mode" data-value="campus" class="js-filter-setting label label-default" href="https://www.masterstudies.com/Masters-Degree/Communication/"> Campus </a> 
+              <a data-cookie="search_mode" data-value="online" class="js-filter-setting label label-default" href="https://www.masterstudies.com/Masters-Degree/Communication/"> Online </a> 
+              <a data-cookie="search_mode" data-value="distance" class="js-filter-setting label label-default" href="https://www.masterstudies.com/Masters-Degree/Communication/Distance-learning/"> Distance learning </a> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-sm-4 search-options-right"> 
+            <div class="is-filter-setting-container"> 
+             <h2 class="is-sub-filter-toggle"> <i class="fa fa-chevron-up filter-opened"></i> <i class="fa fa-chevron-down filter-closed"></i> Pace </h2> 
+             <div class="filter-setting"> 
+              <h3 class="hidden-xs">Pace</h3> 
+              <a data-cookie="search_intensity" data-value="all" class="js-filter-setting label label-primary" href="https://www.masterstudies.com/Masters-Degree/Communication/">All</a> 
+              <a data-cookie="search_intensity" data-value="full_time" class="js-filter-setting label label-default" href="https://www.masterstudies.com/Masters-Degree/Communication/">Full time</a> 
+              <a data-cookie="search_intensity" data-value="part_time" class="js-filter-setting label label-default" href="https://www.masterstudies.com/Masters-Degree/Communication/Part-time/">Part time</a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="row"> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Instituto Universitario de Investigación Ortega y Gasset" alt="Instituto Universitario de Investigación Ortega y Gasset" src="//cdn03.masterstudies.com/gfx/emblem/Large/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid).png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.master-maestrias.com/Master-Universitario-Oficial-MARKETING-CONSULTORÍA-Y-COMUNICACIÓN-POLÍTICA/Espana/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid)/"> <span>Official Master's Degree In Political And Institutional Communication (master's Degree In Marketing, Consulting And Political Communication - Usc)</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Instituto Universitario de Investigación Ortega y Gasset</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">1&nbsp;year</span> 
+             <span class="label label-default-master ">May 2018</span> 
+             <span class="label label-default-master ">Spain</span> 
+             <span class="label label-default-master ">Madrid</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">This program gives access to dual degree of Master in Political and Institutional Communication at the University Research Institute Ortega y Gasset (IUIOG) and Master in Marketing, Consulting and Communication Policy at the University of Santiago de Compostela (USC). <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Masters in Communication. This program gives access to dual degree of Master in Political and Institutional Communication at the University Research Institute Ortega y Gasset (IUIOG) and Master in Marketing, Consulting and Communication Policy at the University of Santiago de Compostela (USC). Teachers credits earned in the Master are recognized automatically, without having to take additional training courses for access to doctoral studies at the University of Santiago de Compostela and Murcia through program agreements with these universities. GOALS The Master in Political and Institutional Communication It is the main reference of this discipline in Spain, having been considered in the years 2012, 2013 and 2014 the best Master of Communication, according to the prestigious ranking of Masters prepared annually by the newspaper El Mundo. His training program responds to the growing demand for communication professionals in organizations with a strategic approach. It offers those who wish to specialize in this field the necessary tools, both theoretical and especially practical for the design and implementation of effective strategies and effective policy and institutional communication. General objectives: This Master is a program that has as main objective to develop the knowledge and skills necessary for proper professional performance in the field of marketing and political communication always at the governmental, administrative and / or institutional setting. It is to produce graduates with a comprehensive understanding of all areas related to political marketing, at the same time possess skills to meet the multiple tasks that address in companies engaged in these market... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.master-maestrias.com/Master-Universitario-Oficial-MARKETING-CONSULTORÍA-Y-COMUNICACIÓN-POLÍTICA/Espana/IUIOG-(centro-adscrito-a-la-Universidad-Complutense-de-Madrid)/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="ESERP Business School" alt="ESERP Business School" src="//cdn01.masterstudies.com/gfx/emblem/Large/ESERP-Business-School.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Corporate-Communication-Public-Relations-Protocol-and-Events-Management-in-Barcelona/Spain/ESERP-Business-School/"> <span>Master in Corporate Communication: Public Relations, Protocol and Events Management in Barcelona</span> </a> </h4> 
+            <h5 class="listing_provider"><span>ESERP Business School</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Part time</span> 
+             <span class="label label-default-master ">1&nbsp;year</span> 
+             <span class="label label-default-master ">October 2017</span> 
+             <span class="label label-default-master ">Spain</span> 
+             <span class="label label-default-master ">Barcelona</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text"> You will learn how to handle the media and discover how to portray a good corporate image, in addition to the influence external agents can have on all decisions. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Studying the Master in Corporate Communication: Public Relations, Protocol and Events Management in Barcelona will allow you to develop your communication skills in order to work in the business world. If you are an active person with people skills and you are interested in communication, pay attention! You will be able to fill a position in the communication department of any company since you will have been educated on how to handle the media and you will have a mastery of public relations overall, enabling you to overcome both internal and external crisis situations. In addition, you will learn about different protocols including the official, business and social protocols, in order to organise events as well as assist in the organisation of others while representing your company name. Not only that but you will also acquire valuable knowledge in regards to budget preparation, which will help you to carry out these events successfully. You will even learn to master non-verbal communication, an essential factor for networking when it comes to interpreting messages. So if you want to work in any field related to corporate communication and public relations, the Master in Corporate Communication: Public Relations, Protocol and Events Management in Barcelona is the best choice for making the leap into the workforce with the best possible training. The degree is recognised by the UVIC-UCC, and they will issue you their own University Degree, sponsored by the Abertis Foundation. What else are you waiting for to find out more? Objectives Good... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Corporate-Communication-Public-Relations-Protocol-and-Events-Management-in-Barcelona/Spain/ESERP-Business-School/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Bologna Business School" alt="Bologna Business School" src="//cdn03.masterstudies.com/gfx/emblem/Large/BBS.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Marketing-Communication-and-New-Media/Italy/BBS/"> <span>Master in Marketing, Communication and New Media</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Bologna Business School</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">12&nbsp;months</span> 
+             <span class="label label-default-master ">December 2017</span> 
+             <span class="label label-default-master ">Italy</span> 
+             <span class="label label-default-master ">Bologna</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The Master in Marketing, Communication and New Media is a full-time program taught entirely in English, which aim to prepare graduates from any discipline to manage the methods and techniques of both traditional and digital media in an industry currently undergoing a continuous revolution. Alumni of this Master have a placement rate of 96% within 6 months. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Masters in Communication. The Master in Marketing, Communication and New Media is a full-time program taught entirely in English, which aim to prepare graduates from any discipline to manage the methods and techniques of both traditional and digital media in an industry currently undergoing a continuous revolution. Alumni of this Master have a placement rate of 96% within 6 months. Through the expansion of mobile devices every day, more and more people around the world connect across social media: Twitter has 320 million active monthly users, Instagram 400 million, Google+ 540 millions, YouTube 1 billion and Facebook 1.6 billion. What we are witnessing is more than a technological revolution, it is a deep socio-cultural transformation. Companies all over the world over are constantly increasing the amount they invest in their online advertising channels to improve their relationship with the consumers and the business community. Together with our partners IAB (Interactive Advertising Bureau), Yoox Net-A-Porter Group, The Boston Consulting Group, Google, GroupM, IBM and WPP, this master’s degree provides students with the qualifications and skills to start a managerial or consultancy career in the field of digital communications. This international program, with students from all over the world and a Faculty composed by professors, managers and entrepreneurs, takes place within the unique atmosphere of a 16th century villa on the hills surrounding Bologna. Thanks to project works, company projects and master lectures, students get in touch with the key concepts of the digital era: participating, creating and sharing content. At the... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Marketing-Communication-and-New-Media/Italy/BBS/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="dfp_ads visible-xs"> 
+         <div id="mobile_listing_communication"> 
+          <script>
+              googletag.cmd.push(function() { googletag.display('mobile_listing_communication'); });
+          </script> 
+         </div> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="CESCOMPOL - Centro de Estudios Superiores de Comunicación y Marketing Político" alt="CESCOMPOL - Centro de Estudios Superiores de Comunicación y Marketing Político" src="//cdn04.masterstudies.com/gfx/emblem/Large/CESCOMPOL-Centro-de-Estudios-Superiores-de-Comunicación-y-Marketing-Político.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.master-maestrias.com/Máster-en-Comunicación-y-Marketing-Político/Espana/CESCOMPOL-Centro-de-Estudios-Superiores-de-Comunicación-y-Marketing-Político/"> <span>Master In Communication And Political Marketing</span> </a> </h4> 
+            <h5 class="listing_provider"><span>CESCOMPOL - Centro de Estudios Superiores de Comunicación y Marketing Político</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">1&nbsp;year</span> 
+             <span class="label label-default-master ">September 2018</span> 
+             <span class="label label-default-master ">Spain</span> 
+             <span class="label label-default-master ">Madrid</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">This program is aimed at either graduates in Political Science, Marketing, Journalism, Law or International Relations; As well as professionals with university degrees and experience in the world of politics who wish to improve their personal skills. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               OBJECTIVES: Students who successfully pass this program: They will improve their own professional profile in the area of ​​politics. They will acquire communicative strategies and techniques to apply them to political candidates. Working as election campaign or government communication advisors To become specialists in electoral marketing that promote the consulting as a work in the service of the political class. ADDRESSED TO: This program is aimed at either graduates in Political Science, Marketing, Journalism, Law or International Relations; As well as professionals with university degrees and experience in the world of politics who wish to improve their personal skills. METHODOLOGY CESCOMPOL is a collaborating center of the University of Alcalá de Henares (UAH), one of the oldest in Europe. The academic contents of this master's degree are structured from more general topics (such as political communication) to specific modules (such as application to the Government, a political party and a candidate). The methodology is based on both theoretical and practical parts, to consolidate all the knowledge acquired and all contents are adapted to both Spain and Latin America. The faculty is composed of professionals in the field and experts in their respective modules, with experience in public policies, government plans, communication strategies and electoral campaigns. EVALUATION Obtaining the final title is subject to the passing of all modules of the Master, as well as the preparation of the Final Master's Work. DEGREE THAT IS OBTAINED Master's Degree by the University of Alcalá de Henares and Master's degree by CESCOMPOL TEMARY... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.master-maestrias.com/Máster-en-Comunicación-y-Marketing-Político/Espana/CESCOMPOL-Centro-de-Estudios-Superiores-de-Comunicación-y-Marketing-Político/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="USI Università della Svizzera italiana" alt="USI Università della Svizzera italiana" src="//cdn01.masterstudies.com/gfx/emblem/Large/USI.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-of-Advanced-Studies-in-Intercultural-Communication-(MIC)/Switzerland/USI/"> <span>Master of Advanced Studies in Intercultural Communication (MIC)</span> </a> </h4> 
+            <h5 class="listing_provider"><span>USI Università della Svizzera italiana</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Part time</span> 
+             <span class="label label-default-master ">14&nbsp;-&nbsp;18&nbsp;months</span> 
+             <span class="label label-default-master ">September 2018</span> 
+             <span class="label label-default-master ">Switzerland</span> 
+             <span class="label label-default-master ">Lugano</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">Part-time postgraduate program for professionals engaged in managing operational or strategic situations in a multicultural context and in managing multicultural human resources. Founded in 2004, MIC is the only academic program in Intercultural Communication of its kind in Europe that allows you to pursue your professional activity while studying. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text"> 
+              <p>Enrich your professional profile in the public or private sector with high-level intercultural competencies!</p> 
+              <p>&nbsp;</p> 
+              <p>New edition starting October 2, 2017</p> 
+              <p> </p> 
+              <p align="left">The Master of Advanced Studies in Intercultural Communication (MIC) is a part-time postgraduate program for professionals engaged in managing operational or strategic situations in a multicultural context and in managing multicultural human resources.</p> 
+              <p align="left">&nbsp;</p> 
+              <p align="left">Founded in 2004, MIC is the only academic program in Intercultural Communication of its kind in Europe that allows you to pursue your professional activity while studying.</p> 
+              <p align="left">&nbsp;</p> 
+              <p align="left">As part of our program you will: Achieve a higher comprehension of your own culture and the culture of others. Develop a laser focus in analyzing multicultural situations; Gain the necessary skills for mediating conflicts and creating effective solutions; Challenge yourself in intercultural strategic sessions in Asia, N. Africa, and Europe, Make an immediate impact in your organization. ... <span class="toogle_lesstext"><i>[-]</i></span> </p>
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-of-Advanced-Studies-in-Intercultural-Communication-(MIC)/Switzerland/USI/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="University of St.Gallen (HSG), School of Management, Economics, Law, Social Sciences and International Affairs" alt="University of St.Gallen (HSG), School of Management, Economics, Law, Social Sciences and International Affairs" src="//cdn02.masterstudies.com/gfx/emblem/Large/HSG.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Masters-Programme-in-Marketing-Services-and-Communication-Management/Switzerland/HSG/"> <span>Master's Programme in Marketing, Services and Communication Management</span> </a> </h4> 
+            <h5 class="listing_provider"><span>University of St.Gallen (HSG), School of Management, Economics, Law, Social Sciences and International Affairs</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">18&nbsp;months</span> 
+             <span class="label label-default-master ">September 2018</span> 
+             <span class="label label-default-master ">Switzerland</span> 
+             <span class="label label-default-master ">St.Gallen</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The Master’s Programme in Marketing, Services and Communication Management (MSC) consists of a unique combination of basic managerial disciplines and the markets and business models of relevant industries. With this concept, the MSC exceeds classical notions of marketing. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text"> 
+              <p>Objectives:</p> 
+              <p>Customer value – the goal of sustainable corporate management</p> 
+              <p>In a globalised world, sustainable corporate value can only be created through convincing products and services for customers, who are the focus of attention. Marketing along these lines concentrates on achieving the highest possible customer focus with the products and services. This integrative view, which transcends classical marketing, is what the Master’s Programme in Marketing, Services and Communication Management (MSC) is committed to: the programme combines all management disciplines that take their bearings from customers and unites them with the markets and business models of topical industries. ... <span class="toogle_lesstext"><i>[-]</i></span> </p>
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Masters-Programme-in-Marketing-Services-and-Communication-Management/Switzerland/HSG/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Up Level School of Management " alt="Up Level School of Management " src="//cdn03.masterstudies.com/gfx/emblem/Large/Up-Level-School-of-Management.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.master-abroad.it/Master-in-Communication-Social-Media-and-Web-Marketing/Italia/Up-Level-School-of-Management/"> <span>Master's Degree In Communication, Social Media And Web Marketing</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Up Level School of Management</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Part time</span> 
+             <span class="label label-default-master ">100&nbsp;-&nbsp;100&nbsp;hours</span> 
+             <span class="label label-default-master ">May 2018</span> 
+             <span class="label label-default-master ">Italy</span> 
+             <span class="label label-default-master ">Milan</span> 
+             <span class="label label-default-master hide ">Rome</span> 
+             <span class="label label-default-master hide ">Napoli</span> 
+             <span class="labels-more" data-lesslabel="Less" id="+ 2 more"> + 2 more </span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The Master in Communication, Social Media and Web Marketing is a modern and innovative education that prepares professionals in the field of Online Marketing and corporate online communications. Unlike other web courses classic Marketing wants to be a more comprehensive tool: it is a specific master on Social Media Marketing Strategies, Online Advertising and the Web Copywriting foundations, designed according to the most modern communication techniques and the latest developments of the sector. Facebook, Google Plus, YouTube, Twitter, Google Adwords will become everyday tools in your work. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Masters in Communication. The Master in Communication, Social Media and Web Marketing is a modern and innovative education that prepares professionals in the field of Online Marketing and corporate online communications. Unlike other web courses classic Marketing wants to be a more comprehensive tool: it is a specific master on Social Media Marketing Strategies, Online Advertising and the Web Copywriting foundations, designed according to the most modern communication techniques and the latest developments of the sector. Facebook, Google Plus, YouTube, Twitter, Google Adwords will become everyday tools in your work. Why choose a Masters in Communication, Social Media and Online Marketing? The new Master in Communication, Social Media and Web Marketing Up level will form preparing you to operate in a highly competitive industry through training to 360 degrees in marketing and communication. At the end of the Master you will be able to design, manage and monitor integrated communication campaigns, using only the classical techniques to promote the brand and product, the most innovative techniques of Web Marketing and communication on social media. The evolution of communication requires the mastery of new methods and in-depth knowledge of all their potentials. The gradual transition from Web 2.0 to Web 3.0, the growing integration between Search Engine and Social Media, revolutionizes communication via the Internet, developing a high level of interaction that is now on Social Network its maximum expression. For this reason, the Master's program in Communication, Social Media and Web Up Level Marketing is continually renewed and strengthened in... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.master-abroad.it/Master-in-Communication-Social-Media-and-Web-Marketing/Italia/Up-Level-School-of-Management/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Macromedia University of Applied Sciences" alt="Macromedia University of Applied Sciences" src="//cdn01.masterstudies.com/gfx/emblem/Large/MHMK.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Media-and-Communication-Management/Germany/MHMK/"> <span>Master in Media and Communication Management</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Macromedia University of Applied Sciences</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">Part time</span> 
+             <span class="label label-default-master ">3&nbsp;-&nbsp;4&nbsp;semesters</span> 
+             <span class="label label-default-master ">March 2018</span> 
+             <span class="label label-default-master ">Germany</span> 
+             <span class="label label-default-master hide ">Munich</span> 
+             <span class="label label-default-master hide ">Cologne</span> 
+             <span class="label label-default-master hide ">Hamburg</span> 
+             <span class="label label-default-master hide ">Stuttgart</span> 
+             <span class="label label-default-master hide ">Berlin Region</span> 
+             <span class="labels-more" data-lesslabel="Less" id="+ 5 more"> + 5 more </span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">This Master's degree is aimed at outstanding graduates from the fields of business administration, communication science or related areas and young professionals from agencies, communications departments, marketing and media companies, who wish to hold technical and management positions. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               There is a huge demand for managers with strategic skills in the media sector. Successfully managing the media business and developing new products requires an extremely broad knowledge of social trends and developments combined with business management expertise. That's why decision makers with sound judgement are in high demand. Macromedia University's Master's degree in Media and Communication Management is aimed at outstanding graduates from the fields of business administration, communication science and related areas, as well as young professionals from agencies, communications departments, marketing and media companies, who wish to hold technical and management positions. The course, which takes a firm cross-media approach, develops entrepreneurial thinking and working. All facets of strategic and operational management are combined with a deeper knowledge of business administration, comprehensive project know-how and practical application to case studies. Students learn to see media development in the overall context of social change. Graduates are not only able to understand the media but also to shape and direct them. Students who choose the Media and Communication Management stream can further specialize in the following areas: Brand Management Corporate Communication Culture and Creative Industries Corporate Publishing Digital Entrepreneurship The benefits of choosing Macromedia University Top position in CHE Ranking 2014/15 Small classes with intensive, individual supervision Globally recognized, state-approved degrees, accredited by FIBAA Campuses in Berlin &amp; Munich: two of the Top 5 “Most Affordable Cities for Students 2015” worldwide Authentic, practice oriented projects with over 500 well-known companies Highly qualified professors and industry insiders as lecturers International... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Media-and-Communication-Management/Germany/MHMK/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="17"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Aristotle University Thessaloniki" alt="Aristotle University Thessaloniki" src="//cdn02.masterstudies.com/gfx/logo/Aristotle-University.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Μaster-of-Arts-in-Digital-Media-Communication-and-Journalism/Greece/Aristotle-University/"> <span>Μaster of Arts in Digital Media, Communication and Journalism</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Aristotle University Thessaloniki</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Distance learning</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">12&nbsp;months</span> 
+             <span class="label label-default-master ">Open Enrollment</span> 
+             <span class="label label-default-master ">Greece</span> 
+             <span class="label label-default-master ">Thessaloniki</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The MA offers three pathways, each of which is designed to respond to a vital area of contemporary concern and application for researchers and professionals in the fields of communication and journalism. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Masters in Communication. Μaster of Arts in Digital Media, Communication and Journalism Message from the Program Director Since its establishment, in 1991, the School of Journalism and Mass Communications of Aristotle University of Thessaloniki offers full-time, four-year long BA degree programs both in Journalism and in Mass Communications. The creation of an English language Master’s program in the areas of Journalism and Communications, the first of its kind among Greek public Universities, is based on the School’s 25 year-long success in promoting learning through theory-building, cutting edge technical skills and professional training, and reflects its steadfast commitment to innovation, excellence, interdisciplinary education and international outlook.What makes our Master’s program relevant is the consistent integration of the students' study, skills and projects to the real world. Innovation and thoughtfulness have always been the only route for students, but I can’t think of a more critical time than now, in our highly complex, risk ridden, globalized and networked societies, for all thinking to become more methodical, reflexive and innovative. We look for students who are eager to take on more challenges, to learn more about themselves and about the world, to reach their full potential. Our faculty, all active scholars and researchers, are committed to helping students succeed in their pursuits. Together we work to make each student’s experience at Aristotle University a rich and fulfilling one that broadens his or hers intellectual and professional horizons. We look forward to welcoming you to the School of Journalism and Mass Communications. With best... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Μaster-of-Arts-in-Digital-Media-Communication-and-Journalism/Greece/Aristotle-University/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="IED – Istituto Europeo di Design Torino" alt="IED – Istituto Europeo di Design Torino" src="//cdn02.masterstudies.com/gfx/emblem/Large/IED-Torino.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Marketing-and-Communication/Italy/IED-Torino/"> <span>Master in Marketing and Communication</span> </a> </h4> 
+            <h5 class="listing_provider"><span>IED – Istituto Europeo di Design Torino</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">11&nbsp;months</span> 
+             <span class="label label-default-master ">November 2017</span> 
+             <span class="label label-default-master ">Italy</span> 
+             <span class="label label-default-master ">Turin</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">Marketing and communication can’t be considered as areas of expertise exclusively connected to sales and advertising but must be integrated in a wider scenario, that take into consideration on the one hand the audience of potential clients, and on the other one the social and economic context in which companies operates and find their own market positions. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Marketing and communication can’t be considered as areas of expertise exclusively connected to sales and advertising but must be integrated in a wider scenario, that take into consideration on the one hand the audience of potential clients, and on the other one the social and economic context in which companies operates and find their own market positions. In order to respond to market requirements and the expectations of the students, the Master course in Marketing and Communication shall address agency and company communication environments in order to show where these two areas overlap and should operate together developing joint forms of interaction. Students have the chance to discuss these issues directly by examining case histories and through the direct first-hand experience of active professionals. Career opportunities - The Master trains professionals who can operate in strategic and operational marketing, in communication offices or agencies as Product Managers and Accounts. Target - The Master in Marketing and Communication course is designed for graduates who are taking their first steps in the profession and for professionals who are already working in the field, with the aim of transferring competence and tools to them that will make them effective and capable to providing innovation within companies and agencies. Methodology and structure - The teaching structure is based on a symbiotic relationship between theory and practice which will enable the participants to develop a high degree of competence and a very practical and operational level thanks to simulations and exercises carried out on case... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Marketing-and-Communication/Italy/IED-Torino/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="University of Helsinki" alt="University of Helsinki" src="//cdn04.masterstudies.com/gfx/emblem/Large/University-of-Helsinki.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Global-Politics-and-Communication/Finland/University-of-Helsinki/"> <span>Master in Global Politics and Communication</span> </a> </h4> 
+            <h5 class="listing_provider"><span>University of Helsinki</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">2&nbsp;years</span> 
+             <span class="label label-default-master ">August 2018</span> 
+             <span class="label label-default-master ">Finland</span> 
+             <span class="label label-default-master ">Helsinki</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">Global Politics and Communication is an interdisciplinary and innovative Master’s degree programme that addresses the key challenges of globalisation from the perspective of media and communication studies, organisation research and global political economy. The programme emphasises developing your critical thinking, a necessary skill in many careers. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Masters in Communication. Global Politics and Communication is an interdisciplinary and innovative Master’s degree programme that addresses the key challenges of globalisation from the perspective of media and communication studies, organisation research and global political economy. The programme emphasises developing your critical thinking, a necessary skill in many careers. The specific objectives of the programme include: Providing you with advanced knowledge of global political economy, relationships between the media and the development of democracy, and linkages between governance, organisations and communication Empowering you to assess how politics and the media are linked to the forces of globalisation Equipping you with conceptual understanding and the theoretical and methodological skills needed to carry out original and relevant research on key societal issues Preparing you to engage in public discussions and develop critical reasoning and argumentation skills that are equally important in academia, public organisations and the private sector The University of Helsinki will introduce annual tuition fees to foreign-language Master’s programmes starting on August 1, 2017 or later. The fee is 13 000 EUR. Citizens of non-EU/EEA countries, who do not have a permanent residence status in the area, are liable to these fees. You can check the FAQ at the Studyinfo website whether or not you are required to pay tuition fees. In­form­a­tion on the lan­guages of in­struc­tion The working language of the Global Politics and Communication programme is English. The degree can include up to 30 credits (ECTS) of studies in other languages, such as Finnish or Swedish, or courses... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Global-Politics-and-Communication/Finland/University-of-Helsinki/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="GBSB Global Business School" alt="GBSB Global Business School" src="//cdn04.masterstudies.com/gfx/emblem/Large/GBSB-Global.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Communications-and-Future-Marketing-in-Barcelona/Spain/GBSB-Global/"> <span>Master in Communications &amp; Future Marketing in Barcelona</span> </a> </h4> 
+            <h5 class="listing_provider"><span>GBSB Global Business School</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">9&nbsp;-&nbsp;12&nbsp;months</span> 
+             <span class="label label-default-master ">Open Enrollment</span> 
+             <span class="label label-default-master ">Spain</span> 
+             <span class="label label-default-master ">Barcelona</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The MA in Communications and Future Marketing at GBSB Global Business School is an innovative degree that focuses teaching you the most effective ways of planning and launching an integrated, multi-channel communications and marketing campaign today and also looks into the future of marketing and the power of crowds, social media, and the trust they command. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Why Master in Communications and Future Marketing in Barcelona 
+              <p>Study Communications and Future Marketing at a Business School Where “Digital” is at Its Core. GBSB Global is the only higher education institution in Spain accredited by Microsoft as a leader in digital education.</p> Program Description 
+              <p>The Master in Communication &amp; Future Marketing in Barcelona teaches students the most successful ways of planning and launching an integrated, multi-channel communication and marketing campaign on the international stage. The Master in Communications &amp; Future Marketing in Barcelona program teaches students the most effective marketing methodologies. This master incorporates teachings in the areas of leadership, global business strategy, digital and innovative marketing, brand communication, as well as trend research and market analysis. Studying for a MA in Communications and Future Marketing in Barcelona develops students’ proficiency in business innovation, global marketing, emerging technologies, and company and personal branding. With courses on marketing of destinations, experiential marketing, international negotiations, and business development, the Master in Communication and Future Marketing in Barcelona students will be prepared to step into the global marketing and communications arena. This program also features an interactive module, the “Strategic Marketing and Communications Simulation Game,” in which students have the opportunity to apply strategic decision making skills to a real-world business simulation in preparation for the challenges of the marketing industry. Students will also learn the best methods for leveraging email and social media analytics and more to build a brand and a business.... <span class="toogle_lesstext"><i>[-]</i></span> </p>
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Communications-and-Future-Marketing-in-Barcelona/Spain/GBSB-Global/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="ESCA School of Management" alt="ESCA School of Management" src="//cdn04.masterstudies.com/gfx/logo/ESCA.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Marketing-and-Communication-Full-Time/Morocco/ESCA/"> <span>Master in Marketing &amp; Communication Full Time</span> </a> </h4> 
+            <h5 class="listing_provider"><span>ESCA School of Management</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">2&nbsp;years</span> 
+             <span class="label label-default-master ">August 2018</span> 
+             <span class="label label-default-master ">Morocco</span> 
+             <span class="label label-default-master ">Casablanca</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">• Professional Communication • English (TOIC preparation) • Spanish • French and classical Arabic (optional foreign language for ESCA exchange students). <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text"> 
+              <p>Master in Marketing &amp; Communication4th yearSemester 7Language, Culture and Communication 7 :• Professional Communication • English (TOIC preparation) • Spanish • French and classical Arabic (optional foreign language for ESCA exchange students).Management 2 :• Supply Chain Management • Purchasing Management and Strategy • Social Law • Geopolitics 1: • MENA &amp; AFRICA • Intercultural Management.Analysis and Management Tools 7:• Distribution Marketing • Management Control (initiation) • Decision of Investment and Financing • Consumer Law • Studies in International Marketing.&nbsp;&nbsp; &nbsp;Semester 8Language, Culture and Communication 8 :• Communication Strategy • Business Ethics • Business English 1 • Business Spanish / or Spanish (optional foreign language for ESCA exchange students).Management 3 :• Geopolitics 2 : Geopolitics in the euromediterranean • Innovation Management • Total Quality Management • Business intelligence management.Markeking :• Services Marketing • Strategic Marketing • Customer Relationship Management • Marketing Intelligence.Experience and professional performance :• Right Arm Mission • Personal professional project • Community life project.5th yearSemester 9Language, Culture and Communication 9 :• Business English 1 • Business Spanish / or Spanish (optional foreign language for ESCA exchange students) • Moroccan dialect 2(optional foreign language for ESCA exchange students) • Moroccan Studies.Management 4 :• Management of Complexity • Change Management • Geopolitics 3: ASIA Opportunities &amp; Risk.Marketing Trends :• Audit Marketing • E- Communication • E-Marketing • Sector Marketing • Marketing Trends • Marketing Plan Implementation.Experience and work performance :• Personal professional project : Business Plan Challenge • Personal professional project : Consultant process and behavior Personal professional project :... <span class="toogle_lesstext"><i>[-]</i></span> </p>
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Marketing-and-Communication-Full-Time/Morocco/ESCA/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Far Eastern Federal University" alt="Far Eastern Federal University" src="//cdn02.masterstudies.com/gfx/logo/XX-small/FEFU.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.ru/Магистратура-Стратегическое-управление-коммуникациями-в-рекламе-и-связях-с-общественностью/Rossija/ДВФУ/"> <span>Master - Strategic Communications Management In Advertising And Public Relations</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Far Eastern Federal University</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">2&nbsp;years</span> 
+             <span class="label label-default-master ">September 2018</span> 
+             <span class="label label-default-master ">Russia</span> 
+             <span class="label label-default-master ">Vladivostok</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The program combines general theoretical and practical training in the field of strategic communication management in advertising and public relations. <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Program Overview The program combines general theoretical and practical training in the field of strategic communication management in advertising and public relations. The program examines the strategic principles of modern management information and advertising communications, analyzed the experience and principles of advertising and information campaigns in the Asia-Pacific region. The program content focuses on the contemporary sphere of mass communications and media, the advertising market, as well as trends in the sphere of business information communications development. The program aims at developing practical skills of evaluating the effectiveness of advertising and information campaigns, as well as the use of innovative resources in advertising and PR-activities. acquired competence skills the implementation of research projects; ideas about modern advertising markets; control of the process of creating an advertising and PR-product of various kinds for different target markets and spheres; systematic evaluation of performance in the advertising markets; organization of work in the field of advertising and public relations, including the management, guidance and control functions; ability to work in large companies (including international and holding) organizing and planning the activities of advertising, marketing and information support of the activities of the corporation. Competitive advantages qualified teachers, including well-known theoretical and practical; the presence of a large database of practices in leading organizations of various types in the region; study of regional specificity Asia-Pacific and the Far East of Russia; use FEFU capacity as an interdisciplinary multicultural scientific and educational area; the ability to integrate into international projects in the Far East of... 
+              <span class="toogle_lesstext"><i>[-]</i></span> 
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.ru/Магистратура-Стратегическое-управление-коммуникациями-в-рекламе-и-связях-с-общественностью/Rossija/ДВФУ/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+        <div class="col-sm-12 list-item" data-idmode="9"> 
+         <div class="listing-row row"> 
+          <div class="col-sm-2 school-logo-listing hidden-xs"> 
+           <img class="img-responsive" title="Accademia del Lusso" alt="Accademia del Lusso" src="//cdn01.masterstudies.com/gfx/emblem/Large/Accademia-del-Lusso.png"> 
+          </div> 
+          <div class="col-sm-10 school-info"> 
+           <header> 
+            <h4 class="listing-title"> <a href="https://www.masterstudies.com/Master-in-Luxury-Goods-Communication-Management/Italy/Accademia-del-Lusso/"> <span>Master in Luxury Goods Communication Management</span> </a> </h4> 
+            <h5 class="listing_provider"><span>Accademia del Lusso</span></h5> 
+           </header> 
+           <div class="is-item-description"> 
+            <div class="labels-container"> 
+             <span class="label label-default-master ">Campus</span> 
+             <span class="label label-default-master ">Full time</span> 
+             <span class="label label-default-master ">9&nbsp;months</span> 
+             <span class="label label-default-master ">February 2018</span> 
+             <span class="label label-default-master ">Italy</span> 
+             <span class="label label-default-master ">Milan</span> 
+            </div> 
+            <span> <p class="short_desc dotdotdot-text">The Master’s Course in Luxury Goods Communication Management trains students to become leaders within the fashion <span class="toogle_moretext">[+]</span> </p> 
+             <div class="moretext hide_text">
+               Course aims 
+              <p>The Master’s Course in Luxury Goods Communication Management trains students to become leaders within the fashion communication professional sphere. The accurate communication of a product, service, or collection is indispensable in order to build and strengthen a brand’s image in line with its marketing strategy. The course therefore equips students with people skills and competitive capability as well as with the technical and creative abilities they need to fully integrate themselves into the image and communication field of businesses, outsourcing agencies, magazine publishers and media channels in the fashion and lifestyle sector. Students learn how to successfully manage people, interpret current trends, and understand consumer needs. They will be able to follow every phase of a communication plan: from the briefing to the definition of objectives; the selecting of suitable means and methods to organising a photo shoot and drafting press releases, company profiles and fashion articles. On completion of the course, students will be able to step out into the professional world fully confident in their managerial skills and able to competently face competition. Masters Courses at Accademia del Lusso are all validated by eCampus University, and those who succefully complete one of these courses will therefore receive a first level Master's Degree.... <span class="toogle_lesstext"><i>[-]</i></span> </p>
+             </div> </span> 
+            <div class=" hidden-xs"> 
+             <a href="https://www.masterstudies.com/Master-in-Luxury-Goods-Communication-Management/Italy/Accademia-del-Lusso/" class="btn btn-primary-master ">Read More</a> 
+            </div> 
+           </div> 
+           <div class="visible-xs toggle-description text-muted"> 
+            <i class="fa fa-chevron-down open-description js-toggle-description"></i> 
+            <i class="fa fa-chevron-up close-description js-toggle-description"></i> 
+           </div> 
+          </div> 
+         </div> 
+         <hr class="col-sm-12 list-item-divider"> 
+        </div> 
+       </div> 
+       <div class="">
+        <ul class="pagination">
+         <li><a class="link" href="https://www.masterstudies.com/Masters-Degree/Communication/?page=2">Next »</a></li>
+        </ul>
+       </div>
+       <br> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container"> 
+   <div class="row"> 
+    <footer class="page-footer clearfix"> 
+     <div class="col-sm-12"> 
+      <div class="row"> 
+       <div class="brand col-sm-12"> 
+        <h2 class="usedColor">MASTERSTUDIES.COM</h2> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-sm-12"> 
+      <div class="row"> 
+       <div class="col-sm-12"> 
+        <div class="footer-social pull-right"> 
+         <div class="hidden-xs addthis-container white"> 
+          <div class="pull-right"> 
+           <a data-toggle="modal" class="addthis-modal-link" href="#linkToUsModal"> Link to this page </a> 
+          </div> 
+          <div class="addthis_toolbox"> 
+           <i class="fa fa-spinner fa-pulse loading-add-this"></i> 
+           <div class="custom_images"> 
+            <!--<a class="addthis_button_facebook addthis-button"><img src="//cdn02.masterstudies.com/img_new/addthis_facebook_white.png" width="18" height="18" border="0" alt="Share to Facebook" /></a>
+      <a class="addthis_button_twitter addthis-button"><img src="//cdn03.masterstudies.com/img_new/addthis_twitter_white.png" width="18" height="18" border="0" alt="Share to Twitter" /></a>--> 
+            <a class="addthis_button_facebook addthis-button"><img src="//cdn03.masterstudies.com/img_new/FB-f-Logo__blue_144_official.png" width="18" height="18" border="0" alt="Share to Facebook"></a> 
+            <a class="addthis_button_twitter addthis-button"><img src="//cdn02.masterstudies.com/img_new/Twitter_Logo_Blue_official.png" width="32" height="32" border="0" alt="Share to Twitter"></a> 
+            <a class="addthis_button_more addthis-button"><img src="//cdn03.masterstudies.com/img_new/addthis_more_white.png" width="18" height="18" border="0" alt="More..."></a> 
+            <a class="addthis_counter addthis_bubble_style"></a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="footer-links"> 
+         <a href="https://www.masterstudies.com/Schools_and_Universities/Contact-us.html">Contact us</a> 
+         <a href="https://www.keystoneacademic.com/">Keystone Academic Solutions</a> 
+         <a href="https://www.masterstudies.com/Schools_and_Universities/Terms-and-Conditions.html">Terms and Conditions</a> 
+         <a href="https://www.masterstudies.com/Schools_and_Universities/Privacy-policy.html">Privacy</a> 
+         <a href="/sitemap/">Sitemap</a> 
+         <a href="https://www.studenttests.com/">StudentTests</a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+  </div> 
+  <div class="modal fade" id="linkToUsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+   <div class="modal-dialog"> 
+    <div class="modal-content"> 
+     <div class="modal-header"> 
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+      <h3>Link to and share "Best Master's Degrees in Communication 2017/2018"</h3> 
+     </div> 
+     <div class="modal-body"> 
+      <div class="row"> 
+       <div class="col-sm-12"> 
+        <div class="radio"> 
+         <label> <input type="radio" name="link_to_us_url" class="link_to_us_url" checked data-title="Masterstudies.com - Best Master's Degrees in Communication 2017/2018" data-url="https://www.masterstudies.com/Masters-Degree/Communication/"> Link to this page </label> 
+        </div> 
+        <div class="radio"> 
+         <label> <input type="radio" name="link_to_us_url" class="link_to_us_url" data-title="Masterstudies.com" data-url="https://www.masterstudies.com/"> Link to Masterstudies.com start page </label> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="row"> 
+       <div class="col-sm-12"> 
+        <div class="form-group"> 
+         <label for="link_to_us_url_input">Paste link in email or IM:</label> 
+         <input type="text" id="link_to_us_url_input" class="form-control link_to_us_plain_link"> 
+        </div> 
+       </div> 
+      </div> 
+      <hr> 
+      <div class="row"> 
+       <div class="col-sm-12"> 
+        <img src="//cdn01.masterstudies.com/img/logo/Masters-Degree-ms-en.png" class="link-to-us-image"> 
+        <div class="pull-right"> 
+         <label class="radio"> <input type="radio" name="link_to_us_image" class="link-to-us-image-radio" checked data-alt="Masterstudies.com" data-image="//cdn01.masterstudies.com/img/logo/Masters-Degree-ms-en.png"> Masterstudies.com logo </label> 
+         <label class="radio"> <input type="radio" name="link_to_us_image" class="link-to-us-image-radio" data-image=""> No image </label> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="row"> 
+       <div class="col-sm-12"> 
+        <label for="link_to_us_textarea">HTML-code:</label> 
+        <textarea name="" id="link_to_us_textarea" class="form-control link-to-us-html" rows="4"></textarea> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="modal-footer"> 
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> 
+  <script src="//cdn02.masterstudies.com/js/application.1507205349.js"></script> 
+  <script src="//cdn04.masterstudies.com/js/randexp/randexp.min.js"></script> 
+  <script src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places&amp;key=AIzaSyBikK5pARri5jnUcBnqAFDIUWrLp3eTLUk"></script> 
+  <script type="text/javascript">
+    $(function ($) {
+
+      $('.is-filter-toggle').on('click', function () {
+        $(this).closest('.navigation-box-container').toggleClass('open');
+      });
+
+      $('.is-sub-filter-toggle').on('click', function () {
+        $(this).closest('.is-filter-setting-container').toggleClass('open');
+      });
+
+
+      if ($('.listingText').height() >= 270 && !$('.listingText').hasClass("toggleText")) {
+        $('.listingText').addClass('toggleText');
+        $('.read_more').removeClass('hide');
+      }
+
+      $(".read_more").click(function () {
+        if ($('.listingText').hasClass("toggleText")) {
+          $('.listingText').removeClass('toggleText');
+          $(".read_more").html('<i class="fa fa-chevron-up"></i> Read Less');
+
+        } else {
+          $('.listingText').addClass('toggleText');
+          $(".read_more").html('<i class="fa fa-chevron-down"></i> Read More');
+        }
+      });
+
+
+      
+      $('.form-search').appendTo($('#place-search-form-here'));
+      $('.form-search').removeClass('pull-right');
+      $('.form-search').removeClass('span7');
+      $('.form-search').addClass('span15');
+
+      
+      $('.toogle_lesstext_lead').appendTo($('.toogle_lesstext_lead').siblings('p').last());
+
+      jQuery('.grid').find('a').click(function (event) {
+
+        event.preventDefault();
+        //$(this).unbind('click');
+
+        params = {
+          action: 'count_search_listing_click', json: $(this).parents('[data-track-click]').attr('data-track-click'), num: '', r: Math.ceil(100 * Math.random())
+        };
+
+        var link = $(this);
+
+        jQuery.ajax({
+          url: '/ajax_handler.php',
+          dataType: 'html',
+          type: 'GET',
+          data: params,
+          success: function () {
+            if (jQuery(link).attr('href')) window.location.href = jQuery(link).attr('href');
+          },
+          error: function () {
+            if (jQuery(link).attr('href')) window.location.href = jQuery(link).attr('href');
+          }
+        });
+
+        return false;
+      });
+
+
+    });
+  </script> 
+  <script type="text/javascript">
+    $(function () {
+      var $partner_sites = [];
+      var $partner_sites_mobile = [];
+
+            $partner_sites.push($('<li><a class="navbar-brand active" href="https://www.masterstudies.com/">Master</a></li>'));
+      $partner_sites_mobile.push($('<li><a href="https://www.masterstudies.com/">Master</a></li>'));
+
+                                                                                    $partner_sites.push($('<li><a class="navbar-brand " href="https://www.phdstudies.com/">PhD</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.phdstudies.com/">PhD</a></li>'));
+                                                                $partner_sites.push($('<li><a class="navbar-brand " href="https://www.lawstudies.com/">Law</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.lawstudies.com/">Law</a></li>'));
+                                                                $partner_sites.push($('<li><a class="navbar-brand " href="https://www.bachelorstudies.com/">Bachelor</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.bachelorstudies.com/">Bachelor</a></li>'));
+                                                                $partner_sites.push($('<li><a class="navbar-brand " href="https://www.mbastudies.com/">MBA</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.mbastudies.com/">MBA</a></li>'));
+                                                                $partner_sites.push($('<li><a class="navbar-brand " href="https://www.healthcarestudies.com/">Healthcare</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.healthcarestudies.com/">Healthcare</a></li>'));
+                                                                            $partner_sites.push($('<li><a class="navbar-brand " href="https://www.academiccourses.com/">Courses</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.academiccourses.com/">Courses</a></li>'));
+                                                                $partner_sites.push($('<li><a class="navbar-brand " href="https://www.onlinestudies.com/">Online</a></li>'));
+          $partner_sites_mobile.push($('<li><a href="https://www.onlinestudies.com/">Online</a></li>'));
+                            $('.partner-sites').first().append($partner_sites);
+      $('.partner-sites-mobile').first().append($partner_sites_mobile);
+
+
+      
+      
+    });
+  </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bb510f4a41","applicationID":"7303044","transactionName":"YQdQbRRSCxZYBUdQV1hNZ0sPHAwLXQNLF0heEg==","queueTime":0,"applicationTime":360,"atts":"TUBTG1xIGBg=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en-US">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="fb:app_id" property="fb:app_id" content="871894772901512"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="application-name" content="Scary Mommy"> 
+  <meta name="msapplication-TileColor" content="#cd2828"> 
+  <meta property="sm:channel" content="club-mid"> 
+  <link rel="shortcut icon" type="image/x-icon" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/favicon.ico"> 
+  <link rel="apple-touch-icon" sizes="57x57" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/apple-icon-57x57.png"> 
+  <link rel="apple-touch-icon" sizes="72x72" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/apple-icon-72x72.png"> 
+  <link rel="apple-touch-icon" sizes="114x114" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/apple-icon-114x114.png"> 
+  <link rel="apple-touch-icon" sizes="144x144" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/apple-icon-144x144.png"> 
+  <link rel="alternate" type="application/rss+xml" title="Scary Mommy Feed" href="http://www.scarymommy.com/feed/"> 
+  <!-- Google Analytics --> 
+  <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-3933552-3', 'auto');
+		ga('send', 'pageview', {"dimension1":"Club Mid"});
+		function _gaLt(event) {
+
+			/* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
+			if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
+				return;
+			}
+
+			var el = event.srcElement || event.target;
+
+			/* Loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */
+			while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
+				el = el.parentNode;
+			}
+
+			/* if a link with valid href has been clicked */
+			if (el && el.href) {
+
+				var link = el.href;
+
+				/* Only if it is an external link */
+				if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) {
+
+					/* Is actual target set and not _(self|parent|top)? */
+					var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
+
+					/* Assume a target if Ctrl|shift|meta-click */
+					if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
+						target = "_blank";
+					}
+
+					var hbrun = false; // tracker has not yet run
+
+					/* HitCallback to open link in same window after tracker */
+					var hitBack = function() {
+						/* run once only */
+						if (hbrun) return;
+						hbrun = true;
+						window.location.href = link;
+					};
+
+					if (target) { /* If target opens a new window then just track */
+						ga(
+								'send',
+								'event',
+								'Outgoing Links',
+								link,
+								document.location.pathname + document.location.search
+						  );
+					} else { /* Prevent standard click, track then open */
+						event.preventDefault ? event.preventDefault() : event.returnValue = !1;
+						/* send event with callback */
+						ga(
+								'send',
+								'event',
+								'Outgoing Links',
+								link,
+								document.location.pathname + document.location.search,
+								{
+									'transport': 'beacon',
+									'hitCallback': hitBack
+								}
+						  );
+
+						/* Run hitCallback again if GA takes longer than 1 second */
+						setTimeout(hitBack, 1000);
+					}
+				}
+			}
+		}
+
+		var _w = window;
+		/* Use "click" if touchscreen device, else "mousedown" */
+		var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
+		/* Attach the event to all clicks in the document after page has loaded */
+		_w.addEventListener ? _w.addEventListener("load", function() {document.body.addEventListener(_gaLtEvt, _gaLt, !1)}, !1)
+		: _w.attachEvent && _w.attachEvent("onload", function() {document.body.attachEvent("on" + _gaLtEvt, _gaLt)});
+
+	</script> 
+  <!-- Chartbeat --> 
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script> 
+  <!-- Facebook Pixel Code --> 
+  <script>
+			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+				n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+				document,'script','https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1591257511129669');
+			fbq('track', "PageView");
+		</script> 
+  <noscript> &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1591257511129669&amp;amp;ev=PageView&amp;amp;noscript=1"&gt; 
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+  <!-- Begin comScore Tag --> 
+  <script>
+			var _comscore = _comscore || [];
+			_comscore.push({ c1: "2", c2: "6036161" });
+			(function() {
+				var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			})();
+		</script> 
+  <noscript> &lt;img src="//b.scorecardresearch.com/p?c1=2&amp;amp;c2=6036161&amp;amp;cv=2.0&amp;amp;cj=1"&gt; 
+  </noscript> 
+  <!-- End comScore Tag --> 
+  <title>Meeting and Keeping Friends in Your 40s – Scary Mommy</title> 
+  <link rel="dns-prefetch" href="//s.ntv.io"> 
+  <link rel="dns-prefetch" href="//s0.wp.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="Scary Mommy » Meeting and Keeping Friends in Your 40s Comments Feed" href="http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/feed/"> 
+  <link rel="stylesheet" id="print-css-0" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/css/print.css?m=1483745531g" type="text/css" media="print"> 
+  <link rel="stylesheet" id="all-css-0" href="http://www.scarymommy.com/wp-content/themes/scary-mommy/inc/confessions/assets/css/scary-mommy-confessions.css?m=1485564988g" type="text/css" media="all"> 
+  <link rel="stylesheet" id="scary-mommy-video-fonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400i%2C600%2C600i%2C700%2C700i%2C800%2C800i%7CPT+Serif%3A400%2C400i%2C700%2C700i&amp;ver=4.8.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="all-css-2" href="http://www.scarymommy.com/_static/??-eJytjr0OgzAQg1+Iy4WBqAxVnwWFUwnNn7gDxNsTCluHLizWJ8u2jGsGm6JQFJSBAjFygMX1lLBjJmG0XDzZPKlCFf4vLBT7NCF7Zz9QK6P0yafeswLf1s9WmCH7+e0i40iSuxI/7l98xF/hWTfa6LZ5tGYHxhBb+w==" type="text/css" media="all"> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var sm_framework_data = {"ajax_url":"https:\/\/www.scarymommy.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.scarymommy.com/_static/??-eJyVjkEOwjAMBD9EmnIIogfEW6LELU5wArbbqr8nSPSKVMnSXmZ2bdeXwRKecwSxqd17Bt5+0SU52X+AIZzYK3SEZYdDLQpFrT6AmiLBf7lKtFkvAip2gRIr7xuiGPJmMuqxlvaLkBnZE6yV81HRxwVYUbBMTb3T7ex6d3XDcOnTBzCUZ7c="></script> 
+  <script type="text/javascript" src="//s.ntv.io/serve/load.js?ver=4.8.2"></script> 
+  <!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.scarymommy.comhttps//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js?ver=3.7.2'></script>
+<![endif]--> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var sm_confessions_data = {"ajax_url":"https:\/\/www.scarymommy.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var smvideo_load_more = {"single":"78559","base":"https:\/\/www.scarymommy.com\/wp-json\/"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://www.scarymommy.com/_static/??-eJyVkM0OAiEMhF9I6GL8iQfjoxgCXQWBKsXVfXvRvayJB7w0bWbmS6bwuApDqWAqUM4YkYGNzqOIFOMILhmoco/MjhKDZsbC4L9cYuaQnhfwgxnF4CzSDJD04E661FBjZsBkKQMHZy5CyY3spn2aMro/Qf52x1qBTaYQCvXuiVa0U2qFz91uD6TtMVLG9oi2748e4l6tu9V2qdSu8y8PMKHy"></script> 
+  <link rel="https://api.w.org/" href="https://www.scarymommy.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.scarymommy.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.scarymommy.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8.2"> 
+  <link rel="canonical" href="http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/"> 
+  <link rel="shortlink" href="http://www.scarymommy.com/?p=78559"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.scarymommy.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.scarymommy.com%2Fmeeting-and-keeping-friends-in-your-40s%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.scarymommy.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.scarymommy.com%2Fmeeting-and-keeping-friends-in-your-40s%2F&amp;format=xml"> 
+  <link rel="dns-prefetch" href="//v0.wordpress.com"> 
+  <style type="text/css">img#wpstats{display:none}</style> 
+  <meta property="fb:pages" content="295199098300"> 
+  <!-- Jetpack Open Graph Tags --> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Meeting and Keeping Friends in Your 40s"> 
+  <meta property="og:url" content="http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/"> 
+  <meta property="og:description" content="©Veer Remember the days when your friends were the center of your universe? Well, thanks to the chaos of work, family, kids, aging parents and grocery shopping, those days are long gone. But the im…"> 
+  <meta property="article:published_time" content="2015-04-25T00:37:18+00:00"> 
+  <meta property="article:modified_time" content="2015-12-26T05:56:24+00:00"> 
+  <meta property="article:publisher" content="https://www.facebook.com/thescarymommy/"> 
+  <meta property="og:site_name" content="Scary Mommy"> 
+  <meta property="og:image" content="/wp-content/uploads/2015/04/meeting-and-keeping-friends-in-your-40s-0.jpg"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta name="twitter:card" content="summary"> 
+  <style type="text/css" id="wp-custom-css">
+			.article-content iframe {
+max-width: 100%;
+}
+@media( max-width: 599px ) {
+.article-content .wp-caption{
+max-width: 300px;
+}
+.article-content .wp-caption img {
+width: 100%;
+height: auto;
+}
+ .single .primary-content{
+max-width: 100%;
+}
+}
+
+.aligncenter{
+margin-left: auto;
+margin-right: auto;
+}
+
+.article-content img{
+max-width: 100%;
+height: auto;
+}
+
+.article-content a img.aligncenter{
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}		</style> 
+ </head> 
+ <body class="post-template-default single single-post postid-78559 single-format-standard hide-follow-buttons single-club-mid placeholder-for-js"> 
+  <script type="text/javascript">
+			if ( document.referrer.match( /facebook/ ) ) {
+				document.body.className = document.body.className.replace( 'placeholder-for-js', 'from-external-source' );
+			}
+
+		</script> 
+  <script type="text/javascript">
+		var _cache_buster = Math.random() * 1000000000;
+		var adPageUrl = window.location.toString();
+	</script> 
+  <div id="fb-root"></div> 
+  <script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script> 
+  <script type="text/javascript">
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+		(function() {
+			var gads = document.createElement('script');
+			gads.async = false;
+			gads.type = 'text/javascript';
+			var useSSL = 'https:' == document.location.protocol;
+			gads.src = (useSSL ? 'https:' : 'http:') +
+								'//www.googletagservices.com/tag/js/gpt.js';
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+		})();
+	</script> 
+  <script async src="//js-sec.indexww.com/ht/p/184235-276380974730573.js"></script> 
+  <script>
+	var adUnits = [{"code":"/32950521/SM_leaderboard","sizes":[[970,250],[320,50],[970,90],[728,90],[970,400]],"bids":[{"bidder":"yieldbot","params":{"psn":{"mobile":"MWr2","desktop":"gmwz"},"slot":{"mobile":"MLB","desktop":"leaderboard"}}},{"bidder":"openx","params":{"unit":"538576973","delDomain":"spider-d.openx.net"}},{"bidder":"amazon","sizes":[[728,90],[970,250]],"params":[]},{"bidder":"appnexus","params":{"placementId":"10264179"}},{"bidder":"criteo","params":{"zoneId":"716855"}}]},{"code":"/32950521/SM_leaderboard_mobile","sizes":[[320,50],[320,300]],"bids":[{"bidder":"openx","params":{"unit":"538576990","delDomain":"spider-d.openx.net"}},{"bidder":"amazon","sizes":[[320,50]],"params":[]},{"bidder":"sovrn","params":{"tagid":{"mobile":"410304","desktop":"405942"}}},{"bidder":"appnexus","params":{"placementId":"10264190"}}]},{"code":"/32950521/SM_320x50_sticky","sizes":[[320,50],[320,100]],"bids":[{"bidder":"yieldbot","params":{"psn":{"mobile":"MWr2"},"slot":"mobile_LB_ADH"}},{"bidder":"openx","params":{"unit":"538576999","delDomain":"spider-d.openx.net"}},{"bidder":"amazon","sizes":[[320,50]],"params":[]},{"bidder":"sovrn","params":{"tagid":{"mobile":"410304","desktop":"405942"}}},{"bidder":"appnexus","params":{"placementId":"10264190"}}]},{"code":"/32950521/SM_300x600","sizes":[[300,600]],"bids":[{"bidder":"yieldbot","enabled":"desktop","params":{"psn":"gmwz","slot":"sb"}},{"bidder":"openx","enabled":"desktop","params":{"unit":"538576974","delDomain":"spider-d.openx.net"}},{"bidder":"amazon","enabled":"desktop","sizes":[[300,600]],"params":[]},{"bidder":"sovrn","params":{"tagid":"405941"}},{"bidder":"appnexus","params":{"placementId":"10264187"}},{"bidder":"criteo","params":{"zoneId":"716853"}}]},{"code":"/32950521/SM_300x250","sizes":[300,250],"bids":[{"bidder":"openx","params":{"unit":"538576972","delDomain":"spider-d.openx.net"}},{"bidder":"sovrn","params":{"tagid":"405935"}},{"bidder":"appnexus","params":{"placementId":"10264193"}}]},{"code":"/32950521/SM_SKIN_2x2","sizes":[[2,2],[1,1]],"bids":[]},{"code":"/32950521/SM_leaderboard_1","sizes":[[728,90],[970,250],[320,50],[970,90]],"bids":[]}];
+	var pbjs = { que: [] };
+	var isMobile = window.matchMedia('(max-width: 721px)').matches;
+</script> 
+  <script src="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/js/header-bidding.js?ver=0111" async="true"></script> 
+  <script src="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/js/pb-6.js?v=06.14.17" async="true"></script> 
+  <script type="text/javascript">
+document.onreadystatechange = function () {
+	if (document.readyState == "complete") {
+		pbjs.que.push(function() {
+			pbjs.enableAnalytics({
+				provider: 'ga',
+				options: {
+					global: 'ga', // <string> name of GA global. Default is 'ga'
+					enableDistribution: false,
+				}
+			});
+		});
+	}
+}
+</script> 
+  <script type="text/javascript">
+
+		if ( document.referrer.indexOf(document.location.hostname) == -1 || getCookie("freqPageCap") == '2' ) {
+			document.cookie = 'freqPageCap=1';
+		} else {
+			document.cookie = 'freqPageCap=2';
+		}
+
+		googletag.cmd.push(function() {
+
+			var leaderboard_mapping = googletag.sizeMapping().
+	addSize([0,0], [320,50]).
+	addSize([768,200], [728,90]).
+	addSize([1050,200], [[970,250],[728,90],[970,90],[970,400]]).
+	build();
+
+var leaderboard_mobile_mapping = googletag.sizeMapping().
+	addSize([0,0], [320,50]).
+	addSize([768,200], []).
+	addSize([1050,200], []).
+	build();
+
+var mobile_sticky_strip_mapping = googletag.sizeMapping().
+	addSize([320,50], [[320,50],[320,100]]).
+	build();
+
+var sidebar_mapping = googletag.sizeMapping().
+	addSize([0,0], []).
+	addSize([768,200], []).
+	addSize([1050,200], [[300,600]]).
+	build();
+
+var sidebar_home_mapping = googletag.sizeMapping().
+	addSize([0,0], [300,250]).
+	build();
+
+var skintag_mapping = googletag.sizeMapping().
+	addSize([2,2], [1,1]).
+	build();
+
+var inline_leaderboard_mapping = googletag.sizeMapping().
+	addSize([0,0], [320,50]).
+	addSize([768,200], [728,90]).
+	addSize([1050,200], [[728,90],[970,250],[970,90]]).
+	build();
+
+googletag.defineSlot('/32950521/SM_leaderboard', [[970,250],[320,50],[970,90],[728,90],[970,400]], 'div-gpt-ad-1469548596955-0').defineSizeMapping(leaderboard_mapping).setTargeting('pos', [1]).addService(googletag.pubads());
+googletag.defineSlot('/32950521/SM_300x250', [300,250], 'div-gpt-ad-1469548596955-5').defineSizeMapping(sidebar_home_mapping).addService(googletag.pubads());
+googletag.defineSlot('/32950521/SM_SKIN_2x2', [[2,2],[1,1]], 'div-gpt-ad-1469548596955-12').defineSizeMapping(skintag_mapping).addService(googletag.pubads());
+googletag.defineSlot('/32950521/SM_leaderboard_1', [[728,90],[970,250],[320,50],[970,90]], 'div-gpt-ad-1492204591432-17').defineSizeMapping(inline_leaderboard_mapping).addService(googletag.pubads());
+if (window.matchMedia('(max-width: 727px)').matches) {
+googletag.defineSlot('/32950521/SM_leaderboard_mobile', [[320,50],[320,300]], 'div-gpt-ad-1469548596955-20').defineSizeMapping(leaderboard_mobile_mapping).addService(googletag.pubads());
+googletag.defineSlot('/32950521/SM_320x50_sticky', [[320,50],[320,100]], 'div-gpt-ad-1469548596955-4').defineSizeMapping(mobile_sticky_strip_mapping).setTargeting('ybot', ["mobile_LB_HI:320x100:500"]).addService(googletag.pubads());
+}
+if (window.matchMedia('(min-width: 728px)').matches) {
+googletag.defineSlot('/32950521/SM_300x600', [[300,600]], 'div-gpt-ad-1469548596955-1').defineSizeMapping(sidebar_mapping).addService(googletag.pubads());
+}
+
+			googletag.pubads().setTargeting('post_id', '78559');
+googletag.pubads().setTargeting('cat', 'club-mid');
+
+
+			
+				if ( document.referrer.indexOf(document.location.hostname) == -1 ) {
+					googletag.pubads().setTargeting( 'adUnitPageCap', '1' );
+				} else {
+					googletag.pubads().setTargeting( 'adUnitPageCap', '2' );
+				}
+
+			
+							googletag.pubads().setTargeting( 'level', 'article' );
+			
+			googletag.pubads().set( 'page_url', adPageUrl );
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().collapseEmptyDivs();
+
+			googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+
+				// reposition sidebar after header ad is loaded to accomodate 50px & 250px heights
+				if ( jQuery('.article-inner').length ) {
+					jQuery('.sidebar-container').css({
+						top: jQuery('.article-inner').position().top,
+						opacity: 1
+					});
+				}
+
+				if ( event.isEmpty == true ) {
+					slotContainer.setAttribute("style","width:1px; height:1px; display:none;");
+				}
+
+				jQuery( window ).trigger( 'adRenderEnded', [event.slot.B] );
+				setAdDimensions();
+
+			});
+
+			googletag.pubads().addEventListener('impressionViewable', function(event) {
+				setAdDimensions();
+			});
+
+			var origDisplay = googletag.display;
+			googletag.display = function (slotId) {
+				window.pbjs.smAuctionReady.push(function () {
+					origDisplay.call(googletag, slotId);
+				});
+			};
+		    window.pbjs.que.push(function () {
+				window.pbjs.smInitAuction();
+		    });
+
+					});
+	</script> 
+  <center> 
+   <div class="desktop-only"> 
+    <div id="" class="leaderboard-ad desktop-leaderboard">
+     <!-- /32950521/SM_leaderboard -->
+     <div id="div-gpt-ad-1469548596955-0">
+      <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1469548596955-0"); });</script>
+     </div>
+    </div> 
+   </div> 
+   <div class="mobile-only"> 
+    <div id="" class="leaderboard-ad mobile-leaderboard">
+     <!-- /32950521/SM_leaderboard_mobile -->
+     <div id="div-gpt-ad-1469548596955-20">
+      <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1469548596955-20"); });</script>
+     </div>
+    </div> 
+   </div> 
+  </center> 
+  <div class="page-wrapper"> 
+   <header class="site-header"> 
+    <div class="main-header "> 
+     <div class="inner-header flex-container flex-between"> 
+      <div class="desktop-flex"> 
+       <div class="site-search icon-search icon"> 
+        <a href="/search/" id="gogo-gadget-search" class="toggle-search"><span>Search</span></a> 
+       </div> 
+       <div class="header-social desktop-only"> 
+        <ul class="social horizontal-list flex-container flex-center"> 
+         <li><a href="https://www.facebook.com/thescarymommy" class="icon facebook-icon">Facebook</a></li> 
+         <li><a href="https://www.instagram.com/scarymommy/" class="icon instagram-icon">Twitter</a></li> 
+         <li><a href="https://www.snapchat.com/add/thescarymommy" class="icon snapchat-icon">Snapchat</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="logo icon"> 
+       <a href="http://www.scarymommy.com/"><span>Scary Mommy</span></a> 
+      </div> 
+      <div class="icon fixed-hamburger"> 
+       <a href="#" id="gogo-gadget-nav" class="toggle-navigation"><span>Toggle Navigation</span></a> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="big-screen-only desktop-navigation-toolbar"> 
+     <nav class="primary-navigation" role="navigation"> 
+      <div class="menu-primary-navigation-bar-container">
+       <ul id="menu-primary-navigation-bar" class="main-menu desktop-flex">
+        <li class="menu-item-has-children menu-item-142690"><a>About</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-142691"><a href="http://www.scarymommy.com/about-scary-mommy/">About Scary Mommy</a></li> 
+          <li class="menu-item-99638"><a href="/advertise-with-us/">Advertise With Us</a></li> 
+          <li class="menu-item-120753"><a href="http://www.scarymommy.com/write-for-scary-mommy/">Write For Us</a></li> 
+          <li class="menu-item-148020"><a href="http://www.scarymommy.com/submit-a-video/">Submit a Video</a></li> 
+          <li class="menu-item-102264"><a href="http://www.scarymommy.com/privacy-policy-2/">Privacy Policy &nbsp;</a></li> 
+          <li class="menu-item-102265"><a href="http://www.scarymommy.com/terms-and-conditions/">Terms and Conditions</a></li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-37343"><a>Pregnancy</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-59529"><a href="/category/pregnancy">101</a></li> 
+          <li class="menu-item-37303"><a href="/category/infertility/">Infertility</a></li> 
+          <li class="menu-item-36561"><a href="/category/loss-and-grieving/miscarriage-and-stillbirth/">Miscarriage</a></li> 
+          <li class="menu-item-36668"><a href="/category/labor-delivery/">Labor &amp; Delivery</a></li> 
+          <li class="menu-item-36564"><a href="/category/PPD/">Postpartum</a></li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-36669"><a>Kids</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-36566"><a href="/category/Babies">Babies</a></li> 
+          <li class="menu-item-36546"><a href="/category/surviving-the-toddler-years/">Toddlers</a></li> 
+          <li class="menu-item-36545"><a href="/category/pre-schoolers">Pre-Schoolers</a></li> 
+          <li class="menu-item-36547"><a href="/category/Elementary-Years/">Elementary Aged</a></li> 
+          <li class="menu-item-232001"><a href="http://www.scarymommy.com/category/special-needs/">Special Needs</a></li> 
+          <li class="menu-item-36548"><a href="/category/tweens/">Tweens</a></li> 
+          <li class="menu-item-36549"><a href="/category/teens/">Teens</a></li> 
+          <li class="menu-item-88531"><a href="http://www.scarymommy.com/category/sm2/empty-nest/">College/Empty Nest</a></li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-189688"><a>Living</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-160735"><a href="http://www.scarymommy.com/category/living/relationships/friendship/">Friendship</a></li> 
+          <li class="menu-item-160329"><a href="http://www.scarymommy.com/category/living/relationships/love-and-marriage/">Love and Marriage</a></li> 
+          <li class="menu-item-189838"><a href="http://www.scarymommy.com/category/living/health-wellness/">Health &amp; Wellness</a></li> 
+          <li class="menu-item-60591"><a href="/category/body-image/">Body Image</a></li> 
+          <li class="menu-item-236920"><a href="http://www.scarymommy.com/category/living/vacation-travel/">Travel</a></li> 
+          <li class="menu-item-has-children menu-item-189808"><a>Seasonal</a> 
+           <ul class="sub-menu"> 
+            <li class="menu-item-189810"><a href="http://www.scarymommy.com/category/back-to-school/">Back To School</a></li> 
+            <li class="menu-item-189809"><a href="http://www.scarymommy.com/category/halloween/">Halloween</a></li> 
+            <li class="menu-item-189814"><a href="http://www.scarymommy.com/category/holiday-season/">Winter Holidays</a></li> 
+            <li class="menu-item-189816"><a href="http://www.scarymommy.com/category/valentines/">Valentine’s Day</a></li> 
+            <li class="menu-item-189815"><a href="http://www.scarymommy.com/category/mothers-day/">Mother’s Day</a></li> 
+            <li class="menu-item-189811"><a href="http://www.scarymommy.com/category/summer-break/">Summer Break</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-189681"><a>News</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-142546"><a href="http://www.scarymommy.com/category/news/">Parenting News</a></li> 
+          <li class="menu-item-142545"><a href="http://www.scarymommy.com/category/trending/">What’s Trending</a></li> 
+          <li class="menu-item-166939"><a href="http://www.scarymommy.com/category/wtf-america/">Social Issues</a></li> 
+         </ul> </li> 
+        <li class="menu-item-236862"><a href="http://www.scarymommy.com/category/dad-perspective/">Dads</a></li> 
+        <li class="menu-item-128348"><a href="http://www.scarymommy.com/category/original-video/">Video</a></li> 
+        <li class="menu-item-189691"><a href="http://www.scarymommy.com/confessions/">Confessional</a></li> 
+       </ul>
+      </div> 
+     </nav> 
+    </div> 
+    <div class="navigation-toolbar"> 
+     <a href="#" class="nav-close" id="navClose"><img src="http://www.scarymommy.com/wp-content/themes/sm-video/assets/images/close.png"></a> 
+     <span class="crown"></span> 
+     <nav class="primary-navigation" role="navigation"> 
+      <div class="menu-primary-navigation-bar-container">
+       <ul id="menu-primary-navigation-bar-1" class="main-menu">
+        <li class="menu-item-has-children menu-item-142690"><a>About</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-142691"><a href="http://www.scarymommy.com/about-scary-mommy/">About Scary Mommy</a></li> 
+          <li class="menu-item-99638"><a href="/advertise-with-us/">Advertise With Us</a></li> 
+          <li class="menu-item-120753"><a href="http://www.scarymommy.com/write-for-scary-mommy/">Write For Us</a></li> 
+          <li class="menu-item-148020"><a href="http://www.scarymommy.com/submit-a-video/">Submit a Video</a></li> 
+          <li class="menu-item-102264"><a href="http://www.scarymommy.com/privacy-policy-2/">Privacy Policy &nbsp;</a></li> 
+          <li class="menu-item-102265"><a href="http://www.scarymommy.com/terms-and-conditions/">Terms and Conditions</a></li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-37343"><a>Pregnancy</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-59529"><a href="/category/pregnancy">101</a></li> 
+          <li class="menu-item-37303"><a href="/category/infertility/">Infertility</a></li> 
+          <li class="menu-item-36561"><a href="/category/loss-and-grieving/miscarriage-and-stillbirth/">Miscarriage</a></li> 
+          <li class="menu-item-36668"><a href="/category/labor-delivery/">Labor &amp; Delivery</a></li> 
+          <li class="menu-item-36564"><a href="/category/PPD/">Postpartum</a></li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-36669"><a>Kids</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-36566"><a href="/category/Babies">Babies</a></li> 
+          <li class="menu-item-36546"><a href="/category/surviving-the-toddler-years/">Toddlers</a></li> 
+          <li class="menu-item-36545"><a href="/category/pre-schoolers">Pre-Schoolers</a></li> 
+          <li class="menu-item-36547"><a href="/category/Elementary-Years/">Elementary Aged</a></li> 
+          <li class="menu-item-232001"><a href="http://www.scarymommy.com/category/special-needs/">Special Needs</a></li> 
+          <li class="menu-item-36548"><a href="/category/tweens/">Tweens</a></li> 
+          <li class="menu-item-36549"><a href="/category/teens/">Teens</a></li> 
+          <li class="menu-item-88531"><a href="http://www.scarymommy.com/category/sm2/empty-nest/">College/Empty Nest</a></li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-189688"><a>Living</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-160735"><a href="http://www.scarymommy.com/category/living/relationships/friendship/">Friendship</a></li> 
+          <li class="menu-item-160329"><a href="http://www.scarymommy.com/category/living/relationships/love-and-marriage/">Love and Marriage</a></li> 
+          <li class="menu-item-189838"><a href="http://www.scarymommy.com/category/living/health-wellness/">Health &amp; Wellness</a></li> 
+          <li class="menu-item-60591"><a href="/category/body-image/">Body Image</a></li> 
+          <li class="menu-item-236920"><a href="http://www.scarymommy.com/category/living/vacation-travel/">Travel</a></li> 
+          <li class="menu-item-has-children menu-item-189808"><a>Seasonal</a> 
+           <ul class="sub-menu"> 
+            <li class="menu-item-189810"><a href="http://www.scarymommy.com/category/back-to-school/">Back To School</a></li> 
+            <li class="menu-item-189809"><a href="http://www.scarymommy.com/category/halloween/">Halloween</a></li> 
+            <li class="menu-item-189814"><a href="http://www.scarymommy.com/category/holiday-season/">Winter Holidays</a></li> 
+            <li class="menu-item-189816"><a href="http://www.scarymommy.com/category/valentines/">Valentine’s Day</a></li> 
+            <li class="menu-item-189815"><a href="http://www.scarymommy.com/category/mothers-day/">Mother’s Day</a></li> 
+            <li class="menu-item-189811"><a href="http://www.scarymommy.com/category/summer-break/">Summer Break</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class="menu-item-has-children menu-item-189681"><a>News</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item-142546"><a href="http://www.scarymommy.com/category/news/">Parenting News</a></li> 
+          <li class="menu-item-142545"><a href="http://www.scarymommy.com/category/trending/">What’s Trending</a></li> 
+          <li class="menu-item-166939"><a href="http://www.scarymommy.com/category/wtf-america/">Social Issues</a></li> 
+         </ul> </li> 
+        <li class="menu-item-236862"><a href="http://www.scarymommy.com/category/dad-perspective/">Dads</a></li> 
+        <li class="menu-item-128348"><a href="http://www.scarymommy.com/category/original-video/">Video</a></li> 
+        <li class="menu-item-189691"><a href="http://www.scarymommy.com/confessions/">Confessional</a></li> 
+       </ul>
+      </div> 
+     </nav> 
+     <div class="nav-footer"> 
+      <h3>Follow Us On</h3> 
+      <ul class="social horizontal-list flex-container flex-center"> 
+       <li class="icon"><a href="https://www.facebook.com/thescarymommy" class="facebook-icon icon"><span>Facebook</span></a></li> 
+       <li class="icon"><a href="https://www.snapchat.com/add/thescarymommy" class="snapchat-icon icon"><span>Snapchat</span></a></li> 
+       <li class="icon"><a href="https://twitter.com/scarymommy" class="twitter-icon icon"><span>Instagram</span></a></li> 
+       <li class="icon"><a href="https://www.instagram.com/scarymommy/" class="instagram-icon icon"><span>Instagram</span></a></li> 
+      </ul> 
+      <ul class="additional-nav horizontal-list barred flex-container flex-center"> 
+       <li><a href="/advertise-with-us/">Advertise With Us</a></li> 
+       <li><a href="/about-scary-mommy/">About Us</a></li> 
+       <li><a href="/privacy-policy-2/">Privacy</a></li> 
+       <li><a href="/terms-and-conditions/">User Terms</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="header-site-search search-box-container"> 
+     <div class="flex-container flex-between"> 
+      <form method="GET" action="/" class="search-form "> 
+       <input name="s" class="searchInputBox" placeholder="Search" data-role="search" type="text" id="searchField"> 
+       <input type="submit" value="search" class="button--search search-submit"> 
+      </form> 
+      <a href="#" class="button--close" id="close-search">×</a> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="content-container flex-between flex-container with-sidebar-wrapper"> 
+    <main class="primary-content"> 
+     <article class="story-card--article full-page post-78559 post type-post status-publish format-standard has-post-thumbnail hentry category-club-mid first-article" data-article-href="http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/" data-postid="78559"> 
+      <header class="article-header"> 
+       <p class="article-categories"> <span class="article-category-primary article-category-club-mid"> <a href="http://www.scarymommy.com/category/club-mid/"> Club Mid </a> </span> </p> 
+       <h1>Meeting and Keeping Friends in Your 40s</h1> 
+       <div class="article-header-author-info article-byline flex-container flex-center"> 
+        <span class="author-name"><a href="http://www.scarymommy.com/author/emma-waverman/" title="Posts by Emma Waverman" class="author url fn" rel="author">Emma Waverman</a></span> 
+       </div> 
+       <div class="article-header-sharing has-add-this desktop-only"> 
+        <ul class="flex-container flex-center"> 
+         <li class="facebook flex-container flex-center"> <a id="fbshare-desktop-head" class="button--facebook button--circular" data-segment="social_share,facebook,article_header_mobile">
+           <svg class="icon icon-fill icon-facebook" width="7.51" height="16.3" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewbox="-1846.275 1140.135 7.515 16.302">
+            <path fill="#fff" data-name="Path 1103" d="M14.254 6.676h-1.822a.689.689 0 0 0-.724.774v1.7h2.522l-.275 2.871h-2.222v8.164h-3.4v-8.166H6.74V9.148h1.6V7.275a3.153 3.153 0 0 1 3.4-3.4h2.5v2.8z" transform="translate(-1853.015 1136.255)" />
+           </svg></a> </li> 
+         <li class="twitter flex-container flex-center"> <a id="twshare-desktop-head" class="button--twitter button--circular" data-segment="social_share,facebook,article_foot_mobile" href="https://twitter.com/share?url=http%3A%2F%2Fwww.scarymommy.com%2Fmeeting-and-keeping-friends-in-your-40s%2F&amp;text=Meeting%20and%20Keeping%20Friends%20in%20Your%2040s">
+           <svg class="icon icon-fill icon-twitter" width="17.07" fill="#fff" height="13.92" xmlns="http://www.w3.org/2000/svg" viewbox="-1790.902 1141.438 17.066 13.918">
+            <path data-name="Path 1104" fill="#fff" d="M368.569 9.532v.441a9.985 9.985 0 0 1-15.389 8.415 7.751 7.751 0 0 0 .824.059 6.969 6.969 0 0 0 4.355-1.5 3.586 3.586 0 0 1-3.3-2.442 4.813 4.813 0 0 0 .647.059 3.1 3.1 0 0 0 .912-.118A3.5 3.5 0 0 1 353.8 11v-.059a3.666 3.666 0 0 0 1.589.441 3.492 3.492 0 0 1-1.56-2.913 3.6 3.6 0 0 1 .471-1.765 10.021 10.021 0 0 0 7.238 3.678 3.657 3.657 0 0 1-.088-.794 3.518 3.518 0 0 1 6.091-2.413 6.654 6.654 0 0 0 2.236-.853 3.523 3.523 0 0 1-1.56 1.942 6.941 6.941 0 0 0 2.03-.559 6.186 6.186 0 0 1-1.678 1.827z" transform="translate(-2144.082 1135.378)" />
+           </svg></a> </li> 
+        </ul> 
+       </div> 
+       <script type="text/javascript">
+	document.getElementById( 'fbshare-desktop-head' ).onclick = function() {
+	FB.ui({
+			method: 'share',
+			display: 'popup',
+			href: 'http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/?utm_source=FBOnsite',
+		}, function( response ){} );
+	}
+</script> 
+      </header> 
+      <div class="article-inner"> 
+       <div class="article-image article-image-missing"> 
+        <div class="article-header-sharing has-add-this mobile-only"> 
+         <ul class="flex-container flex-center"> 
+          <li class="facebook flex-container flex-center"> <a id="fbshare-mobile-head" class="button--facebook button--circular" data-segment="social_share,facebook,article_header_mobile">
+            <svg class="icon icon-fill icon-facebook" width="7.51" height="16.3" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewbox="-1846.275 1140.135 7.515 16.302">
+             <path fill="#fff" data-name="Path 1103" d="M14.254 6.676h-1.822a.689.689 0 0 0-.724.774v1.7h2.522l-.275 2.871h-2.222v8.164h-3.4v-8.166H6.74V9.148h1.6V7.275a3.153 3.153 0 0 1 3.4-3.4h2.5v2.8z" transform="translate(-1853.015 1136.255)" />
+            </svg></a> </li> 
+          <li class="twitter flex-container flex-center"> <a id="twshare-desktop-head" class="button--twitter button--circular" data-segment="social_share,facebook,article_foot_mobile" href="https://twitter.com/share?url=http%3A%2F%2Fwww.scarymommy.com%2Fmeeting-and-keeping-friends-in-your-40s%2F&amp;text=Meeting%20and%20Keeping%20Friends%20in%20Your%2040s">
+            <svg class="icon icon-fill icon-twitter" width="17.07" fill="#fff" height="13.92" xmlns="http://www.w3.org/2000/svg" viewbox="-1790.902 1141.438 17.066 13.918">
+             <path data-name="Path 1104" fill="#fff" d="M368.569 9.532v.441a9.985 9.985 0 0 1-15.389 8.415 7.751 7.751 0 0 0 .824.059 6.969 6.969 0 0 0 4.355-1.5 3.586 3.586 0 0 1-3.3-2.442 4.813 4.813 0 0 0 .647.059 3.1 3.1 0 0 0 .912-.118A3.5 3.5 0 0 1 353.8 11v-.059a3.666 3.666 0 0 0 1.589.441 3.492 3.492 0 0 1-1.56-2.913 3.6 3.6 0 0 1 .471-1.765 10.021 10.021 0 0 0 7.238 3.678 3.657 3.657 0 0 1-.088-.794 3.518 3.518 0 0 1 6.091-2.413 6.654 6.654 0 0 0 2.236-.853 3.523 3.523 0 0 1-1.56 1.942 6.941 6.941 0 0 0 2.03-.559 6.186 6.186 0 0 1-1.678 1.827z" transform="translate(-2144.082 1135.378)" />
+            </svg></a> </li> 
+         </ul> 
+        </div> 
+        <script type="text/javascript">
+	document.getElementById( 'fbshare-mobile-head' ).onclick = function() {
+	FB.ui({
+			method: 'share',
+			display: 'popup',
+			href: 'http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/?utm_source=FBOnsite',
+		}, function( response ){} );
+	}
+</script> 
+        <img width="700" height="400" src="http://www.scarymommy.com/wp-content/uploads/2015/04/meeting-and-keeping-friends-in-your-40s-featured.jpg?w=700" class="attachment-700x400 size-700x400 wp-post-image" alt=""> 
+        <p class="article-image-caption"> </p> 
+       </div> 
+       <div class="article-content"> 
+        <p>Remember the days when your friends were the center of your universe?</p> 
+        <p>Well, thanks to the chaos of work, family, kids, aging parents and grocery shopping, those days are long gone. But the importance of friendship remains the same. Who else can you call in a panic because you don’t have the right shoes to wear to a funeral? Who else will you cry to when one of your children tells you they hate you? Who else will send you condolences when your favorite celebrity from the ’80s dies?</p> 
+        <p>But having friends and being a good friend is different in our 40s than it was when we were younger. As our kids mature, our relationships do too. We need less drama and more fortitude, and we have less time, and, perhaps, more angst.</p> 
+        <p>So here’s my guide to making and keeping friends in your 40s.</p> 
+        <p><strong>Avoid the perfect moms:</strong> The one mom who has it all together: She dresses like a model, and her kids eat the healthiest meals and are athletic and academic superstars. She is the one dispensing advice in the schoolyard and has a line of subtle humblebrags about her busy schedule and incredible gluten-free baking. Avoid her at all costs. She is the craziest one out there.</p> 
+        <p><strong>Lower your expectations:</strong> It’s <a href="http://nymag.com/thecut/2015/04/secret-to-staying-friends-in-your-30s.html">Friends Forever week at The Cut</a>, and they have some good suggestions about lowering your expectations of what constitutes a good friend date. Side-by-side grocery shopping isn’t the same as a long leisurely dinner, but when you know that you only have one hour together, you cut to the chase quickly. And it’s still quality time, even when it isn’t quantity.</p> 
+        <p><strong>Let go of some of your baby group friends:</strong> These are the women who got you through those endless first days of motherhood; you spent hours discussing poop colors and the minutiae of sleep deprivation. But now when you see them, you have nothing to say, and that’s okay. They were a great fit when you needed to commiserate, but now your interests have changed—they probably feel the same way about you.</p> 
+        <p><strong>Be honest: </strong>It was much easier to talk about toddler milestones than it is to really express your fears about your kids as they get older. It’s not easy to admit when your teens are difficult to handle, or your tween seems to be heading off the rails. But if you share the difficult and dark days of parenting older kids with your friends, you will be rewarded when you learn that you are not alone.</p> 
+        <p><strong>Be forgiving:</strong> By this time, you’ve probably said and done some mean things, and so have your friends. Don’t focus on the drama and rehash the old wounds. We all have bad days and say hurtful things without realizing it. True friends forgive; the rest can stay in contact on Facebook.</p> 
+        <p><strong>Learn to make one good casserole and one sugary treat:</strong> The 40s are hard years. People get sick, marriages break up, and parents die. A part of being a friend is being that shoulder to cry on, or the one who delivers a delicious ready-to-eat meal when a family is overwhelmed.</p> 
+        <p><strong>Don’t fall for the hipsters:</strong> Yes, they are very cool with their tattoos and fedoras and Instagram-ready lives. But they aren’t your people anymore. If you thought they were just babysitting your child’s friend, then they may be too young for you.</p> 
+        <p><strong>Use the phone:</strong> Don’t just text! We grew up in the time of the landline and chatting on the phone for hours. Guess what? You can still do that! Just dial a number and talk on the phone like it was the old days. Phone conversations are much more satisfying than typo- and emoji-laden text conversations.</p> 
+        <p><strong>Quality over quantity</strong>: Sure it’s great to know everyone in the schoolyard, but it’s not enough. Your closest friends in your 40s are probably the ones who are going to be by your side when your parents get sick, when your kids move out, and when you decide to grow out all your grey. These people matter—choose wisely.</p> 
+        <p><strong>Go dancing:</strong> Pretend you’re young, go dancing, have some shots of Jägermeister. Flirt. All friendships need some good stories—and secrets.</p> 
+        <p><strong>Don’t be afraid to make new friends:</strong> And I don’t mean “friends” on Facebook. It’s never too late to meet your bosom buddy and be friends for life. You never know when a kindred spirit could walk in—it may be at the hockey rink, the coffee shop or an art class. Embrace it. Friends are the color and texture of life…and you need someone who will tell you when you need your roots done.</p> 
+       </div> 
+      </div> 
+      <footer class="article-footer"> 
+       <div class="article-header-sharing has-add-this mobile-only"> 
+        <ul class="flex-container flex-center"> 
+         <li class="facebook flex-container flex-center"> <a id="fbshare-mobile-foot" class="button--facebook button--circular" data-segment="social_share,facebook,article_foot_mobile">
+           <svg class="icon icon-fill icon-facebook" width="7.51" height="16.3" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewbox="-1846.275 1140.135 7.515 16.302">
+            <path fill="#fff" data-name="Path 1103" d="M14.254 6.676h-1.822a.689.689 0 0 0-.724.774v1.7h2.522l-.275 2.871h-2.222v8.164h-3.4v-8.166H6.74V9.148h1.6V7.275a3.153 3.153 0 0 1 3.4-3.4h2.5v2.8z" transform="translate(-1853.015 1136.255)" />
+           </svg></a> </li> 
+         <li class="twitter flex-container flex-center"> <a id="twshare-mobile-foot" class="button--twitter button--circular" data-segment="social_share,twitter,article_foot_mobile" href="https://twitter.com/share?url=http%3A%2F%2Fwww.scarymommy.com%2Fmeeting-and-keeping-friends-in-your-40s%2F&amp;text=Meeting%20and%20Keeping%20Friends%20in%20Your%2040s">
+           <svg class="icon icon-fill icon-twitter" width="17.07" fill="#fff" height="13.92" xmlns="http://www.w3.org/2000/svg" viewbox="-1790.902 1141.438 17.066 13.918">
+            <path data-name="Path 1104" fill="#fff" d="M368.569 9.532v.441a9.985 9.985 0 0 1-15.389 8.415 7.751 7.751 0 0 0 .824.059 6.969 6.969 0 0 0 4.355-1.5 3.586 3.586 0 0 1-3.3-2.442 4.813 4.813 0 0 0 .647.059 3.1 3.1 0 0 0 .912-.118A3.5 3.5 0 0 1 353.8 11v-.059a3.666 3.666 0 0 0 1.589.441 3.492 3.492 0 0 1-1.56-2.913 3.6 3.6 0 0 1 .471-1.765 10.021 10.021 0 0 0 7.238 3.678 3.657 3.657 0 0 1-.088-.794 3.518 3.518 0 0 1 6.091-2.413 6.654 6.654 0 0 0 2.236-.853 3.523 3.523 0 0 1-1.56 1.942 6.941 6.941 0 0 0 2.03-.559 6.186 6.186 0 0 1-1.678 1.827z" transform="translate(-2144.082 1135.378)" />
+           </svg></a> </li> 
+        </ul> 
+       </div> 
+       <script type="text/javascript">
+	document.getElementById( 'fbshare-mobile-foot' ).onclick = function() {
+	FB.ui({
+			method: 'share',
+			display: 'popup',
+			href: 'http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/?utm_source=FBOnsite',
+		}, function( response ){} );
+	}
+</script> 
+       <div class="article-header-sharing has-add-this desktop-only"> 
+        <ul class="flex-container flex-center"> 
+         <li class="facebook flex-container flex-center"> <a id="fbshare-desktop-foot" class="button--facebook button--circular" data-segment="social_share,facebook,article_header_mobile">
+           <svg class="icon icon-fill icon-facebook" width="7.51" height="16.3" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewbox="-1846.275 1140.135 7.515 16.302">
+            <path fill="#fff" data-name="Path 1103" d="M14.254 6.676h-1.822a.689.689 0 0 0-.724.774v1.7h2.522l-.275 2.871h-2.222v8.164h-3.4v-8.166H6.74V9.148h1.6V7.275a3.153 3.153 0 0 1 3.4-3.4h2.5v2.8z" transform="translate(-1853.015 1136.255)" />
+           </svg></a> </li> 
+         <li class="twitter flex-container flex-center"> <a id="twshare-desktop-foot" class="button--twitter button--circular" data-segment="social_share,twitter,article_foot_mobile" href="https://twitter.com/share?url=http%3A%2F%2Fwww.scarymommy.com%2Fmeeting-and-keeping-friends-in-your-40s%2F&amp;text=Meeting%20and%20Keeping%20Friends%20in%20Your%2040s">
+           <svg class="icon icon-fill icon-twitter" width="17.07" fill="#fff" height="13.92" xmlns="http://www.w3.org/2000/svg" viewbox="-1790.902 1141.438 17.066 13.918">
+            <path data-name="Path 1104" fill="#fff" d="M368.569 9.532v.441a9.985 9.985 0 0 1-15.389 8.415 7.751 7.751 0 0 0 .824.059 6.969 6.969 0 0 0 4.355-1.5 3.586 3.586 0 0 1-3.3-2.442 4.813 4.813 0 0 0 .647.059 3.1 3.1 0 0 0 .912-.118A3.5 3.5 0 0 1 353.8 11v-.059a3.666 3.666 0 0 0 1.589.441 3.492 3.492 0 0 1-1.56-2.913 3.6 3.6 0 0 1 .471-1.765 10.021 10.021 0 0 0 7.238 3.678 3.657 3.657 0 0 1-.088-.794 3.518 3.518 0 0 1 6.091-2.413 6.654 6.654 0 0 0 2.236-.853 3.523 3.523 0 0 1-1.56 1.942 6.941 6.941 0 0 0 2.03-.559 6.186 6.186 0 0 1-1.678 1.827z" transform="translate(-2144.082 1135.378)" />
+           </svg></a> </li> 
+        </ul> 
+       </div> 
+       <script type="text/javascript">
+	document.getElementById( 'fbshare-desktop-foot' ).onclick = function() {
+	FB.ui({
+			method: 'share',
+			display: 'popup',
+			href: 'http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/?utm_source=FBOnsite',
+		}, function( response ){} );
+	}
+</script> 
+       <section class="about-the-author"> 
+        <div class="author-bio"> 
+         <header class="flex-container flex-start author-bio-header"> 
+          <a href="http://www.scarymommy.com/author/emma-waverman/"><img alt="https://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/avatar-default.jpg" src="http://www.scarymommy.com/wp-content/themes/scary-mommy/assets/images-2/avatar-default.jpg" class="avatar avatar-96 photo" height="96" width="96"></a> 
+          <div> 
+           <h1 class="author-name"><a href="http://www.scarymommy.com/author/emma-waverman/" title="Posts by Emma Waverman" class="author url fn" rel="author">Emma Waverman</a></h1> 
+           <h2>Follow: <a href="https://twitter.com/emmawaverman" class="author-twitter">@emmawaverman</a></h2> 
+          </div> 
+         </header> 
+         <h2 class="author-name">Read More from Emma Waverman:</h2> 
+         <div class="more-from-author-card flex-container flex-between"> 
+          <a class="more-card-image" href="http://www.scarymommy.com/16-reasons-to-send-your-kids-to-summer-camp-parents/"> <img width="265" height="150" src="http://www.scarymommy.com/wp-content/uploads/2015/06/16-reasons-to-send-your-kids-to-summer-camp-parents-featured.jpg?w=265&amp;h=150&amp;crop=1" class="attachment-sm-video-more-card size-sm-video-more-card wp-post-image" alt=""> </a> 
+          <div class="more-card-text"> 
+           <p class="article-categories"> <span class="article-category-primary article-category-club-mid"> <a href="http://www.scarymommy.com/category/club-mid/"> Club Mid </a> </span> &nbsp;&nbsp;|&nbsp;&nbsp; <span class="article-category-secondary article-category-summer-break"> <a href="http://www.scarymommy.com/category/summer-break/"> Summer Break </a> </span> </p> 
+           <h1 class="hero-card-title"><a href="http://www.scarymommy.com/16-reasons-to-send-your-kids-to-summer-camp-parents/">16 Reasons to Send Your Kids To Summer Camp, Parents</a></h1> 
+          </div> 
+         </div> 
+         <div class="more-from-author-card flex-container flex-between"> 
+          <a class="more-card-image" href="http://www.scarymommy.com/12-podcasts-that-have-helped-my-relationship-with-my-teen/"> <img width="265" height="150" src="http://www.scarymommy.com/wp-content/uploads/2015/05/12-podcasts-that-have-helped-my-relationship-with-my-teen-featured.jpg?w=265&amp;h=150&amp;crop=1" class="attachment-sm-video-more-card size-sm-video-more-card wp-post-image" alt=""> </a> 
+          <div class="more-card-text"> 
+           <p class="article-categories"> <span class="article-category-primary article-category-club-mid"> <a href="http://www.scarymommy.com/category/club-mid/"> Club Mid </a> </span> </p> 
+           <h1 class="hero-card-title"><a href="http://www.scarymommy.com/12-podcasts-that-have-helped-my-relationship-with-my-teen/">12 Podcasts That Have Helped My Relationship With My Teen</a></h1> 
+          </div> 
+         </div> 
+         <div class="more-from-author-card flex-container flex-between"> 
+          <a class="more-card-image" href="http://www.scarymommy.com/15-movie-soundtracks-that-totally-shaped-generation-x/"> <img width="265" height="150" src="http://www.scarymommy.com/wp-content/uploads/2015/05/15-movie-soundtracks-that-totally-shaped-generation-x-featured.jpg?w=265&amp;h=150&amp;crop=1" class="attachment-sm-video-more-card size-sm-video-more-card wp-post-image" alt=""> </a> 
+          <div class="more-card-text"> 
+           <p class="article-categories"> <span class="article-category-primary article-category-club-mid"> <a href="http://www.scarymommy.com/category/club-mid/"> Club Mid </a> </span> </p> 
+           <h1 class="hero-card-title"><a href="http://www.scarymommy.com/15-movie-soundtracks-that-totally-shaped-generation-x/">15 Movie Soundtracks That Totally Shaped Generation X</a></h1> 
+          </div> 
+         </div> 
+        </div> 
+       </section> 
+      </footer> 
+      <div class="mobile-only mobile-read-more"> 
+       <a href="http://www.scarymommy.com/meeting-and-keeping-friends-in-your-40s/" class="button button--read-more">Read More</a> 
+      </div> 
+      <div id="" class="mobile-only single-page-ad full-width-ad mobile-strip-ad sticky-ad is-sticky">
+       <div class="sticky-ad-contents">
+        <!-- /32950521/SM_320x50_sticky -->
+        <div id="div-gpt-ad-1469548596955-4">
+         <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1469548596955-4"); });</script>
+        </div>
+       </div>
+      </div> 
+     </article> 
+     <div class="readmore-only"> 
+      <button value="Read More" id="read_more" class="load_more">Read More</button> 
+     </div> 
+     <div style="width: 300px; margin: auto; text-align:center" class="sm-embedded-ad inline-nativo-ad mobile-only" id="inline-nativo-ad-3"></div> 
+     <div class="sidebar-stop"></div> 
+    </main> 
+    <aside class="desktop-sidebar sidebar big-screen-only"> 
+     <div class="ad-wrapper"> 
+      <div id="" class="sidebar-ad homepage-sidebar-ad">
+       <!-- /32950521/SM_300x600 -->
+       <div id="div-gpt-ad-1469548596955-1">
+        <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1469548596955-1"); });</script>
+       </div>
+      </div>
+     </div> 
+     <div class="newsletter-signup  flat-white inline "> 
+      <form class="newsletter-signup-form" action="" method="POST" data-segment-position="article_box_%PLATFORM%"> 
+       <h3>Get updates straight to your inbox.</h3> 
+       <div class="newsletter-error-message"></div> 
+       <div class="inputs"> 
+        <input type="hidden" class="sm_newsletter_nonce" name="sm_newsletter_nonce" value="2beb0da49f"> 
+        <input class="left newsletter-email" placeholder="What's your email?" name="cm-iyjlhh-iyjlhh" required value="" type="text"> 
+        <input class="left" id="submit" value="Sign Up" type="submit"> 
+       </div> 
+      </form> 
+     </div> 
+    </aside> 
+   </div> 
+   <div class="sidebar-stop"></div> 
+   <section class="featured-video-callout sidebar-stop"> 
+    <h1>Featured Video</h1> 
+    <h2 class="more-videos"><a href="/category/original-video/">+ Watch More Videos</a></h2> 
+    <article class="post" data-postid="266553"> 
+     <script src="https://content.jwplatform.com/players/faljwyGm-7RtBXwIN.js"></script> 
+     <div class="featured-video-text"> 
+      <h1 class="article-category-primary">The Name Dame</h1> 
+      <h2 class="hero-card-title"><a href="http://www.scarymommy.com/the-name-dame-uncovers-how-weird-names-are-becoming-the-new-normal/">The Name Dame Uncovers How Weird Names Are Becoming The New Normal</a></h2> 
+      <div class="hero-card-article-byline flex-container flex-center"> 
+       <div> 
+        <span class="author-name"><a href="http://www.scarymommy.com/author/team-scary-mommy/" title="Posts by Team Scary Mommy" class="author url fn" rel="author">Team Scary Mommy</a></span> 
+       </div> 
+      </div> 
+     </div> 
+    </article> 
+   </section> 
+   <div class="ad-wrapper"> 
+    <div id="" class="leaderboard-ad">
+     <!-- /32950521/SM_leaderboard_1 -->
+     <div id="div-gpt-ad-1492204591432-17">
+      <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1492204591432-17"); });</script>
+     </div>
+    </div> 
+   </div> 
+   <div class="vertical-cards desktop-flex" id="load_more_box"> 
+    <article class="new-and-trending flex-container flex-between belowRowCard post-270006 post type-post status-publish format-standard has-post-thumbnail hentry category-news" data-postid="270006"> 
+     <div class="card-img"> 
+      <a href="http://www.scarymommy.com/husband-saved-wifes-life-las-vegas-shooting/"> <img width="353" height="200" src="http://www.scarymommy.com/wp-content/uploads/2017/10/melton.jpg?w=353&amp;h=200&amp;crop=1" class="attachment-sm-video-horizontal-card size-sm-video-horizontal-card wp-post-image" alt=""> </a> 
+     </div> 
+     <div class="card-text"> 
+      <p class="article-categories"> <span class="article-category-primary article-category-news"> <a href="http://www.scarymommy.com/category/news/"> News </a> </span> </p> 
+      <h1 class="hero-card-title"><a href="http://www.scarymommy.com/husband-saved-wifes-life-las-vegas-shooting/">Wife Of Las Vegas Massacre Victim: ‘He Saved My Life And Lost His’</a></h1> 
+      <p class="hero-card-article-byline"> <span class="author-name"><a href="http://www.scarymommy.com/author/jerriann-sullivan/" title="Posts by Jerriann Sullivan" class="author url fn" rel="author">Jerriann Sullivan</a></span> </p> 
+     </div> 
+    </article> 
+    <article class="new-and-trending flex-container flex-between belowRowCard post-269984 post type-post status-publish format-standard has-post-thumbnail hentry category-trending" data-postid="269984"> 
+     <div class="card-img"> 
+      <a href="http://www.scarymommy.com/caleb-keeter-josh-abbott-band-tweet-gun-rights/"> <img width="353" height="200" src="http://www.scarymommy.com/wp-content/uploads/2017/10/calebk.jpg?w=353&amp;h=200&amp;crop=1" class="attachment-sm-video-horizontal-card size-sm-video-horizontal-card wp-post-image" alt=""> </a> 
+     </div> 
+     <div class="card-text"> 
+      <p class="article-categories"> <span class="article-category-primary article-category-trending"> <a href="http://www.scarymommy.com/category/trending/"> Trending </a> </span> </p> 
+      <h1 class="hero-card-title"><a href="http://www.scarymommy.com/caleb-keeter-josh-abbott-band-tweet-gun-rights/">Musician Who Survived Shooting Changes Stance On Gun Control</a></h1> 
+      <p class="hero-card-article-byline"> <span class="author-name"><a href="http://www.scarymommy.com/author/christine-organ/" title="Posts by Christine Organ" class="author url fn" rel="author">Christine Organ</a></span> </p> 
+     </div> 
+    </article> 
+    <article class="new-and-trending flex-container flex-between belowRowCard post-266100 post type-post status-publish format-standard has-post-thumbnail hentry category-sm2 category-teens category-tweens" data-postid="266100"> 
+     <div class="card-img"> 
+      <a href="http://www.scarymommy.com/teen-popularity-doesnt-matter/"> <img width="353" height="200" src="http://www.scarymommy.com/wp-content/uploads/2017/10/popular-kids.jpg?w=353&amp;h=200&amp;crop=1" class="attachment-sm-video-horizontal-card size-sm-video-horizontal-card wp-post-image" alt=""> </a> 
+     </div> 
+     <div class="card-text"> 
+      <p class="article-categories"> <span class="article-category-primary article-category-sm2"> <a href="http://www.scarymommy.com/category/sm2/"> Scary Mommy 2 </a> </span> &nbsp;&nbsp;|&nbsp;&nbsp; <span class="article-category-secondary article-category-teens"> <a href="http://www.scarymommy.com/category/sm2/teens/"> Teens </a> </span> </p> 
+      <h1 class="hero-card-title"><a href="http://www.scarymommy.com/teen-popularity-doesnt-matter/">You Can Stop Caring If Your Kids Are Popular Because It Doesn’t Matter</a></h1> 
+      <p class="hero-card-article-byline"> <span class="author-name"><a href="http://www.scarymommy.com/author/melissa-l-fenton/" title="Posts by Melissa L. Fenton" class="author url fn" rel="author">Melissa L. Fenton</a></span> </p> 
+     </div> 
+    </article> 
+    <div class="ad-wrapper"> 
+     <div id="" class="leaderboard-ad">
+      <!-- /32950521/SM_leaderboard_1 -->
+      <div id="div-gpt-ad-1492204591432-17">
+       <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1492204591432-17"); });</script>
+      </div>
+     </div> 
+    </div> 
+    <article class="new-and-trending flex-container flex-between belowRowCard post-261723 post type-post status-publish format-standard has-post-thumbnail hentry category-miscellaneous" data-postid="261723"> 
+     <div class="card-img"> 
+      <a href="http://www.scarymommy.com/let-kids-take-risks-playing-outdoors/"> <img width="353" height="200" src="http://www.scarymommy.com/wp-content/uploads/2017/08/sm_safeplay.jpg?w=353&amp;h=200&amp;crop=1" class="attachment-sm-video-horizontal-card size-sm-video-horizontal-card wp-post-image" alt=""> </a> 
+     </div> 
+     <div class="card-text"> 
+      <p class="article-categories"> <span class="article-category-primary article-category-miscellaneous"> <a href="http://www.scarymommy.com/category/miscellaneous/"> General </a> </span> </p> 
+      <h1 class="hero-card-title"><a href="http://www.scarymommy.com/let-kids-take-risks-playing-outdoors/">Science Says: Let Your Kids Take Risks While Playing. It’s Good For Them.</a></h1> 
+      <p class="hero-card-article-byline"> <span class="author-name"><a href="http://www.scarymommy.com/author/joanna-m/" title="Posts by Joanna McClanahan" class="author url fn" rel="author">Joanna McClanahan</a></span> </p> 
+     </div> 
+    </article> 
+    <article class="new-and-trending flex-container flex-between belowRowCard post-269116 post type-post status-publish format-standard has-post-thumbnail hentry category-rediscovering-you category-sm2" data-postid="269116"> 
+     <div class="card-img"> 
+      <a href="http://www.scarymommy.com/life-as-30-something/"> <img width="353" height="200" src="http://www.scarymommy.com/wp-content/uploads/2017/10/40-is-new-30.jpg?w=353&amp;h=200&amp;crop=1" class="attachment-sm-video-horizontal-card size-sm-video-horizontal-card wp-post-image" alt=""> </a> 
+     </div> 
+     <div class="card-text"> 
+      <p class="article-categories"> <span class="article-category-primary article-category-rediscovering-you"> <a href="http://www.scarymommy.com/category/sm2/rediscovering-you/"> Rediscovering You </a> </span> &nbsp;&nbsp;|&nbsp;&nbsp; <span class="article-category-secondary article-category-sm2"> <a href="http://www.scarymommy.com/category/sm2/"> Scary Mommy 2 </a> </span> </p> 
+      <h1 class="hero-card-title"><a href="http://www.scarymommy.com/life-as-30-something/">If 40 Is The New 30, I Want My Money Back</a></h1> 
+      <p class="hero-card-article-byline"> <span class="author-name"><a href="http://www.scarymommy.com/author/brynn-burger/" title="Posts by Brynn Burger" class="author url fn" rel="author">Brynn Burger</a></span> </p> 
+     </div> 
+    </article> 
+    <article class="new-and-trending flex-container flex-between belowRowCard post-269750 post type-post status-publish format-standard has-post-thumbnail hentry category-dad-perspective" data-postid="269750"> 
+     <div class="card-img"> 
+      <a href="http://www.scarymommy.com/worst-parenting-moment-smashed-legos/"> <img width="353" height="200" src="http://www.scarymommy.com/wp-content/uploads/2017/10/smashed-legos-feature.jpg?w=353&amp;h=200&amp;crop=1" class="attachment-sm-video-horizontal-card size-sm-video-horizontal-card wp-post-image" alt=""> </a> 
+     </div> 
+     <div class="card-text"> 
+      <p class="article-categories"> <span class="article-category-primary article-category-dad-perspective"> <a href="http://www.scarymommy.com/category/dad-perspective/"> Dad Perspective </a> </span> </p> 
+      <h1 class="hero-card-title"><a href="http://www.scarymommy.com/worst-parenting-moment-smashed-legos/">I Smashed Her Legos Today, And Now I’m Filled With Regret</a></h1> 
+      <p class="hero-card-article-byline"> <span class="author-name"><a href="http://www.scarymommy.com/author/pete-wilgoren/" title="Posts by Pete Wilgoren" class="author url fn" rel="author">Pete Wilgoren</a></span> </p> 
+     </div> 
+    </article> 
+   </div> 
+   <div class="load_more_container" id="load_more_container"> 
+    <p class="hidden load_more_all_done"> You found them all! Here are some gold stars. <br> <img src="http://www.scarymommy.com/wp-content/themes/sm-video/assets/images/stars.jpg"> </p> 
+    <button value="Load More" id="load_more" class="load_more">Load More</button> 
+   </div> 
+   <div> 
+    <div class="newsletter-signup  flat-white inline "> 
+     <form class="newsletter-signup-form" action="" method="POST" data-segment-position="article_box_%PLATFORM%"> 
+      <h3>Get updates straight to your inbox.</h3> 
+      <div class="newsletter-error-message"></div> 
+      <div class="inputs"> 
+       <input type="hidden" class="sm_newsletter_nonce" name="sm_newsletter_nonce" value="2beb0da49f"> 
+       <input class="left newsletter-email" placeholder="What's your email?" name="cm-iyjlhh-iyjlhh" required value="" type="text"> 
+       <input class="left" id="submit" value="Sign Up" type="submit"> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+   <div id="" class="mobile-only single-page-ad full-width-ad mobile-strip-ad sticky-ad is-sticky">
+    <div class="sticky-ad-contents">
+     <!-- /32950521/SM_320x50_sticky -->
+     <div id="div-gpt-ad-1469548596955-4">
+      <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1469548596955-4"); });</script>
+     </div>
+    </div>
+   </div> 
+   <footer class="site-footer"> 
+    <div class="logo icon"> 
+     <a href="http://www.scarymommy.com/"><span>Scary Mommy</span></a> 
+    </div> 
+    <h1 class="footer-h1">Follow us on</h1> 
+    <ul class="footer-social blank-list flex-container flex-between"> 
+     <li class="icon"><a href="https://www.facebook.com/thescarymommy" class="facebook-icon icon"><span>Facebook</span></a></li> 
+     <li class="icon"><a href="https://www.snapchat.com/add/thescarymommy" class="snapchat-icon icon"><span>Snapchat</span></a></li> 
+     <li class="icon"><a href="https://twitter.com/scarymommy" class="twitter-icon icon"><span>Instagram</span></a></li> 
+     <li class="icon"><a href="https://www.instagram.com/scarymommy/" class="instagram-icon icon"><span>Instagram</span></a></li> 
+    </ul> 
+    <ul class="footer-links blank-list desktop-flex"> 
+     <li><a href="/advertise-with-us/">Advertise With us</a></li> 
+     <li class="desktop-only">|</li> 
+     <li><a href="/about-scary-mommy/">About Us</a></li> 
+     <li class="desktop-only">|</li> 
+     <li><a href="/privacy-policy-2/">Privacy Policy</a></li> 
+     <li class="desktop-only">|</li> 
+     <li><a href="/terms-and-conditions/">User Terms</a></li> 
+    </ul> 
+    <div class="legal-copy">
+      Powered by 
+     <a href="https://vip.wordpress.com/?utm_source=vip_powered_wpcom&amp;utm_medium=web&amp;utm_campaign=VIP%20Footer%20Credit&amp;utm_term=www.scarymommy.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>
+    </div> 
+    <div id="" class="footer_skin">
+     <!-- /32950521/SM_SKIN_2x2 -->
+     <div id="div-gpt-ad-1469548596955-12">
+      <script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1469548596955-12"); });</script>
+     </div>
+    </div> 
+    <!-- /32950521/Spoutable --> 
+    <script>
+	googletag.cmd.push(function() {
+		googletag.defineOutOfPageSlot('/32950521/Spoutable', 'div-gpt-ad-1498080982527-0').addService(googletag.pubads());
+		googletag.enableServices();
+	});
+</script> 
+    <div id="div-gpt-ad-1498080982527-0"> 
+     <script>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1498080982527-0'); });
+</script> 
+    </div> 
+    <script type="text/javascript" src="http://www.scarymommy.com/_static/??/wp-includes/js/imagesloaded.min.js,/wp-includes/js/masonry.min.js?m=1505859961j"></script> 
+    <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201740"></script> 
+    <script type="text/javascript" src="http://www.scarymommy.com/wp-includes/js/wp-embed.min.js?m=1505859960g"></script> 
+    <script type="text/javascript" src="https://stats.wp.com/e-201740.js" async defer></script> 
+    <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.3',blog:'122712992',post:'78559',tz:'-4',srv:'www.scarymommy.com'} ]);
+	_stq.push([ 'clickTrackerInit', '122712992', '78559' ]);
+</script> 
+    <script type="text/javascript">
+	var _sf_async_config = _sf_async_config || {};
+	_sf_async_config.uid = 57311;
+	_sf_async_config.domain = 'scarymommy.com';
+	_sf_async_config.useCanonical = true;
+	(function() {
+		function loadChartbeat() {
+			window._sf_endpt = (new Date()).getTime();
+			var e = document.createElement('script');
+			e.setAttribute('language', 'javascript');
+			e.setAttribute('type', 'text/javascript');
+			e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+			document.body.appendChild(e);
+		}
+		var oldonload = window.onload;
+		window.onload = (typeof window.onload != 'function') ?
+			loadChartbeat : function() {
+				oldonload();
+				loadChartbeat();
+			};
+	})();
+</script> 
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0601a5bd6b","applicationID":"32223223","transactionName":"ZAEANRADC0dRU0FeW11LIwIWCwpaH0NcWVNfAQ==","queueTime":0,"applicationTime":146,"atts":"SEYXQ1gZGBgSURcNT04Z","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+   </footer> 
+   <!--
+	You'll be on my jockey team
+-->  
+  </div>
+ </body>
+</html>

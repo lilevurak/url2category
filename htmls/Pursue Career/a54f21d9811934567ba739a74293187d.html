@@ -1,0 +1,617 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>	<html lang="en" class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]>	<html lang="en" class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]>	<html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+  <meta name="keywords" content=""> 
+  <meta name="description" content=""> 
+  <meta property="og:title" content="Job and Internship Sites"> 
+  <meta property="og:description" content="Founded in 1824 in Gambier, Ohio, Kenyon College is a highly selective liberal arts college offering 1,600 students an academically challenging curriculum in a close-knit community."> 
+  <meta property="og:image" content="http://www.kenyon.edu/files/settings/social.jpg"> 
+  <title>Job and Internship Sites&nbsp;&nbsp;·&nbsp;&nbsp;Kenyon College</title> 
+  <link rel="stylesheet" href="http://www.kenyon.edu/css/site.css?2017-08-20" type="text/css" media="screen"> 
+  <link rel="stylesheet" href="http://www.kenyon.edu/css/print.css?2017-08-20" type="text/css" media="print"> 
+  <!--[if IE 9]>
+			<script src="http://www.kenyon.edu/js/ie9.js?2017-08-20"></script>
+		<![endif]--> 
+  <!--[if IE 8]>
+			<script src="http://www.kenyon.edu/js/ie8.js?2017-08-20"></script>
+		<![endif]--> 
+  <!--[if IE 7]>
+			<script src="http://www.kenyon.edu/js/ie7.js?2017-08-20"></script>
+		<![endif]--> 
+  <script>var WWW_ROOT = "http://www.kenyon.edu/";</script> 
+  <script src="http://www.kenyon.edu/js/site.js?2017-08-20"></script> 
+  <script src="//platform.twitter.com/widgets.js" defer></script> 
+  <script>
+			var $buoop = {vs:{i:7,f:15,s:4,n:9}};
+			$buoop.ol = window.onload;
+			window.onload=function(){
+				try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+				var e = document.createElement("script");
+				e.setAttribute("type", "text/javascript");
+				e.setAttribute("src", "http://browser-update.org/update.js");
+				document.body.appendChild(e);
+			}
+		</script> 
+  <script>
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-21451915-1']);
+		  _gaq.push(['_setDomainName', 'kenyon.edu']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script> 
+  <script async src="https://admissions.kenyon.edu/ping">/**/</script> 
+  <script type="text/javascript">
+			/*<![CDATA[*/
+			(function() {
+			var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+			sz.src = '//siteimproveanalytics.com/js/siteanalyze_3313.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+			})();
+			/*]]>*/
+		</script> 
+  <noscript> 
+   <style>
+				html { visibility: visible; }
+			</style> 
+  </noscript> 
+ </head> 
+ <body class="gridlock"> 
+  <a href="#body_content" id="skip_to_content" class="skip_link">Skip to Main Content</a> 
+  <div class="nav_slider_page"> 
+   <header id="header"> 
+    <div class="row"> 
+     <div class="desktop-12 tablet-6 mobile-full"> 
+      <a href="http://www.kenyon.edu/" class="logo">Kenyon College</a> 
+      <div class="navigation_desktop"> 
+       <nav class="gateways top_nav"> 
+        <div class="item handle students"> 
+         <a href="http://www.kenyon.edu/for-students/">Students</a> 
+         <div class="dropdown"> 
+          <div class="feature"> 
+           <a href="http://calendar.kenyon.edu/event/an_evening_with_junot_diaz" target="_blank"> <h6>Featured Event</h6> <time datetime="2017-10-09"> <span class="month">Oct</span> <span class="day">9</span> </time> <h3>An Evening with Junot Díaz</h3> <em class="details">7:30pm - 9:00pm, Rosse Hall Auditorium</em> Junot Díaz is the author of the critically acclaimed "Drown";&nbsp;"The Brief Wondrous Life of Oscar Wao,… </a> 
+          </div> 
+          <h4>Popular Resources</h4> 
+          <ul class="links"> 
+           <li> <a href="https://moodle.kenyon.edu/login/index.php" class="external" target="_blank">Moodle</a> </li> 
+           <li> <a href="http://www1.kenyon.edu/bannerweb">Personal Access Pages</a> </li> 
+           <li> <a href="http://www.kenyon.edu/directories/offices-services/academic-advising/">Academic Advising</a> </li> 
+           <li> <a href="http://www.kenyon.edu/directories/offices-services/registrar/">Registrar</a> </li> 
+           <li> <a href="http://www1.kenyon.edu/catalog/index.phtml">Searchable Schedule</a> </li> 
+           <li> <a href="https://lbis.kenyon.edu">LBIS</a> </li> 
+          </ul> 
+          <a href="http://www.kenyon.edu/for-students/" class="button">Students Page</a> 
+         </div> 
+        </div> 
+        <div class="item handle faculty_staff"> 
+         <a href="http://www.kenyon.edu/for-faculty-staff/">Faculty &amp; Staff</a> 
+         <div class="dropdown"> 
+          <div class="feature"> 
+           <a href="http://calendar.kenyon.edu/event/an_evening_with_junot_diaz" target="_blank"> <h6>Featured Event</h6> <time datetime="2017-10-09"> <span class="month">Oct</span> <span class="day">9</span> </time> <h3>An Evening with Junot Díaz</h3> <em class="details">7:30pm - 9:00pm, Rosse Hall Auditorium</em> Junot Díaz is the author of the critically acclaimed "Drown";&nbsp;"The Brief Wondrous Life of Oscar Wao,… </a> 
+          </div> 
+          <h4>Popular Resources</h4> 
+          <ul class="links"> 
+           <li> <a href="http://www.kenyon.edu/academics/academic-calendar/">Academic Calendar</a> </li> 
+           <li> <a href="https://lbis.kenyon.edu">Library</a> </li> 
+           <li> <a href="http://www.kenyon.edu/directories/offices-services/academic-advising/">Academic Advising</a> </li> 
+           <li> <a href="http://www1.kenyon.edu/bannerweb">Personal Access Pages</a> </li> 
+           <li> <a href="http://www.kenyon.edu/directories/offices-services/office-of-the-provost/">Provost</a> </li> 
+           <li> <a href="http://www.kenyon.edu/directories/offices-services/registrar/">Registrar</a> </li> 
+           <li> <a href="http://remote.kenyon.edu">VPN Access</a> </li> 
+          </ul> 
+          <a href="http://www.kenyon.edu/for-faculty-staff/" class="button">Faculty &amp; Staff Page</a> 
+         </div> 
+        </div> 
+        <div class="item handle parents"> 
+         <a href="http://www.kenyon.edu/for-parents/">Parents</a> 
+         <div class="dropdown"> 
+          <div class="feature"> 
+           <a href="http://calendar.kenyon.edu/event/bfec_fall_harvest_festival" target="_blank"> <h6>Featured Event</h6> <time datetime="2017-10-14"> <span class="month">Oct</span> <span class="day">14</span> </time> <h3>BFEC Fall Harvest Festival</h3> <em class="details">2:00pm - 5:00pm, Brown Family Environmental Center</em> Celebrate the season with this free&nbsp;family event! &nbsp;&nbsp; Activities include wagon rides, live music, children… </a> 
+          </div> 
+          <h4>Popular Resources</h4> 
+          <ul class="links"> 
+           <li> <a href="http://www.kenyon.edu/for-parents/family-weekend/">Family Weekend</a> </li> 
+           <li> <a href="http://www.kenyon.edu/commencement/">Commencement Weekend</a> </li> 
+           <li> <a href="http://www.kenyon.edu/visit-kenyon/getting-to-campus/">Getting to Campus</a> </li> 
+           <li> <a href="http://www.kenyon.edu/directories/offices-services/new-student-orientation/">New Student Orientation</a> </li> 
+           <li> <a href="http://www.kenyon.edu/for-parents/area-shops-services/">Area Shops &amp; Services</a> </li> 
+           <li> <a href="http://www.kenyon.edu/for-parents/useful-contacts/">Useful Contacts</a> </li> 
+          </ul> 
+          <a href="http://www.kenyon.edu/for-parents/" class="button">Parents Page</a> 
+         </div> 
+        </div> 
+        <div class="item handle alumni"> 
+         <a href="http://www.kenyon.edu/for-alumni/">Alumni</a> 
+         <div class="dropdown"> 
+          <div class="feature"> 
+           <a href="http://calendar.kenyon.edu/event/an_evening_with_junot_diaz" target="_blank"> <h6>Featured Event</h6> <time datetime="2017-10-09"> <span class="month">Oct</span> <span class="day">9</span> </time> <h3>An Evening with Junot Díaz</h3> <em class="details">7:30pm - 9:00pm, Rosse Hall Auditorium</em> Junot Díaz is the author of the critically acclaimed "Drown";&nbsp;"The Brief Wondrous Life of Oscar Wao,… </a> 
+          </div> 
+          <h4>Popular Resources</h4> 
+          <ul class="links"> 
+           <li> <a href="http://connect.kenyon.edu/s/1424/GID2-Alumni/index.aspx?gid=2&amp;pgid=275#/PersonalProfile">Update Your Information</a> </li> 
+           <li> <a href="https://kenyon.switchboardhq.com/">Kenyon Switchboard</a> </li> 
+           <li> <a href="http://connect.kenyon.edu/s/1424/GID2-Alumni/index.aspx?sid=1424&amp;gid=2&amp;pgid=6&amp;cid=41">Alumni Directory</a> </li> 
+           <li> <a href="http://www.kenyon.edu/for-alumni/events/reunion-weekend/">Reunion Weekend</a> </li> 
+           <li> <a href="http://gift.kenyon.edu">Make A Gift Online</a> </li> 
+          </ul> 
+          <a href="http://www.kenyon.edu/for-alumni/" class="button">Alumni Page</a> 
+         </div> 
+        </div> 
+       </nav> 
+       <nav class="main"> 
+        <div class="item handle "> 
+         <div class="more dropdown"> 
+          <h4><a href="http://www.kenyon.edu/about-kenyon/">About Kenyon</a></h4> 
+          <ul> 
+           <li><a href="http://www.kenyon.edu/about-kenyon/kenyon-at-a-glance/"><span></span>Kenyon at a Glance</a></li> 
+           <li><a href="http://www.kenyon.edu/about-kenyon/our-history-tradition/"><span></span>Our History &amp; Tradition</a></li> 
+           <li><a href="http://www.kenyon.edu/directories/offices-services/"><span></span>Offices &amp; Services</a></li> 
+           <li class="divider"></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/about-kenyon/the-kenyon-campus/"><span></span>The Kenyon Campus</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/about-kenyon/office-of-the-president/"><span></span>Office of the President</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/about-kenyon/sustainability/"><span></span>Sustainability &amp; Green Initiatives</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/about-kenyon/diversity-at-kenyon/"><span></span>Diversity at Kenyon</a></li> 
+           <li class="margin"><a href="http://www.thegundgallery.org/" class="external" target="_blank"><span></span>The Gund Gallery</a></li> 
+           <li class="margin"><a href="http://www.kenyonreview.org/" class="external" target="_blank"><span></span>The Kenyon Review</a></li> 
+           <li class="margin"><a href="http://www.kenyoninstitute.org/" class="external" target="_blank"><span></span>The Kenyon Institute</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/academics/centers/center-for-the-study-of-american-democracy/"><span></span>Center for the Study of American Democracy</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/directories/offices-services/philander-chase-conservancy/"><span></span>Philander Chase Conservancy</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/directories/campus-directory/"><span></span>Campus Directory</a></li> 
+          </ul> 
+         </div> 
+         <h4><a href="http://www.kenyon.edu/about-kenyon/">About Kenyon</a></h4> 
+         <ul class="less"> 
+          <li><a href="http://www.kenyon.edu/about-kenyon/kenyon-at-a-glance/">Kenyon at a Glance</a></li> 
+          <li><a href="http://www.kenyon.edu/about-kenyon/our-history-tradition/">Our History &amp; Tradition</a></li> 
+          <li><a href="http://www.kenyon.edu/directories/offices-services/">Offices &amp; Services</a></li> 
+         </ul> 
+         <span class="plus"></span> 
+        </div> 
+        <div class="item handle "> 
+         <div class="more dropdown"> 
+          <h4><a href="http://www.kenyon.edu/academics/">Academics</a></h4> 
+          <ul> 
+           <li><a href="http://www.kenyon.edu/academics/departments-programs/"><span></span>Departments &amp; Programs</a></li> 
+           <li><a href="http://www.kenyon.edu/academics/centers/"><span></span>Centers</a></li> 
+           <li><a href="http://www.kenyon.edu/academics/academic-calendar/"><span></span>Academic Calendar</a></li> 
+           <li class="divider"></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/academics/study-abroad-off-campus-learning/"><span></span>Off-Campus Study</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/academics/academic-leadership-opportunities/"><span></span>Academic &amp; Leadership Opportunities</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/academics/resources-support/"><span></span>Resources &amp; Support</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/academics/faculty/"><span></span>Faculty</a></li> 
+          </ul> 
+         </div> 
+         <h4><a href="http://www.kenyon.edu/academics/">Academics</a></h4> 
+         <ul class="less"> 
+          <li><a href="http://www.kenyon.edu/academics/departments-programs/">Departments &amp; Programs</a></li> 
+          <li><a href="http://www.kenyon.edu/academics/centers/">Centers</a></li> 
+          <li><a href="http://www.kenyon.edu/academics/academic-calendar/">Academic Calendar</a></li> 
+         </ul> 
+         <span class="plus"></span> 
+        </div> 
+        <div class="item handle "> 
+         <div class="more dropdown"> 
+          <h4><a href="http://www.kenyon.edu/admissions-aid/">Admissions &amp; Aid</a></h4> 
+          <ul> 
+           <li><a href="http://www.kenyon.edu/visit-kenyon/"><span></span>Visit Campus</a></li> 
+           <li><a href="http://www.kenyon.edu/admissions-aid/financial-aid/"><span></span>Costs &amp; Financial Aid</a></li> 
+           <li><a href="http://www.kenyon.edu/admissions-aid/contact-admissions/request-information/"><span></span>Request Information</a></li> 
+           <li class="divider"></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/admissions-aid/how-to-apply/"><span></span>Apply to Kenyon</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/admissions-aid/for-admissions-counselors/"><span></span>For Guidance Counselors</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/admissions-aid/contact-admissions/"><span></span>Contact Admissions</a></li> 
+          </ul> 
+         </div> 
+         <h4><a href="http://www.kenyon.edu/admissions-aid/">Admissions &amp; Aid</a></h4> 
+         <ul class="less"> 
+          <li><a href="http://www.kenyon.edu/visit-kenyon/">Visit Campus</a></li> 
+          <li><a href="http://www.kenyon.edu/admissions-aid/financial-aid/">Costs &amp; Financial Aid</a></li> 
+          <li><a href="http://www.kenyon.edu/admissions-aid/contact-admissions/request-information/">Request Information</a></li> 
+         </ul> 
+         <span class="plus"></span> 
+        </div> 
+        <div class="item handle "> 
+         <div class="more dropdown"> 
+          <h4><a href="http://www.kenyon.edu/student-life/">Student Life</a></h4> 
+          <ul> 
+           <li><a href="http://www.kenyon.edu/directories/offices-services/student-engagement/clubs-organizations/"><span></span>Clubs &amp; Orgs</a></li> 
+           <li><a href="http://www.kenyon.edu/student-life/residence-life/"><span></span>Residential Life</a></li> 
+           <li><a href="http://www.kenyon.edu/student-life/dining-on-campus-2/"><span></span>Dining on Campus</a></li> 
+           <li class="divider"></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/visit-kenyon/gambier-and-beyond/"><span></span>Life in Gambier, OH</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/student-life/career-planning/"><span></span>Career Planning</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/about-kenyon/diversity-at-kenyon/"><span></span>Diversity at Kenyon</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/student-life/spiritual-religious-life/"><span></span>Spirituality &amp; Religious Life</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/student-life/health-counseling/"><span></span>Health &amp; Counseling</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/directories/offices-services/campus-safety/"><span></span>Campus Safety</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/directories/offices-services/student-affairs-division/"><span></span>Student Affairs Division</a></li> 
+          </ul> 
+         </div> 
+         <h4><a href="http://www.kenyon.edu/student-life/">Student Life</a></h4> 
+         <ul class="less"> 
+          <li><a href="http://www.kenyon.edu/directories/offices-services/student-engagement/clubs-organizations/">Clubs &amp; Orgs</a></li> 
+          <li><a href="http://www.kenyon.edu/student-life/residence-life/">Residential Life</a></li> 
+          <li><a href="http://www.kenyon.edu/student-life/dining-on-campus-2/">Dining on Campus</a></li> 
+         </ul> 
+         <span class="plus"></span> 
+        </div> 
+        <div class="item handle "> 
+         <div class="more dropdown"> 
+          <h4><a href="http://athletics.kenyon.edu/">Athletics</a></h4> 
+          <ul> 
+           <li><a href="http://athletics.kenyon.edu/sports/2012/7/16/GEN_0716120709.aspx"><span></span>Facilities</a></li> 
+           <li><a href="http://www.kenyon.edu/athletics/recreation/"><span></span>Recreation</a></li> 
+           <li><a href="http://athletics.kenyon.edu/calendar.aspx"><span></span>Upcoming Events</a></li> 
+          </ul> 
+         </div> 
+         <h4><a href="http://athletics.kenyon.edu/">Athletics</a></h4> 
+         <ul class="less"> 
+          <li><a href="http://athletics.kenyon.edu/sports/2012/7/16/GEN_0716120709.aspx">Facilities</a></li> 
+          <li><a href="http://www.kenyon.edu/athletics/recreation/">Recreation</a></li> 
+          <li><a href="http://athletics.kenyon.edu/calendar.aspx">Upcoming Events</a></li> 
+         </ul> 
+         <span class="plus"></span> 
+        </div> 
+        <div class="item handle "> 
+         <div class="more dropdown"> 
+          <h4><a href="http://www.kenyon.edu/after-kenyon/">After Kenyon</a></h4> 
+          <ul> 
+           <li><a href="http://www.kenyon.edu/after-kenyon/notable-kenyon-alumni/"><span></span>Notable Kenyon Alumni</a></li> 
+           <li><a href="http://www.kenyon.edu/after-kenyon/outcomes/"><span></span>First Jobs in Recent Years</a></li> 
+           <li><a href="http://www.kenyon.edu/after-kenyon/alumni-stories-2/"><span></span>Alumni Stories</a></li> 
+           <li class="divider"></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/after-kenyon/graduate-schools-and-preprofessional-programs/"><span></span>Graduate Schools and Preprofessional Programs</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/after-kenyon/job-shadowing-entrepreneurial-opportunities/"><span></span>Job Shadowing &amp; Entrepreneurial Opportunities</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/after-kenyon/fellowships-and-post-graduate-awards/"><span></span>Fellowships and Post-Graduate Awards</a></li> 
+           <li class="margin"><a href="http://www.kenyon.edu/after-kenyon/skills-employers-are-looking-for/"><span></span>Why the Liberal Arts</a></li> 
+          </ul> 
+         </div> 
+         <h4><a href="http://www.kenyon.edu/after-kenyon/">After Kenyon</a></h4> 
+         <ul class="less"> 
+          <li><a href="http://www.kenyon.edu/after-kenyon/notable-kenyon-alumni/">Notable Kenyon Alumni</a></li> 
+          <li><a href="http://www.kenyon.edu/after-kenyon/outcomes/">First Jobs in Recent Years</a></li> 
+          <li><a href="http://www.kenyon.edu/after-kenyon/alumni-stories-2/">Alumni Stories</a></li> 
+         </ul> 
+         <span class="plus"></span> 
+        </div> 
+       </nav> 
+       <nav class="persistent top_nav"> 
+        <div class="item has_sub handle"> 
+         <a href="http://www.kenyon.edu/middle-path/">News &amp; Events</a> 
+         <div class="dropdown dropdown_mp"> 
+          <h4>News &amp; Events</h4> 
+          <ul class="links"> 
+           <li><a href="http://www.kenyon.edu/middle-path/">Latest Stories</a></li> 
+           <li><a href="http://www.kenyon.edu/middle-path/people/">Kenyon People</a></li> 
+           <li><a href="http://www.kenyon.edu/middle-path/publications/">Publications</a></li> 
+           <li><a href="http://www.kenyon.edu/middle-path/for-the-media/media-relations/">For the Media</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="item">
+         <a href="http://calendar.kenyon.edu">Calendar</a>
+        </div> 
+        <div class="item">
+         <a href="http://www.kenyon.edu/visit-kenyon/">Visit Kenyon</a>
+        </div> 
+        <div class="hoverout left"> 
+         <div class="item has_sub handle"> 
+          <a href="http://www.kenyon.edu/give-to-kenyon/" class="wide">Give to Kenyon</a> 
+          <div class="dropdown dropdown_giving"> 
+           <div class="feature"> 
+            <a href="http://gift.kenyon.edu"> <img src="http://www.kenyon.edu/images/menu-callouts/kenyon_4-18-12_0187-3.jpg" alt=""> <h3>Support Kenyon</h3> <p>Help Kenyon end the fiscal year strong with a donation to the 2017-18 Kenyon Fund or Kenyon Parents Fund. Please make a contribution before June 30.</p> </a> 
+           </div> 
+           <h4>Give To Kenyon</h4> 
+           <ul class="links"> 
+            <li><a href="http://gift.kenyon.edu" class="external" target="_blank">Make a Gift Online</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/ways-to-give-2/">Ways to Give</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/the-kenyon-fund/">The Kenyon Fund</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/the-kenyon-parents-fund/">The Kenyon Parents Fund</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/giving-societies/">Giving Societies</a></li> 
+            <li><a href="http://kenyon.plannedgiving.org/">Planned Giving</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/reunion-gifts/">Reunion Gifts</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/have-i-donated/">Have I Donated?</a></li> 
+            <li><a href="http://www.kenyon.edu/give-to-kenyon/our-staff/">Our Staff</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="item has_sub handle"> 
+          <a href="http://www.kenyon.edu/academics/departments-programs/" class="wide">Areas of Study</a> 
+          <div class="dropdown dropdown_areas_of_study"> 
+           <h4>Areas of Study</h4> 
+           <ul class="links triple"> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/african-diaspora-studies/">African Diaspora Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/american-studies/">American Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/anthropology/">Anthropology</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/art/">Art</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/art-history/">Art History</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/asian-studies/">Asian and Middle East Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/biochemistry/">Biochemistry &amp; Molecular Biology</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/biology/">Biology</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/chemistry/">Chemistry</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/classics/">Classics</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/comparative-world-literature/">Comparative World Literature</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/dance-drama-and-film/">Dance, Drama &amp; Film</a></li> 
+           </ul> 
+           <ul class="links triple"> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/economics/">Economics</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/english/">English</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/environmental-studies/">Environmental Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/history/">History</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/humane-studies/">Integrated Program in Humane Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/international-studies/">International Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/islamic-civilization-and-cultures/">Islamic Civilization &amp; Cultures</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/latinoa-studies/">Latino/a Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/law-and-society/">Law &amp; Society</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/mathematics/">Mathematics &amp; Statistics</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/modern-languages-literatures/">Modern Languages &amp; Literatures</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/music/">Music</a></li> 
+           </ul> 
+           <ul class="links"> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/neuroscience/">Neuroscience</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/philosophy/">Philosophy</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/physics/">Physics</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/political-science/">Political Science</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/psychology/">Psychology</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/public-policy/">Public Policy</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/religious-studies/">Religious Studies</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/scientific-computing/">Scientific Computing</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/sociology/">Sociology</a></li> 
+            <li><a href="http://www.kenyon.edu/academics/departments-programs/womens-gender-studies/">Women's &amp; Gender Studies</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="item has_sub handle"> 
+          <a href="http://www.kenyon.edu/search/" class="slim">Search Site</a> 
+          <div class="dropdown dropdown_search"> 
+           <form method="get" action="http://www.kenyon.edu/search/"> 
+            <h4>Search the Website</h4> 
+            <label class="visually_hidden" for="search_the_website_query">Search Keywords</label> 
+            <input id="search_the_website_query" class="text" type="text" placeholder="Keywords, Articles, Departments, etc..." name="q"> 
+            <input class="submit" type="submit" value="Search Website"> 
+           </form> 
+           <form method="get" action="http://www.kenyon.edu/directories/campus-directory/search/"> 
+            <h4>Find People</h4> 
+            <label class="visually_hidden" for="find_people_query">Search First Name, Last Name, or Title</label> 
+            <input id="find_people_query" class="text" type="text" placeholder="First Name, Last Name, Title, etc..." name="query"> 
+            <input class="submit" type="submit" value="Search Directory"> 
+           </form> 
+           <h4>Popular Pages</h4> 
+           <ul class="links triple"> 
+            <li><a href="http://www.kenyon.edu/directories/offices-services/human-resources/employment-opportunities/">Employment</a></li> 
+            <li><a href="http://www.shopkenyon.com/welcome-kenyon-college-bookstore">Bookstore</a></li> 
+            <li><a href="http://www.kenyon.edu/directories/campus-directory/">Campus Directory</a></li> 
+           </ul> 
+           <ul class="links triple"> 
+            <li><a href="http://www.kenyon.edu/admissions-aid/financial-aid/">Financial Aid</a></li> 
+            <li><a href="http://www.kenyon.edu/directories/offices-services/registrar/">Registrar</a></li> 
+            <li><a href="https://lbis.kenyon.edu">Library</a></li> 
+           </ul> 
+           <ul class="links"> 
+            <li><a href="http://www.kenyon.edu/directories/offices-services/">Offices &amp; Services</a></li> 
+            <li><a href="http://www1.kenyon.edu/catalog/index.phtml">Searchable Schedule</a></li> 
+            <li><a href="http://www.kenyon.edu/visit-kenyon/virtual-tour/">Virtual Tour</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </nav> 
+      </div> 
+      <div class="navigation_compact"> 
+       <span class="nav_slider_handle mobile_handle">Navigation</span> 
+      </div> 
+     </div> 
+    </div> 
+   </header> 
+   <a name="top"></a> 
+   <header class="page"> 
+    <div class="row"> 
+     <div class="desktop-12"> 
+      <h1>Job and Internship Sites</h1> 
+      <nav class="breadcrumb"> 
+       <a href="http://www.kenyon.edu/">Home</a> 
+       <span>–</span> 
+       <a href="http://www.kenyon.edu/directories/">Directories</a> 
+       <span>–</span> 
+       <a href="http://www.kenyon.edu/directories/offices-services/">Offices &amp; Services</a> 
+       <span>–</span> 
+       <a href="http://www.kenyon.edu/directories/offices-services/career-development/">Career Development Office</a> 
+       <span>–</span> 
+       <a href="http://www.kenyon.edu/directories/offices-services/career-development/finding-opportunities-online/">Find Opportunities </a> 
+       <span>–</span> 
+       <a href="http://www.kenyon.edu/directories/offices-services/career-development/finding-opportunities-online/job-links/" class="last">Job and Internship Sites</a> 
+      </nav> 
+     </div> 
+    </div> 
+   </header>
+   <section aria-labelledby="main_page_title" class="page"> 
+    <div class="row"> 
+     <aside class="sidebar desktop-3 tablet-full mobile-full"> 
+      <nav class="subnavigation"> 
+       <div class="naver-handle">
+        Additional Navigation
+       </div> 
+       <div class="naver-wrapper"> 
+        <div class="naver-container"> 
+         <ul class="depth_1"> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/our-staff/">Our Staff</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/schedule-an-appointment/">Schedule an Appointment</a> </li> 
+          <li> <a href="http://calendar.kenyon.edu/calendar/month?event_types%5B%5D=19615" target="_blank" class="external">CDO Calendar</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/explore-careers-and-interests/">Explore Careers and Interests</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/career-resources/">Career Resources</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/finding-opportunities-online/" class="sub_active">Find Opportunities </a> 
+           <ul class="depth_2"> 
+            <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/finding-opportunities-online/job-links/" class="active">Job and Internship Sites</a> </li> 
+            <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/finding-opportunities-online/resources-by-industry/" class="last">Resources By Industry</a> </li> 
+           </ul> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/further-your-education/">Further Your Education</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/the-kenyon-career-network/">The Kenyon Career Network</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/campus-employment/">Student Employment</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/job-shadow-program/">Job Shadow Program</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/housing-resources/">Housing Resources</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/faculty-information/">Faculty Information</a> </li> 
+          <li> <a href="http://www.kenyon.edu/directories/offices-services/career-development/alumnivolunteer/" class="last">Alumni Volunteer Opportunities</a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </nav> 
+     </aside> 
+     <div class="body desktop-9 tablet-full mobile-full right max-8 max-push-1"> 
+      <aside class="in_content_callouts"> 
+       <a href="http://kenyon-csm.symplicity.com/students" target="_blank" class="callout purple_callout"> <small></small> <p>Click Here to log in to Symplicity.</p> </a> 
+      </aside> 
+      <div id="body_content"> 
+       <p class="introduction">The links below are not only career listings, but also general tools, information, and newsletters that you can use to find a job or internship.</p>
+       <p><span style="font-size: 1em;">Some websites require a username and password to access; to get this information, do not hesitate to email us at&nbsp;<a href="mailto:cdo@kenyon.edu">cdo@kenyon.edu</a>&nbsp;or call our office at (740) 427-5165.</span></p> 
+       <h3><span style="font-size: 1em;">Jump to:&nbsp;</span></h3> 
+       <ul class="jumplinks"> 
+        <li><a href="#where">Where to Begin</a></li> 
+        <li><a href="#jobsearch">General Job and Internship Search Websites</a></li> 
+       </ul> 
+       <h3 class="like_h5"><a class="anchor" name="where"></a>Where to Begin</h3> 
+       <p>Looking for advice on applying, unique careers, organizations or career development in gerenal? Here are a few links that will help you get started.&nbsp;</p> 
+       <p>Concerned about a particular job posting or site being legitimate? &nbsp;Consult our <a href="http://www.kenyon.edu/files/resources/copyofavoidingscams-generaltipsforstudents.pdf">guide to avoiding scams</a>, and don't hesitate to reach out to our office if you have additional concerns. &nbsp;</p> 
+       <p class="clearpara"><a title="CareerBliss" href="http://www.careerbliss.com/">CareerBliss.com</a><br>Make an informed career decision by reading about your future employer before you accept a job offer. Look up employer reviews written by current and former employees, search for salary information by company name or job title, and sign up for an account to set up job alerts on available jobs you are interested.</p> 
+       <p class="clearpara"><a title="One Day One Job" href="http://www.onedayonejob.com/">One Day One Job</a><br>Every day One Day One Job will introduce you to an awesome new company or non-profit. They’ll tell you what they do, who they are, why they’re interesting, and what kind of entry level jobs and internships they offer.</p> 
+       <p class="clearpara"><a title="JOBipedia.org" href="http://JOBipedia.org/"> JOBipedia.org</a><br>JOBipedia.org is a free website where students and recent graduates can ask questions about job searching and get answers directly from experienced recruiting professionals at America's top employers.</p> 
+       <p class="clearpara"><a title="http://Jobstr.com" href="http://jobstr.com/"> Jobstr.com</a><br>Jobstr is a Q&amp;A site where professionals from a variety of industries invite readers to "ask them anything" about their jobs.</p> 
+       <p><a href="http://college.wsj.com/">Wall Street Journal: College</a><br> From the Wall Street Journal, literally hundreds of articles about all aspects of job hunting and career management.</p> 
+       <p class="return_top"><a href="#top">Back to Top</a></p> 
+       <h3 class="like_h5"><a class="anchor" name="jobsearch"></a>Job Search Websites</h3> 
+       <p>The following pages are comprised of career development resources and job and internship search engines. This is, by no means, an exhaustive list, but it is a good starting point.</p> 
+       <p><a href="https://www.betterteam.com/job-posting-sites">Betterteam's Top Job Sites</a><br>List of 50 job search sites compiled by Betterteam.</p> 
+       <p><a href="http://www.careerbuilder.com/">Career Builder</a><br>Provides links to home pages of employers who have jobs to offer. You can learn about the employers and the positions they have available.</p> 
+       <p><a href="http://www.csis.org/about/jobs_interns/">Center for Strategic and International Studies Internships</a><br> CSIS has been dedicated to providing world leaders with strategic insights on - and policy solutions to - current and emerging global issues. They offer both full and part-time internships in the fall, spring and summer for undergraduate, advanced students and recent graduates interested in gaining practical experience in public policy at an institution dedicated to analysis and policy impact.</p> 
+       <p><a href="http://www.currentjobsforgraduates.com/">Current Jobs Bulletin</a><br>The CDO subscribes to several online job-posting newsletters particularly useful for liberal arts graduates (arts, international, writing/communications, education, and more). Contact the CDO for a username and password.</p> 
+       <p><a href="https://www.usajobs.gov/StudentsAndGrads">Federal Government Internships</a><br> Searchable database of Federal government internships and student jobs.</p> 
+       <p><a href="http://0-subscriber.hoovers.com.dewey2.library.denison.edu/H/home/index.html">Hoovers<br></a>Kenyon's&nbsp;database&nbsp;for researching companies by location, industry, size, and name. &nbsp;Find potential employers by industry and location!</p> 
+       <p><a href="http://www.idealist.org/">Idealist.org<br></a>Also known as Action Without Borders. Internships (and jobs) with non-profit organizations, volunteer opportunities with community agencies; these are available domestically and in over 160 other countries.</p> 
+       <p><a href="http://www.indeed.com/">Indeed.com</a><br>A tool that allows you to query multiple job-posting sites in one search. For versions of this for 18+ other countries, see&nbsp;<a title="International Careers" href="http://www.indeed.com/worldwide">Indeed International</a>.</p> 
+       <p><a href="http://www.internshipfinder.com/">InternshipFinder</a><br> Click "Internship Job Board" to search for internships by type and location in a large database.</p> 
+       <p><a href="https://www.looksharp.com/">Looksharp.com</a><br>One of the largest free internship listing sites, Looksharp&nbsp;focuses on positions with startup companies, non-profits, and other difficult to find opportunities. The site is flexible and easy to use -- you can easily search different fields and locations, and apply to as many positions as you'd like without any registration required. Also, check out the <a href="https://www.looksharp.com/blog/">Looksharp Blog</a>, a constantly-updating resource of the latest internship trends, insights, and student success stories.</p> 
+       <p><a href="http://www.kenyon.edu/admin/pages/edit/1104/Looksharp.com One of the largest free internship listing sites, Looksharp&nbsp;focuses on positions with startup companies, non-profits, and other difficult to find opportunities. The site is flexible and easy to use -- you can easily search different fields and locations, and apply to as many positions as you'd like without any registration required. Also, check out the Looksharp Blog, a constantly-updating resource of the latest internship trends, insights, and student success stories.">Ohio Means Jobs</a><br>Plan your career, search job postings, post a resume and find programs to assist with skill development. &nbsp;</p> 
+       <p><a href="https://www.profellow.com/">ProFellow</a><br>Search more than 700 professional and academic fellowship programs</p> 
+       <p><a href="http://www.nsf.gov/crssprgm/reu/reu_search.cfm">Research Experience for Undergraduates (REU)<br></a>From the National Science Foundation, this site links to hundreds of research opportunities in 18 primary categories!</p> 
+       <p><a href="http://www.topjobapplications.com/">Top Job Applications</a>&nbsp;<br> View, download and print a large selection of Job Applications for well known companies. They offer information and applications for many retail stores, restaurants, fast food stores, life saving pharmacies, ice cream parlors, department stores and grocery shops.</p> 
+       <p><a href="https://www.ziprecruiter.com/college-jobs">ZipRecruiter for College Students</a><br>Job and internship search engine tailored specifically towards college students. &nbsp;</p> 
+       <p class="return_top"><a href="#top">Back to Top</a></p> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <footer id="footer"> 
+    <div class="row"> 
+     <div class="information max-3 desktop-5 tablet-3 mobile-full"> 
+      <a href="http://www.kenyon.edu/" class="logo">Kenyon College</a> 
+      <p>Gambier, Ohio 43022<br>(740) 427-5000</p> 
+      <a href="https://twitter.com/KenyonCollege" class="twitter" target="_blank">Twitter</a> 
+      <a href="https://www.facebook.com/kenyoncollege" class="facebook" target="_blank">Facebook</a> 
+      <a href="http://www.youtube.com/user/KenyonCollegeVideo" class="youtube" target="_blank">YouTube</a> 
+     </div> 
+     <div class="links max-4 max-pull-1 desktop-5 tablet-3 mobile-full right"> 
+      <ul class="primary"> 
+       <li><a href="http://www.kenyon.edu/contact-us/">Contact Us</a></li> 
+       <li><a href="http://www.kenyon.edu/visit-kenyon/getting-to-campus/">Directions</a></li> 
+       <li><a href="http://map.kenyon.edu/" target="_blank">Map</a></li> 
+       <li><a href="http://www.kenyon.edu/directories/offices-services/human-resources/employment-opportunities/">Employment</a></li> 
+      </ul> 
+      <ul class="secondary"> 
+       <li><a href="http://www.kenyon.edu/directories/offices-services/ocr/discrimination/non-discrimination-statement-2/">Non-Discrimination Statement</a></li> 
+       <li><a href="http://www.kenyon.edu/web-accessibility-statement/">Accessibility Statement</a></li> 
+       <li><a href="http://www.kenyon.edu/directories/campus-directory/">Campus Directory</a></li> 
+       <li><a href="http://www.kenyon.edu/directories/offices-services/">Offices &amp; Services</a></li> 
+       <li><a href="http://www.kenyon.edu/directories/offices-services/campus-safety/">Campus Safety</a></li> 
+       <li><a href="https://lbis.kenyon.edu" target="_blank">Library</a></li> 
+       <li><a href="http://www.shopkenyon.com/welcome-kenyon-college-bookstore" target="_blank">Bookstore</a></li> 
+       <li><a href="http://www.kenyon.edu/middle-path/">News &amp; Media</a></li> 
+       <li><a href="http://www.kenyonreview.org/" target="_blank">The Kenyon Review</a></li> 
+       <li><a href="http://www.thegundgallery.org/" target="_blank">The Gund Gallery</a></li> 
+       <li><a href="http://www.kenyoninstitute.org" target="_blank">The Kenyon Institute</a></li> 
+       <li><a href="http://www.kenyon.edu/about-kenyon/center-for-the-american-study-of-democracy/">The Center for the Study of American Democracy</a></li> 
+       <li><a href="http://www.kenyon.edu/sitemap/">Sitemap</a></li> 
+      </ul> 
+      <ul class="static"> 
+       <li><a href="http://www.kenyon.edu/admissions-aid/contact-admissions/request-information/"><span class="info"></span>Request Information</a></li> 
+       <li><a href="http://www.kenyon.edu/visit-kenyon/"><span class="visit"></span>Visit Campus</a></li> 
+       <li><a href="http://www.kenyon.edu/admissions-aid/how-to-apply/"><span class="apply"></span>Apply</a></li> 
+       <li><a href="http://www.kenyon.edu/website-feedback/"><span class="feedback"></span>Website Feedback</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </footer> 
+  </div> 
+  <div class="nav_slider_navigation"> 
+   <nav class="navigation_mobile navigation_mobile_main"> 
+    <h4>Navigation</h4> 
+    <ul class="depth_1"> 
+     <li> <a href="http://www.kenyon.edu/about-kenyon/">About Kenyon</a> </li> 
+     <li> <a href="http://www.kenyon.edu/academics/">Academics</a> </li> 
+     <li> <a href="http://www.kenyon.edu/admissions-aid/">Admissions &amp; Aid</a> </li> 
+     <li> <a href="http://www.kenyon.edu/student-life/">Student Life</a> </li> 
+     <li> <a href="http://athletics.kenyon.edu/" target="_blank" class="external">Athletics</a> </li> 
+     <li> <a href="http://www.kenyon.edu/after-kenyon/" class="last">After Kenyon</a> </li> 
+    </ul> 
+   </nav> 
+   <form method="get" action="http://www.kenyon.edu/search/"> 
+    <h4>Search Kenyon</h4> 
+    <div class="contain"> 
+     <label class="visually_hidden" for="footer_site_search_query">Search Site by Keyword</label> 
+     <input id="footer_site_search_query" class="text" type="text" name="q"> 
+     <input class="submit" type="submit" value="Search"> 
+    </div> 
+    <div class="contain"> 
+     <label class="mobile_search_type_active" data-target="http://www.kenyon.edu/search/">Website</label> 
+     <div class="mobile_search_type mobile_seach_site"></div> 
+     <label data-target="http://www.kenyon.edu/directories/campus-directory/search/">Directory</label> 
+    </div> 
+   </form> 
+   <nav class="navigation_mobile navigation_mobile_secondary"> 
+    <h4>Audiences</h4> 
+    <ul> 
+     <li> <a href="http://www.kenyon.edu/for-students/">Students</a> </li> 
+     <li> <a href="http://www.kenyon.edu/for-faculty-staff/">Faculty &amp; Staff</a> </li> 
+     <li> <a href="http://www.kenyon.edu/for-parents/">Parents</a> </li> 
+     <li> <a href="http://www.kenyon.edu/for-alumni/">Alumni</a> </li> 
+    </ul> 
+   </nav> 
+   <nav class="navigation_mobile navigation_mobile_secondary"> 
+    <h4>Helpful Links</h4> 
+    <ul> 
+     <li> <a href="http://www.kenyon.edu/middle-path/">Along Middle Path</a> </li> 
+     <li> <a href="http://calendar.kenyon.edu">Calendar</a> </li> 
+     <li> <a href="http://www.kenyon.edu/visit-kenyon/">Visit Kenyon</a> </li> 
+     <li> <a href="http://www.kenyon.edu/give-to-kenyon/">Give to Kenyon</a> </li> 
+     <li> <a href="http://www.kenyon.edu/academics/departments-programs/">Areas of Study</a> </li> 
+    </ul> 
+   </nav> 
+  </div> 
+  <div id="middlepath_related"> 
+   <div class="row"> 
+    <header> 
+     <h2>Related on Middle Path</h2> 
+     <span class="close">Close</span> 
+    </header> 
+    <div class="scroll_container"> 
+     <div class="scroll"> 
+      <!-- RELATED CONTAINER --> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <span id="middlepath_related_loading">Loading</span> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"310ec9156e","applicationID":"11674052","transactionName":"blADMhNSD0FQVEVYDFcaNBQIHAhcVVJJHxNRRQ==","queueTime":0,"applicationTime":161,"atts":"QhcARFtIHE8=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr">
+ <head profile="http://www.w3.org/1999/xhtml/vocab"> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800" rel="stylesheet" type="text/css"> 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <link rel="shortcut icon" href="https://publicpolicy.umd.edu/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon"> 
+  <link rel="shortlink" href="/node/17831"> 
+  <link rel="canonical" href="/dogood-institute/programs/do-good-challenge/teams/healthy-habits"> 
+  <meta name="Generator" content="Drupal 7 (http://drupal.org)"> 
+  <title>Healthy Habits | School of Public Policy</title> 
+  <link type="text/css" rel="stylesheet" href="https://publicpolicy.umd.edu/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://publicpolicy.umd.edu/sites/default/files/css/css_aUEhccm_J1mx1BxjOG1J6fEnquG0N0Zb3DK9kkUjKrs.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://publicpolicy.umd.edu/sites/default/files/css/css_0N-bPgQKJ7ml1ksRwmJo75PNXHlFMPBJKVHF3Kakb3s.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.0.2/css/bootstrap.min.css" media="all"> 
+  <link type="text/css" rel="stylesheet" href="https://publicpolicy.umd.edu/sites/default/files/css/css_sz0h7lqZRpuuaBa1BZu6tum5NbDPWb1u3PnqX7HKNDU.css" media="all"> 
+  <!-- Just for debugging purposes. Don't actually copy this line! --> 
+  <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]--> 
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]--> 
+  <script>document.cookie = 'adaptive_image=' + Math.max(screen.width, screen.height) + '; path=/';</script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_jpJjaUC0z8JMIyav5oQrYykDRUb64rpaUDpB4Y9aklU.js"></script> 
+  <script src="//cdn.jsdelivr.net/bootstrap/3.0.2/js/bootstrap.min.js"></script> 
+  <script>Drupal.settings.ais = [{"name":"threshold-480","size":"480"},{"name":"threshold-768","size":"768"},{"name":"threshhold-880","size":"880"},{"name":"threshold-992","size":"992"},{"name":"threshold-1382","size":"1382"}];
+Drupal.settings.ais_method = "both-max";</script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_3gVyuNWzY7YTnQgbPR9BwpR7m9yI6xaSO3kjxA_U_JM.js"></script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_1bZIg4QZ3L_LEQcW0FYGsz3jJlOsRnjC8BjoKhDROfg.js"></script> 
+  <script src="https://publicpolicy.umd.edu/sites/all/modules/lightbox2/js/lightbox.js?1507035356"></script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_I8yX6RYPZb7AtMcDUA3QKDZqVkvEn35ED11_1i7vVpc.js"></script> 
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-11781221-1", {"cookieDomain":".publicpolicy.umd.edu"});ga("send", "pageview");</script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_D3gaWDovdngGvy7Ar8cOr5P3FJZDJ4dJMGHTZV2zNIY.js"></script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_YsmAAq0yfXgGh-5KWa0aI4K47eJUd6wyA5OcEeBaMDs.js"></script> 
+  <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bootstrap_mspp","theme_token":"Ih--iAJr-mFKviML8Rh7BOmJvETrGfueHUMTxkNZ-VM","js":{"\/\/s3.amazonaws.com\/umdheader.umd.edu\/app\/js\/main.js":1,"sites\/all\/modules\/custom\/umdheader\/umdheader.js":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"0":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.0.2\/js\/bootstrap.min.js":1,"1":1,"ais\/assets\/js\/ais.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/lightbox2\/js\/lightbox.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/contrib\/superfish\/superfish.js":1,"sites\/all\/themes\/bootstrap_mspp\/js\/mspp.js":1,"sites\/all\/themes\/bootstrap_mspp\/js\/jquery.hoverIntent.minified.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/adaptive_image\/css\/adaptive-image.css":1,"sites\/all\/modules\/ais\/assets\/css\/ais.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr_cc_icons_on_hover.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr_cc_icons.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle_rounded.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle_shadow.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle_border.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle_caption_shadow.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle_nostyle.css":1,"sites\/all\/modules\/contrib\/flickr\/style\/css\/flickrstyle_big.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/lightbox2\/css\/lightbox.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/default\/files\/honeypot\/honeypot.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.0.2\/css\/bootstrap.min.css":1,"sites\/all\/themes\/bootstrap\/css\/3.0.2\/overrides.min.css":1,"sites\/all\/themes\/bootstrap_mspp\/css\/style.css":1,"sites\/all\/themes\/bootstrap_mspp\/css\/mspp-custom.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":false,"mobiledevicewidth":"480px"},"lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)public:\/","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":true,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":false,"disable_resize":false,"disable_zoom":false,"force_show_nav":false,"show_caption":true,"loop_items":false,"node_link_text":"View Image Details","node_link_target":false,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\/kbd\u003E\u003C\/a\u003E to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":true,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":false},"better_exposed_filters":{"views":{"team_profile_layout":{"displays":{"block":{"filters":[]},"block_4":{"filters":[]},"block_1":{"filters":[]},"block_2":{"filters":[]},"block_3":{"filters":[]}}}}},"umdHeader":{"news":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":"1","trackCrossDomains":["www.publicpolicy.umd.edu, faculty.publicpolicy.umd.edu, phd.publicpolicy.umd.edu"]},"urlIsAjaxTrusted":{"\/dogood-institute\/programs\/do-good-challenge\/teams\/healthy-habits":true,"\/cas?destination=node\/17831":true},"superfish":{"23":{"id":"23","sf":{"animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":false,"dropShadows":false,"disableHI":false},"plugins":{"supposition":true,"bgiframe":false,"supersubs":{"minWidth":"12","maxWidth":"27","extraWidth":1}}}},"bootstrap":{"anchorsFix":1,"anchorsSmoothScrolling":1,"formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-17831 node-type-team-profile i18n-en"> 
+  <div id="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <!-- BEGIN CONTAINER --> 
+  <div class="container"> 
+   <header class="header col-xs-12"> 
+    <div class="logo col-xs-6"> 
+     <div class="region region-header-first"> 
+      <section id="block-block-101" class="block block-block clearfix"> 
+       <p><img height="285" width="1022" style="width: 222px; height: 62px;" class="media-element file-default img-responsive" src="https://publicpolicy.umd.edu/sites/default/files/DO-GOOD-INSTITUTE.png" alt=""><br>&nbsp;</p> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- TOP NAVIGATION --> 
+    <div class="col-xs-6"> 
+     <div class="region region-header-second"> 
+      <section id="block-search-form" class="block block-search spp-search clearfix"> 
+       <form class="form-search content-search" action="/dogood-institute/programs/do-good-challenge/teams/healthy-habits" method="post" id="search-block-form" accept-charset="UTF-8">
+        <div>
+         <div> 
+          <h2 class="element-invisible">Search form</h2> 
+          <div class="input-group">
+           <input title="Enter the terms you wish to search for." placeholder="Search" class="form-control form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
+           <span class="input-group-btn"><button type="submit" class="btn btn-primary"><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
+          </div>
+          <div class="form-actions form-wrapper form-group" id="edit-actions">
+           <button class="element-invisible btn btn-primary form-submit" type="submit" id="edit-submit" name="op" value="Search">Search</button> 
+          </div>
+          <input type="hidden" name="form_build_id" value="form-VmkmWf8xBykcF0KAo2niaR9SkerAFWvkFsGZwGevjMA"> 
+          <input type="hidden" name="form_id" value="search_block_form"> 
+         </div> 
+        </div>
+       </form> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- END TOP NAVIGATION --> 
+   </header> 
+   <!-- Main Navigation --> 
+   <div class="main-nav navbar-collapse collapse col-xs-12"> 
+    <div class="region region-navigation"> 
+     <section id="block-superfish-23" class="block block-superfish clearfix"> 
+      <ul id="superfish-23" class="menu sf-menu sf-menu-dogood-institute-main sf-horizontal sf-style-none sf-total-items-6 sf-parent-items-3 sf-single-items-3">
+       <li id="menu-6956-23" class="first odd sf-item-1 sf-depth-1 sf-total-children-3 sf-parent-children-1 sf-single-children-2 menuparent"><a href="/dogood-institute/about" class="sf-depth-1 menuparent">About</a>
+        <ul>
+         <li id="menu-6961-23" class="first odd sf-item-1 sf-depth-2 sf-total-children-4 sf-parent-children-1 sf-single-children-3 menuparent"><a href="/dogood-institute/about/people" class="sf-depth-2 menuparent">People</a>
+          <ul>
+           <li id="menu-7201-23" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/dogood-institute/about/people/alumni" class="sf-depth-3">Alumni</a></li>
+           <li id="menu-7151-23" class="middle even sf-item-2 sf-depth-3 sf-total-children-5 sf-parent-children-0 sf-single-children-5 menuparent"><a href="/dogood-institute/about/people/do-good-leaders" class="sf-depth-3 menuparent">Do Good Leaders</a>
+            <ul>
+             <li id="menu-7156-23" class="first odd sf-item-1 sf-depth-4 sf-no-children"><a href="/dogood-institute/about/people/do-good-leaders/ben-simon" class="sf-depth-4">Meet Ben Simon</a></li>
+             <li id="menu-7161-23" class="middle even sf-item-2 sf-depth-4 sf-no-children"><a href="/dogood-institute/about/people/do-good-leaders/evan-lutz" class="sf-depth-4">Meet Evan Lutz</a></li>
+             <li id="menu-7166-23" class="middle odd sf-item-3 sf-depth-4 sf-no-children"><a href="/dogood-institute/about/people/do-good-leaders/kirsten-craft" class="sf-depth-4">Meet Kirsten Craft</a></li>
+             <li id="menu-7171-23" class="middle even sf-item-4 sf-depth-4 sf-no-children"><a href="/dogood-institute/about/people/do-good-leaders/linda-powers" class="sf-depth-4">Meet Linda Powers</a></li>
+             <li id="menu-7176-23" class="last odd sf-item-5 sf-depth-4 sf-no-children"><a href="/dogood-institute/about/people/do-good-leaders/sagar-doshi" class="sf-depth-4">Meet Sagar Doshi</a></li>
+            </ul></li>
+           <li id="menu-7196-23" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/dogood-institute/about/people/faculty-staff" class="sf-depth-3">Faculty &amp; Staff</a></li>
+           <li id="menu-7181-23" class="last even sf-item-4 sf-depth-3 sf-no-children"><a href="/dogood-institute/about/people/student-assistants" class="sf-depth-3">Student Assistants</a></li>
+          </ul></li>
+         <li id="menu-7146-23" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="/dogood-institute/about/news" class="sf-depth-2">News</a></li>
+         <li id="menu-7066-23" class="last odd sf-item-3 sf-depth-2 sf-no-children"><a href="/dogood-institute/about/contact" class="sf-depth-2">Contact</a></li>
+        </ul></li>
+       <li id="menu-7141-23" class="middle even sf-item-2 sf-depth-1 sf-total-children-4 sf-parent-children-3 sf-single-children-1 menuparent"><a href="/dogood-institute/programs" class="sf-depth-1 menuparent">Programs</a>
+        <ul>
+         <li id="menu-7186-23" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/dogood-institute/programs/do-good-accelerator" class="sf-depth-2">Do Good Accelerator</a></li>
+         <li id="menu-7081-23" class="middle even sf-item-2 sf-depth-2 sf-total-children-4 sf-parent-children-1 sf-single-children-3 menuparent"><a href="/dogood-institute/programs/do-good-challenge" class="sf-depth-2 menuparent">Do Good Challenge</a>
+          <ul>
+           <li id="menu-7091-23" class="first odd sf-item-1 sf-depth-3 sf-total-children-6 sf-parent-children-0 sf-single-children-6 menuparent"><a href="/dogood-institute/programs/do-good-challenge/participate" class="sf-depth-3 menuparent">Participate</a>
+            <ul>
+             <li id="menu-7096-23" class="first odd sf-item-1 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/participate/eligibility" class="sf-depth-4">Eligibility</a></li>
+             <li id="menu-7101-23" class="middle even sf-item-2 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/participate/timeline" class="sf-depth-4">Timeline</a></li>
+             <li id="menu-7376-23" class="middle odd sf-item-3 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/participate/apply-seed-funds" class="sf-depth-4">Apply for Seed Funds</a></li>
+             <li id="menu-7106-23" class="middle even sf-item-4 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/participate/register" class="sf-depth-4">Register</a></li>
+             <li id="menu-7111-23" class="middle odd sf-item-5 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/participate/final-report" class="sf-depth-4">Submit Final Reports</a></li>
+             <li id="menu-7116-23" class="last even sf-item-6 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/participate/prizes" class="sf-depth-4">Prizes</a></li>
+            </ul></li>
+           <li id="menu-7636-23" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/teams" class="sf-depth-3">Teams</a></li>
+           <li id="menu-7121-23" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/past-winners" class="sf-depth-3">Past Winners</a></li>
+           <li id="menu-7136-23" class="last even sf-item-4 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/do-good-challenge/contact" class="sf-depth-3">Contact</a></li>
+          </ul></li>
+         <li id="menu-6971-23" class="middle odd sf-item-3 sf-depth-2 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent"><a href="/dogood-institute/programs/global-philanthropy" class="sf-depth-2 menuparent">Global Philanthropy</a>
+          <ul>
+           <li id="menu-7071-23" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/global-philanthropy/india" class="sf-depth-3">India</a></li>
+           <li id="menu-7061-23" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/global-philanthropy/china" class="sf-depth-3">China</a></li>
+           <li id="menu-7076-23" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/global-philanthropy/previous-trips" class="sf-depth-3">Previous Trips</a></li>
+          </ul></li>
+         <li id="menu-6976-23" class="last even sf-item-4 sf-depth-2 sf-total-children-3 sf-parent-children-2 sf-single-children-1 menuparent"><a href="/dogood-institute/programs/fellows-programs" class="sf-depth-2 menuparent">Fellowships</a>
+          <ul>
+           <li id="menu-6981-23" class="first odd sf-item-1 sf-depth-3 sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent"><a href="/dogood-institute/programs/fellows-programs/philanthropy-fellows" class="sf-depth-3 menuparent">Philanthropy Fellows</a>
+            <ul>
+             <li id="menu-6986-23" class="first odd sf-item-1 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/fellows-programs/philanthropy-fellows/apply" class="sf-depth-4">Apply</a></li>
+             <li id="menu-6886-23" class="middle even sf-item-2 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/fellows-programs/philanthropy-fellows/meet-the-fellows" class="sf-depth-4">Meet The Fellows</a></li>
+             <li id="menu-6991-23" class="middle odd sf-item-3 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/fellows-programs/philanthropy-fellows/past-fellows" class="sf-depth-4">Past Fellows</a></li>
+             <li id="menu-6996-23" class="last even sf-item-4 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/fellows-programs/philanthropy-fellows/past-employers" class="sf-depth-4">Past Employers</a></li>
+            </ul></li>
+           <li id="menu-7001-23" class="middle even sf-item-2 sf-depth-3 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent"><a href="/dogood-institute/programs/fellows-programs/global-service-fellowship" class="sf-depth-3 menuparent">Global Service Fellowship</a>
+            <ul>
+             <li id="menu-6796-23" class="first odd sf-item-1 sf-depth-4 sf-no-children"><a href="https://www.publicpolicy.umd.edu/graduate/admissions/financial-aid-and-scholarships" class="sf-depth-4">Apply</a></li>
+             <li id="menu-7006-23" class="last even sf-item-2 sf-depth-4 sf-no-children"><a href="/dogood-institute/programs/fellows-programs/global-service-fellowship/meet-fellows" class="sf-depth-4">Meet The Fellows</a></li>
+            </ul></li>
+           <li id="menu-7551-23" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="/dogood-institute/programs/fellows-programs/nonprofit-leadership-fellows-program" class="sf-depth-3">Nonprofit Leadership Fellows Program</a></li>
+          </ul></li>
+        </ul></li>
+       <li id="menu-7011-23" class="middle odd sf-item-3 sf-depth-1 sf-total-children-2 sf-parent-children-1 sf-single-children-1 menuparent"><a href="/dogood-institute/education" class="sf-depth-1 menuparent">Education</a>
+        <ul>
+         <li id="menu-7036-23" class="first odd sf-item-1 sf-depth-2 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent"><a href="/dogood-institute/education/undergraduate" class="sf-depth-2 menuparent">Undergraduate</a>
+          <ul>
+           <li id="menu-7041-23" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/dogood-institute/education/undergraduate/courses" class="sf-depth-3">Courses</a></li>
+           <li id="menu-7046-23" class="last even sf-item-2 sf-depth-3 sf-no-children"><a href="/dogood-institute/education/undergraduate/living-learning-programs" class="sf-depth-3">Living Learning Programs</a></li>
+          </ul></li>
+         <li id="menu-7191-23" class="last even sf-item-2 sf-depth-2 sf-no-children"><a href="/dogood-institute/education/graduate" class="sf-depth-2">Graduate</a></li>
+        </ul></li>
+       <li id="menu-6951-23" class="middle even sf-item-4 sf-depth-1 sf-no-children"><a href="/dogood-institute/research" class="sf-depth-1">Research</a></li>
+       <li id="menu-6596-23" class="middle odd sf-item-5 sf-depth-1 sf-no-children"><a href="http://giving.umd.edu/giving/fund.php?name=school-of-public-policy-center-for-philanthropy-and-nonprofit-leadership-endowment-fund&amp;school " class="sf-depth-1">Support</a></li>
+       <li id="menu-7051-23" class="last even sf-item-6 sf-depth-1 sf-no-children"><a href="http://dogood.umd.edu/" class="sf-depth-1">Do Good Campus</a></li>
+      </ul> 
+     </section> 
+    </div> 
+   </div> 
+   <!-- End Main Navigation --> 
+   <!-- CONTENT PAGES SECTION --> 
+   <div class="content-wrap col-xs-12"> 
+    <!-- BREADCRUMB --> 
+    <div class="mspp-breadcrumb col-xs-12"> 
+     <div class="region region-breadcrumb"> 
+      <section id="block-easy-breadcrumb-easy-breadcrumb" class="block block-easy-breadcrumb mspp_breadcrumb clearfix"> 
+       <div class="easy-breadcrumb">
+        <a href="/" class="easy-breadcrumb_segment easy-breadcrumb_segment-front">Home</a>
+        <span class="easy-breadcrumb_segment-separator"> </span>
+        <a href="/dogood-institute" class="easy-breadcrumb_segment easy-breadcrumb_segment-1">Do Good Institute</a>
+        <span class="easy-breadcrumb_segment-separator"> </span>
+        <a href="/dogood-institute/programs" class="easy-breadcrumb_segment easy-breadcrumb_segment-2">Programs</a>
+        <span class="easy-breadcrumb_segment-separator"> </span>
+        <a href="/dogood-institute/programs/do-good-challenge" class="easy-breadcrumb_segment easy-breadcrumb_segment-3">Do Good Challenge</a>
+        <span class="easy-breadcrumb_segment-separator"> </span>
+        <a href="/dogood-institute/programs/do-good-challenge/teams" class="easy-breadcrumb_segment easy-breadcrumb_segment-4">Teams</a>
+        <span class="easy-breadcrumb_segment-separator"> </span>
+        <span class="easy-breadcrumb_segment easy-breadcrumb_segment-title">Healthy Habits</span>
+       </div> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- END BREADCRUMB --> 
+    <!-- SIDE BAR FIRST --> 
+    <aside id="sidemenu" class="mspp-sidebar-left col-xs-3"> 
+     <div class="region region-sidebar-left"> 
+      <section id="block-menu-block-23" class="block block-menu-block clearfix"> 
+       <div class="menu-block-wrapper menu-block-23 menu-name-menu-dogood-institute-main parent-mlid-0 menu-level-1"> 
+        <ul class="menu nav">
+         <li class="first expanded menu-mlid-6956 dropdown"><a href="/dogood-institute/about" class="sf-depth-1 menuparent dropdown-toggle" data-target="#" data-toggle="dropdown">About <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li class="first expanded menu-mlid-6961"><a href="/dogood-institute/about/people" class="sf-depth-2 menuparent">People</a></li> 
+           <li class="leaf menu-mlid-7146"><a href="/dogood-institute/about/news">News</a></li> 
+           <li class="last leaf menu-mlid-7066"><a href="/dogood-institute/about/contact" class="sf-depth-2">Contact</a></li> 
+          </ul></li> 
+         <li class="expanded menu-mlid-7141 dropdown"><a href="/dogood-institute/programs" class="sf-depth-1 menuparent dropdown-toggle" data-target="#" data-toggle="dropdown">Programs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li class="first leaf menu-mlid-7186"><a href="/dogood-institute/programs/do-good-accelerator" class="sf-depth-2">Do Good Accelerator</a></li> 
+           <li class="expanded menu-mlid-7081"><a href="/dogood-institute/programs/do-good-challenge" class="sf-depth-2 menuparent">Do Good Challenge</a></li> 
+           <li class="expanded menu-mlid-6971"><a href="/dogood-institute/programs/global-philanthropy" class="sf-depth-2 menuparent">Global Philanthropy</a></li> 
+           <li class="last expanded menu-mlid-6976"><a href="/dogood-institute/programs/fellows-programs" class="sf-depth-2 menuparent">Fellowships</a></li> 
+          </ul></li> 
+         <li class="expanded menu-mlid-7011 dropdown"><a href="/dogood-institute/education" class="sf-depth-1 menuparent dropdown-toggle" data-target="#" data-toggle="dropdown">Education <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li class="first expanded menu-mlid-7036"><a href="/dogood-institute/education/undergraduate" class="sf-depth-2 menuparent">Undergraduate</a></li> 
+           <li class="last leaf menu-mlid-7191"><a href="/dogood-institute/education/graduate" class="sf-depth-2">Graduate</a></li> 
+          </ul></li> 
+         <li class="leaf menu-mlid-6951"><a href="/dogood-institute/research" class="sf-depth-1">Research</a></li> 
+         <li class="leaf menu-mlid-6596"><a href="http://giving.umd.edu/giving/fund.php?name=school-of-public-policy-center-for-philanthropy-and-nonprofit-leadership-endowment-fund&amp;school ">Support</a></li> 
+         <li class="last leaf menu-mlid-7051"><a href="http://dogood.umd.edu/">Do Good Campus</a></li> 
+        </ul>
+       </div> 
+      </section> 
+     </div> 
+    </aside> 
+    <!-- END SIDE BAR FIRST --> 
+    <!-- MAIN CONTENT --> 
+    <div class="mspp-content col-xs-9"> 
+     <h1 class="title"></h1> 
+     <div class="region region-content"> 
+      <section id="block-views-team-profile-layout-block" class="block block-views clearfix"> 
+       <div class="view view-team-profile-layout view-id-team_profile_layout view-display-id-block view-dom-id-9bdb03cf7ce28f60726ccb36158a417b"> 
+        <div class="view-content"> 
+         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+          <div class="grant_img col-sm-4"> 
+           <img class="img-responsive" src="https://publicpolicy.umd.edu/sites/default/files/styles/large/public/Healthy%20Habits%20DGC_0.jpg?itok=yCwTz0Qr" width="480" height="178" alt=""> 
+          </div> 
+          <div class="grant_intro col-sm-8">
+            Healthy Habits 
+          </div> 
+          <div class="grant_intro col-sm-8">
+            Healthy Habits will aim to help college students make healthy choice while eating on campus. 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+      <section id="block-views-team-profile-layout-block-4" class="block block-views clearfix"> 
+       <h2 class="block-title">Project Description</h2> 
+       <div class="view view-team-profile-layout view-id-team_profile_layout view-display-id-block_4 view-dom-id-6e6400fb9e7ee40ae99ca3924ebc9c02"> 
+        <div class="view-content"> 
+         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+          <div class="views-field views-field-field-project-description"> 
+           <div class="field-content">
+            Our objective is to help college students make the healthier choices while eating at the campus diner. We will enroll students in a team challenge program, and post daily incremental challenges, such as eating 1 cup of fruit a day. The participants will then post a picture of the food described in the challenge and a subsequent picture of the emptied plate to prove they completed the challenge. Points will be assigned to teams for every challenge completed, and teams will compete to be on a leaderboard and receive the final prize. We will reward the participants with food from health-oriented establishments and opportunities to engage in fitness activities. College students lack the incentive to maintain healthy eating habits and be educated about dietary needs. Once students leave home, they have to start making important decisions about how to care for their own health and nutrition. If a student starts developing poor eating habits, those habits can hinder academic performance, physical health, and mental health. Conditions such as diabetes and obesity are linked to poor eating habits. Developing health habits is crucial to lifelong health, and college is an opportunity to shape these habits in a positive way. Our reach will consist of students at UMD who are on a meal plan and frequent the university diners. We hope to focus on gathering groups with an investment in nutrition, such as sports clubs and health organizations, as well as everyday students who want to improve their diet. Moving forward, we would be able to expand to other campuses and areas where people feel as though they are not motivated enough by their peers and surroundings to eat healthy. In the short-term we hope to motivate students to make incremental changes in their diet and shift towards consciously eating healthier every day. In order to do so, we also hope to build a support network of peers in our Facebook group to motivate one another and keep participants dedicated to the challenge. In the long-term we hope to educate students about the consequences of poor diet and the benefits of making healthy choices, and instill healthy eating habits that they will carry throughout life. 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+      <section id="block-system-main" class="block block-system clearfix"> 
+       <article id="node-17831" class="node node-team-profile clearfix"> 
+        <span class="print-link"></span> 
+        <footer> 
+        </footer> 
+       </article> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- END MAIN CONTENT --> 
+    <!-- SIDE BAR SECOND --> 
+    <!-- END SIDE BAR SECOND --> 
+   </div> 
+   <div class="clearfix"></div> 
+   <div class="col-xs-12 row"> 
+    <!-- POSTSCRIPT FIRST --> 
+    <div class="col-xs-4"> 
+     <div class="region region-postscript-first"> 
+      <section id="block-views-team-profile-layout-block-1" class="block block-views dogood-cause clearfix"> 
+       <h2 class="block-title">Team Members</h2> 
+       <div class="view view-team-profile-layout view-id-team_profile_layout view-display-id-block_1 view-dom-id-8bd28b2856a7ed918baa18dabfaff53e"> 
+        <div class="view-content"> 
+         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+          <div class="views-field views-field-field-team-members-collection"> 
+           <div class="field-content">
+            <div class="entity entity-field-collection-item field-collection-item-field-team-members-collection clearfix"> 
+             <div class="content"> 
+              <div class="field field-name-field-member-name field-type-text field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 Alexis Peters
+                </div>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+            <div class="entity entity-field-collection-item field-collection-item-field-team-members-collection clearfix"> 
+             <div class="content"> 
+              <div class="field field-name-field-member-name field-type-text field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 Fiona Whitefield
+                </div>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+            <div class="entity entity-field-collection-item field-collection-item-field-team-members-collection clearfix"> 
+             <div class="content"> 
+              <div class="field field-name-field-member-name field-type-text field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 Shawn Linzer
+                </div>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+            <div class="entity entity-field-collection-item field-collection-item-field-team-members-collection clearfix"> 
+             <div class="content"> 
+              <div class="field field-name-field-member-name field-type-text field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 Joel Yoo
+                </div>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+            <div class="entity entity-field-collection-item field-collection-item-field-team-members-collection clearfix"> 
+             <div class="content"> 
+              <div class="field field-name-field-member-name field-type-text field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 Somya Padliya
+                </div>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- END POSTSCRIPT FIRST --> 
+    <!-- POSTSCRIPT SECOND --> 
+    <div class="col-xs-4"> 
+     <div class="region region-postscript-second"> 
+      <section id="block-views-team-profile-layout-block-2" class="block block-views dogood-cause clearfix"> 
+       <h2 class="block-title">Social Issue/Cause</h2> 
+       <div class="view view-team-profile-layout view-id-team_profile_layout view-display-id-block_2 view-dom-id-ab3be248d214edd808b46a1013408d7d"> 
+        <div class="view-content"> 
+         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+          <div class="views-field views-field-field-cause-organization"> 
+           <div class="field-content">
+            Nutrition
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- END POSTSCRIPT SECOND --> 
+    <!-- POSTSCRIPT THIRD --> 
+    <div class="col-xs-4"> 
+     <div class="region region-postscript-third"> 
+      <section id="block-views-team-profile-layout-block-3" class="block block-views dogood-cause clearfix"> 
+       <h2 class="block-title">Type of Activities</h2> 
+       <div class="view view-team-profile-layout view-id-team_profile_layout view-display-id-block_3 view-dom-id-696ebf2d2c8d2872c8831e4387c469ca"> 
+        <div class="view-content"> 
+         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last"> 
+          <div class="views-field views-field-field-type-of-activity"> 
+           <div class="field-content">
+            Advocacy/Awareness
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+     </div> 
+    </div> 
+    <!-- END POSTSCRIPT THIRD --> 
+   </div> 
+   <!-- CONTENT PAGES SECTION --> 
+  </div> 
+  <!-- END CONTAINER --> 
+  <!-- START FOOTER ELEMENTS --> 
+  <div class="mspp-footer col-xs-12"> 
+   <div class="container"> 
+    <div class="col-xs-12"> 
+     <div class="region region-footer-first"> 
+      <section id="block-block-17" class="block block-block col-xs-2 footer-col clearfix"> 
+       <h2 class="block-title">Admissions</h2> 
+       <ul>
+        <li><a href="http://publicpolicy.umd.edu/node/6">Why Maryland</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeUXMvpkDb1gf0jFov25Xd4DP1xeYUC8aReJ1EM3WF1yJqH2w/viewform">Schedule a visit</a></li>
+        <li><a href="https://www.publicpolicy.umd.edu/graduate/admissions/application-process">Apply Now</a></li>
+        <li><a href="http://publicpolicy.umd.edu/undergraduate/academics/major">BA Degree</a></li>
+        <li><a href="https://www.publicpolicy.umd.edu/graduate/masters">MPP Degree</a></li>
+        <li><a href="http://www.publicpolicy.umd.edu/graduate/doctoral-programs">PhD Program</a></li>
+       </ul> 
+      </section> 
+      <section id="block-block-18" class="block block-block col-xs-4 footer-col clearfix"> 
+       <h2 class="block-title">Centers</h2> 
+       <ul>
+        <li><a href="http://publicpolicy.umd.edu/dogood-institute" target="_blank">Do Good Institute</a></li>
+        <li><a href="http://cgs.umd.edu" target="_blank">Center for Global Sustainability</a></li>
+        <li><a href="http://www.cissm.umd.edu/" target="_blank">Center for International and Security Studies at Maryland (CISSM)</a></li>
+        <li><a href="http://cpppe.umd.edu" target="_blank">Center for Public Policy &amp; Private Enterprise (CPPPE)</a></li>
+        <li><a href="http://www.smartgrowth.umd.edu/" target="_blank">National Center for Smart Growth Research</a></li>
+        <li><a href="https://www.umdsafecenter.org" target="_blank">SAFE Center</a></li>
+       </ul> 
+      </section> 
+      <section id="block-block-19" class="block block-block col-xs-2 footer-col clearfix"> 
+       <h2 class="block-title">Newsroom</h2> 
+       <ul>
+        <li><a href="/newsroom">Feature Stories</a></li>
+        <li><a href="/newsroom/press-releases">Press Releases</a></li>
+        <li><a href="/newsroom/in-the-news">In The News</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/newsroom/blog">The Policy Exchange</a></li>
+        <li><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=wmttuopab&amp;p=oi&amp;m=1116109131158&amp;sit=7cwayjnib&amp;f=e3360197-eb0d-45bc-b80f-6e96b5646d50" target="_blank">Get SPP News</a></li>
+       </ul> 
+      </section> 
+      <section id="block-block-20" class="block block-block col-xs-4 footer-col clearfix"> 
+       <h2 class="block-title">Connect with Us</h2> 
+       <p><a style="margin-right:10px;" href="https://www.facebook.com/publicpolicy"><i class="fa fa-facebook-square fa-3x"></i></a><a style="margin-right:10px;" href="https://twitter.com/umdpublicpolicy"><i class="fa fa-twitter-square fa-3x"></i></a><a style="margin-right:10px;" href="http://www.linkedin.com/groups?home=&amp;gid=46307&amp;trk=anet_ug_hm"> <i class="fa fa-linkedin-square fa-3x"></i> </a><a style="margin-right:10px;" href="http://www.youtube.com/user/UMDPublicPolicy"><i class="fa fa-youtube-square fa-3x"></i></a><a href="https://www.flickr.com/photos/marylandpublicpolicy/albums"><i class="fa fa-flickr fa-3x"></i></a></p> 
+       <br> 
+       <br> 
+       <a href="http://www.appam.org/"><img src="/sites/default/files/appam.png" width="68" height="30" alt="APPAM"></a>
+       <a href="http://www.apsia.org/"><img src="/sites/default/files/apsia-logo.png" width="88" height="24" alt="APSIA"></a>
+       <a href="http://www.naspaa.org/"><img src="/sites/default/files/naspaa.png" width="78" height="33" alt="NASPAA"></a> 
+      </section> 
+     </div> 
+    </div> 
+    <div class="footer-address col-xs-12"> 
+     <div class="region region-footer-second"> 
+      <section id="block-footer-message-footer-message" class="block block-footer-message clearfix"> 
+       <address><strong>University of Maryland&nbsp;School of Public Policy</strong><br> <small>2101 Van Munching Hall College Park, MD 20742 • Phone: 301-405-6330 • Fax: 301-403-4675</small></address> 
+      </section> 
+      <section id="block-cas-login" class="block block-cas clearfix"> 
+       <form action="/cas?destination=node/17831" method="post" id="cas-login-form" accept-charset="UTF-8">
+        <div>
+         <div class="form-item form-type-item form-group"></div>
+         <input type="hidden" name="form_build_id" value="form-jKCNHT_6NwL-IK7NRc4sQpM0JLIaxQlp53RjZ7_pYJM"> 
+         <input type="hidden" name="form_id" value="cas_login_block"> 
+         <input type="hidden" name="honeypot_time" value="1507035356|CK-ojZcGbm0oqsFcHYBmDcSn2FI2GO41gdemadAuJGI"> 
+         <div class="homepage-textfield">
+          <div class="form-item form-item-homepage form-type-textfield form-group"> 
+           <label class="control-label" for="edit-homepage">Leave this field blank </label> 
+           <input autocomplete="off" class="form-control form-text" type="text" id="edit-homepage" name="homepage" value="" size="20" maxlength="128">
+          </div>
+         </div>
+         <div class="form-actions form-wrapper form-group" id="edit-actions--2">
+          <button type="submit" id="edit-submit--2" name="op" value="CMS Login" class="btn btn-default form-submit">CMS Login</button> 
+         </div>
+        </div>
+       </form> 
+      </section> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- END FOOTER ELEMENTS --> 
+  <script>
+
+/*jQuery Side Menu*/
+
+jQuery(document).ready(function($){
+  $("li.active-trail>ul").slideDown();
+  $("#sidemenu li").hoverIntent({
+    over: function(){     jQuery(this).find(">ul").slideDown();},
+    out: function(){     jQuery(this).find(">ul").slideUp();},
+    timeout: 2000
+  });
+})
+
+
+console.log('Menu Successful!');
+    </script> 
+  <script src="//s3.amazonaws.com/umdheader.umd.edu/app/js/main.js"></script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_qZeo5lZyGKc-Lf4f9caK7RcfMVt2Hu50PY3E0frxO6o.js"></script> 
+  <script src="https://publicpolicy.umd.edu/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9411395ea4","applicationID":"2253639","transactionName":"NFJbYRRYWRIDBxAMDA0YeFYSUFgPTQoLAQY8R1hSA2ZBCAcT","queueTime":0,"applicationTime":369,"atts":"GBVYF1xCShw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

@@ -1,0 +1,1340 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUEVlRRChADVVRQDwIOVQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script> 
+  <title>Classroom Management Printables,  Advice &amp; Planning for Teachers (Grades K-12)  - TeacherVision</title> 
+  <link rel="publisher" href="https://plus.google.com/+TeachervisionOfficial/posts"> 
+  <script type="application/ld+json">		
+      "@context": "http://schema.org",
+      "@type": "Website",
+      "name": "TeacherVision",
+      "url": "https://www.teachervision.com",
+      "logo": "https://www.teachervision.com/themes/teachervision/images/logo_pos.png", 
+      "sameAs": [
+          "https://www.facebook.com/TeacherVision",
+          "https://twitter.com/teachervision",
+          "https://plus.google.com/+teachervisionofficial",
+          "https://www.pinterest.com/teachervision/"
+      ]</script> 
+  <script>var PREBID_TIMEOUT = 700;
+    var adUnits = [
+        {
+            code: 'div-gpt-ad-1475507939332-0',
+            sizes: [[300, 600]],
+            bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: '10712690'
+                    }
+                },
+   {
+      bidder: 'sovrn',
+      params: { tagid: '470795' }
+    },
+{
+      bidder: "criteo",
+      params: {
+        zoneId: "767850"
+      }
+        }
+            ]
+        },
+        {
+            code: 'div-gpt-ad-1475507628767-0',
+            sizes: [[728, 90]],
+            bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: '10712689'
+                    }
+                },
+{
+      bidder: 'sovrn',
+      params: { tagid: '470793' }
+    },
+{
+      bidder: "criteo",
+      params: {
+        zoneId: "767851"
+      }
+        }
+            ]
+        },
+        {
+            code: 'div-gpt-ad-1475507939332-0',
+            sizes: [[300, 250]],
+            bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: '10712692'
+                    }
+                },
+{
+      bidder: 'sovrn',
+      params: { tagid: '470794' }
+    },
+{
+      bidder: "criteo",
+      params: {
+        zoneId: "767849"
+      }
+        }
+]
+        },
+        {
+            code: 'div-gpt-ad-1475507774924-0',
+            sizes: [[300, 250]],
+            bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: '10712692'
+                    }
+                },
+{
+      bidder: 'sovrn',
+      params: { tagid: '470794' }
+    },
+{
+      bidder: "criteo",
+      params: {
+        zoneId: "767849"
+      }
+        }
+]
+        },
+        {
+            code: 'div-gpt-ad-1475507859467-0',
+            sizes: [[320, 50]],
+            bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: '10712691'
+                    }
+                }]
+        },
+        {
+            code: 'div-gpt-ad-1477597653992-0',
+            sizes: [[320, 50]],
+            bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: '10712691'
+                    }
+                }]
+        }
+    ];
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+
+pbjs.que.push(function(){pbjs.setPriceGranularity('auto');});
+pbjs.que.push(function(){pbjs.enableSendAllBids();});
+pbjs.que.push(function () {
+    pbjs.enableAnalytics([{
+      provider: 'ga',
+      options: {
+        enableDistribution: false
+      }
+    }]);
+  });
+ var slot728;
+ function refreshSlot(slot){
+	 pbjs.que.push(function(){
+		 pbjs.requestBids(
+				 {timeout:PREBID_TIMEOUT,
+					 adUnitCodes:[slot.getSlotElementId()],
+					 bidsBackHandler:function(){
+						 pbjs.setTargetingForGPTAsync([slot.getSlotElementId()]);
+						 googletag.pubads().refresh([slot]);
+						 }
+				 });
+		 });
+	 }
+
+ function refreshSlot2(){
+	 refreshSlot(slot728);
+ }</script> 
+  <script src="/themes/ip/js/prebid_20170602.js" async></script> 
+  <script>var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function() {
+        googletag.pubads().disableInitialLoad();
+    });
+
+    pbjs.que.push(function() {
+        pbjs.addAdUnits(adUnits);
+        pbjs.requestBids({
+            bidsBackHandler: sendAdserverRequest
+        });
+    });
+
+    function sendAdserverRequest() {
+        if (pbjs.adserverRequestSent) return;
+        pbjs.adserverRequestSent = true;
+        googletag.cmd.push(function() {
+            pbjs.que.push(function() {
+                pbjs.setTargetingForGPTAsync();
+                googletag.pubads().refresh();
+            });
+        });
+    }
+
+    setTimeout(function() {
+        sendAdserverRequest();
+    }, PREBID_TIMEOUT);
+
+(function() {	
+var gads = document.createElement('script');	
+gads.async = true;	
+gads.type = 'text/javascript';	
+var useSSL = 'https:' == document.location.protocol;	
+gads.src = (useSSL ? 'https:' : 'http:') +	'//www.googletagservices.com/tag/js/gpt.js';	var node = document.getElementsByTagName('script')[0];	node.parentNode.insertBefore(gads, node);	})();
+</script> 
+  <script async src="https://s3.amazonaws.com/maropost/uploads/1054/websites/1/ecbb81f6fa4da869a8c97a840458a0c9d393d745-v2.js" type="text/javascript"></script> 
+  <script> var _comscore = _comscore || [];
+  _comscore.push({"c1":"2","c2":"6035556","c4":"\/teaching-strategies\/classroom-management"});
+
+ (function() {
+   var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+   s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+   el.parentNode.insertBefore(s, el);
+ })();</script> 
+  <noscript>
+   &lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;amp;c2=6035556&amp;amp;c4=/teaching-strategies/classroom-management&amp;amp;cv=2&amp;amp;cj=1"&gt; 
+  </noscript>
+  <meta name="title" content="Classroom Management Printables,  Advice &amp; Planning for Teachers (Grades K-12)"> 
+  <meta name="referrer" content="origin"> 
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Classroom Management Printables,  Advice &amp; Planning for Teachers (Grades K-12)  - TeacherVision"> 
+  <meta property="og:description" content="Classroom Management Printables,  Advice &amp; Planning for Teachers (Grades K-12)  - TeacherVision"> 
+  <meta property="og:image" content="https://www.teachervision.com/themes/teachervision/images/logo_pos.jpg"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="og:site_name" content="TeacherVision"> 
+  <meta property="og:url" content="https://www.teachervision.com/teaching-strategies/classroom-management"> 
+  <meta property="og:locale" content="en"> 
+  <meta name="fb:app_id" content="661781117365426"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="@TeacherVision"> 
+  <link rel="shortcut icon" href="/themes/teachervision/favicon.ico" type="image/vnd.microsoft.icon"> 
+  <meta name="description" content="The toughest challenges become easier when you have the right resources.  Find our best classroom management resources, from room set-up advice to behavior modification articles to effective teaching methods.  Whether you're a new teacher or a seasoned veteran, there's something for all grade levels, K-12."> 
+  <link rel="canonical" href="https://www.teachervision.com/teaching-strategies/classroom-management"> 
+  <link rel="image_src" href="https://www.teachervision.com/themes/teachervision/images/logo_pos.png"> 
+  <script type="text/javascript">
+      (function(d) {
+        var tkTimeout=3000;
+        if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}
+        var config = {
+          kitId: 'hrg3vmt',
+          scriptTimeout: tkTimeout
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+      </script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="/sites/default/files/css/css_5wNhbhBiWRBHMTzE3NMTS2dch5I7XSlqwg120CzrhtQ_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.css?owxh8k"> 
+  <link rel="stylesheet" href="/sites/default/files/css/css_DxcMaD387svdPlda8BTONw9_2wqGTktWF_KQv5M90FA_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.css?owxh8k"> 
+  <link rel="stylesheet" href="/sites/default/files/css/css_WwCatvJJCo4JELHK7y1QtC1zwKt8IT0GkEURBiOfi0c_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.css?owxh8k"> 
+  <link rel="stylesheet" href="/sites/default/files/css/css_OiB73eLF3HFYy1Y-ZdXF4h0vrV9lIafG0fczPnEKqDo_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.css?owxh8k"> 
+  <link rel="stylesheet" href="/sites/default/files/css/css_NKEAHVMnuxiA-UHE7PEg_4N-LehphfvMK2h6dfVkxSw_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.css?owxh8k"> 
+  <link rel="stylesheet" href="/sites/default/files/css/css_Uo8Tla8dQuJyHML11JKSjCJ7vM9yd5fbZc0dSuTJP3E_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.css?owxh8k"> 
+  <!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.js"></script>
+<![endif]--> 
+  <script type="text/javascript">
+			function ybWidth(){
+			   var w = window, d = document, e = d.documentElement;
+			   return Math.max(e.scrollWidth,e.offsetWidth,e.clientWidth);
+			}
+		</script> 
+  <script type="text/javascript">
+			googletag.cmd.push(function() {
+			googletag.defineSlot('/718/TV/Middlerightrail', [[300, 600], [300, 250]], 'div-gpt-ad-1475507939332-0').addService(googletag.pubads());
+			googletag.defineSlot('/718/TV/ATFrightrail', [300, 250], 'div-gpt-ad-1475507774924-0').addService(googletag.pubads());
+      googletag.defineOutOfPageSlot('/718/TV/outofpage', 'div-gpt-ad-1473886566296-0').addService(googletag.pubads());
+      googletag.defineOutOfPageSlot('/718/TV/oopsticky', 'div-gpt-ad-1501870817474-0').addService(googletag.pubads());
+			slot728 = googletag.defineSlot('/718/TV/leaderboard', [728, 90], 'div-gpt-ad-1475507628767-0').addService(googletag.pubads());
+			googletag.defineSlot('/718/TV/mobile320x50', [320, 50], 'div-gpt-ad-1475507859467-0').addService(googletag.pubads());
+      googletag.defineSlot('/718/TV/mobile320x50', [320, 50], 'div-gpt-ad-1477597653992-0').addService(googletag.pubads());
+			googletag.pubads().enableSingleRequest();
+      googletag.pubads().collapseEmptyDivs();
+
+			
+           	googletag.pubads().setTargeting("pageId","72006");
+
+           	
+           	googletag.pubads().setTargeting("pageType","ClassroomManagement");
+
+           	
+           	googletag.pubads().setTargeting("pageView","taxonomy_term");
+
+           	
+           	googletag.pubads().setTargeting("signedIn","no");
+
+           	
+           	googletag.pubads().setTargeting("tabName","Home");
+
+           	
+           	googletag.pubads().setTargeting("strategies","ClassroomManagement");
+
+           	
+            googletag.pubads().setTargeting("site", document.location.hostname);
+            googletag.pubads().setTargeting("family", "TV");
+            googletag.enableServices();
+			});
+
+      // DataLayer code For GA -Ashutosh
+      var dataLayer = window.dataLayer = window.dataLayer || [];
+      dataLayer.push({"pageType":"","userState":"logged-out","subStatus":"anonymous"});
+
+			
+      		</script> 
+  <script type="text/javascript">
+        window._taboola = window._taboola || [];
+        _taboola.push({article:'auto'});
+        !function (e, f, u, i) {
+          if (!document.getElementById(i)){
+            e.async = 1;
+            e.src = u;
+            e.id = i;
+            f.parentNode.insertBefore(e, f);
+          }
+        }(document.createElement('script'),
+        document.getElementsByTagName('script')[0],
+        '//cdn.taboola.com/libtrc/sandbox-teachervision/loader.js',
+        'tb_loader_script');
+      </script> 
+  <!-- Start Visual Website Optimizer Asynchronous Code --> 
+  <script type="text/javascript">
+    var _vwo_code=(function(){
+    var account_id=185273,
+    settings_tolerance=2000,
+    library_tolerance=2500,
+    use_existing_jquery=false,
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script> 
+  <!-- End Visual Website Optimizer Asynchronous Code --> 
+ </head> 
+ <body data-grid-framework="b3f" data-grid-color="fuchsia" data-grid-opacity="0.5" data-grid-zindex="100000" data-grid-gutterwidth="20px" data-grid-nbcols="12" class="user-logged-out path-taxonomy-term-72006 path-taxonomy head-title-Classroom-Management-Printables.--Advice-&amp;-Planning-for-Teachers-(Grades-K-12) TeacherVision"> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TLN2FX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TLN2FX');</script> 
+  <!-- End Google Tag Manager --> 
+  <a href="#main-content" class="visually-hidden focusable skip-link"> Skip to main content </a> 
+  <div class="fa fa-hand-o-right admin-menu-icon"></div> 
+  <header id="fen-mobile-push-wrapper" class=""> 
+   <div id="fen-main-header" class="navbar navbar-default navbar-fixed-top"> 
+    <div id="fen-main-nav" class="container-fluid"> 
+     <div class="fen-nav-button fen-nav-button-left"> 
+      <button id="fen-mobile-profile-btn" class="btn btn-default pull-left"><i class="fa fa-navicon"></i></button> 
+     </div> 
+     <div class="fen-nav-middle row"> 
+      <div class="col-xs-12 col-sm-3 col-md-3"> 
+       <a id="fen-main-logo" class="btn btn-link" href="/"> <img src="/themes/teachervision/images/logo_pos.svg"> </a> 
+      </div> 
+      <div class="col-sm-3 col-md-4 hidden-xs"> 
+       <form class="navbar-form" id="top-bar-search" role="search"> 
+        <input type="text" class="form-control" placeholder="Search for K-12 resources" name="q"> 
+        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button> 
+       </form> 
+      </div> 
+      <div class="col-sm-6 col-md-5 hidden-xs"> 
+       <div id="block-fepageheader-3" class="block block-fe-page-header"> 
+        <ul class="nav navbar-nav navbar-right"> 
+         <li> <a class="navbar-btn btn-default btn signup-btn" href="/user/login?destination=/teaching-strategies/classroom-management" rel="nofollow">Sign In</a> </li> 
+         <li> <a class="navbar-btn btn-primary btn" href="/user/register?destination=/select-plan">Free Trial</a> </li> 
+        </ul> 
+       </div> 
+       <div id="block-tvoutofpageoopstickyblock" class="block block-block-content block-block-content80c70c23-014b-460e-bb95-4b58bd05bcad"> 
+        <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+         <!-- /718/TV/oopsticky --> 
+         <div id="div-gpt-ad-1501870817474-0"> 
+          <script>
+<!--//--><![CDATA[// ><!--
+
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1501870817474-0'); });
+
+//--><!]]>
+</script>
+         </div>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="fen-nav-button fen-nav-button-right"> 
+      <button class="fen-search-toggle"><i class="fa fa-search"></i></button> 
+     </div> 
+     <div id="fen-nav-search"> 
+      <div class="input-wrapper"> 
+       <i class="fa fa-search"></i> 
+       <input type="text" placeholder="Search TeacherVision ..." id="searchquery" name="searchquery"> 
+      </div> 
+      <div id="fen-nav-search-close">
+       <i class="fa fa-close"></i>
+      </div> 
+     </div> 
+    </div> 
+    <div id="fen-sub-nav"> 
+     <nav class="container-fluid"> 
+      <ul class="menu nav navbar-nav"> 
+       <li class="menu-item menu-item--expanded dropdown my-teachervision"> <a href="/open-modal-teachervision" class="open-pop-up-myteachervision">MY TEACHERVISION</a> </li> 
+       <li class="menu-item menu-item--expanded dropdown futurefit"> <a href="/futurefit" title="FutureFit" data-drupal-link-system-path="node/1795066">FutureFit</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-4">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item overview"> <a href="/futurefit" title="FutureFit" data-drupal-link-system-path="node/1795066">Overview</a> </li> 
+            <li class="menu-item what-is-futurefit?"> <a href="/futurefit/what-is-futurefit" title="What Is FutureFit" data-drupal-link-system-path="node/1794871">What Is FutureFit?</a> </li> 
+            <li class="menu-item futurefit-skills"> <a href="/futurefit/skill-domains" title="FutureFit Skill Domains" data-drupal-link-system-path="node/1794971">FutureFit Skills</a> </li> 
+            <li class="menu-item futurefit-projects"> <a href="/lesson-planning/futurefit-projects" data-drupal-link-system-path="taxonomy/term/135081">FutureFit Projects</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item reflect"> <a href="/futurefit/reflect" data-drupal-link-system-path="taxonomy/term/134786">Reflect</a> </li> 
+            <li class="menu-item relate"> <a href="/futurefit/relate" data-drupal-link-system-path="taxonomy/term/134781">Relate</a> </li> 
+            <li class="menu-item serve"> <a href="/futurefit/serve" data-drupal-link-system-path="taxonomy/term/134811">Serve</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item investigate"> <a href="/futurefit/investigate" data-drupal-link-system-path="taxonomy/term/134816">Investigate</a> </li> 
+            <li class="menu-item create"> <a href="/futurefit/create" data-drupal-link-system-path="taxonomy/term/134796">Create</a> </li> 
+            <li class="menu-item solve"> <a href="/futurefit/solve" data-drupal-link-system-path="taxonomy/term/134791">Solve</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item adapt"> <a href="/futurefit/adapt" data-drupal-link-system-path="taxonomy/term/134821">Adapt</a> </li> 
+            <li class="menu-item get-going"> <a href="/futurefit/getgoing" data-drupal-link-system-path="taxonomy/term/134801">Get Going</a> </li> 
+            <li class="menu-item get-real"> <a href="/futurefit/getreal" data-drupal-link-system-path="taxonomy/term/134806">Get Real</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown subjects"> <a href="/subject" data-drupal-link-system-path="menu/subjects">Subjects</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-3">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item art"> <a href="/subjects/art-music-drama" data-drupal-link-system-path="taxonomy/term/65761">Art</a> </li> 
+            <li class="menu-item health-and-safety"> <a href="/subjects/health-safety" data-drupal-link-system-path="taxonomy/term/65466">Health and Safety</a> </li> 
+            <li class="menu-item language-arts-and-writing"> <a href="/subjects/language-arts-writing" data-drupal-link-system-path="taxonomy/term/62421">Language Arts and Writing</a> </li> 
+            <li class="menu-item languages"> <a href="/subjects/language-arts-writing/foreign-languages" data-drupal-link-system-path="taxonomy/term/62581">Languages</a> </li> 
+            <li class="menu-item mathematics"> <a href="/subjects/mathematics" data-drupal-link-system-path="taxonomy/term/65201">Mathematics</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item music"> <a href="/subjects/art-music-drama/music" data-drupal-link-system-path="taxonomy/term/65876">Music</a> </li> 
+            <li class="menu-item physical-education"> <a href="/subjects/health-safety/physical-education-fitness" data-drupal-link-system-path="taxonomy/term/65646">Physical Education</a> </li> 
+            <li class="menu-item library"> <a href="/subjects/reading-literature/library-resources" data-drupal-link-system-path="taxonomy/term/62101">Library</a> </li> 
+            <li class="menu-item reading-and-literature"> <a href="/subjects/reading-literature" data-drupal-link-system-path="taxonomy/term/62061">Reading and Literature</a> </li> 
+            <li class="menu-item geography"> <a href="/subjects/social-studies-history/geography" data-drupal-link-system-path="taxonomy/term/63326">Geography</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item science"> <a href="/subjects/science" data-drupal-link-system-path="taxonomy/term/64311">Science</a> </li> 
+            <li class="menu-item government"> <a href="/subjects/social-studies-history/us-government" data-drupal-link-system-path="taxonomy/term/64071">Government</a> </li> 
+            <li class="menu-item social-studies-and-history"> <a href="/subjects/social-studies-history" data-drupal-link-system-path="taxonomy/term/62606">Social Studies and History</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown grades"> <a href="/grade" data-drupal-link-system-path="menu/grades">Grades</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-3">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item early-learning"> <a href="/grades/early-learning" data-drupal-link-system-path="taxonomy/term/55">Early Learning</a> </li> 
+            <li class="menu-item pre-k"> <a href="/grades/pre-k" data-drupal-link-system-path="taxonomy/term/54">Pre-K</a> </li> 
+            <li class="menu-item kindergarten"> <a href="/grades/kindergarten" data-drupal-link-system-path="taxonomy/term/53">Kindergarten</a> </li> 
+            <li class="menu-item 1st-grade"> <a href="/grades/1st-grade" data-drupal-link-system-path="taxonomy/term/38">1st Grade</a> </li> 
+            <li class="menu-item 2nd-grade"> <a href="/grades/2nd-grade" data-drupal-link-system-path="taxonomy/term/43">2nd Grade</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item 3rd-grade"> <a href="/grades/3rd-grade" data-drupal-link-system-path="taxonomy/term/45">3rd Grade</a> </li> 
+            <li class="menu-item 4th-grade"> <a href="/grades/4th-grade" data-drupal-link-system-path="taxonomy/term/47">4th Grade</a> </li> 
+            <li class="menu-item 5th-grade"> <a href="/grades/5th-grade" data-drupal-link-system-path="taxonomy/term/48">5th Grade</a> </li> 
+            <li class="menu-item 6th-grade"> <a href="/grades/6th-grade" data-drupal-link-system-path="taxonomy/term/49">6th Grade</a> </li> 
+            <li class="menu-item 7th-grade"> <a href="/grades/7th-grade" data-drupal-link-system-path="taxonomy/term/50">7th Grade</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item 8th-grade"> <a href="/grades/8th-grade" data-drupal-link-system-path="taxonomy/term/51">8th Grade</a> </li> 
+            <li class="menu-item 9th-grade"> <a href="/grades/9th-grade" data-drupal-link-system-path="taxonomy/term/52">9th Grade</a> </li> 
+            <li class="menu-item 10th-grade"> <a href="/grades/10th-grade" data-drupal-link-system-path="taxonomy/term/40">10th Grade</a> </li> 
+            <li class="menu-item 11th-grade"> <a href="/grades/11th-grade" data-drupal-link-system-path="taxonomy/term/41">11th Grade</a> </li> 
+            <li class="menu-item 12th-grade"> <a href="/grades/12th-grade" data-drupal-link-system-path="taxonomy/term/42">12th Grade</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown lesson-planning"> <a href="/lesson-plan">Lesson Planning</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-3">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item awards-&amp;-certificates"> <a href="/lesson-planning/award-certificate" data-drupal-link-system-path="taxonomy/term/72466">Awards &amp; Certificates</a> </li> 
+            <li class="menu-item bulletin-boards"> <a href="/lesson-planning/bulletin-board" data-drupal-link-system-path="taxonomy/term/72476">Bulletin Boards</a> </li> 
+            <li class="menu-item classroom-activities"> <a href="/lesson-planning/activity" data-drupal-link-system-path="taxonomy/term/72456">Classroom Activities</a> </li> 
+            <li class="menu-item classroom-forms"> <a href="/lesson-planning/form-chart" data-drupal-link-system-path="taxonomy/term/72511">Classroom Forms</a> </li> 
+            <li class="menu-item classroom-passes-&amp;-notes"> <a href="/lesson-planning/classroom-pass-note" data-drupal-link-system-path="taxonomy/term/72481">Classroom Passes &amp; Notes</a> </li> 
+            <li class="menu-item digital-books"> <a href="/lesson-planning/digital-book" data-drupal-link-system-path="taxonomy/term/72621">Digital Books</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item games"> <a href="/lesson-planning/game" data-drupal-link-system-path="taxonomy/term/72516">Games</a> </li> 
+            <li class="menu-item graphic-organizers"> <a href="/lesson-planning/graphic-organizer" data-drupal-link-system-path="taxonomy/term/72531">Graphic Organizers</a> </li> 
+            <li class="menu-item graphs-&amp;-charts"> <a href="/lesson-planning/graph-chart-teacher-resources" data-drupal-link-system-path="taxonomy/term/72526">Graphs &amp; Charts</a> </li> 
+            <li class="menu-item lesson-plans"> <a href="/lesson-planning/lesson" data-drupal-link-system-path="taxonomy/term/72546">Lesson Plans</a> </li> 
+            <li class="menu-item literature-guides"> <a href="/lesson-planning/literature-guide" data-drupal-link-system-path="taxonomy/term/72551">Literature Guides</a> </li> 
+            <li class="menu-item map-library"> <a href="/lesson-planning/map" data-drupal-link-system-path="taxonomy/term/72556">Map Library</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item mini-lessons"> <a href="/lesson-planning/mini-lesson" data-drupal-link-system-path="taxonomy/term/72561">Mini-Lessons</a> </li> 
+            <li class="menu-item puzzles"> <a href="/lesson-planning/puzzle" data-drupal-link-system-path="taxonomy/term/72521">Puzzles</a> </li> 
+            <li class="menu-item themed-packets"> <a href="/lesson-planning/themed-packet" data-drupal-link-system-path="taxonomy/term/72566">Themed Packets</a> </li> 
+            <li class="menu-item transparencies"> <a href="/lesson-planning/transparency" data-drupal-link-system-path="taxonomy/term/72606">Transparencies</a> </li> 
+            <li class="menu-item videos-&amp;-activities"> <a href="/lesson-planning/video" data-drupal-link-system-path="taxonomy/term/72611">Videos &amp; Activities</a> </li> 
+            <li class="menu-item worksheets"> <a href="/lesson-planning/worksheet" data-drupal-link-system-path="taxonomy/term/72626">Worksheets</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown menu-item--active-trail  teaching-strategies"> <a href="/teaching-strategies" data-drupal-link-system-path="menu/classroom-management">Teaching Strategies</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-4">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown menu-item--active-trail  <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item assessment"> <a href="/teaching-strategies/assessment" data-drupal-link-system-path="taxonomy/term/71941">Assessment</a> </li> 
+            <li class="menu-item behavior-management"> <a href="/teaching-strategies/behavior-management" data-drupal-link-system-path="taxonomy/term/71976">Behavior Management</a> </li> 
+            <li class="menu-item menu-item--active-trail  classroom-management"> <a href="/teaching-strategies/classroom-management" data-drupal-link-system-path="taxonomy/term/72006" class="is-active">Classroom Management</a> </li> 
+            <li class="menu-item counseling-students"> <a href="/teaching-strategies/counseling-students" data-drupal-link-system-path="taxonomy/term/72046">Counseling Students</a> </li> 
+            <li class="menu-item classroom-organization"> <a href="/teaching-strategies/classroom-organization" data-drupal-link-system-path="taxonomy/term/72041">Classroom Organization</a> </li> 
+            <li class="menu-item curriculum-planning"> <a href="/teaching-strategies/curriculum-planning" data-drupal-link-system-path="taxonomy/term/72101">Curriculum Planning</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item educational-issues"> <a href="/teaching-strategies/educational-issues" data-drupal-link-system-path="taxonomy/term/72156">Educational Issues</a> </li> 
+            <li class="menu-item educational-technology"> <a href="/teaching-strategies/educational-technology" data-drupal-link-system-path="taxonomy/term/72261">Educational Technology</a> </li> 
+            <li class="menu-item english-language-learners"> <a href="/teaching-strategies/english-language-learners" data-drupal-link-system-path="taxonomy/term/71996">English-Language Learners</a> </li> 
+            <li class="menu-item extracurricular-activities"> <a href="/teaching-strategies/extracurricular-activities" data-drupal-link-system-path="taxonomy/term/72286">Extracurricular Activities</a> </li> 
+            <li class="menu-item field-trips"> <a href="/teaching-strategies/field-trips" data-drupal-link-system-path="taxonomy/term/72391">Field Trips</a> </li> 
+            <li class="menu-item getting-to-know-your-students"> <a href="/teaching-strategies/getting-know-your-students" data-drupal-link-system-path="taxonomy/term/72376">Getting to Know Your Students</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item new-teacher-resources"> <a href="/teaching-strategies/new-teacher-resources" data-drupal-link-system-path="taxonomy/term/72296">New Teacher Resources</a> </li> 
+            <li class="menu-item open-house-resources"> <a href="/teaching-strategies/open-house-resources" data-drupal-link-system-path="taxonomy/term/72436">Open House Resources</a> </li> 
+            <li class="menu-item teacher-parent-collaboration"> <a href="/teaching-strategies/teacher-parent-collaboration" data-drupal-link-system-path="taxonomy/term/72226">Teacher-Parent Collaboration</a> </li> 
+            <li class="menu-item professional-development"> <a href="/teaching-strategies/professional-development" data-drupal-link-system-path="taxonomy/term/72211">Professional Development</a> </li> 
+            <li class="menu-item special-needs"> <a href="/teaching-strategies/special-needs" data-drupal-link-system-path="taxonomy/term/72306">Special Needs</a> </li> 
+            <li class="menu-item school-readiness"> <a href="/teaching-strategies/school-readiness" data-drupal-link-system-path="taxonomy/term/72386">School Readiness</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item study-skills-and-test-prep"> <a href="/teaching-strategies/study-skills-test-prep" data-drupal-link-system-path="taxonomy/term/71971">Study Skills and Test Prep</a> </li> 
+            <li class="menu-item teaching-tips-and-advice"> <a href="/teaching-strategies/teaching-tips-advice" data-drupal-link-system-path="taxonomy/term/72411">Teaching Tips and Advice</a> </li> 
+            <li class="menu-item the-art-of-teaching"> <a href="/teaching-strategies/art-teaching" data-drupal-link-system-path="taxonomy/term/72441">The Art of Teaching</a> </li> 
+            <li class="menu-item time-management"> <a href="/teaching-strategies/time-management" data-drupal-link-system-path="taxonomy/term/72406">Time Management</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown themes"> <a href="/theme" data-drupal-link-system-path="menu/teaching-methods">Themes</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-4">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item animals"> <a href="/animals" data-drupal-link-system-path="taxonomy/term/5742">Animals</a> </li> 
+            <li class="menu-item autumn"> <a href="/autumn" data-drupal-link-system-path="taxonomy/term/5679">Autumn</a> </li> 
+            <li class="menu-item back-to-school"> <a href="/back-to-school-headquarters" data-drupal-link-system-path="taxonomy/term/132956">Back to School</a> </li> 
+            <li class="menu-item baseball-in-the-classroom"> <a href="/baseball-classroom" data-drupal-link-system-path="taxonomy/term/75551">Baseball in the Classroom</a> </li> 
+            <li class="menu-item biographies"> <a href="/themes/biographies" data-drupal-link-system-path="taxonomy/term/5680">Biographies</a> </li> 
+            <li class="menu-item community-helpers-and-jobs"> <a href="/community-helpers-jobs" data-drupal-link-system-path="taxonomy/term/75556">Community Helpers and Jobs</a> </li> 
+            <li class="menu-item dinosaurs"> <a href="/dinosaurs" data-drupal-link-system-path="taxonomy/term/5689">Dinosaurs</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item famous-explorers"> <a href="/famous-explorers" data-drupal-link-system-path="taxonomy/term/75561">Famous Explorers</a> </li> 
+            <li class="menu-item family"> <a href="/family" data-drupal-link-system-path="taxonomy/term/6008">Family</a> </li> 
+            <li class="menu-item foods"> <a href="/foods" data-drupal-link-system-path="taxonomy/term/75566">Foods</a> </li> 
+            <li class="menu-item gardening"> <a href="/gardening" data-drupal-link-system-path="taxonomy/term/5874">Gardening</a> </li> 
+            <li class="menu-item green-activities"> <a href="/green-activities" data-drupal-link-system-path="taxonomy/term/75571">Green Activities</a> </li> 
+            <li class="menu-item heroes"> <a href="/heroes" data-drupal-link-system-path="taxonomy/term/5744">Heroes</a> </li> 
+            <li class="menu-item human-and-animal-homes"> <a href="/human-animal-homes" data-drupal-link-system-path="taxonomy/term/75576">Human and Animal Homes</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item hour-of-code"> <a href="/hour-code" data-drupal-link-system-path="taxonomy/term/75581">Hour of Code</a> </li> 
+            <li class="menu-item insects-and-bugs"> <a href="/insects-bugs" data-drupal-link-system-path="taxonomy/term/75586">Insects and Bugs</a> </li> 
+            <li class="menu-item inventors-and-inventions"> <a href="/inventors-inventions" data-drupal-link-system-path="taxonomy/term/75591">Inventors and Inventions</a> </li> 
+            <li class="menu-item oceans"> <a href="/oceans-2" data-drupal-link-system-path="taxonomy/term/75601">Oceans</a> </li> 
+            <li class="menu-item pirates"> <a href="/pirates" data-drupal-link-system-path="taxonomy/term/75596">Pirates</a> </li> 
+            <li class="menu-item plants"> <a href="/plants" data-drupal-link-system-path="taxonomy/term/5723">Plants</a> </li> 
+            <li class="menu-item space"> <a href="/themes/space" data-drupal-link-system-path="taxonomy/term/5728">Space</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item sports-and-athletes"> <a href="/sports-athletes" data-drupal-link-system-path="taxonomy/term/75546">Sports and Athletes</a> </li> 
+            <li class="menu-item spring"> <a href="/spring" data-drupal-link-system-path="taxonomy/term/5729">Spring</a> </li> 
+            <li class="menu-item summer"> <a href="/summer" data-drupal-link-system-path="taxonomy/term/5732">Summer</a> </li> 
+            <li class="menu-item all-kinds-of-weather"> <a href="/all-kinds-weather" data-drupal-link-system-path="taxonomy/term/75606">All Kinds of Weather</a> </li> 
+            <li class="menu-item winter"> <a href="/winter" data-drupal-link-system-path="taxonomy/term/5739">Winter</a> </li> 
+            <li class="menu-item women-in-stem"> <a href="/women-stem" data-drupal-link-system-path="taxonomy/term/75611">Women in STEM</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown holidays"> <a href="/holiday" data-drupal-link-system-path="menu/holidays">Holidays</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-4">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item asian-american-and-pacific-islander-heritage-month"> <a href="/asian-pacific-american-heritage-month" data-drupal-link-system-path="taxonomy/term/75346">Asian American and Pacific Islander Heritage Month</a> </li> 
+            <li class="menu-item black-history-month"> <a href="/black-history-month" data-drupal-link-system-path="taxonomy/term/75351">Black History Month</a> </li> 
+            <li class="menu-item chinese-new-year"> <a href="/chinese-new-year" data-drupal-link-system-path="taxonomy/term/75211">Chinese New Year</a> </li> 
+            <li class="menu-item christmas"> <a href="/christmas" data-drupal-link-system-path="taxonomy/term/75216">Christmas</a> </li> 
+            <li class="menu-item columbus-day"> <a href="/holidays/columbus-day" data-drupal-link-system-path="taxonomy/term/75221">Columbus Day</a> </li> 
+            <li class="menu-item earth-day"> <a href="/earth-day" data-drupal-link-system-path="taxonomy/term/75231">Earth Day</a> </li> 
+            <li class="menu-item easter"> <a href="/easter" data-drupal-link-system-path="taxonomy/term/75236">Easter</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item father's-day"> <a href="/fathers-day" data-drupal-link-system-path="taxonomy/term/75241">Father's Day</a> </li> 
+            <li class="menu-item flag-day"> <a href="/flag-day" data-drupal-link-system-path="taxonomy/term/75246">Flag Day</a> </li> 
+            <li class="menu-item fourth-of-july"> <a href="/fourth-july" data-drupal-link-system-path="taxonomy/term/75251">Fourth of July</a> </li> 
+            <li class="menu-item groundhog-day"> <a href="/groundhog-day" data-drupal-link-system-path="taxonomy/term/75256">Groundhog Day</a> </li> 
+            <li class="menu-item halloween"> <a href="/holidays/halloween" data-drupal-link-system-path="taxonomy/term/75261">Halloween</a> </li> 
+            <li class="menu-item hanukkah"> <a href="/hanukkah" data-drupal-link-system-path="taxonomy/term/75266">Hanukkah</a> </li> 
+            <li class="menu-item hispanic-heritage-month"> <a href="/hispanic-heritage-month" data-drupal-link-system-path="taxonomy/term/75376">Hispanic Heritage Month</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item kwanzaa"> <a href="/kwanzaa" data-drupal-link-system-path="taxonomy/term/75271">Kwanzaa</a> </li> 
+            <li class="menu-item labor-day"> <a href="/holidays/labor-day" data-drupal-link-system-path="taxonomy/term/75276">Labor Day</a> </li> 
+            <li class="menu-item martin-luther-king-day"> <a href="/holidays/martin-luther-king-jr" data-drupal-link-system-path="taxonomy/term/75281">Martin Luther King Day</a> </li> 
+            <li class="menu-item memorial-day"> <a href="/memorial-day" data-drupal-link-system-path="taxonomy/term/75286">Memorial Day</a> </li> 
+            <li class="menu-item mother's-day"> <a href="/mothers-day" data-drupal-link-system-path="taxonomy/term/75291">Mother's Day</a> </li> 
+            <li class="menu-item native-american-heritage-month"> <a href="/holidays/native-american-heritage-month" data-drupal-link-system-path="taxonomy/term/75341">Native American Heritage Month</a> </li> 
+            <li class="menu-item new-year's-day"> <a href="/new-years" data-drupal-link-system-path="taxonomy/term/75296">New Year's Day</a> </li> 
+           </ul> </li> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item passover"> <a href="/passover" data-drupal-link-system-path="taxonomy/term/75301">Passover</a> </li> 
+            <li class="menu-item president's-day"> <a href="/holidays/presidents-day" data-drupal-link-system-path="taxonomy/term/75306">President's Day</a> </li> 
+            <li class="menu-item st.-patrick's-day"> <a href="/st-patricks-day" data-drupal-link-system-path="taxonomy/term/75311">St. Patrick's Day</a> </li> 
+            <li class="menu-item thanksgiving"> <a href="/thanksgiving" data-drupal-link-system-path="taxonomy/term/75316">Thanksgiving</a> </li> 
+            <li class="menu-item valentine's-day"> <a href="/valentines-day" data-drupal-link-system-path="taxonomy/term/75321">Valentine's Day</a> </li> 
+            <li class="menu-item veteran's-day"> <a href="/veterans-day" data-drupal-link-system-path="taxonomy/term/75326">Veteran's Day</a> </li> 
+            <li class="menu-item women's-history-month"> <a href="/womens-history-month" data-drupal-link-system-path="taxonomy/term/75401">Women's History Month</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item menu-item--expanded dropdown july-activities"> <a href="/calendar/holidays-and-seasonal-events/201709" data-drupal-link-system-path="calendar/holidays-and-seasonal-events/201709">July Activities</a> 
+        <div class="mega-menu-class menu dropdown-menu multi-comlumn columns-1">
+         <ul class="container-fluid" levelone=""> 
+          <li class="menu-item menu-item--expanded dropdown <blank>"> 
+           <ul class="mega-menu-adjust"> 
+            <li class="menu-item july-educators'-calendar"> <a href="/calendar/holidays-and-seasonal-events/201710" target="_self" rel="" data-drupal-link-system-path="calendar/holidays-and-seasonal-events/201710">July Educators' Calendar</a> </li> 
+            <li class="menu-item what's-new"> <a href="/blog/morning-announcements/What%27s%20New" target="_self" rel="" title="What's New on TeacherVision" data-drupal-link-system-path="blog/morning-announcements/What's New">What's New</a> </li> 
+            <li class="menu-item printable-educators'-calendar"> <a href="/holidays-and-seasonal-events/printable" data-drupal-link-system-path="node/1739116">Printable Educators' Calendar</a> </li> 
+            <li class="menu-item daily-warm-ups:-reading"> <a href="/daily-warm-ups/reading" data-drupal-link-system-path="node/1739136">Daily Warm-Ups: Reading</a> </li> 
+            <li class="menu-item daily-warm-ups:-math"> <a href="/daily-warm-ups/math" data-drupal-link-system-path="node/1739131">Daily Warm-Ups: Math</a> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> </li> 
+       <li class="menu-item blog"> <a href="/blog/morning-announcements" title="TeacherVision Blog" data-drupal-link-system-path="blog/morning-announcements">Blog</a> </li> 
+      </ul> 
+      <div id="block-tvmobilesignupblock" class="block block-fe-page-header block-tv-mobile-sign-up-block"> 
+       <div class="visible-xs"> 
+        <div class="mobile-nav-item signup"> 
+         <a href="/user/register?destination=/select-plan">Free Trial</a> 
+        </div> 
+        <div class="mobile-nav-item login"> 
+         <a href="/user/login?destination=/teaching-strategies/classroom-management">Sign in</a> 
+        </div> 
+       </div> 
+      </div> 
+     </nav> 
+    </div> 
+   </div> 
+  </header> 
+  <main id="fen-mobile-push-obj" class="page-wrapper "> 
+   <div class="container-fluid content-area"> 
+    <div class="row"> 
+     <section class="layout-content col-sm-12 col-md-9 ad-adjust"> 
+      <div id="block-tvadsheader-3" class="block block-block-content block-block-contentfef2e639-d370-4b1f-8de8-6677a4cd4c0e"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+	function ybWidth(){
+	   var w = window, d = document, e = d.documentElement;
+	   return Math.max(e.scrollWidth,e.offsetWidth,e.clientWidth);
+	}
+
+//--><!]]>
+</script>
+        <div id="banner-wrap" style="text-align:left;"> 
+         <p style="font-size: 10px; color: #b9b9b9; text-align: center; max-width: 728px; margin: 0; padding: 0;">ADVERTISEMENT</p> 
+         <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+if(ybWidth() < 482){
+			var div = document.getElementById('banner-wrap');
+			div.innerHTML = div.innerHTML + "<div id='div-gpt-ad-1475507859467-0'>";
+			googletag.cmd.push(function() {googletag.display('div-gpt-ad-1475507859467-0');});
+		} else {
+			var div = document.getElementById('banner-wrap');
+				div.innerHTML = div.innerHTML + "<div id='div-gpt-ad-1475507628767-0'>";
+			googletag.cmd.push(function() {googletag.display('div-gpt-ad-1475507628767-0');});
+		}
+	
+//--><!]]>
+</script>
+        </div>
+       </div> 
+      </div> 
+      <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb"> 
+       <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2> 
+       <ol> 
+        <li> <a class="fa fa-home" href="/"></a> </li> 
+        <li> <a href="/teaching-strategies"> Teaching strategies </a> </li> 
+        <li> Classroom management </li> 
+       </ol> 
+      </nav> 
+      <h1 class="page-title">Classroom Management</h1> 
+      <span class="node-count">We found 328 items</span> 
+      <div id="block-teachervision-content" class="block block-system block-system-main-block"> 
+       <div class="tv-hub-page js-view-dom-id-da36cf860fbf4a198886a53c4ca6b0c03e21b3bef45f8de9a1f6814f46692976"> 
+        <div id="block-tvhubpagebottomlink" class="block block-common-pages block-tv-hub-page-bottom-link"> 
+         <a class="btn" href="/search?teachingstrategieshub=Classroom Management">Search all resources</a> 
+        </div> 
+        <div id="taxonomy-term-72006" class="clearfix taxonomy-term vocabulary-teaching-strategies"> 
+         <p class="col-sm-8">The toughest challenges become easier when you have the right resources. Find our best classroom management resources, from room set-up advice to behavior modification articles to effective teaching methods. Whether you're a new teacher or a seasoned veteran, there's something for all grade levels, K-12.</p>
+         <img src="/images/tv/hub/TV-hub-bigstock--133695947.jpg" alt="Teacher in school classroom. Classroom Management" class="col-sm-4">
+         <!--col 1-->
+         <div class="col-sm-6"> 
+          <h5>General Teaching Methods</h5> 
+          <ul>
+           <li><a href="/teaching-strategies/learner-centered-vs-curriculum-centered-teachers-which-type-are-you">Learner-Centered vs. Curriculum-Centered Teachers: Which Type Are You?</a></li> 
+           <li><a href="/new-teacher-resources/standards-good-teaching">Standards for Good Teaching</a></li> 
+           <li><a href="/curriculum-planning/textbooks-advantages-disadvantages">Textbooks: Advantages and Disadvantages</a></li> 
+           <li><a href="/teaching-strategies/levels-questions-blooms-taxonomy">Levels of Questions in Bloom's Taxonomy</a></li> 
+           <li><a href="/teaching-strategies/your-secret-weapon-wait-time">Your Secret Weapon: Wait Time</a></li> 
+           <li><a href="/problem-solving/problem-solving">Problem-Solving</a></li> 
+          </ul>
+          <h5>Cooperative Learning</h5> 
+          <ul>
+           <li><a href="/cooperative-learning/teaching-cooperative-learning">Teaching with Cooperative Learning</a></li> 
+           <li><a href="/cooperative-learning/what-cooperative-learning-what-does-it-do">What Is Cooperative Learning, and What Does It Do?</a></li> 
+           <li><a href="/professional-development/cooperative-learning">Cooperative Learning</a></li> 
+           <li><a href="/teaching-strategies/cooperative-learning">More Cooperative Learning Teaching Strategies</a></li> 
+          </ul>
+          <h5>Inclusion</h5> 
+          <ul>
+           <li><a href="/educational-research/adapting-language-arts-social-studies-science-inclusive-classroom">Adapting Language Arts, Social Studies, and Science for the Inclusive Classroom</a></li> 
+           <li><a href="/reading/adapting-reading-math-materials-inclusive-classroom">Adapting Reading and Math Materials in the Inclusive Classroom</a></li> 
+           <li><a href="/teaching-strategies/teaching-strategies-using-materials-inclusive-classroom">Teaching Strategies for Using Materials in an Inclusive Classroom</a></li> 
+           <li><a href="/special-needs/adapt-lessons-reach-all-students">Adapt Lessons to Reach All Students</a></li> 
+           <li><a href="/inclusion">More Inclusion Resources</a></li> 
+           <li><a href="/literature/discovering-math-literature">Discovering Math in Literature</a></li> 
+           <li><a href="/learning-disabilities-month/planning-pyramid-multi-level-mathematics-instruction">Planning Pyramid for Multi-Level Mathematics Instruction</a></li> 
+           <li><a href="/gifted-education/teaching-mathematics-gifted-students-mixed-ability-classroom">Teaching Mathematics to Gifted Students in a Mixed-Ability Classroom</a></li> 
+           <li><a href="/teaching-strategies/classroom-management">Math &amp; Science Teaching Strategies</a></li> 
+          </ul>
+          <h5>Teaching Reading &amp; Language Arts</h5> 
+          <ul>
+           <li><a href="/subjects/reading-literature">Teaching Strategies for Reading</a></li> 
+           <li><a href="/subjects/language-arts-writing">Teaching Strategies for English Language Arts</a></li> 
+           <li><a href="/search/Journaling+Teaching+Strategies">Journaling Teaching Strategies</a></li> 
+          </ul>
+         </div> 
+         <!--End Col 1--> 
+         <!--Start Col 2--> 
+         <div class="col-sm-6"> 
+          <h5>Using Technology</h5> 
+          <ul>
+           <li><a href="/special-needs-assistive-technology/assistive-technology-students-mild-disabilities">Assistive Technology for Students with Mild Disabilities</a></li> 
+           <li><a href="/educational-technology/stages-technology-integration">Stages to Technology Integration</a></li> 
+           <li><a href="/search/Technology+Strategies+for+Music+Education">Technology Strategies for Music Education</a></li> 
+           <li><a href="/educational-technology/integrating-technology">Integrating Technology</a></li> 
+          </ul>
+          <h5>Addressing Special Needs</h5> 
+          <ul>
+           <li><a href="/special-needs/teaching-students-special-needs">Teaching Students with Special Needs</a></li> 
+           <li><a href="/special-needs/effective-accommodations-ieps">Effective Accommodations for IEPs</a></li> 
+           <li><a href="/impairments-and-disabilities/educating-children-who-are-deaf-or-hard-hearing">Educating Children Who Are Deaf or Hard-of-Hearing</a></li> 
+           <li><a href="/teaching-strategies/universal-design-learning">Universal Design for Learning</a></li> 
+           <li><a href="/teaching-strategies/special-needs">More Special Needs – Teacher Resources</a></li> 
+          </ul>
+          <h5>Learning From Social Interactions</h5> 
+          <ul>
+           <li><a href="/teaching-strategies/student-student-learning">Student-to-Student Learning</a></li> 
+           <li><a href="/volunteer-work-and-charities/use-service-learning-enhance-your-curriculum">Use Service-Learning to Enhance Your Curriculum</a></li> 
+          </ul>
+          <h5>The Classroom Environment</h5> 
+          <ul>
+           <li><a href="/learning-centers/learning-centers">Learning Centers</a></li> 
+           <li><a href="/classroom-management/creating-effective-physical-classroom-environment">Creating an Effective Physical Classroom Environment</a></li> 
+           <li><a href="/conflict-resolution">Conflict Resolution Lessons</a></li> 
+           <li><a href="/teaching-strategies/basics-centers">The Basics of Centers</a></li> 
+          </ul>
+          <h5>Multiple Intelligences</h5> 
+          <ul>
+           <li><a href="/teaching-strategies/multiple-intelligences-overview">Multiple Intelligences: An Overview</a></li> 
+           <li><a href="/multiple-intelligences/using-multiple-intelligences-testing-assessment">Using Multiple Intelligences in Testing &amp; Assessment</a></li> 
+           <li><a href="/multiple-intelligences/multiple-intelligences-three-part-series">Multiple Intelligences: A Three Part Series</a></li> 
+           <li><a href="/multiple-intelligences/multiple-intelligences-chart">Multiple Intelligences Chart</a></li> 
+          </ul>
+          <h5>Related Resources</h5> 
+          <ul>
+           <li><a href="/back-school-headquarters">Back to School Headquarters</a></li> 
+           <li><a href="/teaching-strategies/professional-development">Professional Development Resources for Teachers</a></li> 
+           <li><a href="/teaching-strategies/new-teacher-resources">New Teacher Resources</a></li> 
+           <li><a href="/personalizing-secondary-classroom">Personalizing the Secondary Classroom</a></li> 
+          </ul>
+         </div> 
+        </div> 
+        <h3 class="taxonomy-heading">Browse Latest Resources</h3> 
+        <div class="hub-page-latest-resources"> 
+         <div id="list-type-view" class="item-list tiles"> 
+          <ul> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/lack-motivation-challenging-attainable-goals" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/lack-motivation-challenging-attainable-goals" rel="bookmark" class="content-title">Lack of Motivation: Challenging but Attainable Goals</a></p> 
+             <span class="paragraph"> Sometimes students show a lack of motivation becau…</span> 
+             <a href="/videos/lack-motivation-challenging-attainable-goals" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/lack-motivation-interesting-stimulating-classroom" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/lack-motivation-interesting-stimulating-classroom" rel="bookmark" class="content-title">Lack of Motivation: An Interesting and Stimulating Classroom</a></p> 
+             <span class="paragraph"> To combat a lack of motivation in your classroom, …</span> 
+             <a href="/videos/lack-motivation-interesting-stimulating-classroom" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/hyperactivity-distraction-create-work-spaces" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/hyperactivity-distraction-create-work-spaces" rel="bookmark" class="content-title">Hyperactivity and Distraction: Create Work Spaces</a></p> 
+             <span class="paragraph"> Combat distraction by creating spaces for students…</span> 
+             <a href="/videos/hyperactivity-distraction-create-work-spaces" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/hyperactivity-distraction-breaks-check-ins" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/hyperactivity-distraction-breaks-check-ins" rel="bookmark" class="content-title">Hyperactivity and Distraction: Breaks and Check-Ins</a></p> 
+             <span class="paragraph"> Distracted kids are more able to focus if they are…</span> 
+             <a href="/videos/hyperactivity-distraction-breaks-check-ins" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/failure-ask-help-student-helpers" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/failure-ask-help-student-helpers" rel="bookmark" class="content-title">Failure to Ask for Help: Student Helpers</a></p> 
+             <span class="paragraph"> When a student is having a hard time asking for he…</span> 
+             <a href="/videos/failure-ask-help-student-helpers" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/failure-ask-help-using-3x5-cards" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/failure-ask-help-using-3x5-cards" rel="bookmark" class="content-title">Failure to Ask for Help: Using 3x5 Cards</a></p> 
+             <span class="paragraph"> When a student is having a hard time asking for he…</span> 
+             <a href="/videos/failure-ask-help-using-3x5-cards" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/failure-ask-help-conversation-parents" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/failure-ask-help-conversation-parents" rel="bookmark" class="content-title">Failure to Ask for Help: A Conversation With Parents</a></p> 
+             <span class="paragraph"> If a student fails to ask for help, a conversation…</span> 
+             <a href="/videos/failure-ask-help-conversation-parents" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/behavior-problems-behavior-unacceptable-not-student" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/behavior-problems-behavior-unacceptable-not-student" rel="bookmark" class="content-title">Behavior Problems: The Behavior Is Unacceptable, Not the Student</a></p> 
+             <span class="paragraph"> When dealing with behavior problems, make sure the…</span> 
+             <a href="/videos/behavior-problems-behavior-unacceptable-not-student" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/argumentative-student-dont-back-them-corner" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/argumentative-student-dont-back-them-corner" rel="bookmark" class="content-title">Argumentative Student: Don't Back Them Into a Corner</a></p> 
+             <span class="paragraph"> When planning lessons, plan with your argumentativ…</span> 
+             <a href="/videos/argumentative-student-dont-back-them-corner" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/argumentative-student-dont-make-threats-you-cant-carry-out" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/argumentative-student-dont-make-threats-you-cant-carry-out" rel="bookmark" class="content-title">Argumentative Student: Don't Make Threats You Can't Carry Out</a></p> 
+             <span class="paragraph"> When dealing with an argumentative student, it's i…</span> 
+             <a href="/videos/argumentative-student-dont-make-threats-you-cant-carry-out" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/argumentative-student-maintain-control" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/argumentative-student-maintain-control" rel="bookmark" class="content-title">Argumentative Student: Maintain Control</a></p> 
+             <span class="paragraph"> When dealing with an argumentative student, it's i…</span> 
+             <a href="/videos/argumentative-student-maintain-control" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/avoiding-classroom-distractions-teacher-face" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/avoiding-classroom-distractions-teacher-face" rel="bookmark" class="content-title">Avoiding Classroom Distractions: The Teacher Face</a></p> 
+             <span class="paragraph"> Students look for signals and explicit signs to he…</span> 
+             <a href="/videos/avoiding-classroom-distractions-teacher-face" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/avoiding-annoying-classroom-distractions-review-rules-procedures" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/avoiding-annoying-classroom-distractions-review-rules-procedures" rel="bookmark" class="content-title">Avoiding Annoying Classroom Distractions: Review the Rules and Procedures</a></p> 
+             <span class="paragraph"> As the year progresses, it's easy for students to …</span> 
+             <a href="/videos/avoiding-annoying-classroom-distractions-review-rules-procedures" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/avoiding-annoying-classroom-distractions-ticketing-system" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/avoiding-annoying-classroom-distractions-ticketing-system" rel="bookmark" class="content-title">Avoiding Annoying Classroom Distractions: The Ticketing System</a></p> 
+             <span class="paragraph"> Use tickets as positive reinforcement. That way, s…</span> 
+             <a href="/videos/avoiding-annoying-classroom-distractions-ticketing-system" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/avoiding-annoying-classroom-distractions-giving-specific-praise-actions" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/avoiding-annoying-classroom-distractions-giving-specific-praise-actions" rel="bookmark" class="content-title">Avoiding Annoying Classroom Distractions: Giving Specific Praise for Actions</a></p> 
+             <span class="paragraph"> Giving specific praise for actions helps students …</span> 
+             <a href="/videos/avoiding-annoying-classroom-distractions-giving-specific-praise-actions" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/videos/avoiding-annoying-classroom-distractions-group-contract" class="small-thumb-video"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">VIDEO</p> 
+             <p><a href="/videos/avoiding-annoying-classroom-distractions-group-contract" rel="bookmark" class="content-title">Avoiding Annoying Classroom Distractions: Group Contract</a></p> 
+             <span class="paragraph"> Fourth-grade teacher Lisa Koplik explains how to m…</span> 
+             <a href="/videos/avoiding-annoying-classroom-distractions-group-contract" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix premium-content fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <a href="/dealing-germs-classroom/germs-are-not-sharing-coloring-page"> <img src="/sites/default/files/2017-06/Germs%20are%20Not%20for%20Sharing%20Coloring%20Page.gif" class="image-style-my-teachervision-content"> </a> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-pink">COLORING PAGE</p> 
+             <p><a href="/dealing-germs-classroom/germs-are-not-sharing-coloring-page" rel="bookmark" class="content-title">Germs Are Not for Sharing! Coloring Page</a></p> 
+             <span class="paragraph"> Use this printable coloring sheet to reinforce hea…</span> 
+             <a href="/dealing-germs-classroom/germs-are-not-sharing-coloring-page" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-blue"> 
+              <figure>
+               <a href="/back-school-headquarters/teachervisions-favorite-tips-advice-first-day-school" class="small-thumb-slideshow-gallery"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-blue">SLIDESHOW GALLERY</p> 
+             <p><a href="/back-school-headquarters/teachervisions-favorite-tips-advice-first-day-school" rel="bookmark" class="content-title">TeacherVision's Favorite Tips &amp; Advice for the First Day of School</a></p> 
+             <span class="paragraph"> From what to wear to what to say, you'll find vete…</span> 
+             <a href="/back-school-headquarters/teachervisions-favorite-tips-advice-first-day-school" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-blue"> 
+              <figure>
+               <a href="/top-10-motivation-tips-classroom" class="small-thumb-slideshow-gallery"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-blue">SLIDESHOW GALLERY</p> 
+             <p><a href="/top-10-motivation-tips-classroom" rel="bookmark" class="content-title">Top 10 Motivation Tips for the Classroom</a></p> 
+             <span class="paragraph"> Having trouble getting students motivated? Check o…</span> 
+             <a href="/top-10-motivation-tips-classroom" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix premium-content fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-green"> 
+              <figure>
+               <a href="/bullying/cyberbullying-downside-new-media-technology" class="small-thumb-article"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-green">ARTICLE</p> 
+             <p><a href="/bullying/cyberbullying-downside-new-media-technology" rel="bookmark" class="content-title">Cyberbullying: The Downside of New Media Technology</a></p> 
+             <span class="paragraph"> New media technology — cell phones, PDAs, and comp…</span> 
+             <a href="/bullying/cyberbullying-downside-new-media-technology" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix premium-content fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <a href="/reading-instruction/novels-will-hobbs-using-literature-circles"> <img src="/sites/default/files/fe_printable/2010_02/literature-circles-w-hobbs.gif" class="image-style-my-teachervision-content"> </a> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-blue">WORKSHEETS</p> 
+             <p><a href="/reading-instruction/novels-will-hobbs-using-literature-circles" rel="bookmark" class="content-title">Novels by Will Hobbs: Using Literature Circles</a></p> 
+             <span class="paragraph"> Encourage pupil-led discussion in your classroom w…</span> 
+             <a href="/reading-instruction/novels-will-hobbs-using-literature-circles" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix premium-content fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <a href="/reading-instruction/novels-sharon-creech-using-literature-circles"> <img src="/sites/default/files/fe_printable/2010_01/sharon-creech_tg.gif" class="image-style-my-teachervision-content"> </a> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-blue">WORKSHEETS</p> 
+             <p><a href="/reading-instruction/novels-sharon-creech-using-literature-circles" rel="bookmark" class="content-title">Novels by Sharon Creech: Using Literature Circles</a></p> 
+             <span class="paragraph"> Use Literature Circles to promote small group disc…</span> 
+             <a href="/reading-instruction/novels-sharon-creech-using-literature-circles" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix premium-content fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <a href="/mass-media/analyzing-television"> <img src="/sites/default/files/fe_printable/2009_07/analyzing_television.gif" class="image-style-my-teachervision-content"> </a> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-blue">WORKSHEETS</p> 
+             <p><a href="/mass-media/analyzing-television" rel="bookmark" class="content-title">Analyzing Television</a></p> 
+             <span class="paragraph"> After watching television for a set period of time…</span> 
+             <a href="/mass-media/analyzing-television" class="read-more">Read more</a> 
+            </div> </li> 
+           <li class="clearfix  fen-search-results"> 
+            <div class="icon"></div> 
+            <div class="list-left"> 
+             <div class="list-img-thumbnail thumb-pink"> 
+              <figure>
+               <a href="/top-back-school-printables-gallery" class="small-thumb-themed-packet"></a>
+              </figure> 
+             </div> 
+            </div> 
+            <div class="list-right"> 
+             <p class="content-type thumb-pink">THEMED PACKET</p> 
+             <p><a href="/top-back-school-printables-gallery" rel="bookmark" class="content-title">Top Back to School Printables Gallery</a></p> 
+             <span class="paragraph"> This gallery contains advice, activities, lesson i…</span> 
+             <a href="/top-back-school-printables-gallery" class="read-more">Read more</a> 
+            </div> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="block-tvrelatedresources" class="block block-common-pages block-tv-related-resources"> 
+      </div> 
+      <div id="block-tvhubpagebottomlink" class="block block-common-pages block-tv-hub-page-bottom-link"> 
+       <a class="btn" href="/search?teachingstrategieshub=Classroom Management">Search all resources</a> 
+      </div> 
+      <div id="block-featuredpollwithoverlay" class="block block-block-content block-block-contentabfd7b0c-8b97-4435-a151-db7f56465ca8"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <div id="popup-with-overlay" class="overlay"> 
+         <div class="popup"> 
+          <a class="close" href="#">X CLOSE</a> 
+          <div class="content"> 
+           <div id="popup-with-overlay-outer-inner"> 
+            <div id="popup-with-overlay-inner"> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </section> 
+     <aside class="layout-sidebar-second col-sm-12 col-md-3" role="complementary"> 
+      <div id="block-tvadsrightsidebar" class="block block-block-content block-block-contente6f8e060-1e20-4e52-8768-1deb19cc1ebc"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <span style="font-size: 10px; color: #b9b9b9; text-align: center; display:block;">ADVERTISEMENT</span> 
+        <div id="div-gpt-ad-1475507774924-0"> 
+         <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+			googletag.cmd.push(function() {googletag.display('div-gpt-ad-1475507774924-0');});		
+	
+//--><!]]>
+</script>
+        </div>
+       </div> 
+      </div> 
+      <div id="block-tvrelatedresourcessidebar" class="block block-common-pages block-tv-related-resources-sidebar"> 
+      </div> 
+      <div id="block-tvcontentrightblock1-2" class="block block-block-content block-block-contenteeef08de-064c-4126-932d-7ef03b71c83f"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <div class="fen-cta-box-caption fen-cta-box" style="text-align:left;padding:19px 16px 19px 16px"> 
+         <h4><img alt="Newsletter Signup Mailbox" data-entity-type="file" data-entity-uuid="c4c8ca09-46b5-423f-ad32-be318083d630" src="/sites/default/files/inline-images/TV-rightrail-mailbox.png" style="width: 27px;height: auto;margin:-6px 13px 10px 0" class="align-left">NEWSLETTER SIGNUP</h4> 
+         <div style="padding-left:40px;"> 
+          <p>Simplify your lesson planning and stay up to date with the latest resources. </p> 
+          <form action="/newsletter" method="post">
+           <input aria-required="true" class="form-email required" data-drupal-selector="edit-email" id="edit-email" maxlength="254" name="email" placeholder="Enter email address" required size="33" style="margin-bottom:10px;color: #000;max-width:55%;margin-right:10px;font-size:14px;" type="email" value="">
+           <input class="btn" type="submit" value="Sign up">&nbsp;
+          </form> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="block-tvwhatsnew" class="block block-block-content block-block-contente3288b91-6bb4-453a-b8bb-2cb8d70d0507"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <h4 style="padding:19px 0 19px 0;"><img alt="What's New Icon" data-entity-type="file" data-entity-uuid="278474a6-92af-4924-9da9-16d68a105791" src="/sites/default/files/inline-images/TV-rightrail-whatsnew.png" style="width: 23px;height: auto;margin:-6px 13px 10px 0;" class="align-left">WHAT'S NEW</h4> 
+        <ul style="padding:0 5px 0 40px;">
+         <li><b><a href="/literature/minecraft-island-teachers-guide">Teaching Guides for Minecraft</a></b><br> Use this teaching guide to incorporate the new Minecraft novel into your classroom.</li> 
+         <li><b><a href="/autumn-season/autumn-leaf-art-projects">Autumn Leaf Art Projects</a></b><br> Fall is upon us! This lesson plan is a great way to teach students about the changing seasons while encouraging creativity.</li> 
+        </ul>
+       </div> 
+      </div> 
+      <div id="block-tvadsearchpageleft-3" class="block block-block-content block-block-content7fc11fa6-7821-4ac5-a5e3-cc3c9d18e40c"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <span style="font-size: 10px; color: #b9b9b9; text-align: center; display:block;">ADVERTISEMENT</span> 
+        <div id="div-gpt-ad-1475507939332-0" style="padding-bottom: 20px;"> 
+         <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+		
+			googletag.cmd.push(function() {googletag.display('div-gpt-ad-1475507939332-0');});
+		
+	
+//--><!]]>
+</script>
+        </div>
+       </div> 
+      </div> 
+      <div id="block-tvhighlights" class="block block-block-content block-block-contentc64e14b3-a960-476e-b6fc-03fc58578697"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+        <h4 style="padding:19px 0 19px 0;"><img alt="Teaching Highlights Apple" data-entity-type="file" data-entity-uuid="885aef0c-92fc-4009-869a-9f22af666870" src="/sites/default/files/inline-images/TV-rightrail-highlights.png" style="width: 23px;height: auto;margin:-6px 13px 10px 0;" class="align-left">TEACHING HIGHLIGHTS</h4> 
+        <ul style="padding:0 5px 0 40px;">
+         <li><b><a href="/counseling-students/helping-kids-cope-time-crisis-fear">Dealing with Tragedy</a></b> Strategies and tips for educating in times of crisis and fear. </li> 
+         <li><b><a href="/columbus-day">Columbus Day is </a></b> October 9. Use our collection of <a href="/columbus-day">printables, lesson plans, and activities</a> to educate your students about this famous explorer.</li> 
+        </ul>
+       </div> 
+      </div> 
+     </aside> 
+    </div> 
+   </div> 
+   <div id="block-jointeachervision" class="block block-block-content block-block-content1850b3ed-fec4-4fd2-a276-2d6b3d64f7c6"> 
+    <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+     <div style="background-color:#fff;text-align:center;padding:0 20px 10px 20px"> 
+      <h1 style="padding-top:40px;color:#00c1d5;font-weight:normal;">Join TeacherVision today</h1> 
+      <p>Spend more time teaching and less time searching.<br>Get full access to all 20,000 teaching resources—curated by teachers<br>and curriculum specialists—for one-low price. </p> 
+      <p><a href="/user/register?destination=/select-plan?utm_content=footer_cta&amp;utm_campaign=tv_website" class="btn hmpg-orange-btn user-status-no-subscription">Sign Up</a> <a href="/select-plan?utm_source=footer_cta&amp;utm_medium=link&amp;utm_campaign=tv_website" class="btn hmpg-orange-btn user-status-free-trial">Sign Up</a> </p>
+     </div> 
+    </div> 
+   </div> 
+  </main> 
+  <footer id="footer"> 
+   <div class="container-fluid"> 
+    <nav role="navigation" aria-labelledby="block-tvfootermenu-2-menu" id="block-tvfootermenu-2" class="block block-menu navigation menu--tv-footer-menu"> 
+     <h2 class="visually-hidden" id="block-tvfootermenu-2-menu">TV-footer menu</h2> 
+     <ul class="footer-menu "> 
+      <li> <h3>ABOUT</h3> 
+       <ul class="footer-submenu"> 
+        <li> <a href="/about-teachervision" data-drupal-link-system-path="node/1791916">About TeacherVision</a> </li> 
+        <li> <a href="/user/register?destination=/select-plan" target="_self" rel="" data-drupal-link-query="{&quot;destination&quot;:&quot;\/select-plan&quot;}" data-drupal-link-system-path="user/register">Free Trial</a> </li> 
+        <li> <a href="/newsletter" data-drupal-link-system-path="newsletter">Newsletters</a> </li> 
+       </ul> </li> 
+      <li> <h3>SUPPORT</h3> 
+       <ul class="footer-submenu"> 
+        <li> <a href="/teachervision/frequently-asked-questions" data-drupal-link-system-path="node/1750186">FAQs</a> </li> 
+        <li> <a href="/tv/terms-of-use" data-drupal-link-system-path="node/1750181">Terms of Use</a> </li> 
+        <li> <a href="https://www.fen.com/privacyStatement.html">Privacy Policy</a> </li> 
+        <li> <a href="/tv/membership-terms" data-drupal-link-system-path="node/1756861">Cancellation Policy</a> </li> 
+       </ul> </li> 
+      <li> <h3>COMPANY</h3> 
+       <ul class="footer-submenu"> 
+        <li> <a href="https://sandboxnetworks.custhelp.com/app/ask/p/14">Contact Us</a> </li> 
+        <li> <a href="/blog/morning-announcements/write-teachervision" title="Write for TeacherVision" data-drupal-link-system-path="node/1793676">Write for Us</a> </li> 
+        <li> <a href="mailto:advertise@fen.com?subject=Advertise%20Inquiry%20-%20FamilyEducation.com">Advertise with Us</a> </li> 
+        <li> <a href="/sitemap" data-drupal-link-system-path="sitemap">Site Map</a> </li> 
+       </ul> </li> 
+      <li> <h3>FEN LEARNING</h3> 
+       <ul class="footer-submenu"> 
+        <li> <a href="https://www.factmonster.com/">Fact Monster</a> </li> 
+        <li> <a href="https://www.familyeducation.com/">FamilyEducation</a> </li> 
+        <li> <a href="https://www.infoplease.com/">Infoplease</a> </li> 
+       </ul> </li> 
+     </ul> 
+    </nav> 
+    <div id="block-tvfootersociallinkscopyrights-2" class="row block block-block-content block-block-contentf0ef3bfc-55be-4a0c-a8c3-272872dcb5fb"> 
+     <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+      <div class="col-sm-4 col-xs-12">
+       <ul class="social list-unstyled">
+        <li><a href="https://www.facebook.com/TeacherVision" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li> 
+        <li><a href="https://www.pinterest.com/teachervision/" class="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li> 
+        <li><a href="https://twitter.com/teachervision" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li> 
+        <li><a href="https://plus.google.com/107390469031966706077/posts" class="google" target="_blank"><i class="fa fa-google"></i></a></li> 
+       </ul>
+      </div> 
+      <div class="col-sm-8 col-xs-12"> 
+       <p>© 2000-2017 Sandbox Networks, Inc. All Rights Reserved.</p> 
+      </div>
+      <style>
+<!--/*--><![CDATA[/* ><!--*/
+.page-node-type-reference .node--type-reference .group-data {min-height: inherit;}
+/*--><!]]>*/
+</style>
+      <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+window.onload = function(){
+ if (jQuery(window).width() < 767) {
+    $('.path-poll form[class^="poll-view"]:not(.path-poll #block-featuredpollwithoverlay form[class^="poll-view"])').parent().once().css({"display": "inline-block", "width": "100%"}); 
+ }
+}
+
+//--><!]]>
+</script>
+     </div> 
+    </div> 
+    <div id="block-teachvisionnewsletterpopup" class="block block-block-content block-block-contentaf030c48-5224-4554-88f9-3dfc3f6115c4"> 
+     <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+      <div class="newsletter-popup" data-nl-id="tv-all">
+       <a href="/newsletter/open/popup/tv-newsletter-popup" title="TeachVision Newsletter Popup" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:&quot;636px&quot;}">TeachVision Newsletter Popup</a>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <div id="overlay">
+   <img id="loading" src="/themes/teachervision/images/updatedloader.gif">
+  </div> 
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"taxonomy\/term\/72006","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"baby_names\/search_form,calendar\/calendar.theme,core\/html5shiv,fen_newsletters\/fen_newsletters_popup,mixpanel\/mixpanel,mixpanel\/mixpanel-head-v2,poll\/drupal.poll-links,solr_search_alter\/global-styling,system\/base,teachervision\/global-styling,views\/views.module","theme":"teachervision","theme_token":"J1ZhvhKoH1MulipIiPMvfschLKBHGUSwq2ghdnarSN0"},"ajaxTrustedUrl":[],"":false,"mixpanel":{"mixpanel":{"data":{"mixpanel":null},"type":"setting"},"mixpanelLibV2":{"token":"\u0022335f0017548859956f8189b49f609670\u0022","config":"{\u0022cross_subdomain_cookie\u0022:true}"}},"user":{"uid":0,"permissionsHash":"7d2f5667a5081a8c7e32d63378639b9350371e51dffa8417c96cd0fdb43be84a"}}</script> 
+  <script src="/sites/default/files/js/js_slexpbJmtC7qRx2eOafX67X6oRamPsHmfHvS43KHq4U_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.js"></script> 
+  <script src="/sites/default/files/js/js_ygWXYtYn8X9xakSYKiGrWJuTyle5m9XkKoXvRkUc74o_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.js"></script> 
+  <script src="/sites/default/files/js/js_fV9tKwA74zaEcGD3PYBVM6xnE6v9pau7IpsF34dXOfE_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.js"></script> 
+  <script src="/sites/default/files/js/js_t1xpdiTRmxSXdwBXS55UMr1HcxZcVVd4kSl6KOSCTCQ_OvVxttDX6cHEkSQeVR9YatedqZd_LQLpnqZscxAWbYM.js"></script> 
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=teachervision"></script> 
+  <script type="text/javascript">
+    window._taboola = window._taboola || [];
+    _taboola.push({flush: true});
+    </script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fc5994cfb8","applicationID":"31528393","transactionName":"NgAGbRRTXRFUBUBQXg9KJVoSW1wMGiJGTEEACTh6CUBWPngDWkxtJQACWBNeRy9QCEF1WA8OMEsDV34DWw9ETF0AEQtLFR8NBVAIUUtQFQAtVwJXSyNbAmdWQxU=","queueTime":0,"applicationTime":2144,"atts":"GkcFG1xJTh8=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

@@ -1,0 +1,506 @@
+<!doctype html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="https://www.spousebuzz.com/xmlrpc.php"> 
+  <!-- Google Site Verification --> 
+  <meta name="google-site-verification" content="QLyqKGiB158lZ5EhWw9IzSMv-srhpNlYmQLTBeVxc60"> 
+  <!-- End Google Site Verification --> 
+  <title>How to Make Friends: 3 Ways to Find Your Tribe | SpouseBuzz.com</title> 
+  <!-- This site is optimized with the Yoast SEO plugin v3.7.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="You want to &quot;find your tribe&quot; and all that. But do you know how to make friends? It's HARD. Here are three easy ways. Read more."> 
+  <meta name="robots" content="noodp"> 
+  <link rel="canonical" href="https://www.spousebuzz.com/blog/2017/06/how-to-make-friends-3-ways.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="How to Make Friends: 3 Ways to Find Your Tribe | SpouseBuzz.com"> 
+  <meta property="og:description" content="You want to &quot;find your tribe&quot; and all that. But do you know how to make friends? It's HARD. Here are three easy ways. Read more."> 
+  <meta property="og:url" content="https://www.spousebuzz.com/blog/2017/06/how-to-make-friends-3-ways.html"> 
+  <meta property="og:site_name" content="SpouseBuzz.com"> 
+  <meta property="article:section" content="Military Life"> 
+  <meta property="article:published_time" content="2017-06-27T08:00:00-04:00"> 
+  <meta property="article:modified_time" content="2017-06-27T00:56:51-04:00"> 
+  <meta property="og:updated_time" content="2017-06-27T00:56:51-04:00"> 
+  <meta property="og:image" content="https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9.png"> 
+  <meta property="og:image:width" content="1800"> 
+  <meta property="og:image:height" content="1200"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="You want to &quot;find your tribe&quot; and all that. But do you know how to make friends? It's HARD. Here are three easy ways. Read more."> 
+  <meta name="twitter:title" content="How to Make Friends: 3 Ways to Find Your Tribe | SpouseBuzz.com"> 
+  <meta name="twitter:image" content="https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9.png"> 
+  <!-- / Yoast SEO plugin. --> 
+  <link rel="dns-prefetch" href="//s0.wp.com"> 
+  <link rel="dns-prefetch" href="//www.spousebuzz.com"> 
+  <link rel="dns-prefetch" href="//images.military.com"> 
+  <link rel="dns-prefetch" href="//s7.addthis.com"> 
+  <link rel="dns-prefetch" href="//assets.pinterest.com"> 
+  <link rel="dns-prefetch" href="//platform.twitter.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="SpouseBuzz.com » Feed" href="https://www.spousebuzz.com/feed"> 
+  <link rel="alternate" type="application/rss+xml" title="SpouseBuzz.com » Comments Feed" href="https://www.spousebuzz.com/comments/feed"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.spousebuzz.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="ce_responsive-css" href="https://www.spousebuzz.com/wp-content/plugins/simple-embed-code/css/video-container.css?ver=4.8" type="text/css" media="all"> 
+  <link rel="stylesheet" id="parent-style-css" href="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk/style.css?ver=4.8" type="text/css" media="all"> 
+  <link rel="stylesheet" id="child-style-css" href="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/style.css?ver=4.8" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mh-style-css" href="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/style.css?ver=1.2.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mh-font-awesome-css" href="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk/includes/font-awesome.min.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mh-google-fonts-css" href="https://fonts.googleapis.com/css?family=PT+Serif:300,400,400italic,600,700|Oswald:300,400,400italic,600,700" type="text/css" media="all"> 
+  <link rel="stylesheet" id="jetpack_css-css" href="https://www.spousebuzz.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.2" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/plugins/advanced-ads-responsive/public/assets/js/script.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/plugins/advanced-ads/public/assets/js/advanced.js?ver=1.7.12"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/scripts.js?ver=4.8"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/crazyegg.js?ver=4.8"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/mobile-ads.js?ver=4.8"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/monetate.js?ver=4.8"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/site-catalyst.js?ver=4.8"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/facebook-pixel-code.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://images.military.com/script/global/js/military.google.analaytics.js?ver=1.0.0"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var advanced_ads_pro_ajax_object = {"ajax_url":"https:\/\/www.spousebuzz.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js?ver=4.8"></script> 
+  <link rel="https://api.w.org/" href="https://www.spousebuzz.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.spousebuzz.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.spousebuzz.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.8"> 
+  <link rel="shortlink" href="https://wp.me/p1d7d0-ahv"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.spousebuzz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.spousebuzz.com%2Fblog%2F2017%2F06%2Fhow-to-make-friends-3-ways.html"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.spousebuzz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.spousebuzz.com%2Fblog%2F2017%2F06%2Fhow-to-make-friends-3-ways.html&amp;format=xml"> 
+  <!-- <meta name="NextGEN" version="2.1.56" /> --> 
+  <link rel="dns-prefetch" href="//v0.wordpress.com"> 
+  <style type="text/css">img#wpstats{display:none}</style> 
+  <style type="text/css">
+    	    		.social-nav a:hover, .logo-title, .entry-content a, a:hover, .entry-meta .entry-meta-author, .entry-meta a, .comment-info, blockquote, .pagination a:hover .pagelink { color: #da002c; }
+			.main-nav li:hover, .slicknav_menu, .ticker-title, .breadcrumb a, .breadcrumb .bc-text, .button span, .widget-title span, input[type=submit], table th, .comment-section-title .comment-count, #cancel-comment-reply-link:hover, .pagination .current, .pagination .pagelink { background: #da002c; }
+			blockquote, input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[type=url]:hover, textarea:hover { border-color: #da002c; }
+    	    	    	    	    	    		</style> 
+  <!--[if lt IE 9]>
+<script src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk/js/css3-mediaqueries.js"></script>
+<![endif]--> 
+  <style id="custom-css-css">@media only screen and (max-width: 980px){.logo-wrap{margin-top:40px;margin-bottom:40px}}.footer-nav .menu-top-container{display:none}</style> 
+ </head> 
+ <body class="post-template-default single single-post postid-39525 single-format-standard mh-right-sb"> 
+  <!-- Facebook Pixel Code --> 
+  <noscript>
+   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1596486337276952&amp;ev=PageView&amp;noscript=1">
+  </noscript> 
+  <!-- End Facebook Pixel Code --> 
+  <noscript> 
+   <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l6kje&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0"> 
+   <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l6kje&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0"> 
+  </noscript>
+  <div class="YAD-b9dc6b8d-0bee-3d63-9757-abb054435cd2"></div> 
+  <div class="header-top"> 
+   <div class="wrapper-inner clearfix"> 
+    <nav class="header-nav clearfix"> 
+     <div class="menu-top-container">
+      <ul id="menu-top" class="menu">
+       <li id="menu-item-3110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3110"><a title="Home" href="https://www.spousebuzz.com/">Home</a></li> 
+       <li id="menu-item-3111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3111"><a title="About" href="https://www.spousebuzz.com/about">About Us</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-3112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3112"><a title="Authors" href="https://www.spousebuzz.com/authors">Current Authors</a></li> 
+        </ul> </li> 
+       <li id="menu-item-3113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3113"><a title="Contact" href="https://www.spousebuzz.com/contact">Contact Us</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-25351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25351"><a title="Reprints" href="https://www.spousebuzz.com/reprint-request">Reprints</a></li> 
+        </ul> </li> 
+       <li id="menu-item-37772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37772"><a href="http://www.military.com">Military.com</a></li> 
+       <li id="menu-item-34099" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-34099"><a href="https://www.facebook.com/spousebuzz">Find Us on Social</a> 
+        <ul class="sub-menu"> 
+         <li id="menu-item-34290" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34290"><a href="https://www.facebook.com/spousebuzz">Facebook</a></li> 
+         <li id="menu-item-34289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34289"><a href="https://www.pinterest.com/spousebuzz">Pinterest</a></li> 
+         <li id="menu-item-34291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34291"><a href="https://instagram.com/milspousebuzz/">Instagram</a></li> 
+        </ul> </li> 
+      </ul>
+     </div> 
+    </nav> 
+    <nav class="social-nav clearfix"> 
+     <div class="menu-social-menu-container">
+      <ul id="menu-social-menu" class="menu">
+       <li id="menu-item-34093" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34093"><a href="http://facebook.com/spousebuzz"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-mh-social fa-stack-1x"></i></span><span class="screen-reader-text">Facebook</span></a></li> 
+       <li id="menu-item-34094" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34094"><a href="http://twitter.com/spousebuzz"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-mh-social fa-stack-1x"></i></span><span class="screen-reader-text">Twitter</span></a></li> 
+       <li id="menu-item-34322" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34322"><a href="https://www.pinterest.com/spousebuzz/"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-mh-social fa-stack-1x"></i></span><span class="screen-reader-text">Pinterest</span></a></li> 
+      </ul>
+     </div> 
+    </nav> 
+   </div> 
+  </div> 
+  <div id="mh-wrapper"> 
+   <header class="mh-header"> 
+    <div class="header-wrap clearfix"> 
+     <div class="mh-col mh-1-3 header-logo"> 
+      <a href="https://www.spousebuzz.com/" title="SpouseBuzz.com" rel="home"> 
+       <div class="logo-wrap" role="banner"> 
+        <img src="https://www.spousebuzz.com/wp-content/uploads/2015/11/cropped-SpouseBUZZ-Masthead-300x100-v1a.png" height="100" width="300" alt="SpouseBuzz.com"> 
+       </div> </a> 
+     </div> 
+     <aside class="mh-col mh-2-3 advads-widget">
+      <div class="header-ad">
+       <div id="advads-adb51a31be29434faa6903d9e9dd0655"></div>
+      </div>
+     </aside>
+     <aside class="mh-col mh-2-3 advads-widget">
+      <div class="header-ad">
+       <div data-id="34330" id="advads-1235951277">
+        <!-- Interstitial --> 
+        <!-- 1st Section Begins : Delivery via OAS JX Tag --> 
+        <script type="text/javascript">
+<!--
+OAS_rn = '001234567890'; OAS_rns = '1234567890';
+OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
+document.write("<scr"+"ipt type='text/javascript' src='https://oas.monster.com/RealMedia/ads/adstream_jx.ads/us.military.en/news/blogs/spousebuzz/1" + OAS_rns +"@x89?sst=70&str=00&sr=70&s=7&a=ag0&r=0&sta=0&z=&k=&XE&sst=70&str=00&sr=70&s=7&a=ag0&r=0&sta=0&z=&k=&XE'><\/script>");
+//  --> 
+</script> 
+        <!-- 1st Section Ends : Delivery via OAS JX Tag --> 
+        <!-- 2nd Section Begins : Delivery via OAS NX Tag for non-Javascript Browser --> 
+        <noscript> 
+         <a href="https://oas.monster.com/RealMedia/ads/click_nx.ads/us.military.en/news/blogs/spousebuzz/@x89?sst=70&amp;str=00&amp;sr=70&amp;s=7&amp;a=ag0&amp;r=0&amp;sta=0&amp;z=&amp;k=&amp;XE&amp;sst=70&amp;str=00&amp;sr=70&amp;s=7&amp;a=ag0&amp;r=0&amp;sta=0&amp;z=&amp;k=&amp;XE"><img src="https://oas.monster.com/RealMedia/ads/adstream_nx.ads/us.military.en/news/blogs/spousebuzz/@x89?sst=70&amp;str=00&amp;sr=70&amp;s=7&amp;a=ag0&amp;r=0&amp;sta=0&amp;z=&amp;k=&amp;XE&amp;sst=70&amp;str=00&amp;sr=70&amp;s=7&amp;a=ag0&amp;r=0&amp;sta=0&amp;z=&amp;k=&amp;XE"></a> 
+        </noscript> 
+        <!-- 2nd Section Ends : Delivery via OAS NX Tag -->
+       </div>
+      </div>
+     </aside>
+     <aside class="mh-col mh-2-3 advads-widget">
+      <div class="header-ad">
+       <div id="advads-879085bebd87f3788eb8b7b754610e8e"></div>
+      </div>
+     </aside> 
+    </div> 
+    <div class="header-menu clearfix"> 
+     <nav class="main-nav clearfix"> 
+      <div class="menu-main-container">
+       <ul id="menu-main" class="menu">
+        <li id="menu-item-34100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34100"><a href="https://www.spousebuzz.com/blog/category/spouse-family-news">News</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-36923" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36923"><a href="https://www.spousebuzz.com/blog/category/spouse-family-news/commissary-2">Commissary</a></li> 
+         </ul> </li> 
+        <li id="menu-item-3119" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-3119"><a title="The REAL Version" href="https://www.spousebuzz.com/blog/category/military-life">Military Life</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-34280" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34280"><a href="https://www.spousebuzz.com/blog/category/military-life/resources">Resources</a></li> 
+          <li id="menu-item-34274" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34274"><a href="https://www.spousebuzz.com/blog/category/military-life/military-lifestyle">Military Lifestyle</a></li> 
+          <li id="menu-item-34287" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34287"><a href="https://www.spousebuzz.com/blog/category/health-fitness">Health &amp; Fitness</a></li> 
+          <li id="menu-item-34288" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34288"><a href="https://www.spousebuzz.com/blog/category/military-life/legal-financial">Legal &amp; Financial</a></li> 
+          <li id="menu-item-34266" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34266"><a href="https://www.spousebuzz.com/blog/category/military-life/humor">Humor</a></li> 
+          <li id="menu-item-34272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34272"><a href="https://www.spousebuzz.com/blog/category/entertainment">Entertainment</a></li> 
+          <li id="menu-item-34270" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34270"><a href="https://www.spousebuzz.com/blog/category/book-list">Book List</a></li> 
+         </ul> </li> 
+        <li id="menu-item-34282" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34282"><a href="https://www.spousebuzz.com/blog/category/your-family">Your Family</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-34285" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34285"><a href="https://www.spousebuzz.com/blog/category/your-family/marriage">Marriage</a></li> 
+          <li id="menu-item-34276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34276"><a href="https://www.spousebuzz.com/blog/category/your-family/kids-2">Kids</a></li> 
+          <li id="menu-item-34277" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34277"><a href="https://www.spousebuzz.com/blog/category/your-family/pets">Pets</a></li> 
+          <li id="menu-item-34284" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34284"><a href="https://www.spousebuzz.com/blog/category/your-family/caregivers">Caregivers</a></li> 
+         </ul> </li> 
+        <li id="menu-item-34273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-34273"><a href="https://www.spousebuzz.com/blog/category/military-community">Community</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-34286" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34286"><a href="https://www.spousebuzz.com/blog/category/frg-clubs">FRG &amp; Clubs</a></li> 
+          <li id="menu-item-34271" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34271"><a href="https://www.spousebuzz.com/blog/category/civilians">Civilians</a></li> 
+         </ul> </li> 
+        <li id="menu-item-34281" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34281"><a href="https://www.spousebuzz.com/blog/category/education-jobs">Education &amp; Jobs</a></li> 
+        <li id="menu-item-3537" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-3537"><a title="Goodbye &amp; Separation" href="https://www.spousebuzz.com/blog/category/deployment">Deployment</a> 
+         <ul class="sub-menu"> 
+          <li id="menu-item-3539" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3539"><a title="Reunited &amp; It Feels So" href="https://www.spousebuzz.com/blog/category/deployment/reintegration">Reintegration</a></li> 
+          <li id="menu-item-34269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34269"><a href="https://www.spousebuzz.com/blog/category/deployment/deployment-stress">Deployment Stress</a></li> 
+         </ul> </li> 
+        <li id="menu-item-5590" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5590"><a title="Pack Up, Move On" href="https://www.spousebuzz.com/blog/category/pcs">PCS</a></li> 
+        <li id="menu-item-34283" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34283"><a href="https://www.spousebuzz.com/blog/category/transition">Transition</a></li> 
+        <li id="menu-item-34278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34278"><a href="https://www.spousebuzz.com/blog/category/gold-star-life">Gold Star Life</a></li> 
+       </ul>
+      </div> 
+     </nav> 
+     <div class="header-sub clearfix"> 
+      <section id="ticker" class="news-ticker mh-col mh-2-3 clearfix"> 
+       <span class="ticker-title">Popular Stories</span> 
+       <ul class="ticker-content"> 
+        <li class="ticker-item"> <a class="ticker-item-link" href="https://www.spousebuzz.com/blog/2017/10/im-listening-national-anthem-protesters-heres.html" title="I’m Listening to the National Anthem Protesters. Here’s Why."> <span class="ticker-item-date">October 3, 2017</span> <span class="ticker-item-separator">|</span> <span class="ticker-item-title">I’m Listening to the National Anthem Protesters. Here’s Why.</span> </a> </li> 
+        <li class="ticker-item"> <a class="ticker-item-link" href="https://www.spousebuzz.com/blog/2017/10/innovative-spouse-owned-staffing-company-wins-major-grant.html" title="Innovative Spouse-Owned Staffing Company Wins Major Grant"> <span class="ticker-item-date">October 2, 2017</span> <span class="ticker-item-separator">|</span> <span class="ticker-item-title">Innovative Spouse-Owned Staffing Company Wins Major Grant</span> </a> </li> 
+        <li class="ticker-item"> <a class="ticker-item-link" href="https://www.spousebuzz.com/blog/2017/09/problems-one-milspouse-solving-creative-tech.html" title="Problems? One MilSpouse Is Solving Them with Creative Tech"> <span class="ticker-item-date">September 30, 2017</span> <span class="ticker-item-separator">|</span> <span class="ticker-item-title">Problems? One MilSpouse Is Solving Them with Creative Tech</span> </a> </li> 
+        <li class="ticker-item"> <a class="ticker-item-link" href="https://www.spousebuzz.com/blog/2017/09/can-trust-navy-hospitals.html" title="Can You Trust Military Hospitals? An Unscientific Review of Navy Medical Centers"> <span class="ticker-item-date">September 29, 2017</span> <span class="ticker-item-separator">|</span> <span class="ticker-item-title">Can You Trust Military Hospitals? An Unscientific Review of Navy Medical Centers</span> </a> </li> 
+        <li class="ticker-item"> <a class="ticker-item-link" href="https://www.spousebuzz.com/blog/2017/09/catching-football-fever.html" title="Here’s a Football Tradition On Which We Can All Agree"> <span class="ticker-item-date">September 28, 2017</span> <span class="ticker-item-separator">|</span> <span class="ticker-item-title">Here’s a Football Tradition On Which We Can All Agree</span> </a> </li> 
+       </ul> 
+      </section> 
+      <aside class="mh-col mh-1-3 header-search"> 
+       <form role="search" method="get" class="search-form" action="https://www.spousebuzz.com/"> 
+        <label> <span class="screen-reader-text">Search for:</span> <input type="search" class="search-field" placeholder="Search …" value="" name="s"> </label> 
+        <input type="submit" class="search-submit" value="Search"> 
+       </form> 
+      </aside> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="mh-section mh-group"> 
+    <div id="main-content" class="mh-content">
+     <nav class="breadcrumb">
+      <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.spousebuzz.com" itemprop="url" class="bc-home"><span itemprop="title">Home</span></a></span> 
+      <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.spousebuzz.com/blog/category/military-life" itemprop="url"><span itemprop="title">Military Life</span></a></span>
+     </nav> 
+     <article id="post-39525" class="post-39525 post type-post status-publish format-standard has-post-thumbnail hentry category-military-life"> 
+      <header class="entry-header clearfix"> 
+       <h1 class="entry-title">How to Make Friends: 3 Ways to Find Your Tribe</h1> 
+      </header> 
+      <div class="addthis_responsive_sharing"></div> 
+      <div class="entry-thumbnail"> 
+       <img width="777" height="437" src="https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9-777x437.png" class="attachment-content-single size-content-single wp-post-image" alt="How to make friends https://www.spousebuzz.com/blog/2017/06/how-to-make-friends-3-ways.html" srcset="https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9-777x437.png 777w, https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9-180x101.png 180w, https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9-260x146.png 260w, https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9-373x210.png 373w, https://www.spousebuzz.com/wp-content/uploads/2017/06/Design-9-120x67.png 120w" sizes="(max-width: 777px) 100vw, 777px">
+       <span class="wp-caption-text">Stock photo </span> 
+      </div> 
+      <div class="advertisement"> 
+       <div class="sb-widget post-ad advads-widget">
+        <div data-id="34328" id="advads-1314835744">
+         <!-- 1st 728x90 --> 
+         <!-- 1st Section Begins : Delivery via OAS JX Tag --> 
+         <script type="text/javascript">
+<!--
+OAS_rn = '001234567890'; OAS_rns = '1234567890';
+OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
+document.write("<scr"+"ipt type='text/javascript' src='https://oas.monster.com/RealMedia/ads/adstream_jx.ads/us.military.en/spousebuzz/1" + OAS_rns +"@Bottom'><\/script>");
+//  -->
+</script> 
+         <!-- 1st Section Ends : Delivery via OAS JX Tag --> 
+         <!-- 2nd Section Begins : Delivery via OAS NX Tag for non-Javascript Browser --> 
+         <noscript> 
+          <a href="https://oas.monster.com/RealMedia/ads/click_nx.ads/us.military.en/spousebuzz/@Bottom"><img src="https://oas.monster.com/RealMedia/ads/adstream_nx.ads/us.military.en/spousebuzz/@Bottom"></a> 
+         </noscript> 
+         <!-- 2nd Section Ends : Delivery via OAS NX Tag --> 
+        </div>
+       </div> 
+      </div>
+      <p class="entry-meta"> <span class="entry-meta-author vcard author">Posted By: <a class="fn" href="https://www.spousebuzz.com/blog/author/kia">Kia Young</a></span> <span class="entry-meta-date updated">June 27, 2017</span> </p> 
+      <div class="entry-content clearfix"> 
+       <p>A popular sentiment is the need to ‘find your tribe.’ You know, the people who just completely get you and are there for you. You share common interests and goals, you practically complete each other sentences and have a similar sense of humor. You need to know how to make friends.</p> 
+       <p>Chances are for a military spouse, if we’re not moving, then our tribe is. Ideally, finding your tribe is the holy grail of adulthood when you’re married with a family; realistically we’re either on a constant search for that tribe, losing some of our tribe or leaving our tribe.</p> 
+       <p>So, yeah. Not very fun.</p> 
+       <p>In some of the military base groups that I’m a member of, I’ve noticed a recent trend sparking. On any given Friday night, or weekday during nap time, a woman will post an ‘ad’ looking for a friend.</p> 
+       <p>She’ll list her many attributes with the hopes of finding her soul mate in friend form. What follows is an onslaught of comments of people who claim to be JUST. LIKE. HER! They all want to be friends and meet up to have play dates, coffee dates or bunco night.</p> 
+       <p>And just like that she’s found her tribe. But actually, probably not.</p> 
+       <p>My gut tells me that this is probably more common with the 20-30 year old wives, which is fine. What I’ve seen is that not much actually ever comes of it, other than maybe new <a href="https://www.facebook.com/spousebuzz/">Facebook</a> friends. Rarely does this sort of online-friend-hookup evolve to real life tribe status, for various reasons.</p> 
+       <p>Studies show that women in their 30’s prefer to spend time cultivating established relationships, than creating new ones. While that is true, our lifestyle doesn’t afford us the ability to cultivate friendship in person very often, due to distance.</p> 
+       <p>So how do we change this and actually seek out friends? How do you make real friends when you don’t know anyone in town? Here are 3 tips to find your tribe.</p> 
+       <h2>1. How to make friends: Gather some moxie and take a risk by SPEAKING.</h2> 
+       <p>One of the reasons the online ‘ad’ is so popular is because there’s no risk to it. You didn’t have to leave your comfort zone of your cozy home, or <i>actually&nbsp;</i>start a conversation with anyone. When my daughter was in 3rd grade she complained that at lunch, no one would invite her into their conversations and she was very sad about being left out. I asked her who she invited into conversations and she responded with a blank stare. It never dawned on her that <i>she</i> could actually engage people, instead of waiting to be engaged. We spent the rest of that afternoon coming up with ice breaker topics. Basically, she had a set of questions that she could ask to start a conversation with someone as needed.</p> 
+       <p>Questions like, what’s your favorite book or tv show? What sports do you play?</p> 
+       <p>Obviously for adults it’s a little more complicated, but the point is don’t wait for someone to engage you. Start with a compliment, then ask if they’re from the area or have lived there for a while. If they are, they could be a great resource for any questions you might have about your new city.</p> 
+       <h2>2. How to make friends: Host a party!</h2> 
+       <p>I know, the military spouse community is saturated with direct sales consultants and everyone asking you to host or attend a party. That’s not the kind of party I’m talking about; I mean a <i>real&nbsp;</i>social event where you don’t have to buy anything. Consider your new neighbors and invite them over for a relaxed ‘Welcome to the Neighborhood’ party that you throw for yourself. Take a walk around the neighborhood and as you meet people, invite them over and ask them to bring a tip about their favorite “must go” place in town. You’ll end the evening knowing your neighbors better and with a healthy list of hair salons, restaurants, family activities and locally-owned businesses to visit.</p> 
+       <p>If the thought of introducing yourself to your new neighbors terrifies you, or you frankly just aren’t all that interested in a close relationship with them, consider asking your spouse to invite his/her new co-workers and their families over with the same theme.</p> 
+       <h2>3. How to make friends: Lead with what interests you.</h2> 
+       <p>MWR typically has a calendar of events with several activities each month. Choose something that you genuinely have an interest in. This way, you can go into an activity knowing that you already have at least two things in common with everyone there — the military and the hobby or interest itself. Refer back to #1, so that you’re leaving having met like-minded people.</p> 
+       <p>If none of those activities interest you and you have children, consider child-centric activities at the local park, Barnes &amp; Noble story time and the library. If you don’t have children, consider<a href="http://Www.meetup.com"> meetup.com</a> to find a group of local people with common interests. Of course, you can take that route if you have children as well. I personally have had great experiences with meet up groups, just be safety conscious! No matter which route you take, start finding your tribe today.</p> 
+       <p>What has worked for you when making new friends after a <a href="http://www.military.com/money/pcs-dity-move">PCS</a>?</p> 
+      </div> 
+     </article> 
+     <div class="advertisement"> 
+      <div class="sb-widget post-ad advads-widget">
+       <div data-id="34329" id="advads-1191911186">
+        <!-- 2nd 728x90 --> 
+        <!-- 1st Section Begins : Delivery via OAS JX Tag --> 
+        <script type="text/javascript">
+<!--
+OAS_rn = '001234567890'; OAS_rns = '1234567890';
+OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
+document.write("<scr"+"ipt type='text/javascript' src='https://oas.monster.com/RealMedia/ads/adstream_jx.ads/us.military.en/spousebuzz/1" + OAS_rns +"@Bottom'><\/script>");
+//  -->
+</script> 
+        <!-- 1st Section Ends : Delivery via OAS JX Tag --> 
+        <!-- 2nd Section Begins : Delivery via OAS NX Tag for non-Javascript Browser --> 
+        <noscript> 
+         <a href="https://oas.monster.com/RealMedia/ads/click_nx.ads/us.military.en/spousebuzz/@Bottom"><img src="https://oas.monster.com/RealMedia/ads/adstream_nx.ads/us.military.en/spousebuzz/@Bottom"></a> 
+        </noscript> 
+        <!-- 2nd Section Ends : Delivery via OAS NX Tag -->
+       </div>
+      </div>
+      <div class="sb-widget post-ad advads-widget">
+       <div id="advads-3ffbf355ce50ac7fe0828f12f34fff52"></div>
+      </div> 
+     </div> 
+     <div class="addthis_responsive_sharing"></div> 
+     <nav class="post-nav-wrap" role="navigation"> 
+      <ul class="post-nav clearfix"> 
+       <li class="post-nav-prev"> <a href="https://www.spousebuzz.com/blog/2017/06/youre-one-ptsd.html" rel="prev"><i class="fa fa-chevron-left"></i>Previous post</a></li> 
+       <li class="post-nav-next"> <a href="https://www.spousebuzz.com/blog/2017/06/7-road-trip-hacks-for-kids.html" rel="next">Next post<i class="fa fa-chevron-right"></i></a></li> 
+      </ul> 
+     </nav> 
+     <h4 class="widget-title"><span>About the Author</span></h4> 
+     <section class="author-box clearfix"> 
+      <div class="author-box-avatar">
+       <a href="https://www.spousebuzz.com/blog/author/kia"><img alt="" src="https://secure.gravatar.com/avatar/d0e4211c52359269e0a775004b114f22?s=100&amp;r=g" srcset="https://secure.gravatar.com/avatar/d0e4211c52359269e0a775004b114f22?s=200&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100"></a>
+      </div> 
+      <h5 class="author-box-name"><a href="https://www.spousebuzz.com/blog/author/kia">Kia Young</a></h5> 
+      <div class="author-box-desc">
+       Kia Young is probably, at this very moment, driving one of her three kids to school, an appointment, sports or some other social activity. In between being a professional chauffeur that gets paid in kisses, hugs and good grades; she’s an Army wife, small business owner, freelance writer and social media editor. Kia is committed to sharing how military spouses can thrive in their non-traditional lifestyles, and carve out a life they love.&nbsp; She’s also the voice behind the quickly growing family lifestyle blog, 
+       <a href="http://www.theexperiencelife.com/">The Experience Life</a>. Follow her over on 
+       <a href="https://www.facebook.com/hervoiceblog">Facebook</a>, 
+       <a href="https://twitter.com/experience_blog">Twitter</a> or 
+       <a href="https://www.instagram.com/the_experience_life/">Instagram</a>.
+      </div> 
+     </section>
+     <div id="text-56" class="sb-widget widget_text"> 
+      <div class="textwidget">
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+       <!-- SpouseBUzz 336x280 Responsive --> 
+       <ins class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;height:300px" data-ad-client="ca-pub-0218990756745158" data-ad-slot="8190937958"></ins> 
+       <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div> 
+     </div> 
+    </div> 
+    <aside class="mh-sidebar"> 
+     <div class="sb-widget clearfix advads-widget">
+      <div id="advads-72f2ae87d1bc191d2b5d5d7947ebc44b"></div>
+     </div>
+     <div id="mh_newsdesk_facebook_page-4" class="sb-widget clearfix mh_newsdesk_facebook_page">
+      <h4 class="widget-title"><span>SpouseBuzz on Facebook</span></h4>
+      <div class="fb-page" data-href="https://www.facebook.com/spousebuzz" data-width="373" data-height="500" data-hide-cover="0" data-show-facepile="1" data-show-posts="1"></div> 
+     </div>
+     <div id="text-58" class="sb-widget clearfix widget_text"> 
+      <div class="textwidget">
+       <div> 
+        <a href="https://www.military.com/newmembers/spouse-reg-gate" target="_blank"><img src="https://www.spousebuzz.com/wp-content/uploads/2017/05/Spouse-Buzz-373x228-v4.jpg" alt="Get the Military.com Newsletter" width="373" height="228" border="0"></a> 
+       </div>
+      </div> 
+     </div>
+     <div id="pw_profile_widget-3" class="sb-widget clearfix widget_pw_profile_widget">
+      <h4 class="widget-title"><span>SpouseBuzz on Pinterest</span></h4>
+      <div class="pw-wrap pw-widget pw-profile-widget">
+       <a data-pin-do="embedUser" href="http://www.pinterest.com/SpouseBuzz" data-pin-scale-width="80" data-pin-scale-height="320" data-pin-board-width="400"></a>
+      </div>
+     </div>
+     <div class="sb-widget clearfix advads-widget">
+      <div id="advads-aebd33dc4915c2b539ad5ce2e44abee1"></div>
+     </div>
+    </aside> 
+   </div> 
+  </div> 
+  <footer class="mh-footer"> 
+   <div class="footer-ad-wrap advads-widget">
+    <div id="advads-1e33be7150f83cd93a98472892426ef0"></div>
+   </div> 
+   <div class="wrapper-inner clearfix"> 
+   </div> 
+   <div class="footer-bottom"> 
+    <div class="wrapper-inner clearfix"> 
+     <nav class="footer-nav clearfix"> 
+      <div class="menu-top-container">
+       <ul id="menu-top-1" class="menu">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3110"><a title="Home" href="https://www.spousebuzz.com/">Home</a></li> 
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3111"><a title="About" href="https://www.spousebuzz.com/about">About Us</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3112"><a title="Authors" href="https://www.spousebuzz.com/authors">Current Authors</a></li> 
+         </ul> </li> 
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3113"><a title="Contact" href="https://www.spousebuzz.com/contact">Contact Us</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25351"><a title="Reprints" href="https://www.spousebuzz.com/reprint-request">Reprints</a></li> 
+         </ul> </li> 
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37772"><a href="http://www.military.com">Military.com</a></li> 
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-34099"><a href="https://www.facebook.com/spousebuzz">Find Us on Social</a> 
+         <ul class="sub-menu"> 
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34290"><a href="https://www.facebook.com/spousebuzz">Facebook</a></li> 
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34289"><a href="https://www.pinterest.com/spousebuzz">Pinterest</a></li> 
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34291"><a href="https://instagram.com/milspousebuzz/">Instagram</a></li> 
+         </ul> </li> 
+       </ul>
+      </div> 
+     </nav> 
+     <div class="copyright-wrap"> 
+      <p class="copyright">Copyright Military.com 2017</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <!-- ngg_resource_manager_marker -->
+  <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201740"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/DPM.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js?ver=1.0.0#pubid=ra-5642624a7a8f04d6"></script> 
+  <script type="text/javascript" src="https://assets.pinterest.com/js/pinit.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://platform.twitter.com/oct.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/twitter-conversion.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/themes/mh_newsdesk_spousebuzz/js/yahoo-recommend.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js?ver=1.0.6.2"></script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-includes/js/wp-embed.min.js?ver=4.8"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"spousebuzz"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.spousebuzz.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.8"></script> 
+  <div style="display:none"> 
+   <div class="grofile-hash-map-d0e4211c52359269e0a775004b114f22"> 
+   </div> 
+  </div> 
+  <div id="fb-root"></div> 
+  <script>
+				(function(d, s, id){
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script> 
+  <script>var advads_placement_tests = [];
+var advads_passive_ads = {};
+var advads_passive_groups = {};
+var advads_passive_placements = {};
+var advads_ajax_queries = [{"id":"34328","method":"id","params":{"previous_method":"placement","previous_id":"desktop-728x90-no-1","post":{"id":39525,"author":"95","post_type":"post"},"wp_the_query":{"term_id":"","is_main_query":true,"is_archive":false,"is_search":false,"is_home":false,"is_404":false,"is_attachment":false,"is_singular":true,"is_front_page":false,"is_feed":false},"placement_type":"sidebar_widget","cache-busting":"auto","output":{"class":["advads-desktop-728x90-no-1"],"placement_id":"desktop-728x90-no-1"}},"elementid":"advads-adb51a31be29434faa6903d9e9dd0655"},{"id":"34331","method":"id","params":{"previous_method":"placement","previous_id":"mobile-ad-1","post":{"id":39525,"author":"95","post_type":"post"},"wp_the_query":{"term_id":"","is_main_query":true,"is_archive":false,"is_search":false,"is_home":false,"is_404":false,"is_attachment":false,"is_singular":true,"is_front_page":false,"is_feed":false},"placement_type":"sidebar_widget","cache-busting":"auto","output":{"class":["advads-mobile-ad-1"],"placement_id":"mobile-ad-1"}},"elementid":"advads-879085bebd87f3788eb8b7b754610e8e"},{"id":"34332","method":"id","params":{"previous_method":"placement","previous_id":"mobile-ad-2","post":{"id":39525,"author":"95","post_type":"post"},"wp_the_query":{"term_id":"","is_main_query":true,"is_archive":false,"is_search":false,"is_home":false,"is_404":false,"is_attachment":false,"is_singular":true,"is_front_page":false,"is_feed":false},"placement_type":"sidebar_widget","cache-busting":"auto","output":{"class":["advads-mobile-ad-2"],"placement_id":"mobile-ad-2"}},"elementid":"advads-3ffbf355ce50ac7fe0828f12f34fff52"},{"id":"34327","method":"id","params":{"previous_method":"placement","previous_id":"desktop-300x250-no-1","post":{"id":39525,"author":"95","post_type":"post"},"wp_the_query":{"term_id":"","is_main_query":true,"is_archive":false,"is_search":false,"is_home":false,"is_404":false,"is_attachment":false,"is_singular":true,"is_front_page":false,"is_feed":false},"placement_type":"sidebar_widget","cache-busting":"auto","output":{"class":["advads-desktop-300x250-no-1"],"placement_id":"desktop-300x250-no-1"}},"elementid":"advads-72f2ae87d1bc191d2b5d5d7947ebc44b"},{"id":"34354","method":"id","params":{"previous_method":"placement","previous_id":"desktop-300x250-no-2","post":{"id":39525,"author":"95","post_type":"post"},"wp_the_query":{"term_id":"","is_main_query":true,"is_archive":false,"is_search":false,"is_home":false,"is_404":false,"is_attachment":false,"is_singular":true,"is_front_page":false,"is_feed":false},"placement_type":"sidebar_widget","cache-busting":"auto","output":{"class":["advads-desktop-300x250-no-2"],"placement_id":"desktop-300x250-no-2"}},"elementid":"advads-aebd33dc4915c2b539ad5ce2e44abee1"},{"id":"34329","method":"id","params":{"previous_method":"placement","previous_id":"desktop-728x90-no-2","post":{"id":39525,"author":"95","post_type":"post"},"wp_the_query":{"term_id":"","is_main_query":true,"is_archive":false,"is_search":false,"is_home":false,"is_404":false,"is_attachment":false,"is_singular":true,"is_front_page":false,"is_feed":false},"placement_type":"sidebar_widget","cache-busting":"auto","output":{"class":["advads-desktop-728x90-no-2"],"placement_id":"desktop-728x90-no-2"}},"elementid":"advads-1e33be7150f83cd93a98472892426ef0"}];
+var advads_has_ads = [["34330","ad",null],["34328","ad",null],["34329","ad",null]];
+jQuery( document ).ready(function() {advanced_ads_pro.process_passive_cb();});</script>
+  <script type="text/javascript" src="https://stats.wp.com/e-201740.js" async defer></script> 
+  <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.3.2',blog:'17902314',post:'39525',tz:'-4',srv:'www.spousebuzz.com'} ]);
+	_stq.push([ 'clickTrackerInit', '17902314', '39525' ]);
+</script> 
+  <!-- Begin AdDaptive Code --> 
+  <script>
+(function()
+{ var d=document,h=d.getElementsByTagName('head')[0],s=d.createElement('script'),sc = 'https:' == document.location.protocol ? 'https://' : 'http://'; s.type='text/javascript'; s.async=true; s.src=sc+'s.dpmsrv.com/dpm_2a2b47bf21a372f267deccbb420567f3d450b3c0.min.js'; h.appendChild(s); }
+)();
+</script> 
+  <!-- End AdDaptive Code --> 
+  <!-- Begin SiteCatalyst code 20170504 --> 
+  <script type="text/javascript">
+var siteCatURL = (("https:" == document.location.protocol) ? "https://securemedia.newjobs.com/js/global/at_1.5.js" : "http://media.newjobs.com/js/global/at_1.5.js");
+
+document.write(unescape("%3Cscript src='" + siteCatURL + "' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+  <script type="text/javascript">
+var DYNAMIC_S_ACCOUNT='newjobsmilitary';
+_m.ATM.properties={ };
+//<![CDATA[
+var amc=amc||{};if(!amc.on){amc.on=amc.call=function(){}};
+document.write("<scr"+"ipt type='text/javascript' src='//www.adobetag.com/d1/v2/ZDEtbW9uc3RlcmpvYnMtMTI4ODgtMjMzNy0=/amc.js'></sc"+"ript>");
+//]]>
+window.load = _m.ATM.initFromOnReady();
+_m.ATM.countryID=164;
+_m.ATM.appID='';
+_m.ATM.runOnLoad=true;
+</script> 
+  <!-- End SiteCatalyst code --> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ad4099fa87","applicationID":"15399814","transactionName":"YlZbZ0YAWREFUBUIDFsceFBACFgMS0AIDwRZVg==","queueTime":0,"applicationTime":888,"atts":"ThFYEQ4aSh8=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <title>10 Tips on Saving Electricity and Lowering Your Electricity Bill | Family Handyman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta property="fb:pages" content="30340468889"> 
+  <!-- This site is optimized with the Yoast SEO Premium plugin v5.3.1 - https://yoast.com/wordpress/plugins/seo/ --> 
+  <meta name="description" content="Electricity prices are rising and utility bills are getting ugly. Fight back with these 10 tips, and reduce your electrical bill by up to 40 percent.<br"> 
+  <link rel="canonical" href="https://www.familyhandyman.com/smart-homeowner/ways-to-save-money/10-tips-on-saving-electricity-and-lowering-your-electricity-bill/view-all/"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="10 Tips on Saving Electricity and Lowering Your Electricity Bill | Family Handyman"> 
+  <meta property="og:description" content="Electricity prices are rising and utility bills are getting ugly. Fight back with these 10 tips, and reduce your electrical bill by up to 40 percent.<br"> 
+  <meta property="og:url" content="https://www.familyhandyman.com/smart-homeowner/ways-to-save-money/10-tips-on-saving-electricity-and-lowering-your-electricity-bill/view-all/"> 
+  <meta property="og:site_name" content="Family Handyman"> 
+  <meta property="article:section" content="Ways to Save Money"> 
+  <meta property="og:image" content="https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2.jpg"> 
+  <meta property="og:image:width" content="600"> 
+  <meta property="og:image:height" content="600"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:description" content="Electricity prices are rising and utility bills are getting ugly. Fight back with these 10 tips, and reduce your electrical bill by up to 40 percent.<br"> 
+  <meta name="twitter:title" content="10 Tips on Saving Electricity and Lowering Your Electricity Bill | Family Handyman"> 
+  <meta name="twitter:image" content="https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2.jpg"> 
+  <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.familyhandyman.com\/","name":"Family Handyman","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.familyhandyman.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script> 
+  <!-- / Yoast SEO Premium plugin. --> 
+  <link rel="dns-prefetch" href="//js-sec.indexww.com"> 
+  <link rel="dns-prefetch" href="//www.googletagservices.com"> 
+  <link rel="dns-prefetch" href="//mtrx.go.sonobi.com"> 
+  <link rel="dns-prefetch" href="//s.ntv.io"> 
+  <link rel="dns-prefetch" href="//s7.addthis.com"> 
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="alternate" type="application/rss+xml" title="Family Handyman » Feed" href="https://www.familyhandyman.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="Family Handyman » Comments Feed" href="https://www.familyhandyman.com/comments/feed/"> 
+  <script type="text/javascript">
+var digitalData = {"page":{"sitename":"fhm","pageName":"fhm:Ways to Save Money:Smart Homeowner:project:10 Tips on Saving Electricity and Lowering Your Electricity Bill","content":{"contentName":"10 Tips on Saving Electricity and Lowering Your Electricity Bill","contentID":19472,"wpContentID":"","contentType":"project","category":"ways-to-save-money","tags":"","contentCost":"","publishedDate":"2017-06-20","modifiedDate":"2017-06-30","author":"Familyhandyman","authorRole":"administrator"},"subCategory":"Ways to Save Money","subsubCategory":"Smart Homeowner","category":{"subCategory":"Ways to Save Money","subsubCategory":"Smart Homeowner","pageType":"ways-to-save-money"}}};
+</script> 
+  <script type="text/javascript" src="//assets.adobedtm.com/c30a7f4dba5fcf320694d4fefeabd1cf4867f8ed/satelliteLib-247ea3eef67c38bd658d7bf9d4d87aa2e09a9dc9.js"></script> 
+  <link rel="stylesheet" id="fhm-child-theme-css" href="https://www.familyhandyman.com/wp-content/themes/fhm-theme/style.css?ver=2.2.21" type="text/css" media="all"> 
+  <link rel="stylesheet" id="clw-style-css" href="https://www.familyhandyman.com/wp-content/plugins/tmbi-curated-list-widget/css/clw.css?ver=1.0.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="dom-helper-css-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-gpt-ads/css/helper.css?ver=0.4.7" type="text/css" media=""> 
+  <link rel="stylesheet" id="popular-topics-menu-style-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-popular-topics/css/popular-topics.css?ver=1.0.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="magnific-css-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-projects-lightbox/css/magnific-popup.css?ver=1.0.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="magnific-custom-css-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-projects-lightbox/css/custom.css?ver=1.0.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fhm-projects-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-projects/css/frontend.css?ver=1.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="re-circ-style-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-similar-projects-slider/css/re-circ.css?ver=2.0.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="owl-theme-default-style-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-similar-projects-slider/css/owl-theme-default-min.css?ver=2.0.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="social-profiles-menu-style-css" href="https://www.familyhandyman.com/wp-content/plugins/fhm-social-profiles/css/social-profile.css?ver=1.0.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="font-awesome-styles-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="gch-frontend-styles-css" href="https://www.familyhandyman.com/wp-content/plugins/genesis-custom-headers/css/gch-frontend-styles.css?ver=4.7.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="listicle-editor-styles-css" href="https://www.familyhandyman.com/wp-content/plugins/rd-listicle/css/editor-style-listicle.css?ver=1.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fhm-addthis-style-css" href="https://www.familyhandyman.com/wp-content/plugins/tmbi-social-share/css/fhm-addthis-style.css?ver=1.1.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="gsfw-stylesheet-css" href="https://www.familyhandyman.com/wp-content/plugins/genesis-variable-footer-widgets/assets/css/style.css?ver=1.0.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fhm_cmu-css" href="https://www.familyhandyman.com/wp-content/themes/fhm-theme/lib/consumer-marketing-unit.css?ver=1.0" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fhm-child-fonts-css" href="//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900&amp;ver=2.2.21" type="text/css" media="all"> 
+  <link rel="stylesheet" id="dashicons-css" href="https://www.familyhandyman.com/wp-includes/css/dashicons.min.css?ver=4.7.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="owl-carousel-style-css" href="https://www.familyhandyman.com/wp-content/themes/fhm-theme/css/owl-carousel-min.css?ver=2.2.21" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/mu-plugins/cookie-controller/js/cookie.min.js?ver=1.2"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-sticky-feature/js/sticky-ads.js?ver=1.0.0"></script> 
+  <script async type="text/javascript" src="//js-sec.indexww.com/ht/p/184414-205994457498189.js?ver=1.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/fhm-theme/js/owl-carousel-min.js?ver=2.2.21"></script> 
+  <script async type="text/javascript" src="https://www.googletagservices.com/tag/js/gpt.js?ver=0.4.7"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var fhm_ad_data = {"property":"6178","siteId":"hhm.rda.familyhandyman","pageType":"default","contentID":"19472","class":"skills","category":"ways-to-save-money"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-gpt-ads/js/fhm-gpt-header.js?ver=0.4.7"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-gpt-ads/js/fhm-billboard-sticky.js?ver=0.4.7"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-gpt-ads/js/fhm-ads-sticky.js?ver=0.4.7"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-projects-lightbox/js/jquery.magnific-popup.min.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-projects-lightbox/js/lightbox-custom.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-search/js/fhm-search.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://mtrx.go.sonobi.com/morpheus.familyhandyman.com.1577.js?ver=2.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-taboola/js/fhm-taboola-loader.js?ver=0.1.6"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-amazon-a9/js/amazon-lib.js?ver=1.1"></script> 
+  <script async type="text/javascript" src="//s.ntv.io/serve/load.js?ver=1.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-social-share/js/addthis-config.js?ver=4.7.2"></script> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js?ver=1.1.2#pubid=ra-58e64c43f812177f"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/genesis/lib/js/skip-links.js?ver=4.7.2"></script> 
+  <!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.familyhandyman.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]--> 
+  <link rel="amphtml" href="https://www.familyhandyman.com/smart-homeowner/ways-to-save-money/10-tips-on-saving-electricity-and-lowering-your-electricity-bill/amp/">
+  <link rel="https://api.w.org/" href="https://www.familyhandyman.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.familyhandyman.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.familyhandyman.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 4.7.2"> 
+  <link rel="shortlink" href="https://www.familyhandyman.com/?p=19472"> 
+  <link rel="alternate" type="application/json+oembed" href="https://www.familyhandyman.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.familyhandyman.com%2Fsmart-homeowner%2Fways-to-save-money%2F10-tips-on-saving-electricity-and-lowering-your-electricity-bill%2Fview-all%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://www.familyhandyman.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.familyhandyman.com%2Fsmart-homeowner%2Fways-to-save-money%2F10-tips-on-saving-electricity-and-lowering-your-electricity-bill%2Fview-all%2F&amp;format=xml"> 
+  <style type="text/css"> .enews .screenread {
+	height: 1px;
+    left: -1000em;
+    overflow: hidden;
+    position: absolute;
+    top: -1000em;
+    width: 1px; } </style> 
+  <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','gaplusu');
+
+                                                            gaplusu('create', 'UA-42545046-1', 'auto');
+                                        gaplusu('send', 'pageview');
+
+                                    
+                            </script> 
+  <meta name="pageName" content="10 Tips on Saving Electricity and Lowering Your Electricity Bill"> 
+  <meta name="description" content="Electricity prices are rising and utility bills are getting ugly. Fight back with these 10 tips, and reduce your electrical bill by up to 40 percent.<br"> 
+  <meta name="contentId" content="19472"> 
+  <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","name":"Family Handyman","url":"https:\/\/www.familyhandyman.com\/smart-homeowner\/ways-to-save-money\/10-tips-on-saving-electricity-and-lowering-your-electricity-bill\/view-all\/","logo":"https:\/\/cdn1.tmbi.com\/TFH\/new-logo-tfh.png","sameAs":["https:\/\/www.wikidata.org\/wiki\/Q7733312","https:\/\/www.freebase.com\/m\/0bmcfp1","https:\/\/en.wikipedia.org\/wiki\/The_Family_Handyman","https:\/\/www.facebook.com\/TheFamilyHandyman","https:\/\/twitter.com\/Family_Handyman","https:\/\/pinterest.com\/family_handyman\/","https:\/\/plus.google.com\/+familyhandyman\/about"]}</script>
+  <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","@id":"https:\/\/www.familyhandyman.com\/smart-homeowner\/ways-to-save-money\/10-tips-on-saving-electricity-and-lowering-your-electricity-bill\/view-all\/","headline":"10 Tips on Saving Electricity and Lowering Your Electricity Bill","datePublished":"2017-06-20T18:13:27Z","dateModified":"2017-06-30T10:21:22Z","articleBody":"Switch to CFLs: Save up to $35 a bulbCFL bulbCFL bulbs will provide 10,000 hours of light and use $10.40 of electricity (at 8\u00a2 per kilowatt hour). To get the same output with incandescents, you would have to use seven bulbs, which would cost less up front, but the electricity would cost $48.  Replacing incandescent bulbs with compact fluorescent lightbulbs (CFLs) is one of the quickest, easiest ways to save money&mdash;and a place everyone can start. CFLs use about 75 percent less energy and last up to 10 times longer than incandescent bulbs. This can save you up to $35 in electric costs over the lifetime of each bulb. Switching to CFLs in the five most frequently used fixtures in your house will save about $60 per year, according to Energy Star. Choose CFLs with the Energy Star label to get the greatest savings. Energy Star products have to meet energy-efficiency guidelines set by the EPA and the Department of Energy. When you shop, keep in mind that light fixtures with dimmers require special CFLs; read the label. When your CFLs are finally spent, recycle them (to find locations, check with your trash hauler or local government).Install smarter switches: Save up to $100 a yearPhoto 1: Motion sensorMotion sensors are the perfect solution for left-on lights. They turn off automatically so you don't waste electricity.  Photo 2: TimerA timer lets you turn on the fan and walk away. You don't have to remember to come back later and turn it off  Motion sensors (occupancy sensors) automatically turn lights on and off so you only get (and pay for!) light when you need it (Photo 1). Using motion sensors can save you $100 per year. Some motion sensors need to be manually turned on but turn off automatically. They&rsquo;re great for bedrooms because they won&rsquo;t turn on when you move in your sleep. Some switches are installed in junction boxes; others are wireless. You can also buy light fixtures with built-in motion sensors. You&rsquo;ll need special motion sensors for electronic ballasts that control CFLs. Special-order them at home centers or buy them on the internet. Use timers to control bath fans so the fan will run for a preset time to air out the room and then automatically turn off (Photo 2). You can set the length of time you want the fan to run. Be sure the timer you buy is rated for motors, not just lighting (check the label). Buy Energy Star appliances: Save $35 to $600 a yearEnergy Star Look for the Energy Star label when buying appliances. It tells you that the product meets strict standards for energy efficiency. When you shop for appliances, look for the Energy Star label. It means the appliance meets certain energy-efficiency guidelines. The average household spends $2,000 each year on energy bills. Energy Star says that appliances bearing its label can cut those bills by 30 percent, for an annual savings of about $600. But you don&rsquo;t have to replace everything to see a savings. Just replacing an eight-year-old refrigerator with a new Energy Star model can save $110 a year or more in electricity. Not sure what to do with your old appliance? Recycle it. Don&rsquo;t salvage and resell it&mdash;that only passes the electricity&mdash;hogging appliance along to someone else. Check with your utility company or local home center for programs for appliance pickup and recycling.Service your air conditioner: Save up to $65 a yearAir conditioner maintenanceThe best way to keep your air conditioner running at peak efficiency is to spend a couple of hours each year on basic maintenance&mdash;cleaning and straightening the fins, changing the filter and lubricating the motor.  Roughly half of an average home&rsquo;s annual energy bill (gas and electric), about $1,000, is spent on heating and cooling. Air conditioners placed in direct sunlight use up to 10 percent more electricity. If yours sits in the sun, plant tall shrubs or shade trees nearby&mdash;but don&rsquo;t enclose the unit or impede the airflow. Place window units on the north side of the house or install an awning over them. Keep your window or central air conditioner tuned up so it runs at peak efficiency. Every two or three years, call in a pro to check the electrical parts and the refrigerant. If your central air conditioner is more than 12 years old, replacing it with an Energy Star model can cut your cooling costs by 30 percent and save maintenance costs. The payback for replacing a 12-year-old system is typically about eight years. An air conditioner&rsquo;s efficiency level is measured by the seasonal energy efficiency ratio (SEER). The higher the number, the more efficient the unit. A 13 or 14 SEER rating is considered high efficiency. Kill energy vampires: Save up to $100 a yearTurn off electronicsElectronics guzzle lots of power even when they're turned off. Stop wasting electricity: Plug them into a power strip, then turn off the strip.  Seventy-five percent of the electrical use by home electronics occurs when they&rsquo;re turned off, according to the Department of Energy. These &ldquo;energy vampires&rdquo; suck electricity all day long&mdash;costing you an extra $100 each year. So if you&rsquo;d like to keep that Ben Franklin in your wallet, unplug your electronics or plug them into a power strip, then turn off the strip. Don&rsquo;t worry about losing the settings on new computers and TVs. They have a memory chip that resets everything when you power back up. If you have an old VCR or other devices that flash when the power goes out, keep it plugged in. Some power strips have a few outlets that always have power even when you flip off the switch. This type of strip has a main outlet for the computer. When you turn off the computer, the strip also shuts down other devices, such as your scanner, printer or modem. Clean out the lint for dryer efficiency: Save up to $25 a yearClean out lintKeep your dryer safe and efficient by cleaning lint out of the ductwork once a year.  A clogged lint screen or dryer duct drastically reduces the efficiency of your dryer, whether it&rsquo;s gas or electric. Clean the lint screen after each load and clean the exhaust duct once a year. The cleaner shown here has an auger brush that attaches to a drill to clean out the ducts. It&rsquo;s available at home centers. Electric dryers use about $85 of electricity annually. A dirty lint screen can cause the dryer to use up to 30 percent more electricity ($25 per year), according to the Consumer Energy Center. Lint buildup is also a common cause of fires. Dry loads of laundry back-to-back so the dryer doesn&rsquo;t cool down between loads (a warm dryer uses less energy). And only run the dryer until the clothes are dry. Overdrying damages your clothes and runs up your electric bill. If you&rsquo;re in the market for a new dryer and already have a gas line in the house, go with a gas dryer. A gas dryer is more efficient.Change furnace filter: Save up to $60 a yearNew filterLabel filters with the month they'll be used, to help you remember to change them. Keeping your furnace (gas or electric) tuned up has two big benefits: It makes the furnace run efficiently and it prolongs the furnace&rsquo;s life span. And you can perform the annual tune-up yourself in about three hours. Change the filter every month of the heating season (or year-round if the filter is also used for A\/C). Be sure you insert the new one so it faces the right way. The filter protects the blower and its motor; a clogged filter makes the motor work harder and use more power.Save on electric water heating: Save up to $25 a yearPhoto 1: Water heater timerA timer turns on the water heater only when you need it, so you don't waste electricity heating and reheating water that sits in the tank.  Photo 2: Drain sedimentSediment lowers the efficiency of your water heater. Turn off the power, hook up a hose to the drain valve and drain the tank every 6 to 12 months.  If you only use an electric water heater at certain times of the day, you&rsquo;re wasting electricity keeping the water hot 24\/7. To solve that problem, install an electronic timer switch (Photo 1; sold at home centers). Timers are available for 120- and 240-volt heaters. They can be programmed for daily or weekly schedules so you only heat the water when you need it. A timer can save you $25 per year. To make your water heater even more efficient, drain the tank and flush out the sediment at the bottom (Photo 2). Otherwise, you could be heating through inches of sediment before heating the water. If your electric water heater is warm or hot to the touch, it&rsquo;s losing heat. Wrap it with an insulating blanket (sold at home centers). Get smart metering: Save up to $140 a yearTime-of-use meterTime-of-use meters replace the existing meter and attach to the meter box. They enable you to pay less for electricity used at certain times of the day.  Smart metering programs vary among utility companies, but the basic idea is the same: The utility installs a special &ldquo;smart&rdquo; meter that tracks how much electricity you&rsquo;re using. The utility uses that data to make sure its power grid doesn&rsquo;t get overloaded and cause blackouts. If the grid nears capacity, the utility can shut off major appliances in homes for short periods of time (such as 15 minutes per hour). Not all companies offer smart metering, but some do and many others are considering it. What&rsquo;s in it for you? Money! Some programs pay for signing up. Others let you view your home&rsquo;s usage online in real time so you can better manage your electrical consumption. Others let you choose &ldquo;real-time&rdquo; or &ldquo;time-of-use&rdquo; pricing that allows you to pay less for electricity that&rsquo;s used during off-peak hours (for example, on weekdays from early afternoon until 8 p.m.). These plans reward you for using electricity when it&rsquo;s cheapest. Smart metering makes the most sense if you&rsquo;re away from home all day&mdash;you won&rsquo;t notice or care if things get turned off (although it&rsquo;s a good idea for everyone else too!). According to SRP, a power utility company, the plans cut 7 percent off your bill, which is $140 for the average $2,000 yearly energy bill. Check with your local company to find out what smart metering programs are available in your area. Run your refrigerator for less: Save up to $60 a yearClean coilsBrush and vacuum the coils at the bottom or the back of the refrigerator. A coil cleaning brush (available at appliance parts stores or home centers) is bendable to fit in tight areas.  Your refrigerator uses more electricity than all your other kitchen appliances combined. To keep its energy costs down, clean the coils twice a year, which improves efficiency by 30 to 50 percent. Your fridge and freezer run more efficiently when they&rsquo;re full. Put water containers in the fridge and ice bags in your freezer to keep them filled. Keep the refrigerator setting between 35 and 38 degrees and the freezer between 0 and 5 degrees F. Refrigerator door seals wear out over time. Test your seal by closing a dollar bill in the door. If it pulls out easily, replace the seal. If your fridge was made before 2001, it&rsquo;s using at least 40 percent more electricity than new Energy Star models. If you&rsquo;re replacing your fridge, buy an Energy Star model and recycle your old one. Don&rsquo;t hook up the old one in the basement or garage&mdash;an inefficient refrigerator costs as much as $280 a year in electricity. Any money you save buying food in bulk and storing it in an inefficient second fridge is lost in electric costs.","thumbnailUrl":"https:\/\/www.familyhandyman.com\/wp-content\/uploads\/2017\/06\/FH09FEB_SAVELE_01-2.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.familyhandyman.com\/smart-homeowner\/ways-to-save-money\/10-tips-on-saving-electricity-and-lowering-your-electricity-bill\/view-all\/"},"author":[{"@type":"Person","name":"Familyhandyman"}],"image":{"@type":"ImageObject","url":"https:\/\/www.familyhandyman.com\/wp-content\/uploads\/2017\/06\/FH09FEB_SAVELE_01-2.jpg","height":{"@type":"Intangible","name":600},"width":{"@type":"Intangible","name":600}},"publisher":{"@type":"Organization","name":"Family Handyman","logo":{"@type":"ImageObject","url":"https:\/\/cdn1.tmbi.com\/TFH\/new-logo-tfh.png"}},"url":"https:\/\/www.familyhandyman.com\/smart-homeowner\/ways-to-save-money\/10-tips-on-saving-electricity-and-lowering-your-electricity-bill\/view-all\/","dateCreated":"2017-06-20T18:13:27Z","articleSection":["Ways to Save Money"],"creator":[{"@type":"Person","name":"Familyhandyman"}],"keywords":""}</script>
+  <script type="text/javascript">(function(k,g,n,w,K,x,l){function y(a,c,d,b){g.body?(m(z,a+" blocked",c,d),"1"!=="0"&&(A(),setInterval(A,100))):b<L?setTimeout(function(){y(a,c,d,b+1)},10*(b+1)):m(z,a+"blocked; document.body miss",c,d)}function A(){for(var a=g.body.children,c=!1,d=a.length-1;0<=d;d--)a[d]&&(a[d].innerText===B?c=!0:g.body.removeChild(a[d]));if(!c)for(a=g.createElement("h1"),a.innerText=B,g.body.appendChild(a),c=0;a&&20>c;)a.style.cssText="background: white !important;",a=a.parentElement,c+=1}function m(a,c,d,b){a={code:a,message:c,block_detection:{num_requests:0}};0<d&&(a.block_detection.success=d,a.block_detection.num_requests+=d);0<b&&(a.block_detection.fail=b,a.block_detection.num_requests+=b);p("error",a)}function p(a,c,d,b){b||(b=K);var e=k.location.href;c.bid_request={id:"-1",site:{page:e}};c.publisher_uuid=x;c.site_uuid=l;c.js_app_cdn_url=q;c.bootstrap_version=n;b+="/v1/log/";try{b+=a+"?"+r(JSON.stringify(c))}catch(f){b+="exception?e\x3d"+encodeURIComponent(f.message)+"\x26u\x3d"+encodeURIComponent(e)+"\x26bv\x3d"+n+"\x26p\x3d"+x+"\x26s\x3d"+l}e=new Image;d||(e.onerror=function(){p(a,c,1,w)});e.src=b}function r(a){for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",d=[],b=0;4>b;b++)d.push(Math.floor(64*Math.random()));a=k.btoa(a).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");for(var e="",b=0;b<a.length;b++)var f=d[b%4],g=a.charAt(b),g=c.indexOf(g),e=e+c.charAt((g+f)%64);for(b=0;4>b;b++)e+=c.charAt(d[b]);return e}function t(a,c){try{Object.defineProperty(k||{},a,{value:c,writable:!1,configurable:!1,enumerable:!1})}catch(d){}}function C(a,c){return-1===a.indexOf("?")?a+"?"+c:a+"\x26"+c}function D(a,c,d){a>h.length-1&&d();var b=r((new Date).getTime().toString()),e=~~(Math.random()*(b.length-4))+2,b=b.substr(0,e)+"\x3d"+b.substr(e+1),e=new Image;e.onload=function(){c(h[a])};e.onerror=function(){D(a+1,c,d)};e.src=C(h[a],b)}function M(a){for(var c=[],d=0;d<a.length;d+=1){var b=a[d],e=b.src,f=b.srcset;if("img"===(b.tagName||"").toLowerCase())e&&("naturalHeight"in b?0<b.naturalHeight&&c.push(e):c.push(e));else if("source"===(b.tagName||"").toLowerCase()&&f)for(b=f.split(","),f=0;f<b.length;f+=1)(e=b[f].trim().split(" ")[0].trim())&&c.push(e)}return c}function E(a,c,d,b){var e=new Image;e.onload=function(){F(a,c,d+1,b)};e.onerror=function(){F(a,c,d,b+1)};var f=r((new Date).getTime().toString()),g=~~(Math.random()*(f.length-4))+2,f=f.substr(0,g)+"\x3d"+f.substr(g+1);e.src=C(a,f)}function F(a,c,d,b){b>=N?m(u,v,d,b):d+b==O?G(d,b):E(a,c+1,d,b)}function H(a){return a.sort(function(){return~~(100*Math.random())-~~(100*Math.random())})}function I(a){function c(a){E(a,0,0,0)}function d(){m(u,v)}h=M(g.querySelectorAll("img,picture source"));0===h.length&&a<P?setTimeout(function(){I(a+1)},Q):(h=H(h).concat(R),D(0,c,d))}function G(a,c){var d=g.createElement("script");d.async=!0;d.onerror=0===a+c?function(){("onLine"in navigator?navigator.onLine:1)?I(0):m(u,v)}:function(){y(q,a,c,0)};d.src=q;var b=g.querySelector("script");b.parentNode.insertBefore(d,b)}if("http:"===k.location.protocol||"https:"===k.location.protocol){var q=w+"/"+l+".js",L=20,Q=100,P=20,O=5,N=2,v="network down",u="FLAKY_CONNECTION",z="BLOCKED_BY_ADBLOCK",S=l+"-cmd",B="\x4f\x6f\x70\x73\x20\x73\x6f\x6d\x65\x74\x68\x69\x6e\x67\x20\x77\x65\x6e\x74\x20\x77\x72\x6f\x6e\x67\x21\x20\x50\x6c\x65\x61\x73\x65\x20\x63\x68\x65\x63\x6b\x20\x79\x6f\x75\x72\x20\x69\x6e\x74\x65\x72\x6e\x65\x74\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x6f\x72\x20\x64\x69\x73\x61\x62\x6c\x65\x20\x79\x6f\x75\x72\x20\x61\x64\x20\x62\x6c\x6f\x63\x6b\x65\x72",h,R=H("apple.com facebook.com linkedin.com google.com microsoft.com adblockplus.org".split(" ").map(function(a){return"https://www."+a+"/favicon.ico"}));t(l+"-bs",n);var J=[];t(S,J);t("pAPI",function(a,c){J.push([a,c])});p("event",{type:"BOOTLOADER_LOADED"});G(0,0)}})(window,document,"29ca93025df249586ee5832506d6bd1976221c60","//dwx1guhcvx8gs.cloudfront.net","https://168logger.com","6b1766fa-32ee-4e82-89bd-c62f0362c44f","125c7b62-ad3e-41ed-90ca-b1495303db3d");</script>
+  <link rel="pingback" href="https://www.familyhandyman.com/xmlrpc.php"> 
+  <style type="text/css">.site-title a { background: url(https://www.familyhandyman.com/wp-content/uploads/2017/05/cropped-logo-1.png) no-repeat !important; }</style> 
+  <link rel="icon" href="https://www.familyhandyman.com/wp-content/uploads/2017/05/cropped-fhm-favicon-32x32.jpg" sizes="32x32"> 
+  <link rel="icon" href="https://www.familyhandyman.com/wp-content/uploads/2017/05/cropped-fhm-favicon-192x192.jpg" sizes="192x192"> 
+  <link rel="apple-touch-icon-precomposed" href="https://www.familyhandyman.com/wp-content/uploads/2017/05/cropped-fhm-favicon-180x180.jpg"> 
+  <meta name="msapplication-TileImage" content="https://www.familyhandyman.com/wp-content/uploads/2017/05/cropped-fhm-favicon-270x270.jpg"> 
+ </head> 
+ <body class="project-template-default single single-project postid-19472 custom-header header-image content-sidebar">
+  <div class="site-container"> 
+   <!-- Ad Start:BILLBOARD_PLACEMENT --> 
+   <div class="ad-wrapper mobile_billboard"> 
+    <div id="div-gpt-ad-1370019314148-05" style="display:block; margin: 0 auto;"> 
+     <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-05'); });
+</script> 
+    </div> 
+   </div> 
+   <!-- Ad End:BILLBOARD_PLACEMENT --> 
+   <!-- Ad Start:BILLBOARD_PLACEMENT --> 
+   <div class="ad-wrapper billboard"> 
+    <div id="div-gpt-ad-1370019314148-04" style="display:block; margin: 0 auto;"> 
+     <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-04'); });
+</script> 
+    </div> 
+   </div> 
+   <!-- Ad End:BILLBOARD_PLACEMENT --> 
+   <section>
+    <span class="screen-reader-text">Skip links</span>
+    <ul class="genesis-skip-link">
+     <li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li>
+     <li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li>
+     <li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li>
+     <li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li>
+    </ul>
+   </section> 
+   <div class="main-menu"> 
+    <input type="checkbox" id="reveal-main-menu" role="button"> 
+    <label for="reveal-main-menu" id="main-menu-button"><span></span><span></span><span></span></label> 
+    <div id="main-menu"> 
+     <nav class="nav-main">
+      <ul id="menu-main-menu" class="nav-main">
+       <li><a href="https://www.familyhandyman.com/skills" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">How To &amp; Repair</span></a><a href="#submenu-10957" class="more"><i class="fa fa-chevron-right"></i></a>
+        <ul class="sub" id="submenu-10957" data-depth="1"> 
+         <li><a href="https://www.familyhandyman.com/skills/appliance-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Appliance Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Appliance Repair</span></a><a href="#submenu-10958" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10958" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/appliance-repair/dishwasher-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Appliance Repair:Dishwasher Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Dishwasher Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/appliance-repair/refrigerator-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Appliance Repair:Refrigerator Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Refrigerator Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/appliance-repair/stove-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Appliance Repair:Stove Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Stove Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/appliance-repair/washer-and-dryer-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Appliance Repair:Washer and Dryer Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Washer and Dryer Repair</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/automotive" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Automotive</span></a><a href="#submenu-10963" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10963" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/automotive/car-brakes" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive:Car Brakes&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Car Brakes</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/automotive/car-maintenance" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive:Car Maintenance&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Car Maintenance</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/automotive/car-window-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive:Car Window Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Car Window Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/automotive/diy-car-paint" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive:DIY Car Paint&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">DIY Car Paint</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/automotive/diy-oil-change" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive:DIY Oil Change&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">DIY Oil Change</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/automotive/lawn-mower-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Automotive:Lawn Mower Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Lawn Mower Repair</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/carpentry" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Carpentry&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Carpentry</span></a><a href="#submenu-10971" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10971" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/carpentry/trim-carpentry" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Carpentry:Trim Carpentry&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Trim Carpentry</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/cleaning" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Cleaning&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Cleaning</span></a><a href="#submenu-10973" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10973" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/cleaning/mold-and-mildew" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Cleaning:Mold &amp; Mildew&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Mold &amp; Mildew</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/drywall" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Drywall&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Drywall</span></a><a href="#submenu-10975" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10975" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/drywall/ceiling-texture" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Drywall:Ceiling Texture&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Ceiling Texture</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/drywall/cutting-drywall" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Drywall:Cutting Drywall&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Cutting Drywall</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/drywall/installation" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Drywall:Drywall Installation&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Drywall Installation</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/drywall/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Drywall:Drywall Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Drywall Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/drywall/taping" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Drywall:Drywall Taping&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Drywall Taping</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/electrical" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Electrical</span></a><a href="#submenu-10981" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10981" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/breaker-box" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Breaker Box&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Breaker Box</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Electrical Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Electrical Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/wiring" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Electrical Wiring&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Electrical Wiring</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/fluorescent-light" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Fluorescent Lighting&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Fluorescent Lighting</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/home-lighting" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Home Lighting&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Home Lighting</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/wiring-outlets" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Wiring Outlets&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Wiring Outlets</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/electrical/wiring-switches" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Electrical:Wiring Switches&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Wiring Switches</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/heating-cooling" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Heating &amp; Cooling&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Heating &amp; Cooling</span></a><a href="#submenu-10992" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10992" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/heating-cooling/air-conditioner-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Heating &amp; Cooling:Air Conditioner Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Air Conditioner Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/heating-cooling/furnace-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Heating &amp; Cooling:Furnace Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Furnace Repair</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/masonry" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Masonry&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Masonry</span></a><a href="#submenu-10995" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10995" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/masonry/concrete-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Masonry:Concrete Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Concrete Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/masonry/pouring-concrete" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Masonry:Pouring Concrete&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Pouring Concrete</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/painting" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Painting&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Painting</span></a><a href="#submenu-10998" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-10998" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/painting/techniques" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Painting:Painting Techniques&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Painting Techniques</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/painting/tips" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Painting:Painting Tips&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Painting Tips</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/pest-control" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Pest Control&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Pest Control</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/plumbing" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Plumbing</span></a><a href="#submenu-11002" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11002" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/drain-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Drain Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Drain Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/faucet-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Faucet Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Faucet Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Plumbing Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Plumbing Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/valves" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Plumbing Valves&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Plumbing Valves</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/toilet-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Toilet Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Toilet Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/water-heater" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Water Heater&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Water Heater</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/plumbing/water-softener-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Plumbing:Water Softener&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Water Softener</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/storage-organization" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Storage &amp; Organization&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Storage &amp; Organization</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/tiling" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tiling&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Tiling</span></a><a href="#submenu-11012" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11012" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/tiling/grouting" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tiling:Grouting&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Grouting</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tiling/tile-installation" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tiling:Tile Installation&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Tile Installation</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/tools" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Tools</span></a><a href="#submenu-11015" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11015" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/air-tools" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Air Tools&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Air Tools</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/automotive-tools" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Automotive Tools&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Automotive Tools</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/circular-saws" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Circular Saws&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Circular Saws</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/drills" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Drills&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Drills</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/miter-saws" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Miter Saws&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Miter Saws</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/painting-tools" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Painting Tools&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Painting Tools</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/power-tools" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Power Tools&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Power Tools</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/routers" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Routers&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Routers</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/saws" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Saws&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Saws</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/table-saws" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Table Saws&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Table Saws</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/storage" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Tool Storage&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Tool Storage</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/tools/woodworking-tools" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Tools:Woodworking Tools&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Woodworking Tools</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/skills/woodworking" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Woodworking</span></a><a href="#submenu-11028" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11028" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/bookcase" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Bookcase&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Bookcase</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/shelves" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Building Shelves&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Building Shelves</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/furniture-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Furniture Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Furniture Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/staining-wood" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Staining Wood&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Staining Wood</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/wood-joints" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Wood Joints&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Wood Joints</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/projects" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Woodworking Projects&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Woodworking Projects</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/skills/woodworking/tips" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Woodworking:Woodworking Tips&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Woodworking Tips</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/ceiling" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Ceiling&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Ceiling</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/doors" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Doors&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Doors</span></a><a href="#submenu-11037" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11037" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/doors/installation" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Doors:Door Installation&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Door Installation</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/doors/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Doors:Door Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Door Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/doors/garage-door-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Doors:Garage Door Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Garage Door Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/doors/screen-door-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Doors:Screen Door Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Screen Door Repair</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/floor" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Floors&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Floors</span></a><a href="#submenu-11042" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11042" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/floor/carpet-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Floors:Carpet Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Carpet Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/floor/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Floors:Floor Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Floor Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/floor/hardwood-floors" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Floors:Hardwood Floors&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Hardwood Floors</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/floor/vinyl-flooring" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Floors:Vinyl Flooring&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Vinyl Flooring</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/floor/wood-floor-installation" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Floors:Wood Floor Installation&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Wood Floor Installation</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/roof" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Roof&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Roof</span></a><a href="#submenu-11048" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11048" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/roof/gutter-repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Roof:Gutter Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Gutter Repair</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/roof/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Roof:Roof Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Roof Repair</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/siding" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Siding&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Siding</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/walls" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Walls&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Walls</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/parts-of-the-house/windows" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Windows&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Windows</span></a><a href="#submenu-11053" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11053" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/parts-of-the-house/windows/repair" data-analytics-metrics="{&quot;link_name&quot;:&quot;How To &amp; Repair:Windows:Window Repair&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Window Repair</span></a></li> 
+          </ul></li> 
+        </ul></li> 
+       <li><a href="https://www.familyhandyman.com/rooms" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">Rooms</span></a><a href="#submenu-11055" class="more"><i class="fa fa-chevron-right"></i></a>
+        <ul class="sub" id="submenu-11055" data-depth="1"> 
+         <li><a href="https://www.familyhandyman.com/rooms/attic" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Attic&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Attic</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/basement" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Basement&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Basement</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/bathroom" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Bathroom&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Bathroom</span></a><a href="#submenu-11058" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11058" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/rooms/bathroom/exhaust-fan" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Bathroom:Bathroom Exhaust Fan&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Bathroom Exhaust Fan</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/rooms/bathroom/remodeling" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Bathroom:Bathroom Remodeling&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Bathroom Remodeling</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/rooms/bathroom/shower-installation" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Bathroom:Shower Installation&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Shower Installation</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/bedroom" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Bedroom&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Bedroom</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/closet" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Closet&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Closet</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/garage" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Garage&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Garage</span></a><a href="#submenu-11064" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11064" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/rooms/garage/storage" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Garage:Garage Storage&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Garage Storage</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/home-office" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Home Office&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Home Office</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/kitchen" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Kitchen&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Kitchen</span></a><a href="#submenu-11067" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11067" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/rooms/kitchen/diy-kitchen-cabinets" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Kitchen:DIY Kitchen Cabinets&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">DIY Kitchen Cabinets</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/rooms/kitchen/countertops" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Kitchen:Kitchen Countertops&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Kitchen Countertops</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/rooms/kitchen/design-ideas" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Kitchen:Kitchen Design Ideas&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Kitchen Design Ideas</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/rooms/kitchen/storage" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Kitchen:Kitchen Storage&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Kitchen Storage</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/laundry-room" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Laundry&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Laundry</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/rooms/workshop" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Workshop&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Workshop</span></a><a href="#submenu-11073" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11073" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/rooms/workshop/workbench" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Workshop:Workbenches&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Workbenches</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/rooms/workshop/storage" data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms:Workshop:Workshop Storage&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Workshop Storage</span></a></li> 
+          </ul></li> 
+        </ul></li> 
+       <li><a href="https://www.familyhandyman.com/outdoors" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">Outdoor</span></a><a href="#submenu-11076" class="more"><i class="fa fa-chevron-right"></i></a>
+        <ul class="sub" id="submenu-11076" data-depth="1"> 
+         <li><a href="https://www.familyhandyman.com/outdoors/decks" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Decks&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Decks</span></a><a href="#submenu-11077" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11077" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/outdoors/decks/building-a-deck" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Decks:Building a Deck&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Building a Deck</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/decks/designs" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Decks:Deck Designs&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Deck Designs</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/decks/railing" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Decks:Deck Railing&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Deck Railing</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/outdoors/garden" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Garden&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Garden</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/outdoors/garden-structures" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Garden Structures&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Garden Structures</span></a><a href="#submenu-11082" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11082" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/outdoors/garden-structures/fences" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Garden Structures:Fences&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Fences</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/garden-structures/garden-paths" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Garden Structures:Garden Paths&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Garden Paths</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/outdoors/grills" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Grills&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Grills</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/outdoors/landscaping" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Landscaping</span></a><a href="#submenu-11086" class="more"><i class="fa fa-chevron-right"></i></a>
+          <ul class="sub" id="submenu-11086" data-depth="2"> 
+           <li><a href="https://www.familyhandyman.com/outdoors/landscaping/backyard-ponds" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping:Backyard Ponds&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Backyard Ponds</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/landscaping/backyard-waterfalls" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping:Backyard Waterfalls&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Backyard Waterfalls</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/landscaping/lawn-care" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping:Lawn Care&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Lawn Care</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/landscaping/outdoor-fountains" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping:Outdoor Fountains&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Outdoor Fountains</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/landscaping/planters" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping:Planter Boxes&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Planter Boxes</span></a></li> 
+           <li><a href="https://www.familyhandyman.com/outdoors/landscaping/retaining-wall" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Landscaping:Retaining Wall&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Retaining Wall</span></a></li> 
+          </ul></li> 
+         <li><a href="https://www.familyhandyman.com/outdoors/patio" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Patio&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Patio</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/outdoors/sheds" data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoor:Sheds&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Sheds</span></a></li> 
+        </ul></li> 
+       <li><a href="https://www.familyhandyman.com/skills/smart-homeowner" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">Smart Homeowner</span></a><a href="#submenu-11095" class="more"><i class="fa fa-chevron-right"></i></a>
+        <ul class="sub" id="submenu-11095" data-depth="1"> 
+         <li><a href="https://www.familyhandyman.com/skills/diy-advice" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner:DIY Advice&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">DIY Advice</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/smart-homeowner/diy-home-improvement" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner:DIY Home Improvement&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">DIY Home Improvement</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/great-goofs" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner:Great Goofs&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Great Goofs</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/smart-homeowner/home-safety-tips" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner:Home Safety Tips&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Home Safety Tips</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/home-security" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner:Home Security&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Home Security</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/skills/smart-homeowner/ways-to-save-money" data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner:Ways to Save Money&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Ways to Save Money</span></a></li> 
+        </ul></li> 
+       <li><a href="https://www.familyhandyman.com/stuff-we-love" data-analytics-metrics="{&quot;link_name&quot;:&quot;Stuff We Love&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">Stuff We Love</span></a></li> 
+       <li><a target="_blank" href="https://www.mydiyuniversity.com/?utm_source=blog_fhm&amp;utm_medium=blog&amp;utm_campaign=sml-fam-nav-20170613-MAINNAV&amp;trkid=DIYU_FHMCOM_061317_sml-MAINNAV" data-analytics-metrics="{&quot;link_name&quot;:&quot;DIY University&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">DIY University</span></a></li> 
+       <li><a href="https://order.familyhandyman.com/servlet/OrdersGateway?cds_mag_code=FHM&amp;cds_page_id=208064&amp;cds_response_key=IT7ADU114" data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}"><span itemprop="name">Subscribe</span></a><a href="#submenu-10926" class="more"><i class="fa fa-chevron-right"></i></a>
+        <ul class="sub" id="submenu-10926" data-depth="1"> 
+         <li><a target="_blank" href="https://www.readersdigeststore.com/family-handyman.html?utm_source=FHM.com&amp;utm_medium=Shoplink&amp;utm_campaign=FHMbrandshop" data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe:Shop DIY Books&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Shop DIY Books</span></a></li> 
+         <li><a target="_blank" href="https://www.argifocus.com/CLIENT/RDP/LM1/CUSTOM/RSAD.ASP" data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe:Free Product Info&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Free Product Info</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/sign-up-for-free-diy-newsletters" data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe:Newsletters&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Newsletters</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/contests-promotions" data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe:Promotions&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Promotions</span></a></li> 
+         <li><a href="https://www.familyhandyman.com/diy-tip-genius" data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe:Tip App&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;drop down navigation&quot;}"><span itemprop="name">Tip App</span></a></li> 
+        </ul></li> 
+       <li class="follow"><span>Follow us:</span><a href="https://www.facebook.com/TheFamilyHandyman" data-analytics-metrics="{&quot;link_name&quot;:&quot;facebook&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://pinterest.com/family_handyman" data-analytics-metrics="{&quot;link_name&quot;:&quot;pinterest&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;main navigation&quot;}" target="_blank" rel="noopener"><i class="fa fa-pinterest"></i></a></li>
+      </ul>
+     </nav> 
+    </div> 
+   </div>
+   <header class="site-header">
+    <div class="wrap">
+     <div class="title-area">
+      <p id="fhm-url-title"><a href="https://www.familyhandyman.com" title="Family Handyman">Family Handyman</a></p>
+      <p class="site-description">Do it Yourself Home Improvement: Home Repair</p>
+     </div>
+     <div class="widget-area header-widget-area">
+      <section id="text-7" class="widget-1 widget-first widget-last widget-odd widget widget_text">
+       <div class="widget-1 widget-first widget-last widget-odd widget-wrap"> 
+        <div class="textwidget">
+         <form id="fhm-header-search" data-analytics-metrics="{&quot;link_name&quot;:&quot;search&quot;,&quot;link_module&quot;:&quot;search bar&quot;,&quot;link_pos&quot;:&quot;navigation&quot;}" action="https://www.familyhandyman.com/search/index"> 
+          <div class="header-search"> 
+           <input name="search" class="search-header" type="text" placeholder="find DIY projects, repairs, tips"> 
+           <button class="search-btn-header"> <span class="fa fa-search"></span></button> 
+          </div> 
+         </form>
+        </div> 
+       </div>
+      </section> 
+     </div> 
+     <div class="fhm-cmu"> 
+      <div class="links"> 
+       <p> <a target="_blank" rel="noopener" href="https://order.familyhandyman.com/pubs/RD/FHM/TFH-INT-1610-AllAccess-LP-new.jsp?cds_page_id=208064&amp;cds_mag_code=FHM&amp;id=1488055451509&amp;lsid=70561444115018676&amp;vid=1&amp;cds_response_key=IVBADU101">Magazine &gt;&gt;</a> </p> 
+       <p> <a target="_blank" rel="noopener" href="https://order.familyhandyman.com/pubs/RD/FHM/gift_donee1.jsp?cds_page_id=208282&amp;cds_mag_code=FHM&amp;id=1488055496458&amp;lsid=70561444115018676&amp;vid=2&amp;cds_response_key=IVBAAU101">Give a Gift &gt;&gt;</a> </p> 
+       <p> <a target="_blank" rel="noopener" href="http://www.readersdigeststore.com/family-handyman.html?utm_source=FHM.com&amp;utm_medium=Shoplink&amp;utm_campaign=FHMbrandshop">Shop &gt;&gt;</a> </p> 
+      </div> 
+      <div class="img"> 
+       <a target="_blank" rel="noopener" href="https://order.familyhandyman.com/servlet/OrdersGateway?cds_mag_code=FHM&amp;cds_page_id=208064&amp;cds_response_key=IT7ADU114"> <img src="https://www.familyhandyman.com/wp-content/uploads/2017/05/handyman_mag_photo-1.jpg"> </a> 
+      </div> 
+     </div> 
+    </div>
+   </header>
+   <span class="screen-reader-text">Main navigation</span>
+   <nav class="nav-primary" id="genesis-nav-primary" aria-label="Main navigation">
+    <div class="wrap">
+     <ul id="menu-popular-topics" class="menu genesis-nav-menu menu-primary">
+      <li id="menu-item-10951" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Fixing a toilet&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;popular topics&quot;}" href="https://www.familyhandyman.com/skills/plumbing/toilet-repair"><span itemprop="name">Fixing a toilet</span></a></li> 
+      <li id="menu-item-10952" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Electrical&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;popular topics&quot;}" href="https://www.familyhandyman.com/skills/electrical"><span itemprop="name">Electrical</span></a></li> 
+      <li id="menu-item-10953" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Organizing&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;popular topics&quot;}" href="https://www.familyhandyman.com/skills/storage-organization"><span itemprop="name">Organizing</span></a></li> 
+      <li id="menu-item-10954" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Cleaning&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;popular topics&quot;}" href="https://www.familyhandyman.com/skills/cleaning"><span itemprop="name">Cleaning</span></a></li> 
+      <li id="menu-item-10955" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Plumbing&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;popular topics&quot;}" href="https://www.familyhandyman.com/skills/plumbing"><span itemprop="name">Plumbing</span></a></li> 
+      <li id="menu-item-10956" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Smart Homeowner&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;popular topics&quot;}" href="https://www.familyhandyman.com/skills/smart-homeowner"><span itemprop="name">Smart Homeowner</span></a></li> 
+     </ul>
+    </div>
+   </nav>
+   <div class="site-inner"> 
+    <!-- Ad Start:LEADER_BOARD_PLACEMENT --> 
+    <div class="ad-wrapper-sticky"> 
+     <div class="div-float-left"> 
+      <div>
+       <a href="https://www.mydiyuniversity.com/?utm_source=blog_TFH&amp;utm_medium=banner&amp;utm_campaign=sml-fam-ad-20170320-FHM-ad200x90" title="DIYU Online Classes"><img data-pin-no-hover="true" src="https://cdn1.tmbi.com/CM/images/TFH/1703_DIYU/DIYU-INT-1703-TFHsite-AD-200x90.jpg"></a>
+      </div> 
+     </div>
+     <div class="div-float-right">
+      <div id="div-gpt-ad-1370019314148-01" style="display:block; margin: 0 auto;"> 
+       <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-01'); });
+</script> 
+      </div> 
+     </div>
+     <div class="clearfix"></div>
+    </div> 
+    <!-- Ad End:LEADER_BOARD_PLACEMENT --> 
+    <div class="content-sidebar-wrap">
+     <main class="content" id="genesis-content">
+      <article class="post-19472 project type-project status-publish has-post-thumbnail category-ways-to-save-money class-skills entry">
+       <header class="entry-header">
+        <img class="print-logo" src="https://www.familyhandyman.com/images/TFH-logo-print.gif" style="display:none">
+        <p id="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="https://www.familyhandyman.com/" rel="v:url" property="v:title">Home</a> › <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.familyhandyman.com/smart-homeowner" rel="v:url" property="v:title">Smart Homeowner</a> › <span rel="v:child" typeof="v:Breadcrumb"><a href="https://www.familyhandyman.com/smart-homeowner/ways-to-save-money" rel="v:url" property="v:title">Ways to Save Money</a> › <span class="breadcrumb_last">10 Tips on Saving Electricity and Lowering Your Electricity Bill</span></span></span></span></span></p>
+        <h1 class="entry-title">10 Tips on Saving Electricity and Lowering Your Electricity Bill</h1> 
+        <div class="fhm-dek">
+         <h4>Slash your electric bill up to 40 percent!</h4>
+        </div>
+        <div class="fhm-sharing project">
+         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+          <a class="addthis_button_email" data-analytics-metrics="{&quot;link_name&quot;:&quot;email&quot;,&quot;link_module&quot;:&quot;social share&quot;,&quot;link_pos&quot;:&quot;left sticky nav&quot;}"></a>
+          <a class="addthis_button_facebook" addthis:media="https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2.jpg" data-analytics-metrics="{&quot;link_name&quot;:&quot;facebook&quot;,&quot;link_module&quot;:&quot;social share&quot;,&quot;link_pos&quot;:&quot;left sticky nav&quot;}"></a>
+          <a class="addthis_button_pinterest_share" addthis:media="" data-analytics-metrics="{&quot;link_name&quot;:&quot;pinterest&quot;,&quot;link_module&quot;:&quot;social share&quot;,&quot;link_pos&quot;:&quot;left sticky nav&quot;}"></a>
+          <a class="addthis_button_print" data-analytics-metrics="{&quot;link_name&quot;:&quot;print&quot;,&quot;link_module&quot;:&quot;social share&quot;,&quot;link_pos&quot;:&quot;left sticky nav&quot;}"></a>
+         </div>
+        </div>
+       </header>
+       <div class="fhm-np-link">
+        <a onclick="set_local_data(event);"><span class="desktop">Next Project</span><span class="mobile">›</span></a>
+       </div> 
+       <div class="intro"> 
+        <div class="image"> 
+         <img width="600" height="600" src="https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="FH09FEB_SAVELE_01-2" srcset="https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2.jpg 600w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-150x150.jpg 150w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-300x300.jpg 300w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-32x32.jpg 32w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-50x50.jpg 50w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-64x64.jpg 64w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-96x96.jpg 96w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-128x128.jpg 128w, https://www.familyhandyman.com/wp-content/uploads/2017/06/FH09FEB_SAVELE_01-2-10x10.jpg 10w" sizes="(max-width: 600px) 100vw, 600px"> 
+        </div> 
+        <div class="details"> 
+         <div class="intro-paragraph">
+           Electricity prices are rising and utility bills are getting ugly. Fight back with these 10 tips, and reduce your electrical bill by up to 40 percent.
+          <br>
+          <br>Photo courtesy of Tetra Images/Jupiter Images
+         </div> 
+         <p class="byline">By the DIY experts of The Family Handyman Magazine</p> 
+         <p style="display: none;">You might also like: TBD</p> 
+        </div> 
+       </div> 
+       <br>
+       <!-- FHM Taboola goes here. -->
+       <br> 
+       <div id="taboola-native-below-article-thumbnails"></div> 
+       <br>
+       <!-- The content ends here. -->
+       <br> 
+       <div class="entry-content">
+        <h2><strong>Switch to CFLs:</strong> Save up to $35 a bulb</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_04.JPG">
+          <p></p> 
+          <h3>CFL bulb</h3> 
+          <p>CFL bulbs will provide 10,000 hours of light and use $10.40 of electricity (at 8¢ per kilowatt hour). To get the same output with incandescents, you would have to use seven bulbs, which would cost less up front, but the electricity would cost $48. </p>
+         </div>
+        </section> 
+        <p>Replacing incandescent bulbs with compact fluorescent lightbulbs (CFLs) is one of the quickest, easiest ways to save money—and a place everyone can start. CFLs use about 75 percent less energy and last up to 10 times longer than incandescent bulbs. This can save you up to $35 in electric costs over the lifetime of each bulb. Switching to CFLs in the five most frequently used fixtures in your house will save about $60 per year, according to Energy Star.</p> 
+        <p>Choose CFLs with the Energy Star label to get the greatest savings. Energy Star products have to meet energy-efficiency guidelines set by the EPA and the Department of Energy. When you shop, keep in mind that light fixtures with dimmers require special CFLs; read the label.</p> 
+        <p>When your CFLs are finally spent, recycle them (to find locations, check with your trash hauler or local government).</p> 
+        <h2><strong>Install smarter switches:</strong> Save up to $100 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_05.JPG">
+          <p></p> 
+          <h3>Photo 1: Motion sensor</h3> 
+          <p>Motion sensors are the perfect solution for left-on lights. They turn off automatically so you don’t waste electricity. </p>
+         </div>
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_06.JPG">
+          <p></p> 
+          <h3>Photo 2: Timer</h3> 
+          <p>A timer lets you turn on the fan and walk away. You don’t have to remember to come back later and turn it off </p>
+         </div>
+        </section> 
+        <p>Motion sensors (occupancy sensors) automatically turn lights on and off so you only get (and pay for!) light when you need it (Photo 1). Using motion sensors can save you $100 per year. Some motion sensors need to be manually turned on but turn off automatically. They’re great for bedrooms because they won’t turn on when you move in your sleep.</p> 
+        <p>Some switches are installed in junction boxes; others are wireless. You can also buy light fixtures with built-in motion sensors. You’ll need special motion sensors for electronic ballasts that control CFLs. Special-order them at home centers or buy them on the internet.</p> 
+        <p>Use timers to control bath fans so the fan will run for a preset time to air out the room and then automatically turn off (Photo 2). You can set the length of time you want the fan to run. Be sure the timer you buy is rated for motors, not just lighting (check the label). </p> 
+        <h2><strong>Buy Energy Star appliances:</strong> Save $35 to $600 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_07.JPG">
+          <p></p> 
+          <h3>Energy Star </h3> 
+          <p>Look for the Energy Star label when buying appliances. It tells you that the product meets strict standards for energy efficiency. </p>
+         </div>
+        </section> 
+        <p>When you shop for appliances, look for the Energy Star label. It means the appliance meets certain energy-efficiency guidelines. The average household spends $2,000 each year on energy bills. Energy Star says that appliances bearing its label can cut those bills by 30 percent, for an annual savings of about $600. But you don’t have to replace everything to see a savings. Just replacing an eight-year-old refrigerator with a new Energy Star model can save $110 a year or more in electricity.</p> 
+        <p>Not sure what to do with your old appliance? Recycle it. Don’t salvage and resell it—that only passes the electricity—hogging appliance along to someone else. Check with your utility company or local home center for programs for appliance pickup and recycling.</p> 
+        <h2><strong>Service your air conditioner:</strong> Save up to $65 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_08.JPG">
+          <p></p> 
+          <h3>Air conditioner maintenance</h3> 
+          <p>The best way to keep your air conditioner running at peak efficiency is to spend a couple of hours each year on basic maintenance—cleaning and straightening the fins, changing the filter and lubricating the motor. </p>
+         </div>
+        </section> 
+        <p>Roughly half of an average home’s annual energy bill (gas and electric), about $1,000, is spent on heating and cooling. Air conditioners placed in direct sunlight use up to 10 percent more electricity. If yours sits in the sun, plant tall shrubs or shade trees nearby—but don’t enclose the unit or impede the airflow. Place window units on the north side of the house or install an awning over them.</p> 
+        <p>Keep your window or central air conditioner tuned up so it runs at peak efficiency. Every two or three years, call in a pro to check the electrical parts and the refrigerant.</p> 
+        <p>If your central air conditioner is more than 12 years old, replacing it with an Energy Star model can cut your cooling costs by 30 percent <em>and </em>save maintenance costs. The payback for replacing a 12-year-old system is typically about eight years. An air conditioner’s efficiency level is measured by the seasonal energy efficiency ratio (SEER). The higher the number, the more efficient the unit. A 13 or 14 SEER rating is considered high efficiency. </p> 
+        <h2><strong>Kill energy vampires:</strong> Save up to $100 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_09.JPG">
+          <p></p> 
+          <h3>Turn off electronics</h3> 
+          <p>Electronics guzzle lots of power even when they’re turned off. Stop wasting electricity: Plug them into a power strip, then turn off the strip. </p>
+         </div>
+        </section> 
+        <p>Seventy-five percent of the electrical use by home electronics occurs when they’re turned off, according to the Department of Energy. These “energy vampires” suck electricity all day long—costing you an extra $100 each year. So if you’d like to keep that Ben Franklin in your wallet, unplug your electronics or plug them into a power strip, then turn off the strip.</p> 
+        <p>Don’t worry about losing the settings on new computers and TVs. They have a memory chip that resets everything when you power back up. If you have an old VCR or other devices that flash when the power goes out, keep it plugged in. Some power strips have a few outlets that always have power even when you flip off the switch. This type of strip has a main outlet for the computer. When you turn off the computer, the strip also shuts down other devices, such as your scanner, printer or modem. </p> 
+        <h2><strong>Clean out the lint for dryer efficiency:</strong> Save up to $25 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_10.JPG">
+          <p></p> 
+          <h3>Clean out lint</h3> 
+          <p>Keep your dryer safe and efficient by cleaning lint out of the ductwork once a year. </p>
+         </div>
+        </section> 
+        <p>A clogged lint screen or dryer duct drastically reduces the efficiency of your dryer, whether it’s gas or electric. Clean the lint screen after each load and clean the exhaust duct once a year. The cleaner shown here has an auger brush that attaches to a drill to clean out the ducts. It’s available at home centers.</p> 
+        <p>Electric dryers use about $85 of electricity annually. A dirty lint screen can cause the dryer to use up to 30 percent more electricity ($25 per year), according to the Consumer Energy Center. Lint buildup is also a common cause of fires.</p> 
+        <p>Dry loads of laundry back-to-back so the dryer doesn’t cool down between loads (a warm dryer uses less energy). And only run the dryer until the clothes are dry. Overdrying damages your clothes and runs up your electric bill. If you’re in the market for a new dryer and already have a gas line in the house, go with a gas dryer. A gas dryer is more efficient.</p> 
+        <h2><strong>Change furnace filter:</strong> Save up to $60 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_11.JPG">
+          <p></p> 
+          <h3>New filter</h3> 
+          <p>Label filters with the month they’ll be used, to help you remember to change them. </p>
+         </div>
+        </section> 
+        <p>Keeping your furnace (gas or electric) tuned up has two big benefits: It makes the furnace run efficiently and it prolongs the furnace’s life span. And you can perform the annual tune-up yourself in about three hours.</p> 
+        <p>Change the filter every month of the heating season (or year-round if the filter is also used for A/C). Be sure you insert the new one so it faces the right way. The filter protects the blower and its motor; a clogged filter makes the motor work harder and use more power.</p> 
+        <h2><strong>Save on electric water heating:</strong> Save up to $25 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_12.JPG">
+          <p></p> 
+          <h3>Photo 1: Water heater timer</h3> 
+          <p>A timer turns on the water heater only when you need it, so you don’t waste electricity heating and reheating water that sits in the tank. </p>
+         </div>
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_13.JPG">
+          <p></p> 
+          <h3>Photo 2: Drain sediment</h3> 
+          <p>Sediment lowers the efficiency of your water heater. Turn off the power, hook up a hose to the drain valve and drain the tank every 6 to 12 months. </p>
+         </div>
+        </section> 
+        <p>If you only use an electric water heater at certain times of the day, you’re wasting electricity keeping the water hot 24/7. To solve that problem, install an electronic timer switch (Photo 1; sold at home centers). Timers are available for 120- and 240-volt heaters. They can be programmed for daily or weekly schedules so you only heat the water when you need it. A timer can save you $25 per year.</p> 
+        <p>To make your water heater even more efficient, drain the tank and flush out the sediment at the bottom (Photo 2). Otherwise, you could be heating through inches of sediment before heating the water.</p> 
+        <p>If your electric water heater is warm or hot to the touch, it’s losing heat. Wrap it with an insulating blanket (sold at home centers). </p> 
+        <h2><strong>Get smart metering:</strong> Save up to $140 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_14.JPG">
+          <p></p> 
+          <h3>Time-of-use meter</h3> 
+          <p>Time-of-use meters replace the existing meter and attach to the meter box. They enable you to pay less for electricity used at certain times of the day. </p>
+         </div>
+        </section> 
+        <p>Smart metering programs vary among utility companies, but the basic idea is the same: The utility installs a special “smart” meter that tracks how much electricity you’re using. The utility uses that data to make sure its power grid doesn’t get overloaded and cause blackouts. If the grid nears capacity, the utility can shut off major appliances in homes for short periods of time (such as 15 minutes per hour). Not all companies offer smart metering, but some do and many others are considering it.</p> 
+        <p>What’s in it for you? Money! Some programs pay for signing up. Others let you view your home’s usage online in real time so you can better manage your electrical consumption. Others let you choose “real-time” or “time-of-use” pricing that allows you to pay less for electricity that’s used during off-peak hours (for example, on weekdays from early afternoon until 8 p.m.). These plans reward you for using electricity when it’s cheapest. Smart metering makes the most sense if you’re away from home all day—you won’t notice or care if things get turned off (although it’s a good idea for everyone else too!). According to SRP, a power utility company, the plans cut 7 percent off your bill, which is $140 for the average $2,000 yearly energy bill. Check with your local company to find out what smart metering programs are available in your area. </p> 
+        <h2><strong>Run your refrigerator for less:</strong> Save up to $60 a year</h2> 
+        <section class="slideshow">
+         <div class="card">
+          <img alt="10 Tips on Saving Electricity and Lowering Your Electricity Bill" class="size-medium alignleft" src="https://cdn2.tmbi.com/TFH/Step-By-Step/display/FH09FEB_SAVELE_15.JPG">
+          <p></p> 
+          <h3>Clean coils</h3> 
+          <p>Brush and vacuum the coils at the bottom or the back of the refrigerator. A coil cleaning brush (available at appliance parts stores or home centers) is bendable to fit in tight areas. </p>
+         </div>
+        </section> 
+        <p>Your refrigerator uses more electricity than all your other kitchen appliances combined. To keep its energy costs down, clean the coils twice a year, which improves efficiency by 30 to 50 percent.</p> 
+        <p>Your fridge and freezer run more efficiently when they’re full. Put water containers in the fridge and ice bags in your freezer to keep them filled. Keep the refrigerator setting between 35 and 38 degrees and the freezer between 0 and 5 degrees F.</p> 
+        <p>Refrigerator door seals wear out over time. Test your seal by closing a dollar bill in the door. If it pulls out easily, replace the seal.</p> 
+        <p>If your fridge was made before 2001, it’s using at least 40 percent more electricity than new Energy Star models. If you’re replacing your fridge, buy an Energy Star model and recycle your old one. Don’t hook up the old one in the basement or garage—an inefficient refrigerator costs as much as $280 a year in electricity. Any money you save buying food in bulk and storing it in an inefficient second fridge is lost in electric costs.</p> 
+       </div>
+       <footer class="entry-footer">
+        <p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.familyhandyman.com/smart-homeowner/ways-to-save-money" rel="category tag">Ways to Save Money</a></span> </p>
+        <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"VideoObject","description":"","duration":"","name":"FHM Non Contextual Playlist","thumbnailUrl":"https:\/\/www.familyhandyman.com\/wp-content\/uploads\/2017\/07\/517715633_Choosing_the_Best_Security_Chain-5.jpg","uploadDate":"2017-06-06T20:03:21Z"}</script>
+        <div class="fhm-project-non-contextual-video">
+         <h2>Popular How-To Videos</h2>
+         <div class="dmplayer" id="dmpl59d3970d05ea7"></div>
+        </div>
+        <!-- FHM Taboola Article/project pages goes here. -->
+        <div id="taboola-below-article-thumbnails"></div> 
+        <!-- The content ends here. -->
+       </footer>
+      </article>
+      <span class="screen-reader-text">Reader Interactions</span>
+     </main>
+     <aside class="sidebar sidebar-primary widget-area" aria-label="Primary Sidebar" id="genesis-sidebar-primary">
+      <div id="_sticky_spacer">
+       <div id="sticky_sidebar">
+        <section id="text-2" class="widget-1 widget-first widget-odd widget widget_text">
+         <div class="widget-1 widget-first widget-odd widget-wrap"> 
+          <div class="textwidget">
+           <div class="newsletter">
+            <div class="newsletter-header">
+             SIGN UP FOR OUR NEWSLETTER
+            </div> 
+            <div class="newsletter-text">
+             Our editors' favorite DIY projects and tips delivered daily.
+            </div> 
+            <form class="newsletter-form" action="https://www.familyhandyman.com/NewsletterSignUpPage/SignUp?OrgSource=NewsletterAD" method="post" data-analytics-metrics="{&quot;link_name&quot;:&quot;newsletter signup&quot;,&quot;link_module&quot;:&quot;newsletter signup&quot;,&quot;link_pos&quot;:&quot;footer&quot;}"> 
+             <input class="newsletter" type="text" maxlength="75" name="EmailAddress" placeholder="email address"> 
+             <input id="OptinId" name="OptinId" type="hidden" value="46"> 
+             <button class="newsletter-submit" type="submit" value="submit">Sign Up</button> 
+            </form>
+           </div>
+          </div> 
+         </div>
+        </section> 
+        <div class="ad-wrapper">
+         <div id="div-gpt-ad-1370019314148-06" style="display:block; margin: 0 auto;"> 
+          <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-06'); });
+</script> 
+         </div> 
+        </div>
+        <section id="nav_menu-2" class="widget-3 widget-odd widget widget_nav_menu">
+         <div class="widget-3 widget-odd widget-wrap">
+          <h3 class="widgettitle widget-title">Follow Us</h3> 
+          <div class="menu-social-profiles-container">
+           <ul id="menu-social-profiles" class="menu">
+            <li id="menu-item-10521" class="fhm-pinterest menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;pinterest&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.pinterest.com/family_handyman/"><i class="fa fa-pinterest"></i></a></li> 
+            <li id="menu-item-10522" class="fhm-facebook menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;facebook&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.facebook.com/TheFamilyHandyman"><i class="fa fa-facebook"></i></a></li> 
+            <li id="menu-item-10523" class="fhm-twitter menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;twitter&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://twitter.com/Family_Handyman"><i class="fa fa-twitter"></i></a></li> 
+            <li id="menu-item-10524" class="fhm-google menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;google plus&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://plus.google.com/+familyhandyman"><i class="fa fa-google-plus"></i></a></li> 
+           </ul>
+          </div>
+         </div>
+        </section> 
+        <div class="ad-wrapper">
+         <div id="div-gpt-ad-1370019314148-07" style="display:block; margin: 0 auto;"> 
+          <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-07'); });
+</script> 
+         </div> 
+        </div>
+        <div class="ad-wrapper">
+         <div id="div-gpt-ad-1370019314148-08" style="display:block; margin: 0 auto;"> 
+          <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-08'); });
+</script> 
+         </div> 
+        </div>
+        <div class="CMRightRail-AD">
+         <a data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe Today&quot;,&quot;link_module&quot;:&quot;contests and promotions&quot;,&quot;link_pos&quot;:&quot;right rail&quot;}" href="https://order.familyhandyman.com/servlet/OrdersGateway?cds_mag_code=FHM&amp;cds_page_id=161810 &amp;cds_response_key=IEFRB002"> <img src="https://cdn1.tmbi.com/CM/images/TFH/TFH-1306-AD-10-animated_300x250.gif"> </a>
+        </div>
+       </div>
+      </div>
+     </aside>
+    </div>
+   </div> 
+   <!-- Ad Start:MOBILE_FOOTER_PLACEMENT --> 
+   <div class="ad-wrapper mobile_footer"> 
+    <div id="div-gpt-ad-1370019314148-02" style="display:block; margin: 0 auto;"> 
+     <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-02'); });
+</script> 
+    </div> 
+   </div> 
+   <!-- Ad End:MOBILE_FOOTER_PLACEMENT --> 
+   <div class="footer-widgets gsfw-footer-widgets-4" id="genesis-footer-widgets">
+    <div class="wrap">
+     <div class="footer-widgets-1 widget-area">
+      <section id="text-3" class="widget-1 widget-first widget-last widget-odd widget widget_text">
+       <div class="widget-1 widget-first widget-last widget-odd widget-wrap"> 
+        <div class="textwidget">
+         <a href="https://www.familyhandyman.com/"><img src="/wp-content/uploads/2017/05/logo-footer.png"></a> 
+         <br> 
+         <div style="font-size:12px;"> 
+          <a href="https://www.rd.com" target="_blank">Reader's Digest</a> | 
+          <a href="https://www.tasteofhome.com/recipes" target="_blank">Taste of Home Recipes</a> 
+         </div>
+        </div> 
+       </div>
+      </section> 
+     </div>
+     <div class="footer-widgets-2 widget-area">
+      <section id="text-4" class="widget-1 widget-first widget-last widget-odd widget widget_text">
+       <div class="widget-1 widget-first widget-last widget-odd widget-wrap"> 
+        <div class="textwidget">
+         <ul class=""> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;About Us&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/about-the-family-handyman">About Us</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Rooms&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/rooms">Rooms</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Skills&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/skills">Skills</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Parts of the House&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/parts-of-the-house">Parts of the House</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Outdoors&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/outdoors">Outdoors</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Magazine&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://reimanpub.com/rd.asp?id=2716" target="_blank">Magazine</a></li> 
+         </ul>
+        </div> 
+       </div>
+      </section> 
+     </div>
+     <div class="footer-widgets-3 widget-area">
+      <section id="text-5" class="widget-1 widget-first widget-last widget-odd widget widget_text">
+       <div class="widget-1 widget-first widget-last widget-odd widget-wrap"> 
+        <div class="textwidget">
+         <ul> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Subscribe&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://reimanpub.com/rd.asp?id=2715" target="_blank">Subscribe</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Give a Gift&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://reimanpub.com/rd.asp?id=2717" target="_blank">Give a Gift</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Advertise With Us&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="http://homeandgardengroup.com/family-handyman/index.html" target="_blank">Advertise With Us</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Customer Care&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/customercare" target="_blank">Customer Care</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Contests&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href=" https://www.familyhandyman.com/contests-promotions">Contests</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Contact Us&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/contact-us">Contact Us</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Privacy Policy&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="http://tmbi.com/privacy-policy" target="_blank&quot;">Privacy Policy</a></li> 
+          <li><a data-analytics-metrics="{&quot;link_name&quot;:&quot;Terms of Use&quot;,&quot;link_module&quot;:&quot;navigation&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.familyhandyman.com/terms-of-use">Terms of Use</a></li> 
+         </ul>
+        </div> 
+       </div>
+      </section> 
+     </div>
+     <div class="footer-widgets-4 widget-area">
+      <section id="text-6" class="widget-1 widget-first widget-odd widget widget_text">
+       <div class="widget-1 widget-first widget-odd widget-wrap"> 
+        <div class="textwidget">
+         <div class="footer-heading">
+          Sign Up for our newsletters!
+         </div> 
+         <form class="footer-newsletter-form" action="https://www.familyhandyman.com/NewsletterSignUpPage/SignUp?OrgSource=NewsletterAD" method="post" data-analytics-metrics="{&quot;link_name&quot;:&quot;newsletter signup&quot;,&quot;link_module&quot;:&quot;newsletter signup&quot;,&quot;link_pos&quot;:&quot;footer&quot;}"> 
+          <input class="footer-newsletter" type="text" maxlength="75" name="EmailAddress" placeholder="email address"> 
+          <input id="OptinId" name="OptinId" type="hidden" value="46"> 
+          <button class="newsletter-submit" type="submit" value="submit">Sign Up</button> 
+         </form>
+        </div> 
+       </div>
+      </section> 
+      <section id="nav_menu-3" class="widget-2 widget-last widget-even widget widget_nav_menu">
+       <div class="widget-2 widget-last widget-even widget-wrap">
+        <div class="menu-social-profiles-container">
+         <ul id="menu-social-profiles-1" class="menu">
+          <li id="menu-item-10521" class="fhm-pinterest menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;pinterest&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.pinterest.com/family_handyman/"><i class="fa fa-pinterest"></i></a></li> 
+          <li id="menu-item-10522" class="fhm-facebook menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;facebook&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://www.facebook.com/TheFamilyHandyman"><i class="fa fa-facebook"></i></a></li> 
+          <li id="menu-item-10523" class="fhm-twitter menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;twitter&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://twitter.com/Family_Handyman"><i class="fa fa-twitter"></i></a></li> 
+          <li id="menu-item-10524" class="fhm-google menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics="{&quot;link_name&quot;:&quot;google plus&quot;,&quot;link_module&quot;:&quot;follow us&quot;,&quot;link_pos&quot;:&quot;footer&quot;}" href="https://plus.google.com/+familyhandyman"><i class="fa fa-google-plus"></i></a></li> 
+         </ul>
+        </div>
+       </div>
+      </section> 
+     </div>
+    </div>
+   </div>
+   <footer class="site-footer">
+    <div class="wrap">
+     <p></p>
+     <div class="fhm-copyright">
+      ©&nbsp;2017 · HOME SERVICE PUBLICATIONS, INC.
+     </div>
+     <p></p>
+    </div>
+   </footer> 
+   <!-- Ad Start:BRANDSCAPE_PLACEMENT --> 
+   <div class="ad-wrapper"> 
+    <div id="div-gpt-ad-1370019314148-0-3x3" style="display:block; margin: 0 auto;"> 
+     <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-0-3x3'); });
+</script> 
+    </div> 
+   </div> 
+   <!-- Ad End:BRANDSCAPE_PLACEMENT --> 
+   <!-- Ad Start:MOBILE_OOP_PLACEMENT --> 
+   <div class="ad-wrapper mobile_OOP"> 
+    <div id="div-gpt-ad-1370019314148-09-oop" style="display:block; margin: 0 auto;"> 
+     <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-09-oop'); });
+</script> 
+    </div> 
+   </div> 
+   <!-- Ad End:MOBILE_OOP_PLACEMENT --> 
+  </div>
+  <script type="text/javascript" src="https://tags.crwdcntrl.net/c/10234/cc.js?ns=_cc10234" id="LOTCC_10234"></script> 
+  <script type="text/javascript" language="javascript">_cc10234.bcp();</script> 
+  <!-- START Parse.ly Include: Standard --> 
+  <div id="parsely-root" style="display: none"> 
+   <span id="parsely-cfg" data-parsely-site="familyhandyman.com"></span> 
+  </div> 
+  <script type="text/javascript">
+(function(s, p, d) {
+var h=d.location.protocol, i=p+"-"+s,
+e=d.getElementById(i), r=d.getElementById(p+"-root"),
+u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+:"static."+p+".com";
+if (e) return;
+e = d.createElement(s); e.id = i; e.async = true;
+e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script> 
+  <!-- END Parse.ly Include: Standard --> 
+  <noscript> 
+   <p> <img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=6034767&amp;cv=2.0&amp;cj=1" height="1" width="1" alt="*"> </p> 
+  </noscript> 
+  <script async type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-lotame/js/lotame-tags.js?ver=1.6"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var next_projects = [{"id":15037,"link":"https:\/\/www.familyhandyman.com\/garage\/exactly-how-to-insulate-a-garage-door\/view-all\/","title":"Exactly How to Insulate a Garage Door","content_type":"project"},{"id":22197,"link":"https:\/\/www.familyhandyman.com\/walls\/how-to-hang-prepasted-wallpaper\/view-all\/","title":"How to Hang Prepasted Wallpaper","content_type":"project"},{"id":51739,"link":"https:\/\/www.familyhandyman.com\/woodworking\/bookcase-of-secrets\/view-all\/","title":"Bookcase of Secrets","content_type":"project"},{"id":22899,"link":"https:\/\/www.familyhandyman.com\/kitchen\/countertops\/how-to-install-granite-countertops-kitchen-tile\/view-all\/","title":"How to Install Granite Countertops (Kitchen Tile)","content_type":"project"},{"id":18201,"link":"https:\/\/www.familyhandyman.com\/workshop\/workshop-storage\/clever-tool-storage-drill-bits-and-other-pointy-tools\/view-all\/","title":"Clever Tool Storage: Drill Bits and Other Pointy Tools","content_type":"project"},{"id":19454,"link":"https:\/\/www.familyhandyman.com\/floor\/how-joists-work\/view-all\/","title":"How Joists Work","content_type":"project"},{"id":20484,"link":"https:\/\/www.familyhandyman.com\/landscaping\/planters\/building-with-bamboo-planter-and-trellis\/view-all\/","title":"Building With Bamboo: Planter and Trellis","content_type":"project"},{"id":17298,"link":"https:\/\/www.familyhandyman.com\/heating-cooling\/choosing-a-whole-house-fan\/view-all\/","title":"Choosing a Whole House Fan","content_type":"project"},{"id":14991,"link":"https:\/\/www.familyhandyman.com\/smart-homeowner\/how-to-boost-your-cell-phone-signal-3-ways\/view-all\/","title":"How to Boost Your Cell Phone Signal: 3 Ways","content_type":"project"},{"id":19377,"link":"https:\/\/www.familyhandyman.com\/doors\/repair\/how-to-stop-door-drafts-around-entry-doors\/view-all\/","title":"How to Stop Door Drafts Around Entry Doors","content_type":"project"}];
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-next-project/js/fhm-next-project.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-curated-list-widget/js/clw.js?ver=1.0.2"></script> 
+  <script async type="text/javascript" src="https://www.familyhandyman.com/wp-content/mu-plugins/cookie-controller/js/md5.js?ver=1.2"></script> 
+  <script async type="text/javascript" src="https://www.familyhandyman.com/wp-content/mu-plugins/cookie-controller/js/sha1.js?ver=1.2"></script> 
+  <script async type="text/javascript" src="https://www.familyhandyman.com/wp-content/mu-plugins/cookie-controller/js/sha256.js?ver=1.2"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-main-menu/js/main-menu.js?ver=1.0.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var api = {"post_id":"19472","rest_base":"\/wp-json\/fhm-similar-projects\/v1\/post\/"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/fhm-similar-projects-slider/js/re-circ.js?ver=2.0.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-adobe-dtm/js/adobe_dtm.js?ver=1.1.10"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var rd_bx = {"script_id":"933"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-bx/js/smart-tag.js?ver=1.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var rd_taboola = [{"mode":"thumbnails-a","container":"taboola-below-article-thumbnails","placement":"Below Article Thumbnails","target_type":"mix"},{"mode":"thumbnails-f","container":"taboola-native-below-article-thumbnails","placement":"Native Below Article Thumbnails","target_type":"mix"}];
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-taboola/js/rd-taboola-gallery.js?ver=0.1.6"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-amazon-a9/js/fhm-amazon-a9.js?ver=1.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-comscore-mmx/js/comscore-mmx.js?ver=0.0.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var tmb_liveramp = {"pid":"8354"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/tmbi-liveramp/js/liveramp.js?ver=1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/fhm-theme/js/sticky-kit.min.js?ver=1.0.0"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var sticky_sidebar_options = {"timeout":"2"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/fhm-theme/js/sticky-sidebar.js?ver=1.0.4"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/fhm-theme/js/project-slideshow.js?ver=1.0.1"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/fhm-theme/js/ResizeSensor.js?ver=1.0.0"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/themes/fhm-theme/js/main-menu.js?ver=1.0.2"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-includes/js/wp-embed.min.js?ver=4.7.2"></script> 
+  <script type="text/javascript" src="https://api.dmcdn.net/all.js?ver=4.7.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var rd_dm_videos = [{"player_id":"dmpl59d3970d05ea7","video_id":"x4soqc","is_playlist":true,"videos":["x5a40h9","x5a9b2n","x5a46s1","x59j24k","x59j2vd","x59j1we","x5a62ge","x5a98vq","x5a9b6t","x5aro7l"]}];
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-video/inc/js/dm-player.js?ver=1.0.6"></script> 
+  <script type="text/javascript" src="https://www.familyhandyman.com/wp-content/plugins/rd-video/inc/js/jquery.inview.min.js?ver=20170526"></script> 
+  <script type="text/javascript">
+if(typeof _satellite !== "undefined"){
+  _satellite.pageBottom()
+}
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bab150296b","applicationID":"45457233","transactionName":"M1BUY0YAC0ZWUxVaXQoad1RACApbGEMIXVUIUBtHRg4PUFRE","queueTime":0,"applicationTime":722,"atts":"HxdXFQ4aGEg=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

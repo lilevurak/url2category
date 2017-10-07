@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport"> 
+  <meta name="theme-color" content="#2c2c2c"> 
+  <link rel="shortcut icon" href="https://storage.googleapis.com/relevant-magazine/images/relevant-icon-gold.png"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:site" content="@RELEVANT"> 
+  <meta name="twitter:creator" content="@RELEVANT"> 
+  <link rel="dns-prefetch" href="//fonts.google.com"> 
+  <link rel="dns-prefetch" href="//storage.googleapis.com"> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//use.fontawesome.com"> 
+  <link rel="dns-prefetch" href="//www.googletagservices.com"> 
+  <link rel="dns-prefetch" href="//www.google-analytics.com"> 
+  <link rel="dns-prefetch" href="//www.youtube.com"> 
+  <link rel="dns-prefetch" href="//platform.twitter.com"> 
+  <link rel="dns-prefetch" href="//platform.instagram.com"> 
+  <link rel="dns-prefetch" href="//connect.facebook.net"> 
+  <link rel="dns-prefetch" href="//my.sendinblue.com"> 
+  <link rel="dns-prefetch" href="//c.lytics.io"> 
+  <link rel="dns-prefetch" href="//a.teads.tv"> 
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:900,900i|Noto+Serif:400,400i,700,700i" rel="stylesheet"> 
+  <title>Your Purpose is Not Your Job – RELEVANT Magazine</title> 
+  <!-- Social Warfare v2.2.10 https://warfareplugins.com --> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Your Purpose is Not Your Job"> 
+  <meta property="og:description" content="Margaret Meade once said that “a small group of thoughtful people can change the world.” Last Monday night, I invited a group of women into my home to talk about how to discover your purpose and passion in this life. The room was filled with accountants, doctors, bloggers, teachers, moms, trainers and more. These women truly could change the world. But&nbsp;at the end of the day, no matter our profession, we all long for more in this life. We all want to know deep in our hearts what our true purpose is and what that looks like lived out. But"> 
+  <meta property="og:image" content="https://storage.googleapis.com/relevant-magazine/2017/05/purpose_of_job.jpg"> 
+  <meta property="og:url" content="https://relevantmagazine.com/life/career-money/your-purpose-not-your-job"> 
+  <meta property="og:site_name" content="RELEVANT Magazine"> 
+  <meta property="article:publisher" content="https://www.facebook.com/relevant/"> 
+  <meta property="article:published_time" content="2014-03-19T19:17:39+00:00"> 
+  <meta property="article:modified_time" content="2017-06-07T18:15:03+00:00"> 
+  <meta property="og:updated_time" content="2017-06-07T18:15:03+00:00"> 
+  <meta property="fb:app_id" content="122580907754802"> 
+  <style>@font-face {font-family: "sw-icon-font";src:url("https://relevantmagazine.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.eot?ver=2.2.10");src:url("https://relevantmagazine.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.eot?ver=2.2.10#iefix") format("embedded-opentype"),url("https://relevantmagazine.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.woff?ver=2.2.10") format("woff"), url("https://relevantmagazine.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.ttf?ver=2.2.10") format("truetype"),url("https://relevantmagazine.com/wp-content/plugins/social-warfare/fonts/sw-icon-font.svg?ver=2.2.10#1445203416") format("svg");font-weight: normal;font-style: normal;}</style> 
+  <!-- Social Warfare v2.2.10 https://warfareplugins.com --> 
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="RELEVANT Magazine » Feed" href="https://relevantmagazine.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="RELEVANT Magazine » Comments Feed" href="https://relevantmagazine.com/comments/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="RELEVANT Magazine » Your Purpose is Not Your Job Comments Feed" href="https://relevantmagazine.com/life/career-money/your-purpose-not-your-job/feed/"> 
+  <meta property="fb:admins" content="EcQ+44Jtocd">
+  <meta property="og:title" content="Your Purpose is Not Your Job">
+  <meta property="twitter:title" content="Your Purpose is Not Your Job">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://relevantmagazine.com/life/career-money/your-purpose-not-your-job">
+  <meta property="twitter:url" content="https://relevantmagazine.com/life/career-money/your-purpose-not-your-job">
+  <meta property="og:site_name" content="RELEVANT Magazine">
+  <meta property="og:image" content="https://storage.googleapis.com/relevant-magazine/2017/05/purpose_of_job.jpg">
+  <meta property="og:image:secure_url" content="https://storage.googleapis.com/relevant-magazine/2017/05/purpose_of_job.jpg">
+  <meta property="twitter:image" content="https://storage.googleapis.com/relevant-magazine/2017/05/purpose_of_job.jpg"> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/relevantmagazine.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="social_warfare-css" href="https://relevantmagazine.com/wp-content/plugins/social-warfare/css/style.min.css?ver=2.2.10" type="text/css" media="all"> 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <link rel="canonical" href="https://relevantmagazine.com/life/career-money/your-purpose-not-your-job"> 
+  <link rel="alternate" type="application/json+oembed" href="https://relevantmagazine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job"> 
+  <link rel="alternate" type="text/xml+oembed" href="https://relevantmagazine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;format=xml"> 
+  <script>window.dzsap_swfpath="https://relevantmagazine.com/wp-content/plugins/dzs-zoomsounds/apfull.swf";window.ajaxurl="https://relevantmagazine.com/wp-admin/admin-ajax.php";</script>
+  <meta property="fb:app_id" content="330005603714238"> 
+  <link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://relevantmagazine.com/feed/podcast"> 
+  <link rel="stylesheet" href="https://relevantmagazine.com/wp-content/themes/relevant/styles/main.css"> 
+  <script type="text/javascript">
+  window.jstag=function(){function t(t){return function(){return t.apply(this,arguments),this}}function n(){var n=["ready"].concat(c.call(arguments));return t(function(){n.push(c.call(arguments)),this._q.push(n)})}var i={_q:[],_c:{},ts:(new Date).getTime(),ver:"2.0.0"},c=Array.prototype.slice;return i.init=function(t){return i._c=t,t.synchronous||i.loadtagmgr(t),this},i.loadtagmgr=function(t){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=t.url+"/api/tag/"+t.cid+"/lio.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(n,i)},i.ready=n(),i.send=n("send"),i.mock=n("mock"),i.identify=n("identify"),i.pageView=n("pageView"),i.bind=t(function(t){i._q.push([t,c.call(arguments,1)])}),i.block=t(function(){i._c.blockload=!0}),i.unblock=t(function(){i._c.blockload=!1}),i}(),window.jstag.init({cid:"cca0a2a35b82863234adfec7e7c1372c", url:"//c.lytics.io", min:true, loadid:false});
+</script> 
+  <script src="https://c.lytics.io/static/pathfora.min.js" async></script> 
+  <script async src="https://www.googletagservices.com/tag/js/gpt.js"></script> 
+  <script>
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+</script> 
+  <script>
+      var gptAdSlots = [];
+      googletag.cmd.push(function() {
+        var dfptop = googletag.sizeMapping().
+          addSize([1252, 200], [[1200, 300], [960, 240], [728, 90]]).
+          addSize([1012, 200], [[960, 240], [728, 90]]).
+          addSize([768, 200], [728, 90]).
+          addSize([320, 200], [300, 250]).
+          addSize([0, 0], []).
+          build();
+        
+        var dfpart = googletag.sizeMapping().
+          addSize([0, 0], [300, 250]).
+          build();
+        
+        var dfpbot = googletag.sizeMapping().
+          addSize([768, 200], [728, 90]).
+          addSize([320, 200], [300, 250]).
+          addSize([0, 0], []).
+          build();
+        
+        gptAdSlots[0] = googletag.defineSlot('/1061851/nrm-generic-article-1', [300, 250], 'div-gpt-ad-1483049278878-0').defineSizeMapping(dfpart).addService(googletag.pubads());
+        gptAdSlots[1] = googletag.defineSlot('/1061851/nrm-generic-article-2', [300, 250], 'div-gpt-ad-1483049278878-1').defineSizeMapping(dfpart).addService(googletag.pubads());
+        gptAdSlots[2] = googletag.defineSlot('/1061851/nrm-generic-article-3', [300, 250], 'div-gpt-ad-1483049278878-2').defineSizeMapping(dfpart).addService(googletag.pubads());
+        gptAdSlots[3] = googletag.defineSlot('/1061851/nrm-generic-bottom', [[728, 90], [300, 250]], 'div-gpt-ad-1483049278878-3').defineSizeMapping(dfpbot).addService(googletag.pubads());
+        gptAdSlots[4] = googletag.defineSlot('/1061851/nrm-generic-top', [[728, 90], [300, 250], [1200, 300], [960, 240]], 'div-gpt-ad-1483049278878-4').defineSizeMapping(dfptop).addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().disableInitialLoad();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+    </script> 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-525871-2', 'auto');
+  ga('send', 'pageview');
+
+  </script> 
+  <!-- <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=qi9qhefnlgtx0j02vepddq';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script> --> 
+  <link rel="dns-prefetch" href="//e.issuu.com"> 
+  <script src="//e.issuu.com/embed.js" async></script> 
+  <script>
+      var gptAdSlots = [];
+      googletag.cmd.push(function() {
+        var dfptop = googletag.sizeMapping().
+          addSize([1252, 200], [[1200, 300], [960, 240], [728, 90]]).
+          addSize([1012, 200], [[960, 240], [728, 90]]).
+          addSize([768, 200], [728, 90]).
+          addSize([320, 200], [300, 250]).
+          addSize([0, 0], []).
+          build();
+        
+        var dfpart = googletag.sizeMapping().
+          addSize([0, 0], [300, 250]).
+          build();
+        
+        var dfpbot = googletag.sizeMapping().
+          addSize([768, 200], [728, 90]).
+          addSize([320, 200], [300, 250]).
+          addSize([0, 0], []).
+          build();
+        
+        gptAdSlots[0] = googletag.defineSlot('/1061851/nrm-generic-article-1', [300, 250], 'div-gpt-ad-1483049278878-0').defineSizeMapping(dfpart).addService(googletag.pubads());
+        gptAdSlots[1] = googletag.defineSlot('/1061851/nrm-generic-article-2', [300, 250], 'div-gpt-ad-1483049278878-1').defineSizeMapping(dfpart).addService(googletag.pubads());
+        gptAdSlots[2] = googletag.defineSlot('/1061851/nrm-generic-article-3', [300, 250], 'div-gpt-ad-1483049278878-2').defineSizeMapping(dfpart).addService(googletag.pubads());
+        gptAdSlots[3] = googletag.defineSlot('/1061851/nrm-generic-bottom', [[728, 90], [300, 250]], 'div-gpt-ad-1483049278878-3').defineSizeMapping(dfpbot).addService(googletag.pubads());
+        gptAdSlots[4] = googletag.defineSlot('/1061851/nrm-generic-top', [[728, 90], [300, 250], [1200, 300], [960, 240]], 'div-gpt-ad-1483049278878-4').defineSizeMapping(dfptop).addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().disableInitialLoad();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+    </script>
+ </head> 
+ <body class="article-template-default single single-article postid-120786 single-format-standard"> 
+  <header> 
+   <div class="head-ad-cont"> 
+    <div id="div-gpt-ad-1483049278878-4"> 
+     <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1483049278878-4'); googletag.pubads().refresh([gptAdSlots[4]]); });
+        </script> 
+    </div> 
+   </div> 
+   <div class="nav-cont"> 
+    <div class="nav-panel-cont"> 
+     <div class="nav-panel"> 
+      <div class="nav-panel-s c"> 
+       <form role="search" method="get" class="nav-panel-form" action="https://relevantmagazine.com/"> 
+        <input type="search" class="search-input" placeholder="Search" value="" name="s" title="Search for:"> 
+        <svg class="search-icon" data-name="search-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 11 11.42"> 
+         <title>search-icon</title> 
+         <path id="search_left" d="M4,.67A3.53,3.53,0,0,0,.55,4.25,3.53,3.53,0,0,0,4,7.84,3.53,3.53,0,0,0,7.48,4.25,3.53,3.53,0,0,0,4,.67ZM4,6.82A2.52,2.52,0,0,1,1.54,4.25,2.52,2.52,0,0,1,4,1.69,2.52,2.52,0,0,1,6.49,4.25,2.52,2.52,0,0,1,4,6.82Zm6.44,3.38-.7.72L6.95,8l.7-.72Z" style="fill:#fff" /> 
+        </svg> 
+       </form> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/god/">GOD</a> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/life/">LIFE</a> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/culture/">CULTURE</a> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/current/">CURRENT</a> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/podcasts/">PODCAST</a> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/magazines/septoct-2017/">MAGAZINE</a> 
+      </div> 
+      <div class="nav-panel-l desktop-hide c"> 
+       <a class="nav-panel-cat-a" href="/shop/">STORE</a> 
+      </div> 
+      <div class="nav-panel-l tablet-hide c"> 
+       <a class="nav-panel-a" href="/about/">ABOUT</a> 
+      </div> 
+      <div class="nav-panel-l tablet-hide c"> 
+       <a class="nav-panel-a" href="/subscriber-services/">SUPPORT</a> 
+      </div> 
+      <div class="nav-panel-l tablet-hide c"> 
+       <a class="nav-panel-a" href="/shop/">STORE</a> 
+      </div> 
+      <div class="nav-panel-l tablet-hide c"> 
+       <a class="nav-panel-a" href="/advertise/">ADVERTISE</a> 
+      </div> 
+      <div class="nav-panel-l tablet-hide c"> 
+       <a class="nav-panel-a" href="/contact-us/">CONTACT</a> 
+      </div> 
+      <div class="nav-panel-social c"> 
+       <a class="panel-social-a" href="https://www.facebook.com/relevant" target="_blank"> <i class="fa fa-facebook panel-social-fb" aria-hidden="true"></i> </a> 
+       <a class="panel-social-a" href="https://twitter.com/relevant" target="_blank"> <i class="fa fa-twitter panel-social-tw" aria-hidden="true"></i> </a> 
+       <a class="panel-social-a-l" href="https://www.instagram.com/relevantmagazine/" target="_blank"> <i class="fa fa-instagram panel-social-in" aria-hidden="true"></i> </a> 
+       <div class="nav-panel-social2 c"> 
+        <a class="panel-social-a" href="https://www.youtube.com/user/RELEVANTMagazine" target="_blank"> <i class="fa fa-youtube-play panel-social-yt" aria-hidden="true"></i> </a> 
+        <a class="panel-social-a-l" href="https://open.spotify.com/user/relevantmagazine" target="_blank"> <i class="fa fa-spotify panel-social-sp" aria-hidden="true"></i> </a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="nav-main"> 
+     <div class="nav"> 
+      <div class="nav-menu"> 
+       <img class="nav-menu-img" src="https://storage.googleapis.com/relevant-magazine/images/menu.svg"> 
+      </div> 
+      <a class="nav-l tablet-hide" href="https://relevantmagazine.com/god/">GOD</a> 
+      <a class="nav-l tablet-hide" href="https://relevantmagazine.com/life/">LIFE</a> 
+      <a class="nav-l tablet-hide" href="https://relevantmagazine.com/culture/">CULTURE</a> 
+      <a class="nav-l tablet-hide" href="https://relevantmagazine.com/current/">CURRENT</a> 
+      <a class="nav-subscribe" href="https://relevantmagazine.com/subscribe/">SUBSCRIBE</a> 
+      <a class="nav-r tablet-hide" href="https://relevantmagazine.com/magazines/septoct-2017/">MAGAZINE</a> 
+      <a class="nav-r tablet-hide" href="https://relevantmagazine.com/podcasts/">PODCAST</a> 
+     </div> 
+     <div class="nav-logo"> 
+      <a class="nav-logo-a" href="https://relevantmagazine.com"> <img class="nav-logo-img" src="https://storage.googleapis.com/relevant-magazine/2017/02/relevant-white.svg" alt=""> </a> 
+     </div> 
+    </div> 
+   </div> 
+  </header> 
+  <main> 
+   <div class="title-img-cont"> 
+    <img id="title-img" class="title-img" src="https://storage.googleapis.com/relevant-magazine/2017/05/purpose_of_job.jpg"> 
+    <div class="title-cont"> 
+     <h2 class="title-h2">Your Purpose is Not Your Job</h2> 
+     <h3 class="title-h3">Why your life purpose is more than what you do for a living.</h3> 
+    </div> 
+   </div> 
+   <div class="rr-cont"> 
+    <div class="rr"> 
+     <div class="rr-1"> 
+      <p class="rr-1-title">TRENDING</p> 
+      <svg class="rr-1-x" data-name="rr-1-x" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 10.08 9.84"> 
+       <title>lsb-trending-x</title> 
+       <line x1="9.29" y1="9.17" x2="0.95" y2="0.83" style="fill:none;stroke:#212121;stroke-miterlimit:10;stroke-width:0.8px"></line> 
+       <line x1="0.95" y1="9.17" x2="9.29" y2="0.83" style="fill:none;stroke:#212121;stroke-miterlimit:10;stroke-width:0.8px"></line> 
+      </svg> 
+      <div class="rr-1-e c"> 
+       <p class="rr-1-cat"> <a href="https://relevantmagazine.com?s=&amp;cat=12">LIFE</a> 
+        <svg class="rr-1-rising" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 43.4 23.2" style="enable-background:new 0 0 43.4 23.2;" xml:space="preserve"> 
+         <style type="text/css">
+                    .st0{fill:#8f8f8f;}
+                  </style> 
+         <g> 
+          <polygon class="st0" points="19.1,4.1 0,23.2 4.8,23.2 19.1,8.9 28,17.8 40.9,4.9 43.4,7.3 43.4,0 36.1,0 38.5,2.4 28,13 	" /> 
+         </g> 
+        </svg> <span class="rr-1-views">12024</span> </p> 
+       <h2 class="rr-1-h2"> <a class="rr-1-h2-a" href="https://relevantmagazine.com/article/the-5-things-20-somethings-need-to-stop-doing/">5 Things to Stop Doing in Your 20s</a> </h2> 
+      </div> 
+      <div class="rr-1-e c"> 
+       <p class="rr-1-cat"> <a href="https://relevantmagazine.com?s=&amp;cat=12">LIFE</a> 
+        <svg class="rr-1-rising" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 43.4 23.2" style="enable-background:new 0 0 43.4 23.2;" xml:space="preserve"> 
+         <style type="text/css">
+                    .st0{fill:#8f8f8f;}
+                  </style> 
+         <g> 
+          <polygon class="st0" points="19.1,4.1 0,23.2 4.8,23.2 19.1,8.9 28,17.8 40.9,4.9 43.4,7.3 43.4,0 36.1,0 38.5,2.4 28,13 	" /> 
+         </g> 
+        </svg> <span class="rr-1-views">9372</span> </p> 
+       <h2 class="rr-1-h2"> <a class="rr-1-h2-a" href="https://relevantmagazine.com/article/5-things-christians-should-know-about-depression-and-anxiety/">5 Things Christians Should Know About Depression and Anxiety</a> </h2> 
+      </div> 
+      <div class="rr-1-e c"> 
+       <p class="rr-1-cat"> <a href="https://relevantmagazine.com?s=&amp;cat=5">GOD</a> 
+        <svg class="rr-1-rising" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 43.4 23.2" style="enable-background:new 0 0 43.4 23.2;" xml:space="preserve"> 
+         <style type="text/css">
+                    .st0{fill:#8f8f8f;}
+                  </style> 
+         <g> 
+          <polygon class="st0" points="19.1,4.1 0,23.2 4.8,23.2 19.1,8.9 28,17.8 40.9,4.9 43.4,7.3 43.4,0 36.1,0 38.5,2.4 28,13 	" /> 
+         </g> 
+        </svg> <span class="rr-1-views">9286</span> </p> 
+       <h2 class="rr-1-h2"> <a class="rr-1-h2-a" href="https://relevantmagazine.com/article/the-5-most-misused-and-abused-bible-verses/">The 5 Most Misused and Abused Bible Verses</a> </h2> 
+      </div> 
+      <a class="rr-1-show" href="https://relevantmagazine.com?s=&amp;cat="><img class="rr-1-show-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/images/show-comments.svg">SHOW MORE</a> 
+     </div> 
+     <div class="rr-2"> 
+      <a class="rr-2-a" href="https://relevantmagazine.com/magazines/julyaugust-2017/"> <img class="rr-2-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/07/leaderboard-mobile-copy-2.jpg"> </a> 
+     </div> 
+     <div class="rr-3"> 
+      <p class="rr-3-title">RELATED</p> 
+      <div class="rr-3-e c"> 
+       <a class="rr-3-img-a" href="https://relevantmagazine.com/article/the-real-dangers-of-the-cohabitation-trend/"> <img class="rr-3-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/10/cohabthumb.jpg"> </a> 
+       <p class="rr-3-cat"> <a href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> </p> 
+       <h2 class="rr-3-h2"> <a class="rr-3-h2-a" href="https://relevantmagazine.com/article/the-real-dangers-of-the-cohabitation-trend/">The Real Dangers of the Cohabitation Trend</a> </h2> 
+      </div> 
+      <div class="rr-3-e c"> 
+       <a class="rr-3-img-a" href="https://relevantmagazine.com/life/6-things-do-when-you-feel-overwhelmed"> <img class="rr-3-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/06/overwhelmed.jpg"> </a> 
+       <p class="rr-3-cat"> <a href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> </p> 
+       <h2 class="rr-3-h2"> <a class="rr-3-h2-a" href="https://relevantmagazine.com/life/6-things-do-when-you-feel-overwhelmed">6 Things to Do When You Feel Overwhelmed</a> </h2> 
+      </div> 
+      <div class="rr-3-e c"> 
+       <a class="rr-3-img-a" href="https://relevantmagazine.com/article/2-words-that-could-end-your-marriage/"> <img class="rr-3-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/09/Thumb-7.jpg"> </a> 
+       <p class="rr-3-cat"> <a href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> </p> 
+       <h2 class="rr-3-h2"> <a class="rr-3-h2-a" href="https://relevantmagazine.com/article/2-words-that-could-end-your-marriage/">Two Words That Could End Your Marriage</a> </h2> 
+      </div> 
+      <a class="rr-3-show" href="https://relevantmagazine.com?s=&amp;cat="><img class="rr-3-show-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/images/show-comments.svg">SHOW MORE</a> 
+     </div> 
+    </div> 
+   </div> 
+   <section class="article-cont c"> 
+    <p class="title-author">BY LIZ HENDERSON <span class="title-meta"> <a href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> <span class="title-date">March 19, 2014</span> </span> </p> 
+    <div class="article-social"> 
+     <a href="javascript:void(0)" class="social-fb-a" onclick="javascript:genericSocialShare('http://www.facebook.com/sharer.php?u=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job')" title="Facebook Share"> <i class="fa fa-facebook social-fb-i" aria-hidden="true"></i> <p class="social-fb">1</p> </a> 
+     <a href="javascript:void(0)" class="social-tw-a" data-id="120786" onclick="javascript:genericSocialShare('http://twitter.com/share?text=Your Purpose is Not Your Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job')" title="Twitter Share"> <i class="fa fa-twitter social-tw-i" aria-hidden="true"></i> <p class="social-tw">TWEET</p> </a> 
+     <a href="#acf" class="social-cm-a"> <i class="fa fa-comments social-cm-i" aria-hidden="true"></i> 
+      <fb:comments-count class="social-cm" href="https://relevantmagazine.com/life/career-money/your-purpose-not-your-job"></fb:comments-count> </a> 
+    </div> 
+    <div class="cpc-cont c"> 
+     <div class="nc_socialPanel swp_flatFresh swp_d_fullColor swp_i_fullColor swp_o_fullColor scale-100 scale-fullWidth" data-position="below" data-float="floatLeft" data-count="6" data-floatcolor="#ffffff" data-emphasize="0">
+      <div class="nc_tweetContainer swp_fb" data-id="4" data-network="facebook">
+       <a rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" data-link="http://www.facebook.com/share.php?u=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-facebook"></i><span class="swp_share"> Share</span></span></span><span class="swp_count">7K</span></a>
+      </div>
+      <div class="nc_tweetContainer googlePlus" data-id="2" data-network="google_plus">
+       <a rel="nofollow" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" data-link="https://plus.google.com/share?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-google-plus"></i><span class="swp_share"> +1</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer twitter" data-id="3" data-network="twitter">
+       <a rel="nofollow" target="_blank" href="https://twitter.com/share?original_referer=/&amp;text=Your+Purpose+is+Not+Your+Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job&amp;via=RELEVANT" data-link="https://twitter.com/share?original_referer=/&amp;text=Your+Purpose+is+Not+Your+Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job&amp;via=RELEVANT" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-twitter"></i><span class="swp_share"> Tweet</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer swp_tumblr" data-id="5" data-network="tumblr">
+       <a rel="nofollow" target="_blank" href="http://www.tumblr.com/share/link?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;name=Your+Purpose+is+Not+Your+Job" data-link="http://www.tumblr.com/share/link?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;name=Your+Purpose+is+Not+Your+Job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-tumblr"></i><span class="swp_share"> Share</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer swp_email" data-id="6" data-network="email">
+       <a target="_blank" rel="nofollow" href="mailto:?subject=Your%20Purpose%20is%20Not%20Your%20Job&amp;body=Margaret%20Meade%20once%20said%20that%20%E2%80%9Ca%20small%20group%20of%20thoughtful%20people%20can%20change%20the%20world.%E2%80%9D%20Last%20Monday%20night%2C%20I%20invited%20a%20group%20of%20women%20into%20my%20home%20to%20talk%20about%20how%20to%20discover%20your%20purpose%20and%20passion%20in%20this%20life.%20The%20room%20was%20filled%20with%20accountants%2C%20doctors%2C%20bloggers%2C%20teachers%2C%20moms%2C%20trainers%20and%20more.%20These%20women%20truly%20could%20change%20the%20world.%20But%C2%A0at%20the%20end%20of%20the%20day%2C%20no%20matter%20our%20profession%2C%20we%20all%20long%20for%20more%20in%20this%20life.%20We%20all%20want%20to%20know%20deep%20in%20our%20hearts%20what%20our%20true%20purpose%20is%20and%20what%20that%20looks%20like%20lived%20out.%20But%20%20Read%20Here%3A%20https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-email"></i><span class="swp_share"> Email</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer totes totesalt" data-id="7">
+       <span class="swp_count"><span class="swp_label">Shares</span> 7K</span>
+      </div>
+     </div>
+     <p>Margaret Meade once said that “a small group of thoughtful people can change the world.”</p> 
+     <p>Last Monday night, I invited a group of women into my home to talk about how to discover your purpose and passion in this life. The room was filled with accountants, doctors, bloggers, teachers, moms, trainers and more. These women truly <em>could</em> change the world.</p> 
+     <p>But&nbsp;at the end of the day, no matter our profession, we all long for <em>more</em> in this life. We all want to know deep in our hearts what our true purpose is and what that looks like lived out.</p> 
+     <p>But what if you were told that your life purpose is not your profession or role at home? What if the job that you spent years of college learning about and countless hours training for was not the total sum of your purpose?</p> 
+     <p>My purpose in this life is&nbsp;<em>not</em>&nbsp;to be a radio producer, a writer, a wife or a mom.&nbsp;For many of us, this kind of statement shakes us to the core. But for others, it’s extremely liberating knowing that there is more to this life than our 9-5 job or our role at home. Our life purpose goes far beyond that.</p> 
+     <p>
+      <!-- pq --></p> 
+     <p>My dear mentor, Lisa, spent the evening with us and shared that our purpose is&nbsp;lifelong. It’s not solely defined in our career, but rather it’s a&nbsp;life statement&nbsp;that is lived into our titles, roles and every aspect of our lives. She challenged each of us to come up with our own purpose statement that incorporates the talents God has given us.</p> 
+     <p>For example, Lisa’s purpose statement is to “create environments where life transformation can take place.” While this is lived out in her job as a church small group director, it’s also lived out in the ways she ministers to her husband, entertains in her home and interacts with people on a daily basis. This life purpose goes past her job title and role as a wife. It’s infused into every part of who she is and what she does.</p> 
+     <p>If our life purpose was restricted solely to our profession or role, it would end just there. It would be compartmentalized into a very small picture of the big picture of life and it would create extreme pressure to find the&nbsp;<em>perfect</em>&nbsp;job. And anything short of the perfect job could become a fertile ground for dissatisfaction or disappointment. But God’s purpose for our lives goes far beyond us.</p> 
+     <p>In the book&nbsp;<em>A Purpose Driven Life</em>, Rick Warren says:</p> 
+     <p>“The purpose of your life is far greater than your own personal fulfillment, your peace of mind, or even your happiness. It’s far greater than your family, your career, or even your wildest dreams and ambitions. If you want to know why you were placed on this planet, you must begin with God. You were born by His purpose and for His purpose.”&nbsp;</p> 
+     <p>So how do I find my purpose? Begin by asking yourself, <em>What do I care about? Who do I enjoy serving? What gets me out of bed in the morning? What makes my heart beat?</em> Then search for a way to live these things out.</p> 
+     <p>Look for a job that taps into those skills. Look for opportunities to volunteer that incorporate your strengths. Find ways at home and in your social life to display those same passions.</p> 
+     <p>At first, you may discover that there are multiple things you care about. In an effort to narrow the list down, dive in and give those passions a try. See what energizes you and fuels your fire. Ask yourself <em>What would I do even if I didn’t get paid to do it?</em> I once heard that the things you think about and do during your free time are a good indicator of what you should be doing with your life.</p> 
+     <p>Once you’ve narrowed the list down to a handful of things you care about and enjoy doing, draft a purpose statement that incorporates your strengths and passions.</p> 
+     <p>
+      <!-- pq --></p> 
+     <p>For example, Sara shared with us that she believes she was “created to create.” She enjoys painting, decorating and making things with her hands. Sara lives out this purpose statement as a blogger who shares her DIY decorating tips and also as a stay-at-home mom in making her place warm and welcoming for all who enter her front door.</p> 
+     <p>I’m beginning to realize that we make this whole idea of finding our purpose in life much harder than it really should be. We spend hours upon hours looking for the perfect job to never feel truly fulfilled. In reality, it’s quite basic if we think about.</p> 
+     <p>As Rick Warren said, “we must begin with God.” At the end of the day, our main purpose in this life is to glorify God. Our purpose statement is all about tapping into the unique gifts God has given us, finding a way to live those out here on earth and, in the process, bring glory to Him.</p> 
+     <p>So, what is my own personal purpose statement? I’m still trying to figure that out. What I do know though is that it involves my home and people in some way. There’s something sweetly fulfilling about welcoming others in and talking about just&nbsp;<em>who</em>&nbsp;God created each of us to be.&nbsp;It’s good for the heart.</p> 
+     <div class="nc_socialPanel swp_flatFresh swp_d_fullColor swp_i_fullColor swp_o_fullColor scale-100 scale-fullWidth" data-position="below" data-float="floatLeft" data-count="6" data-floatcolor="#ffffff" data-emphasize="0">
+      <div class="nc_tweetContainer swp_fb" data-id="4" data-network="facebook">
+       <a rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" data-link="http://www.facebook.com/share.php?u=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-facebook"></i><span class="swp_share"> Share</span></span></span><span class="swp_count">7K</span></a>
+      </div>
+      <div class="nc_tweetContainer googlePlus" data-id="2" data-network="google_plus">
+       <a rel="nofollow" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" data-link="https://plus.google.com/share?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-google-plus"></i><span class="swp_share"> +1</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer twitter" data-id="3" data-network="twitter">
+       <a rel="nofollow" target="_blank" href="https://twitter.com/share?original_referer=/&amp;text=Your+Purpose+is+Not+Your+Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job&amp;via=RELEVANT" data-link="https://twitter.com/share?original_referer=/&amp;text=Your+Purpose+is+Not+Your+Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job&amp;via=RELEVANT" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-twitter"></i><span class="swp_share"> Tweet</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer swp_tumblr" data-id="5" data-network="tumblr">
+       <a rel="nofollow" target="_blank" href="http://www.tumblr.com/share/link?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;name=Your+Purpose+is+Not+Your+Job" data-link="http://www.tumblr.com/share/link?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;name=Your+Purpose+is+Not+Your+Job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-tumblr"></i><span class="swp_share"> Share</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer swp_email" data-id="6" data-network="email">
+       <a target="_blank" rel="nofollow" href="mailto:?subject=Your%20Purpose%20is%20Not%20Your%20Job&amp;body=Margaret%20Meade%20once%20said%20that%20%E2%80%9Ca%20small%20group%20of%20thoughtful%20people%20can%20change%20the%20world.%E2%80%9D%20Last%20Monday%20night%2C%20I%20invited%20a%20group%20of%20women%20into%20my%20home%20to%20talk%20about%20how%20to%20discover%20your%20purpose%20and%20passion%20in%20this%20life.%20The%20room%20was%20filled%20with%20accountants%2C%20doctors%2C%20bloggers%2C%20teachers%2C%20moms%2C%20trainers%20and%20more.%20These%20women%20truly%20could%20change%20the%20world.%20But%C2%A0at%20the%20end%20of%20the%20day%2C%20no%20matter%20our%20profession%2C%20we%20all%20long%20for%20more%20in%20this%20life.%20We%20all%20want%20to%20know%20deep%20in%20our%20hearts%20what%20our%20true%20purpose%20is%20and%20what%20that%20looks%20like%20lived%20out.%20But%20%20Read%20Here%3A%20https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-email"></i><span class="swp_share"> Email</span></span></span></span></a>
+      </div>
+      <div class="nc_tweetContainer totes totesalt" data-id="7">
+       <span class="swp_count"><span class="swp_label">Shares</span> 7K</span>
+      </div>
+     </div>
+     <div class="swp-content-locator"></div> 
+     <div class="p-author-bio c"> 
+      <div class="p-ab-line"></div> 
+      <div class="p-ab-img"> 
+       <img src="http://relevantmagazine.com/wp-content/uploads/userphoto/LHHeadshot.jpg" alt="Liz Henderson" width="60px" height="60px" class="photo"> 
+      </div> 
+      <p class="p-ab-name">LIZ HENDERSON</p> 
+      <p class="p-ab-bio">Liz Henderson is a freelance radio and television producer/talent and writer. SheÕs been featured on HGTV, DIY Network, MSNBC and more. Follow her on twitter @hendersonliz or connect with her at lizhendy.com.</p> 
+     </div> 
+    </div> 
+   </section> 
+   <section id="acf" class="article-cont-footer"> 
+    <div class="p-bot c"> 
+     <p class="p-tags"> <a class="p-tags-a" href="https://relevantmagazine.com/tag/job/">#JOB</a> <a class="p-tags-a" href="https://relevantmagazine.com/tag/life/">#LIFE</a> <a class="p-tags-a" href="https://relevantmagazine.com/tag/life_purpose23455/">#LIFE PURPOSE</a> <a class="p-tags-a" href="https://relevantmagazine.com/tag/purpose/">#PURPOSE</a> </p> 
+     <div class="p-share"> 
+      <a class="p-share-fb-a c" href="javascript:void(0)" onclick="javascript:genericSocialShare('http://www.facebook.com/sharer.php?u=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job')" title="Facebook Share"> <i class="fa fa-facebook p-share-fb-i" aria-hidden="true"></i> <p class="p-share-fb">SHARE</p> </a> 
+      <a class="p-share-tw-a c" href="javascript:void(0)" onclick="javascript:genericSocialShare('http://twitter.com/share?text=Your Purpose is Not Your Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job')" title="Twitter Share"> <i class="fa fa-twitter p-share-tw-i" aria-hidden="true"></i> <p class="p-share-tw">TWEET</p> </a> 
+     </div> 
+    </div> 
+    <div id="comments" class="comments-area"> 
+     <div id="respond" class="comment-respond"> 
+      <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/life/career-money/your-purpose-not-your-job#respond" style="display:none;">Cancel reply</a></small></h3> 
+      <form action="https://relevantmagazine.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate> 
+       <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+       <p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required></textarea></p>
+       <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required></p> 
+       <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required></p> 
+       <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p> 
+       <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="120786" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p> 
+      </form> 
+     </div>
+     <!-- #respond --> 
+    </div>
+    <!-- #comments --> 
+   </section> 
+   <div class="m-share-cont"> 
+    <div class="m-share"> 
+     <a class="m-share-fb-a c" href="javascript:void(0)" onclick="javascript:genericSocialShare('http://www.facebook.com/sharer.php?u=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job')" title="Facebook Share"> <i class="fa fa-facebook m-share-fb-i" aria-hidden="true"></i> <p class="m-share-fb">SHARE</p> </a> 
+     <a class="m-share-tw-a c" href="javascript:void(0)" onclick="javascript:genericSocialShare('http://twitter.com/share?text=Your Purpose is Not Your Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job')" title="Twitter Share"> <i class="fa fa-twitter m-share-tw-i" aria-hidden="true"></i> <p class="m-share-tw">TWEET</p> </a> 
+     <a class="m-share-cm-a c" href="#acf"> <i class="fa fa-comments m-share-cm-i" aria-hidden="true"></i> <p class="m-share-cm">DISCUSS</p> </a> 
+    </div> 
+   </div> 
+   <div class="sfooter-cont"> 
+    <div class="sfooter c"> 
+     <div class="sfooter-trending"> 
+      <p class="lsb-trending-title">TRENDING</p> 
+      <svg class="lsb-trending-x" data-name="lsb-trending-x" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 10.08 9.84"> 
+       <title>lsb-trending-x</title> 
+       <line x1="9.29" y1="9.17" x2="0.95" y2="0.83" style="fill:none;stroke:#212121;stroke-miterlimit:10;stroke-width:0.8px" /> 
+       <line x1="0.95" y1="9.17" x2="9.29" y2="0.83" style="fill:none;stroke:#212121;stroke-miterlimit:10;stroke-width:0.8px" /> 
+      </svg> 
+      <div class="lsb-trending-e c"> 
+       <a class="lsb-trending-img-a" href="https://relevantmagazine.com/article/the-5-things-20-somethings-need-to-stop-doing/"> <img class="lsb-trending-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/05/Thumb-14.jpg"> <p class="lsb-trending-img-p">1</p> </a> 
+       <p class="lsb-trending-cat"><a href="https://relevantmagazine.com?s=&amp;cat=12">LIFE</a> 
+        <svg class="lsb-trending-share" data-name="lsb-trending-share" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24.74 23.23">
+         <title>lsb-trending-share</title>
+         <path class="lsb-trending-share-icon" d="M13.56,3.49a.34.34,0,0,1,.54-.27l9.27,7a.37.37,0,0,1,0,.59L14.09,17.6a.34.34,0,0,1-.53-.27V14.26a.34.34,0,0,0-.35-.35c-1.63,0-8.48.42-11.43,6.07a.24.24,0,0,1-.46-.08C.17,9.3,11.3,7.21,13.27,6.93a.34.34,0,0,0,.29-.34Z" />
+        </svg> <span class="lsb-trending-views">12024</span></p> 
+       <h2 class="lsb-trending-h2"> <a class="lsb-trending-h2-s-a" href="https://relevantmagazine.com/article/the-5-things-20-somethings-need-to-stop-doing/">5 Things to Stop Doing in Your 20s</a> </h2> 
+      </div> 
+      <div class="lsb-trending-e c"> 
+       <a class="lsb-trending-img-a" href="https://relevantmagazine.com/article/5-things-christians-should-know-about-depression-and-anxiety/"> <img class="lsb-trending-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/04/depression.png"> <p class="lsb-trending-img-p">2</p> </a> 
+       <p class="lsb-trending-cat"><a href="https://relevantmagazine.com?s=&amp;cat=12">LIFE</a> 
+        <svg class="lsb-trending-share" data-name="lsb-trending-share" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24.74 23.23">
+         <title>lsb-trending-share</title>
+         <path class="lsb-trending-share-icon" d="M13.56,3.49a.34.34,0,0,1,.54-.27l9.27,7a.37.37,0,0,1,0,.59L14.09,17.6a.34.34,0,0,1-.53-.27V14.26a.34.34,0,0,0-.35-.35c-1.63,0-8.48.42-11.43,6.07a.24.24,0,0,1-.46-.08C.17,9.3,11.3,7.21,13.27,6.93a.34.34,0,0,0,.29-.34Z" />
+        </svg> <span class="lsb-trending-views">9372</span></p> 
+       <h2 class="lsb-trending-h2"> <a class="lsb-trending-h2-s-a" href="https://relevantmagazine.com/article/5-things-christians-should-know-about-depression-and-anxiety/">5 Things Christians Should Know About Depression and Anxiety</a> </h2> 
+      </div> 
+      <div class="lsb-trending-e c"> 
+       <a class="lsb-trending-img-a" href="https://relevantmagazine.com/article/the-5-most-misused-and-abused-bible-verses/"> <img class="lsb-trending-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/03/bible.png"> <p class="lsb-trending-img-p">3</p> </a> 
+       <p class="lsb-trending-cat"><a href="https://relevantmagazine.com?s=&amp;cat=5">GOD</a> 
+        <svg class="lsb-trending-share" data-name="lsb-trending-share" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24.74 23.23">
+         <title>lsb-trending-share</title>
+         <path class="lsb-trending-share-icon" d="M13.56,3.49a.34.34,0,0,1,.54-.27l9.27,7a.37.37,0,0,1,0,.59L14.09,17.6a.34.34,0,0,1-.53-.27V14.26a.34.34,0,0,0-.35-.35c-1.63,0-8.48.42-11.43,6.07a.24.24,0,0,1-.46-.08C.17,9.3,11.3,7.21,13.27,6.93a.34.34,0,0,0,.29-.34Z" />
+        </svg> <span class="lsb-trending-views">9286</span></p> 
+       <h2 class="lsb-trending-h2"> <a class="lsb-trending-h2-s-a" href="https://relevantmagazine.com/article/the-5-most-misused-and-abused-bible-verses/">The 5 Most Misused and Abused Bible Verses</a> </h2> 
+      </div> 
+      <div class="lsb-trending-e c"> 
+       <a class="lsb-trending-img-a" href="https://relevantmagazine.com/article/eden-evil-and-the-surprising-message-of-wonder-woman/"> <img class="lsb-trending-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/06/Thumb-4.jpg"> <p class="lsb-trending-img-p">4</p> </a> 
+       <p class="lsb-trending-cat"><a href="https://relevantmagazine.com?s=&amp;cat=29">CULTURE</a> 
+        <svg class="lsb-trending-share" data-name="lsb-trending-share" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24.74 23.23">
+         <title>lsb-trending-share</title>
+         <path class="lsb-trending-share-icon" d="M13.56,3.49a.34.34,0,0,1,.54-.27l9.27,7a.37.37,0,0,1,0,.59L14.09,17.6a.34.34,0,0,1-.53-.27V14.26a.34.34,0,0,0-.35-.35c-1.63,0-8.48.42-11.43,6.07a.24.24,0,0,1-.46-.08C.17,9.3,11.3,7.21,13.27,6.93a.34.34,0,0,0,.29-.34Z" />
+        </svg> <span class="lsb-trending-views">8471</span></p> 
+       <h2 class="lsb-trending-h2"> <a class="lsb-trending-h2-s-a" href="https://relevantmagazine.com/article/eden-evil-and-the-surprising-message-of-wonder-woman/">Eden, Evil and the Surprising Message of ‘Wonder Woman’</a> </h2> 
+      </div> 
+      <div class="lsb-trending-e c"> 
+       <a class="lsb-trending-img-a" href="https://relevantmagazine.com/article/having-mental-health-issues-doesnt-mean-youre-a-bad-christian/"> <img class="lsb-trending-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/08/Thumb-40.jpg"> <p class="lsb-trending-img-p">5</p> </a> 
+       <p class="lsb-trending-cat"><a href="https://relevantmagazine.com?s=&amp;cat=2">CURRENT</a> 
+        <svg class="lsb-trending-share" data-name="lsb-trending-share" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24.74 23.23">
+         <title>lsb-trending-share</title>
+         <path class="lsb-trending-share-icon" d="M13.56,3.49a.34.34,0,0,1,.54-.27l9.27,7a.37.37,0,0,1,0,.59L14.09,17.6a.34.34,0,0,1-.53-.27V14.26a.34.34,0,0,0-.35-.35c-1.63,0-8.48.42-11.43,6.07a.24.24,0,0,1-.46-.08C.17,9.3,11.3,7.21,13.27,6.93a.34.34,0,0,0,.29-.34Z" />
+        </svg> <span class="lsb-trending-views">8102</span></p> 
+       <h2 class="lsb-trending-h2"> <a class="lsb-trending-h2-s-a" href="https://relevantmagazine.com/article/having-mental-health-issues-doesnt-mean-youre-a-bad-christian/">Having Mental Health Issues Doesn’t Mean You’re a Bad Christian</a> </h2> 
+      </div> 
+     </div> 
+     <div class="sfooter-recommend"> 
+      <p class="sfooter-recommend-title c">RECOMMENDED FOR YOU</p> 
+      <div class="sfooter-recommend-cont c"> 
+       <div class="sfooter-recommend-e"> 
+        <a class="sfooter-recommend-img-a" href="https://relevantmagazine.com/article/the-real-dangers-of-the-cohabitation-trend/"> <img class="sfooter-recommend-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/10/cohabthumb.jpg"> </a> 
+        <a class="sfooter-recommend-cat" href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> 
+        <h2 class="sfooter-recommend-h2"> <a class="sfooter-recommend-h2-a" href="https://relevantmagazine.com/article/the-real-dangers-of-the-cohabitation-trend/">The Real Dangers of the Cohabitation Trend</a> </h2> 
+       </div> 
+       <div class="sfooter-recommend-e"> 
+        <a class="sfooter-recommend-img-a" href="https://relevantmagazine.com/life/6-things-do-when-you-feel-overwhelmed"> <img class="sfooter-recommend-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/06/overwhelmed.jpg"> </a> 
+        <a class="sfooter-recommend-cat" href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> 
+        <h2 class="sfooter-recommend-h2"> <a class="sfooter-recommend-h2-a" href="https://relevantmagazine.com/life/6-things-do-when-you-feel-overwhelmed">6 Things to Do When You Feel Overwhelmed</a> </h2> 
+       </div> 
+       <div class="sfooter-recommend-e"> 
+        <a class="sfooter-recommend-img-a" href="https://relevantmagazine.com/article/2-words-that-could-end-your-marriage/"> <img class="sfooter-recommend-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/09/Thumb-7.jpg"> </a> 
+        <a class="sfooter-recommend-cat" href="https://relevantmagazine.com?s=&amp;cat=2302">LIFE</a> 
+        <h2 class="sfooter-recommend-h2"> <a class="sfooter-recommend-h2-a" href="https://relevantmagazine.com/article/2-words-that-could-end-your-marriage/">Two Words That Could End Your Marriage</a> </h2> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sfooter-issue"> 
+      <p class="sfooter-issue-title">CURRENT ISSUE</p> 
+      <a class="sfooter-issue-img-a" href="https://relevantmagazine.com/magazines/septoct-2017/"> <img class="sfooter-issue-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/2017/06/Cover-89.png"> </a> 
+      <div class="sfooter-issue-cont c"> 
+       <a class="sfooter-issue-read" href="https://relevantmagazine.com/magazines/septoct-2017/">READ NOW</a> 
+       <a class="sfooter-issue-subscribe" href="https://relevantmagazine.com/subscribe/">SUBSCRIBE</a> 
+      </div> 
+     </div> 
+     <div class="sfooter-listen"> 
+      <p class="sfooter-listen-title">WATCH / LISTEN</p> 
+      <svg class="sfooter-listen-x" data-name="lsb-trending-x" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 10.08 9.84"> 
+       <title>lsb-trending-x</title> 
+       <line x1="9.29" y1="9.17" x2="0.95" y2="0.83" style="fill:none;stroke:#212121;stroke-miterlimit:10;stroke-width:0.8px" /> 
+       <line x1="0.95" y1="9.17" x2="9.29" y2="0.83" style="fill:none;stroke:#212121;stroke-miterlimit:10;stroke-width:0.8px" /> 
+      </svg> 
+      <div class="sfooter-listen-e c"> 
+       <a class="sfooter-listen-play-a" href="https://relevantmagazine.com/podcast/episode-570-andy-mineo/"> 
+        <svg class="sfooter-listen-play" data-name="sfooter-listen-play" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20.02 23.23"> 
+         <title>sfooter-listen-play</title> 
+         <path class="sfooter-listen-play-icon" d="M1.09.34l18.36,11a.51.51,0,0,1,0,.88L1.09,22.94a.51.51,0,0,1-.77-.44V.78A.51.51,0,0,1,1.09.34Z" /> 
+        </svg> </a> 
+       <div class="sfooter-listen-cont"> 
+        <p class="sfooter-listen-meta"><a class="sfooter-listen-meta-a" href="https://relevantmagazine.com/series/relevant-podcast/">RELEVANT PODCAST /</a> E570</p> 
+        <h2 class="sfooter-listen-h2"> <a class="sfooter-listen-h2-a" href="https://relevantmagazine.com/podcast/episode-570-andy-mineo/">Episode 570: Andy Mineo</a> </h2> 
+       </div> 
+      </div> 
+      <div class="sfooter-listen-e c"> 
+       <a class="sfooter-listen-play-a" href="https://relevantmagazine.com/podcast/fun-therapy-trailer/"> 
+        <svg class="sfooter-listen-play" data-name="sfooter-listen-play" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20.02 23.23"> 
+         <title>sfooter-listen-play</title> 
+         <path class="sfooter-listen-play-icon" d="M1.09.34l18.36,11a.51.51,0,0,1,0,.88L1.09,22.94a.51.51,0,0,1-.77-.44V.78A.51.51,0,0,1,1.09.34Z" /> 
+        </svg> </a> 
+       <div class="sfooter-listen-cont"> 
+        <p class="sfooter-listen-meta"><a class="sfooter-listen-meta-a" href="https://relevantmagazine.com/series/fun-therapy/">FUN THERAPY /</a> E</p> 
+        <h2 class="sfooter-listen-h2"> <a class="sfooter-listen-h2-a" href="https://relevantmagazine.com/podcast/fun-therapy-trailer/">Fun Therapy – Trailer</a> </h2> 
+       </div> 
+      </div> 
+      <div class="sfooter-listen-e c"> 
+       <a class="sfooter-listen-play-a" href="https://relevantmagazine.com/podcast/episode-569-terry-crews-derek-webb/"> 
+        <svg class="sfooter-listen-play" data-name="sfooter-listen-play" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20.02 23.23"> 
+         <title>sfooter-listen-play</title> 
+         <path class="sfooter-listen-play-icon" d="M1.09.34l18.36,11a.51.51,0,0,1,0,.88L1.09,22.94a.51.51,0,0,1-.77-.44V.78A.51.51,0,0,1,1.09.34Z" /> 
+        </svg> </a> 
+       <div class="sfooter-listen-cont"> 
+        <p class="sfooter-listen-meta"><a class="sfooter-listen-meta-a" href="https://relevantmagazine.com/series/relevant-podcast/">RELEVANT PODCAST /</a> E569</p> 
+        <h2 class="sfooter-listen-h2"> <a class="sfooter-listen-h2-a" href="https://relevantmagazine.com/podcast/episode-569-terry-crews-derek-webb/">Episode 569: Terry Crews &amp; Derek Webb</a> </h2> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sfooter-newsletter"> 
+      <div id="sib_embed_signup"> 
+       <div class="forms-builder-wrapper" style="position:relative;"> 
+        <input type="hidden" id="sib_embed_signup_lang" value="en"> 
+        <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again."> 
+        <input type="hidden" name="primary_type" id="primary_type" value="email"> 
+        <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;"> 
+         <div class="loader"> 
+          <svg class="circular" viewbox="25 25 50 50"> 
+           <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> 
+          </svg> 
+         </div> 
+        </div> 
+        <form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/2lnmt/id/2" onsubmit="return false;"> 
+         <input type="hidden" name="js_id" id="js_id" value="2lnmt"> 
+         <input type="hidden" name="listid" id="listid" value="14"> 
+         <input type="hidden" name="from_url" id="from_url" value="yes"> 
+         <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value=""> 
+         <div class="sib-container rounded"> 
+          <input type="hidden" name="req_hid" id="req_hid" value=""> 
+          <div class="view-messages"></div> 
+          <div class="primary-group email-group forms-builder-group ui-sortable" style=""> 
+           <div class="row mandatory-email" style="position: relative;"> 
+            <p class="footer-4-p">GET RELEVANT IN YOUR INBOX</p> 
+            <div class="footer-4-i c"> 
+             <input class="footer-email-input" type="text" name="email" id="email" placeholder="Email"> 
+             <button class="footer-email-button" type="submit" data-editfield="subscribe"> 
+              <svg class="footer-email-icon" data-name="footer-email-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 11.88 12.08"> 
+               <title>footer-email-icon</title> 
+               <circle cx="5.91" cy="5.91" r="5" style="fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:0.90px" /> 
+              </svg> </button> 
+            </div> 
+            <p class="footer-4-terms">Signing up agrees to our terms and use.</p> 
+           </div> 
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="end-article-ad-cont"> 
+    <div id="div-gpt-ad-1483049278878-3"> 
+     <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1483049278878-3'); googletag.pubads().refresh([gptAdSlots[3]]); });
+        </script> 
+    </div> 
+   </div> 
+  </main> 
+  <footer> 
+   <div class="footer-cont"> 
+    <div class="footer tablet-hide c"> 
+     <div class="footer-1"> 
+      <a class="footer-logo-a" href="https://relevantmagazine.com/"> <img class="footer-logo-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/images/relevant-white.svg"> </a> 
+     </div> 
+     <div class="footer-2"> 
+      <p class="footer-2-p"><a class="footer-2-a" href="https://relevantmagazine.com/advertise">ADVERTISE WITH US</a> / <a class="footer-2-a" href="https://relevantmagazine.com/write">WRITE FOR US</a></p> 
+      <p class="footer-2-p"><a class="footer-2-a" href="https://relevantmagazine.com/about">ABOUT US</a> / <a class="footer-2-a" href="https://relevantmagazine.com/contact">CONTACT US</a> / <a class="footer-2-a" href="https://relevantmagazine.com/subscriber-services/">SUBSCRIBER SERVICES</a></p> 
+      <p class="footer-2-p"><a class="footer-2-a" href="https://relevantmagazine.com/terms">TERMS OF SERVICE</a> / <a class="footer-2-a" href="https://relevantmagazine.com/privacy">PRIVACY POLICY</a></p> 
+      <p class="footer-2-c">© 2017 RELEVANT Media Group. All Rights Reserved</p> 
+     </div> 
+     <div class="footer-3"> 
+      <p class="footer-3-p">FOLLOW US</p> 
+      <div class="footer-3-social"> 
+       <a class="footer-3-social-a" href="https://www.facebook.com/relevant" target="_blank"> <i class="fa fa-facebook footer-social-fb" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a" href="https://twitter.com/relevant" target="_blank"> <i class="fa fa-twitter footer-social-tw" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a" href="https://www.instagram.com/relevantmagazine/" target="_blank"> <i class="fa fa-instagram footer-social-in" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a" href="https://www.youtube.com/user/RELEVANTMagazine" target="_blank"> <i class="fa fa-youtube-play footer-social-yt" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a-l" href="https://open.spotify.com/user/relevantmagazine" target="_blank"> <i class="fa fa-spotify footer-social-sp" aria-hidden="true"></i> </a> 
+      </div> 
+     </div> 
+     <div class="footer-4"> 
+      <div id="sib_embed_signup"> 
+       <div class="forms-builder-wrapper" style="position:relative;"> 
+        <input type="hidden" id="sib_embed_signup_lang" value="en"> 
+        <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again."> 
+        <input type="hidden" name="primary_type" id="primary_type" value="email"> 
+        <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;"> 
+         <div class="loader"> 
+          <svg class="circular" viewbox="25 25 50 50"> 
+           <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> 
+          </svg> 
+         </div> 
+        </div> 
+        <form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/2lnmt/id/2" onsubmit="return false;"> 
+         <input type="hidden" name="js_id" id="js_id" value="2lnmt"> 
+         <input type="hidden" name="listid" id="listid" value="14"> 
+         <input type="hidden" name="from_url" id="from_url" value="yes"> 
+         <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value=""> 
+         <div class="sib-container rounded"> 
+          <input type="hidden" name="req_hid" id="req_hid" value=""> 
+          <div class="view-messages"></div> 
+          <div class="primary-group email-group forms-builder-group ui-sortable" style=""> 
+           <div class="row mandatory-email" style="position: relative;"> 
+            <p class="footer-4-p">GET RELEVANT IN YOUR INBOX</p> 
+            <div class="footer-4-i c"> 
+             <input class="footer-email-input" type="text" name="email" id="email" placeholder="Email"> 
+             <button class="footer-email-button" type="submit" data-editfield="subscribe"> 
+              <svg class="footer-email-icon" data-name="footer-email-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 11.88 12.08"> 
+               <title>footer-email-icon</title> 
+               <circle cx="5.91" cy="5.91" r="5" style="fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:0.90px" /> 
+              </svg> </button> 
+            </div> 
+            <p class="footer-4-terms">Signing up agrees to our terms and use.</p> 
+           </div> 
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="mfooter desktop-hide c"> 
+     <div class="footer-1"> 
+      <a class="footer-logo-a" href="https://relevantmagazine.com/"> <img class="footer-logo-img lzy" data-original="https://storage.googleapis.com/relevant-magazine/images/relevant-white.svg"> </a> 
+     </div> 
+     <div class="footer-3"> 
+      <div class="footer-3-social"> 
+       <a class="footer-3-social-a" href="https://www.facebook.com/relevant" target="_blank"> <i class="fa fa-facebook footer-social-fb" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a" href="https://twitter.com/relevant" target="_blank"> <i class="fa fa-twitter footer-social-tw" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a" href="https://www.instagram.com/relevantmagazine/" target="_blank"> <i class="fa fa-instagram footer-social-in" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a" href="https://www.youtube.com/user/RELEVANTMagazine" target="_blank"> <i class="fa fa-youtube-play footer-social-yt" aria-hidden="true"></i> </a> 
+       <a class="footer-3-social-a-l" href="https://open.spotify.com/user/relevantmagazine" target="_blank"> <i class="fa fa-spotify footer-social-sp" aria-hidden="true"></i> </a> 
+      </div> 
+     </div> 
+     <div class="footer-2"> 
+      <p class="footer-2-p"><a class="footer-2-a" href="https://relevantmagazine.com/advertise">ADVERTISE WITH US</a> / <a class="footer-2-a" href="https://relevantmagazine.com/write">WRITE FOR US</a></p> 
+      <p class="footer-2-p"><a class="footer-2-a" href="https://relevantmagazine.com/about">ABOUT US</a> / <a class="footer-2-a" href="https://relevantmagazine.com/contact">CONTACT US</a> / <a class="footer-2-a" href="https://relevantmagazine.com/subscriber-services/">SUBSCRIBER SERVICES</a></p> 
+      <p class="footer-2-p"><a class="footer-2-a" href="https://relevantmagazine.com/terms">TERMS OF SERVICE</a> / <a class="footer-2-a" href="https://relevantmagazine.com/privacy">PRIVACY POLICY</a></p> 
+      <p class="footer-2-c">© 2017 RELEVANT Media Group. All Rights Reserved</p> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --> 
+  <script src="https://relevantmagazine.com/wp-content/themes/relevant/scripts/lazyload.min.js" async></script> 
+  <script src="https://relevantmagazine.com/wp-content/themes/relevant/scripts/noframework-shortcuts.waypoints.min.js"></script> 
+  <script src="https://relevantmagazine.com/wp-content/themes/relevant/scripts/sticky-kit.min.js"></script> 
+  <script src="https://relevantmagazine.com/wp-content/themes/relevant/scripts/slick.min.js"></script> 
+  <script src="https://relevantmagazine.com/wp-content/themes/relevant/scripts/main.js" async></script> 
+  <script src="//a.teads.tv/page/65202/tag" async></script> 
+  <div class="nc_socialPanelSide nc_socialPanel swp_default swp_d_fullColor swp_i_fullColor swp_o_fullColor slide" data-position="below" data-float="floatLeft" data-count="6" data-floatcolor="#ffffff" data-screen-width="1100" data-transition="slide" data-mobilefloat="off">
+   <div class="nc_tweetContainer totes totesalt" data-id="6">
+    <span class="swp_count">7K</span>
+    <span class="swp_label"> Shares</span>
+   </div>
+   <div class="nc_tweetContainer swp_fb" data-id="4" data-network="facebook">
+    <a rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" data-link="http://www.facebook.com/share.php?u=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-facebook"></i><span class="swp_share"> Share</span></span></span><span class="swp_count">7K</span></a>
+   </div>
+   <div class="nc_tweetContainer googlePlus" data-id="2" data-network="google_plus">
+    <a rel="nofollow" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" data-link="https://plus.google.com/share?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-google-plus"></i><span class="swp_share"> +1</span></span></span></span></a>
+   </div>
+   <div class="nc_tweetContainer twitter" data-id="3" data-network="twitter">
+    <a rel="nofollow" target="_blank" href="https://twitter.com/share?original_referer=/&amp;text=Your+Purpose+is+Not+Your+Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job&amp;via=RELEVANT" data-link="https://twitter.com/share?original_referer=/&amp;text=Your+Purpose+is+Not+Your+Job&amp;url=https://relevantmagazine.com/life/career-money/your-purpose-not-your-job&amp;via=RELEVANT" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-twitter"></i><span class="swp_share"> Tweet</span></span></span></span></a>
+   </div>
+   <div class="nc_tweetContainer swp_tumblr" data-id="5" data-network="tumblr">
+    <a rel="nofollow" target="_blank" href="http://www.tumblr.com/share/link?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;name=Your+Purpose+is+Not+Your+Job" data-link="http://www.tumblr.com/share/link?url=https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job&amp;name=Your+Purpose+is+Not+Your+Job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-tumblr"></i><span class="swp_share"> Share</span></span></span></span></a>
+   </div>
+   <div class="nc_tweetContainer swp_email" data-id="6" data-network="email">
+    <a target="_blank" rel="nofollow" href="mailto:?subject=Your%20Purpose%20is%20Not%20Your%20Job&amp;body=Margaret%20Meade%20once%20said%20that%20%E2%80%9Ca%20small%20group%20of%20thoughtful%20people%20can%20change%20the%20world.%E2%80%9D%20Last%20Monday%20night%2C%20I%20invited%20a%20group%20of%20women%20into%20my%20home%20to%20talk%20about%20how%20to%20discover%20your%20purpose%20and%20passion%20in%20this%20life.%20The%20room%20was%20filled%20with%20accountants%2C%20doctors%2C%20bloggers%2C%20teachers%2C%20moms%2C%20trainers%20and%20more.%20These%20women%20truly%20could%20change%20the%20world.%20But%C2%A0at%20the%20end%20of%20the%20day%2C%20no%20matter%20our%20profession%2C%20we%20all%20long%20for%20more%20in%20this%20life.%20We%20all%20want%20to%20know%20deep%20in%20our%20hearts%20what%20our%20true%20purpose%20is%20and%20what%20that%20looks%20like%20lived%20out.%20But%20%20Read%20Here%3A%20https%3A%2F%2Frelevantmagazine.com%2Flife%2Fcareer-money%2Fyour-purpose-not-your-job" class="nc_tweet"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw sw-email"></i><span class="swp_share"> Email</span></span></span></span></a>
+   </div>
+  </div>
+  <script type="text/javascript" src="https://relevantmagazine.com/wp-content/plugins/social-warfare/js/script.min.js?ver=2.2.10"></script> 
+  <script type="text/javascript" src="https://relevantmagazine.com/wp-includes/js/comment-reply.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var my_ajax_object = {"ajax_url":"https:\/\/relevantmagazine.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://relevantmagazine.com/wp-content/themes/relevant/js/scripts.js?ver=1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var recurls = {"ajax_url":"https:\/\/relevantmagazine.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="https://relevantmagazine.com/wp-content/themes/relevant/js/recurls.js?ver=1"></script> 
+  <script type="text/javascript" src="https://relevantmagazine.com/wp-includes/js/wp-embed.min.js?ver=4.8.2"></script> 
+  <script type="text/javascript"> swpPinIt={"enabled":false};var swpClickTracking = false; var swp_nonce = "d2703f287f";</script>
+  <!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ --> 
+  <div id="fb-root"></div> 
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=330005603714238&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ae0508e4dc","applicationID":"26641419","transactionName":"blxVZEVVV0JQBk0IW1cWdlNDXVZfHhZQD1NVXA==","queueTime":0,"applicationTime":1400,"atts":"QhtWEg1PREw=","errorBeacon":"bam.nr-data.net","agent":""}</script>  
+ </body>
+</html>

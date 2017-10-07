@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8"> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1bd727006f","applicationID":"18938354","transactionName":"JQpdTEQJWVQBQhwUCxURQBdFDlpP","queueTime":0,"applicationTime":180,"agent":""}</script> 
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwMPUlJVGwIIXVJaBAQD"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title> 16 ways for college and university students to save money | Daily Hive Calgary
+</title> 
+  <meta name="description" content="From bills to social events and everything in between, it can be so hard to make and to stick to a budget - especially after midterm or final season when you're just looking to blow off a little steam. "> 
+  <meta name="keywords" content="calgary, student, college, money, save"> 
+  <meta name="author" content="Kylee Williams"> 
+  <link rel="canonical" href="http://dailyhive.com/calgary/how-students-can-save-money"> 
+  <meta property="fb:app_id" content="1216003615089968"> 
+  <meta property="og:site_name" content="Daily Hive"> 
+  <meta property="og:title" content="16 ways for college and university students to save money"> 
+  <meta property="og:description" content="From bills to social events and everything in between, it can be so hard to make and to stick to a budget - especially after midterm or final season when you're just looking to blow off a little steam. "> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:image" content="http://images.dailyhive.com/20170216174528/feature-.jpg"> 
+  <meta property="og:url" content="http://dailyhive.com/calgary/how-students-can-save-money"> 
+  <meta property="og:updated_time" content="2017-02-20 17:04:42 -0800"> 
+  <meta property="article:author" content=""> 
+  <meta property="article:tag" content="Studentssaving money"> 
+  <meta property="article:published_time" content="2017-02-21 00:00:23 -0800"> 
+  <meta property="article:modified_time" content="2017-02-20 17:04:42 -0800"> 
+  <meta name="twitter:title" content="16 ways for college and university students to save money"> 
+  <meta name="twitter:description" content="From bills to social events and everything in between, it can be so hard to make and to stick to a budget - especially after midterm or final season when you're just looking to blow off a little steam. "> 
+  <meta name="twitter:image" content="http://images.dailyhive.com/20170216174528/feature-.jpg"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:url" content="http://dailyhive.com/calgary/how-students-can-save-money"> 
+  <meta name="twitter:creator" content="@kyleeewilliams"> 
+  <link rel="icon" type="image/png" href="https://s3-us-west-2.amazonaws.com/images.dailyhive.com/assets/favicon.png"> 
+  <link rel="apple-touch-icon" href="https://s3-us-west-2.amazonaws.com/images.dailyhive.com/assets/apple-touch-icon.png"> 
+  <link rel="stylesheet" media="screen" href="/assets/application-736d005ddfa936e6fc8236f126a2415770f246d25b5074c8a86de40f0fae48bb.css"> 
+  <script src="/assets/application-d2da3d9420ba585f86343f56cd7b223133c2175f5c97d72ed6d5532c537ea757.js"></script> 
+  <script src="//cdn.jsdelivr.net/velocity/1.5/velocity.min.js"></script> 
+  <script src="//cdn.jsdelivr.net/velocity/1.5/velocity.ui.min.js"></script> 
+  <meta name="google-site-verification" content="RNkrbgIStvcmYrZRC9FHV9tUYko-rzROlaMhyOzwC64"> 
+  <meta name="p:domain_verify" content="52be8f11bac148aea4d80b2d3c96443f"> 
+  <meta property="fb:pages" content="148192078555388"> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="ukYdYbDHbr29v3RSm08ZoNBX/S+4moAMxvbubeZydYYEeat4weOxD77IZSIeMXShh6pKkMOB1Xi8UqOlW7wMUQ=="> 
+  <script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "Daily Hive",
+        "url" : "http://dailyhive.com",
+        "logo" : "http://dailyhive.com/assets/dh_logo-1c9f2e28157849bf2b7979ae64dfa02ab41c99175f9a2cc9a0d5dec96aaea1f8.png",
+        "sameAs" : [
+          "https://www.facebook.com/VCBuzz",
+          "https://www.facebook.com/calgarybuzz",
+          "https://www.facebook.com/dailyhivetoronto",
+          "https://www.facebook.com/dailyhivemontreal",
+          "https://www.twitter.com/VancityBuzz",
+          "https://www.twitter.com/CgyBuzz",
+          "https://www.twitter.com/DailyHiveTO",
+          "https://www.twitter.com/DailyHiveMTL",
+          "https://www.instagram.com/vancitybuzz/"
+        ]
+      }
+    </script> 
+  <script>
+        (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:607156,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+      </script> 
+ </head> 
+ <body> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-78516275-1', 'auto');
+    ga('set', 'dimension1', 'Kylee Williams');
+    ga('send', 'pageview');
+
+  </script> 
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1216003615089968',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> 
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '374261952730960');
+  fbq('track', "PageView");</script> 
+  <noscript>
+   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=374261952730960&amp;ev=PageView&amp;noscript=1">
+  </noscript> 
+  <script type="text/javascript">
+  var gptadslots=[];
+  (function(){
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script> 
+  <script type="text/javascript">
+
+  //For 728x90
+  var mapping1 = googletag.sizeMapping().
+  addSize([1024, 500], [[970, 250],[970, 90],[728, 90]]).
+  addSize([768, 400], [[728, 80],[468, 60]]).
+  addSize([470, 400], [300, 250]).
+  addSize([360, 400], [300, 250]).
+  addSize([0, 0], [300, 250]).
+  build();
+
+  //For 300x250
+  var mapping2 = googletag.sizeMapping().
+  addSize([1024, 500], [[300, 600],[300, 250]]).
+  addSize([768, 400], [300, 250]).
+  addSize([470, 400], [300, 250]).
+  addSize([360, 400], [300, 250]).
+  addSize([0, 0], [300, 250]).
+  build();
+
+  //For Skin
+  var mapping3 = googletag.sizeMapping().
+  addSize([1024, 500], [1, 1]).
+  addSize([768, 400], []).
+  addSize([470, 400], []).
+  addSize([360, 400], []).
+  addSize([0, 0], []).
+  build();
+
+  //Adslot 1 declaration
+  gptadslots[1]= googletag.defineSlot('/5947346/DailyHive_Homepage_Top_LB_BB', [[728,90]],'div-gpt-ad-881195027772561268-1').defineSizeMapping(mapping1).addService(googletag.pubads());
+  //Adslot 2 declaration
+  gptadslots[2]= googletag.defineSlot('/5947346/DailyHive_Homepage_Top_MPU', [[300,250]],'div-gpt-ad-881195027772561268-2').defineSizeMapping(mapping2).addService(googletag.pubads());
+  //Adslot 3 declaration
+  gptadslots[3]= googletag.defineSlot('/5947346/DailyHive_Homepage_Bottom_MPU', [[300,250]],'div-gpt-ad-881195027772561268-3').defineSizeMapping(mapping2).addService(googletag.pubads());
+  //Adslot 4 declaration
+  gptadslots[4]= googletag.defineSlot('/5947346/DailyHive_Articlepage_Top_LB_BB', [[728,90]],'div-gpt-ad-881195027772561268-4').defineSizeMapping(mapping1).addService(googletag.pubads());
+  //Adslot 5 declaration
+  gptadslots[5]= googletag.defineSlot('/5947346/DailyHive_Articlepage_Top_MPU', [[300,250]],'div-gpt-ad-881195027772561268-5').defineSizeMapping(mapping2).addService(googletag.pubads());
+  //Adslot 6 declaration
+  gptadslots[6]= googletag.defineSlot('/5947346/DailyHive_Articlepage_Bottom_MPU', [[300,250]],'div-gpt-ad-881195027772561268-6').defineSizeMapping(mapping2).addService(googletag.pubads());
+  //Adslot 7 declaration
+  gptadslots[7]= googletag.defineSlot('/5947346/DailyHive_Articlepage_Incontent_MPU', [[300,250]],'div-gpt-ad-881195027772561268-7').addService(googletag.pubads());
+  //Adslot 8 declaration
+  gptadslots[8]= googletag.defineSlot('/5947346/DailyHive_Eventspage_Top_LB_BB', [[728,90]],'div-gpt-ad-881195027772561268-8').defineSizeMapping(mapping1).addService(googletag.pubads());
+  //Adslot 9 declaration
+  gptadslots[9]= googletag.defineSlot('/5947346/DailyHive_Eventspage_Top_MPU', [[300,250]],'div-gpt-ad-881195027772561268-9').addService(googletag.pubads());
+  //Adslot 10 declaration
+  gptadslots[10]= googletag.defineSlot('/5947346/DailyHive_Seriespage_Top_LB_BB', [[728,90]],'div-gpt-ad-881195027772561268-10').defineSizeMapping(mapping1).addService(googletag.pubads());
+  //Adslot 11 declaration
+  gptadslots[11]= googletag.defineSlot('/5947346/DailyHive_Seriespage_Top_MPU', [[300,250]],'div-gpt-ad-881195027772561268-11').addService(googletag.pubads());
+  //Adslot 12 declaration
+  gptadslots[12]= googletag.defineSlot('/5947346/DailyHive_Interstitial', [[1,1]],'div-gpt-ad-881195027772561268-12').addService(googletag.pubads());
+  //Adslot 13 declaration
+  gptadslots[13]= googletag.defineSlot('/5947346/DailyHive_Skin', [[1,1]],'div-gpt-ad-881195027772561268-13').defineSizeMapping(mapping3).addService(googletag.pubads());
+  //Adslot 14 declaration
+  gptadslots[14]= googletag.defineSlot('/5947346/DailyHive_Patio_Top_LB_BB', [[728,90]],'div-gpt-ad-1494621586666-0').defineSizeMapping(mapping1).addService(googletag.pubads());
+  //Adslot 15 declaration
+  gptadslots[15]= googletag.defineSlot('/5947346/DailyHive_Patio_Top_MPU', [[300,250]],'div-gpt-ad-1494621928882-0').defineSizeMapping(mapping2).addService(googletag.pubads());
+
+
+  googletag.pubads().setTargeting('city',['calgary']).setTargeting('category',['business']).setTargeting('URL',['/calgary/how-students-can-save-money']).setTargeting('sponsor_tag',['']);
+  googletag.pubads().enableSyncRendering();
+  googletag.enableServices();
+
+</script> 
+  <div class="mobile-nav-wrapper   hide-for-large"> 
+   <div class="mobile-hamburger hamburger hamburger--collapse"> 
+    <span class="hamburger-box" onclick="openLeftMenu()"> <span class="hamburger-inner"></span> </span> 
+   </div> 
+   <a href="/calgary" class="mobile-logo-sprite calgary"></a> 
+   <a href="javascript:void(0)" class="channel-button" onclick="openChannelsNav()">Channels</a> 
+  </div> 
+  <div id="mobile-left-menu" class="mobile-overlay"> 
+   <a href="javascript:void(0)" class="left-closebtn" onclick="closeLeftMenu()">×</a> 
+   <a href="#" class="right-citiesbtn" style="color:#fff;" onclick="openCitiesNav()">Select City</a> 
+   <div class="mobile-overlay-content push-up-80"> 
+    <div class="column rows"> 
+     <form action="/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="✓"> 
+      <input type="text" name="q" id="q" placeholder="Search..."> 
+      <input type="hidden" name="city" id="city" value="calgary"> 
+     </form> 
+    </div> 
+    <div class="column rows"> 
+     <ul class="menu vertical" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+      <li class="trending"><a href="/calgary/trending" onclick="ga('send', 'event', 'Trending Mobile', 'click', 'calgary', 1);" itemprop="name">Trending</a></li> 
+      <li class="latest"><a href="/calgary/latest" onclick="ga('send', 'event', 'Latest Mobile', 'click', 'calgary', 1);" itemprop="name">Latest</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Food', 1);" itemprop="name" href="/calgary/category/food">Food</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Things To Do', 1);" itemprop="name" href="/calgary/category/events">Things To Do</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'News', 1);" itemprop="name" href="/calgary/category/news">News</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Life', 1);" itemprop="name" href="/calgary/category/life">Life</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Sports', 1);" itemprop="name" href="/calgary/category/sports">Sports</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Business', 1);" itemprop="name" href="/calgary/category/business">Business</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Arts', 1);" itemprop="name" href="/calgary/category/arts">Arts</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Contests', 1);" itemprop="name" href="/calgary/category/contests">Contests</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Photos', 1);" itemprop="name" href="/calgary/category/photos">Photos</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Videos', 1);" itemprop="name" href="/calgary/category/videos">Videos</a></li> 
+      <li><a onclick="ga('send', 'event', 'Mobile Menu', 'click', 'Events', 1);" itemprop="name" href="/calgary/events">Events</a></li> 
+     </ul> 
+     <hr> 
+     <ul class="vertical menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="mobile-main-channels" class="mobile-overlay"> 
+   <a href="javascript:void(0)" class="closebtn" onclick="closeMainChannelsNav()">×</a> 
+   <div class="mobile-overlay-content"> 
+    <div class="mobile-channels-sprite channels">
+     <div class="dh-logos channels"></div>
+    </div> 
+    <a class="sprite city calgary" href="/calgary">
+     <div class="dh-logos calgary"></div></a> 
+    <a href="/calgary/category/food" class="mobile-channels-sprite dished">
+     <div class="dh-logos dished calgary"></div></a> 
+    <div class="mobile-channels-sprite soon-one">
+     <div class="dh-logos cs-one"></div>
+    </div> 
+    <div class="mobile-channels-sprite soon-two">
+     <div class="dh-logos cs-two"></div>
+    </div> 
+    <div class="mobile-channels-sprite soon-three">
+     <div class="dh-logos cs-three"></div>
+    </div> 
+   </div> 
+  </div> 
+  <div id="mobile-channels" class="mobile-overlay"> 
+   <a href="javascript:void(0)" class="closebtn" onclick="closeChannelsNav()">×</a> 
+   <div class="mobile-overlay-content"> 
+    <div class="mobile-channels-sprite channels">
+     <div class="dh-logos channels"></div>
+    </div> 
+    <a href="/calgary/category/food" class="mobile-channels-sprite dished">
+     <div class="dh-logos dished calgary"></div></a> 
+    <div class="mobile-channels-sprite soon-one">
+     <div class="dh-logos cs-one"></div>
+    </div> 
+    <div class="mobile-channels-sprite soon-two">
+     <div class="dh-logos cs-two"></div>
+    </div> 
+    <div class="mobile-channels-sprite soon-three">
+     <div class="dh-logos cs-three"></div>
+    </div> 
+   </div> 
+  </div> 
+  <div id="mobile-cities" class="mobile-overlay"> 
+   <a href="javascript:void(0)" class="closebtn" onclick="closeCitiesNav()">×</a> 
+   <div class="mobile-overlay-content"> 
+    <div class="sprite city" style="height:72px;">
+     <div class="dh-logos cities"></div>
+    </div> 
+    <a class="sprite city montreal" href="/cities/montreal">
+     <div class="dh-logos montreal"></div></a> 
+    <a class="sprite city toronto" href="/cities/toronto">
+     <div class="dh-logos toronto"></div></a> 
+    <a class="sprite city vancouver" href="/cities/vancouver">
+     <div class="dh-logos vancouver"></div></a> 
+   </div> 
+  </div> 
+  <div class="desktop-nav   show-for-large"> 
+   <div class="row large-collapse"> 
+    <div class="large-3 medium-2 columns"> 
+     <a class="logo calgary" href="/"></a> 
+     <div class="desktop-hamburger hamburger hamburger--collapse"> 
+      <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> 
+     </div> 
+    </div> 
+    <div class="large-6 medium-7 columns"> 
+     <div class="channel-group"> 
+      <a href="/calgary/category/food" class="desktop-dished-sprite calgary"></a> 
+     </div> 
+    </div> 
+    <div class="large-3 medium-3 columns text-right"> 
+     <i class="fa fa-2 fa-search search-button  "></i> 
+    </div> 
+   </div> 
+   <div class="row large-collapse"> 
+    <div class="large-12 columns"> 
+     <div class="mega-menu-dropdown"> 
+      <div class="row large-collapse"> 
+       <div class="large-3 columns"> 
+        <ul class="select-city menu vertical" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+         <li class="in-active"> <a class="logo montreal" href="/cities/montreal"></a> </li> 
+         <li class="in-active"> <a class="logo toronto" href="/cities/toronto"></a> </li> 
+         <li class="in-active"> <a class="logo vancouver" href="/cities/vancouver"></a> </li> 
+        </ul> 
+       </div> 
+       <div class="large-9 columns padding-40"> 
+        <div class="row"> 
+         <div class="large-6 columns"> 
+          <ul class="categories no-bullet two-column" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+           <li class="trending"><a href="/calgary/trending" onclick="ga('send', 'event', 'Trending Desktop', 'click', 'calgary', 1);" itemprop="name">Trending</a></li> 
+           <li class="latest"><a href="/calgary/latest" onclick="ga('send', 'event', 'Latest Desktop', 'click', 'calgary', 1);" itemprop="name">Latest</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Food', 1);" itemprop="name" href="/calgary/category/food">Food</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Things To Do', 1);" itemprop="name" href="/calgary/category/events">Things To Do</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'News', 1);" itemprop="name" href="/calgary/category/news">News</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Life', 1);" itemprop="name" href="/calgary/category/life">Life</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Sports', 1);" itemprop="name" href="/calgary/category/sports">Sports</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Business', 1);" itemprop="name" href="/calgary/category/business">Business</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Arts', 1);" itemprop="name" href="/calgary/category/arts">Arts</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Contests', 1);" itemprop="name" href="/calgary/category/contests">Contests</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Photos', 1);" itemprop="name" href="/calgary/category/photos">Photos</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Videos', 1);" itemprop="name" href="/calgary/category/videos">Videos</a></li> 
+           <li><a onclick="ga('send', 'event', 'Desktop Menu', 'click', 'Events', 1);" itemprop="name" href="/calgary/events">Events</a></li> 
+          </ul> 
+         </div> 
+         <div class="large-6 columns"> 
+          <div class="row"> 
+           <div class="large-12 columns"> 
+            <ul class="series no-bullet" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="desktop-search text-center"> 
+   <form action="/search" accept-charset="UTF-8" method="get">
+    <input name="utf8" type="hidden" value="✓"> 
+    <input type="text" name="q" id="q" placeholder="Search..."> 
+    <input type="hidden" name="city" id="city" value="calgary"> 
+   </form> 
+  </div> 
+  <div class="wrapper"> 
+   <div class="ad-top-leaderboard"> 
+    <div class="row"> 
+     <div class="large-11 medium-10 small-12 large-centered small-centered columns"> 
+      <div id="div-gpt-ad-881195027772561268-4"> 
+       <script type="text/javascript">
+		googletag.display('div-gpt-ad-881195027772561268-4');
+	</script> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="row padding-20 white-bg"> 
+    <div class="large-12 columns"> 
+     <script src="https://d26b395fwzu5fz.cloudfront.net/3.4.1/keen.min.js" type="text/javascript"></script> 
+     <script type="text/javascript">
+		var createCookie = function() {
+	    Cookies.set("article-read-12444", true, { expires: 1 });
+	  };
+
+		var article_read = Cookies.get("article-read-12444");
+
+	  if (typeof article_read == "undefined") {
+			// Configure an instance for your project
+			var client = new Keen({
+			  projectId: "5744be4f80a7bd7cef32836e",
+			  writeKey: "a71ce1caf3f71cdee3e9eb8bdf451cabc10745b388b7205347593adf7837d1b91a0b8bfc3019946189994d36e3a1eee6721e2896766aa0f94093fed808ff6498425fdbf7b5a5b0cf6f70173dec797f7ea28cd3ab44c885cb484d8464d807264c"
+			});
+
+			// Send an event to the "pageviews" collection
+			Keen.ready(function() {
+				client.addEvent("pageviews", {
+					post_id: 12444,
+					post_title: "16 ways for college and university students to save money",
+					post_city: "calgary",
+					post_categories: ["Business", "Life"],
+					post_tags: ["Students", "saving money"],
+					post_authors: ["Kylee Williams"],
+				  page_url: "http://dailyhive.com/calgary/how-students-can-save-money",
+				  ip_address: "${keen.ip}",
+				  referrer: {
+				    url: document.referrer
+				  },
+				  page: {
+				    url: "http://dailyhive.com/calgary/how-students-can-save-money"
+				  },
+				  keen: {
+				    addons: [
+				      {
+				        name: "keen:url_parser",
+				        input: {
+				          url: "page_url"
+				        },
+				        output: "parsed_page_url"
+				      },
+				      {
+						    name: "keen:referrer_parser",
+						    input: {
+						      referrer_url: "referrer.url",
+						      page_url: "page.url"
+						    },
+						    output: "referrer.info"
+						  },
+				      {
+				      	name: "keen:ip_to_geo",
+				        input: {
+				          ip: "ip_address"
+				        },
+				        output: "ip_geo_info"
+				      }
+				    ]
+				  }
+				});
+			});
+			createCookie();
+		}
+	</script> 
+     <script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "Article",
+		  "mainEntityOfPage": {
+		    "@type": "WebPage",
+		    "@id": "http://dailyhive.com/calgary/how-students-can-save-money"
+		  },
+		  "publisher": {
+		    "@type": "Organization",
+		    "name": "Daily Hive",
+		    "logo": {
+		    	"@type": "ImageObject",
+		    	"url": "http://dailyhive.com/assets/dh_logo-1c9f2e28157849bf2b7979ae64dfa02ab41c99175f9a2cc9a0d5dec96aaea1f8.png"
+		    }
+		  },
+		  "keywords": "calgary, student, college, money, save",
+		  "headline": "16 ways for college and university students to save money",
+		  "author": {
+		  	"@type": "Person",
+		  	"name": "Kylee Williams"
+		  },
+		  "articleSection": "Business, Life",
+		  "image": {
+		  	"@type": "ImageObject",
+		  	"url": "http://images.dailyhive.com/20170216174528/feature-.jpg",
+		  	"width": "100%",
+		  	"height": "400px"
+		  },
+		  "url": "http://dailyhive.com/calgary/how-students-can-save-money",
+		  "dateCreated": "2017-02-21 00:00:23 -0800",
+		  "datePublished": "2017-02-21 00:00:23 -0800",
+		  "dateModified": "2017-02-20 17:04:42 -0800",
+		  "articleBody": "&lt;h4 id=&#39;pressboard-ad-sponsorship-tag&#39; style=&#39;margin-bottom: 35px;&#39;&gt;&lt;/h4&gt;&lt;p&gt;No one understands what it means to be broke more than a college student does &amp;#8211; that&amp;#8217;s a given. From bills to social events and everything in between, it can be so hard to make and stick to a budget &amp;#8211; especially after midterm season when you&amp;#8217;re just looking to blow off a little steam.&lt;/p&gt;
+&lt;p&gt;Fortunately, we have 16 ideas on ways that any and every college student can actually save some money, while still having a life.&lt;/p&gt;
+&lt;h3&gt;Extreme Couponing Isn&amp;#8217;t Just For TLC&lt;/h3&gt;
+&lt;div id=&quot;attachment_118334&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;wp-image-118334 size-full&quot; src=&quot;http://images.dailyhive.com/20170216173923/coupons-.jpg&quot; width=&quot;1000&quot; height=&quot;556&quot; srcset=&quot;http://images.dailyhive.com/20170216173923/coupons-.jpg 1000w, http://images.dailyhive.com/20170216173923/coupons--500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/FreeStuffFinder/photos/basw.Abqxza2EorViQeTentlwrbeJekY2Ht6giFrmLEhsJWAiaSrCX70tSPUbfI7wN540HxdA_9M0FTpKA5bUvIW6JTQCnYqNhsYxVKrUgeluk_5CLY1Fjlf6Sk7uBEBNJMKLYiOC7RNP25C_G1hq9NzZMLVh.1246287738786889.1419603174757988.1421627521222220.10154816371364870.1383844044979707.1422094377842201.10155136887222494.1422019924516313.1361669223884717/1383844044979707/?type=1&amp;amp;opaqueCursor=Abrlm9GUTHB1q6OW-Rrxr7caaZ6IKzC29mgUGJYPZc9G3K_7OoWv4khmy0nxaF85mwKxGIPY2p-0yYotVrZ4EeLGQSUe6d0HvVewbgG0sXVeUmTD5YjusJwSPDD5vp6OV0deVrPqCpC3erLTQwKaMu22OOqA-QOxOhETRVJZe8k3mRuxja6c-wE24DnfrhYKyXzsaO_lh0-So51wyaqzD3Dg1bbJJNXnlQoJecASV4XvrZB6-NtjH1PzqFWKhrWVsqNtPwbGDM2du-X5IfeD0DKFSEOUdeebEt8ErRcpNboXrIAprqRi5X2UOd8SVC4Mu43ZGbjE9VbmYTjWwK77qb_lvL31HIhWQyK_wcATVl1yyek8BsEJB0OhPdWZS3zoe7DiP2U-efSrTR7un39gmk09R7POT5_fQyt1HlEwSz0awpSbAjHQ9CW_8AiAB7lVvMpn3jY7rv6SzGmkm9kB0KbYIZK7lUrkFKy5XqQR2CyMYSWg7jg4EeFeqpnQrg8FS054loXKEg6vzLw6QDnOPKLcuqOB62gcoc8iE9KloErEzA&amp;amp;theater&quot;&gt;Free Stuff Finder / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;From Groupon to weekly store flyers, clipping coupons is a seriously underrated way to save some money. You can find a deal for pretty much ANYTHING, if you actually put in some time to look.&lt;/p&gt;
+&lt;p&gt;Before you decide to buy some tickets on Ticketmaster, order a pizza from Pizza Hut, or purchase something online &amp;#8211; search for coupons! Trust me, it&amp;#8217;s worth it.&lt;/p&gt;
+&lt;h3&gt;Amazon Student Is Your New Best Friend&lt;/h3&gt;
+&lt;div id=&quot;attachment_118336&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;wp-image-118336 size-full&quot; src=&quot;http://images.dailyhive.com/20170216174517/amazon.jpg&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216174517/amazon.jpg 1000w, http://images.dailyhive.com/20170216174517/amazon-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/AmazonStudent/photos/p.1258560527511490/1258560527511490/?type=1&amp;amp;opaqueCursor=AbqGLSwTIq73Ol74tIR38xT4X7Hpe079v9ioJWUKzaDBiqGBdQlki4EiwJBRJ5_dgXb86r3t5LOie-C5wyB5lxQfLmzXYTyaoDGdK3XbSDB1mEdAHy6wbSbPXRkzW9yIMqGZESfow081Kaoj_Ive4yapoKNQrarKZvca23PRI26OG4k7VMvBhhZqEQCeeJqvYBpuK9yuoDMyDN_y0N6O-P-Ixpj7lII86IucTkYJXVhf51RTE_wwjAmrUCWOeUf3Ln7lTD17nDoHfCJMQnjbmEeFGD1JudsDGUNghXFYn7m4-x9vAWdemk61l7eI5cYCGbnyXPYt4yq2BNchJbQ6ACDqhmTib6EXdG-fole6JEjZas6f6Sila6xFDXlWZDoTqaI&amp;amp;theater&quot;&gt;Amazon Student / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Unfortunately, not enough students even know the true wonders of an Amazon Student account. For starters, you can sign up for a six month free trial. If that doesn&amp;#8217;t already have you opening up a new tab for Amazon, I don&amp;#8217;t know what will.&lt;/p&gt;
+&lt;p&gt;Amazon Student is basically Amazon Prime, except it&amp;#8217;s cheaper. With two-day free shipping and student-only deals, you really can&amp;#8217;t go wrong. (Make sure to check for your textbooks here before buying them elsewhere!)&lt;/p&gt;
+&lt;h3&gt;Limit Going Out Clubbing (Or Go In Groups)&lt;/h3&gt;
+&lt;div id=&quot;attachment_118341&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-118341&quot; src=&quot;http://images.dailyhive.com/20170216175325/going-out.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216175325/going-out.jpg 1000w, http://images.dailyhive.com/20170216175325/going-out-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/CowboysCalgary/photos/a.145498615514656.31790.145442132186971/1404886472909191/?type=3&amp;amp;theater&quot;&gt;Cowboys Calgary / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;We get it, going out is a part of college life. The only downfall is all of the money you spend getting there, actually being there, and getting home. So, if you want to save money, consider cutting back on hitting the town every night or every weekend. And when you do go out- pre-drink, take an Uber, make a guest list, and go with your friends &amp;#8211; it&amp;#8217;s a lot cheaper this way.&lt;/p&gt;
+&lt;h3&gt;Is Cable Really Necessary?&lt;/h3&gt;
+&lt;div id=&quot;attachment_119717&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-119717&quot; src=&quot;http://images.dailyhive.com/20170220195707/netflix-final.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195707/netflix-final.jpg 1000w, http://images.dailyhive.com/20170220195707/netflix-final-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/BlasterjaxxOfficial/photos/p.900002926744314/900002926744314/?type=1&amp;amp;opaqueCursor=AbrJ7vApBnuo2iAM86t7KIGrD7IeivV7U0Vi6D4h3iBqll8hazfx_5kK9pigxM1HE6isbz-L1G5THlpNaIrVDQekKnXdsrDVkNAKAa5wlXrw9atkK_9X13hqMOyZubaUwnoRQq8W5OGdDA4SDrtEP9Mxvj-hDCn2YxcuLS-3nhPA9fyuFk6tjypsp2PgGRW0F4AY232mPuRw2ZdhXWBxmLcyVl41V9Qt94JRWVWuUbbQdkvEVJ7QkXKF7c3BBmts34IjzaXntsKiY4o0gSiYy73ND18_w6uNTxYjHuiWrzNJMV2hWBIq9lbS2bQzy_x_B3i5tpBLaFiPIFOWts0m8nhmWdEAXQThNTpSPZRIKuO3ycJTLzfX8rHcC12OqkAc0GcqZ_FY-NCB3xaKVwungJzt&amp;amp;theater&quot;&gt;Blasterjaxx / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Sure, it&amp;#8217;s unbelievably handy to PVR the shows you can&amp;#8217;t watch live. But is it really a necessity? With Netflix, Crave TV, and many others, it&amp;#8217;s kind of moot. Of course everything isn&amp;#8217;t on Netflix here in Canada (looking at you America), so try some other sites like Putlocker or Project Free TV to catch your shows. The sacrifice of HD quality is worth it when you have a little extra green in your pockets.&lt;/p&gt;
+&lt;h3&gt;Give Up On Brand Clothing&lt;/h3&gt;
+&lt;div id=&quot;attachment_118350&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-118350&quot; src=&quot;http://images.dailyhive.com/20170216180838/brand.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216180838/brand.jpg 1000w, http://images.dailyhive.com/20170216180838/brand-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/photo.php?fbid=150968318663210&amp;amp;set=p.150968318663210&amp;amp;type=1&amp;amp;opaqueCursor=Abp1EqueAyAu0UgQbGNueSTJX1mDxKry0pQN3duLlGXOb_pruadV-nmIytivjJWvnz3vv0excesYiS8kuPIDBN6BmAhcKWRPrjetvh2ANWSr6Qib6np7UbFeHLi0RUwzujHt2Uaq3K_4dDyu443MdtjF2TggsAoIHWztNb5FjN4Nm6WEYiVIorgF-W5MquaEQ9QqKPEUsjDiwKRc1DaTbbIF2nozdKkOULmMiQaz59frdfnNmsF90Js_MPSAfoVBCkjRrTSoJBofXqNIf3pvwUgOepMlX5oRcOxUgrxdebK2UBusSlkWXui-4nJKlFmdYWgP3U0gHb5eSFUU3a7WXsrkMLK7KUp7LzkM-PX2RbjDeFDi9Y_2ubr-4y6417QZn11olYGbyNV4aDmIIdCXbgCNSZKbjeihovmbshDn76WmuQ&amp;amp;theater&quot;&gt;Sharron Vuong / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;It&amp;#8217;s beyond easy to get caught up in the materialistic aspect of clothes shopping, there&amp;#8217;s no doubt about it. However, when you&amp;#8217;re a student, brand clothing shouldn&amp;#8217;t be a top priority.&lt;/p&gt;
+&lt;p&gt;What you can find at Artizia, you can find at Urban Behaviour for half the price. Sure, you won&amp;#8217;t have that expensive tag on the back of your shirt but who can really tell the difference anyways? Spend big when you make big college students.&lt;/p&gt;
+&lt;h3&gt;Buy Everything In Bulk&lt;/h3&gt;
+&lt;div id=&quot;attachment_119718&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-119718&quot; src=&quot;http://images.dailyhive.com/20170220195718/bulk-final.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195718/bulk-final.jpg 1000w, http://images.dailyhive.com/20170220195718/bulk-final-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/BulkBarnFoods/photos/p.824897394279643/824897394279643/?type=1&amp;amp;opaqueCursor=Abp4o77K0VL2t4qm-35W_j_mr8S6GVdNU00zUyDiHLYvTQC86Oa6ofMaR_dSF4jA6mEXnY7fVGKZw-D7u4qGEZyD-tClJxR_wbgp9H5BS7UAJsE_8pqadipkzDrzKhbPOMk2YmyJba0FW9uJq8DLOM6HVVUctn_tvyduErFJ43ByR_rE49O-b29PRCFvTRzRm5RXg5VJB4bMWre1zesKBwGC0IXLOK8uNyBq4hFbtfNH24l0SoXCy3Fh2P22RtIIiREqPFoSH1h6X6IRxGfjdxReq8OMPU0PRirAF09_k7vlM_WUqht8ZutTKK3SmsZSvP03bm_LaZo_QUNGuEgEIgQfDL-sAjJaAfHNH5PotJ5tBAL5V__hxtnM-DsnCbqgA3Rlqjj-6vEvZtV55D-EdjgY&amp;amp;theater&quot;&gt;Bulk Barn / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Bulk Barn and Costco are genuine gifts to the universe. This one is simple. Thinking of treating yourself to a cookie? Don&amp;#8217;t buy one from Starbucks for $2 or more, buy a whole pack of them for the same price from a grocery store.&lt;/p&gt;
+&lt;p&gt;Try to resist the urge to splurge once in a while and it will (literally) pay off.&lt;/p&gt;
+&lt;h3&gt;Look Out For Drink Specials and Wing Nights&lt;/h3&gt;
+&lt;div id=&quot;attachment_118380&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-118380&quot; src=&quot;http://images.dailyhive.com/20170216194533/wing.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216194533/wing.jpg 1000w, http://images.dailyhive.com/20170216194533/wing-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/BlueChipCasino/photos/basw.AbrIBa2ZiUEwMLV_sZnY2tupPVC0x4gQWpumKueXzqdcL8B1UzCwgr4dfdEWFoUWFtNAmgu0ak80QqHbtfuyMBlGM6ZzxEmUssT16Fw_1OatggOVMiTsA_jKGKt9ksiu77Fz1eazWbtdtbJSoPIzU6OQ.1146152685463477.1119427978110619.10153395540362560.10211974699950975.926603927383126.1188286727871684.1636779226539287.1044964928915587.1011991898879557/10153395540362560/?type=1&amp;amp;opaqueCursor=AbrpxAt4_tOuSbkkoH5OzQTq6JkLAfhz42a8w5bwHraeTN0m_GO3GfjBhEucp46Ou3lU8Gzgd3DyrBZjYMeMcEw4qjlyrgnEJH3jXutbh3iNR7OLKyNfXx6EMc7AGYQx4k-sa5h0AUoRuE0asCH0vkbTCyqJPfemwKp03llGfO7rbS7PoWsWox7J8j37B8xHJDfTTAaHbeN-mT_93pdaUURfsdDWPirGgNxiQL900c74YE938dMuEzylGFTAXtrgKiqu6rTWRDF72uyrjMk7Cf2UhGV9ZwJdbfV1zAxsmcQ3RFaf325M8EuQk0AMRnzDCk_lENU00IuxjC0PWzXT7NxSoxDonKz3j1-7Lkr4VKeWpyU4EiwnBFhtV185B7z8tOzpHtvsBIJgg8b226xOOFn_X-cOy9mqsdP-kxZJZPtK0Jkx2EIGikXNInE0nu95hRP8j7XU1fkAp2radL835Ch6ooTch2f2Im-cY6JWaZEuAxMa220i-KI_9Ao8jxFjgvqbH0oon0sMwBgdhek9JZ2F_TQq06LdgwXa3Gzj91k4OaEsRUC5E1ESx0fHEVMNOcn_-itTedagt3rAvYZckkZGxB61C2ilji3_X-4074oi2d9jBM8iX7Ut-aNJKrBK3ec6M1634kdGJKt4KGHE8G96&amp;amp;theater&quot;&gt;Blue Chip Casino / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Part of the whole college experience is going out with some friends to have a great time. When you&amp;#8217;re in the mood for some casual drinks or some cheap food &amp;#8211; check online for drink specials and wing night deals!&lt;/p&gt;
+&lt;p&gt;There are deals every night of the week around town, you just have to do the research!&lt;/p&gt;
+&lt;h3&gt;Get A Job&lt;/h3&gt;
+&lt;div id=&quot;attachment_118383&quot; style=&quot;width: 1011px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-118383&quot; src=&quot;http://images.dailyhive.com/20170216195027/job.jpg&quot; alt=&quot;&quot; width=&quot;1001&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216195027/job.jpg 1001w, http://images.dailyhive.com/20170216195027/job-500x277.jpg 500w&quot; sizes=&quot;(max-width: 1001px) 100vw, 1001px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/waubonsee/photos/basw.Abqtej2HV0UUzWLG6CQXteNUxknYosctXzudeBpvV39bsxHd8EJgt_3gEPUJOSgRO9d1BmooVMvc6jjh6T-N4gC8fEUMmZEEmfcvxjIL0PVEyUgWLswYqTT-bEwXzY794L4C3CIXwxMMpUQVrukavnoA.1127658743999996.10154068580000689.838618086276558.1266803893401596.1160627547369418.1390656931007670.1306421316046815.1702951909730926.866816753390925/10154068580000689/?type=1&amp;amp;opaqueCursor=Abq9JCtmI272YCoVU1AWaDZWvibnyF3bws7XeJzOURxIQGj0EiJ9mrK43XdM0lLRKv2nxzRh_3R8aWeMdxva5HttpCLoQrOqH_TaANpOhxjvShVwjADCJauNqPO1WErdCOy4IffrD0d9lRADr8qhvLe-qAIff4C49Dy30kEIRrS4S3diS5LgFMYH3MQJPdLUdlYcbfpOaQfijfTKwExJ7tXDQIHVtIv9FfREMOSyo02-KiEe_Iv3VEIJ2rmGSs8xqOwIv7Q6o_T36W3OcOQwj5bH54Gr513K2iEKcFraKVKX7pOpksIOk9DNt6a4k5WoQgjCcYkW7ZXh8xZFT1PYGk-WdhWUaPeTyaCwq_L-2ubzbB4XeMWV9AxVxDscf0qRhgesJ9POG8C8YqT3bN7GXgSQlrjoysmH4fj1fqx5dgxiVj504jHMaPQmCJ16uB-8R_QFA2lu0Yd70Bw0sTkA6yeecN8wwznb1U2mM3246T-dgTlqHEwrd-Is1xJj7cpQhJhQkHkTZ5Ui72OftSQA0I7zrb3jGW3bTIe2B-qiJj-XW6nU7iPVa7GabsC6G76CgmmxPjkN1qqf9JEG7KyE2lQp&amp;amp;theater&quot;&gt;Waubonsee Community College / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Sometimes working part time on top of all of your other responsibilities and your school work can be a bit too much. However, if you do find that you have a little extra time, why not try to make a little extra money?&lt;/p&gt;
+&lt;p&gt;Whether you work once or twice a week, anything helps. Think babysitting, freelancing, or dog walking. Get creative!&lt;/p&gt;
+&lt;h3&gt;APPLY FOR SCHOLARSHIPS&lt;/h3&gt;
+&lt;div id=&quot;attachment_118387&quot; style=&quot;width: 1011px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-118387&quot; src=&quot;http://images.dailyhive.com/20170216195446/scholar.jpg&quot; alt=&quot;&quot; width=&quot;1001&quot; height=&quot;554&quot; srcset=&quot;http://images.dailyhive.com/20170216195446/scholar.jpg 1001w, http://images.dailyhive.com/20170216195446/scholar-500x277.jpg 500w&quot; sizes=&quot;(max-width: 1001px) 100vw, 1001px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/McElhanney/photos/basw.Abr_updIE03mcGRE2Ewo9gZplFyEGXM0-z39MnRlCO5q5SAXcpqWu_Y2D9Z531FzUXcB5-GtDD7fLysBxpL4BZo6QGUcekm9yk04pDU1sEAq8MgYmXvEIObMEQJSU1PRxn35TdDWz-NVhEukVSi2O4BV8vs6g1ocb6EdDESnVxqPFw.10153566340680025.1792508171010034.986932577986366.1211314635577485.559921417507845.1247646088590062.10158118411505635.862928173769902.895492467149775/895492467149775/?type=1&amp;amp;opaqueCursor=Abqyn65oANRghEWb6dz0bPPHmB2JXZbh9YLNZOw9rhvXfI-6roLGcBtrM-mJLyYwwBxPEF0GPfBGJ06koLmIpPtKizOScR-F54xqCyP1H5d9cWG1rnWyMkRh3h4DEN6A8Rs8qKfnV6I8SNnR-CSBj0NUd3ddOmuwxcgTlq6KjzRMOklTyFJSQtaBdxBqKjme-sK-_tL341K0DTiIP_3ELKLUe99d7DKxvIqlZBmR_BqfIA-4DQW4GRVVRh5ocXdrenvaJwHFE6G-h81ghR4D2nh-7aHv4mu9ju-TNPLQwkh7VsycKWi-lYP7xVksFMTfk5ztzgPwlJ-CzlH7VFw7bpQNpnx8KSZkika1xOL0ugxV3pxw02mgV9VV7DhCQRufSeG1CrMZQMrOTpkm17xa8NPZ8Zkw_HoNnfa3G294KZiD6Z1In_csCZmoL5Yjz5Bu67mIfg9I-yvbyO3DNS1EOk099p_aCThya7oWzt3i5O0Svw&amp;amp;theater&quot;&gt;McElhanney / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;All college students NEED to get their stuff together when it comes to meeting those pesky deadlines in order to apply for scholarships and student awards.&lt;/p&gt;
+&lt;p&gt;Many people don&amp;#8217;t realize just how many awards, scholarships and bursaries there are to go around, and all of them aren&amp;#8217;t just for the very academically gifted. Apply, apply, apply! Someone has to win.&lt;/p&gt;
+&lt;h3&gt;Open A Savings Account&lt;/h3&gt;
+&lt;div id=&quot;attachment_119721&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-119721&quot; src=&quot;http://images.dailyhive.com/20170220195751/save-acc-final.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195751/save-acc-final.jpg 1000w, http://images.dailyhive.com/20170220195751/save-acc-final-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/KCCUSVG/photos/p.1142989755749350/1142989755749350/?type=1&amp;amp;opaqueCursor=Abo0qccTf7mlSF-CG3Z7KLWxtVYMJSvQFKHBw_j_d65JV86uL0ZvDEhTEhDvsxz2GJw0SVONMIHi5VZwmJvYnIH1711gG9esdr1--FWCK0cdvv5HzPH4TlqvyQNQAFn7DRTaBggub9vliaBQraOfYQI-UqEDPxIr91qPnftAK_Mauay29BPvYpKnQhwEc12JE3SiCiwUc4c98u6RKIK1b7pe6fqFZDs9U-7BP3VNysTQKSZECKhTCwoIDsap8s-dSfSLC1vj0A-nj8M0Ul2M_K6FGexbGQ8JcKnu3846_bWZHHboOimk3wTRU6Hy7LtO9EL4eGsSzUGAsFFTIQL12xob9Zm2QUwXYK-xXAmY0mJ8rCz0cfUKgFd0lqv-CnMyAV8&amp;amp;theater&quot;&gt;KCCU LTD / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;With mobile banking, opening a savings account has literally never been easier. For most banks, you can actually open it online with no bank approval needed. Plus, since you&amp;#8217;re a student, there most likely won&amp;#8217;t be a monthly or an annual fee. Putting away even 10% of your earnings each paycheck is honestly all you will need in case of a rainy day.&lt;/p&gt;
+&lt;h3&gt;Take Advantage of Your Student Discount&lt;/h3&gt;
+&lt;div id=&quot;attachment_119719&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-119719&quot; src=&quot;http://images.dailyhive.com/20170220195729/stud-disc-final.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195729/stud-disc-final.jpg 1000w, http://images.dailyhive.com/20170220195729/stud-disc-final-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/SalonXUK/photos/p.1874046426149604/1874046426149604/?type=1&amp;amp;opaqueCursor=Abpixxq1-vsrVbzRaGNi2540Rwf3cfdr9IEmFO9KlQBnFh3Wb3msaK9pVXjMhVFW04i81T1q8N6zwGp1YV8XPCNKl84Fn4pMfS9MYqfQYJ3J60a8crgpwAgEa3uPQaVrzOCtovRGql1jujORZNhf0yYIfNhSBodPt24qGdpiCq6UIqLL-iv2HaddgCwP93kjFaZusGPcNGEa47xk2tAIYIVSfG4uXmU99Sf2DVaGYvYN5oM8jNCfN81zpPJzbk2pt588J67OTH4bol0Skuq4PcmhXERjFq3cGnkIRngAKwAlMYRg9hHZonGPdgjraFF8s_bMGF7FHWaeVHIPBpVtseT3-ZbeU9XDqVkS16OcN6Bb3wplQg3sx0Ps8lj32NYBtFo&amp;amp;theater&quot;&gt;SalonX / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Usually it&amp;#8217;s kind of a hassle to get carded everywhere, but not when it&amp;#8217;s to your benefit. So many places provide student discounts, they just don&amp;#8217;t like to advertise it too much.&lt;/p&gt;
+&lt;p&gt;Make sure you&amp;#8217;ve got that ID on you at all times because places like Topshop, Apple, Best Buy, Bulk Barn, and many more, have student discounts available.&lt;/p&gt;
+&lt;h3&gt;Check Out Free Events&lt;/h3&gt;
+&lt;div id=&quot;attachment_119716&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-119716&quot; src=&quot;http://images.dailyhive.com/20170220195657/free-final.png&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195657/free-final.png 1000w, http://images.dailyhive.com/20170220195657/free-final-500x278.png 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/photo.php?fbid=1203336133114260&amp;amp;set=a.106347356146482.8622.100003136543886&amp;amp;type=3&amp;amp;theater&quot;&gt;Makenna Williams / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Who says you have to stop having fun in order to save money? I don&amp;#8217;t know if you knew this, but Calgary is not a dull city. There are always cool events going on that are either free or cost next to nothing, every month. Fire up Facebook and simply type in &amp;#8216;free events Calgary&amp;#8217; or something along the lines of that, you might be surprised at what pops up. To read an article of some free events happening in Calgary this month, &lt;a href=&quot;http://dailyhive.com/calgary/free-events-calgary-february-2017#.WJtWD4n-9MM.facebook&quot;&gt;click here. &lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Stay Away From Bottled Water&lt;/h3&gt;
+&lt;div id=&quot;attachment_119720&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;wp-image-119720 size-full&quot; src=&quot;http://images.dailyhive.com/20170220195740/water-final.jpg&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195740/water-final.jpg 1000w, http://images.dailyhive.com/20170220195740/water-final-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/FIJIWaterKH/photos/basw.AbqIif7gD9PyOf8P-kPddV-QagGgtUE88ASXSKTfmrpIdKBvoCXF3ldrqJVOB764WoryyAbt1L_hL9uq_VX8y_I_lWiYYlbjLUjGTLXSFgIBD3w9RSH2o_0RrEiz3ngAVpl49wc5lZ332t-nJMlhmvtR.10154570128228894.10154743265988894.933963020036006.1099802810049872.10154885403758894.10154407468008894.1819265268335043.770625926372194.10154886182623894/770625926372194/?type=1&amp;amp;opaqueCursor=Abp3G9Zac85ksT0QTDQTR9Y2_V7xhnMyGXT3JC6scnjyn3ustVuGCXlxOLOY6cv4wv2BCRknSgndBhK_jiN46Whu3IrUrQVUnoOzC6oacpXt_68oiKoItFBgJ83kwOoQmR1-CNZ2IF6qStisJ7UPdKGXm7lzpC3yNs3YZc8XINwr1THPI9VD1WtWNGroE4F5lpFcx85yW_baEv6UcNxt9iER3QpObSOBQ_OUJuvH7FCzFktz1qfTTt8bz-KCUfi0RO1RtqB-WnrXaKBu0sYuGxPa-h1KU36ACWvkTSPJR2-DPbZ_7ONeHQj01uiTIOmONDYh8142AIQpWDWd1shu9-ePgZcKzeIF8uxmFMtRnBpGyvT-dysr9KZV9V-1zZqDp29up2guF3OEbAiGp7WPHLhSSHh3nH02qeHtIy8zf-J_fNEMyT3eCgX8xGoF4WFMLweBIYIbtzVlLy8ltL5yEOmnnUfc5GZhcTMpDE_G-ILm1_ld4KMiHcabsF7qgK6zHPNCYkizG5HKkby0DsPe7yKUtwZLHZ7jIijQYq-HV2XzwCJChaEwfAhMdDH7hQ9y82GhkJ2hd_C9EZ-T5qNbaHrp&amp;amp;theater&quot;&gt;FIJI Water / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;There is no greater scam than buying bottled water. Living in Calgary, we are beyond lucky to have clean and safe tap water. For many other countries, this simply isn&amp;#8217;t the case. So many people spend their money on bottled water from the store or at a restaurant/fast food establishment. Why? Not only can you just fill up your own water bottle from home, but every single place offers tap water, you just have to ask for it! Save your money for things that you actually need.&lt;/p&gt;
+&lt;h3&gt;Use Public Transit/Carpool&lt;/h3&gt;
+&lt;div id=&quot;attachment_118394&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;wp-image-118394 size-full&quot; src=&quot;http://images.dailyhive.com/20170216202643/transit.jpg&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216202643/transit.jpg 1000w, http://images.dailyhive.com/20170216202643/transit-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/CalgaryJournal/photos/basw.AboprHvFK8bfivIBcFQaEM96fG_rATfV1pX6SnmKHu12N51Oc975GoiHUE5izhxvm7IXJVvS6AikFBGhvuZBLXedFp_1CxB7P_1Gbufdd86EBSlC3WBVWxof3eLuZx0hYwWCmxRmy6tuN0Sor7eWskoOiGdfskAM_bBwP2r_TodBfQ.731803876922809.10154110053996302.1407245312640214.435983293238575.1298781920186101.1532918683389898.572894872880749.10153476892161219.196095077466905/10154110053996302/?type=1&amp;amp;opaqueCursor=AbpNW9Ohl12DJY2EzcR51XRlIhemW24U5X0GH8joMvRv1x5j3VKWvRJTJL35Sw4hzNz0QEpdFEQdppxxk4I9L4pPq8l3A06WQgCbxfImO2NFroWCw-i_aBKzANmQrXc1sETyu-Os0ba04U1b4nAWV0rQc-hbFP7yU3rlfuFRWYyQSuiLTrfDXjLT91LBJ2gzU7dlGoilzh486jyVFckYbIj1BDXAM0zOil7aNpKXtKTeD8067O5kze5lZLOH32beMrvtoUJI7fXi_CC9drL_mq0RZVUFM6z8_o2plabmVIB2wmKim1etIsr1BpZfMjMsIlwWjlwZK0W3eaaRh5_HHF4SMwKEBxqOdRn9NTLv7CMe2G8uyAHiA2i7x9d2NTk_fkIWvfKHfLPMLBbgvEp3oSoul91RdKxd7bSz43aUq5v1Rksk5c27UkbxKBL7kzbea7hOkGCutixrMJO_ESbG-rP9rrMKQiN-AtO1tz1pqXM8N9h-k4txFjn9Tqmo4BtaK2pXFCEe7DqJfoCpH98f0FnvcMSbl-4Rszwp62G2JngBQB9aewY-gpzECsjs-3fpY3XOpRoM8kWMEZVyVuv2x_WEyZDiWQR2Xji4fCYiUHKljqrOmH9KbogAi9sphdG2NgSem09mxsQ-KsfjxM19iiKGYF_hduIGXddj3l5Zzf7r-A&amp;amp;theater&quot;&gt;Chasing Summer Music Video / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Not only is this option good for the environment, but it&amp;#8217;s good for your wallet. Sure, it&amp;#8217;s not perfect, but Calgary transit is not too shabby. Drive to the train station if you need to, but taking the train or carpooling with a friend on your way to wherever is the absolute best way to save money on gas. Especially if you go to a school where transit fees are included in tuition.&lt;/p&gt;
+&lt;h3&gt;Try A Money Savings Challenge&lt;/h3&gt;
+&lt;div id=&quot;attachment_119715&quot; style=&quot;width: 1010px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-119715&quot; src=&quot;http://images.dailyhive.com/20170220195643/money-jar-final.jpg&quot; alt=&quot;&quot; width=&quot;1000&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170220195643/money-jar-final.jpg 1000w, http://images.dailyhive.com/20170220195643/money-jar-final-500x278.jpg 500w&quot; sizes=&quot;(max-width: 1000px) 100vw, 1000px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/water/photos/p.10154695046273641/10154695046273641/?type=1&amp;amp;opaqueCursor=AbpdGPOytqL1gtW4YGT7dlL-bRnMf0jfsfIQGyWdBYnm_R0qxVNo72KM3USj7XMBpyvL3ppY26fAMVgdiy1JTWKxkbAmv0rYiadZtzLHC-h8dw28EMnSr8gUk2kJAKNzzeotasW_etYoHP5Gv4zcuocnfBhTOo_O_QDcwS0fYw6s_ztISqDfulIJp0igalHnqiOKxXyBmBZC-YEOMHtp42zzJozE8gbPTeVoDsjepd9t9hqq8fgFFi8-LcyvuUhjkvEHSO5L_0EpVdhwii865t0-xTLx1mxnkedeuUy1JmzfLZJtXwmS8EV-g5aVXp0cf3Q7NmbmK9EvHNJB3dBnRqEiG03ei0vqzMamI_IJhoyAEx7kz8E9j2bcwlsV9HH3ICY&amp;amp;theater&quot;&gt;Water.org / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Almost every day there seems to be a new challenge or idea trending online for how people can save some money. Of course, not all of them work and some of them are probably scams&amp;#8230; but if you do your research, you could potentially find a really great idea!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://thewhoot.com.au/life/52-week-money-challenge&quot;&gt;Here&lt;/a&gt; is a link to a challenge that honestly works and is incredibly easy to stick to.&lt;/p&gt;
+&lt;h3&gt;Use Your School&amp;#8217;s Amenities&lt;/h3&gt;
+&lt;div id=&quot;attachment_118396&quot; style=&quot;width: 1011px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;img class=&quot;size-full wp-image-118396&quot; src=&quot;http://images.dailyhive.com/20170216203458/gym1.jpg&quot; alt=&quot;&quot; width=&quot;1001&quot; height=&quot;555&quot; srcset=&quot;http://images.dailyhive.com/20170216203458/gym1.jpg 1001w, http://images.dailyhive.com/20170216203458/gym1-500x277.jpg 500w&quot; sizes=&quot;(max-width: 1001px) 100vw, 1001px&quot; /&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;&lt;a href=&quot;https://www.facebook.com/170775309945418/photos/p.367949240228023/367949240228023/?type=1&amp;amp;opaqueCursor=Abqvf2F3Y3hbOdcomCHD5GueW2oe-iLOH4pZojnUO8DMm9Fr_iNaVbmx5eBi3bc1aPxJPD-IAE5IIr5QrtMXt2EbpMjP2xm94QtP3yt9VXxVxdpSl4bN7XhGw_Rt37P1WVRRN_-6BBBjFBP5QdjYCGdh07f10kzlUfxEeaQguqV_eRopsUFmCHGOLkeeAuoRkcNR0CEw5yN1q2sFr23WQDaq8eLMIG3PRYzNIxlX7SAv-BPud8-MwyeikZWXXNr0SgGy1TtAxjBYfDgZCAIrhKpFUsUcKg5-6Ao1anhBZhGwIYvV_39liC4uSvlOI6uhQT_vDPEqo9wmhtkokI4aJ9qaKEhQZPGQhpLFMioSzoX9bNY_xghIBEaqalt4dUJiCeBQBbGEXBw-bL6fZzEz8NaXMVQQpc3qajvsKlKuEt7UNg&amp;amp;theater&quot;&gt;Source Gym Kit / Facebook&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;The majority of universities or colleges in Calgary have some pretty amazing on-campus life hacks. Whether it&amp;#8217;s the school gym or another provided luxury, becoming more educated on all that your school has to offer is more than smart. Look up online schedules or make an appointment with a counsellor, make sure you&amp;#8217;re aware of all of your options.&lt;/p&gt;
+
+&lt;div id=&#39;pressboard-ad-sponsorship-msg&#39;&gt;&lt;/div&gt;
+"
+		}
+	</script> 
+     <div class="row post content calgary show-for-small-only"> 
+      <div class="large-12 columns"> 
+       <span class="category"><a href="/calgary/category/life">Life</a></span>, 
+       <span class="category"><a href="/calgary/category/business">Business</a></span> 
+       <h1>16 ways for college and university students to save money</h1> 
+      </div> 
+     </div> 
+     <div id="dh-read-more" class="row"> 
+      <div class="small-12 columns"> 
+       <div id="media" class="content push-down-50"> 
+        <img class="img show-for-small-only" src="http://images.dailyhive.com/20170216174528/feature-.jpg" alt="Feature "> 
+        <div class="hide-for-small-only" style="width:100%;height:550px;background:url('http://images.dailyhive.com/20170216174528/feature-.jpg') no-repeat; background-size:cover; background-position:center;"></div> 
+        <span class="featured-caption"><a target="_blank" href="https://www.facebook.com/AmazonStudent/photos/p.1121547861212758/1121547861212758/?type=1&amp;opaqueCursor=Abq4wgGVsLHMO5IHTQPlIZ1Mj_G8y4RHeTLeZ6IphllV-LL10JvJA6-GfP85ymJuxZtoYE4YU1FL_iOFfZVIy0NVI8kJbzRwqhZB9iFN1r9c0z47w44dgDMX04FCQ0Ym0C6nLYlvi62z7eWE_O7pJSfGOPYZZXH0AzMMRPYv5e1rBl1VKli02U2HZcbzl-rliAHYzYkVAfMWkFF0g6mhYxrJHGayr7VXB6gB3jtWTM66qDxyCbPxaX99CpyxbaLtlgDWyjWrWMKKXMjKth_2eYFpZOobMQ7wrRoOlXir0WaVrNm0Blt-ilHo84Q2nYqnr9I2DQWutJUwHj6EPzoCesvsioGodR8nxVDZtaQAN5zPgjiLcnskB6jViGZm0lgIB4M&amp;theater">Amazon Student / Facebook</a></span> 
+       </div> 
+       <div class="row"> 
+        <div class="large-8 small-12 columns"> 
+         <div class="post content calgary"> 
+          <div class="row hide-for-small-only"> 
+           <div class="large-12 columns"> 
+            <span class="category"><a href="/calgary/category/life">Life</a></span>, 
+            <span class="category"><a href="/calgary/category/business">Business</a></span> 
+            <h1>16 ways for college and university students to save money</h1> 
+           </div> 
+          </div> 
+          <div class="row push-down-20"> 
+           <div class="large-7 small-12 columns"> 
+            <div class="author-wrapper"> 
+             <img class="author-img img-circle md" src="http://0.gravatar.com/avatar/3cfe6d41e7a6e895b281490a31946fd5?s=96&amp;d=mm&amp;r=g" alt="3cfe6d41e7a6e895b281490a31946fd5?s=96&amp;d=mm&amp;r=g"> 
+            </div> 
+            <div class="author-wrapper"> 
+             <span class="author">Kylee Williams</span> 
+             <span class="date">Feb 21, 2017 12:00 am</span> 
+             <span class="sprite flame moderate"><span>254</span></span> 
+            </div> 
+           </div> 
+           <div class="large-5 medium-5 small-12 columns hide-for-small-only"> 
+            <div class="addthis_sharing_toolbox right"></div> 
+           </div> 
+          </div> 
+          <h4 id="pressboard-ad-sponsorship-tag" style="margin-bottom: 35px;"></h4>
+          <p>No one&nbsp;understands what it means to be broke more than a college student does – that’s a given.&nbsp;From bills to social events and everything in between, it can be so hard to make and stick to a budget – especially after midterm season when you’re just looking to blow off a little steam.</p> 
+          <p>Fortunately, we have 16 ideas on ways that any and every college student can actually save some money, while still having a life.</p> 
+          <h3>Extreme Couponing Isn’t Just For TLC</h3> 
+          <img class="wp-image-118334 size-full" src="http://images.dailyhive.com/20170216173923/coupons-.jpg" width="1000" height="556" srcset="http://images.dailyhive.com/20170216173923/coupons-.jpg 1000w, http://images.dailyhive.com/20170216173923/coupons--500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/FreeStuffFinder/photos/basw.Abqxza2EorViQeTentlwrbeJekY2Ht6giFrmLEhsJWAiaSrCX70tSPUbfI7wN540HxdA_9M0FTpKA5bUvIW6JTQCnYqNhsYxVKrUgeluk_5CLY1Fjlf6Sk7uBEBNJMKLYiOC7RNP25C_G1hq9NzZMLVh.1246287738786889.1419603174757988.1421627521222220.10154816371364870.1383844044979707.1422094377842201.10155136887222494.1422019924516313.1361669223884717/1383844044979707/?type=1&amp;opaqueCursor=Abrlm9GUTHB1q6OW-Rrxr7caaZ6IKzC29mgUGJYPZc9G3K_7OoWv4khmy0nxaF85mwKxGIPY2p-0yYotVrZ4EeLGQSUe6d0HvVewbgG0sXVeUmTD5YjusJwSPDD5vp6OV0deVrPqCpC3erLTQwKaMu22OOqA-QOxOhETRVJZe8k3mRuxja6c-wE24DnfrhYKyXzsaO_lh0-So51wyaqzD3Dg1bbJJNXnlQoJecASV4XvrZB6-NtjH1PzqFWKhrWVsqNtPwbGDM2du-X5IfeD0DKFSEOUdeebEt8ErRcpNboXrIAprqRi5X2UOd8SVC4Mu43ZGbjE9VbmYTjWwK77qb_lvL31HIhWQyK_wcATVl1yyek8BsEJB0OhPdWZS3zoe7DiP2U-efSrTR7un39gmk09R7POT5_fQyt1HlEwSz0awpSbAjHQ9CW_8AiAB7lVvMpn3jY7rv6SzGmkm9kB0KbYIZK7lUrkFKy5XqQR2CyMYSWg7jg4EeFeqpnQrg8FS054loXKEg6vzLw6QDnOPKLcuqOB62gcoc8iE9KloErEzA&amp;theater">Free Stuff Finder / Facebook</a></p> 
+          <p>From Groupon to weekly store flyers, clipping coupons is a seriously underrated way to save some money.&nbsp;You&nbsp;can find a deal for pretty much ANYTHING, if you actually put in some time to look.</p> 
+          <p>Before you decide to buy some tickets on Ticketmaster, order a pizza from Pizza Hut, or purchase something online – search for coupons! Trust me, it’s worth it.</p> 
+          <h3>Amazon Student Is Your New Best Friend</h3> 
+          <img class="wp-image-118336 size-full" src="http://images.dailyhive.com/20170216174517/amazon.jpg" width="1000" height="555" srcset="http://images.dailyhive.com/20170216174517/amazon.jpg 1000w, http://images.dailyhive.com/20170216174517/amazon-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/AmazonStudent/photos/p.1258560527511490/1258560527511490/?type=1&amp;opaqueCursor=AbqGLSwTIq73Ol74tIR38xT4X7Hpe079v9ioJWUKzaDBiqGBdQlki4EiwJBRJ5_dgXb86r3t5LOie-C5wyB5lxQfLmzXYTyaoDGdK3XbSDB1mEdAHy6wbSbPXRkzW9yIMqGZESfow081Kaoj_Ive4yapoKNQrarKZvca23PRI26OG4k7VMvBhhZqEQCeeJqvYBpuK9yuoDMyDN_y0N6O-P-Ixpj7lII86IucTkYJXVhf51RTE_wwjAmrUCWOeUf3Ln7lTD17nDoHfCJMQnjbmEeFGD1JudsDGUNghXFYn7m4-x9vAWdemk61l7eI5cYCGbnyXPYt4yq2BNchJbQ6ACDqhmTib6EXdG-fole6JEjZas6f6Sila6xFDXlWZDoTqaI&amp;theater">Amazon Student / Facebook</a></p> 
+          <p>Unfortunately, not enough students even know the true wonders of an Amazon Student account. For starters, you can sign up for a six month free trial. If that doesn’t already have you opening up a new tab for Amazon, I don’t know what will.</p> 
+          <p>Amazon Student is basically Amazon Prime, except it’s cheaper. With two-day free shipping and student-only deals, you really can’t go wrong. (Make sure to check for your textbooks here before buying them elsewhere!)</p> 
+          <h3>Limit Going Out Clubbing (Or Go In Groups)</h3> 
+          <img class="size-full wp-image-118341" src="http://images.dailyhive.com/20170216175325/going-out.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170216175325/going-out.jpg 1000w, http://images.dailyhive.com/20170216175325/going-out-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/CowboysCalgary/photos/a.145498615514656.31790.145442132186971/1404886472909191/?type=3&amp;theater">Cowboys Calgary / Facebook</a></p> 
+          <p>We get it, going out is a part of college life. The only downfall is all of the money you spend getting there, actually being there, and getting home. So, if you want to save money, consider cutting back on hitting the town every night or every weekend. And when you do go out- pre-drink, take an Uber, make a guest list, and go with your friends – it’s a lot cheaper this way.</p> 
+          <h3>Is Cable Really Necessary?</h3> 
+          <img class="size-full wp-image-119717" src="http://images.dailyhive.com/20170220195707/netflix-final.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195707/netflix-final.jpg 1000w, http://images.dailyhive.com/20170220195707/netflix-final-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/BlasterjaxxOfficial/photos/p.900002926744314/900002926744314/?type=1&amp;opaqueCursor=AbrJ7vApBnuo2iAM86t7KIGrD7IeivV7U0Vi6D4h3iBqll8hazfx_5kK9pigxM1HE6isbz-L1G5THlpNaIrVDQekKnXdsrDVkNAKAa5wlXrw9atkK_9X13hqMOyZubaUwnoRQq8W5OGdDA4SDrtEP9Mxvj-hDCn2YxcuLS-3nhPA9fyuFk6tjypsp2PgGRW0F4AY232mPuRw2ZdhXWBxmLcyVl41V9Qt94JRWVWuUbbQdkvEVJ7QkXKF7c3BBmts34IjzaXntsKiY4o0gSiYy73ND18_w6uNTxYjHuiWrzNJMV2hWBIq9lbS2bQzy_x_B3i5tpBLaFiPIFOWts0m8nhmWdEAXQThNTpSPZRIKuO3ycJTLzfX8rHcC12OqkAc0GcqZ_FY-NCB3xaKVwungJzt&amp;theater">Blasterjaxx / Facebook</a></p> 
+          <p>Sure, it’s unbelievably handy to PVR the shows you can’t watch live. But is it really a necessity? With Netflix, Crave TV, and many others, it’s kind of moot. Of course everything isn’t on Netflix here in Canada (looking at you America), so try some other sites like Putlocker or Project Free TV to catch your shows. The sacrifice of HD quality is worth it when you have a little extra green in your pockets.</p> 
+          <h3>Give Up On Brand Clothing</h3> 
+          <img class="size-full wp-image-118350" src="http://images.dailyhive.com/20170216180838/brand.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170216180838/brand.jpg 1000w, http://images.dailyhive.com/20170216180838/brand-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/photo.php?fbid=150968318663210&amp;set=p.150968318663210&amp;type=1&amp;opaqueCursor=Abp1EqueAyAu0UgQbGNueSTJX1mDxKry0pQN3duLlGXOb_pruadV-nmIytivjJWvnz3vv0excesYiS8kuPIDBN6BmAhcKWRPrjetvh2ANWSr6Qib6np7UbFeHLi0RUwzujHt2Uaq3K_4dDyu443MdtjF2TggsAoIHWztNb5FjN4Nm6WEYiVIorgF-W5MquaEQ9QqKPEUsjDiwKRc1DaTbbIF2nozdKkOULmMiQaz59frdfnNmsF90Js_MPSAfoVBCkjRrTSoJBofXqNIf3pvwUgOepMlX5oRcOxUgrxdebK2UBusSlkWXui-4nJKlFmdYWgP3U0gHb5eSFUU3a7WXsrkMLK7KUp7LzkM-PX2RbjDeFDi9Y_2ubr-4y6417QZn11olYGbyNV4aDmIIdCXbgCNSZKbjeihovmbshDn76WmuQ&amp;theater">Sharron Vuong / Facebook</a></p> 
+          <p>It’s beyond easy to get caught up in the materialistic aspect of clothes shopping, there’s no doubt about it. However, when you’re a student, brand clothing shouldn’t be a top priority.</p> 
+          <p>What you can find at Artizia, you can find at Urban Behaviour for half the price. Sure, you won’t have that expensive tag on the back of your shirt but who can really tell the difference anyways? Spend big when you make big college students.</p> 
+          <h3>Buy Everything In Bulk</h3> 
+          <img class="size-full wp-image-119718" src="http://images.dailyhive.com/20170220195718/bulk-final.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195718/bulk-final.jpg 1000w, http://images.dailyhive.com/20170220195718/bulk-final-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/BulkBarnFoods/photos/p.824897394279643/824897394279643/?type=1&amp;opaqueCursor=Abp4o77K0VL2t4qm-35W_j_mr8S6GVdNU00zUyDiHLYvTQC86Oa6ofMaR_dSF4jA6mEXnY7fVGKZw-D7u4qGEZyD-tClJxR_wbgp9H5BS7UAJsE_8pqadipkzDrzKhbPOMk2YmyJba0FW9uJq8DLOM6HVVUctn_tvyduErFJ43ByR_rE49O-b29PRCFvTRzRm5RXg5VJB4bMWre1zesKBwGC0IXLOK8uNyBq4hFbtfNH24l0SoXCy3Fh2P22RtIIiREqPFoSH1h6X6IRxGfjdxReq8OMPU0PRirAF09_k7vlM_WUqht8ZutTKK3SmsZSvP03bm_LaZo_QUNGuEgEIgQfDL-sAjJaAfHNH5PotJ5tBAL5V__hxtnM-DsnCbqgA3Rlqjj-6vEvZtV55D-EdjgY&amp;theater">Bulk Barn / Facebook</a></p> 
+          <p>Bulk Barn and Costco are genuine gifts to the universe. This one is simple. Thinking of treating yourself to a&nbsp;cookie? Don’t buy one from Starbucks for $2 or more, buy a whole pack of them for the same price from a grocery store.</p> 
+          <p>Try to resist the urge to splurge once in a while and it will (literally) pay off.</p> 
+          <h3>Look Out For Drink Specials and Wing Nights</h3> 
+          <img class="size-full wp-image-118380" src="http://images.dailyhive.com/20170216194533/wing.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170216194533/wing.jpg 1000w, http://images.dailyhive.com/20170216194533/wing-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/BlueChipCasino/photos/basw.AbrIBa2ZiUEwMLV_sZnY2tupPVC0x4gQWpumKueXzqdcL8B1UzCwgr4dfdEWFoUWFtNAmgu0ak80QqHbtfuyMBlGM6ZzxEmUssT16Fw_1OatggOVMiTsA_jKGKt9ksiu77Fz1eazWbtdtbJSoPIzU6OQ.1146152685463477.1119427978110619.10153395540362560.10211974699950975.926603927383126.1188286727871684.1636779226539287.1044964928915587.1011991898879557/10153395540362560/?type=1&amp;opaqueCursor=AbrpxAt4_tOuSbkkoH5OzQTq6JkLAfhz42a8w5bwHraeTN0m_GO3GfjBhEucp46Ou3lU8Gzgd3DyrBZjYMeMcEw4qjlyrgnEJH3jXutbh3iNR7OLKyNfXx6EMc7AGYQx4k-sa5h0AUoRuE0asCH0vkbTCyqJPfemwKp03llGfO7rbS7PoWsWox7J8j37B8xHJDfTTAaHbeN-mT_93pdaUURfsdDWPirGgNxiQL900c74YE938dMuEzylGFTAXtrgKiqu6rTWRDF72uyrjMk7Cf2UhGV9ZwJdbfV1zAxsmcQ3RFaf325M8EuQk0AMRnzDCk_lENU00IuxjC0PWzXT7NxSoxDonKz3j1-7Lkr4VKeWpyU4EiwnBFhtV185B7z8tOzpHtvsBIJgg8b226xOOFn_X-cOy9mqsdP-kxZJZPtK0Jkx2EIGikXNInE0nu95hRP8j7XU1fkAp2radL835Ch6ooTch2f2Im-cY6JWaZEuAxMa220i-KI_9Ao8jxFjgvqbH0oon0sMwBgdhek9JZ2F_TQq06LdgwXa3Gzj91k4OaEsRUC5E1ESx0fHEVMNOcn_-itTedagt3rAvYZckkZGxB61C2ilji3_X-4074oi2d9jBM8iX7Ut-aNJKrBK3ec6M1634kdGJKt4KGHE8G96&amp;theater">Blue Chip Casino / Facebook</a></p> 
+          <p>Part of the whole college experience is going out with some friends to have a great time. When you’re in the mood for some casual drinks or some cheap food – check online for drink specials and wing night deals!</p> 
+          <p>There are deals every night of the week around town, you just have to do the research!</p> 
+          <h3>Get A Job</h3> 
+          <img class="size-full wp-image-118383" src="http://images.dailyhive.com/20170216195027/job.jpg" alt="" width="1001" height="555" srcset="http://images.dailyhive.com/20170216195027/job.jpg 1001w, http://images.dailyhive.com/20170216195027/job-500x277.jpg 500w" sizes="(max-width: 1001px) 100vw, 1001px">
+          <p class="caption"><a href="https://www.facebook.com/waubonsee/photos/basw.Abqtej2HV0UUzWLG6CQXteNUxknYosctXzudeBpvV39bsxHd8EJgt_3gEPUJOSgRO9d1BmooVMvc6jjh6T-N4gC8fEUMmZEEmfcvxjIL0PVEyUgWLswYqTT-bEwXzY794L4C3CIXwxMMpUQVrukavnoA.1127658743999996.10154068580000689.838618086276558.1266803893401596.1160627547369418.1390656931007670.1306421316046815.1702951909730926.866816753390925/10154068580000689/?type=1&amp;opaqueCursor=Abq9JCtmI272YCoVU1AWaDZWvibnyF3bws7XeJzOURxIQGj0EiJ9mrK43XdM0lLRKv2nxzRh_3R8aWeMdxva5HttpCLoQrOqH_TaANpOhxjvShVwjADCJauNqPO1WErdCOy4IffrD0d9lRADr8qhvLe-qAIff4C49Dy30kEIRrS4S3diS5LgFMYH3MQJPdLUdlYcbfpOaQfijfTKwExJ7tXDQIHVtIv9FfREMOSyo02-KiEe_Iv3VEIJ2rmGSs8xqOwIv7Q6o_T36W3OcOQwj5bH54Gr513K2iEKcFraKVKX7pOpksIOk9DNt6a4k5WoQgjCcYkW7ZXh8xZFT1PYGk-WdhWUaPeTyaCwq_L-2ubzbB4XeMWV9AxVxDscf0qRhgesJ9POG8C8YqT3bN7GXgSQlrjoysmH4fj1fqx5dgxiVj504jHMaPQmCJ16uB-8R_QFA2lu0Yd70Bw0sTkA6yeecN8wwznb1U2mM3246T-dgTlqHEwrd-Is1xJj7cpQhJhQkHkTZ5Ui72OftSQA0I7zrb3jGW3bTIe2B-qiJj-XW6nU7iPVa7GabsC6G76CgmmxPjkN1qqf9JEG7KyE2lQp&amp;theater">Waubonsee Community College / Facebook</a></p> 
+          <p>Sometimes working part time on top of all of your other responsibilities and your school work can be a bit too much. However, if you do find that you have a little extra time, why not try to make a little extra money?</p> 
+          <p>Whether you work once or twice a week, anything&nbsp;helps. Think&nbsp;babysitting, freelancing, or dog walking. Get creative!</p> 
+          <h3>APPLY FOR SCHOLARSHIPS</h3> 
+          <img class="size-full wp-image-118387" src="http://images.dailyhive.com/20170216195446/scholar.jpg" alt="" width="1001" height="554" srcset="http://images.dailyhive.com/20170216195446/scholar.jpg 1001w, http://images.dailyhive.com/20170216195446/scholar-500x277.jpg 500w" sizes="(max-width: 1001px) 100vw, 1001px">
+          <p class="caption"><a href="https://www.facebook.com/McElhanney/photos/basw.Abr_updIE03mcGRE2Ewo9gZplFyEGXM0-z39MnRlCO5q5SAXcpqWu_Y2D9Z531FzUXcB5-GtDD7fLysBxpL4BZo6QGUcekm9yk04pDU1sEAq8MgYmXvEIObMEQJSU1PRxn35TdDWz-NVhEukVSi2O4BV8vs6g1ocb6EdDESnVxqPFw.10153566340680025.1792508171010034.986932577986366.1211314635577485.559921417507845.1247646088590062.10158118411505635.862928173769902.895492467149775/895492467149775/?type=1&amp;opaqueCursor=Abqyn65oANRghEWb6dz0bPPHmB2JXZbh9YLNZOw9rhvXfI-6roLGcBtrM-mJLyYwwBxPEF0GPfBGJ06koLmIpPtKizOScR-F54xqCyP1H5d9cWG1rnWyMkRh3h4DEN6A8Rs8qKfnV6I8SNnR-CSBj0NUd3ddOmuwxcgTlq6KjzRMOklTyFJSQtaBdxBqKjme-sK-_tL341K0DTiIP_3ELKLUe99d7DKxvIqlZBmR_BqfIA-4DQW4GRVVRh5ocXdrenvaJwHFE6G-h81ghR4D2nh-7aHv4mu9ju-TNPLQwkh7VsycKWi-lYP7xVksFMTfk5ztzgPwlJ-CzlH7VFw7bpQNpnx8KSZkika1xOL0ugxV3pxw02mgV9VV7DhCQRufSeG1CrMZQMrOTpkm17xa8NPZ8Zkw_HoNnfa3G294KZiD6Z1In_csCZmoL5Yjz5Bu67mIfg9I-yvbyO3DNS1EOk099p_aCThya7oWzt3i5O0Svw&amp;theater">McElhanney / Facebook</a></p> 
+          <p>All college students NEED to get their stuff together when it comes to meeting those pesky deadlines in order to apply for scholarships and student awards.</p> 
+          <p>Many people don’t realize just how many awards, scholarships and bursaries there are to go around, and all of them aren’t just for the very academically gifted. Apply, apply, apply! Someone has to win.</p> 
+          <h3>Open A Savings Account</h3> 
+          <img class="size-full wp-image-119721" src="http://images.dailyhive.com/20170220195751/save-acc-final.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195751/save-acc-final.jpg 1000w, http://images.dailyhive.com/20170220195751/save-acc-final-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/KCCUSVG/photos/p.1142989755749350/1142989755749350/?type=1&amp;opaqueCursor=Abo0qccTf7mlSF-CG3Z7KLWxtVYMJSvQFKHBw_j_d65JV86uL0ZvDEhTEhDvsxz2GJw0SVONMIHi5VZwmJvYnIH1711gG9esdr1--FWCK0cdvv5HzPH4TlqvyQNQAFn7DRTaBggub9vliaBQraOfYQI-UqEDPxIr91qPnftAK_Mauay29BPvYpKnQhwEc12JE3SiCiwUc4c98u6RKIK1b7pe6fqFZDs9U-7BP3VNysTQKSZECKhTCwoIDsap8s-dSfSLC1vj0A-nj8M0Ul2M_K6FGexbGQ8JcKnu3846_bWZHHboOimk3wTRU6Hy7LtO9EL4eGsSzUGAsFFTIQL12xob9Zm2QUwXYK-xXAmY0mJ8rCz0cfUKgFd0lqv-CnMyAV8&amp;theater">KCCU LTD / Facebook</a></p> 
+          <p>With mobile banking, opening a savings account has literally never been easier. For most banks, you can actually open it online with no bank approval needed. Plus, since you’re a student, there most likely&nbsp;won’t be a monthly or an annual fee. Putting away even&nbsp;10% of your earnings each paycheck is honestly all you will need in case of a rainy day.</p> 
+          <h3>Take Advantage of Your Student Discount</h3> 
+          <img class="size-full wp-image-119719" src="http://images.dailyhive.com/20170220195729/stud-disc-final.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195729/stud-disc-final.jpg 1000w, http://images.dailyhive.com/20170220195729/stud-disc-final-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/SalonXUK/photos/p.1874046426149604/1874046426149604/?type=1&amp;opaqueCursor=Abpixxq1-vsrVbzRaGNi2540Rwf3cfdr9IEmFO9KlQBnFh3Wb3msaK9pVXjMhVFW04i81T1q8N6zwGp1YV8XPCNKl84Fn4pMfS9MYqfQYJ3J60a8crgpwAgEa3uPQaVrzOCtovRGql1jujORZNhf0yYIfNhSBodPt24qGdpiCq6UIqLL-iv2HaddgCwP93kjFaZusGPcNGEa47xk2tAIYIVSfG4uXmU99Sf2DVaGYvYN5oM8jNCfN81zpPJzbk2pt588J67OTH4bol0Skuq4PcmhXERjFq3cGnkIRngAKwAlMYRg9hHZonGPdgjraFF8s_bMGF7FHWaeVHIPBpVtseT3-ZbeU9XDqVkS16OcN6Bb3wplQg3sx0Ps8lj32NYBtFo&amp;theater">SalonX / Facebook</a></p> 
+          <p>Usually it’s kind of a hassle to get carded everywhere, but not when it’s to your benefit. So many places provide student&nbsp;discounts, they just don’t like to advertise it too much.</p> 
+          <p>Make sure you’ve got that ID on you at all times because places like Topshop, Apple, Best Buy, Bulk Barn, and many more, have student discounts available.</p> 
+          <h3>Check Out Free Events</h3> 
+          <img class="size-full wp-image-119716" src="http://images.dailyhive.com/20170220195657/free-final.png" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195657/free-final.png 1000w, http://images.dailyhive.com/20170220195657/free-final-500x278.png 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/photo.php?fbid=1203336133114260&amp;set=a.106347356146482.8622.100003136543886&amp;type=3&amp;theater">Makenna Williams / Facebook</a></p> 
+          <p>Who says you have to stop having fun in order to save money? I don’t know if you knew this, but Calgary is not a&nbsp;dull city. There are always cool events going on that are either free or cost next to nothing, every month. Fire up Facebook and simply type in ‘free events Calgary’ or something along the lines of that, you might be surprised at what pops up. To read an article of some free events happening in Calgary this month, <a href="http://dailyhive.com/calgary/free-events-calgary-february-2017#.WJtWD4n-9MM.facebook">click here.&nbsp;</a></p> 
+          <h3>Stay Away From Bottled Water</h3> 
+          <img class="wp-image-119720 size-full" src="http://images.dailyhive.com/20170220195740/water-final.jpg" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195740/water-final.jpg 1000w, http://images.dailyhive.com/20170220195740/water-final-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/FIJIWaterKH/photos/basw.AbqIif7gD9PyOf8P-kPddV-QagGgtUE88ASXSKTfmrpIdKBvoCXF3ldrqJVOB764WoryyAbt1L_hL9uq_VX8y_I_lWiYYlbjLUjGTLXSFgIBD3w9RSH2o_0RrEiz3ngAVpl49wc5lZ332t-nJMlhmvtR.10154570128228894.10154743265988894.933963020036006.1099802810049872.10154885403758894.10154407468008894.1819265268335043.770625926372194.10154886182623894/770625926372194/?type=1&amp;opaqueCursor=Abp3G9Zac85ksT0QTDQTR9Y2_V7xhnMyGXT3JC6scnjyn3ustVuGCXlxOLOY6cv4wv2BCRknSgndBhK_jiN46Whu3IrUrQVUnoOzC6oacpXt_68oiKoItFBgJ83kwOoQmR1-CNZ2IF6qStisJ7UPdKGXm7lzpC3yNs3YZc8XINwr1THPI9VD1WtWNGroE4F5lpFcx85yW_baEv6UcNxt9iER3QpObSOBQ_OUJuvH7FCzFktz1qfTTt8bz-KCUfi0RO1RtqB-WnrXaKBu0sYuGxPa-h1KU36ACWvkTSPJR2-DPbZ_7ONeHQj01uiTIOmONDYh8142AIQpWDWd1shu9-ePgZcKzeIF8uxmFMtRnBpGyvT-dysr9KZV9V-1zZqDp29up2guF3OEbAiGp7WPHLhSSHh3nH02qeHtIy8zf-J_fNEMyT3eCgX8xGoF4WFMLweBIYIbtzVlLy8ltL5yEOmnnUfc5GZhcTMpDE_G-ILm1_ld4KMiHcabsF7qgK6zHPNCYkizG5HKkby0DsPe7yKUtwZLHZ7jIijQYq-HV2XzwCJChaEwfAhMdDH7hQ9y82GhkJ2hd_C9EZ-T5qNbaHrp&amp;theater">FIJI Water / Facebook</a></p> 
+          <p>There is no greater scam than buying bottled water. Living in Calgary, we are beyond lucky to have clean and safe&nbsp;tap&nbsp;water. For many other countries, this simply isn’t the case.&nbsp;So many people spend their money on bottled water from the store or at a restaurant/fast food establishment. Why? Not only can you just fill up your own water bottle from home, but every single place offers tap water, you just have to ask for it! Save your money for things that you actually need.</p> 
+          <h3>Use Public Transit/Carpool</h3> 
+          <img class="wp-image-118394 size-full" src="http://images.dailyhive.com/20170216202643/transit.jpg" width="1000" height="555" srcset="http://images.dailyhive.com/20170216202643/transit.jpg 1000w, http://images.dailyhive.com/20170216202643/transit-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/CalgaryJournal/photos/basw.AboprHvFK8bfivIBcFQaEM96fG_rATfV1pX6SnmKHu12N51Oc975GoiHUE5izhxvm7IXJVvS6AikFBGhvuZBLXedFp_1CxB7P_1Gbufdd86EBSlC3WBVWxof3eLuZx0hYwWCmxRmy6tuN0Sor7eWskoOiGdfskAM_bBwP2r_TodBfQ.731803876922809.10154110053996302.1407245312640214.435983293238575.1298781920186101.1532918683389898.572894872880749.10153476892161219.196095077466905/10154110053996302/?type=1&amp;opaqueCursor=AbpNW9Ohl12DJY2EzcR51XRlIhemW24U5X0GH8joMvRv1x5j3VKWvRJTJL35Sw4hzNz0QEpdFEQdppxxk4I9L4pPq8l3A06WQgCbxfImO2NFroWCw-i_aBKzANmQrXc1sETyu-Os0ba04U1b4nAWV0rQc-hbFP7yU3rlfuFRWYyQSuiLTrfDXjLT91LBJ2gzU7dlGoilzh486jyVFckYbIj1BDXAM0zOil7aNpKXtKTeD8067O5kze5lZLOH32beMrvtoUJI7fXi_CC9drL_mq0RZVUFM6z8_o2plabmVIB2wmKim1etIsr1BpZfMjMsIlwWjlwZK0W3eaaRh5_HHF4SMwKEBxqOdRn9NTLv7CMe2G8uyAHiA2i7x9d2NTk_fkIWvfKHfLPMLBbgvEp3oSoul91RdKxd7bSz43aUq5v1Rksk5c27UkbxKBL7kzbea7hOkGCutixrMJO_ESbG-rP9rrMKQiN-AtO1tz1pqXM8N9h-k4txFjn9Tqmo4BtaK2pXFCEe7DqJfoCpH98f0FnvcMSbl-4Rszwp62G2JngBQB9aewY-gpzECsjs-3fpY3XOpRoM8kWMEZVyVuv2x_WEyZDiWQR2Xji4fCYiUHKljqrOmH9KbogAi9sphdG2NgSem09mxsQ-KsfjxM19iiKGYF_hduIGXddj3l5Zzf7r-A&amp;theater">Chasing Summer Music Video / Facebook</a></p> 
+          <p>Not only is this option good for the environment, but it’s good for your wallet. Sure, it’s not perfect, but Calgary transit is not too shabby. Drive to the train station if you need to, but taking the train or carpooling with a friend on your way to wherever is the absolute best way to save money on gas. Especially if you go to a school where transit fees are included in tuition.</p> 
+          <h3>Try A Money Savings Challenge</h3> 
+          <img class="size-full wp-image-119715" src="http://images.dailyhive.com/20170220195643/money-jar-final.jpg" alt="" width="1000" height="555" srcset="http://images.dailyhive.com/20170220195643/money-jar-final.jpg 1000w, http://images.dailyhive.com/20170220195643/money-jar-final-500x278.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">
+          <p class="caption"><a href="https://www.facebook.com/water/photos/p.10154695046273641/10154695046273641/?type=1&amp;opaqueCursor=AbpdGPOytqL1gtW4YGT7dlL-bRnMf0jfsfIQGyWdBYnm_R0qxVNo72KM3USj7XMBpyvL3ppY26fAMVgdiy1JTWKxkbAmv0rYiadZtzLHC-h8dw28EMnSr8gUk2kJAKNzzeotasW_etYoHP5Gv4zcuocnfBhTOo_O_QDcwS0fYw6s_ztISqDfulIJp0igalHnqiOKxXyBmBZC-YEOMHtp42zzJozE8gbPTeVoDsjepd9t9hqq8fgFFi8-LcyvuUhjkvEHSO5L_0EpVdhwii865t0-xTLx1mxnkedeuUy1JmzfLZJtXwmS8EV-g5aVXp0cf3Q7NmbmK9EvHNJB3dBnRqEiG03ei0vqzMamI_IJhoyAEx7kz8E9j2bcwlsV9HH3ICY&amp;theater">Water.org / Facebook</a></p> 
+          <p>Almost every day there seems to be a new challenge or idea trending online for how people can save some money. Of course, not all of them work and some of them are probably scams… but if you do your research, you could potentially find a really great idea!</p> 
+          <p><a href="http://thewhoot.com.au/life/52-week-money-challenge">Here</a> is a link to a challenge that honestly works and is incredibly easy to stick to.</p> 
+          <h3>Use Your School’s Amenities</h3> 
+          <img class="size-full wp-image-118396" src="http://images.dailyhive.com/20170216203458/gym1.jpg" alt="" width="1001" height="555" srcset="http://images.dailyhive.com/20170216203458/gym1.jpg 1001w, http://images.dailyhive.com/20170216203458/gym1-500x277.jpg 500w" sizes="(max-width: 1001px) 100vw, 1001px">
+          <p class="caption"><a href="https://www.facebook.com/170775309945418/photos/p.367949240228023/367949240228023/?type=1&amp;opaqueCursor=Abqvf2F3Y3hbOdcomCHD5GueW2oe-iLOH4pZojnUO8DMm9Fr_iNaVbmx5eBi3bc1aPxJPD-IAE5IIr5QrtMXt2EbpMjP2xm94QtP3yt9VXxVxdpSl4bN7XhGw_Rt37P1WVRRN_-6BBBjFBP5QdjYCGdh07f10kzlUfxEeaQguqV_eRopsUFmCHGOLkeeAuoRkcNR0CEw5yN1q2sFr23WQDaq8eLMIG3PRYzNIxlX7SAv-BPud8-MwyeikZWXXNr0SgGy1TtAxjBYfDgZCAIrhKpFUsUcKg5-6Ao1anhBZhGwIYvV_39liC4uSvlOI6uhQT_vDPEqo9wmhtkokI4aJ9qaKEhQZPGQhpLFMioSzoX9bNY_xghIBEaqalt4dUJiCeBQBbGEXBw-bL6fZzEz8NaXMVQQpc3qajvsKlKuEt7UNg&amp;theater">Source Gym Kit / Facebook</a></p> 
+          <p>The majority of&nbsp;universities or colleges in Calgary have some pretty amazing on-campus life hacks. Whether it’s the school gym or another provided luxury, becoming more educated on all that your school has to offer is more than smart. Look up online schedules or make an appointment with a counsellor, make sure you’re aware of&nbsp;all of your options.</p> 
+          <div id="pressboard-ad-sponsorship-msg"></div> 
+          <div class="show-for-small-only"> 
+           <div class="text-center" id="div-gpt-ad-881195027772561268-6"> 
+            <script type="text/javascript">
+		googletag.display('div-gpt-ad-881195027772561268-6');
+	</script> 
+           </div> 
+          </div> 
+          <hr> 
+          <div id="authorbox" class="row push-down-50"> 
+           <div class="large-12 columns"> 
+            <div class="authorbox-image"> 
+             <img class="img-circle" src="http://0.gravatar.com/avatar/3cfe6d41e7a6e895b281490a31946fd5?s=96&amp;d=mm&amp;r=g" alt="3cfe6d41e7a6e895b281490a31946fd5?s=96&amp;d=mm&amp;r=g"> 
+            </div> 
+            <div class="authorbox-info"> 
+             <div class="authorbox-name">
+              Kylee Williams
+             </div> Writer for Daily Hive Calgary and proud journalism student. Passionate about travelling, politics, films, photography, reading, and writing. 
+             <div class="authorbox-social"> 
+              <i class="fa fa-twitter md"></i> 
+              <a target="blank" href="https://twitter.com/kyleeewilliams">@kyleeewilliams</a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="disqus_thread" style="display:none;"></div> 
+          <script>
+		var disqus_config = function () {
+		this.page.url = 'http://dailyhive.com/calgary/how-students-can-save-money';
+		this.page.identifier = '118141';
+		};
+
+		(function() {
+		var d = document, s = d.createElement('script');
+
+		s.src = '//dailyhive.disqus.com/embed.js';
+
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+	</script> 
+          <noscript>
+           Please enable JavaScript to view the 
+           <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+          </noscript> 
+          <div class="text-center"> 
+           <a class="show-comment expand hollow button">SHOW COMMENTS</a> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="large-4 hide-for-medium-only columns"> 
+         <div class="sidebar"> 
+          <div class="text-center"> 
+           <div id="div-gpt-ad-881195027772561268-5"> 
+            <script type="text/javascript">
+			googletag.display('div-gpt-ad-881195027772561268-5');
+		</script> 
+           </div> 
+          </div> 
+          <hr> 
+          <div class="push-up-20 row"> 
+           <div class="small-12 columns"> 
+            <h3 class="header-sml"><i class="sprite trend medium" aria-hidden="true"></i> TRENDING</h3> 
+           </div> 
+           <div class="small-12 columns push-down-10"> 
+            <ul class="side-posts"> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/calgary-winter-storm-warning-october-1-2017"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20161122132509/shutterstock_65552290.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Environment Canada issues winter storm warning for Calgary" href="/calgary/calgary-winter-storm-warning-october-1-2017">Environment Canada issues winter storm warning for Calgary</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/jagmeet-singh-ndp-leadership-win"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20171001133200/ndp-leader-jagmeet-singh.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Sikh lawyer and martial artist Jagmeet Singh elected Canada's new NDP leader" href="/calgary/jagmeet-singh-ndp-leadership-win">Sikh lawyer and martial artist Jagmeet Singh elected Canada's new NDP leader</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/edmonton-terror-attack-commonwealth-stadium-october-1-2017"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20170906161806/Untitled-design-491.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Edmonton terror attack: 5 injured in knife and vehicle rampage" href="/calgary/edmonton-terror-attack-commonwealth-stadium-october-1-2017">Edmonton terror attack: 5 injured in knife and vehicle rampage</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/canadian-leaders-react-las-vegas-shooting-2017"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20171002070045/Untitled-design65.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="How Canadian leaders are reacting to mass shooting in Las Vegas" href="/calgary/canadian-leaders-react-las-vegas-shooting-2017">How Canadian leaders are reacting to mass shooting in Las Vegas</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/flames-sign-jagr"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20171002081824/jaromir-jagr.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Jaromir Jagr signs $1 million contract with Calgary Flames" href="/calgary/flames-sign-jagr">Jaromir Jagr signs $1 million contract with Calgary Flames</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+            </ul> 
+           </div> 
+          </div> 
+          <hr> 
+          <div class="push-up-20 row"> 
+           <div class="small-12 columns"> 
+            <h3 class="header-sml">LATEST</h3> 
+           </div> 
+           <div class="small-12 columns push-down-10"> 
+            <ul class="side-posts"> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/series-to-binge-watch-fall-2017"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20171002115934/Game-of-ThronesTELUS-Pik-TV.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="The top 9 series to binge watch as the weather gets colder" href="/calgary/series-to-binge-watch-fall-2017">The top 9 series to binge watch as the weather gets colder</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/edmonton-terror-attack-man-charged"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20170609101952/shutterstock_536219983-1.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Man charged with attempted murder in Edmonton terror attack" href="/calgary/edmonton-terror-attack-man-charged">Man charged following Edmonton terror attack</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/canada-most-pampered-pets-2017"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20171002144210/Dog-running-in-the-park-with-a-toy-alexei_tmShutterstock.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Vancouver has Canada's most pampered pets, says Amazon.ca" href="/calgary/canada-most-pampered-pets-2017">It's official: Vancouver has Canada's most pampered pets</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/calgary-weather-week-sunny-storm"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20170725115607/Untitled-design-152.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Calgary weather this week will be calm and sunny after the storm" href="/calgary/calgary-weather-week-sunny-storm">Calgary weather this week will be calm and sunny after the storm</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+             <li> 
+              <div class="row"> 
+               <div class="large-4 medium-4 small-4 columns"> 
+                <a href="/calgary/consular-officials-las-vegas-canadians"> 
+                 <div class="centered-img" style="width:120px;height:80px;background-image: url(http://images.dailyhive.com/20171002133328/Untitled-design-84.jpg);"></div> </a> 
+               </div> 
+               <div class="large-8 medium-8 small-8 columns"> 
+                <div class="padding-side-10"> 
+                 <a alt="Consular officials sent to Las Vegas to assist Canadian victims" href="/calgary/consular-officials-las-vegas-canadians">Consular officials sent to Las Vegas to assist Canadian victims</a> 
+                </div> 
+               </div> 
+              </div> </li> 
+            </ul> 
+           </div> 
+          </div> 
+          <hr> 
+          <h3>Follow Us</h3> 
+          <h4 class="subheader">Get social with us</h4> 
+          <div class="expanded button-group"> 
+           <a href="https://www.facebook.com/dailyhivecalgary/" target="blank" class="fb-button button"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a> 
+           <a href="https://twitter.com/DailyHiveYYC" target="blank" class="tw-button button"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a> 
+           <a href="https://www.instagram.com/dailyhivecalgary/" target="blank" class="ig-button button"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a> 
+          </div> 
+          <hr> 
+          <h3>Stay Updated</h3> 
+          <h4 class="subheader">Stay connected to your city. Sign up to our weekly newsletter.</h4> 
+          <style type="text/css">
+	#mc_embed_signup {}
+	#mc_embed_signup input { margin:0; }
+</style> 
+          <div id="mc_embed_signup"> 
+           <form action="//dailyhive.us4.list-manage.com/subscribe/post?u=2478fdffd4188d872553e9c7a&amp;id=301ca508e5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> 
+            <div class="input-group"> 
+             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required> 
+             <input type="hidden" value="calgary" name="CITY" id="mce-CITY"> 
+             <input type="hidden" value="" name="CATEGORY" id="mce-CATEGORY"> 
+             <div class="input-group-button"> 
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+               <input type="text" name="b_2478fdffd4188d872553e9c7a_301ca508e5" tabindex="-1" value="">
+              </div> 
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"> 
+             </div> 
+            </div> 
+           </form> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row column"> 
+      <hr> 
+      <div class="push-up-30"> 
+       <div id="taboola-below-article-thumbnails---calgary"></div> 
+       <script type="text/javascript">
+		  window._taboola = window._taboola || [];
+		  _taboola.push({
+		    mode: 'thumbnails-a',
+		    container: 'taboola-below-article-thumbnails---calgary',
+		    placement: 'Below Article Thumbnails - Calgary',
+		    target_type: 'mix'
+		  });
+		</script> 
+      </div> 
+      <script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u) {
+    e.async = 1;
+    e.src = u;
+    f.parentNode.insertBefore(e, f);
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/vancitybuzz-dailyhive/loader.js');
+</script> 
+      <script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script> 
+     </div> 
+     <script src="https://static.freeskreen.com/publisher/410/freeskreen.min.js"></script> 
+     <script type="text/javascript">
+	(function() {
+	var s = document.createElement('script');
+	s.type = 'text/javascript';
+	s.async = !0;
+	s.src = '//adserver.pressboard.ca/v1/embedder?media=131163';
+	var d = document.getElementsByTagName("script")[0];
+	d.parentNode.insertBefore(s, d);
+	})();
+</script> 
+    </div> 
+   </div> 
+   <div class="row column padding-80 text-center white-bg"> 
+    <ul class="footer inline-list"> 
+     <li><a href="/page/advertise">Advertise</a></li> 
+     <li><a href="/page/masthead">Masthead</a></li> 
+     <li><a href="/page/tips">Tips</a></li> 
+     <li><a href="/page/contact">Contact Us</a></li> 
+     <li><a href="/page/careers">Careers</a></li> 
+     <li><a href="/vancouver/rss-feed">RSS</a></li> 
+    </ul> © 2017 Buzz Connected Media Inc. 
+   </div> 
+  </div> 
+  <div id="div-gpt-ad-881195027772561268-12"> 
+   <script type="text/javascript">
+		googletag.display('div-gpt-ad-881195027772561268-12');
+	</script> 
+  </div> 
+  <div id="div-gpt-ad-881195027772561268-13"> 
+   <script type="text/javascript">
+		googletag.display('div-gpt-ad-881195027772561268-13');
+	</script> 
+  </div> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-575ce9d402525697"></script> 
+  <script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "18985157" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script> 
+  <noscript> 
+   <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=18985157&amp;cv=2.0&amp;cj=1"> 
+  </noscript> 
+  <script type="text/javascript" src="http://tags.crwdcntrl.net/c/9551/cc.js?ns=_cc9551" id="LOTCC_9551"></script> 
+  <script type="text/javascript" language="javascript">_cc9551.bcp();</script> 
+  <script src="https://unpkg.com/progressively/dist/progressively.min.js"></script> 
+  <link rel="stylesheet" href="https://unpkg.com/progressively/dist/progressively.min.css">  
+ </body>
+</html>

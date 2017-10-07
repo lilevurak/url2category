@@ -1,0 +1,790 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="" lang="en" dir="ltr">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <link rel="apple-touch-icon-precomposed" href="https://dese.mo.gov/sites/default/files/apple_touch_152_2.png" type="image/png"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> 
+  <link rel="apple-touch-icon" href="https://dese.mo.gov/sites/default/files/apple_touch_152_2.png" type="image/png"> 
+  <meta name="description" content="The State Board of Education establishes&nbsp;minimum&nbsp;graduation requirements that are designed to ensure that graduates have taken courses in several different subject areas and mastered essential knowledge, skills, and competencies.&nbsp;&nbsp;Local boards of education must adopt graduation policies that include at least the state minimum graduation requirements.&nbsp;&nbsp;Local board policy may include additional requirements in accordance with needs and aspirations of students and the communities they serve."> 
+  <meta name="generator" content="Drupal 7 (http://drupal.org)"> 
+  <link rel="canonical" href="https://dese.mo.gov/content/graduation-requirements-how-many-credits-does-student-need-graduate"> 
+  <link rel="shortlink" href="https://dese.mo.gov/node/235"> 
+  <meta property="og:site_name" content="Missouri Department of Elementary and Secondary Education"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:url" content="https://dese.mo.gov/content/graduation-requirements-how-many-credits-does-student-need-graduate"> 
+  <meta property="og:title" content="Graduation Requirements: How many credits does a student need to graduate?"> 
+  <meta property="og:description" content="The State Board of Education establishes&nbsp;minimum&nbsp;graduation requirements that are designed to ensure that graduates have taken courses in several different subject areas and mastered essential knowledge, skills, and competencies.&nbsp;&nbsp;Local boards of education must adopt graduation policies that include at least the state minimum graduation requirements.&nbsp;&nbsp;Local board policy may include additional requirements in accordance with needs and aspirations of students and the communities they serve."> 
+  <meta property="og:updated_time" content="2015-01-12T10:16:57-06:00"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:url" content="https://dese.mo.gov/content/graduation-requirements-how-many-credits-does-student-need-graduate"> 
+  <meta name="twitter:title" content="Graduation Requirements: How many credits does a student need to graduate?"> 
+  <meta name="twitter:description" content="The State Board of Education establishes&nbsp;minimum&nbsp;graduation requirements that are designed to ensure that graduates have taken courses in several different subject areas and mastered essential knowledge, skills, and competencies.&nbsp;&nbsp;Local boards of education must adopt graduation policies that include at least the state minimum graduation requirements.&nbsp;&nbsp;Local board policy may include additional requirements in accordance with needs and aspirations of students and the communities they serve."> 
+  <meta property="article:published_time" content="2013-12-06T15:12:00-06:00"> 
+  <meta property="article:modified_time" content="2015-01-12T10:16:57-06:00"> 
+  <meta name="dcterms.title" content="Graduation Requirements: How many credits does a student need to graduate?"> 
+  <meta name="dcterms.creator" content="Brent Foster"> 
+  <meta name="dcterms.description" content="The State Board of Education establishes&nbsp;minimum&nbsp;graduation requirements that are designed to ensure that graduates have taken courses in several different subject areas and mastered essential knowledge, skills, and competencies.&nbsp;&nbsp;Local boards of education must adopt graduation policies that include at least the state minimum graduation requirements.&nbsp;&nbsp;Local board policy may include additional requirements in accordance with needs and aspirations of students and the communities they serve."> 
+  <meta name="dcterms.date" content="2013-12-06T15:12-06:00"> 
+  <meta name="dcterms.type" content="Text"> 
+  <meta name="dcterms.format" content="text/html"> 
+  <meta name="dcterms.identifier" content="https://dese.mo.gov/content/graduation-requirements-how-many-credits-does-student-need-graduate"> 
+  <meta name="dcterms.language" content="en"> 
+  <meta name="dcterms.modified" content="2015-01-12T10:16-06:00"> 
+  <title>Graduation Requirements: How many credits does a student need to graduate? | Missouri Department of Elementary and Secondary Education</title> 
+  <link rel="stylesheet" href="https://dese.mo.gov/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all"> 
+  <link rel="stylesheet" href="https://dese.mo.gov/sites/default/files/css/css_Z2f2Ec8icMeK82_aZf5JiMy3NdqLkUGrixI_qyiUC2c.css" media="all"> 
+  <link rel="stylesheet" href="https://dese.mo.gov/sites/default/files/css/css_g_leKvOrrChZhjoALt5wEL7SzSQB0CqBxm8o-9QLZig.css" media="all"> 
+  <link rel="stylesheet" href="https://dese.mo.gov/sites/default/files/css/css_svLBKgUwn6bLrvjVK2A59bSlrDuEZ-FBve1pWE5gEtQ.css" media="all"> 
+  <!--[if (lt IE 9)&(!IEMobile)]>
+<link rel="stylesheet" href="https://dese.mo.gov/sites/default/files/css/css_oPDlmbTeehmvUDewwe6n79OMpSOn6a_0Izv7iD58WQI.css" media="all" />
+<![endif]--> 
+  <!--[if gte IE 9]><!--> 
+  <link rel="stylesheet" href="https://dese.mo.gov/sites/default/files/css/css_SncqJoUKWI-Ci0ZRk_Cj8aYLOEy1epntC2-zYBV89as.css" media="all"> 
+  <!--<![endif]--> 
+  <script src="https://dese.mo.gov/sites/default/files/js/js_9uwY22GjdqCEDpnb1on0vFHyLNTh3xilTwLwCfCoJZM.js"></script> 
+  <script>
+document.createElement( "picture" );
+</script> 
+  <script src="https://dese.mo.gov/sites/default/files/js/js_OVAOz6xKTt0o5QhoWFs7HJDiUhoqOR7FmnZl8WEbty4.js"></script> 
+  <script src="https://dese.mo.gov/sites/default/files/js/js_M48xMBMmqHQzryo5A_4wlRFe87ZQhMbyF4Ae_3RI1MM.js"></script> 
+  <script>
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-9082624-1", {"cookieDomain":"auto"});ga("send", "pageview");
+</script> 
+  <script src="https://dese.mo.gov/sites/default/files/js/js_g-DHHeTSStKavwSuYGeFq3pefwQdx8QJyXVMJR5ZtHw.js"></script> 
+  <script src="https://dese.mo.gov/sites/default/files/js/js_43n5FBy8pZxQHxPXkf-sQF7ZiacVZke14b0VlvSA554.js"></script> 
+  <script>
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"mogov_site","theme_token":"s-qFG1K8SXxPf8oCvY2eZoE5g1QwBhFYJyWvfjhCsrY","js":{"sites\/all\/modules\/contrib\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/contrib\/picture\/picture.min.js":1,"0":1,"1":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/fitvids\/jquery.fitvids.js":1,"2":1,"sites\/all\/modules\/contrib\/fitvids\/fitvids.js":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/getdirections\/js\/getdirections.js":1,"sites\/all\/libraries\/modernizr\/modernizr.js":1,"sites\/default\/modules\/mo_project\/js\/mo_project.js":1,"sites\/default\/modules\/mo_project\/js\/jquery.details.min.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"3":1,"sites\/default\/themes\/mogov_blue\/js\/mogov_blue.js":1,"sites\/all\/themes\/contrib\/omega\/omega\/js\/jquery.formalize.js":1,"sites\/all\/themes\/contrib\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/fitvids\/fitvids.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/picture\/picture_wysiwyg.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/default\/modules\/mo_cms\/css\/mo_cms.css":1,"sites\/default\/modules\/mo_project\/css\/mo_project.css":1,"sites\/default\/modules\/mo_project\/css\/details.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/rate\/rate.css":1,"sites\/all\/modules\/contrib\/menu_minipanels\/css\/menu_minipanels.css":1,"sites\/all\/themes\/contrib\/omega\/alpha\/css\/alpha-reset.css":1,"sites\/all\/themes\/contrib\/omega\/alpha\/css\/alpha-mobile.css":1,"sites\/all\/themes\/contrib\/omega\/alpha\/css\/alpha-alpha.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/formalize.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/omega-text.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/omega-branding.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/omega-menu.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/omega-forms.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/omega-visuals.css":1,"sites\/default\/themes\/mogov_blue\/css\/mogov-blue-global.css":1,"sites\/default\/themes\/mogov_site\/css\/mogov-site-global.css":1,"ie::normal::sites\/default\/themes\/mogov_blue\/css\/mogov-blue-alpha-default.css":1,"ie::normal::sites\/default\/themes\/mogov_blue\/css\/mogov-blue-alpha-default-normal.css":1,"ie::normal::sites\/default\/themes\/mogov_site\/css\/mogov-site-alpha-default.css":1,"ie::normal::sites\/default\/themes\/mogov_site\/css\/mogov-site-alpha-default-normal.css":1,"ie::normal::sites\/all\/themes\/contrib\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-24.css":1,"normal::sites\/default\/themes\/mogov_blue\/css\/mogov-blue-alpha-default.css":1,"normal::sites\/default\/themes\/mogov_blue\/css\/mogov-blue-alpha-default-normal.css":1,"normal::sites\/default\/themes\/mogov_site\/css\/mogov-site-alpha-default.css":1,"normal::sites\/default\/themes\/mogov_site\/css\/mogov-site-alpha-default-normal.css":1,"sites\/all\/themes\/contrib\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-24.css":1,"wide::sites\/default\/themes\/mogov_blue\/css\/mogov-blue-alpha-default.css":1,"wide::sites\/default\/themes\/mogov_blue\/css\/mogov-blue-alpha-default-wide.css":1,"wide::sites\/default\/themes\/mogov_site\/css\/mogov-site-alpha-default.css":1,"wide::sites\/default\/themes\/mogov_site\/css\/mogov-site-alpha-default-wide.css":1,"sites\/all\/themes\/contrib\/omega\/alpha\/css\/grid\/alpha_default\/wide\/alpha-default-wide-24.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"getdirections_colorbox":{"enable":0,"width":"600","height":"600"},"gosquared":{"acct":"GSN-762475-G"},"modernizrPath":false,"modernizrServerside":false,"fitvids":{"custom_domains":[],"selectors":["body"],"simplifymarkup":true},"picture":{"mappings":[["mogov_site","mogov_site"],["Not Set","not_set"]],"label":"Image size (required)"},"extlink":{"extTarget":"_blank","extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"(mo|.gov)|(twitter|.com)|(facebook|.com)|(missourilearningstandards|.com)|(nowforlater|.org)","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":"_blank","extAlertText":"You are currently exiting to a site that is not part of the government(.gov) domain. Web sites are places where diverse groups of people interact, so please be aware that you will be subject to a wide variety of experiences beyond our control. Always use good judgment when using these platforms and when following links to other web sites.  Click OK to continue.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"currentPath":"node\/235","currentPathIsAdmin":false,"urlIsAjaxTrusted":{"\/search-mo-gov":true},"omega":{"layouts":{"primary":"normal","order":["normal","wide"],"queries":{"normal":"all and (min-width: 740px) and (min-device-width: 740px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+</script> 
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+ </head> 
+ <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-235 node-type-faq desktop context-content"> 
+  <div id="skip-link"> 
+   <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a> 
+  </div> 
+  <div class="region region-page-top" id="region-page-top"> 
+   <div class="region-inner region-page-top-inner"> 
+   </div> 
+  </div> 
+  <div class="page clearfix" id="page"> 
+   <header id="section-header" class="section section-header"> 
+    <div id="zone-header-prefix-wrapper" class="zone-wrapper zone-header-prefix-wrapper clearfix"> 
+     <div id="zone-header-prefix" class="zone zone-header-prefix clearfix container-24"> 
+      <div class="grid-24 region region-header-prefix" id="region-header-prefix"> 
+       <div class="region-inner region-header-prefix-inner"> 
+        <div class="block block-block block-17 block-block-17 odd block-without-title" id="block-block-17"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <p><span style="line-height: 1.6em;">Welcome to dese.mo.gov. We hope you enjoy the site, and we welcome your </span><a href="mailto:communications@dese.mo.gov" style="line-height: 1.6em;">feedback</a><span style="line-height: 1.6em;">.</span></p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-header-wrapper" class="zone-wrapper zone-header-wrapper clearfix"> 
+     <div id="zone-header" class="zone zone-header clearfix container-24"> 
+      <div class="grid-12 region region-branding" id="region-branding"> 
+       <div class="region-inner region-branding-inner"> 
+        <div class="branding-data clearfix"> 
+         <div class="logo-img"> 
+          <a href="/" rel="home" title="Missouri Department of Elementary and Secondary Education"><img id="logo" src="https://dese.mo.gov/sites/default/themes/mogov_site/logo.png" width="358" height="110" alt="Missouri Department of Elementary and Secondary Education" title="Missouri Department of Elementary and Secondary Education"></a> 
+         </div> 
+         <div class="site-name-slogan"> 
+          <h2 class="site-name element-invisible"><a href="/" title="Home">Missouri Department of Elementary and Secondary Education</a></h2> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+      <div class="grid-12 region region-utility-bar" id="region-utility-bar"> 
+       <div class="region-inner region-utility-bar-inner"> 
+        <nav class="block block-menu block-menu-mo-cms-utility-bar block-menu-menu-mo-cms-utility-bar odd block-without-title" id="block-menu-menu-mo-cms-utility-bar"> 
+         <div class="content clearfix"> 
+          <ul class="menu">
+           <li class="first leaf"><a href="http://mo.gov">MO.gov</a></li> 
+           <li class="leaf"><a href="http://gov.mo.gov">Gov. Eric Greitens</a></li> 
+           <li class="leaf"><a href="http://mo.gov/search-results?mode=state_agencies">Find an Agency</a></li> 
+           <li class="last leaf"><a href="http://www.mo.gov/search-results?mode=online_services&amp;agency=elementary%20and%20secondary%20education">Online Services</a></li> 
+          </ul> 
+         </div> 
+        </nav>
+        <div class="block block-mo-cms-gsa block-search block-mo-cms-gsa-search even block-without-title" id="block-mo-cms-gsa-search"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <form action="/search-mo-gov" method="post" id="mo-cms-gsa-search-form" accept-charset="UTF-8">
+            <div>
+             <div class="form-item form-type-searchfield form-item-search"> 
+              <label for="edit-search">Search </label> 
+              <input placeholder="Search" type="search" id="edit-search" name="search" value="" size="60" maxlength="128" class="form-text form-search"> 
+             </div> 
+             <input class="ir form-submit" type="submit" id="edit-submit" name="op" value="Search">
+             <input type="hidden" name="form_build_id" value="form-q2X2Absyfc_ySCpStQ-XfemL3dLXZHtXfJGLbLAZCxg"> 
+             <input type="hidden" name="form_id" value="mo_cms_gsa_search_form"> 
+            </div>
+           </form> 
+          </div> 
+         </div> 
+        </div>
+        <div class="block block-mo-cms block-social-bar block-mo-cms-social-bar odd block-without-title" id="block-mo-cms-social-bar"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <div id="mo-cms-social-bar-rss" class="mo-cms-social-bar-item">
+            <a href="/rss.xml" class="ir rss">RSS</a>
+           </div>
+           <div id="mo-cms-social-bar-mailto" class="mo-cms-social-bar-item">
+            <a href="mailto:communications@dese.mo.gov" class="ir email">Send Email</a>
+           </div>
+           <div id="mo-cms-social-bar-youtube" class="mo-cms-social-bar-item">
+            <a href="http://youtube.com/MODeptofEducation" class="ir youtube">Watch videos on YouTube</a>
+           </div>
+           <div id="mo-cms-social-bar-twitter" class="mo-cms-social-bar-item">
+            <a href="http://twitter.com/MOEducation" class="ir twitter">Follow @MOEducation on Twitter</a>
+           </div>
+           <div id="mo-cms-social-bar-facebook" class="mo-cms-social-bar-item">
+            <a href="http://facebook.com/MOEducation" class="ir facebook">Visit MOEducation on Facebook</a>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix"> 
+     <div id="zone-menu" class="zone zone-menu clearfix container-24"> 
+      <div class="grid-24 region region-menu" id="region-menu"> 
+       <div class="region-inner region-menu-inner"> 
+        <nav class="block block-system block-menu block-main-menu block-system-main-menu odd" id="block-system-main-menu"> 
+         <h2 class="block-title">Main menu</h2> 
+         <div class="content clearfix"> 
+          <ul class="menu">
+           <li class="first leaf"><a href="/" title="DESE Home Page">Home</a></li> 
+           <li class="leaf"><a href="/about" class="menu-minipanel menu-minipanel-4242 menuparent">About</a>
+            <ul class="menu-minipanel-panel menu-minipanel-about-megamenu"> 
+             <li class="first odd last"> 
+              <div class="panel-display omega-grid mogov_blue-6-6-6-6" id="mini-panel-about_megamenu"> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-1"> 
+                  <h2 class="pane-title"> Learn More </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/administrative-memos">Administrative Memos</a></li> 
+                    <li><a href="/communications">Communications/Media</a></li> 
+                    <li><a href="/contact-us">Contact Us</a></li> 
+                    <li><a href="/department-offices">Department Offices</a></li> 
+                    <li><a href="/governmental-affairs">Governmental Affairs/School Laws</a></li> 
+                    <li><a href="/sites/default/files/DESEStaff.pdf">Staff Directory</a></li> 
+                    <li><a href="/state-board-education">State Board of Education</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-2"> 
+                  <div class="pane-content"> 
+                   <h2><a href="/azindex">A-Z Index</a></h2> 
+                   <p>Can’t find what you are looking for? Check out the A-Z Index.</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-3"> 
+                  <div class="pane-content"> 
+                   <h2><a href="http://mcds.dese.mo.gov/Pages/default.aspx">School Data</a></h2> 
+                   <p>Search for up-to-date data on all Missouri School Districts.</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-4"> 
+                  <h2 class="pane-title"> Popular Services </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/communications/calendars">Calendars</a></li> 
+                    <li><a href="/financial-administrative-services/human-resources">Employment Opportunities</a></li> 
+                    <li><a href="/communications/top-10-by-20-newsletter">Newsletter</a></li> 
+                    <li><a href="//www.mo.gov/search-results?mode=people" target="_blank">Phone Directory</a></li> 
+                    <li><a href="/school-directory">School Directory</a></li> 
+                    <li><a href="https://dese.mo.gov/communications/social-media">Social Media</a></li> 
+                    <li><a href="/communications/webinar">Webinars</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> </li> 
+            </ul> </li> 
+           <li class="leaf"><a href="/administrators" class="menu-minipanel menu-minipanel-4238 menuparent">Administrators</a>
+            <ul class="menu-minipanel-panel menu-minipanel-administrators-megamenu"> 
+             <li class="first odd last"> 
+              <div class="panel-display omega-grid mogov_blue-6-6-6-6" id="mini-panel-administrators_megamenu"> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-5"> 
+                  <h2 class="pane-title"> Learn More </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/administrative-memos">Administrative Memos</a></li> 
+                    <li><a href="/governmental-affairs">Education Law and Regulations</a></li> 
+                    <li><a href="/educator-quality/educator-effectiveness">Educator Effectiveness</a></li> 
+                    <li><a href="/quality-schools/federal-programs">Federal Programs</a></li> 
+                    <li><a href="/educator-quality/educator-development">Leadership Development</a></li> 
+                    <li><a href="/top-10-by-20">Top 10 by 20</a></li> 
+                    <li><a href="/communications/webinar">Webinars</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-6"> 
+                  <h2 class="pane-title"> Administration </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/educator-quality/certification">Certification</a></li> 
+                    <li><a href="/data-system-management">Data Management</a></li> 
+                    <li><a href="/financial-admin-services/school-finance">Finance</a></li> 
+                    <li><a href="/financial-admin-services/food-nutrition-services">Food &amp; Nutrition Services</a></li> 
+                    <li><a href="/educator-quality/educator-evaluation/educator-standards/administrator-standards">Leader Standards</a></li> 
+                    <li><a href="/financial-admin-services/new-superintendent-workshop">New Administrators</a></li> 
+                    <li><a href="/financial-admin-services/school-governance">School Governance</a></li> 
+                    <li><a href="/financial-administrative-services/school-transportation">Transportation</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-7"> 
+                  <h2 class="pane-title"> Learning Services </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/quality-schools/mo-school-improvement-program/accreditation-classification-school-districts">Accreditation</a></li> 
+                    <li><a href="/college-career-readiness/assessment">Assessment</a></li> 
+                    <li><a href="/college-career-readiness/career-education">Career &amp; Technical Education</a></li> 
+                    <li><a href="/college-career-readiness/curriculum">Curriculum</a></li> 
+                    <li><a href="/quality-schools/gifted-education">Gifted Education</a></li> 
+                    <li><a href="/quality-schools/mo-school-improvement-program">MSIP</a></li> 
+                    <li><a href="/special-education">Special Education</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-8"> 
+                  <h2 class="pane-title"> Popular Services </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/data-system-management/core-datamosis">Core Data/MOSIS</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/Pages/default.aspx" target="_blank">Missouri Comprehensive Data System</a></li> 
+                    <li><a href="https://apps.dese.mo.gov/DataAcquisitionCalendar/Data_Cal.aspx">Data Acquisition Calendar</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/Pages/default.aspx">District Annual Performance Report</a></li> 
+                    <li><a href="https://apps.dese.mo.gov/webLogin/login.aspx">Web Applications</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> </li> 
+            </ul> </li> 
+           <li class="leaf"><a href="/adults-community" class="menu-minipanel menu-minipanel-4244 menuparent">Adults &amp; Community</a>
+            <ul class="menu-minipanel-panel menu-minipanel-adults-community-megamenu"> 
+             <li class="first odd last"> 
+              <div class="panel-display omega-grid mogov_blue-6-6-6-6" id="mini-panel-adults_community_megamenu"> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-9"> 
+                  <h2 class="pane-title"> Learn More </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/adult-learning-rehabilitation-services/">Adult Learning</a></li> 
+                    <li><a href="/quality-schools/charter-schools/">Charter Schools</a></li> 
+                    <li><a href="/adult-learningrehab-services/independent-living">Independent Living</a></li> 
+                    <li><a href="/adult-learning-rehabilitation-services/veterans-education/">Veterans Education</a></li> 
+                    <li><a href="/adult-learning-rehabilitation-services/vocational-rehabilitation/">Vocational Rehabilitation</a></li> 
+                   </ul>
+                   <p>&nbsp;</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-10"> 
+                  <div class="pane-content"> 
+                   <h2><a href="http://www.missouriconnections.org/materials/portal/home.html" target="_blank">Missouri Connections</a></h2> 
+                   <p>Missouri Connections is a comprehensive, online, career development and planning program that is provided free of charge to all Missouri citizens</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-11"> 
+                  <div class="pane-content"> 
+                   <h2><a href="/top-10-by-20/">Top 10 By 20</a></h2> 
+                   <p>Learn more about Missouri's goal of becoming one of the top 10 states in education by 2020.</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-12"> 
+                  <h2 class="pane-title"> Popular Services </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="http://www.dss.mo.gov/cd/can.htm">Child Abuse Hotline</a></li> 
+                    <li><a href="/adult-learning-rehabilitation-services/high-school-equivalency/">High School Equivalency Test</a></li> 
+                    <li><a href="/communications/top-10-by-20-newsletter">Newsletter</a></li> 
+                    <li><a href="/communications/social-media/">Social Media</a></li> 
+                    <li><a href="/communications/webinar/">Webinars</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> </li> 
+            </ul> </li> 
+           <li class="leaf"><a href="/educators" class="menu-minipanel menu-minipanel-4239 menuparent">Educators</a>
+            <ul class="menu-minipanel-panel menu-minipanel-educators-megamenu"> 
+             <li class="first odd last"> 
+              <div class="panel-display omega-grid mogov_blue-6-6-6-6" id="mini-panel-educators_megamenu"> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-13"> 
+                  <h2 class="pane-title"> Learn More </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/college-career-readiness/assessment">Assessment</a></li> 
+                    <li><a href="/college-career-readiness/career-education">Career and Technical Education</a></li> 
+                    <li><a href="/college-career-readiness/curriculum">Curriculum</a></li> 
+                    <li><a href="/quality-schools/early-learning">Early Learning</a></li> 
+                    <li><a href="/educator-quality/educator-preparation/mo-standards-preparation-educators">Educator Standards</a></li> 
+                    <li><a href="https://dese.mo.gov/quality-schools/gifted-education">Gifted Education</a></li> 
+                    <li><a href="/college-career-readiness/curriculum/library-media-centers">Librarians</a></li> 
+                    <li><a href="/educator-quality/certification/professional-development">Professional Development</a></li> 
+                    <li><a href="/college-career-readiness/guidance-counseling">School Counseling</a></li> 
+                    <li><a href="/special-education">Special Education</a></li> 
+                    <li><a href="/top-10-by-20">Top 10 by 20</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-14"> 
+                  <div class="pane-content"> 
+                   <p><a href="/educator-quality/educator-effectiveness"><img alt="Teacher Evaluation" data-picture-align="center" src="/sites/default/files/teachereval_megamenu.jpg" title="Teacher Evaluation"></a></p> 
+                   <h2><a href="/educator-quality/certification">Certification</a></h2> 
+                   <p>Find answers to your certification questions.</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-15"> 
+                  <div class="pane-content"> 
+                   <p><a href="http://www.missourilearningstandards.com" target="_blank"><img alt="Missouri Learning Standards" data-picture-align="center" src="/sites/default/files/molearningstandards_megamenu.jpg" title="Missouri Learning Standards"></a></p> 
+                   <p><a> </a></p> 
+                   <h2><a href="/educator-quality/educator-preparation">Educator Preparation</a></h2> 
+                   <p>Stay on top of the latest from educator preparation.</p> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-16"> 
+                  <h2 class="pane-title"> Popular Services </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/educator-quality/educator-preparation">Educator Assessment</a></li> 
+                    <li><a href="/educator-quality/certification/fingerprintingbackground-check">Fingerprinting/Background Check</a></li> 
+                    <li><a href="/educator-quality/certification/update-personaleducation-info">Personal / Education Information</a></li> 
+                    <li><a href="/awards-honors">Teacher Appreciation</a></li> 
+                    <li><a href="https://apps.dese.mo.gov/webLogin/login.aspx" target="_blankl">Web Applications</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> </li> 
+            </ul> </li> 
+           <li class="leaf"><a href="/parents-students" class="menu-minipanel menu-minipanel-4240 menuparent">Parents &amp; Students</a>
+            <ul class="menu-minipanel-panel menu-minipanel-parents-students-megamenu"> 
+             <li class="first odd last"> 
+              <div class="panel-display omega-grid mogov_blue-6-6-6-6" id="mini-panel-parents_students_megamenu"> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-17"> 
+                  <h2 class="pane-title"> Learn More </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/governmental-affairs/public-school-laws-missouri/anti-bullying-laws">Anti-Bullying</a></li> 
+                    <li><a href="/governmental-affairs/home-schooling">HomeSchooling</a></li> 
+                    <li><a href="http://www.missourilearningstandards.com/">Missouri Learning Standards</a></li> 
+                    <li><a href="/governmental-affairs/">School Laws</a></li> 
+                    <li><a href="/top-10-by-20/">Top 10 by 20</a></li> 
+                    <li><a href="/sites/default/files/Transfer_Guidance.pdf">Transfer Guidance</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-18"> 
+                  <h2 class="pane-title"> Education Programs </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/early-extended-learning/afterschool-programs/">Afterschool Programs</a></li> 
+                    <li><a href="/quality-schools/charter-schools/">Charter Schools</a></li> 
+                    <li><a href="/early-extended-learning/early-learning/">Early Childhood Education</a></li> 
+                    <li><a href="/quality-schools/gifted-education/">Gifted Education</a></li> 
+                    <li><a href="/special-education/">Special Education</a></li> 
+                    <li><a href="http://www.movip.org/">Virtual Instruction</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-19"> 
+                  <h2 class="pane-title"> Student Planning </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/quality-schools/gifted-education/advanced-placement/">AP/Dual Credit</a></li> 
+                    <li><a href="/college-career-readiness/career-education/career-clusters/">Career Pathways</a></li> 
+                    <li><a href="http://dhe.mo.gov/ppc/fafsafrenzyforstudents.php">FAFSA</a></li> 
+                    <li><a href="https://www.missourimost.org/content/home.html/">Missouri's College Savings Plan</a></li> 
+                    <li><a href="/college-career-readiness/guidance-counseling/pesonal-plans-study">Personal Plan of Study</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-20"> 
+                  <h2 class="pane-title"> Popular Services </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/school-directory/">Contact Your School</a></li> 
+                    <li><a href="http://health.mo.gov/living/wellness/immunizations/">Immunizations</a></li> 
+                    <li><a href="/moving-missouri/">Moving to Missouri?</a></li> 
+                    <li><a href="/data-system-management/">School District Data</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> </li> 
+            </ul> </li> 
+           <li class="last leaf"><a href="/school-data" class="menu-minipanel menu-minipanel-4249 menuparent">School Data</a>
+            <ul class="menu-minipanel-panel menu-minipanel-school-data-megamenu"> 
+             <li class="first odd last"> 
+              <div class="panel-display omega-grid mogov_blue-6-6-6-6" id="mini-panel-school_data_megamenu"> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-21"> 
+                  <h2 class="pane-title"> Data Providers </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="/data-system-management/core-datamosis">Core Data/MOSIS</a></li> 
+                    <li><a href="https://apps.dese.mo.gov/DataAcquisitionCalendar/Data_Cal.aspx" target="_blank">Data Acquisition Calendar</a></li> 
+                    <li><a href="/data-system-management/user-managerlogin-request-forms">User Manager</a></li> 
+                    <li><a href="https://apps.dese.mo.gov/webLogin/login.aspx" target="_blank">Web Applications Login</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-22"> 
+                  <div class="pane-content"> 
+                   <p><a href="https://apps.dese.mo.gov/DataRequestForm/DataRequest.aspx" target="_blank"><img alt="Data Requests" data-picture-align="center" src="/sites/default/files/datarequests.png" title="Data Requests"></a></p> 
+                   <ul>
+                    <li><a href="/school-directory">School Directory</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/quickfacts/SitePages/DistrictInfo.aspx">School District Data</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-23"> 
+                  <div class="pane-content"> 
+                   <p><a href="http://mcds.dese.mo.gov/Pages/default.aspx" tarage="_blank"><img a="" alt="MCDS Portal" data-picture-align="center" src="/sites/default/files/mcdsportal_megamenu.jpg" title="MCDS Portal"></a></p> 
+                   <ul>
+                    <li><a href="/azindex/">A-Z Index</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="panel-panel grid-6"> 
+                <div class="inside">
+                 <div class="panel-pane pane-custom pane-24"> 
+                  <h2 class="pane-title"> Public Data </h2> 
+                  <div class="pane-content"> 
+                   <ul>
+                    <li><a href="http://mcds.dese.mo.gov/Pages/Accountability.aspx">Accountability</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/quickfacts/Pages/Career-Education.aspx">College and Career</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/quickfacts/Pages/Career-Education.aspx">District and School Info</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/Pages/Early-Childhood-Education.aspx">Early Childhood Education</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/Pages/Education-Staff.aspx">Education Staff</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/Pages/Special-Education.aspx">Special Education</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/quickfacts/Pages/State-Assessment.aspx/">State Assessment</a></li> 
+                    <li><a href="http://mcds.dese.mo.gov/quickfacts/Pages/Student-Characteristics.aspx/">Student Characteristics</a></li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="clearfix"></div> 
+              </div> </li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </nav> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </header> 
+   <section id="section-content" class="section section-content"> 
+    <div id="zone-content" class="zone zone-content clearfix container-24"> 
+     <div class="grid-24 region region-content" id="region-content"> 
+      <div class="region-inner region-content-inner"> 
+       <a id="main-content"></a> 
+       <div class="block block-blockify block-blockify-breadcrumb block-blockify-blockify-breadcrumb odd block-without-title" id="block-blockify-blockify-breadcrumb"> 
+        <div class="block-inner clearfix"> 
+         <div class="content clearfix"> 
+          <h2 class="element-invisible">You are here</h2>
+          <div class="breadcrumb">
+           <a href="/">Home</a>
+          </div> 
+         </div> 
+        </div> 
+       </div>
+       <div class="block block-blockify block-blockify-page-title block-blockify-blockify-page-title even block-without-title" id="block-blockify-blockify-page-title"> 
+        <div class="block-inner clearfix"> 
+         <div class="content clearfix"> 
+          <h1 class="title" id="page-title">Graduation Requirements: How many credits does a student need to graduate?</h1> 
+         </div> 
+        </div> 
+       </div>
+       <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main"> 
+        <div class="block-inner clearfix"> 
+         <div class="content clearfix"> 
+          <article class="node node-faq  node-published node-not-promoted node-not-sticky author-brentfoster odd clearfix" id="node-faq-235"> 
+           <div class="content clearfix"> 
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+             <div class="field-items">
+              <div class="field-item even">
+               <p>The State Board of Education establishes&nbsp;<strong>minimum</strong>&nbsp;graduation requirements that are designed to ensure that graduates have taken courses in several different subject areas and mastered essential knowledge, skills, and competencies.&nbsp;&nbsp;Local boards of education must adopt graduation policies that include at least the state minimum graduation requirements.&nbsp;&nbsp;<strong>Local board policy may include additional requirements in accordance with needs and aspirations of students and the communities they serve.</strong></p> 
+               <p><span style="line-height: 1.6em;">In 2005, the State Board of Education adopted new graduation requirements beginning with the class of 2010. &nbsp;</span></p> 
+               <p><strong>Minimum State Graduation Requirements beginning with Class of 2010</strong></p> 
+               <p>The state minimum high school graduation requirements comprise 24 units of credit that must be earned prior to graduation.&nbsp; The requirements are stated in terms of the number of units of credit that must be earned in each of several subject areas.&nbsp; To earn one unit of credit, a student must meet all the course requirements and earn a passing grade in a course that meets for at least 7,830 minutes a year.&nbsp; Half- and quarter-units of credit may be earned for courses meeting proportionately fewer minutes.</p> 
+               <p>Following are the requirements by subject area and, in some cases, specific courses.&nbsp;&nbsp;</p> 
+               <p>
+                <picture data-picture-mapping="mogov_site" data-picture-align="center"> 
+                 <!--[if IE 9]><video style="display: none;"><![endif]--> 
+                 <source srcset="https://dese.mo.gov/sites/default/files/styles/resp_breakpoints_theme_mogov_site_wide_1x/public/Graduation%20Table.PNG?itok=AgyEunPr 1x" media="all and (min-width: 1220px)"> 
+                 <source srcset="https://dese.mo.gov/sites/default/files/styles/resp_breakpoints_theme_mogov_site_normal_1x/public/Graduation%20Table.PNG?itok=KCHAy0Eb 1x" media="all and (min-width: 740px) and (min-device-width: 740px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)"> 
+                 <source srcset="https://dese.mo.gov/sites/default/files/styles/resp_breakpoints_theme_mogov_site_mobile_1x/public/Graduation%20Table.PNG?itok=Ij41Ve3N 1x" media="(min-width: 0px)"> 
+                 <!--[if IE 9]></video><![endif]--> 
+                 <img data-picture-mapping="mogov_site" data-picture-align="center" src="https://dese.mo.gov/sites/default/files/styles/medium/public/Graduation%20Table.PNG?itok=DjANB6AZ" alt="" title=""> 
+                </picture></p> 
+               <p>*Indicates that the personal finance course may count one half unit of credit towards meetings this requirement.&nbsp;</p> 
+               <p>Follow this link for more information regarding&nbsp;<a href="/quality-schools/graduation-requirements">Graduation Requirements</a>&nbsp;for Students in Missouri Public Schools.</p> 
+              </div>
+             </div>
+            </div>
+            <div class="field field-name-field-faq-categorization field-type-taxonomy-term-reference field-label-above">
+             <div class="field-label">
+              Categorization:&nbsp;
+             </div>
+             <div class="field-items">
+              <div class="field-item even">
+               <a href="/faq-categorization/mo-school-improvement-program">MO School Improvement Program</a>
+              </div>
+             </div>
+            </div> 
+           </div> 
+           <div class="clearfix"> 
+            <nav class="links node-links clearfix"></nav> 
+           </div> 
+          </article> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <footer id="section-footer" class="section section-footer"> 
+    <div id="zone-footer-wrapper" class="zone-wrapper zone-footer-wrapper clearfix"> 
+     <div id="zone-footer" class="zone zone-footer clearfix container-24"> 
+      <div class="grid-24 region region-footer-links" id="region-footer-links"> 
+       <div class="region-inner region-footer-links-inner"> 
+        <section class="block block-menu-block grid-6 alpha block-2 block-menu-block-2 odd" id="block-menu-block-2"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title">About Us</h2> 
+          <div class="content clearfix"> 
+           <div class="menu-block-wrapper menu-block-2 menu-name-menu-footer-links parent-mlid-1642 menu-level-1"> 
+            <ul class="menu">
+             <li class="first leaf menu-mlid-1643"><a href="/financial-administrative-services/human-resources">Careers</a></li> 
+             <li class="leaf menu-mlid-1644"><a href="/state-board-education/commissioner">Commissioner of Education</a></li> 
+             <li class="leaf menu-mlid-4529"><a href="/communications">Communications</a></li> 
+             <li class="leaf menu-mlid-18636"><a href="/commissioner/non-discrimination-statement">Non-Discrimination Statement</a></li> 
+             <li class="leaf has-children menu-mlid-4532"><a href="/state-board-education">State Board of Education</a></li> 
+             <li class="last leaf menu-mlid-4530"><a href="/commissioner/vision-mission-goals">Vision, Mission, Goals</a></li> 
+            </ul>
+           </div> 
+          </div> 
+         </div> 
+        </section>
+        <section class="block block-block grid-6 block-9 block-block-9 even" id="block-block-9"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title">Main Office</h2> 
+          <div class="content clearfix"> 
+           <address> <p>205 Jefferson St.<br> Jefferson City, MO 65101<br><a href="https://www.google.com/maps/place/205+Jefferson+St/@38.5774029,-92.171193,17z/data=!3m1!4b1!4m2!3m1!1s0x87db5e444ec29535:0x1f71a30a2c4d5541" target="_blank">Map</a></p> </address> 
+           <address> <p><strong>Mailing Address:</strong><br> P.O. Box 480<br><span style="font-size: 13px; line-height: 1.6em;">Jefferson City, MO<br> 65102-0480</span></p> <p>573-751-4212</p> </address> 
+          </div> 
+         </div> 
+        </section>
+        <section class="block block-menu-block grid-6 block-3 block-menu-block-3 odd" id="block-menu-block-3"> 
+         <div class="block-inner clearfix"> 
+          <h2 class="block-title">Resources</h2> 
+          <div class="content clearfix"> 
+           <div class="menu-block-wrapper menu-block-3 menu-name-menu-footer-links parent-mlid-1646 menu-level-1"> 
+            <ul class="menu">
+             <li class="first leaf menu-mlid-18641"><a href="http://www.mo.gov/accessibility/">Accessibility</a></li> 
+             <li class="leaf menu-mlid-1647"><a href="//apps.dese.mo.gov/DataAcquisitionCalendar/Data_Cal.aspx">Data Acquisition Calendar</a></li> 
+             <li class="leaf menu-mlid-1649"><a href="http://mcds.dese.mo.gov/Pages/default.aspx">MCDS Portal</a></li> 
+             <li class="leaf menu-mlid-4533"><a href="http://www.missourilearningstandards.com">Missouri Learning Standards</a></li> 
+             <li class="leaf menu-mlid-7859"><a href="https://apps.dese.mo.gov/webLogin/login.aspx ">Web Applications</a></li> 
+             <li class="last leaf menu-mlid-4535"><a href="https://webmail.mo.gov/">Employee Email Access</a></li> 
+            </ul>
+           </div> 
+          </div> 
+         </div> 
+        </section>
+        <nav class="block block-menu grid-6 omega social-media block-menu-social-links block-menu-menu-social-links even" id="block-menu-menu-social-links"> 
+         <h2 class="block-title">Social Links</h2> 
+         <div class="content clearfix"> 
+          <ul class="menu">
+           <li class="first leaf"><a href="https://www.facebook.com/MOEducation" title="Like us on Facebook" class="ir facebook">Facebook</a></li> 
+           <li class="leaf"><a href="https://twitter.com/MOEducation" title="Follow us on Twitter" class="ir twitter">Twitter</a></li> 
+           <li class="leaf"><a href="https://www.youtube.com/user/MODeptofEducation" title="Watch videos on YouTube" class="ir youtube">YouTube</a></li> 
+           <li class="last leaf"><a href="/rss.xml" title="Subscribe to our RSS feed" class="ir rss">RSS</a></li> 
+          </ul> 
+         </div> 
+        </nav> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-leadership-wrapper" class="zone-wrapper zone-leadership-wrapper clearfix"> 
+     <div id="zone-leadership" class="zone zone-leadership clearfix container-24"> 
+      <div class="grid-24 region region-leadership" id="region-leadership"> 
+       <div class="region-inner region-leadership-inner"> 
+        <div class="block block-mo-cms block-leadership block-mo-cms-leadership odd block-without-title" id="block-mo-cms-leadership"> 
+         <div class="block-inner clearfix"> 
+          <div class="content clearfix"> 
+           <p> <a href="http://governor.mo.gov" title="Governor Eric R. Greitens Official Website" class="gov">Governor<br> Eric R. Greitens</a> </p> 
+           <p class="mogov"> <a href="http://mo.gov/" title="Mo.gov | Official State of Missouri Website" class="state"><span class="hide">MO.gov State of Missouri</span></a> </p> 
+           <p> <a href="http://dese.mo.gov/" title="Missouri Department of Elementary and Secondary Education Website" class="agency">Commissioner<br> Margie Vandeven </a> </p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <div id="zone-site-info-wrapper" class="zone-wrapper zone-site-info-wrapper clearfix"> 
+     <div id="zone-site-info" class="zone zone-site-info clearfix container-24"> 
+      <div class="grid-24 region region-site-info" id="region-site-info"> 
+       <div class="region-inner region-site-info-inner"> 
+        <nav class="block block-menu block-menu-menu-site-info block-menu-menu-menu-site-info odd block-without-title" id="block-menu-menu-menu-site-info"> 
+         <div class="content clearfix"> 
+          <ul class="menu">
+           <li class="first leaf"><a href="http://www.mo.gov/privacy-policy/">Privacy Policy</a></li> 
+           <li class="leaf"><a href="http://www.mo.gov/accessibility/">Accessibility</a></li> 
+           <li class="leaf"><a href="/contact-us">Contact Us</a></li> 
+           <li class="leaf"><a href="/governmental-affairs/dese-administrative-rules/proposed-rules">Proposed Rules</a></li> 
+           <li class="last leaf"><a href="http://dese.mo.gov/sites/default/files/DESEAdminRulesReview-2015.pdf">DESE Periodic Rule Review</a></li> 
+          </ul> 
+         </div> 
+        </nav> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </footer> 
+  </div> 
+  <div class="region region-page-bottom" id="region-page-bottom"> 
+   <div class="region-inner region-page-bottom-inner"> 
+   </div> 
+  </div>
+  <script src="https://dese.mo.gov/sites/default/files/js/js_7Ukqb3ierdBEL0eowfOKzTkNu-Le97OPm-UqTS5NENU.js"></script> 
+  <script>
+jQuery('details').details();
+</script> 
+  <script>
+
+        var GoSquared={};
+        GoSquared.acct = Drupal.settings.gosquared.acct;
+        (function(w){
+            function gs(){
+              w._gstc_lt=+(new Date); var d=document;
+              var g = d.createElement("script"); g.type = "text/javascript"; g.async = true; g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
+              var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);
+            }
+            w.addEventListener?w.addEventListener("load",gs,false):w.attachEvent("onload",gs);
+          })(window);
+  
+</script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1a1ddd71e3","applicationID":"70695803","transactionName":"YF0BMkNTDEMDAkILDlkXNhRYHQteBgROTBFfSA==","queueTime":0,"applicationTime":15,"atts":"TBoCRAtJH00=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+  <script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=1&cb=1264301098';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script> 
+ </body>
+</html>
