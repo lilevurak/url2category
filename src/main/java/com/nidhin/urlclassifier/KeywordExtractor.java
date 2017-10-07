@@ -227,8 +227,8 @@ public class KeywordExtractor {
 
 
         RakeAlgorithm ex = new RakeAlgorithm();
-        ex.loadStopWordsList("/home/nidhin/Jump2/jump-classifier/src/main/resources/SmartStopListEn");
-        ex.loadPunctStopWord("/home/nidhin/Jump2/jump-classifier/src/main/resources/RakePunctDefaultStopList");
+        ex.loadStopWordsList("/home/ubuntu/aspirations-oct2nd/SmartStopListEn");
+        ex.loadPunctStopWord("/home/ubuntu/aspirations-oct2nd/RakePunctDefaultStopList");
         Document doc = new Document(".","test.txt");
         doc.setSentenceList(sentenceList);
         ex.init(doc, null);
