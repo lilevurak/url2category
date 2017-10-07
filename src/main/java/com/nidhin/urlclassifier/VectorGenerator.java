@@ -87,11 +87,11 @@ public class VectorGenerator {
                                 }
 
                             }
-                            System.out.println("clustering...  :: Keywords count - " + keyWordsDoubleVecMap.size());
-                            WordKmeans wordKmeans = new WordKmeans(keyWordsDoubleVecMap, 50, 100);
+//                            System.out.println("clustering...  :: Keywords count - " + keyWordsDoubleVecMap.size());
+                            WordKmeans wordKmeans = new WordKmeans(keyWordsDoubleVecMap, 50, 75);
                             WordKmeans.Classes[] classes = wordKmeans.explain();
 //                    urlClustersMap.put(url, classes);
-                            System.out.println("classes - " + classes.length + " url - " + url);
+//                            System.out.println("classes - " + classes.length + " url - " + url);
                             HashMap<String, WordKmeans.Classes[]> map = new HashMap<>();
                             map.put(url, classes);
                             return map;
