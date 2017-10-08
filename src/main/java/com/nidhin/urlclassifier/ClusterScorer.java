@@ -28,7 +28,7 @@ public class ClusterScorer {
     }
 
     public void loadWord2vec(){
-        word2Vec.loadModel("en", new File("/home/nidhin/Jump2/jump-classifier/GoogleNews-vectors-negative300.bin"));
+        word2Vec.loadModel("en", new File("/home/ubuntu/aspirations-oct2nd/GoogleNews-vectors-negative300.bin"));
     }
 
     public void genMetaVectors(){
