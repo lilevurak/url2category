@@ -106,6 +106,8 @@ public class Clusterizer {
         ois.close();
     }
 
+
+
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Clusterizer clusterizer = new Clusterizer();
         clusterizer.loadMaps();

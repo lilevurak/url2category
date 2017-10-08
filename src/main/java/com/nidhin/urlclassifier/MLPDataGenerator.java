@@ -172,11 +172,26 @@ public class MLPDataGenerator {
 
     }
 
+    public void read() throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("urlClustersMap-top10perpage-google.ser"));
+        HashMap<String, WordKmeans.Classes[]> urlClustersMap = (HashMap<String, WordKmeans.Classes[]>) ois.readObject();
+
+        for (String key : urlClustersMap.keySet()){
+            WordKmeans.Classes[] clusters = urlClustersMap.get(key);
+            System.out.println(key);
+            for (int i= 0; i< clusters.length; i++){
+                System.out.println(clusters[i].values.keySet());
+            }
+            System.out.println("\n");
+        }
+    }
+
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         MLPDataGenerator mlpDataGenerator = new MLPDataGenerator();
 //        mlpDataGenerator.loadMaps();
 //        mlpDataGenerator.generateAspirationClusters();
 //        mlpDataGenerator.convertAspirationClusterToLibSVMFormat();
-        mlpDataGenerator.convertAspirationClusterToCSV();
+//        mlpDataGenerator.convertAspirationClusterToCSV();
+        mlpDataGenerator.read();
     }
 }

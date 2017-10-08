@@ -47,7 +47,7 @@ public class ClusterScorer {
         int noClusterCount = 0;
         HashMap<String, Integer> finalAspUrlscountMap = new HashMap<>();
         HashMap<String, HashSet<double[]>> aspirationClusters = new HashMap<>();
-        HashMap<String, HashSet<double[]>> urlClusters = new HashMap<>();
+        HashMap<String, HashSet<WordKmeans.Classes>> urlClusters = new HashMap<>();
 
         for (Map.Entry<String, ArrayList<String>> aspirationUrls : aspirationUrlsMap.entrySet()) {
 
@@ -93,7 +93,7 @@ public class ClusterScorer {
                 finalAspUrlscountMap.put(aspiration, 1 + finalAspUrlscountMap.get(aspiration));
                 clustersWithScores.subList(0,Math.min(10, clustersWithScores.size())).forEach(stringObjectHashMap -> {
                     aspirationClusters.get(aspiration).add(((WordKmeans.Classes)stringObjectHashMap.get("cluster")).getCenter());
-                    urlClusters.get(url).add(((WordKmeans.Classes)stringObjectHashMap.get("cluster")).getCenter());
+                    urlClusters.get(url).add((WordKmeans.Classes)stringObjectHashMap.get("cluster"));
 
                 });
 
